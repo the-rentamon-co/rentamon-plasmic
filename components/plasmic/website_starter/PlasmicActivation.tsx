@@ -5186,6 +5186,78 @@ function PlasmicActivation__RenderFunc(props: {
                               ];
                             }
 
+                            $steps["invokeGlobalAction"] =
+                              $steps.jabamaVerify.status != 200
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["invokeGlobalAction"] != null &&
+                              typeof $steps["invokeGlobalAction"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction"] = await $steps[
+                                "invokeGlobalAction"
+                              ];
+                            }
+
+                            $steps["platformStatus"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    operation: 0,
+                                    value: (() => {
+                                      if (
+                                        $steps.jabamaVerify.data.status === true
+                                      ) {
+                                        $state.platformstatus.status.jabama =
+                                          true;
+                                      } else {
+                                        $state.platformstatus.status.jabama =
+                                          false;
+                                      }
+                                      console.log($steps.jabamaVerify);
+                                      return console.log($state.platformstatus);
+                                    })()
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["platformStatus"] != null &&
+                              typeof $steps["platformStatus"] === "object" &&
+                              typeof $steps["platformStatus"].then ===
+                                "function"
+                            ) {
+                              $steps["platformStatus"] = await $steps[
+                                "platformStatus"
+                              ];
+                            }
+
                             $steps["jabamaContact"] =
                               $state.form.value.jabamaOTP !== undefined
                                 ? (() => {
@@ -5241,78 +5313,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ) {
                               $steps["jabamaContact"] = await $steps[
                                 "jabamaContact"
-                              ];
-                            }
-
-                            $steps["platformStatus"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    operation: 0,
-                                    value: (() => {
-                                      if (
-                                        $steps.jabamaVerify.data.status === true
-                                      ) {
-                                        $state.platformstatus.status.jabama =
-                                          true;
-                                      } else {
-                                        $state.platformstatus.status.jabama =
-                                          false;
-                                      }
-                                      console.log($steps.jabamaVerify);
-                                      return console.log($state.platformstatus);
-                                    })()
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["platformStatus"] != null &&
-                              typeof $steps["platformStatus"] === "object" &&
-                              typeof $steps["platformStatus"].then ===
-                                "function"
-                            ) {
-                              $steps["platformStatus"] = await $steps[
-                                "platformStatus"
-                              ];
-                            }
-
-                            $steps["invokeGlobalAction"] =
-                              $steps.jabamaVerify.status != 200
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "error",
-                                        "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
-                                        "top-center"
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                            if (
-                              $steps["invokeGlobalAction"] != null &&
-                              typeof $steps["invokeGlobalAction"] ===
-                                "object" &&
-                              typeof $steps["invokeGlobalAction"].then ===
-                                "function"
-                            ) {
-                              $steps["invokeGlobalAction"] = await $steps[
-                                "invokeGlobalAction"
                               ];
                             }
                           }}

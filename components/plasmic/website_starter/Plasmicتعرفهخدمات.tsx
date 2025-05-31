@@ -102,14 +102,14 @@ export type Plasmicتعرفهخدمات__OverridesType = {
   checkbox2?: Flex__<typeof Checkbox>;
   item14?: Flex__<"div">;
   checkbox3?: Flex__<typeof Checkbox>;
-  item15?: Flex__<"div">;
-  checkbox4?: Flex__<typeof Checkbox>;
   item19?: Flex__<"div">;
   checkbox9?: Flex__<typeof Checkbox>;
   item112?: Flex__<"div">;
   checkbox10?: Flex__<typeof Checkbox>;
   item113?: Flex__<"div">;
   checkbox11?: Flex__<typeof Checkbox>;
+  item114?: Flex__<"div">;
+  checkbox12?: Flex__<typeof Checkbox>;
   item16?: Flex__<"div">;
   checkbox5?: Flex__<typeof Checkbox>;
   item17?: Flex__<"div">;
@@ -224,12 +224,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
       },
       {
-        path: "checkbox4.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
-      },
-      {
         path: "checkbox9.isChecked",
         type: "private",
         variableType: "boolean",
@@ -270,6 +264,12 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "checkbox12.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
       }
     ],
     [$props, $ctx, $refs]
@@ -427,9 +427,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                         sty.text__ib7W4
                       )}
                     >
-                      {
-                        "\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641\u060c \u062f\u0631 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645"
-                      }
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641\u060c \u062f\u0631 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645"
+                        : "\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641\u060c \u062f\u0631 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645"}
                     </div>
                   </Checkbox>
                 </div>
@@ -549,9 +549,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                         sty.text__m11Mp
                       )}
                     >
-                      {
-                        "\u062a\u063a\u06cc\u06cc\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645 (\u062f\u0633\u062a\u06cc)"
-                      }
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u062a\u063a\u06cc\u06cc\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645 (\u062f\u0633\u062a\u06cc)"
+                        : "\u062a\u063a\u06cc\u06cc\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645 (\u062f\u0633\u062a\u06cc)"}
                     </div>
                   </Checkbox>
                 </div>
@@ -561,67 +561,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       projectcss.all,
                       projectcss.__wab_text,
                       sty.text__rqTdd
-                    )}
-                  >
-                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
-                  </div>
-                </div>
-              </Stack__>
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"item15"}
-                data-plasmic-override={overrides.item15}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.item15)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__qgWSf)}>
-                  <Checkbox
-                    data-plasmic-name={"checkbox4"}
-                    data-plasmic-override={overrides.checkbox4}
-                    className={classNames("__wab_instance", sty.checkbox4)}
-                    isChecked={
-                      generateStateValueProp($state, [
-                        "checkbox4",
-                        "isChecked"
-                      ]) ?? false
-                    }
-                    isDisabled={true}
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "checkbox4",
-                          "isChecked"
-                        ])(eventArgs[0]);
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___2C51K
-                      )}
-                    >
-                      {
-                        "\u062e\u0648\u0627\u0646\u062f\u0646 \u0646\u0638\u0631\u0627\u062a \u0648 \u067e\u0627\u0633\u062e \u0628\u0647 \u200c\u0622\u0646\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9\u062c\u0627 "
-                      }
-                    </div>
-                  </Checkbox>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__dCXC)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yGyZ1
                     )}
                   >
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
@@ -735,7 +674,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u062b\u0628\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 (\u062f\u0633\u062a\u06cc)"
+                        "\u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627"
                       }
                     </div>
                   </Checkbox>
@@ -798,7 +737,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645"
+                        "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0627\u0631\u06cc\u062e\u0686\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0622\u06cc\u0646\u062f\u0647"
                       }
                     </div>
                   </Checkbox>
@@ -809,6 +748,69 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       projectcss.all,
                       projectcss.__wab_text,
                       sty.text__q7L9F
+                    )}
+                  >
+                    {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  </div>
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"item114"}
+                data-plasmic-override={overrides.item114}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.item114)}
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___2MZem)}
+                >
+                  <Checkbox
+                    data-plasmic-name={"checkbox12"}
+                    data-plasmic-override={overrides.checkbox12}
+                    className={classNames("__wab_instance", sty.checkbox12)}
+                    isChecked={
+                      generateStateValueProp($state, [
+                        "checkbox12",
+                        "isChecked"
+                      ]) ?? false
+                    }
+                    isDisabled={true}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "checkbox12",
+                          "isChecked"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___9YP10
+                      )}
+                    >
+                      {
+                        "\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645"
+                      }
+                    </div>
+                  </Checkbox>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__mnhRn)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fE4A1
                     )}
                   >
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
@@ -862,7 +864,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"
+                        ? "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"
                         : hasVariant(globalVariants, "screen", "mobile")
                         ? "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"
                         : "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"}
@@ -923,11 +925,79 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                         sty.text__sDnda
                       )}
                     >
-                      {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u2022 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n\u2022  \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n\u2022  \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\r"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u2022 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n\u2022 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n\u2022 \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646\r"
-                        : "- \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\r\n- \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
+                      {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 500 }}
+                          >
+                            {
+                              "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00a0"
+                            }
+                          </span>
+                          <React.Fragment>
+                            {
+                              "\n\u2022 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n\u2022 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\u2022 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\u2022 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 500 }}
+                          >
+                            {
+                              "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                            }
+                          </span>
+                          <React.Fragment>
+                            {
+                              "\n\u2022 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n\u2022 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\u2022 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\u2022 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      ) : hasVariant(globalVariants, "screen", "tablet") ? (
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 500 }}
+                          >
+                            {
+                              "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                            }
+                          </span>
+                          <React.Fragment>
+                            {
+                              "\n- \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n- \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n- \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n- \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 500 }}
+                          >
+                            {
+                              "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                            }
+                          </span>
+                          <React.Fragment>
+                            {
+                              "\n- \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n- \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n- \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n- \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      )}
                     </div>
                   </Checkbox>
                 </div>
@@ -2974,14 +3044,14 @@ const PlasmicDescendants = {
     "checkbox2",
     "item14",
     "checkbox3",
-    "item15",
-    "checkbox4",
     "item19",
     "checkbox9",
     "item112",
     "checkbox10",
     "item113",
     "checkbox11",
+    "item114",
+    "checkbox12",
     "item16",
     "checkbox5",
     "item17",
@@ -3021,14 +3091,14 @@ const PlasmicDescendants = {
     "checkbox2",
     "item14",
     "checkbox3",
-    "item15",
-    "checkbox4",
     "item19",
     "checkbox9",
     "item112",
     "checkbox10",
     "item113",
     "checkbox11",
+    "item114",
+    "checkbox12",
     "item16",
     "checkbox5",
     "item17",
@@ -3045,14 +3115,14 @@ const PlasmicDescendants = {
   checkbox2: ["checkbox2"],
   item14: ["item14", "checkbox3"],
   checkbox3: ["checkbox3"],
-  item15: ["item15", "checkbox4"],
-  checkbox4: ["checkbox4"],
   item19: ["item19", "checkbox9"],
   checkbox9: ["checkbox9"],
   item112: ["item112", "checkbox10"],
   checkbox10: ["checkbox10"],
   item113: ["item113", "checkbox11"],
   checkbox11: ["checkbox11"],
+  item114: ["item114", "checkbox12"],
+  checkbox12: ["checkbox12"],
   item16: ["item16", "checkbox5"],
   checkbox5: ["checkbox5"],
   item17: ["item17", "checkbox6"],
@@ -3107,14 +3177,14 @@ type NodeDefaultElementType = {
   checkbox2: typeof Checkbox;
   item14: "div";
   checkbox3: typeof Checkbox;
-  item15: "div";
-  checkbox4: typeof Checkbox;
   item19: "div";
   checkbox9: typeof Checkbox;
   item112: "div";
   checkbox10: typeof Checkbox;
   item113: "div";
   checkbox11: typeof Checkbox;
+  item114: "div";
+  checkbox12: typeof Checkbox;
   item16: "div";
   checkbox5: typeof Checkbox;
   item17: "div";
@@ -3215,14 +3285,14 @@ export const Plasmicتعرفهخدمات = Object.assign(
     checkbox2: makeNodeComponent("checkbox2"),
     item14: makeNodeComponent("item14"),
     checkbox3: makeNodeComponent("checkbox3"),
-    item15: makeNodeComponent("item15"),
-    checkbox4: makeNodeComponent("checkbox4"),
     item19: makeNodeComponent("item19"),
     checkbox9: makeNodeComponent("checkbox9"),
     item112: makeNodeComponent("item112"),
     checkbox10: makeNodeComponent("checkbox10"),
     item113: makeNodeComponent("item113"),
     checkbox11: makeNodeComponent("checkbox11"),
+    item114: makeNodeComponent("item114"),
+    checkbox12: makeNodeComponent("checkbox12"),
     item16: makeNodeComponent("item16"),
     checkbox5: makeNodeComponent("checkbox5"),
     item17: makeNodeComponent("item17"),
