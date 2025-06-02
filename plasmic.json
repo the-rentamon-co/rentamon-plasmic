@@ -4038,6 +4038,11 @@
           "id": "vAtkA-7itfV8",
           "name": "img.webp",
           "filePath": "../public/plasmic/website_starter/images/imgWebp.webp"
+        },
+        {
+          "id": "Yin2f6LVuAV4",
+          "name": "image 144",
+          "filePath": "../public/plasmic/website_starter/images/image144.svg"
         }
       ],
       "indirect": false,

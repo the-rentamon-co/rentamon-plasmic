@@ -679,7 +679,16 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
             displayWidth={
               hasVariant(globalVariants, "screen", "mobile") ? "100%" : "auto"
             }
-            src={"https://static1.plasmic.app/menu.svg"}
+            src={
+              hasVariant(globalVariants, "screen", "mobile")
+                ? {
+                    src: "/plasmic/website_starter/images/image144.svg",
+                    fullWidth: 24,
+                    fullHeight: 24,
+                    aspectRatio: 1
+                  }
+                : "https://static1.plasmic.app/menu.svg"
+            }
           />
         }
         responsiveBreakpoint={768}
