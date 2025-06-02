@@ -423,10 +423,10 @@ function Plasmicتالار__RenderFunc(props: {
                             e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
                             return {
-                              src: "/plasmic/website_starter/images/image120.svg",
-                              fullWidth: 28,
-                              fullHeight: 28,
-                              aspectRatio: 1
+                              src: "/plasmic/website_starter/images/imgWebp.webp",
+                              fullWidth: 200,
+                              fullHeight: 200,
+                              aspectRatio: undefined
                             };
                           }
                           throw e;

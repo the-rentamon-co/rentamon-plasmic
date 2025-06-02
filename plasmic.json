@@ -4033,6 +4033,11 @@
           "id": "TelAnp8GAMOZ",
           "name": "image 143",
           "filePath": "../public/plasmic/website_starter/images/image143.svg"
+        },
+        {
+          "id": "vAtkA-7itfV8",
+          "name": "img.webp",
+          "filePath": "../public/plasmic/website_starter/images/imgWebp.webp"
         }
       ],
       "indirect": false,
