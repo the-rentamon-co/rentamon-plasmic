@@ -284,10 +284,6 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
           name="twitter:image"
           content={Plasmicثبتآگهیاقامتگاه.pageMetadata.ogImageSrc}
         />
-        <link
-          rel="canonical"
-          href={Plasmicثبتآگهیاقامتگاه.pageMetadata.canonical}
-        />
       </Head>
 
       <style>{`
@@ -2307,7 +2303,7 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
         "ثبت رایگان آگهی ویلا، اقامتگاه و سوییت در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.",
       ogImageSrc:
         "https://site-assets.plasmic.app/33c05b5a2d13ca8a5491f31ff19d2fb3.jpg",
-      canonical: "list-your-property"
+      canonical: ""
     }
   }
 );

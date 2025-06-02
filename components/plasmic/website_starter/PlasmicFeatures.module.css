@@ -186,7 +186,7 @@
   flex-direction: row;
   grid-column-start: 3 !important;
   grid-column-end: -3 !important;
-  padding: 23px 8px 8px;
+  padding: 23px 60px 8px;
 }
 @media (max-width: 1200px) {
   .freeBox___6Bp8 {
@@ -476,7 +476,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  width: 40%;
+  width: 30%;
   height: auto;
   max-width: 100%;
   padding: 30px 8px 8px 60px;
@@ -495,6 +495,8 @@
     width: 90%;
     padding-left: 0px;
     padding-right: 0px;
+    overflow: hidden;
+    margin: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -518,6 +520,14 @@
 @media (max-width: 1200px) {
   .htmlVideo:global(.__wab_instance) {
     border-width: 2px;
+  }
+}
+@media (max-width: 500px) {
+  .htmlVideo:global(.__wab_instance) {
+    user-select: none;
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
   }
 }
 .why {

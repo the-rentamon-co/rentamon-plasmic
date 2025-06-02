@@ -2725,6 +2725,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-family: "Vazirmatn", sans-serif;
   min-width: 0;
 }
 .reserve2 {
@@ -2807,6 +2808,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-family: "Vazirmatn", sans-serif;
   min-width: 0;
 }
 .reserve3 {
@@ -2890,6 +2892,11 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__pBKau {
+    font-family: "Vazirmatn", sans-serif;
+  }
 }
 .reserve4 {
   display: flex;
@@ -2994,6 +3001,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  font-family: "Vazirmatn", sans-serif;
   min-width: 0;
 }
 .submitChange {
