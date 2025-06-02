@@ -263,7 +263,6 @@ function PlasmicLite__RenderFunc(props: {
           name="twitter:image"
           content={PlasmicLite.pageMetadata.ogImageSrc}
         />
-        <link rel="canonical" href={PlasmicLite.pageMetadata.canonical} />
       </Head>
 
       <style>{`
@@ -1533,7 +1532,7 @@ export const PlasmicLite = Object.assign(
         "با رنتامون، مدیریت اقامتگاه به ساده‌ترین و سریع‌ترین شکل ممکن انجام میشه. دیگه نیازی به دفترچه، سررسید یا تقویم‌های کاغذی نیست! همه چیز در یک تقویم آنلاین در دسترسه؛ از هر جا و روی هر دستگاهی.",
       ogImageSrc:
         "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png",
-      canonical: "https://rentamon.com/lite/"
+      canonical: ""
     }
   }
 );

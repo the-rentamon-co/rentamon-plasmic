@@ -213,10 +213,6 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
           name="twitter:image"
           content={Plasmicچراجارهکوتاهمدت.pageMetadata.ogImageSrc}
         />
-        <link
-          rel="canonical"
-          href={Plasmicچراجارهکوتاهمدت.pageMetadata.canonical}
-        />
       </Head>
 
       <style>{`
@@ -970,7 +966,7 @@ export const Plasmicچراجارهکوتاهمدت = Object.assign(
         "مقایسه میزان درآمدزایی اجاره روزانه و اجاره سالانه از نظر درآمد و هزینه‌های اجرایی.",
       ogImageSrc:
         "https://site-assets.plasmic.app/c85f60591d2e0c0e332ab600541cfe78.webp",
-      canonical: "https://rentamon.com/short-term-rental/"
+      canonical: ""
     }
   }
 );

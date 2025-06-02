@@ -1052,20 +1052,6 @@
           "path": "/درباره-ما"
         },
         {
-          "id": "ItZEs9masGCY",
-          "name": "TermsOfUse",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicTermsOfUse.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/terms-of-use.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicTermsOfUse.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/قوانین-رنتامون"
-        },
-        {
           "id": "7qT9iMfa9pib",
           "name": "Integrations",
           "type": "managed",
@@ -1864,6 +1850,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/upgrade-to-pro"
+        },
+        {
+          "id": "ItZEs9masGCY",
+          "name": "قوانینومقرراتاستفادهازرنتامون",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicقوانینومقرراتاستفادهازرنتامون.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/terms-of-use.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicقوانینومقرراتاستفادهازرنتامون.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/terms-of-use"
         }
       ],
       "icons": [

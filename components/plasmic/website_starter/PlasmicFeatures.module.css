@@ -197,6 +197,8 @@
 @media (max-width: 500px) {
   .freeBox___6Bp8 {
     padding-top: 12px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -392,6 +394,7 @@
   .featuresDesc {
     padding-right: 0px;
     padding-left: 0px;
+    border-bottom-width: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -492,7 +495,7 @@
 }
 @media (max-width: 500px) {
   .appDemo {
-    width: 90%;
+    width: 80%;
     padding-left: 0px;
     padding-right: 0px;
     overflow: hidden;
@@ -607,12 +610,13 @@
 }
 @media (max-width: 500px) {
   .text__kzNvy {
-    padding-top: 12px;
+    padding-top: 26px;
     padding-right: 12px;
     padding-left: 8px;
     text-align: right;
     line-height: 1.8;
     font-size: 16px;
+    font-weight: 400;
   }
 }
 @media (max-width: 350px) {
@@ -682,7 +686,7 @@
     width: 100%;
     height: auto;
     max-width: 100%;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--token-8nedppYkGVaH);
     min-width: 0;
     padding: 24px 12px 30px 8px;

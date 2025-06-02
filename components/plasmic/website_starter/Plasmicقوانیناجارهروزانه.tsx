@@ -221,10 +221,6 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
           name="twitter:image"
           content={Plasmicقوانیناجارهروزانه.pageMetadata.ogImageSrc}
         />
-        <link
-          rel="canonical"
-          href={Plasmicقوانیناجارهروزانه.pageMetadata.canonical}
-        />
       </Head>
 
       <style>{`
@@ -1329,7 +1325,7 @@ export const Plasmicقوانیناجارهروزانه = Object.assign(
         "قوانین اجاره کوتاه‌مدت در ایران: مجوزها، مسئولیت‌ها، مالیات، بیمه و احراز هویت مهمان؛ راهنمای کامل برای صاحبان ویلا و آپارتمان مبله.",
       ogImageSrc:
         "https://site-assets.plasmic.app/0fa21a59b2c480cb87b67e80efe4956e.jpg",
-      canonical: "https://rentamon.com/rental-rules/"
+      canonical: ""
     }
   }
 );

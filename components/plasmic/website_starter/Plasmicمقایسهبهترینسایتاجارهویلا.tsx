@@ -231,10 +231,6 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
           name="twitter:image"
           content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.ogImageSrc}
         />
-        <link
-          rel="canonical"
-          href={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.canonical}
-        />
       </Head>
 
       <style>{`
@@ -2120,7 +2116,7 @@ export const Plasmicمقایسهبهترینسایتاجارهویلا = Object.
         "مقایسه میزان کارمزد، کیفیت پشتیبانی و درآمد سایت‌های جاباما، جاجیگا، شب، اتاقک و...",
       ogImageSrc:
         "https://site-assets.plasmic.app/cc7ae424dd4a99449087afa68e7f3dd1.jpg",
-      canonical: "https://rentamon.com/best-villa-rental-sites/"
+      canonical: ""
     }
   }
 );

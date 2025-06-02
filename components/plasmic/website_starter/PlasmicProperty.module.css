@@ -339,6 +339,7 @@
     padding-left: 7px;
     max-width: 96%;
     width: 100%;
+    padding-top: 9px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
   }
@@ -349,16 +350,37 @@
   max-width: 100%;
   font-size: 18px;
   line-height: 1.8;
+  text-align: center;
   min-width: 0;
 }
 @media (max-width: 500px) {
   .text__kgk1O {
-    text-align: right;
+    text-align: center;
     font-size: 16px;
   }
 }
 @media (max-width: 350px) {
   .text__kgk1O {
+    text-align: center;
+    font-size: 15px;
+  }
+}
+.text___4QJhz {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 18px;
+  line-height: 1.8;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text___4QJhz {
+    text-align: right;
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text___4QJhz {
     text-align: right;
     font-size: 15px;
   }

@@ -215,10 +215,6 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
           name="twitter:image"
           content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.ogImageSrc}
         />
-        <link
-          rel="canonical"
-          href={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.canonical}
-        />
       </Head>
 
       <style>{`
@@ -1226,7 +1222,7 @@ export const Plasmicراهنمایجامعدرآمدازاجارهویلا = Obj
         "در این راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا ارائه می‌شه. از آماده‌سازی اقامتگاه، تا جذب مهمان...",
       ogImageSrc:
         "https://site-assets.plasmic.app/15351cdec6468de813a07a902e7e2f8d.jpg",
-      canonical: "https://rentamon.com/vacation-rental-income/"
+      canonical: ""
     }
   }
 );

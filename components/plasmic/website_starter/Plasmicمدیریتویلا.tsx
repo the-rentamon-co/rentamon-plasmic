@@ -213,7 +213,6 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
           name="twitter:image"
           content={Plasmicمدیریتویلا.pageMetadata.ogImageSrc}
         />
-        <link rel="canonical" href={Plasmicمدیریتویلا.pageMetadata.canonical} />
       </Head>
 
       <style>{`
@@ -905,7 +904,7 @@ export const Plasmicمدیریتویلا = Object.assign(
         "با ابزار چنل‌منیجر رنتامون، رزروهای اقامتگاه خود را در تمام سایت‌های اجاره ویلا مثل جاباما، جاجیگا، اتاقک، شب و… به‌صورت خودکار همگام‌سازی کنید و از تداخل رزروها جلوگیری کنید.",
       ogImageSrc:
         "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png",
-      canonical: "rentamon.com/villa-management"
+      canonical: ""
     }
   }
 );

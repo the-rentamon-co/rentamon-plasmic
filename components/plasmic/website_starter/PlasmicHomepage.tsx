@@ -270,7 +270,6 @@ function PlasmicHomepage__RenderFunc(props: {
           name="twitter:image"
           content={PlasmicHomepage.pageMetadata.ogImageSrc}
         />
-        <link rel="canonical" href={PlasmicHomepage.pageMetadata.canonical} />
       </Head>
 
       <style>{`
@@ -1962,7 +1961,7 @@ export const PlasmicHomepage = Object.assign(
         "رنتامون دستیار هوشمند میزبان‌هاست؛ راه حل عالی برای مدیریت تقویم اقامتگاه و اعمال تغییرات در سایت‌های جاباما، جاجیگا، اتاقک، شب و… از یکجا.",
       ogImageSrc:
         "https://site-assets.plasmic.app/c7832bfe69a5a11cbf030c049fa35152.png",
-      canonical: "https://rentamon.com/"
+      canonical: ""
     }
   }
 );
