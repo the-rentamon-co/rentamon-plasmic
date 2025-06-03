@@ -1864,6 +1864,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/terms-of-use"
+        },
+        {
+          "id": "hYrKe0Fs8H2I",
+          "name": "مدیریتویلا2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicمدیریتویلا2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/مدیریت-ویلا-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicمدیریتویلا2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/مدیریت-ویلا-2"
         }
       ],
       "icons": [
