@@ -1086,6 +1086,9 @@ function PlasmicReservations__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
+                          if ($state.isTheFirstVisit == true) {
+                            return ($state.featureGuide.open = false);
+                          }
                           if (!document.cookie.includes("featureGuide")) {
                             return ($state.featureGuide.open = true);
                           }
@@ -8527,7 +8530,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie("featureGuide", "true", 24);
+                                return setCookie("featureGuide", "true", 72);
                               })();
                             }
                           };
@@ -8613,7 +8616,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie("featureGuide", "true", 24);
+                                return setCookie("featureGuide", "true", 72);
                               })();
                             }
                           };
