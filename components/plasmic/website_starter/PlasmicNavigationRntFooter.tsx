@@ -191,23 +191,52 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
                   const cookies = document.cookie
                     .split(";")
                     .map(cookie => cookie.trim());
+                  console.log("All cookies:", cookies);
                   for (const cookie of cookies) {
                     const [name, value] = cookie.split("=");
+                    console.log(
+                      `Checking cookie: name=${name}, value=${value}`
+                    );
                     if (name === cookieName) {
+                      console.log(
+                        `Found cookie "${cookieName}" with value: ${value}`
+                      );
                       return value;
                     }
                   }
+                  console.log(`Cookie "${cookieName}" not found`);
                   return null;
                 }
                 function isNotifyEnabled() {
-                  if (getCookieValue("first_visit") !== null) {
+                  const firstVisitCookie = getCookieValue("first_visit");
+                  if (firstVisitCookie !== null) {
+                    console.log(
+                      "first_visit cookie exists. Notification enabled."
+                    );
                     return true;
                   }
-                  return localStorage.getItem("is_notify") !== null;
+                  const isNotify = localStorage.getItem("is_notify");
+                  console.log("localStorage is_notify value:", isNotify);
+                  if (isNotify !== null) {
+                    console.log(
+                      "is_notify in localStorage exists. Notification enabled."
+                    );
+                    return true;
+                  }
+                  console.log(
+                    "Neither first_visit cookie nor is_notify in localStorage found. Notification disabled."
+                  );
+                  return false;
                 }
                 if (isNotifyEnabled()) {
+                  console.log(
+                    "Final result: Notification should be shown (true)"
+                  );
                   return true;
                 } else {
+                  console.log(
+                    "Final result: Notification should NOT be shown (false)"
+                  );
                   return false;
                 }
               })();
