@@ -423,9 +423,9 @@ function Plasmicتالار__RenderFunc(props: {
                             e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
                             return {
-                              src: "/plasmic/website_starter/images/imgWebp.webp",
-                              fullWidth: 200,
-                              fullHeight: 200,
+                              src: "/plasmic/website_starter/images/image145.webp",
+                              fullWidth: 1280,
+                              fullHeight: 1280,
                               aspectRatio: undefined
                             };
                           }

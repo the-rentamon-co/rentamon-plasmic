@@ -2,7 +2,7 @@
   "projects": [
     {
       "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-      "version": "216.0.1",
+      "version": "216.1.0",
       "dependencies": {
         "YUiM7yqBWAqsh8KSnrdj7": "0.34.0",
         "ohDidvG9XsCeFumugENU3J": "6.30.0",
@@ -2382,12 +2382,12 @@
         {
           "type": "renderModule",
           "assetId": "wDX6CsUVKNmL",
-          "checksum": "61cd35231db31b60b8916a0b991ce9ff"
+          "checksum": "73e3c48176753c3e1048c4cf60f88f29"
         },
         {
           "type": "cssRules",
           "assetId": "wDX6CsUVKNmL",
-          "checksum": "61cd35231db31b60b8916a0b991ce9ff"
+          "checksum": "73e3c48176753c3e1048c4cf60f88f29"
         },
         {
           "type": "renderModule",
@@ -2912,12 +2912,12 @@
         {
           "type": "renderModule",
           "assetId": "y37kcAs9RXYg",
-          "checksum": "c97dfe60d1237c4568d275743150da09"
+          "checksum": "f5293fe39f78bf585aa38534bd6cc833"
         },
         {
           "type": "cssRules",
           "assetId": "y37kcAs9RXYg",
-          "checksum": "c97dfe60d1237c4568d275743150da09"
+          "checksum": "f5293fe39f78bf585aa38534bd6cc833"
         },
         {
           "type": "icon",
@@ -2962,12 +2962,12 @@
         {
           "type": "renderModule",
           "assetId": "awYJCWS6HouC",
-          "checksum": "61df0f5e3790e294a4e17351f910f27b"
+          "checksum": "7eb5a9cdc87f68ba36787e2f93c6ee06"
         },
         {
           "type": "cssRules",
           "assetId": "awYJCWS6HouC",
-          "checksum": "61df0f5e3790e294a4e17351f910f27b"
+          "checksum": "7eb5a9cdc87f68ba36787e2f93c6ee06"
         },
         {
           "type": "icon",
@@ -3578,6 +3578,11 @@
           "assetId": "7SNMkB8UMukVgcWJYokeAQ",
           "type": "projectCss",
           "checksum": "a301cfd50ffc750e767e097fae99970c"
+        },
+        {
+          "type": "image",
+          "assetId": "9mmlKP7n_gEr",
+          "checksum": "2e8dc09f2e8ec8acf40ca3f8fd43eba4"
         }
       ],
       "codegenVersion": "0.0.1"

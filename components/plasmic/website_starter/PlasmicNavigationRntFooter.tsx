@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -110,6 +111,8 @@ export type PlasmicNavigationRntFooter__OverridesType = {
   backCal?: Flex__<"div">;
   normCal?: Flex__<"div">;
   res?: Flex__<"div">;
+  notifStackFixator3?: Flex__<"div">;
+  stack3?: Flex__<"div">;
   top2?: Flex__<"div">;
   backRes?: Flex__<"div">;
   normRes?: Flex__<"div">;
@@ -118,6 +121,7 @@ export type PlasmicNavigationRntFooter__OverridesType = {
   backProps?: Flex__<"div">;
   normProps?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  checkUserPendingReserve?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultNavigationRntFooterProps {
@@ -182,31 +186,34 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return (() => {
-                function getCookieValue(cookieName) {
-                  const cookies = document.cookie
-                    .split(";")
-                    .map(cookie => cookie.trim());
-                  for (const cookie of cookies) {
-                    const [name, value] = cookie.split("=");
-                    if (name === cookieName) {
-                      return value;
-                    }
-                  }
-                  return null;
-                }
-                function isNotifyEnabled() {
-                  if (getCookieValue("first_visit") !== null) {
-                    return false;
-                  }
-                  return localStorage.getItem("is_notify") !== null;
-                }
-                if (isNotifyEnabled()) {
-                  return true;
-                } else {
-                  return false;
-                }
-              })();
+              return (
+                // function getCookieValue(cookieName) {
+                //   const cookies = document.cookie.split(";").map(cookie => cookie.trim());
+                //   for (const cookie of cookies) {
+                //     const [name, value] = cookie.split("=");
+                //     if (name === cookieName) {
+                //       return value;
+                //     }
+                //   }
+                //   return null;
+                // }
+
+                // function isNotifyEnabled() {
+                //   if (getCookieValue('first_visit') !== null) {
+                //     return false;
+                //   }
+
+                //   return localStorage.getItem('is_notify') !== null;
+                // }
+
+                // if (isNotifyEnabled()) {
+                //   return true;
+                // } else {
+                //   return false;
+                // }
+
+                false
+              );
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -217,6 +224,30 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "checkUserPendingReserve.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "checkUserPendingReserve"
+      },
+      {
+        path: "checkUserPendingReserve.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "checkUserPendingReserve"
+      },
+      {
+        path: "checkUserPendingReserve.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "checkUserPendingReserve"
       }
     ],
     [$props, $ctx, $refs]
@@ -721,6 +752,63 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
                     try {
+                      return !(
+                        $state.checkUserPendingReserve.data == null ||
+                        $state.checkUserPendingReserve.loading == true
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : true
+            ) ? (
+              <div
+                data-plasmic-name={"notifStackFixator3"}
+                data-plasmic-override={overrides.notifStackFixator3}
+                className={classNames(projectcss.all, sty.notifStackFixator3)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__to7Y
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $state.checkUserPendingReserve.data[0].count_id.toLocaleString(
+                          "fa"
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "1";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div
+                  data-plasmic-name={"stack3"}
+                  data-plasmic-override={overrides.stack3}
+                  className={classNames(projectcss.all, sty.stack3)}
+                />
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
                       return $props.navPage == "reservations";
                     } catch (e) {
                       if (
@@ -1061,6 +1149,39 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
             }
           }}
         />
+
+        <ApiRequest
+          data-plasmic-name={"checkUserPendingReserve"}
+          data-plasmic-override={overrides.checkUserPendingReserve}
+          className={classNames("__wab_instance", sty.checkUserPendingReserve)}
+          errorDisplay={null}
+          loadingDisplay={null}
+          method={"GET"}
+          onError={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, [
+              "checkUserPendingReserve",
+              "error"
+            ]).apply(null, eventArgs);
+          }}
+          onLoading={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, [
+              "checkUserPendingReserve",
+              "loading"
+            ]).apply(null, eventArgs);
+          }}
+          onSuccess={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, [
+              "checkUserPendingReserve",
+              "data"
+            ]).apply(null, eventArgs);
+          }}
+          ref={ref => {
+            $refs["checkUserPendingReserve"] = ref;
+          }}
+          url={
+            "https://gateway.rentamon.com/webhook/check_user_pending_request"
+          }
+        />
       </div>
     ) : null
   ) as React.ReactElement | null;
@@ -1082,6 +1203,8 @@ const PlasmicDescendants = {
     "backCal",
     "normCal",
     "res",
+    "notifStackFixator3",
+    "stack3",
     "top2",
     "backRes",
     "normRes",
@@ -1089,7 +1212,8 @@ const PlasmicDescendants = {
     "top3",
     "backProps",
     "normProps",
-    "sideEffect"
+    "sideEffect",
+    "checkUserPendingReserve"
   ],
   mainStack: [
     "mainStack",
@@ -1105,6 +1229,8 @@ const PlasmicDescendants = {
     "backCal",
     "normCal",
     "res",
+    "notifStackFixator3",
+    "stack3",
     "top2",
     "backRes",
     "normRes",
@@ -1132,7 +1258,9 @@ const PlasmicDescendants = {
   top1: ["top1", "backCal"],
   backCal: ["backCal"],
   normCal: ["normCal"],
-  res: ["res", "top2", "backRes", "normRes"],
+  res: ["res", "notifStackFixator3", "stack3", "top2", "backRes", "normRes"],
+  notifStackFixator3: ["notifStackFixator3", "stack3"],
+  stack3: ["stack3"],
   top2: ["top2", "backRes"],
   backRes: ["backRes"],
   normRes: ["normRes"],
@@ -1140,7 +1268,8 @@ const PlasmicDescendants = {
   top3: ["top3", "backProps"],
   backProps: ["backProps"],
   normProps: ["normProps"],
-  sideEffect: ["sideEffect"]
+  sideEffect: ["sideEffect"],
+  checkUserPendingReserve: ["checkUserPendingReserve"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1160,6 +1289,8 @@ type NodeDefaultElementType = {
   backCal: "div";
   normCal: "div";
   res: "div";
+  notifStackFixator3: "div";
+  stack3: "div";
   top2: "div";
   backRes: "div";
   normRes: "div";
@@ -1168,6 +1299,7 @@ type NodeDefaultElementType = {
   backProps: "div";
   normProps: "div";
   sideEffect: typeof SideEffect;
+  checkUserPendingReserve: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1243,6 +1375,8 @@ export const PlasmicNavigationRntFooter = Object.assign(
     backCal: makeNodeComponent("backCal"),
     normCal: makeNodeComponent("normCal"),
     res: makeNodeComponent("res"),
+    notifStackFixator3: makeNodeComponent("notifStackFixator3"),
+    stack3: makeNodeComponent("stack3"),
     top2: makeNodeComponent("top2"),
     backRes: makeNodeComponent("backRes"),
     normRes: makeNodeComponent("normRes"),
@@ -1251,6 +1385,7 @@ export const PlasmicNavigationRntFooter = Object.assign(
     backProps: makeNodeComponent("backProps"),
     normProps: makeNodeComponent("normProps"),
     sideEffect: makeNodeComponent("sideEffect"),
+    checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),
 
     // Metadata about props expected for PlasmicNavigationRntFooter
     internalVariantProps: PlasmicNavigationRntFooter__VariantProps,
