@@ -432,6 +432,8 @@ function PlasmicIntro__RenderFunc(props: {
               <Iframe
                 className={classNames("__wab_instance", sty.iframe__vLsgo)}
                 src={``}
+                srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
+                useHtml={false}
               />
 
               <Embed
@@ -501,6 +503,8 @@ function PlasmicIntro__RenderFunc(props: {
               <Iframe
                 className={classNames("__wab_instance", sty.iframe___1TAO)}
                 src={``}
+                srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
+                useHtml={false}
               />
 
               <Embed

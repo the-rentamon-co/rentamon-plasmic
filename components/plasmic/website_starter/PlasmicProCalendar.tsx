@@ -2176,6 +2176,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                 src={
                   "https://n8n-ger.darkube.app/webhook/a63f81dc-fe4f-4904-8923-1584a8e5c772/chat"
                 }
+                srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
+                useHtml={false}
               />
 
               <div className={classNames(projectcss.all, sty.freeBox__iuRwe)}>

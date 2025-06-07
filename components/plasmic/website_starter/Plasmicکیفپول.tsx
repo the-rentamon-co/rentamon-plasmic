@@ -73,7 +73,6 @@ import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
-import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -115,6 +114,7 @@ export type Plasmicکیفپول__OverridesType = {
   right?: Flex__<"div">;
   center?: Flex__<"div">;
   input3?: Flex__<typeof Input>;
+  input2?: Flex__<typeof Input>;
   left?: Flex__<"div">;
   packages?: Flex__<"div">;
   p1?: Flex__<"div">;
@@ -277,6 +277,12 @@ function Plasmicکیفپول__RenderFunc(props: {
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? "1000000" : "1000000"
+      },
+      {
+        path: "input2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "1000000"
       }
     ],
     [$props, $ctx, $refs]
@@ -884,6 +890,20 @@ function Plasmicکیفپول__RenderFunc(props: {
                     }
                     value={generateStateValueProp($state, ["input3", "value"])}
                   />
+
+                  <Input
+                    data-plasmic-name={"input2"}
+                    data-plasmic-override={overrides.input2}
+                    className={classNames("__wab_instance", sty.input2)}
+                    onChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "input2",
+                        "value"
+                      ]).apply(null, eventArgs);
+                    }}
+                    type={"number"}
+                    value={generateStateValueProp($state, ["input2", "value"])}
+                  />
                 </div>
                 <div
                   data-plasmic-name={"left"}
@@ -923,12 +943,12 @@ function Plasmicکیفپول__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["updateInput3Value"] = true
+                      $steps["updateInput2Value"] = true
                         ? (() => {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["input3", "value"]
+                                variablePath: ["input2", "value"]
                               },
                               operation: 0,
                               value: 2000000
@@ -950,12 +970,12 @@ function Plasmicکیفپول__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["updateInput3Value"] != null &&
-                        typeof $steps["updateInput3Value"] === "object" &&
-                        typeof $steps["updateInput3Value"].then === "function"
+                        $steps["updateInput2Value"] != null &&
+                        typeof $steps["updateInput2Value"] === "object" &&
+                        typeof $steps["updateInput2Value"].then === "function"
                       ) {
-                        $steps["updateInput3Value"] = await $steps[
-                          "updateInput3Value"
+                        $steps["updateInput2Value"] = await $steps[
+                          "updateInput2Value"
                         ];
                       }
                     }}
@@ -978,12 +998,12 @@ function Plasmicکیفپول__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["updateInput3Value"] = true
+                      $steps["updateInput2Value"] = true
                         ? (() => {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["input3", "value"]
+                                variablePath: ["input2", "value"]
                               },
                               operation: 0,
                               value: 3000000
@@ -1005,12 +1025,12 @@ function Plasmicکیفپول__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["updateInput3Value"] != null &&
-                        typeof $steps["updateInput3Value"] === "object" &&
-                        typeof $steps["updateInput3Value"].then === "function"
+                        $steps["updateInput2Value"] != null &&
+                        typeof $steps["updateInput2Value"] === "object" &&
+                        typeof $steps["updateInput2Value"].then === "function"
                       ) {
-                        $steps["updateInput3Value"] = await $steps[
-                          "updateInput3Value"
+                        $steps["updateInput2Value"] = await $steps[
+                          "updateInput2Value"
                         ];
                       }
                     }}
@@ -1033,12 +1053,12 @@ function Plasmicکیفپول__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["updateInput3Value"] = true
+                      $steps["updateInput2Value"] = true
                         ? (() => {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["input3", "value"]
+                                variablePath: ["input2", "value"]
                               },
                               operation: 0,
                               value: 5000000
@@ -1060,12 +1080,12 @@ function Plasmicکیفپول__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["updateInput3Value"] != null &&
-                        typeof $steps["updateInput3Value"] === "object" &&
-                        typeof $steps["updateInput3Value"].then === "function"
+                        $steps["updateInput2Value"] != null &&
+                        typeof $steps["updateInput2Value"] === "object" &&
+                        typeof $steps["updateInput2Value"].then === "function"
                       ) {
-                        $steps["updateInput3Value"] = await $steps[
-                          "updateInput3Value"
+                        $steps["updateInput2Value"] = await $steps[
+                          "updateInput2Value"
                         ];
                       }
                     }}
@@ -1230,7 +1250,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                                 : result;
                               return finalResult.trim() + " تومان";
                             }
-                            const input = $state.input3?.value || "";
+                            const input = $state.input2?.value || "";
                             const output =
                               input === ""
                                 ? "صفر"
@@ -1265,7 +1285,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                   const $steps = {};
 
                   $steps["updateLoading"] =
-                    $state.input3.value >= 100000
+                    $state.input2.value >= 100000
                       ? (() => {
                           const actionArgs = {
                             variable: {
@@ -1300,7 +1320,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                   }
 
                   $steps["invokeGlobalAction"] =
-                    $state.input3.value >= 100000
+                    $state.input2.value >= 100000
                       ? (() => {
                           const actionArgs = {
                             args: [
@@ -1309,7 +1329,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                               undefined,
                               (() => {
                                 try {
-                                  return { amount: $state.input3.value * 10 };
+                                  return { amount: $state.input2.value * 10 };
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -1340,7 +1360,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                   }
 
                   $steps["updateAccordionMainActivePanelId"] =
-                    $state.input3.value >= 100000
+                    $state.input2.value >= 100000
                       ? (() => {
                           const actionArgs = {
                             variable: {
@@ -1351,7 +1371,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                             value: (() => {
                               $state.tokenResponse.payInfo =
                                 $steps.invokeGlobalAction.data.payinfo;
-                              $state.tokenResponse.amount = $state.input3.value;
+                              $state.tokenResponse.amount = $state.input2.value;
                               return console.log($state.tokenResponse);
                             })()
                           };
@@ -1384,7 +1404,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                   }
 
                   $steps["updateAccordionMainActivePanelId2"] =
-                    $state.input3.value >= 100000
+                    $state.input2.value >= 100000
                       ? (() => {
                           const actionArgs = {
                             variable: {
@@ -1423,7 +1443,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                   }
 
                   $steps["updateAccordionMainActivePanelId3"] =
-                    $state.input3.value >= 100000
+                    $state.input2.value >= 100000
                       ? (() => {
                           const actionArgs = {
                             variable: {
@@ -1462,7 +1482,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                   }
 
                   $steps["updateAccordionMainActivePanelId4"] =
-                    $state.input3.value < 100000
+                    $state.input2.value < 100000
                       ? (() => {
                           const actionArgs = {
                             args: [
@@ -2212,6 +2232,7 @@ const PlasmicDescendants = {
     "right",
     "center",
     "input3",
+    "input2",
     "left",
     "packages",
     "p1",
@@ -2254,6 +2275,7 @@ const PlasmicDescendants = {
     "right",
     "center",
     "input3",
+    "input2",
     "left",
     "packages",
     "p1",
@@ -2261,10 +2283,11 @@ const PlasmicDescendants = {
     "right2",
     "left2"
   ],
-  input: ["input", "right", "center", "input3", "left"],
+  input: ["input", "right", "center", "input3", "input2", "left"],
   right: ["right"],
-  center: ["center", "input3"],
+  center: ["center", "input3", "input2"],
   input3: ["input3"],
+  input2: ["input2"],
   left: ["left"],
   packages: ["packages", "p1"],
   p1: ["p1"],
@@ -2323,6 +2346,7 @@ type NodeDefaultElementType = {
   right: "div";
   center: "div";
   input3: typeof Input;
+  input2: typeof Input;
   left: "div";
   packages: "div";
   p1: "div";
@@ -2425,6 +2449,7 @@ export const Plasmicکیفپول = Object.assign(
     right: makeNodeComponent("right"),
     center: makeNodeComponent("center"),
     input3: makeNodeComponent("input3"),
+    input2: makeNodeComponent("input2"),
     left: makeNodeComponent("left"),
     packages: makeNodeComponent("packages"),
     p1: makeNodeComponent("p1"),

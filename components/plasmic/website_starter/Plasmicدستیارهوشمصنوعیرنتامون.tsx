@@ -317,6 +317,8 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                   src={
                     "https://n8n-ger.darkube.app/webhook/e26291be-d10e-43cd-b6e8-f0f49ad6cf55/chat"
                   }
+                  srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
+                  useHtml={false}
                 />
               </div>
             </div>

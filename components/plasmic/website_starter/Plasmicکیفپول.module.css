@@ -898,6 +898,7 @@
   font-weight: 400;
   font-family: "Estedad";
   min-width: 0;
+  display: none;
 }
 @media (max-width: 350px) {
   .input3:global(.__wab_instance) {
@@ -905,6 +906,14 @@
     margin-right: 0px;
     font-family: "Estedad";
   }
+}
+.input2:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  font-size: 20px;
+  text-align: center;
+  min-width: 0;
 }
 .left {
   display: flex;
