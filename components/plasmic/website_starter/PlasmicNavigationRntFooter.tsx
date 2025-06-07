@@ -183,7 +183,22 @@ function PlasmicNavigationRntFooter__RenderFunc(props: {
           (() => {
             try {
               return (() => {
+                function getCookieValue(cookieName) {
+                  const cookies = document.cookie
+                    .split(";")
+                    .map(cookie => cookie.trim());
+                  for (const cookie of cookies) {
+                    const [name, value] = cookie.split("=");
+                    if (name === cookieName) {
+                      return value;
+                    }
+                  }
+                  return null;
+                }
                 function isNotifyEnabled() {
+                  if (getCookieValue("first_visit") !== null) {
+                    return false;
+                  }
                   return localStorage.getItem("is_notify") !== null;
                 }
                 if (isNotifyEnabled()) {
