@@ -2367,7 +2367,10 @@ function PlasmicReservations__RenderFunc(props: {
               >
                 {(() => {
                   try {
-                    return $state.reserveData.data[0].item == "empty";
+                    return (
+                      $state.reserveData.data[0].item == "empty" &&
+                      $state.isTheFirstVisit != true
+                    );
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -2405,29 +2408,126 @@ function PlasmicReservations__RenderFunc(props: {
                 }
               })() ? (
                 <div className={classNames(projectcss.all, sty.freeBox__p8NEt)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__cRiIk
-                    )}
-                  >
-                    <React.Fragment>
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return $state.reserveData.data[0].item == null;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : (() => {
+                          try {
+                            return $state.reserveData.data[0].item == null;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                  ) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__cRiIk
+                      )}
+                    >
                       <React.Fragment>
-                        {
-                          "\u0627\u06cc\u0646\u062c\u0627 \u0644\u06cc\u0633\u062a \u0631\u0632\u0631\u0648 \u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062b\u0628\u062a \u06a9\u0631\u062f\u06cc \u0631\u0648 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc\n\n"
-                        }
+                        <React.Fragment>
+                          {
+                            "\u0627\u06cc\u0646\u062c\u0627 \u0644\u06cc\u0633\u062a \u0631\u0632\u0631\u0648 \u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062b\u0628\u062a \u06a9\u0631\u062f\u06cc \u0631\u0648 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc\n\n"
+                          }
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 600 }}
+                        >
+                          {
+                            "\u062d\u0627\u0644\u0627 \u0631\u0648\u06cc \u0631\u0632\u0631\u0648 \u0628\u0632\u0646"
+                          }
+                        </span>
                       </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 600 }}
-                      >
-                        {
-                          "\u062d\u0627\u0644\u0627 \u0631\u0648\u06cc \u0631\u0632\u0631\u0648 \u0628\u0632\u0646"
-                        }
-                      </span>
-                    </React.Fragment>
-                  </div>
+                    </div>
+                  ) : null}
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return $state.reserveData.data[0].item != null;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : (() => {
+                          try {
+                            return $state.reserveData.data[0].item != null;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                  ) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__xK6Af
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile") ? (
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 600 }}
+                          >
+                            {
+                              "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0631\u0632\u0631\u0648\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc \u0627\u0648\u0644 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645 \u0628\u0631\u0648 \u0648 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u062b\u0628\u062a \u06a9\u0646"
+                            }
+                          </span>
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 600 }}
+                          >
+                            {
+                              "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0631\u0632\u0631\u0648\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc!\r\n\u0627\u0648\u0644 \u0627\u0632 \u0645\u0646\u0648\u06cc \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0631\u0648 \u0628\u0647 \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0648 \u00ab\u067e\u0631\u00bb \u06a9\u0646."
+                            }
+                          </span>
+                        </React.Fragment>
+                      )}
+                    </div>
+                  ) : null}
                 </div>
               ) : null}
             </Stack__>
@@ -3255,78 +3355,215 @@ function PlasmicReservations__RenderFunc(props: {
               </AntdButton>
             </Stack__>
           </AntdModal>
-          <div
-            data-plasmic-name={"pagination2"}
-            data-plasmic-override={overrides.pagination2}
-            className={classNames(projectcss.all, sty.pagination2)}
-          >
-            {(() => {
-              const child$Props = {
-                className: classNames("__wab_instance", sty.pagination),
-                current: generateStateValueProp($state, [
-                  "pagination",
-                  "currentPage"
-                ]),
-                defaultCurrent: (() => {
-                  try {
-                    return $state.reserveData.data[0].meta.current_page;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return 1;
+          {(() => {
+            try {
+              return !$state.isTheFirstVisit;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div
+              data-plasmic-name={"pagination2"}
+              data-plasmic-override={overrides.pagination2}
+              className={classNames(projectcss.all, sty.pagination2)}
+            >
+              {(() => {
+                const child$Props = {
+                  className: classNames("__wab_instance", sty.pagination),
+                  current: generateStateValueProp($state, [
+                    "pagination",
+                    "currentPage"
+                  ]),
+                  defaultCurrent: (() => {
+                    try {
+                      return $state.reserveData.data[0].meta.current_page;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return 1;
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })(),
-                defaultPageSize: (() => {
-                  try {
-                    return $state.reserveData.data[0].meta.page_size;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return 1;
+                  })(),
+                  defaultPageSize: (() => {
+                    try {
+                      return $state.reserveData.data[0].meta.page_size;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return 1;
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })(),
-                disabled: false,
-                onChange: async (...eventArgs: any) => {
-                  generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "currentPage",
-                    ["pagination", "currentPage"],
-                    AntdPagination_Helpers
-                  ).apply(null, eventArgs);
-                  generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "startIndex",
-                    ["pagination", "startIndex"],
-                    AntdPagination_Helpers
-                  ).apply(null, eventArgs);
-                  generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "endIndex",
-                    ["pagination", "endIndex"],
-                    AntdPagination_Helpers
-                  ).apply(null, eventArgs);
+                  })(),
+                  disabled: false,
+                  onChange: async (...eventArgs: any) => {
+                    generateStateOnChangePropForCodeComponents(
+                      $state,
+                      "currentPage",
+                      ["pagination", "currentPage"],
+                      AntdPagination_Helpers
+                    ).apply(null, eventArgs);
+                    generateStateOnChangePropForCodeComponents(
+                      $state,
+                      "startIndex",
+                      ["pagination", "startIndex"],
+                      AntdPagination_Helpers
+                    ).apply(null, eventArgs);
+                    generateStateOnChangePropForCodeComponents(
+                      $state,
+                      "endIndex",
+                      ["pagination", "endIndex"],
+                      AntdPagination_Helpers
+                    ).apply(null, eventArgs);
 
-                  (async (page, pageSize) => {
+                    (async (page, pageSize) => {
+                      const $steps = {};
+
+                      $steps["updateReserveDataPage"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["reserveDataPage"]
+                              },
+                              operation: 0,
+                              value: ($state.reserveDataPage =
+                                $state.pagination.currentPage)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateReserveDataPage"] != null &&
+                        typeof $steps["updateReserveDataPage"] === "object" &&
+                        typeof $steps["updateReserveDataPage"].then ===
+                          "function"
+                      ) {
+                        $steps["updateReserveDataPage"] = await $steps[
+                          "updateReserveDataPage"
+                        ];
+                      }
+                    }).apply(null, eventArgs);
+                  },
+                  onShowSizeChange: async (...eventArgs: any) => {
+                    generateStateOnChangePropForCodeComponents(
+                      $state,
+                      "pageSize",
+                      ["pagination", "pageSize"],
+                      AntdPagination_Helpers
+                    ).apply(null, eventArgs);
+                  },
+                  pageSize: generateStateValueProp($state, [
+                    "pagination",
+                    "pageSize"
+                  ]),
+                  pageSizeOptions: [
+                    { pageSize: 10 },
+                    { pageSize: 20 },
+                    { pageSize: 50 },
+                    { pageSize: 100 }
+                  ],
+                  showQuickJumper: false,
+                  simple: false,
+                  size: "default",
+                  total: (() => {
+                    try {
+                      return $state.reserveData.data[0].meta.total_count;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return 30;
+                      }
+                      throw e;
+                    }
+                  })()
+                };
+                initializeCodeComponentStates(
+                  $state,
+                  [
+                    {
+                      name: "currentPage",
+                      plasmicStateName: "pagination.currentPage"
+                    },
+                    {
+                      name: "pageSize",
+                      plasmicStateName: "pagination.pageSize"
+                    },
+                    {
+                      name: "startIndex",
+                      plasmicStateName: "pagination.startIndex"
+                    },
+                    {
+                      name: "endIndex",
+                      plasmicStateName: "pagination.endIndex"
+                    }
+                  ],
+                  [],
+                  AntdPagination_Helpers ?? {},
+                  child$Props
+                );
+
+                return (
+                  <AntdPagination
+                    data-plasmic-name={"pagination"}
+                    data-plasmic-override={overrides.pagination}
+                    {...child$Props}
+                  />
+                );
+              })()}
+              {(() => {
+                try {
+                  return $state.reserveData.data[0].data.length >= 30;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__asROr)}
+                  onClick={async event => {
                     const $steps = {};
 
-                    $steps["updateReserveDataPage"] = true
+                    $steps["updateDataSize"] = true
                       ? (() => {
                           const actionArgs = {
                             variable: {
                               objRoot: $state,
-                              variablePath: ["reserveDataPage"]
+                              variablePath: ["dataSize"]
                             },
                             operation: 0,
-                            value: ($state.reserveDataPage =
-                              $state.pagination.currentPage)
+                            value: ($state.dataSize = $state.dataSize + 30)
                           };
                           return (({
                             variable,
@@ -3345,185 +3582,63 @@ function PlasmicReservations__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["updateReserveDataPage"] != null &&
-                      typeof $steps["updateReserveDataPage"] === "object" &&
-                      typeof $steps["updateReserveDataPage"].then === "function"
+                      $steps["updateDataSize"] != null &&
+                      typeof $steps["updateDataSize"] === "object" &&
+                      typeof $steps["updateDataSize"].then === "function"
                     ) {
-                      $steps["updateReserveDataPage"] = await $steps[
-                        "updateReserveDataPage"
-                      ];
+                      $steps["updateDataSize"] = await $steps["updateDataSize"];
                     }
-                  }).apply(null, eventArgs);
-                },
-                onShowSizeChange: async (...eventArgs: any) => {
-                  generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "pageSize",
-                    ["pagination", "pageSize"],
-                    AntdPagination_Helpers
-                  ).apply(null, eventArgs);
-                },
-                pageSize: generateStateValueProp($state, [
-                  "pagination",
-                  "pageSize"
-                ]),
-                pageSizeOptions: [
-                  { pageSize: 10 },
-                  { pageSize: 20 },
-                  { pageSize: 50 },
-                  { pageSize: 100 }
-                ],
-                showQuickJumper: false,
-                simple: false,
-                size: "default",
-                total: (() => {
-                  try {
-                    return $state.reserveData.data[0].meta.total_count;
-                  } catch (e) {
+
+                    $steps["updateLoading"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["loading"]
+                            },
+                            operation: 0,
+                            value: ($state.loading = true)
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
                     if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
+                      $steps["updateLoading"] != null &&
+                      typeof $steps["updateLoading"] === "object" &&
+                      typeof $steps["updateLoading"].then === "function"
                     ) {
-                      return 30;
+                      $steps["updateLoading"] = await $steps["updateLoading"];
                     }
-                    throw e;
-                  }
-                })()
-              };
-              initializeCodeComponentStates(
-                $state,
-                [
-                  {
-                    name: "currentPage",
-                    plasmicStateName: "pagination.currentPage"
-                  },
-                  {
-                    name: "pageSize",
-                    plasmicStateName: "pagination.pageSize"
-                  },
-                  {
-                    name: "startIndex",
-                    plasmicStateName: "pagination.startIndex"
-                  },
-                  {
-                    name: "endIndex",
-                    plasmicStateName: "pagination.endIndex"
-                  }
-                ],
-                [],
-                AntdPagination_Helpers ?? {},
-                child$Props
-              );
-
-              return (
-                <AntdPagination
-                  data-plasmic-name={"pagination"}
-                  data-plasmic-override={overrides.pagination}
-                  {...child$Props}
-                />
-              );
-            })()}
-            {(() => {
-              try {
-                return $state.reserveData.data[0].data.length >= 30;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <div
-                className={classNames(projectcss.all, sty.freeBox__asROr)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateDataSize"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["dataSize"]
-                          },
-                          operation: 0,
-                          value: ($state.dataSize = $state.dataSize + 30)
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateDataSize"] != null &&
-                    typeof $steps["updateDataSize"] === "object" &&
-                    typeof $steps["updateDataSize"].then === "function"
-                  ) {
-                    $steps["updateDataSize"] = await $steps["updateDataSize"];
-                  }
-
-                  $steps["updateLoading"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["loading"]
-                          },
-                          operation: 0,
-                          value: ($state.loading = true)
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateLoading"] != null &&
-                    typeof $steps["updateLoading"] === "object" &&
-                    typeof $steps["updateLoading"].then === "function"
-                  ) {
-                    $steps["updateLoading"] = await $steps["updateLoading"];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wcUHs
-                  )}
+                  }}
                 >
-                  {
-                    "\u0646\u0645\u0627\u06cc\u0634 \u0628\u06cc\u0634\u062a\u0631"
-                  }
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wcUHs
+                    )}
+                  >
+                    {
+                      "\u0646\u0645\u0627\u06cc\u0634 \u0628\u06cc\u0634\u062a\u0631"
+                    }
+                  </div>
                 </div>
-              </div>
-            ) : null}
-          </div>
+              ) : null}
+            </div>
+          ) : null}
           <div
             data-plasmic-name={"intro"}
             data-plasmic-override={overrides.intro}
