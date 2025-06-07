@@ -78,7 +78,6 @@ import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -208,8 +207,6 @@ export type PlasmicReservations__OverridesType = {
   settlementNotif?: Flex__<typeof AntdModal>;
   button?: Flex__<"div">;
   closeButton?: Flex__<"div">;
-  featureGuide?: Flex__<typeof AntdModal>;
-  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultReservationsProps {}
@@ -729,17 +726,6 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
-      },
-      {
-        path: "featureGuide.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : false
       }
     ],
     [$props, $ctx, $refs]
@@ -1079,33 +1065,6 @@ function PlasmicReservations__RenderFunc(props: {
                 typeof $steps["updateModalOpen"].then === "function"
               ) {
                 $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-              }
-
-              $steps["updateModalOpen2"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          if ($state.isTheFirstVisit == true) {
-                            return ($state.featureGuide.open = false);
-                          }
-                          if (!document.cookie.includes("featureGuide")) {
-                            return ($state.featureGuide.open = true);
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateModalOpen2"] != null &&
-                typeof $steps["updateModalOpen2"] === "object" &&
-                typeof $steps["updateModalOpen2"].then === "function"
-              ) {
-                $steps["updateModalOpen2"] = await $steps["updateModalOpen2"];
               }
             }}
           />
@@ -8446,283 +8405,6 @@ function PlasmicReservations__RenderFunc(props: {
               </div>
             </div>
           </AntdModal>
-          <AntdModal
-            data-plasmic-name={"featureGuide"}
-            data-plasmic-override={overrides.featureGuide}
-            className={classNames("__wab_instance", sty.featureGuide)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
-            )}
-            hideFooter={true}
-            maskClosable={
-              hasVariant(globalVariants, "screen", "smallMobile")
-                ? false
-                : undefined
-            }
-            modalScopeClassName={sty["featureGuide__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["featureGuide", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["featureGuide", "open"])}
-            title={null}
-            trigger={null}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__nkNiA)}>
-              <div className={classNames(projectcss.all, sty.freeBox__zDunb)}>
-                <Embed
-                  data-plasmic-name={"embedHtml"}
-                  data-plasmic-override={overrides.embedHtml}
-                  className={classNames("__wab_instance", sty.embedHtml)}
-                  code={
-                    '<video autoplay muted loop playsinline style="max-width: 100%; height: auto;">\r\n  <source src="https://rentamon-files.storage.iran.liara.space/video/settlement.mp4" type="video/mp4" />\r\n  Your browser does not support the video tag.\r\n</video>\r\n'
-                  }
-                />
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__h5UYr)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___5DyKu
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0628\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647\u200c\u062d\u0633\u0627\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0645\u0637\u0644\u0639 \u0628\u0634\u06cc."
-                    : "\u0628\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647\u200c\u062d\u0633\u0627\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0645\u0637\u0644\u0639 \u0628\u0634\u06cc."}
-                </div>
-              </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__xyeT)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___37GLw)}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateModalOpen2"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function setCookie(name, value, hours) {
-                                  let expires = "";
-                                  if (hours) {
-                                    const date = new Date();
-                                    date.setTime(
-                                      date.getTime() + hours * 60 * 60 * 1000
-                                    );
-                                    expires = "; expires=" + date.toUTCString();
-                                  }
-                                  document.cookie =
-                                    name +
-                                    "=" +
-                                    (value || "") +
-                                    expires +
-                                    "; path=/";
-                                }
-                                return setCookie("featureGuide", "true", 72);
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateModalOpen2"] != null &&
-                      typeof $steps["updateModalOpen2"] === "object" &&
-                      typeof $steps["updateModalOpen2"].then === "function"
-                    ) {
-                      $steps["updateModalOpen2"] = await $steps[
-                        "updateModalOpen2"
-                      ];
-                    }
-
-                    $steps["goToSettings"] = true
-                      ? (() => {
-                          const actionArgs = { destination: `/settings` };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToSettings"] != null &&
-                      typeof $steps["goToSettings"] === "object" &&
-                      typeof $steps["goToSettings"].then === "function"
-                    ) {
-                      $steps["goToSettings"] = await $steps["goToSettings"];
-                    }
-                  }}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___6UBa0
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-                    }}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"
-                      : "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
-                  </div>
-                </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__ckwm)}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateModalOpen2"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function setCookie(name, value, hours) {
-                                  let expires = "";
-                                  if (hours) {
-                                    const date = new Date();
-                                    date.setTime(
-                                      date.getTime() + hours * 60 * 60 * 1000
-                                    );
-                                    expires = "; expires=" + date.toUTCString();
-                                  }
-                                  document.cookie =
-                                    name +
-                                    "=" +
-                                    (value || "") +
-                                    expires +
-                                    "; path=/";
-                                }
-                                return setCookie("featureGuide", "true", 72);
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateModalOpen2"] != null &&
-                      typeof $steps["updateModalOpen2"] === "object" &&
-                      typeof $steps["updateModalOpen2"].then === "function"
-                    ) {
-                      $steps["updateModalOpen2"] = await $steps[
-                        "updateModalOpen2"
-                      ];
-                    }
-
-                    $steps["updateModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["modal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateModalOpen"] != null &&
-                      typeof $steps["updateModalOpen"] === "object" &&
-                      typeof $steps["updateModalOpen"].then === "function"
-                    ) {
-                      $steps["updateModalOpen"] = await $steps[
-                        "updateModalOpen"
-                      ];
-                    }
-                  }}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rlPbR
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateFeatureGuideOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["featureGuide", "open"]
-                              },
-                              operation: 0
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateFeatureGuideOpen"] != null &&
-                        typeof $steps["updateFeatureGuideOpen"] === "object" &&
-                        typeof $steps["updateFeatureGuideOpen"].then ===
-                          "function"
-                      ) {
-                        $steps["updateFeatureGuideOpen"] = await $steps[
-                          "updateFeatureGuideOpen"
-                        ];
-                      }
-                    }}
-                  >
-                    {"\u0628\u0627\u0634\u0647"}
-                  </div>
-                </div>
-              </Stack__>
-            </div>
-          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -8832,9 +8514,7 @@ const PlasmicDescendants = {
     "otaghak",
     "settlementNotif",
     "button",
-    "closeButton",
-    "featureGuide",
-    "embedHtml"
+    "closeButton"
   ],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
@@ -9070,9 +8750,7 @@ const PlasmicDescendants = {
   otaghak: ["otaghak"],
   settlementNotif: ["settlementNotif", "button", "closeButton"],
   button: ["button"],
-  closeButton: ["closeButton"],
-  featureGuide: ["featureGuide", "embedHtml"],
-  embedHtml: ["embedHtml"]
+  closeButton: ["closeButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -9180,8 +8858,6 @@ type NodeDefaultElementType = {
   settlementNotif: typeof AntdModal;
   button: "div";
   closeButton: "div";
-  featureGuide: typeof AntdModal;
-  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -9345,8 +9021,6 @@ export const PlasmicReservations = Object.assign(
     settlementNotif: makeNodeComponent("settlementNotif"),
     button: makeNodeComponent("button"),
     closeButton: makeNodeComponent("closeButton"),
-    featureGuide: makeNodeComponent("featureGuide"),
-    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,
