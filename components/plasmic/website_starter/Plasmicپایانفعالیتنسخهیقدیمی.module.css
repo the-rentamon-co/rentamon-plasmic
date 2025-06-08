@@ -76,7 +76,7 @@
   align-items: center;
   grid-column-start: 3 !important;
   grid-column-end: -3 !important;
-  padding: 8px;
+  padding: 8px 8px 22px;
 }
 @media (max-width: 500px) {
   .intro {
@@ -153,7 +153,6 @@
   font-weight: 400;
   margin-bottom: 0px;
   padding-right: 20px;
-  padding-bottom: 0px;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -323,12 +322,10 @@
 }
 @media (max-width: 350px) {
   .freeBox__j3QUv {
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
     width: 100%;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
+    padding: 8px;
     border-width: 0px;
   }
 }
@@ -463,13 +460,14 @@
   width: 40%;
   height: auto;
   max-width: 100%;
+  border-radius: 50px;
   padding: 30px 8px 8px 60px;
 }
 @media (max-width: 1200px) {
   .appDemo {
     padding-top: 0px;
     padding-bottom: 0px;
-    width: 50%;
+    width: 40%;
     margin-top: 31px;
     padding-left: 0px;
   }
@@ -497,22 +495,28 @@
   max-width: 100%;
   object-fit: cover;
   flex-shrink: 0;
-  border-radius: 0px;
+  border-radius: 40px;
   border-width: 0px;
 }
 @media (max-width: 1200px) {
   .htmlVideo__qOojf:global(.__wab_instance) {
+    width: 460px;
+    flex-shrink: 0;
+    border-radius: 50px;
     border-width: 2px;
   }
 }
 @media (max-width: 500px) {
   .htmlVideo__qOojf:global(.__wab_instance) {
-    border-radius: 0px;
+    width: 400px;
+    flex-shrink: 0;
+    border-radius: 60px;
     border-width: 0px;
   }
 }
 @media (max-width: 350px) {
   .htmlVideo__qOojf:global(.__wab_instance) {
+    border-radius: 50px;
     border-width: 0px;
   }
 }
