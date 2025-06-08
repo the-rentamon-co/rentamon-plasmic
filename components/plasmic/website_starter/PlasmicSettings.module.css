@@ -782,15 +782,9 @@
     padding-left: 4px;
   }
 }
-.switch1:global(.__wab_instance):global(.__wab_instance) {
+.autoSyncSwitch:global(.__wab_instance) {
   max-width: 100%;
-  min-width: 40px;
-  min-height: 40px;
-  flex-grow: 1;
-}
-.text___7Bl0U {
-  font-size: 20px;
-  text-align: center;
+  object-fit: cover;
 }
 .options2 {
   display: flex;
@@ -1091,15 +1085,9 @@
     padding: 0px 0px 0px 4px;
   }
 }
-.switch2:global(.__wab_instance):global(.__wab_instance) {
+.reservationSwitch:global(.__wab_instance) {
   max-width: 100%;
-  min-width: 40px;
-  min-height: 40px;
-  flex-grow: 1;
-}
-.text__h7PQq {
-  font-size: 20px;
-  text-align: center;
+  object-fit: cover;
 }
 .options3 {
   display: flex;
@@ -1403,15 +1391,9 @@
     padding: 0px 0px 0px 4px;
   }
 }
-.switch3:global(.__wab_instance):global(.__wab_instance) {
+.pricingSwitch:global(.__wab_instance) {
   max-width: 100%;
-  min-width: 40px;
-  min-height: 40px;
-  flex-grow: 1;
-}
-.text__qWGmc {
-  font-size: 20px;
-  text-align: center;
+  object-fit: cover;
 }
 .activateAutosync:global(.__wab_instance) {
   max-width: 100%;

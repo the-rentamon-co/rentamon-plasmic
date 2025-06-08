@@ -61,7 +61,7 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import Switch from "../../Switch"; // plasmic-import: XDOKoC2AhwWH/component
+import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
@@ -113,7 +113,7 @@ export type PlasmicSettings__OverridesType = {
   p3?: Flex__<"div">;
   apiRequest2?: Flex__<typeof ApiRequest>;
   p4?: Flex__<"div">;
-  switch1?: Flex__<typeof Switch>;
+  autoSyncSwitch?: Flex__<typeof Switch>;
   options2?: Flex__<"div">;
   opt12?: Flex__<"div">;
   p12?: Flex__<"div">;
@@ -121,14 +121,14 @@ export type PlasmicSettings__OverridesType = {
   p32?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   p42?: Flex__<"div">;
-  switch2?: Flex__<typeof Switch>;
+  reservationSwitch?: Flex__<typeof Switch>;
   options3?: Flex__<"div">;
   opt13?: Flex__<"div">;
   p13?: Flex__<"div">;
   p23?: Flex__<"div">;
   p33?: Flex__<"div">;
   p43?: Flex__<"div">;
-  switch3?: Flex__<typeof Switch>;
+  pricingSwitch?: Flex__<typeof Switch>;
   activateAutosync?: Flex__<typeof AntdModal>;
   buttons?: Flex__<"div">;
   active?: Flex__<"div">;
@@ -211,43 +211,6 @@ function PlasmicSettings__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
-        path: "switch1.isSelected",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (() => {
-                const data = $state.apiRequestSetting.data;
-                const reservationItems = data.filter(
-                  item => item.feature_name === "auto_sync"
-                );
-                if (reservationItems.length === 0) {
-                  return false;
-                }
-                const allReservationsTrue = reservationItems.every(
-                  item => item.is_active === true
-                );
-                return allReservationsTrue;
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return undefined;
-              }
-              throw e;
-            }
-          })()
-      },
-      {
-        path: "switch3.isSelected",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
         path: "activateAutosync.open",
         type: "private",
         variableType: "boolean",
@@ -298,37 +261,6 @@ function PlasmicSettings__RenderFunc(props: {
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
             : false
-      },
-      {
-        path: "switch2.isSelected",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (() => {
-                const data = $state.apiRequestSetting.data;
-                const reservationItems = data.filter(
-                  item => item.feature_name === "reservations"
-                );
-                if (reservationItems.length === 0) {
-                  return false;
-                }
-                const allReservationsTrue = reservationItems.every(
-                  item => item.is_active === true
-                );
-                return allReservationsTrue;
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return false;
-              }
-              throw e;
-            }
-          })()
       },
       {
         path: "loading",
@@ -431,6 +363,74 @@ function PlasmicSettings__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "profile"
+      },
+      {
+        path: "autoSyncSwitch.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                const data = $state.apiRequestSetting.data;
+                const reservationItems = data.filter(
+                  item => item.feature_name === "auto_sync"
+                );
+                if (reservationItems.length === 0) {
+                  return false;
+                }
+                const allReservationsTrue = reservationItems.every(
+                  item => item.is_active === true
+                );
+                return allReservationsTrue;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "reservationSwitch.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                const data = $state.apiRequestSetting.data;
+                const reservationItems = data.filter(
+                  item => item.feature_name === "reservations"
+                );
+                if (reservationItems.length === 0) {
+                  return false;
+                }
+                const allReservationsTrue = reservationItems.every(
+                  item => item.is_active === true
+                );
+                return allReservationsTrue;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "pricingSwitch.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -808,43 +808,27 @@ function PlasmicSettings__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.p4, "ltr")}
                   >
                     <Switch
-                      data-plasmic-name={"switch1"}
-                      data-plasmic-override={overrides.switch1}
-                      className={classNames("__wab_instance", sty.switch1)}
-                      isSelected={generateStateValueProp($state, [
-                        "switch1",
-                        "isSelected"
+                      data-plasmic-name={"autoSyncSwitch"}
+                      data-plasmic-override={overrides.autoSyncSwitch}
+                      checked={generateStateValueProp($state, [
+                        "autoSyncSwitch",
+                        "checked"
                       ])}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___7Bl0U
-                          )}
-                        >
-                          {"Label"}
-                        </div>
-                      }
-                      onChange={async (...eventArgs: any) => {
+                      className={classNames(
+                        "__wab_instance",
+                        sty.autoSyncSwitch
+                      )}
+                      onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "switch1",
-                          "isSelected"
+                          "autoSyncSwitch",
+                          "checked"
                         ]).apply(null, eventArgs);
 
-                        if (
-                          eventArgs.length > 1 &&
-                          eventArgs[1] &&
-                          eventArgs[1]._plasmic_state_init_
-                        ) {
-                          return;
-                        }
-
-                        (async val => {
+                        (async checked => {
                           const $steps = {};
 
-                          $steps["updateModalOpen"] =
-                            $state.switch1.isSelected == true
+                          $steps["updateActivateAutosyncOpen"] =
+                            $state.autoSyncSwitch.checked == true
                               ? (() => {
                                   const actionArgs = {
                                     variable: {
@@ -871,55 +855,59 @@ function PlasmicSettings__RenderFunc(props: {
                                 })()
                               : undefined;
                           if (
-                            $steps["updateModalOpen"] != null &&
-                            typeof $steps["updateModalOpen"] === "object" &&
-                            typeof $steps["updateModalOpen"].then === "function"
+                            $steps["updateActivateAutosyncOpen"] != null &&
+                            typeof $steps["updateActivateAutosyncOpen"] ===
+                              "object" &&
+                            typeof $steps["updateActivateAutosyncOpen"].then ===
+                              "function"
                           ) {
-                            $steps["updateModalOpen"] = await $steps[
-                              "updateModalOpen"
+                            $steps["updateActivateAutosyncOpen"] = await $steps[
+                              "updateActivateAutosyncOpen"
                             ];
                           }
 
-                          $steps["updateModalDEactivateOpen"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["dEactivateAutosync", "open"]
-                                  },
-                                  operation: 0,
-                                  value: $state.switch1.isSelected == false
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
+                          $steps["updateDEactivateAutosyncOpen"] =
+                            $state.autoSyncSwitch.checked == false
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: [
+                                        "dEactivateAutosync",
+                                        "open"
+                                      ]
+                                    },
+                                    operation: 0,
+                                    value: true
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
 
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                           if (
-                            $steps["updateModalDEactivateOpen"] != null &&
-                            typeof $steps["updateModalDEactivateOpen"] ===
+                            $steps["updateDEactivateAutosyncOpen"] != null &&
+                            typeof $steps["updateDEactivateAutosyncOpen"] ===
                               "object" &&
-                            typeof $steps["updateModalDEactivateOpen"].then ===
-                              "function"
+                            typeof $steps["updateDEactivateAutosyncOpen"]
+                              .then === "function"
                           ) {
-                            $steps["updateModalDEactivateOpen"] = await $steps[
-                              "updateModalDEactivateOpen"
-                            ];
+                            $steps["updateDEactivateAutosyncOpen"] =
+                              await $steps["updateDEactivateAutosyncOpen"];
                           }
                         }).apply(null, eventArgs);
                       }}
-                      showLabel={false}
                     />
                   </div>
                 </div>
@@ -1081,43 +1069,27 @@ function PlasmicSettings__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.p42, "ltr")}
                   >
                     <Switch
-                      data-plasmic-name={"switch2"}
-                      data-plasmic-override={overrides.switch2}
-                      className={classNames("__wab_instance", sty.switch2)}
-                      isSelected={generateStateValueProp($state, [
-                        "switch2",
-                        "isSelected"
+                      data-plasmic-name={"reservationSwitch"}
+                      data-plasmic-override={overrides.reservationSwitch}
+                      checked={generateStateValueProp($state, [
+                        "reservationSwitch",
+                        "checked"
                       ])}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__h7PQq
-                          )}
-                        >
-                          {"Label"}
-                        </div>
-                      }
-                      onChange={async (...eventArgs: any) => {
+                      className={classNames(
+                        "__wab_instance",
+                        sty.reservationSwitch
+                      )}
+                      onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "switch2",
-                          "isSelected"
+                          "reservationSwitch",
+                          "checked"
                         ]).apply(null, eventArgs);
 
-                        if (
-                          eventArgs.length > 1 &&
-                          eventArgs[1] &&
-                          eventArgs[1]._plasmic_state_init_
-                        ) {
-                          return;
-                        }
-
-                        (async val => {
+                        (async checked => {
                           const $steps = {};
 
-                          $steps["updateModalOpen"] =
-                            $state.switch2.isSelected == true
+                          $steps["updateActivateReservationsOpen"] =
+                            $state.reservationSwitch.checked == true
                               ? (() => {
                                   const actionArgs = {
                                     variable: {
@@ -1147,58 +1119,60 @@ function PlasmicSettings__RenderFunc(props: {
                                 })()
                               : undefined;
                           if (
-                            $steps["updateModalOpen"] != null &&
-                            typeof $steps["updateModalOpen"] === "object" &&
-                            typeof $steps["updateModalOpen"].then === "function"
+                            $steps["updateActivateReservationsOpen"] != null &&
+                            typeof $steps["updateActivateReservationsOpen"] ===
+                              "object" &&
+                            typeof $steps["updateActivateReservationsOpen"]
+                              .then === "function"
                           ) {
-                            $steps["updateModalOpen"] = await $steps[
-                              "updateModalOpen"
-                            ];
+                            $steps["updateActivateReservationsOpen"] =
+                              await $steps["updateActivateReservationsOpen"];
                           }
 
-                          $steps["updateModalDEactivateOpen"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: [
-                                      "dEactivateReservations",
-                                      "open"
-                                    ]
-                                  },
-                                  operation: 0,
-                                  value: $state.switch2.isSelected == false
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
+                          $steps["updateDEactivateReservationsOpen"] =
+                            $state.reservationSwitch.checked == false
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: [
+                                        "dEactivateReservations",
+                                        "open"
+                                      ]
+                                    },
+                                    operation: 0,
+                                    value: true
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
 
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                           if (
-                            $steps["updateModalDEactivateOpen"] != null &&
-                            typeof $steps["updateModalDEactivateOpen"] ===
-                              "object" &&
-                            typeof $steps["updateModalDEactivateOpen"].then ===
-                              "function"
+                            $steps["updateDEactivateReservationsOpen"] !=
+                              null &&
+                            typeof $steps[
+                              "updateDEactivateReservationsOpen"
+                            ] === "object" &&
+                            typeof $steps["updateDEactivateReservationsOpen"]
+                              .then === "function"
                           ) {
-                            $steps["updateModalDEactivateOpen"] = await $steps[
-                              "updateModalDEactivateOpen"
-                            ];
+                            $steps["updateDEactivateReservationsOpen"] =
+                              await $steps["updateDEactivateReservationsOpen"];
                           }
                         }).apply(null, eventArgs);
                       }}
-                      showLabel={false}
                     />
                   </div>
                 </div>
@@ -1296,40 +1270,23 @@ function PlasmicSettings__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.p43, "ltr")}
                   >
                     <Switch
-                      data-plasmic-name={"switch3"}
-                      data-plasmic-override={overrides.switch3}
-                      className={classNames("__wab_instance", sty.switch3)}
-                      isSelected={generateStateValueProp($state, [
-                        "switch3",
-                        "isSelected"
+                      data-plasmic-name={"pricingSwitch"}
+                      data-plasmic-override={overrides.pricingSwitch}
+                      checked={generateStateValueProp($state, [
+                        "pricingSwitch",
+                        "checked"
                       ])}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__qWGmc
-                          )}
-                        >
-                          {"Label"}
-                        </div>
-                      }
-                      onChange={async (...eventArgs: any) => {
+                      className={classNames(
+                        "__wab_instance",
+                        sty.pricingSwitch
+                      )}
+                      disabled={true}
+                      onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
-                          "switch3",
-                          "isSelected"
+                          "pricingSwitch",
+                          "checked"
                         ]).apply(null, eventArgs);
-
-                        if (
-                          eventArgs.length > 1 &&
-                          eventArgs[1] &&
-                          eventArgs[1]._plasmic_state_init_
-                        ) {
-                          return;
-                        }
                       }}
-                      readOnly={true}
-                      showLabel={false}
                     />
                   </div>
                 </div>
@@ -1528,15 +1485,15 @@ function PlasmicSettings__RenderFunc(props: {
                           await $steps["updateModalActivateAutosyncOpen"];
                       }
 
-                      $steps["updateSwitch1IsSelected"] = true
+                      $steps["updateAutoSyncSwitchChecked"] = true
                         ? (() => {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["switch1", "isSelected"]
+                                variablePath: ["autoSyncSwitch", "checked"]
                               },
                               operation: 0,
-                              value: ($state.switch1.isSelected =
+                              value: ($state.autoSyncSwitch.checked =
                                 $steps.invokeGlobalAction.data.status)
                             };
                             return (({
@@ -1556,13 +1513,14 @@ function PlasmicSettings__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["updateSwitch1IsSelected"] != null &&
-                        typeof $steps["updateSwitch1IsSelected"] === "object" &&
-                        typeof $steps["updateSwitch1IsSelected"].then ===
+                        $steps["updateAutoSyncSwitchChecked"] != null &&
+                        typeof $steps["updateAutoSyncSwitchChecked"] ===
+                          "object" &&
+                        typeof $steps["updateAutoSyncSwitchChecked"].then ===
                           "function"
                       ) {
-                        $steps["updateSwitch1IsSelected"] = await $steps[
-                          "updateSwitch1IsSelected"
+                        $steps["updateAutoSyncSwitchChecked"] = await $steps[
+                          "updateAutoSyncSwitchChecked"
                         ];
                       }
 
@@ -1730,15 +1688,15 @@ function PlasmicSettings__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["updateSwitch1IsSelected"] = true
+                        $steps["updateAutoSyncSwitchChecked"] = true
                           ? (() => {
                               const actionArgs = {
                                 variable: {
                                   objRoot: $state,
-                                  variablePath: ["switch1", "isSelected"]
+                                  variablePath: ["autoSyncSwitch", "checked"]
                                 },
                                 operation: 0,
-                                value: $state.switch1.isSelected == false
+                                value: $state.autoSyncSwitch.checked == false
                               };
                               return (({
                                 variable,
@@ -1757,14 +1715,14 @@ function PlasmicSettings__RenderFunc(props: {
                             })()
                           : undefined;
                         if (
-                          $steps["updateSwitch1IsSelected"] != null &&
-                          typeof $steps["updateSwitch1IsSelected"] ===
+                          $steps["updateAutoSyncSwitchChecked"] != null &&
+                          typeof $steps["updateAutoSyncSwitchChecked"] ===
                             "object" &&
-                          typeof $steps["updateSwitch1IsSelected"].then ===
+                          typeof $steps["updateAutoSyncSwitchChecked"].then ===
                             "function"
                         ) {
-                          $steps["updateSwitch1IsSelected"] = await $steps[
-                            "updateSwitch1IsSelected"
+                          $steps["updateAutoSyncSwitchChecked"] = await $steps[
+                            "updateAutoSyncSwitchChecked"
                           ];
                         }
 
@@ -1985,15 +1943,15 @@ function PlasmicSettings__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["updateSwitch2IsSelected"] = true
+                      $steps["updateReservationSwitchChecked"] = true
                         ? (() => {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["switch2", "isSelected"]
+                                variablePath: ["reservationSwitch", "checked"]
                               },
                               operation: 0,
-                              value: ($state.switch2.isSelected =
+                              value: ($state.reservationSwitch.checked =
                                 $steps.invokeGlobalAction.data.status)
                             };
                             return (({
@@ -2013,13 +1971,14 @@ function PlasmicSettings__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["updateSwitch2IsSelected"] != null &&
-                        typeof $steps["updateSwitch2IsSelected"] === "object" &&
-                        typeof $steps["updateSwitch2IsSelected"].then ===
+                        $steps["updateReservationSwitchChecked"] != null &&
+                        typeof $steps["updateReservationSwitchChecked"] ===
+                          "object" &&
+                        typeof $steps["updateReservationSwitchChecked"].then ===
                           "function"
                       ) {
-                        $steps["updateSwitch2IsSelected"] = await $steps[
-                          "updateSwitch2IsSelected"
+                        $steps["updateReservationSwitchChecked"] = await $steps[
+                          "updateReservationSwitchChecked"
                         ];
                       }
 
@@ -2202,15 +2161,15 @@ function PlasmicSettings__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["updateSwitch2IsSelected"] = true
+                        $steps["updateReservationSwitchChecked"] = true
                           ? (() => {
                               const actionArgs = {
                                 variable: {
                                   objRoot: $state,
-                                  variablePath: ["switch2", "isSelected"]
+                                  variablePath: ["reservationSwitch", "checked"]
                                 },
                                 operation: 0,
-                                value: $state.switch2.isSelected == false
+                                value: $state.reservationSwitch.checked == false
                               };
                               return (({
                                 variable,
@@ -2229,15 +2188,14 @@ function PlasmicSettings__RenderFunc(props: {
                             })()
                           : undefined;
                         if (
-                          $steps["updateSwitch2IsSelected"] != null &&
-                          typeof $steps["updateSwitch2IsSelected"] ===
+                          $steps["updateReservationSwitchChecked"] != null &&
+                          typeof $steps["updateReservationSwitchChecked"] ===
                             "object" &&
-                          typeof $steps["updateSwitch2IsSelected"].then ===
-                            "function"
+                          typeof $steps["updateReservationSwitchChecked"]
+                            .then === "function"
                         ) {
-                          $steps["updateSwitch2IsSelected"] = await $steps[
-                            "updateSwitch2IsSelected"
-                          ];
+                          $steps["updateReservationSwitchChecked"] =
+                            await $steps["updateReservationSwitchChecked"];
                         }
 
                         $steps["updateModalActivateOpen"] = true
@@ -2461,15 +2419,15 @@ function PlasmicSettings__RenderFunc(props: {
                           await $steps["updateModalDEactivateAutosyncOpen"];
                       }
 
-                      $steps["updateSwitch1IsSelected"] = true
+                      $steps["updateAutoSyncSwitchChecked"] = true
                         ? (() => {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["switch1", "isSelected"]
+                                variablePath: ["autoSyncSwitch", "checked"]
                               },
                               operation: 0,
-                              value: ($state.switch1.isSelected = false)
+                              value: ($state.autoSyncSwitch.checked = false)
                             };
                             return (({
                               variable,
@@ -2488,13 +2446,14 @@ function PlasmicSettings__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["updateSwitch1IsSelected"] != null &&
-                        typeof $steps["updateSwitch1IsSelected"] === "object" &&
-                        typeof $steps["updateSwitch1IsSelected"].then ===
+                        $steps["updateAutoSyncSwitchChecked"] != null &&
+                        typeof $steps["updateAutoSyncSwitchChecked"] ===
+                          "object" &&
+                        typeof $steps["updateAutoSyncSwitchChecked"].then ===
                           "function"
                       ) {
-                        $steps["updateSwitch1IsSelected"] = await $steps[
-                          "updateSwitch1IsSelected"
+                        $steps["updateAutoSyncSwitchChecked"] = await $steps[
+                          "updateAutoSyncSwitchChecked"
                         ];
                       }
 
@@ -2616,15 +2575,15 @@ function PlasmicSettings__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["updateSwitch1IsSelected"] = true
+                        $steps["updateAutoSyncSwitchChecked"] = true
                           ? (() => {
                               const actionArgs = {
                                 variable: {
                                   objRoot: $state,
-                                  variablePath: ["switch1", "isSelected"]
+                                  variablePath: ["autoSyncSwitch", "checked"]
                                 },
                                 operation: 0,
-                                value: $state.switch1.isSelected == false
+                                value: $state.autoSyncSwitch.checked == false
                               };
                               return (({
                                 variable,
@@ -2643,14 +2602,14 @@ function PlasmicSettings__RenderFunc(props: {
                             })()
                           : undefined;
                         if (
-                          $steps["updateSwitch1IsSelected"] != null &&
-                          typeof $steps["updateSwitch1IsSelected"] ===
+                          $steps["updateAutoSyncSwitchChecked"] != null &&
+                          typeof $steps["updateAutoSyncSwitchChecked"] ===
                             "object" &&
-                          typeof $steps["updateSwitch1IsSelected"].then ===
+                          typeof $steps["updateAutoSyncSwitchChecked"].then ===
                             "function"
                         ) {
-                          $steps["updateSwitch1IsSelected"] = await $steps[
-                            "updateSwitch1IsSelected"
+                          $steps["updateAutoSyncSwitchChecked"] = await $steps[
+                            "updateAutoSyncSwitchChecked"
                           ];
                         }
 
@@ -2899,15 +2858,15 @@ function PlasmicSettings__RenderFunc(props: {
                           await $steps["updateModalDEactivateReservationsOpen"];
                       }
 
-                      $steps["updateSwitch2IsSelected"] = true
+                      $steps["updateReservationSwitchChecked"] = true
                         ? (() => {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["switch2", "isSelected"]
+                                variablePath: ["reservationSwitch", "checked"]
                               },
                               operation: 0,
-                              value: ($state.switch2.isSelected = false)
+                              value: ($state.reservationSwitch.checked = false)
                             };
                             return (({
                               variable,
@@ -2926,13 +2885,14 @@ function PlasmicSettings__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["updateSwitch2IsSelected"] != null &&
-                        typeof $steps["updateSwitch2IsSelected"] === "object" &&
-                        typeof $steps["updateSwitch2IsSelected"].then ===
+                        $steps["updateReservationSwitchChecked"] != null &&
+                        typeof $steps["updateReservationSwitchChecked"] ===
+                          "object" &&
+                        typeof $steps["updateReservationSwitchChecked"].then ===
                           "function"
                       ) {
-                        $steps["updateSwitch2IsSelected"] = await $steps[
-                          "updateSwitch2IsSelected"
+                        $steps["updateReservationSwitchChecked"] = await $steps[
+                          "updateReservationSwitchChecked"
                         ];
                       }
 
@@ -3057,15 +3017,15 @@ function PlasmicSettings__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["updateSwitch2IsSelected"] = true
+                        $steps["updateReservationSwitchChecked"] = true
                           ? (() => {
                               const actionArgs = {
                                 variable: {
                                   objRoot: $state,
-                                  variablePath: ["switch2", "isSelected"]
+                                  variablePath: ["reservationSwitch", "checked"]
                                 },
                                 operation: 0,
-                                value: $state.switch2.isSelected == false
+                                value: $state.reservationSwitch.checked == false
                               };
                               return (({
                                 variable,
@@ -3084,15 +3044,14 @@ function PlasmicSettings__RenderFunc(props: {
                             })()
                           : undefined;
                         if (
-                          $steps["updateSwitch2IsSelected"] != null &&
-                          typeof $steps["updateSwitch2IsSelected"] ===
+                          $steps["updateReservationSwitchChecked"] != null &&
+                          typeof $steps["updateReservationSwitchChecked"] ===
                             "object" &&
-                          typeof $steps["updateSwitch2IsSelected"].then ===
-                            "function"
+                          typeof $steps["updateReservationSwitchChecked"]
+                            .then === "function"
                         ) {
-                          $steps["updateSwitch2IsSelected"] = await $steps[
-                            "updateSwitch2IsSelected"
-                          ];
+                          $steps["updateReservationSwitchChecked"] =
+                            await $steps["updateReservationSwitchChecked"];
                         }
 
                         $steps["updateSwitch1IsSelected2"] = true
@@ -3183,17 +3142,17 @@ function PlasmicSettings__RenderFunc(props: {
                       try {
                         return (() => {
                           let sum = 0;
-                          if ($state.switch1.isSelected === true) {
+                          if ($state.autoSyncSwitch.checked === true) {
                             sum += parseFloat(
                               $state.apiRequest2.data[0].default_rate
                             );
                           }
-                          if ($state.switch2.isSelected === true) {
+                          if ($state.reservationSwitch.checked === true) {
                             sum += parseFloat(
                               $state.apiRequest.data[0].default_rate
                             );
                           }
-                          if ($state.switch3.isSelected === true) {
+                          if ($state.pricingSwitch.checked === true) {
                             sum += 0.5;
                           }
                           return `${new Intl.NumberFormat("fa-IR").format(
@@ -3601,7 +3560,7 @@ const PlasmicDescendants = {
     "p3",
     "apiRequest2",
     "p4",
-    "switch1",
+    "autoSyncSwitch",
     "options2",
     "opt12",
     "p12",
@@ -3609,14 +3568,14 @@ const PlasmicDescendants = {
     "p32",
     "apiRequest",
     "p42",
-    "switch2",
+    "reservationSwitch",
     "options3",
     "opt13",
     "p13",
     "p23",
     "p33",
     "p43",
-    "switch3",
+    "pricingSwitch",
     "activateAutosync",
     "buttons",
     "active",
@@ -3667,7 +3626,7 @@ const PlasmicDescendants = {
     "p3",
     "apiRequest2",
     "p4",
-    "switch1",
+    "autoSyncSwitch",
     "options2",
     "opt12",
     "p12",
@@ -3675,14 +3634,14 @@ const PlasmicDescendants = {
     "p32",
     "apiRequest",
     "p42",
-    "switch2",
+    "reservationSwitch",
     "options3",
     "opt13",
     "p13",
     "p23",
     "p33",
     "p43",
-    "switch3",
+    "pricingSwitch",
     "activateAutosync",
     "buttons",
     "active",
@@ -3723,7 +3682,7 @@ const PlasmicDescendants = {
     "p3",
     "apiRequest2",
     "p4",
-    "switch1",
+    "autoSyncSwitch",
     "options2",
     "opt12",
     "p12",
@@ -3731,14 +3690,14 @@ const PlasmicDescendants = {
     "p32",
     "apiRequest",
     "p42",
-    "switch2",
+    "reservationSwitch",
     "options3",
     "opt13",
     "p13",
     "p23",
     "p33",
     "p43",
-    "switch3",
+    "pricingSwitch",
     "activateAutosync",
     "buttons",
     "active",
@@ -3764,15 +3723,15 @@ const PlasmicDescendants = {
     "p3",
     "apiRequest2",
     "p4",
-    "switch1"
+    "autoSyncSwitch"
   ],
-  opt1: ["opt1", "p1", "p2", "p3", "apiRequest2", "p4", "switch1"],
+  opt1: ["opt1", "p1", "p2", "p3", "apiRequest2", "p4", "autoSyncSwitch"],
   p1: ["p1"],
   p2: ["p2"],
   p3: ["p3", "apiRequest2"],
   apiRequest2: ["apiRequest2"],
-  p4: ["p4", "switch1"],
-  switch1: ["switch1"],
+  p4: ["p4", "autoSyncSwitch"],
+  autoSyncSwitch: ["autoSyncSwitch"],
   options2: [
     "options2",
     "opt12",
@@ -3781,22 +3740,30 @@ const PlasmicDescendants = {
     "p32",
     "apiRequest",
     "p42",
-    "switch2"
+    "reservationSwitch"
   ],
-  opt12: ["opt12", "p12", "p22", "p32", "apiRequest", "p42", "switch2"],
+  opt12: [
+    "opt12",
+    "p12",
+    "p22",
+    "p32",
+    "apiRequest",
+    "p42",
+    "reservationSwitch"
+  ],
   p12: ["p12"],
   p22: ["p22"],
   p32: ["p32", "apiRequest"],
   apiRequest: ["apiRequest"],
-  p42: ["p42", "switch2"],
-  switch2: ["switch2"],
-  options3: ["options3", "opt13", "p13", "p23", "p33", "p43", "switch3"],
-  opt13: ["opt13", "p13", "p23", "p33", "p43", "switch3"],
+  p42: ["p42", "reservationSwitch"],
+  reservationSwitch: ["reservationSwitch"],
+  options3: ["options3", "opt13", "p13", "p23", "p33", "p43", "pricingSwitch"],
+  opt13: ["opt13", "p13", "p23", "p33", "p43", "pricingSwitch"],
   p13: ["p13"],
   p23: ["p23"],
   p33: ["p33"],
-  p43: ["p43", "switch3"],
-  switch3: ["switch3"],
+  p43: ["p43", "pricingSwitch"],
+  pricingSwitch: ["pricingSwitch"],
   activateAutosync: ["activateAutosync", "buttons", "active", "deactive"],
   buttons: ["buttons", "active", "deactive"],
   active: ["active"],
@@ -3866,7 +3833,7 @@ type NodeDefaultElementType = {
   p3: "div";
   apiRequest2: typeof ApiRequest;
   p4: "div";
-  switch1: typeof Switch;
+  autoSyncSwitch: typeof Switch;
   options2: "div";
   opt12: "div";
   p12: "div";
@@ -3874,14 +3841,14 @@ type NodeDefaultElementType = {
   p32: "div";
   apiRequest: typeof ApiRequest;
   p42: "div";
-  switch2: typeof Switch;
+  reservationSwitch: typeof Switch;
   options3: "div";
   opt13: "div";
   p13: "div";
   p23: "div";
   p33: "div";
   p43: "div";
-  switch3: typeof Switch;
+  pricingSwitch: typeof Switch;
   activateAutosync: typeof AntdModal;
   buttons: "div";
   active: "div";
@@ -3992,7 +3959,7 @@ export const PlasmicSettings = Object.assign(
     p3: makeNodeComponent("p3"),
     apiRequest2: makeNodeComponent("apiRequest2"),
     p4: makeNodeComponent("p4"),
-    switch1: makeNodeComponent("switch1"),
+    autoSyncSwitch: makeNodeComponent("autoSyncSwitch"),
     options2: makeNodeComponent("options2"),
     opt12: makeNodeComponent("opt12"),
     p12: makeNodeComponent("p12"),
@@ -4000,14 +3967,14 @@ export const PlasmicSettings = Object.assign(
     p32: makeNodeComponent("p32"),
     apiRequest: makeNodeComponent("apiRequest"),
     p42: makeNodeComponent("p42"),
-    switch2: makeNodeComponent("switch2"),
+    reservationSwitch: makeNodeComponent("reservationSwitch"),
     options3: makeNodeComponent("options3"),
     opt13: makeNodeComponent("opt13"),
     p13: makeNodeComponent("p13"),
     p23: makeNodeComponent("p23"),
     p33: makeNodeComponent("p33"),
     p43: makeNodeComponent("p43"),
-    switch3: makeNodeComponent("switch3"),
+    pricingSwitch: makeNodeComponent("pricingSwitch"),
     activateAutosync: makeNodeComponent("activateAutosync"),
     buttons: makeNodeComponent("buttons"),
     active: makeNodeComponent("active"),
