@@ -20,7 +20,12 @@ export const Switch = (props: SwitchType) => {
       checked={checked}
       dir="ltr"
       name={name}
-      className={cn(className, "!w-11 !h-6")}
+      className={cn(
+        className,
+        "!w-11 !h-6",
+        /* وقتی سوییچ checked هست، رنگ پس‌زمینه رو #8165D6 می‌کنیم */
+        "data-[state=checked]:bg-[#8165D6]"
+      )}
     />
   );
 };
