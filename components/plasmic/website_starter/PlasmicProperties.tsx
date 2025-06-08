@@ -488,12 +488,17 @@ function PlasmicProperties__RenderFunc(props: {
                           (() => {
                             try {
                               return (() => {
-                                const storedData =
-                                  localStorage.getItem("property_data");
-                                return JSON.parse(storedData);
-                                if (storedData) {
+                                function getFilteredProperties() {
+                                  const storedData =
+                                    localStorage.getItem("property_data");
+                                  if (!storedData) {
+                                    console.log(
+                                      "هیچ داده‌ای در localStorage با این کلید پیدا نشد."
+                                    );
+                                    return [];
+                                  }
                                   const parsedData = JSON.parse(storedData);
-                                  console.log(`parsedData`, parsedData);
+                                  console.log("parsedData", parsedData);
                                   if (
                                     parsedData.properties &&
                                     Array.isArray(parsedData.properties)
@@ -506,15 +511,15 @@ function PlasmicProperties__RenderFunc(props: {
                                     console.log("filtered", filtered);
                                     return filtered;
                                   } else {
-                                    return console.log(
+                                    console.log(
                                       "properties آرایه نیست یا وجود ندارد."
                                     );
+                                    return [];
                                   }
-                                } else {
-                                  return console.log(
-                                    "هیچ داده‌ای در localStorage با این کلید پیدا نشد."
-                                  );
                                 }
+                                const filteredProperties =
+                                  getFilteredProperties();
+                                return filteredProperties;
                               })();
                             } catch (e) {
                               if (
