@@ -488,38 +488,17 @@ function PlasmicProperties__RenderFunc(props: {
                           (() => {
                             try {
                               return (() => {
-                                function getFilteredProperties() {
-                                  const storedData =
-                                    localStorage.getItem("property_data");
-                                  if (!storedData) {
-                                    console.log(
-                                      "هیچ داده‌ای در localStorage با این کلید پیدا نشد."
-                                    );
-                                    return [];
-                                  }
-                                  const parsedData = JSON.parse(storedData);
-                                  console.log("parsedData", parsedData);
-                                  if (
-                                    parsedData.properties &&
-                                    Array.isArray(parsedData.properties)
-                                  ) {
-                                    const filtered =
-                                      parsedData.properties.filter(
-                                        item =>
-                                          item.property_name !== "اقامتگاه ۱"
-                                      );
-                                    console.log("filtered", filtered);
-                                    return filtered;
-                                  } else {
-                                    console.log(
-                                      "properties آرایه نیست یا وجود ندارد."
-                                    );
-                                    return [];
-                                  }
+                                const storedData =
+                                  localStorage.getItem("property_data");
+                                if (
+                                  JSON.parse(storedData)[0].property_name ==
+                                    "اقامتگاه ۱" &&
+                                  JSON.parse(storedData).length == 1
+                                ) {
+                                  return "";
+                                } else {
+                                  return JSON.parse(storedData);
                                 }
-                                const filteredProperties =
-                                  getFilteredProperties();
-                                return filteredProperties;
                               })();
                             } catch (e) {
                               if (
