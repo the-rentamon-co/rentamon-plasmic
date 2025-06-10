@@ -621,14 +621,34 @@ function Plasmicکیفپول__RenderFunc(props: {
                   sty.text__tdx4A
                 )}
               >
-                {hasVariant(globalVariants, "screen", "tablet") ? (
+                {hasVariant(globalVariants, "screen", "mobile") ? (
                   <React.Fragment>
                     {(() => {
                       try {
                         return (
-                          parseInt($state.input3.value).toLocaleString(
-                            "fa-IR"
-                          ) + " تومان"
+                          new Intl.NumberFormat("fa-IR").format(
+                            $state.tokenResponse.amount
+                          ) + "  تومان"
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                ) : hasVariant(globalVariants, "screen", "tablet") ? (
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (
+                          new Intl.NumberFormat("fa-IR").format(
+                            $state.tokenResponse.amount
+                          ) + "  تومان"
                         );
                       } catch (e) {
                         if (
