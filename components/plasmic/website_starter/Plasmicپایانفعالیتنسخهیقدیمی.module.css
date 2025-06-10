@@ -821,7 +821,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 24%;
   height: auto;
   max-width: 100%;
   position: relative;
@@ -861,10 +861,11 @@
   }
 }
 .htmlVideo___7B1Ex:global(.__wab_instance) {
-  width: 70%;
+  width: 100%;
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  min-width: 0;
   border-radius: 30px;
   border-width: 2px;
 }
@@ -886,7 +887,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 24%;
   height: auto;
   max-width: 100%;
   overflow: hidden;
@@ -939,10 +940,11 @@
   }
 }
 .htmlVideo__pwMyi:global(.__wab_instance) {
-  width: 70%;
+  width: 100%;
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  min-width: 0;
   border-radius: 30px;
   border-width: 2px;
 }
