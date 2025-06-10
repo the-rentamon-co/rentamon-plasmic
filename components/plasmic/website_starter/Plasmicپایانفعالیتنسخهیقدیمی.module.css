@@ -507,6 +507,7 @@
   .appDemo {
     width: 100%;
     min-width: 0;
+    border-radius: 55px;
     padding: 12px;
     margin: 0px;
   }
@@ -540,7 +541,7 @@
 @media (max-width: 500px) {
   .htmlVideo__qOojf:global(.__wab_instance) {
     width: 80%;
-    border-radius: 60px;
+    border-radius: 55px;
     border-width: 0px;
   }
 }
