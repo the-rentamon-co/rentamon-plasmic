@@ -11238,7 +11238,7 @@ function PlasmicActivation__RenderFunc(props: {
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f8\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                    : "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f8\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
+                    : "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
                 </div>
                 <TestimonialsScrolling
                   data-plasmic-name={"testimonialsScrolling"}

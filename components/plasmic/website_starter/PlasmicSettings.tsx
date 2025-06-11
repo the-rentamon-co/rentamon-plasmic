@@ -153,6 +153,7 @@ export type PlasmicSettings__OverridesType = {
   spacer?: Flex__<"div">;
   returnButton?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  lowBalance?: Flex__<typeof AntdModal>;
   html?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -431,6 +432,24 @@ function PlasmicSettings__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "lowBalance.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "variable2",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "selectedFeature",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -1549,31 +1568,6 @@ function PlasmicSettings__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["invokeGlobalAction3"] =
-                        $steps.invokeGlobalAction.data.status == false
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  "error",
-                                  "\u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u0627\u0641\u06cc \u0646\u06cc\u0633\u062a",
-                                  "top-center"
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["invokeGlobalAction3"] != null &&
-                        typeof $steps["invokeGlobalAction3"] === "object" &&
-                        typeof $steps["invokeGlobalAction3"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction3"] = await $steps[
-                          "invokeGlobalAction3"
-                        ];
-                      }
-
                       $steps["updateLoading2"] = true
                         ? (() => {
                             const actionArgs = {
@@ -1607,6 +1601,81 @@ function PlasmicSettings__RenderFunc(props: {
                       ) {
                         $steps["updateLoading2"] = await $steps[
                           "updateLoading2"
+                        ];
+                      }
+
+                      $steps["updateLowBalanceOpen"] =
+                        $steps.invokeGlobalAction.data.status == false
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["lowBalance", "open"]
+                                },
+                                operation: 0,
+                                value: true
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["updateLowBalanceOpen"] != null &&
+                        typeof $steps["updateLowBalanceOpen"] === "object" &&
+                        typeof $steps["updateLowBalanceOpen"].then ===
+                          "function"
+                      ) {
+                        $steps["updateLowBalanceOpen"] = await $steps[
+                          "updateLowBalanceOpen"
+                        ];
+                      }
+
+                      $steps["updateSelectedFeature"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["selectedFeature"]
+                              },
+                              operation: 0,
+                              value: "بروزرسانی خودکار رزروها"
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateSelectedFeature"] != null &&
+                        typeof $steps["updateSelectedFeature"] === "object" &&
+                        typeof $steps["updateSelectedFeature"].then ===
+                          "function"
+                      ) {
+                        $steps["updateSelectedFeature"] = await $steps[
+                          "updateSelectedFeature"
                         ];
                       }
                     }}
@@ -2079,28 +2148,78 @@ function PlasmicSettings__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["invokeGlobalAction3"] =
+                      $steps["updateLowBalanceOpen"] =
                         $steps.invokeGlobalAction.data.status == false
                           ? (() => {
                               const actionArgs = {
-                                args: [
-                                  "error",
-                                  "\u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u0627\u0641\u06cc \u0646\u06cc\u0633\u062a",
-                                  "top-center"
-                                ]
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["lowBalance", "open"]
+                                },
+                                operation: 0,
+                                value: true
                               };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
                             })()
                           : undefined;
                       if (
-                        $steps["invokeGlobalAction3"] != null &&
-                        typeof $steps["invokeGlobalAction3"] === "object" &&
-                        typeof $steps["invokeGlobalAction3"].then === "function"
+                        $steps["updateLowBalanceOpen"] != null &&
+                        typeof $steps["updateLowBalanceOpen"] === "object" &&
+                        typeof $steps["updateLowBalanceOpen"].then ===
+                          "function"
                       ) {
-                        $steps["invokeGlobalAction3"] = await $steps[
-                          "invokeGlobalAction3"
+                        $steps["updateLowBalanceOpen"] = await $steps[
+                          "updateLowBalanceOpen"
+                        ];
+                      }
+
+                      $steps["updateSelectedFeature"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["selectedFeature"]
+                              },
+                              operation: 0,
+                              value: "رزروهای هوشمند"
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateSelectedFeature"] != null &&
+                        typeof $steps["updateSelectedFeature"] === "object" &&
+                        typeof $steps["updateSelectedFeature"].then ===
+                          "function"
+                      ) {
+                        $steps["updateSelectedFeature"] = await $steps[
+                          "updateSelectedFeature"
                         ];
                       }
                     }}
@@ -2463,8 +2582,9 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "\u0648\u06cc\u0698\u06af\u06cc \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f!",
-                                  "top-center"
+                                  "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u062a \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f. \u0644\u0627\u0632\u0645\u0647 \u062e\u0648\u062f\u062a \u0645\u0631\u0627\u0642\u0628 \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627\u0634\u06cc!",
+                                  "top-center",
+                                  5000
                                 ]
                               };
                               return $globalActions[
@@ -2902,8 +3022,9 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "\u0648\u06cc\u0698\u06af\u06cc \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f!",
-                                  "top-center"
+                                  "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0647\u0648\u0634\u0645\u0646\u062f \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f. \u062f\u06cc\u06af\u0647 \u0628\u0627\u06cc\u062f \u062e\u0648\u062f\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u062a \u0631\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc",
+                                  "top-center",
+                                  5000
                                 ]
                               };
                               return $globalActions[
@@ -3491,6 +3612,186 @@ function PlasmicSettings__RenderFunc(props: {
             }}
           />
 
+          <AntdModal
+            data-plasmic-name={"lowBalance"}
+            data-plasmic-override={overrides.lowBalance}
+            className={classNames("__wab_instance", sty.lowBalance)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["lowBalance__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["lowBalance", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["lowBalance", "open"])}
+            title={null}
+            trigger={null}
+          >
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__j8LW)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img___1FczO)}
+                displayHeight={"49px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image106.svg",
+                  fullWidth: 27,
+                  fullHeight: 27,
+                  aspectRatio: 1
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___2ZR0W
+                )}
+              >
+                {
+                  "\u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u06a9\u0627\u0641\u06cc \u0646\u06cc\u0633\u062a!"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__pkZtn
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return `موجودی کیف پولت برای استفاده از ویژگی ${$state.selectedFeature} کافی نیست.
+
+کیف پولت رو شارژ کن تا تمام این امکانت برات فعال بشن.
+`;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc ... \u06a9\u0627\u0641\u06cc \u0646\u06cc\u0633\u062a.\r\n\r\n\u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0631\u0648 \u0634\u0627\u0631\u0698 \u06a9\u0646 \u062a\u0627 \u062a\u0645\u0627\u0645 \u0627\u06cc\u0646 \u0627\u0645\u06a9\u0627\u0646\u062a \u0628\u0631\u0627\u062a \u0641\u0639\u0627\u0644 \u0628\u0634\u0646.";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox___2RPqf)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__il5YH,
+                    "clickable"
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToکیفپول"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/wallet` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToکیفپول"] != null &&
+                      typeof $steps["goToکیفپول"] === "object" &&
+                      typeof $steps["goToکیفپول"].then === "function"
+                    ) {
+                      $steps["goToکیفپول"] = await $steps["goToکیفپول"];
+                    }
+                  }}
+                >
+                  {
+                    "\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__t8VLg,
+                    "clickable"
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateLowBalanceOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["lowBalance", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateLowBalanceOpen"] != null &&
+                      typeof $steps["updateLowBalanceOpen"] === "object" &&
+                      typeof $steps["updateLowBalanceOpen"].then === "function"
+                    ) {
+                      $steps["updateLowBalanceOpen"] = await $steps[
+                        "updateLowBalanceOpen"
+                      ];
+                    }
+                  }}
+                >
+                  {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+                </div>
+              </Stack__>
+            </Stack__>
+          </AntdModal>
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
@@ -3600,6 +3901,7 @@ const PlasmicDescendants = {
     "spacer",
     "returnButton",
     "sideEffect",
+    "lowBalance",
     "html",
     "navigationRntFooter",
     "clarityRntComponent",
@@ -3803,6 +4105,7 @@ const PlasmicDescendants = {
   spacer: ["spacer"],
   returnButton: ["returnButton"],
   sideEffect: ["sideEffect"],
+  lowBalance: ["lowBalance"],
   html: ["html"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -3873,6 +4176,7 @@ type NodeDefaultElementType = {
   spacer: "div";
   returnButton: "div";
   sideEffect: typeof SideEffect;
+  lowBalance: typeof AntdModal;
   html: "div";
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -3999,6 +4303,7 @@ export const PlasmicSettings = Object.assign(
     spacer: makeNodeComponent("spacer"),
     returnButton: makeNodeComponent("returnButton"),
     sideEffect: makeNodeComponent("sideEffect"),
+    lowBalance: makeNodeComponent("lowBalance"),
     html: makeNodeComponent("html"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

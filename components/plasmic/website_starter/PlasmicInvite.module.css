@@ -1230,6 +1230,12 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 350px) {
+  .freeBox__eGSt {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
 .accordionMain:global(.__wab_instance) {
   width: 100%;
   max-width: 100%;

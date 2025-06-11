@@ -1878,6 +1878,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/مدیریت-ویلا-2"
+        },
+        {
+          "id": "6Wv1NvT4ZD0j",
+          "name": "Registration",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicRegistration.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/registration/[type].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicRegistration.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/registration/[type]"
         }
       ],
       "icons": [

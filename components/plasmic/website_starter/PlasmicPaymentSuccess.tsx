@@ -570,7 +570,7 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                         return (() => {
                           return setTimeout(() => {
                             window.location.href =
-                              "https://app.rentamon.com/wallet/";
+                              "https://rentamon.com/settings/";
                           }, 10000);
                         })();
                       }
