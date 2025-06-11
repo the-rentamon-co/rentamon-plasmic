@@ -406,7 +406,11 @@ function PlasmicTransactions__RenderFunc(props: {
                       sty.text__dqFdj
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "mobile")
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0639\u0646\u0648\u0627\u0646"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0639\u0646\u0648\u0627\u0646"
+                      : hasVariant(globalVariants, "screen", "tablet")
                       ? "\u0639\u0646\u0648\u0627\u0646"
                       : "\u0639\u0646\u0648\u0627\u0646"}
                   </div>
@@ -788,7 +792,7 @@ function PlasmicTransactions__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "\u062e\u0631\u06cc\u062f \u0627\u0639\u062a\u0628\u0627\u0631";
+                                    return " ";
                                   }
                                   throw e;
                                 }
