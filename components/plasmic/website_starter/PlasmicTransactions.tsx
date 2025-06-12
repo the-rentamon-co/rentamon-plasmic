@@ -679,6 +679,51 @@ function PlasmicTransactions__RenderFunc(props: {
                           }
                         }}
                       >
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (currentItem.features == null) {
+                                return false;
+                              }
+                              return currentItem.features.some(
+                                feature => feature.is_free
+                              );
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__xAaK7
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img___0GJUp)}
+                              displayHeight={"23px"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image147.svg",
+                                fullWidth: 18,
+                                fullHeight: 20,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          </div>
+                        ) : null}
                         <Stack__
                           as={"div"}
                           hasGap={true}
