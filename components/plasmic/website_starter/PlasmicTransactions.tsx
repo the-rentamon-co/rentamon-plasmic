@@ -928,10 +928,13 @@ function PlasmicTransactions__RenderFunc(props: {
                                   return (() => {
                                     const currentItem =
                                       $state.apiRequest.data[currentIndex];
-                                    if (currentItem.is_reserved == true) {
+                                    if (currentItem.is_reserved) {
                                       const sumOfCommissions =
                                         currentItem.features.reduce(
                                           (total, feature) => {
+                                            if (feature.is_free) {
+                                              return total;
+                                            }
                                             const commission =
                                               Number(
                                                 feature.commission_amount
@@ -948,7 +951,7 @@ function PlasmicTransactions__RenderFunc(props: {
                                       );
                                     } else {
                                       return Math.floor(
-                                        currentItem.total_amount
+                                        Number(currentItem.total_amount) || 0
                                       ).toLocaleString("fa");
                                     }
                                   })();
@@ -1245,6 +1248,13 @@ function PlasmicTransactions__RenderFunc(props: {
               plasmic_plasmic_rich_components_css.plasmic_tokens
             )}
             hideFooter={true}
+            modalContentClassName={classNames({
+              [sty["pcls_X5_hvOZjO8NQ"]]: hasVariant(
+                globalVariants,
+                "screen",
+                "smallMobile"
+              )
+            })}
             modalScopeClassName={sty["withdraw__modal"]}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["withdraw", "open"]).apply(
@@ -1471,7 +1481,9 @@ function PlasmicTransactions__RenderFunc(props: {
                         }
                       </div>
                     </div>
-                    <div
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
                       className={classNames(
                         projectcss.all,
                         sty.freeBox___6A576
@@ -1481,28 +1493,29 @@ function PlasmicTransactions__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__wawXb
+                          sty.text___6974B
                         )}
                       >
                         <React.Fragment>
                           {(() => {
                             try {
                               return (() => {
-                                const currentItem = $state.modalData.feature;
-                                const sumOfCommissions = currentItem.reduce(
+                                const features = $state.modalData.feature;
+                                const sumOfCommissions = features.reduce(
                                   (total, feature) => {
+                                    if (feature.is_free) {
+                                      return total;
+                                    }
                                     const commission =
                                       Number(feature.commission_rate) || 0;
                                     return total + commission;
                                   },
                                   0
                                 );
-                                currentItem.totalCommission = sumOfCommissions;
+                                $state.modalData.feature.totalCommission =
+                                  sumOfCommissions;
                                 return (
-                                  "%" +
-                                  currentItem.totalCommission.toLocaleString(
-                                    "fa"
-                                  )
+                                  "%" + sumOfCommissions.toLocaleString("fa")
                                 );
                               })();
                             } catch (e) {
@@ -1517,7 +1530,7 @@ function PlasmicTransactions__RenderFunc(props: {
                           })()}
                         </React.Fragment>
                       </div>
-                    </div>
+                    </Stack__>
                   </div>
                   {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                     (() => {
@@ -1575,30 +1588,123 @@ function PlasmicTransactions__RenderFunc(props: {
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__yL5Bl
+                            sty.freeBox___7Ijce
                           )}
                         >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "%" +
-                                  currentItem.commission_rate.toLocaleString(
-                                    "fa"
-                                  )
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u06f1 \u066a";
-                                }
-                                throw e;
+                          {(() => {
+                            try {
+                              return currentItem.is_free;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
                               }
-                            })()}
-                          </React.Fragment>
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__yL5Bl
+                              )}
+                            >
+                              {"0 \u066a"}
+                            </div>
+                          ) : null}
+                          {(() => {
+                            try {
+                              return currentItem.is_free;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___2J9Y
+                              )}
+                              style={{
+                                "text-decoration-line": "line-through",
+                                "text-decoration-color": "black",
+                                "text-decoration-thickness": "1px"
+                              }}
+                            >
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      "%" +
+                                      currentItem.commission_rate.toLocaleString(
+                                        "fa"
+                                      )
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "0 \u066a";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            </div>
+                          ) : null}
+                          {(() => {
+                            try {
+                              return currentItem.is_free == false;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__feifQ
+                              )}
+                            >
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      "%" +
+                                      currentItem.commission_rate.toLocaleString(
+                                        "fa"
+                                      )
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "\u06f1 \u066a";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            </div>
+                          ) : null}
                         </div>
                       </div>
                     );
