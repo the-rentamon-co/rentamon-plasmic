@@ -1611,7 +1611,7 @@ function PlasmicTransactions__RenderFunc(props: {
                                 sty.text__yL5Bl
                               )}
                             >
-                              {"0 \u066a"}
+                              {"\u06f0 \u066a"}
                             </div>
                           ) : null}
                           {(() => {
