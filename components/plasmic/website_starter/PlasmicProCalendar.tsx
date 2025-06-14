@@ -121,6 +121,7 @@ export type PlasmicProCalendar__OverridesType = {
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
+  modal?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultProCalendarProps {}
@@ -392,6 +393,12 @@ function PlasmicProCalendar__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "modal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -2388,6 +2395,42 @@ function PlasmicProCalendar__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
+          <AntdModal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["modal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["modal", "open"])}
+            title={null}
+            trigger={null}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__iZhPr
+              )}
+            >
+              {
+                "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0633\u0631\u0627\u0633\u0631\u06cc \u0628\u0631 \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c\r\n\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0627\u0631\u0647. \r\n\r\n\u0644\u0637\u0641\u0627 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0628\u0627\u0634 \ud83d\ude4f"
+              }
+            </div>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -2421,7 +2464,8 @@ const PlasmicDescendants = {
     "spacerDontTouch",
     "navigationRntFooter",
     "clarityRntComponent",
-    "faviconRntComponent"
+    "faviconRntComponent",
+    "modal"
   ],
   sideEffect: ["sideEffect"],
   header2: ["header2", "sideBar2", "profile2"],
@@ -2472,7 +2516,8 @@ const PlasmicDescendants = {
   spacerDontTouch: ["spacerDontTouch"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"]
+  faviconRntComponent: ["faviconRntComponent"],
+  modal: ["modal"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2504,6 +2549,7 @@ type NodeDefaultElementType = {
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
+  modal: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2591,6 +2637,7 @@ export const PlasmicProCalendar = Object.assign(
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
+    modal: makeNodeComponent("modal"),
 
     // Metadata about props expected for PlasmicProCalendar
     internalVariantProps: PlasmicProCalendar__VariantProps,
