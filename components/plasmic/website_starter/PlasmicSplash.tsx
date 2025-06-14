@@ -501,7 +501,7 @@ function PlasmicSplash__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://api-v2.rentamon.com/api/is_user_old"
+                        "https://gateway.rentamon.com/webhook/get_user_segment"
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [
@@ -541,6 +541,8 @@ function PlasmicSplash__RenderFunc(props: {
                             $steps.invokeGlobalAction.data.flag || 99,
                             0.3333
                           );
+                          console.log($steps.invokeGlobalAction.data);
+                          console.log($steps.invokeGlobalAction.data.flag);
                           if ($steps.invokeGlobalAction.data.flag == 3) {
                             window.location.href =
                               "https://web.rentamon.com/panels/?prop_id=1";
