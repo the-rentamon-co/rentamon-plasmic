@@ -398,7 +398,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -823,8 +823,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                     const actionArgs = {
                       operation: 0,
                       value: (() => {
-                        if (!document.cookie.includes("alertModal")) {
-                          return ($state.alertModal.open = true);
+                        if (!document.cookie.includes("disorder_modal")) {
+                          return ($state.modal.open = true);
                         }
                       })()
                     };
@@ -2408,6 +2408,7 @@ function PlasmicProCalendar__RenderFunc(props: {
               plasmic_plasmic_rich_components_css.plasmic_tokens
             )}
             hideFooter={true}
+            maskClosable={false}
             modalScopeClassName={sty["modal__modal"]}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["modal", "open"]).apply(
@@ -2419,16 +2420,72 @@ function PlasmicProCalendar__RenderFunc(props: {
             title={null}
             trigger={null}
           >
+            <div className={classNames(projectcss.all, sty.freeBox__wehah)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__iZhPr
+                )}
+              >
+                {
+                  "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0633\u0631\u0627\u0633\u0631\u06cc \u0628\u0631 \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c\r\n\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0627\u0631\u0647. \r\n\r\n\u0644\u0637\u0641\u0627 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0628\u0627\u0634 \ud83d\ude4f"
+                }
+              </div>
+            </div>
             <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__iZhPr
-              )}
+              className={classNames(projectcss.all, sty.freeBox__ajrCh)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            function setCookie(name, value, hours) {
+                              let expires = "";
+                              if (hours) {
+                                const date = new Date();
+                                date.setTime(
+                                  date.getTime() + hours * 60 * 60 * 1000
+                                );
+                                expires = "; expires=" + date.toUTCString();
+                              }
+                              document.cookie =
+                                name +
+                                "=" +
+                                (value || "") +
+                                expires +
+                                "; path=/";
+                            }
+                            return setCookie("disorder_modal", "true", 3);
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
             >
-              {
-                "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0633\u0631\u0627\u0633\u0631\u06cc \u0628\u0631 \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c\r\n\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0627\u0631\u0647. \r\n\r\n\u0644\u0637\u0641\u0627 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0628\u0627\u0634 \ud83d\ude4f"
-              }
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__pvoeZ
+                )}
+              >
+                {"\u0628\u0627\u0634\u0647"}
+              </div>
             </div>
           </AntdModal>
         </div>

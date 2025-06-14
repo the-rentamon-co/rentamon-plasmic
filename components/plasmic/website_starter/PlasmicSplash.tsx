@@ -89,7 +89,6 @@ export type PlasmicSplash__OverridesType = {
   img?: Flex__<typeof PlasmicImg__>;
   center?: Flex__<"div">;
   svg?: Flex__<"svg">;
-  text?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
 };
@@ -198,7 +197,11 @@ function PlasmicSplash__RenderFunc(props: {
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
               displayMinWidth={"0"}
-              displayWidth={"80px"}
+              displayWidth={
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "60px"
+                  : "80px"
+              }
               loading={"lazy"}
               src={{
                 src: "/plasmic/website_starter/images/image140.gif",
@@ -207,6 +210,57 @@ function PlasmicSplash__RenderFunc(props: {
                 aspectRatio: undefined
               }}
             />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__oRgmN
+              )}
+            >
+              {"\u26a0\ufe0f"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__cww71
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "mobile") ? (
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0633\u0631\u0627\u0633\u0631\u06cc \u0628\u0631 \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c\n\u062e\u062f\u0645\u0627\u062a \u067e\u0627\u06cc\u062f\u0627\u0631 \u0646\u06cc\u0633\u062a.\n\n"
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 500 }}
+                  >
+                    {
+                      "\u0644\u0637\u0641\u0627 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0628\u0627\u0634 \ud83d\ude4f"
+                    }
+                  </span>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0633\u0631\u0627\u0633\u0631\u06cc \u0628\u0631 \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c\r\n\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0627\u0631\u0647. \n\n\r\n\r\n"
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 500 }}
+                  >
+                    {
+                      "\u0644\u0637\u0641\u0627 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0628\u0627\u0634 \ud83d\ude4f"
+                    }
+                  </span>
+                </React.Fragment>
+              )}
+            </div>
           </div>
           <div
             data-plasmic-name={"center"}
@@ -249,12 +303,10 @@ function PlasmicSplash__RenderFunc(props: {
               )}
             >
               <div
-                data-plasmic-name={"text"}
-                data-plasmic-override={overrides.text}
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text,
+                  sty.text__eYj3W,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? ``
                     : undefined
@@ -537,19 +589,10 @@ function PlasmicSplash__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "img",
-    "center",
-    "svg",
-    "text",
-    "sideEffect",
-    "clarityRntComponent"
-  ],
+  root: ["root", "img", "center", "svg", "sideEffect", "clarityRntComponent"],
   img: ["img"],
-  center: ["center", "svg", "text"],
+  center: ["center", "svg"],
   svg: ["svg"],
-  text: ["text"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"]
 } as const;
@@ -561,7 +604,6 @@ type NodeDefaultElementType = {
   img: typeof PlasmicImg__;
   center: "div";
   svg: "svg";
-  text: "div";
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
 };
@@ -629,7 +671,6 @@ export const PlasmicSplash = Object.assign(
     img: makeNodeComponent("img"),
     center: makeNodeComponent("center"),
     svg: makeNodeComponent("svg"),
-    text: makeNodeComponent("text"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
 
