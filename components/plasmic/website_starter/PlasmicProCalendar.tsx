@@ -689,7 +689,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://api-v2.rentamon.com/api/is_user_old"
+                        "https://gateway.rentamon.com/webhook/get_user_segment"
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [
@@ -723,10 +723,12 @@ function PlasmicProCalendar__RenderFunc(props: {
                             name + "=" + (value || "") + expires + "; path=/";
                         }
                         const flag = $steps.checkOldUser.data.flag;
+                        console.log("flag", flag);
                         const current = parseInt($state.vtStatus, 10);
                         if (isNaN(current)) {
                           setCookie("vt", flag.toString(), 0.3333);
                           if (flag === 3) {
+                            console.log("here");
                             return (window.location.href =
                               "https://rentamon.com/splash-wp");
                           } else if (flag === 2) {
