@@ -101,6 +101,7 @@ export type Plasmicتالار__OverridesType = {
   menu?: Flex__<"div">;
   topProfile?: Flex__<"div">;
   image?: Flex__<"div">;
+  image2?: Flex__<"div">;
   info?: Flex__<"div">;
   name?: Flex__<"div">;
   number?: Flex__<"div">;
@@ -404,35 +405,45 @@ function Plasmicتالار__RenderFunc(props: {
                     data-plasmic-override={overrides.image}
                     className={classNames(projectcss.all, sty.image, "shine")}
                   >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__sDsaW, "shine")}
-                      displayHeight={"100%"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"none"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"100%"}
-                      loading={"lazy"}
-                      src={(() => {
-                        try {
-                          return $state.profile2.data.user_info.profile_image;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return {
-                              src: "/plasmic/website_starter/images/image145.webp",
-                              fullWidth: 1280,
-                              fullHeight: 1280,
-                              aspectRatio: undefined
-                            };
+                    <div
+                      data-plasmic-name={"image2"}
+                      data-plasmic-override={overrides.image2}
+                      className={classNames(
+                        projectcss.all,
+                        sty.image2,
+                        "shine"
+                      )}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__yIrgd, "shine")}
+                        displayHeight={"100%"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"none"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"100%"}
+                        loading={"lazy"}
+                        src={(() => {
+                          try {
+                            return $state.profile2.data.user_info.profile_image;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return {
+                                src: "/plasmic/website_starter/images/image145.webp",
+                                fullWidth: 1280,
+                                fullHeight: 1280,
+                                aspectRatio: undefined
+                              };
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                    />
+                        })()}
+                      />
+                    </div>
                   </div>
                 ) : null}
                 <div
@@ -2086,6 +2097,7 @@ const PlasmicDescendants = {
     "menu",
     "topProfile",
     "image",
+    "image2",
     "info",
     "name",
     "number",
@@ -2146,6 +2158,7 @@ const PlasmicDescendants = {
     "menu",
     "topProfile",
     "image",
+    "image2",
     "info",
     "name",
     "number",
@@ -2198,6 +2211,7 @@ const PlasmicDescendants = {
   topProfile: [
     "topProfile",
     "image",
+    "image2",
     "info",
     "name",
     "number",
@@ -2205,7 +2219,8 @@ const PlasmicDescendants = {
     "notifOn",
     "notifOff"
   ],
-  image: ["image"],
+  image: ["image", "image2"],
+  image2: ["image2"],
   info: ["info", "name", "number"],
   name: ["name"],
   number: ["number"],
@@ -2309,6 +2324,7 @@ type NodeDefaultElementType = {
   menu: "div";
   topProfile: "div";
   image: "div";
+  image2: "div";
   info: "div";
   name: "div";
   number: "div";
@@ -2429,6 +2445,7 @@ export const Plasmicتالار = Object.assign(
     menu: makeNodeComponent("menu"),
     topProfile: makeNodeComponent("topProfile"),
     image: makeNodeComponent("image"),
+    image2: makeNodeComponent("image2"),
     info: makeNodeComponent("info"),
     _name: makeNodeComponent("name"),
     number: makeNodeComponent("number"),
