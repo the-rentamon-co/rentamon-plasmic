@@ -1991,7 +1991,7 @@ function Plasmicتالار__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           undefined,
-                          "https://api-v2.rentamon.com/api/is_user_old"
+                          "https://gateway.rentamon.com/webhook/get_user_segment"
                         ]
                       };
                       return $globalActions["Fragment.apiRequest"]?.apply(
