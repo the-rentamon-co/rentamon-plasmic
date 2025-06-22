@@ -324,7 +324,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile") ? true : true
+          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
       },
       {
         path: "aiShow",
@@ -993,6 +993,7 @@ function PlasmicProCalendar__RenderFunc(props: {
               plasmic_plasmic_rich_components_css.plasmic_tokens
             )}
             hideFooter={true}
+            maskClosable={false}
             modalScopeClassName={sty["alertModal__modal"]}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["alertModal", "open"]).apply(
@@ -1118,41 +1119,6 @@ function PlasmicProCalendar__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["updateAlertModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["alertModal", "open"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateAlertModalOpen"] != null &&
-                    typeof $steps["updateAlertModalOpen"] === "object" &&
-                    typeof $steps["updateAlertModalOpen"].then === "function"
-                  ) {
-                    $steps["updateAlertModalOpen"] = await $steps[
-                      "updateAlertModalOpen"
-                    ];
-                  }
-
                   $steps["runCode"] = true
                     ? (() => {
                         const actionArgs = {
@@ -1189,6 +1155,41 @@ function PlasmicProCalendar__RenderFunc(props: {
                     typeof $steps["runCode"].then === "function"
                   ) {
                     $steps["runCode"] = await $steps["runCode"];
+                  }
+
+                  $steps["updateAlertModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["alertModal", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAlertModalOpen"] != null &&
+                    typeof $steps["updateAlertModalOpen"] === "object" &&
+                    typeof $steps["updateAlertModalOpen"].then === "function"
+                  ) {
+                    $steps["updateAlertModalOpen"] = await $steps[
+                      "updateAlertModalOpen"
+                    ];
                   }
                 }}
               >
