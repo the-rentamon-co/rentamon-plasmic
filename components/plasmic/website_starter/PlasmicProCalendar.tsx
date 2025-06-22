@@ -820,13 +820,13 @@ function PlasmicProCalendar__RenderFunc(props: {
                 ];
               }
 
-              $steps["updateStateVariable2"] = false
+              $steps["updateStateVariable2"] = true
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
                       value: (() => {
-                        if (!document.cookie.includes("disorder_modal")) {
-                          return ($state.modal.open = true);
+                        if (!document.cookie.includes("shab_disconnrct")) {
+                          return ($state.alertModal.open = true);
                         }
                       })()
                     };
@@ -1151,6 +1151,44 @@ function PlasmicProCalendar__RenderFunc(props: {
                     $steps["updateAlertModalOpen"] = await $steps[
                       "updateAlertModalOpen"
                     ];
+                  }
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function setCookie(name, value, hours) {
+                                let expires = "";
+                                if (hours) {
+                                  const date = new Date();
+                                  date.setTime(
+                                    date.getTime() + hours * 60 * 60 * 1000
+                                  );
+                                  expires = "; expires=" + date.toUTCString();
+                                }
+                                document.cookie =
+                                  name +
+                                  "=" +
+                                  (value || "") +
+                                  expires +
+                                  "; path=/";
+                              }
+                              return setCookie("shab_disconnrct", "true", 12);
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
                   }
                 }}
               >
