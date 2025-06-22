@@ -324,7 +324,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
+          hasVariant(globalVariants, "screen", "smallMobile") ? true : true
       },
       {
         path: "aiShow",
@@ -1016,44 +1016,6 @@ function PlasmicProCalendar__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function setCookie(name, value, hours) {
-                                  let expires = "";
-                                  if (hours) {
-                                    const date = new Date();
-                                    date.setTime(
-                                      date.getTime() + hours * 60 * 60 * 1000
-                                    );
-                                    expires = "; expires=" + date.toUTCString();
-                                  }
-                                  document.cookie =
-                                    name +
-                                    "=" +
-                                    (value || "") +
-                                    expires +
-                                    "; path=/";
-                                }
-                                return setCookie("alertModal", "true", 24);
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-
                     $steps["updateAlertModalOpen"] = true
                       ? (() => {
                           const actionArgs = {
@@ -1110,29 +1072,104 @@ function PlasmicProCalendar__RenderFunc(props: {
                     sty.text__xsnqv
                   )}
                 >
-                  {
-                    "\ud83c\udf89 \u0627\u0648\u0644\u06cc\u0646 \u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631  \u0631\u0648\u0646\u0645\u0627\u06cc\u06cc \u0634\u062f!\n"
-                  }
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u26a0\ufe0f\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u060c \u0633\u0627\u06cc\u062a \u00ab\u0634\u0628\u00bb \u0645\u0648\u0642\u062a\u0627 \u0627\u0632 \u067e\u0648\u0634\u0634\u200c\u062f\u0647\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062e\u0627\u0631\u062c \u0634\u062f\u0647. "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 500 }}
+                    >
+                      {
+                        "\u0644\u0637\u0641\u0627 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0634\u0628 \u0628\u0627\u0634.\r"
+                      }
+                    </span>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bwiLd
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 400 }}
+                    >
+                      {
+                        "\u062f\u0631 \u062a\u0644\u0627\u0634\u06cc\u0645 \u0645\u0634\u06a9\u0644 \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u06a9\u0646\u06cc\u0645.\r"
+                      }
+                    </span>
+                  </React.Fragment>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__je0Jp)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__yrWUx)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/image93.png",
-                    fullWidth: 128,
-                    fullHeight: 73,
-                    aspectRatio: undefined
-                  }}
-                />
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__wG5YE,
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "clickable"
+                    : undefined
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateAlertModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["alertModal", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAlertModalOpen"] != null &&
+                    typeof $steps["updateAlertModalOpen"] === "object" &&
+                    typeof $steps["updateAlertModalOpen"].then === "function"
+                  ) {
+                    $steps["updateAlertModalOpen"] = await $steps[
+                      "updateAlertModalOpen"
+                    ];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yI1Y
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 400 }}
+                    >
+                      {"\u0628\u0627\u0634\u0647"}
+                    </span>
+                  </React.Fragment>
+                </div>
               </div>
               <Button
                 data-plasmic-name={"button"}
@@ -1215,9 +1252,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                     }
                   }}
                 >
-                  {
-                    "\u0627\u06cc\u0646\u062c\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646"
-                  }
+                  {"\u0628\u0627\u0634\u0647"}
                 </div>
               </Button>
             </div>
