@@ -825,7 +825,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                     const actionArgs = {
                       operation: 0,
                       value: (() => {
-                        if (!document.cookie.includes("shab_disconnrct")) {
+                        if (!document.cookie.includes("shab_disconnrct1")) {
                           return ($state.alertModal.open = true);
                         }
                       })()

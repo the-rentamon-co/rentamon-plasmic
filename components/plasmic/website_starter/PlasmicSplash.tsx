@@ -215,51 +215,14 @@ function PlasmicSplash__RenderFunc(props: {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__oRgmN
-              )}
-            >
-              {"\u26a0\ufe0f"}
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
                 sty.text__cww71
               )}
             >
-              {hasVariant(globalVariants, "screen", "mobile") ? (
-                <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0633\u0631\u0627\u0633\u0631\u06cc \u0628\u0631 \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c\n\u062e\u062f\u0645\u0627\u062a \u067e\u0627\u06cc\u062f\u0627\u0631 \u0646\u06cc\u0633\u062a.\n\n"
-                    }
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 500 }}
-                  >
-                    {
-                      "\u0644\u0637\u0641\u0627 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0628\u0627\u0634 \ud83d\ude4f"
-                    }
-                  </span>
-                </React.Fragment>
-              ) : (
-                <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0633\u0631\u0627\u0633\u0631\u06cc \u0628\u0631 \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c\r\n\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0627\u0631\u0647. \n\n\r\n\r\n"
-                    }
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 500 }}
-                  >
-                    {
-                      "\u0644\u0637\u0641\u0627 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0628\u0627\u0634 \ud83d\ude4f"
-                    }
-                  </span>
-                </React.Fragment>
-              )}
+              {hasVariant(globalVariants, "screen", "smallMobile")
+                ? "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0645\u0645\u06a9\u0646\u0647 \u062e\u062f\u0645\u0627\u062a \u0646\u0627\u067e\u0627\u06cc\u062f\u0627\u0631 \u0628\u0627\u0634\u0647\n\n\r\n\u00a0\u062f\u0631\u0635\u0648\u0631\u062a \u0645\u0634\u0627\u0647\u062f\u0647 \u062e\u0637\u0627\u060c \u0644\u0637\u0641\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647\u00a0\r\n\u00a0\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\r"
+                : hasVariant(globalVariants, "screen", "mobile")
+                ? "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0645\u0645\u06a9\u0646\u0647 \u062e\u062f\u0645\u0627\u062a \u0646\u0627\u067e\u0627\u06cc\u062f\u0627\u0631 \u0628\u0627\u0634\u0647\n\n\r\n\u00a0\u062f\u0631\u0635\u0648\u0631\u062a \u0645\u0634\u0627\u0647\u062f\u0647 \u062e\u0637\u0627\u060c \u0644\u0637\u0641\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647\u00a0\r\n\u00a0\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\r"
+                : "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0645\u0645\u06a9\u0646\u0647 \u062e\u062f\u0645\u0627\u062a \u0646\u0627\u067e\u0627\u06cc\u062f\u0627\u0631 \u0628\u0627\u0634\u0647\n\n\r\n\r\n\u00a0\u062f\u0631\u0635\u0648\u0631\u062a \u0645\u0634\u0627\u0647\u062f\u0647 \u062e\u0637\u0627\u060c \u0644\u0637\u0641\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647\u00a0\r\n\u00a0\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"}
             </div>
           </div>
           <div
