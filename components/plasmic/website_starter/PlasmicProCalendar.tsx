@@ -820,12 +820,12 @@ function PlasmicProCalendar__RenderFunc(props: {
                 ];
               }
 
-              $steps["updateStateVariable2"] = true
+              $steps["updateStateVariable2"] = false
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
                       value: (() => {
-                        if (!document.cookie.includes("shab_disconnrct1")) {
+                        if (!document.cookie.includes("shab_disconnrct")) {
                           return ($state.alertModal.open = true);
                         }
                       })()
