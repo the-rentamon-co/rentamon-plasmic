@@ -10,7 +10,7 @@
   align-items: center;
   padding-top: 50px;
   background: linear-gradient(
-      55deg,
+      55.40940099712543deg,
       #ebfaff 0%,
       #f7fbfd 17%,
       #fcfcfc 30%,
@@ -574,7 +574,11 @@
   font-size: 18px;
   font-weight: 600;
   color: #fcfcfc;
-  background: linear-gradient(43deg, var(--token-8nedppYkGVaH) 0%, #9276e5 100%)
+  background: linear-gradient(
+      43.120363955498306deg,
+      var(--token-8nedppYkGVaH) 0%,
+      #9276e5 100%
+    )
     0% 0% / cover;
   cursor: pointer;
   min-width: 0;
@@ -624,7 +628,11 @@
   font-size: 18px;
   font-weight: 600;
   color: #fcfcfc;
-  background: linear-gradient(43deg, var(--token-8nedppYkGVaH) 0%, #9276e5 100%)
+  background: linear-gradient(
+      43.120363955498306deg,
+      var(--token-8nedppYkGVaH) 0%,
+      #9276e5 100%
+    )
     0% 0% / cover;
   cursor: pointer;
   min-width: 0;

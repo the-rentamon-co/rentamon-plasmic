@@ -4264,7 +4264,11 @@
   font-size: 18px;
   font-weight: 600;
   color: #fcfcfc;
-  background: linear-gradient(43deg, var(--token-8nedppYkGVaH) 0%, #9276e5 100%)
+  background: linear-gradient(
+      43.120363955498306deg,
+      var(--token-8nedppYkGVaH) 0%,
+      #9276e5 100%
+    )
     0% 0% / cover;
   cursor: pointer;
   border-radius: 50px;

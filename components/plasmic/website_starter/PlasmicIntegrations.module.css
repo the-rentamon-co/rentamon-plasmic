@@ -1261,7 +1261,12 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  background: linear-gradient(54deg, #ececec 0%, #ffffff 58%, #ececec 100%);
+  background: linear-gradient(
+    54.57213473261936deg,
+    #ececec 0%,
+    #ffffff 58%,
+    #ececec 100%
+  );
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
   min-width: 0;

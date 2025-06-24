@@ -365,7 +365,7 @@
 @media (max-width: 500px) {
   .modal__modal :global(.ant-modal-content) {
     background: linear-gradient(
-        48deg,
+        48.515879668503885deg,
         #fcfcfc 0%,
         #ececec 15%,
         #ffffff 59%,
@@ -620,7 +620,7 @@
   cursor: pointer;
   margin-right: 0px;
   margin-left: 0px;
-  background: linear-gradient(82deg, #8165d6 0%, #9c80f2 100%);
+  background: linear-gradient(82.91484890504398deg, #8165d6 0%, #9c80f2 100%);
   border-radius: 30px;
   padding: 14px 0px;
 }
@@ -1306,7 +1306,7 @@
   cursor: pointer;
   margin-right: 0px;
   margin-left: 0px;
-  background: linear-gradient(82deg, #8165d6 0%, #9c80f2 100%);
+  background: linear-gradient(82.91484890504398deg, #8165d6 0%, #9c80f2 100%);
   border-radius: 30px;
   padding: 14px 0px;
 }
