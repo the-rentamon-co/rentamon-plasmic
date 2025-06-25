@@ -857,7 +857,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "POST",
-                                      "https://gateway.rentamon.com/webhook/shab-instant",
+                                      "https://gateway.rentamon.com/webhook/shab-instant?v=2",
                                       undefined,
                                       (() => {
                                         try {
@@ -1168,7 +1168,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "POST",
-                                      "https://gateway.rentamon.com/webhook/otaghak-instant",
+                                      "https://gateway.rentamon.com/webhook/otaghak-instant?v=2",
                                       undefined,
                                       (() => {
                                         try {
