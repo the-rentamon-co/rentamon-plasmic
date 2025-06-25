@@ -381,7 +381,18 @@ function PlasmicAnalytics__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u06af\u0632\u0627\u0631\u0634\u0627\u062a \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                  "\u06af\u0632\u0627\u0631\u0634\u0627\u062a \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 (\u0622\u0632\u0645\u0627\u06cc\u0634\u06cc)"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__yvNig
+                )}
+              >
+                {
+                  "\u062f\u0631\u0635\u0648\u0631\u062a \u0627\u0628\u0647\u0627\u0645 \u0648 \u06cc\u0627 \u0645\u0634\u0627\u0647\u062f\u0647 \u062e\u0637\u0627\u06cc \u0645\u062d\u0627\u0633\u0628\u0627\u062a\u06cc\u060c \u0644\u0637\u0641\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647"
                 }
               </div>
             </div>

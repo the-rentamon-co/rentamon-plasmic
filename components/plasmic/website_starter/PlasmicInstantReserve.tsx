@@ -490,7 +490,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ fontWeight: 700 }}
                   >
-                    {"\u06f3\u06f1 \u062e\u0631\u062f\u0627\u062f"}
+                    {"\u06f3\u06f1 \u062a\u06cc\u0631"}
                   </span>
                 </React.Fragment>
               )}
