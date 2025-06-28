@@ -221,13 +221,7 @@
   min-width: 70px;
   min-height: 70px;
   max-height: 70px;
-  background: linear-gradient(
-    0deg,
-    #da0000 0%,
-    #ffffff 36%,
-    #ffffff 62%,
-    #239f40 100%
-  );
+  background: none;
   overflow: hidden;
   flex-shrink: 0;
   border-radius: 100px;
@@ -241,13 +235,7 @@
 .image2 {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    0deg,
-    #da0000 0%,
-    #ffffff 41%,
-    #ffffff 60%,
-    #239f40 94%
-  );
+  background: none;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -258,6 +246,7 @@
   min-height: 0;
   border-radius: 100px;
   padding: 0px;
+  border-width: 2px;
 }
 .img__yIrgd {
   object-fit: cover;

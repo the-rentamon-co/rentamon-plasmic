@@ -512,7 +512,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   className={classNames(sty.img__mAxyx)}
                   displayHeight={
                     hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "20px"
+                      ? "100%"
                       : hasVariant(globalVariants, "screen", "mobile")
                       ? "35px"
                       : "43px"
@@ -543,9 +543,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     sty.text__rnDcz
                   )}
                 >
-                  {
-                    "\u0628\u0631\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0634\u0628 \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647"
-                  }
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u0628\u0647\u200c\u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."
+                    : "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u060c \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."}
                 </div>
               </div>
               <div

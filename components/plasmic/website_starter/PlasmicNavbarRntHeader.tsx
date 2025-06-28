@@ -213,9 +213,9 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                 }
               }}
               src={{
-                src: "/plasmic/website_starter/images/image148.png",
+                src: "/plasmic/website_starter/images/rentamonFaLowPng.png",
                 fullWidth: 200,
-                fullHeight: 100,
+                fullHeight: 99,
                 aspectRatio: undefined
               }}
             />
