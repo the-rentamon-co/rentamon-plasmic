@@ -542,36 +542,34 @@ function PlasmicSplash__RenderFunc(props: {
                 ];
               }
 
-              $steps["updateErrorHandeling"] =
-                $steps.invokeGlobalAction.status != 200
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["isErrorHappen"]
-                        },
-                        operation: 0,
-                        value: (() => {
-                          console.log($steps.invokeGlobalAction.status);
+              $steps["updateErrorHandeling"] = false
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["isErrorHappen"]
+                      },
+                      operation: 0,
+                      value: (() => {
+                        console.log($steps.invokeGlobalAction.status);
+                        if ($steps.invokeGlobalAction.status != 200) {
                           return ($state.isErrorHappen = true);
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
+                        } else {
+                          return ($state.isErrorHappen = false);
                         }
-                        const { objRoot, variablePath } = variable;
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
 
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
               if (
                 $steps["updateErrorHandeling"] != null &&
                 typeof $steps["updateErrorHandeling"] === "object" &&
@@ -619,8 +617,14 @@ function PlasmicSplash__RenderFunc(props: {
                               "https://rentamon.com//panel/";
                           }
                           if ($steps.invokeGlobalAction.data.flag == 0) {
-                            return (window.location.href =
-                              "https://rentamon.com//calendar/");
+                            window.location.href =
+                              "https://rentamon.com//calendar/";
+                          }
+                          if (
+                            !$steps.invokeGlobalAction.data ||
+                            $steps.invokeGlobalAction.data.flag == null
+                          ) {
+                            return ($state.isErrorHappen = true);
                           }
                         })();
                       }
