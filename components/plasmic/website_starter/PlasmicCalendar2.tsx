@@ -586,7 +586,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : false
+            : true
       },
       {
         path: "guestName.value",
