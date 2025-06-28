@@ -1,4 +1,4 @@
-@import url("https://rentamon-files.storage.iran.liara.space/fonts/estedad/Estedad-Medium.ttf");
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inter%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Montserrat%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700&display=swap");
 
 .plasmic_tokens {
   --token-2CXdk7410BHW: var(--token-HBTFH2K_vw-c);
@@ -93,7 +93,7 @@
   --plasmic-token-size-12: var(--token-q7eh_H453nLB);
   --token-o4gfbR28mKoP: 1.5rem;
   --plasmic-token-size-24: var(--token-o4gfbR28mKoP);
-  --token-8R7jjC_-F9FF: #ffffff;
+  --token-8R7jjC_-F9FF: #fcfcfc;
   --plasmic-token-basic-container-background: var(--token-8R7jjC_-F9FF);
   --token-MLwBcAFWQ57Z: 0.375rem;
   --plasmic-token-size-6: var(--token-MLwBcAFWQ57Z);
@@ -247,7 +247,7 @@
   --mixin-uQM-VRcFt-Zt_line-height: 1.1;
   --mixin-uQM-VRcFt-Zt_white-space: pre-wrap;
   --mixin-928ee_lKuGlU_color: var(--token-8nedppYkGVaH);
-  --mixin-928ee_lKuGlU_font-family: "Estedad", sans-serif;
+  --mixin-928ee_lKuGlU_font-family: "Vazirmatn", sans-serif;
   --mixin-928ee_lKuGlU_font-weight: 700;
   --mixin-928ee_lKuGlU_white-space: pre-wrap;
   --mixin-peMwqi_rY8F6_color: #000000;

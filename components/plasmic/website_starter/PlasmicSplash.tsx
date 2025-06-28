@@ -86,7 +86,6 @@ export const PlasmicSplash__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSplash__OverridesType = {
   root?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   center?: Flex__<"div">;
   svg?: Flex__<"svg">;
   sideEffect?: Flex__<typeof SideEffect>;
@@ -207,10 +206,8 @@ function PlasmicSplash__RenderFunc(props: {
               }
             })() ? (
               <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img)}
+                className={classNames(sty.img__fzVw8)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -257,19 +254,21 @@ function PlasmicSplash__RenderFunc(props: {
                   : "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0645\u0645\u06a9\u0646\u0647 \u062e\u062f\u0645\u0627\u062a \u0646\u0627\u067e\u0627\u06cc\u062f\u0627\u0631 \u0628\u0627\u0634\u0647\n\n\r\n\r\n\u00a0\u062f\u0631\u0635\u0648\u0631\u062a \u0645\u0634\u0627\u0647\u062f\u0647 \u062e\u0637\u0627\u060c \u0644\u0637\u0641\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647\u00a0\r\n\u00a0\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"}
               </div>
             ) : null}
-            {(() => {
-              try {
-                return $state.isErrorHappen;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
+          </div>
+          {(() => {
+            try {
+              return $state.isErrorHappen;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
               }
-            })() ? (
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__lbOl7)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -280,11 +279,70 @@ function PlasmicSplash__RenderFunc(props: {
                 {hasVariant(globalVariants, "screen", "smallMobile")
                   ? "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0645\u0645\u06a9\u0646\u0647 \u062e\u062f\u0645\u0627\u062a \u0646\u0627\u067e\u0627\u06cc\u062f\u0627\u0631 \u0628\u0627\u0634\u0647\n\n\r\n\u00a0\u062f\u0631\u0635\u0648\u0631\u062a \u0645\u0634\u0627\u0647\u062f\u0647 \u062e\u0637\u0627\u060c \u0644\u0637\u0641\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647\u00a0\r\n\u00a0\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\r"
                   : hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0645\u0645\u06a9\u0646\u0647 \u062e\u062f\u0645\u0627\u062a \u0646\u0627\u067e\u0627\u06cc\u062f\u0627\u0631 \u0628\u0627\u0634\u0647\n\n\r\n\u00a0\u062f\u0631\u0635\u0648\u0631\u062a \u0645\u0634\u0627\u0647\u062f\u0647 \u062e\u0637\u0627\u060c \u0644\u0637\u0641\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647\u00a0\r\n\u00a0\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\r"
-                  : "\u0645\u0634\u06a9\u0644\u06cc \u067e\u06cc\u0634 \u0627\u0645\u062f\u0647 \u0627\u0633\u062a. \u062f\u0648\u0628\u0627\u0631\u0647 \u062a\u0644\u0627\u0634 \u06a9\u0646"}
+                  ? "\u0644\u0637\u0641\u0627 \u0648\u0636\u0639\u06cc\u062a \u0627\u062a\u0635\u0627\u0644 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u062e\u0648\u062f \u0631\u0627 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u062f"
+                  : "\u0644\u0637\u0641\u0627 \u0648\u0636\u0639\u06cc\u062a \u0627\u062a\u0635\u0627\u0644 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u062e\u0648\u062f \u0631\u0627 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u062f"}
               </div>
-            ) : null}
-          </div>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__nxgSw,
+                  "clickable fadein"
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return location.reload();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jc0Fd
+                  )}
+                >
+                  {"\u062a\u0644\u0627\u0634 \u0645\u062c\u062f\u062f"}
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__ppz2)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"20px"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image149.svg",
+                    fullWidth: 200,
+                    fullHeight: 200,
+                    aspectRatio: undefined
+                  }}
+                />
+              </Stack__>
+            </div>
+          ) : null}
           <div
             data-plasmic-name={"center"}
             data-plasmic-override={overrides.center}
@@ -585,6 +643,13 @@ function PlasmicSplash__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
+                          if (
+                            !$steps.invokeGlobalAction ||
+                            !$steps.invokeGlobalAction.data ||
+                            $steps.invokeGlobalAction.data.flag == null
+                          ) {
+                            $state.isErrorHappen = true;
+                          }
                           function setCookie(name, value, hours) {
                             let expires = "";
                             if (hours) {
@@ -617,14 +682,8 @@ function PlasmicSplash__RenderFunc(props: {
                               "https://rentamon.com//panel/";
                           }
                           if ($steps.invokeGlobalAction.data.flag == 0) {
-                            window.location.href =
-                              "https://rentamon.com//calendar/";
-                          }
-                          if (
-                            !$steps.invokeGlobalAction.data ||
-                            $steps.invokeGlobalAction.data.flag == null
-                          ) {
-                            return ($state.isErrorHappen = true);
+                            return (window.location.href =
+                              "https://rentamon.com//calendar/");
                           }
                         })();
                       }
@@ -658,8 +717,7 @@ function PlasmicSplash__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "center", "svg", "sideEffect", "clarityRntComponent"],
-  img: ["img"],
+  root: ["root", "center", "svg", "sideEffect", "clarityRntComponent"],
   center: ["center", "svg"],
   svg: ["svg"],
   sideEffect: ["sideEffect"],
@@ -670,7 +728,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  img: typeof PlasmicImg__;
   center: "div";
   svg: "svg";
   sideEffect: typeof SideEffect;
@@ -737,7 +794,6 @@ export const PlasmicSplash = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    img: makeNodeComponent("img"),
     center: makeNodeComponent("center"),
     svg: makeNodeComponent("svg"),
     sideEffect: makeNodeComponent("sideEffect"),
