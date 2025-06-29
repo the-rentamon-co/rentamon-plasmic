@@ -90,6 +90,11 @@
     padding-left: 0px;
   }
 }
+@media (max-width: 350px) {
+  .mainContents {
+    padding-bottom: 0px;
+  }
+}
 .intro1st {
   display: flex;
   flex-direction: column;
@@ -205,12 +210,13 @@
   .introduction2 {
     max-width: 100%;
     padding-top: 16px;
-    padding-right: 37px;
+    padding-right: 11px;
+    padding-bottom: 0px;
   }
 }
 @media (max-width: 350px) {
   .introduction2 {
-    padding-right: 23px;
+    padding-right: 21px;
   }
 }
 .text__gb6Nz {
@@ -227,13 +233,14 @@
 @media (max-width: 350px) {
   .text__gb6Nz {
     font-size: 15px;
+    display: none;
   }
 }
-.ul__no6DD {
+.ul {
   display: flex;
   flex-direction: column;
 }
-.li__b5KRs {
+.li {
   padding-right: 0px;
   padding-top: 0px;
 }
@@ -252,15 +259,30 @@
 @media (max-width: 350px) {
   .text__demJa {
     font-size: 15px;
+    padding-top: 0px;
   }
 }
-.ul___560W {
-  display: flex;
-  flex-direction: column;
+.link__tphI7 {
+  font-family: "Estedad";
+  font-weight: 500;
 }
-.ul__j1Mz {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 1200px) {
+  .link__oPuuc {
+    font-family: "Estedad";
+    font-weight: 400;
+  }
+}
+@media (max-width: 350px) {
+  .link__fjJK {
+    font-family: "Estedad";
+    font-weight: 500;
+  }
+}
+@media (max-width: 500px) {
+  .link___3XJI {
+    font-family: "Estedad";
+    font-weight: 500;
+  }
 }
 .rentamonFooter:global(.__wab_instance) {
   max-width: 100%;

@@ -236,8 +236,19 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
             displayMaxWidth={"none"}
             displayMinHeight={"0"}
             displayMinWidth={"0"}
-            displayWidth={"auto"}
-            src={"https://static1.plasmic.app/close.svg"}
+            displayWidth={
+              hasVariant(globalVariants, "screen", "mobile") ? "22px" : "auto"
+            }
+            src={
+              hasVariant(globalVariants, "screen", "mobile")
+                ? {
+                    src: "/plasmic/website_starter/images/image150.svg",
+                    fullWidth: 64,
+                    fullHeight: 64,
+                    aspectRatio: undefined
+                  }
+                : "https://static1.plasmic.app/close.svg"
+            }
           />
         }
         itemsGap={8}

@@ -4,23 +4,23 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicFeatures } from "../../components/plasmic/website_starter/PlasmicFeatures";
+import { Plasmicامکاناتنسخهیپیشرفتهرنتامون } from "../../components/plasmic/website_starter/Plasmic\u0627\u0645\u06A9\u0627\u0646\u0627\u062A\u0646\u0633\u062E\u0647\u06CC\u067E\u06CC\u0634\u0631\u0641\u062A\u0647\u0631\u0646\u062A\u0627\u0645\u0648\u0646";
 import { useRouter } from "next/router";
 
-function Features() {
-  // Use PlasmicFeatures to render this component as it was
+function امکاناتنسخهیپیشرفتهرنتامون() {
+  // Use Plasmicامکاناتنسخهیپیشرفتهرنتامون to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicFeatures are:
+  // Props you can pass into Plasmicامکاناتنسخهیپیشرفتهرنتامون are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicFeatures is wrapped by your project's global
+  // By default, Plasmicامکاناتنسخهیپیشرفتهرنتامون is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -32,10 +32,10 @@ function Features() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicFeatures />
+        <Plasmicامکاناتنسخهیپیشرفتهرنتامون />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default Features;
+export default امکاناتنسخهیپیشرفتهرنتامون;

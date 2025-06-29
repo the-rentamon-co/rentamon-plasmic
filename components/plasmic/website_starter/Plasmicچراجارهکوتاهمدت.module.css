@@ -953,6 +953,11 @@
     font-size: 15px;
   }
 }
+.link___0Ijod {
+  font-family: "Estedad";
+  font-weight: 500;
+  font-size: 17px;
+}
 .freeBox__zmoGb {
   display: flex;
   flex-direction: column;
@@ -1109,6 +1114,10 @@
     padding-left: 0px;
     font-size: 15px;
   }
+}
+.link___3Hcfs {
+  font-family: "Estedad";
+  font-weight: 500;
 }
 .handsOn {
   display: flex;

@@ -447,7 +447,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   sty.freeBox__lvxu,
-                  "fadein"
+                  "fadeinf"
                 )}
               >
                 <div

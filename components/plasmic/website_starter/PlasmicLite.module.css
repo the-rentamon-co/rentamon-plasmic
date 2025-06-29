@@ -1416,6 +1416,10 @@
   font-weight: 400;
   min-width: 0;
 }
+.link {
+  font-family: "Estedad";
+  font-weight: 500;
+}
 .html {
   flex-direction: column;
   position: relative;

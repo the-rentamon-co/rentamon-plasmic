@@ -256,6 +256,14 @@
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 500px) {
+  .ul__eCqGt {
+    padding-left: 5px;
+  }
+}
+.li__reKfS {
+  padding-bottom: 0px;
+}
 .text__wT5Ns {
   text-align: right;
   font-size: 17px;

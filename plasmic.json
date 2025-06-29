@@ -1038,20 +1038,6 @@
           "path": "/contacts"
         },
         {
-          "id": "eddiHU6vfbzN",
-          "name": "AboutUs",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicAboutUs.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/about-us.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicAboutUs.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/درباره-ما"
-        },
-        {
           "id": "7qT9iMfa9pib",
           "name": "Integrations",
           "type": "managed",
@@ -1077,20 +1063,6 @@
           "cssFilePath": "plasmic/website_starter/PlasmicTestimonialsScrolling.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "OUfaFiJLkcrx",
-          "name": "Features",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicFeatures.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/features.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicFeatures.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/features"
         },
         {
           "id": "_jWDmDgs08t7",
@@ -1892,6 +1864,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/registration/[type]"
+        },
+        {
+          "id": "OUfaFiJLkcrx",
+          "name": "امکاناتنسخهیپیشرفتهرنتامون",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicامکاناتنسخهیپیشرفتهرنتامون.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/features.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicامکاناتنسخهیپیشرفتهرنتامون.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/features"
+        },
+        {
+          "id": "eddiHU6vfbzN",
+          "name": "دربارهما",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicدربارهما.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/about-us.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicدربارهما.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/about-us"
         }
       ],
       "icons": [
@@ -4101,6 +4101,11 @@
           "id": "rybaXRu9mgFm",
           "name": "image 149",
           "filePath": "../public/plasmic/website_starter/images/image149.svg"
+        },
+        {
+          "id": "6I5D4ayAus28",
+          "name": "image 150",
+          "filePath": "../public/plasmic/website_starter/images/image150.svg"
         }
       ],
       "indirect": false,

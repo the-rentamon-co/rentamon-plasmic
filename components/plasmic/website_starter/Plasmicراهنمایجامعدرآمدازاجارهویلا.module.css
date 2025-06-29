@@ -259,6 +259,10 @@
     font-size: 15px;
   }
 }
+.link__hApOx {
+  font-family: "Estedad";
+  font-weight: 500;
+}
 .freeBox___2Cjej {
   display: flex;
   flex-direction: column;
@@ -1348,6 +1352,10 @@
     min-width: 0;
   }
 }
+.link__kVhLx {
+  font-family: "Estedad";
+  font-weight: 500;
+}
 .text__oAlLe {
   position: relative;
   width: 100%;
@@ -1555,6 +1563,10 @@
     line-height: 1.8;
     min-width: 0;
   }
+}
+.link__ipHuo {
+  font-family: "Estedad";
+  font-weight: 500;
 }
 .busy2 {
   display: flex;

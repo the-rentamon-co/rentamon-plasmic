@@ -1248,14 +1248,6 @@ function Plasmicتالار__RenderFunc(props: {
                         )}
                       >
                         <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#444444", fontWeight: 600 }}
-                          >
-                            {""}
-                          </span>
                           <React.Fragment>{""}</React.Fragment>
                           {
                             <PlasmicLink__
@@ -1276,7 +1268,7 @@ function Plasmicتالار__RenderFunc(props: {
                                   className={
                                     "plasmic_default__all plasmic_default__span"
                                   }
-                                  style={{ color: "#444444", fontWeight: 600 }}
+                                  style={{ color: "#444444" }}
                                 >
                                   {
                                     "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062a\u0644\u0641\u0646\u06cc: \u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"

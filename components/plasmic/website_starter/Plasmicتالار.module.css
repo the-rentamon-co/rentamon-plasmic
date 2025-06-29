@@ -960,6 +960,10 @@
   white-space: pre;
   min-width: 0;
 }
+.link {
+  font-family: "Estedad";
+  font-weight: 500;
+}
 .left8 {
   display: flex;
   flex-direction: column;

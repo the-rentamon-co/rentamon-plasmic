@@ -3341,6 +3341,26 @@
     font-size: 15px;
   }
 }
+.link___4BJaZ {
+  font-family: "Estedad";
+  font-weight: 500;
+  font-size: 17px;
+}
+@media (max-width: 500px) {
+  .link___4BJaZ {
+    font-size: 16px;
+  }
+}
+.link__w16Gw {
+  font-family: "Estedad";
+  font-weight: 500;
+  font-size: 17px;
+}
+@media (max-width: 500px) {
+  .link__w16Gw {
+    font-size: 16px;
+  }
+}
 .neighbours {
   display: flex;
   flex-direction: column;

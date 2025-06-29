@@ -114,6 +114,11 @@
 .img__p1R3F > picture > img {
   object-fit: cover;
 }
+@media (max-width: 500px) {
+  .img__p1R3F {
+    width: 22px;
+  }
+}
 .freeBox__qrXoX {
   flex-direction: column;
   width: 100%;
@@ -143,6 +148,7 @@
 @media (max-width: 350px) {
   .freeBox__qrXoX {
     z-index: 1;
+    padding-right: 6px;
   }
 }
 .freeBox___1StDi {
@@ -166,6 +172,8 @@
 }
 @media (max-width: 500px) {
   .freeBox___1StDi {
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
     margin: 0px;
   }
 }
@@ -187,16 +195,21 @@
     cursor: pointer;
     background: none;
     color: #444444;
-    border-bottom-width: 1px;
-    border-bottom-style: dashed;
     font-size: 17px;
     user-select: none;
+    font-family: "Estedad";
+    font-weight: 500;
+    padding-right: 0px;
+    padding-left: 0px;
     min-width: 0;
+    border-radius: 0px;
   }
 }
 @media (max-width: 350px) {
   .link__qiqR {
     cursor: pointer;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 .link__cwZwa {
@@ -236,6 +249,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
   min-width: 0;
   padding: 8px;
   margin: 0px;
@@ -245,21 +260,33 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   cursor: pointer;
-  border-bottom-style: dashed;
-  border-bottom-width: 1px;
   text-align: right;
   background: none;
   user-select: none;
+  font-family: "Estedad";
   min-width: 0;
-  border-radius: 30px;
-  padding: 4px 30px;
+  border-radius: 0px;
+  padding: 4px 0px;
 }
 @media (max-width: 350px) {
   .link__kh6Yr {
     cursor: pointer;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-size: 17px;
+    font-weight: 500;
+    color: #444444;
+    text-align: right;
+    user-select: none;
+    background: none;
+    min-width: 0;
+    border-radius: 30px;
+    padding: 4px 0px;
   }
 }
 .freeBox__uzdNm {
@@ -271,6 +298,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
   min-width: 0;
   padding: 8px;
   margin: 0px;
@@ -280,21 +309,33 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   cursor: pointer;
-  border-bottom-style: dashed;
-  border-bottom-width: 1px;
   text-align: right;
   background: none;
   user-select: none;
+  font-family: "Estedad";
   min-width: 0;
-  border-radius: 30px;
-  padding: 4px 30px;
+  border-radius: 0px;
+  padding: 4px 0px;
 }
 @media (max-width: 350px) {
   .link___9Ui3 {
     cursor: pointer;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-size: 17px;
+    font-weight: 500;
+    color: #444444;
+    text-align: right;
+    user-select: none;
+    background: none;
+    min-width: 0;
+    border-radius: 30px;
+    padding: 4px 0px;
   }
 }
 .freeBox___5WeAb {
@@ -306,6 +347,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
   min-width: 0;
   padding: 8px;
   margin: 0px;
@@ -315,21 +358,33 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   cursor: pointer;
-  border-bottom-style: dashed;
-  border-bottom-width: 1px;
   text-align: right;
   background: none;
   user-select: none;
+  font-family: "Estedad";
   min-width: 0;
-  border-radius: 30px;
-  padding: 4px 30px;
+  border-radius: 0px;
+  padding: 4px 0px;
 }
 @media (max-width: 350px) {
   .link__vseFw {
     cursor: pointer;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-size: 17px;
+    font-weight: 500;
+    color: #444444;
+    text-align: right;
+    user-select: none;
+    background: none;
+    min-width: 0;
+    border-radius: 30px;
+    padding: 4px 0px;
   }
 }
 .link__ryWoj {
@@ -343,6 +398,7 @@
   color: #fcfcfc;
   user-select: none;
   cursor: pointer;
+  font-family: "Estedad";
   border-radius: 30px;
   padding: 5px 30px;
   margin: 10px 20px 10px 10px;
@@ -392,6 +448,7 @@
   color: #444444;
   user-select: none;
   cursor: pointer;
+  font-family: "Estedad";
   padding: 4px 24px 4px 20px;
   margin: 10px 0px;
 }
@@ -415,6 +472,7 @@
   color: #444444;
   user-select: none;
   cursor: pointer;
+  font-family: "Estedad";
   padding: 4px 10px 4px 30px;
   margin: 10px 0px;
 }
@@ -438,6 +496,7 @@
   color: #444444;
   user-select: none;
   cursor: pointer;
+  font-family: "Estedad";
   padding: 4px 0px 4px 30px;
   margin: 10px 20px 10px 0px;
 }

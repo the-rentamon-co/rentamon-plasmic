@@ -472,6 +472,9 @@
     font-size: 15px;
   }
 }
+.link {
+  font-family: "Estedad";
+}
 .freeBox__w4VD {
   display: flex;
   flex-direction: column;
