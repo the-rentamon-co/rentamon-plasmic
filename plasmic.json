@@ -1892,6 +1892,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/about-us"
+        },
+        {
+          "id": "ytFOCorhXWl1",
+          "name": "فرصتهایهمکاری",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicفرصتهایهمکاری.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/join-our-journey.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicفرصتهایهمکاری.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/join-our-journey"
         }
       ],
       "icons": [
@@ -4106,6 +4120,51 @@
           "id": "6I5D4ayAus28",
           "name": "image 150",
           "filePath": "../public/plasmic/website_starter/images/image150.svg"
+        },
+        {
+          "id": "40SykPNhkgmd",
+          "name": "join-us-rentamon.jpg",
+          "filePath": "../public/plasmic/website_starter/images/joinUsRentamonJpg.jpg"
+        },
+        {
+          "id": "4AwB10Yu64Ud",
+          "name": "join-us-rentamon-2.jpg",
+          "filePath": "../public/plasmic/website_starter/images/joinUsRentamon2Jpg.jpg"
+        },
+        {
+          "id": "l-9IP5AEeDT9",
+          "name": "join-us-rentamon-3.jpg",
+          "filePath": "../public/plasmic/website_starter/images/joinUsRentamon3Jpg.jpg"
+        },
+        {
+          "id": "0VbXhuvvi0xi",
+          "name": "join-us-rentamon-5.jpg",
+          "filePath": "../public/plasmic/website_starter/images/joinUsRentamon5Jpg.jpg"
+        },
+        {
+          "id": "HsVfmfkgZeGd",
+          "name": "join-us-rentamon-4.jpg",
+          "filePath": "../public/plasmic/website_starter/images/joinUsRentamon4Jpg.jpg"
+        },
+        {
+          "id": "S0MdOQXvNCuK",
+          "name": "join-us-rentamon-5.jpg 2",
+          "filePath": "../public/plasmic/website_starter/images/joinUsRentamon5Jpg2.jpg"
+        },
+        {
+          "id": "Eq6uVPpcvViQ",
+          "name": "join-us-rentamon-2.jpg 2",
+          "filePath": "../public/plasmic/website_starter/images/joinUsRentamon2Jpg2.jpg"
+        },
+        {
+          "id": "Ig6FPewVHEwR",
+          "name": "join-us-rentamon-2.jpg 3",
+          "filePath": "../public/plasmic/website_starter/images/joinUsRentamon2Jpg3.jpg"
+        },
+        {
+          "id": "IRH-x9pWOgpw",
+          "name": "join-us-rentamon-7.jpg",
+          "filePath": "../public/plasmic/website_starter/images/joinUsRentamon7Jpg.jpg"
         }
       ],
       "indirect": false,

@@ -3382,11 +3382,10 @@ function PlasmicSettings__RenderFunc(props: {
                     </React.Fragment>
                     <span
                       className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
+                      style={{ fontWeight: 500 }}
                     >
-                      {"\u0648\u0642\u062a \u0637\u0644\u0627\u0633\u062a"}
+                      {"\u0648\u0642\u062a \u0637\u0644\u0627\u0633\u062a!"}
                     </span>
-                    <React.Fragment>{"!"}</React.Fragment>
                   </React.Fragment>
                 ) : hasVariant(globalVariants, "screen", "mobile") ? (
                   <React.Fragment>
@@ -3397,11 +3396,10 @@ function PlasmicSettings__RenderFunc(props: {
                     </React.Fragment>
                     <span
                       className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
+                      style={{ fontWeight: 500 }}
                     >
-                      {"\u0648\u0642\u062a \u0637\u0644\u0627\u0633\u062a"}
+                      {"\u0648\u0642\u062a \u0637\u0644\u0627\u0633\u062a!"}
                     </span>
-                    <React.Fragment>{"!"}</React.Fragment>
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
@@ -3412,11 +3410,10 @@ function PlasmicSettings__RenderFunc(props: {
                     </React.Fragment>
                     <span
                       className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
+                      style={{ fontWeight: 500 }}
                     >
-                      {"\u0648\u0642\u062a \u0637\u0644\u0627\u0633\u062a"}
+                      {"\u0648\u0642\u062a \u0637\u0644\u0627\u0633\u062a!"}
                     </span>
-                    <React.Fragment>{"!"}</React.Fragment>
                   </React.Fragment>
                 )}
               </div>

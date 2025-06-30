@@ -2606,10 +2606,9 @@
 }
 @media (max-width: 500px) {
   ._2Nd2 {
-    padding-top: 30px;
     max-width: 100%;
     margin-bottom: 0px;
-    padding-bottom: 17px;
+    padding: 30px 12px 17px;
   }
 }
 @media (max-width: 350px) {
