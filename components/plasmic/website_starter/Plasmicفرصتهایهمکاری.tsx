@@ -99,6 +99,9 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   title7?: Flex__<"div">;
   uotlines?: Flex__<"div">;
   ul?: Flex__<"ul">;
+  gridImages?: Flex__<"div">;
+  devMindset?: Flex__<"div">;
+  introAutoSyncTitle4?: Flex__<"div">;
   team?: Flex__<"div">;
   sectionTitle?: Flex__<"div">;
   member13?: Flex__<"div">;
@@ -121,14 +124,13 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   icon18?: Flex__<"div">;
   title19?: Flex__<"div">;
   caption18?: Flex__<"div">;
-  gallery?: Flex__<"div">;
   teamup?: Flex__<"div">;
   introAutoSyncTitle3?: Flex__<"div">;
   introAutoSyncCaption3?: Flex__<"div">;
-  gridImages?: Flex__<"div">;
   address?: Flex__<"div">;
   content?: Flex__<"div">;
   addressText?: Flex__<"div">;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   map?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   html?: Flex__<"div">;
@@ -242,10 +244,6 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
           name="twitter:image"
           content={Plasmicفرصتهایهمکاری.pageMetadata.ogImageSrc}
         />
-        <link
-          rel="canonical"
-          href={Plasmicفرصتهایهمکاری.pageMetadata.canonical}
-        />
       </Head>
 
       <style>{`
@@ -307,7 +305,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0628\u0631\u0627\u06cc \u0633\u0627\u062e\u062a\u0646 \u0622\u06cc\u0646\u062f\u0647\u060c \u0628\u0627 \u0645\u0627 \u0647\u0645\u0631\u0627\u0647 \u0634\u0648"
+                    "\u0645\u0627\u06cc\u06cc\u0645 \u06a9\u0647 \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0645\u06cc\u200c\u0633\u0627\u0632\u06cc\u0645"
                   }
                 </div>
               </div>
@@ -328,9 +326,9 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                       sty.text__lqzPf
                     )}
                   >
-                    {
-                      "\u0645\u0627 \u0628\u0631\u0627\u06cc \u0627\u06cc\u062c\u0627\u062f \u06cc\u06a9 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0632\u0631\u06af \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u0634\u062f\u06cc\u0645. \u062f\u0631 \u0645\u0633\u06cc\u0631\u06cc \u0628\u0631\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u0634\u06a9\u0644 \u0632\u0646\u062f\u06af\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0634\u0648\u0646 \u0647\u0633\u062a\u06cc\u0645. \u0627\u06cc\u0646 \u0641\u0642\u0637 \u0634\u0631\u0648\u0639 \u06a9\u0627\u0631\u0647\u060c \u0648 \u0647\u062f\u0641 \u0645\u0627 \u0627\u06cc\u062c\u0627\u062f \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0632\u0631\u06af \u062f\u0631 \u0627\u0642\u062a\u0635\u0627\u062f \u06a9\u0634\u0648\u0631 \u0647\u0633\u062a. \u0647\u0645\u0631\u0627\u0647\u06cc \u062a\u0648\u060c \u062d\u062a\u0645\u0627 \u0628\u0627\u0639\u062b \u0627\u06cc\u0646 \u062f\u0631 \u062f\u0646\u0628\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u0628\u0647\u062a\u0631 \u0639\u0645\u0644 \u06a9\u0646\u06cc\u0645."
-                    }
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.\n\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."
+                      : "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.\n\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."}
                   </div>
                   <div
                     className={classNames(
@@ -340,33 +338,35 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u00ab\u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u00bb \u0631\u0648 \u067e\u0627\u06cc\u06cc\u0632 \u06f1\u06f4\u06f0\u06f2 \u0645\u0639\u0631\u0641\u06cc \u06a9\u0631\u062f. \u0628\u0627 \u0648\u062c\u0648\u062f \u0647\u0645\u0647\u200c\u06cc \u0633\u062e\u062a\u06cc\u200c\u0647\u0627 \u0648 \u0686\u0627\u0644\u0634\u200c\u0647\u0627\u060c \u0627\u0644\u0627\u0646 \u062d\u062f\u0648\u062f \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0627\u063a\u0644\u0628 \u0627\u0633\u062a\u0627\u0646\u200c\u0647\u0627\u06cc \u06a9\u0634\u0648\u0631 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u062f\u0631\u0648\u0627\u0632\u0647\u200c\u06cc \u0641\u0631\u0648\u0634 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u06cc (\u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627) \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0646. \u0645\u0627 \u0645\u0639\u062a\u0642\u062f\u06cc\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0648 \u0628\u0647\u0628\u0648\u062f \u06a9\u06cc\u0641\u06cc\u062a \u062a\u0639\u0627\u0645\u0644 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0627 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u062d\u062a\u06cc \u0645\u0633\u0627\u0641\u0631\u0647\u0627 \u0645\u06cc\u0634\u0647. \u0627\u06cc\u0646 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631 \u0628\u0631\u0627\u06cc \u062f\u0648 \u0637\u0631\u0641\u060c \u0641\u0631\u06a9\u0627\u0646\u0633 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0631\u0648 \u0628\u0627\u0644\u0627\u062a\u0631 \u0645\u06cc\u200c\u0628\u0631\u0647 \u0648 \u0646\u0647\u0627\u06cc\u062a\u0627 \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631 \u0631\u0648\u0646\u0642 \u067e\u06cc\u062f\u0627 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u0627\u0642\u062a\u0635\u0627\u062f \u06a9\u0634\u0648\u0631 \u0648 \u0628\u0627 \u0627\u0646\u062a\u0642\u0627\u0644 \u062b\u0631\u0648\u062a \u0627\u0632 \u0645\u0631\u06a9\u0632 \u0628\u0647 \u0634\u0647\u0631\u0633\u062a\u0627\u0646\u200c\u0647\u0627\u060c \u0627\u06cc\u0646 \u0647\u062f\u0641\u0647 \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647."
+                      "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u00ab\u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u00bb \u0631\u0648 \u067e\u0627\u06cc\u06cc\u0632 \u06f1\u06f4\u06f0\u06f2 \u0645\u0639\u0631\u0641\u06cc \u06a9\u0631\u062f. \u0628\u0627 \u0648\u062c\u0648\u062f \u0647\u0645\u0647\u200c\u06cc \u0633\u062e\u062a\u06cc\u200c\u0647\u0627 \u0648 \u0686\u0627\u0644\u0634\u200c\u0647\u0627\u060c \u0627\u0644\u0627\u0646 \u062d\u062f\u0648\u062f \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0627\u063a\u0644\u0628 \u0627\u0633\u062a\u0627\u0646\u200c\u0647\u0627\u06cc \u06a9\u0634\u0648\u0631 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u062f\u0631\u0648\u0627\u0632\u0647\u200c\u06cc \u0641\u0631\u0648\u0634 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u06cc (\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0648\u06cc\u0644\u0627) \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0646. \u0645\u0627 \u0645\u0639\u062a\u0642\u062f\u06cc\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0648 \u0628\u0647\u0628\u0648\u062f \u06a9\u06cc\u0641\u06cc\u062a \u062a\u0639\u0627\u0645\u0644 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0627 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u062d\u062a\u06cc \u0645\u0633\u0627\u0641\u0631\u0647\u0627 \u0645\u06cc\u0634\u0647. \u0627\u06cc\u0646 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631 \u0628\u0631\u0627\u06cc \u062f\u0648 \u0637\u0631\u0641\u060c \u0641\u0631\u06a9\u0627\u0646\u0633 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0631\u0648 \u0628\u0627\u0644\u0627\u062a\u0631 \u0645\u06cc\u200c\u0628\u0631\u0647 \u0648 \u0646\u0647\u0627\u06cc\u062a\u0627 \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631 \u0631\u0648\u0646\u0642 \u067e\u06cc\u062f\u0627 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0646\u062a\u06cc\u062c\u0647\u061f \u06af\u0631\u062f\u0634 \u062b\u0631\u0648\u062a \u0627\u0632 \u0645\u0631\u06a9\u0632 \u0627\u0633\u062a\u0627\u0646\u200c\u0647\u0627 \u0628\u0647 \u0634\u0647\u0631\u0633\u062a\u0627\u0646\u200c\u0647\u0627 \u0648 \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0647\u0627\u06cc \u06a9\u0648\u0686\u06a9 \u062f\u0631 \u0627\u0648\u0646 \u0646\u0642\u0627\u0637."
                     }
                   </div>
                 </div>
               </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(
-                  sty.img__vl6Nk,
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? "fadeinf"
-                    : undefined
-                )}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"100%"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/joinUsRentamonJpg.jpg",
-                  fullWidth: 800,
-                  fullHeight: 379,
-                  aspectRatio: undefined
-                }}
-              />
+              <div className={classNames(projectcss.all, sty.freeBox__gdC4O)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(
+                    sty.img__vl6Nk,
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "fadeinf"
+                      : undefined
+                  )}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"100%"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/joinUsRentamonJpg.jpg",
+                    fullWidth: 800,
+                    fullHeight: 379,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
             </div>
             <div
               data-plasmic-name={"principles"}
@@ -447,7 +447,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u0633\u0631\u0639\u062a \u06cc\u0627\u062f\u06af\u06cc\u0631\u06cc \u0627\u0632 \u0633\u0637\u062d \u0645\u0647\u0627\u0631\u062a \u0641\u0639\u0644\u06cc \u0645\u0647\u0645\u200c\u062a\u0631\u0647"
+                            "\u00ab\u0633\u0631\u0639\u062a \u06cc\u0627\u062f\u06af\u06cc\u0631\u06cc\u00bb \u0627\u0632 \u00ab\u0633\u0637\u062d \u0645\u0647\u0627\u0631\u062a \u0641\u0639\u0644\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u0647"
                           }
                         </li>
                         <li
@@ -458,42 +458,8 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                             sty.li__aY40P
                           )}
                         >
-                          <React.Fragment>
-                            <React.Fragment>
-                              {
-                                "\u0633\u0644\u0633\u0644\u0647\u200c\u0645\u0631\u0627\u062a\u0628\u06cc \u0646\u06cc\u0633\u062a\u06cc\u0645 \u0648 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc\u0645 flat \u0628\u0627\u0634\u06cc\u0645 ("
-                              }
-                            </React.Fragment>
-                            {
-                              <PlasmicLink__
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  projectcss.__wab_text,
-                                  projectcss.plasmic_default__inline,
-                                  sty.link__ykfEs
-                                )}
-                                component={Link}
-                                platform={"nextjs"}
-                              >
-                                {
-                                  "\u0627\u0644\u06af\u0648 \u0633\u0627\u062e\u062a\u0627\u0631 \u062a\u06cc\u0645\u200c\u0647\u0627"
-                                }
-                              </PlasmicLink__>
-                            }
-                            <React.Fragment>{")"}</React.Fragment>
-                          </React.Fragment>
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li___3JyYb
-                          )}
-                        >
                           {
-                            "\u0633\u0639\u06cc \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0622\u062f\u0645\u200c\u0647\u0627 \u062d\u062f\u0627\u06a9\u062b\u0631 \u0622\u0632\u0627\u062f\u06cc \u0639\u0645\u0644 \u0631\u0648 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0646\u062f. (Authority and autonomy)"
+                            "\u0628\u0647 \u0633\u0627\u062e\u062a\u0627\u0631 \u0633\u0644\u0633\u0644\u0647\u200c\u0645\u0631\u0627\u062a\u0628\u06cc \u0628\u0627\u0648\u0631 \u0646\u062f\u0627\u0631\u06cc\u0645"
                           }
                         </li>
                         <li
@@ -501,50 +467,12 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li__m1R
+                            sty.li__vkVm8
                           )}
                         >
-                          <React.Fragment>
-                            <React.Fragment>
-                              {
-                                "\u0622\u0632\u0627\u062f\u06cc \u0648 \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u067e\u0630\u06cc\u0631\u06cc \u0628\u0631 \u0627\u0633\u0627\u0633 \u0645\u062f\u0644 \u0645\u0637\u0631\u062d \u0634\u062f\u0647 \u062f\u0631 "
-                              }
-                            </React.Fragment>
-                            {
-                              <PlasmicLink__
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  projectcss.__wab_text,
-                                  projectcss.plasmic_default__inline,
-                                  sty.link___9Xu4F
-                                )}
-                                component={Link}
-                                platform={"nextjs"}
-                              >
-                                {
-                                  "\u06a9\u062a\u0627\u0628 \u0642\u0627\u0646\u0648\u0646 \u0628\u06cc\u200c\u0642\u0627\u0646\u0648\u0646\u06cc"
-                                }
-                              </PlasmicLink__>
-                            }
-                            <React.Fragment>{" \u0648 "}</React.Fragment>
-                            {
-                              <PlasmicLink__
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  projectcss.__wab_text,
-                                  projectcss.plasmic_default__inline,
-                                  sty.link___2UZek
-                                )}
-                                component={Link}
-                                platform={"nextjs"}
-                              >
-                                {"\u0627\u06cc\u0646\u062c\u0627"}
-                              </PlasmicLink__>
-                            }
-                            <React.Fragment>{""}</React.Fragment>
-                          </React.Fragment>
+                          {
+                            "\u0628\u0647 \u0622\u0632\u0627\u062f\u06cc \u0648 \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u067e\u0630\u06cc\u0631\u06cc \u0628\u0627\u0648\u0631 \u062f\u0627\u0631\u06cc\u0645 (authority and autonomy)"
+                          }
                         </li>
                         <li
                           className={classNames(
@@ -563,7 +491,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li___956Yq
+                            sty.li__ey9Hx
                           )}
                         >
                           {
@@ -579,7 +507,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u0627\u06cc\u0646\u062c\u0627 \u062c\u0645\u0639 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u200c\u0647\u0627\u0633\u062a \u0648 \u062f\u0631 \u0633\u0647\u0627\u0645 \u0634\u0631\u06cc\u06a9 \u0645\u06cc\u200c\u0634\u06cc\u0645"
+                            "\u0627\u06cc\u0646\u062c\u0627 \u062c\u0645\u0639 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u200c\u0647\u0627\u0633\u062a. \u062f\u0631 \u0633\u0648\u062f \u0648 \u0632\u06cc\u0627\u0646 \u0634\u0631\u06cc\u06a9\u06cc\u0645"
                           }
                         </li>
                       </ul>
@@ -587,6 +515,8 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
                 </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__bdec8)}>
                 <div
                   className={classNames(
                     projectcss.all,
@@ -594,10 +524,295 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     sty.text__ylbMm
                   )}
                 >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0627\u0647\u0644 \u06a9\u0627\u0645 \u0648 \u0646\u0627\u0632 \u0631\u0627 \u062f\u0631 \u06a9\u0648\u06cc \u0631\u0646\u062f\u06cc \u0631\u0627\u0647 \u0646\u06cc\u0633\u062a\r\n\u0631\u0647\u0631\u0648\u06cc \u0628\u0627\u06cc\u062f \u062c\u0647\u0627\u0646\u200c\u0633\u0648\u0632\u06cc \u0646\u0647 \u062e\u0627\u0645\u06cc \u0628\u06cc\u200c\u063a\u0645\u06cc"
+                    : "\u0627\u0647\u0644 \u06a9\u0627\u0645 \u0648 \u0646\u0627\u0632 \u0631\u0627 \u062f\u0631 \u06a9\u0648\u06cc \u0631\u0646\u062f\u06cc \u0631\u0627\u0647 \u0646\u06cc\u0633\u062a\r       \u0631\u0647\u0631\u0648\u06cc \u0628\u0627\u06cc\u062f \u062c\u0647\u0627\u0646\u200c\u0633\u0648\u0632\u06cc \u0646\u0647 \u062e\u0627\u0645\u06cc \u0628\u06cc\u200c\u063a\u0645\u06cc"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bTKrT
+                  )}
+                >
                   {
-                    "\u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u0627\u0631\u062a\u0628\u0627\u0637 \u0647\u0633\u062a\u0646\u060c \u0641\u0642\u0637 \u0647\u0645\u06a9\u0627\u0631 \u06cc\u0627 \u0645\u062e\u0627\u0637\u0628 \u0646\u06cc\u0633\u062a\u0646. \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0632\u0646\u062f\u06af\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0646 \u0648 \u0628\u062e\u0634\u06cc \u0627\u0632 \u00ab\u0645\u0627\u00bb \u0647\u0633\u062a\u0646\u061b \u0627\u0632 \u0627\u0639\u0636\u0627\u06cc \u062a\u06cc\u0645 \u0648 \u062e\u0627\u0646\u0648\u0627\u062f\u0647\u200c\u0647\u0627\u0634\u0648\u0646 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0648 \u0647\u0631 \u06a9\u0633\u06cc \u06a9\u0647 \u0645\u0633\u06cc\u0631\u0645\u0648\u0646 \u0628\u0631\u0627\u0634 \u0645\u0647\u0645 \u0628\u0648\u062f\u0647.\n\n\u0627\u0633\u062a\u062e\u0648\u0627\u0646\u200c\u0628\u0646\u062f\u06cc \u0641\u0631\u0647\u0646\u06af \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0645\u062c\u0645\u0648\u0639\u0647\u200c\u0627\u06cc \u0627\u0632 \u0627\u0631\u0632\u0634\u200c\u0647\u0627\u0633\u062a\u061b \u0627\u0631\u0632\u0634\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0627 \u0628\u0627\u0648\u0631 \u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0634\u06a9\u0644 \u06af\u0631\u0641\u062a\u0647\u060c \u0631\u0634\u062f \u06a9\u0631\u062f\u0647 \u0648 \u062a\u0627 \u0627\u0645\u0631\u0648\u0632 \u0627\u062f\u0627\u0645\u0647 \u067e\u06cc\u062f\u0627 \u06a9\u0631\u062f\u0647.\n\u0627\u06cc\u0646\u200c\u0647\u0627 \u0628\u0631\u0627\u06cc \u0645\u0627 \u0635\u0631\u0641\u0627\u064b \u0648\u0627\u0698\u0647\u200c\u0647\u0627\u06cc\u06cc \u0631\u0648\u06cc \u062f\u06cc\u0648\u0627\u0631 \u0646\u06cc\u0633\u062a\u0646\u060c \u0645\u0641\u0627\u0647\u06cc\u0645\u06cc\u200c\u0627\u0646 \u06a9\u0647 \u062a\u0648\u06cc \u0631\u0641\u062a\u0627\u0631\u0645\u0648\u0646 \u062d\u0636\u0648\u0631 \u062f\u0627\u0631\u0646\u060c \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0647\u0627\u0645\u0648\u0646 \u0631\u0648 \u062c\u0647\u062a \u0645\u06cc\u200c\u062f\u0646 \u0648 \u062c\u0647\u0627\u0646\u200c\u0628\u06cc\u0646\u06cc \u0645\u0627 \u0631\u0648 \u0645\u06cc\u200c\u0633\u0627\u0632\u0646.\n\n\u0631\u0648\u062d\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u06cc\u060c \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u067e\u0630\u06cc\u0631\u06cc\u060c \u0627\u0634\u062a\u06cc\u0627\u0642 \u0648 \u0645\u0634\u0627\u0631\u06a9\u062a\u060c \u0645\u0641\u0627\u0647\u06cc\u0645 \u0645\u062d\u0648\u0631\u06cc \u0641\u0631\u0647\u0646\u06af \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647. \u0686\u06cc\u0632\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u0647 \u0627\u0632 \u0628\u06cc\u0631\u0648\u0646 \u0628\u0647 \u0645\u0627 \u062a\u062d\u0645\u06cc\u0644 \u0634\u062f\u0646\u060c \u0646\u0647 \u0645\u0648\u0642\u062a\u06cc\u200c\u0627\u0646\u061b \u0627\u0632 \u062f\u0631\u0648\u0646 \u0645\u0627 \u0645\u06cc\u0627\u0646 \u0648 \u0647\u0631 \u0631\u0648\u0632 \u062f\u0648\u0628\u0627\u0631\u0647 \u0645\u0639\u0646\u0627 \u067e\u06cc\u062f\u0627 \u0645\u06cc\u200c\u06a9\u0646\u0646.\r"
+                    "\u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u0627\u0631\u062a\u0628\u0627\u0637 \u0647\u0633\u062a\u0646\u060c \u0641\u0642\u0637 \u0647\u0645\u06a9\u0627\u0631 \u06cc\u0627 \u0645\u062e\u0627\u0637\u0628 \u0646\u06cc\u0633\u062a\u0646. \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0632\u0646\u062f\u06af\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0646 \u0648 \u0628\u062e\u0634\u06cc \u0627\u0632 \u00ab\u0645\u0627\u00bb \u0647\u0633\u062a\u0646\u061b \u0627\u0632 \u0627\u0639\u0636\u0627\u06cc \u062a\u06cc\u0645 \u0648 \u062e\u0627\u0646\u0648\u0627\u062f\u0647\u200c\u0647\u0627\u0634\u0648\u0646 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0648 \u0647\u0631 \u06a9\u0633\u06cc \u06a9\u0647 \u0645\u0633\u06cc\u0631\u0645\u0648\u0646 \u0628\u0631\u0627\u0634 \u0645\u0647\u0645 \u0628\u0648\u062f\u0647.\n\n\u0627\u0633\u062a\u062e\u0648\u0627\u0646\u200c\u0628\u0646\u062f\u06cc \u0641\u0631\u0647\u0646\u06af \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0645\u062c\u0645\u0648\u0639\u0647\u200c\u0627\u06cc \u0627\u0632 \u0627\u0631\u0632\u0634\u200c\u0647\u0627\u0633\u062a. \u0627\u0631\u0632\u0634\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0628\u0627\u0648\u0631 \u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0634\u06a9\u0644 \u06af\u0631\u0641\u062a\u0647\u060c \u0631\u0634\u062f \u06a9\u0631\u062f\u0647 \u0648 \u062a\u0627 \u0627\u0645\u0631\u0648\u0632 \u0627\u062f\u0627\u0645\u0647 \u067e\u06cc\u062f\u0627 \u06a9\u0631\u062f\u0647. \u0627\u06cc\u0646\u200c\u0647\u0627 \u0628\u0631\u0627\u06cc \u0645\u0627 \u0635\u0631\u0641\u0627\u064b \u0648\u0627\u0698\u0647\u200c\u0647\u0627\u06cc\u06cc \u0631\u0648\u06cc \u062f\u06cc\u0648\u0627\u0631 \u0646\u06cc\u0633\u062a\u0646\u060c \u0645\u0641\u0627\u0647\u06cc\u0645\u06cc\u200c\u0627\u0646 \u06a9\u0647 \u062a\u0648\u06cc \u0631\u0641\u062a\u0627\u0631\u0645\u0648\u0646 \u062d\u0636\u0648\u0631 \u062f\u0627\u0631\u0646\u060c \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0647\u0627\u0645\u0648\u0646 \u0631\u0648 \u062c\u0647\u062a \u0645\u06cc\u200c\u062f\u0646 \u0648 \u062c\u0647\u0627\u0646\u200c\u0628\u06cc\u0646\u06cc \u0645\u0627 \u0631\u0648 \u0645\u06cc\u200c\u0633\u0627\u0632\u0646.\n\n\u0631\u0648\u062d\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u06cc\u060c \u0628\u06cc\u200c\u0628\u0627\u06a9\u06cc\u060c \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u067e\u0630\u06cc\u0631\u06cc\u060c \u0627\u0634\u062a\u06cc\u0627\u0642 \u0648 \u0645\u0634\u0627\u0631\u06a9\u062a\u060c \u0645\u0641\u0627\u0647\u06cc\u0645 \u0645\u062d\u0648\u0631\u06cc \u0641\u0631\u0647\u0646\u06af \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647.\r"
                   }
                 </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"gridImages"}
+              data-plasmic-override={overrides.gridImages}
+              className={classNames(projectcss.all, sty.gridImages)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__uBcH)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__zLWdK)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "none"
+                      : "none"
+                  }
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "none"
+                      : "none"
+                  }
+                  displayMinHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "auto"
+                      : "0"
+                  }
+                  displayMinWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "auto"
+                      : "0"
+                  }
+                  displayWidth={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "100%"
+                      : "100%"
+                  }
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/joinUsRentamon2Jpg3.jpg",
+                    fullWidth: 700,
+                    fullHeight: 596,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__bSpKt)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img___964Uj)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "none"
+                      : "none"
+                  }
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "none"
+                      : "none"
+                  }
+                  displayMinHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "auto"
+                      : "0"
+                  }
+                  displayMinWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "auto"
+                      : "0"
+                  }
+                  displayWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "100%"
+                      : "100%"
+                  }
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/joinUsRentamon7Jpg.jpg",
+                    fullWidth: 700,
+                    fullHeight: 596,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__adXwo)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__eQk0G)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "none"
+                      : "none"
+                  }
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "none"
+                      : "none"
+                  }
+                  displayMinHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "auto"
+                      : "0"
+                  }
+                  displayMinWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "auto"
+                      : "0"
+                  }
+                  displayWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "100%"
+                      : "100%"
+                  }
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/joinUsRentamon5Jpg2.jpg",
+                    fullWidth: 700,
+                    fullHeight: 596,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__pGu3E)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__fQ4Kc)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "none"
+                      : "none"
+                  }
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "none"
+                      : "none"
+                  }
+                  displayMinHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "auto"
+                      : "0"
+                  }
+                  displayMinWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "auto"
+                      : "0"
+                  }
+                  displayWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "100%"
+                      : "100%"
+                  }
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/joinUsRentamon4Jpg.jpg",
+                    fullWidth: 700,
+                    fullHeight: 596,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"devMindset"}
+              data-plasmic-override={overrides.devMindset}
+              className={classNames(projectcss.all, sty.devMindset)}
+            >
+              <div
+                data-plasmic-name={"introAutoSyncTitle4"}
+                data-plasmic-override={overrides.introAutoSyncTitle4}
+                className={classNames(projectcss.all, sty.introAutoSyncTitle4)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yJjRl
+                  )}
+                >
+                  {
+                    "\u0631\u0648\u0634 \u062a\u0648\u0633\u0639\u0647 \u0645\u062d\u0635\u0648\u0644 (\u062a\u0639\u062f\u0627\u062f \u06a9\u0645\u060c \u062a\u0627\u062b\u06cc\u0631 \u0632\u06cc\u0627\u062f)"
+                  }
+                </div>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__gf1SG
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "tablet")
+                  ? "\u0645\u0627 \u0628\u0627 \u0627\u0641\u0631\u0627\u062f\u06cc \u0647\u0645\u200c\u0645\u0633\u06cc\u0631 \u0645\u06cc\u200c\u0634\u06cc\u0645 \u06a9\u0647 \u00ab\u062d\u0644 \u0645\u0634\u06a9\u0644 \u06a9\u0627\u0631\u0628\u0631 \u062f\u0631 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631\u06cc\u0646 \u0632\u0645\u0627\u0646 \u0645\u0645\u06a9\u0646\u00bb \u0628\u0631\u0627\u06cc \u0627\u0648\u0646\u200c\u0647\u0627 \u0645\u0647\u0645\u062a\u0631 \u0627\u0632 \u00ab\u062f\u0648\u0644\u0648\u067e \u06a9\u0631\u062f\u0646 \u06cc\u0627 \u0646\u0648\u0634\u062a\u0646 \u06cc\u0647 \u06a9\u062f \u0639\u0627\u0644\u06cc \u0648 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc\u0647\u00bb. \u0627\u0641\u0631\u0627\u062f\u06cc \u06a9\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u0646 \u0646\u06cc\u0627\u0632 \u0627\u0646\u0633\u0627\u0646\u200c\u0647\u0627 \u0648 \u0645\u0634\u06a9\u0644\u0627\u062a\u200c\u0634\u0648\u0646 \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u06a9\u0646\u0646 \u062a\u0627 \u0632\u0646\u062f\u06af\u06cc \u0627\u0648\u0646\u200c\u0647\u0627 \u0628\u0647\u062a\u0631 \u0628\u0634\u0647. \u0627\u06cc\u0646\u06a9\u0647 \u062f\u0631 \u067e\u0634\u062a \u0635\u062d\u0646\u0647\u060c \u0645\u062d\u0635\u0648\u0644 \u0628\u0627 \u0686\u0647 \u0632\u0628\u0627\u0646 \u06cc\u0627 \u0627\u0628\u0632\u0627\u0631\u06cc \u0633\u0627\u062e\u062a\u0647 \u0645\u06cc\u0634\u0647\u060c \u0627\u0648\u0644\u0648\u06cc\u062a \u06a9\u0645\u062a\u0631\u06cc \u062f\u0627\u0631\u0647.\n\n\u0627\u06af\u0647 \u0642\u0628\u0644\u0627 \u0627\u0628\u0632\u0627\u0631\u06cc \u062a\u0648\u0633\u0637 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0633\u0627\u062e\u062a\u0647 \u0634\u062f\u0647\u060c \u0645\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u0646\u0645\u06cc\u200c\u0633\u0627\u0632\u06cc\u0645\u0634 \u0648 \u0627\u06af\u0647 \u062e\u0648\u0628\u0647\u060c \u0633\u0631\u0648\u06cc\u0633 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645. \u0627\u06af\u0647 \u0628\u062e\u0648\u0627\u06cc\u0645 \u0628\u0633\u0627\u0632\u06cc\u0645\u060c \u062a\u0627 \u062c\u0627\u06cc \u0645\u0645\u06a9\u0646 \u0628\u0627 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06cc no-code \u0648 low-code \u0645\u06cc\u200c\u0633\u0627\u0632\u06cc\u0645. \u0627\u06cc\u0646\u062c\u0648\u0631\u06cc \u0628\u062c\u0627\u06cc \u062f\u0631\u06af\u06cc\u0631 \u0634\u062f\u0646 \u0628\u0627 code\u060c \u0648\u0642\u062a\u200c\u0645\u0648\u0646 \u0631\u0648 \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u0647\u0627\u06cc \u0633\u0637\u062d \u0628\u0627\u0644\u0627\u062a\u0631 \u0645\u062b\u0644 \u0645\u0639\u0645\u0627\u0631\u06cc \u0648 design \u0645\u06cc\u200c\u0630\u0627\u0631\u06cc\u0645.\n\n\u0628\u0647 \u0645\u06cc\u06a9\u0631\u0648\u0633\u0631\u0648\u06cc\u0633 \u0648 \u0642\u0627\u0628\u0644\u06cc\u062a integration \u0628\u0627 \u0645\u062d\u0635\u0648\u0644\u0627\u062a \u0648 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u067e\u0627\u06cc\u200c\u0628\u0646\u062f\u06cc\u0645\u060c \u062a\u0627 \u0627\u0641\u0631\u0627\u062f \u0648 \u062a\u06cc\u0645\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc (\u062f\u0627\u062e\u0644\u06cc \u0648 \u0628\u06cc\u0631\u0648\u0646\u06cc) \u0628\u062a\u0648\u0646\u0646 \u062f\u0631 \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0634\u0627\u0631\u06a9\u062a \u06a9\u0646\u0646.\n\n\u0627\u0639\u0636\u0627\u06cc \u062a\u06cc\u0645 \u0645\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u0646\u062f \u06cc\u0647 \u0645\u0633\u0626\u0644\u0647 \u0631\u0648 end-to-end \u062c\u0644\u0648 \u0628\u0628\u0631\u0646\u060c \u0648 \u0647\u0645\u0686\u0646\u06cc\u0646 \u0627\u0632 \u0633\u0627\u06cc\u0631 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u0645\u062d\u0635\u0648\u0644 \u0647\u0645 \u0633\u0631 \u062f\u0631 \u0645\u06cc\u0627\u0631\u0646. \u067e\u0633 \u0647\u0645\u0647 \u0641\u0631\u0635\u062a \u0645\u0634\u0627\u0631\u06a9\u062a \u062f\u0631 \u0646\u0648\u0622\u0648\u0631\u06cc \u0631\u0648 \u062f\u0627\u0631\u0646\u062f\u060c \u0648 \u0631\u0634\u062f \u0648 \u06cc\u0627\u062f\u06af\u06cc\u0631\u0646\u062f\u06af\u06cc \u062a\u06cc\u0645 \u0636\u0631\u06cc\u0628 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647.\n"
+                  : "\u0645\u0627 \u0628\u0627 \u0627\u0641\u0631\u0627\u062f\u06cc \u0647\u0645\u200c\u0645\u0633\u06cc\u0631 \u0645\u06cc\u200c\u0634\u06cc\u0645 \u06a9\u0647 \u00ab\u062d\u0644 \u0645\u0634\u06a9\u0644 \u06a9\u0627\u0631\u0628\u0631 \u062f\u0631 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631\u06cc\u0646 \u0632\u0645\u0627\u0646 \u0645\u0645\u06a9\u0646\u00bb \u0628\u0631\u0627\u06cc \u0627\u0648\u0646\u200c\u0647\u0627 \u0645\u0647\u0645\u062a\u0631 \u0627\u0632 \u00ab\u062f\u0648\u0644\u0648\u067e \u06a9\u0631\u062f\u0646 \u06cc\u0627 \u0646\u0648\u0634\u062a\u0646 \u06cc\u0647 \u06a9\u062f \u0639\u0627\u0644\u06cc \u0648 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc\u0647\u00bb. \u0627\u0641\u0631\u0627\u062f\u06cc \u06a9\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u0646 \u0646\u06cc\u0627\u0632 \u0627\u0646\u0633\u0627\u0646\u200c\u0647\u0627 \u0648 \u0645\u0634\u06a9\u0644\u0627\u062a\u200c\u0634\u0648\u0646 \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u06a9\u0646\u0646 \u062a\u0627 \u0632\u0646\u062f\u06af\u06cc \u0627\u0648\u0646\u200c\u0647\u0627 \u0628\u0647\u062a\u0631 \u0628\u0634\u0647. \u0627\u06cc\u0646\u06a9\u0647 \u062f\u0631 \u067e\u0634\u062a \u0635\u062d\u0646\u0647\u060c \u0645\u062d\u0635\u0648\u0644 \u0628\u0627 \u0686\u0647 \u0632\u0628\u0627\u0646 \u06cc\u0627 \u0627\u0628\u0632\u0627\u0631\u06cc \u0633\u0627\u062e\u062a\u0647 \u0645\u06cc\u0634\u0647\u060c \u0627\u0648\u0644\u0648\u06cc\u062a \u06a9\u0645\u062a\u0631\u06cc \u062f\u0627\u0631\u0647.\n\n\u0627\u06af\u0647 \u0642\u0628\u0644\u0627 \u0627\u0628\u0632\u0627\u0631\u06cc \u062a\u0648\u0633\u0637 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0633\u0627\u062e\u062a\u0647 \u0634\u062f\u0647\u060c \u0645\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u0646\u0645\u06cc\u200c\u0633\u0627\u0632\u06cc\u0645\u0634 \u0648 \u0627\u06af\u0647 \u062e\u0648\u0628\u0647\u060c \u0633\u0631\u0648\u06cc\u0633 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645. \u0627\u06af\u0647 \u0628\u062e\u0648\u0627\u06cc\u0645 \u0628\u0633\u0627\u0632\u06cc\u0645\u060c \u062a\u0627 \u062c\u0627\u06cc \u0645\u0645\u06a9\u0646 \u0628\u0627 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06cc no-code \u0648 low-code \u0645\u06cc\u200c\u0633\u0627\u0632\u06cc\u0645. \u0627\u06cc\u0646\u062c\u0648\u0631\u06cc \u0628\u062c\u0627\u06cc \u062f\u0631\u06af\u06cc\u0631 \u0634\u062f\u0646 \u0628\u0627 code\u060c \u0648\u0642\u062a\u200c\u0645\u0648\u0646 \u0631\u0648 \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u0647\u0627\u06cc \u0633\u0637\u062d \u0628\u0627\u0644\u0627\u062a\u0631 \u0645\u062b\u0644 \u0645\u0639\u0645\u0627\u0631\u06cc \u0648 design \u0645\u06cc\u200c\u0630\u0627\u0631\u06cc\u0645.\n\n\u0628\u0647 \u0645\u06cc\u06a9\u0631\u0648\u0633\u0631\u0648\u06cc\u0633 \u0648 \u0642\u0627\u0628\u0644\u06cc\u062a integration \u0628\u0627 \u0645\u062d\u0635\u0648\u0644\u0627\u062a \u0648 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u067e\u0627\u06cc\u200c\u0628\u0646\u062f\u06cc\u0645\u060c \u062a\u0627 \u0627\u0641\u0631\u0627\u062f \u0648 \u062a\u06cc\u0645\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc (\u062f\u0627\u062e\u0644\u06cc \u0648 \u0628\u06cc\u0631\u0648\u0646\u06cc) \u0628\u062a\u0648\u0646\u0646 \u062f\u0631 \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0634\u0627\u0631\u06a9\u062a \u06a9\u0646\u0646.\n\n\u0627\u0639\u0636\u0627\u06cc \u062a\u06cc\u0645 \u0645\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u0646\u062f \u06cc\u0647 \u0645\u0633\u0626\u0644\u0647 \u0631\u0648 end-to-end \u062c\u0644\u0648 \u0628\u0628\u0631\u0646\u060c \u0648 \u0647\u0645\u0686\u0646\u06cc\u0646 \u0627\u0632 \u0633\u0627\u06cc\u0631 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u0645\u062d\u0635\u0648\u0644 \u0647\u0645 \u0633\u0631 \u062f\u0631 \u0645\u06cc\u0627\u0631\u0646. \u067e\u0633 \u0647\u0645\u0647 \u0641\u0631\u0635\u062a \u0645\u0634\u0627\u0631\u06a9\u062a \u062f\u0631 \u0646\u0648\u0622\u0648\u0631\u06cc \u0631\u0648 \u062f\u0627\u0631\u0646\u062f\u060c \u0648 \u0631\u0634\u062f \u0648 \u06cc\u0627\u062f\u06af\u06cc\u0631\u0646\u062f\u06af\u06cc \u062a\u06cc\u0645 \u0636\u0631\u06cc\u0628 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."}
               </div>
             </div>
             <div
@@ -624,7 +839,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0622\u0634\u0646\u0627\u06cc\u06cc \u0628\u0627 \u062a\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc\u200c\u0647\u0627"
                   }
                 </div>
               </div>
@@ -1356,23 +1571,6 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
               </div>
             </div>
             <div
-              data-plasmic-name={"gallery"}
-              data-plasmic-override={overrides.gallery}
-              className={classNames(projectcss.all, sty.gallery)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__gf1SG
-                )}
-              >
-                {
-                  "\u0634\u0627\u06cc\u062f \u0628\u0631\u062e\u0644\u0627\u0641 \u0639\u0645\u0648\u0645 \u0627\u0633\u062a\u0627\u0631\u062a\u0627\u067e\u200c\u0647\u0627 \u0648 \u062a\u0641\u06a9\u0631 mainstream \u0628\u0627\u0634\u0647\u060c\u200c \u0627\u0645\u0627 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc\u0645 \u0628\u0627 \u0627\u0641\u0631\u0627\u062f\u06cc \u0647\u0645\u200c\u0645\u0633\u06cc\u0631 \u0628\u0634\u06cc\u0645 \u06a9\u0647 \u0628\u0631\u0627\u0634\u0648\u0646 \u0627\u06cc\u0646 \u0645\u0647\u0645\u0647 \u06a9\u0647 \u06cc\u06a9 hashtag#\u0645\u062d\u0635\u0648\u0644 \u062e\u0648\u0628\u060c \u062f\u0631 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631\u06cc\u0646 \u0632\u0645\u0627\u0646 \u0645\u0645\u06a9\u0646 \u0628\u0647 \u062f\u0633\u062a \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u0631\u0633\u0647 \u0648 \u0628\u0627 \u062d\u0644 \u06a9\u0631\u062f\u0646 \u0646\u06cc\u0627\u0632 \u0627\u0646\u0633\u0627\u0646\u200c\u0647\u0627\u060c \u0632\u0646\u062f\u06af\u06cc\u200c\u0634\u0648\u0646 \u0631\u0648 \u0628\u0647\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062d\u0627\u0644\u0627 \u0627\u06cc\u0646\u06a9\u0647 \u062f\u0631 \u067e\u0634\u062a \u0635\u062d\u0646\u0647 \u0645\u062d\u0635\u0648\u0644 \u0686\u0637\u0648\u0631 \u0633\u0627\u062e\u062a\u0647 \u0645\u06cc\u0634\u0647\u060c \u0627\u0648\u0644\u0648\u06cc\u062a \u062f\u0648\u0645\u0647.\r\n\r\n\u0633\u0639\u06cc \u062f\u0627\u0631\u06cc\u0645 \u0631\u0648\u0634 \u0633\u0627\u062e\u062a \u0645\u062d\u0635\u0648\u0644 \u0628\u0647 \u0634\u06a9\u0644 building blocks \u0648 component design \u0628\u0627\u0634\u0647. \u0628\u0647 \u0646\u062d\u0648\u06cc \u06a9\u0647 \u0627\u0641\u0631\u0627\u062f \u0648 \u062a\u06cc\u0645\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0628\u062a\u0648\u0646\u0646\u062f \u062f\u0631 \u0633\u0627\u062e\u062a\u0634 \u0645\u0634\u0627\u0631\u06a9\u062a \u06a9\u0646\u0646\u062f \u0648 \u0642\u0627\u0628\u0644\u06cc\u062a integration \u0628\u0627 \u0645\u062d\u0635\u0648\u0644\u0627\u062a \u0648 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0631\u0648 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0647. \u062a\u0627 \u0686\u0631\u062e \u0631\u0648 \u0627\u0632 \u0627\u0648\u0644 \u0646\u0633\u0627\u0632\u06cc\u0645.\r\n\r\n\u0645\u06cc\u200c\u062e\u0648\u0627\u06cc\u0645 \u0647\u0631\u06a9\u0633\u06cc \u0646\u0647 \u062a\u0646\u0647\u0627 \u06cc\u0647 \u0645\u0648\u0636\u0648\u0639 \u0631\u0648 \u0628\u062a\u0648\u0646\u0647 end-to-end \u062c\u0644\u0648 \u0628\u0628\u0631\u0647\u060c \u0628\u0644\u06a9\u0647 \u0627\u0632 \u0633\u0627\u06cc\u0631 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u0645\u062d\u0635\u0648\u0644 \u0647\u0645 \u0633\u0631 \u062f\u0631 \u0628\u06cc\u0627\u0631\u0647. \u0627\u06cc\u0646\u200c\u062c\u0648\u0631\u06cc \u0647\u0645\u0647 \u0641\u0631\u0635\u062a \u0645\u0634\u0627\u0631\u06a9\u062a \u062f\u0631 \u0646\u0648\u0622\u0648\u0631\u06cc \u0631\u0648 \u062f\u0627\u0631\u0646\u062f\u060c \u0648 \u0631\u0634\u062f \u0648 \u06cc\u0627\u062f\u06af\u06cc\u0631\u0646\u062f\u06af\u06cc \u062a\u06cc\u0645 \u0636\u0631\u06cc\u0628 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."
-                }
-              </div>
-            </div>
-            <div
               data-plasmic-name={"teamup"}
               data-plasmic-override={overrides.teamup}
               className={classNames(projectcss.all, sty.teamup)}
@@ -1409,242 +1607,27 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     sty.text__lIzrz
                   )}
                 >
-                  {"\u0628\u06cc\u0644\u062f\u0631"}
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627 \u0647\u0645\u0647 \u0633\u0627\u0632\u0646\u062f\u0647 (builder) \u0647\u0633\u062a\u0646. \u0647\u0631\u06a9\u0633\u06cc \u0628\u0627 \u0647\u0631 \u067e\u06cc\u0634\u200c\u0632\u0645\u06cc\u0646\u0647\u200c\u0627\u06cc \u0645\u0647\u0627\u0631\u062a \u0633\u0627\u062e\u062a\u0646 \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u06cc\u0627\u062f \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u0645\u0633\u0627\u0626\u0644\u06cc \u06a9\u0647 \u0628\u0647\u0634 \u0633\u067e\u0631\u062f\u0647 \u0634\u062f\u0647 \u0631\u0648 \u062d\u0644 \u06a9\u0646\u0647 \u0648 \u062d\u062a\u06cc \u0645\u0633\u062a\u0642\u06cc\u0645\u0627 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u062e\u0631\u0648\u062c\u06cc \u0628\u062f\u0647. "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 500 }}
+                    >
+                      {
+                        "\u067e\u0633 \u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627\u060c \u0641\u0642\u0637 \u0628\u0631\u0627\u06cc \u00ab\u0627\u0641\u0631\u0627\u062f\u06cc \u06a9\u0647 \u0631\u0648\u062d\u06cc\u0647 \u0633\u0627\u062e\u062a\u0646 \u0648 \u0627\u06cc\u062c\u0627\u062f \u062a\u063a\u06cc\u06cc\u0631 \u062f\u0627\u0631\u0646\u00bb \u062c\u0627 \u0647\u0633\u062a."
+                      }
+                    </span>
+                    <React.Fragment>
+                      {
+                        " \n\n\u0627\u0632 \u0627\u0648\u0646\u062c\u0627\u06cc\u06cc \u06a9\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0647\u0631 \u0631\u0648\u0632 \u0646\u06cc\u0627\u0632\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0631\u0648 \u0645\u0637\u0631\u062d \u0645\u06cc\u200c\u06a9\u0646\u0646 \u06a9\u0647 \u0628\u0627\u06cc\u062f \u0628\u0647\u0634 \u067e\u0627\u0633\u062e \u062f\u0627\u062f\u0647 \u0628\u0634\u0647\u060c \u0628\u0647 \u06a9\u0645\u06a9\u062a \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u06cc\u0645. \u0627\u06af\u0647 \u06f1) \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0645\u062d\u0635\u0648\u0644 \u0628\u0633\u0627\u0632\u06cc \u0648 \u06cc\u0627 \u062f\u0648\u0633\u062a \u062f\u0627\u0631\u06cc \u062e\u06cc\u0644\u06cc \u0633\u0631\u06cc\u0639 \u0633\u0627\u062e\u062a\u0646 \u0631\u0648 \u06cc\u0627\u062f \u0628\u06af\u06cc\u0631\u06cc \u06f2) \u0632\u0628\u0627\u0646 \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u062d\u062f\u0627\u0642\u0644 \u0645\u062a\u0648\u0633\u0637 \u062f\u0627\u0631\u06cc \u06f3) \u062f\u0627\u0646\u0634 \u0627\u0648\u0644\u06cc\u0647 \u062f\u0631\u0645\u0648\u0631\u062f \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u062f\u0627\u0631\u06cc \u0648 \u06f4) \u0627\u0632 \u0647\u0645\u0647 \u0645\u0647\u0645\u200c\u062a\u0631 \u0622\u0631\u0645\u0627\u0646 \u0645\u0634\u062a\u0631\u06a9\u06cc \u0628\u0627 \u0645\u0627 \u062f\u0627\u0631\u06cc\u060c \u0628\u0631\u0627\u06cc \u062f\u06cc\u062f\u0646\u062a \u0644\u062d\u0638\u0647\u200c\u0634\u0645\u0627\u0631\u06cc \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 :)"
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
                 </div>
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"gridImages"}
-              data-plasmic-override={overrides.gridImages}
-              className={classNames(projectcss.all, sty.gridImages)}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__uBcH)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__zLWdK)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
-                  }
-                  displayMaxWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "80%"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
-                  }
-                  displayMinHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
-                  }
-                  displayMinWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
-                  }
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "70%"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "80%"
-                      : "100%"
-                  }
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/joinUsRentamon2Jpg3.jpg",
-                    fullWidth: 700,
-                    fullHeight: 596,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__bSpKt)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img___964Uj)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
-                  }
-                  displayMaxWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "80%"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
-                  }
-                  displayMinHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
-                  }
-                  displayMinWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
-                  }
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "70%"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "80%"
-                      : "100%"
-                  }
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/joinUsRentamon7Jpg.jpg",
-                    fullWidth: 700,
-                    fullHeight: 596,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__adXwo)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__eQk0G)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
-                  }
-                  displayMaxWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "80%"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
-                  }
-                  displayMinHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
-                  }
-                  displayMinWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
-                  }
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "70%"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "80%"
-                      : "100%"
-                  }
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/joinUsRentamon5Jpg2.jpg",
-                    fullWidth: 700,
-                    fullHeight: 596,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__pGu3E)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__fQ4Kc)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
-                  }
-                  displayMaxWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "80%"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
-                  }
-                  displayMinHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
-                  }
-                  displayMinWidth={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
-                  }
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "70%"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "80%"
-                      : "100%"
-                  }
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/joinUsRentamon4Jpg.jpg",
-                    fullWidth: 700,
-                    fullHeight: 596,
-                    aspectRatio: undefined
-                  }}
-                />
               </div>
             </div>
             <div
@@ -1677,12 +1660,14 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                       </React.Fragment>
                       {
                         <PlasmicLink__
+                          data-plasmic-name={"link"}
+                          data-plasmic-override={overrides.link}
                           className={classNames(
                             projectcss.all,
                             projectcss.a,
                             projectcss.__wab_text,
                             projectcss.plasmic_default__inline,
-                            sty.link___64XN
+                            sty.link
                           )}
                           component={Link}
                           href={"tel: 02191096227"}
@@ -1727,16 +1712,16 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
             data-plasmic-override={overrides.html}
             className={classNames(projectcss.all, sty.html)}
           >
-            <Embed
-              data-plasmic-name={"goftino"}
-              data-plasmic-override={overrides.goftino}
-              className={classNames("__wab_instance", sty.goftino)}
-              code={
-                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
-              }
-            />
-
             <div className={classNames(projectcss.all, sty.freeBox__x3Ur8)}>
+              <Embed
+                data-plasmic-name={"goftino"}
+                data-plasmic-override={overrides.goftino}
+                className={classNames("__wab_instance", sty.goftino)}
+                code={
+                  '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+                }
+              />
+
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}
@@ -1826,6 +1811,9 @@ const PlasmicDescendants = {
     "title7",
     "uotlines",
     "ul",
+    "gridImages",
+    "devMindset",
+    "introAutoSyncTitle4",
     "team",
     "sectionTitle",
     "member13",
@@ -1848,14 +1836,13 @@ const PlasmicDescendants = {
     "icon18",
     "title19",
     "caption18",
-    "gallery",
     "teamup",
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
-    "gridImages",
     "address",
     "content",
     "addressText",
+    "link",
     "map",
     "embedHtml",
     "html",
@@ -1877,6 +1864,9 @@ const PlasmicDescendants = {
     "title7",
     "uotlines",
     "ul",
+    "gridImages",
+    "devMindset",
+    "introAutoSyncTitle4",
     "team",
     "sectionTitle",
     "member13",
@@ -1899,14 +1889,13 @@ const PlasmicDescendants = {
     "icon18",
     "title19",
     "caption18",
-    "gallery",
     "teamup",
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
-    "gridImages",
     "address",
     "content",
     "addressText",
+    "link",
     "map",
     "embedHtml"
   ],
@@ -1928,6 +1917,9 @@ const PlasmicDescendants = {
   title7: ["title7"],
   uotlines: ["uotlines", "ul"],
   ul: ["ul"],
+  gridImages: ["gridImages"],
+  devMindset: ["devMindset", "introAutoSyncTitle4"],
+  introAutoSyncTitle4: ["introAutoSyncTitle4"],
   team: [
     "team",
     "sectionTitle",
@@ -1973,14 +1965,13 @@ const PlasmicDescendants = {
   icon18: ["icon18"],
   title19: ["title19"],
   caption18: ["caption18"],
-  gallery: ["gallery"],
   teamup: ["teamup", "introAutoSyncTitle3", "introAutoSyncCaption3"],
   introAutoSyncTitle3: ["introAutoSyncTitle3"],
   introAutoSyncCaption3: ["introAutoSyncCaption3"],
-  gridImages: ["gridImages"],
-  address: ["address", "content", "addressText", "map", "embedHtml"],
-  content: ["content", "addressText", "map", "embedHtml"],
-  addressText: ["addressText"],
+  address: ["address", "content", "addressText", "link", "map", "embedHtml"],
+  content: ["content", "addressText", "link", "map", "embedHtml"],
+  addressText: ["addressText", "link"],
+  link: ["link"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
   html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
@@ -2006,6 +1997,9 @@ type NodeDefaultElementType = {
   title7: "div";
   uotlines: "div";
   ul: "ul";
+  gridImages: "div";
+  devMindset: "div";
+  introAutoSyncTitle4: "div";
   team: "div";
   sectionTitle: "div";
   member13: "div";
@@ -2028,14 +2022,13 @@ type NodeDefaultElementType = {
   icon18: "div";
   title19: "div";
   caption18: "div";
-  gallery: "div";
   teamup: "div";
   introAutoSyncTitle3: "div";
   introAutoSyncCaption3: "div";
-  gridImages: "div";
   address: "div";
   content: "div";
   addressText: "div";
+  link: "a";
   map: "div";
   embedHtml: typeof Embed;
   html: "div";
@@ -2120,6 +2113,9 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     title7: makeNodeComponent("title7"),
     uotlines: makeNodeComponent("uotlines"),
     ul: makeNodeComponent("ul"),
+    gridImages: makeNodeComponent("gridImages"),
+    devMindset: makeNodeComponent("devMindset"),
+    introAutoSyncTitle4: makeNodeComponent("introAutoSyncTitle4"),
     team: makeNodeComponent("team"),
     sectionTitle: makeNodeComponent("sectionTitle"),
     member13: makeNodeComponent("member13"),
@@ -2142,14 +2138,13 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     icon18: makeNodeComponent("icon18"),
     title19: makeNodeComponent("title19"),
     caption18: makeNodeComponent("caption18"),
-    gallery: makeNodeComponent("gallery"),
     teamup: makeNodeComponent("teamup"),
     introAutoSyncTitle3: makeNodeComponent("introAutoSyncTitle3"),
     introAutoSyncCaption3: makeNodeComponent("introAutoSyncCaption3"),
-    gridImages: makeNodeComponent("gridImages"),
     address: makeNodeComponent("address"),
     content: makeNodeComponent("content"),
     addressText: makeNodeComponent("addressText"),
+    link: makeNodeComponent("link"),
     map: makeNodeComponent("map"),
     embedHtml: makeNodeComponent("embedHtml"),
     html: makeNodeComponent("html"),
@@ -2166,28 +2161,22 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     // Key-value metadata
     metadata: {
       description:
-        "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646) \u0628\u0647 \u0634\u0645\u0627\u0631\u0647 \u062b\u0628\u062a \u06f2\u06f2\u06f5\u06f7\u06f7\u060c \u0628\u0627 \u0627\u0631\u0627\u0626\u0647 \u067e\u0646\u0644 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0646\u0631\u062e\u200c\u06af\u0630\u0627\u0631\u06cc \u0631\u0648 \u0628\u0631\u0627\u06cc \u0635\u0627\u062d\u0628\u06cc\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648 \u0686\u0646\u062f\u06cc\u0646 \u0628\u0631\u0627\u0628\u0631 \u0633\u0631\u06cc\u0639 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0645\u0639\u062a\u0642\u062f\u06cc\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0627\u06cc\u0646 \u0645\u062d\u0635\u0648\u0644 \u062a\u0648\u0633\u0637 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u060c \u0645\u0646\u062c\u0631 \u0628\u0647 \u0633\u0647\u0648\u0644\u062a \u0648 \u0628\u0647\u0628\u0648\u062f \u06a9\u06cc\u0641\u06cc\u062a \u062a\u0639\u0627\u0645\u0644 \u0628\u0627 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u0648 \u062d\u062a\u06cc \u0645\u0633\u0627\u0641\u0631\u0647\u0627 \u0645\u06cc\u0634\u0647\u060c \u0648 \u0646\u0647\u0627\u06cc\u062a\u0627 \u0635\u0646\u0639\u062a \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631 \u0631\u0648\u0646\u0642 \u067e\u06cc\u062f\u0627 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0647\u062f\u0641\u0647 \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.",
-      canonical: "rentamon.com/about-us",
+        "\u062d\u062f\u0648\u062f \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0646\u0642\u0627\u0637 \u0645\u062e\u062a\u0644\u0641 \u06a9\u0634\u0648\u0631 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0648\u06cc\u0644\u0627\u0634\u0648\u0646 \u0631\u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u06cc\u200c\u06a9\u0646\u0646\u060c \u0648 \u0647\u0631 \u0631\u0648\u0632 \u0646\u06cc\u0627\u0632\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0631\u0648 \u0645\u0637\u0631\u062d \u0645\u06cc\u200c\u06a9\u0646\u0646. \u0628\u0647 \u06a9\u0645\u06a9\u062a \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u06cc\u0645 :)",
       ogType: "website",
-      ogTitle:
-        "\u062f\u0631\u0628\u0627\u0631\u0647 \u062a\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646",
-      ogImage: "https://rentamon.com/assets/og-about-us.png",
       ogLocale: "fa_IR",
       twitterCard: "summary_large_image",
       twitterTitle:
-        "\u062f\u0631\u0628\u0627\u0631\u0647 \u062a\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646",
-      twitterImage:
-        "https://rentamon.com/plasmic/website_starter/images/teamJpg.jpg"
+        "\u0641\u0631\u0635\u062a \u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
     },
 
     // Page metadata
     pageMetadata: {
-      title: "در این مسیر با ما همراه شو | فرصت همکاری با رنتامون",
+      title: "ماییم که آینده رو می‌سازیم | فرصت همکاری با رنتامون",
       description:
-        "شرکت توسعه فناوری و توانمدسازی شریف (رنتامون) به شماره ثبت ۲۲۵۷۷، با ارائه پنل مدیریت یکپارچه اقامتگاه، مدیریت وضعیت تقویم و نرخ‌گذاری رو برای صاحبین اقامتگاه خودکار و چندین برابر سریع می‌کنه. معتقدیم استفاده از این محصول توسط میزبانان، منجر به سهولت و بهبود کیفیت تعامل با پلتفرم‌ها و حتی مسافرها میشه، و نهایتا صنعت گردشگری کشور رونق پیدا می‌کنه. این هدفه که ما رو دور هم جمع کرده.",
+        "حدود ۱۰۰۰ میزبان از نقاط مختلف کشور با رنتامون ویلاشون رو مدیریت می‌کنن، و هر روز نیازهای بیشتری رو مطرح می‌کنن. به کمکت نیاز داریم :)",
       ogImageSrc:
-        "https://rentamon.com/plasmic/website_starter/images/teamJpg.jpg",
-      canonical: "https://rentamon.com/about-us/"
+        "https://site-assets.plasmic.app/1d9c8ad9b54a38a21150e4728acbe949.jpg",
+      canonical: ""
     }
   }
 );

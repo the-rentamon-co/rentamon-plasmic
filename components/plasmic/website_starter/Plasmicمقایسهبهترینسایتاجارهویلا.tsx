@@ -100,6 +100,7 @@ export type Plasmicمقایسهبهترینسایتاجارهویلا__Overrides
   titlesRow?: Flex__<"div">;
   titlesRow3?: Flex__<"div">;
   strDefinition2?: Flex__<"div">;
+  ul?: Flex__<"ul">;
   strDefinition4?: Flex__<"div">;
   titlesRow4?: Flex__<"div">;
   titlesRow5?: Flex__<"div">;
@@ -814,9 +815,62 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     sty.text__hT3
                   )}
                 >
-                  {
-                    "\u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0645\u0633\u0627\u0641\u0631\u060c \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0648 \u0633\u0627\u06cc\u0631 \u062e\u062f\u0645\u0627\u062a\u06cc \u06a9\u0647 \u0627\u0631\u0627\u0626\u0647 \u0645\u06cc\u200c\u062f\u0647\u0646\u062f\u060c \u0627\u0632 \u062f\u0631\u0622\u0645\u062f \u0648\u06cc\u0644\u0627 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646 \u0628\u0631\u0645\u06cc\u200c\u062f\u0627\u0631\u0646\u062f. \u06cc\u0639\u0646\u06cc \u062f\u0631 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628\u06cc \u06a9\u0647 \u0648\u06cc\u0644\u0627\u06cc \u0634\u0645\u0627 \u0631\u0632\u0631\u0648 \u0628\u0634\u0647\u060c \u0628\u062e\u0634\u06cc \u0627\u0632 \u0645\u0628\u0644\u063a \u0628\u0631\u0627\u06cc \u0627\u0648\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0647\u0633\u062a.\r\n\r\n\u062c\u0627\u0628\u0627\u0645\u0627 \u062a\u062d\u062a \u0634\u0631\u0627\u06cc\u0637\u06cc \u0645\u062b\u0644 \u06af\u0627\u0631\u0627\u0646\u062a \u0648\u06cc\u0644\u0627\u060c \u0645\u0645\u06a9\u0646\u0647 \u062a\u0627 \u06f2\u06f5\u066a \u0627\u0641\u0632\u0627\u06cc\u0634 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0647.\r"
-                  }
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0645\u0633\u0627\u0641\u0631\u060c \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0648 \u0633\u0627\u06cc\u0631 \u062e\u062f\u0645\u0627\u062a\u06cc \u06a9\u0647 \u0627\u0631\u0627\u0626\u0647 \u0645\u06cc\u200c\u062f\u0647\u0646\u062f\u060c \u0627\u0632 \u062f\u0631\u0622\u0645\u062f \u0648\u06cc\u0644\u0627 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646 \u0628\u0631\u0645\u06cc\u200c\u062f\u0627\u0631\u0646\u062f. \u06cc\u0639\u0646\u06cc \u062f\u0631 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628\u06cc \u06a9\u0647 \u0648\u06cc\u0644\u0627\u06cc \u0634\u0645\u0627 \u0631\u0632\u0631\u0648 \u0628\u0634\u0647\u060c \u0628\u062e\u0634\u06cc \u0627\u0632 \u0645\u0628\u0644\u063a \u0628\u0631\u0627\u06cc \u0627\u0648\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0647\u0633\u062a.\n\n\r\n"
+                      }
+                    </React.Fragment>
+                    {
+                      <ul
+                        data-plasmic-name={"ul"}
+                        data-plasmic-override={overrides.ul}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul
+                        )}
+                      >
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__rHnEm
+                          )}
+                        >
+                          {
+                            "\u062c\u0627\u0628\u0627\u0645\u0627 \u062a\u062d\u062a \u0634\u0631\u0627\u06cc\u0637\u06cc \u0645\u062b\u0644 \u06af\u0627\u0631\u0627\u0646\u062a \u0648\u06cc\u0644\u0627\u060c \u0645\u0645\u06a9\u0646\u0647 \u062a\u0627 \u06f2\u06f5\u066a \u0627\u0641\u0632\u0627\u06cc\u0634 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0647."
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__pAeIr
+                          )}
+                        >
+                          {
+                            "\u06a9\u0627\u0631\u0645\u0632\u062f \u0647\u0648\u0645\u0633\u0627 \u0628\u0627 \u062a\u0648\u062c\u0647 \u0628\u0647 \u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u062f\u062a \u0632\u0645\u0627\u0646 \u062a\u0633\u0648\u06cc\u0647 \u062d\u0633\u0627\u0628\u060c \u0627\u0632 \u06f5 \u062a\u0627 \u06f1\u06f5 \u062f\u0631\u0635\u062f \u0645\u062a\u063a\u06cc\u0631\u0647. "
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__edbLc
+                          )}
+                        >
+                          {
+                            "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 \u0639\u0645\u0644\u06a9\u0631\u062f \u0628\u0647\u062a\u0631\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0646\u062f \u0645\u0645\u06a9\u0646\u0647 \u062a\u0627 \u0645\u06cc\u0632\u0627\u0646 \u06f1\u06f0\u066a \u06a9\u0627\u0647\u0634 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646 \u062f\u0631 \u0646\u0638\u0631 \u0628\u06af\u06cc\u0631\u0647."
+                          }
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>{"\r"}</React.Fragment>
+                  </React.Fragment>
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__xp20C)}>
@@ -1024,17 +1078,6 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                   </DataCtxReader__>
                 </DataFetcher>
               </div>
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__hjIX
-              )}
-            >
-              {
-                "\u0637\u0628\u0642 \u062c\u062f\u0648\u0644 \u0628\u0627\u0644\u0627\u060c \u0628\u0647 \u062a\u0631\u062a\u06cc\u0628 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0627\u062a\u0627\u0642\u06a9 \u0628\u0627\u0644\u0627\u062a\u0631\u06cc\u0646 \u0645\u06cc\u0632\u0627\u0646 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646 \u0631\u0648 \u0627\u0632 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0631 \u0645\u06cc\u200c\u062f\u0627\u0631\u0646\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 \u0639\u0645\u0644\u06a9\u0631\u062f \u0628\u0647\u062a\u0631\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0646\u062f \u0645\u0645\u06a9\u0646\u0647 \u062a\u0627 \u0645\u06cc\u0632\u0627\u0646 \u06f1\u06f0\u066a \u06a9\u0627\u0647\u0634 \u06a9\u0645\u06cc\u0633\u06cc\u0648\u0646 \u062f\u0631\u0646\u0638\u0631 \u0628\u06af\u06cc\u0631\u0647."
-              }
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__it0YC)}>
               <PlasmicImg__
@@ -1378,91 +1421,177 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     sty.text__f3Lou
                   )}
                 >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {"\u062c\u0627\u062c\u06cc\u06af\u0627 \u2b50\u06f5"}
-                    </span>
+                  {hasVariant(globalVariants, "screen", "tablet") ? (
                     <React.Fragment>
-                      {
-                        "\r\n\u062a\u0645\u0627\u0633\u060c \u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0648 \u0627\u06cc\u0645\u06cc\u0644 \u0627\u0632 \u06f8 \u0635\u0628\u062d \u062a\u0627 \u06f1\u06f2 \u0634\u0628 \u2013 \u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062e\u0648\u0628 \u0648 \u067e\u06cc\u06af\u06cc\u0631\u0634 \u0645\u0639\u0631\u0648\u0641\u0647!\r\n\n\r\n"
-                      }
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"\u062c\u0627\u062c\u06cc\u06af\u0627 \u2b50\u06f5"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\r\n\u062a\u0645\u0627\u0633\u060c \u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0648 \u0627\u06cc\u0645\u06cc\u0644 \u0627\u0632 \u06f8 \u0635\u0628\u062d \u062a\u0627 \u06f1\u06f2 \u0634\u0628 \u2013 \u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062e\u0648\u0628 \u0648 \u067e\u06cc\u06af\u06cc\u0631\u0634 \u0645\u0639\u0631\u0648\u0641\u0647!\r\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"\u0634\u0628 \u2b50\u06f3.\u06f5"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\r\n\u062a\u0645\u0627\u0633 \u0648 \u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u06f9 \u0635\u0628\u062d \u062a\u0627 \u06f1 \u0634\u0628 \u2013 \u0627\u062e\u06cc\u0631\u0627 \u0628\u0647 \u0633\u062e\u062a\u06cc \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0634\u0628 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u06af\u06cc\u0631\u06cc.\r\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"\u0647\u0648\u0645\u0633\u0627 \u2b50\u06f4\r"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\u062a\u0645\u0627\u0633 \u0648 \u062a\u06cc\u06a9\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u06f1\u06f0 \u0635\u0628\u062d \u062a\u0627 \u06f6 \u0639\u0635\u0631\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"\u0627\u062a\u0627\u0642\u06a9 \u2b50\u06f4\r"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\u062a\u0645\u0627\u0633 \u0627\u0632 \u06f9 \u0635\u0628\u062d \u062a\u0627 \u06f5 \u0639\u0635\u0631\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648 \u2b50\u06f3.\u06f5\r"
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\u062a\u0645\u0627\u0633 \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0635\u0628\u062d \u0627\u0644\u06cc \u06f1\u06f2 \u0634\u0628\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "\u062c\u0627\u0628\u0627\u0645\u0627 \u2b50\u06f3.\u06f5"
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\r\n\u062a\u0627\u0632\u06af\u06cc\u0627 \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062e\u06cc\u0644\u06cc \u0633\u062e\u062a \u0634\u062f\u0647! \u062a\u0642\u0631\u06cc\u0628\u0627 \u062f\u0631 \u0627\u063a\u0644\u0628 \u0634\u0631\u0627\u06cc\u0637\u060c \u0641\u0642\u0637 \u0628\u0627 \u062a\u06cc\u06a9\u062a \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc\u062f \u0645\u0634\u06a9\u0644\u200c\u062a\u0648\u0646 \u0631\u0648 \u067e\u06cc\u06af\u06cc\u0631\u06cc \u06a9\u0646\u06cc\u062f.\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"\u0645\u06cc\u0632\u0628\u0648\u0646 \u2b50\u06f1"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\r\n\u0639\u0645\u0644\u0627 \u0628\u0627\u06cc\u062f \u06cc\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0633\u0627\u06cc\u062a \u0627\u0642\u0627\u0645\u062a \u06f2\u06f4 \u0632\u0646\u06af \u0628\u0632\u0646\u06cc\u062f \u0648 \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc\u200c\u0634\u0648\u0646 \u0633\u0627\u062f\u0647 \u0646\u06cc\u0633\u062a."
+                        }
+                      </React.Fragment>
                     </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {"\u0634\u0628 \u2b50\u06f4.\u06f5"}
-                    </span>
+                  ) : (
                     <React.Fragment>
-                      {
-                        "\r\n\u062a\u0645\u0627\u0633 \u0648 \u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u06f9 \u0635\u0628\u062d \u062a\u0627 \u06f1 \u0634\u0628 \u2013 \u062f\u0631 \u06a9\u0644 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062e\u0648\u0628\u06cc \u062f\u0627\u0631\u0647.\r\n\n\r\n"
-                      }
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"\u062c\u0627\u062c\u06cc\u06af\u0627 \u2b50\u06f5"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\r\n\u062a\u0645\u0627\u0633\u060c \u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0648 \u0627\u06cc\u0645\u06cc\u0644 \u0627\u0632 \u06f8 \u0635\u0628\u062d \u062a\u0627 \u06f1\u06f2 \u0634\u0628 \u2013 \u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062e\u0648\u0628 \u0648 \u067e\u06cc\u06af\u06cc\u0631\u0634 \u0645\u0639\u0631\u0648\u0641\u0647!\r\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"\u0634\u0628 \u2b50\u06f4.\u06f5"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\r\n\u062a\u0645\u0627\u0633 \u0648 \u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u06f9 \u0635\u0628\u062d \u062a\u0627 \u06f1 \u0634\u0628 \u2013 \u062f\u0631 \u06a9\u0644 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062e\u0648\u0628\u06cc \u062f\u0627\u0631\u0647.\r\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"\u0647\u0648\u0645\u0633\u0627 \u2b50\u06f4\r"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\u062a\u0645\u0627\u0633 \u0648 \u062a\u06cc\u06a9\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u06f1\u06f0 \u0635\u0628\u062d \u062a\u0627 \u06f6 \u0639\u0635\u0631\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"\u0627\u062a\u0627\u0642\u06a9 \u2b50\u06f4\r"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\u062a\u0645\u0627\u0633 \u0627\u0632 \u06f9 \u0635\u0628\u062d \u062a\u0627 \u06f5 \u0639\u0635\u0631\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648 \u2b50\u06f3.\u06f5\r"
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\u062a\u0645\u0627\u0633 \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0635\u0628\u062d \u0627\u0644\u06cc \u06f1\u06f2 \u0634\u0628\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "\u062c\u0627\u0628\u0627\u0645\u0627 \u2b50\u06f3.\u06f5"
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\r\n\u062a\u0627\u0632\u06af\u06cc\u0627 \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062e\u06cc\u0644\u06cc \u0633\u062e\u062a \u0634\u062f\u0647! \u062a\u0642\u0631\u06cc\u0628\u0627 \u062f\u0631 \u0627\u063a\u0644\u0628 \u0634\u0631\u0627\u06cc\u0637\u060c \u0641\u0642\u0637 \u0628\u0627 \u062a\u06cc\u06a9\u062a \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc\u062f \u0645\u0634\u06a9\u0644\u200c\u062a\u0648\u0646 \u0631\u0648 \u067e\u06cc\u06af\u06cc\u0631\u06cc \u06a9\u0646\u06cc\u062f.\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "\u0645\u06cc\u0632\u0628\u0648\u0646 \u2b50\u06f3.\u06f5"
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\r\n\u0639\u0645\u0644\u0627 \u0628\u0627\u06cc\u062f \u06cc\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0633\u0627\u06cc\u062a \u0627\u0642\u0627\u0645\u062a \u06f2\u06f4 \u0632\u0646\u06af \u0628\u0632\u0646\u06cc\u062f \u0648 \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc\u200c\u0634\u0648\u0646 \u0633\u0631 \u0631\u0627\u0633\u062a \u0646\u06cc\u0633\u062a."
+                        }
+                      </React.Fragment>
                     </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {"\u0647\u0648\u0645\u0633\u0627 \u2b50\u06f4\r"}
-                    </span>
-                    <React.Fragment>
-                      {
-                        "\n\u062a\u0645\u0627\u0633 \u0648 \u062a\u06cc\u06a9\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u06f1\u06f0 \u0635\u0628\u062d \u062a\u0627 \u06f6 \u0639\u0635\u0631\n\n\r\n\r\n"
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {"\u0627\u062a\u0627\u0642\u06a9 \u2b50\u06f4\r"}
-                    </span>
-                    <React.Fragment>
-                      {
-                        "\n\u062a\u0645\u0627\u0633 \u0627\u0632 \u06f9 \u0635\u0628\u062d \u062a\u0627 \u06f5 \u0639\u0635\u0631\n\n\r\n\r\n"
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {
-                        "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648 \u2b50\u06f3.\u06f5\r"
-                      }
-                    </span>
-                    <React.Fragment>
-                      {
-                        "\n\u062a\u0645\u0627\u0633 \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0635\u0628\u062d \u0627\u0644\u06cc \u06f1\u06f2 \u0634\u0628\r\n\r\n\n"
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {
-                        "\u062c\u0627\u0628\u0627\u0645\u0627 \u2b50\u06f3.\u06f5"
-                      }
-                    </span>
-                    <React.Fragment>
-                      {
-                        "\r\n\u062a\u0627\u0632\u06af\u06cc\u0627 \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062e\u06cc\u0644\u06cc \u0633\u062e\u062a \u0634\u062f\u0647! \u062a\u0642\u0631\u06cc\u0628\u0627 \u062f\u0631 \u0627\u063a\u0644\u0628 \u0634\u0631\u0627\u06cc\u0637\u060c \u0641\u0642\u0637 \u0628\u0627 \u062a\u06cc\u06a9\u062a \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc\u062f \u0645\u0634\u06a9\u0644\u200c\u062a\u0648\u0646 \u0631\u0648 \u067e\u06cc\u06af\u06cc\u0631\u06cc \u06a9\u0646\u06cc\u062f.\r\n\r\n\n"
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {
-                        "\u0645\u06cc\u0632\u0628\u0648\u0646 \u2b50\u06f3.\u06f5"
-                      }
-                    </span>
-                    <React.Fragment>
-                      {
-                        "\r\n\u0639\u0645\u0644\u0627 \u0628\u0627\u06cc\u062f \u06cc\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0633\u0627\u06cc\u062a \u0627\u0642\u0627\u0645\u062a \u06f2\u06f4 \u0632\u0646\u06af \u0628\u0632\u0646\u06cc\u062f \u0648 \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc\u200c\u0634\u0648\u0646 \u0633\u0631 \u0631\u0627\u0633\u062a \u0646\u06cc\u0633\u062a."
-                      }
-                    </React.Fragment>
-                  </React.Fragment>
+                  )}
                 </div>
               </div>
             </div>
@@ -1689,6 +1818,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                         ? "100%"
                         : hasVariant(globalVariants, "screen", "mobile")
                         ? "100%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "70%"
                         : "40%"
                     }
                     displayMinHeight={"0"}
@@ -1832,6 +1963,7 @@ const PlasmicDescendants = {
     "titlesRow",
     "titlesRow3",
     "strDefinition2",
+    "ul",
     "strDefinition4",
     "titlesRow4",
     "titlesRow5",
@@ -1868,6 +2000,7 @@ const PlasmicDescendants = {
     "titlesRow",
     "titlesRow3",
     "strDefinition2",
+    "ul",
     "strDefinition4",
     "titlesRow4",
     "titlesRow5",
@@ -1907,10 +2040,12 @@ const PlasmicDescendants = {
   titlesRow3: ["titlesRow3"],
   strDefinition2: [
     "strDefinition2",
+    "ul",
     "strDefinition4",
     "titlesRow4",
     "titlesRow5"
   ],
+  ul: ["ul"],
   strDefinition4: ["strDefinition4", "titlesRow4", "titlesRow5"],
   titlesRow4: ["titlesRow4"],
   titlesRow5: ["titlesRow5"],
@@ -1968,6 +2103,7 @@ type NodeDefaultElementType = {
   titlesRow: "div";
   titlesRow3: "div";
   strDefinition2: "div";
+  ul: "ul";
   strDefinition4: "div";
   titlesRow4: "div";
   titlesRow5: "div";
@@ -2066,6 +2202,7 @@ export const Plasmicمقایسهبهترینسایتاجارهویلا = Object.
     titlesRow: makeNodeComponent("titlesRow"),
     titlesRow3: makeNodeComponent("titlesRow3"),
     strDefinition2: makeNodeComponent("strDefinition2"),
+    ul: makeNodeComponent("ul"),
     strDefinition4: makeNodeComponent("strDefinition4"),
     titlesRow4: makeNodeComponent("titlesRow4"),
     titlesRow5: makeNodeComponent("titlesRow5"),
