@@ -109,12 +109,15 @@
 }
 @media (max-width: 500px) {
   .text__cww71 {
-    font-size: 16px;
+    font-size: 15px;
+    padding-bottom: 0px;
+    padding-top: 40px;
   }
 }
 @media (max-width: 350px) {
   .text__cww71 {
-    font-size: 15px;
+    font-size: 14px;
+    padding-top: 18px;
   }
 }
 .freeBox__lbOl7 {

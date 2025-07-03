@@ -179,7 +179,7 @@ export type PlasmicReservations__OverridesType = {
   _1?: Flex__<"div">;
   _11?: Flex__<"div">;
   _12?: Flex__<"div">;
-  userPhone?: Flex__<"div">;
+  userPhone?: Flex__<"a"> & Partial<LinkProps>;
   status?: Flex__<"div">;
   status3?: Flex__<"div">;
   falseStatus?: Flex__<"div">;
@@ -7262,14 +7262,30 @@ function PlasmicReservations__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__zmBvF)}
                   >
-                    <div
+                    <PlasmicLink__
                       data-plasmic-name={"userPhone"}
                       data-plasmic-override={overrides.userPhone}
                       className={classNames(
                         projectcss.all,
+                        projectcss.a,
                         projectcss.__wab_text,
                         sty.userPhone
                       )}
+                      component={Link}
+                      href={(() => {
+                        try {
+                          return `tel:${$state.modalData[0].phone_number}`;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
+                      platform={"nextjs"}
                     >
                       <React.Fragment>
                         {(() => {
@@ -7286,7 +7302,7 @@ function PlasmicReservations__RenderFunc(props: {
                           }
                         })()}
                       </React.Fragment>
-                    </div>
+                    </PlasmicLink__>
                   </div>
                   <Stack__
                     as={"div"}
@@ -8262,7 +8278,15 @@ function PlasmicReservations__RenderFunc(props: {
                   }
                 }}
               >
-                {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fUoe
+                  )}
+                >
+                  {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+                </div>
               </Button>
             </Stack__>
           </AntdModal>
@@ -8947,7 +8971,7 @@ type NodeDefaultElementType = {
   _1: "div";
   _11: "div";
   _12: "div";
-  userPhone: "div";
+  userPhone: "a";
   status: "div";
   status3: "div";
   falseStatus: "div";

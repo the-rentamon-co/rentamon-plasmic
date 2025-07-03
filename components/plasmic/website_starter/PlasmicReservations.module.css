@@ -3186,7 +3186,8 @@
   height: auto;
   font-size: 15px;
   text-align: right;
-  color: #203647;
+  color: var(--token-8nedppYkGVaH);
+  font-family: "Estedad";
   min-width: 0;
 }
 .freeBox___70Qp {
@@ -3701,6 +3702,9 @@
   object-fit: cover;
   width: auto;
   height: 1em;
+}
+.text__fUoe {
+  font-weight: 600;
 }
 .svg__glwVw {
   position: relative;
