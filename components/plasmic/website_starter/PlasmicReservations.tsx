@@ -284,7 +284,7 @@ function PlasmicReservations__RenderFunc(props: {
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
-            ? true
+            ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
             : false
