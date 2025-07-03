@@ -64,8 +64,6 @@ import Select__Overlay from "../../Select__Overlay"; // plasmic-import: ylePlweK
 import Select__Option from "../../Select__Option"; // plasmic-import: PSgBvLRmwT1D/component
 import Select__OptionGroup from "../../Select__OptionGroup"; // plasmic-import: d_b2_mjvC-EH/component
 
-import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
-
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -265,10 +263,6 @@ function PlasmicSelect__RenderFunc(props: {
   const triggers = {
     focusVisibleWithin_root: isRootFocusVisibleWithin
   };
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantsaSuSwU8JUYf()
-  });
 
   return (
     <PlasmicSelectContext.Provider value={{ variants, args }}>

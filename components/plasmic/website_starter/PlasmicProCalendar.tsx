@@ -1543,7 +1543,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                       })() ? (
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__lrd6I)}
+                          className={classNames(sty.img__lrd6I, "clickable")}
                           displayHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "26px"
@@ -1627,7 +1627,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                       })() ? (
                         <PlasmicImg__
                           alt={""}
-                          className={classNames(sty.img__kXy9)}
+                          className={classNames(sty.img__kXy9, "clickable")}
                           displayHeight={
                             hasVariant(globalVariants, "screen", "smallMobile")
                               ? "26px"

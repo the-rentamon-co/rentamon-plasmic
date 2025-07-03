@@ -66,8 +66,6 @@ import { BaseSliderTrack } from "@plasmicpkgs/react-aria/skinny/registerSliderTr
 import SliderThumb from "../../SliderThumb"; // plasmic-import: wE-pttKNjW8W/component
 import Description from "../../Description"; // plasmic-import: ptXaKwJQedSt/component
 
-import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
-
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -208,10 +206,6 @@ function PlasmicSlider__RenderFunc(props: {
     $ctx,
     $queries: {},
     $refs
-  });
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantsaSuSwU8JUYf()
   });
 
   const [$ccVariants, setDollarCcVariants] = React.useState<

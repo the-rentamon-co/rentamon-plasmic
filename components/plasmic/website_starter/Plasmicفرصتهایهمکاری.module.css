@@ -25,7 +25,7 @@
       calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
     )
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
-  padding: 0px 13px 0px 0px;
+  padding: 0px;
 }
 .root > * {
   grid-column: 4;
@@ -2506,7 +2506,7 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
-  background: #fcfcfc;
+  background: none;
   min-width: 0;
   padding: 40px 8px 28px;
 }

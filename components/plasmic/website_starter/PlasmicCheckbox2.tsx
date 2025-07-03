@@ -61,8 +61,6 @@ import {
 
 import { BaseCheckbox } from "@plasmicpkgs/react-aria/skinny/registerCheckbox";
 
-import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
-
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -177,10 +175,6 @@ function PlasmicCheckbox2__RenderFunc(props: {
     $ctx,
     $queries: {},
     $refs
-  });
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantsaSuSwU8JUYf()
   });
 
   const [$ccVariants, setDollarCcVariants] = React.useState<

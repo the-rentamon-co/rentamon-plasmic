@@ -533,6 +533,7 @@
   object-fit: cover;
   max-width: 100%;
   height: 34px;
+  cursor: pointer;
 }
 .img__lrd6I > picture > img {
   object-fit: cover;
@@ -552,6 +553,7 @@
   object-fit: cover;
   max-width: 100%;
   height: 34px;
+  cursor: pointer;
 }
 .img__kXy9 > picture > img {
   object-fit: cover;

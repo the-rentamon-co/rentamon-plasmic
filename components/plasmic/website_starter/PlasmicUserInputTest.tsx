@@ -64,8 +64,6 @@ import TextInput2 from "../../TextInput2"; // plasmic-import: MGm7xuldRCuA/compo
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 
-import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
-
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -191,10 +189,6 @@ function PlasmicUserInputTest__RenderFunc(props: {
     $ctx,
     $queries: {},
     $refs
-  });
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantsaSuSwU8JUYf()
   });
 
   return (
