@@ -785,9 +785,12 @@ function Plasmicکیفپول__RenderFunc(props: {
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
                     loading={"lazy"}
-                    src={
-                      "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                    }
+                    src={{
+                      src: "/plasmic/website_starter/images/image140.gif",
+                      fullWidth: 500,
+                      fullHeight: 500,
+                      aspectRatio: undefined
+                    }}
                   />
                 ) : null}
                 <div
@@ -1553,9 +1556,12 @@ function Plasmicکیفپول__RenderFunc(props: {
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
                     loading={"lazy"}
-                    src={
-                      "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                    }
+                    src={{
+                      src: "/plasmic/website_starter/images/image140.gif",
+                      fullWidth: 500,
+                      fullHeight: 500,
+                      aspectRatio: undefined
+                    }}
                   />
                 ) : null}
                 <div

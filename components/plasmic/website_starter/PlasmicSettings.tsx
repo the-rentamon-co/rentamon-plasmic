@@ -1726,7 +1726,7 @@ function PlasmicSettings__RenderFunc(props: {
                         displayWidth={"45px"}
                         loading={"lazy"}
                         src={{
-                          src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                          src: "/plasmic/website_starter/images/image140.gif",
                           fullWidth: 500,
                           fullHeight: 500,
                           aspectRatio: undefined
@@ -2255,7 +2255,7 @@ function PlasmicSettings__RenderFunc(props: {
                         displayWidth={"45px"}
                         loading={"lazy"}
                         src={{
-                          src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                          src: "/plasmic/website_starter/images/image140.gif",
                           fullWidth: 500,
                           fullHeight: 500,
                           aspectRatio: undefined
@@ -2673,7 +2673,7 @@ function PlasmicSettings__RenderFunc(props: {
                         displayWidth={"45px"}
                         loading={"lazy"}
                         src={{
-                          src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                          src: "/plasmic/website_starter/images/image140.gif",
                           fullWidth: 500,
                           fullHeight: 500,
                           aspectRatio: undefined
@@ -3116,7 +3116,7 @@ function PlasmicSettings__RenderFunc(props: {
                         displayWidth={"45px"}
                         loading={"lazy"}
                         src={{
-                          src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
+                          src: "/plasmic/website_starter/images/image140.gif",
                           fullWidth: 500,
                           fullHeight: 500,
                           aspectRatio: undefined

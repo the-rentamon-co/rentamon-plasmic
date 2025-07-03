@@ -265,7 +265,9 @@ function PlasmicIntro__RenderFunc(props: {
                 alt={""}
                 className={classNames(sty.img)}
                 displayHeight={
-                  hasVariant(globalVariants, "screen", "mobile")
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "40px"
+                    : hasVariant(globalVariants, "screen", "mobile")
                     ? "50px"
                     : "76px"
                 }
@@ -275,9 +277,12 @@ function PlasmicIntro__RenderFunc(props: {
                 displayMinWidth={"0"}
                 displayWidth={"auto"}
                 loading={"lazy"}
-                src={
-                  "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                }
+                src={{
+                  src: "/plasmic/website_starter/images/image140.gif",
+                  fullWidth: 500,
+                  fullHeight: 500,
+                  aspectRatio: undefined
+                }}
               />
 
               <div

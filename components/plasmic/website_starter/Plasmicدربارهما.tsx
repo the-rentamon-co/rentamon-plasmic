@@ -1545,7 +1545,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>
                       {
-                        "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0641\u0631\u0635\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 "
+                        "\u0641\u0631\u0635\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 "
                       }
                     </React.Fragment>
                     {
@@ -1555,31 +1555,18 @@ function Plasmicدربارهما__RenderFunc(props: {
                           projectcss.a,
                           projectcss.__wab_text,
                           projectcss.plasmic_default__inline,
-                          sty.link___1GwSz
+                          sty.link___0WglN
                         )}
                         component={Link}
-                        href={
-                          "https://jobvision.ir/companies/104272/%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%B1%D9%86%D8%AA%D8%A7%D9%85%D9%88%D9%86"
-                        }
+                        href={"https://rentamon.com/join-our-journey/"}
                         platform={"nextjs"}
                       >
-                        {"\u062c\u0627\u0628\u200c\u0648\u06cc\u0698\u0646"}
+                        {"\u0627\u06cc\u0646\u062c\u0627"}
                       </PlasmicLink__>
                     }
                     <React.Fragment>
-                      {
-                        " \u0628\u0628\u06cc\u0646\u06cc \u0648 \u06cc\u0627 \u0631\u0632\u0648\u0645\u0647\u200c\u0627\u062a \u0631\u0648 \u0628\u0647 \u0627\u06cc\u0646 \u0622\u062f\u0631\u0633 \u0628\u0641\u0631\u0633\u062a\u06cc:\r\ninfo [at] rentamon.com\n"
-                      }
+                      {" \u0628\u0628\u06cc\u0646."}
                     </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontStyle: "italic" }}
-                    >
-                      {
-                        "(\u0628\u0647 \u0645\u0646\u0642\u0636\u06cc \u0634\u062f\u0646 \u0622\u06af\u0647\u06cc \u0634\u063a\u0644\u06cc \u062a\u0648\u062c\u0647 \u0646\u06a9\u0646)"
-                      }
-                    </span>
-                    <React.Fragment>{"\r"}</React.Fragment>
                   </React.Fragment>
                 </div>
               </div>
