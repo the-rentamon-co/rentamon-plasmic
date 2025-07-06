@@ -1317,7 +1317,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u0627\u0648\u0644\u0648\u06cc\u062a \u0627\u0648\u0644 \u0628\u0631\u0627\u06cc \u062a\u0635\u0645\u06cc\u0645\u200c\u06af\u06cc\u0631\u06cc \u062e\u0648\u0634\u062d\u0627\u0644\u06cc \u06a9\u0627\u0631\u0628\u0631\u0647\u060c \u0646\u0647 \u062a\u0648\u0627\u0646\u0627\u06cc\u06cc \u0645\u0627"
+                            "\u0627\u0648\u0644\u0648\u06cc\u062a \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0647\u0627 \u0631\u0648 \u00ab\u0634\u06cc\u062f\u0627\u06cc\u06cc \u06a9\u0627\u0631\u0628\u0631\u00bb \u0645\u0634\u062e\u0635 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0646\u0647 \u062a\u0648\u0627\u0646\u0627\u06cc\u06cc \u0645\u0627"
                           }
                         </li>
                         <li
@@ -1325,11 +1325,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li__tz4ML
+                            sty.li__qafHd
                           )}
                         >
                           {
-                            "\u062a\u0637\u0627\u0628\u0642 \u0641\u0631\u0647\u0646\u06af\u06cc \u0627\u0639\u0636\u0627\u06cc \u062a\u06cc\u0645 (culture fit \u0628\u0648\u062f\u0646) \u0627\u0632 \u0645\u0647\u0627\u0631\u062a \u0641\u0631\u062f\u06cc \u0645\u0647\u0645\u200c\u062a\u0631\u0647"
+                            "\u0628\u0647 \u00ab\u062a\u0637\u0627\u0628\u0642 \u0641\u0631\u0647\u0646\u06af\u06cc \u0628\u0627 \u062a\u06cc\u0645\u00bb \u0646\u0633\u0628\u062a \u0628\u0647 \u00ab\u0645\u0647\u0627\u0631\u062a \u0641\u0631\u062f\u06cc\u00bb \u0627\u0648\u0644\u0648\u06cc\u062a \u0645\u06cc\u200c\u062f\u06cc\u0645"
                           }
                         </li>
                         <li
@@ -1337,11 +1337,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li__tK7Eu
+                            sty.li__bzjq5
                           )}
                         >
                           {
-                            "\u0633\u0631\u0639\u062a \u06cc\u0627\u062f\u06af\u06cc\u0631\u06cc \u0627\u0632 \u0645\u0647\u0627\u0631\u062a \u0641\u0639\u0644\u06cc \u0645\u0647\u0645\u200c\u062a\u0631\u0647"
+                            "\u00ab\u0633\u0631\u0639\u062a \u06cc\u0627\u062f\u06af\u06cc\u0631\u06cc\u00bb \u0627\u0632 \u00ab\u0633\u0637\u062d \u0645\u0647\u0627\u0631\u062a \u0641\u0639\u0644\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u0647"
                           }
                         </li>
                         <li
@@ -1349,45 +1349,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li___6D6LN
-                          )}
-                        >
-                          <React.Fragment>
-                            <React.Fragment>
-                              {
-                                "\u0633\u0644\u0633\u0644\u0647\u200c\u0645\u0631\u0627\u062a\u0628\u06cc \u0646\u06cc\u0633\u062a\u06cc\u0645 \u0648 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc\u0645 flat \u0628\u0627\u0634\u06cc\u0645 ("
-                              }
-                            </React.Fragment>
-                            {
-                              <PlasmicLink__
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  projectcss.__wab_text,
-                                  projectcss.plasmic_default__inline,
-                                  sty.link__lmQNn
-                                )}
-                                component={Link}
-                                platform={"nextjs"}
-                              >
-                                {
-                                  "\u0627\u0644\u06af\u0648 \u0633\u0627\u062e\u062a\u0627\u0631 \u062a\u06cc\u0645\u200c\u0647\u0627"
-                                }
-                              </PlasmicLink__>
-                            }
-                            <React.Fragment>{")"}</React.Fragment>
-                          </React.Fragment>
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__otPvx
+                            sty.li__g99Ix
                           )}
                         >
                           {
-                            "\u0633\u0639\u06cc \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0622\u062f\u0645\u200c\u0647\u0627 \u062d\u062f\u0627\u06a9\u062b\u0631 \u0622\u0632\u0627\u062f\u06cc \u0639\u0645\u0644 \u0631\u0648 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0646\u062f. (Authority and autonomy)"
+                            "\u0628\u0647 \u0633\u0627\u062e\u062a\u0627\u0631 \u0633\u0644\u0633\u0644\u0647\u200c\u0645\u0631\u0627\u062a\u0628\u06cc \u0628\u0627\u0648\u0631 \u0646\u062f\u0627\u0631\u06cc\u0645"
                           }
                         </li>
                         <li
@@ -1395,61 +1361,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li___6WSkN
-                          )}
-                        >
-                          <React.Fragment>
-                            <React.Fragment>
-                              {
-                                "\u0622\u0632\u0627\u062f\u06cc \u062f\u0631 \u06a9\u0646\u0627\u0631 \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u067e\u0630\u06cc\u0631\u06cc \u0628\u0631 \u0627\u0633\u0627\u0633 \u0645\u062f\u0644 \u0645\u0637\u0631\u062d \u0634\u062f\u0647 \u062f\u0631 "
-                              }
-                            </React.Fragment>
-                            {
-                              <PlasmicLink__
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  projectcss.__wab_text,
-                                  projectcss.plasmic_default__inline,
-                                  sty.link__zU6Mf
-                                )}
-                                component={Link}
-                                platform={"nextjs"}
-                              >
-                                {
-                                  "\u06a9\u062a\u0627\u0628 \u0642\u0627\u0646\u0648\u0646 \u0628\u06cc\u200c\u0642\u0627\u0646\u0648\u0646\u06cc"
-                                }
-                              </PlasmicLink__>
-                            }
-                            <React.Fragment>{" \u0648 "}</React.Fragment>
-                            {
-                              <PlasmicLink__
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  projectcss.__wab_text,
-                                  projectcss.plasmic_default__inline,
-                                  sty.link___8A0Rf
-                                )}
-                                component={Link}
-                                platform={"nextjs"}
-                              >
-                                {"\u0627\u06cc\u0646\u062c\u0627"}
-                              </PlasmicLink__>
-                            }
-                            <React.Fragment>{""}</React.Fragment>
-                          </React.Fragment>
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__fKxgq
+                            sty.li__bphv
                           )}
                         >
                           {
-                            "\u0627\u0641\u0631\u0627\u062f\u06cc \u06a9\u0647 \u0627\u0648\u0644\u0648\u06cc\u062a \u0627\u0648\u0644 \u0632\u0646\u062f\u06af\u06cc\u200c\u0634\u0648\u0646 \u00ab\u0631\u0634\u062f \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0641\u0631\u062f\u06cc\u0647\u00bb \u0627\u06cc\u0646\u062c\u0627 \u062e\u0648\u0634\u062d\u0627\u0644\u0646"
+                            "\u0628\u0647 \u0622\u0632\u0627\u062f\u06cc \u0648 \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u067e\u0630\u06cc\u0631\u06cc \u0628\u0627\u0648\u0631 \u062f\u0627\u0631\u06cc\u0645 (authority and autonomy)"
                           }
                         </li>
                         <li
@@ -1457,11 +1373,35 @@ function Plasmicدربارهما__RenderFunc(props: {
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li__vumsQ
+                            sty.li__ozzI
                           )}
                         >
                           {
-                            "\u0645\u06cc\u200c\u062e\u0648\u0627\u06cc\u0645 \u062c\u0632\u0648 \u0633\u0631\u06cc\u0639\u200c\u0627\u0644\u0631\u0634\u062f\u200c\u0647\u0627 \u0628\u0627\u0634\u06cc\u0645\u060c \u067e\u0633 \u0628\u0627 \u0627\u0639\u0637\u0627\u0621 \u0633\u0647\u0627\u0645 \u062f\u0631 \u0631\u0634\u062f \u0634\u0631\u06a9\u062a \u0634\u0631\u06cc\u06a9 \u0645\u06cc\u200c\u0634\u06cc\u0645"
+                            "\u0627\u0641\u0631\u0627\u062f\u06cc \u06a9\u0647 \u0627\u0648\u0644\u0648\u06cc\u062a \u0627\u0648\u0644 \u0632\u0646\u062f\u06af\u06cc\u200c\u0634\u0648\u0646 \u00ab\u06a9\u0645\u06a9 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0631\u0634\u062f \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0641\u0631\u062f\u06cc\u0647\u00bb \u0627\u06cc\u0646\u062c\u0627 \u062e\u0648\u0634\u062d\u0627\u0644\u0646"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__alxq5
+                          )}
+                        >
+                          {
+                            "\u0645\u0633\u06cc\u0631 \u0645\u0627 \u062f\u0631 \u0639\u06cc\u0646 \u062c\u0630\u0627\u0628\u06cc\u062a\u060c \u067e\u0631 \u0686\u0627\u0644\u0634\u0647 \u0648 \u0628\u0627 \u0631\u0648\u062d\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0645\u0646\u062f\u06cc \u062c\u0648\u0631 \u0646\u06cc\u0633\u062a"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__jFg1P
+                          )}
+                        >
+                          {
+                            "\u0627\u06cc\u0646\u062c\u0627 \u062c\u0645\u0639 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u200c\u0647\u0627\u0633\u062a. \u062f\u0631 \u0633\u0648\u062f \u0648 \u0632\u06cc\u0627\u0646 \u0634\u0631\u06cc\u06a9\u06cc\u0645"
                           }
                         </li>
                       </ul>
