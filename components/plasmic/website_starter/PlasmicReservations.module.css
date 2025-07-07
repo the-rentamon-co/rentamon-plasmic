@@ -1459,6 +1459,7 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
+  color: var(--token-ixQAh6dzIToM);
   min-width: 0;
 }
 @media (max-width: 500px) {
