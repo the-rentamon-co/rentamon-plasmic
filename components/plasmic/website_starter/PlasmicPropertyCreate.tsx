@@ -759,7 +759,151 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["updateStep"] = true
+                      $steps["updateLoading"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["loading"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateLoading"] != null &&
+                        typeof $steps["updateLoading"] === "object" &&
+                        typeof $steps["updateLoading"].then === "function"
+                      ) {
+                        $steps["updateLoading"] = await $steps["updateLoading"];
+                      }
+
+                      $steps["invokeGlobalAction"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                "POST",
+                                "https://gateway.rentamon.com/webhook/property_create",
+                                undefined,
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      let a = {
+                                        hostType: $state.hostType,
+                                        prop_name: $state.textInput.value,
+                                        property_pic: $state.upload.files[0]
+                                      };
+                                      return a;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
+                        ];
+                      }
+
+                      $steps["goToProperties"] =
+                        $steps.invokeGlobalAction.status == 200
+                          ? (() => {
+                              const actionArgs = { destination: `/properties` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["goToProperties"] != null &&
+                        typeof $steps["goToProperties"] === "object" &&
+                        typeof $steps["goToProperties"].then === "function"
+                      ) {
+                        $steps["goToProperties"] = await $steps[
+                          "goToProperties"
+                        ];
+                      }
+
+                      $steps["updateLoading2"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["loading"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateLoading2"] != null &&
+                        typeof $steps["updateLoading2"] === "object" &&
+                        typeof $steps["updateLoading2"].then === "function"
+                      ) {
+                        $steps["updateLoading2"] = await $steps[
+                          "updateLoading2"
+                        ];
+                      }
+
+                      $steps["updateStep"] = false
                         ? (() => {
                             const actionArgs = {
                               variable: {
@@ -801,7 +945,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         sty.text___06Po8
                       )}
                     >
-                      {"\u0628\u0639\u062f"}
+                      {"\u0630\u062e\u06cc\u0631\u0647"}
                     </div>
                   </div>
                   <div
@@ -1199,7 +1343,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "error",
-                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u0646",
+                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646",
                                   "top-center",
                                   4000
                                 ]

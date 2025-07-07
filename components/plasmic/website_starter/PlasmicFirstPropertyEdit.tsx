@@ -922,7 +922,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["updateStep"] = true
+                      $steps["updateStep"] = false
                         ? (() => {
                             const actionArgs = {
                               variable: {
@@ -955,6 +955,104 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       ) {
                         $steps["updateStep"] = await $steps["updateStep"];
                       }
+
+                      $steps["updateLoading"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["loading"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateLoading"] != null &&
+                        typeof $steps["updateLoading"] === "object" &&
+                        typeof $steps["updateLoading"].then === "function"
+                      ) {
+                        $steps["updateLoading"] = await $steps["updateLoading"];
+                      }
+
+                      $steps["goToLiteCalendar"] =
+                        $steps.invokeGlobalAction.status == 200
+                          ? (() => {
+                              const actionArgs = { destination: `/calendar` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["goToLiteCalendar"] != null &&
+                        typeof $steps["goToLiteCalendar"] === "object" &&
+                        typeof $steps["goToLiteCalendar"].then === "function"
+                      ) {
+                        $steps["goToLiteCalendar"] = await $steps[
+                          "goToLiteCalendar"
+                        ];
+                      }
+
+                      $steps["updateLoading2"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["loading"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateLoading2"] != null &&
+                        typeof $steps["updateLoading2"] === "object" &&
+                        typeof $steps["updateLoading2"].then === "function"
+                      ) {
+                        $steps["updateLoading2"] = await $steps[
+                          "updateLoading2"
+                        ];
+                      }
                     }}
                   >
                     <div
@@ -964,7 +1062,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         sty.text___6AXjw
                       )}
                     >
-                      {"\u0628\u0639\u062f"}
+                      {"\u0630\u062e\u06cc\u0631\u0647"}
                     </div>
                   </div>
                   <div
@@ -1364,7 +1462,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "error",
-                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u0646",
+                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646",
                                   "top-center",
                                   4000
                                 ]
