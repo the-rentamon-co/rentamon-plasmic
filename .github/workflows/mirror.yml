@@ -1,6 +1,6 @@
 # FINAL WORKFLOW
 # This workflow mirrors every commit from this repository to HamGit.
-# It uses a proxy to connect to the HamGit server.
+# It uses a proxy to connect to the HamGit server.ds
 
 name: Mirror to HamGit via Proxy
 
