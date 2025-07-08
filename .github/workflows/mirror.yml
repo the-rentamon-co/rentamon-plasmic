@@ -1,8 +1,8 @@
-# ===================================
-#  TEST TO PROVE THE FILE IS UPDATING
-# ===================================
+# FINAL WORKFLOW
+# This workflow mirrors every commit from this repository to HamGit.
+# It uses a proxy to connect to the HamGit server.
 
-name: 🧪 My Test Workflow - Version 3
+name: Mirror to HamGit via Proxy
 
 on:
   push:
@@ -10,8 +10,34 @@ on:
       - main
 
 jobs:
-  build:
+  mirror:
     runs-on: ubuntu-latest
     steps:
-      - name: A simple test step
-        run: echo "Hello world! If you see this, the file was updated correctly."
+      # Step 1: Check out the repository's code from GitHub
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Step 2: Configure Git to use the proxy stored in secrets
+      - name: Configure Git Proxy
+        if: ${{ secrets.PROXY_URL != '' }}
+        run: |
+          echo "Configuring git to use the proxy..."
+          git config --global https.proxy ${{ secrets.PROXY_URL }}
+      
+      # Step 3: Push the code to your HamGit repository through the proxy
+      - name: Push to HamGit Mirror
+        env:
+          HAMGIT_PAT: ${{ secrets.HAMGIT_PAT }}
+        run: |
+          echo "Pushing changes to HamGit..."
+          git remote set-url --push origin "https://rentamon.co:${HAMGIT_PAT}@hamgit.ir/rentamon.co/rentamon-plasmic.git"
+          git push --force origin main
+      
+      # Step 4: Unset the proxy configuration (this is good practice)
+      - name: Cleanup Git Proxy
+        if: always() && ${{ secrets.PROXY_URL != '' }}
+        run: |
+          echo "Cleaning up proxy configuration..."
+          git config --global --unset https.proxy
