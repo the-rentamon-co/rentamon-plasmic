@@ -3535,6 +3535,22 @@
     font-size: 16px;
   }
 }
+.text__dCBjR {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  color: var(--token-8R7jjC_-F9FF);
+  text-align: center;
+  min-width: 0;
+  padding: 20px;
+}
+@media (max-width: 500px) {
+  .text__dCBjR {
+    font-size: 16px;
+  }
+}
 .freeBox__iQrxp {
   display: flex;
   flex-direction: column;
