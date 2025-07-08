@@ -30,6 +30,6 @@ jobs:
           # Configure Git to push to your specific HamGit URL using the PAT for authentication
           git remote set-url --push origin "https://rentamon.co:${HAMGIT_PAT}@hamgit.ir/rentamon.co/rentamon-plasmic.git"
           
-          # Push all changes from the 'main' branch to the mirror
-          # If your branch is not 'main', change it here as well.
-          git push origin main
+          # Force push all changes from the 'main' branch to the mirror.
+          # The --force flag overwrites the destination's history to ensure a perfect mirror.
+          git push --force origin main
