@@ -1,0 +1,35 @@
+# This workflow mirrors every commit from this repository to HamGit.
+# It triggers automatically on any push to the 'main' branch.
+
+name: Mirror to HamGit
+
+on:
+  # This workflow runs on any push to the 'main' branch.
+  # If Plasmic uses a different branch, change 'main' to that branch name.
+  push:
+    branches:
+      - main
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out the repository's code from GitHub
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          # Fetches all history for all branches & tags, which is needed for a true mirror
+          fetch-depth: 0
+
+      # Step 2: Push the code to your HamGit repository
+      - name: Push to HamGit Mirror
+        env:
+          # This securely uses the Personal Access Token you stored in GitHub Secrets
+          HAMGIT_PAT: ${{ secrets.HAMGIT_PAT }}
+        run: |
+          # Configure Git to push to your specific HamGit URL using the PAT for authentication
+          git remote set-url --push origin "https://rentamon.co:${HAMGIT_PAT}@hamgit.ir/rentamon.co/rentamon-plasmic.git"
+          
+          # Push all changes from the 'main' branch to the mirror
+          # If your branch is not 'main', change it here as well.
+          git push origin main
