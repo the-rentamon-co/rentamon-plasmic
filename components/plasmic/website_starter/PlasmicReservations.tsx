@@ -6197,7 +6197,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     if (phone === "") {
                                       $state.showMobileError = true;
                                       $state.phoneError =
-                                        "شماره نمی‌تواند خالی باشد.";
+                                        "شماره نمی‌تونه خالی باشه.";
                                       return false;
                                     }
                                     $state.showMobileError = false;
@@ -6205,13 +6205,12 @@ function PlasmicReservations__RenderFunc(props: {
                                     if (!regex.test(phone)) {
                                       if (phone.length !== 11) {
                                         $state.phoneError =
-                                          "شماره باید ۱۱ رقم باشد.";
+                                          "شماره باید ۱۱ رقم باشه.";
                                       } else if (!phone.startsWith("09")) {
                                         $state.phoneError =
-                                          "شماره باید با 09 شروع شود.";
+                                          "شماره باید با 09 شروع بشه.";
                                       } else {
-                                        $state.phoneError =
-                                          "فرمت شماره صحیح نیست.";
+                                        $state.phoneError = "شماره صحیح نیست.";
                                       }
                                       return false;
                                     }
@@ -6326,7 +6325,7 @@ function PlasmicReservations__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 undefined,
-                                "\u0631\u0632\u0631\u0648 \u0634\u0645\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0648\u06cc\u0631\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0634\u062f",
+                                "\u0631\u0632\u0631\u0648 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0648\u06cc\u0631\u0627\u06cc\u0634 \u0634\u062f",
                                 "top-center"
                               ]
                             };

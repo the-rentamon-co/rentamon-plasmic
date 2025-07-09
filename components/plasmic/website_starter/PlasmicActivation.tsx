@@ -4686,6 +4686,20 @@ function PlasmicActivation__RenderFunc(props: {
                           length: 11,
                           message:
                             "\u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
+                        },
+
+                        {
+                          ruleType: "advanced",
+                          options: (() => {
+                            const __composite = [{ value: null }];
+                            __composite["0"]["value"] = /^[1-9]$/.test(
+                              $ctx.params.type
+                            );
+                            return __composite;
+                          })(),
+                          custom: (rule, value) => {
+                            return /^09\d{9}$/;
+                          }
                         }
                       ]}
                     >

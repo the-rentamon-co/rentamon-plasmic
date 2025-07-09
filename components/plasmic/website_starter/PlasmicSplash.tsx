@@ -335,12 +335,9 @@ function PlasmicSplash__RenderFunc(props: {
                   displayMinWidth={"0"}
                   displayWidth={"20px"}
                   loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/image149.svg",
-                    fullWidth: 200,
-                    fullHeight: 200,
-                    aspectRatio: undefined
-                  }}
+                  src={
+                    "https://rentamon-files.storage.iran.liara.space/icon/reload.svg"
+                  }
                 />
               </Stack__>
             </div>
@@ -408,7 +405,7 @@ function PlasmicSplash__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["updateSrc"] = true
+              $steps["updateSrc"] = false
                 ? (() => {
                     const actionArgs = {
                       variable: {
@@ -437,7 +434,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["updateSrc"] = await $steps["updateSrc"];
               }
 
-              $steps["setCookie"] = true
+              $steps["setCookie"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -477,7 +474,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["setCookie"] = await $steps["setCookie"];
               }
 
-              $steps["checkIsUserLogin"] = true
+              $steps["checkIsUserLogin"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -579,7 +576,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["checkIsUserLogin"] = await $steps["checkIsUserLogin"];
               }
 
-              $steps["invokeGlobalAction"] = true
+              $steps["invokeGlobalAction"] = false
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -640,7 +637,7 @@ function PlasmicSplash__RenderFunc(props: {
                 ];
               }
 
-              $steps["redirectAndSetUserCookie"] = true
+              $steps["redirectAndSetUserCookie"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -703,6 +700,31 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["redirectAndSetUserCookie"] = await $steps[
                   "redirectAndSetUserCookie"
                 ];
+              }
+
+              $steps["updateSrc2"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/panel` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateSrc2"] != null &&
+                typeof $steps["updateSrc2"] === "object" &&
+                typeof $steps["updateSrc2"].then === "function"
+              ) {
+                $steps["updateSrc2"] = await $steps["updateSrc2"];
               }
             }}
           />

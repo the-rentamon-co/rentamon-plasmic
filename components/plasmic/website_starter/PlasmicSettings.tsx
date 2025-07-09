@@ -114,6 +114,7 @@ export type PlasmicSettings__OverridesType = {
   apiRequest2?: Flex__<typeof ApiRequest>;
   p4?: Flex__<"div">;
   autoSyncSwitch?: Flex__<typeof Switch>;
+  free1?: Flex__<"div">;
   options2?: Flex__<"div">;
   opt12?: Flex__<"div">;
   p12?: Flex__<"div">;
@@ -122,6 +123,7 @@ export type PlasmicSettings__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   p42?: Flex__<"div">;
   reservationSwitch?: Flex__<typeof Switch>;
+  free2?: Flex__<"div">;
   options3?: Flex__<"div">;
   opt13?: Flex__<"div">;
   p13?: Flex__<"div">;
@@ -930,6 +932,23 @@ function PlasmicSettings__RenderFunc(props: {
                     />
                   </div>
                 </div>
+                <div
+                  data-plasmic-name={"free1"}
+                  data-plasmic-override={overrides.free1}
+                  className={classNames(projectcss.all, sty.free1)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__nxKEu
+                    )}
+                  >
+                    {
+                      "\u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646: \u06f6 \u0627\u0632 \u06f1\u06f0"
+                    }
+                  </div>
+                </div>
               </div>
               <div
                 data-plasmic-name={"options2"}
@@ -1193,6 +1212,23 @@ function PlasmicSettings__RenderFunc(props: {
                         }).apply(null, eventArgs);
                       }}
                     />
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"free2"}
+                  data-plasmic-override={overrides.free2}
+                  className={classNames(projectcss.all, sty.free2)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__jf2Z7
+                    )}
+                  >
+                    {
+                      "\u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646: \u06f6 \u0627\u0632 \u06f1\u06f0"
+                    }
                   </div>
                 </div>
               </div>
@@ -3871,6 +3907,7 @@ const PlasmicDescendants = {
     "apiRequest2",
     "p4",
     "autoSyncSwitch",
+    "free1",
     "options2",
     "opt12",
     "p12",
@@ -3879,6 +3916,7 @@ const PlasmicDescendants = {
     "apiRequest",
     "p42",
     "reservationSwitch",
+    "free2",
     "options3",
     "opt13",
     "p13",
@@ -3938,6 +3976,7 @@ const PlasmicDescendants = {
     "apiRequest2",
     "p4",
     "autoSyncSwitch",
+    "free1",
     "options2",
     "opt12",
     "p12",
@@ -3946,6 +3985,7 @@ const PlasmicDescendants = {
     "apiRequest",
     "p42",
     "reservationSwitch",
+    "free2",
     "options3",
     "opt13",
     "p13",
@@ -3994,6 +4034,7 @@ const PlasmicDescendants = {
     "apiRequest2",
     "p4",
     "autoSyncSwitch",
+    "free1",
     "options2",
     "opt12",
     "p12",
@@ -4002,6 +4043,7 @@ const PlasmicDescendants = {
     "apiRequest",
     "p42",
     "reservationSwitch",
+    "free2",
     "options3",
     "opt13",
     "p13",
@@ -4034,7 +4076,8 @@ const PlasmicDescendants = {
     "p3",
     "apiRequest2",
     "p4",
-    "autoSyncSwitch"
+    "autoSyncSwitch",
+    "free1"
   ],
   opt1: ["opt1", "p1", "p2", "p3", "apiRequest2", "p4", "autoSyncSwitch"],
   p1: ["p1"],
@@ -4043,6 +4086,7 @@ const PlasmicDescendants = {
   apiRequest2: ["apiRequest2"],
   p4: ["p4", "autoSyncSwitch"],
   autoSyncSwitch: ["autoSyncSwitch"],
+  free1: ["free1"],
   options2: [
     "options2",
     "opt12",
@@ -4051,7 +4095,8 @@ const PlasmicDescendants = {
     "p32",
     "apiRequest",
     "p42",
-    "reservationSwitch"
+    "reservationSwitch",
+    "free2"
   ],
   opt12: [
     "opt12",
@@ -4068,6 +4113,7 @@ const PlasmicDescendants = {
   apiRequest: ["apiRequest"],
   p42: ["p42", "reservationSwitch"],
   reservationSwitch: ["reservationSwitch"],
+  free2: ["free2"],
   options3: ["options3", "opt13", "p13", "p23", "p33", "p43", "pricingSwitch"],
   opt13: ["opt13", "p13", "p23", "p33", "p43", "pricingSwitch"],
   p13: ["p13"],
@@ -4146,6 +4192,7 @@ type NodeDefaultElementType = {
   apiRequest2: typeof ApiRequest;
   p4: "div";
   autoSyncSwitch: typeof Switch;
+  free1: "div";
   options2: "div";
   opt12: "div";
   p12: "div";
@@ -4154,6 +4201,7 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   p42: "div";
   reservationSwitch: typeof Switch;
+  free2: "div";
   options3: "div";
   opt13: "div";
   p13: "div";
@@ -4273,6 +4321,7 @@ export const PlasmicSettings = Object.assign(
     apiRequest2: makeNodeComponent("apiRequest2"),
     p4: makeNodeComponent("p4"),
     autoSyncSwitch: makeNodeComponent("autoSyncSwitch"),
+    free1: makeNodeComponent("free1"),
     options2: makeNodeComponent("options2"),
     opt12: makeNodeComponent("opt12"),
     p12: makeNodeComponent("p12"),
@@ -4281,6 +4330,7 @@ export const PlasmicSettings = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     p42: makeNodeComponent("p42"),
     reservationSwitch: makeNodeComponent("reservationSwitch"),
+    free2: makeNodeComponent("free2"),
     options3: makeNodeComponent("options3"),
     opt13: makeNodeComponent("opt13"),
     p13: makeNodeComponent("p13"),

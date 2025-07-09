@@ -1171,6 +1171,7 @@
   max-width: 16%;
   justify-content: center;
   align-items: flex-end;
+  opacity: 0.3;
   min-width: 0;
   padding: 8px;
 }
@@ -1208,6 +1209,7 @@
   max-width: 60%;
   justify-content: center;
   align-items: center;
+  opacity: 0.3;
   min-width: 0;
   padding: 8px 0px 8px 8px;
 }
@@ -1255,6 +1257,7 @@
   max-width: 16%;
   justify-content: flex-start;
   align-items: center;
+  opacity: 0.3;
   min-width: 0;
   padding: 8px;
 }

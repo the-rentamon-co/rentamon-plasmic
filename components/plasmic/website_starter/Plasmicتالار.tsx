@@ -1424,32 +1424,29 @@ function Plasmicتالار__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["goToInstantReserve"] = true
+                    $steps["invokeGlobalAction"] = true
                       ? (() => {
                           const actionArgs = {
-                            destination: `/instant-reserve`
+                            args: [
+                              "error",
+                              "\u0648\u06cc\u0698\u06af\u06cc \u00ab\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u00bb \u062f\u0631\u062d\u0627\u0644 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0627\u0633\u062a. \u0644\u0637\u0641\u0627 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0627\u0632 \u0633\u0627\u06cc\u062a \u0627\u0642\u062f\u0627\u0645 \u06a9\u0646",
+                              "top-center",
+                              5000
+                            ]
                           };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
+                          return $globalActions["Fragment.showToast"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
                         })()
                       : undefined;
                     if (
-                      $steps["goToInstantReserve"] != null &&
-                      typeof $steps["goToInstantReserve"] === "object" &&
-                      typeof $steps["goToInstantReserve"].then === "function"
+                      $steps["invokeGlobalAction"] != null &&
+                      typeof $steps["invokeGlobalAction"] === "object" &&
+                      typeof $steps["invokeGlobalAction"].then === "function"
                     ) {
-                      $steps["goToInstantReserve"] = await $steps[
-                        "goToInstantReserve"
+                      $steps["invokeGlobalAction"] = await $steps[
+                        "invokeGlobalAction"
                       ];
                     }
                   }}
