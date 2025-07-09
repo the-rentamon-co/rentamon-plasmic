@@ -405,7 +405,7 @@ function PlasmicSplash__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["updateSrc"] = false
+              $steps["updateSrc"] = true
                 ? (() => {
                     const actionArgs = {
                       variable: {
@@ -434,7 +434,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["updateSrc"] = await $steps["updateSrc"];
               }
 
-              $steps["setCookie"] = false
+              $steps["setCookie"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -474,7 +474,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["setCookie"] = await $steps["setCookie"];
               }
 
-              $steps["checkIsUserLogin"] = false
+              $steps["checkIsUserLogin"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -576,7 +576,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["checkIsUserLogin"] = await $steps["checkIsUserLogin"];
               }
 
-              $steps["invokeGlobalAction"] = false
+              $steps["invokeGlobalAction"] = true
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -637,7 +637,7 @@ function PlasmicSplash__RenderFunc(props: {
                 ];
               }
 
-              $steps["redirectAndSetUserCookie"] = false
+              $steps["redirectAndSetUserCookie"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -700,31 +700,6 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["redirectAndSetUserCookie"] = await $steps[
                   "redirectAndSetUserCookie"
                 ];
-              }
-
-              $steps["updateSrc2"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/panel` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateSrc2"] != null &&
-                typeof $steps["updateSrc2"] === "object" &&
-                typeof $steps["updateSrc2"].then === "function"
-              ) {
-                $steps["updateSrc2"] = await $steps["updateSrc2"];
               }
             }}
           />
