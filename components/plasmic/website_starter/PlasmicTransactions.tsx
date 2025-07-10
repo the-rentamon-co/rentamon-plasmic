@@ -1619,12 +1619,21 @@ function PlasmicTransactions__RenderFunc(props: {
                               displayMinWidth={"0"}
                               displayWidth={"auto"}
                               loading={"lazy"}
-                              src={{
-                                src: "/plasmic/website_starter/images/image151.svg",
-                                fullWidth: 16,
-                                fullHeight: 17,
-                                aspectRatio: undefined
-                              }}
+                              src={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? {
+                                      src: "/plasmic/website_starter/images/image147.svg",
+                                      fullWidth: 18,
+                                      fullHeight: 20,
+                                      aspectRatio: undefined
+                                    }
+                                  : {
+                                      src: "/plasmic/website_starter/images/image147.svg",
+                                      fullWidth: 18,
+                                      fullHeight: 20,
+                                      aspectRatio: undefined
+                                    }
+                              }
                             />
                           </div>
                         ) : null}
