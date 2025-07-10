@@ -272,12 +272,12 @@
   text-align: center;
   background: #8165d6;
   color: #fcfcfc;
-  padding-top: 12px;
   padding-bottom: 12px;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   user-select: none;
+  padding-top: 12px;
   min-width: 0;
   border-radius: 30px;
 }

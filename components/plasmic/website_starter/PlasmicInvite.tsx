@@ -637,7 +637,7 @@ function PlasmicInvite__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"
+                  "\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 + \u067e\u0631\u062f\u0627\u0632\u0634 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646"
                 }
               </div>
             </Stack__>
@@ -931,7 +931,7 @@ function PlasmicInvite__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"
+                  "\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 + \u067e\u0631\u062f\u0627\u0632\u0634 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646"
                 }
               </div>
             </Stack__>

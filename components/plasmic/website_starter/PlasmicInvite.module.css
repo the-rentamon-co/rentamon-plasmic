@@ -517,7 +517,7 @@
 }
 @media (max-width: 350px) {
   .freeBox__jn6Yz {
-    max-width: 96%;
+    max-width: 100%;
     padding: 40px 0px;
   }
 }
@@ -539,7 +539,7 @@
 }
 @media (max-width: 350px) {
   .text__hEvvJ {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 .freeBox__oi07T {
@@ -576,7 +576,12 @@
 }
 .button___9Wqe:global(.__wab_instance) {
   max-width: 100%;
-  width: 283px;
+  width: 350px;
+}
+@media (max-width: 1200px) {
+  .button___9Wqe:global(.__wab_instance) {
+    width: 340px;
+  }
 }
 @media (max-width: 500px) {
   .button___9Wqe:global(.__wab_instance) {
@@ -604,7 +609,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
   font-weight: 600;
   min-width: 0;
@@ -616,7 +621,7 @@
 }
 @media (max-width: 350px) {
   .text___9OOaM {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 .image {
@@ -1047,7 +1052,7 @@
   .freeBox__kb3W2 {
     padding-right: 0px;
     padding-left: 0px;
-    max-width: 96%;
+    max-width: 100%;
   }
 }
 .text__pvaXy {
@@ -1073,7 +1078,14 @@
 }
 @media (max-width: 350px) {
   .text__pvaXy {
-    font-size: 18px;
+    font-size: 16px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    padding-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 0;
   }
 }
 .freeBox__vMItQ {
@@ -1094,9 +1106,20 @@
     min-width: 0;
   }
 }
+@media (max-width: 350px) {
+  .freeBox__vMItQ {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
 .button__uW0Sj:global(.__wab_instance) {
   max-width: 100%;
-  width: 283px;
+  width: 350px;
+}
+@media (max-width: 1200px) {
+  .button__uW0Sj:global(.__wab_instance) {
+    width: 340px;
+  }
 }
 @media (max-width: 500px) {
   .button__uW0Sj:global(.__wab_instance) {
@@ -1124,14 +1147,31 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
   font-weight: 600;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .text__kEqxE {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    min-width: 0;
+  }
+}
 @media (max-width: 350px) {
   .text__kEqxE {
-    font-size: 16px;
+    font-size: 14px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-weight: 500;
+    text-align: center;
+    min-width: 0;
   }
 }
 .freeBox__zaC0Z {
@@ -1670,7 +1710,7 @@
   min-width: 0;
 }
 .link {
-  font-family: "Estedad", sans-serif;
+  font-family: "Vazirmatn", sans-serif;
   font-size: 12px;
   font-weight: 700;
   font-style: normal;

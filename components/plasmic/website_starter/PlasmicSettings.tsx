@@ -874,7 +874,8 @@ function PlasmicSettings__RenderFunc(props: {
                           const $steps = {};
 
                           $steps["updateActivateAutosyncOpen"] =
-                            $state.autoSyncSwitch.checked == true
+                            $state.autoSyncSwitch.checked == true &&
+                            !$steps.runCode
                               ? (() => {
                                   const actionArgs = {
                                     variable: {
@@ -913,7 +914,8 @@ function PlasmicSettings__RenderFunc(props: {
                           }
 
                           $steps["updateDEactivateAutosyncOpen"] =
-                            $state.autoSyncSwitch.checked == false
+                            $state.autoSyncSwitch.checked == false &&
+                            !$steps.runCode
                               ? (() => {
                                   const actionArgs = {
                                     variable: {

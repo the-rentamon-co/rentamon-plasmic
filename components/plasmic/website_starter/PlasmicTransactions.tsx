@@ -103,6 +103,7 @@ export type PlasmicTransactions__OverridesType = {
   returnButton?: Flex__<"div">;
   withdraw?: Flex__<typeof AntdModal>;
   giftEmoji?: Flex__<"div">;
+  description?: Flex__<"div">;
   deposit?: Flex__<typeof AntdModal>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -1663,7 +1664,17 @@ function PlasmicTransactions__RenderFunc(props: {
                                 sty.text__yL5Bl
                               )}
                             >
-                              {"\u06f0 \u066a"}
+                              {hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "\u06f0 %"
+                                : hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u06f0 %"
+                                : hasVariant(globalVariants, "screen", "tablet")
+                                ? "\u06f0 %"
+                                : "\u06f0 %"}
                             </div>
                           ) : null}
                           {(() => {
@@ -1764,6 +1775,25 @@ function PlasmicTransactions__RenderFunc(props: {
                 </Stack__>
               </div>
             ) : null}
+            <Stack__
+              as={"div"}
+              data-plasmic-name={"description"}
+              data-plasmic-override={overrides.description}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.description)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox___5YFh)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cpYxA
+                  )}
+                >
+                  {"\u062a\u0648\u0636\u06cc\u062d\u0627\u062a: "}
+                </div>
+              </div>
+            </Stack__>
             <Stack__
               as={"div"}
               hasGap={true}
@@ -2236,6 +2266,7 @@ const PlasmicDescendants = {
     "returnButton",
     "withdraw",
     "giftEmoji",
+    "description",
     "deposit",
     "navigationRntFooter",
     "clarityRntComponent",
@@ -2249,8 +2280,9 @@ const PlasmicDescendants = {
   sideEffect: ["sideEffect"],
   apiRequest: ["apiRequest"],
   returnButton: ["returnButton"],
-  withdraw: ["withdraw", "giftEmoji"],
+  withdraw: ["withdraw", "giftEmoji", "description"],
   giftEmoji: ["giftEmoji"],
+  description: ["description"],
   deposit: ["deposit"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -2271,6 +2303,7 @@ type NodeDefaultElementType = {
   returnButton: "div";
   withdraw: typeof AntdModal;
   giftEmoji: "div";
+  description: "div";
   deposit: typeof AntdModal;
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -2347,6 +2380,7 @@ export const PlasmicTransactions = Object.assign(
     returnButton: makeNodeComponent("returnButton"),
     withdraw: makeNodeComponent("withdraw"),
     giftEmoji: makeNodeComponent("giftEmoji"),
+    description: makeNodeComponent("description"),
     deposit: makeNodeComponent("deposit"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

@@ -775,6 +775,7 @@
   justify-content: flex-start;
   align-items: center;
   min-height: 20px;
+  z-index: 10000000000;
   min-width: 0;
   padding: 0px;
 }
@@ -794,6 +795,7 @@
   max-width: 100%;
   object-fit: cover;
   color: var(--token-8nedppYkGVaH);
+  z-index: 1;
 }
 .free1 {
   display: flex;
