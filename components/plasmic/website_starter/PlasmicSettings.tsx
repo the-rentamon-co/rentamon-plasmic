@@ -147,6 +147,7 @@ export type PlasmicSettings__OverridesType = {
   buttons4?: Flex__<"div">;
   active4?: Flex__<"div">;
   deactive4?: Flex__<"div">;
+  freeFeatureCredits?: Flex__<typeof ApiRequest>;
   opt14?: Flex__<"div">;
   p24?: Flex__<"div">;
   p34?: Flex__<"div">;
@@ -452,6 +453,30 @@ function PlasmicSettings__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "freeFeatureCredits.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "freeFeatureCredits"
+      },
+      {
+        path: "freeFeatureCredits.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "freeFeatureCredits"
+      },
+      {
+        path: "freeFeatureCredits.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "freeFeatureCredits"
       }
     ],
     [$props, $ctx, $refs]
@@ -932,23 +957,116 @@ function PlasmicSettings__RenderFunc(props: {
                     />
                   </div>
                 </div>
-                <div
-                  data-plasmic-name={"free1"}
-                  data-plasmic-override={overrides.free1}
-                  className={classNames(projectcss.all, sty.free1)}
-                >
+                {(
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const data = $state.freeFeatureCredits?.data;
+                            if (data == null) {
+                              return false;
+                            } else {
+                              return true;
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const data = $state.freeFeatureCredits?.data;
+                            if (data == null) {
+                              return false;
+                            } else {
+                              return true;
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : (() => {
+                        try {
+                          return (() => {
+                            const data = $state.freeFeatureCredits?.data;
+                            if (data == null) {
+                              return false;
+                            }
+                            const autoSync = data.auto_sync;
+                            if (autoSync?.used === autoSync?.total) {
+                              const updatedAt = new Date(autoSync?.updated_at);
+                              const now = new Date();
+                              const daysPassed =
+                                (now - updatedAt) / (1000 * 60 * 60 * 24);
+                              if (daysPassed > 10) {
+                                return false;
+                              }
+                            }
+                            return true;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                ) ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__nxKEu
-                    )}
+                    data-plasmic-name={"free1"}
+                    data-plasmic-override={overrides.free1}
+                    className={classNames(projectcss.all, sty.free1)}
                   >
-                    {
-                      "\u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646: \u06f6 \u0627\u0632 \u06f1\u06f0"
-                    }
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__nxKEu
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const data =
+                                $state.freeFeatureCredits.data.auto_sync;
+                              const total = data.total;
+                              const used = data.used;
+                              const remaining = total - used;
+                              return `رزرو رایگان باقی مونده: ${remaining} از ${total}`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
               <div
                 data-plasmic-name={"options2"}
@@ -1214,23 +1332,118 @@ function PlasmicSettings__RenderFunc(props: {
                     />
                   </div>
                 </div>
-                <div
-                  data-plasmic-name={"free2"}
-                  data-plasmic-override={overrides.free2}
-                  className={classNames(projectcss.all, sty.free2)}
-                >
+                {(
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const data = $state.freeFeatureCredits?.data;
+                            if (data == null) {
+                              return false;
+                            } else {
+                              return true;
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const data = $state.freeFeatureCredits?.data;
+                            if (data == null) {
+                              return false;
+                            } else {
+                              return true;
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : (() => {
+                        try {
+                          return (() => {
+                            const data = $state.freeFeatureCredits?.data;
+                            if (data == null) {
+                              return false;
+                            }
+                            const smartbooking = data.smart_bookings;
+                            if (smartbooking?.used === smartbooking?.total) {
+                              const updatedAt = new Date(
+                                smartbooking?.updated_at
+                              );
+                              const now = new Date();
+                              const daysPassed =
+                                (now - updatedAt) / (1000 * 60 * 60 * 24);
+                              if (daysPassed > 10) {
+                                return false;
+                              }
+                            }
+                            return true;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                ) ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__jf2Z7
-                    )}
+                    data-plasmic-name={"free2"}
+                    data-plasmic-override={overrides.free2}
+                    className={classNames(projectcss.all, sty.free2)}
                   >
-                    {
-                      "\u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646: \u06f6 \u0627\u0632 \u06f1\u06f0"
-                    }
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jf2Z7
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const data =
+                                $state.freeFeatureCredits.data.smart_bookings;
+                              const total = data.total;
+                              const used = data.used;
+                              const remaining = total - used;
+                              return `رزرو رایگان باقی مونده: ${remaining} از ${total}`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
               <div
                 data-plasmic-name={"options3"}
@@ -3271,6 +3484,58 @@ function PlasmicSettings__RenderFunc(props: {
                   </div>
                 </Stack__>
               </AntdModal>
+              <ApiRequest
+                data-plasmic-name={"freeFeatureCredits"}
+                data-plasmic-override={overrides.freeFeatureCredits}
+                className={classNames("__wab_instance", sty.freeFeatureCredits)}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__njLpM
+                    )}
+                  >
+                    {"Error fetching data"}
+                  </div>
+                }
+                loadingDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___5Av41
+                    )}
+                  >
+                    {"Loading..."}
+                  </div>
+                }
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "freeFeatureCredits",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "freeFeatureCredits",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "freeFeatureCredits",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["freeFeatureCredits"] = ref;
+                }}
+                url={
+                  "https://gateway.rentamon.com/webhook/free_feature_credits"
+                }
+              />
             </div>
             <div
               data-plasmic-name={"opt14"}
@@ -3940,6 +4205,7 @@ const PlasmicDescendants = {
     "buttons4",
     "active4",
     "deactive4",
+    "freeFeatureCredits",
     "opt14",
     "p24",
     "p34",
@@ -4009,6 +4275,7 @@ const PlasmicDescendants = {
     "buttons4",
     "active4",
     "deactive4",
+    "freeFeatureCredits",
     "opt14",
     "p24",
     "p34",
@@ -4066,7 +4333,8 @@ const PlasmicDescendants = {
     "dEactivateReservations",
     "buttons4",
     "active4",
-    "deactive4"
+    "deactive4",
+    "freeFeatureCredits"
   ],
   options: [
     "options",
@@ -4152,6 +4420,7 @@ const PlasmicDescendants = {
   buttons4: ["buttons4", "active4", "deactive4"],
   active4: ["active4"],
   deactive4: ["deactive4"],
+  freeFeatureCredits: ["freeFeatureCredits"],
   opt14: ["opt14", "p24", "p34"],
   p24: ["p24"],
   p34: ["p34"],
@@ -4225,6 +4494,7 @@ type NodeDefaultElementType = {
   buttons4: "div";
   active4: "div";
   deactive4: "div";
+  freeFeatureCredits: typeof ApiRequest;
   opt14: "div";
   p24: "div";
   p34: "div";
@@ -4354,6 +4624,7 @@ export const PlasmicSettings = Object.assign(
     buttons4: makeNodeComponent("buttons4"),
     active4: makeNodeComponent("active4"),
     deactive4: makeNodeComponent("deactive4"),
+    freeFeatureCredits: makeNodeComponent("freeFeatureCredits"),
     opt14: makeNodeComponent("opt14"),
     p24: makeNodeComponent("p24"),
     p34: makeNodeComponent("p34"),

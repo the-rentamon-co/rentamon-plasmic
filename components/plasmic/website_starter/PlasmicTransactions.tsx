@@ -102,6 +102,7 @@ export type PlasmicTransactions__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   returnButton?: Flex__<"div">;
   withdraw?: Flex__<typeof AntdModal>;
+  giftEmoji?: Flex__<"div">;
   deposit?: Flex__<typeof AntdModal>;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -207,6 +208,8 @@ function PlasmicTransactions__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
             ? false
             : false
       },
@@ -1585,6 +1588,46 @@ function PlasmicTransactions__RenderFunc(props: {
                             })()}
                           </React.Fragment>
                         </div>
+                        {(() => {
+                          try {
+                            return currentItem.is_free;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <div
+                            data-plasmic-name={"giftEmoji"}
+                            data-plasmic-override={overrides.giftEmoji}
+                            className={classNames(
+                              projectcss.all,
+                              sty.giftEmoji
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__dig8)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image151.svg",
+                                fullWidth: 16,
+                                fullHeight: 17,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          </div>
+                        ) : null}
                         <div
                           className={classNames(
                             projectcss.all,
@@ -1635,8 +1678,8 @@ function PlasmicTransactions__RenderFunc(props: {
                               )}
                               style={{
                                 "text-decoration-line": "line-through",
-                                "text-decoration-color": "black",
-                                "text-decoration-thickness": "1px"
+                                "text-decoration-color": "red",
+                                "text-decoration-thickness": "1.5px"
                               }}
                             >
                               <React.Fragment>
@@ -2183,6 +2226,7 @@ const PlasmicDescendants = {
     "apiRequest",
     "returnButton",
     "withdraw",
+    "giftEmoji",
     "deposit",
     "navigationRntFooter",
     "clarityRntComponent",
@@ -2196,7 +2240,8 @@ const PlasmicDescendants = {
   sideEffect: ["sideEffect"],
   apiRequest: ["apiRequest"],
   returnButton: ["returnButton"],
-  withdraw: ["withdraw"],
+  withdraw: ["withdraw", "giftEmoji"],
+  giftEmoji: ["giftEmoji"],
   deposit: ["deposit"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -2216,6 +2261,7 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   returnButton: "div";
   withdraw: typeof AntdModal;
+  giftEmoji: "div";
   deposit: typeof AntdModal;
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -2291,6 +2337,7 @@ export const PlasmicTransactions = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     returnButton: makeNodeComponent("returnButton"),
     withdraw: makeNodeComponent("withdraw"),
+    giftEmoji: makeNodeComponent("giftEmoji"),
     deposit: makeNodeComponent("deposit"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
