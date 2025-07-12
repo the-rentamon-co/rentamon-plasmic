@@ -974,7 +974,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const now = new Date();
                               const daysPassed =
                                 (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 2) {
+                              if (daysPassed > 1) {
                                 return false;
                               }
                             }
@@ -1004,7 +1004,37 @@ function PlasmicSettings__RenderFunc(props: {
                               const now = new Date();
                               const daysPassed =
                                 (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 2) {
+                              if (daysPassed > 1) {
+                                return false;
+                              }
+                            }
+                            return true;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const data = $state.freeFeatureCredits?.data;
+                            if (data == null) {
+                              return false;
+                            }
+                            const autoSync = data.auto_sync;
+                            if (autoSync?.used === autoSync?.total) {
+                              const updatedAt = new Date(autoSync?.updated_at);
+                              const now = new Date();
+                              const daysPassed =
+                                (now - updatedAt) / (1000 * 60 * 60 * 24);
+                              if (daysPassed > 1) {
                                 return false;
                               }
                             }
@@ -1033,7 +1063,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const now = new Date();
                               const daysPassed =
                                 (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 2) {
+                              if (daysPassed > 1) {
                                 return false;
                               }
                             }
@@ -1369,7 +1399,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const now = new Date();
                               const daysPassed =
                                 (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 2) {
+                              if (daysPassed > 1) {
                                 return false;
                               }
                             }
@@ -1401,7 +1431,39 @@ function PlasmicSettings__RenderFunc(props: {
                               const now = new Date();
                               const daysPassed =
                                 (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 2) {
+                              if (daysPassed > 1) {
+                                return false;
+                              }
+                            }
+                            return true;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const data = $state.freeFeatureCredits?.data;
+                            if (data == null) {
+                              return false;
+                            }
+                            const smartbooking = data.smart_bookings;
+                            if (smartbooking?.used === smartbooking?.total) {
+                              const updatedAt = new Date(
+                                smartbooking?.updated_at
+                              );
+                              const now = new Date();
+                              const daysPassed =
+                                (now - updatedAt) / (1000 * 60 * 60 * 24);
+                              if (daysPassed > 1) {
                                 return false;
                               }
                             }

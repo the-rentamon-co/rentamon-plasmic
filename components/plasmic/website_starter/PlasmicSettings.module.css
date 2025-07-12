@@ -809,6 +809,11 @@
   min-width: 0;
   padding: 0px 8px 0px 55px;
 }
+@media (max-width: 1200px) {
+  .free1 {
+    display: flex;
+  }
+}
 @media (max-width: 500px) {
   .free1 {
     padding-left: 10px;
@@ -1158,6 +1163,11 @@
   align-items: center;
   min-width: 0;
   padding: 0px 8px 0px 55px;
+}
+@media (max-width: 1200px) {
+  .free2 {
+    display: flex;
+  }
 }
 @media (max-width: 500px) {
   .free2 {
