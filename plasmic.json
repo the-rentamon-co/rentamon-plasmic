@@ -175,19 +175,6 @@
           "componentType": "component"
         },
         {
-          "id": "24pJs8Ng-L75",
-          "name": "WalletNew",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicWalletNew.tsx",
-          "importSpec": {
-            "modulePath": "WalletNew.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicWalletNew.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "RNhZtlNmydsH",
           "name": "Calendar2",
           "type": "managed",
