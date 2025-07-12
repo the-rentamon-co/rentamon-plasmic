@@ -1196,7 +1196,7 @@ function PlasmicReservations__RenderFunc(props: {
                     : "fadeinf"
                 )}
               >
-                {"\u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646"}
+                {"\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"}
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__ihmaM)}>

@@ -967,9 +967,18 @@ function PlasmicSettings__RenderFunc(props: {
                             const data = $state.freeFeatureCredits?.data;
                             if (data == null) {
                               return false;
-                            } else {
-                              return true;
                             }
+                            const autoSync = data.auto_sync;
+                            if (autoSync?.used === autoSync?.total) {
+                              const updatedAt = new Date(autoSync?.updated_at);
+                              const now = new Date();
+                              const daysPassed =
+                                (now - updatedAt) / (1000 * 60 * 60 * 24);
+                              if (daysPassed > 2) {
+                                return false;
+                              }
+                            }
+                            return true;
                           })();
                         } catch (e) {
                           if (
@@ -988,9 +997,18 @@ function PlasmicSettings__RenderFunc(props: {
                             const data = $state.freeFeatureCredits?.data;
                             if (data == null) {
                               return false;
-                            } else {
-                              return true;
                             }
+                            const autoSync = data.auto_sync;
+                            if (autoSync?.used === autoSync?.total) {
+                              const updatedAt = new Date(autoSync?.updated_at);
+                              const now = new Date();
+                              const daysPassed =
+                                (now - updatedAt) / (1000 * 60 * 60 * 24);
+                              if (daysPassed > 2) {
+                                return false;
+                              }
+                            }
+                            return true;
                           })();
                         } catch (e) {
                           if (
@@ -1015,7 +1033,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const now = new Date();
                               const daysPassed =
                                 (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 10) {
+                              if (daysPassed > 2) {
                                 return false;
                               }
                             }
@@ -1342,9 +1360,20 @@ function PlasmicSettings__RenderFunc(props: {
                             const data = $state.freeFeatureCredits?.data;
                             if (data == null) {
                               return false;
-                            } else {
-                              return true;
                             }
+                            const smartbooking = data.smart_bookings;
+                            if (smartbooking?.used === smartbooking?.total) {
+                              const updatedAt = new Date(
+                                smartbooking?.updated_at
+                              );
+                              const now = new Date();
+                              const daysPassed =
+                                (now - updatedAt) / (1000 * 60 * 60 * 24);
+                              if (daysPassed > 2) {
+                                return false;
+                              }
+                            }
+                            return true;
                           })();
                         } catch (e) {
                           if (
@@ -1363,9 +1392,20 @@ function PlasmicSettings__RenderFunc(props: {
                             const data = $state.freeFeatureCredits?.data;
                             if (data == null) {
                               return false;
-                            } else {
-                              return true;
                             }
+                            const smartbooking = data.smart_bookings;
+                            if (smartbooking?.used === smartbooking?.total) {
+                              const updatedAt = new Date(
+                                smartbooking?.updated_at
+                              );
+                              const now = new Date();
+                              const daysPassed =
+                                (now - updatedAt) / (1000 * 60 * 60 * 24);
+                              if (daysPassed > 2) {
+                                return false;
+                              }
+                            }
+                            return true;
                           })();
                         } catch (e) {
                           if (
@@ -1392,7 +1432,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const now = new Date();
                               const daysPassed =
                                 (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 10) {
+                              if (daysPassed > 2) {
                                 return false;
                               }
                             }
