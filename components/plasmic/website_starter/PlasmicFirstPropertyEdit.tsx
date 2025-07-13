@@ -1017,7 +1017,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["updateLoading2"] = false
+                      $steps["updateLoading2"] = true
                         ? (() => {
                             const actionArgs = {
                               variable: {
@@ -1061,7 +1061,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         sty.text___6AXjw
                       )}
                     >
-                      {"\u0630\u062e\u06cc\u0631\u0647"}
+                      {"\u0628\u0639\u062f\u06cc"}
                     </div>
                   </div>
                   <div

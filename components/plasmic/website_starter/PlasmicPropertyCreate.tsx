@@ -944,7 +944,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         sty.text___06Po8
                       )}
                     >
-                      {"\u0630\u062e\u06cc\u0631\u0647"}
+                      {"\u0628\u0639\u062f\u06cc"}
                     </div>
                   </div>
                   <div

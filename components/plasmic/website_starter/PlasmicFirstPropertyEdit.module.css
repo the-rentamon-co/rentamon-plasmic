@@ -667,6 +667,7 @@
   text-align: center;
   font-weight: 500;
   user-select: none;
+  margin-top: 0px;
   min-width: 0;
 }
 .privious {
