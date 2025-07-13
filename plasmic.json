@@ -1893,6 +1893,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/join-our-journey"
+        },
+        {
+          "id": "QAns8FNAW5dF",
+          "name": "Picup",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPicup.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/picup.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPicup.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/picup"
+        },
+        {
+          "id": "S9ixvXp2RjYd",
+          "name": "PropertyCreate2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPropertyCreate2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/property/create-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPropertyCreate2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/property/create-2"
         }
       ],
       "icons": [
