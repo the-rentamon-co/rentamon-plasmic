@@ -21,8 +21,9 @@ RUN npm config set fetch-retry-mintimeout 100000 \
 # Install specific plasmic packages first to improve layer caching
 RUN npm install @plasmicpkgs/plasmic-nav @plasmicpkgs/react-aria --legacy-peer-deps
 
-# Install rest of dependencies
-RUN npm install --legacy-peer-deps --force \
+# Install browser-image-compression and the rest of dependencies
+RUN npm install browser-image-compression --legacy-peer-deps \
+ && npm install --legacy-peer-deps --force \
  && npm cache clean --force
 
 # Copy app source code
