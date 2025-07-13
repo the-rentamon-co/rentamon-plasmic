@@ -864,6 +864,22 @@ function PlasmicSettings__RenderFunc(props: {
                         "__wab_instance",
                         sty.autoSyncSwitch
                       )}
+                      disabled={(() => {
+                        try {
+                          return (
+                            $state.freeFeatureCredits.data.auto_sync.total !=
+                            $state.freeFeatureCredits.data.auto_sync.used
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
                       onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
                           "autoSyncSwitch",
@@ -874,8 +890,7 @@ function PlasmicSettings__RenderFunc(props: {
                           const $steps = {};
 
                           $steps["updateActivateAutosyncOpen"] =
-                            $state.autoSyncSwitch.checked == true &&
-                            !$steps.runCode
+                            $state.autoSyncSwitch.checked == true
                               ? (() => {
                                   const actionArgs = {
                                     variable: {
@@ -914,8 +929,7 @@ function PlasmicSettings__RenderFunc(props: {
                           }
 
                           $steps["updateDEactivateAutosyncOpen"] =
-                            $state.autoSyncSwitch.checked == false &&
-                            !$steps.runCode
+                            $state.autoSyncSwitch.checked == false
                               ? (() => {
                                   const actionArgs = {
                                     variable: {
@@ -1101,7 +1115,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const total = data.total;
                               const used = data.used;
                               const remaining = total - used;
-                              return `رزرو رایگان باقی مونده: ${remaining} از ${total}`;
+                              return `از ${total} رزرو رایگان، ${remaining} تاش باقی مونده`;
                             })();
                           } catch (e) {
                             if (
@@ -1285,6 +1299,23 @@ function PlasmicSettings__RenderFunc(props: {
                         "__wab_instance",
                         sty.reservationSwitch
                       )}
+                      disabled={(() => {
+                        try {
+                          return (
+                            $state.freeFeatureCredits.data.smart_bookings
+                              .total !=
+                            $state.freeFeatureCredits.data.smart_bookings.used
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
                       onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
                           "reservationSwitch",
@@ -1532,7 +1563,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const total = data.total;
                               const used = data.used;
                               const remaining = total - used;
-                              return `رزرو رایگان باقی مونده: ${remaining} از ${total}`;
+                              return `از ${total} رزرو رایگان، ${remaining} تاش باقی مونده`;
                             })();
                           } catch (e) {
                             if (
@@ -4096,7 +4127,7 @@ function PlasmicSettings__RenderFunc(props: {
                     try {
                       return `موجودی کیف پولت برای استفاده از ویژگی ${$state.selectedFeature} کافی نیست.
 
-کیف پولت رو شارژ کن تا تمام این امکانت برات فعال بشن.
+کیف پولت رو شارژ کن تا تمام این امکانات برات فعال بشن.
 `;
                     } catch (e) {
                       if (
