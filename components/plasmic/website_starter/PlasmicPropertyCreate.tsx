@@ -793,7 +793,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         $steps["updateLoading"] = await $steps["updateLoading"];
                       }
 
-                      $steps["invokeGlobalAction"] = true
+                      $steps["invokeGlobalAction"] = false
                         ? (() => {
                             const actionArgs = {
                               args: [
@@ -839,24 +839,23 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["goToProperties"] =
-                        $steps.invokeGlobalAction.status == 200
-                          ? (() => {
-                              const actionArgs = { destination: `/properties` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
+                      $steps["goToProperties"] = false
+                        ? (() => {
+                            const actionArgs = { destination: `/properties` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
                       if (
                         $steps["goToProperties"] != null &&
                         typeof $steps["goToProperties"] === "object" &&
@@ -867,7 +866,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["updateLoading2"] = true
+                      $steps["updateLoading2"] = false
                         ? (() => {
                             const actionArgs = {
                               variable: {
@@ -903,7 +902,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["updateStep"] = false
+                      $steps["updateStep"] = true
                         ? (() => {
                             const actionArgs = {
                               variable: {

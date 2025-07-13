@@ -1274,14 +1274,14 @@ function PlasmicPropertyCreate2__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               "POST",
-                              "https://gateway.rentamon.com/webhook/property_create",
+                              "https://gateway.rentamon.com/webhook/upload-pic",
                               undefined,
                               (() => {
                                 try {
                                   return (() => {
                                     let a = {
                                       hostType: "villa_cottage",
-                                      prop_name: "s3",
+                                      prop_name: "ویلام",
                                       property_pic: $state.upload.files[0]
                                     };
                                     return a;

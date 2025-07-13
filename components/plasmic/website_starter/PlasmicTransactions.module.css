@@ -1313,6 +1313,7 @@
   min-width: 0;
 }
 .description {
+  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -1321,7 +1322,6 @@
   background: var(--token-8R7jjC_-F9FF);
   margin-top: 10px;
   min-width: 0;
-  display: none;
   border-radius: 30px;
   padding: 8px 0px;
   border-width: 1px;
