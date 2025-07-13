@@ -103,8 +103,9 @@ export type PlasmicTransactions__OverridesType = {
   returnButton?: Flex__<"div">;
   withdraw?: Flex__<typeof AntdModal>;
   giftEmoji?: Flex__<"div">;
-  description?: Flex__<"div">;
+  comment?: Flex__<"div">;
   deposit?: Flex__<typeof AntdModal>;
+  comment2?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -222,6 +223,8 @@ function PlasmicTransactions__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
             ? false
             : false
       },
@@ -591,7 +594,10 @@ function PlasmicTransactions__RenderFunc(props: {
                                             .features,
                                         is_reserved:
                                           $state.apiRequest.data[currentIndex]
-                                            .is_reserved
+                                            .is_reserved,
+                                        comment:
+                                          $state.apiRequest.data[currentIndex]
+                                            .comment
                                       });
                                     } else {
                                       return ($state.modalData = {
@@ -607,7 +613,10 @@ function PlasmicTransactions__RenderFunc(props: {
                                             .transaction_cause,
                                         is_reserved:
                                           $state.apiRequest.data[currentIndex]
-                                            .is_reserved
+                                            .is_reserved,
+                                        comment:
+                                          $state.apiRequest.data[currentIndex]
+                                            .comment
                                       });
                                     }
                                   })()
@@ -1777,10 +1786,10 @@ function PlasmicTransactions__RenderFunc(props: {
             ) : null}
             <Stack__
               as={"div"}
-              data-plasmic-name={"description"}
-              data-plasmic-override={overrides.description}
+              data-plasmic-name={"comment"}
+              data-plasmic-override={overrides.comment}
               hasGap={true}
-              className={classNames(projectcss.all, sty.description)}
+              className={classNames(projectcss.all, sty.comment)}
             >
               <div className={classNames(projectcss.all, sty.freeBox___5YFh)}>
                 <div
@@ -1790,7 +1799,21 @@ function PlasmicTransactions__RenderFunc(props: {
                     sty.text__cpYxA
                   )}
                 >
-                  {"\u062a\u0648\u0636\u06cc\u062d\u0627\u062a: "}
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $state.modalData.comment;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u062a\u0648\u0636\u06cc\u062d\u0627\u062a: ";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </div>
               </div>
             </Stack__>
@@ -2094,6 +2117,53 @@ function PlasmicTransactions__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
+            {(() => {
+              try {
+                return $state.modalData.comment !== undefined;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <Stack__
+                as={"div"}
+                data-plasmic-name={"comment2"}
+                data-plasmic-override={overrides.comment2}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.comment2)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__g3LRp)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__h9Qe
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return "توضیحات: " + $state.modalData.comment;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u062a\u0648\u0636\u06cc\u062d\u0627\u062a: ";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              </Stack__>
+            ) : null}
             <Stack__
               as={"div"}
               hasGap={true}
@@ -2266,8 +2336,9 @@ const PlasmicDescendants = {
     "returnButton",
     "withdraw",
     "giftEmoji",
-    "description",
+    "comment",
     "deposit",
+    "comment2",
     "navigationRntFooter",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -2280,10 +2351,11 @@ const PlasmicDescendants = {
   sideEffect: ["sideEffect"],
   apiRequest: ["apiRequest"],
   returnButton: ["returnButton"],
-  withdraw: ["withdraw", "giftEmoji", "description"],
+  withdraw: ["withdraw", "giftEmoji", "comment"],
   giftEmoji: ["giftEmoji"],
-  description: ["description"],
-  deposit: ["deposit"],
+  comment: ["comment"],
+  deposit: ["deposit", "comment2"],
+  comment2: ["comment2"],
   navigationRntFooter: ["navigationRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -2303,8 +2375,9 @@ type NodeDefaultElementType = {
   returnButton: "div";
   withdraw: typeof AntdModal;
   giftEmoji: "div";
-  description: "div";
+  comment: "div";
   deposit: typeof AntdModal;
+  comment2: "div";
   navigationRntFooter: typeof NavigationRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -2380,8 +2453,9 @@ export const PlasmicTransactions = Object.assign(
     returnButton: makeNodeComponent("returnButton"),
     withdraw: makeNodeComponent("withdraw"),
     giftEmoji: makeNodeComponent("giftEmoji"),
-    description: makeNodeComponent("description"),
+    comment: makeNodeComponent("comment"),
     deposit: makeNodeComponent("deposit"),
+    comment2: makeNodeComponent("comment2"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
