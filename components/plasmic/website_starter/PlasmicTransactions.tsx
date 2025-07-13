@@ -2117,19 +2117,35 @@ function PlasmicTransactions__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            {(() => {
-              try {
-                return $state.modalData.comment !== undefined;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $state.modalData.comment !== null;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : (() => {
+                    try {
+                      return $state.modalData.comment !== null;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+            ) ? (
               <Stack__
                 as={"div"}
                 data-plasmic-name={"comment2"}
