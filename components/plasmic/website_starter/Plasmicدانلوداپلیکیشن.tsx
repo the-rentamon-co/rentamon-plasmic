@@ -357,7 +357,7 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             destination:
-                              "https://rentamon-files.storage.iran.liara.space/APK/rentamon-v19-app.apk"
+                              "https://media.rentamon.com/apk%2Frentamon-v19-app%20%282%29.apk"
                           };
                           return (({ destination }) => {
                             if (
