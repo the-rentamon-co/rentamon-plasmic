@@ -2,7 +2,7 @@
   "projects": [
     {
       "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-      "version": "228.0.1",
+      "version": "228.0.2",
       "dependencies": {
         "YUiM7yqBWAqsh8KSnrdj7": "0.35.0",
         "ohDidvG9XsCeFumugENU3J": "6.31.0",
@@ -21,7 +21,7 @@
       "fileLocks": [
         {
           "assetId": "7SNMkB8UMukVgcWJYokeAQ",
-          "checksum": "25b5776274b8c0fc920dfd0bedf31356",
+          "checksum": "601b9bce1bbf398e9436d0be983e7204",
           "type": "globalContexts"
         },
         {
@@ -2372,12 +2372,12 @@
         {
           "type": "renderModule",
           "assetId": "wDX6CsUVKNmL",
-          "checksum": "95ed9c4e5cb7e4a7643739d3f7a515bb"
+          "checksum": "d0bf5aac6380120fe21f6eb20e678523"
         },
         {
           "type": "cssRules",
           "assetId": "wDX6CsUVKNmL",
-          "checksum": "95ed9c4e5cb7e4a7643739d3f7a515bb"
+          "checksum": "d0bf5aac6380120fe21f6eb20e678523"
         },
         {
           "type": "renderModule",
