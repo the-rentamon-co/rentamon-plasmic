@@ -866,9 +866,11 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   hasGap={true}
                   className={classNames(projectcss.all, sty.newButtons)}
                 >
-                  <div
+                  <Stack__
+                    as={"div"}
                     data-plasmic-name={"next"}
                     data-plasmic-override={overrides.next}
+                    hasGap={true}
                     className={classNames(
                       projectcss.all,
                       sty.next,
@@ -911,7 +913,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["updateStep"] = await $steps["updateStep"];
                       }
 
-                      $steps["updateLoading"] = true
+                      $steps["updateLoading"] = false
                         ? (() => {
                             const actionArgs = {
                               variable: {
@@ -990,34 +992,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["goToLiteCalendar"] = false
-                        ? (() => {
-                            const actionArgs = { destination: `/calendar` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToLiteCalendar"] != null &&
-                        typeof $steps["goToLiteCalendar"] === "object" &&
-                        typeof $steps["goToLiteCalendar"].then === "function"
-                      ) {
-                        $steps["goToLiteCalendar"] = await $steps[
-                          "goToLiteCalendar"
-                        ];
-                      }
-
-                      $steps["updateLoading2"] = true
+                      $steps["updateLoading2"] = false
                         ? (() => {
                             const actionArgs = {
                               variable: {
@@ -1052,6 +1027,33 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           "updateLoading2"
                         ];
                       }
+
+                      $steps["goToLiteCalendar"] = false
+                        ? (() => {
+                            const actionArgs = { destination: `/calendar` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToLiteCalendar"] != null &&
+                        typeof $steps["goToLiteCalendar"] === "object" &&
+                        typeof $steps["goToLiteCalendar"].then === "function"
+                      ) {
+                        $steps["goToLiteCalendar"] = await $steps[
+                          "goToLiteCalendar"
+                        ];
+                      }
                     }}
                   >
                     <div
@@ -1063,7 +1065,24 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     >
                       {"\u0628\u0639\u062f\u06cc"}
                     </div>
-                  </div>
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__m7T)}
+                      displayHeight={"37px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image140.gif",
+                        fullWidth: 500,
+                        fullHeight: 500,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Stack__>
                   <div
                     data-plasmic-name={"privious"}
                     data-plasmic-override={overrides.privious}
