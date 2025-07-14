@@ -1066,7 +1066,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                   loop={true}
                   muted={true}
                   src={
-                    "https://rentamon-files.storage.iran.liara.space/auto-sync.mp4"
+                    "https://media.rentamon.com/others%2Fauto-sync.mp4"
                   }
                 />
               </div>

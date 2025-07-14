@@ -565,7 +565,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.embedHtml__gDn1
                     )}
                     code={
-                      '<video\r\n  src="https://rentamon-files.storage.iran.liara.space/auto-sync.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
+                      '<video\r\n  src="https://media.rentamon.com/others%2Fauto-sync.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
                     }
                   />
                 </div>
