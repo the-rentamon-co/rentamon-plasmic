@@ -1325,7 +1325,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       )}
                       controls={true}
                       src={
-                        "https://rentamon-files.storage.iran.liara.space/video/tavana.mp4"
+                        "https://media.rentamon.com/video%2Ftavana.mp4"
                       }
                     />
                   </div>
@@ -1441,7 +1441,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       )}
                       controls={true}
                       src={
-                        "https://rentamon-files.storage.iran.liara.space/video/mehranfar.mp4"
+                        "https://media.rentamon.com/video%2Fmehranfar.mp4"
                       }
                     />
                   </div>
@@ -1559,7 +1559,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       )}
                       controls={true}
                       src={
-                        "https://rentamon-files.storage.iran.liara.space/video/moradhosseini.mp4"
+                        "https://media.rentamon.com/video%2Fmoradhosseini.mp4"
                       }
                     />
                   </div>

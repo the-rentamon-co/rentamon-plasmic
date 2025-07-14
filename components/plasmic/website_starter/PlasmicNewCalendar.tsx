@@ -715,7 +715,7 @@ function PlasmicNewCalendar__RenderFunc(props: {
                 loop={true}
                 muted={true}
                 src={
-                  "https://rentamon-files.storage.iran.liara.space/gif/calendar-2-demo.mp4"
+                  "https://media.rentamon.com/gif%2Fcalendar-2-demo.mp4"
                 }
               />
             </div>

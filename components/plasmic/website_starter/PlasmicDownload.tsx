@@ -303,7 +303,7 @@ function PlasmicDownload__RenderFunc(props: {
                     controls={true}
                     loop={true}
                     src={
-                      "https://rentamon-files.storage.iran.liara.space/video/pro.mp4"
+                      "https://media.rentamon.com/video%2Fpro.mp4"
                     }
                   />
                 </div>

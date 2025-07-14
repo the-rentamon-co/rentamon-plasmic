@@ -715,7 +715,7 @@ function PlasmicFeatures__RenderFunc(props: {
                 loop={true}
                 muted={true}
                 src={
-                  "https://rentamon-files.storage.iran.liara.space/video/pro-panel/features.mp4"
+                  "https://media.rentamon.com/video%2Ffeatures.mp4"
                 }
               />
             </div>

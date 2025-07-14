@@ -481,7 +481,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 loop={true}
                 muted={true}
                 src={
-                  "https://rentamon-files.storage.iran.liara.space/gif/unified-calendar.mp4"
+                  "https://media.rentamon.com/gif%2Funified-calendar.mp4"
                 }
               />
 

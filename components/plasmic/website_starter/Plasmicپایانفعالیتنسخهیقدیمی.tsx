@@ -664,7 +664,7 @@ function Plasmicپایانفعالیتنسخهیقدیمی__RenderFunc(props: {
                 loop={true}
                 muted={true}
                 src={
-                  "https://rentamon-files.storage.iran.liara.space/video/pro-panel/features.mp4"
+                  "https://media.rentamon.com/video%2Ffeatures.mp4"
                 }
               />
             </div>
@@ -874,8 +874,8 @@ function Plasmicپایانفعالیتنسخهیقدیمی__RenderFunc(props: {
                   muted={true}
                   src={
                     hasVariant(globalVariants, "screen", "mobile")
-                      ? "https://rentamon-files.storage.iran.liara.space/video/pro-panel/edit-res.mp4"
-                      : "https://rentamon-files.storage.iran.liara.space/video/pro-panel/analytics.mp4"
+                      ? "https://media.rentamon.com/video%2Fedit-res.mp4"
+                      : "https://media.rentamon.com/video%2Fanalytics.mp4"
                   }
                 />
               </div>
@@ -892,8 +892,8 @@ function Plasmicپایانفعالیتنسخهیقدیمی__RenderFunc(props: {
                   muted={true}
                   src={
                     hasVariant(globalVariants, "screen", "mobile")
-                      ? "https://rentamon-files.storage.iran.liara.space/video/pro-panel/analytics.mp4"
-                      : "https://rentamon-files.storage.iran.liara.space/video/pro-panel/edit-res.mp4"
+                      ? "https://media.rentamon.com/video%2Fanalytics.mp4"
+                      : "https://media.rentamon.com/video%2Fedit-res.mp4"
                   }
                 />
               </div>
