@@ -829,18 +829,9 @@ function PlasmicSettings__RenderFunc(props: {
                                 }
                                 const number =
                                   $state.apiRequest2.data[0].default_rate;
-                                const [intPart, decimalPart] = number
-                                  .toString()
-                                  .split(".");
-                                const formatted = decimalPart
-                                  ? `${intPart}/${decimalPart.replace(
-                                      /0+$/,
-                                      ""
-                                    )}`
-                                  : intPart;
-                                const persianNumber =
-                                  convertToPersianNumber(formatted);
-                                return persianNumber;
+                                return `${new Intl.NumberFormat("fa-IR").format(
+                                  number
+                                )}`;
                               })();
                             } catch (e) {
                               if (
@@ -1275,19 +1266,9 @@ function PlasmicSettings__RenderFunc(props: {
                                 }
                                 const number =
                                   $state.apiRequest.data[0].default_rate;
-                                const [intPart, decimalPart] = number
-                                  .toString()
-                                  .split(".");
-                                const cleanedDecimal = decimalPart?.replace(
-                                  /0+$/,
-                                  ""
-                                );
-                                const formatted = cleanedDecimal
-                                  ? `${intPart}/${cleanedDecimal}`
-                                  : intPart;
-                                const persianNumber =
-                                  convertToPersianNumber(formatted);
-                                return persianNumber;
+                                return `${new Intl.NumberFormat("fa-IR").format(
+                                  number
+                                )}`;
                               })();
                             } catch (e) {
                               if (
