@@ -11272,17 +11272,7 @@ function PlasmicActivation__RenderFunc(props: {
                 {"Error fetching data"}
               </div>
             }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__a3JDg
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
+            loadingDisplay={null}
             method={"GET"}
             onError={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, [

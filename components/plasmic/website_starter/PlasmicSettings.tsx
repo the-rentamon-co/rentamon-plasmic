@@ -829,9 +829,17 @@ function PlasmicSettings__RenderFunc(props: {
                                 }
                                 const number =
                                   $state.apiRequest2.data[0].default_rate;
-                                const persianNumber = convertToPersianNumber(
-                                  number.toLocaleString()
-                                );
+                                const [intPart, decimalPart] = number
+                                  .toString()
+                                  .split(".");
+                                const formatted = decimalPart
+                                  ? `${intPart}/${decimalPart.replace(
+                                      /0+$/,
+                                      ""
+                                    )}`
+                                  : intPart;
+                                const persianNumber =
+                                  convertToPersianNumber(formatted);
                                 return persianNumber;
                               })();
                             } catch (e) {
@@ -1267,9 +1275,18 @@ function PlasmicSettings__RenderFunc(props: {
                                 }
                                 const number =
                                   $state.apiRequest.data[0].default_rate;
-                                const persianNumber = convertToPersianNumber(
-                                  number.toLocaleString()
+                                const [intPart, decimalPart] = number
+                                  .toString()
+                                  .split(".");
+                                const cleanedDecimal = decimalPart?.replace(
+                                  /0+$/,
+                                  ""
                                 );
+                                const formatted = cleanedDecimal
+                                  ? `${intPart}/${cleanedDecimal}`
+                                  : intPart;
+                                const persianNumber =
+                                  convertToPersianNumber(formatted);
                                 return persianNumber;
                               })();
                             } catch (e) {
@@ -3640,17 +3657,7 @@ function PlasmicSettings__RenderFunc(props: {
                     {"Error fetching data"}
                   </div>
                 }
-                loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___5Av41
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
-                }
+                loadingDisplay={null}
                 method={"GET"}
                 onError={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
