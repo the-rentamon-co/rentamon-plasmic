@@ -56,7 +56,7 @@ function LiteCalendar() {
         {/* <meta name="theme-color" content="#7444BC" /> */}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png" />
+        <link rel="apple-touch-icon" href="https://media.rentamon.com/icon%2Fapp-icon-1080.png" />
       </Head>
     <GlobalContextsProvider>
       <PageParamsProvider__

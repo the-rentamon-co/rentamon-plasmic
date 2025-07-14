@@ -24,7 +24,7 @@
   },
   "icons": [
     {
-      "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png",
+      "src": "https://media.rentamon.com/icon%2Fapp-icon-1080.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
@@ -50,13 +50,13 @@
       "description": "رنتامون، مدیریت آنلاین اقامتگاه",
       "icons": [
         {
-          "src": "https://rentamon-files.storage.iran.liara.space/icon/app-icon-1080.png",
+          "src": "https://media.rentamon.com/icon%2Fapp-icon-1080.png",
           "sizes": "48x48"
         }
       ],
       "screenshots": [
         {
-          "src": "https://rentamon-files.storage.iran.liara.space/icon/splashscreen.svg",
+          "src": "https://media.rentamon.com/icon%2Fsplashscreen.svg",
           "sizes": "500x500",
           "label": "تصویر ویجت"
         }

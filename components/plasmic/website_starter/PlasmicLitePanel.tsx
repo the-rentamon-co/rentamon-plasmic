@@ -1571,7 +1571,7 @@ function PlasmicLitePanel__RenderFunc(props: {
             data-plasmic-override={overrides.favicon}
             className={classNames("__wab_instance", sty.favicon)}
             code={
-              '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u0644\u06cc\u0646\u06a9 favicon\r\n  const faviconLink = document.createElement("link");\r\n  faviconLink.rel = "icon";\r\n  faviconLink.href = "https://rentamon-files.storage.iran.liara.space/icon/icon.svg";\r\n  faviconLink.sizes = "192x192";\r\n  document.head.appendChild(faviconLink);\r\n\r\n</script>\r\n\r\n'
+              '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u0644\u06cc\u0646\u06a9 favicon\r\n  const faviconLink = document.createElement("link");\r\n  faviconLink.rel = "icon";\r\n  faviconLink.href = "https://media.rentamon.com/icon%2Ficon.svg";\r\n  faviconLink.sizes = "192x192";\r\n  document.head.appendChild(faviconLink);\r\n\r\n</script>\r\n\r\n'
             }
           />
 
