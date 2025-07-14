@@ -1862,9 +1862,22 @@
     padding-right: 0px;
   }
 }
-.jabamaPhoneInput:global(.__wab_instance) {
+.freeBox__fYgfU {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.jabamaSendOtp:global(.__wab_instance) {
+  width: 100%;
   max-width: 100%;
   object-fit: cover;
+  min-width: 0;
 }
 .freeBox__dpDxM {
   display: flex;
@@ -2124,9 +2137,22 @@
     padding-right: 0px;
   }
 }
-.jajigaPhoneInput:global(.__wab_instance) {
+.freeBox__pGyxG {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.jajigaSend:global(.__wab_instance) {
+  width: 100%;
   max-width: 100%;
   object-fit: cover;
+  min-width: 0;
 }
 .freeBox__mpeUy {
   display: flex;
@@ -2387,9 +2413,22 @@
     padding-right: 0px;
   }
 }
-.input9:global(.__wab_instance) {
+.freeBox__pgFQy {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.shabOtpSend:global(.__wab_instance) {
+  width: 100%;
   max-width: 100%;
   object-fit: cover;
+  min-width: 0;
 }
 .freeBox__mblh6 {
   display: flex;
@@ -2428,7 +2467,7 @@
     margin-top: 0px;
   }
 }
-.shabsend:global(.__wab_instance) {
+.shabSendButton:global(.__wab_instance) {
   max-width: 50%;
   object-fit: cover;
   width: 100%;
@@ -2445,7 +2484,7 @@
   margin: 10px 0px;
 }
 @media (max-width: 500px) {
-  .shabsend:global(.__wab_instance) {
+  .shabSendButton:global(.__wab_instance) {
     height: 146px;
     margin-top: calc(0px + 0px) !important;
     margin-right: 0px;
@@ -2659,9 +2698,22 @@
     padding-right: 0px;
   }
 }
-.input11:global(.__wab_instance) {
+.freeBox__uDmKw {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.otaghakSendOtp:global(.__wab_instance) {
+  width: 100%;
   max-width: 100%;
   object-fit: cover;
+  min-width: 0;
 }
 .freeBox__lKZu {
   display: flex;
@@ -4412,4 +4464,22 @@
     font-size: 15px;
     font-weight: 500;
   }
+}
+.getNumberOfDisconnectedPlatforms:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__a3JDg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__eTKys {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
 }

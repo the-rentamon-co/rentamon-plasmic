@@ -70,6 +70,7 @@ import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Fo
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
@@ -154,28 +155,28 @@ export type PlasmicActivation__OverridesType = {
   link?: Flex__<"a"> & Partial<LinkProps>;
   submitButton?: Flex__<typeof AntdButton>;
   jabamaSend?: Flex__<typeof FormItemWrapper>;
-  jabamaPhoneInput?: Flex__<typeof AntdInput>;
+  jabamaSendOtp?: Flex__<typeof Input>;
   jabamasend2?: Flex__<typeof AntdButton>;
   jabamasend3?: Flex__<typeof AntdButton>;
   jabamaVerify?: Flex__<typeof FormItemWrapper>;
   jabamaOtpInput?: Flex__<typeof AntdInput>;
   jabamaverify?: Flex__<typeof AntdButton>;
   jajigaSendForm?: Flex__<typeof FormItemWrapper>;
-  jajigaPhoneInput?: Flex__<typeof AntdInput>;
+  jajigaSend?: Flex__<typeof Input>;
   jajigasend?: Flex__<typeof AntdButton>;
   jabamasend4?: Flex__<typeof AntdButton>;
   jajigaVerify?: Flex__<typeof FormItemWrapper>;
   input6?: Flex__<typeof AntdInput>;
   jajigaverify?: Flex__<typeof AntdButton>;
   shabSend?: Flex__<typeof FormItemWrapper>;
-  input9?: Flex__<typeof AntdInput>;
-  shabsend?: Flex__<typeof AntdButton>;
+  shabOtpSend?: Flex__<typeof Input>;
+  shabSendButton?: Flex__<typeof AntdButton>;
   jabamasend5?: Flex__<typeof AntdButton>;
   shabVerify?: Flex__<typeof FormItemWrapper>;
   input10?: Flex__<typeof AntdInput>;
   shabverify?: Flex__<typeof AntdButton>;
   otaghakSend?: Flex__<typeof FormItemWrapper>;
-  input11?: Flex__<typeof AntdInput>;
+  otaghakSendOtp?: Flex__<typeof Input>;
   otaghaksend?: Flex__<typeof AntdButton>;
   jabamasend6?: Flex__<typeof AntdButton>;
   otaghakVerify?: Flex__<typeof FormItemWrapper>;
@@ -229,6 +230,7 @@ export type PlasmicActivation__OverridesType = {
   _6?: Flex__<"div">;
   quotes?: Flex__<"div">;
   testimonialsScrolling?: Flex__<typeof TestimonialsScrolling>;
+  getNumberOfDisconnectedPlatforms?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultActivationProps {}
@@ -303,14 +305,6 @@ function PlasmicActivation__RenderFunc(props: {
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
       {
-        path: "jajigaPhoneInput.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
-      },
-      {
         path: "jabamaOtpInput.value",
         type: "private",
         variableType: "text",
@@ -319,23 +313,7 @@ function PlasmicActivation__RenderFunc(props: {
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
       {
-        path: "input9.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
-      },
-      {
         path: "input10.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
-      },
-      {
-        path: "input11.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
@@ -440,14 +418,6 @@ function PlasmicActivation__RenderFunc(props: {
       },
       {
         path: "input24.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
-      },
-      {
-        path: "jabamaPhoneInput.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
@@ -591,6 +561,126 @@ function PlasmicActivation__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "getNumberOfDisconnectedPlatforms.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getNumberOfDisconnectedPlatforms"
+      },
+      {
+        path: "getNumberOfDisconnectedPlatforms.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getNumberOfDisconnectedPlatforms"
+      },
+      {
+        path: "getNumberOfDisconnectedPlatforms.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getNumberOfDisconnectedPlatforms"
+      },
+      {
+        path: "jajigaSend.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                const found = $state.getNumberOfDisconnectedPlatforms.data.find(
+                  item => item.website_id === 3
+                );
+                return found ? found.phone_number : null;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "jabamaSendOtp.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                const found = $state.getNumberOfDisconnectedPlatforms.data.find(
+                  item => item.website_id === 2
+                );
+                return found ? found.phone_number : null;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "otaghakSendOtp.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                const found = $state.getNumberOfDisconnectedPlatforms.data.find(
+                  item => item.website_id === 6
+                );
+                return found ? found.phone_number : null;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "shabOtpSend.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                const found = $state.getNumberOfDisconnectedPlatforms.data.find(
+                  item => item.website_id === 4
+                );
+                return found ? found.phone_number : null;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -4689,48 +4779,33 @@ function PlasmicActivation__RenderFunc(props: {
                         }
                       ]}
                     >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames(
-                            "__wab_instance",
-                            sty.jabamaPhoneInput
-                          ),
-                          onChange: async (...eventArgs: any) => {
-                            generateStateOnChangePropForCodeComponents(
-                              $state,
-                              "value",
-                              ["jabamaPhoneInput", "value"],
-                              AntdInput_Helpers
-                            ).apply(null, eventArgs);
-                          },
-                          placeholder: ``,
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "jabamaPhoneInput",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "jabamaPhoneInput.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__fYgfU
+                        )}
+                      />
 
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"jabamaPhoneInput"}
-                            data-plasmic-override={overrides.jabamaPhoneInput}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
+                      <Input
+                        data-plasmic-name={"jabamaSendOtp"}
+                        data-plasmic-override={overrides.jabamaSendOtp}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.jabamaSendOtp
+                        )}
+                        onChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "jabamaSendOtp",
+                            "value"
+                          ]).apply(null, eventArgs);
+                        }}
+                        type={"text"}
+                        value={generateStateValueProp($state, [
+                          "jabamaSendOtp",
+                          "value"
+                        ])}
+                      />
+
                       <Stack__
                         as={"div"}
                         hasGap={true}
@@ -4750,8 +4825,8 @@ function PlasmicActivation__RenderFunc(props: {
                             const $steps = {};
 
                             $steps["updateStep"] =
-                              $state.form.value.jabamaphone !== undefined &&
-                              $state.form.value.jabamaphone.length >= 11
+                              $state.jabamaSendOtp.value !== undefined &&
+                              $state.jabamaSendOtp.value.length >= 11
                                 ? (() => {
                                     const actionArgs = {
                                       variable: {
@@ -4794,8 +4869,8 @@ function PlasmicActivation__RenderFunc(props: {
                             }
 
                             $steps["jabamaSend"] =
-                              $state.form.value.jabamaphone !== undefined &&
-                              $state.form.value.jabamaphone.length >= 11
+                              $state.jabamaSendOtp.value !== undefined &&
+                              $state.jabamaSendOtp.value >= 11
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
@@ -4813,7 +4888,7 @@ function PlasmicActivation__RenderFunc(props: {
                                               }
                                               return {
                                                 phone: faToEnDigits(
-                                                  $state.form.value.jabamaphone
+                                                  $state.jabamaSendOtp.value
                                                 )
                                               };
                                             })();
@@ -4853,7 +4928,7 @@ function PlasmicActivation__RenderFunc(props: {
                                           try {
                                             return (
                                               "با شماره " +
-                                              $state.form.value.jabamaphone.replace(
+                                              $state.jabamaSendOtp.value.replace(
                                                 /[0-9]/g,
                                                 function (char) {
                                                   return String.fromCharCode(
@@ -5149,7 +5224,7 @@ function PlasmicActivation__RenderFunc(props: {
                                               }
                                               return {
                                                 phone: faToEnDigits(
-                                                  $state.form.value.jabamaphone
+                                                  $state.jabamaSendOtp.value
                                                 ),
                                                 otp: $state.form.value.jabamaOTP
                                               };
@@ -5217,14 +5292,12 @@ function PlasmicActivation__RenderFunc(props: {
                                       if (
                                         $steps.jabamaVerify.data.status === true
                                       ) {
-                                        $state.platformstatus.status.jabama =
-                                          true;
+                                        return ($state.platformstatus.status.jabama =
+                                          true);
                                       } else {
-                                        $state.platformstatus.status.jabama =
-                                          false;
+                                        return ($state.platformstatus.status.jabama =
+                                          false);
                                       }
-                                      console.log($steps.jabamaVerify);
-                                      return console.log($state.platformstatus);
                                     })()
                                   };
                                   return (({
@@ -5452,48 +5525,30 @@ function PlasmicActivation__RenderFunc(props: {
                         }
                       ]}
                     >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames(
-                            "__wab_instance",
-                            sty.jajigaPhoneInput
-                          ),
-                          onChange: async (...eventArgs: any) => {
-                            generateStateOnChangePropForCodeComponents(
-                              $state,
-                              "value",
-                              ["jajigaPhoneInput", "value"],
-                              AntdInput_Helpers
-                            ).apply(null, eventArgs);
-                          },
-                          placeholder: ``,
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "jajigaPhoneInput",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "jajigaPhoneInput.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__pGyxG
+                        )}
+                      />
 
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"jajigaPhoneInput"}
-                            data-plasmic-override={overrides.jajigaPhoneInput}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
+                      <Input
+                        data-plasmic-name={"jajigaSend"}
+                        data-plasmic-override={overrides.jajigaSend}
+                        className={classNames("__wab_instance", sty.jajigaSend)}
+                        onChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "jajigaSend",
+                            "value"
+                          ]).apply(null, eventArgs);
+                        }}
+                        type={"text"}
+                        value={generateStateValueProp($state, [
+                          "jajigaSend",
+                          "value"
+                        ])}
+                      />
+
                       <Stack__
                         as={"div"}
                         hasGap={true}
@@ -5513,8 +5568,8 @@ function PlasmicActivation__RenderFunc(props: {
                             const $steps = {};
 
                             $steps["updateStep"] =
-                              $state.form.value.jajigaphone !== undefined &&
-                              $state.form.value.jajigaphone.length >= 11
+                              $state.jajigaSend.value !== undefined &&
+                              $state.jajigaSend.value.length >= 11
                                 ? (() => {
                                     const actionArgs = {
                                       variable: {
@@ -5557,8 +5612,8 @@ function PlasmicActivation__RenderFunc(props: {
                             }
 
                             $steps["jajigaSend"] =
-                              $state.form.value.jajigaphone !== undefined &&
-                              $state.form.value.jajigaphone.length >= 11
+                              $state.jajigaSend.value !== undefined &&
+                              $state.jajigaSend.value.length >= 11
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
@@ -5576,7 +5631,7 @@ function PlasmicActivation__RenderFunc(props: {
                                               }
                                               return {
                                                 phone: faToEnDigits(
-                                                  $state.form.value.jajigaphone
+                                                  $state.jajigaSend.value
                                                 )
                                               };
                                             })();
@@ -5862,7 +5917,7 @@ function PlasmicActivation__RenderFunc(props: {
                                               }
                                               return {
                                                 phone: faToEnDigits(
-                                                  $state.form.value.jajigaphone
+                                                  $state.jajigaSend.value
                                                 ),
                                                 otp: $state.form.value.jajigaOTP
                                               };
@@ -5959,14 +6014,12 @@ function PlasmicActivation__RenderFunc(props: {
                                     operation: 0,
                                     value: (() => {
                                       if ($steps.jajigaVerify.status == 200) {
-                                        $state.platformstatus.status.jajiga =
-                                          true;
+                                        return ($state.platformstatus.status.jajiga =
+                                          true);
                                       } else {
-                                        $state.platformstatus.status.jajiga =
-                                          false;
+                                        return ($state.platformstatus.status.jajiga =
+                                          false);
                                       }
-                                      console.log($steps.jajigaVerify);
-                                      return console.log($state.platformstatus);
                                     })()
                                   };
                                   return (({
@@ -6160,46 +6213,33 @@ function PlasmicActivation__RenderFunc(props: {
                         }
                       ]}
                     >
-                      {(() => {
-                        const child$Props = {
-                          autoFocus: true,
-                          className: classNames("__wab_instance", sty.input9),
-                          onChange: async (...eventArgs: any) => {
-                            generateStateOnChangePropForCodeComponents(
-                              $state,
-                              "value",
-                              ["input9", "value"],
-                              AntdInput_Helpers
-                            ).apply(null, eventArgs);
-                          },
-                          placeholder: ``,
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input9",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input9.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__pgFQy
+                        )}
+                      />
 
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input9"}
-                            data-plasmic-override={overrides.input9}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
+                      <Input
+                        data-plasmic-name={"shabOtpSend"}
+                        data-plasmic-override={overrides.shabOtpSend}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.shabOtpSend
+                        )}
+                        onChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "shabOtpSend",
+                            "value"
+                          ]).apply(null, eventArgs);
+                        }}
+                        type={"text"}
+                        value={generateStateValueProp($state, [
+                          "shabOtpSend",
+                          "value"
+                        ])}
+                      />
+
                       <Stack__
                         as={"div"}
                         hasGap={true}
@@ -6209,15 +6249,18 @@ function PlasmicActivation__RenderFunc(props: {
                         )}
                       >
                         <AntdButton
-                          data-plasmic-name={"shabsend"}
-                          data-plasmic-override={overrides.shabsend}
-                          className={classNames("__wab_instance", sty.shabsend)}
+                          data-plasmic-name={"shabSendButton"}
+                          data-plasmic-override={overrides.shabSendButton}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.shabSendButton
+                          )}
                           onClick={async () => {
                             const $steps = {};
 
                             $steps["updateStep"] =
-                              $state.form.value.shabphone !== undefined &&
-                              $state.form.value.shabphone.length >= 11
+                              $state.shabOtpSend.value !== undefined &&
+                              $state.shabOtpSend.value.length >= 11
                                 ? (() => {
                                     const actionArgs = {
                                       variable: {
@@ -6260,8 +6303,8 @@ function PlasmicActivation__RenderFunc(props: {
                             }
 
                             $steps["shabSend"] =
-                              $state.form.value.shabphone !== undefined &&
-                              $state.form.value.shabphone.length >= 11
+                              $state.shabOtpSend.value !== undefined &&
+                              $state.shabOtpSend.value.length >= 11
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
@@ -6279,7 +6322,7 @@ function PlasmicActivation__RenderFunc(props: {
                                               }
                                               return {
                                                 phone: faToEnDigits(
-                                                  $state.form.value.shabphone
+                                                  $state.shabOtpSend.value
                                                 )
                                               };
                                             })();
@@ -6307,40 +6350,6 @@ function PlasmicActivation__RenderFunc(props: {
                               typeof $steps["shabSend"].then === "function"
                             ) {
                               $steps["shabSend"] = await $steps["shabSend"];
-                            }
-
-                            $steps["updateStateVariable"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    operation: 0,
-                                    value: console.log($steps.shabSend)
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updateStateVariable"] != null &&
-                              typeof $steps["updateStateVariable"] ===
-                                "object" &&
-                              typeof $steps["updateStateVariable"].then ===
-                                "function"
-                            ) {
-                              $steps["updateStateVariable"] = await $steps[
-                                "updateStateVariable"
-                              ];
                             }
 
                             $steps["repeatTest"] = (() => {
@@ -6641,7 +6650,7 @@ function PlasmicActivation__RenderFunc(props: {
                                               }
                                               return {
                                                 phone: faToEnDigits(
-                                                  $state.form.value.shabphone
+                                                  $state.shabOtpSend.value
                                                 ),
                                                 otp: $state.form.value.shabOTP
                                               };
@@ -6738,14 +6747,12 @@ function PlasmicActivation__RenderFunc(props: {
                                       if (
                                         $steps.shabVerify.data.status === true
                                       ) {
-                                        $state.platformstatus.status.shab =
-                                          true;
+                                        return ($state.platformstatus.status.shab =
+                                          true);
                                       } else {
-                                        $state.platformstatus.status.shab =
-                                          false;
+                                        return ($state.platformstatus.status.shab =
+                                          false);
                                       }
-                                      console.log($steps.shabContact);
-                                      return console.log($state.platformstatus);
                                     })()
                                   };
                                   return (({
@@ -6940,45 +6947,34 @@ function PlasmicActivation__RenderFunc(props: {
                         }
                       ]}
                     >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.input11),
-                          onChange: async (...eventArgs: any) => {
-                            generateStateOnChangePropForCodeComponents(
-                              $state,
-                              "value",
-                              ["input11", "value"],
-                              AntdInput_Helpers
-                            ).apply(null, eventArgs);
-                          },
-                          placeholder: ``,
-                          size: "large",
-                          value: generateStateValueProp($state, [
-                            "input11",
-                            "value"
-                          ])
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input11.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__uDmKw
+                        )}
+                      />
 
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input11"}
-                            data-plasmic-override={overrides.input11}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
+                      <Input
+                        data-plasmic-name={"otaghakSendOtp"}
+                        data-plasmic-override={overrides.otaghakSendOtp}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.otaghakSendOtp
+                        )}
+                        onChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "otaghakSendOtp",
+                            "value"
+                          ]).apply(null, eventArgs);
+                        }}
+                        placeholder={``}
+                        type={"text"}
+                        value={generateStateValueProp($state, [
+                          "otaghakSendOtp",
+                          "value"
+                        ])}
+                      />
+
                       <Stack__
                         as={"div"}
                         hasGap={true}
@@ -6998,8 +6994,8 @@ function PlasmicActivation__RenderFunc(props: {
                             const $steps = {};
 
                             $steps["updateStep"] =
-                              $state.form.value.otaghakphone !== undefined &&
-                              $state.form.value.otaghakphone.length >= 11
+                              $state.otaghakSendOtp.value !== undefined &&
+                              $state.otaghakSendOtp.value.length >= 11
                                 ? (() => {
                                     const actionArgs = {
                                       variable: {
@@ -7042,8 +7038,8 @@ function PlasmicActivation__RenderFunc(props: {
                             }
 
                             $steps["otaghakSend"] =
-                              $state.form.value.otaghakphone !== undefined &&
-                              $state.form.value.otaghakphone.length >= 11
+                              $state.otaghakSendOtp.value !== undefined &&
+                              $state.otaghakSendOtp.value.length >= 11
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
@@ -7061,7 +7057,7 @@ function PlasmicActivation__RenderFunc(props: {
                                               }
                                               return {
                                                 phone: faToEnDigits(
-                                                  $state.form.value.otaghakphone
+                                                  $state.otaghakSendOtp.value
                                                 ),
                                                 website: "otaghak"
                                               };
@@ -7091,51 +7087,6 @@ function PlasmicActivation__RenderFunc(props: {
                             ) {
                               $steps["otaghakSend"] = await $steps[
                                 "otaghakSend"
-                              ];
-                            }
-
-                            $steps["updateRateLimitOtaghak"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["rateLimit", "otaghak"]
-                                    },
-                                    operation: 2
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    const oldValue = $stateGet(
-                                      objRoot,
-                                      variablePath
-                                    );
-                                    $stateSet(
-                                      objRoot,
-                                      variablePath,
-                                      oldValue + 1
-                                    );
-                                    return oldValue + 1;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updateRateLimitOtaghak"] != null &&
-                              typeof $steps["updateRateLimitOtaghak"] ===
-                                "object" &&
-                              typeof $steps["updateRateLimitOtaghak"].then ===
-                                "function"
-                            ) {
-                              $steps["updateRateLimitOtaghak"] = await $steps[
-                                "updateRateLimitOtaghak"
                               ];
                             }
                           }}
@@ -7401,7 +7352,7 @@ function PlasmicActivation__RenderFunc(props: {
                                               }
                                               return {
                                                 phone: faToEnDigits(
-                                                  $state.form.value.otaghakphone
+                                                  $state.otaghakSendOtp.value
                                                 ),
                                                 otp: $state.form.value
                                                   .otaghakOTP,
@@ -11299,6 +11250,61 @@ function PlasmicActivation__RenderFunc(props: {
               </div>
             </div>
           </Stack__>
+          <ApiRequest
+            data-plasmic-name={"getNumberOfDisconnectedPlatforms"}
+            data-plasmic-override={overrides.getNumberOfDisconnectedPlatforms}
+            className={classNames(
+              "__wab_instance",
+              sty.getNumberOfDisconnectedPlatforms
+            )}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__eTKys
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__a3JDg
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "getNumberOfDisconnectedPlatforms",
+                "error"
+              ]).apply(null, eventArgs);
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "getNumberOfDisconnectedPlatforms",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "getNumberOfDisconnectedPlatforms",
+                "data"
+              ]).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["getNumberOfDisconnectedPlatforms"] = ref;
+            }}
+            url={
+              "https://gateway.rentamon.com/webhook/disconnected\u0640website\u0640users"
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -11357,28 +11363,28 @@ const PlasmicDescendants = {
     "link",
     "submitButton",
     "jabamaSend",
-    "jabamaPhoneInput",
+    "jabamaSendOtp",
     "jabamasend2",
     "jabamasend3",
     "jabamaVerify",
     "jabamaOtpInput",
     "jabamaverify",
     "jajigaSendForm",
-    "jajigaPhoneInput",
+    "jajigaSend",
     "jajigasend",
     "jabamasend4",
     "jajigaVerify",
     "input6",
     "jajigaverify",
     "shabSend",
-    "input9",
-    "shabsend",
+    "shabOtpSend",
+    "shabSendButton",
     "jabamasend5",
     "shabVerify",
     "input10",
     "shabverify",
     "otaghakSend",
-    "input11",
+    "otaghakSendOtp",
     "otaghaksend",
     "jabamasend6",
     "otaghakVerify",
@@ -11431,7 +11437,8 @@ const PlasmicDescendants = {
     "_5",
     "_6",
     "quotes",
-    "testimonialsScrolling"
+    "testimonialsScrolling",
+    "getNumberOfDisconnectedPlatforms"
   ],
   html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
   goftino: ["goftino"],
@@ -11560,28 +11567,28 @@ const PlasmicDescendants = {
     "link",
     "submitButton",
     "jabamaSend",
-    "jabamaPhoneInput",
+    "jabamaSendOtp",
     "jabamasend2",
     "jabamasend3",
     "jabamaVerify",
     "jabamaOtpInput",
     "jabamaverify",
     "jajigaSendForm",
-    "jajigaPhoneInput",
+    "jajigaSend",
     "jajigasend",
     "jabamasend4",
     "jajigaVerify",
     "input6",
     "jajigaverify",
     "shabSend",
-    "input9",
-    "shabsend",
+    "shabOtpSend",
+    "shabSendButton",
     "jabamasend5",
     "shabVerify",
     "input10",
     "shabverify",
     "otaghakSend",
-    "input11",
+    "otaghakSendOtp",
     "otaghaksend",
     "jabamasend6",
     "otaghakVerify",
@@ -11629,34 +11636,29 @@ const PlasmicDescendants = {
   policiesCheckbox: ["policiesCheckbox", "link"],
   link: ["link"],
   submitButton: ["submitButton"],
-  jabamaSend: ["jabamaSend", "jabamaPhoneInput", "jabamasend2", "jabamasend3"],
-  jabamaPhoneInput: ["jabamaPhoneInput"],
+  jabamaSend: ["jabamaSend", "jabamaSendOtp", "jabamasend2", "jabamasend3"],
+  jabamaSendOtp: ["jabamaSendOtp"],
   jabamasend2: ["jabamasend2"],
   jabamasend3: ["jabamasend3"],
   jabamaVerify: ["jabamaVerify", "jabamaOtpInput", "jabamaverify"],
   jabamaOtpInput: ["jabamaOtpInput"],
   jabamaverify: ["jabamaverify"],
-  jajigaSendForm: [
-    "jajigaSendForm",
-    "jajigaPhoneInput",
-    "jajigasend",
-    "jabamasend4"
-  ],
-  jajigaPhoneInput: ["jajigaPhoneInput"],
+  jajigaSendForm: ["jajigaSendForm", "jajigaSend", "jajigasend", "jabamasend4"],
+  jajigaSend: ["jajigaSend"],
   jajigasend: ["jajigasend"],
   jabamasend4: ["jabamasend4"],
   jajigaVerify: ["jajigaVerify", "input6", "jajigaverify"],
   input6: ["input6"],
   jajigaverify: ["jajigaverify"],
-  shabSend: ["shabSend", "input9", "shabsend", "jabamasend5"],
-  input9: ["input9"],
-  shabsend: ["shabsend"],
+  shabSend: ["shabSend", "shabOtpSend", "shabSendButton", "jabamasend5"],
+  shabOtpSend: ["shabOtpSend"],
+  shabSendButton: ["shabSendButton"],
   jabamasend5: ["jabamasend5"],
   shabVerify: ["shabVerify", "input10", "shabverify"],
   input10: ["input10"],
   shabverify: ["shabverify"],
-  otaghakSend: ["otaghakSend", "input11", "otaghaksend", "jabamasend6"],
-  input11: ["input11"],
+  otaghakSend: ["otaghakSend", "otaghakSendOtp", "otaghaksend", "jabamasend6"],
+  otaghakSendOtp: ["otaghakSendOtp"],
   otaghaksend: ["otaghaksend"],
   jabamasend6: ["jabamasend6"],
   otaghakVerify: ["otaghakVerify", "input12", "otaghakverify"],
@@ -11753,7 +11755,8 @@ const PlasmicDescendants = {
   _5: ["_5"],
   _6: ["_6"],
   quotes: ["quotes", "testimonialsScrolling"],
-  testimonialsScrolling: ["testimonialsScrolling"]
+  testimonialsScrolling: ["testimonialsScrolling"],
+  getNumberOfDisconnectedPlatforms: ["getNumberOfDisconnectedPlatforms"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -11809,28 +11812,28 @@ type NodeDefaultElementType = {
   link: "a";
   submitButton: typeof AntdButton;
   jabamaSend: typeof FormItemWrapper;
-  jabamaPhoneInput: typeof AntdInput;
+  jabamaSendOtp: typeof Input;
   jabamasend2: typeof AntdButton;
   jabamasend3: typeof AntdButton;
   jabamaVerify: typeof FormItemWrapper;
   jabamaOtpInput: typeof AntdInput;
   jabamaverify: typeof AntdButton;
   jajigaSendForm: typeof FormItemWrapper;
-  jajigaPhoneInput: typeof AntdInput;
+  jajigaSend: typeof Input;
   jajigasend: typeof AntdButton;
   jabamasend4: typeof AntdButton;
   jajigaVerify: typeof FormItemWrapper;
   input6: typeof AntdInput;
   jajigaverify: typeof AntdButton;
   shabSend: typeof FormItemWrapper;
-  input9: typeof AntdInput;
-  shabsend: typeof AntdButton;
+  shabOtpSend: typeof Input;
+  shabSendButton: typeof AntdButton;
   jabamasend5: typeof AntdButton;
   shabVerify: typeof FormItemWrapper;
   input10: typeof AntdInput;
   shabverify: typeof AntdButton;
   otaghakSend: typeof FormItemWrapper;
-  input11: typeof AntdInput;
+  otaghakSendOtp: typeof Input;
   otaghaksend: typeof AntdButton;
   jabamasend6: typeof AntdButton;
   otaghakVerify: typeof FormItemWrapper;
@@ -11884,6 +11887,7 @@ type NodeDefaultElementType = {
   _6: "div";
   quotes: "div";
   testimonialsScrolling: typeof TestimonialsScrolling;
+  getNumberOfDisconnectedPlatforms: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -11995,28 +11999,28 @@ export const PlasmicActivation = Object.assign(
     link: makeNodeComponent("link"),
     submitButton: makeNodeComponent("submitButton"),
     jabamaSend: makeNodeComponent("jabamaSend"),
-    jabamaPhoneInput: makeNodeComponent("jabamaPhoneInput"),
+    jabamaSendOtp: makeNodeComponent("jabamaSendOtp"),
     jabamasend2: makeNodeComponent("jabamasend2"),
     jabamasend3: makeNodeComponent("jabamasend3"),
     jabamaVerify: makeNodeComponent("jabamaVerify"),
     jabamaOtpInput: makeNodeComponent("jabamaOtpInput"),
     jabamaverify: makeNodeComponent("jabamaverify"),
     jajigaSendForm: makeNodeComponent("jajigaSendForm"),
-    jajigaPhoneInput: makeNodeComponent("jajigaPhoneInput"),
+    jajigaSend: makeNodeComponent("jajigaSend"),
     jajigasend: makeNodeComponent("jajigasend"),
     jabamasend4: makeNodeComponent("jabamasend4"),
     jajigaVerify: makeNodeComponent("jajigaVerify"),
     input6: makeNodeComponent("input6"),
     jajigaverify: makeNodeComponent("jajigaverify"),
     shabSend: makeNodeComponent("shabSend"),
-    input9: makeNodeComponent("input9"),
-    shabsend: makeNodeComponent("shabsend"),
+    shabOtpSend: makeNodeComponent("shabOtpSend"),
+    shabSendButton: makeNodeComponent("shabSendButton"),
     jabamasend5: makeNodeComponent("jabamasend5"),
     shabVerify: makeNodeComponent("shabVerify"),
     input10: makeNodeComponent("input10"),
     shabverify: makeNodeComponent("shabverify"),
     otaghakSend: makeNodeComponent("otaghakSend"),
-    input11: makeNodeComponent("input11"),
+    otaghakSendOtp: makeNodeComponent("otaghakSendOtp"),
     otaghaksend: makeNodeComponent("otaghaksend"),
     jabamasend6: makeNodeComponent("jabamasend6"),
     otaghakVerify: makeNodeComponent("otaghakVerify"),
@@ -12070,6 +12074,9 @@ export const PlasmicActivation = Object.assign(
     _6: makeNodeComponent("_6"),
     quotes: makeNodeComponent("quotes"),
     testimonialsScrolling: makeNodeComponent("testimonialsScrolling"),
+    getNumberOfDisconnectedPlatforms: makeNodeComponent(
+      "getNumberOfDisconnectedPlatforms"
+    ),
 
     // Metadata about props expected for PlasmicActivation
     internalVariantProps: PlasmicActivation__VariantProps,
