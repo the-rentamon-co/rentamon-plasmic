@@ -2,7 +2,7 @@
   "projects": [
     {
       "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-      "version": "229.0.0",
+      "version": "229.0.1",
       "dependencies": {
         "YUiM7yqBWAqsh8KSnrdj7": "0.35.0",
         "ohDidvG9XsCeFumugENU3J": "6.31.0",
@@ -2362,12 +2362,12 @@
         {
           "type": "renderModule",
           "assetId": "wDX6CsUVKNmL",
-          "checksum": "b5c5d33589cf03a4ea368bc10a13c5fe"
+          "checksum": "9b593676ca90b3270a02170ef7d045ba"
         },
         {
           "type": "cssRules",
           "assetId": "wDX6CsUVKNmL",
-          "checksum": "b5c5d33589cf03a4ea368bc10a13c5fe"
+          "checksum": "9b593676ca90b3270a02170ef7d045ba"
         },
         {
           "type": "renderModule",
