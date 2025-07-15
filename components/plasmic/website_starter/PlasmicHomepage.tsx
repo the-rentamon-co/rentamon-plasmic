@@ -565,7 +565,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.embedHtml__gDn1
                     )}
                     code={
-                      '<video\r\n  src="https://media.rentamon.com/others%2Fauto-sync.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
+                      '<video\r\n    src="https://media.rentamon.com/video%2Fauto-sync.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
                     }
                   />
                 </div>
@@ -623,7 +623,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0646\u0645\u06cc\u0627\u062f"
+                      "\u062a\u0636\u0645\u06cc\u0646 \u067e\u0631\u062f\u0627\u062e\u062a \u062e\u0633\u0627\u0631\u062a \u062f\u0631\u0635\u0648\u0631\u062a \u062c\u0631\u06cc\u0645\u0647 \u0634\u062f\u0646"
                     }
                   </div>
                 </div>
@@ -657,9 +657,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text__fMa1T
                     )}
                   >
-                    {
-                      "\u0627\u0641\u0632\u0627\u06cc\u0634 \u0633\u0631\u0639\u062a"
-                    }
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0635\u0631\u0641\u0647\u200c\u062c\u0648\u06cc\u06cc \u062f\u0631 \u0648\u0642\u062a"
+                      : "\u0635\u0631\u0641\u0647\u200c\u062c\u0648\u06cc\u06cc \u062f\u0631 \u0648\u0642\u062a"}
                   </div>
                 </div>
                 <div
@@ -674,9 +674,11 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text__up4Yp
                     )}
                   >
-                    {
-                      "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632\u0647"
-                    }
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632\u0647 \u0645\u06cc\u200c\u0634\u0647"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632\u0647 \u0645\u06cc\u200c\u0634\u0647"
+                      : "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632 \u0645\u06cc\u200c\u0634\u0647"}
                   </div>
                 </div>
               </Stack__>
