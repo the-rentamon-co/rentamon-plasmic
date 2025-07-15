@@ -778,6 +778,9 @@ export const PlasmicTier = Object.assign(
     internalVariantProps: PlasmicTier__VariantProps,
     internalArgProps: PlasmicTier__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

@@ -295,6 +295,9 @@ export const PlasmicRedirectFromPanelsToPanel = Object.assign(
     internalVariantProps: PlasmicRedirectFromPanelsToPanel__VariantProps,
     internalArgProps: PlasmicRedirectFromPanelsToPanel__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

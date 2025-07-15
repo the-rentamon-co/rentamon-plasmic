@@ -12076,6 +12076,9 @@ export const PlasmicActivation = Object.assign(
     internalVariantProps: PlasmicActivation__VariantProps,
     internalArgProps: PlasmicActivation__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

@@ -2618,6 +2618,9 @@ export const PlasmicSelfRegister = Object.assign(
     internalVariantProps: PlasmicSelfRegister__VariantProps,
     internalArgProps: PlasmicSelfRegister__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

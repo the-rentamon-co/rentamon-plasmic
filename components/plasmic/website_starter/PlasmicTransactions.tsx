@@ -2480,6 +2480,9 @@ export const PlasmicTransactions = Object.assign(
     internalVariantProps: PlasmicTransactions__VariantProps,
     internalArgProps: PlasmicTransactions__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "گزارشات مصرف کیف پول",

@@ -620,6 +620,9 @@ export const PlasmicPaymentError = Object.assign(
     internalVariantProps: PlasmicPaymentError__VariantProps,
     internalArgProps: PlasmicPaymentError__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

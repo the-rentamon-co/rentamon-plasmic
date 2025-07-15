@@ -3091,6 +3091,9 @@ export const PlasmicChannelManager = Object.assign(
     internalVariantProps: PlasmicChannelManager__VariantProps,
     internalArgProps: PlasmicChannelManager__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "بروز رسانی خودکار رزروها",

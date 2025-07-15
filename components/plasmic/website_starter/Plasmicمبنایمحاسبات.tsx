@@ -340,6 +340,9 @@ export const Plasmicمبنایمحاسبات = Object.assign(
     internalVariantProps: Plasmicمبنایمحاسبات__VariantProps,
     internalArgProps: Plasmicمبنایمحاسبات__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "مبنای محاسبات",

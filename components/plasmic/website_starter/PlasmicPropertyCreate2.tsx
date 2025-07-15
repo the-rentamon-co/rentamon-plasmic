@@ -1716,6 +1716,9 @@ export const PlasmicPropertyCreate2 = Object.assign(
     internalVariantProps: PlasmicPropertyCreate2__VariantProps,
     internalArgProps: PlasmicPropertyCreate2__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

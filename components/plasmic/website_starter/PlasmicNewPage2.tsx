@@ -287,6 +287,9 @@ export const PlasmicNewPage2 = Object.assign(
     internalVariantProps: PlasmicNewPage2__VariantProps,
     internalArgProps: PlasmicNewPage2__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

@@ -714,6 +714,9 @@ export const PlasmicPaymentSuccess = Object.assign(
     internalVariantProps: PlasmicPaymentSuccess__VariantProps,
     internalArgProps: PlasmicPaymentSuccess__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

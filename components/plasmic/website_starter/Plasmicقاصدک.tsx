@@ -527,6 +527,9 @@ export const Plasmicقاصدک = Object.assign(
     internalVariantProps: Plasmicقاصدک__VariantProps,
     internalArgProps: Plasmicقاصدک__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "قاصدک",

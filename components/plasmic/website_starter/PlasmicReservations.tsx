@@ -3,8 +3,6 @@
 // @ts-nocheck
 /* prettier-ignore-start */
 
-
-
 /** @jsxRuntime classic */
 /** @jsx createPlasmicElementProxy */
 /** @jsxFrag React.Fragment */
@@ -9167,6 +9165,9 @@ export const PlasmicReservations = Object.assign(
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,
     internalArgProps: PlasmicReservations__ArgProps,
+
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
 
     // Page metadata
     pageMetadata: {

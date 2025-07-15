@@ -306,6 +306,9 @@ export const Plasmicثبتآگهیاقامتگاه2 = Object.assign(
     internalVariantProps: Plasmicثبتآگهیاقامتگاه2__VariantProps,
     internalArgProps: Plasmicثبتآگهیاقامتگاه2__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

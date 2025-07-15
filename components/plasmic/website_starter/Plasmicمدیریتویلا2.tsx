@@ -318,6 +318,9 @@ export const Plasmicمدیریتویلا2 = Object.assign(
     internalVariantProps: Plasmicمدیریتویلا2__VariantProps,
     internalArgProps: Plasmicمدیریتویلا2__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

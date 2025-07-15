@@ -1880,6 +1880,9 @@ export const PlasmicFirstPropertyEdit = Object.assign(
     internalVariantProps: PlasmicFirstPropertyEdit__VariantProps,
     internalArgProps: PlasmicFirstPropertyEdit__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

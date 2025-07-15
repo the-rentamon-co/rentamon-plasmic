@@ -2506,6 +2506,9 @@ export const Plasmicکیفپول = Object.assign(
     internalVariantProps: Plasmicکیفپول__VariantProps,
     internalArgProps: Plasmicکیفپول__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "کیف پول",

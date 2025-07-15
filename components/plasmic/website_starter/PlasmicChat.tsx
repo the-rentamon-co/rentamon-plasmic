@@ -500,6 +500,9 @@ export const PlasmicChat = Object.assign(
     internalVariantProps: PlasmicChat__VariantProps,
     internalArgProps: PlasmicChat__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

@@ -336,7 +336,7 @@ function PlasmicSplash__RenderFunc(props: {
                   displayWidth={"20px"}
                   loading={"lazy"}
                   src={
-                    "https://media.rentamon.com/icon%2Freload.svg"
+                    "https://rentamon-files.storage.iran.liara.space/icon/reload.svg"
                   }
                 />
               </Stack__>
@@ -801,6 +801,9 @@ export const PlasmicSplash = Object.assign(
     // Metadata about props expected for PlasmicSplash
     internalVariantProps: PlasmicSplash__VariantProps,
     internalArgProps: PlasmicSplash__ArgProps,
+
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
 
     // Page metadata
     pageMetadata: {

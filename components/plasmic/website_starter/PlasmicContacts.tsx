@@ -949,6 +949,9 @@ export const PlasmicContacts = Object.assign(
     internalVariantProps: PlasmicContacts__VariantProps,
     internalArgProps: PlasmicContacts__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

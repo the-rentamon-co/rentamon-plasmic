@@ -83,20 +83,6 @@
           "componentType": "component"
         },
         {
-          "id": "enTBCTY8cSPF",
-          "name": "Instant2",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicInstant2.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-page.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicInstant2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page"
-        },
-        {
           "id": "g8UqCmyjUW7S",
           "name": "Calendar",
           "type": "managed",
@@ -1192,20 +1178,6 @@
           "path": "/ai-assistant"
         },
         {
-          "id": "q2ytjN9XEjsp",
-          "name": "NewPage",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/feature-setting.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewPage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/feature-setting"
-        },
-        {
           "id": "NKEuaTqYxvdh",
           "name": "SidebarLite",
           "type": "managed",
@@ -1591,20 +1563,6 @@
           "componentType": "component"
         },
         {
-          "id": "oDtZS8iwRHFd",
-          "name": "UserInputTest",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicUserInputTest.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/user-input-test.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicUserInputTest.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/user-input-test"
-        },
-        {
           "id": "MCY7hgSl3pBE",
           "name": "_404",
           "type": "managed",
@@ -1643,20 +1601,6 @@
           "cssFilePath": "plasmic/website_starter/PlasmicClarityRntComponent.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "5r0JWFQACsXK",
-          "name": "SplashWp",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicSplashWp.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/splash-wp.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicSplashWp.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/splash-wp"
         },
         {
           "id": "HZSvfOagQfiC",
@@ -1893,20 +1837,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/join-our-journey"
-        },
-        {
-          "id": "QAns8FNAW5dF",
-          "name": "Picup",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicPicup.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/picup.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicPicup.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/picup"
         },
         {
           "id": "S9ixvXp2RjYd",

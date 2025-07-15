@@ -763,7 +763,7 @@ function PlasmicInvite__RenderFunc(props: {
                     loop={true}
                     muted={true}
                     src={
-                      "https://media.rentamon.com/gif%2Funified-calendar.mp4"
+                      "https://rentamon-files.storage.iran.liara.space/gif/unified-calendar.mp4"
                     }
                   />
                 </div>
@@ -1557,6 +1557,9 @@ export const PlasmicInvite = Object.assign(
     // Metadata about props expected for PlasmicInvite
     internalVariantProps: PlasmicInvite__VariantProps,
     internalArgProps: PlasmicInvite__ArgProps,
+
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
 
     // Page metadata
     pageMetadata: {

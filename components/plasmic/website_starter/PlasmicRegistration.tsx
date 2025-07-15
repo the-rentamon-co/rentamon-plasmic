@@ -2441,6 +2441,9 @@ export const PlasmicRegistration = Object.assign(
     internalVariantProps: PlasmicRegistration__VariantProps,
     internalArgProps: PlasmicRegistration__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

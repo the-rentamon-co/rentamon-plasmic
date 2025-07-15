@@ -315,6 +315,9 @@ export const Plasmicسایتاجارهویلا2 = Object.assign(
     internalVariantProps: Plasmicسایتاجارهویلا2__VariantProps,
     internalArgProps: Plasmicسایتاجارهویلا2__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

@@ -1384,6 +1384,9 @@ export const PlasmicAnalytics = Object.assign(
     internalVariantProps: PlasmicAnalytics__VariantProps,
     internalArgProps: PlasmicAnalytics__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "گزارشات پیشرفته اقامتگاه",

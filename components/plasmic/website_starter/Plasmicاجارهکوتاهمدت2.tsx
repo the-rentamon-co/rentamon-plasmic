@@ -305,6 +305,9 @@ export const Plasmicاجارهکوتاهمدت2 = Object.assign(
     internalVariantProps: Plasmicاجارهکوتاهمدت2__VariantProps,
     internalArgProps: Plasmicاجارهکوتاهمدت2__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

@@ -296,6 +296,9 @@ export const PlasmicRntRedirect = Object.assign(
     internalVariantProps: PlasmicRntRedirect__VariantProps,
     internalArgProps: PlasmicRntRedirect__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

@@ -2492,6 +2492,9 @@ export const Plasmicتالار = Object.assign(
     internalVariantProps: Plasmicتالار__VariantProps,
     internalArgProps: Plasmicتالار__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "تالار",

@@ -4772,6 +4772,9 @@ export const PlasmicSettings = Object.assign(
     internalVariantProps: PlasmicSettings__VariantProps,
     internalArgProps: PlasmicSettings__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "تنظیمات",

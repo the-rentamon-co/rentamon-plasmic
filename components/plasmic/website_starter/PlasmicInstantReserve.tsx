@@ -2770,6 +2770,9 @@ export const PlasmicInstantReserve = Object.assign(
     internalVariantProps: PlasmicInstantReserve__VariantProps,
     internalArgProps: PlasmicInstantReserve__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",

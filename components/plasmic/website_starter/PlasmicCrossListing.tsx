@@ -2524,6 +2524,9 @@ export const PlasmicCrossListing = Object.assign(
     internalVariantProps: PlasmicCrossListing__VariantProps,
     internalArgProps: PlasmicCrossListing__ArgProps,
 
+    // Key-value metadata
+    metadata: { nameRobots: 'content="noindex, nofollow"' },
+
     // Page metadata
     pageMetadata: {
       title: "",
