@@ -1290,7 +1290,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         $steps["updateLoading"] = await $steps["updateLoading"];
                       }
 
-                      $steps["invokeGlobalAction"] = true
+                      $steps["apiRequest"] = true
                         ? (() => {
                             const actionArgs = {
                               args: [
@@ -1327,17 +1327,15 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
+                        $steps["apiRequest"] != null &&
+                        typeof $steps["apiRequest"] === "object" &&
+                        typeof $steps["apiRequest"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["apiRequest"] = await $steps["apiRequest"];
                       }
 
-                      $steps["invokeGlobalAction2"] =
-                        $steps.invokeGlobalAction.status == 413
+                      $steps["showSizeErrorToast"] =
+                        $steps.apiRequest.status !== 200
                           ? (() => {
                               const actionArgs = {
                                 args: [
@@ -1353,17 +1351,17 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                             })()
                           : undefined;
                       if (
-                        $steps["invokeGlobalAction2"] != null &&
-                        typeof $steps["invokeGlobalAction2"] === "object" &&
-                        typeof $steps["invokeGlobalAction2"].then === "function"
+                        $steps["showSizeErrorToast"] != null &&
+                        typeof $steps["showSizeErrorToast"] === "object" &&
+                        typeof $steps["showSizeErrorToast"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction2"] = await $steps[
-                          "invokeGlobalAction2"
+                        $steps["showSizeErrorToast"] = await $steps[
+                          "showSizeErrorToast"
                         ];
                       }
 
                       $steps["goToProperties"] =
-                        $steps.invokeGlobalAction.status == 200
+                        $steps.apiRequest.status == 200
                           ? (() => {
                               const actionArgs = { destination: `/properties` };
                               return (({ destination }) => {
@@ -1450,9 +1448,12 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={"auto"}
                         loading={"lazy"}
-                        src={
-                          "https://web.rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                        }
+                        src={{
+                          src: "/plasmic/website_starter/images/image140.gif",
+                          fullWidth: 500,
+                          fullHeight: 500,
+                          aspectRatio: undefined
+                        }}
                       />
                     ) : null}
                     <div
