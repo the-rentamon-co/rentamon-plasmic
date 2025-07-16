@@ -321,7 +321,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : false
+            : true
       },
       {
         path: "variable3",
@@ -5282,6 +5282,36 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   ? "lazy"
                                   : "eager"
                               }
+                              onClick={async event => {
+                                const $steps = {};
+
+                                $steps["invokeGlobalAction"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "error",
+                                          "\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u0646\u062c\u0627\u0645 \u0646\u0634\u062f!",
+                                          "top-center",
+                                          5000
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["invokeGlobalAction"] != null &&
+                                  typeof $steps["invokeGlobalAction"] ===
+                                    "object" &&
+                                  typeof $steps["invokeGlobalAction"].then ===
+                                    "function"
+                                ) {
+                                  $steps["invokeGlobalAction"] = await $steps[
+                                    "invokeGlobalAction"
+                                  ];
+                                }
+                              }}
                               src={{
                                 src: "/plasmic/website_starter/images/image28.svg",
                                 fullWidth: 26,
