@@ -154,7 +154,7 @@ function Plasmicامکاناتنسخهیپیشرفتهرنتامون__RenderFunc
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">
           {Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.title}
         </title>
@@ -167,6 +167,31 @@ function Plasmicامکاناتنسخهیپیشرفتهرنتامون__RenderFunc
           key="twitter:title"
           name="twitter:title"
           content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.title}
+        />
+        <meta
+          key="description"
+          name="description"
+          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -719,7 +744,7 @@ function Plasmicامکاناتنسخهیپیشرفتهرنتامون__RenderFunc
                 loop={true}
                 muted={true}
                 src={
-                  "https://media.rentamon.com/video%2Ffeatures.mp4"
+                  "https://rentamon-files.storage.iran.liara.space/video/pro-panel/features.mp4"
                 }
               />
             </div>
@@ -1019,11 +1044,23 @@ export const Plasmicامکاناتنسخهیپیشرفتهرنتامون = Objec
     internalVariantProps: Plasmicامکاناتنسخهیپیشرفتهرنتامون__VariantProps,
     internalArgProps: Plasmicامکاناتنسخهیپیشرفتهرنتامون__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      ogTitle:
+        "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0646\u0633\u062e\u0647 \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646",
+      ogDescription:
+        "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062c\u0630\u0627\u0628\u06cc \u0628\u0631\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u0631\u0627\u0626\u0647 \u0645\u06cc\u200c\u062f\u0647. \u0645\u062b\u0644 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0627\u0631\u06cc\u062e\u0686\u0647 \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0648...",
+      ogType: "website",
+      ogUrl: "https://rentamon.com/features/"
+    },
+
     // Page metadata
     pageMetadata: {
       title: "امکانات نسخه‌ی پیشرفته رنتامون",
-      description: "",
-      ogImageSrc: "",
+      description:
+        "رنتامون امکانات جذابی برای افزایش درآمد میزبان‌ها ارائه می‌ده. مثل نمایش آخرین وضعیت «تسویه درآمد» سایت‌ها، مشاهده‌ی تاریخچه رزرو سایت‌ها و...\n\n",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/28cd923580288b56ef96b273d0ff6cb0.png",
       canonical: ""
     }
   }
