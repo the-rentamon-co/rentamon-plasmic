@@ -148,19 +148,6 @@
           "componentType": "component"
         },
         {
-          "id": "kplG0PgU22ci",
-          "name": "UserFullName",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicUserFullName.tsx",
-          "importSpec": {
-            "modulePath": "UserFullName.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicUserFullName.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "RNhZtlNmydsH",
           "name": "Calendar2",
           "type": "managed",
