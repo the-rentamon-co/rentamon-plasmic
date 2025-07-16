@@ -116,11 +116,11 @@ export type Plasmicکیفپول__OverridesType = {
   input3?: Flex__<typeof Input>;
   input2?: Flex__<typeof Input>;
   left?: Flex__<"div">;
-  packages?: Flex__<"div">;
-  p1?: Flex__<"div">;
   intext?: Flex__<"div">;
   right2?: Flex__<"div">;
   left2?: Flex__<"div">;
+  packages?: Flex__<"div">;
+  p1?: Flex__<"div">;
   paymentbutton?: Flex__<"div">;
   button?: Flex__<"div">;
   pricing?: Flex__<"div">;
@@ -945,183 +945,6 @@ function Plasmicکیفپول__RenderFunc(props: {
                 </div>
               </div>
               <div
-                data-plasmic-name={"packages"}
-                data-plasmic-override={overrides.packages}
-                className={classNames(projectcss.all, sty.packages)}
-              >
-                <div
-                  data-plasmic-name={"p1"}
-                  data-plasmic-override={overrides.p1}
-                  className={classNames(projectcss.all, sty.p1)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__m3UhN,
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "clickable"
-                        : undefined
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateInput2Value"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["input2", "value"]
-                              },
-                              operation: 0,
-                              value: 2000000
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateInput2Value"] != null &&
-                        typeof $steps["updateInput2Value"] === "object" &&
-                        typeof $steps["updateInput2Value"].then === "function"
-                      ) {
-                        $steps["updateInput2Value"] = await $steps[
-                          "updateInput2Value"
-                        ];
-                      }
-                    }}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                      : "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mLjd,
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "clickable"
-                        : undefined
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateInput2Value"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["input2", "value"]
-                              },
-                              operation: 0,
-                              value: 3000000
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateInput2Value"] != null &&
-                        typeof $steps["updateInput2Value"] === "object" &&
-                        typeof $steps["updateInput2Value"].then === "function"
-                      ) {
-                        $steps["updateInput2Value"] = await $steps[
-                          "updateInput2Value"
-                        ];
-                      }
-                    }}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                      : "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yqQfD,
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "clickable"
-                        : undefined
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateInput2Value"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["input2", "value"]
-                              },
-                              operation: 0,
-                              value: 5000000
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateInput2Value"] != null &&
-                        typeof $steps["updateInput2Value"] === "object" &&
-                        typeof $steps["updateInput2Value"].then === "function"
-                      ) {
-                        $steps["updateInput2Value"] = await $steps[
-                          "updateInput2Value"
-                        ];
-                      }
-                    }}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                      : "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
-                  </div>
-                </div>
-              </div>
-              <div
                 data-plasmic-name={"intext"}
                 data-plasmic-override={overrides.intext}
                 className={classNames(projectcss.all, sty.intext)}
@@ -1292,6 +1115,183 @@ function Plasmicکیفپول__RenderFunc(props: {
                       })()}
                     </React.Fragment>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"packages"}
+              data-plasmic-override={overrides.packages}
+              className={classNames(projectcss.all, sty.packages)}
+            >
+              <div
+                data-plasmic-name={"p1"}
+                data-plasmic-override={overrides.p1}
+                className={classNames(projectcss.all, sty.p1)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__m3UhN,
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "clickable"
+                      : undefined
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateInput2Value"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["input2", "value"]
+                            },
+                            operation: 0,
+                            value: 2000000
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateInput2Value"] != null &&
+                      typeof $steps["updateInput2Value"] === "object" &&
+                      typeof $steps["updateInput2Value"].then === "function"
+                    ) {
+                      $steps["updateInput2Value"] = await $steps[
+                        "updateInput2Value"
+                      ];
+                    }
+                  }}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                    : "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mLjd,
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "clickable"
+                      : undefined
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateInput2Value"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["input2", "value"]
+                            },
+                            operation: 0,
+                            value: 3000000
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateInput2Value"] != null &&
+                      typeof $steps["updateInput2Value"] === "object" &&
+                      typeof $steps["updateInput2Value"].then === "function"
+                    ) {
+                      $steps["updateInput2Value"] = await $steps[
+                        "updateInput2Value"
+                      ];
+                    }
+                  }}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                    : "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yqQfD,
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "clickable"
+                      : undefined
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateInput2Value"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["input2", "value"]
+                            },
+                            operation: 0,
+                            value: 5000000
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateInput2Value"] != null &&
+                      typeof $steps["updateInput2Value"] === "object" &&
+                      typeof $steps["updateInput2Value"].then === "function"
+                    ) {
+                      $steps["updateInput2Value"] = await $steps[
+                        "updateInput2Value"
+                      ];
+                    }
+                  }}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                    : "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                 </div>
               </div>
             </div>
@@ -1583,9 +1583,9 @@ function Plasmicکیفپول__RenderFunc(props: {
                   sty.text__tAt2Q
                 )}
               >
-                {
-                  "\u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0647."
-                }
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u062f\u0631 \u0635\u0648\u0631\u062a \u0639\u062f\u0645 \u0631\u0636\u0627\u06cc\u062a \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u062e\u062f\u0645\u0627\u062a\u060c \u0648\u062c\u0647 \u0648\u0627\u0631\u06cc\u0632 \u0634\u062f\u0647 \u0628\u06cc \u0642\u06cc\u062f\u0648\u0634\u0631\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."
+                  : "\u062f\u0631 \u0635\u0648\u0631\u062a \u0639\u062f\u0645 \u0631\u0636\u0627\u06cc\u062a \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u062e\u062f\u0645\u0627\u062a\u060c \u0648\u062c\u0647 \u0648\u0627\u0631\u06cc\u0632 \u0634\u062f\u0647 \u0628\u06cc \u0642\u06cc\u062f\u0648\u0634\u0631\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."}
               </div>
               <div
                 className={classNames(
@@ -2260,11 +2260,11 @@ const PlasmicDescendants = {
     "input3",
     "input2",
     "left",
-    "packages",
-    "p1",
     "intext",
     "right2",
     "left2",
+    "packages",
+    "p1",
     "paymentbutton",
     "button",
     "pricing",
@@ -2303,8 +2303,6 @@ const PlasmicDescendants = {
     "input3",
     "input2",
     "left",
-    "packages",
-    "p1",
     "intext",
     "right2",
     "left2"
@@ -2315,11 +2313,11 @@ const PlasmicDescendants = {
   input3: ["input3"],
   input2: ["input2"],
   left: ["left"],
-  packages: ["packages", "p1"],
-  p1: ["p1"],
   intext: ["intext", "right2", "left2"],
   right2: ["right2"],
   left2: ["left2"],
+  packages: ["packages", "p1"],
+  p1: ["p1"],
   paymentbutton: ["paymentbutton", "button"],
   button: ["button"],
   pricing: ["pricing"],
@@ -2374,11 +2372,11 @@ type NodeDefaultElementType = {
   input3: typeof Input;
   input2: typeof Input;
   left: "div";
-  packages: "div";
-  p1: "div";
   intext: "div";
   right2: "div";
   left2: "div";
+  packages: "div";
+  p1: "div";
   paymentbutton: "div";
   button: "div";
   pricing: "div";
@@ -2477,11 +2475,11 @@ export const Plasmicکیفپول = Object.assign(
     input3: makeNodeComponent("input3"),
     input2: makeNodeComponent("input2"),
     left: makeNodeComponent("left"),
-    packages: makeNodeComponent("packages"),
-    p1: makeNodeComponent("p1"),
     intext: makeNodeComponent("intext"),
     right2: makeNodeComponent("right2"),
     left2: makeNodeComponent("left2"),
+    packages: makeNodeComponent("packages"),
+    p1: makeNodeComponent("p1"),
     paymentbutton: makeNodeComponent("paymentbutton"),
     button: makeNodeComponent("button"),
     pricing: makeNodeComponent("pricing"),
