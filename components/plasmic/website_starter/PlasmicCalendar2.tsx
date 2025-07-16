@@ -125,6 +125,7 @@ export type PlasmicCalendar2__OverridesType = {
   main?: Flex__<"div">;
   textInput2?: Flex__<typeof TextInput>;
   modal?: Flex__<typeof AntdModal>;
+  ثبتتغییرات?: Flex__<"div">;
   modalChangePrice?: Flex__<typeof AntdModal>;
   main2?: Flex__<"div">;
   input?: Flex__<typeof Input>;
@@ -321,7 +322,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
-            : true
+            : false
       },
       {
         path: "variable3",
@@ -3292,6 +3293,87 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
             }}
           >
+            <div
+              data-plasmic-name={
+                "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+              }
+              data-plasmic-override={overrides.ثبتتغییرات}
+              className={classNames(projectcss.all, sty.ثبتتغییرات)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qzyC
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return (() => {
+                        {
+                          return (() => {
+                            const startOfToday = new Date();
+                            startOfToday.setHours(0, 0, 0, 0);
+                            const startOfTodayTimestamp = Math.floor(
+                              startOfToday.getTime() / 1000
+                            );
+                            const flatDays = (
+                              $state.fragmentDatePicker.values.flat?.() ??
+                              $state.fragmentDatePicker.values
+                            )
+                              .filter(ts => ts >= startOfTodayTimestamp)
+                              .sort((a, b) => a - b);
+                            if (!flatDays.length) {
+                              return "انتخاب تغییر";
+                            }
+                            let isConsecutive = true;
+                            for (let i = 1; i < flatDays.length; i++) {
+                              const diffInDays =
+                                (flatDays[i] - flatDays[i - 1]) /
+                                (60 * 60 * 24);
+                              if (diffInDays !== 1) {
+                                isConsecutive = false;
+                                break;
+                              }
+                            }
+                            if (!isConsecutive) {
+                              return "انتخاب تغییر";
+                            }
+                            const fmt = new Intl.DateTimeFormat(
+                              "fa-IR-u-ca-persian",
+                              {
+                                day: "numeric",
+                                month: "long"
+                              }
+                            );
+                            const firstDate = fmt.format(
+                              new Date(flatDays[0] * 1000)
+                            );
+                            let dateStr = firstDate;
+                            if (flatDays.length > 1) {
+                              const lastDate = fmt.format(
+                                new Date(flatDays[flatDays.length - 1] * 1000)
+                              );
+                              dateStr = `${firstDate} تا ${lastDate}`;
+                            }
+                            return `ثبت تغییرات برای ${dateStr}`;
+                          })();
+                        }
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u0646\u062a\u06cc\u062c\u0647 \u00ab\u062b\u0628\u062a \u0631\u0632\u0631\u0648\u00bb \u06f2\u06f4 \u062e\u0631\u062f\u0627\u062f \u062a\u0627 \u06f2\u06f6 \u062e\u0631\u062f\u0627\u062f";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__p8HqH)}>
               <div
                 className={classNames(
@@ -10566,6 +10648,7 @@ const PlasmicDescendants = {
     "main",
     "textInput2",
     "modal",
+    "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a",
     "modalChangePrice",
     "main2",
     "input",
@@ -10628,7 +10711,11 @@ const PlasmicDescendants = {
   modalDiscount: ["modalDiscount", "main", "textInput2"],
   main: ["main", "textInput2"],
   textInput2: ["textInput2"],
-  modal: ["modal"],
+  modal: [
+    "modal",
+    "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+  ],
+  ثبتتغییرات: ["\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"],
   modalChangePrice: [
     "modalChangePrice",
     "main2",
@@ -10756,6 +10843,7 @@ type NodeDefaultElementType = {
   main: "div";
   textInput2: typeof TextInput;
   modal: typeof AntdModal;
+  ثبتتغییرات: "div";
   modalChangePrice: typeof AntdModal;
   main2: "div";
   input: typeof Input;
@@ -10880,6 +10968,9 @@ export const PlasmicCalendar2 = Object.assign(
     main: makeNodeComponent("main"),
     textInput2: makeNodeComponent("textInput2"),
     modal: makeNodeComponent("modal"),
+    ثبتتغییرات: makeNodeComponent(
+      "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+    ),
     modalChangePrice: makeNodeComponent("modalChangePrice"),
     main2: makeNodeComponent("main2"),
     input: makeNodeComponent("input"),

@@ -740,6 +740,31 @@
 .section__rqNfm > * {
   grid-column: 4;
 }
+.ثبتتغییرات {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.text__qzyC {
+  background: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0px;
+}
+@media (max-width: 500px) {
+  .text__qzyC {
+    font-size: 16px;
+    background: #f8f8f8;
+  }
+}
 .freeBox__p8HqH {
   display: flex;
   flex-direction: row;
