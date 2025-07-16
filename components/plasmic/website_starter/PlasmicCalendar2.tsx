@@ -960,39 +960,30 @@ function PlasmicCalendar2__RenderFunc(props: {
               })()
             : (() => {
                 try {
-                  return (
-                    //   function toEnglishDigits(str) {
-                    //     return str.replace(/[۰-۹]/g, function (char) {
-                    //       return String.fromCharCode(char.charCodeAt(0) - 1728);
-                    //     });
-                    //   }
-
-                    //   // انتخاب المنت دوم span
-                    //   const secondSpan = document.querySelector('.rmdp-header-values span:nth-child(3)');
-
-                    //   // دسترسی به محتوای متن آن
-                    //   if (secondSpan) {
-                    //     $state.year = secondSpan.textContent;
-                    //     // console.log($state.year); // محتوای ۱۴۰۴ را نشان می‌دهد
-                    //   }
-
-                    //   let initialMonth = new Date().toLocaleDateString("fa").split("/");
-                    //   let monStr = $state.fragmentDatePicker?.month ?? initialMonth[1];
-
-                    //   // اگر رشته شامل اعداد فارسی بود، آن را تبدیل کن
-                    //   if (/[\u06F0-\u06F9]/.test(monStr)) {
-                    //     monStr = toEnglishDigits(monStr);
-                    //   }
-
-                    //   let mon = parseInt(monStr, 10);
-
-                    //   // تعیین تعداد روزهای ماه
-                    //   let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-
-                    // `https://api-v2.rentamon.com/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
-
-                    "https://gateway.rentamon.com/webhook/test?v=2"
-                  );
+                  return (() => {
+                    function toEnglishDigits(str) {
+                      return str.replace(/[۰-۹]/g, function (char) {
+                        return String.fromCharCode(char.charCodeAt(0) - 1728);
+                      });
+                    }
+                    const secondSpan = document.querySelector(
+                      ".rmdp-header-values span:nth-child(3)"
+                    );
+                    if (secondSpan) {
+                      $state.year = secondSpan.textContent;
+                    }
+                    let initialMonth = new Date()
+                      .toLocaleDateString("fa")
+                      .split("/");
+                    let monStr =
+                      $state.fragmentDatePicker?.month ?? initialMonth[1];
+                    if (/[\u06F0-\u06F9]/.test(monStr)) {
+                      monStr = toEnglishDigits(monStr);
+                    }
+                    let mon = parseInt(monStr, 10);
+                    let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+                    return `https://api-v2.rentamon.com/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -3816,58 +3807,32 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "updateStateVariable2"
                 ];
               }
-            }}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox___0YivI)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rlhEr
-                )}
-                onClick={async event => {
-                  const $steps = {};
 
-                  $steps["updateFetchModalOpen"] = false
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["fetchModal", "open"]
-                          },
-                          operation: 0,
-                          value: true
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
+              $steps["invokeGlobalAction"] = (() => {
+                const calendar = $state.selectedItem;
+                const platforms = [
+                  "شب",
+                  "مهمانشو",
+                  "اتاقک",
+                  "جاباما",
+                  "جاجیگا",
+                  "هومسا",
+                  "میزبون"
+                ];
 
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateFetchModalOpen"] != null &&
-                    typeof $steps["updateFetchModalOpen"] === "object" &&
-                    typeof $steps["updateFetchModalOpen"].then === "function"
-                  ) {
-                    $steps["updateFetchModalOpen"] = await $steps[
-                      "updateFetchModalOpen"
-                    ];
-                  }
-
-                  $steps["runCode"] = false
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
+                const result = calendar.some(item =>
+                  platforms.includes(item.website)
+                );
+                return !result;
+              })()
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://gateway.rentamon.com/webhook/post-unblock",
+                        undefined,
+                        (() => {
+                          try {
                             return (() => {
                               function convertPersianNumbersToEnglish(str) {
                                 const persianNumbers = [
@@ -3942,7 +3907,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 days: [$state.fragmentDatePicker.values],
                                 property_id: $props.propertyId
                               };
-                              $state.requestdata = data;
                               data.days = data.days
                                 .map(timestampArray =>
                                   timestampArray
@@ -3954,52 +3918,45 @@ function PlasmicCalendar2__RenderFunc(props: {
                                     .filter(day => day >= todayInPersian)
                                 )
                                 .flat();
-                              fetch("https://api.rentamon.com/api/setunblock", {
-                                method: "POST",
-                                headers: {
-                                  "Content-Type": "application/json",
-                                  Accept: "*/*"
-                                },
-                                credentials: "include",
-                                body: JSON.stringify(data)
-                              })
-                                .then(response => {
-                                  if (!response.ok) {
-                                    throw new Error(
-                                      `HTTP error! status: ${response.status}`
-                                    );
-                                  }
-                                  return response.json();
-                                })
-                                .then(result => {
-                                  $state.platformRequestStatus = result;
-                                  console.log(
-                                    "Response saved to state:",
-                                    result
-                                  );
-                                })
-                                .catch(error => {
-                                  console.error("Error:", error);
-                                  $state.platformRequestStatus = {
-                                    error: error.message
-                                  };
-                                });
-                              return console.log(data);
+                              return data;
                             })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
                           }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
+                ];
+              }
+            }}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___0YivI)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__rlhEr
+                )}
+                onClick={async event => {
+                  const $steps = {};
                 }}
               >
                 {"\u062e\u0627\u0644\u06cc"}
@@ -4834,7 +4791,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            undefined,
+                            "https://gateway.rentamon.com/webhook/post-price",
                             undefined,
                             (() => {
                               try {
@@ -6347,6 +6304,131 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
+              $steps["sendRequestToRntApi"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://gateway.rentamon.com/webhook/post-block",
+                        undefined,
+                        (() => {
+                          try {
+                            return (() => {
+                              function convertPersianNumbersToEnglish(str) {
+                                const persianNumbers = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
+                                ];
+
+                                const englishNumbers = [
+                                  "0",
+                                  "1",
+                                  "2",
+                                  "3",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "7",
+                                  "8",
+                                  "9"
+                                ];
+
+                                return str.replace(
+                                  /[۰-۹]/g,
+                                  char =>
+                                    englishNumbers[
+                                      persianNumbers.indexOf(char)
+                                    ] || char
+                                );
+                              }
+                              function padZero(num) {
+                                return num.length === 1 ? `0${num}` : num;
+                              }
+                              function convertTimestampToPersianDateWithEnglishNumbers(
+                                timestamp
+                              ) {
+                                const date = new Date(timestamp * 1000);
+                                const [year, month, day] = date
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(
+                                  year
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(month)
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(day)
+                                )}`;
+                                return formattedDate;
+                              }
+                              function getTodayInPersian() {
+                                const today = new Date();
+                                const [year, month, day] = today
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(
+                                  year
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(month)
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(day)
+                                )}`;
+                                return formattedDate;
+                              }
+                              const todayInPersian = getTodayInPersian();
+                              const data = {
+                                days: [$state.fragmentDatePicker.values],
+                                property_id: $props.propertyId,
+                                requested_by: "user",
+                                request_for: "reserve"
+                              };
+                              data.days = data.days
+                                .map(timestampArray =>
+                                  timestampArray
+                                    .map(timestamp =>
+                                      convertTimestampToPersianDateWithEnglishNumbers(
+                                        timestamp
+                                      )
+                                    )
+                                    .filter(day => day >= todayInPersian)
+                                )
+                                .flat();
+                              return data;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["sendRequestToRntApi"] != null &&
+                typeof $steps["sendRequestToRntApi"] === "object" &&
+                typeof $steps["sendRequestToRntApi"].then === "function"
+              ) {
+                $steps["sendRequestToRntApi"] = await $steps[
+                  "sendRequestToRntApi"
+                ];
+              }
+
               $steps["reserveRequest"] = $steps.checkConsecutive
                 ? (() => {
                     const actionArgs = {
@@ -6648,29 +6730,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "saveBookingIdToState"
                 ];
               }
-
-              $steps["invokeGlobalAction"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "PUT",
-                        "https://gateway.rentamon.com/webhook/post-block"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
-              }
             }}
           >
             <Icon25Icon
@@ -6927,6 +6986,129 @@ function PlasmicCalendar2__RenderFunc(props: {
                 $steps["updateStateVariable2"] = await $steps[
                   "updateStateVariable2"
                 ];
+              }
+
+              $steps["sendForRntApi"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://gateway.rentamon.com/webhook/post-block",
+                        undefined,
+                        (() => {
+                          try {
+                            return (() => {
+                              function convertPersianNumbersToEnglish(str) {
+                                const persianNumbers = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
+                                ];
+
+                                const englishNumbers = [
+                                  "0",
+                                  "1",
+                                  "2",
+                                  "3",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "7",
+                                  "8",
+                                  "9"
+                                ];
+
+                                return str.replace(
+                                  /[۰-۹]/g,
+                                  char =>
+                                    englishNumbers[
+                                      persianNumbers.indexOf(char)
+                                    ] || char
+                                );
+                              }
+                              function padZero(num) {
+                                return num.length === 1 ? `0${num}` : num;
+                              }
+                              function convertTimestampToPersianDateWithEnglishNumbers(
+                                timestamp
+                              ) {
+                                const date = new Date(timestamp * 1000);
+                                const [year, month, day] = date
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(
+                                  year
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(month)
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(day)
+                                )}`;
+                                return formattedDate;
+                              }
+                              function getTodayInPersian() {
+                                const today = new Date();
+                                const [year, month, day] = today
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(
+                                  year
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(month)
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(day)
+                                )}`;
+                                return formattedDate;
+                              }
+                              const todayInPersian = getTodayInPersian();
+                              const data = {
+                                days: [$state.fragmentDatePicker.values],
+                                property_id: $props.propertyId,
+                                requested_by: "user",
+                                request_for: "block"
+                              };
+                              data.days = data.days
+                                .map(timestampArray =>
+                                  timestampArray
+                                    .map(timestamp =>
+                                      convertTimestampToPersianDateWithEnglishNumbers(
+                                        timestamp
+                                      )
+                                    )
+                                    .filter(day => day >= todayInPersian)
+                                )
+                                .flat();
+                              return data;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["sendForRntApi"] != null &&
+                typeof $steps["sendForRntApi"] === "object" &&
+                typeof $steps["sendForRntApi"].then === "function"
+              ) {
+                $steps["sendForRntApi"] = await $steps["sendForRntApi"];
               }
             }}
           >
@@ -8190,6 +8372,146 @@ function PlasmicCalendar2__RenderFunc(props: {
                   typeof $steps["runCode"].then === "function"
                 ) {
                   $steps["runCode"] = await $steps["runCode"];
+                }
+
+                $steps["invokeGlobalAction"] = (() => {
+                  const calendar = $state.selectedItem;
+                  const platforms = [
+                    "شب",
+                    "مهمانشو",
+                    "اتاقک",
+                    "جاباما",
+                    "جاجیگا",
+                    "هومسا",
+                    "میزبون"
+                  ];
+
+                  const result = calendar.some(item =>
+                    platforms.includes(item.website)
+                  );
+                  return !result;
+                })()
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://gateway.rentamon.com/webhook/post-unblock",
+                          undefined,
+                          (() => {
+                            try {
+                              return (() => {
+                                function convertPersianNumbersToEnglish(str) {
+                                  const persianNumbers = [
+                                    "۰",
+                                    "۱",
+                                    "۲",
+                                    "۳",
+                                    "۴",
+                                    "۵",
+                                    "۶",
+                                    "۷",
+                                    "۸",
+                                    "۹"
+                                  ];
+
+                                  const englishNumbers = [
+                                    "0",
+                                    "1",
+                                    "2",
+                                    "3",
+                                    "4",
+                                    "5",
+                                    "6",
+                                    "7",
+                                    "8",
+                                    "9"
+                                  ];
+
+                                  return str.replace(
+                                    /[۰-۹]/g,
+                                    char =>
+                                      englishNumbers[
+                                        persianNumbers.indexOf(char)
+                                      ] || char
+                                  );
+                                }
+                                function padZero(num) {
+                                  return num.length === 1 ? `0${num}` : num;
+                                }
+                                function convertTimestampToPersianDateWithEnglishNumbers(
+                                  timestamp
+                                ) {
+                                  const date = new Date(timestamp * 1000);
+                                  const [year, month, day] = date
+                                    .toLocaleDateString("fa")
+                                    .split("/");
+                                  const formattedDate = `${convertPersianNumbersToEnglish(
+                                    year
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(month)
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(day)
+                                  )}`;
+                                  return formattedDate;
+                                }
+                                function getTodayInPersian() {
+                                  const today = new Date();
+                                  const [year, month, day] = today
+                                    .toLocaleDateString("fa")
+                                    .split("/");
+                                  const formattedDate = `${convertPersianNumbersToEnglish(
+                                    year
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(month)
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(day)
+                                  )}`;
+                                  return formattedDate;
+                                }
+                                const todayInPersian = getTodayInPersian();
+                                const data = {
+                                  days: [$state.fragmentDatePicker.values],
+                                  property_id: $props.propertyId
+                                };
+                                data.days = data.days
+                                  .map(timestampArray =>
+                                    timestampArray
+                                      .map(timestamp =>
+                                        convertTimestampToPersianDateWithEnglishNumbers(
+                                          timestamp
+                                        )
+                                      )
+                                      .filter(day => day >= todayInPersian)
+                                  )
+                                  .flat();
+                                return data;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] = await $steps[
+                    "invokeGlobalAction"
+                  ];
                 }
               }}
             >

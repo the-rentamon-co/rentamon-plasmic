@@ -113,11 +113,11 @@ export type Plasmicتالار__OverridesType = {
   right2?: Flex__<"div">;
   mid2?: Flex__<"div">;
   items8?: Flex__<"div">;
-  items?: Flex__<"div">;
+  channelManager?: Flex__<"div">;
   right?: Flex__<"div">;
   mid?: Flex__<"div">;
   left?: Flex__<"div">;
-  items2?: Flex__<"div">;
+  contacts?: Flex__<"div">;
   right3?: Flex__<"div">;
   mid3?: Flex__<"div">;
   left2?: Flex__<"div">;
@@ -130,23 +130,23 @@ export type Plasmicتالار__OverridesType = {
   right10?: Flex__<"div">;
   mid10?: Flex__<"div">;
   left9?: Flex__<"div">;
-  items3?: Flex__<"div">;
+  instantReserve?: Flex__<"div">;
   right4?: Flex__<"div">;
   mid4?: Flex__<"div">;
   left3?: Flex__<"div">;
-  items4?: Flex__<"div">;
+  settings?: Flex__<"div">;
   right5?: Flex__<"div">;
   mid5?: Flex__<"div">;
   left4?: Flex__<"div">;
-  items5?: Flex__<"div">;
+  support?: Flex__<"div">;
   right6?: Flex__<"div">;
   mid6?: Flex__<"div">;
   left5?: Flex__<"div">;
-  items7?: Flex__<"div">;
+  homePage?: Flex__<"div">;
   right8?: Flex__<"div">;
   mid8?: Flex__<"div">;
   left7?: Flex__<"div">;
-  items6?: Flex__<"div">;
+  logout?: Flex__<"div">;
   right7?: Flex__<"div">;
   mid7?: Flex__<"div">;
   left6?: Flex__<"div">;
@@ -919,11 +919,11 @@ function Plasmicتالار__RenderFunc(props: {
               )}
             >
               <div
-                data-plasmic-name={"items"}
-                data-plasmic-override={overrides.items}
+                data-plasmic-name={"channelManager"}
+                data-plasmic-override={overrides.channelManager}
                 className={classNames(
                   projectcss.all,
-                  sty.items,
+                  sty.channelManager,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? (() => {
                         try {
@@ -1052,11 +1052,11 @@ function Plasmicتالار__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
                 <div
-                  data-plasmic-name={"items2"}
-                  data-plasmic-override={overrides.items2}
+                  data-plasmic-name={"contacts"}
+                  data-plasmic-override={overrides.contacts}
                   className={classNames(
                     projectcss.all,
-                    sty.items2,
+                    sty.contacts,
                     "clickable"
                   )}
                   onClick={async event => {
@@ -1396,11 +1396,11 @@ function Plasmicتالار__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
                 <div
-                  data-plasmic-name={"items3"}
-                  data-plasmic-override={overrides.items3}
+                  data-plasmic-name={"instantReserve"}
+                  data-plasmic-override={overrides.instantReserve}
                   className={classNames(
                     projectcss.all,
-                    sty.items3,
+                    sty.instantReserve,
                     (() => {
                       try {
                         return (() => {
@@ -1505,11 +1505,11 @@ function Plasmicتالار__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
                 <div
-                  data-plasmic-name={"items4"}
-                  data-plasmic-override={overrides.items4}
+                  data-plasmic-name={"settings"}
+                  data-plasmic-override={overrides.settings}
                   className={classNames(
                     projectcss.all,
-                    sty.items4,
+                    sty.settings,
                     (() => {
                       try {
                         return (() => {
@@ -1610,11 +1610,11 @@ function Plasmicتالار__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
                 <div
-                  data-plasmic-name={"items5"}
-                  data-plasmic-override={overrides.items5}
+                  data-plasmic-name={"support"}
+                  data-plasmic-override={overrides.support}
                   className={classNames(
                     projectcss.all,
-                    sty.items5,
+                    sty.support,
                     (() => {
                       try {
                         return (() => {
@@ -1715,11 +1715,11 @@ function Plasmicتالار__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
                 <div
-                  data-plasmic-name={"items7"}
-                  data-plasmic-override={overrides.items7}
+                  data-plasmic-name={"homePage"}
+                  data-plasmic-override={overrides.homePage}
                   className={classNames(
                     projectcss.all,
-                    sty.items7,
+                    sty.homePage,
                     (() => {
                       try {
                         return (() => {
@@ -1823,12 +1823,12 @@ function Plasmicتالار__RenderFunc(props: {
               ) ? (
                 <Stack__
                   as={"div"}
-                  data-plasmic-name={"items6"}
-                  data-plasmic-override={overrides.items6}
+                  data-plasmic-name={"logout"}
+                  data-plasmic-override={overrides.logout}
                   hasGap={true}
                   className={classNames(
                     projectcss.all,
-                    sty.items6,
+                    sty.logout,
                     "clickable"
                   )}
                   onClick={async event => {
@@ -2098,11 +2098,11 @@ const PlasmicDescendants = {
     "right2",
     "mid2",
     "items8",
-    "items",
+    "channelManager",
     "right",
     "mid",
     "left",
-    "items2",
+    "contacts",
     "right3",
     "mid3",
     "left2",
@@ -2115,23 +2115,23 @@ const PlasmicDescendants = {
     "right10",
     "mid10",
     "left9",
-    "items3",
+    "instantReserve",
     "right4",
     "mid4",
     "left3",
-    "items4",
+    "settings",
     "right5",
     "mid5",
     "left4",
-    "items5",
+    "support",
     "right6",
     "mid6",
     "left5",
-    "items7",
+    "homePage",
     "right8",
     "mid8",
     "left7",
-    "items6",
+    "logout",
     "right7",
     "mid7",
     "left6",
@@ -2159,11 +2159,11 @@ const PlasmicDescendants = {
     "right2",
     "mid2",
     "items8",
-    "items",
+    "channelManager",
     "right",
     "mid",
     "left",
-    "items2",
+    "contacts",
     "right3",
     "mid3",
     "left2",
@@ -2176,23 +2176,23 @@ const PlasmicDescendants = {
     "right10",
     "mid10",
     "left9",
-    "items3",
+    "instantReserve",
     "right4",
     "mid4",
     "left3",
-    "items4",
+    "settings",
     "right5",
     "mid5",
     "left4",
-    "items5",
+    "support",
     "right6",
     "mid6",
     "left5",
-    "items7",
+    "homePage",
     "right8",
     "mid8",
     "left7",
-    "items6",
+    "logout",
     "right7",
     "mid7",
     "left6"
@@ -2222,11 +2222,11 @@ const PlasmicDescendants = {
   mid2: ["mid2"],
   items8: [
     "items8",
-    "items",
+    "channelManager",
     "right",
     "mid",
     "left",
-    "items2",
+    "contacts",
     "right3",
     "mid3",
     "left2",
@@ -2239,32 +2239,32 @@ const PlasmicDescendants = {
     "right10",
     "mid10",
     "left9",
-    "items3",
+    "instantReserve",
     "right4",
     "mid4",
     "left3",
-    "items4",
+    "settings",
     "right5",
     "mid5",
     "left4",
-    "items5",
+    "support",
     "right6",
     "mid6",
     "left5",
-    "items7",
+    "homePage",
     "right8",
     "mid8",
     "left7",
-    "items6",
+    "logout",
     "right7",
     "mid7",
     "left6"
   ],
-  items: ["items", "right", "mid", "left"],
+  channelManager: ["channelManager", "right", "mid", "left"],
   right: ["right"],
   mid: ["mid"],
   left: ["left"],
-  items2: ["items2", "right3", "mid3", "left2"],
+  contacts: ["contacts", "right3", "mid3", "left2"],
   right3: ["right3"],
   mid3: ["mid3"],
   left2: ["left2"],
@@ -2277,23 +2277,23 @@ const PlasmicDescendants = {
   right10: ["right10"],
   mid10: ["mid10"],
   left9: ["left9"],
-  items3: ["items3", "right4", "mid4", "left3"],
+  instantReserve: ["instantReserve", "right4", "mid4", "left3"],
   right4: ["right4"],
   mid4: ["mid4"],
   left3: ["left3"],
-  items4: ["items4", "right5", "mid5", "left4"],
+  settings: ["settings", "right5", "mid5", "left4"],
   right5: ["right5"],
   mid5: ["mid5"],
   left4: ["left4"],
-  items5: ["items5", "right6", "mid6", "left5"],
+  support: ["support", "right6", "mid6", "left5"],
   right6: ["right6"],
   mid6: ["mid6"],
   left5: ["left5"],
-  items7: ["items7", "right8", "mid8", "left7"],
+  homePage: ["homePage", "right8", "mid8", "left7"],
   right8: ["right8"],
   mid8: ["mid8"],
   left7: ["left7"],
-  items6: ["items6", "right7", "mid7", "left6"],
+  logout: ["logout", "right7", "mid7", "left6"],
   right7: ["right7"],
   mid7: ["mid7"],
   left6: ["left6"],
@@ -2325,11 +2325,11 @@ type NodeDefaultElementType = {
   right2: "div";
   mid2: "div";
   items8: "div";
-  items: "div";
+  channelManager: "div";
   right: "div";
   mid: "div";
   left: "div";
-  items2: "div";
+  contacts: "div";
   right3: "div";
   mid3: "div";
   left2: "div";
@@ -2342,23 +2342,23 @@ type NodeDefaultElementType = {
   right10: "div";
   mid10: "div";
   left9: "div";
-  items3: "div";
+  instantReserve: "div";
   right4: "div";
   mid4: "div";
   left3: "div";
-  items4: "div";
+  settings: "div";
   right5: "div";
   mid5: "div";
   left4: "div";
-  items5: "div";
+  support: "div";
   right6: "div";
   mid6: "div";
   left5: "div";
-  items7: "div";
+  homePage: "div";
   right8: "div";
   mid8: "div";
   left7: "div";
-  items6: "div";
+  logout: "div";
   right7: "div";
   mid7: "div";
   left6: "div";
@@ -2446,11 +2446,11 @@ export const Plasmicتالار = Object.assign(
     right2: makeNodeComponent("right2"),
     mid2: makeNodeComponent("mid2"),
     items8: makeNodeComponent("items8"),
-    items: makeNodeComponent("items"),
+    channelManager: makeNodeComponent("channelManager"),
     right: makeNodeComponent("right"),
     mid: makeNodeComponent("mid"),
     left: makeNodeComponent("left"),
-    items2: makeNodeComponent("items2"),
+    contacts: makeNodeComponent("contacts"),
     right3: makeNodeComponent("right3"),
     mid3: makeNodeComponent("mid3"),
     left2: makeNodeComponent("left2"),
@@ -2463,23 +2463,23 @@ export const Plasmicتالار = Object.assign(
     right10: makeNodeComponent("right10"),
     mid10: makeNodeComponent("mid10"),
     left9: makeNodeComponent("left9"),
-    items3: makeNodeComponent("items3"),
+    instantReserve: makeNodeComponent("instantReserve"),
     right4: makeNodeComponent("right4"),
     mid4: makeNodeComponent("mid4"),
     left3: makeNodeComponent("left3"),
-    items4: makeNodeComponent("items4"),
+    settings: makeNodeComponent("settings"),
     right5: makeNodeComponent("right5"),
     mid5: makeNodeComponent("mid5"),
     left4: makeNodeComponent("left4"),
-    items5: makeNodeComponent("items5"),
+    support: makeNodeComponent("support"),
     right6: makeNodeComponent("right6"),
     mid6: makeNodeComponent("mid6"),
     left5: makeNodeComponent("left5"),
-    items7: makeNodeComponent("items7"),
+    homePage: makeNodeComponent("homePage"),
     right8: makeNodeComponent("right8"),
     mid8: makeNodeComponent("mid8"),
     left7: makeNodeComponent("left7"),
-    items6: makeNodeComponent("items6"),
+    logout: makeNodeComponent("logout"),
     right7: makeNodeComponent("right7"),
     mid7: makeNodeComponent("mid7"),
     left6: makeNodeComponent("left6"),

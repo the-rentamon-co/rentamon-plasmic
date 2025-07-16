@@ -1749,6 +1749,7 @@
   max-width: 100%;
   text-align: center;
   font-size: 16px;
+  font-family: "Estedad";
   min-width: 0;
 }
 @media (max-width: 500px) {

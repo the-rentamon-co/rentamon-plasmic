@@ -678,7 +678,7 @@
   max-width: 100%;
   text-align: center;
   color: #2f2f2f;
-  font-weight: 600;
+  font-weight: 500;
   left: 0px;
   top: 10px;
   z-index: 1;
@@ -697,6 +697,7 @@
 }
 .textdayStatus_reserved__ltKp26WcTl {
   color: var(--token-7MRjbe724hDb);
+  font-weight: 500;
 }
 .textdayStatus_disabled__ltKp2Okz0Z {
   color: var(--token-aAU8kfeqE6Ao);
