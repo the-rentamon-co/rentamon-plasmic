@@ -459,6 +459,11 @@ function PlasmicDayCell__RenderFunc(props: {
                   projectcss.__wab_text,
                   sty.text__sLeDq,
                   {
+                    [sty.textdayStatus_blocked__sLeDq77F30]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "blocked"
+                    ),
                     [sty.textdayStatus_disabled__sLeDqOkz0Z]: hasVariant(
                       $state,
                       "dayStatus",
@@ -468,6 +473,21 @@ function PlasmicDayCell__RenderFunc(props: {
                       $state,
                       "dayStatus",
                       "discount"
+                    ),
+                    [sty.textdayStatus_firstDayReserve__sLeDqyp11Q]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "firstDayReserve"
+                    ),
+                    [sty.textdayStatus_lastDayReserve__sLeDqvreYs]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "lastDayReserve"
+                    ),
+                    [sty.textdayStatus_midDayReserve__sLeDqxrGdN]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "midDayReserve"
                     ),
                     [sty.textdayStatus_passedFirstDayReserve__sLeDqohsA4]:
                       hasVariant($state, "dayStatus", "passedFirstDayReserve"),
@@ -539,6 +559,11 @@ function PlasmicDayCell__RenderFunc(props: {
                   projectcss.__wab_text,
                   sty.holidays2,
                   {
+                    [sty.holidays2dayStatus_blocked]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "blocked"
+                    ),
                     [sty.holidays2dayStatus_disabled]: hasVariant(
                       $state,
                       "dayStatus",
@@ -548,6 +573,21 @@ function PlasmicDayCell__RenderFunc(props: {
                       $state,
                       "dayStatus",
                       "discount"
+                    ),
+                    [sty.holidays2dayStatus_firstDayReserve]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "firstDayReserve"
+                    ),
+                    [sty.holidays2dayStatus_lastDayReserve]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "lastDayReserve"
+                    ),
+                    [sty.holidays2dayStatus_midDayReserve]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "midDayReserve"
                     ),
                     [sty.holidays2dayStatus_passedFirstDayReserve]: hasVariant(
                       $state,
@@ -617,6 +657,11 @@ function PlasmicDayCell__RenderFunc(props: {
                 "dayStatus",
                 "disabled"
               ),
+              [sty.freeBoxdayStatus_firstDayReserve__gKj3Yp11Q]: hasVariant(
+                $state,
+                "dayStatus",
+                "firstDayReserve"
+              ),
               [sty.freeBoxdayStatus_midDayReserve__gKj3XrGdN]: hasVariant(
                 $state,
                 "dayStatus",
@@ -657,6 +702,11 @@ function PlasmicDayCell__RenderFunc(props: {
                 projectcss.__wab_text,
                 sty.text__kqTC,
                 {
+                  [sty.textdayStatus_blocked__kqTC77F30]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "blocked"
+                  ),
                   [sty.textdayStatus_disabled__kqTCokz0Z]: hasVariant(
                     $state,
                     "dayStatus",
@@ -666,6 +716,21 @@ function PlasmicDayCell__RenderFunc(props: {
                     $state,
                     "dayStatus",
                     "discount"
+                  ),
+                  [sty.textdayStatus_firstDayReserve__kqTCyp11Q]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "firstDayReserve"
+                  ),
+                  [sty.textdayStatus_lastDayReserve__kqTCvreYs]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "lastDayReserve"
+                  ),
+                  [sty.textdayStatus_midDayReserve__kqTCxrGdN]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "midDayReserve"
                   ),
                   [sty.textdayStatus_passedFirstDayReserve__kqTCohsA4]:
                     hasVariant($state, "dayStatus", "passedFirstDayReserve"),
@@ -746,6 +811,11 @@ function PlasmicDayCell__RenderFunc(props: {
                 "dayStatus",
                 "firstDayReserve"
               ),
+              [sty.freeBoxdayStatus_lastDayReserve__cD9FrvreYs]: hasVariant(
+                $state,
+                "dayStatus",
+                "lastDayReserve"
+              ),
               [sty.freeBoxdayStatus_passedMidDayReserve__cD9Fro7Nt2]:
                 hasVariant($state, "dayStatus", "passedMidDayReserve"),
               [sty.freeBoxdayStatus_reserved__cD9Fr6WcTl]: hasVariant(
@@ -785,6 +855,16 @@ function PlasmicDayCell__RenderFunc(props: {
                     $state,
                     "dayStatus",
                     "firstDayReserve"
+                  ),
+                  [sty.textdayStatus_lastDayReserve__ltKp2VreYs]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "lastDayReserve"
+                  ),
+                  [sty.textdayStatus_midDayReserve__ltKp2XrGdN]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "midDayReserve"
                   ),
                   [sty.textdayStatus_passedFirstDayReserve__ltKp2OhsA4]:
                     hasVariant($state, "dayStatus", "passedFirstDayReserve"),

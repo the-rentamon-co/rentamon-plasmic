@@ -1166,7 +1166,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                       $state.fetchModal.open = false;
                       $state.block.open = false;
                       $state.modal.open = false;
-                      $state.modalDiscount.open = false;
                       $state.modalChangePrice.open = false;
                       const changedDaysTimestamps = (
                         $state.requestdata.days || []
@@ -1343,7 +1342,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                       $state.fetchModal.open = false;
                       $state.block.open = false;
                       $state.modal.open = false;
-                      $state.modalDiscount.open = false;
                       $state.modalChangePrice.open = false;
                       const changedDaysTimestamps = (
                         $state.requestdata.days || []
@@ -4103,37 +4101,6 @@ function PlasmicCalendar2__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
-              $steps["updateModalDiscountOpen"] = false
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["modalDiscount", "open"]
-                      },
-                      operation: 0,
-                      value: true
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateModalDiscountOpen"] != null &&
-                typeof $steps["updateModalDiscountOpen"] === "object" &&
-                typeof $steps["updateModalDiscountOpen"].then === "function"
-              ) {
-                $steps["updateModalDiscountOpen"] = await $steps[
-                  "updateModalDiscountOpen"
-                ];
-              }
-
               $steps["updateNewDiscountModalOpen"] = true
                 ? (() => {
                     const actionArgs = {
@@ -4859,6 +4826,114 @@ function PlasmicCalendar2__RenderFunc(props: {
                   ) {
                     $steps["updateStateVariable2"] = await $steps[
                       "updateStateVariable2"
+                    ];
+                  }
+
+                  $steps["sendRequestToRntApi"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            undefined,
+                            undefined,
+                            (() => {
+                              try {
+                                return (() => {
+                                  function convertPersianNumbersToEnglish(str) {
+                                    const persianNumbers = [
+                                      "۰",
+                                      "۱",
+                                      "۲",
+                                      "۳",
+                                      "۴",
+                                      "۵",
+                                      "۶",
+                                      "۷",
+                                      "۸",
+                                      "۹"
+                                    ];
+
+                                    const englishNumbers = [
+                                      "0",
+                                      "1",
+                                      "2",
+                                      "3",
+                                      "4",
+                                      "5",
+                                      "6",
+                                      "7",
+                                      "8",
+                                      "9"
+                                    ];
+
+                                    return str.replace(
+                                      /[۰-۹]/g,
+                                      char =>
+                                        englishNumbers[
+                                          persianNumbers.indexOf(char)
+                                        ] || char
+                                    );
+                                  }
+                                  function padZero(num) {
+                                    return num.length === 1 ? `0${num}` : num;
+                                  }
+                                  function convertTimestampToPersianDateWithEnglishNumbers(
+                                    timestamp
+                                  ) {
+                                    const date = new Date(timestamp * 1000);
+                                    const [year, month, day] = date
+                                      .toLocaleDateString("fa")
+                                      .split("/");
+                                    const formattedDate = `${convertPersianNumbersToEnglish(
+                                      year
+                                    )}-${padZero(
+                                      convertPersianNumbersToEnglish(month)
+                                    )}-${padZero(
+                                      convertPersianNumbersToEnglish(day)
+                                    )}`;
+                                    return formattedDate;
+                                  }
+                                  const data = {
+                                    days: [$state.fragmentDatePicker.values],
+                                    property_id: $props.propertyId,
+                                    price: String($state.requestdata.price)
+                                  };
+                                  data.days = data.days
+                                    .map(timestampArray =>
+                                      timestampArray.map(timestamp =>
+                                        convertTimestampToPersianDateWithEnglishNumbers(
+                                          timestamp
+                                        )
+                                      )
+                                    )
+                                    .flat();
+                                  return data;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["sendRequestToRntApi"] != null &&
+                    typeof $steps["sendRequestToRntApi"] === "object" &&
+                    typeof $steps["sendRequestToRntApi"].then === "function"
+                  ) {
+                    $steps["sendRequestToRntApi"] = await $steps[
+                      "sendRequestToRntApi"
                     ];
                   }
                 }}
@@ -5711,7 +5786,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                               $state.fetchModal.open = false;
                               $state.block.open = false;
                               $state.modal.open = false;
-                              $state.modalDiscount.open = false;
                               $state.modalChangePrice.open = false;
                               const changedDaysTimestamps = (
                                 $state.requestdata.days || []
@@ -6572,6 +6646,29 @@ function PlasmicCalendar2__RenderFunc(props: {
               ) {
                 $steps["saveBookingIdToState"] = await $steps[
                   "saveBookingIdToState"
+                ];
+              }
+
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "PUT",
+                        "https://gateway.rentamon.com/webhook/post-block"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
                 ];
               }
             }}
@@ -9258,7 +9355,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   const data = {
                                     days: [$state.fragmentDatePicker.values],
                                     property_id: $props.propertyId,
-                                    discount: String($state.textInput2.value)
+                                    discount: String(
+                                      $state.requestdata.discount
+                                    )
                                   };
                                   data.days = data.days
                                     .map(timestampArray =>
