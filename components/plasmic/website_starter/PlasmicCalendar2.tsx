@@ -6309,7 +6309,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         "POST",
-                        "https://gateway.rentamon.com/webhook/post-block",
+                        "https://gateway.rentamon.com/webhook/set-block",
                         undefined,
                         (() => {
                           try {
@@ -6993,7 +6993,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         "POST",
-                        "https://gateway.rentamon.com/webhook/post-block",
+                        "https://gateway.rentamon.com/webhook/set-block",
                         undefined,
                         (() => {
                           try {
@@ -9615,7 +9615,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/post-discount",
+                            "https://gateway.rentamon.com/webhook/set-discount",
                             undefined,
                             (() => {
                               try {
@@ -9719,26 +9719,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                     $steps["invokeGlobalAction"] = await $steps[
                       "invokeGlobalAction"
                     ];
-                  }
-
-                  $steps["runCode2"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return console.log("here in the request");
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode2"] != null &&
-                    typeof $steps["runCode2"] === "object" &&
-                    typeof $steps["runCode2"].then === "function"
-                  ) {
-                    $steps["runCode2"] = await $steps["runCode2"];
                   }
                 }}
               >
