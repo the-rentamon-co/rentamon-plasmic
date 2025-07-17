@@ -127,6 +127,11 @@
   min-width: 0;
   padding: 8px 20px 8px 8px;
 }
+@media (max-width: 500px) {
+  .introTitle {
+    padding-right: 8px;
+  }
+}
 .text___2BkbI {
   position: relative;
   width: 100%;
@@ -136,6 +141,16 @@
   font-weight: 600;
   padding-right: 0px;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .text___2BkbI {
+    font-size: 19px;
+  }
+}
+@media (max-width: 350px) {
+  .text___2BkbI {
+    font-size: 17px;
+  }
 }
 .introduction {
   display: flex;
@@ -159,7 +174,12 @@
 @media (max-width: 500px) {
   .introduction {
     max-width: 100%;
-    padding-top: 16px;
+    padding-top: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .introduction {
+    padding-top: 0px;
   }
 }
 .text__rvVUk {
@@ -171,6 +191,7 @@
 @media (max-width: 500px) {
   .text__rvVUk {
     font-size: 14px;
+    padding-right: 8px;
   }
 }
 @media (max-width: 350px) {
@@ -186,13 +207,13 @@
 }
 @media (max-width: 500px) {
   .text__isa1H {
-    font-size: 16px;
+    font-size: 15px;
     padding-top: 24px;
   }
 }
 @media (max-width: 350px) {
   .text__isa1H {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .introduction2 {
@@ -218,7 +239,7 @@
   .introduction2 {
     max-width: 100%;
     padding-top: 16px;
-    padding-right: 37px;
+    padding-right: 20px;
   }
 }
 @media (max-width: 350px) {
@@ -234,12 +255,12 @@
 }
 @media (max-width: 500px) {
   .text__un56I {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text__un56I {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .ul__hG4Nf {
@@ -249,7 +270,7 @@
 @media (max-width: 350px) {
   .li__eRDu {
     padding-top: 0px;
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .ul__eCqGt {
@@ -272,12 +293,12 @@
 }
 @media (max-width: 500px) {
   .text__wT5Ns {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text__wT5Ns {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .ul___95RfE {
@@ -296,12 +317,12 @@
 }
 @media (max-width: 500px) {
   .text__mnQ1G {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text__mnQ1G {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .ul__sUbvs {
@@ -313,6 +334,11 @@
     padding-left: 7px;
   }
 }
+@media (max-width: 350px) {
+  .li__dgt4B {
+    padding-bottom: 0px;
+  }
+}
 .text__vnUgP {
   text-align: right;
   font-size: 17px;
@@ -321,12 +347,12 @@
 }
 @media (max-width: 500px) {
   .text__vnUgP {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
   .text__vnUgP {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .rentamonFooter:global(.__wab_instance) {

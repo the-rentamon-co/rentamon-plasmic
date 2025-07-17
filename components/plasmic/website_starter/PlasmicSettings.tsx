@@ -682,9 +682,7 @@ function PlasmicSettings__RenderFunc(props: {
                       sty.text__vxcPf
                     )}
                   >
-                    {
-                      "\u06a9\u0627\u0631\u0645\u0632\u062f (\u062f\u0631\u0635\u062f)"
-                    }
+                    {"\u06a9\u0627\u0631\u0645\u0632\u062f"}
                   </div>
                 </div>
                 <div
@@ -829,9 +827,11 @@ function PlasmicSettings__RenderFunc(props: {
                                 }
                                 const number =
                                   $state.apiRequest2.data[0].default_rate;
-                                return `${new Intl.NumberFormat("fa-IR").format(
-                                  number
-                                )}`;
+                                return (
+                                  `${new Intl.NumberFormat("fa-IR").format(
+                                    number
+                                  )}` + " % "
+                                );
                               })();
                             } catch (e) {
                               if (
@@ -850,7 +850,13 @@ function PlasmicSettings__RenderFunc(props: {
                   <div
                     data-plasmic-name={"p4"}
                     data-plasmic-override={overrides.p4}
-                    className={classNames(projectcss.all, sty.p4, "ltr")}
+                    className={classNames(
+                      projectcss.all,
+                      sty.p4,
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "ltr"
+                        : "ltr"
+                    )}
                   >
                     <Switch
                       data-plasmic-name={"autoSyncSwitch"}
@@ -1266,9 +1272,11 @@ function PlasmicSettings__RenderFunc(props: {
                                 }
                                 const number =
                                   $state.apiRequest.data[0].default_rate;
-                                return `${new Intl.NumberFormat("fa-IR").format(
-                                  number
-                                )}`;
+                                return (
+                                  `${new Intl.NumberFormat("fa-IR").format(
+                                    number
+                                  )}` + " % "
+                                );
                               })();
                             } catch (e) {
                               if (
@@ -1287,7 +1295,13 @@ function PlasmicSettings__RenderFunc(props: {
                   <div
                     data-plasmic-name={"p42"}
                     data-plasmic-override={overrides.p42}
-                    className={classNames(projectcss.all, sty.p42, "ltr")}
+                    className={classNames(
+                      projectcss.all,
+                      sty.p42,
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "ltr"
+                        : "ltr"
+                    )}
                   >
                     <Switch
                       data-plasmic-name={"reservationSwitch"}

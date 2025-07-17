@@ -125,7 +125,7 @@
   text-align: center;
   font-family: "Estedad";
   font-style: normal;
-  color: #203647;
+  color: #444444;
   text-transform: none;
   line-height: 1.5;
   letter-spacing: normal;
@@ -133,6 +133,11 @@
   user-select: none;
   text-decoration-line: none;
   text-overflow: clip;
+}
+@media (max-width: 350px) {
+  .text__i01Xj {
+    color: #444444;
+  }
 }
 .freeBox___8Ay3J {
   display: flex;
@@ -263,6 +268,7 @@
 .text__wxCeh {
   font-size: 16px;
   padding-top: 20px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__wxCeh {
@@ -281,6 +287,7 @@
   .text__wxCeh {
     font-size: 15px;
     padding-top: 0px;
+    color: #444444;
   }
 }
 .titleRow {
@@ -341,8 +348,9 @@
 @media (max-width: 500px) {
   .opt15 {
     max-width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-bottom: 12px;
+    align-items: flex-end;
   }
 }
 @media (max-width: 350px) {
@@ -384,16 +392,21 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 50%;
+  max-width: 49%;
   justify-content: center;
   align-items: flex-start;
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 1200px) {
+  .p25 {
+    max-width: 50%;
+  }
+}
 @media (max-width: 500px) {
   .p25 {
     padding-right: 0px;
-    max-width: 65%;
+    max-width: 60%;
   }
 }
 @media (max-width: 350px) {
@@ -406,6 +419,7 @@
   font-size: 17px;
   font-weight: 500;
   width: 100%;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -425,6 +439,7 @@
   .text__zleIg {
     font-size: 15px;
     font-weight: 500;
+    color: #444444;
   }
 }
 .p35 {
@@ -441,19 +456,22 @@
 }
 @media (max-width: 500px) {
   .p35 {
-    max-width: 36%;
+    max-width: 26%;
     padding-left: 0px;
   }
 }
 @media (max-width: 350px) {
   .p35 {
     padding-left: 0px;
-    max-width: 36%;
+    max-width: 32%;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
 .text__vxcPf {
   font-size: 17px;
   font-weight: 500;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__vxcPf {
@@ -469,6 +487,10 @@
 @media (max-width: 350px) {
   .text__vxcPf {
     font-size: 15px;
+    width: 100%;
+    font-weight: 500;
+    color: #444444;
+    min-width: 0;
   }
 }
 .p44 {
@@ -690,7 +712,7 @@
 @media (max-width: 350px) {
   .p2 {
     padding-left: 0px;
-    max-width: 65%;
+    max-width: 55%;
     padding-right: 4px;
   }
 }
@@ -698,6 +720,7 @@
   font-size: 16px;
   font-weight: 400;
   width: 100%;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -712,6 +735,7 @@
   .text__q9AmZ {
     font-size: 15px;
     font-weight: 400;
+    color: #444444;
   }
 }
 .p3 {
@@ -734,7 +758,7 @@
 @media (max-width: 350px) {
   .p3 {
     padding-left: 0px;
-    max-width: 14%;
+    max-width: 20%;
   }
 }
 .apiRequest2:global(.__wab_instance) {
@@ -760,10 +784,20 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__uz7N {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    color: #444444;
+    min-width: 0;
+  }
 }
 .p4 {
   display: flex;
@@ -789,6 +823,7 @@
 @media (max-width: 350px) {
   .p4 {
     padding-left: 4px;
+    max-width: 16%;
   }
 }
 .autoSyncSwitch:global(.__wab_instance) {
@@ -1025,7 +1060,7 @@
 }
 @media (max-width: 350px) {
   .p22 {
-    max-width: 65%;
+    max-width: 55%;
     width: 100%;
     height: auto;
     flex-direction: column;
@@ -1040,6 +1075,7 @@
   font-weight: 400;
   width: 100%;
   padding-bottom: 0px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -1054,6 +1090,7 @@
     font-weight: 400;
     padding-right: 0px;
     width: 100%;
+    color: #444444;
     min-width: 0;
   }
 }
@@ -1077,7 +1114,7 @@
 @media (max-width: 350px) {
   .p32 {
     padding-left: 0px;
-    max-width: 14%;
+    max-width: 20%;
   }
 }
 .apiRequest:global(.__wab_instance) {
@@ -1104,10 +1141,22 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__fbF23 {
+    width: 100%;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #444444;
+    min-width: 0;
+  }
 }
 .p42 {
   display: flex;
@@ -1140,7 +1189,7 @@
     width: 100%;
     height: auto;
     min-height: 20px;
-    max-width: 13%;
+    max-width: 16%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1413,6 +1462,7 @@
 .text__faHZa {
   font-size: 16px;
   font-weight: 400;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .text__faHZa {
@@ -2645,6 +2695,7 @@
   font-weight: 600;
   width: 100%;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2661,8 +2712,11 @@
 }
 @media (max-width: 350px) {
   .text__nIm2M {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    color: #444444;
+    min-width: 0;
   }
 }
 .p34 {
@@ -2700,6 +2754,7 @@
 .text__ifHFd {
   font-size: 17px;
   font-weight: 600;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .text__ifHFd {
@@ -2709,7 +2764,9 @@
 }
 @media (max-width: 350px) {
   .text__ifHFd {
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
   }
 }
 .apiRequestSetting:global(.__wab_instance) {
