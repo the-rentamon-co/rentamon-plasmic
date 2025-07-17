@@ -3829,7 +3829,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         "POST",
-                        "https://gateway.rentamon.com/webhook/post-unblock",
+                        "https://gateway.rentamon.com/webhook/set-unblock",
                         undefined,
                         (() => {
                           try {
@@ -4791,7 +4791,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/post-price",
+                            "https://gateway.rentamon.com/webhook/set-price",
                             undefined,
                             (() => {
                               try {

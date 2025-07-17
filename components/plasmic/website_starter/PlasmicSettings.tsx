@@ -1082,7 +1082,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const now = new Date();
                               const daysPassed =
                                 (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 1) {
+                              if (daysPassed > 4) {
                                 return false;
                               }
                             }
@@ -1540,7 +1540,7 @@ function PlasmicSettings__RenderFunc(props: {
                               const now = new Date();
                               const daysPassed =
                                 (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 2) {
+                              if (daysPassed > 4) {
                                 return false;
                               }
                             }
