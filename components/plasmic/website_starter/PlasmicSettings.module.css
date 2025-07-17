@@ -705,7 +705,7 @@
 @media (max-width: 500px) {
   .p2 {
     padding-right: 0px;
-    max-width: 60%;
+    max-width: 56%;
     padding-left: 0px;
   }
 }
@@ -752,7 +752,7 @@
 }
 @media (max-width: 500px) {
   .p3 {
-    max-width: 14%;
+    max-width: 20%;
   }
 }
 @media (max-width: 350px) {
@@ -1048,7 +1048,7 @@
 }
 @media (max-width: 500px) {
   .p22 {
-    max-width: 60%;
+    max-width: 56%;
     width: 100%;
     height: auto;
     flex-direction: column;
@@ -1108,7 +1108,7 @@
 }
 @media (max-width: 500px) {
   .p32 {
-    max-width: 14%;
+    max-width: 20%;
   }
 }
 @media (max-width: 350px) {
