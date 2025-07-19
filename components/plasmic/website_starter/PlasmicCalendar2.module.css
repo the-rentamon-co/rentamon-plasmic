@@ -1224,6 +1224,24 @@
   background: none;
   outline: none;
 }
+.getJabamaSmartPriceStatus:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__vPmpe {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__ygtwX {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
 .userPlatform:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -1472,6 +1490,17 @@
   }
 }
 .text__vJgZx {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  min-width: 0;
+  padding: 0px;
+}
+.text__cMwnN {
   position: relative;
   width: 100%;
   height: auto;

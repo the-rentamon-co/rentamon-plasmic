@@ -132,6 +132,7 @@ export type PlasmicCalendar2__OverridesType = {
   textInput?: Flex__<typeof TextInput>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
   fetchModal?: Flex__<typeof AntdModal>;
+  getJabamaSmartPriceStatus?: Flex__<typeof ApiRequest>;
   userPlatform?: Flex__<typeof ApiRequest>;
   loading2?: Flex__<typeof PlasmicImg__>;
   ok?: Flex__<typeof PlasmicImg__>;
@@ -702,6 +703,30 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "getJabamaSmartPriceStatus.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getJabamaSmartPriceStatus"
+      },
+      {
+        path: "getJabamaSmartPriceStatus.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getJabamaSmartPriceStatus"
+      },
+      {
+        path: "getJabamaSmartPriceStatus.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getJabamaSmartPriceStatus"
       }
     ],
     [$props, $ctx, $refs]
@@ -5036,6 +5061,72 @@ function PlasmicCalendar2__RenderFunc(props: {
             wrapClassName={classNames({ [sty["pcls_Z_csKiH11fxe"]]: true })}
           >
             <ApiRequest
+              data-plasmic-name={"getJabamaSmartPriceStatus"}
+              data-plasmic-override={overrides.getJabamaSmartPriceStatus}
+              className={classNames(
+                "__wab_instance",
+                sty.getJabamaSmartPriceStatus
+              )}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ygtwX
+                  )}
+                >
+                  {"Error fetching data"}
+                </div>
+              }
+              loadingDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vPmpe
+                  )}
+                >
+                  {"Loading..."}
+                </div>
+              }
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "getJabamaSmartPriceStatus",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "getJabamaSmartPriceStatus",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "getJabamaSmartPriceStatus",
+                  "data"
+                ]).apply(null, eventArgs);
+              }}
+              ref={ref => {
+                $refs["getJabamaSmartPriceStatus"] = ref;
+              }}
+              url={(() => {
+                try {
+                  return `https://gateway.rentamon.com/webhook/check-property-smart-pricing?prop_id=${$props.propertyId}`;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            />
+
+            <ApiRequest
               data-plasmic-name={"userPlatform"}
               data-plasmic-override={overrides.userPlatform}
               className={classNames("__wab_instance", sty.userPlatform)}
@@ -5315,6 +5406,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 }
                                 const platforms =
                                   $state.platformRequestStatus.data;
+                                const jabama_smart_price =
+                                  $state.getJabamaSmartPriceStatus.data[0]
+                                    .status;
+                                if (
+                                  currentItem == "jabama" &&
+                                  $state.requestdata.price != null &&
+                                  jabama_smart_price
+                                ) {
+                                  return false;
+                                }
                                 if (platforms[currentItem]) {
                                   const item = platforms[currentItem];
                                   if (
@@ -5375,6 +5476,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   !$state.platformRequestStatus.data ||
                                   Object.keys($state.platformRequestStatus.data)
                                     .length === 0
+                                ) {
+                                  return false;
+                                }
+                                const jabama_smart_price =
+                                  $state.getJabamaSmartPriceStatus.data[0]
+                                    .status;
+                                if (
+                                  currentItem == "jabama" &&
+                                  $state.requestdata.price != null &&
+                                  jabama_smart_price
                                 ) {
                                   return false;
                                 }
@@ -5470,6 +5581,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                           {(() => {
                             try {
                               return (() => {
+                                const jabama_smart_price =
+                                  $state.getJabamaSmartPriceStatus.data[0]
+                                    .status;
+                                if (
+                                  currentItem == "jabama" &&
+                                  $state.requestdata.price != null &&
+                                  jabama_smart_price
+                                ) {
+                                  return false;
+                                }
                                 if (
                                   !$state.platformRequestStatus ||
                                   !$state.platformRequestStatus.data ||
@@ -5556,6 +5677,49 @@ function PlasmicCalendar2__RenderFunc(props: {
                             >
                               {
                                 "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u0646\u062f\u0627\u0631\u0647"
+                              }
+                            </div>
+                          ) : null}
+                          {(() => {
+                            try {
+                              return (() => {
+                                const jabama_smart_price =
+                                  $state.getJabamaSmartPriceStatus.data[0]
+                                    .status;
+                                if (
+                                  jabama_smart_price == false ||
+                                  jabama_smart_price == null
+                                ) {
+                                  return false;
+                                }
+                                if (
+                                  currentItem == "jabama" &&
+                                  $state.requestdata.price != null
+                                ) {
+                                  return true;
+                                } else {
+                                  return false;
+                                }
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__cMwnN
+                              )}
+                            >
+                              {
+                                "\u274c \u0645\u062d\u062f\u0648\u062f\u06cc\u062a \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a"
                               }
                             </div>
                           ) : null}
@@ -11249,6 +11413,7 @@ const PlasmicDescendants = {
     "textInput",
     "numberInput2",
     "fetchModal",
+    "getJabamaSmartPriceStatus",
     "userPlatform",
     "loading2",
     "ok",
@@ -11323,6 +11488,7 @@ const PlasmicDescendants = {
   numberInput2: ["numberInput2"],
   fetchModal: [
     "fetchModal",
+    "getJabamaSmartPriceStatus",
     "userPlatform",
     "loading2",
     "ok",
@@ -11330,6 +11496,7 @@ const PlasmicDescendants = {
     "loading",
     "ok2"
   ],
+  getJabamaSmartPriceStatus: ["getJabamaSmartPriceStatus"],
   userPlatform: ["userPlatform", "loading2", "ok", "fail", "loading", "ok2"],
   loading2: ["loading2"],
   ok: ["ok"],
@@ -11444,6 +11611,7 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   numberInput2: typeof AntdInputNumber;
   fetchModal: typeof AntdModal;
+  getJabamaSmartPriceStatus: typeof ApiRequest;
   userPlatform: typeof ApiRequest;
   loading2: typeof PlasmicImg__;
   ok: typeof PlasmicImg__;
@@ -11571,6 +11739,7 @@ export const PlasmicCalendar2 = Object.assign(
     textInput: makeNodeComponent("textInput"),
     numberInput2: makeNodeComponent("numberInput2"),
     fetchModal: makeNodeComponent("fetchModal"),
+    getJabamaSmartPriceStatus: makeNodeComponent("getJabamaSmartPriceStatus"),
     userPlatform: makeNodeComponent("userPlatform"),
     loading2: makeNodeComponent("loading2"),
     ok: makeNodeComponent("ok"),
