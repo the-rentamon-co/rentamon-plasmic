@@ -3630,23 +3630,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 $steps["checkForChange"] = await $steps["checkForChange"];
               }
 
-              $steps["runCode"] = (() => {
-                const calendar = $state.selectedItem;
-                const platforms = [
-                  "شب",
-                  "مهمانشو",
-                  "اتاقک",
-                  "جاباما",
-                  "جاجیگا",
-                  "هومسا",
-                  "میزبون"
-                ];
-
-                const result = calendar.some(item =>
-                  platforms.includes(item.website)
-                );
-                return !result;
-              })()
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -3808,7 +3792,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["invokeGlobalAction"] = (() => {
+              $steps["setUnblock"] = (() => {
                 const calendar = $state.selectedItem;
                 const platforms = [
                   "شب",
@@ -3907,6 +3891,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 days: [$state.fragmentDatePicker.values],
                                 property_id: $props.propertyId
                               };
+                              $state.requestdata = data;
                               data.days = data.days
                                 .map(timestampArray =>
                                   timestampArray
@@ -3938,13 +3923,32 @@ function PlasmicCalendar2__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
+                $steps["setUnblock"] != null &&
+                typeof $steps["setUnblock"] === "object" &&
+                typeof $steps["setUnblock"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
+                $steps["setUnblock"] = await $steps["setUnblock"];
+              }
+
+              $steps["runCode2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return ($state.platformRequestStatus =
+                          $steps.setUnblock.data[0]);
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode2"] != null &&
+                typeof $steps["runCode2"] === "object" &&
+                typeof $steps["runCode2"].then === "function"
+              ) {
+                $steps["runCode2"] = await $steps["runCode2"];
               }
             }}
           >
@@ -8257,7 +8261,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   ];
                 }
 
-                $steps["runCode"] = true
+                $steps["runCode"] = false
                   ? (() => {
                       const actionArgs = {
                         customFunction: async () => {
@@ -8394,28 +8398,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                   $steps["runCode"] = await $steps["runCode"];
                 }
 
-                $steps["invokeGlobalAction"] = (() => {
-                  const calendar = $state.selectedItem;
-                  const platforms = [
-                    "شب",
-                    "مهمانشو",
-                    "اتاقک",
-                    "جاباما",
-                    "جاجیگا",
-                    "هومسا",
-                    "میزبون"
-                  ];
-
-                  const result = calendar.some(item =>
-                    platforms.includes(item.website)
-                  );
-                  return !result;
-                })()
+                $steps["setUnblock"] = true
                   ? (() => {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/post-unblock",
+                          "https://gateway.rentamon.com/webhook/set-unblock",
                           undefined,
                           (() => {
                             try {
@@ -8493,6 +8481,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   days: [$state.fragmentDatePicker.values],
                                   property_id: $props.propertyId
                                 };
+                                $state.requestdata = data;
                                 data.days = data.days
                                   .map(timestampArray =>
                                     timestampArray
@@ -8525,13 +8514,32 @@ function PlasmicCalendar2__RenderFunc(props: {
                     })()
                   : undefined;
                 if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
+                  $steps["setUnblock"] != null &&
+                  typeof $steps["setUnblock"] === "object" &&
+                  typeof $steps["setUnblock"].then === "function"
                 ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
+                  $steps["setUnblock"] = await $steps["setUnblock"];
+                }
+
+                $steps["runCode2"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return ($state.platformRequestStatus =
+                            $steps.setUnblock.data[0]);
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode2"] != null &&
+                  typeof $steps["runCode2"] === "object" &&
+                  typeof $steps["runCode2"].then === "function"
+                ) {
+                  $steps["runCode2"] = await $steps["runCode2"];
                 }
               }}
             >
