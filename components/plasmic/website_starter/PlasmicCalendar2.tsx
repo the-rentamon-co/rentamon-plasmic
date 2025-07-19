@@ -9610,7 +9610,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     $steps["runCode"] = await $steps["runCode"];
                   }
 
-                  $steps["invokeGlobalAction"] = true
+                  $steps["setDiscout"] = true
                     ? (() => {
                         const actionArgs = {
                           args: [
@@ -9690,7 +9690,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                                       )
                                     )
                                     .flat();
-                                  console.log(data);
                                   return data;
                                 })();
                               } catch (e) {
@@ -9712,13 +9711,34 @@ function PlasmicCalendar2__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["invokeGlobalAction"] != null &&
-                    typeof $steps["invokeGlobalAction"] === "object" &&
-                    typeof $steps["invokeGlobalAction"].then === "function"
+                    $steps["setDiscout"] != null &&
+                    typeof $steps["setDiscout"] === "object" &&
+                    typeof $steps["setDiscout"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
+                    $steps["setDiscout"] = await $steps["setDiscout"];
+                  }
+
+                  $steps["runCode2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              console.log($steps.setDiscout);
+                              return console.log($steps.setDiscout.data);
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode2"] != null &&
+                    typeof $steps["runCode2"] === "object" &&
+                    typeof $steps["runCode2"].then === "function"
+                  ) {
+                    $steps["runCode2"] = await $steps["runCode2"];
                   }
                 }}
               >
