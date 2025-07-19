@@ -5051,12 +5051,12 @@ function PlasmicCalendar2__RenderFunc(props: {
             trigger={null}
             width={
               hasVariant(globalVariants, "screen", "smallMobile")
-                ? "280"
+                ? "320"
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? "300"
+                ? "340"
                 : hasVariant(globalVariants, "screen", "tablet")
                 ? "320px"
-                : "320px"
+                : "350"
             }
             wrapClassName={classNames({ [sty["pcls_Z_csKiH11fxe"]]: true })}
           >
@@ -5078,17 +5078,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   {"Error fetching data"}
                 </div>
               }
-              loadingDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__vPmpe
-                  )}
-                >
-                  {"Loading..."}
-                </div>
-              }
+              loadingDisplay={null}
               method={"GET"}
               onError={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, [
@@ -5718,9 +5708,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 sty.text__cMwnN
                               )}
                             >
-                              {
-                                "\u274c \u0645\u062d\u062f\u0648\u062f\u06cc\u062a \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a"
-                              }
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u0645\u062d\u062f\u0648\u062f\u06cc\u062a \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a \u274c"
+                                : "\u274c \u0645\u062d\u062f\u0648\u062f\u06cc\u062a \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a"}
                             </div>
                           ) : null}
                         </Stack__>
