@@ -4628,7 +4628,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["runCode"] = true
+                  $steps["runCode"] = false
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
@@ -4786,7 +4786,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["sendRequestToRntApi"] = true
+                  $steps["setPrice"] = true
                     ? (() => {
                         const actionArgs = {
                           args: [
@@ -4853,8 +4853,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   const data = {
                                     days: [$state.fragmentDatePicker.values],
                                     property_id: $props.propertyId,
-                                    price: String($state.requestdata.price)
+                                    price: String($state.input.value)
                                   };
+                                  $state.requestdata = data;
                                   data.days = data.days
                                     .map(timestampArray =>
                                       timestampArray.map(timestamp =>
@@ -4885,13 +4886,32 @@ function PlasmicCalendar2__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["sendRequestToRntApi"] != null &&
-                    typeof $steps["sendRequestToRntApi"] === "object" &&
-                    typeof $steps["sendRequestToRntApi"].then === "function"
+                    $steps["setPrice"] != null &&
+                    typeof $steps["setPrice"] === "object" &&
+                    typeof $steps["setPrice"].then === "function"
                   ) {
-                    $steps["sendRequestToRntApi"] = await $steps[
-                      "sendRequestToRntApi"
-                    ];
+                    $steps["setPrice"] = await $steps["setPrice"];
+                  }
+
+                  $steps["runCode2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.platformRequestStatus =
+                              $steps.setPrice.data[0]);
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode2"] != null &&
+                    typeof $steps["runCode2"] === "object" &&
+                    typeof $steps["runCode2"].then === "function"
+                  ) {
+                    $steps["runCode2"] = await $steps["runCode2"];
                   }
                 }}
               >
