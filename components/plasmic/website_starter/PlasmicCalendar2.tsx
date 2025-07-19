@@ -6328,7 +6328,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["sendRequestToRntApi"] = true
+              $steps["setBlock"] = true
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -6413,6 +6413,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 requested_by: "user",
                                 request_for: "reserve"
                               };
+                              $state.requestdata = data;
                               data.days = data.days
                                 .map(timestampArray =>
                                   timestampArray
@@ -6444,16 +6445,35 @@ function PlasmicCalendar2__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["sendRequestToRntApi"] != null &&
-                typeof $steps["sendRequestToRntApi"] === "object" &&
-                typeof $steps["sendRequestToRntApi"].then === "function"
+                $steps["setBlock"] != null &&
+                typeof $steps["setBlock"] === "object" &&
+                typeof $steps["setBlock"].then === "function"
               ) {
-                $steps["sendRequestToRntApi"] = await $steps[
-                  "sendRequestToRntApi"
-                ];
+                $steps["setBlock"] = await $steps["setBlock"];
               }
 
-              $steps["reserveRequest"] = $steps.checkConsecutive
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return ($state.platformRequestStatus =
+                          $steps.setBlock.data[0]);
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["reserveRequest"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -6722,38 +6742,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   "createAManualReserve"
                 ];
               }
-
-              $steps["saveBookingIdToState"] = true
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["manualReserveBookingId"]
-                      },
-                      operation: 0,
-                      value: ($state.manualReserveBookingId =
-                        $steps.createAManualReserve.data[0].b_id)
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["saveBookingIdToState"] != null &&
-                typeof $steps["saveBookingIdToState"] === "object" &&
-                typeof $steps["saveBookingIdToState"].then === "function"
-              ) {
-                $steps["saveBookingIdToState"] = await $steps[
-                  "saveBookingIdToState"
-                ];
-              }
             }}
           >
             <Icon25Icon
@@ -6844,7 +6832,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["blockRequest"] = true
+              $steps["blockRequest"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -7012,7 +7000,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["sendForRntApi"] = true
+              $steps["setBlock"] = true
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -7097,6 +7085,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 requested_by: "user",
                                 request_for: "block"
                               };
+                              $state.requestdata = data;
                               data.days = data.days
                                 .map(timestampArray =>
                                   timestampArray
@@ -7128,11 +7117,32 @@ function PlasmicCalendar2__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["sendForRntApi"] != null &&
-                typeof $steps["sendForRntApi"] === "object" &&
-                typeof $steps["sendForRntApi"].then === "function"
+                $steps["setBlock"] != null &&
+                typeof $steps["setBlock"] === "object" &&
+                typeof $steps["setBlock"].then === "function"
               ) {
-                $steps["sendForRntApi"] = await $steps["sendForRntApi"];
+                $steps["setBlock"] = await $steps["setBlock"];
+              }
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return ($state.platformRequestStatus =
+                          $steps.setBlock.data[0]);
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
               }
             }}
           >
