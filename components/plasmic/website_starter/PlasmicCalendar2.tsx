@@ -5397,12 +5397,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 const platforms =
                                   $state.platformRequestStatus.data;
                                 const jabama_smart_price =
-                                  $state.getJabamaSmartPriceStatus.data[0]
-                                    .status;
+                                  $state.getJabamaSmartPriceStatus.data;
                                 if (
                                   currentItem == "jabama" &&
                                   $state.requestdata.price != null &&
-                                  jabama_smart_price
+                                  jabama_smart_price != null
                                 ) {
                                   return false;
                                 }
@@ -5470,12 +5469,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   return false;
                                 }
                                 const jabama_smart_price =
-                                  $state.getJabamaSmartPriceStatus.data[0]
-                                    .status;
+                                  $state.getJabamaSmartPriceStatus.data;
                                 if (
                                   currentItem == "jabama" &&
                                   $state.requestdata.price != null &&
-                                  jabama_smart_price
+                                  jabama_smart_price != null
                                 ) {
                                   return false;
                                 }
@@ -5572,12 +5570,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                             try {
                               return (() => {
                                 const jabama_smart_price =
-                                  $state.getJabamaSmartPriceStatus.data[0]
-                                    .status;
+                                  $state.getJabamaSmartPriceStatus.data;
                                 if (
                                   currentItem == "jabama" &&
                                   $state.requestdata.price != null &&
-                                  jabama_smart_price
+                                  jabama_smart_price != null
                                 ) {
                                   return false;
                                 }
