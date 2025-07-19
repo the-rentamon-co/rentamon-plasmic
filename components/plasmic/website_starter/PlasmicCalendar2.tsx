@@ -9521,7 +9521,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["runCode"] = false
+                  $steps["runCode"] = true
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
@@ -9751,7 +9751,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     $steps["setDiscout"] = await $steps["setDiscout"];
                   }
 
-                  $steps["runCode2"] = true
+                  $steps["runCode2"] = false
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
