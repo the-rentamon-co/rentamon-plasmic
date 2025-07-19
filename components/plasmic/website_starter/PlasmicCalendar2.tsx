@@ -5281,27 +5281,61 @@ function PlasmicCalendar2__RenderFunc(props: {
                           {(() => {
                             try {
                               return (() => {
+                                console.log(
+                                  "\uD83D\uDD0D $state.platformRequestStatus =",
+                                  $state.platformRequestStatus
+                                );
                                 if (
                                   !$state.platformRequestStatus ||
                                   !$state.platformRequestStatus.data ||
                                   Object.keys($state.platformRequestStatus.data)
                                     .length === 0
                                 ) {
+                                  console.log(
+                                    "\u27A1️ دادهٔ platformRequestStatus یا data وجود نداره یا خالیه."
+                                  );
                                   return false;
                                 }
                                 const platforms =
                                   $state.platformRequestStatus.data;
+                                console.log(
+                                  "\uD83D\uDD0D platforms (data) =",
+                                  platforms
+                                );
+                                console.log(
+                                  "\uD83D\uDD0D currentItem =",
+                                  currentItem
+                                );
                                 if (platforms[currentItem]) {
+                                  console.log(
+                                    `🔍 platforms[${currentItem}] =`,
+                                    platforms[currentItem]
+                                  );
+                                  const item = platforms[currentItem];
+                                  console.log(
+                                    "\u2013> final_status =",
+                                    item.final_status,
+                                    ", status_code =",
+                                    item.status_code
+                                  );
                                   if (
-                                    platforms[currentItem].final_status ===
-                                      true &&
-                                    platforms[currentItem].status_code === 200
+                                    item.final_status === true &&
+                                    item.status_code === 200
                                   ) {
+                                    console.log(
+                                      "\u2705 شرایط نهایی برقرار است."
+                                    );
                                     return true;
                                   } else {
+                                    console.log(
+                                      "\u274C شرایط نهایی برقرار نیست."
+                                    );
                                     return false;
                                   }
                                 } else {
+                                  console.log(
+                                    `❌ هیچ ورودی‌ای برای index=${currentItem} پیدا نشد.`
+                                  );
                                   return false;
                                 }
                               })();
@@ -9487,7 +9521,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["runCode"] = true
+                  $steps["runCode"] = false
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
@@ -9610,7 +9644,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     $steps["runCode"] = await $steps["runCode"];
                   }
 
-                  $steps["setDiscout"] = true
+                  $steps["setDiscout"] = false
                     ? (() => {
                         const actionArgs = {
                           args: [
@@ -9677,10 +9711,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   const data = {
                                     days: [$state.fragmentDatePicker.values],
                                     property_id: $props.propertyId,
-                                    discount: String(
-                                      $state.requestdata.discount
-                                    )
+                                    discount: String($state.textInput4.value)
                                   };
+                                  $state.requestdata = data;
                                   data.days = data.days
                                     .map(timestampArray =>
                                       timestampArray.map(timestamp =>
@@ -9723,8 +9756,108 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           customFunction: async () => {
                             return (() => {
-                              console.log($steps.setDiscout);
-                              return console.log($steps.setDiscout.data);
+                              function convertPersianNumbersToEnglish(str) {
+                                const persianNumbers = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
+                                ];
+
+                                const englishNumbers = [
+                                  "0",
+                                  "1",
+                                  "2",
+                                  "3",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "7",
+                                  "8",
+                                  "9"
+                                ];
+
+                                return str.replace(
+                                  /[۰-۹]/g,
+                                  char =>
+                                    englishNumbers[
+                                      persianNumbers.indexOf(char)
+                                    ] || char
+                                );
+                              }
+                              function padZero(num) {
+                                return num.length === 1 ? `0${num}` : num;
+                              }
+                              function convertTimestampToPersianDateWithEnglishNumbers(
+                                timestamp
+                              ) {
+                                const date = new Date(timestamp * 1000);
+                                const [year, month, day] = date
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(
+                                  year
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(month)
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(day)
+                                )}`;
+                                return formattedDate;
+                              }
+                              const data = {
+                                days: [$state.fragmentDatePicker.values],
+                                property_id: $props.propertyId,
+                                discount: String($state.textInput4.value)
+                              };
+                              $state.requestdata = data;
+                              data.days = data.days
+                                .map(timestampArray =>
+                                  timestampArray.map(timestamp =>
+                                    convertTimestampToPersianDateWithEnglishNumbers(
+                                      timestamp
+                                    )
+                                  )
+                                )
+                                .flat();
+                              return fetch(
+                                "https://gateway.rentamon.com/webhook/set-discount",
+                                {
+                                  method: "POST",
+                                  headers: {
+                                    "Content-Type": "application/json",
+                                    Accept: "*/*"
+                                  },
+                                  credentials: "include",
+                                  body: JSON.stringify(data)
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error(
+                                      `HTTP error! status: ${response.status}`
+                                    );
+                                  }
+                                  return response.json();
+                                })
+                                .then(result => {
+                                  $state.platformRequestStatus = result;
+                                  console.log(
+                                    "Response saved to state:",
+                                    result
+                                  );
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  $state.platformRequestStatus = {
+                                    error: error.message
+                                  };
+                                });
                             })();
                           }
                         };
