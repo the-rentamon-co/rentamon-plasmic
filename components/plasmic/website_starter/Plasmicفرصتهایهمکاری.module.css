@@ -231,7 +231,7 @@
 }
 .text__lqzPf {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-right: 0px;
   padding-top: 0px;
@@ -254,7 +254,7 @@
 }
 .text__ra7WN {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 20px;
 }
@@ -395,7 +395,7 @@
 }
 .text__dr0NC {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 2;
 }
 @media (max-width: 1200px) {
@@ -444,7 +444,7 @@
 }
 .text__ylbMm {
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 20px;
   font-weight: 600;
@@ -469,7 +469,7 @@
 }
 .text__bTKrT {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 20px;
 }
@@ -832,7 +832,7 @@
 }
 .text__gf1SG {
   padding-top: 8px;
-  font-size: 17px;
+  font-size: 16px;
   text-align: right;
   line-height: 1.8;
 }
@@ -2478,7 +2478,7 @@
 }
 .text__lIzrz {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 2;
   padding-bottom: 0px;
 }
@@ -2499,7 +2499,7 @@
 }
 .text__bcvq1 {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 2;
   padding-bottom: 0px;
   padding-top: 16px;
@@ -2606,10 +2606,10 @@
 }
 .text___4Vz9V {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 2;
   padding-bottom: 0px;
-  font-weight: 500;
+  font-weight: 400;
 }
 @media (max-width: 1200px) {
   .text___4Vz9V {
@@ -2620,6 +2620,7 @@
 @media (max-width: 500px) {
   .text___4Vz9V {
     padding-bottom: 16px;
+    font-weight: 500;
   }
 }
 @media (max-width: 350px) {

@@ -116,6 +116,11 @@
   font-weight: 600;
   min-width: 0;
 }
+@media (max-width: 1200px) {
+  .text__frdDf {
+    font-size: 20px;
+  }
+}
 @media (max-width: 350px) {
   .text__frdDf {
     font-size: 20px;
@@ -138,7 +143,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   min-width: 0;
 }
 @media (max-width: 350px) {
@@ -198,9 +203,14 @@
 }
 .text__yXNy {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 0px;
+}
+@media (max-width: 1200px) {
+  .text__yXNy {
+    font-size: 16px;
+  }
 }
 @media (max-width: 500px) {
   .text__yXNy {
@@ -427,8 +437,13 @@
   max-width: 100%;
   font-weight: 600;
   color: #fcfcfc;
-  font-size: 18px;
+  font-size: 17px;
   text-align: right;
+}
+@media (max-width: 1200px) {
+  .text__zjGoq {
+    font-size: 16px;
+  }
 }
 @media (max-width: 350px) {
   .text__zjGoq {
@@ -449,7 +464,7 @@
 }
 .text__dsyrH {
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   color: #fcfcfc;
   font-weight: 400;
 }
@@ -557,11 +572,16 @@
 }
 .text__aEq5G {
   text-align: right;
-  font-size: 18px;
+  font-size: 17px;
   color: #fcfcfc;
   font-weight: 600;
   padding-right: 0px;
   max-width: 100%;
+}
+@media (max-width: 1200px) {
+  .text__aEq5G {
+    font-size: 16px;
+  }
 }
 @media (max-width: 350px) {
   .text__aEq5G {
@@ -582,7 +602,7 @@
 }
 .text__hUkkj {
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   color: #fcfcfc;
   font-weight: 400;
 }
@@ -665,11 +685,16 @@
 }
 .text__wXrUg {
   text-align: right;
-  font-size: 18px;
+  font-size: 17px;
   color: #fcfcfc;
   font-weight: 600;
   max-width: 100%;
   padding-right: 0px;
+}
+@media (max-width: 1200px) {
+  .text__wXrUg {
+    font-size: 16px;
+  }
 }
 @media (max-width: 350px) {
   .text__wXrUg {
@@ -695,7 +720,7 @@
 }
 .text__gt0Nw {
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   color: #fcfcfc;
   font-weight: 400;
 }
@@ -759,7 +784,7 @@
 }
 .text__qVu8H {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
 }
 .introAutoSyncDesc {
@@ -806,7 +831,7 @@
   }
 }
 .text___6YC3 {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 2;
   padding-top: 12px;
   padding-bottom: 0px;
@@ -893,7 +918,7 @@
 }
 .text__pQUs {
   text-align: right;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
 }
@@ -1048,7 +1073,7 @@
 }
 .text__r6Rq4 {
   text-align: right;
-  font-size: 18px;
+  font-size: 17px;
   width: 70%;
   line-height: 1.8;
   font-weight: 600;
@@ -1333,6 +1358,7 @@
   height: auto;
   max-width: 100%;
   font-size: 16px;
+  font-weight: 500;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -1365,6 +1391,7 @@
   height: auto;
   max-width: 100%;
   font-size: 16px;
+  font-weight: 500;
   min-width: 0;
 }
 @media (max-width: 500px) {

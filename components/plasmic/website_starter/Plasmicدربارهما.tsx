@@ -403,7 +403,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__jYb4P)}>
-                <div className={classNames(projectcss.all, sty.freeBox__sw6Bz)}>
+                <Stack__
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__sw6Bz)}
+                >
                   <Stack__
                     as={"div"}
                     data-plasmic-name={"member13"}
@@ -426,8 +430,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -435,8 +439,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -444,8 +448,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -453,8 +457,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
@@ -574,7 +578,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                       </div>
                     </div>
                   </Stack__>
-                </div>
+                </Stack__>
                 <div className={classNames(projectcss.all, sty.freeBox__fpiMh)}>
                   <Stack__
                     as={"div"}
@@ -591,15 +595,21 @@ function Plasmicدربارهما__RenderFunc(props: {
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__joyhH)}
-                        displayHeight={"auto"}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
+                            : "auto"
+                        }
                         displayMaxHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -607,8 +617,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -616,8 +626,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -625,12 +635,12 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
+                            ? "78%"
                             : hasVariant(globalVariants, "screen", "tablet")
                             ? "80%"
                             : "auto"
@@ -710,9 +720,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                           }
                         }}
                       >
-                        {
-                          "\u0645\u0648\u0641\u0642\u06cc\u062a \u06a9\u0627\u0631\u0628\u0631\u0627\u0646"
-                        }
+                        {hasVariant(globalVariants, "screen", "mobile")
+                          ? "\u06a9\u0627\u0631\u0634\u0646\u0627\u0633 \u0645\u0648\u0641\u0642\u06cc\u062a \u06a9\u0627\u0631\u0628\u0631\u0627\u0646"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u06a9\u0627\u0631\u0634\u0646\u0627\u0633 \u0645\u0648\u0641\u0642\u06cc\u062a \u06a9\u0627\u0631\u0628\u0631\u0627\u0646"
+                          : "\u0645\u0648\u0641\u0642\u06cc\u062a \u06a9\u0627\u0631\u0628\u0631\u0627\u0646"}
                       </div>
                     </div>
                   </Stack__>
@@ -740,8 +752,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -749,8 +761,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -758,8 +770,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -767,8 +779,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
@@ -803,9 +815,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                           : "\u0633\u06cc\u062f \u0639\u0644\u06cc\u0631\u0636\u0627 \u0646\u06cc\u06a9\u0648\u0646\u06cc\u0627"}
                       </div>
                     </div>
-                    <div
+                    <Stack__
+                      as={"div"}
                       data-plasmic-name={"caption15"}
                       data-plasmic-override={overrides.caption15}
+                      hasGap={true}
                       className={classNames(projectcss.all, sty.caption15)}
                     >
                       <div
@@ -847,7 +861,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                           "\u062a\u0648\u0633\u0639\u0647\u200c\u062f\u0647\u0646\u062f\u0647 \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631"
                         }
                       </div>
-                    </div>
+                    </Stack__>
                   </Stack__>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox___30Av)}>
@@ -873,8 +887,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -882,8 +896,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -891,8 +905,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -900,8 +914,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
@@ -945,9 +959,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                         }
                       </div>
                     </div>
-                    <div
+                    <Stack__
+                      as={"div"}
                       data-plasmic-name={"caption16"}
                       data-plasmic-override={overrides.caption16}
+                      hasGap={true}
                       className={classNames(projectcss.all, sty.caption16)}
                     >
                       <div
@@ -989,7 +1005,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                           "\u062a\u0648\u0633\u0639\u0647\u200c\u062f\u0647\u0646\u062f\u0647 \u0641\u0646\u06cc"
                         }
                       </div>
-                    </div>
+                    </Stack__>
                   </Stack__>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__xvu5G)}>
@@ -1015,8 +1031,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -1024,8 +1040,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -1033,8 +1049,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -1042,8 +1058,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
@@ -1078,9 +1094,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                           : "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647"}
                       </div>
                     </div>
-                    <div
+                    <Stack__
+                      as={"div"}
                       data-plasmic-name={"caption17"}
                       data-plasmic-override={overrides.caption17}
+                      hasGap={true}
                       className={classNames(projectcss.all, sty.caption17)}
                     >
                       <div
@@ -1122,7 +1140,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                           "\u0628\u0646\u06cc\u0627\u0646\u200c\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644"
                         }
                       </div>
-                    </div>
+                    </Stack__>
                   </Stack__>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__qPe16)}>
@@ -1148,8 +1166,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -1157,8 +1175,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -1166,8 +1184,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -1175,8 +1193,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : hasVariant(globalVariants, "screen", "mobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                            ? "100px"
+                            : "100px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
@@ -1208,14 +1226,18 @@ function Plasmicدربارهما__RenderFunc(props: {
                           sty.text___75Pai
                         )}
                       >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0645\u062d\u0645\u062f \u062d\u0633\u06cc\u0646 \u062d\u0645\u06cc\u062f\u06cc"
+                        {hasVariant(globalVariants, "screen", "mobile")
+                          ? "\u0645\u062d\u0645\u062f\u062d\u0633\u06cc\u0646 \u062d\u0645\u06cc\u062f\u06cc"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u0645\u062d\u0645\u062f\u062d\u0633\u06cc\u0646 \u062d\u0645\u06cc\u062f\u06cc"
                           : "\u0645\u062d\u0645\u062f\u062d\u0633\u06cc\u0646 \u062d\u0645\u06cc\u062f\u06cc"}
                       </div>
                     </Stack__>
-                    <div
+                    <Stack__
+                      as={"div"}
                       data-plasmic-name={"caption18"}
                       data-plasmic-override={overrides.caption18}
+                      hasGap={true}
                       className={classNames(projectcss.all, sty.caption18)}
                     >
                       <div
@@ -1257,7 +1279,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                           ? "\u0645\u0634\u0627\u0648\u0631 \u0648 \u0631\u0627\u0647\u0628\u0631"
                           : "\u0645\u0634\u0627\u0648\u0631 \u0648 \u0631\u0627\u0647\u0628\u0631 \u0645\u062d\u0635\u0648\u0644"}
                       </div>
-                    </div>
+                    </Stack__>
                   </Stack__>
                 </div>
               </div>
