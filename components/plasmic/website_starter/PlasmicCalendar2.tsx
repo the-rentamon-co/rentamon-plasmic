@@ -584,7 +584,9 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile")
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
             ? false
@@ -5399,10 +5401,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 const jabama_smart_price =
                                   $state.getJabamaSmartPriceStatus.data;
                                 if (
-                                  currentItem === "jabama" &&
-                                  jabama_smart_price?.[0]?.status === true &&
-                                  ($state.requestdata.discount != null ||
-                                    $state.requestdata.price != null)
+                                  currentItem == "jabama" &&
+                                  $state.requestdata.price != null &&
+                                  jabama_smart_price != null
                                 ) {
                                   return false;
                                 }
@@ -5472,10 +5473,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 const jabama_smart_price =
                                   $state.getJabamaSmartPriceStatus.data;
                                 if (
-                                  currentItem === "jabama" &&
-                                  jabama_smart_price?.[0]?.status === true &&
-                                  ($state.requestdata.discount != null ||
-                                    $state.requestdata.price != null)
+                                  currentItem == "jabama" &&
+                                  $state.requestdata.price != null &&
+                                  jabama_smart_price != null
                                 ) {
                                   return false;
                                 }
@@ -5574,10 +5574,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 const jabama_smart_price =
                                   $state.getJabamaSmartPriceStatus.data;
                                 if (
-                                  currentItem === "jabama" &&
-                                  jabama_smart_price?.[0]?.status === true &&
-                                  ($state.requestdata.discount != null ||
-                                    $state.requestdata.price != null)
+                                  currentItem == "jabama" &&
+                                  $state.requestdata.price != null &&
+                                  jabama_smart_price != null
                                 ) {
                                   return false;
                                 }
@@ -5676,17 +5675,20 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 const jabama_smart_price =
                                   $state.getJabamaSmartPriceStatus.data[0]
                                     .status;
-                                if (!jabama_smart_price) {
+                                if (
+                                  jabama_smart_price == false ||
+                                  jabama_smart_price == null
+                                ) {
                                   return false;
                                 }
                                 if (
-                                  currentItem === "jabama" &&
-                                  ($state.requestdata.price != null ||
-                                    $state.requestdata.discount != null)
+                                  currentItem == "jabama" &&
+                                  $state.requestdata.price != null
                                 ) {
                                   return true;
+                                } else {
+                                  return false;
                                 }
-                                return false;
                               })();
                             } catch (e) {
                               if (

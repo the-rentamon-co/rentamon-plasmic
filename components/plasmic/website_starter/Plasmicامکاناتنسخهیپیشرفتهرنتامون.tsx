@@ -783,7 +783,7 @@ function Plasmicامکاناتنسخهیپیشرفتهرنتامون__RenderFunc
                   ? "90%"
                   : hasVariant(globalVariants, "screen", "tablet")
                   ? "60%"
-                  : "30%"
+                  : "40%"
               }
               displayMinHeight={"0"}
               displayMinWidth={"0"}

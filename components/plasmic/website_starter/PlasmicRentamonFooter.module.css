@@ -147,7 +147,7 @@
   height: auto;
   max-width: 100%;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   padding-top: 0px;
   user-select: none;
   min-width: 0;
@@ -155,12 +155,7 @@
 @media (max-width: 1200px) {
   .text__musna {
     line-height: 1.8;
-    font-size: 16px;
-  }
-}
-@media (max-width: 500px) {
-  .text__musna {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 .freeBox___6NgD {
@@ -261,7 +256,7 @@
   height: auto;
   max-width: 100%;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   padding-top: 0px;
   user-select: none;
   min-width: 0;
@@ -269,12 +264,7 @@
 @media (max-width: 1200px) {
   .text__xral5 {
     line-height: 1.8;
-    font-size: 16px;
-  }
-}
-@media (max-width: 500px) {
-  .text__xral5 {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 .freeBox__wrGuV {
@@ -376,7 +366,7 @@
   height: auto;
   max-width: 100%;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   padding-top: 0px;
   user-select: none;
   min-width: 0;
@@ -384,12 +374,12 @@
 @media (max-width: 1200px) {
   .text___45Xuh {
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 @media (max-width: 500px) {
   .text___45Xuh {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 ._1st {
@@ -425,7 +415,6 @@
 @media (max-width: 1200px) {
   .text__xugAr {
     font-weight: 600;
-    font-size: 17px;
   }
 }
 @media (max-width: 350px) {
@@ -447,7 +436,7 @@
 }
 @media (max-width: 1200px) {
   .top {
-    max-width: 36%;
+    max-width: 40%;
   }
 }
 @media (max-width: 500px) {
@@ -623,7 +612,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.8;
   font-weight: 500;
   user-select: none;
@@ -673,7 +662,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 2;
   user-select: none;
   min-width: 0;
@@ -683,11 +672,6 @@
     font-size: 16px;
   }
 }
-@media (max-width: 500px) {
-  .text__tJKbf {
-    font-size: 15px;
-  }
-}
 .link__dOCjC {
   font-family: "Estedad";
   font-weight: 600;
@@ -695,7 +679,6 @@
 @media (max-width: 500px) {
   .link__dOCjC {
     font-size: 16px;
-    font-weight: 500;
   }
 }
 .link___0VoWf {
@@ -706,7 +689,7 @@
   .link___0VoWf {
     font-family: "Estedad";
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 .link__xvVyt {
@@ -717,7 +700,7 @@
   .link__xvVyt {
     font-family: "Estedad";
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 .link__cqnzq {
@@ -728,7 +711,7 @@
   .link__cqnzq {
     font-family: "Estedad";
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 .link__ddjit {
@@ -739,7 +722,7 @@
   .link__ddjit {
     font-family: "Estedad";
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 .link___2L0X0 {
@@ -750,7 +733,7 @@
   .link___2L0X0 {
     font-family: "Estedad";
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 .freeBox__rLfH4 {
@@ -787,8 +770,7 @@
 @media (max-width: 500px) {
   .text__zFLzn {
     line-height: 1.8;
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 18px;
   }
 }
 .text__cOA3 {
@@ -797,7 +779,7 @@
   height: auto;
   max-width: 100%;
   color: #fcfcfc;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.8;
   padding-top: 6px;
   user-select: none;
@@ -812,6 +794,5 @@
 @media (max-width: 500px) {
   .text__cOA3 {
     line-height: 1.8;
-    font-size: 15px;
   }
 }
