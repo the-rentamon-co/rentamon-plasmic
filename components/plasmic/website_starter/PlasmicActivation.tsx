@@ -8041,29 +8041,33 @@ function PlasmicActivation__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["redirectToOldPanel"] = true
+                              $steps["goToPanel"] = true
                                 ? (() => {
                                     const actionArgs = {
-                                      customFunction: async () => {
-                                        return (window.location.href =
-                                          "https://rentamon.com/panels/?prop_id=1");
-                                      }
+                                      destination: `/panel`
                                     };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
                                     })?.apply(null, [actionArgs]);
                                   })()
                                 : undefined;
                               if (
-                                $steps["redirectToOldPanel"] != null &&
-                                typeof $steps["redirectToOldPanel"] ===
-                                  "object" &&
-                                typeof $steps["redirectToOldPanel"].then ===
-                                  "function"
+                                $steps["goToPanel"] != null &&
+                                typeof $steps["goToPanel"] === "object" &&
+                                typeof $steps["goToPanel"].then === "function"
                               ) {
-                                $steps["redirectToOldPanel"] = await $steps[
-                                  "redirectToOldPanel"
-                                ];
+                                $steps["goToPanel"] = await $steps["goToPanel"];
                               }
 
                               $steps["mihmanshoVerify"] =

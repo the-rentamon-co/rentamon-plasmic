@@ -430,7 +430,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       }}
                     >
                       {
-                        "\u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                        "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646"
                       }
                     </div>
                     <div
@@ -1009,7 +1009,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 }}
               >
                 {
-                  "\u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                  "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646"
                 }
               </div>
             </div>
