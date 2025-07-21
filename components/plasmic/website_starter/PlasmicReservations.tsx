@@ -1275,10 +1275,16 @@ function PlasmicReservations__RenderFunc(props: {
           >
             {(() => {
               try {
-                return (
-                  !$state.isTheFirstVisit &&
-                  $state.apiRequest.data.status != "ok"
-                );
+                return (() => {
+                  if ($state.apiRequest.data.status !== "ok") {
+                    if ($state.userType == "2") {
+                      return false;
+                    }
+                    return true;
+                  } else {
+                    return false;
+                  }
+                })();
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -1289,35 +1295,7 @@ function PlasmicReservations__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox___7ZJdP,
-                  (() => {
-                    try {
-                      return (() => {
-                        console.log($state.userType);
-                        if ($state.apiRequest.data.status !== "ok") {
-                          if ($state.userType == "2") {
-                            return "";
-                          }
-                          return "display_block";
-                        } else {
-                          return "";
-                        }
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()
-                )}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox___7ZJdP)}>
                 <ToastMessageRnt
                   data-plasmic-name={"toastMessageRnt"}
                   data-plasmic-override={overrides.toastMessageRnt}

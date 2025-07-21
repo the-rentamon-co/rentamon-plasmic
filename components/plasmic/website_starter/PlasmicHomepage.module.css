@@ -209,7 +209,7 @@
 }
 @media (max-width: 500px) {
   .introCalendarRight {
-    padding-top: 30px;
+    padding-top: 0px;
     align-items: center;
     justify-content: flex-start;
     max-width: 100%;
@@ -234,6 +234,11 @@
   align-items: flex-start;
   min-width: 0;
   padding: 24px 8px 8px;
+}
+@media (max-width: 500px) {
+  .introCalendarRight3 {
+    padding-top: 8px;
+  }
 }
 .text__y1MaM {
   text-align: right;
@@ -315,7 +320,10 @@
 }
 @media (max-width: 500px) {
   .introCalendarLeft {
-    max-width: 100%;
+    max-width: 80%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    max-height: 70%;
   }
 }
 .embedHtml___2YmQ:global(.__wab_instance) {
