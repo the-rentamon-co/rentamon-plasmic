@@ -1446,11 +1446,21 @@
 .ok > picture > img {
   object-fit: cover;
 }
+@media (max-width: 1200px) {
+  .ok {
+    margin-top: calc(0px + 4px) !important;
+  }
+}
 @media (max-width: 500px) {
   .ok {
     height: 30px;
     margin-top: calc(0px + 4px) !important;
     flex-shrink: 0;
+  }
+}
+@media (max-width: 350px) {
+  .ok {
+    margin-top: calc(0px + 4px) !important;
   }
 }
 .fail {

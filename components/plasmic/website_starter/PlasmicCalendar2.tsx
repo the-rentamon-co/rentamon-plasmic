@@ -5401,9 +5401,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 const jabama_smart_price =
                                   $state.getJabamaSmartPriceStatus.data;
                                 if (
-                                  currentItem == "jabama" &&
-                                  $state.requestdata.price != null &&
-                                  jabama_smart_price != null
+                                  currentItem === "jabama" &&
+                                  jabama_smart_price?.[0]?.status === true &&
+                                  ($state.requestdata.discount != null ||
+                                    $state.requestdata.price != null)
                                 ) {
                                   return false;
                                 }
@@ -5473,9 +5474,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 const jabama_smart_price =
                                   $state.getJabamaSmartPriceStatus.data;
                                 if (
-                                  currentItem == "jabama" &&
-                                  $state.requestdata.price != null &&
-                                  jabama_smart_price != null
+                                  currentItem === "jabama" &&
+                                  jabama_smart_price?.[0]?.status === true &&
+                                  ($state.requestdata.discount != null ||
+                                    $state.requestdata.price != null)
                                 ) {
                                   return false;
                                 }
@@ -5574,9 +5576,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 const jabama_smart_price =
                                   $state.getJabamaSmartPriceStatus.data;
                                 if (
-                                  currentItem == "jabama" &&
-                                  $state.requestdata.price != null &&
-                                  jabama_smart_price != null
+                                  currentItem === "jabama" &&
+                                  jabama_smart_price?.[0]?.status === true &&
+                                  ($state.requestdata.discount != null ||
+                                    $state.requestdata.price != null)
                                 ) {
                                   return false;
                                 }
@@ -5675,20 +5678,17 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 const jabama_smart_price =
                                   $state.getJabamaSmartPriceStatus.data[0]
                                     .status;
-                                if (
-                                  jabama_smart_price == false ||
-                                  jabama_smart_price == null
-                                ) {
+                                if (!jabama_smart_price) {
                                   return false;
                                 }
                                 if (
-                                  currentItem == "jabama" &&
-                                  $state.requestdata.price != null
+                                  currentItem === "jabama" &&
+                                  ($state.requestdata.price != null ||
+                                    $state.requestdata.discount != null)
                                 ) {
                                   return true;
-                                } else {
-                                  return false;
                                 }
+                                return false;
                               })();
                             } catch (e) {
                               if (
