@@ -105,6 +105,7 @@ export const PlasmicRecordList__ArgProps = new Array<ArgPropType>(
 export type PlasmicRecordList__OverridesType = {
   root?: Flex__<"div">;
   website?: Flex__<"div">;
+  property?: Flex__<"div">;
   date?: Flex__<"div">;
   name?: Flex__<"div">;
 };
@@ -331,6 +332,72 @@ function PlasmicRecordList__RenderFunc(props: {
         )}
       </div>
       <div
+        data-plasmic-name={"property"}
+        data-plasmic-override={overrides.property}
+        className={classNames(
+          projectcss.all,
+          projectcss.__wab_text,
+          sty.property,
+          {
+            [sty.propertypendingBookings]: hasVariant(
+              $state,
+              "pendingBookings",
+              "pendingBookings"
+            )
+          }
+        )}
+      >
+        {hasVariant(globalVariants, "screen", "smallMobile") ? (
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.data.GuestName;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "";
+                }
+                throw e;
+              }
+            })()}
+          </React.Fragment>
+        ) : hasVariant(globalVariants, "screen", "mobile") ? (
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.data.GuestName;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "";
+                }
+                throw e;
+              }
+            })()}
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.data.property_name;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return " ";
+                }
+                throw e;
+              }
+            })()}
+          </React.Fragment>
+        )}
+      </div>
+      <div
         data-plasmic-name={"date"}
         data-plasmic-override={overrides.date}
         className={classNames(projectcss.all, projectcss.__wab_text, sty.date)}
@@ -440,8 +507,9 @@ function PlasmicRecordList__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "website", "date", "name"],
+  root: ["root", "website", "property", "date", "name"],
   website: ["website"],
+  property: ["property"],
   date: ["date"],
   name: ["name"]
 } as const;
@@ -451,6 +519,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   website: "div";
+  property: "div";
   date: "div";
   name: "div";
 };
@@ -516,6 +585,7 @@ export const PlasmicRecordList = Object.assign(
   {
     // Helper components rendering sub-elements
     website: makeNodeComponent("website"),
+    property: makeNodeComponent("property"),
     date: makeNodeComponent("date"),
     _name: makeNodeComponent("name"),
 

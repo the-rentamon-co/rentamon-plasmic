@@ -117,6 +117,7 @@ export type PlasmicReservations__OverridesType = {
   container?: Flex__<"div">;
   titles?: Flex__<"div">;
   guestName?: Flex__<"div">;
+  propertyName?: Flex__<"div">;
   arriveDate?: Flex__<"div">;
   source?: Flex__<"div">;
   reserveMainStack2?: Flex__<"div">;
@@ -1347,6 +1348,21 @@ function PlasmicReservations__RenderFunc(props: {
                 </div>
               </div>
               <div
+                data-plasmic-name={"propertyName"}
+                data-plasmic-override={overrides.propertyName}
+                className={classNames(projectcss.all, sty.propertyName)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__k0T0L
+                  )}
+                >
+                  {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                </div>
+              </div>
+              <div
                 data-plasmic-name={"arriveDate"}
                 data-plasmic-override={overrides.arriveDate}
                 className={classNames(projectcss.all, sty.arriveDate)}
@@ -1355,7 +1371,7 @@ function PlasmicReservations__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__k0T0L
+                    sty.text__m4Cx2
                   )}
                 >
                   {"\u062a\u0627\u0631\u06cc\u062e \u0648\u0631\u0648\u062f"}
@@ -8543,6 +8559,7 @@ const PlasmicDescendants = {
     "container",
     "titles",
     "guestName",
+    "propertyName",
     "arriveDate",
     "source",
     "reserveMainStack2",
@@ -8646,6 +8663,7 @@ const PlasmicDescendants = {
     "container",
     "titles",
     "guestName",
+    "propertyName",
     "arriveDate",
     "source",
     "reserveMainStack2",
@@ -8653,8 +8671,9 @@ const PlasmicDescendants = {
     "reserveMainStack",
     "reserveData"
   ],
-  titles: ["titles", "guestName", "arriveDate", "source"],
+  titles: ["titles", "guestName", "propertyName", "arriveDate", "source"],
   guestName: ["guestName"],
+  propertyName: ["propertyName"],
   arriveDate: ["arriveDate"],
   source: ["source"],
   reserveMainStack2: ["reserveMainStack2", "reserveData2"],
@@ -8886,6 +8905,7 @@ type NodeDefaultElementType = {
   container: "div";
   titles: "div";
   guestName: "div";
+  propertyName: "div";
   arriveDate: "div";
   source: "div";
   reserveMainStack2: "div";
@@ -9049,6 +9069,7 @@ export const PlasmicReservations = Object.assign(
     container: makeNodeComponent("container"),
     titles: makeNodeComponent("titles"),
     guestName: makeNodeComponent("guestName"),
+    propertyName: makeNodeComponent("propertyName"),
     arriveDate: makeNodeComponent("arriveDate"),
     source: makeNodeComponent("source"),
     reserveMainStack2: makeNodeComponent("reserveMainStack2"),

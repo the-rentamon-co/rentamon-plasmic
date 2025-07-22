@@ -422,6 +422,11 @@
   min-width: 0;
   padding: 0px 22px 0px 0px;
 }
+@media (max-width: 1200px) {
+  .guestName {
+    max-width: 22%;
+  }
+}
 @media (max-width: 500px) {
   .guestName {
     max-width: 30%;
@@ -464,17 +469,27 @@
     text-align: center;
   }
 }
-.arriveDate {
+.propertyName {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 40%;
+  max-width: 26%;
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
   padding: 0px;
+}
+@media (max-width: 1200px) {
+  .propertyName {
+    max-width: 28%;
+  }
+}
+@media (max-width: 500px) {
+  .propertyName {
+    display: none;
+  }
 }
 .text__k0T0L {
   position: relative;
@@ -503,6 +518,53 @@
 }
 @media (max-width: 350px) {
   .text__k0T0L {
+    font-size: 16px;
+  }
+}
+.arriveDate {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 32%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 0px;
+}
+@media (max-width: 1200px) {
+  .arriveDate {
+    max-width: 30%;
+  }
+}
+.text__m4Cx2 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: "Estedad";
+  font-size: 17px;
+  font-weight: 600;
+  font-style: normal;
+  color: #203647;
+  text-align: center;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__m4Cx2 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__m4Cx2 {
     font-size: 16px;
   }
 }

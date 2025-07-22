@@ -156,6 +156,39 @@
     width: 38%;
   }
 }
+.property {
+  width: 33%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  position: relative;
+  user-select: none;
+  padding: 4px 20px 4px 4px;
+}
+@media (max-width: 1200px) {
+  .property {
+    width: 33%;
+    padding-left: 0px;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+@media (max-width: 500px) {
+  .property {
+    width: 35%;
+    font-size: 15px;
+    display: none;
+  }
+}
+@media (max-width: 350px) {
+  .property {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 15px;
+    width: 38%;
+  }
+}
 .date {
   position: relative;
   width: 33%;
