@@ -776,6 +776,27 @@ function Plasmicتالار__RenderFunc(props: {
                             throw e;
                           }
                         })()
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return (
+                              // if ($props.isFirstVisit == true) {
+                              //   return ""
+                              // }
+                              // parseInt($state.profile2.data.user_info.balance_info) < 100000 ? "blinkBorderWallet clickable" : "clickable"
+
+                              "clickable"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
                       : (() => {
                           try {
                             return (
@@ -876,31 +897,52 @@ function Plasmicتالار__RenderFunc(props: {
                           sty.text___58WW
                         )}
                       >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return (() => {
-                                const balance_info =
-                                  $state.profile2.data.user_info.balance_info;
-                                const reducedBalance = Math.floor(
-                                  balance_info.balance / 10
-                                );
-                                const formattedBalance = new Intl.NumberFormat(
-                                  "fa-IR"
-                                ).format(reducedBalance);
-                                return `کیف پول: ${formattedBalance} تومان`;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "";
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (() => {
+                                  return "در حال بروز رسانی";
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
+                            })()}
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (() => {
+                                  const balance_info =
+                                    $state.profile2.data.user_info.balance_info;
+                                  const reducedBalance = Math.floor(
+                                    balance_info.balance / 10
+                                  );
+                                  const formattedBalance =
+                                    new Intl.NumberFormat("fa-IR").format(
+                                      reducedBalance
+                                    );
+                                  return `کیف پول: ${formattedBalance} تومان`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        )}
                       </div>
                     </div>
                   </div>

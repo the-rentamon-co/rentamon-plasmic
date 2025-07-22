@@ -464,15 +464,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                     {(() => {
                       try {
                         return (() => {
-                          const balance_info =
-                            $state.profile2.data.user_info.balance_info;
-                          const reducedBalance = Math.floor(
-                            balance_info.balance / 10
-                          );
-                          const formattedBalance = new Intl.NumberFormat(
-                            "fa-IR"
-                          ).format(reducedBalance);
-                          return `موجودی: ${formattedBalance} تومان`;
+                          return "در حال بروز رسانی....";
                         })();
                       } catch (e) {
                         if (
