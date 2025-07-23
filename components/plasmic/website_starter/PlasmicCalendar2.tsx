@@ -5068,17 +5068,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 "__wab_instance",
                 sty.getJabamaSmartPriceStatus
               )}
-              errorDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ygtwX
-                  )}
-                >
-                  {"Error fetching data"}
-                </div>
-              }
+              errorDisplay={null}
               loadingDisplay={null}
               method={"GET"}
               onError={async (...eventArgs: any) => {
