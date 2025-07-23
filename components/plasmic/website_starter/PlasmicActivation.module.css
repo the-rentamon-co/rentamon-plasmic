@@ -1445,9 +1445,10 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
+  background: none;
   box-shadow: none;
   margin-top: 2em;
+  justify-self: flex-start;
   min-width: 0;
   border-radius: 30px;
   padding: 0px;
@@ -1474,13 +1475,12 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
+  width: 70%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
   object-fit: cover;
-  min-width: 0;
 }
 .platforms:global(.__wab_instance) {
   width: 100%;
@@ -1976,8 +1976,8 @@
 }
 .jabamaVerify:global(.__wab_instance) {
   width: 100%;
-  margin-bottom: 24px;
   min-width: 0;
+  margin: 0px;
 }
 .text__xed8V {
   padding-left: 0px;
@@ -1987,16 +1987,26 @@
   max-width: 100%;
   object-fit: cover;
 }
-.freeBox__omgNo {
+.freeBox__iTmjy {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
-  align-items: stretch;
-  justify-content: flex-start;
   width: 100%;
   height: auto;
   max-width: 100%;
+  justify-content: center;
+  align-items: center;
   min-width: 0;
+  padding: 8px 8px 30px;
+}
+.freeBox__omgNo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: auto;
+  max-width: 100%;
   padding: 8px;
 }
 .jabamaverify:global(.__wab_instance) {
@@ -2004,11 +2014,12 @@
   object-fit: cover;
   width: 100%;
   background: var(--token-8nedppYkGVaH);
-  font-size: 14px;
-  height: 40px;
+  font-size: 16px;
+  height: 50px;
+  font-weight: 600;
   min-width: 0;
-  border-radius: 30px;
-  margin: 10px 0px;
+  border-radius: 100px;
+  margin: 0px;
 }
 .text__fPBr8 {
   position: relative;
@@ -2267,8 +2278,8 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  align-items: stretch;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -2278,11 +2289,11 @@
 .jajigaverify:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  width: 100%;
+  width: 350px;
   background: var(--token-8nedppYkGVaH);
-  height: 40px;
-  min-width: 0;
-  border-radius: 30px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 100px;
   margin: 10px 0px;
 }
 .text__z1LHa {
@@ -2291,6 +2302,8 @@
   height: auto;
   max-width: 100%;
   padding-right: 0px;
+  font-size: 17px;
+  font-weight: 600;
   min-width: 0;
 }
 .shabSend:global(.__wab_instance) {
@@ -2549,8 +2562,8 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  align-items: stretch;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -2560,12 +2573,12 @@
 .shabverify:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  width: 100%;
+  width: 350px;
   background: var(--token-8nedppYkGVaH);
-  height: 40px;
+  height: 50px;
   cursor: auto;
-  min-width: 0;
-  border-radius: 30px;
+  flex-shrink: 0;
+  border-radius: 100px;
   margin: 10px 0px;
 }
 .text__e2DBa {
@@ -2834,23 +2847,25 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  align-items: stretch;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
   max-width: 100%;
+  padding-left: 8px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   min-width: 0;
-  padding: 8px;
 }
 .otaghakverify:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-  width: 100%;
+  width: 350px;
   background: var(--token-8nedppYkGVaH);
   font-size: 14px;
-  height: 40px;
-  min-width: 0;
-  border-radius: 30px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 100px;
   margin: 10px 0px;
 }
 .text__yDjNu {
@@ -4469,11 +4484,4 @@
 .getNumberOfDisconnectedPlatforms:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-}
-.text__eTKys {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
 }
