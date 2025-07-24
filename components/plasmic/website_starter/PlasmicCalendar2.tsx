@@ -10887,12 +10887,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 let raw = $state.phoneNumber.value || "";
                                 const phone = toEnglishDigits(raw.trim());
                                 if (phone === "") {
-                                  $state.showMobileError = true;
-                                  $state.phoneError =
-                                    "شماره نمی‌تواند خالی باشد.";
-                                  return false;
+                                  $state.phoneError = "";
+                                  $state.showMobileError = false;
+                                  return true;
                                 }
-                                $state.showMobileError = false;
                                 const regex = /^09\d{9}$/;
                                 if (!regex.test(phone)) {
                                   if (phone.length !== 11) {
@@ -10904,9 +10902,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   } else {
                                     $state.phoneError = "فرمت شماره صحیح نیست.";
                                   }
+                                  $state.showMobileError = true;
                                   return false;
                                 }
                                 $state.phoneError = "";
+                                $state.showMobileError = false;
                                 return true;
                               }
                               const isMobileValid = validateMobile();

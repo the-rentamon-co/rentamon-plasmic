@@ -6144,7 +6144,7 @@ function PlasmicReservations__RenderFunc(props: {
                         style={{ color: "#DC2626" }}
                       >
                         {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0627\u062c\u0628\u0627\u0631\u06cc\u0633\u062a"
+                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062f\u0631\u0633\u062a \u0646\u06cc\u0633\u062a"
                         }
                       </span>
                     </React.Fragment>
@@ -6189,12 +6189,10 @@ function PlasmicReservations__RenderFunc(props: {
                                     let raw = $state.phoneNumber.value || "";
                                     const phone = toEnglishDigits(raw.trim());
                                     if (phone === "") {
-                                      $state.showMobileError = true;
-                                      $state.phoneError =
-                                        "شماره نمی‌تونه خالی باشه.";
-                                      return false;
+                                      $state.showMobileError = false;
+                                      $state.phoneError = "";
+                                      return true;
                                     }
-                                    $state.showMobileError = false;
                                     const regex = /^09\d{9}$/;
                                     if (!regex.test(phone)) {
                                       if (phone.length !== 11) {
@@ -6206,9 +6204,11 @@ function PlasmicReservations__RenderFunc(props: {
                                       } else {
                                         $state.phoneError = "شماره صحیح نیست.";
                                       }
+                                      $state.showMobileError = true;
                                       return false;
                                     }
                                     $state.phoneError = "";
+                                    $state.showMobileError = false;
                                     return true;
                                   }
                                   const isMobileValid = validateMobile();
