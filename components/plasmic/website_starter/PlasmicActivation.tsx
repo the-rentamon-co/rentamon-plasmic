@@ -4148,6 +4148,23 @@ function PlasmicActivation__RenderFunc(props: {
                                             }
                                             throw e;
                                           }
+                                        })(),
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return {
+                                              source: $state.source
+                                            };
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
                                         })()
                                       ]
                                     };
