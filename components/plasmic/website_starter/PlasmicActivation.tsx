@@ -155,6 +155,7 @@ export type PlasmicActivation__OverridesType = {
   policiesCheckbox?: Flex__<typeof Checkbox>;
   link?: Flex__<"a"> & Partial<LinkProps>;
   submitButton?: Flex__<typeof AntdButton>;
+  loadingImg?: Flex__<typeof PlasmicImg__>;
   jabamaSend?: Flex__<typeof FormItemWrapper>;
   jabamaSendOtp?: Flex__<typeof Input>;
   jabamasend2?: Flex__<typeof AntdButton>;
@@ -4323,7 +4324,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   style={{ color: "#1F3546" }}
                                 >
                                   {
-                                    " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0627 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645."
+                                    " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645."
                                   }
                                 </span>
                               </React.Fragment>
@@ -4475,26 +4476,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["invokeGlobalAction"] = true
-                                ? (() => {
-                                    const actionArgs = { args: [1000] };
-                                    return $globalActions[
-                                      "Fragment.wait"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["invokeGlobalAction"] != null &&
-                                typeof $steps["invokeGlobalAction"] ===
-                                  "object" &&
-                                typeof $steps["invokeGlobalAction"].then ===
-                                  "function"
-                              ) {
-                                $steps["invokeGlobalAction"] = await $steps[
-                                  "invokeGlobalAction"
-                                ];
-                              }
-
                               $steps["updateInput6Value3"] = $state
                                 .policiesCheckbox.isChecked
                                 ? (() => {
@@ -4538,8 +4519,7 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["updateInput6Value2"] = $state
-                                .policiesCheckbox.isChecked
+                              $steps["goToPage"] = false
                                 ? (() => {
                                     const actionArgs = {
                                       destination: `/calendar`
@@ -4561,60 +4541,11 @@ function PlasmicActivation__RenderFunc(props: {
                                   })()
                                 : undefined;
                               if (
-                                $steps["updateInput6Value2"] != null &&
-                                typeof $steps["updateInput6Value2"] ===
-                                  "object" &&
-                                typeof $steps["updateInput6Value2"].then ===
-                                  "function"
+                                $steps["goToPage"] != null &&
+                                typeof $steps["goToPage"] === "object" &&
+                                typeof $steps["goToPage"].then === "function"
                               ) {
-                                $steps["updateInput6Value2"] = await $steps[
-                                  "updateInput6Value2"
-                                ];
-                              }
-
-                              $steps["updateLoading2"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["loading"]
-                                      },
-                                      operation: 4
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      const oldValue = $stateGet(
-                                        objRoot,
-                                        variablePath
-                                      );
-                                      $stateSet(
-                                        objRoot,
-                                        variablePath,
-                                        !oldValue
-                                      );
-                                      return !oldValue;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["updateLoading2"] != null &&
-                                typeof $steps["updateLoading2"] === "object" &&
-                                typeof $steps["updateLoading2"].then ===
-                                  "function"
-                              ) {
-                                $steps["updateLoading2"] = await $steps[
-                                  "updateLoading2"
-                                ];
+                                $steps["goToPage"] = await $steps["goToPage"];
                               }
 
                               $steps["setCookie"] = true
@@ -4665,6 +4596,102 @@ function PlasmicActivation__RenderFunc(props: {
                               ) {
                                 $steps["setCookie"] = await $steps["setCookie"];
                               }
+
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          let user_type = $state.source;
+                                          console.log("user_type", user_type);
+                                          if (
+                                            user_type == "app_store" ||
+                                            user_type == "cafe_bazar" ||
+                                            user_type == "myket" ||
+                                            user_type == "unknown"
+                                          ) {
+                                            return (window.location.href =
+                                              "https://rentamon.com/calendar/");
+                                          } else {
+                                            return (window.location.href =
+                                              "https://rentamon.com/panel/");
+                                          }
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
+                              $steps["wait"] = true
+                                ? (() => {
+                                    const actionArgs = { args: [1000] };
+                                    return $globalActions[
+                                      "Fragment.wait"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["wait"] != null &&
+                                typeof $steps["wait"] === "object" &&
+                                typeof $steps["wait"].then === "function"
+                              ) {
+                                $steps["wait"] = await $steps["wait"];
+                              }
+
+                              $steps["updateLoading2"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["loading"]
+                                      },
+                                      operation: 4
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      const oldValue = $stateGet(
+                                        objRoot,
+                                        variablePath
+                                      );
+                                      $stateSet(
+                                        objRoot,
+                                        variablePath,
+                                        !oldValue
+                                      );
+                                      return !oldValue;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateLoading2"] != null &&
+                                typeof $steps["updateLoading2"] === "object" &&
+                                typeof $steps["updateLoading2"].then ===
+                                  "function"
+                              ) {
+                                $steps["updateLoading2"] = await $steps[
+                                  "updateLoading2"
+                                ];
+                              }
                             }}
                             submitsForm={true}
                             type={"primary"}
@@ -4701,8 +4728,10 @@ function PlasmicActivation__RenderFunc(props: {
                                 }
                               })() ? (
                                 <PlasmicImg__
+                                  data-plasmic-name={"loadingImg"}
+                                  data-plasmic-override={overrides.loadingImg}
                                   alt={""}
-                                  className={classNames(sty.img__o58Ro)}
+                                  className={classNames(sty.loadingImg)}
                                   displayHeight={"26px"}
                                   displayMaxHeight={"none"}
                                   displayMaxWidth={"100%"}
@@ -11500,6 +11529,7 @@ const PlasmicDescendants = {
     "policiesCheckbox",
     "link",
     "submitButton",
+    "loadingImg",
     "jabamaSend",
     "jabamaSendOtp",
     "jabamasend2",
@@ -11705,6 +11735,7 @@ const PlasmicDescendants = {
     "policiesCheckbox",
     "link",
     "submitButton",
+    "loadingImg",
     "jabamaSend",
     "jabamaSendOtp",
     "jabamasend2",
@@ -11771,10 +11802,17 @@ const PlasmicDescendants = {
     "platformpropertyButton",
     "platformpropertyButton2"
   ],
-  platforms: ["platforms", "policiesCheckbox", "link", "submitButton"],
+  platforms: [
+    "platforms",
+    "policiesCheckbox",
+    "link",
+    "submitButton",
+    "loadingImg"
+  ],
   policiesCheckbox: ["policiesCheckbox", "link"],
   link: ["link"],
-  submitButton: ["submitButton"],
+  submitButton: ["submitButton", "loadingImg"],
+  loadingImg: ["loadingImg"],
   jabamaSend: ["jabamaSend", "jabamaSendOtp", "jabamasend2", "jabamasend3"],
   jabamaSendOtp: ["jabamaSendOtp"],
   jabamasend2: ["jabamasend2"],
@@ -11951,6 +11989,7 @@ type NodeDefaultElementType = {
   policiesCheckbox: typeof Checkbox;
   link: "a";
   submitButton: typeof AntdButton;
+  loadingImg: typeof PlasmicImg__;
   jabamaSend: typeof FormItemWrapper;
   jabamaSendOtp: typeof Input;
   jabamasend2: typeof AntdButton;
@@ -12139,6 +12178,7 @@ export const PlasmicActivation = Object.assign(
     policiesCheckbox: makeNodeComponent("policiesCheckbox"),
     link: makeNodeComponent("link"),
     submitButton: makeNodeComponent("submitButton"),
+    loadingImg: makeNodeComponent("loadingImg"),
     jabamaSend: makeNodeComponent("jabamaSend"),
     jabamaSendOtp: makeNodeComponent("jabamaSendOtp"),
     jabamasend2: makeNodeComponent("jabamasend2"),
