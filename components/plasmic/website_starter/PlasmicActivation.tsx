@@ -74,6 +74,7 @@ import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -231,6 +232,7 @@ export type PlasmicActivation__OverridesType = {
   quotes?: Flex__<"div">;
   testimonialsScrolling?: Flex__<typeof TestimonialsScrolling>;
   getNumberOfDisconnectedPlatforms?: Flex__<typeof ApiRequest>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultActivationProps {}
@@ -685,6 +687,12 @@ function PlasmicActivation__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "userType",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -4607,6 +4615,55 @@ function PlasmicActivation__RenderFunc(props: {
                                 $steps["updateLoading2"] = await $steps[
                                   "updateLoading2"
                                 ];
+                              }
+
+                              $steps["setCookie"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          function setCookie(
+                                            name,
+                                            value,
+                                            hours
+                                          ) {
+                                            let expires = "";
+                                            if (hours) {
+                                              const date = new Date();
+                                              date.setTime(
+                                                date.getTime() +
+                                                  hours * 60 * 60 * 1000
+                                              );
+                                              expires =
+                                                "; expires=" +
+                                                date.toUTCString();
+                                            }
+                                            document.cookie =
+                                              name +
+                                              "=" +
+                                              (value || "") +
+                                              expires +
+                                              "; path=/";
+                                          }
+                                          return setCookie(
+                                            "first_visit",
+                                            "true",
+                                            2
+                                          );
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["setCookie"] != null &&
+                                typeof $steps["setCookie"] === "object" &&
+                                typeof $steps["setCookie"].then === "function"
+                              ) {
+                                $steps["setCookie"] = await $steps["setCookie"];
                               }
                             }}
                             submitsForm={true}
@@ -11316,6 +11373,76 @@ function PlasmicActivation__RenderFunc(props: {
               "https://gateway.rentamon.com/webhook/disconnected\u0640website\u0640users"
             }
           />
+
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/get_user_referrer"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps[
+                  "invokeGlobalAction"
+                ];
+              }
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          let user_type =
+                            $steps.invokeGlobalAction.data[0].referrer;
+                          $state.userType = user_type;
+                          console.log($state.userType);
+                          if (user_type == "referral") {
+                            window.location.href =
+                              "https://rentamon.com/intro/pro/";
+                          }
+                          if (
+                            user_type == "app_store" ||
+                            user_type == "cafe_bazar" ||
+                            user_type == "myket" ||
+                            user_type == "unknown"
+                          ) {
+                            return (window.location.href =
+                              "https://rentamon.com/intro/lite/");
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -11449,7 +11576,8 @@ const PlasmicDescendants = {
     "_6",
     "quotes",
     "testimonialsScrolling",
-    "getNumberOfDisconnectedPlatforms"
+    "getNumberOfDisconnectedPlatforms",
+    "sideEffect"
   ],
   html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
   goftino: ["goftino"],
@@ -11767,7 +11895,8 @@ const PlasmicDescendants = {
   _6: ["_6"],
   quotes: ["quotes", "testimonialsScrolling"],
   testimonialsScrolling: ["testimonialsScrolling"],
-  getNumberOfDisconnectedPlatforms: ["getNumberOfDisconnectedPlatforms"]
+  getNumberOfDisconnectedPlatforms: ["getNumberOfDisconnectedPlatforms"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -11899,6 +12028,7 @@ type NodeDefaultElementType = {
   quotes: "div";
   testimonialsScrolling: typeof TestimonialsScrolling;
   getNumberOfDisconnectedPlatforms: typeof ApiRequest;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -12088,6 +12218,7 @@ export const PlasmicActivation = Object.assign(
     getNumberOfDisconnectedPlatforms: makeNodeComponent(
       "getNumberOfDisconnectedPlatforms"
     ),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicActivation
     internalVariantProps: PlasmicActivation__VariantProps,
