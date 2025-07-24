@@ -6615,140 +6615,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                 $steps["runCode"] = await $steps["runCode"];
               }
 
-              $steps["reserveRequest"] = false
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          function convertPersianNumbersToEnglish(str) {
-                            const persianNumbers = [
-                              "۰",
-                              "۱",
-                              "۲",
-                              "۳",
-                              "۴",
-                              "۵",
-                              "۶",
-                              "۷",
-                              "۸",
-                              "۹"
-                            ];
-
-                            const englishNumbers = [
-                              "0",
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5",
-                              "6",
-                              "7",
-                              "8",
-                              "9"
-                            ];
-
-                            return str.replace(
-                              /[۰-۹]/g,
-                              char =>
-                                englishNumbers[persianNumbers.indexOf(char)] ||
-                                char
-                            );
-                          }
-                          function padZero(num) {
-                            return num.length === 1 ? `0${num}` : num;
-                          }
-                          function convertTimestampToPersianDateWithEnglishNumbers(
-                            timestamp
-                          ) {
-                            const date = new Date(timestamp * 1000);
-                            const [year, month, day] = date
-                              .toLocaleDateString("fa")
-                              .split("/");
-                            const formattedDate = `${convertPersianNumbersToEnglish(
-                              year
-                            )}-${padZero(
-                              convertPersianNumbersToEnglish(month)
-                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                            return formattedDate;
-                          }
-                          function getTodayInPersian() {
-                            const today = new Date();
-                            const [year, month, day] = today
-                              .toLocaleDateString("fa")
-                              .split("/");
-                            const formattedDate = `${convertPersianNumbersToEnglish(
-                              year
-                            )}-${padZero(
-                              convertPersianNumbersToEnglish(month)
-                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                            return formattedDate;
-                          }
-                          const todayInPersian = getTodayInPersian();
-                          const data = {
-                            days: [$state.fragmentDatePicker.values],
-                            property_id: $props.propertyId,
-                            requested_by: "user",
-                            request_for: "reserve"
-                          };
-                          $state.requestdata = data;
-                          data.days = data.days
-                            .map(timestampArray =>
-                              timestampArray
-                                .map(timestamp =>
-                                  convertTimestampToPersianDateWithEnglishNumbers(
-                                    timestamp
-                                  )
-                                )
-                                .filter(day => day >= todayInPersian)
-                            )
-                            .flat();
-                          $state.requestdata = data;
-                          return fetch(
-                            "https://api-v2.rentamon.com/api/setblock",
-                            {
-                              method: "POST",
-                              headers: {
-                                "Content-Type": "application/json",
-                                Accept: "*/*"
-                              },
-                              credentials: "include",
-                              body: JSON.stringify(data)
-                            }
-                          )
-                            .then(response => {
-                              if (!response.ok) {
-                                throw new Error(
-                                  `HTTP error! status: ${response.status}`
-                                );
-                              }
-                              return response.json();
-                            })
-                            .then(result => {
-                              $state.platformRequestStatus = result;
-                              console.log("Response saved to state:", result);
-                            })
-                            .catch(error => {
-                              console.error("Error:", error);
-                              $state.platformRequestStatus = {
-                                error: error.message
-                              };
-                            });
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["reserveRequest"] != null &&
-                typeof $steps["reserveRequest"] === "object" &&
-                typeof $steps["reserveRequest"].then === "function"
-              ) {
-                $steps["reserveRequest"] = await $steps["reserveRequest"];
-              }
-
               $steps["updateStateVariable2"] =
                 $props.calendarType == "lite" && $steps.checkConsecutive
                   ? (() => {
@@ -6883,6 +6749,30 @@ function PlasmicCalendar2__RenderFunc(props: {
                 $steps["createAManualReserve"] = await $steps[
                   "createAManualReserve"
                 ];
+              }
+
+              $steps["runCode2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          console.log($steps.createAManualReserve.data[0].b_id);
+                          return ($state.manualReserveBookingId =
+                            $steps.createAManualReserve.data[0].b_id);
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode2"] != null &&
+                typeof $steps["runCode2"] === "object" &&
+                typeof $steps["runCode2"].then === "function"
+              ) {
+                $steps["runCode2"] = await $steps["runCode2"];
               }
             }}
           >
