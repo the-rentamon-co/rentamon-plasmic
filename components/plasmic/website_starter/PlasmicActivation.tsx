@@ -3951,10 +3951,7 @@ function PlasmicActivation__RenderFunc(props: {
                               className={
                                 "plasmic_default__all plasmic_default__span"
                               }
-                              style={{
-                                fontWeight: 700,
-                                color: "var(--token-8nedppYkGVaH)"
-                              }}
+                              style={{ fontWeight: 700, color: "#1F3546" }}
                             >
                               {
                                 "\u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc\ud83d\udc4b"
@@ -8158,35 +8155,6 @@ function PlasmicActivation__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["goToPanel"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      destination: `/panel`
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["goToPanel"] != null &&
-                                typeof $steps["goToPanel"] === "object" &&
-                                typeof $steps["goToPanel"].then === "function"
-                              ) {
-                                $steps["goToPanel"] = await $steps["goToPanel"];
-                              }
-
                               $steps["mihmanshoVerify"] =
                                 $state.form.value.mihmanshophone !==
                                   undefined &&
@@ -8234,6 +8202,29 @@ function PlasmicActivation__RenderFunc(props: {
                                 $steps["mihmanshoVerify"] = await $steps[
                                   "mihmanshoVerify"
                                 ];
+                              }
+
+                              $steps["showToast"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
+                                        "bottom-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["showToast"] != null &&
+                                typeof $steps["showToast"] === "object" &&
+                                typeof $steps["showToast"].then === "function"
+                              ) {
+                                $steps["showToast"] = await $steps["showToast"];
                               }
 
                               $steps["connectionStatus"] = true
@@ -8330,29 +8321,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["showToast"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        undefined,
-                                        "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
-                                        "bottom-center",
-                                        6000
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["showToast"] != null &&
-                                typeof $steps["showToast"] === "object" &&
-                                typeof $steps["showToast"].then === "function"
-                              ) {
-                                $steps["showToast"] = await $steps["showToast"];
-                              }
-
                               $steps["platformSatus"] = true
                                 ? (() => {
                                     const actionArgs = {
@@ -8400,6 +8368,35 @@ function PlasmicActivation__RenderFunc(props: {
                                 $steps["platformSatus"] = await $steps[
                                   "platformSatus"
                                 ];
+                              }
+
+                              $steps["goToPanel"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: `/panel`
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["goToPanel"] != null &&
+                                typeof $steps["goToPanel"] === "object" &&
+                                typeof $steps["goToPanel"].then === "function"
+                              ) {
+                                $steps["goToPanel"] = await $steps["goToPanel"];
                               }
                             }}
                             submitsForm={true}

@@ -1544,6 +1544,7 @@
   position: relative;
   padding-top: 0px;
   margin-bottom: 0px;
+  color: #444444;
   min-width: 0;
 }
 .freeBox__vzQTs {
@@ -4348,7 +4349,7 @@
   height: auto;
   max-width: 100%;
   font-weight: 500;
-  color: var(--token-8nedppYkGVaH);
+  color: #444444;
   font-size: 20px;
   padding-right: 0px;
   text-align: center;

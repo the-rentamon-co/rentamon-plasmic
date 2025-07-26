@@ -1277,14 +1277,11 @@ function PlasmicReservations__RenderFunc(props: {
             {(() => {
               try {
                 return (() => {
-                  if ($state.apiRequest.data.status !== "ok") {
-                    if ($state.userType == "2") {
-                      return false;
-                    }
-                    return true;
-                  } else {
-                    return false;
-                  }
+                  return (
+                    $state.apiRequest.data.status !== "ok" &&
+                    $state.userType !== "2" &&
+                    $state.isTheFirstVisit === false
+                  );
                 })();
               } catch (e) {
                 if (

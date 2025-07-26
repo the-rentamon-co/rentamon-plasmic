@@ -3118,7 +3118,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 100px;
-  padding: 0px;
+  padding: 6px;
 }
 @media (max-width: 1200px) {
   .freeBox___8O4D {
@@ -3130,19 +3130,17 @@
     align-items: center;
     justify-content: center;
     width: 94%;
-    max-height: 64px;
+    max-height: 70px;
     min-height: 64px;
     border-radius: 100px;
-    padding: 0px;
+    padding: 6px;
     margin: 0px;
   }
 }
 @media (max-width: 350px) {
   .freeBox___8O4D {
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-bottom: 0px;
     width: 96%;
+    padding: 6px;
   }
 }
 .button__fNtwK:global(.__wab_instance) {

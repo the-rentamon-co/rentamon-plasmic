@@ -115,7 +115,7 @@ export type PlasmicProCalendar__OverridesType = {
   image?: Flex__<"div">;
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
-  iframe?: Flex__<typeof Iframe>;
+  aiAgentIframe?: Flex__<typeof Iframe>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   spacerDontTouch?: Flex__<"div">;
   navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
@@ -1938,8 +1938,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "60px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "110px"
-                          : "auto"
+                          ? "70px"
+                          : "80px"
                       }
                       displayMaxHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
@@ -1947,8 +1947,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "60px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "110px"
-                          : "none"
+                          ? "70px"
+                          : "80px"
                       }
                       displayMaxWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
@@ -1956,8 +1956,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "88px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "140px"
-                          : "none"
+                          ? "120px"
+                          : "120px"
                       }
                       displayMinHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
@@ -1965,7 +1965,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "60px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "110px"
+                          ? "70px"
                           : "0"
                       }
                       displayMinWidth={
@@ -1974,8 +1974,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "88px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "140px"
-                          : "0"
+                          ? "120px"
+                          : "120px"
                       }
                       displayWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
@@ -1983,7 +1983,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                           : hasVariant(globalVariants, "screen", "mobile")
                           ? "88px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "140px"
+                          ? "120px"
                           : "auto"
                       }
                       loading={"lazy"}
@@ -2378,9 +2378,9 @@ function PlasmicProCalendar__RenderFunc(props: {
               )}
             >
               <Iframe
-                data-plasmic-name={"iframe"}
-                data-plasmic-override={overrides.iframe}
-                className={classNames("__wab_instance", sty.iframe)}
+                data-plasmic-name={"aiAgentIframe"}
+                data-plasmic-override={overrides.aiAgentIframe}
+                className={classNames("__wab_instance", sty.aiAgentIframe)}
                 src={
                   "https://n8n-ger.darkube.app/webhook/a63f81dc-fe4f-4904-8923-1584a8e5c772/chat"
                 }
@@ -2717,7 +2717,7 @@ const PlasmicDescendants = {
     "image",
     "profile",
     "calendar2",
-    "iframe",
+    "aiAgentIframe",
     "userAvailableFeature",
     "spacerDontTouch",
     "navigationRntFooter",
@@ -2769,7 +2769,7 @@ const PlasmicDescendants = {
   image: ["image"],
   profile: ["profile"],
   calendar2: ["calendar2"],
-  iframe: ["iframe"],
+  aiAgentIframe: ["aiAgentIframe"],
   userAvailableFeature: ["userAvailableFeature"],
   spacerDontTouch: ["spacerDontTouch"],
   navigationRntFooter: ["navigationRntFooter"],
@@ -2801,7 +2801,7 @@ type NodeDefaultElementType = {
   image: "div";
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
-  iframe: typeof Iframe;
+  aiAgentIframe: typeof Iframe;
   userAvailableFeature: typeof ApiRequest;
   spacerDontTouch: "div";
   navigationRntFooter: typeof NavigationRntFooter;
@@ -2889,7 +2889,7 @@ export const PlasmicProCalendar = Object.assign(
     image: makeNodeComponent("image"),
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
-    iframe: makeNodeComponent("iframe"),
+    aiAgentIframe: makeNodeComponent("aiAgentIframe"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     spacerDontTouch: makeNodeComponent("spacerDontTouch"),
     navigationRntFooter: makeNodeComponent("navigationRntFooter"),
