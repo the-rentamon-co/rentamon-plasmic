@@ -310,7 +310,11 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : false
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : false
       },
       {
         path: "fetchModal.open",
@@ -6299,21 +6303,39 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__zpQtD
                 )}
               >
-                <React.Fragment>
+                {hasVariant(globalVariants, "screen", "smallMobile") ? (
                   <React.Fragment>
-                    {
-                      "\u0641\u0631\u0636 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0645\u06cc\u062e\u0648\u0627\u0647\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0633\u0627\u0641\u0631 \u0631\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc\n\n"
-                    }
+                    <React.Fragment>
+                      {
+                        "\u0641\u0631\u0636 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0645\u0633\u0627\u0641\u0631  \u0631\u0632\u0631\u0648 \u06a9\u0631\u062f\u0647\n\n"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 600 }}
+                    >
+                      {
+                        "\u06af\u0632\u06cc\u0646\u0647 \u00ab\u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645\u00bb \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                      }
+                    </span>
                   </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {
-                      "\u06af\u0632\u06cc\u0646\u0647 \u00ab\u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645\u00bb \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
-                    }
-                  </span>
-                </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u0641\u0631\u0636 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0645\u06cc\u062e\u0648\u0627\u0647\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0633\u0627\u0641\u0631 \u0631\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc\n\n"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 600 }}
+                    >
+                      {
+                        "\u06af\u0632\u06cc\u0646\u0647 \u00ab\u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645\u00bb \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                      }
+                    </span>
+                  </React.Fragment>
+                )}
               </div>
             </div>
           ) : null}
