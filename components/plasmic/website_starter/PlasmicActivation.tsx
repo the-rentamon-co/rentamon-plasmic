@@ -11453,36 +11453,41 @@ function PlasmicActivation__RenderFunc(props: {
                 ];
               }
 
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          let user_type =
-                            $steps.invokeGlobalAction.data[0].referrer;
-                          $state.userType = user_type;
-                          console.log($state.userType);
-                          if (user_type == "referral") {
-                            window.location.href =
-                              "https://rentamon.com/intro/pro/";
-                          }
-                          if (
-                            user_type == "app_store" ||
-                            user_type == "cafe_bazar" ||
-                            user_type == "myket" ||
-                            user_type == "unknown"
-                          ) {
-                            return (window.location.href =
-                              "https://rentamon.com/intro/lite/");
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
+              $steps["runCode"] =
+                // if($state.step == 0){
+                //   return false
+                // }
+
+                $state.step == 0 && $ctx.params.type == 1
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            let user_type =
+                              $steps.invokeGlobalAction.data[0].referrer;
+                            $state.userType = user_type;
+                            console.log($state.userType);
+                            if (user_type == "referral") {
+                              window.location.href =
+                                "https://rentamon.com/intro/pro/";
+                            }
+                            if (
+                              user_type == "app_store" ||
+                              user_type == "cafe_bazar" ||
+                              user_type == "myket" ||
+                              user_type == "unknown"
+                            ) {
+                              return (window.location.href =
+                                "https://rentamon.com/intro/lite/");
+                            }
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
               if (
                 $steps["runCode"] != null &&
                 typeof $steps["runCode"] === "object" &&
