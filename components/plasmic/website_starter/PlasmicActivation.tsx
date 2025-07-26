@@ -2560,19 +2560,7 @@ function PlasmicActivation__RenderFunc(props: {
                       {"\u0634\u0628"}
                     </div>
                   </div>
-                  {(() => {
-                    try {
-                      return $ctx.params.type == 3;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                  {false ? (
                     <div
                       data-plasmic-name={"mizbon"}
                       data-plasmic-override={overrides.mizbon}

@@ -1528,7 +1528,33 @@ function PlasmicProCalendar__RenderFunc(props: {
                   </div>
                   {(
                     hasVariant(globalVariants, "screen", "mobile")
-                      ? true
+                      ? (() => {
+                          try {
+                            return $state.isTheFirstVisit == false;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? (() => {
+                          try {
+                            return $state.isTheFirstVisit == false;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })()
                       : (() => {
                           try {
                             return $state.isTheFirstVisit == false;
@@ -1537,7 +1563,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return true;
+                              return false;
                             }
                             throw e;
                           }
