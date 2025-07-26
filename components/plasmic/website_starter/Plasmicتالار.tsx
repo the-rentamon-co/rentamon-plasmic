@@ -971,136 +971,160 @@ function Plasmicتالار__RenderFunc(props: {
                   : undefined
               )}
             >
-              <div
-                data-plasmic-name={"channelManager"}
-                data-plasmic-override={overrides.channelManager}
-                className={classNames(
-                  projectcss.all,
-                  sty.channelManager,
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? (() => {
-                        try {
-                          return (() => {
-                            if ($state.userType == 1) {
-                              return "display_block clickable";
-                            } else {
-                              return "hidden clickable";
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
+              {(
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return (
+                          $state.profile2.data?.user_info?.websites?.length > 0
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
                         }
-                      })()
-                    : `hidden${undefined}`
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToChannelManager"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/channel-manager` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToChannelManager"] != null &&
-                    typeof $steps["goToChannelManager"] === "object" &&
-                    typeof $steps["goToChannelManager"].then === "function"
-                  ) {
-                    $steps["goToChannelManager"] = await $steps[
-                      "goToChannelManager"
-                    ];
-                  }
-                }}
-              >
-                {(
-                  hasVariant(globalVariants, "screen", "mobile") ? true : false
-                ) ? (
-                  <div
-                    data-plasmic-name={"right"}
-                    data-plasmic-override={overrides.right}
-                    className={classNames(projectcss.all, sty.right)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img___8Nxz)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "100%"
-                          : "100%"
+                        throw e;
                       }
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "100%"
-                          : "100%"
-                      }
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "26px"
-                          : "26px"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image143.svg",
-                        fullWidth: 80,
-                        fullHeight: 78,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                ) : null}
+                    })()
+                  : true
+              ) ? (
                 <div
-                  data-plasmic-name={"mid"}
-                  data-plasmic-override={overrides.mid}
-                  className={classNames(projectcss.all, sty.mid)}
+                  data-plasmic-name={"channelManager"}
+                  data-plasmic-override={overrides.channelManager}
+                  className={classNames(
+                    projectcss.all,
+                    sty.channelManager,
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return (() => {
+                              if ($state.userType == 1) {
+                                return "display_block clickable";
+                              } else {
+                                return "hidden clickable";
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : `hidden${undefined}`
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToChannelManager"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: `/channel-manager`
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToChannelManager"] != null &&
+                      typeof $steps["goToChannelManager"] === "object" &&
+                      typeof $steps["goToChannelManager"].then === "function"
+                    ) {
+                      $steps["goToChannelManager"] = await $steps[
+                        "goToChannelManager"
+                      ];
+                    }
+                  }}
                 >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"right"}
+                      data-plasmic-override={overrides.right}
+                      className={classNames(projectcss.all, sty.right)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img___8Nxz)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : "100%"
+                        }
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : "100%"
+                        }
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "26px"
+                            : "26px"
+                        }
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image143.svg",
+                          fullWidth: 80,
+                          fullHeight: 78,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    </div>
+                  ) : null}
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__qoJwp)}
+                    data-plasmic-name={"mid"}
+                    data-plasmic-override={overrides.mid}
+                    className={classNames(projectcss.all, sty.mid)}
                   >
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__kOXp
-                      )}
+                      className={classNames(projectcss.all, sty.freeBox__qoJwp)}
                     >
-                      {
-                        "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
-                      }
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__kOXp
+                        )}
+                      >
+                        {
+                          "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+                        }
+                      </div>
                     </div>
                   </div>
+                  <div
+                    data-plasmic-name={"left"}
+                    data-plasmic-override={overrides.left}
+                    className={classNames(projectcss.all, sty.left)}
+                  >
+                    <Icon74Icon
+                      className={classNames(projectcss.all, sty.svg__xgS23)}
+                      role={"img"}
+                    />
+                  </div>
                 </div>
-                <div
-                  data-plasmic-name={"left"}
-                  data-plasmic-override={overrides.left}
-                  className={classNames(projectcss.all, sty.left)}
-                >
-                  <Icon74Icon
-                    className={classNames(projectcss.all, sty.svg__xgS23)}
-                    role={"img"}
-                  />
-                </div>
-              </div>
+              ) : null}
               {(
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
@@ -1446,7 +1470,23 @@ function Plasmicتالار__RenderFunc(props: {
                 </div>
               ) : null}
               {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return (
+                          $state.profile2.data?.user_info?.websites?.length > 0
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })()
+                  : false
               ) ? (
                 <div
                   data-plasmic-name={"instantReserve"}
@@ -1555,7 +1595,23 @@ function Plasmicتالار__RenderFunc(props: {
                 </div>
               ) : null}
               {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return (
+                          $state.profile2.data?.user_info?.websites?.length > 0
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })()
+                  : false
               ) ? (
                 <div
                   data-plasmic-name={"settings"}

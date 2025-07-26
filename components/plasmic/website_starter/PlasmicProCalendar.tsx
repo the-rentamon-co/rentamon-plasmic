@@ -1557,7 +1557,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                         })()
                       : (() => {
                           try {
-                            return $state.isTheFirstVisit == false;
+                            return $state.isTheFirstVisit === false;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
