@@ -64,7 +64,7 @@ import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxHmSdr/component
-import RecordList from "../../RecordList"; // plasmic-import: dDeToLEgGJS_/component
+import ReservationsRecordList from "../../ReservationsRecordList"; // plasmic-import: dDeToLEgGJS_/component
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
@@ -1569,7 +1569,7 @@ function PlasmicReservations__RenderFunc(props: {
                             }
                           })()
                     ) ? (
-                      <RecordList
+                      <ReservationsRecordList
                         cancelledBookings={(() => {
                           try {
                             return (
@@ -1588,7 +1588,7 @@ function PlasmicReservations__RenderFunc(props: {
                         })()}
                         className={classNames(
                           "__wab_instance",
-                          sty.recordList__j2Fns
+                          sty.reservationsRecordList__j2Fns
                         )}
                         confirmedBookings={(() => {
                           try {
@@ -1895,7 +1895,9 @@ function PlasmicReservations__RenderFunc(props: {
                         sty.freeBox__lAff,
                         (() => {
                           try {
-                            return (() => {})();
+                            return $state.isTheFirstVisit == true
+                              ? "blinkBorderTourGuide clickable"
+                              : "clickable";
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -1941,7 +1943,7 @@ function PlasmicReservations__RenderFunc(props: {
                               }
                             })()
                       ) ? (
-                        <RecordList
+                        <ReservationsRecordList
                           cancelledBookings={(() => {
                             try {
                               return currentItem.status == "Cancelled";
@@ -1957,7 +1959,7 @@ function PlasmicReservations__RenderFunc(props: {
                           })()}
                           className={classNames(
                             "__wab_instance",
-                            sty.recordList__lPd
+                            sty.reservationsRecordList__lPd
                           )}
                           confirmedBookings={(() => {
                             try {
@@ -2190,7 +2192,7 @@ function PlasmicReservations__RenderFunc(props: {
                               sty.freeBox__strKl
                             )}
                           >
-                            <RecordList
+                            <ReservationsRecordList
                               cancelledBookings={(() => {
                                 try {
                                   return currentItems.status == "Cancelled";
@@ -2207,7 +2209,7 @@ function PlasmicReservations__RenderFunc(props: {
                               })()}
                               className={classNames(
                                 "__wab_instance",
-                                sty.recordList__lgeZv
+                                sty.reservationsRecordList__lgeZv
                               )}
                               confirmedBookings={(() => {
                                 try {

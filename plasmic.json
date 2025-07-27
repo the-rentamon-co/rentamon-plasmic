@@ -632,19 +632,6 @@
           "componentType": "component"
         },
         {
-          "id": "dDeToLEgGJS_",
-          "name": "RecordList",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicRecordList.tsx",
-          "importSpec": {
-            "modulePath": "RecordList.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicRecordList.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "eerOzN6iqdPm",
           "name": "Label",
           "type": "managed",
@@ -1838,6 +1825,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/property/create-2"
+        },
+        {
+          "id": "dDeToLEgGJS_",
+          "name": "ReservationsRecordList",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicReservationsRecordList.tsx",
+          "importSpec": {
+            "modulePath": "ReservationsRecordList.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicReservationsRecordList.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
