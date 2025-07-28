@@ -5442,26 +5442,7 @@ function PlasmicActivation__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          (() => {
-                                            try {
-                                              return (() => {
-                                                if ($ctx.params.type == "1") {
-                                                  return "https://gateway.rentamon.com/webhook/jabamacontact";
-                                                } else {
-                                                  return "";
-                                                }
-                                              })();
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })(),
+                                          "https://gateway.rentamon.com/webhook/jabamacontact",
                                           undefined,
                                           (() => {
                                             try {
@@ -6067,26 +6048,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        (() => {
-                                          try {
-                                            return (() => {
-                                              if ($ctx.params.type == "1") {
-                                                return "https://gateway.rentamon.com/webhook/jajigacontact";
-                                              } else {
-                                                return "";
-                                              }
-                                            })();
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })(),
+                                        "https://gateway.rentamon.com/webhook/jajigacontact",
                                         undefined,
                                         (() => {
                                           try {
@@ -6798,26 +6760,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        (() => {
-                                          try {
-                                            return (() => {
-                                              if ($ctx.params.type == "1") {
-                                                return "https://gateway.rentamon.com/webhook/shabcontact";
-                                              } else {
-                                                return "";
-                                              }
-                                            })();
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })(),
+                                        "https://gateway.rentamon.com/webhook/shabcontact",
                                         undefined,
                                         (() => {
                                           try {
@@ -7504,26 +7447,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        (() => {
-                                          try {
-                                            return (() => {
-                                              if ($ctx.params.type == "1") {
-                                                return "https://gateway.rentamon.com/webhook/otaghakcontact";
-                                              } else {
-                                                return "";
-                                              }
-                                            })();
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })(),
+                                        "https://gateway.rentamon.com/webhook/otaghakcontact",
                                         undefined,
                                         (() => {
                                           try {
@@ -8204,21 +8128,25 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["showToast"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        undefined,
-                                        "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
-                                        "bottom-center",
-                                        6000
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
+                              $steps["showToast"] =
+                                $state.form.value.mihmanshophone.length ===
+                                  11 &&
+                                $state.form.value.mihmanshoPass !== "" &&
+                                $state.form.value.mihmanshoPass !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          undefined,
+                                          "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
+                                          "bottom-center",
+                                          6000
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
                               if (
                                 $steps["showToast"] != null &&
                                 typeof $steps["showToast"] === "object" &&
@@ -8299,9 +8227,10 @@ function PlasmicActivation__RenderFunc(props: {
                               }
 
                               $steps["mihmanshoContactX"] =
-                                $state.form.value.homsaphone !== undefined &&
-                                $state.form.value.homsaphone.length >= 11 &&
-                                $state.form.value.homsaOTP !== undefined
+                                $state.form.value.mihmanshophone !==
+                                  undefined &&
+                                $state.form.value.mihmanshophone.length >= 11 &&
+                                $state.form.value.mihmanshoPass !== undefined
                                   ? (() => {
                                       const actionArgs = { args: ["POST"] };
                                       return $globalActions[

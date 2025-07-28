@@ -459,9 +459,7 @@ function PlasmicIntro__RenderFunc(props: {
                     ? "/plasmic/website_starter/images/coverJpg2.jpg"
                     : "/plasmic/website_starter/images/coverJpg2.jpg"
                 }
-                src={
-                  "https://rentamon-files.storage.iran.liara.space/video/pro_onboarding.mp4"
-                }
+                src={"https://media.rentamon.com/video%2Fpro_onboarding.mp4"}
               />
             </div>
           ) : null}
@@ -530,9 +528,7 @@ function PlasmicIntro__RenderFunc(props: {
                     ? "/plasmic/website_starter/images/coverJpg2.jpg"
                     : "/plasmic/website_starter/images/coverJpg2.jpg"
                 }
-                src={
-                  "https://rentamon-files.storage.iran.liara.space/video/intro%20to%20lite.mp4"
-                }
+                src={"https://media.rentamon.com/video%2Fintro%20to%20lite.mp4"}
               />
             </div>
           ) : null}

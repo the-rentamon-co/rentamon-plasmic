@@ -6319,6 +6319,22 @@ function PlasmicCalendar2__RenderFunc(props: {
                       }
                     </span>
                   </React.Fragment>
+                ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u0641\u0631\u0636 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0627\u06cc\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0632\u0631\u0648 \u0634\u062f\u0647\n\n"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 600 }}
+                    >
+                      {
+                        "\u06af\u0632\u06cc\u0646\u0647 \u00ab\u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645\u00bb \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                      }
+                    </span>
+                  </React.Fragment>
                 ) : (
                   <React.Fragment>
                     <React.Fragment>

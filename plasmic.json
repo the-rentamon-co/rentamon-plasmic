@@ -1838,6 +1838,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicReservationsRecordList.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "rNSSH2xZnrkV",
+          "name": "Bookings",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicBookings.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/bookings/[booking_id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicBookings.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/bookings/[booking_id]"
         }
       ],
       "icons": [
@@ -4132,6 +4146,41 @@
           "id": "1flnnZWAgj47",
           "name": "Group",
           "filePath": "../public/plasmic/website_starter/images/group.svg"
+        },
+        {
+          "id": "8VtL2hbWw2Ow",
+          "name": "image 152",
+          "filePath": "../public/plasmic/website_starter/images/image152.svg"
+        },
+        {
+          "id": "AmepQ_frqL2s",
+          "name": "image 153",
+          "filePath": "../public/plasmic/website_starter/images/image153.svg"
+        },
+        {
+          "id": "4Z8HnsP8iPOv",
+          "name": "image 154",
+          "filePath": "../public/plasmic/website_starter/images/image154.svg"
+        },
+        {
+          "id": "LJkeDT1mjG70",
+          "name": "image 155",
+          "filePath": "../public/plasmic/website_starter/images/image155.svg"
+        },
+        {
+          "id": "PIAzUqjTWRqb",
+          "name": "image 156",
+          "filePath": "../public/plasmic/website_starter/images/image156.svg"
+        },
+        {
+          "id": "Hghc8Q72FVfH",
+          "name": "image 157",
+          "filePath": "../public/plasmic/website_starter/images/image157.svg"
+        },
+        {
+          "id": "FIWjiumV81r_",
+          "name": "image 158",
+          "filePath": "../public/plasmic/website_starter/images/image158.svg"
         }
       ],
       "indirect": false,

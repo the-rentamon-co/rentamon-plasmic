@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 13 16">
+  <circle cx="6.461" cy="8.015" r="5.25" stroke="#ACACAC" stroke-width="1.5"/>
+  <rect width="1" height="4" x="6.461" y="5.015" fill="#ACACAC" rx=".5"/>
+  <rect width="1" height="3" x="4.461" y="9.015" fill="#ACACAC" rx=".5" transform="rotate(-90 4.46 9.015)"/>
+  <rect width="1.2" height="3.946" fill="#ACACAC" rx=".6" transform="matrix(-.98595 .16704 -.12984 -.99154 10.71 4.9)"/>
+  <rect width="1.2" height="3.966" fill="#ACACAC" rx=".6" transform="matrix(-.98242 -.18667 .16761 -.98585 10.117 15.06)"/>
+  <rect width="1.2" height="3.947" fill="#ACACAC" rx=".6" transform="matrix(-.98753 -.15743 .12484 -.99218 3.21 5.067)"/>
+  <rect width="1.2" height="3.965" fill="#ACACAC" rx=".6" transform="matrix(-.99059 .13688 -.11256 -.99365 3.68 14.906)"/>
+</svg>

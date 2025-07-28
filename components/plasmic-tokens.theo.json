@@ -453,7 +453,7 @@
     {
       "name": "Neutral/Neutral-Soft-Foreground",
       "type": "color",
-      "value": "#111827",
+      "value": "#000000B3",
       "category": "color",
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",
@@ -2928,6 +2928,16 @@
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",
         "id": "-290uurj-8QW"
+      }
+    },
+    {
+      "name": "rnt green",
+      "type": "color",
+      "value": "#2EB773",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "6z3qtlJMEewC"
       }
     },
     {

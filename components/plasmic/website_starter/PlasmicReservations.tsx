@@ -8268,6 +8268,46 @@ function PlasmicReservations__RenderFunc(props: {
                   ) {
                     $steps["updateModalOpen"] = await $steps["updateModalOpen"];
                   }
+
+                  $steps["registrationSteps"] =
+                    $state.isTheFirstVisit == true
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              "POST",
+                              "https://gateway.rentamon.com/webhook/registration-steps",
+                              undefined,
+                              (() => {
+                                try {
+                                  return $state.isTheFirstVisit;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            ]
+                          };
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                  if (
+                    $steps["registrationSteps"] != null &&
+                    typeof $steps["registrationSteps"] === "object" &&
+                    typeof $steps["registrationSteps"].then === "function"
+                  ) {
+                    $steps["registrationSteps"] = await $steps[
+                      "registrationSteps"
+                    ];
+                  }
                 }}
               >
                 <div

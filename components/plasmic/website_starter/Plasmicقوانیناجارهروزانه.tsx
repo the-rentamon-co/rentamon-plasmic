@@ -507,110 +507,237 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                         sty.text__e8Leu
                       )}
                     >
-                      <React.Fragment>
+                      {hasVariant(globalVariants, "screen", "mobile") ? (
                         <React.Fragment>
+                          <React.Fragment>
+                            {
+                              "\u0627\u06af\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u06a9\u0627\u0645\u0644\u0627 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u06a9\u0627\u0631 \u06a9\u0646\u06cc\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0648\u0632\u0631\u0627\u062a \u0645\u06cc\u0631\u0627\u062b \u0641\u0631\u0647\u0646\u06af\u06cc \u0648 \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u060c \u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0645\u0646\u0632\u0644 \u0631\u0648 \u0628\u0627 \u0639\u0646\u0648\u0627\u0646 \u00ab\u062e\u0627\u0646\u0647 \u0645\u0633\u0627\u0641\u0631\u00bb \u0628\u06af\u06cc\u0631\u06cc. ("
+                            }
+                          </React.Fragment>
                           {
-                            "\u0627\u06af\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u06a9\u0627\u0645\u0644\u0627 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u06a9\u0627\u0631 \u06a9\u0646\u06cc\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0648\u0632\u0631\u0627\u062a \u0645\u06cc\u0631\u0627\u062b \u0641\u0631\u0647\u0646\u06af\u06cc \u0648 \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u0645\u062c\u0648\u0632 \u00ab\u062e\u0627\u0646\u0647 \u0645\u0633\u0627\u0641\u0631\u00bb \u0628\u06af\u06cc\u0631\u06cc. ("
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__zowxq
+                              )}
+                              component={Link}
+                              href={"https://mojavez.ir/license/781593"}
+                              platform={"nextjs"}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u0627\u06cc\u0646\u062c\u0627"
+                                : "\u0627\u06cc\u0646\u062c\u0627"}
+                            </PlasmicLink__>
                           }
+                          <React.Fragment>
+                            {
+                              ")\r\n\u0627\u0645\u0627 \u0628\u0631\u0627\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a \u0627\u0632 \u0637\u0631\u06cc\u0642 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0645\u0639\u062a\u0628\u0631\u06cc \u0645\u062b\u0644 "
+                            }
+                          </React.Fragment>
+                          {
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__g0ZEh
+                              )}
+                              component={Link}
+                              href={"https://www.jajiga.com/newroom"}
+                              platform={"nextjs"}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u062c\u0627\u062c\u06cc\u06af\u0627"
+                                : "\u062c\u0627\u062c\u06cc\u06af\u0627"}
+                            </PlasmicLink__>
+                          }
+                          <React.Fragment>{"\u060c "}</React.Fragment>
+                          {
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link___1ZgFy
+                              )}
+                              component={Link}
+                              href={"https://www.jabama.com/"}
+                              platform={"nextjs"}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u062c\u0627\u0628\u0627\u0645\u0627"
+                                : "\u062c\u0627\u0628\u0627\u0645\u0627"}
+                            </PlasmicLink__>
+                          }
+                          <React.Fragment>{"\u060c "}</React.Fragment>
+                          {
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__pYkh
+                              )}
+                              component={Link}
+                              href={"https://www.shab.ir/houseRegister"}
+                              platform={"nextjs"}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u0634\u0628 "
+                                : "\u0634\u0628 "}
+                            </PlasmicLink__>
+                          }
+                          <React.Fragment>
+                            {
+                              "\u0648... \u06cc\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "
+                            }
+                          </React.Fragment>
+                          {
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link___89G64
+                              )}
+                              component={Link}
+                              href={"https://divar.ir/s/qom/rent-temporary"}
+                              platform={"nextjs"}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u062f\u06cc\u0648\u0627\u0631 "
+                                : "\u062f\u06cc\u0648\u0627\u0631 "}
+                            </PlasmicLink__>
+                          }
+                          <React.Fragment>
+                            {
+                              "\u0648 \u06cc\u0627 \u0647\u0645\u06a9\u0627\u0631\u06cc \u0628\u0627 \u0648\u0627\u0633\u0637\u0647\u200c\u0647\u0627 \u0641\u0639\u0644\u0627 \u0646\u06cc\u0627\u0632\u06cc \u0628\u0647 \u0645\u062c\u0648\u0632 \u0646\u06cc\u0633\u062a."
+                            }
+                          </React.Fragment>
                         </React.Fragment>
-                        {
-                          <PlasmicLink__
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__zowxq
-                            )}
-                            component={Link}
-                            href={"https://mojavez.ir/license/781593"}
-                            platform={"nextjs"}
-                          >
-                            {"\u0627\u06cc\u0646\u062c\u0627"}
-                          </PlasmicLink__>
-                        }
+                      ) : (
                         <React.Fragment>
+                          <React.Fragment>
+                            {
+                              "\u0627\u06af\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u06a9\u0627\u0645\u0644\u0627 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u06a9\u0627\u0631 \u06a9\u0646\u06cc\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0648\u0632\u0631\u0627\u062a \u0645\u06cc\u0631\u0627\u062b \u0641\u0631\u0647\u0646\u06af\u06cc \u0648 \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u060c \u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0645\u0646\u0632\u0644 \u0631\u0648 \u0628\u0627 \u0639\u0646\u0648\u0627\u0646 \u00ab\u062e\u0627\u0646\u0647 \u0645\u0633\u0627\u0641\u0631\u00bb \u0628\u06af\u06cc\u0631\u06cc. ("
+                            }
+                          </React.Fragment>
                           {
-                            ")\r\n\u0627\u0645\u0627 \u0628\u0631\u0627\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a \u0627\u0632 \u0637\u0631\u06cc\u0642 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0645\u0639\u062a\u0628\u0631\u06cc \u0645\u062b\u0644 "
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__zowxq
+                              )}
+                              component={Link}
+                              href={"https://mojavez.ir/license/781593"}
+                              platform={"nextjs"}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u0627\u06cc\u0646\u062c\u0627"
+                                : "\u0627\u06cc\u0646\u062c\u0627"}
+                            </PlasmicLink__>
                           }
-                        </React.Fragment>
-                        {
-                          <PlasmicLink__
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__g0ZEh
-                            )}
-                            component={Link}
-                            href={"https://www.jajiga.com/newroom"}
-                            platform={"nextjs"}
-                          >
-                            {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
-                          </PlasmicLink__>
-                        }
-                        <React.Fragment>{"\u060c "}</React.Fragment>
-                        {
-                          <PlasmicLink__
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link___1ZgFy
-                            )}
-                            component={Link}
-                            href={"https://www.jabama.com/"}
-                            platform={"nextjs"}
-                          >
-                            {"\u062c\u0627\u0628\u0627\u0645\u0627"}
-                          </PlasmicLink__>
-                        }
-                        <React.Fragment>{"\u060c "}</React.Fragment>
-                        {
-                          <PlasmicLink__
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__pYkh
-                            )}
-                            component={Link}
-                            href={"https://www.shab.ir/houseRegister"}
-                            platform={"nextjs"}
-                          >
-                            {"\u0634\u0628 "}
-                          </PlasmicLink__>
-                        }
-                        <React.Fragment>
+                          <React.Fragment>
+                            {
+                              ")\r\n\u0627\u0645\u0627 \u0628\u0631\u0627\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a \u0627\u0632 \u0637\u0631\u06cc\u0642 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0645\u0639\u062a\u0628\u0631\u06cc \u0645\u062b\u0644 "
+                            }
+                          </React.Fragment>
                           {
-                            "\u0648... \u06cc\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__g0ZEh
+                              )}
+                              component={Link}
+                              href={"https://www.jajiga.com/newroom"}
+                              platform={"nextjs"}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u062c\u0627\u062c\u06cc\u06af\u0627"
+                                : "\u062c\u0627\u062c\u06cc\u06af\u0627"}
+                            </PlasmicLink__>
                           }
-                        </React.Fragment>
-                        {
-                          <PlasmicLink__
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link___89G64
-                            )}
-                            component={Link}
-                            href={"https://divar.ir/s/qom/rent-temporary"}
-                            platform={"nextjs"}
-                          >
-                            {"\u062f\u06cc\u0648\u0627\u0631 "}
-                          </PlasmicLink__>
-                        }
-                        <React.Fragment>
+                          <React.Fragment>{"\u060c "}</React.Fragment>
                           {
-                            "\u0648 \u06cc\u0627 \u0647\u0645\u06a9\u0627\u0631\u06cc \u0628\u0627 \u0648\u0627\u0633\u0637\u0647\u200c\u0647\u0627 \u0641\u0639\u0644\u0627 \u0646\u06cc\u0627\u0632\u06cc \u0628\u0647 \u0645\u062c\u0648\u0632 \u0646\u06cc\u0633\u062a."
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link___1ZgFy
+                              )}
+                              component={Link}
+                              href={"https://www.jabama.com/"}
+                              platform={"nextjs"}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u062c\u0627\u0628\u0627\u0645\u0627"
+                                : "\u062c\u0627\u0628\u0627\u0645\u0627"}
+                            </PlasmicLink__>
                           }
+                          <React.Fragment>{"\u060c "}</React.Fragment>
+                          {
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__pYkh
+                              )}
+                              component={Link}
+                              href={"https://www.shab.ir/houseRegister"}
+                              platform={"nextjs"}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u0634\u0628 "
+                                : "\u0634\u0628 "}
+                            </PlasmicLink__>
+                          }
+                          <React.Fragment>
+                            {
+                              "\u0648... \u06cc\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 "
+                            }
+                          </React.Fragment>
+                          {
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link___89G64
+                              )}
+                              component={Link}
+                              href={"https://divar.ir/s/qom/rent-temporary"}
+                              platform={"nextjs"}
+                            >
+                              {hasVariant(globalVariants, "screen", "mobile")
+                                ? "\u062f\u06cc\u0648\u0627\u0631 "
+                                : "\u062f\u06cc\u0648\u0627\u0631 "}
+                            </PlasmicLink__>
+                          }
+                          <React.Fragment>
+                            {
+                              "\u0648 \u06cc\u0627 \u0647\u0645\u06a9\u0627\u0631\u06cc \u0628\u0627 \u0648\u0627\u0633\u0637\u0647\u200c\u0647\u0627 \u0641\u0639\u0644\u0627 \u0646\u06cc\u0627\u0632\u06cc \u0628\u0647 \u0645\u062c\u0648\u0632 \u0646\u06cc\u0633\u062a."
+                            }
+                          </React.Fragment>
                         </React.Fragment>
-                      </React.Fragment>
+                      )}
                     </div>
                     <div
                       className={classNames(
