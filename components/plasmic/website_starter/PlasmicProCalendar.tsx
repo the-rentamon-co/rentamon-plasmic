@@ -2630,7 +2630,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0633\u0631\u0627\u0633\u0631\u06cc \u0628\u0631 \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c\r\n\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u00ab\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0627\u0631\u0647. \r\n\r\n\u0644\u0637\u0641\u0627 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0628\u0627\u0634 \ud83d\ude4f"
+                  "\u26a0\ufe0f\r\n\u0628\u0627 \u062a\u0648\u062c\u0647 \u0628\u0647 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u200c \u00ab\u0633\u0627\u06cc\u062a \u0647\u0648\u0645\u0633\u0627\u00bb \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631 \u0647\u0648\u0645\u0633\u0627 \u0637\u06cc \u0633\u0627\u0639\u0627\u062a \u0622\u06cc\u0646\u062f\u0647 \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0627\u0631\u0647.\n\n\r\n\r\n\u0644\u0637\u0641\u0627  \u062a\u0627 \u0631\u0641\u0639 \u06a9\u0627\u0645\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0645\u0631\u0627\u0642\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0628\u0627\u0634 \ud83d\ude4f"
                 }
               </div>
             </div>
@@ -2660,7 +2660,19 @@ function PlasmicProCalendar__RenderFunc(props: {
                                 expires +
                                 "; path=/";
                             }
-                            return setCookie("disorder_modal", "true", 3);
+                            function getCookie(name) {
+                              const nameEQ = name + "=";
+                              const ca = document.cookie.split(";");
+                              for (let i = 0; i < ca.length; i++) {
+                                let c = ca[i].trim();
+                                if (c.indexOf(nameEQ) === 0)
+                                  return c.substring(nameEQ.length);
+                              }
+                              return null;
+                            }
+                            if (!getCookie("disorder_modal")) {
+                              return setCookie("disorder_modal", "true", 24);
+                            }
                           })();
                         }
                       };

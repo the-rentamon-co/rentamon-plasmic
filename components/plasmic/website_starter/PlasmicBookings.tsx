@@ -90,11 +90,17 @@ export type PlasmicBookings__OverridesType = {
   title?: Flex__<"div">;
   guestInfo?: Flex__<"div">;
   bookInfo?: Flex__<"div">;
-  bookInfo2?: Flex__<"div">;
-  bookInfo3?: Flex__<"div">;
-  bookInfo4?: Flex__<"div">;
-  bookInfo5?: Flex__<"div">;
+  bookPrice?: Flex__<"div">;
+  bookCommission?: Flex__<"div">;
+  bookNetPrice?: Flex__<"div">;
+  bookSettleStatus?: Flex__<"div">;
   openAndCloseButton?: Flex__<"div">;
+  smartBooking2?: Flex__<"div">;
+  data2?: Flex__<"div">;
+  title2?: Flex__<"div">;
+  description?: Flex__<"div">;
+  platformStatus?: Flex__<"div">;
+  openAndCloseButton2?: Flex__<"div">;
 };
 
 export interface DefaultBookingsProps {}
@@ -141,10 +147,22 @@ function PlasmicBookings__RenderFunc(props: {
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "accordionOpen",
+        path: "accordionOpenSmartBooking",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "accordionOpenAutoSync",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "variable2",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -374,81 +392,58 @@ function PlasmicBookings__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div
-            data-plasmic-name={"smartBooking"}
-            data-plasmic-override={overrides.smartBooking}
-            className={classNames(projectcss.all, sty.smartBooking)}
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__uFzao)}
           >
             <div
-              data-plasmic-name={"data"}
-              data-plasmic-override={overrides.data}
-              className={classNames(
-                projectcss.all,
-                sty.data,
-                (() => {
-                  try {
-                    return (() => {})();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()
-              )}
+              data-plasmic-name={"smartBooking"}
+              data-plasmic-override={overrides.smartBooking}
+              className={classNames(projectcss.all, sty.smartBooking)}
             >
-              <Stack__
-                as={"div"}
-                data-plasmic-name={"title"}
-                data-plasmic-override={overrides.title}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.title)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___3A21E
-                  )}
-                >
-                  {
-                    "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
-                  }
-                </div>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__bMfM)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/image155.svg",
-                    fullWidth: 27,
-                    fullHeight: 26,
-                    aspectRatio: undefined
-                  }}
-                />
-              </Stack__>
               <div
-                data-plasmic-name={"guestInfo"}
-                data-plasmic-override={overrides.guestInfo}
-                className={classNames(projectcss.all, sty.guestInfo)}
+                data-plasmic-name={"data"}
+                data-plasmic-override={overrides.data}
+                className={classNames(
+                  projectcss.all,
+                  sty.data,
+                  (() => {
+                    try {
+                      return (() => {})();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                )}
               >
                 <Stack__
                   as={"div"}
+                  data-plasmic-name={"title"}
+                  data-plasmic-override={overrides.title}
                   hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__adlWs)}
+                  className={classNames(projectcss.all, sty.title)}
                 >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___3A21E
+                    )}
+                  >
+                    {
+                      "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                    }
+                  </div>
                   <PlasmicImg__
                     alt={""}
-                    className={classNames(sty.img__pkI36)}
+                    className={classNames(sty.img__bMfM)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -457,490 +452,26 @@ function PlasmicBookings__RenderFunc(props: {
                     displayWidth={"auto"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/image156.svg",
-                      fullWidth: 14,
-                      fullHeight: 15,
+                      src: "/plasmic/website_starter/images/image155.svg",
+                      fullWidth: 27,
+                      fullHeight: 26,
                       aspectRatio: undefined
                     }}
                   />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wxoad
-                    )}
-                  >
-                    {
-                      "\u06f0\u06f9\u06f1\u06f9\u06f6\u06f5\u06f7\u06f2\u06f2\u06f3\u06f4"
-                    }
-                  </div>
-                </Stack__>
-                <div className={classNames(projectcss.all, sty.freeBox__s0ZDt)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__agLat
-                    )}
-                  >
-                    {
-                      "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                    }
-                  </div>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"bookInfo"}
-                data-plasmic-override={overrides.bookInfo}
-                className={classNames(
-                  projectcss.all,
-                  sty.bookInfo,
-                  (() => {
-                    try {
-                      return $state.accordionOpen
-                        ? "display_hidden"
-                        : "display_block";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()
-                )}
-              >
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__aU2Qf)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aIhhR
-                    )}
-                  >
-                    {
-                      "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631"
-                    }
-                  </div>
-                </Stack__>
-                <div className={classNames(projectcss.all, sty.freeBox__w81Ii)}>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__oufwt)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__awjXa)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image158.svg",
-                        fullWidth: 13,
-                        fullHeight: 16,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__qgaal
-                      )}
-                    >
-                      {"\u06f2 \u0634\u0628"}
-                    </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox___5UCox)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__jioCg)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image157.svg",
-                        fullWidth: 14,
-                        fullHeight: 14,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__pXy5
-                      )}
-                    >
-                      {"5 \u0646\u0641\u0631"}
-                    </div>
-                  </Stack__>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"bookInfo2"}
-                data-plasmic-override={overrides.bookInfo2}
-                className={classNames(
-                  projectcss.all,
-                  sty.bookInfo2,
-                  (() => {
-                    try {
-                      return $state.accordionOpen
-                        ? "display_hidden"
-                        : "display_block";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()
-                )}
-              >
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__d8ITf)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bc7Tf
-                    )}
-                  >
-                    {
-                      "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631"
-                    }
-                  </div>
-                </Stack__>
-                <div className={classNames(projectcss.all, sty.freeBox__n3CAg)}>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__cbTtt)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__l7X87)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image158.svg",
-                        fullWidth: 13,
-                        fullHeight: 16,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__k80T3
-                      )}
-                    >
-                      {"\u06f2 \u0634\u0628"}
-                    </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__b0H3N)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__mlcF0)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image157.svg",
-                        fullWidth: 14,
-                        fullHeight: 14,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__q1Tbt
-                      )}
-                    >
-                      {"5 \u0646\u0641\u0631"}
-                    </div>
-                  </Stack__>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"bookInfo3"}
-                data-plasmic-override={overrides.bookInfo3}
-                className={classNames(
-                  projectcss.all,
-                  sty.bookInfo3,
-                  (() => {
-                    try {
-                      return $state.accordionOpen
-                        ? "display_hidden"
-                        : "display_block";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()
-                )}
-              >
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__fDlu7)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dgPoa
-                    )}
-                  >
-                    {
-                      "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631"
-                    }
-                  </div>
-                </Stack__>
-                <div className={classNames(projectcss.all, sty.freeBox__rCc6I)}>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__b2T1S)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__iQ4Bu)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image158.svg",
-                        fullWidth: 13,
-                        fullHeight: 16,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__nSbKb
-                      )}
-                    >
-                      {"\u06f2 \u0634\u0628"}
-                    </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__kffH)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__qx41P)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image157.svg",
-                        fullWidth: 14,
-                        fullHeight: 14,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___6GyPc
-                      )}
-                    >
-                      {"5 \u0646\u0641\u0631"}
-                    </div>
-                  </Stack__>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"bookInfo4"}
-                data-plasmic-override={overrides.bookInfo4}
-                className={classNames(projectcss.all, sty.bookInfo4)}
-              >
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__rLZsn)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__tdgzg
-                    )}
-                  >
-                    {
-                      "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631"
-                    }
-                  </div>
-                </Stack__>
-                <div className={classNames(projectcss.all, sty.freeBox__yuNmr)}>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__aLmE4)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__dihO9)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image158.svg",
-                        fullWidth: 13,
-                        fullHeight: 16,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__zKhZm
-                      )}
-                    >
-                      {"\u06f2 \u0634\u0628"}
-                    </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__eb3EI)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__adujx)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image157.svg",
-                        fullWidth: 14,
-                        fullHeight: 14,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__l1HKf
-                      )}
-                    >
-                      {"5 \u0646\u0641\u0631"}
-                    </div>
-                  </Stack__>
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"bookInfo5"}
-                data-plasmic-override={overrides.bookInfo5}
-                className={classNames(projectcss.all, sty.bookInfo5)}
-              >
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__oFfw)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yiaF
-                    )}
-                  >
-                    {
-                      "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631"
-                    }
-                  </div>
                 </Stack__>
                 <div
-                  className={classNames(projectcss.all, sty.freeBox___90Cmi)}
+                  data-plasmic-name={"guestInfo"}
+                  data-plasmic-override={overrides.guestInfo}
+                  className={classNames(projectcss.all, sty.guestInfo)}
                 >
                   <Stack__
                     as={"div"}
                     hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__aMpmz)}
+                    className={classNames(projectcss.all, sty.freeBox__adlWs)}
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__qrk9Z)}
+                      className={classNames(sty.img__pkI36)}
                       displayHeight={"auto"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
@@ -949,9 +480,9 @@ function PlasmicBookings__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/image158.svg",
-                        fullWidth: 13,
-                        fullHeight: 16,
+                        src: "/plasmic/website_starter/images/image156.svg",
+                        fullWidth: 14,
+                        fullHeight: 15,
                         aspectRatio: undefined
                       }}
                     />
@@ -960,20 +491,319 @@ function PlasmicBookings__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__ifmAk
+                        sty.text__wxoad
                       )}
                     >
-                      {"\u06f2 \u0634\u0628"}
+                      {
+                        "\u06f0\u06f9\u06f1\u06f9\u06f6\u06f5\u06f7\u06f2\u06f2\u06f3\u06f4"
+                      }
                     </div>
                   </Stack__>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__s0ZDt)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__agLat
+                      )}
+                    >
+                      {
+                        "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
+                      }
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"bookInfo"}
+                  data-plasmic-override={overrides.bookInfo}
+                  className={classNames(
+                    projectcss.all,
+                    sty.bookInfo,
+                    (() => {
+                      try {
+                        return $state.accordionOpenSmartBooking
+                          ? "display_hidden"
+                          : "display_block";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  )}
+                >
                   <Stack__
                     as={"div"}
                     hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__iznGv)}
+                    className={classNames(projectcss.all, sty.freeBox__aU2Qf)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__aIhhR
+                      )}
+                    >
+                      {
+                        "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631"
+                      }
+                    </div>
+                  </Stack__>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__w81Ii)}
+                  >
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__oufwt)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__awjXa)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image158.svg",
+                          fullWidth: 13,
+                          fullHeight: 16,
+                          aspectRatio: undefined
+                        }}
+                      />
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__qgaal
+                        )}
+                      >
+                        {"\u06f2 \u0634\u0628"}
+                      </div>
+                    </Stack__>
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___5UCox
+                      )}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__jioCg)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image157.svg",
+                          fullWidth: 14,
+                          fullHeight: 14,
+                          aspectRatio: undefined
+                        }}
+                      />
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__pXy5
+                        )}
+                      >
+                        {"5 \u0646\u0641\u0631"}
+                      </div>
+                    </Stack__>
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"bookPrice"}
+                  data-plasmic-override={overrides.bookPrice}
+                  className={classNames(
+                    projectcss.all,
+                    sty.bookPrice,
+                    (() => {
+                      try {
+                        return $state.accordionOpenSmartBooking
+                          ? "display_hidden"
+                          : "display_block";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  )}
+                >
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__d8ITf)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__bc7Tf
+                      )}
+                    >
+                      {"\u06f2/\u06f9\u06f0\u06f0/\u06f0\u06f0\u06f0"}
+                    </div>
+                  </Stack__>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__n3CAg)}
+                  >
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__b0H3N)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__q1Tbt
+                        )}
+                      >
+                        {
+                          "\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062f\u0631 \u0634\u0628:"
+                        }
+                      </div>
+                    </Stack__>
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"bookCommission"}
+                  data-plasmic-override={overrides.bookCommission}
+                  className={classNames(
+                    projectcss.all,
+                    sty.bookCommission,
+                    (() => {
+                      try {
+                        return $state.accordionOpenSmartBooking
+                          ? "display_hidden"
+                          : "display_block";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  )}
+                >
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__fDlu7)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__dgPoa
+                      )}
+                    >
+                      {"%\u06f1\u06f0"}
+                    </div>
+                  </Stack__>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__rCc6I)}
+                  >
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__kffH)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___6GyPc
+                        )}
+                      >
+                        {
+                          "\u06a9\u0627\u0631\u0645\u0632\u062f (\u0648 \u0645\u0627\u0644\u06cc\u0627\u062a) \u0634\u0628:"
+                        }
+                      </div>
+                    </Stack__>
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"bookNetPrice"}
+                  data-plasmic-override={overrides.bookNetPrice}
+                  className={classNames(projectcss.all, sty.bookNetPrice)}
+                >
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__rLZsn)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__tdgzg
+                      )}
+                    >
+                      {"\u06f2/\u06f6\u06f5\u06f5/\u06f0\u06f0\u06f0"}
+                    </div>
+                  </Stack__>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__yuNmr)}
+                  >
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__eb3EI)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__l1HKf
+                        )}
+                      >
+                        {
+                          "\u062f\u0631\u0622\u0645\u062f \u062e\u0627\u0644\u0635 \u0634\u0645\u0627:"
+                        }
+                      </div>
+                    </Stack__>
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"bookSettleStatus"}
+                  data-plasmic-override={overrides.bookSettleStatus}
+                  className={classNames(projectcss.all, sty.bookSettleStatus)}
+                >
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__oFfw)}
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img___1B8K)}
+                      className={classNames(sty.img__qOrc4)}
                       displayHeight={"auto"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
@@ -982,9 +812,9 @@ function PlasmicBookings__RenderFunc(props: {
                       displayWidth={"auto"}
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/image157.svg",
-                        fullWidth: 14,
-                        fullHeight: 14,
+                        src: "/plasmic/website_starter/images/image141.svg",
+                        fullWidth: 23,
+                        fullHeight: 23,
                         aspectRatio: undefined
                       }}
                     />
@@ -993,68 +823,129 @@ function PlasmicBookings__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__pVcZ
+                        sty.text__yiaF
                       )}
                     >
-                      {"5 \u0646\u0641\u0631"}
+                      {"\u062a\u0633\u0648\u06cc\u0647"}
                     </div>
                   </Stack__>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___90Cmi)}
+                  >
+                    <Stack__
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__iznGv)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__pVcZ
+                        )}
+                      >
+                        {
+                          "\u0648\u0636\u0639\u06cc\u062a \u0645\u0627\u0644\u06cc:"
+                        }
+                      </div>
+                    </Stack__>
+                  </div>
                 </div>
+              </div>
+              <div
+                data-plasmic-name={"openAndCloseButton"}
+                data-plasmic-override={overrides.openAndCloseButton}
+                className={classNames(projectcss.all, sty.openAndCloseButton)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateAccordionOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["accordionOpenSmartBooking"]
+                          },
+                          operation: 4
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          const oldValue = $stateGet(objRoot, variablePath);
+                          $stateSet(objRoot, variablePath, !oldValue);
+                          return !oldValue;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAccordionOpen"] != null &&
+                    typeof $steps["updateAccordionOpen"] === "object" &&
+                    typeof $steps["updateAccordionOpen"].then === "function"
+                  ) {
+                    $steps["updateAccordionOpen"] = await $steps[
+                      "updateAccordionOpen"
+                    ];
+                  }
+                }}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(
+                    sty.img__rkHvn,
+                    (() => {
+                      try {
+                        return $state.accordionOpenSmartBooking
+                          ? ".rotate-normal"
+                          : "rotate-flipped";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  )}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image154.svg",
+                    fullWidth: 21,
+                    fullHeight: 10,
+                    aspectRatio: undefined
+                  }}
+                />
               </div>
             </div>
             <div
-              data-plasmic-name={"openAndCloseButton"}
-              data-plasmic-override={overrides.openAndCloseButton}
-              className={classNames(projectcss.all, sty.openAndCloseButton)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateAccordionOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["accordionOpen"]
-                        },
-                        operation: 4
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        const oldValue = $stateGet(objRoot, variablePath);
-                        $stateSet(objRoot, variablePath, !oldValue);
-                        return !oldValue;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateAccordionOpen"] != null &&
-                  typeof $steps["updateAccordionOpen"] === "object" &&
-                  typeof $steps["updateAccordionOpen"].then === "function"
-                ) {
-                  $steps["updateAccordionOpen"] = await $steps[
-                    "updateAccordionOpen"
-                  ];
-                }
-              }}
+              data-plasmic-name={"smartBooking2"}
+              data-plasmic-override={overrides.smartBooking2}
+              className={classNames(projectcss.all, sty.smartBooking2)}
             >
-              <PlasmicImg__
-                alt={""}
+              <div
+                data-plasmic-name={"data2"}
+                data-plasmic-override={overrides.data2}
                 className={classNames(
-                  sty.img__rkHvn,
+                  projectcss.all,
+                  sty.data2,
                   (() => {
                     try {
-                      return $state.accordionOpen
-                        ? ".rotate-normal"
-                        : "rotate-flipped";
+                      return (() => {})();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -1066,22 +957,214 @@ function PlasmicBookings__RenderFunc(props: {
                     }
                   })()
                 )}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image154.svg",
-                  fullWidth: 21,
-                  fullHeight: 10,
-                  aspectRatio: undefined
+              >
+                <Stack__
+                  as={"div"}
+                  data-plasmic-name={"title2"}
+                  data-plasmic-override={overrides.title2}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.title2)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__siMi
+                    )}
+                  >
+                    {
+                      "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+                    }
+                  </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__gLuYa)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image159.svg",
+                      fullWidth: 29,
+                      fullHeight: 28,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </Stack__>
+                <div
+                  data-plasmic-name={"description"}
+                  data-plasmic-override={overrides.description}
+                  className={classNames(projectcss.all, sty.description)}
+                >
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__iyOnW)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__zn2Wr
+                      )}
+                    >
+                      {
+                        "\u0646\u062a\u06cc\u062c\u0647 \u062a\u0644\u0627\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u06cc \u0628\u0633\u062a\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627:"
+                      }
+                    </div>
+                  </Stack__>
+                </div>
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))([
+                  2, 3, 4
+                ]).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
+                    <div
+                      data-plasmic-name={"platformStatus"}
+                      data-plasmic-override={overrides.platformStatus}
+                      className={classNames(
+                        projectcss.all,
+                        sty.platformStatus,
+                        (() => {
+                          try {
+                            return $state.accordionOpenAutoSync
+                              ? "display_hidden"
+                              : "display_block";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      )}
+                      key={currentIndex}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__diq12
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__o51MG
+                          )}
+                        >
+                          {"\u0634\u0628"}
+                        </div>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__q849)}
+                          displayHeight={"27px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image160.svg",
+                            fullWidth: 22,
+                            fullHeight: 22,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div
+                data-plasmic-name={"openAndCloseButton2"}
+                data-plasmic-override={overrides.openAndCloseButton2}
+                className={classNames(projectcss.all, sty.openAndCloseButton2)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateAccordionOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["accordionOpenAutoSync"]
+                          },
+                          operation: 4
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          const oldValue = $stateGet(objRoot, variablePath);
+                          $stateSet(objRoot, variablePath, !oldValue);
+                          return !oldValue;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAccordionOpen"] != null &&
+                    typeof $steps["updateAccordionOpen"] === "object" &&
+                    typeof $steps["updateAccordionOpen"].then === "function"
+                  ) {
+                    $steps["updateAccordionOpen"] = await $steps[
+                      "updateAccordionOpen"
+                    ];
+                  }
                 }}
-              />
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(
+                    sty.img__os5Gg,
+                    (() => {
+                      try {
+                        return $state.accordionOpenSmartBooking
+                          ? ".rotate-normal"
+                          : "rotate-flipped";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  )}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image154.svg",
+                    fullWidth: 21,
+                    fullHeight: 10,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
             </div>
-          </div>
+          </Stack__>
         </div>
       </div>
     </React.Fragment>
@@ -1100,11 +1183,17 @@ const PlasmicDescendants = {
     "title",
     "guestInfo",
     "bookInfo",
-    "bookInfo2",
-    "bookInfo3",
-    "bookInfo4",
-    "bookInfo5",
-    "openAndCloseButton"
+    "bookPrice",
+    "bookCommission",
+    "bookNetPrice",
+    "bookSettleStatus",
+    "openAndCloseButton",
+    "smartBooking2",
+    "data2",
+    "title2",
+    "description",
+    "platformStatus",
+    "openAndCloseButton2"
   ],
   header: ["header", "returnButton", "detail"],
   returnButton: ["returnButton"],
@@ -1116,10 +1205,10 @@ const PlasmicDescendants = {
     "title",
     "guestInfo",
     "bookInfo",
-    "bookInfo2",
-    "bookInfo3",
-    "bookInfo4",
-    "bookInfo5",
+    "bookPrice",
+    "bookCommission",
+    "bookNetPrice",
+    "bookSettleStatus",
     "openAndCloseButton"
   ],
   data: [
@@ -1127,19 +1216,32 @@ const PlasmicDescendants = {
     "title",
     "guestInfo",
     "bookInfo",
-    "bookInfo2",
-    "bookInfo3",
-    "bookInfo4",
-    "bookInfo5"
+    "bookPrice",
+    "bookCommission",
+    "bookNetPrice",
+    "bookSettleStatus"
   ],
   title: ["title"],
   guestInfo: ["guestInfo"],
   bookInfo: ["bookInfo"],
-  bookInfo2: ["bookInfo2"],
-  bookInfo3: ["bookInfo3"],
-  bookInfo4: ["bookInfo4"],
-  bookInfo5: ["bookInfo5"],
-  openAndCloseButton: ["openAndCloseButton"]
+  bookPrice: ["bookPrice"],
+  bookCommission: ["bookCommission"],
+  bookNetPrice: ["bookNetPrice"],
+  bookSettleStatus: ["bookSettleStatus"],
+  openAndCloseButton: ["openAndCloseButton"],
+  smartBooking2: [
+    "smartBooking2",
+    "data2",
+    "title2",
+    "description",
+    "platformStatus",
+    "openAndCloseButton2"
+  ],
+  data2: ["data2", "title2", "description", "platformStatus"],
+  title2: ["title2"],
+  description: ["description"],
+  platformStatus: ["platformStatus"],
+  openAndCloseButton2: ["openAndCloseButton2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1155,11 +1257,17 @@ type NodeDefaultElementType = {
   title: "div";
   guestInfo: "div";
   bookInfo: "div";
-  bookInfo2: "div";
-  bookInfo3: "div";
-  bookInfo4: "div";
-  bookInfo5: "div";
+  bookPrice: "div";
+  bookCommission: "div";
+  bookNetPrice: "div";
+  bookSettleStatus: "div";
   openAndCloseButton: "div";
+  smartBooking2: "div";
+  data2: "div";
+  title2: "div";
+  description: "div";
+  platformStatus: "div";
+  openAndCloseButton2: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1231,11 +1339,17 @@ export const PlasmicBookings = Object.assign(
     title: makeNodeComponent("title"),
     guestInfo: makeNodeComponent("guestInfo"),
     bookInfo: makeNodeComponent("bookInfo"),
-    bookInfo2: makeNodeComponent("bookInfo2"),
-    bookInfo3: makeNodeComponent("bookInfo3"),
-    bookInfo4: makeNodeComponent("bookInfo4"),
-    bookInfo5: makeNodeComponent("bookInfo5"),
+    bookPrice: makeNodeComponent("bookPrice"),
+    bookCommission: makeNodeComponent("bookCommission"),
+    bookNetPrice: makeNodeComponent("bookNetPrice"),
+    bookSettleStatus: makeNodeComponent("bookSettleStatus"),
     openAndCloseButton: makeNodeComponent("openAndCloseButton"),
+    smartBooking2: makeNodeComponent("smartBooking2"),
+    data2: makeNodeComponent("data2"),
+    title2: makeNodeComponent("title2"),
+    description: makeNodeComponent("description"),
+    platformStatus: makeNodeComponent("platformStatus"),
+    openAndCloseButton2: makeNodeComponent("openAndCloseButton2"),
 
     // Metadata about props expected for PlasmicBookings
     internalVariantProps: PlasmicBookings__VariantProps,
