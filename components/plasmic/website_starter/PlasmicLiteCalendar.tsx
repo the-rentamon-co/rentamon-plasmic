@@ -73,7 +73,7 @@ import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/reg
 import { AntdTextArea } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdTextArea_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
-import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
@@ -118,7 +118,7 @@ export type PlasmicLiteCalendar__OverridesType = {
   input?: Flex__<typeof AntdInput>;
   textArea?: Flex__<typeof AntdTextArea>;
   button?: Flex__<typeof AntdButton>;
-  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -1444,7 +1444,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__a5Me
+                        sty.formField__cuTjQ
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1456,7 +1456,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__mYe
+                        sty.formField__yLd2
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1474,7 +1474,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__koBqg
+                          sty.text__fbIh7
                         )}
                       >
                         {"Submit"}
@@ -1485,10 +1485,10 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               })()}
             </AntdModal>
           ) : null}
-          <NavigationRntFooter
-            data-plasmic-name={"navigationRntFooter"}
-            data-plasmic-override={overrides.navigationRntFooter}
-            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          <NavbarRntFooter
+            data-plasmic-name={"navbarRntFooter"}
+            data-plasmic-override={overrides.navbarRntFooter}
+            className={classNames("__wab_instance", sty.navbarRntFooter)}
             navPage={"calendar"}
           />
 
@@ -1533,7 +1533,7 @@ const PlasmicDescendants = {
     "input",
     "textArea",
     "button",
-    "navigationRntFooter",
+    "navbarRntFooter",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -1567,7 +1567,7 @@ const PlasmicDescendants = {
   input: ["input"],
   textArea: ["textArea"],
   button: ["button"],
-  navigationRntFooter: ["navigationRntFooter"],
+  navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -1595,7 +1595,7 @@ type NodeDefaultElementType = {
   input: typeof AntdInput;
   textArea: typeof AntdTextArea;
   button: typeof AntdButton;
-  navigationRntFooter: typeof NavigationRntFooter;
+  navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -1679,7 +1679,7 @@ export const PlasmicLiteCalendar = Object.assign(
     input: makeNodeComponent("input"),
     textArea: makeNodeComponent("textArea"),
     button: makeNodeComponent("button"),
-    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

@@ -1832,12 +1832,12 @@
   font-size: 18px;
   min-width: 0;
 }
-.navigationRntFooter:global(.__wab_instance) {
+.navbarRntFooter:global(.__wab_instance) {
   max-width: 100%;
   display: none;
 }
 @media (max-width: 500px) {
-  .navigationRntFooter:global(.__wab_instance) {
+  .navbarRntFooter:global(.__wab_instance) {
     display: flex;
   }
 }

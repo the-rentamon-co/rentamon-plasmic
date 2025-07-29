@@ -1442,19 +1442,6 @@
           "path": "/property/create"
         },
         {
-          "id": "y37kcAs9RXYg",
-          "name": "NavigationRntFooter",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNavigationRntFooter.tsx",
-          "importSpec": {
-            "modulePath": "NavigationRntFooter.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNavigationRntFooter.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "awYJCWS6HouC",
           "name": "تالار",
           "type": "managed",
@@ -1852,6 +1839,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/bookings/[booking_id]"
+        },
+        {
+          "id": "y37kcAs9RXYg",
+          "name": "NavbarRntFooter",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNavbarRntFooter.tsx",
+          "importSpec": {
+            "modulePath": "NavbarRntFooter.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNavbarRntFooter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

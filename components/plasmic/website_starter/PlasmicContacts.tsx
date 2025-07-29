@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
@@ -88,7 +88,7 @@ export const PlasmicContacts__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicContacts__OverridesType = {
   contacts?: Flex__<"div">;
-  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   sideBar2?: Flex__<typeof SideBar2>;
   profile?: Flex__<typeof ApiRequest>;
   returnButton?: Flex__<"div">;
@@ -244,10 +244,10 @@ function PlasmicContacts__RenderFunc(props: {
             sty.contacts
           )}
         >
-          <NavigationRntFooter
-            data-plasmic-name={"navigationRntFooter"}
-            data-plasmic-override={overrides.navigationRntFooter}
-            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          <NavbarRntFooter
+            data-plasmic-name={"navbarRntFooter"}
+            data-plasmic-override={overrides.navbarRntFooter}
+            className={classNames("__wab_instance", sty.navbarRntFooter)}
             userType={(() => {
               try {
                 return (() => {
@@ -811,7 +811,7 @@ function PlasmicContacts__RenderFunc(props: {
 const PlasmicDescendants = {
   contacts: [
     "contacts",
-    "navigationRntFooter",
+    "navbarRntFooter",
     "sideBar2",
     "profile",
     "returnButton",
@@ -826,7 +826,7 @@ const PlasmicDescendants = {
     "clarityRntComponent",
     "faviconRntComponent"
   ],
-  navigationRntFooter: ["navigationRntFooter"],
+  navbarRntFooter: ["navbarRntFooter"],
   sideBar2: ["sideBar2"],
   profile: ["profile"],
   returnButton: ["returnButton"],
@@ -854,7 +854,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   contacts: "div";
-  navigationRntFooter: typeof NavigationRntFooter;
+  navbarRntFooter: typeof NavbarRntFooter;
   sideBar2: typeof SideBar2;
   profile: typeof ApiRequest;
   returnButton: "div";
@@ -930,7 +930,7 @@ export const PlasmicContacts = Object.assign(
   makeNodeComponent("contacts"),
   {
     // Helper components rendering sub-elements
-    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile: makeNodeComponent("profile"),
     returnButton: makeNodeComponent("returnButton"),

@@ -66,7 +66,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
@@ -121,7 +121,7 @@ export type PlasmicReferral__OverridesType = {
   tips?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   sideEffect?: Flex__<typeof SideEffect>;
-  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -2037,10 +2037,10 @@ ${$state.textInput.value}
             }}
           />
 
-          <NavigationRntFooter
-            data-plasmic-name={"navigationRntFooter"}
-            data-plasmic-override={overrides.navigationRntFooter}
-            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          <NavbarRntFooter
+            data-plasmic-name={"navbarRntFooter"}
+            data-plasmic-override={overrides.navbarRntFooter}
+            className={classNames("__wab_instance", sty.navbarRntFooter)}
             userType={
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
@@ -2109,7 +2109,7 @@ const PlasmicDescendants = {
     "tips",
     "rentamonFooter",
     "sideEffect",
-    "navigationRntFooter",
+    "navbarRntFooter",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -2184,7 +2184,7 @@ const PlasmicDescendants = {
   tips: ["tips"],
   rentamonFooter: ["rentamonFooter"],
   sideEffect: ["sideEffect"],
-  navigationRntFooter: ["navigationRntFooter"],
+  navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -2218,7 +2218,7 @@ type NodeDefaultElementType = {
   tips: "div";
   rentamonFooter: typeof RentamonFooter;
   sideEffect: typeof SideEffect;
-  navigationRntFooter: typeof NavigationRntFooter;
+  navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -2308,7 +2308,7 @@ export const PlasmicReferral = Object.assign(
     tips: makeNodeComponent("tips"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     sideEffect: makeNodeComponent("sideEffect"),
-    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

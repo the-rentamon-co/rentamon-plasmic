@@ -1796,6 +1796,6 @@
   max-width: 100%;
   display: none;
 }
-.navigationRntFooter:global(.__wab_instance) {
+.navbarRntFooter:global(.__wab_instance) {
   max-width: 100%;
 }

@@ -684,12 +684,12 @@
 .rentamonFooter:global(.__wab_instance) {
   max-width: 100%;
 }
-.navigationRntFooter:global(.__wab_instance) {
+.navbarRntFooter:global(.__wab_instance) {
   max-width: 100%;
   display: none;
 }
 @media (max-width: 500px) {
-  .navigationRntFooter:global(.__wab_instance) {
+  .navbarRntFooter:global(.__wab_instance) {
     display: none;
   }
 }

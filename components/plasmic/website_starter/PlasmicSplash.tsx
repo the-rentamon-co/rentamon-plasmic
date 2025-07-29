@@ -434,7 +434,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["updateSrc"] = await $steps["updateSrc"];
               }
 
-              $steps["setCookie"] = true
+              $steps["setSourceCookie"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -456,7 +456,7 @@ function PlasmicSplash__RenderFunc(props: {
                           );
                           const srcValue = params.get("src");
                           if (srcValue) {
-                            return setCookie("source", srcValue, 12);
+                            return setCookie("source", srcValue, 168);
                           }
                         })();
                       }
@@ -467,11 +467,11 @@ function PlasmicSplash__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["setCookie"] != null &&
-                typeof $steps["setCookie"] === "object" &&
-                typeof $steps["setCookie"].then === "function"
+                $steps["setSourceCookie"] != null &&
+                typeof $steps["setSourceCookie"] === "object" &&
+                typeof $steps["setSourceCookie"].then === "function"
               ) {
-                $steps["setCookie"] = await $steps["setCookie"];
+                $steps["setSourceCookie"] = await $steps["setSourceCookie"];
               }
 
               $steps["checkIsUserLogin"] = true

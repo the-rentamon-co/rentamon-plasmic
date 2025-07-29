@@ -65,7 +65,7 @@ import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxH
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
@@ -114,7 +114,7 @@ export type PlasmicChannelManager__OverridesType = {
   sideEffect?: Flex__<typeof SideEffect>;
   intro?: Flex__<"div">;
   returnButton?: Flex__<"div">;
-  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -2840,10 +2840,10 @@ function PlasmicChannelManager__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <NavigationRntFooter
-            data-plasmic-name={"navigationRntFooter"}
-            data-plasmic-override={overrides.navigationRntFooter}
-            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          <NavbarRntFooter
+            data-plasmic-name={"navbarRntFooter"}
+            data-plasmic-override={overrides.navbarRntFooter}
+            className={classNames("__wab_instance", sty.navbarRntFooter)}
             userType={(() => {
               try {
                 return (() => {
@@ -2911,7 +2911,7 @@ const PlasmicDescendants = {
     "sideEffect",
     "intro",
     "returnButton",
-    "navigationRntFooter",
+    "navbarRntFooter",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -2969,7 +2969,7 @@ const PlasmicDescendants = {
   sideEffect: ["sideEffect"],
   intro: ["intro"],
   returnButton: ["returnButton"],
-  navigationRntFooter: ["navigationRntFooter"],
+  navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -2998,7 +2998,7 @@ type NodeDefaultElementType = {
   sideEffect: typeof SideEffect;
   intro: "div";
   returnButton: "div";
-  navigationRntFooter: typeof NavigationRntFooter;
+  navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -3083,7 +3083,7 @@ export const PlasmicChannelManager = Object.assign(
     sideEffect: makeNodeComponent("sideEffect"),
     intro: makeNodeComponent("intro"),
     returnButton: makeNodeComponent("returnButton"),
-    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

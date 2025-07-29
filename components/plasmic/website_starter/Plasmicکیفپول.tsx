@@ -72,7 +72,7 @@ import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: 
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -139,7 +139,7 @@ export type Plasmicکیفپول__OverridesType = {
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   profile?: Flex__<typeof ApiRequest>;
   sideEffect?: Flex__<typeof SideEffect>;
-  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
 };
 
 export interface DefaultکیفپولProps {}
@@ -2212,10 +2212,10 @@ function Plasmicکیفپول__RenderFunc(props: {
             }}
           />
 
-          <NavigationRntFooter
-            data-plasmic-name={"navigationRntFooter"}
-            data-plasmic-override={overrides.navigationRntFooter}
-            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          <NavbarRntFooter
+            data-plasmic-name={"navbarRntFooter"}
+            data-plasmic-override={overrides.navbarRntFooter}
+            className={classNames("__wab_instance", sty.navbarRntFooter)}
             userType={
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
@@ -2285,7 +2285,7 @@ const PlasmicDescendants = {
     "rentamonFooter",
     "profile",
     "sideEffect",
-    "navigationRntFooter"
+    "navbarRntFooter"
   ],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
@@ -2350,7 +2350,7 @@ const PlasmicDescendants = {
   rentamonFooter: ["rentamonFooter"],
   profile: ["profile"],
   sideEffect: ["sideEffect"],
-  navigationRntFooter: ["navigationRntFooter"]
+  navbarRntFooter: ["navbarRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2397,7 +2397,7 @@ type NodeDefaultElementType = {
   rentamonFooter: typeof RentamonFooter;
   profile: typeof ApiRequest;
   sideEffect: typeof SideEffect;
-  navigationRntFooter: typeof NavigationRntFooter;
+  navbarRntFooter: typeof NavbarRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2500,7 +2500,7 @@ export const Plasmicکیفپول = Object.assign(
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     profile: makeNodeComponent("profile"),
     sideEffect: makeNodeComponent("sideEffect"),
-    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
 
     // Metadata about props expected for Plasmicکیفپول
     internalVariantProps: Plasmicکیفپول__VariantProps,

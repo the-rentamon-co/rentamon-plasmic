@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
@@ -150,7 +150,7 @@ export type Plasmicتالار__OverridesType = {
   right7?: Flex__<"div">;
   mid7?: Flex__<"div">;
   left6?: Flex__<"div">;
-  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -2015,10 +2015,10 @@ function Plasmicتالار__RenderFunc(props: {
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__sgL9C)} />
 
-          <NavigationRntFooter
-            data-plasmic-name={"navigationRntFooter"}
-            data-plasmic-override={overrides.navigationRntFooter}
-            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          <NavbarRntFooter
+            data-plasmic-name={"navbarRntFooter"}
+            data-plasmic-override={overrides.navbarRntFooter}
+            className={classNames("__wab_instance", sty.navbarRntFooter)}
             navPage={"menu"}
             userType={(() => {
               try {
@@ -2244,7 +2244,7 @@ const PlasmicDescendants = {
     "right7",
     "mid7",
     "left6",
-    "navigationRntFooter",
+    "navbarRntFooter",
     "sideEffect",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -2406,7 +2406,7 @@ const PlasmicDescendants = {
   right7: ["right7"],
   mid7: ["mid7"],
   left6: ["left6"],
-  navigationRntFooter: ["navigationRntFooter"],
+  navbarRntFooter: ["navbarRntFooter"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -2471,7 +2471,7 @@ type NodeDefaultElementType = {
   right7: "div";
   mid7: "div";
   left6: "div";
-  navigationRntFooter: typeof NavigationRntFooter;
+  navbarRntFooter: typeof NavbarRntFooter;
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -2592,7 +2592,7 @@ export const Plasmicتالار = Object.assign(
     right7: makeNodeComponent("right7"),
     mid7: makeNodeComponent("mid7"),
     left6: makeNodeComponent("left6"),
-    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),

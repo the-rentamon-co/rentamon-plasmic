@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
@@ -89,13 +89,14 @@ export const PlasmicProperties__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicProperties__OverridesType = {
   root?: Flex__<"div">;
-  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   sidebarLite?: Flex__<typeof SidebarLite>;
   profile2?: Flex__<typeof ApiRequest>;
   property?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  propGuide?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -248,10 +249,10 @@ function PlasmicProperties__RenderFunc(props: {
           )}
         >
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <NavigationRntFooter
-              data-plasmic-name={"navigationRntFooter"}
-              data-plasmic-override={overrides.navigationRntFooter}
-              className={classNames("__wab_instance", sty.navigationRntFooter)}
+            <NavbarRntFooter
+              data-plasmic-name={"navbarRntFooter"}
+              data-plasmic-override={overrides.navbarRntFooter}
+              className={classNames("__wab_instance", sty.navbarRntFooter)}
               navPage={"properties"}
               userType={(() => {
                 try {
@@ -1172,6 +1173,28 @@ function PlasmicProperties__RenderFunc(props: {
                             : "\u0627\u06cc\u062c\u0627\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                         </div>
                       </div>
+                      <div
+                        data-plasmic-name={"propGuide"}
+                        data-plasmic-override={overrides.propGuide}
+                        className={classNames(projectcss.all, sty.propGuide)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__vAuf
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__qFn33
+                            )}
+                          >
+                            {"Enter some text"}
+                          </div>
+                        </div>
+                      </div>
                     </Stack__>
                   </div>
                 </ApiRequest>
@@ -1366,24 +1389,26 @@ function PlasmicProperties__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "navigationRntFooter",
+    "navbarRntFooter",
     "header",
     "sideBar2",
     "sidebarLite",
     "profile2",
     "property",
     "apiRequest",
+    "propGuide",
     "sideEffect",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
-  navigationRntFooter: ["navigationRntFooter"],
+  navbarRntFooter: ["navbarRntFooter"],
   header: ["header", "sideBar2", "sidebarLite", "profile2"],
   sideBar2: ["sideBar2"],
   sidebarLite: ["sidebarLite"],
   profile2: ["profile2"],
-  property: ["property", "apiRequest"],
-  apiRequest: ["apiRequest"],
+  property: ["property", "apiRequest", "propGuide"],
+  apiRequest: ["apiRequest", "propGuide"],
+  propGuide: ["propGuide"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -1393,13 +1418,14 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  navigationRntFooter: typeof NavigationRntFooter;
+  navbarRntFooter: typeof NavbarRntFooter;
   header: "div";
   sideBar2: typeof SideBar2;
   sidebarLite: typeof SidebarLite;
   profile2: typeof ApiRequest;
   property: "div";
   apiRequest: typeof ApiRequest;
+  propGuide: "div";
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -1465,13 +1491,14 @@ export const PlasmicProperties = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     sidebarLite: makeNodeComponent("sidebarLite"),
     profile2: makeNodeComponent("profile2"),
     property: makeNodeComponent("property"),
     apiRequest: makeNodeComponent("apiRequest"),
+    propGuide: makeNodeComponent("propGuide"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),

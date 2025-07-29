@@ -65,7 +65,7 @@ import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
-import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -137,7 +137,7 @@ export type PlasmicSupport__OverridesType = {
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
-  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
 };
 
 export interface DefaultSupportProps {}
@@ -1350,10 +1350,10 @@ function PlasmicSupport__RenderFunc(props: {
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
 
-          <NavigationRntFooter
-            data-plasmic-name={"navigationRntFooter"}
-            data-plasmic-override={overrides.navigationRntFooter}
-            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          <NavbarRntFooter
+            data-plasmic-name={"navbarRntFooter"}
+            data-plasmic-override={overrides.navbarRntFooter}
+            className={classNames("__wab_instance", sty.navbarRntFooter)}
           />
         </div>
       </div>
@@ -1408,7 +1408,7 @@ const PlasmicDescendants = {
     "faviconRntComponent",
     "clarityRntComponent",
     "rentamonFooter",
-    "navigationRntFooter"
+    "navbarRntFooter"
   ],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
@@ -1547,7 +1547,7 @@ const PlasmicDescendants = {
   faviconRntComponent: ["faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
   rentamonFooter: ["rentamonFooter"],
-  navigationRntFooter: ["navigationRntFooter"]
+  navbarRntFooter: ["navbarRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1598,7 +1598,7 @@ type NodeDefaultElementType = {
   faviconRntComponent: typeof FaviconRntComponent;
   clarityRntComponent: typeof ClarityRntComponent;
   rentamonFooter: typeof RentamonFooter;
-  navigationRntFooter: typeof NavigationRntFooter;
+  navbarRntFooter: typeof NavbarRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1705,7 +1705,7 @@ export const PlasmicSupport = Object.assign(
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
-    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
 
     // Metadata about props expected for PlasmicSupport
     internalVariantProps: PlasmicSupport__VariantProps,

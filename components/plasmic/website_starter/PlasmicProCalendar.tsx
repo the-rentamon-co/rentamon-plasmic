@@ -67,7 +67,7 @@ import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
-import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
@@ -118,7 +118,7 @@ export type PlasmicProCalendar__OverridesType = {
   aiAgentIframe?: Flex__<typeof Iframe>;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   spacerDontTouch?: Flex__<"div">;
-  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   modal?: Flex__<typeof AntdModal>;
@@ -2625,10 +2625,10 @@ function PlasmicProCalendar__RenderFunc(props: {
               className={classNames(projectcss.all, sty.spacerDontTouch)}
             />
           ) : null}
-          <NavigationRntFooter
-            data-plasmic-name={"navigationRntFooter"}
-            data-plasmic-override={overrides.navigationRntFooter}
-            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          <NavbarRntFooter
+            data-plasmic-name={"navbarRntFooter"}
+            data-plasmic-override={overrides.navbarRntFooter}
+            className={classNames("__wab_instance", sty.navbarRntFooter)}
             navPage={"calendar"}
           />
 
@@ -2781,7 +2781,7 @@ const PlasmicDescendants = {
     "aiAgentIframe",
     "userAvailableFeature",
     "spacerDontTouch",
-    "navigationRntFooter",
+    "navbarRntFooter",
     "clarityRntComponent",
     "faviconRntComponent",
     "modal"
@@ -2833,7 +2833,7 @@ const PlasmicDescendants = {
   aiAgentIframe: ["aiAgentIframe"],
   userAvailableFeature: ["userAvailableFeature"],
   spacerDontTouch: ["spacerDontTouch"],
-  navigationRntFooter: ["navigationRntFooter"],
+  navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   modal: ["modal"]
@@ -2865,7 +2865,7 @@ type NodeDefaultElementType = {
   aiAgentIframe: typeof Iframe;
   userAvailableFeature: typeof ApiRequest;
   spacerDontTouch: "div";
-  navigationRntFooter: typeof NavigationRntFooter;
+  navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   modal: typeof AntdModal;
@@ -2953,7 +2953,7 @@ export const PlasmicProCalendar = Object.assign(
     aiAgentIframe: makeNodeComponent("aiAgentIframe"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     spacerDontTouch: makeNodeComponent("spacerDontTouch"),
-    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     modal: makeNodeComponent("modal"),

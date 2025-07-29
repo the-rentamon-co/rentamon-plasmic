@@ -2147,7 +2147,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.navigationRntFooter:global(.__wab_instance) {
+.navbarRntFooter:global(.__wab_instance) {
   max-width: 100%;
 }
 .freeBox___3Atjn {

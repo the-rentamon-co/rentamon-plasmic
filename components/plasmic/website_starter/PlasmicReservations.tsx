@@ -66,7 +66,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxHmSdr/component
 import ReservationsRecordList from "../../ReservationsRecordList"; // plasmic-import: dDeToLEgGJS_/component
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
-import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdPagination } from "@plasmicpkgs/antd5/skinny/registerPagination";
@@ -124,7 +124,7 @@ export type PlasmicReservations__OverridesType = {
   reserveData2?: Flex__<typeof ApiRequest>;
   reserveMainStack?: Flex__<"div">;
   reserveData?: Flex__<typeof ApiRequest>;
-  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
+  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   finalModal?: Flex__<typeof AntdModal>;
   title2?: Flex__<"div">;
   cancelle?: Flex__<typeof AntdButton>;
@@ -2538,10 +2538,10 @@ function PlasmicReservations__RenderFunc(props: {
               {"\u0628\u0627\u0632\u06af\u0634\u062a"}
             </div>
           </Button>
-          <NavigationRntFooter
-            data-plasmic-name={"navigationRntFooter"}
-            data-plasmic-override={overrides.navigationRntFooter}
-            className={classNames("__wab_instance", sty.navigationRntFooter)}
+          <NavbarRntFooter
+            data-plasmic-name={"navbarRntFooter"}
+            data-plasmic-override={overrides.navbarRntFooter}
+            className={classNames("__wab_instance", sty.navbarRntFooter)}
             navPage={"reservations"}
             userType={(() => {
               try {
@@ -8605,7 +8605,7 @@ const PlasmicDescendants = {
     "reserveData2",
     "reserveMainStack",
     "reserveData",
-    "navigationRntFooter",
+    "navbarRntFooter",
     "finalModal",
     "title2",
     "cancelle",
@@ -8719,7 +8719,7 @@ const PlasmicDescendants = {
   reserveData2: ["reserveData2"],
   reserveMainStack: ["reserveMainStack", "reserveData"],
   reserveData: ["reserveData"],
-  navigationRntFooter: ["navigationRntFooter"],
+  navbarRntFooter: ["navbarRntFooter"],
   finalModal: ["finalModal", "title2", "cancelle"],
   title2: ["title2"],
   cancelle: ["cancelle"],
@@ -8951,7 +8951,7 @@ type NodeDefaultElementType = {
   reserveData2: typeof ApiRequest;
   reserveMainStack: "div";
   reserveData: typeof ApiRequest;
-  navigationRntFooter: typeof NavigationRntFooter;
+  navbarRntFooter: typeof NavbarRntFooter;
   finalModal: typeof AntdModal;
   title2: "div";
   cancelle: typeof AntdButton;
@@ -9115,7 +9115,7 @@ export const PlasmicReservations = Object.assign(
     reserveData2: makeNodeComponent("reserveData2"),
     reserveMainStack: makeNodeComponent("reserveMainStack"),
     reserveData: makeNodeComponent("reserveData"),
-    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
+    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     finalModal: makeNodeComponent("finalModal"),
     title2: makeNodeComponent("title2"),
     cancelle: makeNodeComponent("cancelle"),

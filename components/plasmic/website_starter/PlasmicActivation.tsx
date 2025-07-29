@@ -4521,10 +4521,11 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["goToPage"] = false
+                              $steps["goToPage"] = $state.policiesCheckbox
+                                .isChecked
                                 ? (() => {
                                     const actionArgs = {
-                                      destination: `/calendar`
+                                      destination: `/properties`
                                     };
                                     return (({ destination }) => {
                                       if (
@@ -4579,7 +4580,7 @@ function PlasmicActivation__RenderFunc(props: {
                                               "; path=/";
                                           }
                                           return setCookie(
-                                            "first_visit",
+                                            "prop_tour",
                                             "true",
                                             2
                                           );
@@ -4599,7 +4600,7 @@ function PlasmicActivation__RenderFunc(props: {
                                 $steps["setCookie"] = await $steps["setCookie"];
                               }
 
-                              $steps["runCode"] = true
+                              $steps["runCode"] = false
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {

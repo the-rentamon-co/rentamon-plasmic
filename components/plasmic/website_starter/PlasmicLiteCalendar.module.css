@@ -536,7 +536,7 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__a5Me:global(.__wab_instance) {
+.formField__cuTjQ:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -545,7 +545,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__mYe:global(.__wab_instance) {
+.formField__yLd2:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -558,19 +558,19 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__koBqg {
+.text__fbIh7 {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
 }
-.navigationRntFooter:global(.__wab_instance) {
+.navbarRntFooter:global(.__wab_instance) {
   max-width: 100%;
   display: none;
 }
 @media (max-width: 500px) {
-  .navigationRntFooter:global(.__wab_instance) {
+  .navbarRntFooter:global(.__wab_instance) {
     display: flex;
   }
 }
