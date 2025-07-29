@@ -2078,6 +2078,12 @@ function PlasmicBookings__RenderFunc(props: {
                                     "smallMobile"
                                   )
                                     ? "22px"
+                                    : hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "tablet"
+                                      )
+                                    ? "24px"
                                     : "27px"
                                 }
                                 displayMaxHeight={"none"}
