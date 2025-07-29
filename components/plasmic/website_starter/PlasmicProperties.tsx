@@ -1210,7 +1210,9 @@ function PlasmicProperties__RenderFunc(props: {
                                 sty.text__qFn33
                               )}
                             >
-                              {"Enter some text"}
+                              {
+                                "\u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 + \u0628\u0632\u0646 \u062a\u0627 \u0645\u0634\u062e\u0635\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc"
+                              }
                             </div>
                           </div>
                         </div>

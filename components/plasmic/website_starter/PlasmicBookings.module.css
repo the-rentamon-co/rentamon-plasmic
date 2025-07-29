@@ -1842,7 +1842,6 @@
   }
 }
 .bookCommission {
-  display: flex;
   flex-direction: row-reverse;
   position: relative;
   width: 100%;
@@ -1853,6 +1852,7 @@
   border-bottom-width: 2px;
   border-bottom-style: dashed;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .freeBox__fDlu7 {
