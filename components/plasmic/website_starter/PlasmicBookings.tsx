@@ -100,6 +100,8 @@ export type PlasmicBookings__OverridesType = {
   bookCommission?: Flex__<"div">;
   bookNetPrice?: Flex__<"div">;
   bookSettleStatus?: Flex__<"div">;
+  error?: Flex__<"div">;
+  _true?: Flex__<"div">;
   openAndCloseButton?: Flex__<"div">;
   autoSync?: Flex__<"div">;
   data2?: Flex__<"div">;
@@ -292,7 +294,7 @@ function PlasmicBookings__RenderFunc(props: {
                     ? $state.profile.data.user_info.profile_pic_link
                     : (() => {
                         try {
-                          return $state.profile.data.user_info.profile_pic_link;
+                          return $state.booking.data[0].property_pic_link;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -327,9 +329,21 @@ function PlasmicBookings__RenderFunc(props: {
                       sty.text__hiet1
                     )}
                   >
-                    {
-                      "\u0633\u0627\u062d\u0644\u06cc \u0645\u0647\u062a\u0627\u0628 \u0637\u0628\u0642\u0647 \u06cc\u06a9"
-                    }
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.booking.data[0].property_name;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u0633\u0627\u062d\u0644\u06cc \u0645\u0647\u062a\u0627\u0628 \u0637\u0628\u0642\u0647 \u06cc\u06a9";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
                   </div>
                 </div>
                 <div
@@ -509,7 +523,19 @@ function PlasmicBookings__RenderFunc(props: {
             ref={ref => {
               $refs["booking"] = ref;
             }}
-            url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+            url={(() => {
+              try {
+                return `https://gateway.rentamon.com/webhook/booking?booking_id=${$ctx.params.booking_id}`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           >
             <div
               data-plasmic-name={"generalData"}
@@ -538,9 +564,25 @@ function PlasmicBookings__RenderFunc(props: {
                       sty.text___1Fev3
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062f\u0648\u0634\u0646\u0628\u0647 \u06f1\u06f2 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a"
-                      : "\u062f\u0648\u0634\u0646\u0628\u0647 \u06f1\u06f2 \u0645\u0647\u0631"}
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      "\u062f\u0648\u0634\u0646\u0628\u0647 \u06f1\u06f2 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a"
+                    ) : (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.booking.data[0].check_in;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u062f\u0648\u0634\u0646\u0628\u0647 \u06f1\u06f2 \u0645\u0647\u0631";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    )}
                   </div>
                 </Stack__>
                 <Stack__
@@ -566,6 +608,29 @@ function PlasmicBookings__RenderFunc(props: {
                   >
                     {"\u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647"}
                   </div>
+                  {(() => {
+                    try {
+                      return $state.booking.data[0].status != "reserve";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__sgcH
+                      )}
+                    >
+                      {"\u0644\u063a\u0648 \u0634\u062f\u0647"}
+                    </div>
+                  ) : null}
                 </Stack__>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__b98V)}>
@@ -590,9 +655,25 @@ function PlasmicBookings__RenderFunc(props: {
                       sty.text__o9Y4I
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u06f1\u06f4 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a"
-                      : "\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u06f1\u06f4 \u062a\u06cc\u0631"}
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      "\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u06f1\u06f4 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a"
+                    ) : (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.booking.data[0].check_out;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u06f1\u06f4 \u062a\u06cc\u0631";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    )}
                   </div>
                 </Stack__>
                 <Stack__
@@ -616,9 +697,25 @@ function PlasmicBookings__RenderFunc(props: {
                       sty.text__eijx
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "RNT-1255483"
-                      : "RNT1255483"}
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      "RNT-1255483"
+                    ) : (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.booking.data[0].booking_id;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "RNT1255483";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    )}
                   </div>
                 </Stack__>
               </div>
@@ -731,9 +828,23 @@ function PlasmicBookings__RenderFunc(props: {
                           sty.text__wxoad
                         )}
                       >
-                        {
-                          "\u06f0\u06f9\u06f1\u06f9\u06f6\u06f5\u06f7\u06f2\u06f2\u06f3\u06f4"
-                        }
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (
+                                $state.booking.data[0].guest_phone_number || "؟"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u06f0\u06f9\u06f1\u06f9\u06f6\u06f5\u06f7\u06f2\u06f2\u06f3\u06f4";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
                       </div>
                     </Stack__>
                     <div
@@ -746,9 +857,21 @@ function PlasmicBookings__RenderFunc(props: {
                           sty.text__agLat
                         )}
                       >
-                        {
-                          "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc"
-                        }
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.booking.data[0].guest_name || "؟";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
                       </div>
                     </div>
                   </div>
@@ -832,7 +955,21 @@ function PlasmicBookings__RenderFunc(props: {
                             sty.text__qgaal
                           )}
                         >
-                          {"\u06f2 \u0634\u0628"}
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $state.booking.data[0].night || "؟";
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return " ";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
                         </div>
                       </Stack__>
                       <Stack__
@@ -872,9 +1009,28 @@ function PlasmicBookings__RenderFunc(props: {
                             sty.text__pXy5
                           )}
                         >
-                          {hasVariant(globalVariants, "screen", "mobile")
-                            ? "\u06f5 \u0646\u0641\u0631"
-                            : "5 \u0646\u0641\u0631"}
+                          {hasVariant(globalVariants, "screen", "mobile") ? (
+                            "\u06f5 \u0646\u0641\u0631"
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    $state.booking.data[0].guests_count || "؟"
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return " ";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          )}
                         </div>
                       </Stack__>
                     </div>
@@ -1055,43 +1211,114 @@ function PlasmicBookings__RenderFunc(props: {
                     data-plasmic-override={overrides.bookSettleStatus}
                     className={classNames(projectcss.all, sty.bookSettleStatus)}
                   >
-                    <Stack__
-                      as={"div"}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.freeBox__oFfw)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__qOrc4)}
-                        displayHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "18px"
-                            : "auto"
+                    {(() => {
+                      try {
+                        return $state.booking.data[0].is_settled == false;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
                         }
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image141.svg",
-                          fullWidth: 23,
-                          fullHeight: 23,
-                          aspectRatio: undefined
-                        }}
-                      />
-
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__yiaF
-                        )}
+                        throw e;
+                      }
+                    })() ? (
+                      <Stack__
+                        as={"div"}
+                        data-plasmic-name={"error"}
+                        data-plasmic-override={overrides.error}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty.error)}
                       >
-                        {"\u062a\u0633\u0648\u06cc\u0647"}
-                      </div>
-                    </Stack__>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__qOrc4)}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "18px"
+                              : "auto"
+                          }
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image141.svg",
+                            fullWidth: 23,
+                            fullHeight: 23,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__yiaF
+                          )}
+                        >
+                          {
+                            "\u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647"
+                          }
+                        </div>
+                      </Stack__>
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.booking.data[0].is_settled == true;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <Stack__
+                        as={"div"}
+                        data-plasmic-name={"_true"}
+                        data-plasmic-override={overrides._true}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty._true)}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__eWUza)}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "18px"
+                              : "auto"
+                          }
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image141.svg",
+                            fullWidth: 23,
+                            fullHeight: 23,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__di7DJ
+                          )}
+                        >
+                          {"\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"}
+                        </div>
+                      </Stack__>
+                    ) : null}
                     <div
                       className={classNames(
                         projectcss.all,
@@ -1600,6 +1827,8 @@ const PlasmicDescendants = {
     "bookCommission",
     "bookNetPrice",
     "bookSettleStatus",
+    "error",
+    "_true",
     "openAndCloseButton",
     "autoSync",
     "data2",
@@ -1627,6 +1856,8 @@ const PlasmicDescendants = {
     "bookCommission",
     "bookNetPrice",
     "bookSettleStatus",
+    "error",
+    "_true",
     "openAndCloseButton",
     "autoSync",
     "data2",
@@ -1647,6 +1878,8 @@ const PlasmicDescendants = {
     "bookCommission",
     "bookNetPrice",
     "bookSettleStatus",
+    "error",
+    "_true",
     "openAndCloseButton",
     "autoSync",
     "data2",
@@ -1665,6 +1898,8 @@ const PlasmicDescendants = {
     "bookCommission",
     "bookNetPrice",
     "bookSettleStatus",
+    "error",
+    "_true",
     "openAndCloseButton"
   ],
   data: [
@@ -1675,7 +1910,9 @@ const PlasmicDescendants = {
     "bookPrice",
     "bookCommission",
     "bookNetPrice",
-    "bookSettleStatus"
+    "bookSettleStatus",
+    "error",
+    "_true"
   ],
   title: ["title"],
   guestInfo: ["guestInfo"],
@@ -1683,7 +1920,9 @@ const PlasmicDescendants = {
   bookPrice: ["bookPrice"],
   bookCommission: ["bookCommission"],
   bookNetPrice: ["bookNetPrice"],
-  bookSettleStatus: ["bookSettleStatus"],
+  bookSettleStatus: ["bookSettleStatus", "error", "_true"],
+  error: ["error"],
+  _true: ["_true"],
   openAndCloseButton: ["openAndCloseButton"],
   autoSync: [
     "autoSync",
@@ -1722,6 +1961,8 @@ type NodeDefaultElementType = {
   bookCommission: "div";
   bookNetPrice: "div";
   bookSettleStatus: "div";
+  error: "div";
+  _true: "div";
   openAndCloseButton: "div";
   autoSync: "div";
   data2: "div";
@@ -1809,6 +2050,8 @@ export const PlasmicBookings = Object.assign(
     bookCommission: makeNodeComponent("bookCommission"),
     bookNetPrice: makeNodeComponent("bookNetPrice"),
     bookSettleStatus: makeNodeComponent("bookSettleStatus"),
+    error: makeNodeComponent("error"),
+    _true: makeNodeComponent("_true"),
     openAndCloseButton: makeNodeComponent("openAndCloseButton"),
     autoSync: makeNodeComponent("autoSync"),
     data2: makeNodeComponent("data2"),

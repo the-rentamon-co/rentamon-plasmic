@@ -1046,6 +1046,7 @@
   }
 }
 .propGuide {
+  display: flex;
   flex-direction: column;
   position: absolute;
   width: 100%;
@@ -1057,7 +1058,6 @@
   top: -20px;
   box-shadow: 1px 4px 16px 0px var(--token-kp-6VXCi0jqS);
   min-width: 0;
-  display: none;
 }
 .freeBox__vAuf {
   display: flex;

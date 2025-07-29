@@ -187,7 +187,34 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                return false;
+                function getCookieValue(cookieName) {
+                  const cookies = document.cookie
+                    .split(";")
+                    .map(cookie => cookie.trim());
+                  for (const cookie of cookies) {
+                    const [name, value] = cookie.split("=");
+                    if (name === cookieName) {
+                      return value;
+                    }
+                  }
+                  return null;
+                }
+                function isNotifyEnabled() {
+                  const firstVisitCookie = getCookieValue("first_visit");
+                  if (firstVisitCookie !== null) {
+                    return true;
+                  }
+                  const isNotify = localStorage.getItem("is_notify");
+                  if (isNotify !== null) {
+                    return true;
+                  }
+                  return false;
+                }
+                if (isNotifyEnabled()) {
+                  return true;
+                } else {
+                  return false;
+                }
               })();
             } catch (e) {
               if (

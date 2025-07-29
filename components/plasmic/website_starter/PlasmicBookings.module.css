@@ -842,6 +842,39 @@
     font-size: 12px;
   }
 }
+.text__sgcH {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  font-size: 18px;
+  margin-bottom: 0px;
+  color: var(--token-pZV_D4O-0Dnd);
+}
+@media (max-width: 1200px) {
+  .text__sgcH {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    font-size: 17px;
+  }
+}
+@media (max-width: 500px) {
+  .text__sgcH {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    font-size: 13px;
+  }
+}
+@media (max-width: 350px) {
+  .text__sgcH {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    font-size: 12px;
+  }
+}
 .freeBox__b98V {
   display: flex;
   flex-direction: row;
@@ -1956,7 +1989,6 @@
   }
 }
 .bookNetPrice {
-  display: flex;
   flex-direction: row-reverse;
   position: relative;
   width: 100%;
@@ -1967,6 +1999,7 @@
   border-bottom-width: 2px;
   border-bottom-style: dashed;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .freeBox__rLZsn {
@@ -2126,7 +2159,7 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox__oFfw {
+.error {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -2136,7 +2169,7 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox__oFfw > :global(.__wab_flex-container) {
+.error > :global(.__wab_flex-container) {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
@@ -2144,18 +2177,14 @@
   margin-left: calc(0px - 15px);
   width: calc(100% + 15px);
 }
-.freeBox__oFfw > :global(.__wab_flex-container) > *,
-.freeBox__oFfw > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__oFfw > :global(.__wab_flex-container) > picture > img,
-.freeBox__oFfw
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
+.error > :global(.__wab_flex-container) > *,
+.error > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.error > :global(.__wab_flex-container) > picture > img,
+.error > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-left: 15px;
 }
 @media (max-width: 350px) {
-  .freeBox__oFfw {
+  .error {
     padding: 0px;
   }
 }
@@ -2193,6 +2222,78 @@
 }
 @media (max-width: 350px) {
   .text__yiaF {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+  }
+}
+._true {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+._true > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 15px);
+  width: calc(100% + 15px);
+}
+._true > :global(.__wab_flex-container) > *,
+._true > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+._true > :global(.__wab_flex-container) > picture > img,
+._true > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-left: 15px;
+}
+@media (max-width: 350px) {
+  ._true {
+    padding: 0px;
+  }
+}
+.img__eWUza {
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__eWUza > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 350px) {
+  .img__eWUza {
+    height: 18px;
+  }
+}
+.text__di7DJ {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--token-ZOf6qhi7gIGD);
+}
+@media (max-width: 500px) {
+  .text__di7DJ {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+  }
+}
+@media (max-width: 350px) {
+  .text__di7DJ {
     width: auto;
     height: auto;
     max-width: 100%;

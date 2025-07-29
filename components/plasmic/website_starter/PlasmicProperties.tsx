@@ -206,6 +206,12 @@ function PlasmicProperties__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "propTour",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -1173,28 +1179,42 @@ function PlasmicProperties__RenderFunc(props: {
                             : "\u0627\u06cc\u062c\u0627\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                         </div>
                       </div>
-                      <div
-                        data-plasmic-name={"propGuide"}
-                        data-plasmic-override={overrides.propGuide}
-                        className={classNames(projectcss.all, sty.propGuide)}
-                      >
+                      {(() => {
+                        try {
+                          return $state.propTour === true;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__vAuf
-                          )}
+                          data-plasmic-name={"propGuide"}
+                          data-plasmic-override={overrides.propGuide}
+                          className={classNames(projectcss.all, sty.propGuide)}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__qFn33
+                              sty.freeBox__vAuf
                             )}
                           >
-                            {"Enter some text"}
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__qFn33
+                              )}
+                            >
+                              {"Enter some text"}
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      ) : null}
                     </Stack__>
                   </div>
                 </ApiRequest>
@@ -1363,6 +1383,49 @@ function PlasmicProperties__RenderFunc(props: {
                 typeof $steps["updateStep"].then === "function"
               ) {
                 $steps["updateStep"] = await $steps["updateStep"];
+              }
+
+              $steps["checkPropTourCookie"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                return value;
+                              }
+                            }
+                            return null;
+                          }
+                          if (document.cookie.includes("prop_tour")) {
+                            console.log("in the visit");
+                            const prop_tour = getCookieValue("prop_tour");
+                            if (prop_tour != null) {
+                              $state.propTour = true;
+                            }
+                            return console.log("prop_tour:", $state.propTour);
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkPropTourCookie"] != null &&
+                typeof $steps["checkPropTourCookie"] === "object" &&
+                typeof $steps["checkPropTourCookie"].then === "function"
+              ) {
+                $steps["checkPropTourCookie"] = await $steps[
+                  "checkPropTourCookie"
+                ];
               }
             }}
           />

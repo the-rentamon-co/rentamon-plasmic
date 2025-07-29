@@ -4521,8 +4521,7 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["goToPage"] = $state.policiesCheckbox
-                                .isChecked
+                              $steps["goToPage"] = false
                                 ? (() => {
                                     const actionArgs = {
                                       destination: `/properties`
@@ -4551,7 +4550,60 @@ function PlasmicActivation__RenderFunc(props: {
                                 $steps["goToPage"] = await $steps["goToPage"];
                               }
 
-                              $steps["setCookie"] = true
+                              $steps["setCookieFirstVisit"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          function setCookie(
+                                            name,
+                                            value,
+                                            hours
+                                          ) {
+                                            let expires = "";
+                                            if (hours) {
+                                              const date = new Date();
+                                              date.setTime(
+                                                date.getTime() +
+                                                  hours * 60 * 60 * 1000
+                                              );
+                                              expires =
+                                                "; expires=" +
+                                                date.toUTCString();
+                                            }
+                                            document.cookie =
+                                              name +
+                                              "=" +
+                                              (value || "") +
+                                              expires +
+                                              "; path=/";
+                                          }
+                                          return setCookie(
+                                            "first_visit",
+                                            "true",
+                                            2
+                                          );
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["setCookieFirstVisit"] != null &&
+                                typeof $steps["setCookieFirstVisit"] ===
+                                  "object" &&
+                                typeof $steps["setCookieFirstVisit"].then ===
+                                  "function"
+                              ) {
+                                $steps["setCookieFirstVisit"] = await $steps[
+                                  "setCookieFirstVisit"
+                                ];
+                              }
+
+                              $steps["setCookiePropTour"] = false
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {
@@ -4593,14 +4645,19 @@ function PlasmicActivation__RenderFunc(props: {
                                   })()
                                 : undefined;
                               if (
-                                $steps["setCookie"] != null &&
-                                typeof $steps["setCookie"] === "object" &&
-                                typeof $steps["setCookie"].then === "function"
+                                $steps["setCookiePropTour"] != null &&
+                                typeof $steps["setCookiePropTour"] ===
+                                  "object" &&
+                                typeof $steps["setCookiePropTour"].then ===
+                                  "function"
                               ) {
-                                $steps["setCookie"] = await $steps["setCookie"];
+                                $steps["setCookiePropTour"] = await $steps[
+                                  "setCookiePropTour"
+                                ];
                               }
 
-                              $steps["runCode"] = false
+                              $steps["runCode"] = $state.policiesCheckbox
+                                .isChecked
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {

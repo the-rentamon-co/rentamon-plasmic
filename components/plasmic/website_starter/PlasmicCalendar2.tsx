@@ -314,7 +314,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
             ? false
-            : false
+            : true
       },
       {
         path: "fetchModal.open",
@@ -6508,122 +6508,124 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ];
               }
 
-              $steps["setBlock"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://gateway.rentamon.com/webhook/set-block",
-                        undefined,
-                        (() => {
-                          try {
-                            return (() => {
-                              function convertPersianNumbersToEnglish(str) {
-                                const persianNumbers = [
-                                  "۰",
-                                  "۱",
-                                  "۲",
-                                  "۳",
-                                  "۴",
-                                  "۵",
-                                  "۶",
-                                  "۷",
-                                  "۸",
-                                  "۹"
-                                ];
+              $steps["setBlock"] =
+                $steps.checkConsecutive == true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://gateway.rentamon.com/webhook/set-block",
+                          undefined,
+                          (() => {
+                            try {
+                              return (() => {
+                                function convertPersianNumbersToEnglish(str) {
+                                  const persianNumbers = [
+                                    "۰",
+                                    "۱",
+                                    "۲",
+                                    "۳",
+                                    "۴",
+                                    "۵",
+                                    "۶",
+                                    "۷",
+                                    "۸",
+                                    "۹"
+                                  ];
 
-                                const englishNumbers = [
-                                  "0",
-                                  "1",
-                                  "2",
-                                  "3",
-                                  "4",
-                                  "5",
-                                  "6",
-                                  "7",
-                                  "8",
-                                  "9"
-                                ];
+                                  const englishNumbers = [
+                                    "0",
+                                    "1",
+                                    "2",
+                                    "3",
+                                    "4",
+                                    "5",
+                                    "6",
+                                    "7",
+                                    "8",
+                                    "9"
+                                  ];
 
-                                return str.replace(
-                                  /[۰-۹]/g,
-                                  char =>
-                                    englishNumbers[
-                                      persianNumbers.indexOf(char)
-                                    ] || char
-                                );
-                              }
-                              function padZero(num) {
-                                return num.length === 1 ? `0${num}` : num;
-                              }
-                              function convertTimestampToPersianDateWithEnglishNumbers(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                const [year, month, day] = date
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(
-                                  year
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(month)
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(day)
-                                )}`;
-                                return formattedDate;
-                              }
-                              function getTodayInPersian() {
-                                const today = new Date();
-                                const [year, month, day] = today
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(
-                                  year
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(month)
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(day)
-                                )}`;
-                                return formattedDate;
-                              }
-                              const todayInPersian = getTodayInPersian();
-                              const data = {
-                                days: [$state.fragmentDatePicker.values],
-                                property_id: $props.propertyId,
-                                requested_by: "user",
-                                request_for: "reserve"
-                              };
-                              $state.requestdata = data;
-                              data.days = data.days
-                                .map(timestampArray =>
-                                  timestampArray
-                                    .map(timestamp =>
-                                      convertTimestampToPersianDateWithEnglishNumbers(
-                                        timestamp
+                                  return str.replace(
+                                    /[۰-۹]/g,
+                                    char =>
+                                      englishNumbers[
+                                        persianNumbers.indexOf(char)
+                                      ] || char
+                                  );
+                                }
+                                function padZero(num) {
+                                  return num.length === 1 ? `0${num}` : num;
+                                }
+                                function convertTimestampToPersianDateWithEnglishNumbers(
+                                  timestamp
+                                ) {
+                                  const date = new Date(timestamp * 1000);
+                                  const [year, month, day] = date
+                                    .toLocaleDateString("fa")
+                                    .split("/");
+                                  const formattedDate = `${convertPersianNumbersToEnglish(
+                                    year
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(month)
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(day)
+                                  )}`;
+                                  return formattedDate;
+                                }
+                                function getTodayInPersian() {
+                                  const today = new Date();
+                                  const [year, month, day] = today
+                                    .toLocaleDateString("fa")
+                                    .split("/");
+                                  const formattedDate = `${convertPersianNumbersToEnglish(
+                                    year
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(month)
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(day)
+                                  )}`;
+                                  return formattedDate;
+                                }
+                                const todayInPersian = getTodayInPersian();
+                                const data = {
+                                  days: [$state.fragmentDatePicker.values],
+                                  property_id: $props.propertyId,
+                                  requested_by: "user",
+                                  request_for: "reserve"
+                                };
+                                $state.requestdata = data;
+                                data.days = data.days
+                                  .map(timestampArray =>
+                                    timestampArray
+                                      .map(timestamp =>
+                                        convertTimestampToPersianDateWithEnglishNumbers(
+                                          timestamp
+                                        )
                                       )
-                                    )
-                                    .filter(day => day >= todayInPersian)
-                                )
-                                .flat();
-                              return data;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
+                                      .filter(day => day >= todayInPersian)
+                                  )
+                                  .flat();
+                                return data;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
+                          })()
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
               if (
                 $steps["setBlock"] != null &&
                 typeof $steps["setBlock"] === "object" &&
