@@ -85,6 +85,12 @@ export const PlasmicBookings__ArgProps = new Array<ArgPropType>();
 export type PlasmicBookings__OverridesType = {
   root?: Flex__<"div">;
   detail2?: Flex__<"div">;
+  shab?: Flex__<typeof PlasmicImg__>;
+  jabama?: Flex__<typeof PlasmicImg__>;
+  jajiga?: Flex__<typeof PlasmicImg__>;
+  homsa?: Flex__<typeof PlasmicImg__>;
+  otaghak?: Flex__<typeof PlasmicImg__>;
+  mihmansho?: Flex__<typeof PlasmicImg__>;
   header?: Flex__<"div">;
   returnButton?: Flex__<"div">;
   detail?: Flex__<"div">;
@@ -338,7 +344,7 @@ function PlasmicBookings__RenderFunc(props: {
                             e instanceof TypeError ||
                             e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
-                            return "\u0633\u0627\u062d\u0644\u06cc \u0645\u0647\u062a\u0627\u0628 \u0637\u0628\u0642\u0647 \u06cc\u06a9";
+                            return " ";
                           }
                           throw e;
                         }
@@ -354,32 +360,252 @@ function PlasmicBookings__RenderFunc(props: {
                     hasGap={true}
                     className={classNames(projectcss.all, sty.freeBox__sv7Au)}
                   >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__lsD0)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "23px"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                          ? "26px"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                          ? "46px"
-                          : "63px"
+                    {(() => {
+                      try {
+                        return $state.booking.data[0].website == "shab";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
                       }
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image20.svg",
-                        fullWidth: 46,
-                        fullHeight: 45,
-                        aspectRatio: 1.022222
-                      }}
-                    />
-
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"shab"}
+                        data-plasmic-override={overrides.shab}
+                        alt={""}
+                        className={classNames(sty.shab)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "23px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "46px"
+                            : "63px"
+                        }
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image20.svg",
+                          fullWidth: 46,
+                          fullHeight: 45,
+                          aspectRatio: 1.022222
+                        }}
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.booking.data[0].website == "jabama";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"jabama"}
+                        data-plasmic-override={overrides.jabama}
+                        alt={""}
+                        className={classNames(sty.jabama)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "23px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "46px"
+                            : "63px"
+                        }
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image19.svg",
+                          fullWidth: 45,
+                          fullHeight: 46,
+                          aspectRatio: 0.978261
+                        }}
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.booking.data[0].website == "jajiga";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"jajiga"}
+                        data-plasmic-override={overrides.jajiga}
+                        alt={""}
+                        className={classNames(sty.jajiga)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "23px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "46px"
+                            : "63px"
+                        }
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/jajigaWebp.webp",
+                          fullWidth: 192,
+                          fullHeight: 192,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.booking.data[0].website == "homsa";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"homsa"}
+                        data-plasmic-override={overrides.homsa}
+                        alt={""}
+                        className={classNames(sty.homsa)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "23px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "46px"
+                            : "63px"
+                        }
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image66.png",
+                          fullWidth: 512,
+                          fullHeight: 512,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.booking.data[0].website == "otaghak";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"otaghak"}
+                        data-plasmic-override={overrides.otaghak}
+                        alt={""}
+                        className={classNames(sty.otaghak)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "23px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "46px"
+                            : "63px"
+                        }
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image65.png",
+                          fullWidth: 512,
+                          fullHeight: 512,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.booking.data[0].website == "mihmansho";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"mihmansho"}
+                        data-plasmic-override={overrides.mihmansho}
+                        alt={""}
+                        className={classNames(sty.mihmansho)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "23px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "46px"
+                            : "63px"
+                        }
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image68.png",
+                          fullWidth: 512,
+                          fullHeight: 512,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    ) : null}
                     <div
                       className={classNames(
                         projectcss.all,
@@ -387,7 +613,33 @@ function PlasmicBookings__RenderFunc(props: {
                         sty.text__xqoMq
                       )}
                     >
-                      {"\u0634\u0628"}
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.booking.data[0].website == "jabama"
+                              ? "جاباما"
+                              : $state.booking.data[0].website == "jajiga"
+                              ? "جاجیگا"
+                              : $state.booking.data[0].website == "shab"
+                              ? "شب"
+                              : $state.booking.data[0].website == "otaghak"
+                              ? "اتاقک"
+                              : $state.booking.data[0].website == "mihmansho"
+                              ? "مهمانشو"
+                              : $state.booking.data[0].website == "homsa"
+                              ? "هومسا"
+                              : "یافت نشد";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u0634\u0628";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
                   </Stack__>
                 </div>
@@ -913,10 +1165,7 @@ function PlasmicBookings__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return (
-                                "دریافت رزرو" +
-                                  $state.booking.data[0].created_at || "؟"
-                              );
+                              return (() => {})();
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1627,7 +1876,19 @@ function PlasmicBookings__RenderFunc(props: {
                     </Stack__>
                   </div>
                   {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-                    [2, 3, 4]
+                    (() => {
+                      try {
+                        return $state.booking.data[0].auto_sync_status;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return [];
+                        }
+                        throw e;
+                      }
+                    })()
                   ).map((__plasmic_item_0, __plasmic_idx_0) => {
                     const currentItem = __plasmic_item_0;
                     const currentIndex = __plasmic_idx_0;
@@ -1669,25 +1930,98 @@ function PlasmicBookings__RenderFunc(props: {
                               sty.text__o51MG
                             )}
                           >
-                            {"\u0634\u0628"}
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (() => {
+                                    const websiteMap = {
+                                      shab: "شب",
+                                      jabama: "جاباما",
+                                      homsa: "هومسا",
+                                      jajiga: "جاجیگا",
+                                      mihmansho: "مهمانشو",
+                                      otaghak: "اتاقک"
+                                    };
+                                    const faWebsiteName =
+                                      websiteMap[currentItem.website_name] ||
+                                      currentItem.website_name;
+                                    return faWebsiteName;
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0634\u0628";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
                           </div>
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__q849)}
-                            displayHeight={"27px"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            src={{
-                              src: "/plasmic/website_starter/images/image160.svg",
-                              fullWidth: 22,
-                              fullHeight: 22,
-                              aspectRatio: undefined
-                            }}
-                          />
+                          {(() => {
+                            try {
+                              return currentItem.status == false;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__q849)}
+                              displayHeight={"27px"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image161.svg",
+                                fullWidth: 22,
+                                fullHeight: 22,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          ) : null}
+                          {(() => {
+                            try {
+                              return currentItem.status == true;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__mxXba)}
+                              displayHeight={"27px"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image160.svg",
+                                fullWidth: 22,
+                                fullHeight: 22,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          ) : null}
                         </div>
                       </div>
                     );
@@ -1842,6 +2176,12 @@ const PlasmicDescendants = {
   root: [
     "root",
     "detail2",
+    "shab",
+    "jabama",
+    "jajiga",
+    "homsa",
+    "otaghak",
+    "mihmansho",
     "header",
     "returnButton",
     "detail",
@@ -1869,7 +2209,21 @@ const PlasmicDescendants = {
     "navbarRntFooter",
     "profile"
   ],
-  detail2: ["detail2"],
+  detail2: [
+    "detail2",
+    "shab",
+    "jabama",
+    "jajiga",
+    "homsa",
+    "otaghak",
+    "mihmansho"
+  ],
+  shab: ["shab"],
+  jabama: ["jabama"],
+  jajiga: ["jajiga"],
+  homsa: ["homsa"],
+  otaghak: ["otaghak"],
+  mihmansho: ["mihmansho"],
   header: ["header", "returnButton", "detail"],
   returnButton: ["returnButton"],
   detail: ["detail"],
@@ -1976,6 +2330,12 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   detail2: "div";
+  shab: typeof PlasmicImg__;
+  jabama: typeof PlasmicImg__;
+  jajiga: typeof PlasmicImg__;
+  homsa: typeof PlasmicImg__;
+  otaghak: typeof PlasmicImg__;
+  mihmansho: typeof PlasmicImg__;
   header: "div";
   returnButton: "div";
   detail: "div";
@@ -2065,6 +2425,12 @@ export const PlasmicBookings = Object.assign(
   {
     // Helper components rendering sub-elements
     detail2: makeNodeComponent("detail2"),
+    shab: makeNodeComponent("shab"),
+    jabama: makeNodeComponent("jabama"),
+    jajiga: makeNodeComponent("jajiga"),
+    homsa: makeNodeComponent("homsa"),
+    otaghak: makeNodeComponent("otaghak"),
+    mihmansho: makeNodeComponent("mihmansho"),
     header: makeNodeComponent("header"),
     returnButton: makeNodeComponent("returnButton"),
     detail: makeNodeComponent("detail"),

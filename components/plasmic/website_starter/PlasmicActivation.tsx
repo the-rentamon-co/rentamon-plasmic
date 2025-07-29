@@ -4521,7 +4521,8 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["goToPage"] = false
+                              $steps["goToPage"] = $state.policiesCheckbox
+                                .isChecked
                                 ? (() => {
                                     const actionArgs = {
                                       destination: `/properties`
@@ -4550,7 +4551,7 @@ function PlasmicActivation__RenderFunc(props: {
                                 $steps["goToPage"] = await $steps["goToPage"];
                               }
 
-                              $steps["setCookieFirstVisit"] = true
+                              $steps["setCookieFirstVisit"] = false
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {
@@ -4603,7 +4604,7 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["setCookiePropTour"] = false
+                              $steps["setCookiePropTour"] = true
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {
@@ -4656,8 +4657,7 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["runCode"] = $state.policiesCheckbox
-                                .isChecked
+                              $steps["runCode"] = false
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {

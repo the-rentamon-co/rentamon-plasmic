@@ -1009,7 +1009,7 @@
   justify-content: flex-start;
   align-items: center;
   background: var(--token-KcT8SL_MgztD);
-  box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 16px 0px #00000033;
   border-radius: 30px;
   padding: 8px;
 }

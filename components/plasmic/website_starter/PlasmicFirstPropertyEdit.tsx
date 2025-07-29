@@ -64,6 +64,7 @@ import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/compone
 import { UploadWrapper } from "@plasmicpkgs/antd5/skinny/registerUpload";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -105,8 +106,15 @@ export type PlasmicFirstPropertyEdit__OverridesType = {
   next2?: Flex__<"div">;
   privious2?: Flex__<"div">;
   back?: Flex__<"div">;
+  propGuide3?: Flex__<"div">;
+  propGuide2?: Flex__<"div">;
+  propGuide?: Flex__<"div">;
+  propGuide4?: Flex__<"div">;
+  propGuide5?: Flex__<"div">;
+  propGuide6?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultFirstPropertyEditProps {}
@@ -170,7 +178,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
         path: "step",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $ctx }) => 2
       },
       {
         path: "hostType",
@@ -183,6 +191,12 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "propTour",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -1561,6 +1575,102 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           "updateLoading2"
                         ];
                       }
+
+                      $steps["goToProLitePanel"] =
+                        $state.propTour === true
+                          ? (() => {
+                              const actionArgs = { destination: `/calendar` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["goToProLitePanel"] != null &&
+                        typeof $steps["goToProLitePanel"] === "object" &&
+                        typeof $steps["goToProLitePanel"].then === "function"
+                      ) {
+                        $steps["goToProLitePanel"] = await $steps[
+                          "goToProLitePanel"
+                        ];
+                      }
+
+                      $steps["setCookieFirstVisit"] =
+                        $state.propTour === true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    function setCookie(name, value, hours) {
+                                      let expires = "";
+                                      if (hours) {
+                                        const date = new Date();
+                                        date.setTime(
+                                          date.getTime() +
+                                            hours * 60 * 60 * 1000
+                                        );
+                                        expires =
+                                          "; expires=" + date.toUTCString();
+                                      }
+                                      document.cookie =
+                                        name +
+                                        "=" +
+                                        (value || "") +
+                                        expires +
+                                        "; path=/";
+                                    }
+                                    return setCookie("first_visit", "true", 2);
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["setCookieFirstVisit"] != null &&
+                        typeof $steps["setCookieFirstVisit"] === "object" &&
+                        typeof $steps["setCookieFirstVisit"].then === "function"
+                      ) {
+                        $steps["setCookieFirstVisit"] = await $steps[
+                          "setCookieFirstVisit"
+                        ];
+                      }
+
+                      $steps["killPropTourCookie"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  return (document.cookie =
+                                    "prop_tour=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/");
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["killPropTourCookie"] != null &&
+                        typeof $steps["killPropTourCookie"] === "object" &&
+                        typeof $steps["killPropTourCookie"].then === "function"
+                      ) {
+                        $steps["killPropTourCookie"] = await $steps[
+                          "killPropTourCookie"
+                        ];
+                      }
                     }}
                   >
                     {(() => {
@@ -1669,6 +1779,63 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
             data-plasmic-override={overrides.back}
             className={classNames(projectcss.all, sty.back)}
           >
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $state.propTour === true && $state.step === 2;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : false
+            ) ? (
+              <div
+                data-plasmic-name={"propGuide3"}
+                data-plasmic-override={overrides.propGuide3}
+                className={classNames(projectcss.all, sty.propGuide3)}
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___9F5QE)}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : (() => {
+                          try {
+                            return $state.step === 2;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                  ) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jeRkc
+                      )}
+                    >
+                      {
+                        "\u06cc\u0647 \u0639\u06a9\u0633 \u0628\u0627 \u062d\u062c\u0645 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f2 \u0645\u06af\u0627\u0628\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                      }
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+            ) : null}
             <div
               className={classNames(
                 projectcss.all,
@@ -1711,6 +1878,209 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                 {"\u0627\u0646\u0635\u0631\u0627\u0641"}
               </div>
             </div>
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $state.propTour === true && $state.step === 1;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : false
+            ) ? (
+              <div
+                data-plasmic-name={"propGuide2"}
+                data-plasmic-override={overrides.propGuide2}
+                className={classNames(projectcss.all, sty.propGuide2)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__xtdkH)}>
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : (() => {
+                          try {
+                            return $state.step === 1;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                  ) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__yv5A
+                      )}
+                    >
+                      {
+                        "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633"
+                      }
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return $state.propTour === true && $state.step === 0;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : (() => {
+                    try {
+                      return $state.propTour === true && $state.step === 0;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+            ) ? (
+              <div
+                data-plasmic-name={"propGuide"}
+                data-plasmic-override={overrides.propGuide}
+                className={classNames(projectcss.all, sty.propGuide)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__dFvA6)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__jRcu
+                    )}
+                  >
+                    {
+                      "\u0627\u0648\u0644 \u0627\u06cc\u0646\u062c\u0627 \u0628\u06af\u0648 \u0646\u0648\u0639 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0686\u06cc\u0647"
+                    }
+                  </div>
+                </div>
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? true
+                : (() => {
+                    try {
+                      return $state.propTour === true && $state.step === 1;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+            ) ? (
+              <div
+                data-plasmic-name={"propGuide4"}
+                data-plasmic-override={overrides.propGuide4}
+                className={classNames(projectcss.all, sty.propGuide4)}
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___4GhiK)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___5Fhpz
+                    )}
+                  >
+                    {
+                      "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633"
+                    }
+                  </div>
+                </div>
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? true
+                : (() => {
+                    try {
+                      return $state.propTour === true && $state.step === 2;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+            ) ? (
+              <div
+                data-plasmic-name={"propGuide5"}
+                data-plasmic-override={overrides.propGuide5}
+                className={classNames(projectcss.all, sty.propGuide5)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__j0Y5F)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__naA0P
+                    )}
+                  >
+                    {
+                      "\u06cc\u0647 \u0639\u06a9\u0633 \u0628\u0627 \u062d\u062c\u0645 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f2 \u0645\u06af\u0627\u0628\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                    }
+                  </div>
+                </div>
+                {false ? (
+                  <div
+                    data-plasmic-name={"propGuide6"}
+                    data-plasmic-override={overrides.propGuide6}
+                    className={classNames(projectcss.all, sty.propGuide6)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__df9G6)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___8KLf4
+                        )}
+                      >
+                        {
+                          "\u06cc\u0647 \u0639\u06a9\u0633 \u0628\u0627 \u062d\u062c\u0645 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f2 \u0645\u06af\u0627\u0628\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                        }
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__b06Bk)}>
             <ClarityRntComponent
@@ -1725,6 +2095,57 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["checkPropTourCookie"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                return value;
+                              }
+                            }
+                            return null;
+                          }
+                          if (document.cookie.includes("prop_tour")) {
+                            console.log("in the visit");
+                            const prop_tour = getCookieValue("prop_tour");
+                            if (prop_tour != null) {
+                              $state.propTour = true;
+                            }
+                            return console.log("prop_tour:", $state.propTour);
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkPropTourCookie"] != null &&
+                typeof $steps["checkPropTourCookie"] === "object" &&
+                typeof $steps["checkPropTourCookie"].then === "function"
+              ) {
+                $steps["checkPropTourCookie"] = await $steps[
+                  "checkPropTourCookie"
+                ];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1748,8 +2169,15 @@ const PlasmicDescendants = {
     "next2",
     "privious2",
     "back",
+    "propGuide3",
+    "propGuide2",
+    "propGuide",
+    "propGuide4",
+    "propGuide5",
+    "propGuide6",
     "clarityRntComponent",
-    "faviconRntComponent"
+    "faviconRntComponent",
+    "sideEffect"
   ],
   type: ["type"],
   name: ["name", "textInput", "newButtons", "next", "privious"],
@@ -1772,9 +2200,24 @@ const PlasmicDescendants = {
   newButtons2: ["newButtons2", "next2", "privious2"],
   next2: ["next2"],
   privious2: ["privious2"],
-  back: ["back"],
+  back: [
+    "back",
+    "propGuide3",
+    "propGuide2",
+    "propGuide",
+    "propGuide4",
+    "propGuide5",
+    "propGuide6"
+  ],
+  propGuide3: ["propGuide3"],
+  propGuide2: ["propGuide2"],
+  propGuide: ["propGuide"],
+  propGuide4: ["propGuide4"],
+  propGuide5: ["propGuide5", "propGuide6"],
+  propGuide6: ["propGuide6"],
   clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"]
+  faviconRntComponent: ["faviconRntComponent"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1795,8 +2238,15 @@ type NodeDefaultElementType = {
   next2: "div";
   privious2: "div";
   back: "div";
+  propGuide3: "div";
+  propGuide2: "div";
+  propGuide: "div";
+  propGuide4: "div";
+  propGuide5: "div";
+  propGuide6: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1873,8 +2323,15 @@ export const PlasmicFirstPropertyEdit = Object.assign(
     next2: makeNodeComponent("next2"),
     privious2: makeNodeComponent("privious2"),
     back: makeNodeComponent("back"),
+    propGuide3: makeNodeComponent("propGuide3"),
+    propGuide2: makeNodeComponent("propGuide2"),
+    propGuide: makeNodeComponent("propGuide"),
+    propGuide4: makeNodeComponent("propGuide4"),
+    propGuide5: makeNodeComponent("propGuide5"),
+    propGuide6: makeNodeComponent("propGuide6"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicFirstPropertyEdit
     internalVariantProps: PlasmicFirstPropertyEdit__VariantProps,
