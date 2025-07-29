@@ -820,37 +820,6 @@ function PlasmicProCalendar__RenderFunc(props: {
                 ];
               }
 
-              $steps["updateStateVariable2"] = false
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        if (!document.cookie.includes("shab_disconnrct")) {
-                          return ($state.alertModal.open = true);
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable2"] != null &&
-                typeof $steps["updateStateVariable2"] === "object" &&
-                typeof $steps["updateStateVariable2"].then === "function"
-              ) {
-                $steps["updateStateVariable2"] = await $steps[
-                  "updateStateVariable2"
-                ];
-              }
-
               $steps["getFirstTimeCookie"] = true
                 ? (() => {
                     const actionArgs = {
@@ -958,6 +927,35 @@ function PlasmicProCalendar__RenderFunc(props: {
                 $steps["invokeGlobalAction"] = await $steps[
                   "invokeGlobalAction"
                 ];
+              }
+
+              $steps["alertModalOpen"] = false
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        if (!document.cookie.includes("shab_disconnrct")) {
+                          return ($state.alertModal.open = true);
+                        }
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["alertModalOpen"] != null &&
+                typeof $steps["alertModalOpen"] === "object" &&
+                typeof $steps["alertModalOpen"].then === "function"
+              ) {
+                $steps["alertModalOpen"] = await $steps["alertModalOpen"];
               }
             }}
           />

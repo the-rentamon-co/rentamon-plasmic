@@ -5364,6 +5364,33 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
+                              $steps["jabamaContact"] =
+                                $state.form.value.jabamaOTP !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "POST",
+                                          "https://gateway.rentamon.com/webhook/jabamacontact",
+                                          undefined,
+                                          undefined
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["jabamaContact"] != null &&
+                                typeof $steps["jabamaContact"] === "object" &&
+                                typeof $steps["jabamaContact"].then ===
+                                  "function"
+                              ) {
+                                $steps["jabamaContact"] = await $steps[
+                                  "jabamaContact"
+                                ];
+                              }
+
                               $steps["invokeGlobalAction"] =
                                 $steps.jabamaVerify.status != 200
                                   ? (() => {
@@ -5433,46 +5460,6 @@ function PlasmicActivation__RenderFunc(props: {
                               ) {
                                 $steps["platformStatus"] = await $steps[
                                   "platformStatus"
-                                ];
-                              }
-
-                              $steps["jabamaContact"] =
-                                $state.form.value.jabamaOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          "https://gateway.rentamon.com/webhook/jabamacontact",
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return $state.user_id;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["jabamaContact"] != null &&
-                                typeof $steps["jabamaContact"] === "object" &&
-                                typeof $steps["jabamaContact"].then ===
-                                  "function"
-                              ) {
-                                $steps["jabamaContact"] = await $steps[
-                                  "jabamaContact"
                                 ];
                               }
                             }}
