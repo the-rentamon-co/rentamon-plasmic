@@ -2727,6 +2727,7 @@
   .guide {
     padding-top: 0px;
     padding-bottom: 14px;
+    display: flex;
   }
 }
 @media (max-width: 350px) {

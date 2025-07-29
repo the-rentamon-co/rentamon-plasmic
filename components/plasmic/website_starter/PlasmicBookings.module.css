@@ -810,7 +810,7 @@
     width: 100%;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
-    padding: 10px;
+    padding: 10px 10px 7rem;
   }
 }
 @media (max-width: 350px) {

@@ -9853,122 +9853,152 @@ function PlasmicCalendar2__RenderFunc(props: {
           </div>
         </AntdModal>
       </div>
-      <div
-        data-plasmic-name={"guide"}
-        data-plasmic-override={overrides.guide}
-        className={classNames(projectcss.all, sty.guide)}
-      >
+      {(
+        hasVariant(globalVariants, "screen", "mobile")
+          ? (() => {
+              try {
+                return $props.isFirstVisit === false;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })()
+          : (() => {
+              try {
+                return $state.isTheFirstVisit === false;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })()
+      ) ? (
         <div
-          data-plasmic-name={"reserve1"}
-          data-plasmic-override={overrides.reserve1}
-          className={classNames(projectcss.all, sty.reserve1)}
+          data-plasmic-name={"guide"}
+          data-plasmic-override={overrides.guide}
+          className={classNames(projectcss.all, sty.guide)}
         >
           <div
-            data-plasmic-name={"color"}
-            data-plasmic-override={overrides.color}
-            className={classNames(projectcss.all, sty.color)}
-          />
-
-          <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
-            className={classNames(projectcss.all, sty.text)}
+            data-plasmic-name={"reserve1"}
+            data-plasmic-override={overrides.reserve1}
+            className={classNames(projectcss.all, sty.reserve1)}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__oE5Mq
-              )}
+              data-plasmic-name={"color"}
+              data-plasmic-override={overrides.color}
+              className={classNames(projectcss.all, sty.color)}
+            />
+
+            <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
+              className={classNames(projectcss.all, sty.text)}
             >
-              {"\u0631\u0632\u0631\u0648"}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__oE5Mq
+                )}
+              >
+                {"\u0631\u0632\u0631\u0648"}
+              </div>
+            </div>
+          </div>
+          <div
+            data-plasmic-name={"reserve2"}
+            data-plasmic-override={overrides.reserve2}
+            className={classNames(projectcss.all, sty.reserve2)}
+          >
+            <div
+              data-plasmic-name={"color2"}
+              data-plasmic-override={overrides.color2}
+              className={classNames(projectcss.all, sty.color2)}
+            />
+
+            <div
+              data-plasmic-name={"text2"}
+              data-plasmic-override={overrides.text2}
+              className={classNames(projectcss.all, sty.text2)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___3DCBm
+                )}
+              >
+                {"\u0628\u0633\u062a\u0647"}
+              </div>
+            </div>
+          </div>
+          <div
+            data-plasmic-name={"reserve3"}
+            data-plasmic-override={overrides.reserve3}
+            className={classNames(projectcss.all, sty.reserve3)}
+          >
+            <div
+              data-plasmic-name={"color3"}
+              data-plasmic-override={overrides.color3}
+              className={classNames(projectcss.all, sty.color3)}
+            />
+
+            <div
+              data-plasmic-name={"text3"}
+              data-plasmic-override={overrides.text3}
+              className={classNames(projectcss.all, sty.text3)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__pBKau
+                )}
+              >
+                {"\u062a\u062e\u0641\u06cc\u0641"}
+              </div>
+            </div>
+          </div>
+          <div
+            data-plasmic-name={"reserve4"}
+            data-plasmic-override={overrides.reserve4}
+            className={classNames(projectcss.all, sty.reserve4)}
+          >
+            <Stack__
+              as={"div"}
+              data-plasmic-name={"color4"}
+              data-plasmic-override={overrides.color4}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.color4)}
+            />
+
+            <div
+              data-plasmic-name={"text4"}
+              data-plasmic-override={overrides.text4}
+              className={classNames(projectcss.all, sty.text4)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___9D5GC
+                )}
+              >
+                {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
+              </div>
             </div>
           </div>
         </div>
-        <div
-          data-plasmic-name={"reserve2"}
-          data-plasmic-override={overrides.reserve2}
-          className={classNames(projectcss.all, sty.reserve2)}
-        >
-          <div
-            data-plasmic-name={"color2"}
-            data-plasmic-override={overrides.color2}
-            className={classNames(projectcss.all, sty.color2)}
-          />
-
-          <div
-            data-plasmic-name={"text2"}
-            data-plasmic-override={overrides.text2}
-            className={classNames(projectcss.all, sty.text2)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___3DCBm
-              )}
-            >
-              {"\u0628\u0633\u062a\u0647"}
-            </div>
-          </div>
-        </div>
-        <div
-          data-plasmic-name={"reserve3"}
-          data-plasmic-override={overrides.reserve3}
-          className={classNames(projectcss.all, sty.reserve3)}
-        >
-          <div
-            data-plasmic-name={"color3"}
-            data-plasmic-override={overrides.color3}
-            className={classNames(projectcss.all, sty.color3)}
-          />
-
-          <div
-            data-plasmic-name={"text3"}
-            data-plasmic-override={overrides.text3}
-            className={classNames(projectcss.all, sty.text3)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__pBKau
-              )}
-            >
-              {"\u062a\u062e\u0641\u06cc\u0641"}
-            </div>
-          </div>
-        </div>
-        <div
-          data-plasmic-name={"reserve4"}
-          data-plasmic-override={overrides.reserve4}
-          className={classNames(projectcss.all, sty.reserve4)}
-        >
-          <Stack__
-            as={"div"}
-            data-plasmic-name={"color4"}
-            data-plasmic-override={overrides.color4}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.color4)}
-          />
-
-          <div
-            data-plasmic-name={"text4"}
-            data-plasmic-override={overrides.text4}
-            className={classNames(projectcss.all, sty.text4)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___9D5GC
-              )}
-            >
-              {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
-            </div>
-          </div>
-        </div>
-      </div>
+      ) : null}
       <div
         data-plasmic-name={"submitChange"}
         data-plasmic-override={overrides.submitChange}
