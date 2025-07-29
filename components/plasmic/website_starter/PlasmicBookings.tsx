@@ -87,6 +87,7 @@ export type PlasmicBookings__OverridesType = {
   returnButton?: Flex__<"div">;
   detail?: Flex__<"div">;
   generalData?: Flex__<"div">;
+  feature?: Flex__<"div">;
   smartBooking?: Flex__<"div">;
   data?: Flex__<"div">;
   title?: Flex__<"div">;
@@ -97,7 +98,7 @@ export type PlasmicBookings__OverridesType = {
   bookNetPrice?: Flex__<"div">;
   bookSettleStatus?: Flex__<"div">;
   openAndCloseButton?: Flex__<"div">;
-  smartBooking2?: Flex__<"div">;
+  autoSync?: Flex__<"div">;
   data2?: Flex__<"div">;
   title2?: Flex__<"div">;
   description?: Flex__<"div">;
@@ -229,8 +230,12 @@ function PlasmicBookings__RenderFunc(props: {
                   alt={""}
                   className={classNames(sty.img___9Mfa9)}
                   displayHeight={
-                    hasVariant(globalVariants, "screen", "mobile")
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "28px"
+                      : hasVariant(globalVariants, "screen", "mobile")
                       ? "33px"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "48px"
                       : "60px"
                   }
                   displayMaxHeight={"none"}
@@ -276,8 +281,12 @@ function PlasmicBookings__RenderFunc(props: {
                     alt={""}
                     className={classNames(sty.img___3DxSj)}
                     displayHeight={
-                      hasVariant(globalVariants, "screen", "mobile")
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "23px"
+                        : hasVariant(globalVariants, "screen", "mobile")
                         ? "26px"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "46px"
                         : "63px"
                     }
                     displayMaxHeight={"none"}
@@ -313,7 +322,11 @@ function PlasmicBookings__RenderFunc(props: {
             className={classNames(projectcss.all, sty.generalData)}
           >
             <div className={classNames(projectcss.all, sty.freeBox__pxMr9)}>
-              <div className={classNames(projectcss.all, sty.freeBox__lRf4L)}>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__lRf4L)}
+              >
                 <div
                   className={classNames(
                     projectcss.all,
@@ -330,12 +343,16 @@ function PlasmicBookings__RenderFunc(props: {
                     sty.text___1Fev3
                   )}
                 >
-                  {
-                    "\u062f\u0648\u0634\u0646\u0628\u0647 \u06f1\u06f2 \u0645\u0647\u0631"
-                  }
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062f\u0648\u0634\u0646\u0628\u0647 \u06f1\u06f2 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a"
+                    : "\u062f\u0648\u0634\u0646\u0628\u0647 \u06f1\u06f2 \u0645\u0647\u0631"}
                 </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox___8Epy1)}>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox___8Epy1)}
+              >
                 <div
                   className={classNames(
                     projectcss.all,
@@ -354,10 +371,14 @@ function PlasmicBookings__RenderFunc(props: {
                 >
                   {"\u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647"}
                 </div>
-              </div>
+              </Stack__>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__b98V)}>
-              <div className={classNames(projectcss.all, sty.freeBox__hxnJz)}>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__hxnJz)}
+              >
                 <div
                   className={classNames(
                     projectcss.all,
@@ -374,12 +395,16 @@ function PlasmicBookings__RenderFunc(props: {
                     sty.text__o9Y4I
                   )}
                 >
-                  {
-                    "\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u06f1\u06f4 \u062a\u06cc\u0631"
-                  }
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u06f1\u06f4 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a"
+                    : "\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u06f1\u06f4 \u062a\u06cc\u0631"}
                 </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__rBuvx)}>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__rBuvx)}
+              >
                 <div
                   className={classNames(
                     projectcss.all,
@@ -396,15 +421,19 @@ function PlasmicBookings__RenderFunc(props: {
                     sty.text__eijx
                   )}
                 >
-                  {"RNT1255483"}
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "RNT-1255483"
+                    : "RNT1255483"}
                 </div>
-              </div>
+              </Stack__>
             </div>
           </div>
           <Stack__
             as={"div"}
+            data-plasmic-name={"feature"}
+            data-plasmic-override={overrides.feature}
             hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__uFzao)}
+            className={classNames(projectcss.all, sty.feature)}
           >
             <div
               data-plasmic-name={"smartBooking"}
@@ -458,7 +487,11 @@ function PlasmicBookings__RenderFunc(props: {
                     displayMaxWidth={"100%"}
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
-                    displayWidth={"auto"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "26px"
+                        : "auto"
+                    }
                     loading={"lazy"}
                     src={{
                       src: "/plasmic/website_starter/images/image155.svg",
@@ -577,7 +610,11 @@ function PlasmicBookings__RenderFunc(props: {
                         className={classNames(sty.img__awjXa)}
                         displayHeight={"auto"}
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
                         displayWidth={"auto"}
@@ -613,7 +650,11 @@ function PlasmicBookings__RenderFunc(props: {
                         className={classNames(sty.img__jioCg)}
                         displayHeight={"auto"}
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
                         displayWidth={"auto"}
@@ -633,7 +674,9 @@ function PlasmicBookings__RenderFunc(props: {
                           sty.text__pXy5
                         )}
                       >
-                        {"5 \u0646\u0641\u0631"}
+                        {hasVariant(globalVariants, "screen", "mobile")
+                          ? "\u06f5 \u0646\u0641\u0631"
+                          : "5 \u0646\u0641\u0631"}
                       </div>
                     </Stack__>
                   </div>
@@ -813,7 +856,11 @@ function PlasmicBookings__RenderFunc(props: {
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__qOrc4)}
-                      displayHeight={"auto"}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "18px"
+                          : "auto"
+                      }
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
@@ -942,9 +989,9 @@ function PlasmicBookings__RenderFunc(props: {
               </div>
             </div>
             <div
-              data-plasmic-name={"smartBooking2"}
-              data-plasmic-override={overrides.smartBooking2}
-              className={classNames(projectcss.all, sty.smartBooking2)}
+              data-plasmic-name={"autoSync"}
+              data-plasmic-override={overrides.autoSync}
+              className={classNames(projectcss.all, sty.autoSync)}
             >
               <div
                 data-plasmic-name={"data2"}
@@ -998,9 +1045,19 @@ function PlasmicBookings__RenderFunc(props: {
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__x4L7O)}
-                      displayHeight={"37px"}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "18px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "30px"
+                          : "37px"
+                      }
                       displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : "100%"
+                      }
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
                       displayWidth={"auto"}
@@ -1032,9 +1089,19 @@ function PlasmicBookings__RenderFunc(props: {
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__gLuYa)}
-                      displayHeight={"auto"}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "22px"
+                          : "auto"
+                      }
                       displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "100%"
+                          : "100%"
+                      }
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
                       displayWidth={"auto"}
@@ -1204,21 +1271,37 @@ function PlasmicBookings__RenderFunc(props: {
                   alt={""}
                   className={classNames(
                     sty.img__os5Gg,
-                    (() => {
-                      try {
-                        return $state.accordionOpenSmartBooking
-                          ? ".rotate-normal"
-                          : "rotate-flipped";
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return $state.accordionOpenAutoSync
+                              ? ".rotate-normal"
+                              : "rotate-flipped";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : (() => {
+                          try {
+                            return $state.accordionOpenSmartBooking
+                              ? ".rotate-normal"
+                              : "rotate-flipped";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
                   )}
                   displayHeight={"auto"}
                   displayMaxHeight={"none"}
@@ -1257,6 +1340,7 @@ const PlasmicDescendants = {
     "returnButton",
     "detail",
     "generalData",
+    "feature",
     "smartBooking",
     "data",
     "title",
@@ -1267,7 +1351,7 @@ const PlasmicDescendants = {
     "bookNetPrice",
     "bookSettleStatus",
     "openAndCloseButton",
-    "smartBooking2",
+    "autoSync",
     "data2",
     "title2",
     "description",
@@ -1279,6 +1363,25 @@ const PlasmicDescendants = {
   returnButton: ["returnButton"],
   detail: ["detail"],
   generalData: ["generalData"],
+  feature: [
+    "feature",
+    "smartBooking",
+    "data",
+    "title",
+    "guestInfo",
+    "bookInfo",
+    "bookPrice",
+    "bookCommission",
+    "bookNetPrice",
+    "bookSettleStatus",
+    "openAndCloseButton",
+    "autoSync",
+    "data2",
+    "title2",
+    "description",
+    "platformStatus",
+    "openAndCloseButton2"
+  ],
   smartBooking: [
     "smartBooking",
     "data",
@@ -1309,8 +1412,8 @@ const PlasmicDescendants = {
   bookNetPrice: ["bookNetPrice"],
   bookSettleStatus: ["bookSettleStatus"],
   openAndCloseButton: ["openAndCloseButton"],
-  smartBooking2: [
-    "smartBooking2",
+  autoSync: [
+    "autoSync",
     "data2",
     "title2",
     "description",
@@ -1333,6 +1436,7 @@ type NodeDefaultElementType = {
   returnButton: "div";
   detail: "div";
   generalData: "div";
+  feature: "div";
   smartBooking: "div";
   data: "div";
   title: "div";
@@ -1343,7 +1447,7 @@ type NodeDefaultElementType = {
   bookNetPrice: "div";
   bookSettleStatus: "div";
   openAndCloseButton: "div";
-  smartBooking2: "div";
+  autoSync: "div";
   data2: "div";
   title2: "div";
   description: "div";
@@ -1416,6 +1520,7 @@ export const PlasmicBookings = Object.assign(
     returnButton: makeNodeComponent("returnButton"),
     detail: makeNodeComponent("detail"),
     generalData: makeNodeComponent("generalData"),
+    feature: makeNodeComponent("feature"),
     smartBooking: makeNodeComponent("smartBooking"),
     data: makeNodeComponent("data"),
     title: makeNodeComponent("title"),
@@ -1426,7 +1531,7 @@ export const PlasmicBookings = Object.assign(
     bookNetPrice: makeNodeComponent("bookNetPrice"),
     bookSettleStatus: makeNodeComponent("bookSettleStatus"),
     openAndCloseButton: makeNodeComponent("openAndCloseButton"),
-    smartBooking2: makeNodeComponent("smartBooking2"),
+    autoSync: makeNodeComponent("autoSync"),
     data2: makeNodeComponent("data2"),
     title2: makeNodeComponent("title2"),
     description: makeNodeComponent("description"),
