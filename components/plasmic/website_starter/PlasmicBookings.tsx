@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import NavigationRntFooter from "../../NavigationRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -101,6 +103,7 @@ export type PlasmicBookings__OverridesType = {
   description?: Flex__<"div">;
   platformStatus?: Flex__<"div">;
   openAndCloseButton2?: Flex__<"div">;
+  navigationRntFooter?: Flex__<typeof NavigationRntFooter>;
 };
 
 export interface DefaultBookingsProps {}
@@ -160,6 +163,12 @@ function PlasmicBookings__RenderFunc(props: {
       },
       {
         path: "variable2",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "userType",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
@@ -524,8 +533,8 @@ function PlasmicBookings__RenderFunc(props: {
                     (() => {
                       try {
                         return $state.accordionOpenSmartBooking
-                          ? "display_hidden"
-                          : "display_block";
+                          ? "display_block"
+                          : "display_hidden";
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -638,8 +647,8 @@ function PlasmicBookings__RenderFunc(props: {
                     (() => {
                       try {
                         return $state.accordionOpenSmartBooking
-                          ? "display_hidden"
-                          : "display_block";
+                          ? "display_block"
+                          : "display_hidden";
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -698,8 +707,8 @@ function PlasmicBookings__RenderFunc(props: {
                     (() => {
                       try {
                         return $state.accordionOpenSmartBooking
-                          ? "display_hidden"
-                          : "display_block";
+                          ? "display_block"
+                          : "display_hidden";
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -968,36 +977,99 @@ function PlasmicBookings__RenderFunc(props: {
                   <div
                     className={classNames(
                       projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__siMi
+                      sty.freeBox__oIafE,
+                      (() => {
+                        try {
+                          return $state.accordionOpenAutoSync
+                            ? "display_hidden"
+                            : "display_block";
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
                     )}
                   >
-                    {
-                      "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
-                    }
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__x4L7O)}
+                      displayHeight={"37px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image160.svg",
+                        fullWidth: 22,
+                        fullHeight: 22,
+                        aspectRatio: undefined
+                      }}
+                    />
                   </div>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__gLuYa)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image159.svg",
-                      fullWidth: 29,
-                      fullHeight: 28,
-                      aspectRatio: undefined
-                    }}
-                  />
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__ljl7)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__joCMm
+                      )}
+                    >
+                      {
+                        "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+                      }
+                    </div>
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__gLuYa)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image159.svg",
+                        fullWidth: 29,
+                        fullHeight: 28,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Stack__>
                 </Stack__>
                 <div
                   data-plasmic-name={"description"}
                   data-plasmic-override={overrides.description}
-                  className={classNames(projectcss.all, sty.description)}
+                  className={classNames(
+                    projectcss.all,
+                    sty.description,
+                    (() => {
+                      try {
+                        return $state.accordionOpenAutoSync
+                          ? "display_block"
+                          : "display_hidden";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  )}
                 >
                   <Stack__
                     as={"div"}
@@ -1032,8 +1104,8 @@ function PlasmicBookings__RenderFunc(props: {
                         (() => {
                           try {
                             return $state.accordionOpenAutoSync
-                              ? "display_hidden"
-                              : "display_block";
+                              ? "display_block"
+                              : "display_hidden";
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -1165,6 +1237,13 @@ function PlasmicBookings__RenderFunc(props: {
               </div>
             </div>
           </Stack__>
+          <NavigationRntFooter
+            data-plasmic-name={"navigationRntFooter"}
+            data-plasmic-override={overrides.navigationRntFooter}
+            className={classNames("__wab_instance", sty.navigationRntFooter)}
+            navPage={"reservations"}
+            userType={"1"}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1193,7 +1272,8 @@ const PlasmicDescendants = {
     "title2",
     "description",
     "platformStatus",
-    "openAndCloseButton2"
+    "openAndCloseButton2",
+    "navigationRntFooter"
   ],
   header: ["header", "returnButton", "detail"],
   returnButton: ["returnButton"],
@@ -1241,7 +1321,8 @@ const PlasmicDescendants = {
   title2: ["title2"],
   description: ["description"],
   platformStatus: ["platformStatus"],
-  openAndCloseButton2: ["openAndCloseButton2"]
+  openAndCloseButton2: ["openAndCloseButton2"],
+  navigationRntFooter: ["navigationRntFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1268,6 +1349,7 @@ type NodeDefaultElementType = {
   description: "div";
   platformStatus: "div";
   openAndCloseButton2: "div";
+  navigationRntFooter: typeof NavigationRntFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1350,6 +1432,7 @@ export const PlasmicBookings = Object.assign(
     description: makeNodeComponent("description"),
     platformStatus: makeNodeComponent("platformStatus"),
     openAndCloseButton2: makeNodeComponent("openAndCloseButton2"),
+    navigationRntFooter: makeNodeComponent("navigationRntFooter"),
 
     // Metadata about props expected for PlasmicBookings
     internalVariantProps: PlasmicBookings__VariantProps,
