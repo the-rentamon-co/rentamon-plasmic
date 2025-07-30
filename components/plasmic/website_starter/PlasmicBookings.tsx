@@ -935,19 +935,42 @@ function PlasmicBookings__RenderFunc(props: {
               data-plasmic-override={overrides.booking}
               className={classNames("__wab_instance", sty.booking)}
               errorDisplay={
-                <div className={classNames(projectcss.all, sty.freeBox__q9Xw9)}>
+                (
+                  hasVariant(globalVariants, "screen", "tablet")
+                    ? true
+                    : (() => {
+                        try {
+                          return (
+                            $state.booking.error.error.message ==
+                            "Booking ID does not exist"
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                ) ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___6YVk8
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__q9Xw9)}
                   >
-                    {
-                      "\u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0646\u06cc\u0633\u062a"
-                    }
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___6YVk8
+                      )}
+                    >
+                      {
+                        "\u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f."
+                      }
+                    </div>
                   </div>
-                </div>
+                ) : null
               }
               loadingDisplay={null}
               method={"GET"}
@@ -1133,7 +1156,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 const checkIn = $state.booking.data.check_in;
                                 const result =
                                   convertDateToJalaliFullString(checkIn);
-                                return "دریافت رزرو : " + result;
+                                return result;
                               })();
                             } catch (e) {
                               if (
@@ -1635,7 +1658,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 const checkIn = $state.booking.data.check_out;
                                 const result =
                                   convertDateToJalaliFullString(checkIn);
-                                return "دریافت رزرو : " + result;
+                                return result;
                               })();
                             } catch (e) {
                               if (
@@ -2124,7 +2147,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "\u06f0\u06f9\u06f1\u06f9\u06f6\u06f5\u06f7\u06f2\u06f2\u06f3\u06f4";
+                                    return " ";
                                   }
                                   throw e;
                                 }

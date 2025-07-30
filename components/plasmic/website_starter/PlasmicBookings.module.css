@@ -756,6 +756,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 1200px) {
+  .freeBox__q9Xw9 {
+    display: flex;
+  }
+}
 .text___6YVk8 {
   width: 100%;
   height: auto;
