@@ -3329,33 +3329,130 @@ function PlasmicBookings__RenderFunc(props: {
                           })()
                         )}
                       >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__x4L7O)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "18px"
-                              : hasVariant(globalVariants, "screen", "mobile")
-                              ? "30px"
-                              : "37px"
+                        {(() => {
+                          try {
+                            return !$state.booking.data.auto_sync_status.some(
+                              platform => !platform.status
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
                           }
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image160.svg",
-                            fullWidth: 22,
-                            fullHeight: 22,
-                            aspectRatio: undefined
-                          }}
-                        />
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__x4L7O)}
+                            displayHeight={
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "18px"
+                                : hasVariant(globalVariants, "screen", "mobile")
+                                ? "30px"
+                                : "37px"
+                            }
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "100%"
+                                : "100%"
+                            }
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image160.svg",
+                              fullWidth: 22,
+                              fullHeight: 22,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return $state.booking.data.auto_sync_status.some(
+                                    platform => !platform.status
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return $state.booking.data.auto_sync_status.some(
+                                    platform => !platform.status
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__pemI9)}
+                            displayHeight={
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "18px"
+                                : hasVariant(globalVariants, "screen", "mobile")
+                                ? "30px"
+                                : "37px"
+                            }
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "100%"
+                                : hasVariant(globalVariants, "screen", "mobile")
+                                ? "100%"
+                                : "100%"
+                            }
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image161.svg",
+                              fullWidth: 22,
+                              fullHeight: 22,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
                       </div>
                       <Stack__
                         as={"div"}
@@ -3505,35 +3602,74 @@ function PlasmicBookings__RenderFunc(props: {
                                 sty.text__o51MG
                               )}
                             >
-                              <React.Fragment>
-                                {(() => {
-                                  try {
-                                    return (() => {
-                                      const websiteMap = {
-                                        shab: "شب",
-                                        jabama: "جاباما",
-                                        homsa: "هومسا",
-                                        jajiga: "جاجیگا",
-                                        mihmansho: "مهمانشو",
-                                        otaghak: "اتاقک"
-                                      };
-                                      const faWebsiteName =
-                                        websiteMap[currentItem.website_name] ||
-                                        currentItem.website_name;
-                                      return faWebsiteName;
-                                    })();
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return "\u0634\u0628";
+                              {hasVariant(
+                                globalVariants,
+                                "screen",
+                                "mobile"
+                              ) ? (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        const websiteMap = {
+                                          shab: "شب",
+                                          jabama: "جاباما",
+                                          homsa: "هومسا",
+                                          jajiga: "جاجیگا",
+                                          mizboon: "میزبون",
+                                          mihmansho: "مهمانشو",
+                                          otaghak: "اتاقک"
+                                        };
+                                        const faWebsiteName =
+                                          websiteMap[
+                                            currentItem.website_name
+                                          ] || currentItem.website_name;
+                                        return faWebsiteName;
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "\u0634\u0628";
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()}
-                              </React.Fragment>
+                                  })()}
+                                </React.Fragment>
+                              ) : (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        const websiteMap = {
+                                          shab: "شب",
+                                          jabama: "جاباما",
+                                          homsa: "هومسا",
+                                          jajiga: "جاجیگا",
+                                          mihmansho: "مهمانشو",
+                                          otaghak: "اتاقک"
+                                        };
+                                        const faWebsiteName =
+                                          websiteMap[
+                                            currentItem.website_name
+                                          ] || currentItem.website_name;
+                                        return faWebsiteName;
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "\u0634\u0628";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              )}
                             </div>
                             {(() => {
                               try {

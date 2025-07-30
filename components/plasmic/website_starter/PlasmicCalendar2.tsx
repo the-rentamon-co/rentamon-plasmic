@@ -9872,7 +9872,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             })()
           : (() => {
               try {
-                return $state.isTheFirstVisit === false;
+                return $props.isFirstVisit === false;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
