@@ -1647,12 +1647,19 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["killPropTourCookie"] = true
+                      $steps["deletePropTourCookie"] = true
                         ? (() => {
                             const actionArgs = {
                               customFunction: async () => {
-                                return (document.cookie =
-                                  "prop_tour=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/");
+                                return (() => {
+                                  function deleteCookie(name) {
+                                    document.cookie =
+                                      name +
+                                      "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                  }
+                                  deleteCookie("prop_tour");
+                                  return ($state.propTour = false);
+                                })();
                               }
                             };
                             return (({ customFunction }) => {
@@ -1661,12 +1668,13 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["killPropTourCookie"] != null &&
-                        typeof $steps["killPropTourCookie"] === "object" &&
-                        typeof $steps["killPropTourCookie"].then === "function"
+                        $steps["deletePropTourCookie"] != null &&
+                        typeof $steps["deletePropTourCookie"] === "object" &&
+                        typeof $steps["deletePropTourCookie"].then ===
+                          "function"
                       ) {
-                        $steps["killPropTourCookie"] = await $steps[
-                          "killPropTourCookie"
+                        $steps["deletePropTourCookie"] = await $steps[
+                          "deletePropTourCookie"
                         ];
                       }
 

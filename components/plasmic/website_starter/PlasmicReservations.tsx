@@ -8211,7 +8211,7 @@ function PlasmicReservations__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               "POST",
-                              "https://gateway.rentamon.com/webhook/registration-steps_bookings",
+                              "https://gateway.rentamon.com/webhook/registration-steps-bookings",
                               undefined,
                               (() => {
                                 try {
@@ -8245,7 +8245,7 @@ function PlasmicReservations__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["updateModalOpen2"] =
+                  $steps["deleteCookie"] =
                     $state.isTheFirstVisit == true
                       ? (() => {
                           const actionArgs = {
@@ -8267,13 +8267,11 @@ function PlasmicReservations__RenderFunc(props: {
                         })()
                       : undefined;
                   if (
-                    $steps["updateModalOpen2"] != null &&
-                    typeof $steps["updateModalOpen2"] === "object" &&
-                    typeof $steps["updateModalOpen2"].then === "function"
+                    $steps["deleteCookie"] != null &&
+                    typeof $steps["deleteCookie"] === "object" &&
+                    typeof $steps["deleteCookie"].then === "function"
                   ) {
-                    $steps["updateModalOpen2"] = await $steps[
-                      "updateModalOpen2"
-                    ];
+                    $steps["deleteCookie"] = await $steps["deleteCookie"];
                   }
 
                   $steps["updateModalOpen"] = true

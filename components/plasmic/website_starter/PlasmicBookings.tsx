@@ -108,6 +108,7 @@ export type PlasmicBookings__OverridesType = {
   bookSettleStatus?: Flex__<"div">;
   error?: Flex__<"div">;
   _true?: Flex__<"div">;
+  true2?: Flex__<"div">;
   openAndCloseButton?: Flex__<"div">;
   autoSync?: Flex__<"div">;
   data2?: Flex__<"div">;
@@ -1524,24 +1525,51 @@ function PlasmicBookings__RenderFunc(props: {
                             sty.text__wxoad
                           )}
                         >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  $state.booking.data[0].guest_phone_number ||
-                                  "؟"
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u06f0\u06f9\u06f1\u06f9\u06f6\u06f5\u06f7\u06f2\u06f2\u06f3\u06f4";
+                          {hasVariant(
+                            globalVariants,
+                            "screen",
+                            "smallMobile"
+                          ) ? (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    $state.booking.data[0].guest_phone_number ||
+                                    "موبایل مهمان: ؟"
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u06f0\u06f9\u06f1\u06f9\u06f6\u06f5\u06f7\u06f2\u06f2\u06f3\u06f4";
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
+                              })()}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    $state.booking.data[0].guest_phone_number ||
+                                    "موبایل مهمان: ؟"
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u06f0\u06f9\u06f1\u06f9\u06f6\u06f5\u06f7\u06f2\u06f2\u06f3\u06f4";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          )}
                         </div>
                       </Stack__>
                       <div
@@ -1557,21 +1585,50 @@ function PlasmicBookings__RenderFunc(props: {
                             sty.text__agLat
                           )}
                         >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return $state.booking.data[0].guest_name || "؟";
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc";
+                          {hasVariant(
+                            globalVariants,
+                            "screen",
+                            "smallMobile"
+                          ) ? (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    $state.booking.data[0].guest_name ||
+                                    "نام مهمان :‌ ؟"
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc";
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
+                              })()}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    $state.booking.data[0].guest_name || "؟"
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -1745,7 +1802,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631";
+                                    return " ";
                                   }
                                   throw e;
                                 }
@@ -1762,7 +1819,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631";
+                                    return " ";
                                   }
                                   throw e;
                                 }
@@ -1818,24 +1875,58 @@ function PlasmicBookings__RenderFunc(props: {
                               sty.text__qgaal
                             )}
                           >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    $state.booking.data[0].night + " شب" || "؟"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data[0].night + " شب" ||
+                                      "نفرات"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
                                   }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
+                                })()}
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        $state.booking.data[0].night == null
+                                      ) {
+                                        return "مدت اقامت";
+                                      }
+                                      return (
+                                        $state.booking.data[0].night + " شب" ||
+                                        "مدت اقامت"
+                                      );
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            )}
                           </div>
                         </Stack__>
                         <Stack__
@@ -1885,10 +1976,18 @@ function PlasmicBookings__RenderFunc(props: {
                               <React.Fragment>
                                 {(() => {
                                   try {
-                                    return (
-                                      $state.booking.data[0].guests_count +
-                                        " نفر" || "؟"
-                                    );
+                                    return (() => {
+                                      if (
+                                        $state.booking.data[0].guests_count ==
+                                        null
+                                      ) {
+                                        return "نفرات";
+                                      }
+                                      return (
+                                        $state.booking.data[0].guests_count +
+                                        " نفر"
+                                      );
+                                    })();
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
@@ -1947,13 +2046,18 @@ function PlasmicBookings__RenderFunc(props: {
                           <React.Fragment>
                             {(() => {
                               try {
-                                return $state.booking.data[0].amount;
+                                return (() => {
+                                  if ($state.booking.data[0].amount == null) {
+                                    return "زمان دریافت رزرو";
+                                  }
+                                  return $state.booking.data[0].amount;
+                                })();
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
                                   e?.plasmicType === "PlasmicUndefinedDataError"
                                 ) {
-                                  return "\u06f2/\u06f9\u06f0\u06f0/\u06f0\u06f0\u06f0";
+                                  return " ";
                                 }
                                 throw e;
                               }
@@ -2230,6 +2334,43 @@ function PlasmicBookings__RenderFunc(props: {
                             {
                               "\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"
                             }
+                          </div>
+                        </Stack__>
+                      ) : null}
+                      {(
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? true
+                          : (() => {
+                              try {
+                                return (
+                                  $state.booking.data[0].is_settled == null
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                      ) ? (
+                        <Stack__
+                          as={"div"}
+                          data-plasmic-name={"true2"}
+                          data-plasmic-override={overrides.true2}
+                          hasGap={true}
+                          className={classNames(projectcss.all, sty.true2)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__skgW4
+                            )}
+                          >
+                            {"\u061f"}
                           </div>
                         </Stack__>
                       ) : null}
@@ -2859,6 +3000,7 @@ const PlasmicDescendants = {
     "bookSettleStatus",
     "error",
     "_true",
+    "true2",
     "openAndCloseButton",
     "autoSync",
     "data2",
@@ -2902,6 +3044,7 @@ const PlasmicDescendants = {
     "bookSettleStatus",
     "error",
     "_true",
+    "true2",
     "openAndCloseButton",
     "autoSync",
     "data2",
@@ -2924,6 +3067,7 @@ const PlasmicDescendants = {
     "bookSettleStatus",
     "error",
     "_true",
+    "true2",
     "openAndCloseButton",
     "autoSync",
     "data2",
@@ -2944,6 +3088,7 @@ const PlasmicDescendants = {
     "bookSettleStatus",
     "error",
     "_true",
+    "true2",
     "openAndCloseButton"
   ],
   data: [
@@ -2956,7 +3101,8 @@ const PlasmicDescendants = {
     "bookNetPrice",
     "bookSettleStatus",
     "error",
-    "_true"
+    "_true",
+    "true2"
   ],
   title: ["title"],
   guestInfo: ["guestInfo"],
@@ -2964,9 +3110,10 @@ const PlasmicDescendants = {
   bookPrice: ["bookPrice"],
   bookCommission: ["bookCommission"],
   bookNetPrice: ["bookNetPrice"],
-  bookSettleStatus: ["bookSettleStatus", "error", "_true"],
+  bookSettleStatus: ["bookSettleStatus", "error", "_true", "true2"],
   error: ["error"],
   _true: ["_true"],
+  true2: ["true2"],
   openAndCloseButton: ["openAndCloseButton"],
   autoSync: [
     "autoSync",
@@ -3013,6 +3160,7 @@ type NodeDefaultElementType = {
   bookSettleStatus: "div";
   error: "div";
   _true: "div";
+  true2: "div";
   openAndCloseButton: "div";
   autoSync: "div";
   data2: "div";
@@ -3108,6 +3256,7 @@ export const PlasmicBookings = Object.assign(
     bookSettleStatus: makeNodeComponent("bookSettleStatus"),
     error: makeNodeComponent("error"),
     _true: makeNodeComponent("_true"),
+    true2: makeNodeComponent("true2"),
     openAndCloseButton: makeNodeComponent("openAndCloseButton"),
     autoSync: makeNodeComponent("autoSync"),
     data2: makeNodeComponent("data2"),
