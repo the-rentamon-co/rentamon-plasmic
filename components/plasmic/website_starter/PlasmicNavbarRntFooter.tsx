@@ -1037,9 +1037,9 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   sty.text__ybLty
                 )}
               >
-                {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                  : "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627"}
+                 {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "اقامتگاه"
+                  : "اقامتگاه‌ها"}
               </div>
             </Stack__>
           </Stack__>
