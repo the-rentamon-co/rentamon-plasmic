@@ -4196,6 +4196,11 @@
           "id": "bmMlKK1m7NNT",
           "name": "image 161",
           "filePath": "../public/plasmic/website_starter/images/image161.svg"
+        },
+        {
+          "id": "RkMcRfneb9D6",
+          "name": "home-cover.jpg",
+          "filePath": "../public/plasmic/website_starter/images/homeCoverJpg.jpg"
         }
       ],
       "indirect": false,

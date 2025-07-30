@@ -1540,6 +1540,34 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["goToLitePanel"] = await $steps["goToLitePanel"];
                       }
 
+                      $steps["goToProLitePanel"] =
+                        $state.propTour === true
+                          ? (() => {
+                              const actionArgs = { destination: `/calendar` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["goToProLitePanel"] != null &&
+                        typeof $steps["goToProLitePanel"] === "object" &&
+                        typeof $steps["goToProLitePanel"].then === "function"
+                      ) {
+                        $steps["goToProLitePanel"] = await $steps[
+                          "goToProLitePanel"
+                        ];
+                      }
+
                       $steps["updateLoading2"] = true
                         ? (() => {
                             const actionArgs = {
@@ -1573,34 +1601,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       ) {
                         $steps["updateLoading2"] = await $steps[
                           "updateLoading2"
-                        ];
-                      }
-
-                      $steps["goToProLitePanel"] =
-                        $state.propTour === true
-                          ? (() => {
-                              const actionArgs = { destination: `/calendar` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["goToProLitePanel"] != null &&
-                        typeof $steps["goToProLitePanel"] === "object" &&
-                        typeof $steps["goToProLitePanel"].then === "function"
-                      ) {
-                        $steps["goToProLitePanel"] = await $steps[
-                          "goToProLitePanel"
                         ];
                       }
 
@@ -1651,10 +1651,8 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               customFunction: async () => {
-                                return (() => {
-                                  return (document.cookie =
-                                    "prop_tour=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/");
-                                })();
+                                return (document.cookie =
+                                  "prop_tour=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/");
                               }
                             };
                             return (({ customFunction }) => {
@@ -1669,6 +1667,45 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       ) {
                         $steps["killPropTourCookie"] = await $steps[
                           "killPropTourCookie"
+                        ];
+                      }
+
+                      $steps["registrationSteps"] =
+                        $state.propTour === true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://gateway.rentamon.com/webhook/registration-steps-prop",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $state.propTour;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["registrationSteps"] != null &&
+                        typeof $steps["registrationSteps"] === "object" &&
+                        typeof $steps["registrationSteps"].then === "function"
+                      ) {
+                        $steps["registrationSteps"] = await $steps[
+                          "registrationSteps"
                         ];
                       }
                     }}

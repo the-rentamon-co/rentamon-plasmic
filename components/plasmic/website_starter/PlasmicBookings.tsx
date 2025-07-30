@@ -306,9 +306,9 @@ function PlasmicBookings__RenderFunc(props: {
                             e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
                             return {
-                              src: "/plasmic/website_starter/images/image152.svg",
-                              fullWidth: 370,
-                              fullHeight: 90,
+                              src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
+                              fullWidth: 1247,
+                              fullHeight: 529,
                               aspectRatio: undefined
                             };
                           }
@@ -318,16 +318,16 @@ function PlasmicBookings__RenderFunc(props: {
                     : hasVariant(globalVariants, "screen", "mobile")
                     ? (() => {
                         try {
-                          return $state.profile.data.user_info.profile_pic_link;
+                          return $state.booking.data[0].property_pic_link;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
                             e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
                             return {
-                              src: "/plasmic/website_starter/images/image152.svg",
-                              fullWidth: 370,
-                              fullHeight: 90,
+                              src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
+                              fullWidth: 1247,
+                              fullHeight: 529,
                               aspectRatio: undefined
                             };
                           }
@@ -344,9 +344,9 @@ function PlasmicBookings__RenderFunc(props: {
                             e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
                             return {
-                              src: "/plasmic/website_starter/images/image152.svg",
-                              fullWidth: 370,
-                              fullHeight: 90,
+                              src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
+                              fullWidth: 1247,
+                              fullHeight: 529,
                               aspectRatio: undefined
                             };
                           }
@@ -362,9 +362,9 @@ function PlasmicBookings__RenderFunc(props: {
                             e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
                             return {
-                              src: "/plasmic/website_starter/images/image152.svg",
-                              fullWidth: 370,
-                              fullHeight: 90,
+                              src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
+                              fullWidth: 1247,
+                              fullHeight: 529,
                               aspectRatio: undefined
                             };
                           }
@@ -438,7 +438,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return true;
+                                return false;
                               }
                               throw e;
                             }
@@ -495,7 +495,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return true;
+                                return false;
                               }
                               throw e;
                             }
@@ -552,7 +552,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return true;
+                                return false;
                               }
                               throw e;
                             }
@@ -609,7 +609,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return true;
+                                return false;
                               }
                               throw e;
                             }
@@ -670,7 +670,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return true;
+                                return false;
                               }
                               throw e;
                             }
@@ -731,7 +731,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return true;
+                                return false;
                               }
                               throw e;
                             }
