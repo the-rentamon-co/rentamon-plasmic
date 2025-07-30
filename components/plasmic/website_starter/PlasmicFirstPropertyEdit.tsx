@@ -106,12 +106,12 @@ export type PlasmicFirstPropertyEdit__OverridesType = {
   next2?: Flex__<"div">;
   privious2?: Flex__<"div">;
   back?: Flex__<"div">;
-  propGuide3?: Flex__<"div">;
-  propGuide2?: Flex__<"div">;
-  propGuide?: Flex__<"div">;
-  propGuide4?: Flex__<"div">;
   propGuide5?: Flex__<"div">;
   propGuide6?: Flex__<"div">;
+  propGuide4?: Flex__<"div">;
+  propGuide?: Flex__<"div">;
+  propGuide2?: Flex__<"div">;
+  propGuide3?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   sideEffect?: Flex__<typeof SideEffect>;
@@ -1779,63 +1779,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
             data-plasmic-override={overrides.back}
             className={classNames(projectcss.all, sty.back)}
           >
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return $state.propTour === true && $state.step === 2;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })()
-                : false
-            ) ? (
-              <div
-                data-plasmic-name={"propGuide3"}
-                data-plasmic-override={overrides.propGuide3}
-                className={classNames(projectcss.all, sty.propGuide3)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___9F5QE)}
-                >
-                  {(
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? true
-                      : (() => {
-                          try {
-                            return $state.step === 2;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })()
-                  ) ? (
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__jeRkc
-                      )}
-                    >
-                      {
-                        "\u06cc\u0647 \u0639\u06a9\u0633 \u0628\u0627 \u062d\u062c\u0645 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f2 \u0645\u06af\u0627\u0628\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
-                      }
-                    </div>
-                  ) : null}
-                </div>
-              </div>
-            ) : null}
             <div
               className={classNames(
                 projectcss.all,
@@ -1878,149 +1821,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                 {"\u0627\u0646\u0635\u0631\u0627\u0641"}
               </div>
             </div>
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return $state.propTour === true && $state.step === 1;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })()
-                : false
-            ) ? (
-              <div
-                data-plasmic-name={"propGuide2"}
-                data-plasmic-override={overrides.propGuide2}
-                className={classNames(projectcss.all, sty.propGuide2)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__xtdkH)}>
-                  {(
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? true
-                      : (() => {
-                          try {
-                            return $state.step === 1;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })()
-                  ) ? (
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__yv5A
-                      )}
-                    >
-                      {
-                        "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633"
-                      }
-                    </div>
-                  ) : null}
-                </div>
-              </div>
-            ) : null}
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return $state.propTour === true && $state.step === 0;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })()
-                : (() => {
-                    try {
-                      return $state.propTour === true && $state.step === 0;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })()
-            ) ? (
-              <div
-                data-plasmic-name={"propGuide"}
-                data-plasmic-override={overrides.propGuide}
-                className={classNames(projectcss.all, sty.propGuide)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__dFvA6)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__jRcu
-                    )}
-                  >
-                    {
-                      "\u0627\u0648\u0644 \u0627\u06cc\u0646\u062c\u0627 \u0628\u06af\u0648 \u0646\u0648\u0639 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0686\u06cc\u0647"
-                    }
-                  </div>
-                </div>
-              </div>
-            ) : null}
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? true
-                : (() => {
-                    try {
-                      return $state.propTour === true && $state.step === 1;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })()
-            ) ? (
-              <div
-                data-plasmic-name={"propGuide4"}
-                data-plasmic-override={overrides.propGuide4}
-                className={classNames(projectcss.all, sty.propGuide4)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___4GhiK)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___5Fhpz
-                    )}
-                  >
-                    {
-                      "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633"
-                    }
-                  </div>
-                </div>
-              </div>
-            ) : null}
             {(
               hasVariant(globalVariants, "screen", "mobile")
                 ? true
@@ -2082,6 +1882,202 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
               </div>
             ) : null}
           </div>
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? true
+              : (() => {
+                  try {
+                    return $state.propTour === true && $state.step === 1;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+          ) ? (
+            <div
+              data-plasmic-name={"propGuide4"}
+              data-plasmic-override={overrides.propGuide4}
+              className={classNames(projectcss.all, sty.propGuide4)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox___4GhiK)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___5Fhpz
+                  )}
+                >
+                  {
+                    "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633"
+                  }
+                </div>
+              </div>
+            </div>
+          ) : null}
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? (() => {
+                  try {
+                    return $state.propTour === true && $state.step === 0;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+              : (() => {
+                  try {
+                    return $state.propTour === true && $state.step === 0;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+          ) ? (
+            <div
+              data-plasmic-name={"propGuide"}
+              data-plasmic-override={overrides.propGuide}
+              className={classNames(projectcss.all, sty.propGuide)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__dFvA6)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jRcu
+                  )}
+                >
+                  {
+                    "\u0627\u0648\u0644 \u0627\u06cc\u0646\u062c\u0627 \u0628\u06af\u0648 \u0646\u0648\u0639 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0686\u06cc\u0647"
+                  }
+                </div>
+              </div>
+            </div>
+          ) : null}
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? (() => {
+                  try {
+                    return $state.propTour === true && $state.step === 1;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+              : false
+          ) ? (
+            <div
+              data-plasmic-name={"propGuide2"}
+              data-plasmic-override={overrides.propGuide2}
+              className={classNames(projectcss.all, sty.propGuide2)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__xtdkH)}>
+                {(
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? true
+                    : (() => {
+                        try {
+                          return $state.step === 1;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                ) ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yv5A
+                    )}
+                  >
+                    {
+                      "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633"
+                    }
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          ) : null}
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? (() => {
+                  try {
+                    return $state.propTour === true && $state.step === 2;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+              : false
+          ) ? (
+            <div
+              data-plasmic-name={"propGuide3"}
+              data-plasmic-override={overrides.propGuide3}
+              className={classNames(projectcss.all, sty.propGuide3)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox___9F5QE)}>
+                {(
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? true
+                    : (() => {
+                        try {
+                          return $state.step === 2;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                ) ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__jeRkc
+                    )}
+                  >
+                    {
+                      "\u06cc\u0647 \u0639\u06a9\u0633 \u0628\u0627 \u062d\u062c\u0645 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f2 \u0645\u06af\u0627\u0628\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                    }
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          ) : null}
           <div className={classNames(projectcss.all, sty.freeBox__b06Bk)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
@@ -2169,12 +2165,12 @@ const PlasmicDescendants = {
     "next2",
     "privious2",
     "back",
-    "propGuide3",
-    "propGuide2",
-    "propGuide",
-    "propGuide4",
     "propGuide5",
     "propGuide6",
+    "propGuide4",
+    "propGuide",
+    "propGuide2",
+    "propGuide3",
     "clarityRntComponent",
     "faviconRntComponent",
     "sideEffect"
@@ -2200,21 +2196,13 @@ const PlasmicDescendants = {
   newButtons2: ["newButtons2", "next2", "privious2"],
   next2: ["next2"],
   privious2: ["privious2"],
-  back: [
-    "back",
-    "propGuide3",
-    "propGuide2",
-    "propGuide",
-    "propGuide4",
-    "propGuide5",
-    "propGuide6"
-  ],
-  propGuide3: ["propGuide3"],
-  propGuide2: ["propGuide2"],
-  propGuide: ["propGuide"],
-  propGuide4: ["propGuide4"],
+  back: ["back", "propGuide5", "propGuide6"],
   propGuide5: ["propGuide5", "propGuide6"],
   propGuide6: ["propGuide6"],
+  propGuide4: ["propGuide4"],
+  propGuide: ["propGuide"],
+  propGuide2: ["propGuide2"],
+  propGuide3: ["propGuide3"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   sideEffect: ["sideEffect"]
@@ -2238,12 +2226,12 @@ type NodeDefaultElementType = {
   next2: "div";
   privious2: "div";
   back: "div";
-  propGuide3: "div";
-  propGuide2: "div";
-  propGuide: "div";
-  propGuide4: "div";
   propGuide5: "div";
   propGuide6: "div";
+  propGuide4: "div";
+  propGuide: "div";
+  propGuide2: "div";
+  propGuide3: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   sideEffect: typeof SideEffect;
@@ -2323,12 +2311,12 @@ export const PlasmicFirstPropertyEdit = Object.assign(
     next2: makeNodeComponent("next2"),
     privious2: makeNodeComponent("privious2"),
     back: makeNodeComponent("back"),
-    propGuide3: makeNodeComponent("propGuide3"),
-    propGuide2: makeNodeComponent("propGuide2"),
-    propGuide: makeNodeComponent("propGuide"),
-    propGuide4: makeNodeComponent("propGuide4"),
     propGuide5: makeNodeComponent("propGuide5"),
     propGuide6: makeNodeComponent("propGuide6"),
+    propGuide4: makeNodeComponent("propGuide4"),
+    propGuide: makeNodeComponent("propGuide"),
+    propGuide2: makeNodeComponent("propGuide2"),
+    propGuide3: makeNodeComponent("propGuide3"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     sideEffect: makeNodeComponent("sideEffect"),

@@ -296,8 +296,63 @@ function PlasmicBookings__RenderFunc(props: {
                 }
                 loading={"lazy"}
                 src={
-                  hasVariant(globalVariants, "screen", "tablet")
-                    ? $state.profile.data.user_info.profile_pic_link
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? (() => {
+                        try {
+                          return $state.booking.data[0].property_pic_link;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return {
+                              src: "/plasmic/website_starter/images/image152.svg",
+                              fullWidth: 370,
+                              fullHeight: 90,
+                              aspectRatio: undefined
+                            };
+                          }
+                          throw e;
+                        }
+                      })()
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return $state.profile.data.user_info.profile_pic_link;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return {
+                              src: "/plasmic/website_starter/images/image152.svg",
+                              fullWidth: 370,
+                              fullHeight: 90,
+                              aspectRatio: undefined
+                            };
+                          }
+                          throw e;
+                        }
+                      })()
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? (() => {
+                        try {
+                          return $state.booking.data[0].property_pic_link;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return {
+                              src: "/plasmic/website_starter/images/image152.svg",
+                              fullWidth: 370,
+                              fullHeight: 90,
+                              aspectRatio: undefined
+                            };
+                          }
+                          throw e;
+                        }
+                      })()
                     : (() => {
                         try {
                           return $state.booking.data[0].property_pic_link;
@@ -360,19 +415,35 @@ function PlasmicBookings__RenderFunc(props: {
                     hasGap={true}
                     className={classNames(projectcss.all, sty.freeBox__sv7Au)}
                   >
-                    {(() => {
-                      try {
-                        return $state.booking.data[0].website == "shab";
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
+                    {(
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            try {
+                              return $state.booking.data[0].website == "shab";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return $state.booking.data[0].website == "shab";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
                       <PlasmicImg__
                         data-plasmic-name={"shab"}
                         data-plasmic-override={overrides.shab}
@@ -401,19 +472,35 @@ function PlasmicBookings__RenderFunc(props: {
                         }}
                       />
                     ) : null}
-                    {(() => {
-                      try {
-                        return $state.booking.data[0].website == "jabama";
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
+                    {(
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            try {
+                              return $state.booking.data[0].website == "jabama";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return $state.booking.data[0].website == "jabama";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
                       <PlasmicImg__
                         data-plasmic-name={"jabama"}
                         data-plasmic-override={overrides.jabama}
@@ -442,19 +529,35 @@ function PlasmicBookings__RenderFunc(props: {
                         }}
                       />
                     ) : null}
-                    {(() => {
-                      try {
-                        return $state.booking.data[0].website == "jajiga";
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
+                    {(
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            try {
+                              return $state.booking.data[0].website == "jajiga";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return $state.booking.data[0].website == "jajiga";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
                       <PlasmicImg__
                         data-plasmic-name={"jajiga"}
                         data-plasmic-override={overrides.jajiga}
@@ -483,19 +586,35 @@ function PlasmicBookings__RenderFunc(props: {
                         }}
                       />
                     ) : null}
-                    {(() => {
-                      try {
-                        return $state.booking.data[0].website == "homsa";
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
+                    {(
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            try {
+                              return $state.booking.data[0].website == "homsa";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return $state.booking.data[0].website == "homsa";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
                       <PlasmicImg__
                         data-plasmic-name={"homsa"}
                         data-plasmic-override={overrides.homsa}
@@ -524,19 +643,39 @@ function PlasmicBookings__RenderFunc(props: {
                         }}
                       />
                     ) : null}
-                    {(() => {
-                      try {
-                        return $state.booking.data[0].website == "otaghak";
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
+                    {(
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            try {
+                              return (
+                                $state.booking.data[0].website == "otaghak"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return (
+                                $state.booking.data[0].website == "otaghak"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
                       <PlasmicImg__
                         data-plasmic-name={"otaghak"}
                         data-plasmic-override={overrides.otaghak}
@@ -565,19 +704,39 @@ function PlasmicBookings__RenderFunc(props: {
                         }}
                       />
                     ) : null}
-                    {(() => {
-                      try {
-                        return $state.booking.data[0].website == "mihmansho";
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
+                    {(
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            try {
+                              return (
+                                $state.booking.data[0].website == "mihmansho"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return (
+                                $state.booking.data[0].website == "mihmansho"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
                       <PlasmicImg__
                         data-plasmic-name={"mihmansho"}
                         data-plasmic-override={overrides.mihmansho}
@@ -634,7 +793,7 @@ function PlasmicBookings__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "\u0634\u0628";
+                              return " ";
                             }
                             throw e;
                           }
@@ -752,7 +911,21 @@ function PlasmicBookings__RenderFunc(props: {
               data-plasmic-name={"booking"}
               data-plasmic-override={overrides.booking}
               className={classNames("__wab_instance", sty.booking)}
-              errorDisplay={null}
+              errorDisplay={
+                <div className={classNames(projectcss.all, sty.freeBox__q9Xw9)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___6YVk8
+                    )}
+                  >
+                    {
+                      "\u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0646\u06cc\u0633\u062a"
+                    }
+                  </div>
+                </div>
+              }
               loadingDisplay={null}
               method={"GET"}
               onError={async (...eventArgs: any) => {
@@ -819,6 +992,139 @@ function PlasmicBookings__RenderFunc(props: {
                     >
                       {hasVariant(globalVariants, "screen", "mobile") ? (
                         "\u062f\u0648\u0634\u0646\u0628\u0647 \u06f1\u06f2 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a"
+                      ) : hasVariant(globalVariants, "screen", "tablet") ? (
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (() => {
+                                const persianMonths = [
+                                  "فروردین",
+                                  "اردیبهشت",
+                                  "خرداد",
+                                  "تیر",
+                                  "مرداد",
+                                  "شهریور",
+                                  "مهر",
+                                  "آبان",
+                                  "آذر",
+                                  "دی",
+                                  "بهمن",
+                                  "اسفند"
+                                ];
+
+                                const persianWeekdays = [
+                                  "یک‌شنبه",
+                                  "دوشنبه",
+                                  "سه‌شنبه",
+                                  "چهارشنبه",
+                                  "پنج‌شنبه",
+                                  "جمعه",
+                                  "شنبه"
+                                ];
+
+                                function toPersianDigits(input) {
+                                  const persianDigits = [
+                                    "۰",
+                                    "۱",
+                                    "۲",
+                                    "۳",
+                                    "۴",
+                                    "۵",
+                                    "۶",
+                                    "۷",
+                                    "۸",
+                                    "۹"
+                                  ];
+
+                                  return input
+                                    .toString()
+                                    .replace(/\d/g, d => persianDigits[d]);
+                                }
+                                function toJalali(gYear, gMonth, gDay) {
+                                  const gDaysInMonth = [
+                                    31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
+                                    31
+                                  ];
+
+                                  const jDaysInMonth = [
+                                    31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30,
+                                    29
+                                  ];
+
+                                  let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                                  let gm = gMonth - 1;
+                                  let gd = gDay - 1;
+                                  let gDayNo =
+                                    365 * gy +
+                                    Math.floor((gy + 3) / 4) -
+                                    Math.floor((gy + 99) / 100) +
+                                    Math.floor((gy + 399) / 400);
+                                  for (let i = 0; i < gm; ++i)
+                                    gDayNo += gDaysInMonth[i];
+                                  gDayNo += gd;
+                                  let jDayNo =
+                                    gDayNo - (gYear >= 1600 ? 79 : 0);
+                                  let jNp = Math.floor(jDayNo / 12053);
+                                  jDayNo %= 12053;
+                                  let jYear =
+                                    979 +
+                                    33 * jNp +
+                                    4 * Math.floor(jDayNo / 1461);
+                                  jDayNo %= 1461;
+                                  if (jDayNo >= 366) {
+                                    jYear += Math.floor((jDayNo - 1) / 365);
+                                    jDayNo = (jDayNo - 1) % 365;
+                                  }
+                                  let jMonth;
+                                  for (
+                                    jMonth = 0;
+                                    jMonth < 11 &&
+                                    jDayNo >= jDaysInMonth[jMonth];
+                                    ++jMonth
+                                  )
+                                    jDayNo -= jDaysInMonth[jMonth];
+                                  let jDay = jDayNo + 1;
+                                  return {
+                                    jy: jYear + (gYear >= 1600 ? 1600 : 621),
+                                    jm: jMonth + 1,
+                                    jd: jDay
+                                  };
+                                }
+                                function convertDateToJalaliFullString(
+                                  dateString
+                                ) {
+                                  const date = new Date(dateString);
+                                  const gYear = date.getFullYear();
+                                  const gMonth = date.getMonth() + 1;
+                                  const gDay = date.getDate();
+                                  const weekdayIndex = date.getDay();
+                                  const { jy, jm, jd } = toJalali(
+                                    gYear,
+                                    gMonth,
+                                    gDay
+                                  );
+                                  const weekday = persianWeekdays[weekdayIndex];
+                                  const monthName = persianMonths[jm - 1];
+                                  return `${weekday} ${toPersianDigits(
+                                    jd
+                                  )} ${monthName}`;
+                                }
+                                const checkIn = $state.booking.data[0].check_in;
+                                const result =
+                                  convertDateToJalaliFullString(checkIn);
+                                return result;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u062f\u0648\u0634\u0646\u0628\u0647 \u06f1\u06f2 \u0645\u0647\u0631";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
                       ) : (
                         <React.Fragment>
                           {(() => {
@@ -910,6 +1216,140 @@ function PlasmicBookings__RenderFunc(props: {
                     >
                       {hasVariant(globalVariants, "screen", "mobile") ? (
                         "\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u06f1\u06f4 \u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a"
+                      ) : hasVariant(globalVariants, "screen", "tablet") ? (
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (() => {
+                                const persianMonths = [
+                                  "فروردین",
+                                  "اردیبهشت",
+                                  "خرداد",
+                                  "تیر",
+                                  "مرداد",
+                                  "شهریور",
+                                  "مهر",
+                                  "آبان",
+                                  "آذر",
+                                  "دی",
+                                  "بهمن",
+                                  "اسفند"
+                                ];
+
+                                const persianWeekdays = [
+                                  "یک‌شنبه",
+                                  "دوشنبه",
+                                  "سه‌شنبه",
+                                  "چهارشنبه",
+                                  "پنج‌شنبه",
+                                  "جمعه",
+                                  "شنبه"
+                                ];
+
+                                function toPersianDigits(input) {
+                                  const persianDigits = [
+                                    "۰",
+                                    "۱",
+                                    "۲",
+                                    "۳",
+                                    "۴",
+                                    "۵",
+                                    "۶",
+                                    "۷",
+                                    "۸",
+                                    "۹"
+                                  ];
+
+                                  return input
+                                    .toString()
+                                    .replace(/\d/g, d => persianDigits[d]);
+                                }
+                                function toJalali(gYear, gMonth, gDay) {
+                                  const gDaysInMonth = [
+                                    31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
+                                    31
+                                  ];
+
+                                  const jDaysInMonth = [
+                                    31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30,
+                                    29
+                                  ];
+
+                                  let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                                  let gm = gMonth - 1;
+                                  let gd = gDay - 1;
+                                  let gDayNo =
+                                    365 * gy +
+                                    Math.floor((gy + 3) / 4) -
+                                    Math.floor((gy + 99) / 100) +
+                                    Math.floor((gy + 399) / 400);
+                                  for (let i = 0; i < gm; ++i)
+                                    gDayNo += gDaysInMonth[i];
+                                  gDayNo += gd;
+                                  let jDayNo =
+                                    gDayNo - (gYear >= 1600 ? 79 : 0);
+                                  let jNp = Math.floor(jDayNo / 12053);
+                                  jDayNo %= 12053;
+                                  let jYear =
+                                    979 +
+                                    33 * jNp +
+                                    4 * Math.floor(jDayNo / 1461);
+                                  jDayNo %= 1461;
+                                  if (jDayNo >= 366) {
+                                    jYear += Math.floor((jDayNo - 1) / 365);
+                                    jDayNo = (jDayNo - 1) % 365;
+                                  }
+                                  let jMonth;
+                                  for (
+                                    jMonth = 0;
+                                    jMonth < 11 &&
+                                    jDayNo >= jDaysInMonth[jMonth];
+                                    ++jMonth
+                                  )
+                                    jDayNo -= jDaysInMonth[jMonth];
+                                  let jDay = jDayNo + 1;
+                                  return {
+                                    jy: jYear + (gYear >= 1600 ? 1600 : 621),
+                                    jm: jMonth + 1,
+                                    jd: jDay
+                                  };
+                                }
+                                function convertDateToJalaliFullString(
+                                  dateString
+                                ) {
+                                  const date = new Date(dateString);
+                                  const gYear = date.getFullYear();
+                                  const gMonth = date.getMonth() + 1;
+                                  const gDay = date.getDate();
+                                  const weekdayIndex = date.getDay();
+                                  const { jy, jm, jd } = toJalali(
+                                    gYear,
+                                    gMonth,
+                                    gDay
+                                  );
+                                  const weekday = persianWeekdays[weekdayIndex];
+                                  const monthName = persianMonths[jm - 1];
+                                  return `${weekday} ${toPersianDigits(
+                                    jd
+                                  )} ${monthName}`;
+                                }
+                                const checkIn =
+                                  $state.booking.data[0].check_out;
+                                const result =
+                                  convertDateToJalaliFullString(checkIn);
+                                return result;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u06f1\u06f4 \u062a\u06cc\u0631";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
                       ) : (
                         <React.Fragment>
                           {(() => {
@@ -1173,21 +1613,162 @@ function PlasmicBookings__RenderFunc(props: {
                             sty.text__aIhhR
                           )}
                         >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (() => {})();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631";
+                          {hasVariant(globalVariants, "screen", "tablet") ? (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (() => {
+                                    const persianMonths = [
+                                      "فروردین",
+                                      "اردیبهشت",
+                                      "خرداد",
+                                      "تیر",
+                                      "مرداد",
+                                      "شهریور",
+                                      "مهر",
+                                      "آبان",
+                                      "آذر",
+                                      "دی",
+                                      "بهمن",
+                                      "اسفند"
+                                    ];
+
+                                    const persianWeekdays = [
+                                      "یک‌شنبه",
+                                      "دوشنبه",
+                                      "سه‌شنبه",
+                                      "چهارشنبه",
+                                      "پنج‌شنبه",
+                                      "جمعه",
+                                      "شنبه"
+                                    ];
+
+                                    function toPersianDigits(input) {
+                                      const persianDigits = [
+                                        "۰",
+                                        "۱",
+                                        "۲",
+                                        "۳",
+                                        "۴",
+                                        "۵",
+                                        "۶",
+                                        "۷",
+                                        "۸",
+                                        "۹"
+                                      ];
+
+                                      return input
+                                        .toString()
+                                        .replace(/\d/g, d => persianDigits[d]);
+                                    }
+                                    function toJalali(gYear, gMonth, gDay) {
+                                      const gDaysInMonth = [
+                                        31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
+                                        30, 31
+                                      ];
+
+                                      const jDaysInMonth = [
+                                        31, 31, 31, 31, 31, 31, 30, 30, 30, 30,
+                                        30, 29
+                                      ];
+
+                                      let gy =
+                                        gYear - (gYear >= 1600 ? 1600 : 621);
+                                      let gm = gMonth - 1;
+                                      let gd = gDay - 1;
+                                      let gDayNo =
+                                        365 * gy +
+                                        Math.floor((gy + 3) / 4) -
+                                        Math.floor((gy + 99) / 100) +
+                                        Math.floor((gy + 399) / 400);
+                                      for (let i = 0; i < gm; ++i)
+                                        gDayNo += gDaysInMonth[i];
+                                      gDayNo += gd;
+                                      let jDayNo =
+                                        gDayNo - (gYear >= 1600 ? 79 : 0);
+                                      let jNp = Math.floor(jDayNo / 12053);
+                                      jDayNo %= 12053;
+                                      let jYear =
+                                        979 +
+                                        33 * jNp +
+                                        4 * Math.floor(jDayNo / 1461);
+                                      jDayNo %= 1461;
+                                      if (jDayNo >= 366) {
+                                        jYear += Math.floor((jDayNo - 1) / 365);
+                                        jDayNo = (jDayNo - 1) % 365;
+                                      }
+                                      let jMonth;
+                                      for (
+                                        jMonth = 0;
+                                        jMonth < 11 &&
+                                        jDayNo >= jDaysInMonth[jMonth];
+                                        ++jMonth
+                                      )
+                                        jDayNo -= jDaysInMonth[jMonth];
+                                      let jDay = jDayNo + 1;
+                                      return {
+                                        jy:
+                                          jYear + (gYear >= 1600 ? 1600 : 621),
+                                        jm: jMonth + 1,
+                                        jd: jDay
+                                      };
+                                    }
+                                    function convertDateToJalaliFullString(
+                                      dateString
+                                    ) {
+                                      const date = new Date(dateString);
+                                      const gYear = date.getFullYear();
+                                      const gMonth = date.getMonth() + 1;
+                                      const gDay = date.getDate();
+                                      const weekdayIndex = date.getDay();
+                                      const { jy, jm, jd } = toJalali(
+                                        gYear,
+                                        gMonth,
+                                        gDay
+                                      );
+                                      const weekday =
+                                        persianWeekdays[weekdayIndex];
+                                      const monthName = persianMonths[jm - 1];
+                                      return `${weekday} ${toPersianDigits(
+                                        jd
+                                      )} ${monthName}`;
+                                    }
+                                    const checkIn =
+                                      $state.booking.data[0].check_in;
+                                    const result =
+                                      convertDateToJalaliFullString(checkIn);
+                                    return "دریافت رزرو : " + result;
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631";
+                                  }
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
+                              })()}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (() => {})();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648:  \u062c\u0645\u0639\u0647 \u06f9 \u062a\u06cc\u0631";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          )}
                         </div>
                       </Stack__>
                       <div
