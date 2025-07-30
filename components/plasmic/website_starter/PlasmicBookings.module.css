@@ -1066,6 +1066,7 @@
     height: auto;
     max-width: 100%;
     font-size: 16px;
+    display: block;
   }
 }
 @media (max-width: 500px) {
@@ -2643,6 +2644,7 @@
 }
 @media (max-width: 350px) {
   .true2 {
+    display: flex;
     padding: 0px;
   }
 }
