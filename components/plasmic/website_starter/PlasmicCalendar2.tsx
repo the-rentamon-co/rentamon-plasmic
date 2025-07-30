@@ -10341,7 +10341,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             >
               {hasVariant(globalVariants, "screen", "mobile")
                 ? "\u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0631\u0632\u0631\u0648"
-                : "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"}
+                : "\u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0631\u0632\u0631\u0648"}
             </div>
             <Icon23Icon
               className={classNames(projectcss.all, sty.svg__yj0Tz)}

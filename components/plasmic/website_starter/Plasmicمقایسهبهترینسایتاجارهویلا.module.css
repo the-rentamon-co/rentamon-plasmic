@@ -193,7 +193,7 @@
   .text___82KF {
     padding-right: 12px;
     padding-left: 10px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -335,7 +335,7 @@
   .text__o9UhC {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -368,7 +368,7 @@
   .text___7DL1F {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1762,7 +1762,7 @@
   .text__lMzU5 {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1795,7 +1795,7 @@
   .text__hT3 {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -2339,7 +2339,7 @@
   .text__e6SC {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 16px;
+    font-size: 13px;
   }
 }
 @media (max-width: 350px) {
@@ -2372,7 +2372,7 @@
   .text___02QL1 {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -2791,7 +2791,7 @@
   .text__rCjtz {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -2909,7 +2909,7 @@
   .text__ke47I {
     padding-right: 0px;
     padding-left: 0px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -2972,7 +2972,7 @@
 }
 @media (max-width: 500px) {
   .text__f3Lou {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -3181,7 +3181,7 @@
     width: 96%;
     text-align: right;
     padding-top: 25px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -3349,7 +3349,7 @@
 }
 @media (max-width: 500px) {
   .link___4BJaZ {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .link__w16Gw {
@@ -3359,7 +3359,7 @@
 }
 @media (max-width: 500px) {
   .link__w16Gw {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .neighbours {
@@ -3458,7 +3458,7 @@
   .text__vkq1Q {
     padding-right: 0px;
     padding-left: 0px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -3555,7 +3555,7 @@
   .text__wkyZx {
     padding-right: 12px;
     padding-left: 10px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -3608,6 +3608,7 @@
     text-align: center;
     line-height: 1.8;
     padding-bottom: 20px;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
