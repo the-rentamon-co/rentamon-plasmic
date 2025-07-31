@@ -1256,6 +1256,44 @@ function PlasmicProperties__RenderFunc(props: {
                           projectcss.all,
                           sty.freeBox__hyTnZ
                         )}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["deleteCookie"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      function deleteCookie(name) {
+                                        document.cookie =
+                                          name +
+                                          "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                      }
+                                      deleteCookie("prop_tour");
+                                      console.log("delete cookie");
+                                      $state.tourSteps = 0;
+                                      return console.log(
+                                        "delete cookie",
+                                        $state.tourSteps
+                                      );
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["deleteCookie"] != null &&
+                            typeof $steps["deleteCookie"] === "object" &&
+                            typeof $steps["deleteCookie"].then === "function"
+                          ) {
+                            $steps["deleteCookie"] = await $steps[
+                              "deleteCookie"
+                            ];
+                          }
+                        }}
                       >
                         <div
                           className={classNames(
@@ -1266,7 +1304,7 @@ function PlasmicProperties__RenderFunc(props: {
                           onClick={async event => {
                             const $steps = {};
 
-                            $steps["deleteCookie"] = true
+                            $steps["deleteCookie"] = false
                               ? (() => {
                                   const actionArgs = {
                                     customFunction: async () => {
@@ -1278,7 +1316,7 @@ function PlasmicProperties__RenderFunc(props: {
                                         }
                                         deleteCookie("prop_tour");
                                         console.log("delete cookie");
-                                        $state.tourSteps = 10;
+                                        $state.tourSteps = 0;
                                         return console.log(
                                           "delete cookie",
                                           $state.tourSteps

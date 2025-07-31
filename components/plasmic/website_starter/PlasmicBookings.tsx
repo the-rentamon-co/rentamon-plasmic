@@ -118,6 +118,18 @@ export type PlasmicBookings__OverridesType = {
   _true?: Flex__<"div">;
   true2?: Flex__<"div">;
   openAndCloseButton?: Flex__<"div">;
+  manulBooking?: Flex__<"div">;
+  data3?: Flex__<"div">;
+  title3?: Flex__<"div">;
+  guestInfo2?: Flex__<"div">;
+  bookInfo2?: Flex__<"div">;
+  bookCommission2?: Flex__<"div">;
+  bookNetPrice2?: Flex__<"div">;
+  bookSettleStatus2?: Flex__<"div">;
+  error2?: Flex__<"div">;
+  true3?: Flex__<"div">;
+  true4?: Flex__<"div">;
+  openAndCloseButton3?: Flex__<"div">;
   autoSync?: Flex__<"div">;
   data2?: Flex__<"div">;
   title2?: Flex__<"div">;
@@ -777,7 +789,7 @@ function PlasmicBookings__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return true;
+                          return false;
                         }
                         throw e;
                       }
@@ -878,7 +890,7 @@ function PlasmicBookings__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return true;
+                          return false;
                         }
                         throw e;
                       }
@@ -911,7 +923,7 @@ function PlasmicBookings__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return true;
+                          return false;
                         }
                         throw e;
                       }
@@ -944,7 +956,7 @@ function PlasmicBookings__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return true;
+                          return false;
                         }
                         throw e;
                       }
@@ -2225,269 +2237,33 @@ function PlasmicBookings__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.feature)}
               >
-                <div
-                  data-plasmic-name={"smartBooking"}
-                  data-plasmic-override={overrides.smartBooking}
-                  className={classNames(projectcss.all, sty.smartBooking)}
-                >
+                {(() => {
+                  try {
+                    return $state.booking.data.smart_booking != null;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })() ? (
                   <div
-                    data-plasmic-name={"data"}
-                    data-plasmic-override={overrides.data}
-                    className={classNames(
-                      projectcss.all,
-                      sty.data,
-                      (() => {
-                        try {
-                          return (() => {})();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()
-                    )}
+                    data-plasmic-name={"smartBooking"}
+                    data-plasmic-override={overrides.smartBooking}
+                    className={classNames(projectcss.all, sty.smartBooking)}
                   >
-                    <Stack__
-                      as={"div"}
-                      data-plasmic-name={"title"}
-                      data-plasmic-override={overrides.title}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.title)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___3A21E
-                        )}
-                      >
-                        {
-                          "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
-                        }
-                      </div>
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__bMfM)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "26px"
-                            : "auto"
-                        }
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image155.svg",
-                          fullWidth: 27,
-                          fullHeight: 26,
-                          aspectRatio: undefined
-                        }}
-                      />
-                    </Stack__>
                     <div
-                      data-plasmic-name={"guestInfo"}
-                      data-plasmic-override={overrides.guestInfo}
-                      className={classNames(projectcss.all, sty.guestInfo)}
-                    >
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__adlWs
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__pkI36)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image156.svg",
-                            fullWidth: 14,
-                            fullHeight: 15,
-                            aspectRatio: undefined
-                          }}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__wxoad
-                          )}
-                        >
-                          {hasVariant(
-                            globalVariants,
-                            "screen",
-                            "smallMobile"
-                          ) ? (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    $state.booking.data.smart_booking
-                                      .guest_phone_number || "موبایل مهمان: ؟"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          ) : hasVariant(globalVariants, "screen", "mobile") ? (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    $state.booking.data.smart_booking
-                                      .guest_phone_number || "موبایل مهمان: ؟"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          ) : (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    $state.booking.data.smart_booking
-                                      .guest_phone_number || "موبایل مهمان: ؟"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          )}
-                        </div>
-                      </Stack__>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__s0ZDt
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__agLat
-                          )}
-                        >
-                          {hasVariant(
-                            globalVariants,
-                            "screen",
-                            "smallMobile"
-                          ) ? (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    $state.booking.data.smart_booking
-                                      .guest_name || "نام مهمان :‌ ؟"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          ) : hasVariant(globalVariants, "screen", "tablet") ? (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    $state.booking.data.smart_booking
-                                      .guest_name || "؟"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          ) : (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (
-                                    $state.booking.data.smart_booking
-                                      .guest_name || "؟"
-                                  );
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"bookInfo"}
-                      data-plasmic-override={overrides.bookInfo}
+                      data-plasmic-name={"data"}
+                      data-plasmic-override={overrides.data}
                       className={classNames(
                         projectcss.all,
-                        sty.bookInfo,
+                        sty.data,
                         (() => {
                           try {
-                            return $state.accordionOpenSmartBooking
-                              ? "display_block"
-                              : "display_hidden";
+                            return (() => {})();
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -2502,618 +2278,71 @@ function PlasmicBookings__RenderFunc(props: {
                     >
                       <Stack__
                         as={"div"}
+                        data-plasmic-name={"title"}
+                        data-plasmic-override={overrides.title}
                         hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__aU2Qf
-                        )}
+                        className={classNames(projectcss.all, sty.title)}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__aIhhR
+                            sty.text___3A21E
                           )}
                         >
-                          {hasVariant(
-                            globalVariants,
-                            "screen",
-                            "smallMobile"
-                          ) ? (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (() => {
-                                    const persianMonths = [
-                                      "فروردین",
-                                      "اردیبهشت",
-                                      "خرداد",
-                                      "تیر",
-                                      "مرداد",
-                                      "شهریور",
-                                      "مهر",
-                                      "آبان",
-                                      "آذر",
-                                      "دی",
-                                      "بهمن",
-                                      "اسفند"
-                                    ];
-
-                                    const persianWeekdays = [
-                                      "یک‌شنبه",
-                                      "دوشنبه",
-                                      "سه‌شنبه",
-                                      "چهارشنبه",
-                                      "پنج‌شنبه",
-                                      "جمعه",
-                                      "شنبه"
-                                    ];
-
-                                    function toPersianDigits(input) {
-                                      const persianDigits = [
-                                        "۰",
-                                        "۱",
-                                        "۲",
-                                        "۳",
-                                        "۴",
-                                        "۵",
-                                        "۶",
-                                        "۷",
-                                        "۸",
-                                        "۹"
-                                      ];
-
-                                      return input
-                                        .toString()
-                                        .replace(/\d/g, d => persianDigits[d]);
-                                    }
-                                    function toJalali(gYear, gMonth, gDay) {
-                                      const gDaysInMonth = [
-                                        31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
-                                        30, 31
-                                      ];
-
-                                      const jDaysInMonth = [
-                                        31, 31, 31, 31, 31, 31, 30, 30, 30, 30,
-                                        30, 29
-                                      ];
-
-                                      let gy =
-                                        gYear - (gYear >= 1600 ? 1600 : 621);
-                                      let gm = gMonth - 1;
-                                      let gd = gDay - 1;
-                                      let gDayNo =
-                                        365 * gy +
-                                        Math.floor((gy + 3) / 4) -
-                                        Math.floor((gy + 99) / 100) +
-                                        Math.floor((gy + 399) / 400);
-                                      for (let i = 0; i < gm; ++i)
-                                        gDayNo += gDaysInMonth[i];
-                                      gDayNo += gd;
-                                      let jDayNo =
-                                        gDayNo - (gYear >= 1600 ? 79 : 0);
-                                      let jNp = Math.floor(jDayNo / 12053);
-                                      jDayNo %= 12053;
-                                      let jYear =
-                                        979 +
-                                        33 * jNp +
-                                        4 * Math.floor(jDayNo / 1461);
-                                      jDayNo %= 1461;
-                                      if (jDayNo >= 366) {
-                                        jYear += Math.floor((jDayNo - 1) / 365);
-                                        jDayNo = (jDayNo - 1) % 365;
-                                      }
-                                      let jMonth;
-                                      for (
-                                        jMonth = 0;
-                                        jMonth < 11 &&
-                                        jDayNo >= jDaysInMonth[jMonth];
-                                        ++jMonth
-                                      )
-                                        jDayNo -= jDaysInMonth[jMonth];
-                                      let jDay = jDayNo + 1;
-                                      return {
-                                        jy:
-                                          jYear + (gYear >= 1600 ? 1600 : 621),
-                                        jm: jMonth + 1,
-                                        jd: jDay
-                                      };
-                                    }
-                                    function convertDateToJalaliFullString(
-                                      dateString
-                                    ) {
-                                      const date = new Date(dateString);
-                                      const gYear = date.getFullYear();
-                                      const gMonth = date.getMonth() + 1;
-                                      const gDay = date.getDate();
-                                      const weekdayIndex = date.getDay();
-                                      const { jy, jm, jd } = toJalali(
-                                        gYear,
-                                        gMonth,
-                                        gDay
-                                      );
-                                      const weekday =
-                                        persianWeekdays[weekdayIndex];
-                                      const monthName = persianMonths[jm - 1];
-                                      return `${weekday} ${toPersianDigits(
-                                        jd
-                                      )} ${monthName}`;
-                                    }
-                                    const checkIn =
-                                      $state.booking.data.smart_booking
-                                        .created_at;
-                                    const result =
-                                      convertDateToJalaliFullString(checkIn);
-                                    return "دریافت: " + result;
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          ) : hasVariant(globalVariants, "screen", "mobile") ? (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (() => {
-                                    const persianMonths = [
-                                      "فروردین",
-                                      "اردیبهشت",
-                                      "خرداد",
-                                      "تیر",
-                                      "مرداد",
-                                      "شهریور",
-                                      "مهر",
-                                      "آبان",
-                                      "آذر",
-                                      "دی",
-                                      "بهمن",
-                                      "اسفند"
-                                    ];
-
-                                    const persianWeekdays = [
-                                      "یک‌شنبه",
-                                      "دوشنبه",
-                                      "سه‌شنبه",
-                                      "چهارشنبه",
-                                      "پنج‌شنبه",
-                                      "جمعه",
-                                      "شنبه"
-                                    ];
-
-                                    function toPersianDigits(input) {
-                                      const persianDigits = [
-                                        "۰",
-                                        "۱",
-                                        "۲",
-                                        "۳",
-                                        "۴",
-                                        "۵",
-                                        "۶",
-                                        "۷",
-                                        "۸",
-                                        "۹"
-                                      ];
-
-                                      return input
-                                        .toString()
-                                        .replace(/\d/g, d => persianDigits[d]);
-                                    }
-                                    function toJalali(gYear, gMonth, gDay) {
-                                      const gDaysInMonth = [
-                                        31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
-                                        30, 31
-                                      ];
-
-                                      const jDaysInMonth = [
-                                        31, 31, 31, 31, 31, 31, 30, 30, 30, 30,
-                                        30, 29
-                                      ];
-
-                                      let gy =
-                                        gYear - (gYear >= 1600 ? 1600 : 621);
-                                      let gm = gMonth - 1;
-                                      let gd = gDay - 1;
-                                      let gDayNo =
-                                        365 * gy +
-                                        Math.floor((gy + 3) / 4) -
-                                        Math.floor((gy + 99) / 100) +
-                                        Math.floor((gy + 399) / 400);
-                                      for (let i = 0; i < gm; ++i)
-                                        gDayNo += gDaysInMonth[i];
-                                      gDayNo += gd;
-                                      let jDayNo =
-                                        gDayNo - (gYear >= 1600 ? 79 : 0);
-                                      let jNp = Math.floor(jDayNo / 12053);
-                                      jDayNo %= 12053;
-                                      let jYear =
-                                        979 +
-                                        33 * jNp +
-                                        4 * Math.floor(jDayNo / 1461);
-                                      jDayNo %= 1461;
-                                      if (jDayNo >= 366) {
-                                        jYear += Math.floor((jDayNo - 1) / 365);
-                                        jDayNo = (jDayNo - 1) % 365;
-                                      }
-                                      let jMonth;
-                                      for (
-                                        jMonth = 0;
-                                        jMonth < 11 &&
-                                        jDayNo >= jDaysInMonth[jMonth];
-                                        ++jMonth
-                                      )
-                                        jDayNo -= jDaysInMonth[jMonth];
-                                      let jDay = jDayNo + 1;
-                                      return {
-                                        jy:
-                                          jYear + (gYear >= 1600 ? 1600 : 621),
-                                        jm: jMonth + 1,
-                                        jd: jDay
-                                      };
-                                    }
-                                    function convertDateToJalaliFullString(
-                                      dateString
-                                    ) {
-                                      const date = new Date(dateString);
-                                      const gYear = date.getFullYear();
-                                      const gMonth = date.getMonth() + 1;
-                                      const gDay = date.getDate();
-                                      const weekdayIndex = date.getDay();
-                                      const { jy, jm, jd } = toJalali(
-                                        gYear,
-                                        gMonth,
-                                        gDay
-                                      );
-                                      const weekday =
-                                        persianWeekdays[weekdayIndex];
-                                      const monthName = persianMonths[jm - 1];
-                                      return `${weekday} ${toPersianDigits(
-                                        jd
-                                      )} ${monthName}`;
-                                    }
-                                    const checkIn =
-                                      $state.booking.data.smart_booking
-                                        .created_at;
-                                    const result =
-                                      convertDateToJalaliFullString(checkIn);
-                                    return "دریافت: " + result;
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          ) : hasVariant(globalVariants, "screen", "tablet") ? (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (() => {
-                                    const persianMonths = [
-                                      "فروردین",
-                                      "اردیبهشت",
-                                      "خرداد",
-                                      "تیر",
-                                      "مرداد",
-                                      "شهریور",
-                                      "مهر",
-                                      "آبان",
-                                      "آذر",
-                                      "دی",
-                                      "بهمن",
-                                      "اسفند"
-                                    ];
-
-                                    const persianWeekdays = [
-                                      "یک‌شنبه",
-                                      "دوشنبه",
-                                      "سه‌شنبه",
-                                      "چهارشنبه",
-                                      "پنج‌شنبه",
-                                      "جمعه",
-                                      "شنبه"
-                                    ];
-
-                                    function toPersianDigits(input) {
-                                      const persianDigits = [
-                                        "۰",
-                                        "۱",
-                                        "۲",
-                                        "۳",
-                                        "۴",
-                                        "۵",
-                                        "۶",
-                                        "۷",
-                                        "۸",
-                                        "۹"
-                                      ];
-
-                                      return input
-                                        .toString()
-                                        .replace(/\d/g, d => persianDigits[d]);
-                                    }
-                                    function toJalali(gYear, gMonth, gDay) {
-                                      const gDaysInMonth = [
-                                        31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
-                                        30, 31
-                                      ];
-
-                                      const jDaysInMonth = [
-                                        31, 31, 31, 31, 31, 31, 30, 30, 30, 30,
-                                        30, 29
-                                      ];
-
-                                      let gy =
-                                        gYear - (gYear >= 1600 ? 1600 : 621);
-                                      let gm = gMonth - 1;
-                                      let gd = gDay - 1;
-                                      let gDayNo =
-                                        365 * gy +
-                                        Math.floor((gy + 3) / 4) -
-                                        Math.floor((gy + 99) / 100) +
-                                        Math.floor((gy + 399) / 400);
-                                      for (let i = 0; i < gm; ++i)
-                                        gDayNo += gDaysInMonth[i];
-                                      gDayNo += gd;
-                                      let jDayNo =
-                                        gDayNo - (gYear >= 1600 ? 79 : 0);
-                                      let jNp = Math.floor(jDayNo / 12053);
-                                      jDayNo %= 12053;
-                                      let jYear =
-                                        979 +
-                                        33 * jNp +
-                                        4 * Math.floor(jDayNo / 1461);
-                                      jDayNo %= 1461;
-                                      if (jDayNo >= 366) {
-                                        jYear += Math.floor((jDayNo - 1) / 365);
-                                        jDayNo = (jDayNo - 1) % 365;
-                                      }
-                                      let jMonth;
-                                      for (
-                                        jMonth = 0;
-                                        jMonth < 11 &&
-                                        jDayNo >= jDaysInMonth[jMonth];
-                                        ++jMonth
-                                      )
-                                        jDayNo -= jDaysInMonth[jMonth];
-                                      let jDay = jDayNo + 1;
-                                      return {
-                                        jy:
-                                          jYear + (gYear >= 1600 ? 1600 : 621),
-                                        jm: jMonth + 1,
-                                        jd: jDay
-                                      };
-                                    }
-                                    function convertDateToJalaliFullString(
-                                      dateString
-                                    ) {
-                                      const date = new Date(dateString);
-                                      const gYear = date.getFullYear();
-                                      const gMonth = date.getMonth() + 1;
-                                      const gDay = date.getDate();
-                                      const weekdayIndex = date.getDay();
-                                      const { jy, jm, jd } = toJalali(
-                                        gYear,
-                                        gMonth,
-                                        gDay
-                                      );
-                                      const weekday =
-                                        persianWeekdays[weekdayIndex];
-                                      const monthName = persianMonths[jm - 1];
-                                      return `${weekday} ${toPersianDigits(
-                                        jd
-                                      )} ${monthName}`;
-                                    }
-                                    const checkIn =
-                                      $state.booking.data.smart_booking
-                                        .created_at;
-                                    const result =
-                                      convertDateToJalaliFullString(checkIn);
-                                    return "دریافت رزرو : " + result;
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          ) : (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (() => {
-                                    const persianMonths = [
-                                      "فروردین",
-                                      "اردیبهشت",
-                                      "خرداد",
-                                      "تیر",
-                                      "مرداد",
-                                      "شهریور",
-                                      "مهر",
-                                      "آبان",
-                                      "آذر",
-                                      "دی",
-                                      "بهمن",
-                                      "اسفند"
-                                    ];
-
-                                    const persianWeekdays = [
-                                      "یک‌شنبه",
-                                      "دوشنبه",
-                                      "سه‌شنبه",
-                                      "چهارشنبه",
-                                      "پنج‌شنبه",
-                                      "جمعه",
-                                      "شنبه"
-                                    ];
-
-                                    function toPersianDigits(input) {
-                                      const persianDigits = [
-                                        "۰",
-                                        "۱",
-                                        "۲",
-                                        "۳",
-                                        "۴",
-                                        "۵",
-                                        "۶",
-                                        "۷",
-                                        "۸",
-                                        "۹"
-                                      ];
-
-                                      return input
-                                        .toString()
-                                        .replace(/\d/g, d => persianDigits[d]);
-                                    }
-                                    function toJalali(gYear, gMonth, gDay) {
-                                      const gDaysInMonth = [
-                                        31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
-                                        30, 31
-                                      ];
-
-                                      const jDaysInMonth = [
-                                        31, 31, 31, 31, 31, 31, 30, 30, 30, 30,
-                                        30, 29
-                                      ];
-
-                                      let gy =
-                                        gYear - (gYear >= 1600 ? 1600 : 621);
-                                      let gm = gMonth - 1;
-                                      let gd = gDay - 1;
-                                      let gDayNo =
-                                        365 * gy +
-                                        Math.floor((gy + 3) / 4) -
-                                        Math.floor((gy + 99) / 100) +
-                                        Math.floor((gy + 399) / 400);
-                                      for (let i = 0; i < gm; ++i)
-                                        gDayNo += gDaysInMonth[i];
-                                      gDayNo += gd;
-                                      let jDayNo =
-                                        gDayNo - (gYear >= 1600 ? 79 : 0);
-                                      let jNp = Math.floor(jDayNo / 12053);
-                                      jDayNo %= 12053;
-                                      let jYear =
-                                        979 +
-                                        33 * jNp +
-                                        4 * Math.floor(jDayNo / 1461);
-                                      jDayNo %= 1461;
-                                      if (jDayNo >= 366) {
-                                        jYear += Math.floor((jDayNo - 1) / 365);
-                                        jDayNo = (jDayNo - 1) % 365;
-                                      }
-                                      let jMonth;
-                                      for (
-                                        jMonth = 0;
-                                        jMonth < 11 &&
-                                        jDayNo >= jDaysInMonth[jMonth];
-                                        ++jMonth
-                                      )
-                                        jDayNo -= jDaysInMonth[jMonth];
-                                      let jDay = jDayNo + 1;
-                                      return {
-                                        jy:
-                                          jYear + (gYear >= 1600 ? 1600 : 621),
-                                        jm: jMonth + 1,
-                                        jd: jDay
-                                      };
-                                    }
-                                    function convertDateToJalaliFullString(
-                                      dateString
-                                    ) {
-                                      const date = new Date(dateString);
-                                      const gYear = date.getFullYear();
-                                      const gMonth = date.getMonth() + 1;
-                                      const gDay = date.getDate();
-                                      const weekdayIndex = date.getDay();
-                                      const { jy, jm, jd } = toJalali(
-                                        gYear,
-                                        gMonth,
-                                        gDay
-                                      );
-                                      const weekday =
-                                        persianWeekdays[weekdayIndex];
-                                      const monthName = persianMonths[jm - 1];
-                                      return `${weekday} ${toPersianDigits(
-                                        jd
-                                      )} ${monthName}`;
-                                    }
-                                    const checkIn =
-                                      $state.booking.data.smart_booking
-                                        .created_at;
-                                    const result =
-                                      convertDateToJalaliFullString(checkIn);
-                                    return "دریافت رزرو : " + result;
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          )}
+                          {
+                            "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                          }
                         </div>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__bMfM)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "26px"
+                              : "auto"
+                          }
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image155.svg",
+                            fullWidth: 27,
+                            fullHeight: 26,
+                            aspectRatio: undefined
+                          }}
+                        />
                       </Stack__>
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__w81Ii
-                        )}
+                        data-plasmic-name={"guestInfo"}
+                        data-plasmic-override={overrides.guestInfo}
+                        className={classNames(projectcss.all, sty.guestInfo)}
                       >
                         <Stack__
                           as={"div"}
                           hasGap={true}
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__oufwt
+                            sty.freeBox__adlWs
                           )}
                         >
                           <PlasmicImg__
                             alt={""}
-                            className={classNames(sty.img__awjXa)}
+                            className={classNames(sty.img__pkI36)}
                             displayHeight={"auto"}
                             displayMaxHeight={"none"}
-                            displayMaxWidth={
-                              hasVariant(
-                                globalVariants,
-                                "screen",
-                                "smallMobile"
-                              )
-                                ? "100%"
-                                : "100%"
-                            }
+                            displayMaxWidth={"100%"}
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/image158.svg",
-                              fullWidth: 13,
-                              fullHeight: 16,
+                              src: "/plasmic/website_starter/images/image156.svg",
+                              fullWidth: 14,
+                              fullHeight: 15,
                               aspectRatio: undefined
                             }}
                           />
@@ -3122,7 +2351,7 @@ function PlasmicBookings__RenderFunc(props: {
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__qgaal
+                              sty.text__wxoad
                             )}
                           >
                             {hasVariant(
@@ -3134,8 +2363,8 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.smart_booking.night +
-                                        " شب" || "نفرات"
+                                      $state.booking.data.smart_booking
+                                        .guest_phone_number || "موبایل مهمان: ؟"
                                     );
                                   } catch (e) {
                                     if (
@@ -3157,17 +2386,602 @@ function PlasmicBookings__RenderFunc(props: {
                               <React.Fragment>
                                 {(() => {
                                   try {
+                                    return (
+                                      $state.booking.data.smart_booking
+                                        .guest_phone_number || "موبایل مهمان: ؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data.smart_booking
+                                        .guest_phone_number || "موبایل مهمان: ؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            )}
+                          </div>
+                        </Stack__>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__s0ZDt
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__agLat
+                            )}
+                          >
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data.smart_booking
+                                        .guest_name || "نام مهمان :‌ ؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : hasVariant(
+                                globalVariants,
+                                "screen",
+                                "tablet"
+                              ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data.smart_booking
+                                        .guest_name || "؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data.smart_booking
+                                        .guest_name || "؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"bookInfo"}
+                        data-plasmic-override={overrides.bookInfo}
+                        className={classNames(
+                          projectcss.all,
+                          sty.bookInfo,
+                          (() => {
+                            try {
+                              return $state.accordionOpenSmartBooking
+                                ? "display_block"
+                                : "display_hidden";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        )}
+                      >
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__aU2Qf
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__aIhhR
+                            )}
+                          >
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
                                     return (() => {
-                                      if (
-                                        $state.booking.data.smart_booking
-                                          .night == null
-                                      ) {
-                                        return "مدت اقامت";
+                                      const persianMonths = [
+                                        "فروردین",
+                                        "اردیبهشت",
+                                        "خرداد",
+                                        "تیر",
+                                        "مرداد",
+                                        "شهریور",
+                                        "مهر",
+                                        "آبان",
+                                        "آذر",
+                                        "دی",
+                                        "بهمن",
+                                        "اسفند"
+                                      ];
+
+                                      const persianWeekdays = [
+                                        "یک‌شنبه",
+                                        "دوشنبه",
+                                        "سه‌شنبه",
+                                        "چهارشنبه",
+                                        "پنج‌شنبه",
+                                        "جمعه",
+                                        "شنبه"
+                                      ];
+
+                                      function toPersianDigits(input) {
+                                        const persianDigits = [
+                                          "۰",
+                                          "۱",
+                                          "۲",
+                                          "۳",
+                                          "۴",
+                                          "۵",
+                                          "۶",
+                                          "۷",
+                                          "۸",
+                                          "۹"
+                                        ];
+
+                                        return input
+                                          .toString()
+                                          .replace(
+                                            /\d/g,
+                                            d => persianDigits[d]
+                                          );
                                       }
-                                      return (
+                                      function toJalali(gYear, gMonth, gDay) {
+                                        const gDaysInMonth = [
+                                          31, 28, 31, 30, 31, 30, 31, 31, 30,
+                                          31, 30, 31
+                                        ];
+
+                                        const jDaysInMonth = [
+                                          31, 31, 31, 31, 31, 31, 30, 30, 30,
+                                          30, 30, 29
+                                        ];
+
+                                        let gy =
+                                          gYear - (gYear >= 1600 ? 1600 : 621);
+                                        let gm = gMonth - 1;
+                                        let gd = gDay - 1;
+                                        let gDayNo =
+                                          365 * gy +
+                                          Math.floor((gy + 3) / 4) -
+                                          Math.floor((gy + 99) / 100) +
+                                          Math.floor((gy + 399) / 400);
+                                        for (let i = 0; i < gm; ++i)
+                                          gDayNo += gDaysInMonth[i];
+                                        gDayNo += gd;
+                                        let jDayNo =
+                                          gDayNo - (gYear >= 1600 ? 79 : 0);
+                                        let jNp = Math.floor(jDayNo / 12053);
+                                        jDayNo %= 12053;
+                                        let jYear =
+                                          979 +
+                                          33 * jNp +
+                                          4 * Math.floor(jDayNo / 1461);
+                                        jDayNo %= 1461;
+                                        if (jDayNo >= 366) {
+                                          jYear += Math.floor(
+                                            (jDayNo - 1) / 365
+                                          );
+                                          jDayNo = (jDayNo - 1) % 365;
+                                        }
+                                        let jMonth;
+                                        for (
+                                          jMonth = 0;
+                                          jMonth < 11 &&
+                                          jDayNo >= jDaysInMonth[jMonth];
+                                          ++jMonth
+                                        )
+                                          jDayNo -= jDaysInMonth[jMonth];
+                                        let jDay = jDayNo + 1;
+                                        return {
+                                          jy:
+                                            jYear +
+                                            (gYear >= 1600 ? 1600 : 621),
+                                          jm: jMonth + 1,
+                                          jd: jDay
+                                        };
+                                      }
+                                      function convertDateToJalaliFullString(
+                                        dateString
+                                      ) {
+                                        const date = new Date(dateString);
+                                        const gYear = date.getFullYear();
+                                        const gMonth = date.getMonth() + 1;
+                                        const gDay = date.getDate();
+                                        const weekdayIndex = date.getDay();
+                                        const { jy, jm, jd } = toJalali(
+                                          gYear,
+                                          gMonth,
+                                          gDay
+                                        );
+                                        const weekday =
+                                          persianWeekdays[weekdayIndex];
+                                        const monthName = persianMonths[jm - 1];
+                                        return `${weekday} ${toPersianDigits(
+                                          jd
+                                        )} ${monthName}`;
+                                      }
+                                      const checkIn =
                                         $state.booking.data.smart_booking
-                                          .night + " شب" || "مدت اقامت"
-                                      );
+                                          .created_at;
+                                      const result =
+                                        convertDateToJalaliFullString(checkIn);
+                                      return "دریافت: " + result;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : hasVariant(
+                                globalVariants,
+                                "screen",
+                                "mobile"
+                              ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (() => {
+                                      const persianMonths = [
+                                        "فروردین",
+                                        "اردیبهشت",
+                                        "خرداد",
+                                        "تیر",
+                                        "مرداد",
+                                        "شهریور",
+                                        "مهر",
+                                        "آبان",
+                                        "آذر",
+                                        "دی",
+                                        "بهمن",
+                                        "اسفند"
+                                      ];
+
+                                      const persianWeekdays = [
+                                        "یک‌شنبه",
+                                        "دوشنبه",
+                                        "سه‌شنبه",
+                                        "چهارشنبه",
+                                        "پنج‌شنبه",
+                                        "جمعه",
+                                        "شنبه"
+                                      ];
+
+                                      function toPersianDigits(input) {
+                                        const persianDigits = [
+                                          "۰",
+                                          "۱",
+                                          "۲",
+                                          "۳",
+                                          "۴",
+                                          "۵",
+                                          "۶",
+                                          "۷",
+                                          "۸",
+                                          "۹"
+                                        ];
+
+                                        return input
+                                          .toString()
+                                          .replace(
+                                            /\d/g,
+                                            d => persianDigits[d]
+                                          );
+                                      }
+                                      function toJalali(gYear, gMonth, gDay) {
+                                        const gDaysInMonth = [
+                                          31, 28, 31, 30, 31, 30, 31, 31, 30,
+                                          31, 30, 31
+                                        ];
+
+                                        const jDaysInMonth = [
+                                          31, 31, 31, 31, 31, 31, 30, 30, 30,
+                                          30, 30, 29
+                                        ];
+
+                                        let gy =
+                                          gYear - (gYear >= 1600 ? 1600 : 621);
+                                        let gm = gMonth - 1;
+                                        let gd = gDay - 1;
+                                        let gDayNo =
+                                          365 * gy +
+                                          Math.floor((gy + 3) / 4) -
+                                          Math.floor((gy + 99) / 100) +
+                                          Math.floor((gy + 399) / 400);
+                                        for (let i = 0; i < gm; ++i)
+                                          gDayNo += gDaysInMonth[i];
+                                        gDayNo += gd;
+                                        let jDayNo =
+                                          gDayNo - (gYear >= 1600 ? 79 : 0);
+                                        let jNp = Math.floor(jDayNo / 12053);
+                                        jDayNo %= 12053;
+                                        let jYear =
+                                          979 +
+                                          33 * jNp +
+                                          4 * Math.floor(jDayNo / 1461);
+                                        jDayNo %= 1461;
+                                        if (jDayNo >= 366) {
+                                          jYear += Math.floor(
+                                            (jDayNo - 1) / 365
+                                          );
+                                          jDayNo = (jDayNo - 1) % 365;
+                                        }
+                                        let jMonth;
+                                        for (
+                                          jMonth = 0;
+                                          jMonth < 11 &&
+                                          jDayNo >= jDaysInMonth[jMonth];
+                                          ++jMonth
+                                        )
+                                          jDayNo -= jDaysInMonth[jMonth];
+                                        let jDay = jDayNo + 1;
+                                        return {
+                                          jy:
+                                            jYear +
+                                            (gYear >= 1600 ? 1600 : 621),
+                                          jm: jMonth + 1,
+                                          jd: jDay
+                                        };
+                                      }
+                                      function convertDateToJalaliFullString(
+                                        dateString
+                                      ) {
+                                        const date = new Date(dateString);
+                                        const gYear = date.getFullYear();
+                                        const gMonth = date.getMonth() + 1;
+                                        const gDay = date.getDate();
+                                        const weekdayIndex = date.getDay();
+                                        const { jy, jm, jd } = toJalali(
+                                          gYear,
+                                          gMonth,
+                                          gDay
+                                        );
+                                        const weekday =
+                                          persianWeekdays[weekdayIndex];
+                                        const monthName = persianMonths[jm - 1];
+                                        return `${weekday} ${toPersianDigits(
+                                          jd
+                                        )} ${monthName}`;
+                                      }
+                                      const checkIn =
+                                        $state.booking.data.smart_booking
+                                          .created_at;
+                                      const result =
+                                        convertDateToJalaliFullString(checkIn);
+                                      return "دریافت: " + result;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : hasVariant(
+                                globalVariants,
+                                "screen",
+                                "tablet"
+                              ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (() => {
+                                      const persianMonths = [
+                                        "فروردین",
+                                        "اردیبهشت",
+                                        "خرداد",
+                                        "تیر",
+                                        "مرداد",
+                                        "شهریور",
+                                        "مهر",
+                                        "آبان",
+                                        "آذر",
+                                        "دی",
+                                        "بهمن",
+                                        "اسفند"
+                                      ];
+
+                                      const persianWeekdays = [
+                                        "یک‌شنبه",
+                                        "دوشنبه",
+                                        "سه‌شنبه",
+                                        "چهارشنبه",
+                                        "پنج‌شنبه",
+                                        "جمعه",
+                                        "شنبه"
+                                      ];
+
+                                      function toPersianDigits(input) {
+                                        const persianDigits = [
+                                          "۰",
+                                          "۱",
+                                          "۲",
+                                          "۳",
+                                          "۴",
+                                          "۵",
+                                          "۶",
+                                          "۷",
+                                          "۸",
+                                          "۹"
+                                        ];
+
+                                        return input
+                                          .toString()
+                                          .replace(
+                                            /\d/g,
+                                            d => persianDigits[d]
+                                          );
+                                      }
+                                      function toJalali(gYear, gMonth, gDay) {
+                                        const gDaysInMonth = [
+                                          31, 28, 31, 30, 31, 30, 31, 31, 30,
+                                          31, 30, 31
+                                        ];
+
+                                        const jDaysInMonth = [
+                                          31, 31, 31, 31, 31, 31, 30, 30, 30,
+                                          30, 30, 29
+                                        ];
+
+                                        let gy =
+                                          gYear - (gYear >= 1600 ? 1600 : 621);
+                                        let gm = gMonth - 1;
+                                        let gd = gDay - 1;
+                                        let gDayNo =
+                                          365 * gy +
+                                          Math.floor((gy + 3) / 4) -
+                                          Math.floor((gy + 99) / 100) +
+                                          Math.floor((gy + 399) / 400);
+                                        for (let i = 0; i < gm; ++i)
+                                          gDayNo += gDaysInMonth[i];
+                                        gDayNo += gd;
+                                        let jDayNo =
+                                          gDayNo - (gYear >= 1600 ? 79 : 0);
+                                        let jNp = Math.floor(jDayNo / 12053);
+                                        jDayNo %= 12053;
+                                        let jYear =
+                                          979 +
+                                          33 * jNp +
+                                          4 * Math.floor(jDayNo / 1461);
+                                        jDayNo %= 1461;
+                                        if (jDayNo >= 366) {
+                                          jYear += Math.floor(
+                                            (jDayNo - 1) / 365
+                                          );
+                                          jDayNo = (jDayNo - 1) % 365;
+                                        }
+                                        let jMonth;
+                                        for (
+                                          jMonth = 0;
+                                          jMonth < 11 &&
+                                          jDayNo >= jDaysInMonth[jMonth];
+                                          ++jMonth
+                                        )
+                                          jDayNo -= jDaysInMonth[jMonth];
+                                        let jDay = jDayNo + 1;
+                                        return {
+                                          jy:
+                                            jYear +
+                                            (gYear >= 1600 ? 1600 : 621),
+                                          jm: jMonth + 1,
+                                          jd: jDay
+                                        };
+                                      }
+                                      function convertDateToJalaliFullString(
+                                        dateString
+                                      ) {
+                                        const date = new Date(dateString);
+                                        const gYear = date.getFullYear();
+                                        const gMonth = date.getMonth() + 1;
+                                        const gDay = date.getDate();
+                                        const weekdayIndex = date.getDay();
+                                        const { jy, jm, jd } = toJalali(
+                                          gYear,
+                                          gMonth,
+                                          gDay
+                                        );
+                                        const weekday =
+                                          persianWeekdays[weekdayIndex];
+                                        const monthName = persianMonths[jm - 1];
+                                        return `${weekday} ${toPersianDigits(
+                                          jd
+                                        )} ${monthName}`;
+                                      }
+                                      const checkIn =
+                                        $state.booking.data.smart_booking
+                                          .created_at;
+                                      const result =
+                                        convertDateToJalaliFullString(checkIn);
+                                      return "دریافت رزرو : " + result;
                                     })();
                                   } catch (e) {
                                     if (
@@ -3186,16 +3000,133 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (() => {
-                                      if (
-                                        $state.booking.data.smart_booking
-                                          .night == null
-                                      ) {
-                                        return "مدت اقامت";
+                                      const persianMonths = [
+                                        "فروردین",
+                                        "اردیبهشت",
+                                        "خرداد",
+                                        "تیر",
+                                        "مرداد",
+                                        "شهریور",
+                                        "مهر",
+                                        "آبان",
+                                        "آذر",
+                                        "دی",
+                                        "بهمن",
+                                        "اسفند"
+                                      ];
+
+                                      const persianWeekdays = [
+                                        "یک‌شنبه",
+                                        "دوشنبه",
+                                        "سه‌شنبه",
+                                        "چهارشنبه",
+                                        "پنج‌شنبه",
+                                        "جمعه",
+                                        "شنبه"
+                                      ];
+
+                                      function toPersianDigits(input) {
+                                        const persianDigits = [
+                                          "۰",
+                                          "۱",
+                                          "۲",
+                                          "۳",
+                                          "۴",
+                                          "۵",
+                                          "۶",
+                                          "۷",
+                                          "۸",
+                                          "۹"
+                                        ];
+
+                                        return input
+                                          .toString()
+                                          .replace(
+                                            /\d/g,
+                                            d => persianDigits[d]
+                                          );
                                       }
-                                      return (
+                                      function toJalali(gYear, gMonth, gDay) {
+                                        const gDaysInMonth = [
+                                          31, 28, 31, 30, 31, 30, 31, 31, 30,
+                                          31, 30, 31
+                                        ];
+
+                                        const jDaysInMonth = [
+                                          31, 31, 31, 31, 31, 31, 30, 30, 30,
+                                          30, 30, 29
+                                        ];
+
+                                        let gy =
+                                          gYear - (gYear >= 1600 ? 1600 : 621);
+                                        let gm = gMonth - 1;
+                                        let gd = gDay - 1;
+                                        let gDayNo =
+                                          365 * gy +
+                                          Math.floor((gy + 3) / 4) -
+                                          Math.floor((gy + 99) / 100) +
+                                          Math.floor((gy + 399) / 400);
+                                        for (let i = 0; i < gm; ++i)
+                                          gDayNo += gDaysInMonth[i];
+                                        gDayNo += gd;
+                                        let jDayNo =
+                                          gDayNo - (gYear >= 1600 ? 79 : 0);
+                                        let jNp = Math.floor(jDayNo / 12053);
+                                        jDayNo %= 12053;
+                                        let jYear =
+                                          979 +
+                                          33 * jNp +
+                                          4 * Math.floor(jDayNo / 1461);
+                                        jDayNo %= 1461;
+                                        if (jDayNo >= 366) {
+                                          jYear += Math.floor(
+                                            (jDayNo - 1) / 365
+                                          );
+                                          jDayNo = (jDayNo - 1) % 365;
+                                        }
+                                        let jMonth;
+                                        for (
+                                          jMonth = 0;
+                                          jMonth < 11 &&
+                                          jDayNo >= jDaysInMonth[jMonth];
+                                          ++jMonth
+                                        )
+                                          jDayNo -= jDaysInMonth[jMonth];
+                                        let jDay = jDayNo + 1;
+                                        return {
+                                          jy:
+                                            jYear +
+                                            (gYear >= 1600 ? 1600 : 621),
+                                          jm: jMonth + 1,
+                                          jd: jDay
+                                        };
+                                      }
+                                      function convertDateToJalaliFullString(
+                                        dateString
+                                      ) {
+                                        const date = new Date(dateString);
+                                        const gYear = date.getFullYear();
+                                        const gMonth = date.getMonth() + 1;
+                                        const gDay = date.getDate();
+                                        const weekdayIndex = date.getDay();
+                                        const { jy, jm, jd } = toJalali(
+                                          gYear,
+                                          gMonth,
+                                          gDay
+                                        );
+                                        const weekday =
+                                          persianWeekdays[weekdayIndex];
+                                        const monthName = persianMonths[jm - 1];
+                                        return `${weekday} ${toPersianDigits(
+                                          jd
+                                        )} ${monthName}`;
+                                      }
+                                      const checkIn =
                                         $state.booking.data.smart_booking
-                                          .night + " شب" || "مدت اقامت"
-                                      );
+                                          .created_at;
+                                      const result =
+                                        convertDateToJalaliFullString(checkIn);
+                                      return "دریافت رزرو : " + result;
                                     })();
                                   } catch (e) {
                                     if (
@@ -3212,36 +3143,883 @@ function PlasmicBookings__RenderFunc(props: {
                             )}
                           </div>
                         </Stack__>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__w81Ii
+                          )}
+                        >
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__oufwt
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__awjXa)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : "100%"
+                              }
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image158.svg",
+                                fullWidth: 13,
+                                fullHeight: 16,
+                                aspectRatio: undefined
+                              }}
+                            />
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__qgaal
+                              )}
+                            >
+                              {hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              ) ? (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (
+                                        $state.booking.data.smart_booking
+                                          .night + " شب" || "نفرات"
+                                      );
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return " ";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              ) : hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobile"
+                                ) ? (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          $state.booking.data.smart_booking
+                                            .night == null
+                                        ) {
+                                          return "مدت اقامت";
+                                        }
+                                        return (
+                                          $state.booking.data.smart_booking
+                                            .night + " شب" || "مدت اقامت"
+                                        );
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return " ";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              ) : (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          $state.booking.data.smart_booking
+                                            .night == null
+                                        ) {
+                                          return "مدت اقامت";
+                                        }
+                                        return (
+                                          $state.booking.data.smart_booking
+                                            .night + " شب" || "مدت اقامت"
+                                        );
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return " ";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              )}
+                            </div>
+                          </Stack__>
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox___5UCox
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__jioCg)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : "100%"
+                              }
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image157.svg",
+                                fullWidth: 14,
+                                fullHeight: 14,
+                                aspectRatio: undefined
+                              }}
+                            />
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__pXy5
+                              )}
+                            >
+                              {hasVariant(
+                                globalVariants,
+                                "screen",
+                                "mobile"
+                              ) ? (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          $state.booking.data.smart_booking
+                                            .guests_count == null
+                                        ) {
+                                          return "نفرات";
+                                        }
+                                        return (
+                                          $state.booking.data.smart_booking
+                                            .guests_count + " نفر"
+                                        );
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "\u06f5 \u0646\u0641\u0631";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              ) : (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          $state.booking.data.smart_booking
+                                            .guests_count == null
+                                        ) {
+                                          return "نفرات";
+                                        }
+                                        return (
+                                          $state.booking.data.smart_booking
+                                            .guests_count + " نفر"
+                                        );
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return " ";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              )}
+                            </div>
+                          </Stack__>
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"bookPrice"}
+                        data-plasmic-override={overrides.bookPrice}
+                        className={classNames(
+                          projectcss.all,
+                          sty.bookPrice,
+                          (() => {
+                            try {
+                              return $state.accordionOpenSmartBooking
+                                ? "display_block"
+                                : "display_hidden";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        )}
+                      >
                         <Stack__
                           as={"div"}
                           hasGap={true}
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox___5UCox
+                            sty.freeBox__d8ITf
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__bc7Tf
+                            )}
+                          >
+                            {hasVariant(globalVariants, "screen", "tablet") ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (() => {
+                                      let price =
+                                        $state.booking.data.smart_booking
+                                          .amount;
+                                      if (
+                                        $state.booking.data.website == "jabama"
+                                      ) {
+                                        price = price / 10;
+                                      }
+                                      return new Intl.NumberFormat(
+                                        "fa-IR"
+                                      ).format(price);
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (() => {
+                                      let price =
+                                        $state.booking.data.smart_booking
+                                          .amount;
+                                      if (
+                                        $state.booking.data.website == "jabama"
+                                      ) {
+                                        price = price / 10;
+                                      }
+                                      return new Intl.NumberFormat(
+                                        "fa-IR"
+                                      ).format(price);
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            )}
+                          </div>
+                        </Stack__>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__n3CAg
+                          )}
+                        >
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__b0H3N
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__q1Tbt
+                              )}
+                            >
+                              {
+                                "\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062f\u0631 \u0634\u0628:"
+                              }
+                            </div>
+                          </Stack__>
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"bookCommission"}
+                        data-plasmic-override={overrides.bookCommission}
+                        className={classNames(
+                          projectcss.all,
+                          sty.bookCommission,
+                          (() => {
+                            try {
+                              return (() => {})();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        )}
+                      >
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__fDlu7
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__dgPoa
+                            )}
+                          >
+                            {"%\u06f1\u06f0"}
+                          </div>
+                        </Stack__>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__rCc6I
+                          )}
+                        >
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__kffH
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___6GyPc
+                              )}
+                            >
+                              {
+                                "\u06a9\u0627\u0631\u0645\u0632\u062f (\u0648 \u0645\u0627\u0644\u06cc\u0627\u062a) \u0634\u0628:"
+                              }
+                            </div>
+                          </Stack__>
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"bookNetPrice"}
+                        data-plasmic-override={overrides.bookNetPrice}
+                        className={classNames(projectcss.all, sty.bookNetPrice)}
+                      >
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__rLZsn
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__tdgzg
+                            )}
+                          >
+                            {"\u06f2/\u06f6\u06f5\u06f5/\u06f0\u06f0\u06f0"}
+                          </div>
+                        </Stack__>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__yuNmr
+                          )}
+                        >
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__eb3EI
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__l1HKf
+                              )}
+                            >
+                              {
+                                "\u062f\u0631\u0622\u0645\u062f \u062e\u0627\u0644\u0635 \u0634\u0645\u0627:"
+                              }
+                            </div>
+                          </Stack__>
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"bookSettleStatus"}
+                        data-plasmic-override={overrides.bookSettleStatus}
+                        className={classNames(
+                          projectcss.all,
+                          sty.bookSettleStatus
+                        )}
+                      >
+                        {(() => {
+                          try {
+                            return (
+                              $state.booking.data.smart_booking.is_settled ==
+                              false
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <Stack__
+                            as={"div"}
+                            data-plasmic-name={"error"}
+                            data-plasmic-override={overrides.error}
+                            hasGap={true}
+                            className={classNames(projectcss.all, sty.error)}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__qOrc4)}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "18px"
+                                  : "auto"
+                              }
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image141.svg",
+                                fullWidth: 23,
+                                fullHeight: 23,
+                                aspectRatio: undefined
+                              }}
+                            />
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__yiaF
+                              )}
+                            >
+                              {
+                                "\u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647"
+                              }
+                            </div>
+                          </Stack__>
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (
+                              $state.booking.data.smart_booking.is_settled ==
+                              true
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <Stack__
+                            as={"div"}
+                            data-plasmic-name={"_true"}
+                            data-plasmic-override={overrides._true}
+                            hasGap={true}
+                            className={classNames(projectcss.all, sty._true)}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__eWUza)}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "18px"
+                                  : "auto"
+                              }
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image141.svg",
+                                fullWidth: 23,
+                                fullHeight: 23,
+                                aspectRatio: undefined
+                              }}
+                            />
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__di7DJ
+                              )}
+                            >
+                              {
+                                "\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"
+                              }
+                            </div>
+                          </Stack__>
+                        ) : null}
+                        {(
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? (() => {
+                                try {
+                                  return (
+                                    $state.booking.data.smart_booking
+                                      .is_settled == null
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (
+                                    $state.booking.data.smart_booking
+                                      .is_settled == null
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
+                          <Stack__
+                            as={"div"}
+                            data-plasmic-name={"true2"}
+                            data-plasmic-override={overrides.true2}
+                            hasGap={true}
+                            className={classNames(projectcss.all, sty.true2)}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__skgW4
+                              )}
+                            >
+                              {"\u061f"}
+                            </div>
+                          </Stack__>
+                        ) : null}
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox___90Cmi
+                          )}
+                        >
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__iznGv
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__pVcZ
+                              )}
+                            >
+                              {
+                                "\u0648\u0636\u0639\u06cc\u062a \u0645\u0627\u0644\u06cc:"
+                              }
+                            </div>
+                          </Stack__>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-plasmic-name={"openAndCloseButton"}
+                      data-plasmic-override={overrides.openAndCloseButton}
+                      className={classNames(
+                        projectcss.all,
+                        sty.openAndCloseButton
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateAccordionOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["accordionOpenSmartBooking"]
+                                },
+                                operation: 4
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, !oldValue);
+                                return !oldValue;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateAccordionOpen"] != null &&
+                          typeof $steps["updateAccordionOpen"] === "object" &&
+                          typeof $steps["updateAccordionOpen"].then ===
+                            "function"
+                        ) {
+                          $steps["updateAccordionOpen"] = await $steps[
+                            "updateAccordionOpen"
+                          ];
+                        }
+                      }}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(
+                          sty.img__rkHvn,
+                          (() => {
+                            try {
+                              return $state.accordionOpenSmartBooking
+                                ? ".rotate-normal"
+                                : "rotate-flipped";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        )}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image154.svg",
+                          fullWidth: 21,
+                          fullHeight: 10,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    </div>
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return $state.booking.data.manual_booking != null;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    data-plasmic-name={"manulBooking"}
+                    data-plasmic-override={overrides.manulBooking}
+                    className={classNames(projectcss.all, sty.manulBooking)}
+                  >
+                    <div
+                      data-plasmic-name={"data3"}
+                      data-plasmic-override={overrides.data3}
+                      className={classNames(projectcss.all, sty.data3)}
+                    >
+                      <Stack__
+                        as={"div"}
+                        data-plasmic-name={"title3"}
+                        data-plasmic-override={overrides.title3}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty.title3)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__ewOqG
+                          )}
+                        >
+                          {"\u0631\u0632\u0631\u0648 \u062f\u0633\u062a\u06cc"}
+                        </div>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__rNlAs)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "26px"
+                              : "auto"
+                          }
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image155.svg",
+                            fullWidth: 27,
+                            fullHeight: 26,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      </Stack__>
+                      <div
+                        data-plasmic-name={"guestInfo2"}
+                        data-plasmic-override={overrides.guestInfo2}
+                        className={classNames(projectcss.all, sty.guestInfo2)}
+                      >
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox___6UWUc
                           )}
                         >
                           <PlasmicImg__
                             alt={""}
-                            className={classNames(sty.img__jioCg)}
+                            className={classNames(sty.img__oUumn)}
                             displayHeight={"auto"}
                             displayMaxHeight={"none"}
-                            displayMaxWidth={
-                              hasVariant(
-                                globalVariants,
-                                "screen",
-                                "smallMobile"
-                              )
-                                ? "100%"
-                                : "100%"
-                            }
+                            displayMaxWidth={"100%"}
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/image157.svg",
+                              src: "/plasmic/website_starter/images/image156.svg",
                               fullWidth: 14,
-                              fullHeight: 14,
+                              fullHeight: 15,
                               aspectRatio: undefined
                             }}
                           />
@@ -3250,24 +4028,321 @@ function PlasmicBookings__RenderFunc(props: {
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__pXy5
+                              sty.text__utevI
                             )}
                           >
-                            {hasVariant(globalVariants, "screen", "mobile") ? (
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data.smart_booking
+                                        .guest_phone_number || "موبایل مهمان: ؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : hasVariant(
+                                globalVariants,
+                                "screen",
+                                "mobile"
+                              ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data.smart_booking
+                                        .guest_phone_number || "موبایل مهمان: ؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data.manual_booking
+                                        .guest_phone_number || "موبایل مهمان: ؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            )}
+                          </div>
+                        </Stack__>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__kFsnw
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__eStQg
+                            )}
+                          >
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data.smart_booking
+                                        .guest_name || "نام مهمان :‌ ؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : hasVariant(
+                                globalVariants,
+                                "screen",
+                                "tablet"
+                              ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data.smart_booking
+                                        .guest_name || "؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      $state.booking.data.manual_booking
+                                        .guest_name || "؟"
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"bookInfo2"}
+                        data-plasmic-override={overrides.bookInfo2}
+                        className={classNames(projectcss.all, sty.bookInfo2)}
+                      >
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__pxXzy
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__sdp9D
+                            )}
+                          >
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
                               <React.Fragment>
                                 {(() => {
                                   try {
                                     return (() => {
-                                      if (
-                                        $state.booking.data.smart_booking
-                                          .guests_count == null
-                                      ) {
-                                        return "نفرات";
+                                      const persianMonths = [
+                                        "فروردین",
+                                        "اردیبهشت",
+                                        "خرداد",
+                                        "تیر",
+                                        "مرداد",
+                                        "شهریور",
+                                        "مهر",
+                                        "آبان",
+                                        "آذر",
+                                        "دی",
+                                        "بهمن",
+                                        "اسفند"
+                                      ];
+
+                                      const persianWeekdays = [
+                                        "یک‌شنبه",
+                                        "دوشنبه",
+                                        "سه‌شنبه",
+                                        "چهارشنبه",
+                                        "پنج‌شنبه",
+                                        "جمعه",
+                                        "شنبه"
+                                      ];
+
+                                      function toPersianDigits(input) {
+                                        const persianDigits = [
+                                          "۰",
+                                          "۱",
+                                          "۲",
+                                          "۳",
+                                          "۴",
+                                          "۵",
+                                          "۶",
+                                          "۷",
+                                          "۸",
+                                          "۹"
+                                        ];
+
+                                        return input
+                                          .toString()
+                                          .replace(
+                                            /\d/g,
+                                            d => persianDigits[d]
+                                          );
                                       }
-                                      return (
+                                      function toJalali(gYear, gMonth, gDay) {
+                                        const gDaysInMonth = [
+                                          31, 28, 31, 30, 31, 30, 31, 31, 30,
+                                          31, 30, 31
+                                        ];
+
+                                        const jDaysInMonth = [
+                                          31, 31, 31, 31, 31, 31, 30, 30, 30,
+                                          30, 30, 29
+                                        ];
+
+                                        let gy =
+                                          gYear - (gYear >= 1600 ? 1600 : 621);
+                                        let gm = gMonth - 1;
+                                        let gd = gDay - 1;
+                                        let gDayNo =
+                                          365 * gy +
+                                          Math.floor((gy + 3) / 4) -
+                                          Math.floor((gy + 99) / 100) +
+                                          Math.floor((gy + 399) / 400);
+                                        for (let i = 0; i < gm; ++i)
+                                          gDayNo += gDaysInMonth[i];
+                                        gDayNo += gd;
+                                        let jDayNo =
+                                          gDayNo - (gYear >= 1600 ? 79 : 0);
+                                        let jNp = Math.floor(jDayNo / 12053);
+                                        jDayNo %= 12053;
+                                        let jYear =
+                                          979 +
+                                          33 * jNp +
+                                          4 * Math.floor(jDayNo / 1461);
+                                        jDayNo %= 1461;
+                                        if (jDayNo >= 366) {
+                                          jYear += Math.floor(
+                                            (jDayNo - 1) / 365
+                                          );
+                                          jDayNo = (jDayNo - 1) % 365;
+                                        }
+                                        let jMonth;
+                                        for (
+                                          jMonth = 0;
+                                          jMonth < 11 &&
+                                          jDayNo >= jDaysInMonth[jMonth];
+                                          ++jMonth
+                                        )
+                                          jDayNo -= jDaysInMonth[jMonth];
+                                        let jDay = jDayNo + 1;
+                                        return {
+                                          jy:
+                                            jYear +
+                                            (gYear >= 1600 ? 1600 : 621),
+                                          jm: jMonth + 1,
+                                          jd: jDay
+                                        };
+                                      }
+                                      function convertDateToJalaliFullString(
+                                        dateString
+                                      ) {
+                                        const date = new Date(dateString);
+                                        const gYear = date.getFullYear();
+                                        const gMonth = date.getMonth() + 1;
+                                        const gDay = date.getDate();
+                                        const weekdayIndex = date.getDay();
+                                        const { jy, jm, jd } = toJalali(
+                                          gYear,
+                                          gMonth,
+                                          gDay
+                                        );
+                                        const weekday =
+                                          persianWeekdays[weekdayIndex];
+                                        const monthName = persianMonths[jm - 1];
+                                        return `${weekday} ${toPersianDigits(
+                                          jd
+                                        )} ${monthName}`;
+                                      }
+                                      const checkIn =
                                         $state.booking.data.smart_booking
-                                          .guests_count + " نفر"
-                                      );
+                                          .created_at;
+                                      const result =
+                                        convertDateToJalaliFullString(checkIn);
+                                      return "دریافت: " + result;
                                     })();
                                   } catch (e) {
                                     if (
@@ -3275,7 +4350,305 @@ function PlasmicBookings__RenderFunc(props: {
                                       e?.plasmicType ===
                                         "PlasmicUndefinedDataError"
                                     ) {
-                                      return "\u06f5 \u0646\u0641\u0631";
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : hasVariant(
+                                globalVariants,
+                                "screen",
+                                "mobile"
+                              ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (() => {
+                                      const persianMonths = [
+                                        "فروردین",
+                                        "اردیبهشت",
+                                        "خرداد",
+                                        "تیر",
+                                        "مرداد",
+                                        "شهریور",
+                                        "مهر",
+                                        "آبان",
+                                        "آذر",
+                                        "دی",
+                                        "بهمن",
+                                        "اسفند"
+                                      ];
+
+                                      const persianWeekdays = [
+                                        "یک‌شنبه",
+                                        "دوشنبه",
+                                        "سه‌شنبه",
+                                        "چهارشنبه",
+                                        "پنج‌شنبه",
+                                        "جمعه",
+                                        "شنبه"
+                                      ];
+
+                                      function toPersianDigits(input) {
+                                        const persianDigits = [
+                                          "۰",
+                                          "۱",
+                                          "۲",
+                                          "۳",
+                                          "۴",
+                                          "۵",
+                                          "۶",
+                                          "۷",
+                                          "۸",
+                                          "۹"
+                                        ];
+
+                                        return input
+                                          .toString()
+                                          .replace(
+                                            /\d/g,
+                                            d => persianDigits[d]
+                                          );
+                                      }
+                                      function toJalali(gYear, gMonth, gDay) {
+                                        const gDaysInMonth = [
+                                          31, 28, 31, 30, 31, 30, 31, 31, 30,
+                                          31, 30, 31
+                                        ];
+
+                                        const jDaysInMonth = [
+                                          31, 31, 31, 31, 31, 31, 30, 30, 30,
+                                          30, 30, 29
+                                        ];
+
+                                        let gy =
+                                          gYear - (gYear >= 1600 ? 1600 : 621);
+                                        let gm = gMonth - 1;
+                                        let gd = gDay - 1;
+                                        let gDayNo =
+                                          365 * gy +
+                                          Math.floor((gy + 3) / 4) -
+                                          Math.floor((gy + 99) / 100) +
+                                          Math.floor((gy + 399) / 400);
+                                        for (let i = 0; i < gm; ++i)
+                                          gDayNo += gDaysInMonth[i];
+                                        gDayNo += gd;
+                                        let jDayNo =
+                                          gDayNo - (gYear >= 1600 ? 79 : 0);
+                                        let jNp = Math.floor(jDayNo / 12053);
+                                        jDayNo %= 12053;
+                                        let jYear =
+                                          979 +
+                                          33 * jNp +
+                                          4 * Math.floor(jDayNo / 1461);
+                                        jDayNo %= 1461;
+                                        if (jDayNo >= 366) {
+                                          jYear += Math.floor(
+                                            (jDayNo - 1) / 365
+                                          );
+                                          jDayNo = (jDayNo - 1) % 365;
+                                        }
+                                        let jMonth;
+                                        for (
+                                          jMonth = 0;
+                                          jMonth < 11 &&
+                                          jDayNo >= jDaysInMonth[jMonth];
+                                          ++jMonth
+                                        )
+                                          jDayNo -= jDaysInMonth[jMonth];
+                                        let jDay = jDayNo + 1;
+                                        return {
+                                          jy:
+                                            jYear +
+                                            (gYear >= 1600 ? 1600 : 621),
+                                          jm: jMonth + 1,
+                                          jd: jDay
+                                        };
+                                      }
+                                      function convertDateToJalaliFullString(
+                                        dateString
+                                      ) {
+                                        const date = new Date(dateString);
+                                        const gYear = date.getFullYear();
+                                        const gMonth = date.getMonth() + 1;
+                                        const gDay = date.getDate();
+                                        const weekdayIndex = date.getDay();
+                                        const { jy, jm, jd } = toJalali(
+                                          gYear,
+                                          gMonth,
+                                          gDay
+                                        );
+                                        const weekday =
+                                          persianWeekdays[weekdayIndex];
+                                        const monthName = persianMonths[jm - 1];
+                                        return `${weekday} ${toPersianDigits(
+                                          jd
+                                        )} ${monthName}`;
+                                      }
+                                      const checkIn =
+                                        $state.booking.data.smart_booking
+                                          .created_at;
+                                      const result =
+                                        convertDateToJalaliFullString(checkIn);
+                                      return "دریافت: " + result;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : hasVariant(
+                                globalVariants,
+                                "screen",
+                                "tablet"
+                              ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (() => {
+                                      const persianMonths = [
+                                        "فروردین",
+                                        "اردیبهشت",
+                                        "خرداد",
+                                        "تیر",
+                                        "مرداد",
+                                        "شهریور",
+                                        "مهر",
+                                        "آبان",
+                                        "آذر",
+                                        "دی",
+                                        "بهمن",
+                                        "اسفند"
+                                      ];
+
+                                      const persianWeekdays = [
+                                        "یک‌شنبه",
+                                        "دوشنبه",
+                                        "سه‌شنبه",
+                                        "چهارشنبه",
+                                        "پنج‌شنبه",
+                                        "جمعه",
+                                        "شنبه"
+                                      ];
+
+                                      function toPersianDigits(input) {
+                                        const persianDigits = [
+                                          "۰",
+                                          "۱",
+                                          "۲",
+                                          "۳",
+                                          "۴",
+                                          "۵",
+                                          "۶",
+                                          "۷",
+                                          "۸",
+                                          "۹"
+                                        ];
+
+                                        return input
+                                          .toString()
+                                          .replace(
+                                            /\d/g,
+                                            d => persianDigits[d]
+                                          );
+                                      }
+                                      function toJalali(gYear, gMonth, gDay) {
+                                        const gDaysInMonth = [
+                                          31, 28, 31, 30, 31, 30, 31, 31, 30,
+                                          31, 30, 31
+                                        ];
+
+                                        const jDaysInMonth = [
+                                          31, 31, 31, 31, 31, 31, 30, 30, 30,
+                                          30, 30, 29
+                                        ];
+
+                                        let gy =
+                                          gYear - (gYear >= 1600 ? 1600 : 621);
+                                        let gm = gMonth - 1;
+                                        let gd = gDay - 1;
+                                        let gDayNo =
+                                          365 * gy +
+                                          Math.floor((gy + 3) / 4) -
+                                          Math.floor((gy + 99) / 100) +
+                                          Math.floor((gy + 399) / 400);
+                                        for (let i = 0; i < gm; ++i)
+                                          gDayNo += gDaysInMonth[i];
+                                        gDayNo += gd;
+                                        let jDayNo =
+                                          gDayNo - (gYear >= 1600 ? 79 : 0);
+                                        let jNp = Math.floor(jDayNo / 12053);
+                                        jDayNo %= 12053;
+                                        let jYear =
+                                          979 +
+                                          33 * jNp +
+                                          4 * Math.floor(jDayNo / 1461);
+                                        jDayNo %= 1461;
+                                        if (jDayNo >= 366) {
+                                          jYear += Math.floor(
+                                            (jDayNo - 1) / 365
+                                          );
+                                          jDayNo = (jDayNo - 1) % 365;
+                                        }
+                                        let jMonth;
+                                        for (
+                                          jMonth = 0;
+                                          jMonth < 11 &&
+                                          jDayNo >= jDaysInMonth[jMonth];
+                                          ++jMonth
+                                        )
+                                          jDayNo -= jDaysInMonth[jMonth];
+                                        let jDay = jDayNo + 1;
+                                        return {
+                                          jy:
+                                            jYear +
+                                            (gYear >= 1600 ? 1600 : 621),
+                                          jm: jMonth + 1,
+                                          jd: jDay
+                                        };
+                                      }
+                                      function convertDateToJalaliFullString(
+                                        dateString
+                                      ) {
+                                        const date = new Date(dateString);
+                                        const gYear = date.getFullYear();
+                                        const gMonth = date.getMonth() + 1;
+                                        const gDay = date.getDate();
+                                        const weekdayIndex = date.getDay();
+                                        const { jy, jm, jd } = toJalali(
+                                          gYear,
+                                          gMonth,
+                                          gDay
+                                        );
+                                        const weekday =
+                                          persianWeekdays[weekdayIndex];
+                                        const monthName = persianMonths[jm - 1];
+                                        return `${weekday} ${toPersianDigits(
+                                          jd
+                                        )} ${monthName}`;
+                                      }
+                                      const checkIn =
+                                        $state.booking.data.smart_booking
+                                          .created_at;
+                                      const result =
+                                        convertDateToJalaliFullString(checkIn);
+                                      return "دریافت رزرو : " + result;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
                                     }
                                     throw e;
                                   }
@@ -3286,16 +4659,133 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (() => {
-                                      if (
-                                        $state.booking.data.smart_booking
-                                          .guests_count == null
-                                      ) {
-                                        return "نفرات";
+                                      const persianMonths = [
+                                        "فروردین",
+                                        "اردیبهشت",
+                                        "خرداد",
+                                        "تیر",
+                                        "مرداد",
+                                        "شهریور",
+                                        "مهر",
+                                        "آبان",
+                                        "آذر",
+                                        "دی",
+                                        "بهمن",
+                                        "اسفند"
+                                      ];
+
+                                      const persianWeekdays = [
+                                        "یک‌شنبه",
+                                        "دوشنبه",
+                                        "سه‌شنبه",
+                                        "چهارشنبه",
+                                        "پنج‌شنبه",
+                                        "جمعه",
+                                        "شنبه"
+                                      ];
+
+                                      function toPersianDigits(input) {
+                                        const persianDigits = [
+                                          "۰",
+                                          "۱",
+                                          "۲",
+                                          "۳",
+                                          "۴",
+                                          "۵",
+                                          "۶",
+                                          "۷",
+                                          "۸",
+                                          "۹"
+                                        ];
+
+                                        return input
+                                          .toString()
+                                          .replace(
+                                            /\d/g,
+                                            d => persianDigits[d]
+                                          );
                                       }
-                                      return (
-                                        $state.booking.data.smart_booking
-                                          .guests_count + " نفر"
-                                      );
+                                      function toJalali(gYear, gMonth, gDay) {
+                                        const gDaysInMonth = [
+                                          31, 28, 31, 30, 31, 30, 31, 31, 30,
+                                          31, 30, 31
+                                        ];
+
+                                        const jDaysInMonth = [
+                                          31, 31, 31, 31, 31, 31, 30, 30, 30,
+                                          30, 30, 29
+                                        ];
+
+                                        let gy =
+                                          gYear - (gYear >= 1600 ? 1600 : 621);
+                                        let gm = gMonth - 1;
+                                        let gd = gDay - 1;
+                                        let gDayNo =
+                                          365 * gy +
+                                          Math.floor((gy + 3) / 4) -
+                                          Math.floor((gy + 99) / 100) +
+                                          Math.floor((gy + 399) / 400);
+                                        for (let i = 0; i < gm; ++i)
+                                          gDayNo += gDaysInMonth[i];
+                                        gDayNo += gd;
+                                        let jDayNo =
+                                          gDayNo - (gYear >= 1600 ? 79 : 0);
+                                        let jNp = Math.floor(jDayNo / 12053);
+                                        jDayNo %= 12053;
+                                        let jYear =
+                                          979 +
+                                          33 * jNp +
+                                          4 * Math.floor(jDayNo / 1461);
+                                        jDayNo %= 1461;
+                                        if (jDayNo >= 366) {
+                                          jYear += Math.floor(
+                                            (jDayNo - 1) / 365
+                                          );
+                                          jDayNo = (jDayNo - 1) % 365;
+                                        }
+                                        let jMonth;
+                                        for (
+                                          jMonth = 0;
+                                          jMonth < 11 &&
+                                          jDayNo >= jDaysInMonth[jMonth];
+                                          ++jMonth
+                                        )
+                                          jDayNo -= jDaysInMonth[jMonth];
+                                        let jDay = jDayNo + 1;
+                                        return {
+                                          jy:
+                                            jYear +
+                                            (gYear >= 1600 ? 1600 : 621),
+                                          jm: jMonth + 1,
+                                          jd: jDay
+                                        };
+                                      }
+                                      function convertDateToJalaliFullString(
+                                        dateString
+                                      ) {
+                                        const date = new Date(dateString);
+                                        const gYear = date.getFullYear();
+                                        const gMonth = date.getMonth() + 1;
+                                        const gDay = date.getDate();
+                                        const weekdayIndex = date.getDay();
+                                        const { jy, jm, jd } = toJalali(
+                                          gYear,
+                                          gMonth,
+                                          gDay
+                                        );
+                                        const weekday =
+                                          persianWeekdays[weekdayIndex];
+                                        const monthName = persianMonths[jm - 1];
+                                        return `${weekday} ${toPersianDigits(
+                                          jd
+                                        )} ${monthName}`;
+                                      }
+                                      const checkIn =
+                                        $state.booking.data.manual_booking
+                                          .created_at;
+                                      const result =
+                                        convertDateToJalaliFullString(checkIn);
+                                      return "دریافت رزرو : " + result;
                                     })();
                                   } catch (e) {
                                     if (
@@ -3312,109 +4802,265 @@ function PlasmicBookings__RenderFunc(props: {
                             )}
                           </div>
                         </Stack__>
-                      </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"bookPrice"}
-                      data-plasmic-override={overrides.bookPrice}
-                      className={classNames(
-                        projectcss.all,
-                        sty.bookPrice,
-                        (() => {
-                          try {
-                            return $state.accordionOpenSmartBooking
-                              ? "display_block"
-                              : "display_hidden";
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
-                      )}
-                    >
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__d8ITf
-                        )}
-                      >
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__bc7Tf
+                            sty.freeBox__jUzls
                           )}
                         >
-                          {hasVariant(globalVariants, "screen", "tablet") ? (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (() => {
-                                    let price =
-                                      $state.booking.data.smart_booking.amount;
-                                    if (
-                                      $state.booking.data.website == "jabama"
-                                    ) {
-                                      price = price / 10;
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__v65EK
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__xKPjf)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : "100%"
+                              }
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image158.svg",
+                                fullWidth: 13,
+                                fullHeight: 16,
+                                aspectRatio: undefined
+                              }}
+                            />
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__lNfrd
+                              )}
+                            >
+                              {hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              ) ? (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (
+                                        $state.booking.data.smart_booking
+                                          .night + " شب" || "نفرات"
+                                      );
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return " ";
+                                      }
+                                      throw e;
                                     }
-                                    return new Intl.NumberFormat(
-                                      "fa-IR"
-                                    ).format(price);
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          ) : (
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (() => {
-                                    let price =
-                                      $state.booking.data.smart_booking.amount;
-                                    if (
-                                      $state.booking.data.website == "jabama"
-                                    ) {
-                                      price = price / 10;
+                                  })()}
+                                </React.Fragment>
+                              ) : hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobile"
+                                ) ? (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          $state.booking.data.smart_booking
+                                            .night == null
+                                        ) {
+                                          return "مدت اقامت";
+                                        }
+                                        return (
+                                          $state.booking.data.smart_booking
+                                            .night + " شب" || "مدت اقامت"
+                                        );
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return " ";
+                                      }
+                                      throw e;
                                     }
-                                    return new Intl.NumberFormat(
-                                      "fa-IR"
-                                    ).format(price);
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          )}
+                                  })()}
+                                </React.Fragment>
+                              ) : (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          $state.booking.data.manual_booking
+                                            .night == null
+                                        ) {
+                                          return "مدت اقامت";
+                                        }
+                                        return (
+                                          $state.booking.data.manual_booking
+                                            .night + " شب" || "مدت اقامت"
+                                        );
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return " ";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              )}
+                            </div>
+                          </Stack__>
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__d39Xe
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img___1Okd5)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : "100%"
+                              }
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image157.svg",
+                                fullWidth: 14,
+                                fullHeight: 14,
+                                aspectRatio: undefined
+                              }}
+                            />
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__c5Rz1
+                              )}
+                            >
+                              {hasVariant(
+                                globalVariants,
+                                "screen",
+                                "mobile"
+                              ) ? (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          $state.booking.data.smart_booking
+                                            .guests_count == null
+                                        ) {
+                                          return "نفرات";
+                                        }
+                                        return (
+                                          $state.booking.data.smart_booking
+                                            .guests_count + " نفر"
+                                        );
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "\u06f5 \u0646\u0641\u0631";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              ) : (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          $state.booking.data.manual_booking
+                                            .guests_count == null
+                                        ) {
+                                          return "نفرات";
+                                        }
+                                        return (
+                                          $state.booking.data.manual_booking
+                                            .guests_count + " نفر"
+                                        );
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return " ";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              )}
+                            </div>
+                          </Stack__>
                         </div>
-                      </Stack__>
+                      </div>
                       <div
+                        data-plasmic-name={"bookCommission2"}
+                        data-plasmic-override={overrides.bookCommission2}
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__n3CAg
+                          sty.bookCommission2,
+                          (() => {
+                            try {
+                              return (() => {})();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
                         )}
                       >
                         <Stack__
@@ -3422,29 +5068,429 @@ function PlasmicBookings__RenderFunc(props: {
                           hasGap={true}
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__b0H3N
+                            sty.freeBox__gSemk
                           )}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__q1Tbt
+                              sty.text__cExJl
                             )}
                           >
-                            {
-                              "\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062f\u0631 \u0634\u0628:"
-                            }
+                            {"%\u06f1\u06f0"}
                           </div>
                         </Stack__>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__ib4Yp
+                          )}
+                        >
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__z9QzL
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__jfwmV
+                              )}
+                            >
+                              {
+                                "\u06a9\u0627\u0631\u0645\u0632\u062f (\u0648 \u0645\u0627\u0644\u06cc\u0627\u062a) \u0634\u0628:"
+                              }
+                            </div>
+                          </Stack__>
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"bookNetPrice2"}
+                        data-plasmic-override={overrides.bookNetPrice2}
+                        className={classNames(
+                          projectcss.all,
+                          sty.bookNetPrice2
+                        )}
+                      >
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__wnzV
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__zsX2U
+                            )}
+                          >
+                            {"\u06f2/\u06f6\u06f5\u06f5/\u06f0\u06f0\u06f0"}
+                          </div>
+                        </Stack__>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__dxQVs
+                          )}
+                        >
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__d2Xvy
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__m2TTu
+                              )}
+                            >
+                              {
+                                "\u062f\u0631\u0622\u0645\u062f \u062e\u0627\u0644\u0635 \u0634\u0645\u0627:"
+                              }
+                            </div>
+                          </Stack__>
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"bookSettleStatus2"}
+                        data-plasmic-override={overrides.bookSettleStatus2}
+                        className={classNames(
+                          projectcss.all,
+                          sty.bookSettleStatus2
+                        )}
+                      >
+                        {(() => {
+                          try {
+                            return (
+                              $state.booking.data.smart_booking.is_settled ==
+                              false
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <Stack__
+                            as={"div"}
+                            data-plasmic-name={"error2"}
+                            data-plasmic-override={overrides.error2}
+                            hasGap={true}
+                            className={classNames(projectcss.all, sty.error2)}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__kacg7)}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "18px"
+                                  : "auto"
+                              }
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image141.svg",
+                                fullWidth: 23,
+                                fullHeight: 23,
+                                aspectRatio: undefined
+                              }}
+                            />
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___92Ilt
+                              )}
+                            >
+                              {
+                                "\u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647"
+                              }
+                            </div>
+                          </Stack__>
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (
+                              $state.booking.data.smart_booking.is_settled ==
+                              true
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <Stack__
+                            as={"div"}
+                            data-plasmic-name={"true3"}
+                            data-plasmic-override={overrides.true3}
+                            hasGap={true}
+                            className={classNames(projectcss.all, sty.true3)}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__dZtAh)}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "18px"
+                                  : "auto"
+                              }
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image141.svg",
+                                fullWidth: 23,
+                                fullHeight: 23,
+                                aspectRatio: undefined
+                              }}
+                            />
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__zL8H
+                              )}
+                            >
+                              {
+                                "\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"
+                              }
+                            </div>
+                          </Stack__>
+                        ) : null}
+                        {(
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? (() => {
+                                try {
+                                  return (
+                                    $state.booking.data.smart_booking
+                                      .is_settled == null
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (
+                                    $state.booking.data.smart_booking
+                                      .is_settled == null
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
+                          <Stack__
+                            as={"div"}
+                            data-plasmic-name={"true4"}
+                            data-plasmic-override={overrides.true4}
+                            hasGap={true}
+                            className={classNames(projectcss.all, sty.true4)}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__qWmt
+                              )}
+                            >
+                              {"\u061f"}
+                            </div>
+                          </Stack__>
+                        ) : null}
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__ba6CE
+                          )}
+                        >
+                          <Stack__
+                            as={"div"}
+                            hasGap={true}
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox___4OEmw
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__uMp0K
+                              )}
+                            >
+                              {
+                                "\u0648\u0636\u0639\u06cc\u062a \u0645\u0627\u0644\u06cc:"
+                              }
+                            </div>
+                          </Stack__>
+                        </div>
                       </div>
                     </div>
                     <div
-                      data-plasmic-name={"bookCommission"}
-                      data-plasmic-override={overrides.bookCommission}
+                      data-plasmic-name={"openAndCloseButton3"}
+                      data-plasmic-override={overrides.openAndCloseButton3}
                       className={classNames(
                         projectcss.all,
-                        sty.bookCommission,
+                        sty.openAndCloseButton3
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateAccordionOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["accordionOpenSmartBooking"]
+                                },
+                                operation: 4
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, !oldValue);
+                                return !oldValue;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateAccordionOpen"] != null &&
+                          typeof $steps["updateAccordionOpen"] === "object" &&
+                          typeof $steps["updateAccordionOpen"].then ===
+                            "function"
+                        ) {
+                          $steps["updateAccordionOpen"] = await $steps[
+                            "updateAccordionOpen"
+                          ];
+                        }
+                      }}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(
+                          sty.img__dpog,
+                          (() => {
+                            try {
+                              return $state.accordionOpenSmartBooking
+                                ? ".rotate-normal"
+                                : "rotate-flipped";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        )}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image154.svg",
+                          fullWidth: 21,
+                          fullHeight: 10,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    </div>
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return $state.booking.data.auto_sync_status != null;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    data-plasmic-name={"autoSync"}
+                    data-plasmic-override={overrides.autoSync}
+                    className={classNames(projectcss.all, sty.autoSync)}
+                  >
+                    <div
+                      data-plasmic-name={"data2"}
+                      data-plasmic-override={overrides.data2}
+                      className={classNames(
+                        projectcss.all,
+                        sty.data2,
                         (() => {
                           try {
                             return (() => {})();
@@ -3462,446 +5508,243 @@ function PlasmicBookings__RenderFunc(props: {
                     >
                       <Stack__
                         as={"div"}
+                        data-plasmic-name={"title2"}
+                        data-plasmic-override={overrides.title2}
                         hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__fDlu7
-                        )}
+                        className={classNames(projectcss.all, sty.title2)}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__dgPoa
+                            sty.freeBox__oIafE,
+                            (() => {
+                              try {
+                                return (() => {
+                                  if (
+                                    $state.booking.data.auto_sync_status == null
+                                  ) {
+                                    return "display_hidden";
+                                  }
+                                  return $state.accordionOpenAutoSync
+                                    ? "display_hidden"
+                                    : "display_block";
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
                           )}
                         >
-                          {"%\u06f1\u06f0"}
+                          {(() => {
+                            try {
+                              return !$state.booking.data.auto_sync_status.some(
+                                platform => !platform.status
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__x4L7O)}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "18px"
+                                  : hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    )
+                                  ? "30px"
+                                  : "37px"
+                              }
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : "100%"
+                              }
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image160.svg",
+                                fullWidth: 22,
+                                fullHeight: 22,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          ) : null}
+                          {(
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? (() => {
+                                  try {
+                                    return $state.booking.data.auto_sync_status.some(
+                                      platform => !platform.status
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              : (() => {
+                                  try {
+                                    return $state.booking.data.auto_sync_status.some(
+                                      platform => !platform.status
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return false;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          ) ? (
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__pemI9)}
+                              displayHeight={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "18px"
+                                  : hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    )
+                                  ? "30px"
+                                  : "37px"
+                              }
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "100%"
+                                  : hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    )
+                                  ? "100%"
+                                  : "100%"
+                              }
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image161.svg",
+                                fullWidth: 22,
+                                fullHeight: 22,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          ) : null}
                         </div>
-                      </Stack__>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__rCc6I
-                        )}
-                      >
                         <Stack__
                           as={"div"}
                           hasGap={true}
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__kffH
+                            sty.freeBox__ljl7
                           )}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text___6GyPc
+                              sty.text__joCMm
                             )}
                           >
                             {
-                              "\u06a9\u0627\u0631\u0645\u0632\u062f (\u0648 \u0645\u0627\u0644\u06cc\u0627\u062a) \u0634\u0628:"
+                              "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
                             }
                           </div>
-                        </Stack__>
-                      </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"bookNetPrice"}
-                      data-plasmic-override={overrides.bookNetPrice}
-                      className={classNames(projectcss.all, sty.bookNetPrice)}
-                    >
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__rLZsn
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__tdgzg
-                          )}
-                        >
-                          {"\u06f2/\u06f6\u06f5\u06f5/\u06f0\u06f0\u06f0"}
-                        </div>
-                      </Stack__>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__yuNmr
-                        )}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__eb3EI
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__l1HKf
-                            )}
-                          >
-                            {
-                              "\u062f\u0631\u0622\u0645\u062f \u062e\u0627\u0644\u0635 \u0634\u0645\u0627:"
-                            }
-                          </div>
-                        </Stack__>
-                      </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"bookSettleStatus"}
-                      data-plasmic-override={overrides.bookSettleStatus}
-                      className={classNames(
-                        projectcss.all,
-                        sty.bookSettleStatus
-                      )}
-                    >
-                      {(() => {
-                        try {
-                          return (
-                            $state.booking.data.smart_booking.is_settled ==
-                            false
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <Stack__
-                          as={"div"}
-                          data-plasmic-name={"error"}
-                          data-plasmic-override={overrides.error}
-                          hasGap={true}
-                          className={classNames(projectcss.all, sty.error)}
-                        >
                           <PlasmicImg__
                             alt={""}
-                            className={classNames(sty.img__qOrc4)}
+                            className={classNames(sty.img__gLuYa)}
                             displayHeight={
                               hasVariant(
                                 globalVariants,
                                 "screen",
                                 "smallMobile"
                               )
-                                ? "18px"
+                                ? "22px"
                                 : "auto"
                             }
                             displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            src={{
-                              src: "/plasmic/website_starter/images/image141.svg",
-                              fullWidth: 23,
-                              fullHeight: 23,
-                              aspectRatio: undefined
-                            }}
-                          />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__yiaF
-                            )}
-                          >
-                            {
-                              "\u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647"
-                            }
-                          </div>
-                        </Stack__>
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (
-                            $state.booking.data.smart_booking.is_settled == true
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <Stack__
-                          as={"div"}
-                          data-plasmic-name={"_true"}
-                          data-plasmic-override={overrides._true}
-                          hasGap={true}
-                          className={classNames(projectcss.all, sty._true)}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__eWUza)}
-                            displayHeight={
+                            displayMaxWidth={
                               hasVariant(
                                 globalVariants,
                                 "screen",
                                 "smallMobile"
                               )
-                                ? "18px"
-                                : "auto"
+                                ? "100%"
+                                : hasVariant(globalVariants, "screen", "mobile")
+                                ? "100%"
+                                : "100%"
                             }
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/image141.svg",
-                              fullWidth: 23,
-                              fullHeight: 23,
+                              src: "/plasmic/website_starter/images/image159.svg",
+                              fullWidth: 29,
+                              fullHeight: 28,
                               aspectRatio: undefined
                             }}
                           />
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__di7DJ
-                            )}
-                          >
-                            {
-                              "\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"
-                            }
-                          </div>
                         </Stack__>
-                      ) : null}
-                      {(
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? (() => {
-                              try {
-                                return (
-                                  $state.booking.data.smart_booking
-                                    .is_settled == null
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (
-                                  $state.booking.data.smart_booking
-                                    .is_settled == null
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                      ) ? (
-                        <Stack__
-                          as={"div"}
-                          data-plasmic-name={"true2"}
-                          data-plasmic-override={overrides.true2}
-                          hasGap={true}
-                          className={classNames(projectcss.all, sty.true2)}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__skgW4
-                            )}
-                          >
-                            {"\u061f"}
-                          </div>
-                        </Stack__>
-                      ) : null}
+                      </Stack__>
                       <div
+                        data-plasmic-name={"description"}
+                        data-plasmic-override={overrides.description}
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox___90Cmi
-                        )}
-                      >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__iznGv
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__pVcZ
-                            )}
-                          >
-                            {
-                              "\u0648\u0636\u0639\u06cc\u062a \u0645\u0627\u0644\u06cc:"
-                            }
-                          </div>
-                        </Stack__>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"openAndCloseButton"}
-                    data-plasmic-override={overrides.openAndCloseButton}
-                    className={classNames(
-                      projectcss.all,
-                      sty.openAndCloseButton
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateAccordionOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["accordionOpenSmartBooking"]
-                              },
-                              operation: 4
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateAccordionOpen"] != null &&
-                        typeof $steps["updateAccordionOpen"] === "object" &&
-                        typeof $steps["updateAccordionOpen"].then === "function"
-                      ) {
-                        $steps["updateAccordionOpen"] = await $steps[
-                          "updateAccordionOpen"
-                        ];
-                      }
-                    }}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(
-                        sty.img__rkHvn,
-                        (() => {
-                          try {
-                            return $state.accordionOpenSmartBooking
-                              ? ".rotate-normal"
-                              : "rotate-flipped";
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
-                      )}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image154.svg",
-                        fullWidth: 21,
-                        fullHeight: 10,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"autoSync"}
-                  data-plasmic-override={overrides.autoSync}
-                  className={classNames(projectcss.all, sty.autoSync)}
-                >
-                  <div
-                    data-plasmic-name={"data2"}
-                    data-plasmic-override={overrides.data2}
-                    className={classNames(
-                      projectcss.all,
-                      sty.data2,
-                      (() => {
-                        try {
-                          return (() => {})();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()
-                    )}
-                  >
-                    <Stack__
-                      as={"div"}
-                      data-plasmic-name={"title2"}
-                      data-plasmic-override={overrides.title2}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.title2)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__oIafE,
+                          sty.description,
                           (() => {
                             try {
-                              return (() => {
-                                if (
-                                  $state.booking.data.auto_sync_status == null
-                                ) {
-                                  return "display_hidden";
-                                }
-                                return $state.accordionOpenAutoSync
-                                  ? "display_hidden"
-                                  : "display_block";
-                              })();
+                              return $state.accordionOpenAutoSync
+                                ? "display_block"
+                                : "display_hidden";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -3914,64 +5757,200 @@ function PlasmicBookings__RenderFunc(props: {
                           })()
                         )}
                       >
-                        {(() => {
+                        <Stack__
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__iyOnW
+                          )}
+                        >
+                          {(() => {
+                            try {
+                              return (
+                                $state.booking.data.auto_sync_status != null
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__zn2Wr
+                              )}
+                            >
+                              {
+                                "\u0646\u062a\u06cc\u062c\u0647 \u062a\u0644\u0627\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u06cc \u0628\u0633\u062a\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627:"
+                              }
+                            </div>
+                          ) : null}
+                          {(() => {
+                            try {
+                              return (
+                                $state.booking.data.auto_sync_status == null
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__qzN7
+                              )}
+                            >
+                              {
+                                "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0641\u0639\u0627\u0644 \u0646\u0628\u0648\u062f\u0647 \u0627\u0633\u062a"
+                              }
+                            </div>
+                          ) : null}
+                        </Stack__>
+                      </div>
+                      {(_par =>
+                        !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                        (() => {
                           try {
-                            return !$state.booking.data.auto_sync_status.some(
-                              platform => !platform.status
-                            );
+                            return $state.booking.data.auto_sync_status;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return false;
+                              return [];
                             }
                             throw e;
                           }
-                        })() ? (
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__x4L7O)}
-                            displayHeight={
-                              hasVariant(
-                                globalVariants,
-                                "screen",
-                                "smallMobile"
-                              )
-                                ? "18px"
-                                : hasVariant(globalVariants, "screen", "mobile")
-                                ? "30px"
-                                : "37px"
-                            }
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={
-                              hasVariant(
-                                globalVariants,
-                                "screen",
-                                "smallMobile"
-                              )
-                                ? "100%"
-                                : "100%"
-                            }
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            src={{
-                              src: "/plasmic/website_starter/images/image160.svg",
-                              fullWidth: 22,
-                              fullHeight: 22,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        ) : null}
-                        {(
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
+                        })()
+                      ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                        const currentItem = __plasmic_item_0;
+                        const currentIndex = __plasmic_idx_0;
+                        return (
+                          <div
+                            data-plasmic-name={"platformStatus"}
+                            data-plasmic-override={overrides.platformStatus}
+                            className={classNames(
+                              projectcss.all,
+                              sty.platformStatus,
+                              (() => {
                                 try {
-                                  return $state.booking.data.auto_sync_status.some(
-                                    platform => !platform.status
-                                  );
+                                  return $state.accordionOpenAutoSync
+                                    ? "display_block"
+                                    : "display_hidden";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            )}
+                            key={currentIndex}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__diq12
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__o51MG
+                                )}
+                              >
+                                {hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobile"
+                                ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          const websiteMap = {
+                                            shab: "شب",
+                                            jabama: "جاباما",
+                                            homsa: "هومسا",
+                                            jajiga: "جاجیگا",
+                                            mizboon: "میزبون",
+                                            mihmansho: "مهمانشو",
+                                            otaghak: "اتاقک"
+                                          };
+                                          const faWebsiteName =
+                                            websiteMap[
+                                              currentItem.website_name
+                                            ] || currentItem.website_name;
+                                          return faWebsiteName;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "\u0634\u0628";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          const websiteMap = {
+                                            shab: "شب",
+                                            jabama: "جاباما",
+                                            homsa: "هومسا",
+                                            jajiga: "جاجیگا",
+                                            mizboon: "میزبون",
+                                            mihmansho: "مهمانشو",
+                                            otaghak: "اتاقک"
+                                          };
+                                          const faWebsiteName =
+                                            websiteMap[
+                                              currentItem.website_name
+                                            ] || currentItem.website_name;
+                                          return faWebsiteName;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "\u0634\u0628";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                )}
+                              </div>
+                              {(() => {
+                                try {
+                                  return currentItem.status == false;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -3982,534 +5961,216 @@ function PlasmicBookings__RenderFunc(props: {
                                   }
                                   throw e;
                                 }
-                              })()
-                            : (() => {
+                              })() ? (
+                                <PlasmicImg__
+                                  alt={""}
+                                  className={classNames(sty.img__q849)}
+                                  displayHeight={
+                                    hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "smallMobile"
+                                    )
+                                      ? "22px"
+                                      : hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                      ? "24px"
+                                      : hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "tablet"
+                                        )
+                                      ? "24px"
+                                      : "27px"
+                                  }
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={
+                                    hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "smallMobile"
+                                    )
+                                      ? "100%"
+                                      : hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                      ? "100%"
+                                      : "100%"
+                                  }
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"auto"}
+                                  loading={"lazy"}
+                                  src={{
+                                    src: "/plasmic/website_starter/images/image161.svg",
+                                    fullWidth: 22,
+                                    fullHeight: 22,
+                                    aspectRatio: undefined
+                                  }}
+                                />
+                              ) : null}
+                              {(() => {
                                 try {
-                                  return $state.booking.data.auto_sync_status.some(
-                                    platform => !platform.status
-                                  );
+                                  return currentItem.status == true;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return false;
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })() ? (
+                                <PlasmicImg__
+                                  alt={""}
+                                  className={classNames(sty.img__mxXba)}
+                                  displayHeight={
+                                    hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "smallMobile"
+                                    )
+                                      ? "22px"
+                                      : hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "tablet"
+                                        )
+                                      ? "24px"
+                                      : "27px"
+                                  }
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"auto"}
+                                  loading={"lazy"}
+                                  src={{
+                                    src: "/plasmic/website_starter/images/image160.svg",
+                                    fullWidth: 22,
+                                    fullHeight: 22,
+                                    aspectRatio: undefined
+                                  }}
+                                />
+                              ) : null}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div
+                      data-plasmic-name={"openAndCloseButton2"}
+                      data-plasmic-override={overrides.openAndCloseButton2}
+                      className={classNames(
+                        projectcss.all,
+                        sty.openAndCloseButton2
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateAccordionOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["accordionOpenAutoSync"]
+                                },
+                                operation: 4
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, !oldValue);
+                                return !oldValue;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateAccordionOpen"] != null &&
+                          typeof $steps["updateAccordionOpen"] === "object" &&
+                          typeof $steps["updateAccordionOpen"].then ===
+                            "function"
+                        ) {
+                          $steps["updateAccordionOpen"] = await $steps[
+                            "updateAccordionOpen"
+                          ];
+                        }
+                      }}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(
+                          sty.img__os5Gg,
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return $state.accordionOpenAutoSync
+                                    ? ".rotate-normal"
+                                    : "rotate-flipped";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
                                   }
                                   throw e;
                                 }
                               })()
-                        ) ? (
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__pemI9)}
-                            displayHeight={
-                              hasVariant(
-                                globalVariants,
-                                "screen",
-                                "smallMobile"
-                              )
-                                ? "18px"
-                                : hasVariant(globalVariants, "screen", "mobile")
-                                ? "30px"
-                                : "37px"
-                            }
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={
-                              hasVariant(
-                                globalVariants,
-                                "screen",
-                                "smallMobile"
-                              )
-                                ? "100%"
-                                : hasVariant(globalVariants, "screen", "mobile")
-                                ? "100%"
-                                : "100%"
-                            }
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            src={{
-                              src: "/plasmic/website_starter/images/image161.svg",
-                              fullWidth: 22,
-                              fullHeight: 22,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        ) : null}
-                      </div>
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__ljl7
+                            : (() => {
+                                try {
+                                  return $state.accordionOpenSmartBooking
+                                    ? ".rotate-normal"
+                                    : "rotate-flipped";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
                         )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__joCMm
-                          )}
-                        >
-                          {
-                            "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
-                          }
-                        </div>
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__gLuYa)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "22px"
-                              : "auto"
-                          }
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "100%"
-                              : hasVariant(globalVariants, "screen", "mobile")
-                              ? "100%"
-                              : "100%"
-                          }
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image159.svg",
-                            fullWidth: 29,
-                            fullHeight: 28,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      </Stack__>
-                    </Stack__>
-                    <div
-                      data-plasmic-name={"description"}
-                      data-plasmic-override={overrides.description}
-                      className={classNames(
-                        projectcss.all,
-                        sty.description,
-                        (() => {
-                          try {
-                            return $state.accordionOpenAutoSync
-                              ? "display_block"
-                              : "display_hidden";
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
-                      )}
-                    >
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__iyOnW
-                        )}
-                      >
-                        {(() => {
-                          try {
-                            return $state.booking.data.auto_sync_status != null;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })() ? (
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__zn2Wr
-                            )}
-                          >
-                            {
-                              "\u0646\u062a\u06cc\u062c\u0647 \u062a\u0644\u0627\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u06cc \u0628\u0633\u062a\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627:"
-                            }
-                          </div>
-                        ) : null}
-                        {(() => {
-                          try {
-                            return $state.booking.data.auto_sync_status == null;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })() ? (
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__qzN7
-                            )}
-                          >
-                            {
-                              "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0641\u0639\u0627\u0644 \u0646\u0628\u0648\u062f\u0647 \u0627\u0633\u062a"
-                            }
-                          </div>
-                        ) : null}
-                      </Stack__>
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image154.svg",
+                          fullWidth: 21,
+                          fullHeight: 10,
+                          aspectRatio: undefined
+                        }}
+                      />
                     </div>
-                    {(_par =>
-                      !_par ? [] : Array.isArray(_par) ? _par : [_par])(
-                      (() => {
-                        try {
-                          return $state.booking.data.auto_sync_status;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return [];
-                          }
-                          throw e;
-                        }
-                      })()
-                    ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                      const currentItem = __plasmic_item_0;
-                      const currentIndex = __plasmic_idx_0;
-                      return (
-                        <div
-                          data-plasmic-name={"platformStatus"}
-                          data-plasmic-override={overrides.platformStatus}
-                          className={classNames(
-                            projectcss.all,
-                            sty.platformStatus,
-                            (() => {
-                              try {
-                                return $state.accordionOpenAutoSync
-                                  ? "display_block"
-                                  : "display_hidden";
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                          )}
-                          key={currentIndex}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__diq12
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__o51MG
-                              )}
-                            >
-                              {hasVariant(
-                                globalVariants,
-                                "screen",
-                                "mobile"
-                              ) ? (
-                                <React.Fragment>
-                                  {(() => {
-                                    try {
-                                      return (() => {
-                                        const websiteMap = {
-                                          shab: "شب",
-                                          jabama: "جاباما",
-                                          homsa: "هومسا",
-                                          jajiga: "جاجیگا",
-                                          mizboon: "میزبون",
-                                          mihmansho: "مهمانشو",
-                                          otaghak: "اتاقک"
-                                        };
-                                        const faWebsiteName =
-                                          websiteMap[
-                                            currentItem.website_name
-                                          ] || currentItem.website_name;
-                                        return faWebsiteName;
-                                      })();
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "\u0634\u0628";
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
-                                </React.Fragment>
-                              ) : (
-                                <React.Fragment>
-                                  {(() => {
-                                    try {
-                                      return (() => {
-                                        const websiteMap = {
-                                          shab: "شب",
-                                          jabama: "جاباما",
-                                          homsa: "هومسا",
-                                          jajiga: "جاجیگا",
-                                          mizboon: "میزبون",
-                                          mihmansho: "مهمانشو",
-                                          otaghak: "اتاقک"
-                                        };
-                                        const faWebsiteName =
-                                          websiteMap[
-                                            currentItem.website_name
-                                          ] || currentItem.website_name;
-                                        return faWebsiteName;
-                                      })();
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "\u0634\u0628";
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
-                                </React.Fragment>
-                              )}
-                            </div>
-                            {(() => {
-                              try {
-                                return currentItem.status == false;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })() ? (
-                              <PlasmicImg__
-                                alt={""}
-                                className={classNames(sty.img__q849)}
-                                displayHeight={
-                                  hasVariant(
-                                    globalVariants,
-                                    "screen",
-                                    "smallMobile"
-                                  )
-                                    ? "22px"
-                                    : hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "mobile"
-                                      )
-                                    ? "24px"
-                                    : hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "tablet"
-                                      )
-                                    ? "24px"
-                                    : "27px"
-                                }
-                                displayMaxHeight={"none"}
-                                displayMaxWidth={
-                                  hasVariant(
-                                    globalVariants,
-                                    "screen",
-                                    "smallMobile"
-                                  )
-                                    ? "100%"
-                                    : hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "mobile"
-                                      )
-                                    ? "100%"
-                                    : "100%"
-                                }
-                                displayMinHeight={"0"}
-                                displayMinWidth={"0"}
-                                displayWidth={"auto"}
-                                loading={"lazy"}
-                                src={{
-                                  src: "/plasmic/website_starter/images/image161.svg",
-                                  fullWidth: 22,
-                                  fullHeight: 22,
-                                  aspectRatio: undefined
-                                }}
-                              />
-                            ) : null}
-                            {(() => {
-                              try {
-                                return currentItem.status == true;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })() ? (
-                              <PlasmicImg__
-                                alt={""}
-                                className={classNames(sty.img__mxXba)}
-                                displayHeight={
-                                  hasVariant(
-                                    globalVariants,
-                                    "screen",
-                                    "smallMobile"
-                                  )
-                                    ? "22px"
-                                    : hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "tablet"
-                                      )
-                                    ? "24px"
-                                    : "27px"
-                                }
-                                displayMaxHeight={"none"}
-                                displayMaxWidth={"100%"}
-                                displayMinHeight={"0"}
-                                displayMinWidth={"0"}
-                                displayWidth={"auto"}
-                                loading={"lazy"}
-                                src={{
-                                  src: "/plasmic/website_starter/images/image160.svg",
-                                  fullWidth: 22,
-                                  fullHeight: 22,
-                                  aspectRatio: undefined
-                                }}
-                              />
-                            ) : null}
-                          </div>
-                        </div>
-                      );
-                    })}
                   </div>
-                  <div
-                    data-plasmic-name={"openAndCloseButton2"}
-                    data-plasmic-override={overrides.openAndCloseButton2}
-                    className={classNames(
-                      projectcss.all,
-                      sty.openAndCloseButton2
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateAccordionOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["accordionOpenAutoSync"]
-                              },
-                              operation: 4
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateAccordionOpen"] != null &&
-                        typeof $steps["updateAccordionOpen"] === "object" &&
-                        typeof $steps["updateAccordionOpen"].then === "function"
-                      ) {
-                        $steps["updateAccordionOpen"] = await $steps[
-                          "updateAccordionOpen"
-                        ];
-                      }
-                    }}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(
-                        sty.img__os5Gg,
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return $state.accordionOpenAutoSync
-                                  ? ".rotate-normal"
-                                  : "rotate-flipped";
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return $state.accordionOpenSmartBooking
-                                  ? ".rotate-normal"
-                                  : "rotate-flipped";
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                      )}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image154.svg",
-                        fullWidth: 21,
-                        fullHeight: 10,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                </div>
+                ) : null}
               </Stack__>
             </ApiRequest>
           </div>
@@ -4618,6 +6279,18 @@ const PlasmicDescendants = {
     "_true",
     "true2",
     "openAndCloseButton",
+    "manulBooking",
+    "data3",
+    "title3",
+    "guestInfo2",
+    "bookInfo2",
+    "bookCommission2",
+    "bookNetPrice2",
+    "bookSettleStatus2",
+    "error2",
+    "true3",
+    "true4",
+    "openAndCloseButton3",
     "autoSync",
     "data2",
     "title2",
@@ -4677,6 +6350,18 @@ const PlasmicDescendants = {
     "_true",
     "true2",
     "openAndCloseButton",
+    "manulBooking",
+    "data3",
+    "title3",
+    "guestInfo2",
+    "bookInfo2",
+    "bookCommission2",
+    "bookNetPrice2",
+    "bookSettleStatus2",
+    "error2",
+    "true3",
+    "true4",
+    "openAndCloseButton3",
     "autoSync",
     "data2",
     "title2",
@@ -4700,6 +6385,18 @@ const PlasmicDescendants = {
     "_true",
     "true2",
     "openAndCloseButton",
+    "manulBooking",
+    "data3",
+    "title3",
+    "guestInfo2",
+    "bookInfo2",
+    "bookCommission2",
+    "bookNetPrice2",
+    "bookSettleStatus2",
+    "error2",
+    "true3",
+    "true4",
+    "openAndCloseButton3",
     "autoSync",
     "data2",
     "title2",
@@ -4746,6 +6443,42 @@ const PlasmicDescendants = {
   _true: ["_true"],
   true2: ["true2"],
   openAndCloseButton: ["openAndCloseButton"],
+  manulBooking: [
+    "manulBooking",
+    "data3",
+    "title3",
+    "guestInfo2",
+    "bookInfo2",
+    "bookCommission2",
+    "bookNetPrice2",
+    "bookSettleStatus2",
+    "error2",
+    "true3",
+    "true4",
+    "openAndCloseButton3"
+  ],
+  data3: [
+    "data3",
+    "title3",
+    "guestInfo2",
+    "bookInfo2",
+    "bookCommission2",
+    "bookNetPrice2",
+    "bookSettleStatus2",
+    "error2",
+    "true3",
+    "true4"
+  ],
+  title3: ["title3"],
+  guestInfo2: ["guestInfo2"],
+  bookInfo2: ["bookInfo2"],
+  bookCommission2: ["bookCommission2"],
+  bookNetPrice2: ["bookNetPrice2"],
+  bookSettleStatus2: ["bookSettleStatus2", "error2", "true3", "true4"],
+  error2: ["error2"],
+  true3: ["true3"],
+  true4: ["true4"],
+  openAndCloseButton3: ["openAndCloseButton3"],
   autoSync: [
     "autoSync",
     "data2",
@@ -4802,6 +6535,18 @@ type NodeDefaultElementType = {
   _true: "div";
   true2: "div";
   openAndCloseButton: "div";
+  manulBooking: "div";
+  data3: "div";
+  title3: "div";
+  guestInfo2: "div";
+  bookInfo2: "div";
+  bookCommission2: "div";
+  bookNetPrice2: "div";
+  bookSettleStatus2: "div";
+  error2: "div";
+  true3: "div";
+  true4: "div";
+  openAndCloseButton3: "div";
   autoSync: "div";
   data2: "div";
   title2: "div";
@@ -4907,6 +6652,18 @@ export const PlasmicBookings = Object.assign(
     _true: makeNodeComponent("_true"),
     true2: makeNodeComponent("true2"),
     openAndCloseButton: makeNodeComponent("openAndCloseButton"),
+    manulBooking: makeNodeComponent("manulBooking"),
+    data3: makeNodeComponent("data3"),
+    title3: makeNodeComponent("title3"),
+    guestInfo2: makeNodeComponent("guestInfo2"),
+    bookInfo2: makeNodeComponent("bookInfo2"),
+    bookCommission2: makeNodeComponent("bookCommission2"),
+    bookNetPrice2: makeNodeComponent("bookNetPrice2"),
+    bookSettleStatus2: makeNodeComponent("bookSettleStatus2"),
+    error2: makeNodeComponent("error2"),
+    true3: makeNodeComponent("true3"),
+    true4: makeNodeComponent("true4"),
+    openAndCloseButton3: makeNodeComponent("openAndCloseButton3"),
     autoSync: makeNodeComponent("autoSync"),
     data2: makeNodeComponent("data2"),
     title2: makeNodeComponent("title2"),

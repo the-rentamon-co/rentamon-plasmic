@@ -3471,7 +3471,45 @@ function PlasmicCalendar2__RenderFunc(props: {
                   </div>
                 ) : null}
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox___3P2Zi)}>
+              <div
+                className={classNames(projectcss.all, sty.freeBox___3P2Zi)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["deleteCookie"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function deleteCookie(name) {
+                                document.cookie =
+                                  name +
+                                  "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                              }
+                              deleteCookie("first_visit");
+                              console.log("delete cookie");
+                              $state.tourSteps = 10;
+                              return console.log(
+                                "delete cookie",
+                                $state.tourSteps
+                              );
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["deleteCookie"] != null &&
+                    typeof $steps["deleteCookie"] === "object" &&
+                    typeof $steps["deleteCookie"].then === "function"
+                  ) {
+                    $steps["deleteCookie"] = await $steps["deleteCookie"];
+                  }
+                }}
+              >
                 <div
                   className={classNames(
                     projectcss.all,
@@ -3481,7 +3519,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["runCode"] = true
+                    $steps["runCodeDeleteCookie"] = false
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
@@ -3507,11 +3545,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
+                      $steps["runCodeDeleteCookie"] != null &&
+                      typeof $steps["runCodeDeleteCookie"] === "object" &&
+                      typeof $steps["runCodeDeleteCookie"].then === "function"
                     ) {
-                      $steps["runCode"] = await $steps["runCode"];
+                      $steps["runCodeDeleteCookie"] = await $steps[
+                        "runCodeDeleteCookie"
+                      ];
                     }
                   }}
                 >
@@ -6712,9 +6752,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   Math.floor((gy2 + 3) / 4) -
                                   Math.floor((gy2 + 99) / 100) +
                                   Math.floor((gy2 + 399) / 400);
-                                for (let i = 0; i < gm; i++) {
-                                  days += g_d_m[i];
-                                }
+                                for (let i = 0; i < gm; i++) days += g_d_m[i];
                                 days += gd - 1;
                                 let j_days = days - 79;
                                 let j_np = Math.floor(j_days / 12053);
@@ -6725,14 +6763,14 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   jy += Math.floor((j_days - 1) / 365);
                                   j_days = (j_days - 1) % 365;
                                 }
-                                let jm, jd;
-                                if (j_days < 186) {
-                                  jm = 1 + Math.floor(j_days / 31);
-                                  jd = 1 + (j_days % 31);
-                                } else {
-                                  jm = 7 + Math.floor((j_days - 186) / 30);
-                                  jd = 1 + ((j_days - 186) % 30);
-                                }
+                                let jm =
+                                  j_days < 186
+                                    ? 1 + Math.floor(j_days / 31)
+                                    : 7 + Math.floor((j_days - 186) / 30);
+                                let jd =
+                                  j_days < 186
+                                    ? 1 + (j_days % 31)
+                                    : 1 + ((j_days - 186) % 30);
                                 return {
                                   jy,
                                   jm,
@@ -6740,11 +6778,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 };
                               }
                               function convertTimestampToJalali(timestamp) {
-                                let date = new Date(timestamp * 1000);
-                                let gy = date.getUTCFullYear();
-                                let gm = date.getUTCMonth() + 1;
-                                let gd = date.getUTCDate();
-                                let { jy, jm, jd } = gregorianToJalali(
+                                const date = new Date(timestamp * 1000);
+                                const gy = date.getFullYear();
+                                const gm = date.getMonth() + 1;
+                                const gd = date.getDate();
+                                const { jy, jm, jd } = gregorianToJalali(
+                                  gy,
+                                  gm,
+                                  gd
+                                );
+                                return `${jy}-${String(jm).padStart(
+                                  2,
+                                  "0"
+                                )}-${String(jd).padStart(2, "0")}`;
+                              }
+                              function getTodayInJalali() {
+                                const now = new Date();
+                                const gy = now.getFullYear();
+                                const gm = now.getMonth() + 1;
+                                const gd = now.getDate();
+                                const { jy, jm, jd } = gregorianToJalali(
                                   gy,
                                   gm,
                                   gd
@@ -6755,9 +6808,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 )}-${String(jd).padStart(2, "0")}`;
                               }
                               let timestamps = $state.fragmentDatePicker.values;
-                              let jalaliDates = timestamps.map(ts =>
-                                convertTimestampToJalali(ts)
-                              );
+                              let today = getTodayInJalali();
+                              let jalaliDates = timestamps
+                                .map(ts => convertTimestampToJalali(ts))
+                                .filter(date => date >= today);
                               return {
                                 check_in: jalaliDates[0],
                                 check_out: jalaliDates[jalaliDates.length - 1],

@@ -8205,6 +8205,35 @@ function PlasmicReservations__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
+                  $steps["deleteCookie"] =
+                    $state.isTheFirstVisit == true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function deleteCookie(name) {
+                                  document.cookie =
+                                    name +
+                                    "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                }
+                                deleteCookie("first_visit");
+                                return ($state.isTheFirstVisit = false);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["deleteCookie"] != null &&
+                    typeof $steps["deleteCookie"] === "object" &&
+                    typeof $steps["deleteCookie"].then === "function"
+                  ) {
+                    $steps["deleteCookie"] = await $steps["deleteCookie"];
+                  }
+
                   $steps["registrationSteps"] =
                     $state.isTheFirstVisit == true
                       ? (() => {
@@ -8243,35 +8272,6 @@ function PlasmicReservations__RenderFunc(props: {
                     $steps["registrationSteps"] = await $steps[
                       "registrationSteps"
                     ];
-                  }
-
-                  $steps["deleteCookie"] =
-                    $state.isTheFirstVisit == true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function deleteCookie(name) {
-                                  document.cookie =
-                                    name +
-                                    "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                                }
-                                deleteCookie("first_visit");
-                                return ($state.isTheFirstVisit = false);
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                  if (
-                    $steps["deleteCookie"] != null &&
-                    typeof $steps["deleteCookie"] === "object" &&
-                    typeof $steps["deleteCookie"].then === "function"
-                  ) {
-                    $steps["deleteCookie"] = await $steps["deleteCookie"];
                   }
 
                   $steps["updateModalOpen"] = true
