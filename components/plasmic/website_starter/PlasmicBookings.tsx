@@ -61,6 +61,8 @@ import {
 
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
+import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -118,6 +120,9 @@ export type PlasmicBookings__OverridesType = {
   openAndCloseButton2?: Flex__<"div">;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   profile?: Flex__<typeof ApiRequest>;
+  html?: Flex__<"div">;
+  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultBookingsProps {}
@@ -4331,6 +4336,32 @@ function PlasmicBookings__RenderFunc(props: {
             }}
             url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
           />
+
+          <div
+            data-plasmic-name={"html"}
+            data-plasmic-override={overrides.html}
+            className={classNames(projectcss.all, sty.html)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__wUeQg)}>
+              <ClarityRntComponent
+                data-plasmic-name={"clarityRntComponent"}
+                data-plasmic-override={overrides.clarityRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.clarityRntComponent
+                )}
+              />
+
+              <FaviconRntComponent
+                data-plasmic-name={"faviconRntComponent"}
+                data-plasmic-override={overrides.faviconRntComponent}
+                className={classNames(
+                  "__wab_instance",
+                  sty.faviconRntComponent
+                )}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -4373,7 +4404,10 @@ const PlasmicDescendants = {
     "platformStatus",
     "openAndCloseButton2",
     "navbarRntFooter",
-    "profile"
+    "profile",
+    "html",
+    "clarityRntComponent",
+    "faviconRntComponent"
   ],
   detail2: [
     "detail2",
@@ -4493,7 +4527,10 @@ const PlasmicDescendants = {
   platformStatus: ["platformStatus"],
   openAndCloseButton2: ["openAndCloseButton2"],
   navbarRntFooter: ["navbarRntFooter"],
-  profile: ["profile"]
+  profile: ["profile"],
+  html: ["html", "clarityRntComponent", "faviconRntComponent"],
+  clarityRntComponent: ["clarityRntComponent"],
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -4534,6 +4571,9 @@ type NodeDefaultElementType = {
   openAndCloseButton2: "div";
   navbarRntFooter: typeof NavbarRntFooter;
   profile: typeof ApiRequest;
+  html: "div";
+  clarityRntComponent: typeof ClarityRntComponent;
+  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -4630,6 +4670,9 @@ export const PlasmicBookings = Object.assign(
     openAndCloseButton2: makeNodeComponent("openAndCloseButton2"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     profile: makeNodeComponent("profile"),
+    html: makeNodeComponent("html"),
+    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicBookings
     internalVariantProps: PlasmicBookings__VariantProps,
