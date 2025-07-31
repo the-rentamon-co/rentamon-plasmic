@@ -2050,7 +2050,8 @@
   text-align: center;
   font-size: 16px;
   font-weight: 400;
-  color: #444444;
+  color: #acacac;
+  padding-left: 0px;
 }
 @media (max-width: 500px) {
   .text__bc7Tf {
@@ -2070,10 +2071,10 @@
     height: auto;
     max-width: 100%;
     padding-left: 0px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
-    color: #444444;
-    text-align: center;
+    color: #acacac;
+    text-align: left;
   }
 }
 .freeBox__n3CAg {
@@ -2127,8 +2128,9 @@
   max-width: 100%;
   text-align: center;
   font-size: 16px;
-  font-weight: 500;
-  color: #444444;
+  font-weight: 400;
+  color: #acacac;
+  padding-left: 0px;
 }
 @media (max-width: 500px) {
   .text__q1Tbt {
@@ -2148,10 +2150,10 @@
     height: auto;
     max-width: 100%;
     padding-left: 0px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
-    color: #444444;
-    text-align: center;
+    color: #acacac;
+    text-align: left;
   }
 }
 .bookCommission {

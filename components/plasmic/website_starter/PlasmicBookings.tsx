@@ -433,7 +433,7 @@ function PlasmicBookings__RenderFunc(props: {
                           })()
                         : (() => {
                             try {
-                              return $state.booking.data[0].website == "shab";
+                              return $state.booking.data.website == "shab";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -797,17 +797,17 @@ function PlasmicBookings__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.booking.data[0].website == "jabama"
+                              return $state.booking.data.website == "jabama"
                                 ? "جاباما"
-                                : $state.booking.data[0].website == "jajiga"
+                                : $state.booking.data.website == "jajiga"
                                 ? "جاجیگا"
-                                : $state.booking.data[0].website == "shab"
+                                : $state.booking.data.website == "shab"
                                 ? "شب"
-                                : $state.booking.data[0].website == "otaghak"
+                                : $state.booking.data.website == "otaghak"
                                 ? "اتاقک"
-                                : $state.booking.data[0].website == "mihmansho"
+                                : $state.booking.data.website == "mihmansho"
                                 ? "مهمانشو"
-                                : $state.booking.data[0].website == "homsa"
+                                : $state.booking.data.website == "homsa"
                                 ? "هومسا"
                                 : "یافت نشد";
                             } catch (e) {
@@ -3136,9 +3136,18 @@ function PlasmicBookings__RenderFunc(props: {
                             <React.Fragment>
                               {(() => {
                                 try {
-                                  return new Intl.NumberFormat("fa-IR").format(
-                                    $state.booking.data.smart_booking.amount
-                                  );
+                                  return (() => {
+                                    let price =
+                                      $state.booking.data.smart_booking.amount;
+                                    if (
+                                      $state.booking.data.website == "jabama"
+                                    ) {
+                                      price = price / 10;
+                                    }
+                                    return new Intl.NumberFormat(
+                                      "fa-IR"
+                                    ).format(price);
+                                  })();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -3155,9 +3164,18 @@ function PlasmicBookings__RenderFunc(props: {
                             <React.Fragment>
                               {(() => {
                                 try {
-                                  return new Intl.NumberFormat("fa-IR").format(
-                                    $state.booking.data.smart_booking.amount
-                                  );
+                                  return (() => {
+                                    let price =
+                                      $state.booking.data.smart_booking.amount;
+                                    if (
+                                      $state.booking.data.website == "jabama"
+                                    ) {
+                                      price = price / 10;
+                                    }
+                                    return new Intl.NumberFormat(
+                                      "fa-IR"
+                                    ).format(price);
+                                  })();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -3686,7 +3704,7 @@ function PlasmicBookings__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return true;
+                              return false;
                             }
                             throw e;
                           }
@@ -3756,7 +3774,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return true;
+                                    return false;
                                   }
                                   throw e;
                                 }
@@ -3880,17 +3898,31 @@ function PlasmicBookings__RenderFunc(props: {
                           sty.freeBox__iyOnW
                         )}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__zn2Wr
-                          )}
-                        >
-                          {
-                            "\u0646\u062a\u06cc\u062c\u0647 \u062a\u0644\u0627\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u06cc \u0628\u0633\u062a\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627:"
+                        {(() => {
+                          try {
+                            return $state.booking.data.auto_sync_status != null;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
                           }
-                        </div>
+                        })() ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__zn2Wr
+                            )}
+                          >
+                            {
+                              "\u0646\u062a\u06cc\u062c\u0647 \u062a\u0644\u0627\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u06cc \u0628\u0633\u062a\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627:"
+                            }
+                          </div>
+                        ) : null}
                         {(() => {
                           try {
                             return $state.booking.data.auto_sync_status == null;
