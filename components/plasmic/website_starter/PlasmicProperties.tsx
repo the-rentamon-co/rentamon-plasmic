@@ -1238,6 +1238,74 @@ function PlasmicProperties__RenderFunc(props: {
                         </div>
                       </div>
                     ) : null}
+                    {(() => {
+                      try {
+                        return $state.propTour === true;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__hyTnZ
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__gin1Y
+                          )}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["deleteCookie"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return (() => {
+                                        function deleteCookie(name) {
+                                          document.cookie =
+                                            name +
+                                            "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                        }
+                                        deleteCookie("prop_tour");
+                                        console.log("delete cookie");
+                                        $state.tourSteps = 10;
+                                        return console.log(
+                                          "delete cookie",
+                                          $state.tourSteps
+                                        );
+                                      })();
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["deleteCookie"] != null &&
+                              typeof $steps["deleteCookie"] === "object" &&
+                              typeof $steps["deleteCookie"].then === "function"
+                            ) {
+                              $steps["deleteCookie"] = await $steps[
+                                "deleteCookie"
+                              ];
+                            }
+                          }}
+                        >
+                          {"\u0628\u06cc\u200c\u062e\u06cc\u0627\u0644"}
+                        </div>
+                      </div>
+                    ) : null}
                   </div>
                 </ApiRequest>
               </div>

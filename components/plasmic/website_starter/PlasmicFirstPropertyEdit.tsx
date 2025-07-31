@@ -1443,167 +1443,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["updateLoading"] = await $steps["updateLoading"];
                       }
 
-                      $steps["invokeGlobalAction"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://gateway.rentamon.com/webhook/change_property_pic",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return (() => {
-                                      let a = {
-                                        prop_id: "1",
-                                        property_pic: $state.upload.files[0]
-                                      };
-                                      return a;
-                                    })();
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
-                      }
-
-                      $steps["invokeGlobalAction2"] =
-                        $steps.invokeGlobalAction.status == 413
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  "error",
-                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646",
-                                  "top-center",
-                                  4000
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["invokeGlobalAction2"] != null &&
-                        typeof $steps["invokeGlobalAction2"] === "object" &&
-                        typeof $steps["invokeGlobalAction2"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction2"] = await $steps[
-                          "invokeGlobalAction2"
-                        ];
-                      }
-
-                      $steps["goToLitePanel"] =
-                        $steps.invokeGlobalAction.status == 200
-                          ? (() => {
-                              const actionArgs = { destination: `/calendar` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["goToLitePanel"] != null &&
-                        typeof $steps["goToLitePanel"] === "object" &&
-                        typeof $steps["goToLitePanel"].then === "function"
-                      ) {
-                        $steps["goToLitePanel"] = await $steps["goToLitePanel"];
-                      }
-
-                      $steps["goToProLitePanel"] =
-                        $state.propTour === true
-                          ? (() => {
-                              const actionArgs = { destination: `/calendar` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["goToProLitePanel"] != null &&
-                        typeof $steps["goToProLitePanel"] === "object" &&
-                        typeof $steps["goToProLitePanel"].then === "function"
-                      ) {
-                        $steps["goToProLitePanel"] = await $steps[
-                          "goToProLitePanel"
-                        ];
-                      }
-
-                      $steps["updateLoading2"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["loading"]
-                              },
-                              operation: 4
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateLoading2"] != null &&
-                        typeof $steps["updateLoading2"] === "object" &&
-                        typeof $steps["updateLoading2"].then === "function"
-                      ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
-                        ];
-                      }
-
                       $steps["setCookieFirstVisit"] =
                         $state.propTour === true
                           ? (() => {
@@ -1678,6 +1517,84 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         ];
                       }
 
+                      $steps["showToast"] =
+                        $steps.changePropertyPic.status == 413
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646",
+                                  "top-center",
+                                  4000
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["showToast"] != null &&
+                        typeof $steps["showToast"] === "object" &&
+                        typeof $steps["showToast"].then === "function"
+                      ) {
+                        $steps["showToast"] = await $steps["showToast"];
+                      }
+
+                      $steps["goToLitePanel"] =
+                        $steps.changePropertyPic.status == 200
+                          ? (() => {
+                              const actionArgs = { destination: `/calendar` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["goToLitePanel"] != null &&
+                        typeof $steps["goToLitePanel"] === "object" &&
+                        typeof $steps["goToLitePanel"].then === "function"
+                      ) {
+                        $steps["goToLitePanel"] = await $steps["goToLitePanel"];
+                      }
+
+                      $steps["goToProLitePanel"] =
+                        $state.propTour === true
+                          ? (() => {
+                              const actionArgs = { destination: `/calendar` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["goToProLitePanel"] != null &&
+                        typeof $steps["goToProLitePanel"] === "object" &&
+                        typeof $steps["goToProLitePanel"].then === "function"
+                      ) {
+                        $steps["goToProLitePanel"] = await $steps[
+                          "goToProLitePanel"
+                        ];
+                      }
+
                       $steps["registrationSteps"] =
                         $state.propTour === true
                           ? (() => {
@@ -1714,6 +1631,87 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       ) {
                         $steps["registrationSteps"] = await $steps[
                           "registrationSteps"
+                        ];
+                      }
+
+                      $steps["updateLoading2"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["loading"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateLoading2"] != null &&
+                        typeof $steps["updateLoading2"] === "object" &&
+                        typeof $steps["updateLoading2"].then === "function"
+                      ) {
+                        $steps["updateLoading2"] = await $steps[
+                          "updateLoading2"
+                        ];
+                      }
+
+                      $steps["changePropertyPic"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                "POST",
+                                "https://gateway.rentamon.com/webhook/change_property_pic",
+                                undefined,
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      let a = {
+                                        prop_id: "1",
+                                        property_pic: $state.upload.files[0]
+                                      };
+                                      return a;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["changePropertyPic"] != null &&
+                        typeof $steps["changePropertyPic"] === "object" &&
+                        typeof $steps["changePropertyPic"].then === "function"
+                      ) {
+                        $steps["changePropertyPic"] = await $steps[
+                          "changePropertyPic"
                         ];
                       }
                     }}
