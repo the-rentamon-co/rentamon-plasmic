@@ -47,8 +47,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  grid-column-start: 3 !important;
-  grid-column-end: -3 !important;
+  grid-column-start: 1 !important;
+  grid-column-end: -1 !important;
   padding: 0px;
 }
 @media (max-width: 1200px) {
@@ -181,7 +181,7 @@
   flex-direction: row;
   width: 100%;
   height: auto;
-  max-width: 90%;
+  max-width: 80%;
   justify-content: center;
   align-items: center;
   background: var(--token-CRgiL9etiPcm);
@@ -303,7 +303,7 @@
 .shab {
   object-fit: cover;
   max-width: 100%;
-  height: 63px;
+  height: 40px;
 }
 .shab > picture > img {
   object-fit: cover;
@@ -353,7 +353,7 @@
 .jajiga {
   object-fit: cover;
   max-width: 100%;
-  height: 63px;
+  height: 40px;
 }
 .jajiga > picture > img {
   object-fit: cover;
@@ -378,7 +378,7 @@
 .homsa {
   object-fit: cover;
   max-width: 100%;
-  height: 63px;
+  height: 40px;
 }
 .homsa > picture > img {
   object-fit: cover;
@@ -403,7 +403,7 @@
 .otaghak {
   object-fit: cover;
   max-width: 100%;
-  height: 63px;
+  height: 40px;
 }
 .otaghak > picture > img {
   object-fit: cover;
@@ -428,7 +428,7 @@
 .mihmansho {
   object-fit: cover;
   max-width: 100%;
-  height: 63px;
+  height: 40px;
 }
 .mihmansho > picture > img {
   object-fit: cover;
@@ -716,13 +716,19 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
+  width: 80%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  min-width: 0;
   padding: 8px;
+}
+@media (max-width: 1200px) {
+  .freeBox__fdSc6 {
+    width: 100%;
+    grid-column-start: 3 !important;
+    grid-column-end: -3 !important;
+  }
 }
 @media (max-width: 500px) {
   .freeBox__fdSc6 {
@@ -893,8 +899,14 @@
 }
 @media (max-width: 350px) {
   .freeBox__lRf4L {
-    max-width: 50%;
+    max-width: 54%;
     padding: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__lRf4L > :global(.__wab_flex-container) {
+    justify-content: flex-start;
+    align-items: center;
   }
 }
 .text__lzc9 {
@@ -1015,7 +1027,7 @@
 }
 @media (max-width: 350px) {
   .freeBox___8Epy1 {
-    max-width: 44%;
+    max-width: 46%;
     padding: 0px;
   }
 }
@@ -1214,7 +1226,7 @@
   .freeBox__hxnJz {
     width: 100%;
     height: auto;
-    max-width: 50%;
+    max-width: 54%;
     flex-direction: row;
     min-width: 0;
     padding: 0px;
@@ -1223,7 +1235,7 @@
 @media (max-width: 350px) {
   .freeBox__hxnJz > :global(.__wab_flex-container) {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     min-width: 0;
     margin-left: calc(0px - 10px);
@@ -1378,7 +1390,7 @@
 }
 @media (max-width: 350px) {
   .freeBox__rBuvx {
-    max-width: 44%;
+    max-width: 46%;
     padding: 0px;
   }
 }
@@ -1670,7 +1682,7 @@
     max-width: 100%;
     padding-left: 0px;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
   }
 }
@@ -1707,12 +1719,13 @@
   max-width: 100%;
   text-align: center;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   padding-left: 0px;
 }
 @media (max-width: 500px) {
   .text__agLat {
     font-size: 15px;
+    font-weight: 400;
   }
 }
 @media (max-width: 350px) {
@@ -1788,8 +1801,8 @@
     max-width: 100%;
     padding-left: 0px;
     font-size: 14px;
-    font-weight: 500;
-    text-align: center;
+    font-weight: 400;
+    text-align: left;
     color: #acacac;
   }
 }
@@ -1801,7 +1814,7 @@
     padding-left: 0px;
     font-size: 13px;
     font-weight: 400;
-    text-align: center;
+    text-align: left;
   }
 }
 .freeBox__w81Ii {
@@ -2037,7 +2050,7 @@
   text-align: center;
   font-size: 16px;
   font-weight: 400;
-  color: #acacac;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .text__bc7Tf {
@@ -2057,9 +2070,9 @@
     height: auto;
     max-width: 100%;
     padding-left: 0px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
-    color: #acacac;
+    color: #444444;
     text-align: center;
   }
 }
@@ -2114,8 +2127,8 @@
   max-width: 100%;
   text-align: center;
   font-size: 16px;
-  font-weight: 400;
-  color: #acacac;
+  font-weight: 500;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .text__q1Tbt {
@@ -2135,9 +2148,9 @@
     height: auto;
     max-width: 100%;
     padding-left: 0px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
-    color: #acacac;
+    color: #444444;
     text-align: center;
   }
 }
@@ -2591,7 +2604,7 @@
   height: auto;
   max-width: 100%;
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--token-ZOf6qhi7gIGD);
 }
@@ -2602,7 +2615,7 @@
     max-width: 100%;
     padding-left: 0px;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
   }
 }
@@ -2613,7 +2626,7 @@
     max-width: 100%;
     padding-left: 0px;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
   }
 }
@@ -2740,7 +2753,7 @@
   max-width: 100%;
   text-align: center;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   padding-left: 0px;
 }
 @media (max-width: 500px) {
@@ -2750,7 +2763,7 @@
     max-width: 100%;
     padding-left: 0px;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
   }
 }
@@ -2761,7 +2774,7 @@
     max-width: 100%;
     padding-left: 0px;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
   }
 }
@@ -2868,8 +2881,8 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  justify-content: flex-start;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -3064,6 +3077,21 @@
     font-size: 15px;
   }
 }
+.text__qzN7 {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 400;
+  padding-top: 0px;
+}
+@media (max-width: 500px) {
+  .text__qzN7 {
+    font-weight: 400;
+    font-size: 15px;
+  }
+}
 .platformStatus {
   display: flex;
   flex-direction: row-reverse;
@@ -3152,6 +3180,23 @@
 }
 .img__q849 > picture > img {
   object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .img__q849 {
+    height: 24px;
+  }
+}
+@media (max-width: 500px) {
+  .img__q849 {
+    height: 24px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .img__q849 {
+    height: 22px;
+    max-width: 100%;
+  }
 }
 .img__mxXba {
   object-fit: cover;
