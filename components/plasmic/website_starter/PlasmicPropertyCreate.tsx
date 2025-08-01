@@ -1334,6 +1334,35 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         $steps["apiRequest"] = await $steps["apiRequest"];
                       }
 
+                      $steps["testToast"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  console.log(
+                                    "$steps.apiRequest.status !== 200",
+                                    $steps.apiRequest.status !== 200
+                                  );
+                                  return console.log(
+                                    "$steps.apiRequest.status",
+                                    $steps.apiRequest.status !== 200
+                                  );
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["testToast"] != null &&
+                        typeof $steps["testToast"] === "object" &&
+                        typeof $steps["testToast"].then === "function"
+                      ) {
+                        $steps["testToast"] = await $steps["testToast"];
+                      }
+
                       $steps["showSizeErrorToast"] =
                         $steps.apiRequest.status !== 200
                           ? (() => {
