@@ -1425,28 +1425,49 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["updateLoading"] = await $steps["updateLoading"];
                       }
 
-                      $steps["showToast"] =
-                        $steps.apiRequest == null
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  "error",
-                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646",
-                                  "top-center",
-                                  4000
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
+                      $steps["changePropertyPic"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                "POST",
+                                "https://gateway.rentamon.com/webhook/change_property_pic",
+                                undefined,
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      let a = {
+                                        prop_id: "1",
+                                        property_pic: $state.upload.files[0]
+                                      };
+                                      return a;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
                       if (
-                        $steps["showToast"] != null &&
-                        typeof $steps["showToast"] === "object" &&
-                        typeof $steps["showToast"].then === "function"
+                        $steps["changePropertyPic"] != null &&
+                        typeof $steps["changePropertyPic"] === "object" &&
+                        typeof $steps["changePropertyPic"].then === "function"
                       ) {
-                        $steps["showToast"] = await $steps["showToast"];
+                        $steps["changePropertyPic"] = await $steps[
+                          "changePropertyPic"
+                        ];
                       }
 
                       $steps["setCookieFirstVisit"] =
@@ -1525,6 +1546,30 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["deletePropTourCookie"] = await $steps[
                           "deletePropTourCookie"
                         ];
+                      }
+
+                      $steps["showToast"] =
+                        $steps.apiRequest == null
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646",
+                                  "top-center",
+                                  4000
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["showToast"] != null &&
+                        typeof $steps["showToast"] === "object" &&
+                        typeof $steps["showToast"].then === "function"
+                      ) {
+                        $steps["showToast"] = await $steps["showToast"];
                       }
 
                       $steps["goToLitePanel"] =
@@ -1653,51 +1698,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       ) {
                         $steps["updateLoading2"] = await $steps[
                           "updateLoading2"
-                        ];
-                      }
-
-                      $steps["changePropertyPic"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://gateway.rentamon.com/webhook/change_property_pic",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return (() => {
-                                      let a = {
-                                        prop_id: "1",
-                                        property_pic: $state.upload.files[0]
-                                      };
-                                      return a;
-                                    })();
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["changePropertyPic"] != null &&
-                        typeof $steps["changePropertyPic"] === "object" &&
-                        typeof $steps["changePropertyPic"].then === "function"
-                      ) {
-                        $steps["changePropertyPic"] = await $steps[
-                          "changePropertyPic"
                         ];
                       }
                     }}

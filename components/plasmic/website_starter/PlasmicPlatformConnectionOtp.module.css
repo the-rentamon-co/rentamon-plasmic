@@ -289,6 +289,12 @@
   min-width: 0;
   padding: 8px;
 }
+.columns > :nth-child(2n + 1) {
+  width: calc(100% * 6 / 12);
+}
+.columns > :nth-child(2n + 2) {
+  width: calc(100% * 6 / 12);
+}
 @media (max-width: 500px) {
   .columns {
     width: 100%;
@@ -296,6 +302,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     min-width: 0;
+  }
+}
+@media (max-width: 500px) {
+  .columns > :nth-child(1n + 1) {
+    width: calc(100% * 12 / 12);
   }
 }
 .column__dFOmf {

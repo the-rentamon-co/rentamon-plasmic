@@ -38,6 +38,9 @@
   min-width: 0;
   padding: 8px 0px 8px 8px;
 }
+.columns > :nth-child(1n + 1) {
+  width: calc(100% * 12 / 12);
+}
 @media (max-width: 500px) {
   .columns {
     width: 100%;
@@ -45,6 +48,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     min-width: 0;
+  }
+}
+@media (max-width: 500px) {
+  .columns > :nth-child(1n + 1) {
+    width: calc(100% * 12 / 12);
   }
 }
 .column {

@@ -616,6 +616,61 @@ function PlasmicBookings__RenderFunc(props: {
                       })()
                 }
               />
+
+              <div
+                className={classNames(projectcss.all, sty.freeBox__kL4Rj)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              return window.history.back();
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__ne5E1)}
+                  displayHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "28px"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "31px"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "48px"
+                      : "60px"
+                  }
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image153.svg",
+                    fullWidth: 34,
+                    fullHeight: 34,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__inIyH)} />
 
@@ -2390,6 +2445,34 @@ function PlasmicBookings__RenderFunc(props: {
                   </div>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__rBuvx)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["invokeGlobalAction"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                undefined,
+                                "\u0627\u06cc\u0646 \u06a9\u062f \u0631\u0632\u0631\u0648 \u0634\u0645\u0627 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647",
+                                "top-center"
+                              ]
+                            };
+                            return $globalActions["Fragment.showToast"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
+                        ];
+                      }
+                    }}
                   >
                     <div
                       className={classNames(
@@ -2555,12 +2638,28 @@ function PlasmicBookings__RenderFunc(props: {
                             }}
                           />
 
-                          <div
+                          <PlasmicLink__
                             className={classNames(
                               projectcss.all,
+                              projectcss.a,
                               projectcss.__wab_text,
-                              sty.text__wxoad
+                              sty.link__wxoad
                             )}
+                            component={Link}
+                            href={(() => {
+                              try {
+                                return `tel:${$state.booking.data.smart_booking.guest_phone_number}`;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+                            platform={"nextjs"}
                           >
                             {hasVariant(
                               globalVariants,
@@ -2631,7 +2730,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 })()}
                               </React.Fragment>
                             )}
-                          </div>
+                          </PlasmicLink__>
                         </div>
                         <div
                           className={classNames(
@@ -3701,9 +3800,47 @@ function PlasmicBookings__RenderFunc(props: {
                                 sty.text__q1Tbt
                               )}
                             >
-                              {
-                                "\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062f\u0631 \u0634\u0628:"
-                              }
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (() => {
+                                      const websiteFarsiNames = {
+                                        host: "میزبان",
+                                        jabama: "جاباما",
+                                        jajiga: "جاجیگا",
+                                        shab: "شب",
+                                        mizboon: "میزبون",
+                                        otaghak: "اتاقک",
+                                        homsa: "هومسا",
+                                        mihmansho: "میهمانشو",
+                                        divar: "دیوار",
+                                        others: "سایر",
+                                        offline: "حضوری",
+                                        Returning_Guest: "قبلی",
+                                        "Broker or Colleague": "واسطه یا همکار",
+                                        social: "پیام‌رسان و شبکه‌اجتماعی",
+                                        garmeja: "گرمه‌جا"
+                                      };
+                                      const englishWebsiteName =
+                                        $state.booking.data.website;
+                                      const farsiWebsiteName =
+                                        websiteFarsiNames[englishWebsiteName] ||
+                                        englishWebsiteName;
+                                      const finalMessage = `مبلغ رزرو در ${farsiWebsiteName}:`;
+                                      return finalMessage;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
                             </div>
                           </div>
                         </div>
@@ -3846,6 +3983,76 @@ function PlasmicBookings__RenderFunc(props: {
                             data-plasmic-name={"error"}
                             data-plasmic-override={overrides.error}
                             className={classNames(projectcss.all, sty.error)}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["invokeGlobalAction"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              const websiteFarsiNames = {
+                                                host: "میزبان",
+                                                jabama: "جاباما",
+                                                jajiga: "جاجیگا",
+                                                shab: "شب",
+                                                mizboon: "میزبون",
+                                                otaghak: "اتاقک",
+                                                homsa: "هومسا",
+                                                mihmansho: "میهمانشو",
+                                                divar: "دیوار",
+                                                others: "سایر",
+                                                offline: "حضوری",
+                                                Returning_Guest: "قبلی",
+                                                "Broker or Colleague":
+                                                  "واسطه یا همکار",
+                                                social:
+                                                  "پیام‌رسان و شبکه‌اجتماعی",
+                                                garmeja: "گرمه‌جا"
+                                              };
+                                              const englishWebsiteName =
+                                                $state.booking.data.website;
+                                              const farsiWebsiteName =
+                                                websiteFarsiNames[
+                                                  englishWebsiteName
+                                                ] || englishWebsiteName;
+                                              const finalMessage = `${farsiWebsiteName} هنوز درآمد این رزرو رو باشما تسویه نکرده`;
+                                              return finalMessage;
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })(),
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["invokeGlobalAction"] != null &&
+                                typeof $steps["invokeGlobalAction"] ===
+                                  "object" &&
+                                typeof $steps["invokeGlobalAction"].then ===
+                                  "function"
+                              ) {
+                                $steps["invokeGlobalAction"] = await $steps[
+                                  "invokeGlobalAction"
+                                ];
+                              }
+                            }}
                           >
                             <PlasmicImg__
                               alt={""}
@@ -3897,7 +4104,7 @@ function PlasmicBookings__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return true;
+                              return false;
                             }
                             throw e;
                           }
@@ -3906,6 +4113,77 @@ function PlasmicBookings__RenderFunc(props: {
                             data-plasmic-name={"_true"}
                             data-plasmic-override={overrides._true}
                             className={classNames(projectcss.all, sty._true)}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["invokeGlobalAction"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              const websiteFarsiNames = {
+                                                host: "میزبان",
+                                                jabama: "جاباما",
+                                                jajiga: "جاجیگا",
+                                                shab: "شب",
+                                                mizboon: "میزبون",
+                                                otaghak: "اتاقک",
+                                                homsa: "هومسا",
+                                                mihmansho: "میهمانشو",
+                                                divar: "دیوار",
+                                                others: "سایر",
+                                                offline: "حضوری",
+                                                Returning_Guest: "قبلی",
+                                                "Broker or Colleague":
+                                                  "واسطه یا همکار",
+                                                social:
+                                                  "پیام‌رسان و شبکه‌اجتماعی",
+                                                garmeja: "گرمه‌جا"
+                                              };
+                                              const englishWebsiteName =
+                                                $state.booking.data.website;
+                                              const farsiWebsiteName =
+                                                websiteFarsiNames[
+                                                  englishWebsiteName
+                                                ] || englishWebsiteName;
+                                              const finalMessage = `${farsiWebsiteName} درآمد این رزرو رو با شما تسویه کرده`;
+                                              return finalMessage;
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })(),
+                                        "top-center",
+                                        4500
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["invokeGlobalAction"] != null &&
+                                typeof $steps["invokeGlobalAction"] ===
+                                  "object" &&
+                                typeof $steps["invokeGlobalAction"].then ===
+                                  "function"
+                              ) {
+                                $steps["invokeGlobalAction"] = await $steps[
+                                  "invokeGlobalAction"
+                                ];
+                              }
+                            }}
                           >
                             <PlasmicImg__
                               alt={""}
@@ -4166,9 +4444,9 @@ function PlasmicBookings__RenderFunc(props: {
                           }
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image155.svg",
+                            src: "/plasmic/website_starter/images/image165.svg",
                             fullWidth: 27,
-                            fullHeight: 26,
+                            fullHeight: 28,
                             aspectRatio: undefined
                           }}
                         />
@@ -4202,12 +4480,28 @@ function PlasmicBookings__RenderFunc(props: {
                             }}
                           />
 
-                          <div
+                          <PlasmicLink__
                             className={classNames(
                               projectcss.all,
+                              projectcss.a,
                               projectcss.__wab_text,
-                              sty.text__utevI
+                              sty.link__utevI
                             )}
+                            component={Link}
+                            href={(() => {
+                              try {
+                                return `tel:${$state.booking.data.manual_booking.guest_phone_number}`;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+                            platform={"nextjs"}
                           >
                             {hasVariant(
                               globalVariants,
@@ -4278,7 +4572,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 })()}
                               </React.Fragment>
                             )}
-                          </div>
+                          </PlasmicLink__>
                         </div>
                         <div
                           className={classNames(
@@ -5589,7 +5883,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       "mobile"
                                     )
                                   ? "30px"
-                                  : "37px"
+                                  : "27px"
                               }
                               displayMaxHeight={"none"}
                               displayMaxWidth={
@@ -5664,7 +5958,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       "mobile"
                                     )
                                   ? "30px"
-                                  : "37px"
+                                  : "27px"
                               }
                               displayMaxHeight={"none"}
                               displayMaxWidth={
@@ -6153,7 +6447,7 @@ function PlasmicBookings__RenderFunc(props: {
                             : (() => {
                                 try {
                                   return $state.accordionOpenSmartBooking
-                                    ? ".rotate-normal"
+                                    ? "rotate-normal"
                                     : "rotate-flipped";
                                 } catch (e) {
                                   if (
@@ -6193,7 +6487,7 @@ function PlasmicBookings__RenderFunc(props: {
                     e instanceof TypeError ||
                     e?.plasmicType === "PlasmicUndefinedDataError"
                   ) {
-                    return true;
+                    return false;
                   }
                   throw e;
                 }
@@ -6296,32 +6590,36 @@ function PlasmicBookings__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["updateCancelManualReserveOpen"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["cancelManualReserve", "open"]
-                                },
-                                operation: 0,
-                                value: true
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
+                        $steps["updateCancelManualReserveOpen"] =
+                          $state.booking.data.status != "cancelled"
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: [
+                                      "cancelManualReserve",
+                                      "open"
+                                    ]
+                                  },
+                                  operation: 0,
+                                  value: true
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
 
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
                         if (
                           $steps["updateCancelManualReserveOpen"] != null &&
                           typeof $steps["updateCancelManualReserveOpen"] ===
@@ -6331,6 +6629,32 @@ function PlasmicBookings__RenderFunc(props: {
                         ) {
                           $steps["updateCancelManualReserveOpen"] =
                             await $steps["updateCancelManualReserveOpen"];
+                        }
+
+                        $steps["checkIfReserveBeCancelShowToast"] =
+                          $state.booking.data.status != "cancelled"
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "error",
+                                    "\u0631\u0632\u0631\u0648  \u0644\u063a\u0648 \u0634\u062f\u0647 \u0627\u0633\u062a",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["checkIfReserveBeCancelShowToast"] != null &&
+                          typeof $steps["checkIfReserveBeCancelShowToast"] ===
+                            "object" &&
+                          typeof $steps["checkIfReserveBeCancelShowToast"]
+                            .then === "function"
+                        ) {
+                          $steps["checkIfReserveBeCancelShowToast"] =
+                            await $steps["checkIfReserveBeCancelShowToast"];
                         }
                       }}
                     >
@@ -6390,7 +6714,81 @@ function PlasmicBookings__RenderFunc(props: {
                       "updateManualReserve",
                       "open"
                     ])}
-                    title={null}
+                    title={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__v7B5M
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__ifgEu
+                          )}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["updateUpdateManualReserveOpen"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: [
+                                        "updateManualReserve",
+                                        "open"
+                                      ]
+                                    },
+                                    operation: 0
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateUpdateManualReserveOpen"] != null &&
+                              typeof $steps["updateUpdateManualReserveOpen"] ===
+                                "object" &&
+                              typeof $steps["updateUpdateManualReserveOpen"]
+                                .then === "function"
+                            ) {
+                              $steps["updateUpdateManualReserveOpen"] =
+                                await $steps["updateUpdateManualReserveOpen"];
+                            }
+                          }}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__gj7OH)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image166.svg",
+                              fullWidth: 18,
+                              fullHeight: 18,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        </div>
+                      </div>
+                    }
                     trigger={null}
                   >
                     <div
@@ -7086,7 +7484,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["runCode"] = true
+                              $steps["updateFront"] = true
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {
@@ -7110,11 +7508,13 @@ function PlasmicBookings__RenderFunc(props: {
                                   })()
                                 : undefined;
                               if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
+                                $steps["updateFront"] != null &&
+                                typeof $steps["updateFront"] === "object" &&
+                                typeof $steps["updateFront"].then === "function"
                               ) {
-                                $steps["runCode"] = await $steps["runCode"];
+                                $steps["updateFront"] = await $steps[
+                                  "updateFront"
+                                ];
                               }
                             }}
                             submitsForm={false}
@@ -7313,6 +7713,27 @@ function PlasmicBookings__RenderFunc(props: {
                         onClick={async event => {
                           const $steps = {};
 
+                          $steps["updateFront"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return ($state.booking.data.status =
+                                      "cancelled");
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateFront"] != null &&
+                            typeof $steps["updateFront"] === "object" &&
+                            typeof $steps["updateFront"].then === "function"
+                          ) {
+                            $steps["updateFront"] = await $steps["updateFront"];
+                          }
+
                           $steps["invokeGlobalAction"] = true
                             ? (() => {
                                 const actionArgs = {
@@ -7419,27 +7840,6 @@ function PlasmicBookings__RenderFunc(props: {
                             $steps["invokeGlobalAction2"] = await $steps[
                               "invokeGlobalAction2"
                             ];
-                          }
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return ($state.booking.data.status =
-                                      "cancelled");
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
                           }
                         }}
                       >
