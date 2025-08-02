@@ -7317,7 +7317,7 @@ function PlasmicBookings__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   args: [
-                                    undefined,
+                                    "POST",
                                     "https://gateway.rentamon.com/webhook/cancelled_reserve",
                                     undefined,
                                     (() => {
