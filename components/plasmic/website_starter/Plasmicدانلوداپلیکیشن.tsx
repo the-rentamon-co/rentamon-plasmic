@@ -448,11 +448,9 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                     />
                   </div>
                 </div>
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"iOs"}
                   data-plasmic-override={overrides.iOs}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.iOs, "clickable")}
                   onClick={async event => {
                     const $steps = {};
@@ -552,12 +550,10 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                       }}
                     />
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
+                </div>
+                <div
                   data-plasmic-name={"cafeBazar"}
                   data-plasmic-override={overrides.cafeBazar}
-                  hasGap={true}
                   className={classNames(
                     projectcss.all,
                     sty.cafeBazar,
@@ -636,12 +632,10 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                       }}
                     />
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
+                </div>
+                <div
                   data-plasmic-name={"myket"}
                   data-plasmic-override={overrides.myket}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.myket, "clickable")}
                   onClick={async event => {
                     const $steps = {};
@@ -714,7 +708,7 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                       }}
                     />
                   </div>
-                </Stack__>
+                </div>
               </div>
             </div>
             <div
@@ -783,11 +777,9 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"screenshots"}
               data-plasmic-override={overrides.screenshots}
-              hasGap={true}
               className={classNames(projectcss.all, sty.screenshots)}
             >
               <div
@@ -827,7 +819,7 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-            </Stack__>
+            </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox___7Lda8)}>
             <div className={classNames(projectcss.all, sty.freeBox__memql)}>

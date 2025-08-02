@@ -211,9 +211,7 @@ function PlasmicTier__RenderFunc(props: {
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__aPlBi)}>
                 <div className={classNames(projectcss.all, sty.freeBox__y790)}>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__yySkr)}
                   >
                     <PlasmicImg__
@@ -243,10 +241,8 @@ function PlasmicTier__RenderFunc(props: {
                     >
                       {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
                     </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  </div>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__rMT3)}
                   >
                     <PlasmicImg__
@@ -276,10 +272,8 @@ function PlasmicTier__RenderFunc(props: {
                     >
                       {"\u062c\u0627\u0628\u0627\u0645\u0627"}
                     </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  </div>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__gjRrw)}
                   >
                     <PlasmicImg__
@@ -309,10 +303,8 @@ function PlasmicTier__RenderFunc(props: {
                     >
                       {"\u0634\u0628"}
                     </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  </div>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__pp4AP)}
                   >
                     <PlasmicImg__
@@ -342,10 +334,8 @@ function PlasmicTier__RenderFunc(props: {
                     >
                       {"\u0627\u062a\u0627\u0642\u06a9"}
                     </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  </div>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__nhze)}
                   >
                     <PlasmicImg__
@@ -375,10 +365,8 @@ function PlasmicTier__RenderFunc(props: {
                     >
                       {"\u0647\u0648\u0645\u0633\u0627"}
                     </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  </div>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__mr1Ry)}
                   >
                     <PlasmicImg__
@@ -408,10 +396,8 @@ function PlasmicTier__RenderFunc(props: {
                     >
                       {"\u0645\u0647\u0645\u0627\u0646\u0634\u0648"}
                     </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  </div>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox___7Y3M)}
                   >
                     <PlasmicImg__
@@ -441,13 +427,9 @@ function PlasmicTier__RenderFunc(props: {
                     >
                       {"\u0645\u06cc\u0632\u0628\u0648\u0646"}
                     </div>
-                  </Stack__>
+                  </div>
                 </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__mnhb7)}
-                >
+                <div className={classNames(projectcss.all, sty.freeBox__mnhb7)}>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -564,7 +546,7 @@ function PlasmicTier__RenderFunc(props: {
                       ? "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"
                       : "\u0646\u0647\u060c \u0627\u0644\u0627\u0646 \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u0645"}
                   </div>
-                </Stack__>
+                </div>
               </div>
             </div>
           ) : null}

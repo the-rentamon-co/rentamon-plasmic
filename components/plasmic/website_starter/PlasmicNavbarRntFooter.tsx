@@ -289,11 +289,9 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
           data-plasmic-override={overrides.mainStack}
           className={classNames(projectcss.all, sty.mainStack)}
         >
-          <Stack__
-            as={"div"}
+          <div
             data-plasmic-name={"menu"}
             data-plasmic-override={overrides.menu}
-            hasGap={true}
             className={classNames(projectcss.all, sty.menu, "clickable")}
             onClick={async event => {
               const $steps = {};
@@ -395,11 +393,9 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 data-plasmic-override={overrides.top4}
                 className={classNames(projectcss.all, sty.top4)}
               >
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"backMenu"}
                   data-plasmic-override={overrides.backMenu}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.backMenu)}
                 >
                   <Icon65Icon
@@ -410,7 +406,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                     )}
                     role={"img"}
                   />
-                </Stack__>
+                </div>
               </div>
             ) : null}
             {(
@@ -444,24 +440,18 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   })()
                 : true
             ) ? (
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"normMenu"}
                 data-plasmic-override={overrides.normMenu}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.normMenu)}
               >
                 <Icon64Icon
                   className={classNames(projectcss.all, sty.svg__y8AJf)}
                   role={"img"}
                 />
-              </Stack__>
+              </div>
             ) : null}
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__n9Wh1)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__n9Wh1)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -473,8 +463,8 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   ? "\u062a\u0627\u0644\u0627\u0631"
                   : "\u062a\u0627\u0644\u0627\u0631"}
               </div>
-            </Stack__>
-          </Stack__>
+            </div>
+          </div>
           <div
             data-plasmic-name={"cal"}
             data-plasmic-override={overrides.cal}
@@ -694,11 +684,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 />
               </div>
             ) : null}
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__ubiag)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__ubiag)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -708,13 +694,11 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               >
                 {"\u062a\u0642\u0648\u06cc\u0645"}
               </div>
-            </Stack__>
+            </div>
           </div>
-          <Stack__
-            as={"div"}
+          <div
             data-plasmic-name={"res"}
             data-plasmic-override={overrides.res}
-            hasGap={true}
             className={classNames(
               projectcss.all,
               sty.res,
@@ -871,11 +855,9 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   })()
                 : true
             ) ? (
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"normRes"}
                 data-plasmic-override={overrides.normRes}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.normRes)}
               >
                 <PlasmicImg__
@@ -895,13 +877,9 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                     aspectRatio: 1.210526
                   }}
                 />
-              </Stack__>
+              </div>
             ) : null}
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__e0Sqm)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__e0Sqm)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -911,13 +889,11 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               >
                 {"\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"}
               </div>
-            </Stack__>
-          </Stack__>
-          <Stack__
-            as={"div"}
+            </div>
+          </div>
+          <div
             data-plasmic-name={"props"}
             data-plasmic-override={overrides.props}
-            hasGap={true}
             className={classNames(
               projectcss.all,
               sty.props,
@@ -1012,24 +988,18 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   })()
                 : true
             ) ? (
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"normProps"}
                 data-plasmic-override={overrides.normProps}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.normProps)}
               >
                 <Icon57Icon
                   className={classNames(projectcss.all, sty.svg___3Yheu)}
                   role={"img"}
                 />
-              </Stack__>
+              </div>
             ) : null}
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__jY1W2)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__jY1W2)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -1037,12 +1007,12 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   sty.text__ybLty
                 )}
               >
-                 {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "اقامتگاه"
-                  : "اقامتگاه‌ها"}
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                  : "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627"}
               </div>
-            </Stack__>
-          </Stack__>
+            </div>
+          </div>
         </div>
         <SideEffect
           data-plasmic-name={"sideEffect"}

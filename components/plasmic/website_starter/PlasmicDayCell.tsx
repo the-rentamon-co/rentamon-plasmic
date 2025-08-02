@@ -233,13 +233,11 @@ function PlasmicDayCell__RenderFunc(props: {
   });
 
   return (
-    <Stack__
-      as={"div"}
+    <div
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      hasGap={true}
       className={classNames(
         projectcss.all,
         projectcss.root_reset,
@@ -351,11 +349,9 @@ function PlasmicDayCell__RenderFunc(props: {
           )
         })}
       >
-        <Stack__
-          as={"div"}
+        <div
           data-plasmic-name={"cell"}
           data-plasmic-override={overrides.cell}
-          hasGap={true}
           className={classNames(projectcss.all, sty.cell, "noteEffect", {
             [sty.celldayStatus_blocked]: hasVariant(
               $state,
@@ -919,7 +915,7 @@ function PlasmicDayCell__RenderFunc(props: {
               </React.Fragment>
             </div>
           </div>
-        </Stack__>
+        </div>
       </div>
       {(
         hasVariant($state, "dayStatus", "disabled")
@@ -997,7 +993,7 @@ function PlasmicDayCell__RenderFunc(props: {
           )}
         />
       ) : null}
-    </Stack__>
+    </div>
   ) as React.ReactElement | null;
 }
 

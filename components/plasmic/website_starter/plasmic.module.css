@@ -357,6 +357,8 @@
   background: none;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  row-gap: 0px;
+  column-gap: 0px;
   box-shadow: none;
   box-sizing: border-box;
   text-decoration-line: none;
@@ -370,6 +372,8 @@
   background: none;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  row-gap: 0px;
+  column-gap: 0px;
   box-shadow: none;
   box-sizing: border-box;
   margin: 0;
@@ -807,7 +811,7 @@ ul:where(.root_reset_tags) {
   padding-left: var(--mixin-JlBB4wPchFdn_padding-left);
   position: var(--mixin-JlBB4wPchFdn_position);
   list-style-type: var(--mixin-JlBB4wPchFdn_list-style-type);
-  flex-column-gap: var(--mixin-JlBB4wPchFdn_flex-column-gap);
+  column-gap: var(--mixin-JlBB4wPchFdn_column-gap);
 }
 
 :where(.root_reset) ol:where(.ol),
@@ -823,7 +827,7 @@ ol:where(.root_reset_tags) {
   padding-left: var(--mixin-cDm6wSpnTzLL_padding-left);
   position: var(--mixin-cDm6wSpnTzLL_position);
   list-style-type: var(--mixin-cDm6wSpnTzLL_list-style-type);
-  flex-column-gap: var(--mixin-cDm6wSpnTzLL_flex-column-gap);
+  column-gap: var(--mixin-cDm6wSpnTzLL_column-gap);
 }
 
 :where(.root_reset) h5:where(.h5),

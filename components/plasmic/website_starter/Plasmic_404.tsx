@@ -376,9 +376,7 @@ function Plasmic_404__RenderFunc(props: {
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__my6Xn)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
+              <div
                 className={classNames(projectcss.all, sty.freeBox__hESl, ``)}
                 onClick={async event => {
                   const $steps = {};
@@ -427,7 +425,7 @@ function Plasmic_404__RenderFunc(props: {
                     ? "\ud83d\udd17 \u0645\u0642\u0627\u06cc\u0633\u0647 \u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\r"
                     : "\ud83d\udd17 \u0645\u0642\u0627\u06cc\u0633\u0647 \u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627"}
                 </div>
-              </Stack__>
+              </div>
               <div
                 className={classNames(projectcss.all, sty.freeBox__uuj9S, ``)}
                 onClick={async event => {
@@ -478,9 +476,7 @@ function Plasmic_404__RenderFunc(props: {
                     : "\ud83d\udd17 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                 </div>
               </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
+              <div
                 className={classNames(projectcss.all, sty.freeBox__ajAll, ``)}
                 onClick={async event => {
                   const $steps = {};
@@ -525,7 +521,7 @@ function Plasmic_404__RenderFunc(props: {
                     ? "\ud83d\udd17 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647"
                     : "\ud83d\udd17 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647"}
                 </div>
-              </Stack__>
+              </div>
             </div>
           </div>
           <RentamonFooter

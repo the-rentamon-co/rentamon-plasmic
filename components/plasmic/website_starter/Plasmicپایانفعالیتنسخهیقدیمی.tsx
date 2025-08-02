@@ -664,7 +664,7 @@ function Plasmicپایانفعالیتنسخهیقدیمی__RenderFunc(props: {
                 loop={true}
                 muted={true}
                 src={
-                  "https://media.rentamon.com/video%2Ffeatures.mp4"
+                  "https://rentamon-files.storage.iran.liara.space/video/pro-panel/features.mp4"
                 }
               />
             </div>
@@ -776,11 +776,9 @@ function Plasmicپایانفعالیتنسخهیقدیمی__RenderFunc(props: {
                 "\u0637\u06cc \u06f6 \u0645\u0627\u0647 \u06af\u0630\u0634\u062a\u0647\u060c \u062a\u0646\u0647\u0627 \u0647\u062f\u0641\u200c\u0645\u0648\u0646 \u0627\u06cc\u0646 \u0628\u0648\u062f: \u00ab\u0633\u0627\u062e\u062a \u0645\u062d\u0635\u0648\u0644\u06cc \u0628\u0647\u062a\u0631 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627\u00bb. \u0627\u0646\u0631\u0698\u06cc\u200c\u0645\u0648\u0646 \u0631\u0648 \u0635\u0631\u0641 \u0628\u0647\u0628\u0648\u062f \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0642\u0628\u0644\u06cc \u0648 \u0647\u0645\u0686\u0646\u06cc\u0646 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a\u06cc \u06a9\u0631\u062f\u06cc\u0645 \u06a9\u0647 \u0648\u0627\u0642\u0639\u0627 \u06af\u0631\u0647\u200c\u06cc \u06a9\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0628\u0627\u0632 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062a\u0627 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0647\u0648\u0634\u0645\u0646\u062f \u0648 \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc\u200c\u062a\u0631\u06cc \u0628\u0633\u0627\u0632\u06cc\u0645."
               )}
             </div>
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"featuresDesc2"}
               data-plasmic-override={overrides.featuresDesc2}
-              hasGap={true}
               className={classNames(projectcss.all, sty.featuresDesc2)}
             >
               <div className={classNames(projectcss.all, sty.freeBox__dPCnl)}>
@@ -874,8 +872,8 @@ function Plasmicپایانفعالیتنسخهیقدیمی__RenderFunc(props: {
                   muted={true}
                   src={
                     hasVariant(globalVariants, "screen", "mobile")
-                      ? "https://media.rentamon.com/video%2Fedit-res.mp4"
-                      : "https://media.rentamon.com/video%2Fanalytics.mp4"
+                      ? "https://rentamon-files.storage.iran.liara.space/video/pro-panel/edit-res.mp4"
+                      : "https://rentamon-files.storage.iran.liara.space/video/pro-panel/analytics.mp4"
                   }
                 />
               </div>
@@ -892,12 +890,12 @@ function Plasmicپایانفعالیتنسخهیقدیمی__RenderFunc(props: {
                   muted={true}
                   src={
                     hasVariant(globalVariants, "screen", "mobile")
-                      ? "https://media.rentamon.com/video%2Fanalytics.mp4"
-                      : "https://media.rentamon.com/video%2Fedit-res.mp4"
+                      ? "https://rentamon-files.storage.iran.liara.space/video/pro-panel/analytics.mp4"
+                      : "https://rentamon-files.storage.iran.liara.space/video/pro-panel/edit-res.mp4"
                   }
                 />
               </div>
-            </Stack__>
+            </div>
           </div>
           <div
             data-plasmic-name={"cta2"}

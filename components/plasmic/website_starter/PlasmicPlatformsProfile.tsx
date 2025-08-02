@@ -1358,9 +1358,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             </div>
                           </div>
                         </div>
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.column__eoPuj
@@ -1429,7 +1427,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                               "value"
                             ])}
                           />
-                        </Stack__>
+                        </div>
                       </div>
                       <div
                         className={classNames(

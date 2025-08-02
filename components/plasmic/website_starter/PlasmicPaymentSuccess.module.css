@@ -304,6 +304,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    column-gap: 0px;
     min-width: 0;
     padding: 8px 0px 8px 8px;
   }
@@ -336,6 +337,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    column-gap: 0px;
     min-width: 0;
     padding: 8px 8px 8px 0px;
   }
@@ -392,6 +394,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    column-gap: 0px;
     min-width: 0;
     padding: 8px 0px 8px 8px;
   }
@@ -424,6 +427,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    column-gap: 0px;
     min-width: 0;
     padding: 8px 8px 8px 0px;
   }
@@ -484,18 +488,21 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+    row-gap: 0px;
   }
 }
 @media (max-width: 500px) {
   .button {
     display: flex;
     flex-direction: column;
+    column-gap: 0px;
   }
 }
 @media (max-width: 350px) {
   .button {
     display: flex;
     flex-direction: column;
+    column-gap: 0px;
   }
 }
 .button__uOppp:global(.__wab_instance) {

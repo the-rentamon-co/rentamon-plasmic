@@ -112,6 +112,7 @@
   .introApp {
     flex-direction: column-reverse;
     background: none;
+    column-gap: 0px;
     padding: 0px;
   }
 }
@@ -139,6 +140,7 @@
     padding-right: 0px;
     padding-left: 0px;
     padding-bottom: 0px;
+    column-gap: 0px;
   }
 }
 .introCalendarRight {
@@ -335,6 +337,7 @@
   .downloadLinks {
     display: flex;
     flex-direction: column;
+    column-gap: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -376,6 +379,7 @@
     align-items: center;
     margin-right: 4px;
     cursor: pointer;
+    row-gap: 0px;
     min-width: 0;
     border-radius: 30px;
     padding: 0px 4px;
@@ -479,6 +483,8 @@
   width: 100%;
   height: auto;
   max-width: 220px;
+  justify-content: center;
+  align-items: center;
   background: #8165d6;
   margin-left: 4px;
   min-height: 56px;
@@ -488,12 +494,6 @@
   min-width: 0;
   border-radius: 30px;
   padding: 0px 4px 2px;
-}
-.iOs > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
 }
 @media (max-width: 1200px) {
   .iOs {
@@ -506,29 +506,14 @@
     background: #8165d6;
     opacity: 1;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin-right: 4px;
     cursor: pointer;
+    row-gap: 0px;
     min-width: 0;
     border-radius: 30px;
     padding: 0px 4px;
-  }
-}
-@media (max-width: 1200px) {
-  .iOs > :global(.__wab_flex-container) {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: 0;
-    margin-top: calc(0px - 0px);
-    height: calc(100% + 0px);
-  }
-}
-@media (max-width: 1200px) {
-  .iOs > :global(.__wab_flex-container) > *,
-  .iOs > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-  .iOs > :global(.__wab_flex-container) > picture > img,
-  .iOs > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
-    margin-top: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -544,30 +529,13 @@
     opacity: 1;
     cursor: pointer;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0px;
+    column-gap: 0px;
     min-width: 0;
     border-radius: 30px;
     padding: 0px 4px 0px 8px;
-  }
-}
-@media (max-width: 500px) {
-  .iOs > :global(.__wab_flex-container) {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: 0;
-    margin-left: calc(0px - 0px);
-    width: calc(100% + 0px);
-    margin-top: calc(0px - 0px);
-    height: calc(100% + 0px);
-  }
-}
-@media (max-width: 500px) {
-  .iOs > :global(.__wab_flex-container) > *,
-  .iOs > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-  .iOs > :global(.__wab_flex-container) > picture > img,
-  .iOs > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
-    margin-left: 0px;
-    margin-top: 0px;
   }
 }
 .text2 {
@@ -686,6 +654,8 @@
   width: 100%;
   height: auto;
   max-width: 220px;
+  justify-content: center;
+  align-items: center;
   background: #8165d6;
   margin-left: 4px;
   min-height: 56px;
@@ -703,12 +673,6 @@
   border-radius: 30px;
   padding: 0px 4px 2px;
 }
-.cafeBazar > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-}
 @media (max-width: 1200px) {
   .cafeBazar {
     margin-left: 4px;
@@ -721,31 +685,12 @@
     background: #8165d6;
     cursor: pointer;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0px;
     min-width: 0;
     border-radius: 30px;
     padding: 0px 4px;
-  }
-}
-@media (max-width: 1200px) {
-  .cafeBazar > :global(.__wab_flex-container) {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: 0;
-    margin-top: calc(0px - 0px);
-    height: calc(100% + 0px);
-  }
-}
-@media (max-width: 1200px) {
-  .cafeBazar > :global(.__wab_flex-container) > *,
-  .cafeBazar > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-  .cafeBazar > :global(.__wab_flex-container) > picture > img,
-  .cafeBazar
-    > :global(.__wab_flex-container)
-    > :global(.__wab_slot)
-    > picture
-    > img {
-    margin-top: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -760,35 +705,14 @@
     background: #8165d6;
     opacity: 1;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    row-gap: 0px;
+    column-gap: 0px;
     min-width: 0;
     border-radius: 30px;
     padding: 0px 4px 0px 8px;
-  }
-}
-@media (max-width: 500px) {
-  .cafeBazar > :global(.__wab_flex-container) {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: 0;
-    margin-left: calc(0px - 0px);
-    width: calc(100% + 0px);
-    margin-top: calc(0px - 0px);
-    height: calc(100% + 0px);
-  }
-}
-@media (max-width: 500px) {
-  .cafeBazar > :global(.__wab_flex-container) > *,
-  .cafeBazar > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-  .cafeBazar > :global(.__wab_flex-container) > picture > img,
-  .cafeBazar
-    > :global(.__wab_flex-container)
-    > :global(.__wab_slot)
-    > picture
-    > img {
-    margin-left: 0px;
-    margin-top: 0px;
   }
 }
 .text4 {
@@ -875,6 +799,8 @@
   width: 100%;
   height: auto;
   max-width: 220px;
+  justify-content: center;
+  align-items: center;
   background: #8165d6;
   margin-left: 4px;
   min-height: 56px;
@@ -885,12 +811,6 @@
   min-width: 0;
   border-radius: 30px;
   padding: 0px 4px 2px;
-}
-.myket > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
 }
 @media (max-width: 1200px) {
   .myket {
@@ -910,35 +830,14 @@
     background: #8165d6;
     opacity: 1;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    row-gap: 0px;
+    column-gap: 0px;
     min-width: 0;
     border-radius: 30px;
     padding: 0px 4px 0px 8px;
-  }
-}
-@media (max-width: 500px) {
-  .myket > :global(.__wab_flex-container) {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: 0;
-    margin-left: calc(0px - 0px);
-    width: calc(100% + 0px);
-    margin-top: calc(0px - 0px);
-    height: calc(100% + 0px);
-  }
-}
-@media (max-width: 500px) {
-  .myket > :global(.__wab_flex-container) > *,
-  .myket > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-  .myket > :global(.__wab_flex-container) > picture > img,
-  .myket
-    > :global(.__wab_flex-container)
-    > :global(.__wab_slot)
-    > picture
-    > img {
-    margin-left: 0px;
-    margin-top: 0px;
   }
 }
 .text5 {
@@ -1029,6 +928,7 @@
   .image {
     display: flex;
     flex-direction: column-reverse;
+    column-gap: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -1121,17 +1021,13 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
   background: #81a2bb;
   margin-top: 14px;
   min-width: 0;
   border-radius: 50px;
   padding: 30px 8px;
-}
-.screenshots > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
 }
 @media (max-width: 1200px) {
   .screenshots {
@@ -1147,31 +1043,12 @@
     height: auto;
     max-width: 100%;
     background: #81a2bb;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0px;
     min-width: 0;
     border-radius: 30px;
     padding: 40px 8px 30px;
-  }
-}
-@media (max-width: 500px) {
-  .screenshots > :global(.__wab_flex-container) {
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    align-items: center;
-    min-width: 0;
-    margin-left: calc(0px - 0px);
-    width: calc(100% + 0px);
-  }
-}
-@media (max-width: 500px) {
-  .screenshots > :global(.__wab_flex-container) > *,
-  .screenshots > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-  .screenshots > :global(.__wab_flex-container) > picture > img,
-  .screenshots
-    > :global(.__wab_flex-container)
-    > :global(.__wab_slot)
-    > picture
-    > img {
-    margin-left: 0px;
   }
 }
 @media (max-width: 350px) {

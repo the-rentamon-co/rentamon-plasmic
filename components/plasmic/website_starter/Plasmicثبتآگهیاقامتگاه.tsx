@@ -1276,11 +1276,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     : "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0645\u0648\u0641\u0642 \u0628\u0627 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\r"}
                 </div>
               </div>
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"videos"}
                 data-plasmic-override={overrides.videos}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.videos)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__dao4O)}>
@@ -1630,7 +1628,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     </div>
                   </div>
                 </div>
-              </Stack__>
+              </div>
             </div>
             <div
               data-plasmic-name={"strDefinition3"}
@@ -1782,11 +1780,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
               data-plasmic-override={overrides.bot}
               className={classNames(projectcss.all, sty.bot)}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"more"}
                 data-plasmic-override={overrides.more}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.more)}
               >
                 <div
@@ -1895,7 +1891,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     </div>
                   </div>
                 </div>
-              </Stack__>
+              </div>
               <div
                 data-plasmic-name={"neighbours"}
                 data-plasmic-override={overrides.neighbours}

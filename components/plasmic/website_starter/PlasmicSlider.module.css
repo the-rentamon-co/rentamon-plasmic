@@ -17,23 +17,9 @@
 .freeBox__cgydw {
   display: flex;
   flex-direction: row;
-}
-.freeBox__cgydw > :global(.__wab_flex-container) {
-  flex-direction: row;
   align-items: stretch;
   justify-content: space-between;
-  margin-left: calc(0px - var(--token-Duv1ymIhszml));
-  width: calc(100% + var(--token-Duv1ymIhszml));
-}
-.freeBox__cgydw > :global(.__wab_flex-container) > *,
-.freeBox__cgydw > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__cgydw > :global(.__wab_flex-container) > picture > img,
-.freeBox__cgydw
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-left: var(--token-Duv1ymIhszml);
+  column-gap: var(--token-Duv1ymIhszml);
 }
 .text__ur0Z4 {
   position: relative;

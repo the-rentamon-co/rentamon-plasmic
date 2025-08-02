@@ -861,16 +861,8 @@ function PlasmicActivation__RenderFunc(props: {
               role={"img"}
             />
           </div>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__ezxHy)}
-          >
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__dL0Eq)}
-            >
+          <div className={classNames(projectcss.all, sty.freeBox__ezxHy)}>
+            <div className={classNames(projectcss.all, sty.freeBox__dL0Eq)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__oFjq5)}
@@ -933,8 +925,8 @@ function PlasmicActivation__RenderFunc(props: {
                   </Button>
                 </div>
               ) : null}
-            </Stack__>
-          </Stack__>
+            </div>
+          </div>
           {(() => {
             try {
               return (() => {
@@ -963,11 +955,9 @@ function PlasmicActivation__RenderFunc(props: {
               data-plasmic-override={overrides.platformStatus}
               className={classNames(projectcss.all, sty.platformStatus)}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"helptStack"}
                 data-plasmic-override={overrides.helptStack}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.helptStack)}
               >
                 <div
@@ -981,9 +971,7 @@ function PlasmicActivation__RenderFunc(props: {
                     "\u0648\u0636\u0639\u06cc\u062a \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
                   }
                 </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
+                <div
                   className={classNames(
                     projectcss.all,
                     sty.freeBox__gi6DB,
@@ -1045,8 +1033,8 @@ function PlasmicActivation__RenderFunc(props: {
                   >
                     {"\u0631\u0627\u0647\u0646\u0645\u0627"}
                   </div>
-                </Stack__>
-              </Stack__>
+                </div>
+              </div>
               <div
                 data-plasmic-name={"platforms2"}
                 data-plasmic-override={overrides.platforms2}
@@ -3667,9 +3655,7 @@ function PlasmicActivation__RenderFunc(props: {
                 open={generateStateValueProp($state, ["modal", "open"])}
                 title={
                   <React.Fragment>
-                    <Stack__
-                      as={"div"}
-                      hasGap={true}
+                    <div
                       className={classNames(projectcss.all, sty.freeBox__iwEMe)}
                     >
                       <Icon22Icon
@@ -3688,7 +3674,7 @@ function PlasmicActivation__RenderFunc(props: {
                           "\u0648\u0636\u0639\u06cc\u062a \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
                         }
                       </div>
-                    </Stack__>
+                    </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__lr7Yl)}
                       onClick={async event => {
@@ -3754,9 +3740,7 @@ function PlasmicActivation__RenderFunc(props: {
                 width={"320px"}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__znrAt)}>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__nq6O)}
                   >
                     <Icon19Icon
@@ -3775,10 +3759,8 @@ function PlasmicActivation__RenderFunc(props: {
                         "\u0633\u0627\u06cc\u062a \u0647\u0646\u0648\u0632 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u0646\u0634\u062f\u0647"
                       }
                     </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  </div>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__khLay)}
                   >
                     <Icon20Icon
@@ -3797,10 +3779,8 @@ function PlasmicActivation__RenderFunc(props: {
                         "\u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0642\u0637\u0639 \u0647\u0633\u062a"
                       }
                     </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  </div>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__uDtD1)}
                   >
                     <Icon21Icon
@@ -3819,7 +3799,7 @@ function PlasmicActivation__RenderFunc(props: {
                         "\u0633\u0627\u06cc\u062a \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0648\u0635\u0644 \u0634\u062f\u0647"
                       }
                     </div>
-                  </Stack__>
+                  </div>
                 </div>
               </AntdModal>
             </div>
@@ -4756,9 +4736,7 @@ function PlasmicActivation__RenderFunc(props: {
                             submitsForm={true}
                             type={"primary"}
                           >
-                            <Stack__
-                              as={"div"}
-                              hasGap={true}
+                            <div
                               className={classNames(
                                 projectcss.all,
                                 sty.freeBox__gIjbh
@@ -4807,7 +4785,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   }}
                                 />
                               ) : null}
-                            </Stack__>
+                            </div>
                           </AntdButton>
                         </div>
                       </div>
@@ -4961,9 +4939,7 @@ function PlasmicActivation__RenderFunc(props: {
                         ])}
                       />
 
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
+                      <div
                         className={classNames(
                           projectcss.all,
                           sty.freeBox__dpDxM
@@ -5216,7 +5192,7 @@ function PlasmicActivation__RenderFunc(props: {
                             {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                           </div>
                         </AntdButton>
-                      </Stack__>
+                      </div>
                     </FormItemWrapper>
                   ) : null}
                   {(() => {
@@ -5686,9 +5662,7 @@ function PlasmicActivation__RenderFunc(props: {
                         ])}
                       />
 
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
+                      <div
                         className={classNames(
                           projectcss.all,
                           sty.freeBox__mpeUy
@@ -5894,7 +5868,7 @@ function PlasmicActivation__RenderFunc(props: {
                             {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                           </div>
                         </AntdButton>
-                      </Stack__>
+                      </div>
                     </FormItemWrapper>
                   ) : null}
                   {(() => {
@@ -6358,9 +6332,7 @@ function PlasmicActivation__RenderFunc(props: {
                         ])}
                       />
 
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
+                      <div
                         className={classNames(
                           projectcss.all,
                           sty.freeBox__mblh6
@@ -6608,7 +6580,7 @@ function PlasmicActivation__RenderFunc(props: {
                             {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                           </div>
                         </AntdButton>
-                      </Stack__>
+                      </div>
                     </FormItemWrapper>
                   ) : null}
                   {(() => {
@@ -7074,9 +7046,7 @@ function PlasmicActivation__RenderFunc(props: {
                         ])}
                       />
 
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
+                      <div
                         className={classNames(
                           projectcss.all,
                           sty.freeBox__lKZu
@@ -7285,7 +7255,7 @@ function PlasmicActivation__RenderFunc(props: {
                             {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                           </div>
                         </AntdButton>
-                      </Stack__>
+                      </div>
                     </FormItemWrapper>
                   ) : null}
                   {(() => {
@@ -7831,9 +7801,7 @@ function PlasmicActivation__RenderFunc(props: {
                             />
                           );
                         })()}
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__eRoDw
@@ -8021,7 +7989,7 @@ function PlasmicActivation__RenderFunc(props: {
                               </React.Fragment>
                             </div>
                           </AntdButton>
-                        </Stack__>
+                        </div>
                       </FormItemWrapper>
                       <FormItemWrapper
                         data-plasmic-name={"mihmanshoVerify"}
@@ -8106,9 +8074,7 @@ function PlasmicActivation__RenderFunc(props: {
                             />
                           );
                         })()}
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__vGf6E
@@ -8468,7 +8434,7 @@ function PlasmicActivation__RenderFunc(props: {
                               {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                             </div>
                           </AntdButton>
-                        </Stack__>
+                        </div>
                       </FormItemWrapper>
                     </div>
                   ) : null}
@@ -10861,11 +10827,9 @@ function PlasmicActivation__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"_4"}
                   data-plasmic-override={overrides._4}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty._4)}
                 >
                   <PlasmicImg__
@@ -10948,7 +10912,7 @@ function PlasmicActivation__RenderFunc(props: {
                       aspectRatio: undefined
                     }}
                   />
-                </Stack__>
+                </div>
               ) : null}
               {(() => {
                 try {
@@ -10963,11 +10927,9 @@ function PlasmicActivation__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"_5"}
                   data-plasmic-override={overrides._5}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty._5)}
                 >
                   <PlasmicImg__
@@ -11105,7 +11067,7 @@ function PlasmicActivation__RenderFunc(props: {
                       aspectRatio: 0.875
                     }}
                   />
-                </Stack__>
+                </div>
               ) : null}
               {(() => {
                 try {
@@ -11120,11 +11082,9 @@ function PlasmicActivation__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"_6"}
                   data-plasmic-override={overrides._6}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty._6)}
                 >
                   <PlasmicImg__
@@ -11257,7 +11217,7 @@ function PlasmicActivation__RenderFunc(props: {
                       aspectRatio: 0.875
                     }}
                   />
-                </Stack__>
+                </div>
               ) : null}
             </div>
           ) : null}
@@ -11327,11 +11287,7 @@ function PlasmicActivation__RenderFunc(props: {
               </React.Fragment>
             </div>
           </div>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__uAwxe)}
-          >
+          <div className={classNames(projectcss.all, sty.freeBox__uAwxe)}>
             <div className={classNames(projectcss.all, sty.freeBox__pMoPs)}>
               <div
                 className={classNames(
@@ -11345,7 +11301,7 @@ function PlasmicActivation__RenderFunc(props: {
                   : "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641\n\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r\n\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\r"}
               </div>
             </div>
-          </Stack__>
+          </div>
           <ApiRequest
             data-plasmic-name={"getNumberOfDisconnectedPlatforms"}
             data-plasmic-override={overrides.getNumberOfDisconnectedPlatforms}

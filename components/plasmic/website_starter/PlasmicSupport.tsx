@@ -429,11 +429,9 @@ function PlasmicSupport__RenderFunc(props: {
                     <div
                       className={classNames(projectcss.all, sty.freeBox__ryaQa)}
                     >
-                      <Stack__
-                        as={"div"}
+                      <div
                         data-plasmic-name={"contact6"}
                         data-plasmic-override={overrides.contact6}
-                        hasGap={true}
                         className={classNames(
                           projectcss.all,
                           sty.contact6,
@@ -563,7 +561,7 @@ function PlasmicSupport__RenderFunc(props: {
                             }
                           </div>
                         </div>
-                      </Stack__>
+                      </div>
                     </div>
                     <div
                       className={classNames(
@@ -571,11 +569,9 @@ function PlasmicSupport__RenderFunc(props: {
                         sty.freeBox___2Eyto
                       )}
                     >
-                      <Stack__
-                        as={"div"}
+                      <div
                         data-plasmic-name={"contact10"}
                         data-plasmic-override={overrides.contact10}
-                        hasGap={true}
                         className={classNames(
                           projectcss.all,
                           sty.contact10,
@@ -696,16 +692,14 @@ function PlasmicSupport__RenderFunc(props: {
                             {"(\u0686\u062a)"}
                           </div>
                         </div>
-                      </Stack__>
+                      </div>
                     </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__zZfjf)}
                     >
-                      <Stack__
-                        as={"div"}
+                      <div
                         data-plasmic-name={"contact7"}
                         data-plasmic-override={overrides.contact7}
-                        hasGap={true}
                         className={classNames(
                           projectcss.all,
                           sty.contact7,
@@ -840,16 +834,14 @@ function PlasmicSupport__RenderFunc(props: {
                             }
                           </div>
                         </div>
-                      </Stack__>
+                      </div>
                     </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__a5Scl)}
                     >
-                      <Stack__
-                        as={"div"}
+                      <div
                         data-plasmic-name={"contact8"}
                         data-plasmic-override={overrides.contact8}
-                        hasGap={true}
                         className={classNames(
                           projectcss.all,
                           sty.contact8,
@@ -984,16 +976,14 @@ function PlasmicSupport__RenderFunc(props: {
                             }
                           </div>
                         </div>
-                      </Stack__>
+                      </div>
                     </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__rcAYr)}
                     >
-                      <Stack__
-                        as={"div"}
+                      <div
                         data-plasmic-name={"contact9"}
                         data-plasmic-override={overrides.contact9}
-                        hasGap={true}
                         className={classNames(
                           projectcss.all,
                           sty.contact9,
@@ -1114,16 +1104,14 @@ function PlasmicSupport__RenderFunc(props: {
                             }
                           </div>
                         </div>
-                      </Stack__>
+                      </div>
                     </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__cdAo)}
                     >
-                      <Stack__
-                        as={"div"}
+                      <div
                         data-plasmic-name={"contact11"}
                         data-plasmic-override={overrides.contact11}
-                        hasGap={true}
                         className={classNames(
                           projectcss.all,
                           sty.contact11,
@@ -1171,11 +1159,9 @@ function PlasmicSupport__RenderFunc(props: {
                             role={"img"}
                           />
                         </div>
-                        <Stack__
-                          as={"div"}
+                        <div
                           data-plasmic-name={"title11"}
                           data-plasmic-override={overrides.title11}
-                          hasGap={true}
                           className={classNames(projectcss.all, sty.title11)}
                         >
                           <div
@@ -1228,7 +1214,7 @@ function PlasmicSupport__RenderFunc(props: {
                           >
                             {"\u0627\u06cc\u0645\u06cc\u0644"}
                           </div>
-                        </Stack__>
+                        </div>
                         <div
                           data-plasmic-name={"caption11"}
                           data-plasmic-override={overrides.caption11}
@@ -1244,7 +1230,7 @@ function PlasmicSupport__RenderFunc(props: {
                             {"info@rentamon.com"}
                           </div>
                         </div>
-                      </Stack__>
+                      </div>
                     </div>
                   </div>
                 </div>

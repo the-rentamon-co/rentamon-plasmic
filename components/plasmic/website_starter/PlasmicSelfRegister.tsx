@@ -344,16 +344,8 @@ function PlasmicSelfRegister__RenderFunc(props: {
             sty.root
           )}
         >
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__tjwa5)}
-          >
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__nf730)}
-            >
+          <div className={classNames(projectcss.all, sty.freeBox__tjwa5)}>
+            <div className={classNames(projectcss.all, sty.freeBox__nf730)}>
               <PlasmicImg__
                 data-plasmic-name={"img"}
                 data-plasmic-override={overrides.img}
@@ -446,8 +438,8 @@ function PlasmicSelfRegister__RenderFunc(props: {
                   </Button>
                 </div>
               ) : null}
-            </Stack__>
-          </Stack__>
+            </div>
+          </div>
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}

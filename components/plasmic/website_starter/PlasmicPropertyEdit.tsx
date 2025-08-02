@@ -316,18 +316,12 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"name"}
                 data-plasmic-override={overrides.name}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.name)}
               >
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__hYmNp)}
-                >
+                <div className={classNames(projectcss.all, sty.freeBox__hYmNp)}>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -350,15 +344,9 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                       "\u0646\u0648\u0639 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0686\u06cc\u0647\u061f"
                     }
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__qsUmy)}
-                >
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__qsUmy)}>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__k6Quz)}
                   >
                     <div
@@ -372,13 +360,9 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                         "\u0648\u06cc\u0644\u0627/\u0648\u06cc\u0644\u0627\u06cc\u06cc"
                       }
                     </div>
-                  </Stack__>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__b7Hq5)}
-                >
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__b7Hq5)}>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__njdMr)}
                   >
@@ -394,12 +378,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                       }
                     </div>
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__ikYam)}
-                >
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__ikYam)}>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__apMtH)}
                   >
@@ -415,12 +395,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                       }
                     </div>
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__wAdqO)}
-                >
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__wAdqO)}>
                   <Button
                     className={classNames("__wab_instance", sty.button___5X2)}
                   >
@@ -431,8 +407,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   >
                     {"\u0642\u0628\u0644"}
                   </Button>
-                </Stack__>
-              </Stack__>
+                </div>
+              </div>
             ) : null}
             {(() => {
               try {
@@ -447,16 +423,12 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"type"}
                 data-plasmic-override={overrides.type}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.type)}
               >
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
+                <div
                   className={classNames(projectcss.all, sty.freeBox___3BVdg)}
                 >
                   <div
@@ -481,12 +453,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                       "\u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc \u0628\u0627\u0634\u0647\u061f"
                     }
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__vzuDv)}
-                >
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__vzuDv)}>
                   {(() => {
                     const child$Props = {
                       className: classNames("__wab_instance", sty.textInput2),
@@ -546,12 +514,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                       />
                     );
                   })()}
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__fjjF)}
-                >
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__fjjF)}>
                   <Button
                     className={classNames("__wab_instance", sty.button__yX5Xz)}
                     onClick={async event => {
@@ -681,8 +645,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   >
                     {"\u0642\u0628\u0644"}
                   </Button>
-                </Stack__>
-              </Stack__>
+                </div>
+              </div>
             ) : null}
             {(() => {
               try {
@@ -697,18 +661,12 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"image"}
                 data-plasmic-override={overrides.image}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.image)}
               >
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__mvHmx)}
-                >
+                <div className={classNames(projectcss.all, sty.freeBox__mvHmx)}>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -747,12 +705,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                       })()}
                     </React.Fragment>
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__kDi)}
-                >
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__kDi)}>
                   <UploadWrapper
                     data-plasmic-name={"upload"}
                     data-plasmic-override={overrides.upload}
@@ -787,12 +741,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                       </div>
                     </AntdButton>
                   </UploadWrapper>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__bip8X)}
-                >
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__bip8X)}>
                   <Button
                     className={classNames("__wab_instance", sty.button__mJj3Z)}
                     onClick={async event => {
@@ -922,8 +872,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   >
                     {"\u0642\u0628\u0644"}
                   </Button>
-                </Stack__>
-              </Stack__>
+                </div>
+              </div>
             ) : null}
             {(() => {
               try {
@@ -938,18 +888,12 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"imagePreview"}
                 data-plasmic-override={overrides.imagePreview}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.imagePreview)}
               >
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__cN9En)}
-                >
+                <div className={classNames(projectcss.all, sty.freeBox__cN9En)}>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -972,12 +916,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                       "\u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc \u0628\u0627\u0634\u0647\u061f"
                     }
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox___6KjN)}
-                >
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox___6KjN)}>
                   <PlasmicImg__
                     data-plasmic-name={"img"}
                     data-plasmic-override={overrides.img}
@@ -991,10 +931,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     displayWidth={"auto"}
                     loading={"lazy"}
                   />
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
+                </div>
+                <div
                   className={classNames(projectcss.all, sty.freeBox___8XV96)}
                 >
                   <Button
@@ -1007,8 +945,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   >
                     {"\u0642\u0628\u0644"}
                   </Button>
-                </Stack__>
-              </Stack__>
+                </div>
+              </div>
             ) : null}
           </ApiRequest>
           <div className={classNames(projectcss.all, sty.freeBox___6Agim)}>

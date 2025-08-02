@@ -51,6 +51,7 @@
     justify-content: flex-start;
     align-items: center;
     align-content: flex-start;
+    column-gap: 0px;
     min-width: 0;
     min-height: 0;
     padding: 0px;
@@ -90,6 +91,7 @@
     flex-direction: row;
     padding-top: 9px;
     padding-bottom: 2em;
+    row-gap: 0px;
   }
 }
 .headerTitle {
@@ -171,24 +173,10 @@
   width: 50%;
   height: auto;
   max-width: 100%;
-  padding: 8px;
-}
-.messages > :global(.__wab_flex-container) {
-  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: calc(0px - 20px);
-  height: calc(100% + 20px);
-}
-.messages > :global(.__wab_flex-container) > *,
-.messages > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.messages > :global(.__wab_flex-container) > picture > img,
-.messages
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-top: 20px;
+  row-gap: 20px;
+  padding: 8px;
 }
 @media (max-width: 1200px) {
   .messages {

@@ -1930,11 +1930,9 @@ function Plasmicتالار__RenderFunc(props: {
               {(
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"logout"}
                   data-plasmic-override={overrides.logout}
-                  hasGap={true}
                   className={classNames(
                     projectcss.all,
                     sty.logout,
@@ -1972,18 +1970,16 @@ function Plasmicتالار__RenderFunc(props: {
                       ? true
                       : false
                   ) ? (
-                    <Stack__
-                      as={"div"}
+                    <div
                       data-plasmic-name={"right7"}
                       data-plasmic-override={overrides.right7}
-                      hasGap={true}
                       className={classNames(projectcss.all, sty.right7)}
                     >
                       <Icon72Icon
                         className={classNames(projectcss.all, sty.svg__eJx3R)}
                         role={"img"}
                       />
-                    </Stack__>
+                    </div>
                   ) : null}
                   <div
                     data-plasmic-name={"mid7"}
@@ -2009,7 +2005,7 @@ function Plasmicتالار__RenderFunc(props: {
                     data-plasmic-override={overrides.left6}
                     className={classNames(projectcss.all, sty.left6)}
                   />
-                </Stack__>
+                </div>
               ) : null}
             </div>
           </div>

@@ -503,11 +503,9 @@ function PlasmicReferral__RenderFunc(props: {
                 data-plasmic-override={overrides.cta}
                 className={classNames(projectcss.all, sty.cta)}
               >
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"ctaText"}
                   data-plasmic-override={overrides.ctaText}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.ctaText)}
                 >
                   <div
@@ -525,12 +523,10 @@ function PlasmicReferral__RenderFunc(props: {
                       ? "\u0628\u0631\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u0632\u06cc\u0631 \u0628\u0632\u0646 \ud83d\udc47\r"
                       : "\u0628\u0631\u0627\u06cc \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u0632\u06cc\u0631 \u0628\u0632\u0646 \ud83d\udc47\r"}
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
+                </div>
+                <div
                   data-plasmic-name={"ctaButton"}
                   data-plasmic-override={overrides.ctaButton}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.ctaButton)}
                 >
                   <div
@@ -745,12 +741,10 @@ ${$state.textInput.value}
                       "https://gateway.rentamon.com/webhook/generate_referral_code"
                     }
                   />
-                </Stack__>
-                <Stack__
-                  as={"div"}
+                </div>
+                <div
                   data-plasmic-name={"ctaText2"}
                   data-plasmic-override={overrides.ctaText2}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.ctaText2)}
                 >
                   <div
@@ -768,7 +762,7 @@ ${$state.textInput.value}
                       ? "\u062a\u0648\u062c\u0647: \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0634\u0645\u0627\u0633\u062a \u0648 \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\u060c \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u062d\u062a\u0645\u0627 \u0628\u0627\u06cc\u062f \u0631\u0648\u06cc \u0647\u0645\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0632\u0646\u0647 \u0648 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0647."
                       : "\u062a\u0648\u062c\u0647: \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0634\u0645\u0627\u0633\u062a \u0648 \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\u060c \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u062d\u062a\u0645\u0627 \u0628\u0627\u06cc\u062f \u0631\u0648\u06cc \u0647\u0645\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0632\u0646\u0647 \u0648 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0647."}
                   </div>
-                </Stack__>
+                </div>
                 <AntdModal
                   data-plasmic-name={"shareLink"}
                   data-plasmic-override={overrides.shareLink}
@@ -1238,16 +1232,8 @@ ${$state.textInput.value}
               </div>
             </div>
           </div>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__zy5QH)}
-          >
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__gdp1I)}
-            >
+          <div className={classNames(projectcss.all, sty.freeBox__zy5QH)}>
+            <div className={classNames(projectcss.all, sty.freeBox__gdp1I)}>
               <div className={classNames(projectcss.all, sty.freeBox__fDkXb)}>
                 <div className={classNames(projectcss.all, sty.freeBox__z9E3B)}>
                   <div
@@ -1365,11 +1351,7 @@ ${$state.textInput.value}
                     </React.Fragment>
                   </div>
                 </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__wYvn)}
-                >
+                <div className={classNames(projectcss.all, sty.freeBox__wYvn)}>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -1395,12 +1377,8 @@ ${$state.textInput.value}
                       })()}
                     </React.Fragment>
                   </div>
-                </Stack__>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__znaIq)}
-                >
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__znaIq)}>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -1433,7 +1411,7 @@ ${$state.textInput.value}
                       })()}
                     </React.Fragment>
                   </div>
-                </Stack__>
+                </div>
                 <div className={classNames(projectcss.all, sty.freeBox__eQaNs)}>
                   <div
                     className={classNames(
@@ -1469,7 +1447,7 @@ ${$state.textInput.value}
                   </div>
                 </div>
               </div>
-            </Stack__>
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__leVaB)}>
               <div className={classNames(projectcss.all, sty.freeBox__nIhuu)}>
                 <div
@@ -1679,9 +1657,7 @@ ${$state.textInput.value}
                               throw e;
                             }
                           })() ? (
-                            <Stack__
-                              as={"div"}
-                              hasGap={true}
+                            <div
                               className={classNames(
                                 projectcss.all,
                                 sty.freeBox___30Pc
@@ -1767,7 +1743,7 @@ ${$state.textInput.value}
                                   }}
                                 />
                               ) : null}
-                            </Stack__>
+                            </div>
                           ) : null}
                           <div
                             className={classNames(
@@ -1828,7 +1804,7 @@ ${$state.textInput.value}
                   : null}
               </ApiRequest>
             </div>
-          </Stack__>
+          </div>
           <div
             data-plasmic-name={"rules"}
             data-plasmic-override={overrides.rules}

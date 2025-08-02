@@ -378,6 +378,7 @@
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+    row-gap: 0px;
   }
 }
 .newHeader {
@@ -403,6 +404,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-end;
+    row-gap: 0px;
     padding: 0px;
   }
 }
@@ -685,6 +687,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    column-gap: 0px;
     flex-shrink: 0;
     border-radius: 15px;
   }
@@ -739,6 +742,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    column-gap: 0px;
     flex-shrink: 0;
     border-radius: 10px;
   }

@@ -51,6 +51,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    column-gap: 0px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
     padding: 0px 0px 4px;
@@ -152,14 +153,10 @@
   height: auto;
   max-width: 80%;
   flex-direction: column;
-  min-width: 0;
-  padding: 0px 8px;
-}
-.right > :global(.__wab_flex-container) {
-  flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   min-width: 0;
+  padding: 0px 8px;
 }
 @media (max-width: 1200px) {
   .right {
@@ -168,46 +165,21 @@
 }
 @media (max-width: 500px) {
   .right {
+    align-items: flex-end;
+    justify-content: center;
     width: 100%;
     height: auto;
     max-width: 78%;
     flex-direction: row-reverse;
+    row-gap: 0px;
+    column-gap: 0px;
     min-width: 0;
     padding: 0px 0px 0px 4px;
-  }
-}
-@media (max-width: 500px) {
-  .right > :global(.__wab_flex-container) {
-    align-items: flex-end;
-    justify-content: center;
-    flex-direction: row-reverse;
-    min-width: 0;
-    margin-left: calc(0px - 0px);
-    width: calc(100% + 0px);
-    margin-top: calc(0px - 0px);
-    height: calc(100% + 0px);
-  }
-}
-@media (max-width: 500px) {
-  .right > :global(.__wab_flex-container) > *,
-  .right > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-  .right > :global(.__wab_flex-container) > picture > img,
-  .right
-    > :global(.__wab_flex-container)
-    > :global(.__wab_slot)
-    > picture
-    > img {
-    margin-left: 0px;
-    margin-top: 0px;
   }
 }
 @media (max-width: 350px) {
   .right {
     max-width: 66%;
-  }
-}
-@media (max-width: 350px) {
-  .right > :global(.__wab_flex-container) {
     justify-content: flex-end;
     align-items: flex-end;
   }
@@ -387,6 +359,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    column-gap: 0px;
     display: flex;
     border-radius: 15px;
   }
@@ -536,7 +509,7 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__iu2TM:global(.__wab_instance) {
+.formField__urtLp:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -545,7 +518,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField___7YsOt:global(.__wab_instance) {
+.formField__aTcWd:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
@@ -558,7 +531,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__c9PH7 {
+.text__v1Pcw {
   position: relative;
   width: 100%;
   height: auto;

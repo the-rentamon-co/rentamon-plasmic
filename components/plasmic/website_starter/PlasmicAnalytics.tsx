@@ -682,11 +682,9 @@ function PlasmicAnalytics__RenderFunc(props: {
               data-plasmic-override={overrides.sourcesOfReserves2}
               className={classNames(projectcss.all, sty.sourcesOfReserves2)}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"sourcesOfReserves"}
                 data-plasmic-override={overrides.sourcesOfReserves}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.sourcesOfReserves)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__qbSdR)}>
@@ -809,7 +807,7 @@ function PlasmicAnalytics__RenderFunc(props: {
                     }
                   />
                 </div>
-              </Stack__>
+              </div>
               <ApiRequest
                 data-plasmic-name={"apiRequestSourceOfReserves"}
                 data-plasmic-override={overrides.apiRequestSourceOfReserves}

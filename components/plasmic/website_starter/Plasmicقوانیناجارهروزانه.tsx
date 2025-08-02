@@ -474,11 +474,9 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
               data-plasmic-override={overrides.bot}
               className={classNames(projectcss.all, sty.bot)}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"more"}
                 data-plasmic-override={overrides.more}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.more)}
               >
                 <div
@@ -789,7 +787,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                     }}
                   />
                 </div>
-              </Stack__>
+              </div>
               <div
                 data-plasmic-name={"relatedContents"}
                 data-plasmic-override={overrides.relatedContents}

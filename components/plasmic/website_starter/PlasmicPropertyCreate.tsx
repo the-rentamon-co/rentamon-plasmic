@@ -237,11 +237,9 @@ function PlasmicPropertyCreate__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"type"}
               data-plasmic-override={overrides.type}
-              hasGap={true}
               className={classNames(projectcss.all, sty.type)}
             >
               <div className={classNames(projectcss.all, sty.freeBox__pbjFe)}>
@@ -660,7 +658,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                   }
                 </div>
               </div>
-            </Stack__>
+            </div>
           ) : null}
           <div className={classNames(projectcss.all, sty.freeBox__l2NPd)}>
             {(() => {
@@ -676,11 +674,9 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"name"}
                 data-plasmic-override={overrides.name}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.name)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__vGkqC)}>
@@ -741,11 +737,9 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     }
                   />
                 </div>
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"newButtons"}
                   data-plasmic-override={overrides.newButtons}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.newButtons)}
                 >
                   <div
@@ -1003,8 +997,8 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                       {"\u0642\u0628\u0644"}
                     </div>
                   </div>
-                </Stack__>
-              </Stack__>
+                </div>
+              </div>
             ) : null}
           </div>
           {(() => {
@@ -1020,11 +1014,9 @@ function PlasmicPropertyCreate__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"name2"}
               data-plasmic-override={overrides.name2}
-              hasGap={true}
               className={classNames(projectcss.all, sty.name2)}
             >
               <div
@@ -1040,7 +1032,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062a\u0635\u0648\u06cc\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                    "\u062a\u0635\u0648\u06cc\u0631\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   }
                 </div>
               </div>
@@ -1138,9 +1130,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         throw e;
                       }
                     })() ? (
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
+                      <div
                         className={classNames(
                           projectcss.all,
                           sty.freeBox__ougx1
@@ -1180,7 +1170,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                           })()}
                           width={"100%"}
                         />
-                      </Stack__>
+                      </div>
                     ) : null}
                     {(() => {
                       try {
@@ -1195,9 +1185,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         throw e;
                       }
                     })() ? (
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
+                      <div
                         className={classNames(
                           projectcss.all,
                           sty.freeBox__pbXlw
@@ -1232,22 +1220,18 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                             "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062a\u0635\u0648\u06cc\u0631"
                           }
                         </div>
-                      </Stack__>
+                      </div>
                     ) : null}
                   </UploadWrapper>
                 </div>
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"newButtons2"}
                   data-plasmic-override={overrides.newButtons2}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.newButtons2)}
                 >
-                  <Stack__
-                    as={"div"}
+                  <div
                     data-plasmic-name={"next2"}
                     data-plasmic-override={overrides.next2}
-                    hasGap={true}
                     className={classNames(
                       projectcss.all,
                       sty.next2,
@@ -1334,37 +1318,8 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         $steps["apiRequest"] = await $steps["apiRequest"];
                       }
 
-                      $steps["testToast"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  console.log(
-                                    "$steps.apiRequest.status !== 200",
-                                    $steps.apiRequest.status !== 200
-                                  );
-                                  return console.log(
-                                    "$steps.apiRequest.status",
-                                    $steps.apiRequest.status !== 200
-                                  );
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["testToast"] != null &&
-                        typeof $steps["testToast"] === "object" &&
-                        typeof $steps["testToast"].then === "function"
-                      ) {
-                        $steps["testToast"] = await $steps["testToast"];
-                      }
-
                       $steps["showSizeErrorToast"] =
-                        $steps.apiRequest.status !== 200
+                        $steps.apiRequest == null
                           ? (() => {
                               const actionArgs = {
                                 args: [
@@ -1494,7 +1449,7 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     >
                       {"\u0630\u062e\u06cc\u0631\u0647"}
                     </div>
-                  </Stack__>
+                  </div>
                   <div
                     data-plasmic-name={"privious2"}
                     data-plasmic-override={overrides.privious2}
@@ -1551,9 +1506,9 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                       {"\u0642\u0628\u0644"}
                     </div>
                   </div>
-                </Stack__>
+                </div>
               </div>
-            </Stack__>
+            </div>
           ) : null}
           <div
             data-plasmic-name={"back"}

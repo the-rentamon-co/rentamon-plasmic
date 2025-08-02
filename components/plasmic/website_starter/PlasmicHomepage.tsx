@@ -576,11 +576,9 @@ function PlasmicHomepage__RenderFunc(props: {
               data-plasmic-override={overrides._3Benefits}
               className={classNames(projectcss.all, sty._3Benefits)}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"_3Benefits1st"}
                 data-plasmic-override={overrides._3Benefits1st}
-                hasGap={true}
                 className={classNames(projectcss.all, sty._3Benefits1st)}
               >
                 <div
@@ -627,12 +625,10 @@ function PlasmicHomepage__RenderFunc(props: {
                     }
                   </div>
                 </div>
-              </Stack__>
-              <Stack__
-                as={"div"}
+              </div>
+              <div
                 data-plasmic-name={"_3Benefits2nd"}
                 data-plasmic-override={overrides._3Benefits2nd}
-                hasGap={true}
                 className={classNames(projectcss.all, sty._3Benefits2nd)}
               >
                 <div
@@ -681,7 +677,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       : "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632 \u0645\u06cc\u200c\u0634\u0647"}
                   </div>
                 </div>
-              </Stack__>
+              </div>
               <div
                 data-plasmic-name={"_3Benefits3rd"}
                 data-plasmic-override={overrides._3Benefits3rd}
@@ -907,11 +903,9 @@ function PlasmicHomepage__RenderFunc(props: {
               />
             </div>
           </div>
-          <Stack__
-            as={"div"}
+          <div
             data-plasmic-name={"screenshots"}
             data-plasmic-override={overrides.screenshots}
-            hasGap={true}
             className={classNames(projectcss.all, sty.screenshots)}
           >
             <div
@@ -955,7 +949,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 }
               />
             </div>
-          </Stack__>
+          </div>
           <div
             data-plasmic-name={"addingVillaIntoPltforms"}
             data-plasmic-override={overrides.addingVillaIntoPltforms}

@@ -126,6 +126,7 @@
     flex-direction: column;
     padding-right: 0px;
     padding-left: 0px;
+    column-gap: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -182,6 +183,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding-bottom: 0px;
+    column-gap: 0px;
   }
 }
 .text__yudQt {
@@ -298,6 +300,7 @@
     padding-top: 0px;
     display: flex;
     flex-direction: column;
+    column-gap: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -368,6 +371,7 @@
     flex-direction: column;
     background: none;
     padding-top: 17px;
+    column-gap: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -698,29 +702,21 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
   background: #ffffff;
   min-width: 0;
   border-radius: 50px;
   padding: 40px;
   border-width: 2px;
 }
-.incomeAnual > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-wrap: wrap;
-  min-width: 0;
-}
 @media (max-width: 1200px) {
   .incomeAnual {
     padding-right: 20px;
-    margin: 0px;
-  }
-}
-@media (max-width: 1200px) {
-  .incomeAnual > :global(.__wab_flex-container) {
     justify-content: center;
     align-content: flex-start;
+    margin: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -729,27 +725,9 @@
     padding-left: 8px;
     display: flex;
     flex-direction: column;
+    column-gap: 0px;
     border-radius: 0px;
     border-width: 0px;
-  }
-}
-@media (max-width: 500px) {
-  .incomeAnual > :global(.__wab_flex-container) {
-    flex-direction: column;
-    margin-left: calc(0px - 0px);
-    width: calc(100% + 0px);
-  }
-}
-@media (max-width: 500px) {
-  .incomeAnual > :global(.__wab_flex-container) > *,
-  .incomeAnual > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-  .incomeAnual > :global(.__wab_flex-container) > picture > img,
-  .incomeAnual
-    > :global(.__wab_flex-container)
-    > :global(.__wab_slot)
-    > picture
-    > img {
-    margin-left: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -880,6 +858,7 @@
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+    column-gap: 0px;
     border-radius: 0px;
   }
 }

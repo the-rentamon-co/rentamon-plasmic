@@ -205,6 +205,7 @@
     justify-content: center;
     align-items: center;
     max-width: 90%;
+    row-gap: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -215,6 +216,7 @@
     max-width: 100%;
     padding-top: 10px;
     padding-bottom: 20px;
+    column-gap: 0px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
   }

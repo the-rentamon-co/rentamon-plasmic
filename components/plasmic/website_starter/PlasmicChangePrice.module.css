@@ -36,11 +36,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   min-width: 0;
-  --plsmc-rc-col-gap: 0px;
   padding: 8px 0px 8px 8px;
-}
-.columns > :nth-child(1n + 1) {
-  width: calc((100% - 1 * var(--plsmc-rc-col-gap, 0px)) * 12 / 12);
 }
 @media (max-width: 500px) {
   .columns {
@@ -49,11 +45,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     min-width: 0;
-  }
-}
-@media (max-width: 500px) {
-  .columns > :nth-child(1n + 1) {
-    width: calc((100% - 1 * var(--plsmc-rc-col-gap, 0px)) * 12 / 12);
   }
 }
 .column {

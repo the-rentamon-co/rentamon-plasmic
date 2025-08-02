@@ -165,13 +165,11 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
   });
 
   return (
-    <Stack__
-      as={"div"}
+    <div
       data-plasmic-name={"main"}
       data-plasmic-override={overrides.main}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      hasGap={true}
       className={classNames(
         projectcss.all,
         projectcss.root_reset,
@@ -288,11 +286,9 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
           throw e;
         }
       })() ? (
-        <Stack__
-          as={"div"}
+        <div
           data-plasmic-name={"menuItems"}
           data-plasmic-override={overrides.menuItems}
-          hasGap={true}
           className={classNames(projectcss.all, sty.menuItems, "fadeinf ")}
         >
           <div
@@ -341,9 +337,9 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
               </div>
             </div>
           </div>
-        </Stack__>
+        </div>
       ) : null}
-    </Stack__>
+    </div>
   ) as React.ReactElement | null;
 }
 

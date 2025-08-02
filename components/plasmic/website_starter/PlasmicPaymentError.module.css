@@ -414,12 +414,14 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+    row-gap: 0px;
   }
 }
 @media (max-width: 500px) {
   .button {
     display: flex;
     flex-direction: column;
+    column-gap: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -427,6 +429,7 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 70px;
+    column-gap: 0px;
   }
 }
 .freeBox__fMFrv {

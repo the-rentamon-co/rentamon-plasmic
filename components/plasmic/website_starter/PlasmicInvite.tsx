@@ -301,11 +301,7 @@ function PlasmicInvite__RenderFunc(props: {
             })()}
           />
 
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox___73I8V)}
-          >
+          <div className={classNames(projectcss.all, sty.freeBox___73I8V)}>
             <div className={classNames(projectcss.all, sty.freeBox__pdbF7)}>
               <div className={classNames(projectcss.all, sty.freeBox__lIzAm)}>
                 <PlasmicImg__
@@ -526,11 +522,7 @@ function PlasmicInvite__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__jn6Yz)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__jn6Yz)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -640,7 +632,7 @@ function PlasmicInvite__RenderFunc(props: {
                   "\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 + \u067e\u0631\u062f\u0627\u0632\u0634 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646"
                 }
               </div>
-            </Stack__>
+            </div>
             <div
               data-plasmic-name={"image"}
               data-plasmic-override={overrides.image}
@@ -813,11 +805,7 @@ function PlasmicInvite__RenderFunc(props: {
                 />
               </div>
             </div>
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__kb3W2)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__kb3W2)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -934,7 +922,7 @@ function PlasmicInvite__RenderFunc(props: {
                   "\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 + \u067e\u0631\u062f\u0627\u0632\u0634 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646"
                 }
               </div>
-            </Stack__>
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__zaC0Z)}>
               <Embed
                 data-plasmic-name={"embedHtml"}
@@ -1312,7 +1300,7 @@ function PlasmicInvite__RenderFunc(props: {
                 />
               </div>
             </div>
-          </Stack__>
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox__rh9Bm)}>
             <RentamonFooter
               data-plasmic-name={"rentamonFooter"}

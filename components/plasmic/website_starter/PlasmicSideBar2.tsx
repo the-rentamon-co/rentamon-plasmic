@@ -520,9 +520,7 @@ function PlasmicSideBar2__RenderFunc(props: {
             </React.Fragment>
           </div>
         </div>
-        <Stack__
-          as={"div"}
-          hasGap={true}
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox__frdDg,
@@ -666,10 +664,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               }}
             />
           </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
+        </div>
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox__hcaX9,
@@ -808,10 +804,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               </div>
             </div>
           ) : null}
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
+        </div>
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox__otMgi,
@@ -894,10 +888,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
             }
           </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
+        </div>
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox___5JuLu,
@@ -978,10 +970,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               "\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647"
             }
           </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
+        </div>
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox___8UaoI,
@@ -1075,10 +1065,8 @@ function PlasmicSideBar2__RenderFunc(props: {
           >
             {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
           </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
+        </div>
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox__hfEa2,
@@ -1157,12 +1145,10 @@ function PlasmicSideBar2__RenderFunc(props: {
           >
             {"\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc"}
           </div>
-        </Stack__>
+        </div>
         <div className={classNames(projectcss.all, sty.freeBox__sWbL)} />
 
-        <Stack__
-          as={"div"}
-          hasGap={true}
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox___9VXjg,
@@ -1241,10 +1227,8 @@ function PlasmicSideBar2__RenderFunc(props: {
           >
             {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
           </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
+        </div>
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox___6SALn,
@@ -1326,10 +1310,8 @@ function PlasmicSideBar2__RenderFunc(props: {
           >
             {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
           </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
+        </div>
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox__m6LFh,
@@ -1408,10 +1390,8 @@ function PlasmicSideBar2__RenderFunc(props: {
           >
             {"\u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"}
           </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
+        </div>
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox___4HzoA,
@@ -1488,12 +1468,8 @@ function PlasmicSideBar2__RenderFunc(props: {
           >
             {"\u062e\u0631\u0648\u062c"}
           </div>
-        </Stack__>
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__giLd)}
-        >
+        </div>
+        <div className={classNames(projectcss.all, sty.freeBox__giLd)}>
           <Icon15Icon
             className={classNames(projectcss.all, sty.svg__umjx5)}
             onClick={async event => {
@@ -1536,7 +1512,7 @@ function PlasmicSideBar2__RenderFunc(props: {
               "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\n\u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u062a\u0627 \u06f1\u06f7"
             }
           </div>
-        </Stack__>
+        </div>
       </div>
       <Embed
         data-plasmic-name={"favicon"}

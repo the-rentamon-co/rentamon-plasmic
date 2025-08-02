@@ -563,29 +563,23 @@ function PlasmicProperty__RenderFunc(props: {
                 : "\u0645\u0646\u0628\u0639 \u06af\u0632\u0627\u0631\u0634\u200c\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647\u060c \u0631\u0632\u0631\u0648\u0647\u0627\u06cc\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0631\u0648\u06cc \u0646\u0633\u062e\u0647\u200c\u06cc \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 (\u0648 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627) \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc \u0647\u0633\u062a."}
             </div>
           </div>
-          <Stack__
-            as={"div"}
+          <div
             data-plasmic-name={"analytics"}
             data-plasmic-override={overrides.analytics}
-            hasGap={true}
             className={classNames(projectcss.all, sty.analytics)}
           >
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"monthlyIncome2"}
               data-plasmic-override={overrides.monthlyIncome2}
-              hasGap={true}
               className={classNames(
                 projectcss.all,
                 sty.monthlyIncome2,
                 "fadein"
               )}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"monthlyIncome"}
                 data-plasmic-override={overrides.monthlyIncome}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.monthlyIncome)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__zGsQx)}>
@@ -850,13 +844,11 @@ function PlasmicProperty__RenderFunc(props: {
                     }
                   />
                 </div>
-              </Stack__>
-            </Stack__>
-            <Stack__
-              as={"div"}
+              </div>
+            </div>
+            <div
               data-plasmic-name={"sourcesOfReserves2"}
               data-plasmic-override={overrides.sourcesOfReserves2}
-              hasGap={true}
               className={classNames(
                 projectcss.all,
                 sty.sourcesOfReserves2,
@@ -865,11 +857,9 @@ function PlasmicProperty__RenderFunc(props: {
                   : undefined
               )}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"sourcesOfReserves"}
                 data-plasmic-override={overrides.sourcesOfReserves}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.sourcesOfReserves)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__ftUj2)}>
@@ -1109,13 +1099,11 @@ function PlasmicProperty__RenderFunc(props: {
                     }
                   />
                 </div>
-              </Stack__>
-            </Stack__>
-            <Stack__
-              as={"div"}
+              </div>
+            </div>
+            <div
               data-plasmic-name={"occupancyRate2"}
               data-plasmic-override={overrides.occupancyRate2}
-              hasGap={true}
               className={classNames(
                 projectcss.all,
                 sty.occupancyRate2,
@@ -1313,7 +1301,7 @@ function PlasmicProperty__RenderFunc(props: {
                   />
                 </div>
               </div>
-            </Stack__>
+            </div>
             <div
               data-plasmic-name={"avgDailyRate2"}
               data-plasmic-override={overrides.avgDailyRate2}
@@ -1325,11 +1313,9 @@ function PlasmicProperty__RenderFunc(props: {
                   : undefined
               )}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"avgDailyRate"}
                 data-plasmic-override={overrides.avgDailyRate}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.avgDailyRate)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__dm6F)}>
@@ -1573,9 +1559,9 @@ function PlasmicProperty__RenderFunc(props: {
                     )}
                   </div>
                 </div>
-              </Stack__>
+              </div>
             </div>
-          </Stack__>
+          </div>
           <div
             data-plasmic-name={"back"}
             data-plasmic-override={overrides.back}

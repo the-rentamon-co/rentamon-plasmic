@@ -284,9 +284,7 @@ function PlasmicSplash__RenderFunc(props: {
                   ? "\u0644\u0637\u0641\u0627 \u0648\u0636\u0639\u06cc\u062a \u0627\u062a\u0635\u0627\u0644 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u062e\u0648\u062f \u0631\u0627 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u062f"
                   : "\u0644\u0637\u0641\u0627 \u0648\u0636\u0639\u06cc\u062a \u0627\u062a\u0635\u0627\u0644 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u062e\u0648\u062f \u0631\u0627 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u062f"}
               </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
+              <div
                 className={classNames(
                   projectcss.all,
                   sty.freeBox__nxgSw,
@@ -339,7 +337,7 @@ function PlasmicSplash__RenderFunc(props: {
                     "https://media.rentamon.com/icon%2Freload-ui-svgrepo-com.svg"
                   }
                 />
-              </Stack__>
+              </div>
             </div>
           ) : null}
           <div

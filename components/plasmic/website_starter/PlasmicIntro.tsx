@@ -254,11 +254,7 @@ function PlasmicIntro__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__cn8R7)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__cn8R7)}>
               <PlasmicImg__
                 data-plasmic-name={"img"}
                 data-plasmic-override={overrides.img}
@@ -296,7 +292,7 @@ function PlasmicIntro__RenderFunc(props: {
                   "\u062f\u0631 \u062d\u0627\u0644 \u0622\u0645\u0627\u062f\u0647 \u0633\u0627\u0632\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0634\u0645\u0627"
                 }
               </div>
-            </Stack__>
+            </div>
           ) : null}
           {(() => {
             try {
@@ -311,11 +307,7 @@ function PlasmicIntro__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__rNjTb)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__rNjTb)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -392,7 +384,7 @@ function PlasmicIntro__RenderFunc(props: {
                   "\u0648\u0631\u0648\u062f \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645"
                 }
               </Button>
-            </Stack__>
+            </div>
           ) : null}
           {(() => {
             try {
@@ -408,11 +400,7 @@ function PlasmicIntro__RenderFunc(props: {
             }
           })() ? (
             <div className={classNames(projectcss.all, sty.freeBox__yiK3J)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__nepg6)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__nepg6)}>
                 <div
                   className={classNames(
                     projectcss.all,
@@ -433,7 +421,7 @@ function PlasmicIntro__RenderFunc(props: {
                 >
                   {"\u0648\u06cc\u062f\u0648 \u067e\u0631\u0648"}
                 </div>
-              </Stack__>
+              </div>
               <Iframe
                 className={classNames("__wab_instance", sty.iframe__vLsgo)}
                 src={``}
@@ -477,11 +465,7 @@ function PlasmicIntro__RenderFunc(props: {
             }
           })() ? (
             <div className={classNames(projectcss.all, sty.freeBox__vVBpa)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__kphtq)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__kphtq)}>
                 <div
                   className={classNames(
                     projectcss.all,
@@ -502,7 +486,7 @@ function PlasmicIntro__RenderFunc(props: {
                 >
                   {"\u0648\u06cc\u062f\u0648 \u0644\u0627\u06cc\u062a"}
                 </div>
-              </Stack__>
+              </div>
               <Iframe
                 className={classNames("__wab_instance", sty.iframe___1TAO)}
                 src={``}

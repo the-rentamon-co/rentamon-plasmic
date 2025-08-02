@@ -778,11 +778,9 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               data-plasmic-override={overrides.header}
               className={classNames(projectcss.all, sty.header)}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"right"}
                 data-plasmic-override={overrides.right}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.right)}
               >
                 <div
@@ -946,7 +944,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     value={generateStateValueProp($state, ["select2", "value"])}
                   />
                 </div>
-              </Stack__>
+              </div>
               <div
                 data-plasmic-name={"left"}
                 data-plasmic-override={overrides.left}
@@ -1444,7 +1442,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__iu2TM
+                        sty.formField__urtLp
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1456,7 +1454,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___7YsOt
+                        sty.formField__aTcWd
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1474,7 +1472,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__c9PH7
+                          sty.text__v1Pcw
                         )}
                       >
                         {"Submit"}

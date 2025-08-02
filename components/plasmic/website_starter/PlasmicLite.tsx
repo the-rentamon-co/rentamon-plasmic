@@ -462,11 +462,9 @@ function PlasmicLite__RenderFunc(props: {
               data-plasmic-override={overrides._3Benefits}
               className={classNames(projectcss.all, sty._3Benefits)}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"_3Benefits1st"}
                 data-plasmic-override={overrides._3Benefits1st}
-                hasGap={true}
                 className={classNames(projectcss.all, sty._3Benefits1st)}
               >
                 <div
@@ -513,12 +511,10 @@ function PlasmicLite__RenderFunc(props: {
                     }
                   </div>
                 </div>
-              </Stack__>
-              <Stack__
-                as={"div"}
+              </div>
+              <div
                 data-plasmic-name={"_3Benefits2nd"}
                 data-plasmic-override={overrides._3Benefits2nd}
-                hasGap={true}
                 className={classNames(projectcss.all, sty._3Benefits2nd)}
               >
                 <div
@@ -565,7 +561,7 @@ function PlasmicLite__RenderFunc(props: {
                     }
                   </div>
                 </div>
-              </Stack__>
+              </div>
               <div
                 data-plasmic-name={"_3Benefits3rd"}
                 data-plasmic-override={overrides._3Benefits3rd}
@@ -764,11 +760,9 @@ function PlasmicLite__RenderFunc(props: {
               />
             </div>
           </div>
-          <Stack__
-            as={"div"}
+          <div
             data-plasmic-name={"screenshots"}
             data-plasmic-override={overrides.screenshots}
-            hasGap={true}
             className={classNames(projectcss.all, sty.screenshots)}
           >
             <div
@@ -808,7 +802,7 @@ function PlasmicLite__RenderFunc(props: {
                 }
               />
             </div>
-          </Stack__>
+          </div>
           <div
             data-plasmic-name={"addingVillaIntoPltforms"}
             data-plasmic-override={overrides.addingVillaIntoPltforms}

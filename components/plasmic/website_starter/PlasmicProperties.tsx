@@ -432,11 +432,9 @@ function PlasmicProperties__RenderFunc(props: {
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__hIpz)}>
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"property"}
               data-plasmic-override={overrides.property}
-              hasGap={true}
               className={classNames(projectcss.all, sty.property, "fadeinf")}
             >
               <div
@@ -688,9 +686,7 @@ function PlasmicProperties__RenderFunc(props: {
                             </div>
                           );
                         })}
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__sBuze,
@@ -817,7 +813,7 @@ function PlasmicProperties__RenderFunc(props: {
                                 : "\u0627\u06cc\u062c\u0627\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                             </div>
                           </div>
-                        </Stack__>
+                        </div>
                       </div>
                     </React.Fragment>
                   }
@@ -1055,9 +1051,7 @@ function PlasmicProperties__RenderFunc(props: {
                         </div>
                       );
                     })}
-                    <Stack__
-                      as={"div"}
-                      hasGap={true}
+                    <div
                       className={classNames(
                         projectcss.all,
                         sty.freeBox__ojr5X,
@@ -1179,7 +1173,7 @@ function PlasmicProperties__RenderFunc(props: {
                             : "\u0627\u06cc\u062c\u0627\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                         </div>
                       </div>
-                    </Stack__>
+                    </div>
                   </div>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__sAki9)}
@@ -1347,7 +1341,7 @@ function PlasmicProperties__RenderFunc(props: {
                   </div>
                 </ApiRequest>
               </div>
-            </Stack__>
+            </div>
           </div>
           <SideEffect
             data-plasmic-name={"sideEffect"}

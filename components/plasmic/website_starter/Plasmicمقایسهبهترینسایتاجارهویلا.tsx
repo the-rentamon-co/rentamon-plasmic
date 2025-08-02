@@ -476,9 +476,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                   : "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648"}
                               </div>
                             </div>
-                            <Stack__
-                              as={"div"}
-                              hasGap={true}
+                            <div
                               className={classNames(
                                 projectcss.all,
                                 sty.freeBox__yCEuC
@@ -493,7 +491,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               >
                                 {"\u06a9\u0627\u0631\u0645\u0632\u062f"}
                               </div>
-                            </Stack__>
+                            </div>
                             <div
                               className={classNames(
                                 projectcss.all,
@@ -588,9 +586,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                     </React.Fragment>
                                   </div>
                                 </div>
-                                <Stack__
-                                  as={"div"}
-                                  hasGap={true}
+                                <div
                                   className={classNames(
                                     projectcss.all,
                                     sty.freeBox__utHVl
@@ -620,10 +616,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                       })()}
                                     </React.Fragment>
                                   </div>
-                                </Stack__>
-                                <Stack__
-                                  as={"div"}
-                                  hasGap={true}
+                                </div>
+                                <div
                                   className={classNames(
                                     projectcss.all,
                                     sty.freeBox__yUbK3
@@ -653,10 +647,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                       })()}
                                     </React.Fragment>
                                   </div>
-                                </Stack__>
-                                <Stack__
-                                  as={"div"}
-                                  hasGap={true}
+                                </div>
+                                <div
                                   className={classNames(
                                     projectcss.all,
                                     sty.freeBox__zjnRu
@@ -686,10 +678,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                       })()}
                                     </React.Fragment>
                                   </div>
-                                </Stack__>
-                                <Stack__
-                                  as={"div"}
-                                  hasGap={true}
+                                </div>
+                                <div
                                   className={classNames(
                                     projectcss.all,
                                     sty.freeBox__nowX
@@ -719,7 +709,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                       })()}
                                     </React.Fragment>
                                   </div>
-                                </Stack__>
+                                </div>
                                 <div
                                   className={classNames(
                                     projectcss.all,
@@ -1600,11 +1590,9 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
               data-plasmic-override={overrides.bot}
               className={classNames(projectcss.all, sty.bot)}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"more"}
                 data-plasmic-override={overrides.more}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.more)}
               >
                 <div
@@ -1694,7 +1682,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     }}
                   />
                 </div>
-              </Stack__>
+              </div>
               <div
                 data-plasmic-name={"relatedContents"}
                 data-plasmic-override={overrides.relatedContents}

@@ -9,21 +9,7 @@
   position: relative;
   display: flex;
   flex-direction: row;
-}
-.freeBox > :global(.__wab_flex-container) {
-  flex-direction: row;
-  margin-left: calc(0px - var(--token-fuThMYwlrO8g));
-  width: calc(100% + var(--token-fuThMYwlrO8g));
-}
-.freeBox > :global(.__wab_flex-container) > *,
-.freeBox > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox > :global(.__wab_flex-container) > picture > img,
-.freeBox
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-left: var(--token-fuThMYwlrO8g);
+  column-gap: var(--token-fuThMYwlrO8g);
 }
 .slotTargetChildrensize_sm {
   font-size: var(--token-li6MjHbGxIuq);

@@ -411,16 +411,8 @@ function PlasmicRegistration__RenderFunc(props: {
               role={"img"}
             />
           </div>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox___3CbM)}
-          >
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox___2EXtv)}
-            >
+          <div className={classNames(projectcss.all, sty.freeBox___3CbM)}>
+            <div className={classNames(projectcss.all, sty.freeBox___2EXtv)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__nL6Or)}
@@ -479,8 +471,8 @@ function PlasmicRegistration__RenderFunc(props: {
                   </Button>
                 </div>
               ) : null}
-            </Stack__>
-          </Stack__>
+            </div>
+          </div>
           <div
             className={classNames(
               projectcss.all,
@@ -1264,9 +1256,7 @@ function PlasmicRegistration__RenderFunc(props: {
                             submitsForm={true}
                             type={"primary"}
                           >
-                            <Stack__
-                              as={"div"}
-                              hasGap={true}
+                            <div
                               className={classNames(
                                 projectcss.all,
                                 sty.freeBox__jDhVy
@@ -1310,7 +1300,7 @@ function PlasmicRegistration__RenderFunc(props: {
                                   }
                                 />
                               ) : null}
-                            </Stack__>
+                            </div>
                           </AntdButton>
                         </div>
                       </div>
@@ -1797,11 +1787,9 @@ function PlasmicRegistration__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"_4"}
                   data-plasmic-override={overrides._4}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty._4)}
                 >
                   <PlasmicImg__
@@ -1884,7 +1872,7 @@ function PlasmicRegistration__RenderFunc(props: {
                       aspectRatio: undefined
                     }}
                   />
-                </Stack__>
+                </div>
               ) : null}
               {(() => {
                 try {
@@ -1899,11 +1887,9 @@ function PlasmicRegistration__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"_5"}
                   data-plasmic-override={overrides._5}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty._5)}
                 >
                   <PlasmicImg__
@@ -2041,7 +2027,7 @@ function PlasmicRegistration__RenderFunc(props: {
                       aspectRatio: 0.875
                     }}
                   />
-                </Stack__>
+                </div>
               ) : null}
               {(() => {
                 try {
@@ -2056,11 +2042,9 @@ function PlasmicRegistration__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"_6"}
                   data-plasmic-override={overrides._6}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty._6)}
                 >
                   <PlasmicImg__
@@ -2193,7 +2177,7 @@ function PlasmicRegistration__RenderFunc(props: {
                       aspectRatio: 0.875
                     }}
                   />
-                </Stack__>
+                </div>
               ) : null}
             </div>
           ) : null}
@@ -2263,11 +2247,7 @@ function PlasmicRegistration__RenderFunc(props: {
               </React.Fragment>
             </div>
           </div>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__zrxbm)}
-          >
+          <div className={classNames(projectcss.all, sty.freeBox__zrxbm)}>
             <div className={classNames(projectcss.all, sty.freeBox___9PhAq)}>
               <div
                 className={classNames(
@@ -2281,7 +2261,7 @@ function PlasmicRegistration__RenderFunc(props: {
                   : "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641\n\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r\n\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\r"}
               </div>
             </div>
-          </Stack__>
+          </div>
         </div>
       </div>
     </React.Fragment>

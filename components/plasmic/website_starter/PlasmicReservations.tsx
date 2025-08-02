@@ -1313,11 +1313,9 @@ function PlasmicReservations__RenderFunc(props: {
               </div>
             ) : null}
           </ApiRequest>
-          <Stack__
-            as={"div"}
+          <div
             data-plasmic-name={"container"}
             data-plasmic-override={overrides.container}
-            hasGap={true}
             className={classNames(projectcss.all, sty.container)}
           >
             <div
@@ -1390,11 +1388,9 @@ function PlasmicReservations__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"reserveMainStack2"}
               data-plasmic-override={overrides.reserveMainStack2}
-              hasGap={true}
               className={classNames(projectcss.all, sty.reserveMainStack2)}
             >
               {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
@@ -1415,9 +1411,7 @@ function PlasmicReservations__RenderFunc(props: {
                 const currentItem = __plasmic_item_0;
                 const currentIndex = __plasmic_idx_0;
                 return (
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(
                       projectcss.all,
                       sty.freeBox__roKyl,
@@ -1651,7 +1645,7 @@ function PlasmicReservations__RenderFunc(props: {
                         })()}
                       />
                     ) : null}
-                  </Stack__>
+                  </div>
                 );
               })}
               <ApiRequest
@@ -1687,12 +1681,10 @@ function PlasmicReservations__RenderFunc(props: {
                   "https://gateway.rentamon.com/webhook/get_pending_reserve?v=2"
                 }
               />
-            </Stack__>
-            <Stack__
-              as={"div"}
+            </div>
+            <div
               data-plasmic-name={"reserveMainStack"}
               data-plasmic-override={overrides.reserveMainStack}
-              hasGap={true}
               className={classNames(projectcss.all, sty.reserveMainStack)}
               onScroll={async event => {
                 const $steps = {};
@@ -2525,8 +2517,8 @@ function PlasmicReservations__RenderFunc(props: {
                   ) : null}
                 </div>
               ) : null}
-            </Stack__>
-          </Stack__>
+            </div>
+          </div>
           <Button className={classNames("__wab_instance", sty.button__x5Anb)}>
             <div
               className={classNames(
@@ -2637,11 +2629,7 @@ function PlasmicReservations__RenderFunc(props: {
                 </div>
               ) : null}
             </div>
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__bmCxi)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__bmCxi)}>
               {(() => {
                 try {
                   return $state.selectedAction == "accept";
@@ -2740,12 +2728,8 @@ function PlasmicReservations__RenderFunc(props: {
                   })()}
                 </React.Fragment>
               </div>
-            </Stack__>
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__s4Gyp)}
-            >
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__s4Gyp)}>
               {(() => {
                 try {
                   return $state.selectedAction != "accept";
@@ -2878,9 +2862,7 @@ function PlasmicReservations__RenderFunc(props: {
                     }
                   }}
                 >
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__itsm2)}
                   >
                     <div
@@ -2892,7 +2874,7 @@ function PlasmicReservations__RenderFunc(props: {
                     >
                       {"\u0631\u062f "}
                     </div>
-                  </Stack__>
+                  </div>
                 </Button>
               ) : null}
               {(() => {
@@ -3053,9 +3035,7 @@ function PlasmicReservations__RenderFunc(props: {
                     }
                   }}
                 >
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__onQgL)}
                   >
                     <div
@@ -3084,7 +3064,7 @@ function PlasmicReservations__RenderFunc(props: {
                         aspectRatio: 1.25
                       }}
                     />
-                  </Stack__>
+                  </div>
                 </Button>
               ) : null}
               {(() => {
@@ -3223,9 +3203,7 @@ function PlasmicReservations__RenderFunc(props: {
                     }
                   }}
                 >
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__bqdUl)}
                   >
                     <div
@@ -3254,7 +3232,7 @@ function PlasmicReservations__RenderFunc(props: {
                         aspectRatio: 1.25
                       }}
                     />
-                  </Stack__>
+                  </div>
                 </Button>
               ) : null}
               <AntdButton
@@ -3348,7 +3326,7 @@ function PlasmicReservations__RenderFunc(props: {
                   {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                 </div>
               </AntdButton>
-            </Stack__>
+            </div>
           </AntdModal>
           {(() => {
             try {
@@ -3791,11 +3769,7 @@ function PlasmicReservations__RenderFunc(props: {
                   })()}
                 </React.Fragment>
               </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__ucqaE)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__ucqaE)}>
                 <Button
                   className={classNames("__wab_instance", sty.button__owLxb)}
                   color={"red"}
@@ -4046,7 +4020,7 @@ function PlasmicReservations__RenderFunc(props: {
                     {"\u0646\u0647"}
                   </div>
                 </AntdButton>
-              </Stack__>
+              </div>
             </div>
           </AntdModal>
           <AntdModal
@@ -4131,9 +4105,7 @@ function PlasmicReservations__RenderFunc(props: {
                     }}
                   />
                 </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
+                <div
                   className={classNames(projectcss.all, sty.freeBox___6Uxt4)}
                 >
                   {(() => {
@@ -4435,24 +4407,20 @@ function PlasmicReservations__RenderFunc(props: {
                       })()}
                     </React.Fragment>
                   </div>
-                </Stack__>
+                </div>
               </React.Fragment>
             }
             trigger={null}
             width={"350"}
           >
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"main2"}
               data-plasmic-override={overrides.main2}
-              hasGap={true}
               className={classNames(projectcss.all, sty.main2)}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"_3"}
                 data-plasmic-override={overrides._3}
-                hasGap={true}
                 className={classNames(projectcss.all, sty._3)}
               >
                 <div
@@ -4588,12 +4556,10 @@ function PlasmicReservations__RenderFunc(props: {
                     ) : null}
                   </div>
                 </div>
-              </Stack__>
-              <Stack__
-                as={"div"}
+              </div>
+              <div
                 data-plasmic-name={"_4"}
                 data-plasmic-override={overrides._4}
-                hasGap={true}
                 className={classNames(projectcss.all, sty._4)}
               >
                 <div
@@ -4739,13 +4705,9 @@ function PlasmicReservations__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                 </div>
-              </Stack__>
-            </Stack__>
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__yf6X9)}
-            >
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__yf6X9)}>
               <Button
                 className={classNames("__wab_instance", sty.button__iyqlk)}
                 onClick={async event => {
@@ -4857,11 +4819,7 @@ function PlasmicReservations__RenderFunc(props: {
                   }
                 }}
               >
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__tEXkb)}
-                >
+                <div className={classNames(projectcss.all, sty.freeBox__tEXkb)}>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -4888,7 +4846,7 @@ function PlasmicReservations__RenderFunc(props: {
                       aspectRatio: 1.25
                     }}
                   />
-                </Stack__>
+                </div>
               </Button>
               {(() => {
                 try {
@@ -5023,9 +4981,7 @@ function PlasmicReservations__RenderFunc(props: {
                   size={"medium"}
                   type={"primary"}
                 >
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__zzp7)}
                   >
                     <div
@@ -5054,7 +5010,7 @@ function PlasmicReservations__RenderFunc(props: {
                         aspectRatio: 1.0625
                       }}
                     />
-                  </Stack__>
+                  </div>
                 </AntdButton>
               ) : null}
               {(() => {
@@ -5118,9 +5074,7 @@ function PlasmicReservations__RenderFunc(props: {
                   size={"medium"}
                   type={"primary"}
                 >
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__kgKnF)}
                   >
                     <div
@@ -5132,10 +5086,10 @@ function PlasmicReservations__RenderFunc(props: {
                     >
                       {"\u0641\u0639\u0644\u0627 \u0646\u0647"}
                     </div>
-                  </Stack__>
+                  </div>
                 </AntdButton>
               ) : null}
-            </Stack__>
+            </div>
           </AntdModal>
           <AntdModal
             data-plasmic-name={"chooseAction"}
@@ -5161,18 +5115,14 @@ function PlasmicReservations__RenderFunc(props: {
             title={null}
             trigger={null}
           >
-            <Stack__
-              as={"div"}
-              hasGap={true}
+            <div
               className={classNames(
                 projectcss.all,
                 sty.freeBox__c0Xob,
                 "clickable"
               )}
             >
-              <Stack__
-                as={"div"}
-                hasGap={true}
+              <div
                 className={classNames(
                   projectcss.all,
                   sty.freeBox___8Blge,
@@ -5284,11 +5234,9 @@ function PlasmicReservations__RenderFunc(props: {
                     "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
                   }
                 </div>
-              </Stack__>
-            </Stack__>
-            <Stack__
-              as={"div"}
-              hasGap={true}
+              </div>
+            </div>
+            <div
               className={classNames(
                 projectcss.all,
                 sty.freeBox__trYvw,
@@ -5409,9 +5357,7 @@ function PlasmicReservations__RenderFunc(props: {
                 }
               }}
             >
-              <Stack__
-                as={"div"}
-                hasGap={true}
+              <div
                 className={classNames(
                   projectcss.all,
                   sty.freeBox___2OLk7,
@@ -5445,16 +5391,10 @@ function PlasmicReservations__RenderFunc(props: {
                 >
                   {"\u0644\u063a\u0648 \u0631\u0632\u0631\u0648"}
                 </div>
-              </Stack__>
-            </Stack__>
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__wIaV)}
-            >
-              <Stack__
-                as={"div"}
-                hasGap={true}
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__wIaV)}>
+              <div
                 className={classNames(
                   projectcss.all,
                   sty.freeBox__rv5Yp,
@@ -5490,14 +5430,10 @@ function PlasmicReservations__RenderFunc(props: {
                     "\u062d\u0630\u0641 \u06a9\u0627\u0645\u0644 \u0631\u0632\u0631\u0648"
                   }
                 </div>
-              </Stack__>
-            </Stack__>
+              </div>
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__ybHYs)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__cy24C)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__cy24C)}>
                 <AntdButton
                   data-plasmic-name={"edit2"}
                   data-plasmic-override={overrides.edit2}
@@ -5589,7 +5525,7 @@ function PlasmicReservations__RenderFunc(props: {
                     {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                   </div>
                 </AntdButton>
-              </Stack__>
+              </div>
             </div>
           </AntdModal>
           <AntdModal
@@ -6565,9 +6501,7 @@ function PlasmicReservations__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                 </div>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
+                <div
                   className={classNames(projectcss.all, sty.freeBox___3CnqH)}
                 >
                   {(() => {
@@ -7105,7 +7039,7 @@ function PlasmicReservations__RenderFunc(props: {
                       })()}
                     </React.Fragment>
                   </div>
-                </Stack__>
+                </div>
               </div>
             }
             trigger={null}
@@ -7145,18 +7079,14 @@ function PlasmicReservations__RenderFunc(props: {
                 </div>
               </div>
             ) : null}
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"main"}
               data-plasmic-override={overrides.main}
-              hasGap={true}
               className={classNames(projectcss.all, sty.main)}
             >
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"_1"}
                 data-plasmic-override={overrides._1}
-                hasGap={true}
                 className={classNames(projectcss.all, sty._1)}
               >
                 <div
@@ -7296,9 +7226,7 @@ function PlasmicReservations__RenderFunc(props: {
                       </React.Fragment>
                     </PlasmicLink__>
                   </div>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox___70Qp)}
                   >
                     {(() => {
@@ -7482,7 +7410,7 @@ function PlasmicReservations__RenderFunc(props: {
                         {"\u0644\u063a\u0648 \u0634\u062f\u0647"}
                       </div>
                     ) : null}
-                  </Stack__>
+                  </div>
                 </div>
                 <div
                   data-plasmic-name={"_13"}
@@ -7560,12 +7488,10 @@ function PlasmicReservations__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                 </div>
-              </Stack__>
-              <Stack__
-                as={"div"}
+              </div>
+              <div
                 data-plasmic-name={"_2"}
                 data-plasmic-override={overrides._2}
-                hasGap={true}
                 className={classNames(projectcss.all, sty._2)}
               >
                 <div
@@ -7829,9 +7755,7 @@ function PlasmicReservations__RenderFunc(props: {
                           throw e;
                         }
                       })() ? (
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__nSErI
@@ -7865,7 +7789,7 @@ function PlasmicReservations__RenderFunc(props: {
                               aspectRatio: undefined
                             }}
                           />
-                        </Stack__>
+                        </div>
                       ) : null}
                       {(() => {
                         try {
@@ -7880,9 +7804,7 @@ function PlasmicReservations__RenderFunc(props: {
                           throw e;
                         }
                       })() ? (
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__po69A
@@ -7914,7 +7836,7 @@ function PlasmicReservations__RenderFunc(props: {
                               aspectRatio: undefined
                             }}
                           />
-                        </Stack__>
+                        </div>
                       ) : null}
                       {(() => {
                         try {
@@ -7929,9 +7851,7 @@ function PlasmicReservations__RenderFunc(props: {
                           throw e;
                         }
                       })() ? (
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox___4Iihu
@@ -7966,18 +7886,14 @@ function PlasmicReservations__RenderFunc(props: {
                               "\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"
                             }
                           </div>
-                        </Stack__>
+                        </div>
                       ) : null}
                     </div>
                   </div>
                 ) : null}
-              </Stack__>
-            </Stack__>
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__szX41)}
-            >
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__szX41)}>
               {(() => {
                 try {
                   return (() => {
@@ -8318,7 +8234,7 @@ function PlasmicReservations__RenderFunc(props: {
                   {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                 </div>
               </Button>
-            </Stack__>
+            </div>
           </AntdModal>
           <AntdModal
             data-plasmic-name={"settlementNotif"}

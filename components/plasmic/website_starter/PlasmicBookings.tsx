@@ -125,11 +125,9 @@ export type PlasmicBookings__OverridesType = {
   bookInfo2?: Flex__<"div">;
   bookCommission2?: Flex__<"div">;
   bookNetPrice2?: Flex__<"div">;
-  bookSettleStatus2?: Flex__<"div">;
-  error2?: Flex__<"div">;
-  true3?: Flex__<"div">;
+  netPrice?: Flex__<"div">;
   true4?: Flex__<"div">;
-  openAndCloseButton3?: Flex__<"div">;
+  true5?: Flex__<"div">;
   autoSync?: Flex__<"div">;
   data2?: Flex__<"div">;
   title2?: Flex__<"div">;
@@ -434,9 +432,7 @@ function PlasmicBookings__RenderFunc(props: {
                 <div
                   className={classNames(projectcss.all, sty.freeBox___7WZp8)}
                 >
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__sv7Au)}
                   >
                     {(
@@ -992,19 +988,28 @@ function PlasmicBookings__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return $state.booking.data.website == "jabama"
-                                ? "جاباما"
-                                : $state.booking.data.website == "jajiga"
-                                ? "جاجیگا"
-                                : $state.booking.data.website == "shab"
-                                ? "شب"
-                                : $state.booking.data.website == "otaghak"
-                                ? "اتاقک"
-                                : $state.booking.data.website == "mihmansho"
-                                ? "مهمانشو"
-                                : $state.booking.data.website == "homsa"
-                                ? "هومسا"
-                                : "یافت نشد";
+                              return (() => {
+                                const websiteMap = {
+                                  jabama: "جاباما",
+                                  jajiga: "جاجیگا",
+                                  shab: "شب",
+                                  otaghak: "اتاقک",
+                                  mihmansho: "میهمانشو",
+                                  homsa: "هومسا",
+                                  mizboon: "میزبون",
+                                  divar: "دیوار",
+                                  "Broker or Colleague": "واسطه یا همکار",
+                                  Returning_Guest: "قبلی",
+                                  social: "پیام‌رسان و شبکه‌اجتماعی",
+                                  others: "سایر",
+                                  offline: "حضوری",
+                                  host: "میزبان"
+                                };
+                                return (
+                                  websiteMap[$state.booking.data.website] ||
+                                  $state.booking.data.website
+                                );
+                              })();
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -1055,7 +1060,7 @@ function PlasmicBookings__RenderFunc(props: {
                         </React.Fragment>
                       )}
                     </div>
-                  </Stack__>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1117,11 +1122,7 @@ function PlasmicBookings__RenderFunc(props: {
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox___6YImL)}>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__xMpHr)}
-                >
+                <div className={classNames(projectcss.all, sty.freeBox__xMpHr)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img___3DxSj)}
@@ -1157,7 +1158,7 @@ function PlasmicBookings__RenderFunc(props: {
                   >
                     {"\u0634\u0628"}
                   </div>
-                </Stack__>
+                </div>
               </div>
             </div>
           </div>
@@ -1247,9 +1248,7 @@ function PlasmicBookings__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.generalData)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__pxMr9)}>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__lRf4L)}
                   >
                     <div
@@ -1669,10 +1668,8 @@ function PlasmicBookings__RenderFunc(props: {
                         </React.Fragment>
                       )}
                     </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  </div>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox___8Epy1)}
                   >
                     <div
@@ -1746,12 +1743,10 @@ function PlasmicBookings__RenderFunc(props: {
                         {"\u0644\u063a\u0648 \u0634\u062f\u0647"}
                       </div>
                     ) : null}
-                  </Stack__>
+                  </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__b98V)}>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__hxnJz)}
                   >
                     <div
@@ -2171,10 +2166,8 @@ function PlasmicBookings__RenderFunc(props: {
                         </React.Fragment>
                       )}
                     </div>
-                  </Stack__>
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  </div>
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__rBuvx)}
                   >
                     <div
@@ -2227,14 +2220,12 @@ function PlasmicBookings__RenderFunc(props: {
                         </React.Fragment>
                       )}
                     </div>
-                  </Stack__>
+                  </div>
                 </div>
               </div>
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"feature"}
                 data-plasmic-override={overrides.feature}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.feature)}
               >
                 {(() => {
@@ -2276,11 +2267,9 @@ function PlasmicBookings__RenderFunc(props: {
                         })()
                       )}
                     >
-                      <Stack__
-                        as={"div"}
+                      <div
                         data-plasmic-name={"title"}
                         data-plasmic-override={overrides.title}
-                        hasGap={true}
                         className={classNames(projectcss.all, sty.title)}
                       >
                         <div
@@ -2315,15 +2304,13 @@ function PlasmicBookings__RenderFunc(props: {
                             aspectRatio: undefined
                           }}
                         />
-                      </Stack__>
+                      </div>
                       <div
                         data-plasmic-name={"guestInfo"}
                         data-plasmic-override={overrides.guestInfo}
                         className={classNames(projectcss.all, sty.guestInfo)}
                       >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__adlWs
@@ -2424,7 +2411,7 @@ function PlasmicBookings__RenderFunc(props: {
                               </React.Fragment>
                             )}
                           </div>
-                        </Stack__>
+                        </div>
                         <div
                           className={classNames(
                             projectcss.all,
@@ -2533,9 +2520,7 @@ function PlasmicBookings__RenderFunc(props: {
                           })()
                         )}
                       >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__aU2Qf
@@ -3142,16 +3127,14 @@ function PlasmicBookings__RenderFunc(props: {
                               </React.Fragment>
                             )}
                           </div>
-                        </Stack__>
+                        </div>
                         <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__w81Ii
                           )}
                         >
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox__oufwt
@@ -3276,10 +3259,8 @@ function PlasmicBookings__RenderFunc(props: {
                                 </React.Fragment>
                               )}
                             </div>
-                          </Stack__>
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          </div>
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox___5UCox
@@ -3380,7 +3361,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 </React.Fragment>
                               )}
                             </div>
-                          </Stack__>
+                          </div>
                         </div>
                       </div>
                       <div
@@ -3406,9 +3387,7 @@ function PlasmicBookings__RenderFunc(props: {
                           })()
                         )}
                       >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__d8ITf
@@ -3481,16 +3460,14 @@ function PlasmicBookings__RenderFunc(props: {
                               </React.Fragment>
                             )}
                           </div>
-                        </Stack__>
+                        </div>
                         <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__n3CAg
                           )}
                         >
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox__b0H3N
@@ -3507,7 +3484,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 "\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062f\u0631 \u0634\u0628:"
                               }
                             </div>
-                          </Stack__>
+                          </div>
                         </div>
                       </div>
                       <div
@@ -3531,9 +3508,7 @@ function PlasmicBookings__RenderFunc(props: {
                           })()
                         )}
                       >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__fDlu7
@@ -3548,16 +3523,14 @@ function PlasmicBookings__RenderFunc(props: {
                           >
                             {"%\u06f1\u06f0"}
                           </div>
-                        </Stack__>
+                        </div>
                         <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__rCc6I
                           )}
                         >
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox__kffH
@@ -3574,7 +3547,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 "\u06a9\u0627\u0631\u0645\u0632\u062f (\u0648 \u0645\u0627\u0644\u06cc\u0627\u062a) \u0634\u0628:"
                               }
                             </div>
-                          </Stack__>
+                          </div>
                         </div>
                       </div>
                       <div
@@ -3582,9 +3555,7 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.bookNetPrice}
                         className={classNames(projectcss.all, sty.bookNetPrice)}
                       >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__rLZsn
@@ -3599,16 +3570,14 @@ function PlasmicBookings__RenderFunc(props: {
                           >
                             {"\u06f2/\u06f6\u06f5\u06f5/\u06f0\u06f0\u06f0"}
                           </div>
-                        </Stack__>
+                        </div>
                         <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__yuNmr
                           )}
                         >
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox__eb3EI
@@ -3625,7 +3594,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 "\u062f\u0631\u0622\u0645\u062f \u062e\u0627\u0644\u0635 \u0634\u0645\u0627:"
                               }
                             </div>
-                          </Stack__>
+                          </div>
                         </div>
                       </div>
                       <div
@@ -3652,11 +3621,9 @@ function PlasmicBookings__RenderFunc(props: {
                             throw e;
                           }
                         })() ? (
-                          <Stack__
-                            as={"div"}
+                          <div
                             data-plasmic-name={"error"}
                             data-plasmic-override={overrides.error}
-                            hasGap={true}
                             className={classNames(projectcss.all, sty.error)}
                           >
                             <PlasmicImg__
@@ -3696,7 +3663,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 "\u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647"
                               }
                             </div>
-                          </Stack__>
+                          </div>
                         ) : null}
                         {(() => {
                           try {
@@ -3714,11 +3681,9 @@ function PlasmicBookings__RenderFunc(props: {
                             throw e;
                           }
                         })() ? (
-                          <Stack__
-                            as={"div"}
+                          <div
                             data-plasmic-name={"_true"}
                             data-plasmic-override={overrides._true}
-                            hasGap={true}
                             className={classNames(projectcss.all, sty._true)}
                           >
                             <PlasmicImg__
@@ -3758,7 +3723,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 "\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"
                               }
                             </div>
-                          </Stack__>
+                          </div>
                         ) : null}
                         {(
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -3797,11 +3762,9 @@ function PlasmicBookings__RenderFunc(props: {
                                 }
                               })()
                         ) ? (
-                          <Stack__
-                            as={"div"}
+                          <div
                             data-plasmic-name={"true2"}
                             data-plasmic-override={overrides.true2}
-                            hasGap={true}
                             className={classNames(projectcss.all, sty.true2)}
                           >
                             <div
@@ -3813,7 +3776,7 @@ function PlasmicBookings__RenderFunc(props: {
                             >
                               {"\u061f"}
                             </div>
-                          </Stack__>
+                          </div>
                         ) : null}
                         <div
                           className={classNames(
@@ -3821,9 +3784,7 @@ function PlasmicBookings__RenderFunc(props: {
                             sty.freeBox___90Cmi
                           )}
                         >
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox__iznGv
@@ -3840,7 +3801,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 "\u0648\u0636\u0639\u06cc\u062a \u0645\u0627\u0644\u06cc:"
                               }
                             </div>
-                          </Stack__>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3955,11 +3916,9 @@ function PlasmicBookings__RenderFunc(props: {
                       data-plasmic-override={overrides.data3}
                       className={classNames(projectcss.all, sty.data3)}
                     >
-                      <Stack__
-                        as={"div"}
+                      <div
                         data-plasmic-name={"title3"}
                         data-plasmic-override={overrides.title3}
-                        hasGap={true}
                         className={classNames(projectcss.all, sty.title3)}
                       >
                         <div
@@ -3992,15 +3951,13 @@ function PlasmicBookings__RenderFunc(props: {
                             aspectRatio: undefined
                           }}
                         />
-                      </Stack__>
+                      </div>
                       <div
                         data-plasmic-name={"guestInfo2"}
                         data-plasmic-override={overrides.guestInfo2}
                         className={classNames(projectcss.all, sty.guestInfo2)}
                       >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox___6UWUc
@@ -4040,7 +3997,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.smart_booking
+                                      $state.booking.data.manual_booking
                                         .guest_phone_number || "موبایل مهمان: ؟"
                                     );
                                   } catch (e) {
@@ -4064,7 +4021,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.smart_booking
+                                      $state.booking.data.manual_booking
                                         .guest_phone_number || "موبایل مهمان: ؟"
                                     );
                                   } catch (e) {
@@ -4101,7 +4058,7 @@ function PlasmicBookings__RenderFunc(props: {
                               </React.Fragment>
                             )}
                           </div>
-                        </Stack__>
+                        </div>
                         <div
                           className={classNames(
                             projectcss.all,
@@ -4124,7 +4081,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.smart_booking
+                                      $state.booking.data.manual_booking
                                         .guest_name || "نام مهمان :‌ ؟"
                                     );
                                   } catch (e) {
@@ -4148,7 +4105,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.smart_booking
+                                      $state.booking.data.manual_booking
                                         .guest_name || "؟"
                                     );
                                   } catch (e) {
@@ -4192,9 +4149,7 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.bookInfo2}
                         className={classNames(projectcss.all, sty.bookInfo2)}
                       >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__pxXzy
@@ -4338,7 +4293,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         )} ${monthName}`;
                                       }
                                       const checkIn =
-                                        $state.booking.data.smart_booking
+                                        $state.booking.data.manual_booking
                                           .created_at;
                                       const result =
                                         convertDateToJalaliFullString(checkIn);
@@ -4487,7 +4442,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         )} ${monthName}`;
                                       }
                                       const checkIn =
-                                        $state.booking.data.smart_booking
+                                        $state.booking.data.manual_booking
                                           .created_at;
                                       const result =
                                         convertDateToJalaliFullString(checkIn);
@@ -4636,7 +4591,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         )} ${monthName}`;
                                       }
                                       const checkIn =
-                                        $state.booking.data.smart_booking
+                                        $state.booking.data.manual_booking
                                           .created_at;
                                       const result =
                                         convertDateToJalaliFullString(checkIn);
@@ -4801,16 +4756,14 @@ function PlasmicBookings__RenderFunc(props: {
                               </React.Fragment>
                             )}
                           </div>
-                        </Stack__>
+                        </div>
                         <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__jUzls
                           )}
                         >
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox__v65EK
@@ -4858,7 +4811,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   {(() => {
                                     try {
                                       return (
-                                        $state.booking.data.smart_booking
+                                        $state.booking.data.manual_booking
                                           .night + " شب" || "نفرات"
                                       );
                                     } catch (e) {
@@ -4883,13 +4836,13 @@ function PlasmicBookings__RenderFunc(props: {
                                     try {
                                       return (() => {
                                         if (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.manual_booking
                                             .night == null
                                         ) {
                                           return "مدت اقامت";
                                         }
                                         return (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.manual_booking
                                             .night + " شب" || "مدت اقامت"
                                         );
                                       })();
@@ -4935,10 +4888,8 @@ function PlasmicBookings__RenderFunc(props: {
                                 </React.Fragment>
                               )}
                             </div>
-                          </Stack__>
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          </div>
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox__d39Xe
@@ -4987,13 +4938,13 @@ function PlasmicBookings__RenderFunc(props: {
                                     try {
                                       return (() => {
                                         if (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.manual_booking
                                             .guests_count == null
                                         ) {
                                           return "نفرات";
                                         }
                                         return (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.manual_booking
                                             .guests_count + " نفر"
                                         );
                                       })();
@@ -5003,7 +4954,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         e?.plasmicType ===
                                           "PlasmicUndefinedDataError"
                                       ) {
-                                        return "\u06f5 \u0646\u0641\u0631";
+                                        return " ";
                                       }
                                       throw e;
                                     }
@@ -5039,7 +4990,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 </React.Fragment>
                               )}
                             </div>
-                          </Stack__>
+                          </div>
                         </div>
                       </div>
                       <div
@@ -5063,9 +5014,7 @@ function PlasmicBookings__RenderFunc(props: {
                           })()
                         )}
                       >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__gSemk
@@ -5080,16 +5029,14 @@ function PlasmicBookings__RenderFunc(props: {
                           >
                             {"%\u06f1\u06f0"}
                           </div>
-                        </Stack__>
+                        </div>
                         <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__ib4Yp
                           )}
                         >
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox__z9QzL
@@ -5106,7 +5053,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 "\u06a9\u0627\u0631\u0645\u0632\u062f (\u0648 \u0645\u0627\u0644\u06cc\u0627\u062a) \u0634\u0628:"
                               }
                             </div>
-                          </Stack__>
+                          </div>
                         </div>
                       </div>
                       <div
@@ -5117,9 +5064,7 @@ function PlasmicBookings__RenderFunc(props: {
                           sty.bookNetPrice2
                         )}
                       >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__wnzV
@@ -5134,16 +5079,14 @@ function PlasmicBookings__RenderFunc(props: {
                           >
                             {"\u06f2/\u06f6\u06f5\u06f5/\u06f0\u06f0\u06f0"}
                           </div>
-                        </Stack__>
+                        </div>
                         <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__dxQVs
                           )}
                         >
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox__d2Xvy
@@ -5160,148 +5103,21 @@ function PlasmicBookings__RenderFunc(props: {
                                 "\u062f\u0631\u0622\u0645\u062f \u062e\u0627\u0644\u0635 \u0634\u0645\u0627:"
                               }
                             </div>
-                          </Stack__>
+                          </div>
                         </div>
                       </div>
                       <div
-                        data-plasmic-name={"bookSettleStatus2"}
-                        data-plasmic-override={overrides.bookSettleStatus2}
-                        className={classNames(
-                          projectcss.all,
-                          sty.bookSettleStatus2
-                        )}
+                        data-plasmic-name={"netPrice"}
+                        data-plasmic-override={overrides.netPrice}
+                        className={classNames(projectcss.all, sty.netPrice)}
                       >
-                        {(() => {
-                          try {
-                            return (
-                              $state.booking.data.smart_booking.is_settled ==
-                              false
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })() ? (
-                          <Stack__
-                            as={"div"}
-                            data-plasmic-name={"error2"}
-                            data-plasmic-override={overrides.error2}
-                            hasGap={true}
-                            className={classNames(projectcss.all, sty.error2)}
-                          >
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img__kacg7)}
-                              displayHeight={
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "smallMobile"
-                                )
-                                  ? "18px"
-                                  : "auto"
-                              }
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={"auto"}
-                              loading={"lazy"}
-                              src={{
-                                src: "/plasmic/website_starter/images/image141.svg",
-                                fullWidth: 23,
-                                fullHeight: 23,
-                                aspectRatio: undefined
-                              }}
-                            />
-
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text___92Ilt
-                              )}
-                            >
-                              {
-                                "\u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647"
-                              }
-                            </div>
-                          </Stack__>
-                        ) : null}
-                        {(() => {
-                          try {
-                            return (
-                              $state.booking.data.smart_booking.is_settled ==
-                              true
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })() ? (
-                          <Stack__
-                            as={"div"}
-                            data-plasmic-name={"true3"}
-                            data-plasmic-override={overrides.true3}
-                            hasGap={true}
-                            className={classNames(projectcss.all, sty.true3)}
-                          >
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img__dZtAh)}
-                              displayHeight={
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "smallMobile"
-                                )
-                                  ? "18px"
-                                  : "auto"
-                              }
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={"auto"}
-                              loading={"lazy"}
-                              src={{
-                                src: "/plasmic/website_starter/images/image141.svg",
-                                fullWidth: 23,
-                                fullHeight: 23,
-                                aspectRatio: undefined
-                              }}
-                            />
-
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__zL8H
-                              )}
-                            >
-                              {
-                                "\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"
-                              }
-                            </div>
-                          </Stack__>
-                        ) : null}
                         {(
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? (() => {
                                 try {
                                   return (
-                                    $state.booking.data.smart_booking
-                                      .is_settled == null
+                                    $state.booking.data.manual_booking.amount ==
+                                    null
                                   );
                                 } catch (e) {
                                   if (
@@ -5317,8 +5133,8 @@ function PlasmicBookings__RenderFunc(props: {
                             : (() => {
                                 try {
                                   return (
-                                    $state.booking.data.smart_booking
-                                      .is_settled == null
+                                    $state.booking.data.manual_booking.amount ==
+                                    null
                                   );
                                 } catch (e) {
                                   if (
@@ -5332,11 +5148,9 @@ function PlasmicBookings__RenderFunc(props: {
                                 }
                               })()
                         ) ? (
-                          <Stack__
-                            as={"div"}
+                          <div
                             data-plasmic-name={"true4"}
                             data-plasmic-override={overrides.true4}
-                            hasGap={true}
                             className={classNames(projectcss.all, sty.true4)}
                           >
                             <div
@@ -5348,7 +5162,79 @@ function PlasmicBookings__RenderFunc(props: {
                             >
                               {"\u061f"}
                             </div>
-                          </Stack__>
+                          </div>
+                        ) : null}
+                        {(
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? (() => {
+                                try {
+                                  return (
+                                    $state.booking.data.manual_booking.amount !=
+                                    null
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (
+                                    $state.booking.data.manual_booking.amount !=
+                                    null
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
+                          <div
+                            data-plasmic-name={"true5"}
+                            data-plasmic-override={overrides.true5}
+                            className={classNames(projectcss.all, sty.true5)}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__mqXl
+                              )}
+                            >
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return new Intl.NumberFormat(
+                                      "fa-IR"
+                                    ).format(
+                                      $state.booking.data.manual_booking.amount
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return " ";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            </div>
+                          </div>
                         ) : null}
                         <div
                           className={classNames(
@@ -5356,9 +5242,7 @@ function PlasmicBookings__RenderFunc(props: {
                             sty.freeBox__ba6CE
                           )}
                         >
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
+                          <div
                             className={classNames(
                               projectcss.all,
                               sty.freeBox___4OEmw
@@ -5372,98 +5256,12 @@ function PlasmicBookings__RenderFunc(props: {
                               )}
                             >
                               {
-                                "\u0648\u0636\u0639\u06cc\u062a \u0645\u0627\u0644\u06cc:"
+                                "\u062f\u0631\u0622\u0645\u062f \u062e\u0627\u0644\u0635 \u0634\u0645\u0627:"
                               }
                             </div>
-                          </Stack__>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"openAndCloseButton3"}
-                      data-plasmic-override={overrides.openAndCloseButton3}
-                      className={classNames(
-                        projectcss.all,
-                        sty.openAndCloseButton3
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["updateAccordionOpen"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["accordionOpenSmartBooking"]
-                                },
-                                operation: 4
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
-
-                                const oldValue = $stateGet(
-                                  objRoot,
-                                  variablePath
-                                );
-                                $stateSet(objRoot, variablePath, !oldValue);
-                                return !oldValue;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["updateAccordionOpen"] != null &&
-                          typeof $steps["updateAccordionOpen"] === "object" &&
-                          typeof $steps["updateAccordionOpen"].then ===
-                            "function"
-                        ) {
-                          $steps["updateAccordionOpen"] = await $steps[
-                            "updateAccordionOpen"
-                          ];
-                        }
-                      }}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(
-                          sty.img__dpog,
-                          (() => {
-                            try {
-                              return $state.accordionOpenSmartBooking
-                                ? ".rotate-normal"
-                                : "rotate-flipped";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        )}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image154.svg",
-                          fullWidth: 21,
-                          fullHeight: 10,
-                          aspectRatio: undefined
-                        }}
-                      />
                     </div>
                   </div>
                 ) : null}
@@ -5506,11 +5304,9 @@ function PlasmicBookings__RenderFunc(props: {
                         })()
                       )}
                     >
-                      <Stack__
-                        as={"div"}
+                      <div
                         data-plasmic-name={"title2"}
                         data-plasmic-override={overrides.title2}
-                        hasGap={true}
                         className={classNames(projectcss.all, sty.title2)}
                       >
                         <div
@@ -5678,9 +5474,7 @@ function PlasmicBookings__RenderFunc(props: {
                             />
                           ) : null}
                         </div>
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__ljl7
@@ -5732,8 +5526,8 @@ function PlasmicBookings__RenderFunc(props: {
                               aspectRatio: undefined
                             }}
                           />
-                        </Stack__>
-                      </Stack__>
+                        </div>
+                      </div>
                       <div
                         data-plasmic-name={"description"}
                         data-plasmic-override={overrides.description}
@@ -5757,9 +5551,7 @@ function PlasmicBookings__RenderFunc(props: {
                           })()
                         )}
                       >
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__iyOnW
@@ -5819,7 +5611,7 @@ function PlasmicBookings__RenderFunc(props: {
                               }
                             </div>
                           ) : null}
-                        </Stack__>
+                        </div>
                       </div>
                       {(_par =>
                         !_par ? [] : Array.isArray(_par) ? _par : [_par])(
@@ -6171,7 +5963,7 @@ function PlasmicBookings__RenderFunc(props: {
                     </div>
                   </div>
                 ) : null}
-              </Stack__>
+              </div>
             </ApiRequest>
           </div>
           <NavbarRntFooter
@@ -6286,11 +6078,9 @@ const PlasmicDescendants = {
     "bookInfo2",
     "bookCommission2",
     "bookNetPrice2",
-    "bookSettleStatus2",
-    "error2",
-    "true3",
+    "netPrice",
     "true4",
-    "openAndCloseButton3",
+    "true5",
     "autoSync",
     "data2",
     "title2",
@@ -6357,11 +6147,9 @@ const PlasmicDescendants = {
     "bookInfo2",
     "bookCommission2",
     "bookNetPrice2",
-    "bookSettleStatus2",
-    "error2",
-    "true3",
+    "netPrice",
     "true4",
-    "openAndCloseButton3",
+    "true5",
     "autoSync",
     "data2",
     "title2",
@@ -6392,11 +6180,9 @@ const PlasmicDescendants = {
     "bookInfo2",
     "bookCommission2",
     "bookNetPrice2",
-    "bookSettleStatus2",
-    "error2",
-    "true3",
+    "netPrice",
     "true4",
-    "openAndCloseButton3",
+    "true5",
     "autoSync",
     "data2",
     "title2",
@@ -6451,11 +6237,9 @@ const PlasmicDescendants = {
     "bookInfo2",
     "bookCommission2",
     "bookNetPrice2",
-    "bookSettleStatus2",
-    "error2",
-    "true3",
+    "netPrice",
     "true4",
-    "openAndCloseButton3"
+    "true5"
   ],
   data3: [
     "data3",
@@ -6464,21 +6248,18 @@ const PlasmicDescendants = {
     "bookInfo2",
     "bookCommission2",
     "bookNetPrice2",
-    "bookSettleStatus2",
-    "error2",
-    "true3",
-    "true4"
+    "netPrice",
+    "true4",
+    "true5"
   ],
   title3: ["title3"],
   guestInfo2: ["guestInfo2"],
   bookInfo2: ["bookInfo2"],
   bookCommission2: ["bookCommission2"],
   bookNetPrice2: ["bookNetPrice2"],
-  bookSettleStatus2: ["bookSettleStatus2", "error2", "true3", "true4"],
-  error2: ["error2"],
-  true3: ["true3"],
+  netPrice: ["netPrice", "true4", "true5"],
   true4: ["true4"],
-  openAndCloseButton3: ["openAndCloseButton3"],
+  true5: ["true5"],
   autoSync: [
     "autoSync",
     "data2",
@@ -6542,11 +6323,9 @@ type NodeDefaultElementType = {
   bookInfo2: "div";
   bookCommission2: "div";
   bookNetPrice2: "div";
-  bookSettleStatus2: "div";
-  error2: "div";
-  true3: "div";
+  netPrice: "div";
   true4: "div";
-  openAndCloseButton3: "div";
+  true5: "div";
   autoSync: "div";
   data2: "div";
   title2: "div";
@@ -6659,11 +6438,9 @@ export const PlasmicBookings = Object.assign(
     bookInfo2: makeNodeComponent("bookInfo2"),
     bookCommission2: makeNodeComponent("bookCommission2"),
     bookNetPrice2: makeNodeComponent("bookNetPrice2"),
-    bookSettleStatus2: makeNodeComponent("bookSettleStatus2"),
-    error2: makeNodeComponent("error2"),
-    true3: makeNodeComponent("true3"),
+    netPrice: makeNodeComponent("netPrice"),
     true4: makeNodeComponent("true4"),
-    openAndCloseButton3: makeNodeComponent("openAndCloseButton3"),
+    true5: makeNodeComponent("true5"),
     autoSync: makeNodeComponent("autoSync"),
     data2: makeNodeComponent("data2"),
     title2: makeNodeComponent("title2"),

@@ -615,16 +615,8 @@ function PlasmicCalendar22__RenderFunc(props: {
           ])}
         />
 
-        <Stack__
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__hxone)}
-        >
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__jD7Wi)}
-          >
+        <div className={classNames(projectcss.all, sty.freeBox__hxone)}>
+          <div className={classNames(projectcss.all, sty.freeBox__jD7Wi)}>
             <div className={classNames(projectcss.all, sty.freeBox__wZeS)} />
 
             <div
@@ -636,12 +628,8 @@ function PlasmicCalendar22__RenderFunc(props: {
             >
               {"\u0631\u0632\u0631\u0648"}
             </div>
-          </Stack__>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__u57Rs)}
-          >
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__u57Rs)}>
             <div className={classNames(projectcss.all, sty.freeBox__yuSbx)} />
 
             <div
@@ -653,12 +641,8 @@ function PlasmicCalendar22__RenderFunc(props: {
             >
               {"\u063a\u06cc\u0631\u0641\u0639\u0627\u0644"}
             </div>
-          </Stack__>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__z96Q)}
-          >
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__z96Q)}>
             <div className={classNames(projectcss.all, sty.freeBox__kjWd)} />
 
             <div
@@ -670,8 +654,8 @@ function PlasmicCalendar22__RenderFunc(props: {
             >
               {"\u062a\u062e\u0641\u06cc\u0641"}
             </div>
-          </Stack__>
-        </Stack__>
+          </div>
+        </div>
         <AntdModal
           data-plasmic-name={"modalDiscount"}
           data-plasmic-override={overrides.modalDiscount}
@@ -969,11 +953,7 @@ function PlasmicCalendar22__RenderFunc(props: {
               data-plasmic-override={overrides.main}
               className={classNames(projectcss.all, sty.main, "bordeRadius")}
             >
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__otErB)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__otErB)}>
                 <Button
                   className={classNames("__wab_instance", sty.button__nxg1A)}
                   onClick={async event => {
@@ -1101,7 +1081,7 @@ function PlasmicCalendar22__RenderFunc(props: {
                     {"-"}
                   </div>
                 </Button>
-              </Stack__>
+              </div>
               {(() => {
                 try {
                   return (() => {
@@ -3435,11 +3415,7 @@ function PlasmicCalendar22__RenderFunc(props: {
             hasVariant(globalVariants, "screen", "mobile") ? "320px" : "320px"
           }
         >
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__dOd4S)}
-          >
+          <div className={classNames(projectcss.all, sty.freeBox__dOd4S)}>
             <Icon25Icon
               className={classNames(projectcss.all, sty.svg__o77T1)}
               role={"img"}
@@ -3664,12 +3640,8 @@ function PlasmicCalendar22__RenderFunc(props: {
             >
               {"\u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645"}
             </div>
-          </Stack__>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__ycVpz)}
-          >
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__ycVpz)}>
             <Icon24Icon
               className={classNames(projectcss.all, sty.svg__j9BUv)}
               role={"img"}
@@ -3895,7 +3867,7 @@ function PlasmicCalendar22__RenderFunc(props: {
                 "\u0641\u0639\u0644\u0627 \u0627\u062c\u0627\u0631\u0647 \u0646\u0645\u06cc\u200c\u062f\u0645"
               }
             </div>
-          </Stack__>
+          </div>
           <div
             className={classNames(
               projectcss.all,

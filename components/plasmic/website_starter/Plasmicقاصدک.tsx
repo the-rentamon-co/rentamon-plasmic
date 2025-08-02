@@ -233,11 +233,9 @@ function Plasmicقاصدک__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
             )}
           >
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"messages"}
               data-plasmic-override={overrides.messages}
-              hasGap={true}
               className={classNames(
                 projectcss.all,
                 sty.messages,
@@ -365,7 +363,7 @@ function Plasmicقاصدک__RenderFunc(props: {
                   />
                 </div>
               </div>
-            </Stack__>
+            </div>
           </div>
           <NavbarRntFooter
             data-plasmic-name={"navbarRntFooter"}

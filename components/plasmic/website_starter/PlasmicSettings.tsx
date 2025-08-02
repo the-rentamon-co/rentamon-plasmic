@@ -1150,18 +1150,16 @@ function PlasmicSettings__RenderFunc(props: {
                   data-plasmic-override={overrides.opt12}
                   className={classNames(projectcss.all, sty.opt12)}
                 >
-                  <Stack__
-                    as={"div"}
+                  <div
                     data-plasmic-name={"p12"}
                     data-plasmic-override={overrides.p12}
-                    hasGap={true}
                     className={classNames(projectcss.all, sty.p12)}
                   >
                     <Icon97Icon
                       className={classNames(projectcss.all, sty.svg___6UaXp)}
                       role={"img"}
                     />
-                  </Stack__>
+                  </div>
                   <div
                     data-plasmic-name={"p22"}
                     data-plasmic-override={overrides.p22}
@@ -1608,11 +1606,9 @@ function PlasmicSettings__RenderFunc(props: {
                   data-plasmic-override={overrides.opt13}
                   className={classNames(projectcss.all, sty.opt13)}
                 >
-                  <Stack__
-                    as={"div"}
+                  <div
                     data-plasmic-name={"p13"}
                     data-plasmic-override={overrides.p13}
-                    hasGap={true}
                     className={classNames(projectcss.all, sty.p13)}
                   >
                     <PlasmicImg__
@@ -1650,7 +1646,7 @@ function PlasmicSettings__RenderFunc(props: {
                         aspectRatio: 1
                       }}
                     />
-                  </Stack__>
+                  </div>
                   <div
                     data-plasmic-name={"p23"}
                     data-plasmic-override={overrides.p23}
@@ -3259,18 +3255,14 @@ function PlasmicSettings__RenderFunc(props: {
                       : "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"}
                   </div>
                 </div>
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"buttons4"}
                   data-plasmic-override={overrides.buttons4}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.buttons4)}
                 >
-                  <Stack__
-                    as={"div"}
+                  <div
                     data-plasmic-name={"active4"}
                     data-plasmic-override={overrides.active4}
-                    hasGap={true}
                     className={classNames(projectcss.all, sty.active4)}
                     onClick={async event => {
                       const $steps = {};
@@ -3537,7 +3529,7 @@ function PlasmicSettings__RenderFunc(props: {
                     >
                       {"\u063a\u06cc\u0631\u0641\u0639\u0627\u0644"}
                     </div>
-                  </Stack__>
+                  </div>
                   <div
                     data-plasmic-name={"deactive4"}
                     data-plasmic-override={overrides.deactive4}
@@ -3635,7 +3627,7 @@ function PlasmicSettings__RenderFunc(props: {
                       {"\u0627\u0646\u0635\u0631\u0627\u0641"}
                     </div>
                   </div>
-                </Stack__>
+                </div>
               </AntdModal>
               <ApiRequest
                 data-plasmic-name={"freeFeatureCredits"}
@@ -4089,11 +4081,7 @@ function PlasmicSettings__RenderFunc(props: {
             title={null}
             trigger={null}
           >
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__j8LW)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__j8LW)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img___1FczO)}
@@ -4149,11 +4137,7 @@ function PlasmicSettings__RenderFunc(props: {
                   })()}
                 </React.Fragment>
               </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox___2RPqf)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox___2RPqf)}>
                 <div
                   className={classNames(
                     projectcss.all,
@@ -4242,8 +4226,8 @@ function PlasmicSettings__RenderFunc(props: {
                 >
                   {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                 </div>
-              </Stack__>
-            </Stack__>
+              </div>
+            </div>
           </AntdModal>
           <div
             data-plasmic-name={"html"}

@@ -499,11 +499,7 @@ function PlasmicChannelManager__RenderFunc(props: {
             }}
             url={"https://gateway.rentamon.com/webhook/get_status"}
           >
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__y4L)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__y4L)}>
               <div
                 data-plasmic-name={"tableHeader"}
                 data-plasmic-override={overrides.tableHeader}
@@ -539,9 +535,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox___5NVyJ)}
                   >
-                    <Stack__
-                      as={"div"}
-                      hasGap={true}
+                    <div
                       className={classNames(projectcss.all, sty.freeBox__dTzEi)}
                     >
                       {(() => {
@@ -963,7 +957,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                           }}
                         />
                       ) : null}
-                    </Stack__>
+                    </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__m3Fs2)}
                     >
@@ -2274,9 +2268,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                     </Button>
                   </div>
                 </AntdModal>
-                <Stack__
-                  as={"div"}
-                  hasGap={true}
+                <div
                   className={classNames(projectcss.all, sty.freeBox___0DlVa)}
                 >
                   <div
@@ -2288,7 +2280,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                   >
                     {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                   </div>
-                </Stack__>
+                </div>
                 <div className={classNames(projectcss.all, sty.freeBox__eF7Bt)}>
                   <div
                     className={classNames(
@@ -2457,9 +2449,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                       }
                     }}
                   >
-                    <Stack__
-                      as={"div"}
-                      hasGap={true}
+                    <div
                       className={classNames(projectcss.all, sty.freeBox__haSnf)}
                     >
                       <div
@@ -2486,7 +2476,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                           })()}
                         </React.Fragment>
                       </div>
-                    </Stack__>
+                    </div>
                     <div
                       className={classNames(projectcss.all, sty.freeBox__p5KJm)}
                     >
@@ -2660,7 +2650,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                   </div>
                 );
               })}
-            </Stack__>
+            </div>
           </ApiRequest>
           <SideEffect
             data-plasmic-name={"sideEffect"}

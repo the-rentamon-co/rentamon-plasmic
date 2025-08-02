@@ -481,7 +481,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 loop={true}
                 muted={true}
                 src={
-                  "https://media.rentamon.com/gif%2Funified-calendar.mp4"
+                  "https://rentamon-files.storage.iran.liara.space/gif/unified-calendar.mp4"
                 }
               />
 
@@ -498,11 +498,9 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <Stack__
-            as={"div"}
+          <div
             data-plasmic-name={"incomeAnual"}
             data-plasmic-override={overrides.incomeAnual}
-            hasGap={true}
             className={classNames(projectcss.all, sty.incomeAnual)}
           >
             <div
@@ -561,7 +559,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 <React.Fragment>{")\r\n\r"}</React.Fragment>
               </React.Fragment>
             </div>
-          </Stack__>
+          </div>
           <div
             data-plasmic-name={"efforts"}
             data-plasmic-override={overrides.efforts}

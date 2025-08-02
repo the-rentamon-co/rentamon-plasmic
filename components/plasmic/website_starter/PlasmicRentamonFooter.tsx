@@ -428,11 +428,9 @@ function PlasmicRentamonFooter__RenderFunc(props: {
           />
         </div>
       </div>
-      <Stack__
-        as={"div"}
+      <div
         data-plasmic-name={"but"}
         data-plasmic-override={overrides.but}
-        hasGap={true}
         className={classNames(projectcss.all, sty.but)}
       >
         <div className={classNames(projectcss.all, sty.freeBox__hVQnd)}>
@@ -616,7 +614,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               : "info [@] rentamon.com\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\n\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641"}
           </div>
         </div>
-      </Stack__>
+      </div>
     </div>
   ) as React.ReactElement | null;
 }

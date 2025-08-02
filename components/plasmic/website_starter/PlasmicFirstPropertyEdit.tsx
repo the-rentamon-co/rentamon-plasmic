@@ -196,7 +196,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
         path: "propTour",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -252,11 +252,9 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"type"}
               data-plasmic-override={overrides.type}
-              hasGap={true}
               className={classNames(projectcss.all, sty.type)}
             >
               <div className={classNames(projectcss.all, sty.freeBox__ed6Oj)}>
@@ -794,7 +792,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   }
                 </div>
               </div>
-            </Stack__>
+            </div>
           ) : null}
           <div className={classNames(projectcss.all, sty.freeBox__qObmX)}>
             {(() => {
@@ -810,11 +808,9 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <Stack__
-                as={"div"}
+              <div
                 data-plasmic-name={"name"}
                 data-plasmic-override={overrides.name}
-                hasGap={true}
                 className={classNames(projectcss.all, sty.name)}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__pIhDn)}>
@@ -873,18 +869,14 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     }
                   />
                 </div>
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"newButtons"}
                   data-plasmic-override={overrides.newButtons}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.newButtons)}
                 >
-                  <Stack__
-                    as={"div"}
+                  <div
                     data-plasmic-name={"next"}
                     data-plasmic-override={overrides.next}
-                    hasGap={true}
                     className={classNames(
                       projectcss.all,
                       sty.next,
@@ -1096,7 +1088,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         aspectRatio: undefined
                       }}
                     />
-                  </Stack__>
+                  </div>
                   <div
                     data-plasmic-name={"privious"}
                     data-plasmic-override={overrides.privious}
@@ -1153,8 +1145,8 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       {"\u0642\u0628\u0644"}
                     </div>
                   </div>
-                </Stack__>
-              </Stack__>
+                </div>
+              </div>
             ) : null}
           </div>
           {(() => {
@@ -1170,11 +1162,9 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"name2"}
               data-plasmic-override={overrides.name2}
-              hasGap={true}
               className={classNames(projectcss.all, sty.name2)}
             >
               <div
@@ -1289,9 +1279,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         throw e;
                       }
                     })() ? (
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
+                      <div
                         className={classNames(
                           projectcss.all,
                           sty.freeBox__dGo5A,
@@ -1332,7 +1320,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           })()}
                           width={"100%"}
                         />
-                      </Stack__>
+                      </div>
                     ) : null}
                     {(() => {
                       try {
@@ -1347,9 +1335,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         throw e;
                       }
                     })() ? (
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
+                      <div
                         className={classNames(
                           projectcss.all,
                           sty.freeBox__rpFix,
@@ -1385,22 +1371,18 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                             "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062a\u0635\u0648\u06cc\u0631"
                           }
                         </div>
-                      </Stack__>
+                      </div>
                     ) : null}
                   </UploadWrapper>
                 </div>
-                <Stack__
-                  as={"div"}
+                <div
                   data-plasmic-name={"newButtons2"}
                   data-plasmic-override={overrides.newButtons2}
-                  hasGap={true}
                   className={classNames(projectcss.all, sty.newButtons2)}
                 >
-                  <Stack__
-                    as={"div"}
+                  <div
                     data-plasmic-name={"next2"}
                     data-plasmic-override={overrides.next2}
-                    hasGap={true}
                     className={classNames(
                       projectcss.all,
                       sty.next2,
@@ -1441,6 +1423,30 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         typeof $steps["updateLoading"].then === "function"
                       ) {
                         $steps["updateLoading"] = await $steps["updateLoading"];
+                      }
+
+                      $steps["showToast"] =
+                        $steps.apiRequest == null
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646",
+                                  "top-center",
+                                  4000
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["showToast"] != null &&
+                        typeof $steps["showToast"] === "object" &&
+                        typeof $steps["showToast"].then === "function"
+                      ) {
+                        $steps["showToast"] = await $steps["showToast"];
                       }
 
                       $steps["setCookieFirstVisit"] =
@@ -1515,30 +1521,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["deletePropTourCookie"] = await $steps[
                           "deletePropTourCookie"
                         ];
-                      }
-
-                      $steps["showToast"] =
-                        $steps.changePropertyPic.status == 413
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  "error",
-                                  "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646",
-                                  "top-center",
-                                  4000
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["showToast"] != null &&
-                        typeof $steps["showToast"] === "object" &&
-                        typeof $steps["showToast"].then === "function"
-                      ) {
-                        $steps["showToast"] = await $steps["showToast"];
                       }
 
                       $steps["goToLitePanel"] =
@@ -1756,7 +1738,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     >
                       {"\u0630\u062e\u06cc\u0631\u0647"}
                     </div>
-                  </Stack__>
+                  </div>
                   <div
                     data-plasmic-name={"privious2"}
                     data-plasmic-override={overrides.privious2}
@@ -1813,9 +1795,9 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       {"\u0642\u0628\u0644"}
                     </div>
                   </div>
-                </Stack__>
+                </div>
               </div>
-            </Stack__>
+            </div>
           ) : null}
           <div
             data-plasmic-name={"back"}

@@ -2467,11 +2467,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               data-plasmic-override={overrides.main}
               className={classNames(projectcss.all, sty.main, "bordeRadius")}
             >
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__eCwSf)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__eCwSf)}>
                 <Button
                   className={classNames("__wab_instance", sty.button__q70Wl)}
                   color={"softSand"}
@@ -2667,7 +2663,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     {"-"}
                   </div>
                 </Button>
-              </Stack__>
+              </div>
               {(() => {
                 try {
                   return (() => {
@@ -5366,9 +5362,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__zeq8A)}
                       key={currentIndex}
                     >
-                      <Stack__
-                        as={"div"}
-                        hasGap={true}
+                      <div
                         className={classNames(
                           projectcss.all,
                           sty.freeBox__rfsi
@@ -5410,9 +5404,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                             })()}
                           </React.Fragment>
                         </div>
-                        <Stack__
-                          as={"div"}
-                          hasGap={true}
+                        <div
                           className={classNames(
                             projectcss.all,
                             sty.freeBox__x9Ue1
@@ -5745,8 +5737,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 : "\u274c \u0645\u062d\u062f\u0648\u062f\u06cc\u062a \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a"}
                             </div>
                           ) : null}
-                        </Stack__>
-                      </Stack__>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
@@ -5763,9 +5755,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     throw e;
                   }
                 })() ? (
-                  <Stack__
-                    as={"div"}
-                    hasGap={true}
+                  <div
                     className={classNames(projectcss.all, sty.freeBox__l5DBh)}
                   >
                     <div
@@ -5791,9 +5781,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         })()}
                       </React.Fragment>
                     </div>
-                    <Stack__
-                      as={"div"}
-                      hasGap={true}
+                    <div
                       className={classNames(
                         projectcss.all,
                         sty.freeBox___7NYGc
@@ -5822,8 +5810,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                           aspectRatio: 1
                         }}
                       />
-                    </Stack__>
-                  </Stack__>
+                    </div>
+                  </div>
                 ) : null}
                 <Button
                   className={classNames("__wab_instance", sty.button__sWmv0)}
@@ -6395,11 +6383,9 @@ function PlasmicCalendar2__RenderFunc(props: {
               </div>
             </div>
           ) : null}
-          <Stack__
-            as={"div"}
+          <div
             data-plasmic-name={"reserve"}
             data-plasmic-override={overrides.reserve}
-            hasGap={true}
             className={classNames(
               projectcss.all,
               sty.reserve,
@@ -6884,12 +6870,10 @@ function PlasmicCalendar2__RenderFunc(props: {
             >
               {"\u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645"}
             </div>
-          </Stack__>
-          <Stack__
-            as={"div"}
+          </div>
+          <div
             data-plasmic-name={"block2"}
             data-plasmic-override={overrides.block2}
-            hasGap={true}
             className={classNames(projectcss.all, sty.block2, "clickable")}
             onClick={async event => {
               const $steps = {};
@@ -7288,7 +7272,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 "\u0641\u0639\u0644\u0627 \u0627\u062c\u0627\u0631\u0647 \u0646\u0645\u06cc\u200c\u062f\u0645"
               }
             </div>
-          </Stack__>
+          </div>
           <div
             className={classNames(
               projectcss.all,
@@ -7946,11 +7930,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           trigger={null}
           width={"320"}
         >
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__dmMyI)}
-          >
+          <div className={classNames(projectcss.all, sty.freeBox__dmMyI)}>
             {(() => {
               const child$Props = {
                 className: classNames("__wab_instance", sty.textarea2),
@@ -8265,7 +8245,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             >
               {"\u062b\u0628\u062a \u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
             </Button>
-          </Stack__>
+          </div>
         </AntdModal>
         <AntdModal
           data-plasmic-name={"checkForChange"}
@@ -8314,11 +8294,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u062e\u0648\u0627\u06cc \u062a\u0648\u06cc \u0628\u0642\u06cc\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u06cc\u0646 \u0628\u0627\u0632\u0647 \u0632\u0645\u0627\u0646\u06cc \u00ab\u062e\u0627\u0644\u06cc\u00bb \u0628\u0634\u0647\u061f"
             }
           </div>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__uWbV)}
-          >
+          <div className={classNames(projectcss.all, sty.freeBox__uWbV)}>
             <div
               data-plasmic-name={"buttonYes"}
               data-plasmic-override={overrides.buttonYes}
@@ -8744,7 +8720,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 {"\u0646\u0647"}
               </div>
             </AntdButton>
-          </Stack__>
+          </div>
         </AntdModal>
         <AntdModal
           data-plasmic-name={"newDiscountModal"}
@@ -8964,11 +8940,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   {"+"}
                 </div>
               </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox___1PDks)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox___1PDks)}>
                 <TextInput
                   data-plasmic-name={"textInput4"}
                   data-plasmic-override={overrides.textInput4}
@@ -8996,7 +8968,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ""
                   }
                 />
-              </Stack__>
+              </div>
               <div
                 className={classNames(
                   projectcss.all,
@@ -10029,11 +10001,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             data-plasmic-override={overrides.reserve4}
             className={classNames(projectcss.all, sty.reserve4)}
           >
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"color4"}
               data-plasmic-override={overrides.color4}
-              hasGap={true}
               className={classNames(projectcss.all, sty.color4)}
             />
 
@@ -10524,11 +10494,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ])}
               />
             </div>
-            <Stack__
-              as={"div"}
+            <div
               data-plasmic-name={"count2"}
               data-plasmic-override={overrides.count2}
-              hasGap={true}
               className={classNames(projectcss.all, sty.count2)}
             >
               <AntdInputNumber
@@ -10554,7 +10522,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.svg__wuzF)}
                 role={"img"}
               />
-            </Stack__>
+            </div>
           </div>
           <div
             data-plasmic-name={"p3"}
