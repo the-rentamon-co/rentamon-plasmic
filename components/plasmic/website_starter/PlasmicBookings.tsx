@@ -6969,7 +6969,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["requestForUpdate"] = false
+                              $steps["requestForUpdate"] = $steps.validationData
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
@@ -7313,7 +7313,7 @@ function PlasmicBookings__RenderFunc(props: {
                         onClick={async event => {
                           const $steps = {};
 
-                          $steps["invokeGlobalAction"] = false
+                          $steps["invokeGlobalAction"] = true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
