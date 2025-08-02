@@ -94,11 +94,15 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   introTitle?: Flex__<"div">;
   دربارهما?: Flex__<"div">;
   teamImage?: Flex__<"div">;
-  introduction?: Flex__<"div">;
+  introduction1Text?: Flex__<"div">;
+  introduction2TextPics?: Flex__<"div">;
+  introduction3?: Flex__<"div">;
   principles?: Flex__<"div">;
   title7?: Flex__<"div">;
   uotlines?: Flex__<"div">;
   ul?: Flex__<"ul">;
+  pic?: Flex__<"div">;
+  pic2?: Flex__<"div">;
   gridImages?: Flex__<"div">;
   devMindset?: Flex__<"div">;
   introAutoSyncTitle4?: Flex__<"div">;
@@ -127,6 +131,7 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   teamup?: Flex__<"div">;
   introAutoSyncTitle3?: Flex__<"div">;
   introAutoSyncCaption3?: Flex__<"div">;
+  introAutoSyncCaption4?: Flex__<"div">;
   address?: Flex__<"div">;
   content?: Flex__<"div">;
   addressText?: Flex__<"div">;
@@ -315,9 +320,9 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.teamImage)}
               >
                 <div
-                  data-plasmic-name={"introduction"}
-                  data-plasmic-override={overrides.introduction}
-                  className={classNames(projectcss.all, sty.introduction)}
+                  data-plasmic-name={"introduction1Text"}
+                  data-plasmic-override={overrides.introduction1Text}
+                  className={classNames(projectcss.all, sty.introduction1Text)}
                 >
                   <div
                     className={classNames(
@@ -328,13 +333,101 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
                       ? "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.\n\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."
-                      : "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.\n\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."}
+                      : "\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."}
                   </div>
+                </div>
+                <div
+                  data-plasmic-name={"introduction2TextPics"}
+                  data-plasmic-override={overrides.introduction2TextPics}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introduction2TextPics
+                  )}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___6MHzZ)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ko0A4
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.\n\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."
+                        : "\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."}
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__wZ25R)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__nrvLr)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "none"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "none"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
+                      }
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "none"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
+                      }
+                      displayMinHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
+                      }
+                      displayMinWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
+                      }
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "100%"
+                          : "100%"
+                      }
+                      loading={"lazy"}
+                      src={
+                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fhosts%2F%D9%85%D8%AD%D9%85%D8%AF%20%D8%A7%D9%85%DB%8C%D9%86%20%D8%AC%D8%B9%D9%81%D8%B1%DB%8C.jpg?versionId="
+                      }
+                    />
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"introduction3"}
+                  data-plasmic-override={overrides.introduction3}
+                  className={classNames(projectcss.all, sty.introduction3)}
+                >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__ra7WN
+                      sty.text___7JiJy
                     )}
                   >
                     {
@@ -373,172 +466,238 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
               data-plasmic-override={overrides.principles}
               className={classNames(projectcss.all, sty.principles)}
             >
-              <div
-                data-plasmic-name={"title7"}
-                data-plasmic-override={overrides.title7}
-                className={classNames(projectcss.all, sty.title7)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__ooNxp)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dHope
-                  )}
+                  data-plasmic-name={"title7"}
+                  data-plasmic-override={overrides.title7}
+                  className={classNames(projectcss.all, sty.title7)}
                 >
-                  {
-                    "\u0627\u0631\u0632\u0634\u200c\u0647\u0627 \u0648 \u0641\u0631\u0647\u0646\u06af \u062a\u06cc\u0645\u06cc"
-                  }
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"uotlines"}
-                data-plasmic-override={overrides.uotlines}
-                className={classNames(projectcss.all, sty.uotlines)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dr0NC
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dHope
+                    )}
+                  >
                     {
-                      <ul
-                        data-plasmic-name={"ul"}
-                        data-plasmic-override={overrides.ul}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.ul,
-                          sty.ul
-                        )}
-                      >
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__i0LoJ
-                          )}
-                        >
-                          {
-                            "\u0627\u0648\u0644\u0648\u06cc\u062a \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0647\u0627 \u0631\u0648 \u00ab\u0634\u06cc\u062f\u0627\u06cc\u06cc \u06a9\u0627\u0631\u0628\u0631\u00bb \u0645\u0634\u062e\u0635 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0646\u0647 \u062a\u0648\u0627\u0646\u0627\u06cc\u06cc \u0645\u0627"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__ahJhQ
-                          )}
-                        >
-                          {
-                            "\u0628\u0647 \u00ab\u062a\u0637\u0627\u0628\u0642 \u0641\u0631\u0647\u0646\u06af\u06cc \u0628\u0627 \u062a\u06cc\u0645\u00bb \u0646\u0633\u0628\u062a \u0628\u0647 \u00ab\u0645\u0647\u0627\u0631\u062a \u0641\u0631\u062f\u06cc\u00bb \u0627\u0648\u0644\u0648\u06cc\u062a \u0645\u06cc\u200c\u062f\u06cc\u0645"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li___9W2AK
-                          )}
-                        >
-                          {
-                            "\u00ab\u0633\u0631\u0639\u062a \u06cc\u0627\u062f\u06af\u06cc\u0631\u06cc\u00bb \u0627\u0632 \u00ab\u0633\u0637\u062d \u0645\u0647\u0627\u0631\u062a \u0641\u0639\u0644\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u0647"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__aY40P
-                          )}
-                        >
-                          {
-                            "\u0628\u0647 \u0633\u0627\u062e\u062a\u0627\u0631 \u0633\u0644\u0633\u0644\u0647\u200c\u0645\u0631\u0627\u062a\u0628\u06cc \u0628\u0627\u0648\u0631 \u0646\u062f\u0627\u0631\u06cc\u0645"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__vkVm8
-                          )}
-                        >
-                          {
-                            "\u0628\u0647 \u0622\u0632\u0627\u062f\u06cc \u0648 \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u067e\u0630\u06cc\u0631\u06cc \u0628\u0627\u0648\u0631 \u062f\u0627\u0631\u06cc\u0645 (authority and autonomy)"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__wqI
-                          )}
-                        >
-                          {
-                            "\u0627\u0641\u0631\u0627\u062f\u06cc \u06a9\u0647 \u0627\u0648\u0644\u0648\u06cc\u062a \u0627\u0648\u0644 \u0632\u0646\u062f\u06af\u06cc\u200c\u0634\u0648\u0646 \u00ab\u06a9\u0645\u06a9 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0631\u0634\u062f \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0641\u0631\u062f\u06cc\u0647\u00bb \u0627\u06cc\u0646\u062c\u0627 \u062e\u0648\u0634\u062d\u0627\u0644\u0646"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__ey9Hx
-                          )}
-                        >
-                          {
-                            "\u0645\u0633\u06cc\u0631 \u0645\u0627 \u062f\u0631 \u0639\u06cc\u0646 \u062c\u0630\u0627\u0628\u06cc\u062a\u060c \u067e\u0631 \u0686\u0627\u0644\u0634\u0647 \u0648 \u0628\u0627 \u0631\u0648\u062d\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0645\u0646\u062f\u06cc \u062c\u0648\u0631 \u0646\u06cc\u0633\u062a"
-                          }
-                        </li>
-                        <li
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.__wab_text,
-                            sty.li__wdMof
-                          )}
-                        >
-                          {
-                            "\u0627\u06cc\u0646\u062c\u0627 \u062c\u0645\u0639 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u200c\u0647\u0627\u0633\u062a. \u062f\u0631 \u0633\u0648\u062f \u0648 \u0632\u06cc\u0627\u0646 \u0634\u0631\u06cc\u06a9\u06cc\u0645"
-                          }
-                        </li>
-                      </ul>
+                      "\u0627\u0631\u0632\u0634\u200c\u0647\u0627 \u0648 \u0641\u0631\u0647\u0646\u06af \u062a\u06cc\u0645\u06cc"
                     }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"uotlines"}
+                  data-plasmic-override={overrides.uotlines}
+                  className={classNames(projectcss.all, sty.uotlines)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dr0NC
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <ul
+                          data-plasmic-name={"ul"}
+                          data-plasmic-override={overrides.ul}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.ul,
+                            sty.ul
+                          )}
+                        >
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__i0LoJ
+                            )}
+                          >
+                            {
+                              "\u0627\u0648\u0644\u0648\u06cc\u062a \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0647\u0627 \u0631\u0648 \u00ab\u0634\u06cc\u062f\u0627\u06cc\u06cc \u06a9\u0627\u0631\u0628\u0631\u00bb \u0645\u0634\u062e\u0635 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0646\u0647 \u062a\u0648\u0627\u0646\u0627\u06cc\u06cc \u0645\u0627"
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__ahJhQ
+                            )}
+                          >
+                            {
+                              "\u0628\u0647 \u00ab\u062a\u0637\u0627\u0628\u0642 \u0641\u0631\u0647\u0646\u06af\u06cc \u0628\u0627 \u062a\u06cc\u0645\u00bb \u0646\u0633\u0628\u062a \u0628\u0647 \u00ab\u0645\u0647\u0627\u0631\u062a \u0641\u0631\u062f\u06cc\u00bb \u0627\u0648\u0644\u0648\u06cc\u062a \u0645\u06cc\u200c\u062f\u06cc\u0645"
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li___9W2AK
+                            )}
+                          >
+                            {
+                              "\u00ab\u0633\u0631\u0639\u062a \u06cc\u0627\u062f\u06af\u06cc\u0631\u06cc\u00bb \u0627\u0632 \u00ab\u0633\u0637\u062d \u0645\u0647\u0627\u0631\u062a \u0641\u0639\u0644\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u0647"
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__aY40P
+                            )}
+                          >
+                            {
+                              "\u0628\u0647 \u0633\u0627\u062e\u062a\u0627\u0631 \u0633\u0644\u0633\u0644\u0647\u200c\u0645\u0631\u0627\u062a\u0628\u06cc \u0628\u0627\u0648\u0631 \u0646\u062f\u0627\u0631\u06cc\u0645"
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__vkVm8
+                            )}
+                          >
+                            {
+                              "\u0628\u0647 \u0622\u0632\u0627\u062f\u06cc \u0648 \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u067e\u0630\u06cc\u0631\u06cc \u0628\u0627\u0648\u0631 \u062f\u0627\u0631\u06cc\u0645 (authority and autonomy)"
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__wqI
+                            )}
+                          >
+                            {
+                              "\u0627\u0641\u0631\u0627\u062f\u06cc \u06a9\u0647 \u0627\u0648\u0644\u0648\u06cc\u062a \u0627\u0648\u0644 \u0632\u0646\u062f\u06af\u06cc\u200c\u0634\u0648\u0646 \u00ab\u06a9\u0645\u06a9 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646\u060c \u0631\u0634\u062f \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u0641\u0631\u062f\u06cc\u0647\u00bb \u0627\u06cc\u0646\u062c\u0627 \u062e\u0648\u0634\u062d\u0627\u0644\u0646"
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__ey9Hx
+                            )}
+                          >
+                            {
+                              "\u0645\u0633\u06cc\u0631 \u0645\u0627 \u062f\u0631 \u0639\u06cc\u0646 \u062c\u0630\u0627\u0628\u06cc\u062a\u060c \u067e\u0631 \u0686\u0627\u0644\u0634\u0647 \u0648 \u0628\u0627 \u0631\u0648\u062d\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0645\u0646\u062f\u06cc \u062c\u0648\u0631 \u0646\u06cc\u0633\u062a"
+                            }
+                          </li>
+                          <li
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.li,
+                              projectcss.__wab_text,
+                              sty.li__wdMof
+                            )}
+                          >
+                            {
+                              "\u0627\u06cc\u0646\u062c\u0627 \u062c\u0645\u0639 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u200c\u0647\u0627\u0633\u062a. \u062f\u0631 \u0633\u0648\u062f \u0648 \u0632\u06cc\u0627\u0646 \u0634\u0631\u06cc\u06a9\u06cc\u0645"
+                            }
+                          </li>
+                        </ul>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
+                  </div>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__bdec8)}>
+              <div
+                data-plasmic-name={"pic"}
+                data-plasmic-override={overrides.pic}
+                className={classNames(projectcss.all, sty.pic)}
+              >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ylbMm
-                  )}
+                  data-plasmic-name={"pic2"}
+                  data-plasmic-override={overrides.pic2}
+                  className={classNames(projectcss.all, sty.pic2)}
                 >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0627\u0647\u0644 \u06a9\u0627\u0645 \u0648 \u0646\u0627\u0632 \u0631\u0627 \u062f\u0631 \u06a9\u0648\u06cc \u0631\u0646\u062f\u06cc \u0631\u0627\u0647 \u0646\u06cc\u0633\u062a\r\n\u0631\u0647\u0631\u0648\u06cc \u0628\u0627\u06cc\u062f \u062c\u0647\u0627\u0646\u200c\u0633\u0648\u0632\u06cc \u0646\u0647 \u062e\u0627\u0645\u06cc \u0628\u06cc\u200c\u063a\u0645\u06cc"
-                    : "\u0627\u0647\u0644 \u06a9\u0627\u0645 \u0648 \u0646\u0627\u0632 \u0631\u0627 \u062f\u0631 \u06a9\u0648\u06cc \u0631\u0646\u062f\u06cc \u0631\u0627\u0647 \u0646\u06cc\u0633\u062a\r       \u0631\u0647\u0631\u0648\u06cc \u0628\u0627\u06cc\u062f \u062c\u0647\u0627\u0646\u200c\u0633\u0648\u0632\u06cc \u0646\u0647 \u062e\u0627\u0645\u06cc \u0628\u06cc\u200c\u063a\u0645\u06cc"}
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__pWs2J)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "none"
+                        : "none"
+                    }
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "none"
+                        : "none"
+                    }
+                    displayMinHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "auto"
+                        : "0"
+                    }
+                    displayMinWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "auto"
+                        : "0"
+                    }
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "100%"
+                        : "100%"
+                    }
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fhosts%2F%D8%AD%D8%A7%D9%85%D8%AF%20%D8%B3%D8%B9%DB%8C%D8%AF%D9%BE%D9%88%D8%B1.jpg?versionId="
+                    }
+                  />
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bTKrT
-                  )}
-                >
-                  {
-                    "\u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u0627\u0631\u062a\u0628\u0627\u0637 \u0647\u0633\u062a\u0646\u060c \u0641\u0642\u0637 \u0647\u0645\u06a9\u0627\u0631 \u06cc\u0627 \u0645\u062e\u0627\u0637\u0628 \u0646\u06cc\u0633\u062a\u0646. \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0632\u0646\u062f\u06af\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0646 \u0648 \u0628\u062e\u0634\u06cc \u0627\u0632 \u00ab\u0645\u0627\u00bb \u0647\u0633\u062a\u0646\u061b \u0627\u0632 \u0627\u0639\u0636\u0627\u06cc \u062a\u06cc\u0645 \u0648 \u062e\u0627\u0646\u0648\u0627\u062f\u0647\u200c\u0647\u0627\u0634\u0648\u0646 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0648 \u0647\u0631 \u06a9\u0633\u06cc \u06a9\u0647 \u0645\u0633\u06cc\u0631\u0645\u0648\u0646 \u0628\u0631\u0627\u0634 \u0645\u0647\u0645 \u0628\u0648\u062f\u0647.\n\n\u0627\u0633\u062a\u062e\u0648\u0627\u0646\u200c\u0628\u0646\u062f\u06cc \u0641\u0631\u0647\u0646\u06af \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0645\u062c\u0645\u0648\u0639\u0647\u200c\u0627\u06cc \u0627\u0632 \u0627\u0631\u0632\u0634\u200c\u0647\u0627\u0633\u062a. \u0627\u0631\u0632\u0634\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0628\u0627\u0648\u0631 \u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0634\u06a9\u0644 \u06af\u0631\u0641\u062a\u0647\u060c \u0631\u0634\u062f \u06a9\u0631\u062f\u0647 \u0648 \u062a\u0627 \u0627\u0645\u0631\u0648\u0632 \u0627\u062f\u0627\u0645\u0647 \u067e\u06cc\u062f\u0627 \u06a9\u0631\u062f\u0647. \u0627\u06cc\u0646\u200c\u0647\u0627 \u0628\u0631\u0627\u06cc \u0645\u0627 \u0635\u0631\u0641\u0627\u064b \u0648\u0627\u0698\u0647\u200c\u0647\u0627\u06cc\u06cc \u0631\u0648\u06cc \u062f\u06cc\u0648\u0627\u0631 \u0646\u06cc\u0633\u062a\u0646\u060c \u0645\u0641\u0627\u0647\u06cc\u0645\u06cc\u200c\u0627\u0646 \u06a9\u0647 \u062a\u0648\u06cc \u0631\u0641\u062a\u0627\u0631\u0645\u0648\u0646 \u062d\u0636\u0648\u0631 \u062f\u0627\u0631\u0646\u060c \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0647\u0627\u0645\u0648\u0646 \u0631\u0648 \u062c\u0647\u062a \u0645\u06cc\u200c\u062f\u0646 \u0648 \u062c\u0647\u0627\u0646\u200c\u0628\u06cc\u0646\u06cc \u0645\u0627 \u0631\u0648 \u0645\u06cc\u200c\u0633\u0627\u0632\u0646.\n\n\u0631\u0648\u062d\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u06cc\u060c \u0628\u06cc\u200c\u0628\u0627\u06a9\u06cc\u060c \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u067e\u0630\u06cc\u0631\u06cc\u060c \u0627\u0634\u062a\u06cc\u0627\u0642 \u0648 \u0645\u0634\u0627\u0631\u06a9\u062a\u060c \u0645\u0641\u0627\u0647\u06cc\u0645 \u0645\u062d\u0648\u0631\u06cc \u0641\u0631\u0647\u0646\u06af \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647.\r"
-                  }
-                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__bdec8)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ylbMm
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u0627\u0647\u0644 \u06a9\u0627\u0645 \u0648 \u0646\u0627\u0632 \u0631\u0627 \u062f\u0631 \u06a9\u0648\u06cc \u0631\u0646\u062f\u06cc \u0631\u0627\u0647 \u0646\u06cc\u0633\u062a\r\n\u0631\u0647\u0631\u0648\u06cc \u0628\u0627\u06cc\u062f \u062c\u0647\u0627\u0646\u200c\u0633\u0648\u0632\u06cc \u0646\u0647 \u062e\u0627\u0645\u06cc \u0628\u06cc\u200c\u063a\u0645\u06cc"
+                  : "\u0627\u0647\u0644 \u06a9\u0627\u0645 \u0648 \u0646\u0627\u0632 \u0631\u0627 \u062f\u0631 \u06a9\u0648\u06cc \u0631\u0646\u062f\u06cc \u0631\u0627\u0647 \u0646\u06cc\u0633\u062a\r       \u0631\u0647\u0631\u0648\u06cc \u0628\u0627\u06cc\u062f \u062c\u0647\u0627\u0646\u200c\u0633\u0648\u0632\u06cc \u0646\u0647 \u062e\u0627\u0645\u06cc \u0628\u06cc\u200c\u063a\u0645\u06cc"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__bTKrT
+                )}
+              >
+                {
+                  "\u0627\u0641\u0631\u0627\u062f\u06cc \u06a9\u0647 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u0627\u0631\u062a\u0628\u0627\u0637\u0646\u060c \u0641\u0642\u0637 \u0647\u0645\u06a9\u0627\u0631 \u06cc\u0627 \u0645\u062e\u0627\u0637\u0628 \u0646\u06cc\u0633\u062a\u0646. \u0622\u062f\u0645\u200c\u0647\u0627\u06cc \u0641\u0648\u0642\u200c\u0627\u0644\u0639\u0627\u062f\u0647\u200c\u0627\u06cc \u0647\u0633\u062a\u0646 \u06a9\u0647 \u0647\u0631 \u06a9\u062f\u0648\u0645 \u062f\u0627\u0633\u062a\u0627\u0646\u06cc \u0628\u0631\u0627\u06cc \u06af\u0641\u062a\u0646 \u062f\u0627\u0631\u0646. \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0632\u0646\u062f\u06af\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0646 \u0648 \u0628\u062e\u0634\u06cc \u0627\u0632 \u00ab\u0645\u0627\u00bb \u0647\u0633\u062a\u0646\u061b \u0627\u0632 \u0627\u0639\u0636\u0627\u06cc \u062a\u06cc\u0645 \u0648 \u062e\u0627\u0646\u0648\u0627\u062f\u0647\u200c\u0647\u0627\u0634\u0648\u0646 \u06af\u0631\u0641\u062a\u0647 \u062a\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0648 \u0647\u0631 \u06a9\u0633\u06cc \u06a9\u0647 \u0622\u0631\u0645\u0627\u0646 \u0645\u0634\u062a\u0631\u06a9\u06cc \u0628\u0627 \u0645\u0627 \u062f\u0627\u0631\u0647.\n\n\u0627\u0633\u062a\u062e\u0648\u0627\u0646\u200c\u0628\u0646\u062f\u06cc \u0641\u0631\u0647\u0646\u06af \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0645\u062c\u0645\u0648\u0639\u0647\u200c\u0627\u06cc \u0627\u0632 \u0627\u0631\u0632\u0634\u200c\u0647\u0627\u0633\u062a. \u0627\u0631\u0632\u0634\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0628\u0627\u0648\u0631 \u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0634\u06a9\u0644 \u06af\u0631\u0641\u062a\u0647\u060c \u0631\u0634\u062f \u06a9\u0631\u062f\u0647 \u0648 \u062a\u0627 \u0627\u0645\u0631\u0648\u0632 \u0627\u062f\u0627\u0645\u0647 \u067e\u06cc\u062f\u0627 \u06a9\u0631\u062f\u0647. \u0627\u06cc\u0646\u200c\u0647\u0627 \u0628\u0631\u0627\u06cc \u0645\u0627 \u0635\u0631\u0641\u0627\u064b \u0648\u0627\u0698\u0647\u200c\u0647\u0627\u06cc\u06cc \u0631\u0648\u06cc \u062f\u06cc\u0648\u0627\u0631 \u0646\u06cc\u0633\u062a\u0646\u060c \u0645\u0641\u0627\u0647\u06cc\u0645\u06cc\u200c\u0627\u0646 \u06a9\u0647 \u062a\u0648\u06cc \u0631\u0641\u062a\u0627\u0631\u0645\u0648\u0646 \u062d\u0636\u0648\u0631 \u062f\u0627\u0631\u0646\u060c \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0647\u0627\u0645\u0648\u0646 \u0631\u0648 \u062c\u0647\u062a \u0645\u06cc\u200c\u062f\u0646 \u0648 \u062c\u0647\u0627\u0646\u200c\u0628\u06cc\u0646\u06cc \u0645\u0627 \u0631\u0648 \u0645\u06cc\u200c\u0633\u0627\u0632\u0646.\n\n\u0631\u0648\u062d\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u06cc\u060c \u0628\u06cc\u200c\u0628\u0627\u06a9\u06cc\u060c \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u067e\u0630\u06cc\u0631\u06cc\u060c \u0627\u0634\u062a\u06cc\u0627\u0642 \u0648 \u0645\u0634\u0627\u0631\u06a9\u062a\u060c \u0645\u0641\u0627\u0647\u06cc\u0645 \u0645\u062d\u0648\u0631\u06cc \u0641\u0631\u0647\u0646\u06af \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647.\r"
+                }
               </div>
             </div>
             <div
@@ -1588,22 +1747,112 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   sty.introAutoSyncCaption3
                 )}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__lIzrz
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627 \u0647\u0645\u0647 \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u0627\u0646. \u0647\u0631\u06a9\u0633\u06cc \u0628\u0627 \u0647\u0631 \u067e\u06cc\u0634\u200c\u0632\u0645\u06cc\u0646\u0647\u200c\u0627\u06cc \u0645\u0647\u0627\u0631\u062a \u0633\u0627\u062e\u062a\u0646 \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u06cc\u0627\u062f \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u0645\u0633\u0627\u0626\u0644\u06cc \u06a9\u0647 \u0628\u0647\u0634 \u0633\u067e\u0631\u062f\u0647 \u0634\u062f\u0647 \u0631\u0648 \u062d\u0644 \u06a9\u0646\u0647 \u0648 \u062d\u062a\u06cc \u0645\u0633\u062a\u0642\u06cc\u0645\u0627 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u062e\u0631\u0648\u062c\u06cc \u0628\u062f\u0647. \u067e\u0633 \u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627\u060c \u0641\u0642\u0637 \u0628\u0631\u0627\u06cc \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u00ab\u0631\u0648\u062d\u06cc\u0647 \u0633\u0627\u062e\u062a\u0646 \u0648 \u0627\u06cc\u062c\u0627\u062f \u062a\u063a\u06cc\u06cc\u0631\u00bb \u062f\u0627\u0631\u0646 \u062c\u0627 \u0647\u0633\u062a.\n\n\u0646\u0642\u0634\u06cc \u06a9\u0647 \u062f\u0646\u0628\u0627\u0644\u200c\u0634 \u0647\u0633\u062a\u06cc\u0645\u060c \u0686\u06cc\u0632\u06cc \u0628\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0646\u0648\u06cc\u0633 \u0648 \u067e\u0631\u0648\u062f\u0627\u06a9\u062a \u0645\u0646\u06cc\u062c\u0631\u0647 (\u0645\u0627 \u0628\u0647\u0634 \u0645\u06cc\u200c\u06af\u06cc\u0645 builder). \u06a9\u0633\u06cc \u06a9\u0647 \u0645\u0633\u0626\u0644\u0647\u200c\u06cc \u06a9\u0627\u0631\u0628\u0631 \u0631\u0648 \u062a\u062d\u0644\u06cc\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0631\u0627\u0647 \u062d\u0644 \u0645\u06cc\u062f\u0647\u060c \u0627\u0648\u0646 \u0631\u0648 \u0628\u0647 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u06a9\u0648\u0686\u06a9 \u0645\u06cc\u200c\u0634\u06a9\u0646\u0647\u060c \u0648 \u062e\u0631\u0648\u062c\u06cc \u0645\u06cc\u200c\u0633\u0627\u0632\u0647 \u0648 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u062f\u0647.\n\n\u0645\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u0648\u0644\u0648\u06cc\u062a \u0631\u0648 \u0628\u0647 \u0633\u0631\u0639\u062a \u062f\u0631 \u062d\u0644 \u0645\u0634\u06a9\u0644 \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645\u060c \u0646\u0647 \u0628\u0647 \u06a9\u0645\u0627\u0644\u200c\u06af\u0631\u0627\u06cc\u06cc \u06cc\u0627 \u0646\u0648\u0634\u062a\u0646 \u06a9\u062f \u0628\u0631\u0627\u06cc \u062c\u0630\u0627\u0628\u06cc\u062a\u0634. \u062c\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06cc\u0650 \u0622\u0645\u0627\u062f\u0647 \u06cc\u0627 \u0633\u0631\u0648\u06cc\u0633\u200c\u0647\u0627\u06cc no-code \u0645\u062b\u0644 n8n \u067e\u0627\u0633\u062e\u200c\u06af\u0648 \u0628\u0627\u0634\u0647\u060c \u0627\u0632\u0634\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c \u0648 \u0641\u0642\u0637 \u062c\u0627\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u06cc\u0627\u0632 \u0628\u0627\u0634\u0647\u060c \u0633\u0631\u0627\u063a \u06a9\u062f\u0646\u0648\u06cc\u0633\u06cc \u0645\u06cc\u200c\u0631\u06cc\u0645.\n\n\u0645\u0627 \u0628\u0647 \u06a9\u0645\u06a9 \u06cc\u0647 \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u06cc \u062f\u06cc\u06af\u0647 \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u06cc\u0645\u061b \u0686\u0648\u0646 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0647\u0631 \u0631\u0648\u0632 \u0645\u0633\u0626\u0644\u0647\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u06cc \u062f\u0627\u0631\u0646 \u06a9\u0647 \u0645\u0646\u062a\u0638\u0631 \u067e\u0627\u0633\u062e \u0645\u0627\u0633\u062a.\r"
-                    : "\u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627 \u0647\u0645\u0647 \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u0627\u0646. \u0647\u0631\u06a9\u0633\u06cc \u0628\u0627 \u0647\u0631 \u067e\u06cc\u0634\u200c\u0632\u0645\u06cc\u0646\u0647\u200c\u0627\u06cc \u0645\u0647\u0627\u0631\u062a \u0633\u0627\u062e\u062a\u0646 \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u06cc\u0627\u062f \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u0645\u0633\u0627\u0626\u0644\u06cc \u06a9\u0647 \u0628\u0647\u0634 \u0633\u067e\u0631\u062f\u0647 \u0634\u062f\u0647 \u0631\u0648 \u062d\u0644 \u06a9\u0646\u0647 \u0648 \u062d\u062a\u06cc \u0645\u0633\u062a\u0642\u06cc\u0645\u0627 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u062e\u0631\u0648\u062c\u06cc \u0628\u062f\u0647.  \u067e\u0633 \u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627\u060c \u0641\u0642\u0637 \u0628\u0631\u0627\u06cc \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u00ab\u0631\u0648\u062d\u06cc\u0647 \u0633\u0627\u062e\u062a\u0646 \u0648 \u0627\u06cc\u062c\u0627\u062f \u062a\u063a\u06cc\u06cc\u0631\u00bb \u062f\u0627\u0631\u0646 \u062c\u0627 \u0647\u0633\u062a.\n\n\u0646\u0642\u0634\u06cc \u06a9\u0647 \u062f\u0646\u0628\u0627\u0644\u200c\u0634 \u0647\u0633\u062a\u06cc\u0645\u060c \u0686\u06cc\u0632\u06cc \u0628\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0646\u0648\u06cc\u0633 \u0648 \u067e\u0631\u0648\u062f\u0627\u06a9\u062a \u0645\u0646\u06cc\u062c\u0631\u0647 (\u0645\u0627 \u0628\u0647\u0634 \u0645\u06cc\u200c\u06af\u06cc\u0645 builder). \u06a9\u0633\u06cc \u06a9\u0647 \u0645\u0633\u0626\u0644\u0647\u200c\u06cc \u06a9\u0627\u0631\u0628\u0631 \u0631\u0648 \u062a\u062d\u0644\u06cc\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0631\u0627\u0647 \u062d\u0644 \u0645\u06cc\u062f\u0647\u060c \u0627\u0648\u0646 \u0631\u0648 \u0628\u0647 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u06a9\u0648\u0686\u06a9 \u0645\u06cc\u200c\u0634\u06a9\u0646\u0647\u060c \u0648 \u062e\u0631\u0648\u062c\u06cc \u0645\u06cc\u200c\u0633\u0627\u0632\u0647 \u0648 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u062f\u0647.\n\n\u0645\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u0648\u0644\u0648\u06cc\u062a \u0631\u0648 \u0628\u0647 \u0633\u0631\u0639\u062a \u062f\u0631 \u062d\u0644 \u0645\u0634\u06a9\u0644 \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645\u060c \u0646\u0647 \u0628\u0647 \u06a9\u0645\u0627\u0644\u200c\u06af\u0631\u0627\u06cc\u06cc \u06cc\u0627 \u0646\u0648\u0634\u062a\u0646 \u06a9\u062f \u0628\u0631\u0627\u06cc \u062c\u0630\u0627\u0628\u06cc\u062a\u0634. \u062c\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06cc\u0650 \u0622\u0645\u0627\u062f\u0647 \u06cc\u0627 \u0633\u0631\u0648\u06cc\u0633\u200c\u0647\u0627\u06cc no-code \u0645\u062b\u0644 n8n \u067e\u0627\u0633\u062e\u200c\u06af\u0648 \u0628\u0627\u0634\u0647\u060c \u0627\u0632\u0634\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c \u0648 \u0641\u0642\u0637 \u062c\u0627\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u06cc\u0627\u0632 \u0628\u0627\u0634\u0647\u060c \u0633\u0631\u0627\u063a \u06a9\u062f\u0646\u0648\u06cc\u0633\u06cc \u0645\u06cc\u200c\u0631\u06cc\u0645.\n\n\u0645\u0627 \u0628\u0647 \u06a9\u0645\u06a9 \u06cc\u0647 \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u06cc \u062f\u06cc\u06af\u0647 \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u06cc\u0645\u061b \u0686\u0648\u0646 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0647\u0631 \u0631\u0648\u0632 \u0645\u0633\u0626\u0644\u0647\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u06cc \u062f\u0627\u0631\u0646 \u06a9\u0647 \u0645\u0646\u062a\u0638\u0631 \u067e\u0627\u0633\u062e \u0645\u0627\u0633\u062a.\r"}
+                <div className={classNames(projectcss.all, sty.freeBox__mfS19)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__lIzrz
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627 \u0647\u0645\u0647 \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u0627\u0646. \u0647\u0631\u06a9\u0633\u06cc \u0628\u0627 \u0647\u0631 \u067e\u06cc\u0634\u200c\u0632\u0645\u06cc\u0646\u0647\u200c\u0627\u06cc \u0645\u0647\u0627\u0631\u062a \u0633\u0627\u062e\u062a\u0646 \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u06cc\u0627\u062f \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u0645\u0633\u0627\u0626\u0644\u06cc \u06a9\u0647 \u0628\u0647\u0634 \u0633\u067e\u0631\u062f\u0647 \u0634\u062f\u0647 \u0631\u0648 \u062d\u0644 \u06a9\u0646\u0647 \u0648 \u062d\u062a\u06cc \u0645\u0633\u062a\u0642\u06cc\u0645\u0627 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u062e\u0631\u0648\u062c\u06cc \u0628\u062f\u0647. \u067e\u0633 \u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627\u060c \u0641\u0642\u0637 \u0628\u0631\u0627\u06cc \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u00ab\u0631\u0648\u062d\u06cc\u0647 \u0633\u0627\u062e\u062a\u0646 \u0648 \u0627\u06cc\u062c\u0627\u062f \u062a\u063a\u06cc\u06cc\u0631\u00bb \u062f\u0627\u0631\u0646 \u062c\u0627 \u0647\u0633\u062a.\n\n\u0646\u0642\u0634\u06cc \u06a9\u0647 \u062f\u0646\u0628\u0627\u0644\u200c\u0634 \u0647\u0633\u062a\u06cc\u0645\u060c \u0686\u06cc\u0632\u06cc \u0628\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0646\u0648\u06cc\u0633 \u0648 \u067e\u0631\u0648\u062f\u0627\u06a9\u062a \u0645\u0646\u06cc\u062c\u0631\u0647 (\u0645\u0627 \u0628\u0647\u0634 \u0645\u06cc\u200c\u06af\u06cc\u0645 builder). \u06a9\u0633\u06cc \u06a9\u0647 \u0645\u0633\u0626\u0644\u0647\u200c\u06cc \u06a9\u0627\u0631\u0628\u0631 \u0631\u0648 \u062a\u062d\u0644\u06cc\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0631\u0627\u0647 \u062d\u0644 \u0645\u06cc\u062f\u0647\u060c \u0627\u0648\u0646 \u0631\u0648 \u0628\u0647 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u06a9\u0648\u0686\u06a9 \u0645\u06cc\u200c\u0634\u06a9\u0646\u0647\u060c \u0648 \u062e\u0631\u0648\u062c\u06cc \u0645\u06cc\u200c\u0633\u0627\u0632\u0647 \u0648 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u062f\u0647.\n\n\u0645\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u0648\u0644\u0648\u06cc\u062a \u0631\u0648 \u0628\u0647 \u0633\u0631\u0639\u062a \u062f\u0631 \u062d\u0644 \u0645\u0634\u06a9\u0644 \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645\u060c \u0646\u0647 \u0628\u0647 \u06a9\u0645\u0627\u0644\u200c\u06af\u0631\u0627\u06cc\u06cc \u06cc\u0627 \u0646\u0648\u0634\u062a\u0646 \u06a9\u062f \u0628\u0631\u0627\u06cc \u062c\u0630\u0627\u0628\u06cc\u062a\u0634. \u062c\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06cc\u0650 \u0622\u0645\u0627\u062f\u0647 \u06cc\u0627 \u0633\u0631\u0648\u06cc\u0633\u200c\u0647\u0627\u06cc no-code \u0645\u062b\u0644 n8n \u067e\u0627\u0633\u062e\u200c\u06af\u0648 \u0628\u0627\u0634\u0647\u060c \u0627\u0632\u0634\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c \u0648 \u0641\u0642\u0637 \u062c\u0627\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u06cc\u0627\u0632 \u0628\u0627\u0634\u0647\u060c \u0633\u0631\u0627\u063a \u06a9\u062f\u0646\u0648\u06cc\u0633\u06cc \u0645\u06cc\u200c\u0631\u06cc\u0645.\n\n\u0645\u0627 \u0628\u0647 \u06a9\u0645\u06a9 \u06cc\u0647 \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u06cc \u062f\u06cc\u06af\u0647 \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u06cc\u0645\u061b \u0686\u0648\u0646 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0647\u0631 \u0631\u0648\u0632 \u0645\u0633\u0626\u0644\u0647\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u06cc \u062f\u0627\u0631\u0646 \u06a9\u0647 \u0645\u0646\u062a\u0638\u0631 \u067e\u0627\u0633\u062e \u0645\u0627\u0633\u062a.\r"
+                      : "\u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627 \u0647\u0645\u0647 \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u0627\u0646. \u0647\u0631\u06a9\u0633\u06cc \u0628\u0627 \u0647\u0631 \u067e\u06cc\u0634\u200c\u0632\u0645\u06cc\u0646\u0647\u200c\u0627\u06cc \u0645\u0647\u0627\u0631\u062a \u0633\u0627\u062e\u062a\u0646 \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u06cc\u0627\u062f \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u0645\u0633\u0627\u0626\u0644\u06cc \u06a9\u0647 \u0628\u0647\u0634 \u0633\u067e\u0631\u062f\u0647 \u0634\u062f\u0647 \u0631\u0648 \u062d\u0644 \u06a9\u0646\u0647 \u0648 \u062d\u062a\u06cc \u0645\u0633\u062a\u0642\u06cc\u0645\u0627 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u062e\u0631\u0648\u062c\u06cc \u0628\u062f\u0647.  \u067e\u0633 \u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627\u060c \u0641\u0642\u0637 \u0628\u0631\u0627\u06cc \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u00ab\u0631\u0648\u062d\u06cc\u0647 \u0633\u0627\u062e\u062a\u0646 \u0648 \u0627\u06cc\u062c\u0627\u062f \u062a\u063a\u06cc\u06cc\u0631\u00bb \u062f\u0627\u0631\u0646 \u062c\u0627 \u0647\u0633\u062a.\n\n\u0646\u0642\u0634\u06cc \u06a9\u0647 \u062f\u0646\u0628\u0627\u0644\u200c\u0634 \u0647\u0633\u062a\u06cc\u0645\u060c \u0686\u06cc\u0632\u06cc \u0628\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0646\u0648\u06cc\u0633 \u0648 \u067e\u0631\u0648\u062f\u0627\u06a9\u062a \u0645\u0646\u06cc\u062c\u0631\u0647 (\u0645\u0627 \u0628\u0647\u0634 \u0645\u06cc\u200c\u06af\u06cc\u0645 builder). \u06a9\u0633\u06cc \u06a9\u0647 \u0645\u0633\u0626\u0644\u0647\u200c\u06cc \u06a9\u0627\u0631\u0628\u0631 \u0631\u0648 \u062a\u062d\u0644\u06cc\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0631\u0627\u0647 \u062d\u0644 \u0645\u06cc\u062f\u0647\u060c \u0627\u0648\u0646 \u0631\u0648 \u0628\u0647 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u06a9\u0648\u0686\u06a9 \u0645\u06cc\u200c\u0634\u06a9\u0646\u0647\u060c \u0648 \u062e\u0631\u0648\u062c\u06cc \u0645\u06cc\u200c\u0633\u0627\u0632\u0647 \u0648 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u062f\u0647."}
+                  </div>
                 </div>
+                <div className={classNames(projectcss.all, sty.freeBox__x3NX2)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__wUaAb)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___3VFDa
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627 \u0647\u0645\u0647 \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u0627\u0646. \u0647\u0631\u06a9\u0633\u06cc \u0628\u0627 \u0647\u0631 \u067e\u06cc\u0634\u200c\u0632\u0645\u06cc\u0646\u0647\u200c\u0627\u06cc \u0645\u0647\u0627\u0631\u062a \u0633\u0627\u062e\u062a\u0646 \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u06cc\u0627\u062f \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u0645\u0633\u0627\u0626\u0644\u06cc \u06a9\u0647 \u0628\u0647\u0634 \u0633\u067e\u0631\u062f\u0647 \u0634\u062f\u0647 \u0631\u0648 \u062d\u0644 \u06a9\u0646\u0647 \u0648 \u062d\u062a\u06cc \u0645\u0633\u062a\u0642\u06cc\u0645\u0627 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u062e\u0631\u0648\u062c\u06cc \u0628\u062f\u0647. \u067e\u0633 \u062a\u0648\u06cc \u062a\u06cc\u0645 \u0645\u0627\u060c \u0641\u0642\u0637 \u0628\u0631\u0627\u06cc \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u00ab\u0631\u0648\u062d\u06cc\u0647 \u0633\u0627\u062e\u062a\u0646 \u0648 \u0627\u06cc\u062c\u0627\u062f \u062a\u063a\u06cc\u06cc\u0631\u00bb \u062f\u0627\u0631\u0646 \u062c\u0627 \u0647\u0633\u062a.\n\n\u0646\u0642\u0634\u06cc \u06a9\u0647 \u062f\u0646\u0628\u0627\u0644\u200c\u0634 \u0647\u0633\u062a\u06cc\u0645\u060c \u0686\u06cc\u0632\u06cc \u0628\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0646\u0648\u06cc\u0633 \u0648 \u067e\u0631\u0648\u062f\u0627\u06a9\u062a \u0645\u0646\u06cc\u062c\u0631\u0647 (\u0645\u0627 \u0628\u0647\u0634 \u0645\u06cc\u200c\u06af\u06cc\u0645 builder). \u06a9\u0633\u06cc \u06a9\u0647 \u0645\u0633\u0626\u0644\u0647\u200c\u06cc \u06a9\u0627\u0631\u0628\u0631 \u0631\u0648 \u062a\u062d\u0644\u06cc\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0631\u0627\u0647 \u062d\u0644 \u0645\u06cc\u062f\u0647\u060c \u0627\u0648\u0646 \u0631\u0648 \u0628\u0647 \u0628\u062e\u0634\u200c\u0647\u0627\u06cc \u06a9\u0648\u0686\u06a9 \u0645\u06cc\u200c\u0634\u06a9\u0646\u0647\u060c \u0648 \u062e\u0631\u0648\u062c\u06cc \u0645\u06cc\u200c\u0633\u0627\u0632\u0647 \u0648 \u0628\u0647 \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u062f\u0647.\n\n\u0645\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u0648\u0644\u0648\u06cc\u062a \u0631\u0648 \u0628\u0647 \u0633\u0631\u0639\u062a \u062f\u0631 \u062d\u0644 \u0645\u0634\u06a9\u0644 \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645\u060c \u0646\u0647 \u0628\u0647 \u06a9\u0645\u0627\u0644\u200c\u06af\u0631\u0627\u06cc\u06cc \u06cc\u0627 \u0646\u0648\u0634\u062a\u0646 \u06a9\u062f \u0628\u0631\u0627\u06cc \u062c\u0630\u0627\u0628\u06cc\u062a\u0634. \u062c\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06cc\u0650 \u0622\u0645\u0627\u062f\u0647 \u06cc\u0627 \u0633\u0631\u0648\u06cc\u0633\u200c\u0647\u0627\u06cc no-code \u0645\u062b\u0644 n8n \u067e\u0627\u0633\u062e\u200c\u06af\u0648 \u0628\u0627\u0634\u0647\u060c \u0627\u0632\u0634\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c \u0648 \u0641\u0642\u0637 \u062c\u0627\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u06cc\u0627\u0632 \u0628\u0627\u0634\u0647\u060c \u0633\u0631\u0627\u063a \u06a9\u062f\u0646\u0648\u06cc\u0633\u06cc \u0645\u06cc\u200c\u0631\u06cc\u0645.\n\n\u0645\u0627 \u0628\u0647 \u06a9\u0645\u06a9 \u06cc\u0647 \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u06cc \u062f\u06cc\u06af\u0647 \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u06cc\u0645\u061b \u0686\u0648\u0646 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0647\u0631 \u0631\u0648\u0632 \u0645\u0633\u0626\u0644\u0647\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u06cc \u062f\u0627\u0631\u0646 \u06a9\u0647 \u0645\u0646\u062a\u0638\u0631 \u067e\u0627\u0633\u062e \u0645\u0627\u0633\u062a.\r"
+                        : "\u0645\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u0648\u0644\u0648\u06cc\u062a \u0631\u0648 \u0628\u0647 \u0633\u0631\u0639\u062a \u062f\u0631 \u062d\u0644 \u0645\u0634\u06a9\u0644 \u06a9\u0627\u0631\u0628\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645\u060c \u0646\u0647 \u0628\u0647 \u06a9\u0645\u0627\u0644\u200c\u06af\u0631\u0627\u06cc\u06cc \u06cc\u0627 \u0646\u0648\u0634\u062a\u0646 \u06a9\u062f \u0628\u0631\u0627\u06cc \u062c\u0630\u0627\u0628\u06cc\u062a\u0634. \u062c\u0627\u06cc\u06cc \u06a9\u0647 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06cc\u0650 \u0622\u0645\u0627\u062f\u0647 \u06cc\u0627 \u0633\u0631\u0648\u06cc\u0633\u200c\u0647\u0627\u06cc no-code \u0645\u062b\u0644 n8n \u067e\u0627\u0633\u062e\u200c\u06af\u0648 \u0628\u0627\u0634\u0647\u060c \u0627\u0632\u0634\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c \u0648 \u0641\u0642\u0637 \u062c\u0627\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u06cc\u0627\u0632 \u0628\u0627\u0634\u0647\u060c \u0633\u0631\u0627\u063a \u06a9\u062f\u0646\u0648\u06cc\u0633\u06cc \u0645\u06cc\u200c\u0631\u06cc\u0645.\n\n\u0645\u0627 \u0628\u0647 \u06a9\u0645\u06a9 \u06cc\u0647 \u0633\u0627\u0632\u0646\u062f\u0647\u200c\u06cc \u062f\u06cc\u06af\u0647 \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u06cc\u0645\u061b \u0686\u0648\u0646 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0647\u0631 \u0631\u0648\u0632 \u0645\u0633\u0626\u0644\u0647\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u06cc \u062f\u0627\u0631\u0646 \u06a9\u0647 \u0645\u0646\u062a\u0638\u0631 \u067e\u0627\u0633\u062e \u0645\u0627\u0633\u062a.\r"}
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__beO9X)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__fHejH)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__oMwip)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "none"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "none"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "none"
+                            : "none"
+                        }
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "none"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "none"
+                            : "none"
+                        }
+                        displayMinHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "auto"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "auto"
+                            : "0"
+                        }
+                        displayMinWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "auto"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "auto"
+                            : "0"
+                        }
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                            ? "100%"
+                            : "100%"
+                        }
+                        loading={"lazy"}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fhosts%2F%D9%85%D8%B1%DB%8C%D9%85%20%D8%B0%D8%A7%DA%A9%D8%B1%D9%86%DA%98%D8%A7%D8%AF.jpg?versionId="
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"introAutoSyncCaption4"}
+                data-plasmic-override={overrides.introAutoSyncCaption4}
+                className={classNames(
+                  projectcss.all,
+                  sty.introAutoSyncCaption4
+                )}
+              >
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__bcvq1
+                    sty.text__ickip
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "mobile") ? (
@@ -1819,11 +2068,15 @@ const PlasmicDescendants = {
     "introTitle",
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
     "teamImage",
-    "introduction",
+    "introduction1Text",
+    "introduction2TextPics",
+    "introduction3",
     "principles",
     "title7",
     "uotlines",
     "ul",
+    "pic",
+    "pic2",
     "gridImages",
     "devMindset",
     "introAutoSyncTitle4",
@@ -1852,6 +2105,7 @@ const PlasmicDescendants = {
     "teamup",
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
+    "introAutoSyncCaption4",
     "address",
     "content",
     "addressText",
@@ -1872,11 +2126,15 @@ const PlasmicDescendants = {
     "introTitle",
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
     "teamImage",
-    "introduction",
+    "introduction1Text",
+    "introduction2TextPics",
+    "introduction3",
     "principles",
     "title7",
     "uotlines",
     "ul",
+    "pic",
+    "pic2",
     "gridImages",
     "devMindset",
     "introAutoSyncTitle4",
@@ -1905,6 +2163,7 @@ const PlasmicDescendants = {
     "teamup",
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
+    "introAutoSyncCaption4",
     "address",
     "content",
     "addressText",
@@ -1917,19 +2176,30 @@ const PlasmicDescendants = {
     "introTitle",
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627",
     "teamImage",
-    "introduction"
+    "introduction1Text",
+    "introduction2TextPics",
+    "introduction3"
   ],
   introTitle: [
     "introTitle",
     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"
   ],
   دربارهما: ["\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"],
-  teamImage: ["teamImage", "introduction"],
-  introduction: ["introduction"],
-  principles: ["principles", "title7", "uotlines", "ul"],
+  teamImage: [
+    "teamImage",
+    "introduction1Text",
+    "introduction2TextPics",
+    "introduction3"
+  ],
+  introduction1Text: ["introduction1Text"],
+  introduction2TextPics: ["introduction2TextPics"],
+  introduction3: ["introduction3"],
+  principles: ["principles", "title7", "uotlines", "ul", "pic", "pic2"],
   title7: ["title7"],
   uotlines: ["uotlines", "ul"],
   ul: ["ul"],
+  pic: ["pic", "pic2"],
+  pic2: ["pic2"],
   gridImages: ["gridImages"],
   devMindset: ["devMindset", "introAutoSyncTitle4"],
   introAutoSyncTitle4: ["introAutoSyncTitle4"],
@@ -1978,9 +2248,15 @@ const PlasmicDescendants = {
   icon18: ["icon18"],
   title19: ["title19"],
   caption18: ["caption18"],
-  teamup: ["teamup", "introAutoSyncTitle3", "introAutoSyncCaption3"],
+  teamup: [
+    "teamup",
+    "introAutoSyncTitle3",
+    "introAutoSyncCaption3",
+    "introAutoSyncCaption4"
+  ],
   introAutoSyncTitle3: ["introAutoSyncTitle3"],
   introAutoSyncCaption3: ["introAutoSyncCaption3"],
+  introAutoSyncCaption4: ["introAutoSyncCaption4"],
   address: ["address", "content", "addressText", "link", "map", "embedHtml"],
   content: ["content", "addressText", "link", "map", "embedHtml"],
   addressText: ["addressText", "link"],
@@ -2005,11 +2281,15 @@ type NodeDefaultElementType = {
   introTitle: "div";
   دربارهما: "div";
   teamImage: "div";
-  introduction: "div";
+  introduction1Text: "div";
+  introduction2TextPics: "div";
+  introduction3: "div";
   principles: "div";
   title7: "div";
   uotlines: "div";
   ul: "ul";
+  pic: "div";
+  pic2: "div";
   gridImages: "div";
   devMindset: "div";
   introAutoSyncTitle4: "div";
@@ -2038,6 +2318,7 @@ type NodeDefaultElementType = {
   teamup: "div";
   introAutoSyncTitle3: "div";
   introAutoSyncCaption3: "div";
+  introAutoSyncCaption4: "div";
   address: "div";
   content: "div";
   addressText: "div";
@@ -2121,11 +2402,15 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
       "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"
     ),
     teamImage: makeNodeComponent("teamImage"),
-    introduction: makeNodeComponent("introduction"),
+    introduction1Text: makeNodeComponent("introduction1Text"),
+    introduction2TextPics: makeNodeComponent("introduction2TextPics"),
+    introduction3: makeNodeComponent("introduction3"),
     principles: makeNodeComponent("principles"),
     title7: makeNodeComponent("title7"),
     uotlines: makeNodeComponent("uotlines"),
     ul: makeNodeComponent("ul"),
+    pic: makeNodeComponent("pic"),
+    pic2: makeNodeComponent("pic2"),
     gridImages: makeNodeComponent("gridImages"),
     devMindset: makeNodeComponent("devMindset"),
     introAutoSyncTitle4: makeNodeComponent("introAutoSyncTitle4"),
@@ -2154,6 +2439,7 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     teamup: makeNodeComponent("teamup"),
     introAutoSyncTitle3: makeNodeComponent("introAutoSyncTitle3"),
     introAutoSyncCaption3: makeNodeComponent("introAutoSyncCaption3"),
+    introAutoSyncCaption4: makeNodeComponent("introAutoSyncCaption4"),
     address: makeNodeComponent("address"),
     content: makeNodeComponent("content"),
     addressText: makeNodeComponent("addressText"),

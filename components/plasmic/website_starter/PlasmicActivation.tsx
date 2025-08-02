@@ -4615,7 +4615,7 @@ function PlasmicActivation__RenderFunc(props: {
                                           return setCookie(
                                             "prop_tour",
                                             "true",
-                                            2
+                                            168
                                           );
                                         })();
                                       }

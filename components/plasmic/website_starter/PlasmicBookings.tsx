@@ -60,6 +60,13 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
+import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
+import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
@@ -72,6 +79,11 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicBookings.module.css"; // plasmic-import: rNSSH2xZnrkV/css
+
+import Icon83Icon from "./icons/PlasmicIcon__Icon83"; // plasmic-import: gfE8ZaasAWNB/icon
+import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -134,6 +146,26 @@ export type PlasmicBookings__OverridesType = {
   description?: Flex__<"div">;
   platformStatus?: Flex__<"div">;
   openAndCloseButton2?: Flex__<"div">;
+  updateOrDeleteReserve?: Flex__<"div">;
+  updateManualReserve?: Flex__<typeof AntdModal>;
+  title4?: Flex__<"div">;
+  checkInAndCheckOut?: Flex__<"div">;
+  checkInAndCheckOut2?: Flex__<"div">;
+  referrer?: Flex__<"div">;
+  guestReferrer?: Flex__<typeof Select>;
+  count2?: Flex__<"div">;
+  guestCount?: Flex__<typeof AntdInputNumber>;
+  svg?: Flex__<"svg">;
+  p3?: Flex__<"div">;
+  amount2?: Flex__<typeof Input>;
+  amount?: Flex__<typeof AntdInputNumber>;
+  p1?: Flex__<"div">;
+  guestName2?: Flex__<typeof TextInput>;
+  p2?: Flex__<"div">;
+  phoneNumber?: Flex__<typeof TextInput>;
+  p5?: Flex__<"div">;
+  cancelManualReserve?: Flex__<typeof AntdModal>;
+  cancelledBtn?: Flex__<typeof AntdButton>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   profile?: Flex__<typeof ApiRequest>;
   html?: Flex__<"div">;
@@ -181,6 +213,8 @@ function PlasmicBookings__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const $globalActions = useGlobalActions?.();
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
@@ -255,6 +289,193 @@ function PlasmicBookings__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "booking"
+      },
+      {
+        path: "updateManualReserve.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "guestReferrer.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.booking.data.website;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "guestCount.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                {
+                  return (() => {
+                    const raw = String(
+                      $state.booking.data.manual_booking.guests_count || ""
+                    );
+                    const fa2en = {
+                      "۰": "0",
+                      "۱": "1",
+                      "۲": "2",
+                      "۳": "3",
+                      "۴": "4",
+                      "۵": "5",
+                      "۶": "6",
+                      "۷": "7",
+                      "۸": "8",
+                      "۹": "9"
+                    };
+                    const englishStr = raw
+                      .replace(/[۰-۹]/g, ch => fa2en[ch])
+                      .replace(/[٬,]/g, "");
+                    return Number(englishStr);
+                  })();
+                }
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "amount2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                {
+                  return (() => {
+                    const raw = String(
+                      $state.booking.data.manual_booking.amount || ""
+                    );
+                    const fa2en = {
+                      "۰": "0",
+                      "۱": "1",
+                      "۲": "2",
+                      "۳": "3",
+                      "۴": "4",
+                      "۵": "5",
+                      "۶": "6",
+                      "۷": "7",
+                      "۸": "8",
+                      "۹": "9"
+                    };
+                    const englishStr = raw
+                      .replace(/[۰-۹]/g, ch => fa2en[ch])
+                      .replace(/[٬,]/g, "");
+                    return Number(englishStr);
+                  })();
+                }
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "amount.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "guestName2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                if ($state.booking.data.manual_booking.guest_name == "-") {
+                  return null;
+                } else {
+                  return $state.booking.data.manual_booking.guest_name;
+                }
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "phoneNumber.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                if (
+                  $state.booking.data.manual_booking.guest_phone_number == "-"
+                ) {
+                  return null;
+                } else {
+                  return $state.booking.data.manual_booking.guest_phone_number;
+                }
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "showMobileError",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "phoneError",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "cancelManualReserve.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -1698,7 +1919,7 @@ function PlasmicBookings__RenderFunc(props: {
                           })()
                         : (() => {
                             try {
-                              return $state.booking.data[0].status == "reserve";
+                              return $state.booking.data.status == "reserve";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -5964,6 +6185,1341 @@ function PlasmicBookings__RenderFunc(props: {
                   </div>
                 ) : null}
               </div>
+              {(() => {
+                try {
+                  return $state.booking.data.manual_booking != null;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  data-plasmic-name={"updateOrDeleteReserve"}
+                  data-plasmic-override={overrides.updateOrDeleteReserve}
+                  className={classNames(
+                    projectcss.all,
+                    sty.updateOrDeleteReserve
+                  )}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      sty.freeBox__c19Hm,
+                      "clickable"
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateUpdateManualReserveOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["updateManualReserve", "open"]
+                              },
+                              operation: 0,
+                              value: true
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateUpdateManualReserveOpen"] != null &&
+                        typeof $steps["updateUpdateManualReserveOpen"] ===
+                          "object" &&
+                        typeof $steps["updateUpdateManualReserveOpen"].then ===
+                          "function"
+                      ) {
+                        $steps["updateUpdateManualReserveOpen"] = await $steps[
+                          "updateUpdateManualReserveOpen"
+                        ];
+                      }
+                    }}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__ehuYu)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image162.svg",
+                        fullWidth: 22,
+                        fullHeight: 22,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__vEaFp
+                      )}
+                    >
+                      {
+                        "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
+                      }
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__eNiFp)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox__eTUd,
+                        "clickable"
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateCancelManualReserveOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["cancelManualReserve", "open"]
+                                },
+                                operation: 0,
+                                value: true
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateCancelManualReserveOpen"] != null &&
+                          typeof $steps["updateCancelManualReserveOpen"] ===
+                            "object" &&
+                          typeof $steps["updateCancelManualReserveOpen"]
+                            .then === "function"
+                        ) {
+                          $steps["updateCancelManualReserveOpen"] =
+                            await $steps["updateCancelManualReserveOpen"];
+                        }
+                      }}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img___2OEd7)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image163.svg",
+                          fullWidth: 18,
+                          fullHeight: 18,
+                          aspectRatio: undefined
+                        }}
+                      />
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__nfqW0
+                        )}
+                      >
+                        {"\u0644\u063a\u0648 \u0631\u0632\u0631\u0648"}
+                      </div>
+                    </div>
+                  </div>
+                  <AntdModal
+                    data-plasmic-name={"updateManualReserve"}
+                    data-plasmic-override={overrides.updateManualReserve}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.updateManualReserve
+                    )}
+                    defaultStylesClassName={classNames(
+                      projectcss.root_reset,
+                      projectcss.plasmic_default_styles,
+                      projectcss.plasmic_mixins,
+                      projectcss.plasmic_tokens,
+                      plasmic_antd_5_hostless_css.plasmic_tokens,
+                      plasmic_plasmic_rich_components_css.plasmic_tokens
+                    )}
+                    hideFooter={true}
+                    modalScopeClassName={sty["updateManualReserve__modal"]}
+                    onOpenChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "updateManualReserve",
+                        "open"
+                      ]).apply(null, eventArgs);
+                    }}
+                    open={generateStateValueProp($state, [
+                      "updateManualReserve",
+                      "open"
+                    ])}
+                    title={null}
+                    trigger={null}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__xvtqk)}
+                    >
+                      <div
+                        data-plasmic-name={"title4"}
+                        data-plasmic-override={overrides.title4}
+                        className={classNames(projectcss.all, sty.title4)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__jcjVz
+                          )}
+                        >
+                          {
+                            "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"
+                          }
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"checkInAndCheckOut"}
+                        data-plasmic-override={overrides.checkInAndCheckOut}
+                        className={classNames(
+                          projectcss.all,
+                          sty.checkInAndCheckOut
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__tOeHh
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (() => {
+                                  function gregorianToJalali(gy, gm, gd) {
+                                    const g_d_m = [
+                                      0,
+                                      31,
+                                      (gy % 4 === 0 && gy % 100 !== 0) ||
+                                      gy % 400 === 0
+                                        ? 29
+                                        : 28,
+                                      31,
+                                      30,
+                                      31,
+                                      30,
+                                      31,
+                                      31,
+                                      30,
+                                      31,
+                                      30,
+                                      31
+                                    ];
+
+                                    let jy = gy <= 1600 ? 0 : 979;
+                                    gy -= gy <= 1600 ? 621 : 1600;
+                                    let gy2 = gm > 2 ? gy + 1 : gy;
+                                    let days =
+                                      365 * gy +
+                                      Math.floor((gy2 + 3) / 4) -
+                                      Math.floor((gy2 + 99) / 100) +
+                                      Math.floor((gy2 + 399) / 400);
+                                    for (let i = 0; i < gm; ++i)
+                                      days += g_d_m[i];
+                                    days += gd - 1;
+                                    let j_day_no = days - 79;
+                                    let j_np = Math.floor(j_day_no / 12053);
+                                    j_day_no %= 12053;
+                                    jy +=
+                                      33 * j_np +
+                                      4 * Math.floor(j_day_no / 1461);
+                                    j_day_no %= 1461;
+                                    if (j_day_no >= 366) {
+                                      jy += Math.floor((j_day_no - 1) / 365);
+                                      j_day_no = (j_day_no - 1) % 365;
+                                    }
+                                    const jm_list = [
+                                      0, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30,
+                                      30, 29
+                                    ];
+
+                                    let jm, jd;
+                                    for (
+                                      jm = 1;
+                                      jm <= 12 && j_day_no >= jm_list[jm];
+                                      ++jm
+                                    ) {
+                                      j_day_no -= jm_list[jm];
+                                    }
+                                    jd = j_day_no + 1;
+                                    return [jy, jm, jd];
+                                  }
+                                  function formatPersianNumber(num) {
+                                    return num
+                                      .toString()
+                                      .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+                                  }
+                                  function jalaliMonthName(jm) {
+                                    const months = [
+                                      "",
+                                      "فروردین",
+                                      "اردیبهشت",
+                                      "خرداد",
+                                      "تیر",
+                                      "مرداد",
+                                      "شهریور",
+                                      "مهر",
+                                      "آبان",
+                                      "آذر",
+                                      "دی",
+                                      "بهمن",
+                                      "اسفند"
+                                    ];
+
+                                    return months[jm];
+                                  }
+                                  function formatJalaliDayMonth(isoDateStr) {
+                                    const date = new Date(isoDateStr);
+                                    const [, jm, jd] = gregorianToJalali(
+                                      date.getFullYear(),
+                                      date.getMonth() + 1,
+                                      date.getDate()
+                                    );
+                                    return `${formatPersianNumber(
+                                      jd
+                                    )} ${jalaliMonthName(jm)}`;
+                                  }
+                                  const checkIn = $state.booking.data.check_in;
+                                  const checkOut =
+                                    $state.booking.data.check_out;
+                                  const checkInStr =
+                                    formatJalaliDayMonth(checkIn);
+                                  const checkOutStr =
+                                    formatJalaliDayMonth(checkOut);
+                                  const message = `ورودی: ${checkInStr} - خروج: ${checkOutStr}`;
+                                  return message;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return " ";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"checkInAndCheckOut2"}
+                        data-plasmic-override={overrides.checkInAndCheckOut2}
+                        className={classNames(
+                          projectcss.all,
+                          sty.checkInAndCheckOut2
+                        )}
+                      >
+                        <div
+                          data-plasmic-name={"referrer"}
+                          data-plasmic-override={overrides.referrer}
+                          className={classNames(projectcss.all, sty.referrer)}
+                        >
+                          <Select
+                            data-plasmic-name={"guestReferrer"}
+                            data-plasmic-override={overrides.guestReferrer}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.guestReferrer
+                            )}
+                            onChange={async (...eventArgs: any) => {
+                              ((...eventArgs) => {
+                                generateStateOnChangeProp($state, [
+                                  "guestReferrer",
+                                  "value"
+                                ])(eventArgs[0]);
+                              }).apply(null, eventArgs);
+
+                              if (
+                                eventArgs.length > 1 &&
+                                eventArgs[1] &&
+                                eventArgs[1]._plasmic_state_init_
+                              ) {
+                                return;
+                              }
+                            }}
+                            options={(() => {
+                              const __composite = [
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { value: null, label: null },
+                                { label: null, value: null },
+                                { value: null, label: null },
+                                { value: null, label: null }
+                              ];
+                              __composite["0"]["value"] = "Returning_Guest";
+                              __composite["0"]["label"] =
+                                "\u0645\u0633\u0627\u0641\u0631 \u0642\u0628\u0644\u06cc";
+                              __composite["1"]["value"] = "divar";
+                              __composite["1"]["label"] =
+                                "\u062f\u06cc\u0648\u0627\u0631";
+                              __composite["2"]["value"] = "Broker or Colleague";
+                              __composite["2"]["label"] =
+                                "\u0648\u0627\u0633\u0637\u0647 \u06cc\u0627 \u0647\u0645\u06a9\u0627\u0631";
+                              __composite["3"]["label"] =
+                                "\u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0648 \u0634\u0628\u06a9\u0647\u200c\u0627\u062c\u062a\u0645\u0627\u0639\u06cc";
+                              __composite["3"]["value"] = "social";
+                              __composite["4"]["value"] = "offline";
+                              __composite["4"]["label"] =
+                                "\u062d\u0636\u0648\u0631\u06cc";
+                              __composite["5"]["value"] = "others";
+                              __composite["5"]["label"] =
+                                "\u0633\u0627\u06cc\u0631";
+                              return __composite;
+                            })()}
+                            placeholder={
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__ktlt9
+                                )}
+                              >
+                                {
+                                  "\u0645\u0639\u0631\u0641 \u0645\u0647\u0645\u0627\u0646"
+                                }
+                              </div>
+                            }
+                            value={generateStateValueProp($state, [
+                              "guestReferrer",
+                              "value"
+                            ])}
+                          />
+                        </div>
+                        <div
+                          data-plasmic-name={"count2"}
+                          data-plasmic-override={overrides.count2}
+                          className={classNames(projectcss.all, sty.count2)}
+                        >
+                          <AntdInputNumber
+                            data-plasmic-name={"guestCount"}
+                            data-plasmic-override={overrides.guestCount}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.guestCount
+                            )}
+                            onChange={async (...eventArgs: any) => {
+                              generateStateOnChangeProp($state, [
+                                "guestCount",
+                                "value"
+                              ]).apply(null, eventArgs);
+                            }}
+                            placeholder={"\u0646\u0641\u0631\u0627\u062a"}
+                            type={"number"}
+                            value={generateStateValueProp($state, [
+                              "guestCount",
+                              "value"
+                            ])}
+                          />
+
+                          <Icon83Icon
+                            data-plasmic-name={"svg"}
+                            data-plasmic-override={overrides.svg}
+                            className={classNames(projectcss.all, sty.svg)}
+                            role={"img"}
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"p3"}
+                        data-plasmic-override={overrides.p3}
+                        className={classNames(projectcss.all, sty.p3)}
+                      >
+                        <Input
+                          data-plasmic-name={"amount2"}
+                          data-plasmic-override={overrides.amount2}
+                          className={classNames("__wab_instance", sty.amount2)}
+                          onChange={async (...eventArgs: any) => {
+                            generateStateOnChangeProp($state, [
+                              "amount2",
+                              "value"
+                            ]).apply(null, eventArgs);
+                          }}
+                          placeholder={
+                            "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
+                          }
+                          type={"number"}
+                          value={generateStateValueProp($state, [
+                            "amount2",
+                            "value"
+                          ])}
+                        />
+
+                        <AntdInputNumber
+                          data-plasmic-name={"amount"}
+                          data-plasmic-override={overrides.amount}
+                          className={classNames("__wab_instance", sty.amount)}
+                          onChange={async (...eventArgs: any) => {
+                            generateStateOnChangeProp($state, [
+                              "amount",
+                              "value"
+                            ]).apply(null, eventArgs);
+                          }}
+                          placeholder={
+                            "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
+                          }
+                          type={"number"}
+                          value={generateStateValueProp($state, [
+                            "amount",
+                            "value"
+                          ])}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__dTdgL
+                          )}
+                        >
+                          {""}
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"p1"}
+                        data-plasmic-override={overrides.p1}
+                        className={classNames(projectcss.all, sty.p1)}
+                      >
+                        <TextInput
+                          data-plasmic-name={"guestName2"}
+                          data-plasmic-override={overrides.guestName2}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.guestName2
+                          )}
+                          onChange={async (...eventArgs: any) => {
+                            ((...eventArgs) => {
+                              generateStateOnChangeProp($state, [
+                                "guestName2",
+                                "value"
+                              ])((e => e.target?.value).apply(null, eventArgs));
+                            }).apply(null, eventArgs);
+
+                            if (
+                              eventArgs.length > 1 &&
+                              eventArgs[1] &&
+                              eventArgs[1]._plasmic_state_init_
+                            ) {
+                              return;
+                            }
+                          }}
+                          placeholder={
+                            "\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"
+                          }
+                          value={
+                            generateStateValueProp($state, [
+                              "guestName2",
+                              "value"
+                            ]) ?? ""
+                          }
+                        />
+                      </div>
+                      <div
+                        data-plasmic-name={"p2"}
+                        data-plasmic-override={overrides.p2}
+                        className={classNames(projectcss.all, sty.p2)}
+                      >
+                        <TextInput
+                          data-plasmic-name={"phoneNumber"}
+                          data-plasmic-override={overrides.phoneNumber}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.phoneNumber
+                          )}
+                          onChange={async (...eventArgs: any) => {
+                            ((...eventArgs) => {
+                              generateStateOnChangeProp($state, [
+                                "phoneNumber",
+                                "value"
+                              ])((e => e.target?.value).apply(null, eventArgs));
+                            }).apply(null, eventArgs);
+
+                            if (
+                              eventArgs.length > 1 &&
+                              eventArgs[1] &&
+                              eventArgs[1]._plasmic_state_init_
+                            ) {
+                              return;
+                            }
+                          }}
+                          placeholder={"\u0645\u0648\u0628\u0627\u06cc\u0644"}
+                          required={true}
+                          type={"text"}
+                          value={
+                            generateStateValueProp($state, [
+                              "phoneNumber",
+                              "value"
+                            ]) ?? ""
+                          }
+                        />
+
+                        {(() => {
+                          try {
+                            return $state.showMobileError;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__ltR7M
+                            )}
+                          >
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ color: "#DC2626" }}
+                              >
+                                {
+                                  "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062f\u0631\u0633\u062a \u0646\u06cc\u0633\u062a"
+                                }
+                              </span>
+                            </React.Fragment>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div
+                        data-plasmic-name={"p5"}
+                        data-plasmic-override={overrides.p5}
+                        className={classNames(projectcss.all, sty.p5)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__gaelA
+                          )}
+                        >
+                          <Button
+                            className={classNames(
+                              "__wab_instance",
+                              sty.button__cbWeT
+                            )}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["validationData"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          function toEnglishDigits(str) {
+                                            const faToEn = {
+                                              "۰": "0",
+                                              "۱": "1",
+                                              "۲": "2",
+                                              "۳": "3",
+                                              "۴": "4",
+                                              "۵": "5",
+                                              "۶": "6",
+                                              "۷": "7",
+                                              "۸": "8",
+                                              "۹": "9"
+                                            };
+                                            return str.replace(
+                                              /[۰-۹]/g,
+                                              ch => faToEn[ch]
+                                            );
+                                          }
+                                          function validateMobile() {
+                                            let raw =
+                                              $state.phoneNumber.value || "";
+                                            const phone = toEnglishDigits(
+                                              raw.trim()
+                                            );
+                                            if (phone === "") {
+                                              $state.showMobileError = false;
+                                              $state.phoneError = "";
+                                              return true;
+                                            }
+                                            const regex = /^09\d{9}$/;
+                                            if (!regex.test(phone)) {
+                                              if (phone.length !== 11) {
+                                                $state.phoneError =
+                                                  "شماره باید ۱۱ رقم باشه.";
+                                              } else if (
+                                                !phone.startsWith("09")
+                                              ) {
+                                                $state.phoneError =
+                                                  "شماره باید با 09 شروع بشه.";
+                                              } else {
+                                                $state.phoneError =
+                                                  "شماره صحیح نیست.";
+                                              }
+                                              $state.showMobileError = true;
+                                              return false;
+                                            }
+                                            $state.phoneError = "";
+                                            $state.showMobileError = false;
+                                            return true;
+                                          }
+                                          const isMobileValid =
+                                            validateMobile();
+                                          return isMobileValid;
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["validationData"] != null &&
+                                typeof $steps["validationData"] === "object" &&
+                                typeof $steps["validationData"].then ===
+                                  "function"
+                              ) {
+                                $steps["validationData"] = await $steps[
+                                  "validationData"
+                                ];
+                              }
+
+                              $steps["closeModal"] = $steps.validationData
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: [
+                                          "updateManualReserve",
+                                          "open"
+                                        ]
+                                      },
+                                      operation: 0
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["closeModal"] != null &&
+                                typeof $steps["closeModal"] === "object" &&
+                                typeof $steps["closeModal"].then === "function"
+                              ) {
+                                $steps["closeModal"] = await $steps[
+                                  "closeModal"
+                                ];
+                              }
+
+                              $steps["requestForUpdate"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        "https://gateway.rentamon.com/webhook/update_reservation_data",
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              return {
+                                                booking_id:
+                                                  $state.booking.data
+                                                    .booking_id,
+                                                guest_name:
+                                                  $state.guestName2.value,
+                                                count: $state.guestCount.value,
+                                                amount: $state.amount2.value,
+                                                source:
+                                                  $state.guestReferrer.value,
+                                                phone_number:
+                                                  $state.phoneNumber.value
+                                              };
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["requestForUpdate"] != null &&
+                                typeof $steps["requestForUpdate"] ===
+                                  "object" &&
+                                typeof $steps["requestForUpdate"].then ===
+                                  "function"
+                              ) {
+                                $steps["requestForUpdate"] = await $steps[
+                                  "requestForUpdate"
+                                ];
+                              }
+
+                              $steps["showTrueToast"] = $steps.validationData
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0631\u0632\u0631\u0648 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0648\u06cc\u0631\u0627\u06cc\u0634 \u0634\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["showTrueToast"] != null &&
+                                typeof $steps["showTrueToast"] === "object" &&
+                                typeof $steps["showTrueToast"].then ===
+                                  "function"
+                              ) {
+                                $steps["showTrueToast"] = await $steps[
+                                  "showTrueToast"
+                                ];
+                              }
+
+                              $steps["showFalseToast"] = !$steps.validationData
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        (() => {
+                                          try {
+                                            return $state.phoneError;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })(),
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["showFalseToast"] != null &&
+                                typeof $steps["showFalseToast"] === "object" &&
+                                typeof $steps["showFalseToast"].then ===
+                                  "function"
+                              ) {
+                                $steps["showFalseToast"] = await $steps[
+                                  "showFalseToast"
+                                ];
+                              }
+
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          $state.booking.data.website =
+                                            $state.guestReferrer.value;
+                                          $state.booking.data.manual_booking.guests_count =
+                                            $state.guestCount.value;
+                                          $state.booking.data.manual_booking.amount =
+                                            $state.amount2.value;
+                                          $state.booking.data.manual_booking.guest_name =
+                                            $state.guestName2.value;
+                                          return ($state.booking.data.manual_booking.guest_phone_number =
+                                            $state.phoneNumber.value);
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+                            }}
+                            submitsForm={false}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__bof09
+                              )}
+                            >
+                              {
+                                "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0631\u0632\u0631\u0648"
+                              }
+                            </div>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </AntdModal>
+                  <AntdModal
+                    data-plasmic-name={"cancelManualReserve"}
+                    data-plasmic-override={overrides.cancelManualReserve}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.cancelManualReserve
+                    )}
+                    defaultStylesClassName={classNames(
+                      projectcss.root_reset,
+                      projectcss.plasmic_default_styles,
+                      projectcss.plasmic_mixins,
+                      projectcss.plasmic_tokens,
+                      plasmic_antd_5_hostless_css.plasmic_tokens,
+                      plasmic_plasmic_rich_components_css.plasmic_tokens
+                    )}
+                    hideFooter={true}
+                    modalScopeClassName={sty["cancelManualReserve__modal"]}
+                    onOpenChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "cancelManualReserve",
+                        "open"
+                      ]).apply(null, eventArgs);
+                    }}
+                    open={generateStateValueProp($state, [
+                      "cancelManualReserve",
+                      "open"
+                    ])}
+                    title={null}
+                    trigger={null}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__mYePa)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___6Yxob
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (() => {
+                                function gregorianToJalali(gy, gm, gd) {
+                                  const g_d_m = [
+                                    0,
+                                    31,
+                                    (gy % 4 === 0 && gy % 100 !== 0) ||
+                                    gy % 400 === 0
+                                      ? 29
+                                      : 28,
+                                    31,
+                                    30,
+                                    31,
+                                    30,
+                                    31,
+                                    31,
+                                    30,
+                                    31,
+                                    30,
+                                    31
+                                  ];
+
+                                  let jy = gy <= 1600 ? 0 : 979;
+                                  gy -= gy <= 1600 ? 621 : 1600;
+                                  let gy2 = gm > 2 ? gy + 1 : gy;
+                                  let days =
+                                    365 * gy +
+                                    Math.floor((gy2 + 3) / 4) -
+                                    Math.floor((gy2 + 99) / 100) +
+                                    Math.floor((gy2 + 399) / 400);
+                                  for (let i = 0; i < gm; ++i) days += g_d_m[i];
+                                  days += gd - 1;
+                                  let j_day_no = days - 79;
+                                  let j_np = Math.floor(j_day_no / 12053);
+                                  j_day_no %= 12053;
+                                  jy +=
+                                    33 * j_np + 4 * Math.floor(j_day_no / 1461);
+                                  j_day_no %= 1461;
+                                  if (j_day_no >= 366) {
+                                    jy += Math.floor((j_day_no - 1) / 365);
+                                    j_day_no = (j_day_no - 1) % 365;
+                                  }
+                                  const jm_list = [
+                                    0, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30,
+                                    30, 29
+                                  ];
+
+                                  let jm, jd;
+                                  for (
+                                    jm = 1;
+                                    jm <= 12 && j_day_no >= jm_list[jm];
+                                    ++jm
+                                  ) {
+                                    j_day_no -= jm_list[jm];
+                                  }
+                                  jd = j_day_no + 1;
+                                  return [jy, jm, jd];
+                                }
+                                function formatPersianNumber(num) {
+                                  return num
+                                    .toString()
+                                    .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+                                }
+                                function formatJalaliDate(isoDateStr) {
+                                  const date = new Date(isoDateStr);
+                                  const [jy, jm, jd] = gregorianToJalali(
+                                    date.getFullYear(),
+                                    date.getMonth() + 1,
+                                    date.getDate()
+                                  );
+                                  const pad = n =>
+                                    formatPersianNumber(
+                                      n.toString().padStart(2, "0")
+                                    );
+                                  return `${pad(jy)}/${pad(jm)}/${pad(jd)}`;
+                                }
+                                const checkIn = $state.booking.data.check_in;
+                                const checkOut = $state.booking.data.check_out;
+                                const checkInJalali = formatJalaliDate(checkIn);
+                                const checkOutJalali =
+                                  formatJalaliDate(checkOut);
+                                const message = `مطمئنی می‌خوای رزرو  ${checkInJalali}  تا  ${checkOutJalali} رو لغو کنی؟`;
+                                return message;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return " ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__k4D2)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__hZiqB
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return `در صورت لغو، این روزها برای واحد «${$state.booking.data.property_name}» خالی می‌شن.`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0628\u0631\u0627\u06cc \u0648\u0627\u062d\u062f \u00ab\u0648\u06cc\u0644\u0627\u06cc\u06cc \u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0628\u0647\u0627\u0631\u0627\u0646\u00bb \u062e\u0627\u0644\u06cc \u0645\u06cc\u200c\u0634\u0646.";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__alr0H)}
+                    >
+                      <Button
+                        className={classNames(
+                          "__wab_instance",
+                          sty.button__pFhaP
+                        )}
+                        color={"red"}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["invokeGlobalAction"] = false
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "https://gateway.rentamon.com/webhook/cancelled_reserve",
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return (() => {
+                                          return {
+                                            booking_id:
+                                              $state.booking.data.booking_id
+                                          };
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["invokeGlobalAction"] != null &&
+                            typeof $steps["invokeGlobalAction"] === "object" &&
+                            typeof $steps["invokeGlobalAction"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction"] = await $steps[
+                              "invokeGlobalAction"
+                            ];
+                          }
+
+                          $steps["updateCancelManualReserveOpen"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: [
+                                      "cancelManualReserve",
+                                      "open"
+                                    ]
+                                  },
+                                  operation: 0
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateCancelManualReserveOpen"] != null &&
+                            typeof $steps["updateCancelManualReserveOpen"] ===
+                              "object" &&
+                            typeof $steps["updateCancelManualReserveOpen"]
+                              .then === "function"
+                          ) {
+                            $steps["updateCancelManualReserveOpen"] =
+                              await $steps["updateCancelManualReserveOpen"];
+                          }
+
+                          $steps["invokeGlobalAction2"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u0631\u0632\u0631\u0648 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["invokeGlobalAction2"] != null &&
+                            typeof $steps["invokeGlobalAction2"] === "object" &&
+                            typeof $steps["invokeGlobalAction2"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction2"] = await $steps[
+                              "invokeGlobalAction2"
+                            ];
+                          }
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return ($state.booking.data.status =
+                                      "cancelled");
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+                        }}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__rC0Mx
+                          )}
+                        >
+                          {"\u062a\u0627\u06cc\u06cc\u062f"}
+                        </div>
+                      </Button>
+                      <AntdButton
+                        data-plasmic-name={"cancelledBtn"}
+                        data-plasmic-override={overrides.cancelledBtn}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.cancelledBtn
+                        )}
+                        danger={false}
+                        onClick={async () => {
+                          const $steps = {};
+
+                          $steps["updateCancelManualReserveOpen"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: [
+                                      "cancelManualReserve",
+                                      "open"
+                                    ]
+                                  },
+                                  operation: 0
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateCancelManualReserveOpen"] != null &&
+                            typeof $steps["updateCancelManualReserveOpen"] ===
+                              "object" &&
+                            typeof $steps["updateCancelManualReserveOpen"]
+                              .then === "function"
+                          ) {
+                            $steps["updateCancelManualReserveOpen"] =
+                              await $steps["updateCancelManualReserveOpen"];
+                          }
+                        }}
+                        submitsForm={false}
+                        type={"default"}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__iwgQk
+                          )}
+                        >
+                          {"\u0646\u0647"}
+                        </div>
+                      </AntdButton>
+                    </div>
+                  </AntdModal>
+                </div>
+              ) : null}
             </ApiRequest>
           </div>
           <NavbarRntFooter
@@ -6087,6 +7643,26 @@ const PlasmicDescendants = {
     "description",
     "platformStatus",
     "openAndCloseButton2",
+    "updateOrDeleteReserve",
+    "updateManualReserve",
+    "title4",
+    "checkInAndCheckOut",
+    "checkInAndCheckOut2",
+    "referrer",
+    "guestReferrer",
+    "count2",
+    "guestCount",
+    "svg",
+    "p3",
+    "amount2",
+    "amount",
+    "p1",
+    "guestName2",
+    "p2",
+    "phoneNumber",
+    "p5",
+    "cancelManualReserve",
+    "cancelledBtn",
     "navbarRntFooter",
     "profile",
     "html",
@@ -6155,7 +7731,27 @@ const PlasmicDescendants = {
     "title2",
     "description",
     "platformStatus",
-    "openAndCloseButton2"
+    "openAndCloseButton2",
+    "updateOrDeleteReserve",
+    "updateManualReserve",
+    "title4",
+    "checkInAndCheckOut",
+    "checkInAndCheckOut2",
+    "referrer",
+    "guestReferrer",
+    "count2",
+    "guestCount",
+    "svg",
+    "p3",
+    "amount2",
+    "amount",
+    "p1",
+    "guestName2",
+    "p2",
+    "phoneNumber",
+    "p5",
+    "cancelManualReserve",
+    "cancelledBtn"
   ],
   generalData: ["generalData"],
   feature: [
@@ -6273,6 +7869,72 @@ const PlasmicDescendants = {
   description: ["description"],
   platformStatus: ["platformStatus"],
   openAndCloseButton2: ["openAndCloseButton2"],
+  updateOrDeleteReserve: [
+    "updateOrDeleteReserve",
+    "updateManualReserve",
+    "title4",
+    "checkInAndCheckOut",
+    "checkInAndCheckOut2",
+    "referrer",
+    "guestReferrer",
+    "count2",
+    "guestCount",
+    "svg",
+    "p3",
+    "amount2",
+    "amount",
+    "p1",
+    "guestName2",
+    "p2",
+    "phoneNumber",
+    "p5",
+    "cancelManualReserve",
+    "cancelledBtn"
+  ],
+  updateManualReserve: [
+    "updateManualReserve",
+    "title4",
+    "checkInAndCheckOut",
+    "checkInAndCheckOut2",
+    "referrer",
+    "guestReferrer",
+    "count2",
+    "guestCount",
+    "svg",
+    "p3",
+    "amount2",
+    "amount",
+    "p1",
+    "guestName2",
+    "p2",
+    "phoneNumber",
+    "p5"
+  ],
+  title4: ["title4"],
+  checkInAndCheckOut: ["checkInAndCheckOut"],
+  checkInAndCheckOut2: [
+    "checkInAndCheckOut2",
+    "referrer",
+    "guestReferrer",
+    "count2",
+    "guestCount",
+    "svg"
+  ],
+  referrer: ["referrer", "guestReferrer"],
+  guestReferrer: ["guestReferrer"],
+  count2: ["count2", "guestCount", "svg"],
+  guestCount: ["guestCount"],
+  svg: ["svg"],
+  p3: ["p3", "amount2", "amount"],
+  amount2: ["amount2"],
+  amount: ["amount"],
+  p1: ["p1", "guestName2"],
+  guestName2: ["guestName2"],
+  p2: ["p2", "phoneNumber"],
+  phoneNumber: ["phoneNumber"],
+  p5: ["p5"],
+  cancelManualReserve: ["cancelManualReserve", "cancelledBtn"],
+  cancelledBtn: ["cancelledBtn"],
   navbarRntFooter: ["navbarRntFooter"],
   profile: ["profile"],
   html: ["html", "clarityRntComponent", "faviconRntComponent"],
@@ -6332,6 +7994,26 @@ type NodeDefaultElementType = {
   description: "div";
   platformStatus: "div";
   openAndCloseButton2: "div";
+  updateOrDeleteReserve: "div";
+  updateManualReserve: typeof AntdModal;
+  title4: "div";
+  checkInAndCheckOut: "div";
+  checkInAndCheckOut2: "div";
+  referrer: "div";
+  guestReferrer: typeof Select;
+  count2: "div";
+  guestCount: typeof AntdInputNumber;
+  svg: "svg";
+  p3: "div";
+  amount2: typeof Input;
+  amount: typeof AntdInputNumber;
+  p1: "div";
+  guestName2: typeof TextInput;
+  p2: "div";
+  phoneNumber: typeof TextInput;
+  p5: "div";
+  cancelManualReserve: typeof AntdModal;
+  cancelledBtn: typeof AntdButton;
   navbarRntFooter: typeof NavbarRntFooter;
   profile: typeof ApiRequest;
   html: "div";
@@ -6447,6 +8129,26 @@ export const PlasmicBookings = Object.assign(
     description: makeNodeComponent("description"),
     platformStatus: makeNodeComponent("platformStatus"),
     openAndCloseButton2: makeNodeComponent("openAndCloseButton2"),
+    updateOrDeleteReserve: makeNodeComponent("updateOrDeleteReserve"),
+    updateManualReserve: makeNodeComponent("updateManualReserve"),
+    title4: makeNodeComponent("title4"),
+    checkInAndCheckOut: makeNodeComponent("checkInAndCheckOut"),
+    checkInAndCheckOut2: makeNodeComponent("checkInAndCheckOut2"),
+    referrer: makeNodeComponent("referrer"),
+    guestReferrer: makeNodeComponent("guestReferrer"),
+    count2: makeNodeComponent("count2"),
+    guestCount: makeNodeComponent("guestCount"),
+    svg: makeNodeComponent("svg"),
+    p3: makeNodeComponent("p3"),
+    amount2: makeNodeComponent("amount2"),
+    amount: makeNodeComponent("amount"),
+    p1: makeNodeComponent("p1"),
+    guestName2: makeNodeComponent("guestName2"),
+    p2: makeNodeComponent("p2"),
+    phoneNumber: makeNodeComponent("phoneNumber"),
+    p5: makeNodeComponent("p5"),
+    cancelManualReserve: makeNodeComponent("cancelManualReserve"),
+    cancelledBtn: makeNodeComponent("cancelledBtn"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     profile: makeNodeComponent("profile"),
     html: makeNodeComponent("html"),

@@ -200,21 +200,12 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   return null;
                 }
                 function isNotifyEnabled() {
-                  const firstVisitCookie = getCookieValue("first_visit");
-                  if (firstVisitCookie !== null) {
-                    return true;
-                  }
-                  const isNotify = localStorage.getItem("is_notify");
-                  if (isNotify !== null) {
-                    return true;
-                  }
-                  return false;
+                  const isNotify = localStorage.getItem("is_notify") !== null;
+                  const hasFirstVisit = getCookieValue("first_visit") !== null;
+                  const hasPropTour = getCookieValue("prop_tour") !== null;
+                  return isNotify || hasFirstVisit || hasPropTour;
                 }
-                if (isNotifyEnabled()) {
-                  return true;
-                } else {
-                  return false;
-                }
+                return isNotifyEnabled();
               })();
             } catch (e) {
               if (

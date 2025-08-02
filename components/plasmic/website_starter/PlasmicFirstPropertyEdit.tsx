@@ -1473,7 +1473,11 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                                         expires +
                                         "; path=/";
                                     }
-                                    return setCookie("first_visit", "true", 2);
+                                    return setCookie(
+                                      "first_visit",
+                                      "true",
+                                      168
+                                    );
                                   })();
                                 }
                               };

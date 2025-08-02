@@ -4201,6 +4201,16 @@
           "id": "RkMcRfneb9D6",
           "name": "home-cover.jpg",
           "filePath": "../public/plasmic/website_starter/images/homeCoverJpg.jpg"
+        },
+        {
+          "id": "Ubu4oSga_jCL",
+          "name": "image 162",
+          "filePath": "../public/plasmic/website_starter/images/image162.svg"
+        },
+        {
+          "id": "X1Q4NxDrVoLb",
+          "name": "image 163",
+          "filePath": "../public/plasmic/website_starter/images/image163.svg"
         }
       ],
       "indirect": false,
