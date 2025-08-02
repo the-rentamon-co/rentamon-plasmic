@@ -3404,7 +3404,8 @@
 }
 @media (max-width: 500px) {
   .img__x4L7O {
-    height: 30px;
+    height: 24px;
+    max-width: 100%;
   }
 }
 @media (max-width: 350px) {
@@ -3424,7 +3425,7 @@
 }
 @media (max-width: 500px) {
   .img__pemI9 {
-    height: 30px;
+    height: 24px;
     max-width: 100%;
     display: block;
   }

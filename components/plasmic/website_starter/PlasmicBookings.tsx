@@ -5882,7 +5882,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       "screen",
                                       "mobile"
                                     )
-                                  ? "30px"
+                                  ? "24px"
                                   : "27px"
                               }
                               displayMaxHeight={"none"}
@@ -5892,6 +5892,12 @@ function PlasmicBookings__RenderFunc(props: {
                                   "screen",
                                   "smallMobile"
                                 )
+                                  ? "100%"
+                                  : hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    )
                                   ? "100%"
                                   : "100%"
                               }
@@ -5957,7 +5963,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       "screen",
                                       "mobile"
                                     )
-                                  ? "30px"
+                                  ? "24px"
                                   : "27px"
                               }
                               displayMaxHeight={"none"}
@@ -6446,7 +6452,7 @@ function PlasmicBookings__RenderFunc(props: {
                               })()
                             : (() => {
                                 try {
-                                  return $state.accordionOpenSmartBooking
+                                  return $state.accordionOpenAutoSync
                                     ? "rotate-normal"
                                     : "rotate-flipped";
                                 } catch (e) {
@@ -6632,7 +6638,7 @@ function PlasmicBookings__RenderFunc(props: {
                         }
 
                         $steps["checkIfReserveBeCancelShowToast"] =
-                          $state.booking.data.status != "cancelled"
+                          $state.booking.data.status == "cancelled"
                             ? (() => {
                                 const actionArgs = {
                                   args: [
@@ -7484,7 +7490,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["updateFront"] = true
+                              $steps["updateFront"] = $steps.validationData
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {
