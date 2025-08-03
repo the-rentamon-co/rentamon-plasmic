@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState, useContext, forwardRef, useImperativeHandle } from 'react';
 import { CodeComponentMeta, DataProvider, useSelector } from '@plasmicapp/react-web/lib/host';
 import axios from 'axios';
-import { refreshAccessIfNeeded, logForDev, refreshUser } from './CommonUtils';
+// import { refreshAccessIfNeeded, logForDev, refreshUser } from './CommonUtils';
 import { GlobalContext } from './types/CommonTypes';
 
 
@@ -198,3 +198,4 @@ export const ApiFetcherMeta: CodeComponentMeta<PropsType> = {
   providesData: true,
   importPath: './utils/ApiFetcherComponent',
 };
+
