@@ -5782,7 +5782,10 @@ function PlasmicBookings__RenderFunc(props: {
                 ) : null}
                 {(() => {
                   try {
-                    return $state.booking.data.auto_sync_status != null;
+                    return (
+                      $state.booking.data.auto_sync_status != null ||
+                      $state.booking.data.smart_booking != null
+                    );
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -6319,6 +6322,34 @@ function PlasmicBookings__RenderFunc(props: {
                                   displayMinWidth={"0"}
                                   displayWidth={"auto"}
                                   loading={"lazy"}
+                                  onClick={async event => {
+                                    const $steps = {};
+
+                                    $steps["invokeGlobalAction"] = true
+                                      ? (() => {
+                                          const actionArgs = {
+                                            args: [
+                                              undefined,
+                                              "\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631 \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u0646\u062c\u0627\u0645 \u0646\u0634\u062f!",
+                                              "top-center"
+                                            ]
+                                          };
+                                          return $globalActions[
+                                            "Fragment.showToast"
+                                          ]?.apply(null, [...actionArgs.args]);
+                                        })()
+                                      : undefined;
+                                    if (
+                                      $steps["invokeGlobalAction"] != null &&
+                                      typeof $steps["invokeGlobalAction"] ===
+                                        "object" &&
+                                      typeof $steps["invokeGlobalAction"]
+                                        .then === "function"
+                                    ) {
+                                      $steps["invokeGlobalAction"] =
+                                        await $steps["invokeGlobalAction"];
+                                    }
+                                  }}
                                   src={{
                                     src: "/plasmic/website_starter/images/image161.svg",
                                     fullWidth: 22,
