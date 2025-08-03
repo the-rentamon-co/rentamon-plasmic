@@ -291,7 +291,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
             <React.Fragment>
               {(() => {
                 try {
-                  return $props.data.GuestName;
+                  return $props.data.guest_name;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -307,7 +307,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
             <React.Fragment>
               {(() => {
                 try {
-                  return $props.data.GuestName;
+                  return $props.data.guest_name;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -416,7 +416,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
             <React.Fragment>
               {(() => {
                 try {
-                  return $props.data.checkIn;
+                  return $props.data.check_in;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -471,7 +471,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
             <React.Fragment>
               {(() => {
                 try {
-                  return $props.data.platformName;
+                  return $props.data.website;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -487,7 +487,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
             <React.Fragment>
               {(() => {
                 try {
-                  return $props.data.platformName;
+                  return $props.data.website;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||

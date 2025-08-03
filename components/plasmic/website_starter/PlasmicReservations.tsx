@@ -1940,9 +1940,7 @@ function PlasmicReservations__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "mobile")
                           ? (() => {
                               try {
-                                return (
-                                  $state.reserveData.data[0].data[0].Id != null
-                                );
+                                return currentItem.id != null;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
