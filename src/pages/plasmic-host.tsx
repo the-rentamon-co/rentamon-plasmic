@@ -20,7 +20,7 @@ import { Slider, sliderMeta } from "@/fragment/components/slider";
 import { Chart, chartMeta } from "@/fragment/components/chart";
 import { Textarea, textareaMeta } from "@/fragment/components/textarea";
 
-// ✅ اضافه‌شده برای رجیستر تابع فشرده‌سازی تصویر
+// ✅ اضافه‌شده برای تابع فشرده‌سازی تصویر
 import {
   processAndCompressBase64,
   processAndCompressMultipleBase64,
