@@ -4400,6 +4400,7 @@
   justify-content: flex-start;
   align-items: center;
   background: #ffffff;
+  cursor: pointer;
   border-radius: 30px;
   padding: 8px;
 }

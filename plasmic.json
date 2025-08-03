@@ -4344,6 +4344,13 @@
           "importPath": "src/lib/imagecompressor",
           "name": "processAndCompressBase64",
           "namespace": null
+        },
+        {
+          "defaultExport": false,
+          "id": "fileToBase64",
+          "importPath": "src/lib/imagecompressor",
+          "name": "fileToBase64",
+          "namespace": null
         }
       ]
     },

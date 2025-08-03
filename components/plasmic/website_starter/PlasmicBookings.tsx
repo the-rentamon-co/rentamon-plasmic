@@ -8119,44 +8119,24 @@ function PlasmicBookings__RenderFunc(props: {
                           ];
                         }
 
-                        $steps["updateIsTheFirstVisit"] = true
+                        $steps["runCode2"] = true
                           ? (() => {
                               const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["isTheFirstVisit"]
-                                },
-                                operation: 4
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
+                                customFunction: async () => {
+                                  return ($state.isTheFirstVisit = false);
                                 }
-                                const { objRoot, variablePath } = variable;
-
-                                const oldValue = $stateGet(
-                                  objRoot,
-                                  variablePath
-                                );
-                                $stateSet(objRoot, variablePath, !oldValue);
-                                return !oldValue;
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
                               })?.apply(null, [actionArgs]);
                             })()
                           : undefined;
                         if (
-                          $steps["updateIsTheFirstVisit"] != null &&
-                          typeof $steps["updateIsTheFirstVisit"] === "object" &&
-                          typeof $steps["updateIsTheFirstVisit"].then ===
-                            "function"
+                          $steps["runCode2"] != null &&
+                          typeof $steps["runCode2"] === "object" &&
+                          typeof $steps["runCode2"].then === "function"
                         ) {
-                          $steps["updateIsTheFirstVisit"] = await $steps[
-                            "updateIsTheFirstVisit"
-                          ];
+                          $steps["runCode2"] = await $steps["runCode2"];
                         }
                       }}
                     >
