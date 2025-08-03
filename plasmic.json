@@ -1852,20 +1852,6 @@
           "cssFilePath": "plasmic/website_starter/PlasmicNavbarRntFooter.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "gPTziCkb7jLf",
-          "name": "FirstPropertyEditTest",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicFirstPropertyEditTest.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/property/edit/test.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicFirstPropertyEditTest.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/property/edit/test"
         }
       ],
       "icons": [
