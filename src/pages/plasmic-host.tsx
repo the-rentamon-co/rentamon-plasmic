@@ -20,7 +20,7 @@ import { Slider, sliderMeta } from "@/fragment/components/slider";
 import { Chart, chartMeta } from "@/fragment/components/chart";
 import { Textarea, textareaMeta } from "@/fragment/components/textarea";
 
-// ✅ اضافه‌شده برای تابع فشرده‌سازی تصویر
+// ✅ تابع‌های فشرده‌سازی تصویر
 import {
   processAndCompressBase64,
   processAndCompressMultipleBase64,
@@ -42,6 +42,14 @@ registerFunction(processAndCompressBase64, {
     },
   ],
 });
+
+// ✅ کامپوننت ApiFetcherComponent
+import {
+  ApiFetcherComponent,
+  ApiFetcherMeta,
+} from "../lib/ApiFetcherComponent";
+
+registerComponent(ApiFetcherComponent, ApiFetcherMeta);
 
 export default function PlasmicHost() {
   return <PlasmicCanvasHost />;
