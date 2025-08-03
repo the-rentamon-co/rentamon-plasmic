@@ -1506,7 +1506,7 @@ function PlasmicBookings__RenderFunc(props: {
               }}
               url={(() => {
                 try {
-                  return `https://gateway.rentamon.com/webhook/booking?booking_id=${$ctx.params.booking_id}`;
+                  return `https://gateway.rentamon.com/webhook/booking?booking_id=RNT${$ctx.params.booking_id}`;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -3692,9 +3692,7 @@ function PlasmicBookings__RenderFunc(props: {
                           sty.bookPrice,
                           (() => {
                             try {
-                              return $state.accordionOpenSmartBooking
-                                ? "display_block"
-                                : "display_hidden";
+                              return (() => {})();
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -3960,7 +3958,22 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.bookSettleStatus}
                         className={classNames(
                           projectcss.all,
-                          sty.bookSettleStatus
+                          sty.bookSettleStatus,
+                          (() => {
+                            try {
+                              return $state.accordionOpenSmartBooking
+                                ? "display_block"
+                                : "display_hidden";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
                         )}
                       >
                         {(() => {
@@ -7963,7 +7976,7 @@ function PlasmicBookings__RenderFunc(props: {
             data-plasmic-name={"navbarRntFooter"}
             data-plasmic-override={overrides.navbarRntFooter}
             className={classNames("__wab_instance", sty.navbarRntFooter)}
-            navPage={"reservations"}
+            navPage={``}
             userType={"1"}
           />
 
