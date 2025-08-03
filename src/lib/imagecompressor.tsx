@@ -1,7 +1,4 @@
-
-
 import imageCompression from 'browser-image-compression';
-
 
 /**
  * Converts raw or prefixed base64 string to a JPEG File
@@ -10,17 +7,14 @@ function rawBase64ToFile(base64: string, filename = 'image.jpg'): File {
   let mime = 'image/jpeg';
   let base64Data = base64;
 
-
   // Add data header if missing
   if (!base64.startsWith('data:')) {
     base64Data = `data:${mime};base64,${base64}`;
   }
 
-
   const [header, data] = base64Data.split(',');
   const mimeMatch = header.match(/:(.*?);/);
   if (!mimeMatch) throw new Error('Invalid base64 string: cannot extract MIME type');
-
 
   mime = mimeMatch[1];
   const binary = atob(data);
@@ -29,10 +23,8 @@ function rawBase64ToFile(base64: string, filename = 'image.jpg'): File {
     u8arr[i] = binary.charCodeAt(i);
   }
 
-
   return new File([u8arr], filename, { type: mime });
 }
-
 
 /**
  * Compress a base64 image and return the raw base64 string (no data URL header)
@@ -45,17 +37,14 @@ export async function processAndCompressBase64(input_base64string: string, quali
   try {
     const imageFile = rawBase64ToFile(input_base64string);
 
-
     const options = {
       maxSizeMB: quality,
       maxWidthOrHeight: 1920,
       useWebWorker: true,
     };
 
-
     const compressedFile = await imageCompression(imageFile, options);
     const compressedWithHeader = await imageCompression.getDataUrlFromFile(compressedFile);
-
 
     const [, rawCompressedBase64] = compressedWithHeader.split(',');
     return rawCompressedBase64;
@@ -64,7 +53,6 @@ export async function processAndCompressBase64(input_base64string: string, quali
     throw new Error('Failed to process and compress image');
   }
 }
-
 
 /**
  * Compress multiple base64 images and return an array of compressed raw base64 strings
@@ -79,12 +67,25 @@ export async function processAndCompressMultipleBase64(
 ): Promise<string[]> {
   const results: string[] = [];
 
-
   for (const base64 of input_base64strings) {
     const compressed = await processAndCompressBase64(base64, quality);
     results.push(compressed);
   }
 
-
   return results;
+}
+
+/**
+ * Converts a File (e.g., from upload.files[0]) to base64 string with data header
+ * 
+ * @param file - File object to convert
+ * @returns base64 string with data:image/...;base64, prefix
+ */
+export function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result as string);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
 }
