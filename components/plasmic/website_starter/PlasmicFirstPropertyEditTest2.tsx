@@ -78,6 +78,8 @@ import sty from "./PlasmicFirstPropertyEditTest2.module.css"; // plasmic-import:
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 
+import { processAndCompressBase64 as __fn_processAndCompressBase64 } from "src/lib/imagecompressor"; // plasmic-import: processAndCompressBase64/customFunction
+
 createPlasmicElementProxy;
 
 export type PlasmicFirstPropertyEditTest2__VariantMembers = {};
@@ -119,7 +121,9 @@ export type PlasmicFirstPropertyEditTest2__OverridesType = {
 
 export interface DefaultFirstPropertyEditTest2Props {}
 
-const $$ = {};
+const $$ = {
+  processAndCompressBase64: __fn_processAndCompressBase64
+};
 
 function useNextRouter() {
   try {
@@ -197,6 +201,12 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "compressedImage",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
       }
     ],
     [$props, $ctx, $refs]
@@ -1427,6 +1437,40 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                         $steps["updateLoading"] = await $steps["updateLoading"];
                       }
 
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (async () => {
+                                  return (async () => {
+                                    const file = $state.upload?.files?.[0];
+                                    if (!file) {
+                                      alert("فایلی انتخاب نشده");
+                                      return;
+                                    }
+                                    const compressed =
+                                      await $$.processAndCompressBase64(
+                                        file,
+                                        0.2
+                                      );
+                                    $state.compressedImage = compressed;
+                                  })();
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+
                       $steps["changePropertyPic"] = true
                         ? (() => {
                             const actionArgs = {
@@ -1436,13 +1480,11 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                                 undefined,
                                 (() => {
                                   try {
-                                    return (() => {
-                                      let a = {
-                                        prop_id: "1",
-                                        property_pic: $state.upload.files[0]
-                                      };
-                                      return a;
-                                    })();
+                                    return {
+                                      prop_id: "1",
+                                      property_pic_base64:
+                                        $state.compressedImage
+                                    };
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
@@ -1469,30 +1511,6 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                       ) {
                         $steps["changePropertyPic"] = await $steps[
                           "changePropertyPic"
-                        ];
-                      }
-
-                      $steps["invokeGlobalAction"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://gateway.rentamon.com/webhook/change_property_pic"
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
                         ];
                       }
 

@@ -70,6 +70,7 @@ import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -166,11 +167,13 @@ export type PlasmicBookings__OverridesType = {
   p5?: Flex__<"div">;
   cancelManualReserve?: Flex__<typeof AntdModal>;
   cancelledBtn?: Flex__<typeof AntdButton>;
+  tour?: Flex__<"div">;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   profile?: Flex__<typeof ApiRequest>;
   html?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultBookingsProps {}
@@ -476,6 +479,12 @@ function PlasmicBookings__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "isTheFirstVisit",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -650,9 +659,9 @@ function PlasmicBookings__RenderFunc(props: {
                   className={classNames(sty.img__ne5E1)}
                   displayHeight={
                     hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "28px"
+                      ? "32px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "31px"
+                      ? "36px"
                       : hasVariant(globalVariants, "screen", "tablet")
                       ? "48px"
                       : "60px"
@@ -1481,7 +1490,27 @@ function PlasmicBookings__RenderFunc(props: {
                   </div>
                 ) : null
               }
-              loadingDisplay={null}
+              loadingDisplay={
+                <div className={classNames(projectcss.all, sty.freeBox__nrZZm)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__tycgv)}
+                    displayHeight={"65px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image140.gif",
+                      fullWidth: 500,
+                      fullHeight: 500,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+              }
               method={"GET"}
               onError={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, ["booking", "error"]).apply(
@@ -2590,7 +2619,11 @@ function PlasmicBookings__RenderFunc(props: {
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__bMfM)}
-                          displayHeight={"auto"}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : "auto"
+                          }
                           displayMaxHeight={"none"}
                           displayMaxWidth={"100%"}
                           displayMinHeight={"0"}
@@ -6037,7 +6070,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 "screen",
                                 "smallMobile"
                               )
-                                ? "22px"
+                                ? "100%"
                                 : "auto"
                             }
                             displayMaxHeight={"none"}
@@ -6054,7 +6087,15 @@ function PlasmicBookings__RenderFunc(props: {
                             }
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
-                            displayWidth={"auto"}
+                            displayWidth={
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "26px"
+                                : "auto"
+                            }
                             loading={"lazy"}
                             src={{
                               src: "/plasmic/website_starter/images/image159.svg",
@@ -7970,6 +8011,168 @@ function PlasmicBookings__RenderFunc(props: {
                   </AntdModal>
                 </div>
               ) : null}
+              {(() => {
+                try {
+                  return $state.isTheFirstVisit;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  data-plasmic-name={"tour"}
+                  data-plasmic-override={overrides.tour}
+                  className={classNames(projectcss.all, sty.tour)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__cLBa)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__zj1Rz)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___2IRuR
+                        )}
+                      >
+                        {
+                          "\u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u062a\u0648\u0646\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u0631\u0648 \u0628\u0628\u06cc\u0646\u06cc"
+                        }
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__eV2SM)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    function deleteCookie(name) {
+                                      document.cookie =
+                                        name +
+                                        "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                    }
+                                    deleteCookie("first_visit");
+                                    return ($state.isTheFirstVisit = false);
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://gateway.rentamon.com/webhook/registration-steps-bookings",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $state.isTheFirstVisit;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+
+                        $steps["updateIsTheFirstVisit"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["isTheFirstVisit"]
+                                },
+                                operation: 4
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, !oldValue);
+                                return !oldValue;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateIsTheFirstVisit"] != null &&
+                          typeof $steps["updateIsTheFirstVisit"] === "object" &&
+                          typeof $steps["updateIsTheFirstVisit"].then ===
+                            "function"
+                        ) {
+                          $steps["updateIsTheFirstVisit"] = await $steps[
+                            "updateIsTheFirstVisit"
+                          ];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__gHd70
+                        )}
+                      >
+                        {"\u0628\u0627\u0634\u0647"}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
             </ApiRequest>
           </div>
           <NavbarRntFooter
@@ -8036,6 +8239,162 @@ function PlasmicBookings__RenderFunc(props: {
               />
             </div>
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          console.log("side effect started");
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            console.log("side effect in the cudition");
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/reservations/");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/reservations/";
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["runCode2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                return value;
+                              }
+                            }
+                            return null;
+                          }
+                          if (document.cookie.includes("first_visit")) {
+                            console.log("in the visit");
+                            const first_visit = getCookieValue("first_visit");
+                            if (first_visit != null) {
+                              $state.isTheFirstVisit = true;
+                            }
+                            return console.log(
+                              "first_visit:",
+                              $state.isTheFirstVisit
+                            );
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode2"] != null &&
+                typeof $steps["runCode2"] === "object" &&
+                typeof $steps["runCode2"].then === "function"
+              ) {
+                $steps["runCode2"] = await $steps["runCode2"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -8113,11 +8472,13 @@ const PlasmicDescendants = {
     "p5",
     "cancelManualReserve",
     "cancelledBtn",
+    "tour",
     "navbarRntFooter",
     "profile",
     "html",
     "clarityRntComponent",
-    "faviconRntComponent"
+    "faviconRntComponent",
+    "sideEffect"
   ],
   detail2: [
     "detail2",
@@ -8201,7 +8562,8 @@ const PlasmicDescendants = {
     "phoneNumber",
     "p5",
     "cancelManualReserve",
-    "cancelledBtn"
+    "cancelledBtn",
+    "tour"
   ],
   generalData: ["generalData"],
   feature: [
@@ -8385,11 +8747,13 @@ const PlasmicDescendants = {
   p5: ["p5"],
   cancelManualReserve: ["cancelManualReserve", "cancelledBtn"],
   cancelledBtn: ["cancelledBtn"],
+  tour: ["tour"],
   navbarRntFooter: ["navbarRntFooter"],
   profile: ["profile"],
   html: ["html", "clarityRntComponent", "faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"]
+  faviconRntComponent: ["faviconRntComponent"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -8464,11 +8828,13 @@ type NodeDefaultElementType = {
   p5: "div";
   cancelManualReserve: typeof AntdModal;
   cancelledBtn: typeof AntdButton;
+  tour: "div";
   navbarRntFooter: typeof NavbarRntFooter;
   profile: typeof ApiRequest;
   html: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -8599,11 +8965,13 @@ export const PlasmicBookings = Object.assign(
     p5: makeNodeComponent("p5"),
     cancelManualReserve: makeNodeComponent("cancelManualReserve"),
     cancelledBtn: makeNodeComponent("cancelledBtn"),
+    tour: makeNodeComponent("tour"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     profile: makeNodeComponent("profile"),
     html: makeNodeComponent("html"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicBookings
     internalVariantProps: PlasmicBookings__VariantProps,

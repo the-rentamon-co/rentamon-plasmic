@@ -1899,6 +1899,50 @@ function PlasmicReservations__RenderFunc(props: {
                           "updateModalOpen3"
                         ];
                       }
+
+                      $steps["updateModalOpen4"] = false
+                        ? (() => {
+                            const actionArgs = {
+                              destination: `/bookings/${(() => {
+                                try {
+                                  return $state.modalData[0].reserve_id.substring(
+                                    3
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}`
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateModalOpen4"] != null &&
+                        typeof $steps["updateModalOpen4"] === "object" &&
+                        typeof $steps["updateModalOpen4"].then === "function"
+                      ) {
+                        $steps["updateModalOpen4"] = await $steps[
+                          "updateModalOpen4"
+                        ];
+                      }
                     }}
                   >
                     <div
@@ -2197,6 +2241,53 @@ function PlasmicReservations__RenderFunc(props: {
                             sty.freeBox__giYau
                           )}
                           key={currentIndexs}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["goToBookings"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: `/bookings/${(() => {
+                                      try {
+                                        return currentItems.reserve_id.substring(
+                                          3
+                                        );
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()}`
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["goToBookings"] != null &&
+                              typeof $steps["goToBookings"] === "object" &&
+                              typeof $steps["goToBookings"].then === "function"
+                            ) {
+                              $steps["goToBookings"] = await $steps[
+                                "goToBookings"
+                              ];
+                            }
+                          }}
                         >
                           <div
                             className={classNames(
