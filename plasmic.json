@@ -1852,6 +1852,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicNavbarRntFooter.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "gPTziCkb7jLf",
+          "name": "FirstPropertyEditTest",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicFirstPropertyEditTest.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/property/edit/test.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicFirstPropertyEditTest.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/property/edit/test"
         }
       ],
       "icons": [
@@ -4323,7 +4337,15 @@
           "componentImportPath": "@/fragment/components/textarea"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [
+        {
+          "defaultExport": false,
+          "id": "processAndCompressBase64",
+          "importPath": "src/lib/imagecompressor",
+          "name": "processAndCompressBase64",
+          "namespace": null
+        }
+      ]
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",

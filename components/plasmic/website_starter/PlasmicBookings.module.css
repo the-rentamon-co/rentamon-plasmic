@@ -489,7 +489,7 @@
 .divar {
   object-fit: cover;
   max-width: 100%;
-  height: 42px;
+  height: 40px;
 }
 .divar > picture > img {
   object-fit: cover;
@@ -497,7 +497,7 @@
 .prevGuest {
   object-fit: cover;
   max-width: 100%;
-  height: 42px;
+  height: 40px;
 }
 .prevGuest > picture > img {
   object-fit: cover;
@@ -505,7 +505,7 @@
 .colleague {
   object-fit: cover;
   max-width: 100%;
-  height: 42px;
+  height: 40px;
 }
 .colleague > picture > img {
   object-fit: cover;
@@ -513,7 +513,7 @@
 .others {
   object-fit: cover;
   max-width: 100%;
-  height: 42px;
+  height: 40px;
 }
 .others > picture > img {
   object-fit: cover;
@@ -521,7 +521,7 @@
 .offline {
   object-fit: cover;
   max-width: 100%;
-  height: 42px;
+  height: 40px;
 }
 .offline > picture > img {
   object-fit: cover;
@@ -529,7 +529,7 @@
 .social {
   object-fit: cover;
   max-width: 100%;
-  height: 42px;
+  height: 40px;
 }
 .social > picture > img {
   object-fit: cover;

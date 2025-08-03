@@ -1071,7 +1071,7 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.divar}
                         alt={""}
                         className={classNames(sty.divar)}
-                        displayHeight={"42px"}
+                        displayHeight={"40px"}
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
@@ -1104,7 +1104,7 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.prevGuest}
                         alt={""}
                         className={classNames(sty.prevGuest)}
-                        displayHeight={"42px"}
+                        displayHeight={"40px"}
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
@@ -1139,7 +1139,7 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.colleague}
                         alt={""}
                         className={classNames(sty.colleague)}
-                        displayHeight={"42px"}
+                        displayHeight={"40px"}
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
@@ -1172,7 +1172,7 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.others}
                         alt={""}
                         className={classNames(sty.others)}
-                        displayHeight={"42px"}
+                        displayHeight={"40px"}
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
@@ -1205,7 +1205,7 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.offline}
                         alt={""}
                         className={classNames(sty.offline)}
-                        displayHeight={"42px"}
+                        displayHeight={"40px"}
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
@@ -1238,7 +1238,7 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.social}
                         alt={""}
                         className={classNames(sty.social)}
-                        displayHeight={"42px"}
+                        displayHeight={"40px"}
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
@@ -4362,7 +4362,7 @@ function PlasmicBookings__RenderFunc(props: {
                           (() => {
                             try {
                               return $state.accordionOpenSmartBooking
-                                ? ".rotate-normal"
+                                ? "rotate-normal"
                                 : "rotate-flipped";
                             } catch (e) {
                               if (
