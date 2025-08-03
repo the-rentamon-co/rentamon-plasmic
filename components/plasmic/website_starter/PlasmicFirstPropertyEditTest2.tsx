@@ -1403,25 +1403,7 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               customFunction: async () => {
-                                return async function myFunction(
-                                  args,
-                                  context
-                                ) {
-                                  const file = context.vars.upload.files[0];
-                                  const base64 =
-                                    await context.functions.fileToBase64(file);
-                                  const compressed =
-                                    await context.functions.processAndCompressBase64(
-                                      base64,
-                                      0.2
-                                    );
-                                  const withHeader =
-                                    "data:image/jpeg;base64," + compressed;
-                                  context.setState(
-                                    "compressedImage",
-                                    withHeader
-                                  );
-                                };
+                                return $state.upload.files[0];
                               }
                             };
                             return (({ customFunction }) => {
@@ -1468,13 +1450,7 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                                 undefined,
                                 (() => {
                                   try {
-                                    return {
-                                      prop_id: "1",
-                                      property_pic: processAndCompressBase64(
-                                        fileToBase64($state.upload.files[0]),
-                                        0.7
-                                      )
-                                    };
+                                    return $state.upload.files[0];
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
