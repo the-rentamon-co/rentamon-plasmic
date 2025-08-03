@@ -20,12 +20,14 @@ import { Slider, sliderMeta } from "@/fragment/components/slider";
 import { Chart, chartMeta } from "@/fragment/components/chart";
 import { Textarea, textareaMeta } from "@/fragment/components/textarea";
 
-// ✅ اضافه‌شده برای تابع فشرده‌سازی تصویر
+// ✅ اضافه‌شده برای توابع فشرده‌سازی و تبدیل فایل
 import {
   processAndCompressBase64,
   processAndCompressMultipleBase64,
+  fileToBase64,
 } from "../lib/imagecompressor";
 
+// ثبت توابع در Plasmic
 registerFunction(processAndCompressBase64, {
   name: "processAndCompressBase64",
   importPath: "src/lib/imagecompressor",
@@ -39,6 +41,18 @@ registerFunction(processAndCompressBase64, {
       name: "quality",
       type: "any",
       description: "JPEG compression quality (0.1 to 1.0)",
+    },
+  ],
+});
+
+registerFunction(fileToBase64, {
+  name: "fileToBase64",
+  importPath: "src/lib/imagecompressor",
+  params: [
+    {
+      name: "file",
+      type: "any",
+      description: "Input file (from upload.files[0])",
     },
   ],
 });
