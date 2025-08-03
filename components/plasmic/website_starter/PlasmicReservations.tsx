@@ -1714,21 +1714,21 @@ function PlasmicReservations__RenderFunc(props: {
                                 $state.bookingId = currentItem.reserve_id;
                                 return ($state.modalData = [
                                   {
-                                    GuestName: currentItem.GuestName,
-                                    platfromName: currentItem.platformName,
-                                    enterDate: currentItem.checkIn,
-                                    laveDate: currentItem.checkOut,
+                                    GuestName: currentItem.guest_name,
+                                    platfromName: currentItem.website,
+                                    enterDate: currentItem.check_in,
+                                    laveDate: currentItem.check_out,
                                     propertyName: currentItem.property_name,
                                     status: currentItem.status,
                                     phone_number: currentItem.phone_number,
                                     amount: currentItem.amount,
-                                    night: currentItem.night,
+                                    night: currentItem.nights,
                                     guests_count: currentItem.guests_count,
-                                    reserve_id: currentItem.reserve_id,
-                                    id: currentItem.Id,
+                                    reserve_id: currentItem.booking_id,
+                                    id: currentItem.id,
                                     created_at: currentItem.created_at,
                                     is_sattled: currentItem.is_settled,
-                                    booking_id: currentItem.reserve_id
+                                    booking_id: currentItem.booking_id
                                   }
                                 ]);
                               })()
@@ -1955,7 +1955,7 @@ function PlasmicReservations__RenderFunc(props: {
                             })()
                           : (() => {
                               try {
-                                return currentItem.Id != null;
+                                return currentItem.id != null;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||

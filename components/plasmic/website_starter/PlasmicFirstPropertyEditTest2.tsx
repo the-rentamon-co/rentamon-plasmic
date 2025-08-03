@@ -1399,87 +1399,6 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["compressImageAction"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return $state.upload.files[0];
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["compressImageAction"] != null &&
-                        typeof $steps["compressImageAction"] === "object" &&
-                        typeof $steps["compressImageAction"].then === "function"
-                      ) {
-                        $steps["compressImageAction"] = await $steps[
-                          "compressImageAction"
-                        ];
-                      }
-
-                      $steps["runElementAction"] = true
-                        ? (() => {
-                            const actionArgs = {};
-                            return (({ tplRef, action, args }) => {
-                              return $refs?.[tplRef]?.[action]?.(
-                                ...(args ?? [])
-                              );
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runElementAction"] != null &&
-                        typeof $steps["runElementAction"] === "object" &&
-                        typeof $steps["runElementAction"].then === "function"
-                      ) {
-                        $steps["runElementAction"] = await $steps[
-                          "runElementAction"
-                        ];
-                      }
-
-                      $steps["changePropertyPic"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://gateway.rentamon.com/webhook/change_property_pic",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return $state.upload.files[0];
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["changePropertyPic"] != null &&
-                        typeof $steps["changePropertyPic"] === "object" &&
-                        typeof $steps["changePropertyPic"].then === "function"
-                      ) {
-                        $steps["changePropertyPic"] = await $steps[
-                          "changePropertyPic"
-                        ];
-                      }
-
                       $steps["showToast"] =
                         $steps.apiRequest == null
                           ? (() => {
@@ -1502,42 +1421,6 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                         typeof $steps["showToast"].then === "function"
                       ) {
                         $steps["showToast"] = await $steps["showToast"];
-                      }
-
-                      $steps["updateTextInputValue"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["textInput", "value"]
-                              },
-                              operation: 0
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateTextInputValue"] != null &&
-                        typeof $steps["updateTextInputValue"] === "object" &&
-                        typeof $steps["updateTextInputValue"].then ===
-                          "function"
-                      ) {
-                        $steps["updateTextInputValue"] = await $steps[
-                          "updateTextInputValue"
-                        ];
                       }
                     }}
                   >
