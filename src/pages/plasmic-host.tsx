@@ -3,6 +3,7 @@ import {
   PlasmicCanvasHost,
   registerComponent,
   registerGlobalContext,
+  registerFunction,
 } from "@plasmicapp/react-web/lib/host";
 
 import { Fragment, fragmentMeta } from "@/fragment/fragment";
@@ -18,6 +19,29 @@ import { ApiRequest, apiRequestMeta } from "@/fragment/components/api-request";
 import { Slider, sliderMeta } from "@/fragment/components/slider";
 import { Chart, chartMeta } from "@/fragment/components/chart";
 import { Textarea, textareaMeta } from "@/fragment/components/textarea";
+
+// ✅ اضافه‌شده برای رجیستر تابع فشرده‌سازی تصویر
+import {
+  processAndCompressBase64,
+  processAndCompressMultipleBase64,
+} from "../lib/imagecompressor";
+
+registerFunction(processAndCompressBase64, {
+  name: "processAndCompressBase64",
+  importPath: "src/lib/imagecompressor",
+  params: [
+    {
+      name: "input_base64string",
+      type: "any",
+      description: "Raw base64 image string",
+    },
+    {
+      name: "quality",
+      type: "any",
+      description: "JPEG compression quality (0.1 to 1.0)",
+    },
+  ],
+});
 
 export default function PlasmicHost() {
   return <PlasmicCanvasHost />;
