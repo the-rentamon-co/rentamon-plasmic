@@ -1728,7 +1728,9 @@ function PlasmicReservations__RenderFunc(props: {
                                     id: currentItem.id,
                                     created_at: currentItem.created_at,
                                     is_sattled: currentItem.is_settled,
-                                    booking_id: currentItem.booking_id
+                                    booking_id: currentItem.booking_id,
+                                    alternative_booking_id:
+                                      currentItem.alternative_booking_id
                                   }
                                 ]);
                               })()
@@ -1875,7 +1877,7 @@ function PlasmicReservations__RenderFunc(props: {
                             const actionArgs = {
                               destination: `/bookings/${(() => {
                                 try {
-                                  return $state.modalData[0].reserve_id.substring(
+                                  return currentItem.alternative_booking_id.substring(
                                     3
                                   );
                                 } catch (e) {
