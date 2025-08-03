@@ -78,8 +78,6 @@ import sty from "./PlasmicFirstPropertyEditTest2.module.css"; // plasmic-import:
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 
-import { processAndCompressBase64 as __fn_processAndCompressBase64 } from "src/lib/imagecompressor"; // plasmic-import: processAndCompressBase64/customFunction
-
 createPlasmicElementProxy;
 
 export type PlasmicFirstPropertyEditTest2__VariantMembers = {};
@@ -121,9 +119,7 @@ export type PlasmicFirstPropertyEditTest2__OverridesType = {
 
 export interface DefaultFirstPropertyEditTest2Props {}
 
-const $$ = {
-  processAndCompressBase64: __fn_processAndCompressBase64
-};
+const $$ = {};
 
 function useNextRouter() {
   try {
@@ -1435,40 +1431,6 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                         typeof $steps["updateLoading"].then === "function"
                       ) {
                         $steps["updateLoading"] = await $steps["updateLoading"];
-                      }
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (async () => {
-                                  return (async () => {
-                                    const file = $state.upload?.files?.[0];
-                                    if (!file) {
-                                      alert("فایلی انتخاب نشده");
-                                      return;
-                                    }
-                                    const compressed =
-                                      await $$.processAndCompressBase64(
-                                        file,
-                                        0.2
-                                      );
-                                    $state.compressedImage = compressed;
-                                  })();
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
                       }
 
                       $steps["changePropertyPic"] = true
