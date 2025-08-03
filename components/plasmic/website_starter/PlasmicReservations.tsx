@@ -2185,12 +2185,36 @@ function PlasmicReservations__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return console.log(
+                                    currentItems.alternative_booking_id
+                                  );
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+
                         $steps["goToBookings"] = true
                           ? (() => {
                               const actionArgs = {
                                 destination: `/bookings/${(() => {
                                   try {
-                                    return currentItems.reserve_id.substring(3);
+                                    return currentItems.alternative_booking_id.substring(
+                                      3
+                                    );
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
