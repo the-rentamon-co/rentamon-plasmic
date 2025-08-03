@@ -201,8 +201,8 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
       {
         path: "compressedImage",
         type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -1399,38 +1399,64 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["updateLoading"] = true
+                      $steps["compressImageAction"] = true
                         ? (() => {
                             const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["loading"]
-                              },
-                              operation: 4
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
+                              customFunction: async () => {
+                                return async function myFunction(
+                                  args,
+                                  context
+                                ) {
+                                  const file = context.vars.upload.files[0];
+                                  const base64 =
+                                    await context.functions.fileToBase64(file);
+                                  const compressed =
+                                    await context.functions.processAndCompressBase64(
+                                      base64,
+                                      0.2
+                                    );
+                                  const withHeader =
+                                    "data:image/jpeg;base64," + compressed;
+                                  context.setState(
+                                    "compressedImage",
+                                    withHeader
+                                  );
+                                };
                               }
-                              const { objRoot, variablePath } = variable;
-
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;
                       if (
-                        $steps["updateLoading"] != null &&
-                        typeof $steps["updateLoading"] === "object" &&
-                        typeof $steps["updateLoading"].then === "function"
+                        $steps["compressImageAction"] != null &&
+                        typeof $steps["compressImageAction"] === "object" &&
+                        typeof $steps["compressImageAction"].then === "function"
                       ) {
-                        $steps["updateLoading"] = await $steps["updateLoading"];
+                        $steps["compressImageAction"] = await $steps[
+                          "compressImageAction"
+                        ];
+                      }
+
+                      $steps["runElementAction"] = true
+                        ? (() => {
+                            const actionArgs = {};
+                            return (({ tplRef, action, args }) => {
+                              return $refs?.[tplRef]?.[action]?.(
+                                ...(args ?? [])
+                              );
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runElementAction"] != null &&
+                        typeof $steps["runElementAction"] === "object" &&
+                        typeof $steps["runElementAction"].then === "function"
+                      ) {
+                        $steps["runElementAction"] = await $steps[
+                          "runElementAction"
+                        ];
                       }
 
                       $steps["changePropertyPic"] = true
@@ -1444,8 +1470,10 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                                   try {
                                     return {
                                       prop_id: "1",
-                                      property_pic_base64:
-                                        $state.compressedImage
+                                      property_pic: processAndCompressBase64(
+                                        fileToBase64($state.upload.files[0]),
+                                        0.7
+                                      )
                                     };
                                   } catch (e) {
                                     if (
@@ -1476,84 +1504,6 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["setCookieFirstVisit"] =
-                        $state.propTour === true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    function setCookie(name, value, hours) {
-                                      let expires = "";
-                                      if (hours) {
-                                        const date = new Date();
-                                        date.setTime(
-                                          date.getTime() +
-                                            hours * 60 * 60 * 1000
-                                        );
-                                        expires =
-                                          "; expires=" + date.toUTCString();
-                                      }
-                                      document.cookie =
-                                        name +
-                                        "=" +
-                                        (value || "") +
-                                        expires +
-                                        "; path=/";
-                                    }
-                                    return setCookie(
-                                      "first_visit",
-                                      "true",
-                                      168
-                                    );
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["setCookieFirstVisit"] != null &&
-                        typeof $steps["setCookieFirstVisit"] === "object" &&
-                        typeof $steps["setCookieFirstVisit"].then === "function"
-                      ) {
-                        $steps["setCookieFirstVisit"] = await $steps[
-                          "setCookieFirstVisit"
-                        ];
-                      }
-
-                      $steps["deletePropTourCookie"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  function deleteCookie(name) {
-                                    document.cookie =
-                                      name +
-                                      "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                                  }
-                                  deleteCookie("prop_tour");
-                                  return ($state.propTour = false);
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["deletePropTourCookie"] != null &&
-                        typeof $steps["deletePropTourCookie"] === "object" &&
-                        typeof $steps["deletePropTourCookie"].then ===
-                          "function"
-                      ) {
-                        $steps["deletePropTourCookie"] = await $steps[
-                          "deletePropTourCookie"
-                        ];
-                      }
-
                       $steps["showToast"] =
                         $steps.apiRequest == null
                           ? (() => {
@@ -1576,135 +1526,6 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                         typeof $steps["showToast"].then === "function"
                       ) {
                         $steps["showToast"] = await $steps["showToast"];
-                      }
-
-                      $steps["goToLitePanel"] =
-                        $steps.changePropertyPic.status == 200
-                          ? (() => {
-                              const actionArgs = { destination: `/calendar` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["goToLitePanel"] != null &&
-                        typeof $steps["goToLitePanel"] === "object" &&
-                        typeof $steps["goToLitePanel"].then === "function"
-                      ) {
-                        $steps["goToLitePanel"] = await $steps["goToLitePanel"];
-                      }
-
-                      $steps["goToProLitePanel"] =
-                        $state.propTour === true
-                          ? (() => {
-                              const actionArgs = { destination: `/calendar` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["goToProLitePanel"] != null &&
-                        typeof $steps["goToProLitePanel"] === "object" &&
-                        typeof $steps["goToProLitePanel"].then === "function"
-                      ) {
-                        $steps["goToProLitePanel"] = await $steps[
-                          "goToProLitePanel"
-                        ];
-                      }
-
-                      $steps["registrationSteps"] =
-                        $state.propTour === true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  "POST",
-                                  "https://gateway.rentamon.com/webhook/registration-steps-prop",
-                                  undefined,
-                                  (() => {
-                                    try {
-                                      return $state.propTour;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return undefined;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.apiRequest"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["registrationSteps"] != null &&
-                        typeof $steps["registrationSteps"] === "object" &&
-                        typeof $steps["registrationSteps"].then === "function"
-                      ) {
-                        $steps["registrationSteps"] = await $steps[
-                          "registrationSteps"
-                        ];
-                      }
-
-                      $steps["updateLoading2"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["loading"]
-                              },
-                              operation: 4
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateLoading2"] != null &&
-                        typeof $steps["updateLoading2"] === "object" &&
-                        typeof $steps["updateLoading2"].then === "function"
-                      ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
-                        ];
                       }
 
                       $steps["updateTextInputValue"] = true
