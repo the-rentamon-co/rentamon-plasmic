@@ -79,8 +79,6 @@ import sty from "./PlasmicFirstPropertyEditTest2.module.css"; // plasmic-import:
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 
-import { compressImageFile as __fn_compressImageFile } from "@/lib/compressImageFile"; // plasmic-import: compressImageFile/customFunction
-
 createPlasmicElementProxy;
 
 export type PlasmicFirstPropertyEditTest2__VariantMembers = {};
@@ -123,9 +121,7 @@ export type PlasmicFirstPropertyEditTest2__OverridesType = {
 
 export interface DefaultFirstPropertyEditTest2Props {}
 
-const $$ = {
-  compressImageFile: __fn_compressImageFile
-};
+const $$ = {};
 
 function useNextRouter() {
   try {
@@ -1446,52 +1442,39 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                         $steps["showToast"] = await $steps["showToast"];
                       }
 
-                      $steps["runCode"] = true
+                      $steps["runCode2"] = true
                         ? (() => {
                             const actionArgs = {
                               customFunction: async () => {
-                                return (async () => {
-                                  const compressedBase64 =
-                                    await $$.compressImageFile(
-                                      $state.upload.files[0],
-                                      {
-                                        maxWidth: 800,
-                                        maxHeight: 800,
-                                        quality: 0.8
+                                return (() => {
+                                  return document
+                                    .getElementById("profile-upload")
+                                    .addEventListener(
+                                      "change",
+                                      function (event) {
+                                        const fileInput = event.target;
+                                        const file = fileInput.files[0];
+                                        $state.pic = file;
+                                        if (file) {
+                                          console.log("نام فایل:", file.name);
+                                          console.log("نوع فایل:", file.type);
+                                          console.log(
+                                            "حجم فایل:",
+                                            file.size,
+                                            "بایت"
+                                          );
+                                          const reader = new FileReader();
+                                          reader.onload = function (e) {
+                                            document.getElementById(
+                                              "preview-img"
+                                            ).src = e.target.result;
+                                          };
+                                          reader.readAsDataURL(file);
+                                        } else {
+                                          console.log("فایلی انتخاب نشده است.");
+                                        }
                                       }
                                     );
-                                  function base64ToFile(
-                                    base64Data,
-                                    fileName,
-                                    mimeType
-                                  ) {
-                                    const byteString = atob(
-                                      base64Data.split(",")[1]
-                                    );
-                                    const ab = new ArrayBuffer(
-                                      byteString.length
-                                    );
-                                    const ia = new Uint8Array(ab);
-                                    for (
-                                      let i = 0;
-                                      i < byteString.length;
-                                      i++
-                                    ) {
-                                      ia[i] = byteString.charCodeAt(i);
-                                    }
-                                    const blob = new Blob([ab], {
-                                      type: mimeType
-                                    });
-                                    return new File([blob], fileName, {
-                                      type: mimeType
-                                    });
-                                  }
-                                  const file = base64ToFile(
-                                    compressedBase64,
-                                    $state.upload.files[0].name,
-                                    $state.upload.files[0].type
-                                  );
-                                  return ($state.compressedFile = file);
                                 })();
                               }
                             };
@@ -1501,11 +1484,11 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
+                        $steps["runCode2"] != null &&
+                        typeof $steps["runCode2"] === "object" &&
+                        typeof $steps["runCode2"].then === "function"
                       ) {
-                        $steps["runCode"] = await $steps["runCode"];
+                        $steps["runCode2"] = await $steps["runCode2"];
                       }
 
                       $steps["invokeGlobalAction"] = true
@@ -1519,7 +1502,7 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                                   try {
                                     return {
                                       prop_id: "1",
-                                      property_pic: $state.compressedFile
+                                      property_pic: $state.pic
                                     };
                                   } catch (e) {
                                     if (
