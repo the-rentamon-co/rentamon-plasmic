@@ -1123,7 +1123,7 @@ function PlasmicSettings__RenderFunc(props: {
                               if (total === used) {
                                 return `${total} رزرو رایگان شما تموم شد`;
                               }
-                              return `از ${total} رزرو رایگان، ${remaining} تاش باقی مونده`;
+                              return `از ${total} رزرو رایگان، ${remaining} عدد باقی مونده`;
                             })();
                           } catch (e) {
                             if (

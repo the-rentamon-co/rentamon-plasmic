@@ -297,6 +297,9 @@
   .text__hiet1 {
     font-size: 15px;
     font-weight: 500;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 }
 @media (max-width: 350px) {
@@ -657,6 +660,7 @@
   max-width: 100%;
   color: var(--token-8R7jjC_-F9FF);
   font-size: 23px;
+  white-space: pre;
 }
 @media (max-width: 1200px) {
   .text__xqoMq {
@@ -668,8 +672,10 @@
   .text__xqoMq {
     font-size: 15px;
     font-weight: 500;
-    white-space: pre-wrap;
+    white-space: pre;
     padding-top: 2px;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 }
 @media (max-width: 350px) {
