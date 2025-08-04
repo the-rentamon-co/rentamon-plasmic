@@ -3,6 +3,7 @@ import {
   PlasmicCanvasHost,
   registerComponent,
   registerGlobalContext,
+  registerFunction,
 } from "@plasmicapp/react-web/lib/host";
 
 import { Fragment, fragmentMeta } from "@/fragment/fragment";
@@ -18,6 +19,34 @@ import { ApiRequest, apiRequestMeta } from "@/fragment/components/api-request";
 import { Slider, sliderMeta } from "@/fragment/components/slider";
 import { Chart, chartMeta } from "@/fragment/components/chart";
 import { Textarea, textareaMeta } from "@/fragment/components/textarea";
+
+// ✅ افزودن تابع فشرده‌سازی تصویر
+import { compressImageFile } from "@/lib/compressImageFile";
+
+registerFunction(compressImageFile, {
+  name: "compressImageFile",
+  description: "Compress an uploaded image file before sending it to backend.",
+  parameters: [
+    {
+      name: "file",
+      type: "file",
+      description: "The original uploaded file",
+    },
+    {
+      name: "maxWidth",
+      type: "number",
+      defaultValue: 800,
+      description: "Maximum width for resizing the image",
+    },
+    {
+      name: "quality",
+      type: "number",
+      defaultValue: 0.7,
+      description: "Compression quality between 0 (low) and 1 (high)",
+    },
+  ],
+  returnType: "file",
+});
 
 export default function PlasmicHost() {
   return <PlasmicCanvasHost />;
