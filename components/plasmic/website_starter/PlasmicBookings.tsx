@@ -4918,9 +4918,25 @@ function PlasmicBookings__RenderFunc(props: {
                                     sty.text__zn2Wr
                                   )}
                                 >
-                                  {
-                                    "\u0646\u062a\u06cc\u062c\u0647 \u062a\u0644\u0627\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u06cc \u0628\u0633\u062a\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627:"
-                                  }
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return $state.booking.data.status ==
+                                          "cancelled"
+                                          ? "نتیجه تلاش رنتامون برای باز کردن سایت‌ها:"
+                                          : "نتیجه تلاش رنتامون برای بستن سایت‌ها:";
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "\u0646\u062a\u06cc\u062c\u0647 \u062a\u0644\u0627\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u06cc \u0628\u0633\u062a\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627:";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
                                 </div>
                               ) : null}
                               {(() => {

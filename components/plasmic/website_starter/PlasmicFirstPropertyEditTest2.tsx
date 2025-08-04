@@ -62,6 +62,7 @@ import {
 import VilaType from "../../VilaType"; // plasmic-import: Ovb_QdBC9YkI/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { UploadWrapper } from "@plasmicpkgs/antd5/skinny/registerUpload";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
@@ -105,6 +106,7 @@ export type PlasmicFirstPropertyEditTest2__OverridesType = {
   newButtons2?: Flex__<"div">;
   next2?: Flex__<"div">;
   privious2?: Flex__<"div">;
+  embedHtml?: Flex__<typeof Embed>;
   back?: Flex__<"div">;
   propGuide5?: Flex__<"div">;
   propGuide6?: Flex__<"div">;
@@ -199,7 +201,7 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
-        path: "compressedImage",
+        path: "compressedFile",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
@@ -1422,6 +1424,110 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                       ) {
                         $steps["showToast"] = await $steps["showToast"];
                       }
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (async () => {
+                                  const compressedBase64 =
+                                    await $$.compressImageFile(
+                                      $state.upload.files[0],
+                                      {
+                                        maxWidth: 800,
+                                        maxHeight: 800,
+                                        quality: 0.8
+                                      }
+                                    );
+                                  function base64ToFile(
+                                    base64Data,
+                                    fileName,
+                                    mimeType
+                                  ) {
+                                    const byteString = atob(
+                                      base64Data.split(",")[1]
+                                    );
+                                    const ab = new ArrayBuffer(
+                                      byteString.length
+                                    );
+                                    const ia = new Uint8Array(ab);
+                                    for (
+                                      let i = 0;
+                                      i < byteString.length;
+                                      i++
+                                    ) {
+                                      ia[i] = byteString.charCodeAt(i);
+                                    }
+                                    const blob = new Blob([ab], {
+                                      type: mimeType
+                                    });
+                                    return new File([blob], fileName, {
+                                      type: mimeType
+                                    });
+                                  }
+                                  const file = base64ToFile(
+                                    compressedBase64,
+                                    $state.upload.files[0].name,
+                                    $state.upload.files[0].type
+                                  );
+                                  return ($state.compressedFile = file);
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+
+                      $steps["invokeGlobalAction"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                "POST",
+                                "https://gateway.rentamon.com/webhook/property_create",
+                                undefined,
+                                (() => {
+                                  try {
+                                    return {
+                                      prop_id: "1",
+                                      property_pic: $state.compressedFile
+                                    };
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
+                        ];
+                      }
                     }}
                   >
                     {(() => {
@@ -1525,6 +1631,15 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
               </div>
             </div>
           ) : null}
+          <Embed
+            data-plasmic-name={"embedHtml"}
+            data-plasmic-override={overrides.embedHtml}
+            className={classNames("__wab_instance", sty.embedHtml)}
+            code={
+              "<script src=\"https://unpkg.com/browser-image-compression@2.0.2/dist/browser-image-compression.js\"></script>\r\n<input type=\"file\" accept=\"image/*\" onchange=\"handleImageUpload(event)\" />\r\n\r\n<script>\r\n  async function handleImageUpload(event) {\r\n    const file = event.target.files[0];\r\n    if (!file) return;\r\n\r\n    const options = {\r\n      maxSizeMB: 0.3,\r\n      maxWidthOrHeight: 800,\r\n      useWebWorker: true,\r\n    };\r\n\r\n    try {\r\n      const compressedFile = await imageCompression(file, options);\r\n      const formData = new FormData();\r\n      formData.append('file', compressedFile);\r\n\r\n      await fetch('https://dev.rentamon.com/webhook/60c848d5-b4e1-421b-8194-8bb74bba7b74', {\r\n        method: 'POST',\r\n        body: formData,\r\n      });\r\n\r\n      alert('Upload successful!');\r\n    } catch (error) {\r\n      console.error('Compression/upload error:', error);\r\n    }\r\n  }\r\n</script>\r\n"
+            }
+          />
+
           <div
             data-plasmic-name={"back"}
             data-plasmic-override={overrides.back}
@@ -1918,6 +2033,7 @@ const PlasmicDescendants = {
     "newButtons2",
     "next2",
     "privious2",
+    "embedHtml",
     "back",
     "propGuide5",
     "propGuide6",
@@ -1950,6 +2066,7 @@ const PlasmicDescendants = {
   newButtons2: ["newButtons2", "next2", "privious2"],
   next2: ["next2"],
   privious2: ["privious2"],
+  embedHtml: ["embedHtml"],
   back: ["back", "propGuide5", "propGuide6"],
   propGuide5: ["propGuide5", "propGuide6"],
   propGuide6: ["propGuide6"],
@@ -1979,6 +2096,7 @@ type NodeDefaultElementType = {
   newButtons2: "div";
   next2: "div";
   privious2: "div";
+  embedHtml: typeof Embed;
   back: "div";
   propGuide5: "div";
   propGuide6: "div";
@@ -2064,6 +2182,7 @@ export const PlasmicFirstPropertyEditTest2 = Object.assign(
     newButtons2: makeNodeComponent("newButtons2"),
     next2: makeNodeComponent("next2"),
     privious2: makeNodeComponent("privious2"),
+    embedHtml: makeNodeComponent("embedHtml"),
     back: makeNodeComponent("back"),
     propGuide5: makeNodeComponent("propGuide5"),
     propGuide6: makeNodeComponent("propGuide6"),
