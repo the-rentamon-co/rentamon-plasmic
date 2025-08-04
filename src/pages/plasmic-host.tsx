@@ -20,12 +20,12 @@ import { Slider, sliderMeta } from "@/fragment/components/slider";
 import { Chart, chartMeta } from "@/fragment/components/chart";
 import { Textarea, textareaMeta } from "@/fragment/components/textarea";
 
-// ✅ اضافه کردن تابع فشرده‌سازی عکس
 import { compressImageFile } from "@/lib/compressImageFile";
 
 registerFunction(compressImageFile, {
   name: "compressImageFile",
   description: "Compress an uploaded image file before sending it to backend.",
+  importPath: "@/lib/compressImageFile",
 });
 
 export default function PlasmicHost() {
