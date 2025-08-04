@@ -659,12 +659,12 @@ function PlasmicBookings__RenderFunc(props: {
                   className={classNames(sty.img__ne5E1)}
                   displayHeight={
                     hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "32px"
+                      ? "34px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "36px"
+                      ? "38px"
                       : hasVariant(globalVariants, "screen", "tablet")
                       ? "48px"
-                      : "60px"
+                      : "40px"
                   }
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
@@ -764,10 +764,18 @@ function PlasmicBookings__RenderFunc(props: {
                             : "40px"
                         }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image20.svg",
@@ -821,10 +829,18 @@ function PlasmicBookings__RenderFunc(props: {
                             : "40px"
                         }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image19.svg",
@@ -878,10 +894,18 @@ function PlasmicBookings__RenderFunc(props: {
                             : "40px"
                         }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/jajigaWebp.webp",
@@ -935,10 +959,18 @@ function PlasmicBookings__RenderFunc(props: {
                             : "40px"
                         }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image66.png",
@@ -1049,10 +1081,18 @@ function PlasmicBookings__RenderFunc(props: {
                             : "40px"
                         }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image68.png",
@@ -1080,12 +1120,24 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.divar}
                         alt={""}
                         className={classNames(sty.divar)}
-                        displayHeight={"40px"}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : "40px"
+                        }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/iconDivarPng2.png",
@@ -1113,12 +1165,24 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.prevGuest}
                         alt={""}
                         className={classNames(sty.prevGuest)}
-                        displayHeight={"40px"}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : "40px"
+                        }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/iconReturnedPng2.png",
@@ -1148,12 +1212,24 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.colleague}
                         alt={""}
                         className={classNames(sty.colleague)}
-                        displayHeight={"40px"}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : "40px"
+                        }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/iconColleaguePng.png",
@@ -1181,12 +1257,24 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.others}
                         alt={""}
                         className={classNames(sty.others)}
-                        displayHeight={"40px"}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : "40px"
+                        }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/iconOtherPng2.png",
@@ -1214,12 +1302,24 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.offline}
                         alt={""}
                         className={classNames(sty.offline)}
-                        displayHeight={"40px"}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : "40px"
+                        }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/iconArrivedPng2.png",
@@ -1247,12 +1347,24 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-override={overrides.social}
                         alt={""}
                         className={classNames(sty.social)}
-                        displayHeight={"40px"}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "26px"
+                            : "40px"
+                        }
                         displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/iconSocialMediaPng.png",
@@ -2725,7 +2837,21 @@ function PlasmicBookings__RenderFunc(props: {
                                 displayMaxWidth={"100%"}
                                 displayMinHeight={"0"}
                                 displayMinWidth={"0"}
-                                displayWidth={"auto"}
+                                displayWidth={
+                                  hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "smallMobile"
+                                  )
+                                    ? "14px"
+                                    : hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                    ? "16px"
+                                    : "auto"
+                                }
                                 loading={"lazy"}
                                 src={{
                                   src: "/plasmic/website_starter/images/image156.svg",
@@ -3614,11 +3740,31 @@ function PlasmicBookings__RenderFunc(props: {
                                       "smallMobile"
                                     )
                                       ? "100%"
+                                      : hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                      ? "100%"
                                       : "100%"
                                   }
                                   displayMinHeight={"0"}
                                   displayMinWidth={"0"}
-                                  displayWidth={"auto"}
+                                  displayWidth={
+                                    hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "smallMobile"
+                                    )
+                                      ? "14px"
+                                      : hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                      ? "16px"
+                                      : "auto"
+                                  }
                                   loading={"lazy"}
                                   src={{
                                     src: "/plasmic/website_starter/images/image158.svg",
@@ -3740,11 +3886,31 @@ function PlasmicBookings__RenderFunc(props: {
                                       "smallMobile"
                                     )
                                       ? "100%"
+                                      : hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                      ? "100%"
                                       : "100%"
                                   }
                                   displayMinHeight={"0"}
                                   displayMinWidth={"0"}
-                                  displayWidth={"auto"}
+                                  displayWidth={
+                                    hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "smallMobile"
+                                    )
+                                      ? "14px"
+                                      : hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                      ? "16px"
+                                      : "auto"
+                                  }
                                   loading={"lazy"}
                                   src={{
                                     src: "/plasmic/website_starter/images/image157.svg",
@@ -5429,10 +5595,18 @@ function PlasmicBookings__RenderFunc(props: {
                             className={classNames(sty.img__oUumn)}
                             displayHeight={"auto"}
                             displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
+                            displayMaxWidth={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "100%"
+                                : "100%"
+                            }
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
-                            displayWidth={"auto"}
+                            displayWidth={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "16px"
+                                : "auto"
+                            }
                             loading={"lazy"}
                             src={{
                               src: "/plasmic/website_starter/images/image156.svg",
@@ -6258,11 +6432,21 @@ function PlasmicBookings__RenderFunc(props: {
                                   "smallMobile"
                                 )
                                   ? "100%"
+                                  : hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    )
+                                  ? "100%"
                                   : "100%"
                               }
                               displayMinHeight={"0"}
                               displayMinWidth={"0"}
-                              displayWidth={"auto"}
+                              displayWidth={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "16px"
+                                  : "auto"
+                              }
                               loading={"lazy"}
                               src={{
                                 src: "/plasmic/website_starter/images/image158.svg",
@@ -6384,11 +6568,21 @@ function PlasmicBookings__RenderFunc(props: {
                                   "smallMobile"
                                 )
                                   ? "100%"
+                                  : hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    )
+                                  ? "100%"
                                   : "100%"
                               }
                               displayMinHeight={"0"}
                               displayMinWidth={"0"}
-                              displayWidth={"auto"}
+                              displayWidth={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "16px"
+                                  : "auto"
+                              }
                               loading={"lazy"}
                               src={{
                                 src: "/plasmic/website_starter/images/image157.svg",
