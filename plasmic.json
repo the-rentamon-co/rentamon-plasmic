@@ -4240,6 +4240,16 @@
           "id": "Sm0jRlUFFNla",
           "name": "image 166",
           "filePath": "../public/plasmic/website_starter/images/image166.svg"
+        },
+        {
+          "id": "CYAne5TGWS5-",
+          "name": "Screenshot 2025-08-04 103748.png",
+          "filePath": "../public/plasmic/website_starter/images/screenshot20250804103748Png.png"
+        },
+        {
+          "id": "yTcdajDqr_IN",
+          "name": "12208120.png",
+          "filePath": "../public/plasmic/website_starter/images/_12208120Png.png"
         }
       ],
       "indirect": false,
@@ -4337,22 +4347,7 @@
           "componentImportPath": "@/fragment/components/textarea"
         }
       ],
-      "customFunctions": [
-        {
-          "defaultExport": false,
-          "id": "processAndCompressBase64",
-          "importPath": "src/lib/imagecompressor",
-          "name": "processAndCompressBase64",
-          "namespace": null
-        },
-        {
-          "defaultExport": false,
-          "id": "fileToBase64",
-          "importPath": "src/lib/imagecompressor",
-          "name": "fileToBase64",
-          "namespace": null
-        }
-      ]
+      "customFunctions": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",

@@ -1030,7 +1030,7 @@
 .propGuide {
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 50%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
@@ -1047,7 +1047,7 @@
     box-shadow: none;
     min-width: 0;
     border-radius: 20px;
-    padding: 20px 20px 0px;
+    padding: 20px;
   }
 }
 @media (max-width: 350px) {
@@ -1140,17 +1140,24 @@
   top: auto;
   bottom: auto;
   right: auto;
-  width: auto;
+  width: 50%;
   height: auto;
   max-width: 100%;
   background: none;
   box-shadow: none;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 10px;
-  padding-top: 0px;
+  display: flex;
   border-radius: 30px;
+  padding: 10px 20px 20px;
+}
+@media (max-width: 500px) {
+  .freeBox__hyTnZ {
+    padding-right: 0px;
+    padding-top: 0px;
+    width: 70%;
+  }
 }
 .text__gin1Y {
   position: relative;
@@ -1158,13 +1165,25 @@
   height: auto;
   max-width: 100%;
   align-self: auto;
-  font-size: 16px;
+  font-size: 17px;
   color: var(--token-qkMXlUhOdBHU);
   padding-bottom: 20px;
   left: auto;
   top: auto;
   text-align: right;
+  font-weight: 500;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__gin1Y {
+    font-size: 16px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 350px) {
+  .text__gin1Y {
+    padding-right: 0px;
+  }
 }
 .sideEffect:global(.__wab_instance) {
   max-width: 100%;

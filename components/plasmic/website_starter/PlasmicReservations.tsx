@@ -208,6 +208,7 @@ export type PlasmicReservations__OverridesType = {
   settlementNotif?: Flex__<typeof AntdModal>;
   button?: Flex__<"div">;
   closeButton?: Flex__<"div">;
+  newDetailPage?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultReservationsProps {}
@@ -727,6 +728,12 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "newDetailPage.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -1038,6 +1045,32 @@ function PlasmicReservations__RenderFunc(props: {
                 typeof $steps["runCode2"].then === "function"
               ) {
                 $steps["runCode2"] = await $steps["runCode2"];
+              }
+
+              $steps["checkBookingDetailPage"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          if (!document.cookie.includes("booking_page")) {
+                            return ($state.newDetailPage.open = true);
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["checkBookingDetailPage"] != null &&
+                typeof $steps["checkBookingDetailPage"] === "object" &&
+                typeof $steps["checkBookingDetailPage"].then === "function"
+              ) {
+                $steps["checkBookingDetailPage"] = await $steps[
+                  "checkBookingDetailPage"
+                ];
               }
             }}
           />
@@ -8544,6 +8577,181 @@ function PlasmicReservations__RenderFunc(props: {
               </div>
             </div>
           </AntdModal>
+          <AntdModal
+            data-plasmic-name={"newDetailPage"}
+            data-plasmic-override={overrides.newDetailPage}
+            className={classNames("__wab_instance", sty.newDetailPage)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_rich_components_css.plasmic_tokens
+            )}
+            hideFooter={true}
+            maskClosable={false}
+            modalScopeClassName={sty["newDetailPage__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "newDetailPage",
+                "open"
+              ]).apply(null, eventArgs);
+            }}
+            open={generateStateValueProp($state, ["newDetailPage", "open"])}
+            title={null}
+            trigger={null}
+            width={``}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__ovXrl)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__aw2Dm)}
+                displayHeight={"97px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/_12208120Png.png",
+                  fullWidth: 512,
+                  fullHeight: 512,
+                  aspectRatio: undefined
+                }}
+              />
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox___4Ur4N)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___9KIha
+                )}
+              >
+                {
+                  "\u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f \u0628\u0627 \u0632\u062f\u0646 \u0631\u0648\u06cc \u0647\u0631 \u0631\u0632\u0631\u0648\u060c \u062c\u0632\u0626\u06cc\u0627\u062a \u06a9\u0627\u0645\u0644 \u0648 \u0645\u0641\u06cc\u062f\u062a\u0631\u06cc \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc\r"
+                }
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__mKKrG
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 500 }}
+                  >
+                    {
+                      "\u0631\u0648\u06cc \u06cc\u06a9\u06cc \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0632\u0646"
+                    }
+                  </span>
+                </React.Fragment>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__qxg7M)}>
+              <div
+                className={classNames(projectcss.all, sty.freeBox__sq487)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function setCookie(name, value, hours) {
+                                let expires = "";
+                                if (hours) {
+                                  const date = new Date();
+                                  if (hours === "long") {
+                                    date.setTime(
+                                      date.getTime() +
+                                        365 * 24 * 60 * 60 * 1000 * 100
+                                    );
+                                  } else {
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                  }
+                                  expires = "; expires=" + date.toUTCString();
+                                }
+                                document.cookie =
+                                  name +
+                                  "=" +
+                                  (value || "") +
+                                  expires +
+                                  "; path=/";
+                              }
+                              return setCookie("booking_page", "true", "long");
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+
+                  $steps["updateNewDetailPageOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["newDetailPage", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateNewDetailPageOpen"] != null &&
+                    typeof $steps["updateNewDetailPageOpen"] === "object" &&
+                    typeof $steps["updateNewDetailPageOpen"].then === "function"
+                  ) {
+                    $steps["updateNewDetailPageOpen"] = await $steps[
+                      "updateNewDetailPageOpen"
+                    ];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__rwSfM
+                  )}
+                >
+                  {"\u0628\u0627\u0634\u0647"}
+                </div>
+              </div>
+            </div>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -8654,7 +8862,8 @@ const PlasmicDescendants = {
     "otaghak",
     "settlementNotif",
     "button",
-    "closeButton"
+    "closeButton",
+    "newDetailPage"
   ],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
@@ -8892,7 +9101,8 @@ const PlasmicDescendants = {
   otaghak: ["otaghak"],
   settlementNotif: ["settlementNotif", "button", "closeButton"],
   button: ["button"],
-  closeButton: ["closeButton"]
+  closeButton: ["closeButton"],
+  newDetailPage: ["newDetailPage"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -9001,6 +9211,7 @@ type NodeDefaultElementType = {
   settlementNotif: typeof AntdModal;
   button: "div";
   closeButton: "div";
+  newDetailPage: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -9165,6 +9376,7 @@ export const PlasmicReservations = Object.assign(
     settlementNotif: makeNodeComponent("settlementNotif"),
     button: makeNodeComponent("button"),
     closeButton: makeNodeComponent("closeButton"),
+    newDetailPage: makeNodeComponent("newDetailPage"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,
