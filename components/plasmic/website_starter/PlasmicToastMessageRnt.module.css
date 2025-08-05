@@ -10,6 +10,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 350px) {
+  .root {
+    display: flex;
+  }
+}
 .freeBox {
   display: flex;
   flex-direction: row;

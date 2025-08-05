@@ -184,6 +184,12 @@ function PlasmicPropertyCreate__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "accommodationName",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -868,13 +874,25 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                       }
                     }}
                     placeholder={
-                      "\u0645\u062b\u0644\u0627: \u0633\u0648\u06cc\u06cc\u062a \u0645\u0628\u0644\u0647 \u0645\u0647\u062a\u0627\u0628"
+                      "\u0645\u062b\u0644\u0627: \u0633\u0648\u06cc\u06cc\u062a \u0645\u0647\u062a\u0627\u0628"
                     }
                     value={
                       generateStateValueProp($state, ["textInput", "value"]) ??
                       ""
                     }
                   />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___2JvaQ
+                    )}
+                  >
+                    {
+                      "\u062d\u062f\u0627\u06a9\u062b\u0631 \u06f4 \u06a9\u0644\u0645\u0647 \u0645\u062c\u0627\u0632 \u0627\u0633\u062a"
+                    }
+                  </div>
                 </div>
                 <div
                   data-plasmic-name={"newButtons"}

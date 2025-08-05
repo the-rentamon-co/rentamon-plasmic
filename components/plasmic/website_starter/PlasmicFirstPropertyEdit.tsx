@@ -857,7 +857,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       }
                     }}
                     placeholder={
-                      "\u0645\u062b\u0644\u0627: \u0633\u0648\u06cc\u06cc\u062a \u0645\u0628\u0644\u0647 \u0645\u0647\u062a\u0627\u0628"
+                      "\u0645\u062b\u0644\u0627: \u0633\u0648\u06cc\u06cc\u062a \u0645\u0647\u062a\u0627\u0628"
                     }
                     value={
                       generateStateValueProp($state, ["textInput", "value"]) ??

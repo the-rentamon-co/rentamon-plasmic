@@ -188,7 +188,19 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
               throw e;
             }
           })()
-        : true
+        : (() => {
+            try {
+              return $state.display;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
     ) ? (
       <div
         data-plasmic-name={"root"}
