@@ -233,14 +233,14 @@
 }
 @media (max-width: 500px) {
   .closeButton {
-    top: -5px;
-    left: -4px;
+    top: -4px;
+    left: -3px;
   }
 }
 .img___3XJ7 {
   object-fit: cover;
   max-width: 100%;
-  height: 18px;
+  height: 16px;
   flex-shrink: 0;
 }
 .img___3XJ7 > picture > img {

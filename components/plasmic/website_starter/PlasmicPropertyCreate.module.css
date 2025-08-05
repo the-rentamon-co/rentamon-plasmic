@@ -477,6 +477,28 @@
     font-size: 17px;
   }
 }
+.text__hOqa {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: right;
+  color: var(--token-n891C0rZfC8n);
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__hOqa {
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+@media (max-width: 350px) {
+  .text__hOqa {
+    font-size: 17px;
+  }
+}
 .freeBox___5WgJh {
   display: flex;
   flex-direction: column;

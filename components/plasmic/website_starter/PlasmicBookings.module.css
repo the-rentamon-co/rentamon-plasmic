@@ -1548,7 +1548,7 @@
     width: 100%;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
-    padding: 8px 4px;
+    padding: 8px 2px;
   }
 }
 .freeBox___4RvEb {
@@ -1594,6 +1594,7 @@
 }
 @media (max-width: 350px) {
   .smartBooking {
+    border-radius: 20px;
     padding: 3px;
   }
 }
@@ -2758,6 +2759,11 @@
   border-radius: 30px;
   padding: 10px;
 }
+@media (max-width: 350px) {
+  .autoSync {
+    border-radius: 20px;
+  }
+}
 .data2 {
   display: flex;
   flex-direction: column;
@@ -3186,8 +3192,14 @@
   border-radius: 30px;
   padding: 10px;
 }
+@media (max-width: 500px) {
+  .manulBooking {
+    padding: 6px;
+  }
+}
 @media (max-width: 350px) {
   .manulBooking {
+    border-radius: 20px;
     padding: 3px;
   }
 }
@@ -3277,6 +3289,14 @@
 @media (max-width: 500px) {
   .guestInfo2 {
     border-bottom-width: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .guestInfo2 {
+    padding-right: 8px;
+    padding-left: 8px;
   }
 }
 .freeBox___6UWUc {
@@ -3291,6 +3311,11 @@
   column-gap: 15px;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox___6UWUc {
+    max-width: 40%;
+  }
 }
 @media (max-width: 350px) {
   .freeBox___6UWUc {
@@ -3354,6 +3379,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .freeBox__kFsnw {
+    max-width: 60%;
+  }
+}
 @media (max-width: 350px) {
   .freeBox__kFsnw {
     padding: 8px 0px;
@@ -3372,6 +3402,9 @@
   .text__eStQg {
     font-size: 15px;
     font-weight: 400;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 }
 @media (max-width: 350px) {
@@ -3401,6 +3434,14 @@
 @media (max-width: 500px) {
   .bookInfo2 {
     border-bottom-width: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .bookInfo2 {
+    padding-right: 8px;
+    padding-left: 8px;
   }
 }
 .freeBox__pxXzy {
@@ -3857,13 +3898,19 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .netPrice {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
 @media (max-width: 350px) {
   .netPrice {
     width: 100%;
     height: auto;
     max-width: 100%;
     border-bottom-style: dashed;
-    border-bottom-width: 2px;
+    border-bottom-width: 0px;
     flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: center;

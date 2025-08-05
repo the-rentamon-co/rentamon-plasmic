@@ -117,7 +117,7 @@ export type PlasmicReservations__OverridesType = {
   container?: Flex__<"div">;
   titles?: Flex__<"div">;
   property?: Flex__<"div">;
-  guestName3?: Flex__<"div">;
+  guestName?: Flex__<"div">;
   arriveDate?: Flex__<"div">;
   source?: Flex__<"div">;
   reserveMainStack2?: Flex__<"div">;
@@ -1403,9 +1403,9 @@ function PlasmicReservations__RenderFunc(props: {
                   </div>
                 </div>
                 <div
-                  data-plasmic-name={"guestName3"}
-                  data-plasmic-override={overrides.guestName3}
-                  className={classNames(projectcss.all, sty.guestName3)}
+                  data-plasmic-name={"guestName"}
+                  data-plasmic-override={overrides.guestName}
+                  className={classNames(projectcss.all, sty.guestName)}
                 >
                   <div
                     className={classNames(
@@ -8812,7 +8812,7 @@ const PlasmicDescendants = {
     "container",
     "titles",
     "property",
-    "guestName3",
+    "guestName",
     "arriveDate",
     "source",
     "reserveMainStack2",
@@ -8917,7 +8917,7 @@ const PlasmicDescendants = {
     "container",
     "titles",
     "property",
-    "guestName3",
+    "guestName",
     "arriveDate",
     "source",
     "reserveMainStack2",
@@ -8925,9 +8925,9 @@ const PlasmicDescendants = {
     "reserveMainStack",
     "reserveData"
   ],
-  titles: ["titles", "property", "guestName3", "arriveDate", "source"],
+  titles: ["titles", "property", "guestName", "arriveDate", "source"],
   property: ["property"],
-  guestName3: ["guestName3"],
+  guestName: ["guestName"],
   arriveDate: ["arriveDate"],
   source: ["source"],
   reserveMainStack2: ["reserveMainStack2", "reserveData2"],
@@ -9160,7 +9160,7 @@ type NodeDefaultElementType = {
   container: "div";
   titles: "div";
   property: "div";
-  guestName3: "div";
+  guestName: "div";
   arriveDate: "div";
   source: "div";
   reserveMainStack2: "div";
@@ -9325,7 +9325,7 @@ export const PlasmicReservations = Object.assign(
     container: makeNodeComponent("container"),
     titles: makeNodeComponent("titles"),
     property: makeNodeComponent("property"),
-    guestName3: makeNodeComponent("guestName3"),
+    guestName: makeNodeComponent("guestName"),
     arriveDate: makeNodeComponent("arriveDate"),
     source: makeNodeComponent("source"),
     reserveMainStack2: makeNodeComponent("reserveMainStack2"),

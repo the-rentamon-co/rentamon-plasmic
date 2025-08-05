@@ -201,12 +201,6 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
-        path: "compressedFile",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      },
-      {
         path: "pic",
         type: "private",
         variableType: "text",
@@ -859,6 +853,7 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                   <TextInput
                     data-plasmic-name={"textInput"}
                     data-plasmic-override={overrides.textInput}
+                    autoFocus={false}
                     className={classNames("__wab_instance", sty.textInput)}
                     onChange={async (...eventArgs: any) => {
                       ((...eventArgs) => {
@@ -879,6 +874,7 @@ function PlasmicFirstPropertyEditTest2__RenderFunc(props: {
                     placeholder={
                       "\u0645\u062b\u0644\u0627: \u0633\u0648\u06cc\u06cc\u062a \u0645\u0628\u0644\u0647 \u0645\u0647\u062a\u0627\u0628"
                     }
+                    required={false}
                     value={
                       generateStateValueProp($state, ["textInput", "value"]) ??
                       ""

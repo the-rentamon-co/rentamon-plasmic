@@ -832,6 +832,17 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                       "\u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc \u0628\u0627\u0634\u0647\u061f"
                     }
                   </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__hOqa
+                    )}
+                  >
+                    {
+                      "\u0627\u06cc\u0646 \u0627\u0633\u0645 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                    }
+                  </div>
                 </div>
                 <div
                   className={classNames(projectcss.all, sty.freeBox___5WgJh)}

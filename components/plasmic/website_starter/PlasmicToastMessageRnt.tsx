@@ -173,19 +173,23 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
   });
 
   return (
-    (() => {
-      try {
-        return $state.display;
-      } catch (e) {
-        if (
-          e instanceof TypeError ||
-          e?.plasmicType === "PlasmicUndefinedDataError"
-        ) {
-          return true;
-        }
-        throw e;
-      }
-    })() ? (
+    (
+      hasVariant(globalVariants, "screen", "smallMobile")
+        ? (() => {
+            try {
+              return $state.display;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })()
+        : true
+    ) ? (
       <div
         data-plasmic-name={"root"}
         data-plasmic-override={overrides.root}
@@ -448,7 +452,7 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
             <PlasmicImg__
               alt={""}
               className={classNames(sty.img___3XJ7)}
-              displayHeight={"18px"}
+              displayHeight={"16px"}
               displayMaxHeight={"none"}
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
