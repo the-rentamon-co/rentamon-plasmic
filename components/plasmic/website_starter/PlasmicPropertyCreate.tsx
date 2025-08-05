@@ -659,7 +659,41 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     $steps["updateHostType"] = await $steps["updateHostType"];
                   }
 
-                  $steps["invokeGlobalAction"] = true
+                  $steps["updateStep"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["step"]
+                          },
+                          operation: 2
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          const oldValue = $stateGet(objRoot, variablePath);
+                          $stateSet(objRoot, variablePath, oldValue + 1);
+                          return oldValue + 1;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateStep"] != null &&
+                    typeof $steps["updateStep"] === "object" &&
+                    typeof $steps["updateStep"].then === "function"
+                  ) {
+                    $steps["updateStep"] = await $steps["updateStep"];
+                  }
+
+                  $steps["invokeGlobalAction"] = false
                     ? (() => {
                         const actionArgs = {
                           args: [
@@ -717,40 +751,6 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     typeof $steps["wait"].then === "function"
                   ) {
                     $steps["wait"] = await $steps["wait"];
-                  }
-
-                  $steps["updateStep"] = false
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["step"]
-                          },
-                          operation: 2
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          const oldValue = $stateGet(objRoot, variablePath);
-                          $stateSet(objRoot, variablePath, oldValue + 1);
-                          return oldValue + 1;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateStep"] != null &&
-                    typeof $steps["updateStep"] === "object" &&
-                    typeof $steps["updateStep"].then === "function"
-                  ) {
-                    $steps["updateStep"] = await $steps["updateStep"];
                   }
                 }}
               >

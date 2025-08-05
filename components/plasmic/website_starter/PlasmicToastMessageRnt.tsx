@@ -456,10 +456,10 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
               displayWidth={"auto"}
               loading={"lazy"}
               src={{
-                src: "/plasmic/website_starter/images/image24.svg",
-                fullWidth: 20,
+                src: "/plasmic/website_starter/images/image167.svg",
+                fullWidth: 18,
                 fullHeight: 18,
-                aspectRatio: 1.111111
+                aspectRatio: undefined
               }}
             />
           </div>

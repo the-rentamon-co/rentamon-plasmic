@@ -469,7 +469,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
               sty.date
             )}
           >
-            {hasVariant(globalVariants, "screen", "mobile") ? (
+            {hasVariant(globalVariants, "screen", "smallMobile") ? (
               <React.Fragment>
                 {(() => {
                   try {
@@ -578,7 +578,263 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
                         const weekdayIndex = gDate.getDay();
                         const weekday = persianWeekdays[weekdayIndex];
                         const monthName = persianMonths[jm - 1];
-                        return `${toPersianDigits(jd)} ${monthName} ${weekday}`;
+                        return `${weekday}\n${toPersianDigits(
+                          jd
+                        )} ${monthName}`;
+                      }
+                      const checkIn = $props.data.check_in;
+                      const result = convertJalaliStringToFullPersian(checkIn);
+                      return result;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return " ";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            ) : hasVariant(globalVariants, "screen", "mobile") ? (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return (() => {
+                      const persianMonths = [
+                        "فروردین",
+                        "اردیبهشت",
+                        "خرداد",
+                        "تیر",
+                        "مرداد",
+                        "شهریور",
+                        "مهر",
+                        "آبان",
+                        "آذر",
+                        "دی",
+                        "بهمن",
+                        "اسفند"
+                      ];
+
+                      const persianWeekdays = [
+                        "یک‌شنبه",
+                        "دوشنبه",
+                        "سه‌شنبه",
+                        "چهارشنبه",
+                        "پنج‌شنبه",
+                        "جمعه",
+                        "شنبه"
+                      ];
+
+                      function toPersianDigits(input) {
+                        const persianDigits = [
+                          "۰",
+                          "۱",
+                          "۲",
+                          "۳",
+                          "۴",
+                          "۵",
+                          "۶",
+                          "۷",
+                          "۸",
+                          "۹"
+                        ];
+
+                        return input
+                          .toString()
+                          .replace(/\d/g, d => persianDigits[d]);
+                      }
+                      function toEnglishDigits(str) {
+                        const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+                        return str.replace(/[۰-۹]/g, d =>
+                          persianDigits.indexOf(d)
+                        );
+                      }
+                      function toGregorian(jy, jm, jd) {
+                        const jDaysInMonth = [
+                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                        ];
+
+                        const gDaysInMonth = [
+                          31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+                        ];
+
+                        jy -= 979;
+                        jm -= 1;
+                        jd -= 1;
+                        let jDayNo =
+                          365 * jy +
+                          Math.floor(jy / 33) * 8 +
+                          Math.floor(((jy % 33) + 3) / 4);
+                        for (let i = 0; i < jm; ++i) jDayNo += jDaysInMonth[i];
+                        jDayNo += jd;
+                        let gDayNo = jDayNo + 79;
+                        let gy = 1600 + 400 * Math.floor(gDayNo / 146097);
+                        gDayNo %= 146097;
+                        let leap = true;
+                        if (gDayNo >= 36525) {
+                          gDayNo--;
+                          gy += 100 * Math.floor(gDayNo / 36524);
+                          gDayNo %= 36524;
+                          if (gDayNo >= 365) gDayNo++;
+                          else leap = false;
+                        }
+                        gy += 4 * Math.floor(gDayNo / 1461);
+                        gDayNo %= 1461;
+                        if (gDayNo >= 366) {
+                          leap = false;
+                          gDayNo--;
+                          gy += Math.floor(gDayNo / 365);
+                          gDayNo = gDayNo % 365;
+                        }
+                        let gm = 0;
+                        for (; gm < 12; gm++) {
+                          let daysInMonth = gDaysInMonth[gm];
+                          if (gm === 1 && leap) daysInMonth++;
+                          if (gDayNo < daysInMonth) break;
+                          gDayNo -= daysInMonth;
+                        }
+                        let gd = gDayNo + 1;
+                        return new Date(gy, gm, gd);
+                      }
+                      function convertJalaliStringToFullPersian(dateStr) {
+                        const [jy, jm, jd] = toEnglishDigits(dateStr)
+                          .split("/")
+                          .map(Number);
+                        const gDate = toGregorian(jy, jm, jd);
+                        const weekdayIndex = gDate.getDay();
+                        const weekday = persianWeekdays[weekdayIndex];
+                        const monthName = persianMonths[jm - 1];
+                        return `${weekday}\n${toPersianDigits(
+                          jd
+                        )} ${monthName}`;
+                      }
+                      const checkIn = $props.data.check_in;
+                      const result = convertJalaliStringToFullPersian(checkIn);
+                      return result;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return " ";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            ) : hasVariant(globalVariants, "screen", "tablet") ? (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return (() => {
+                      const persianMonths = [
+                        "فروردین",
+                        "اردیبهشت",
+                        "خرداد",
+                        "تیر",
+                        "مرداد",
+                        "شهریور",
+                        "مهر",
+                        "آبان",
+                        "آذر",
+                        "دی",
+                        "بهمن",
+                        "اسفند"
+                      ];
+
+                      const persianWeekdays = [
+                        "یک‌شنبه",
+                        "دوشنبه",
+                        "سه‌شنبه",
+                        "چهارشنبه",
+                        "پنج‌شنبه",
+                        "جمعه",
+                        "شنبه"
+                      ];
+
+                      function toPersianDigits(input) {
+                        const persianDigits = [
+                          "۰",
+                          "۱",
+                          "۲",
+                          "۳",
+                          "۴",
+                          "۵",
+                          "۶",
+                          "۷",
+                          "۸",
+                          "۹"
+                        ];
+
+                        return input
+                          .toString()
+                          .replace(/\d/g, d => persianDigits[d]);
+                      }
+                      function toEnglishDigits(str) {
+                        const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+                        return str.replace(/[۰-۹]/g, d =>
+                          persianDigits.indexOf(d)
+                        );
+                      }
+                      function toGregorian(jy, jm, jd) {
+                        const jDaysInMonth = [
+                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                        ];
+
+                        const gDaysInMonth = [
+                          31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+                        ];
+
+                        jy -= 979;
+                        jm -= 1;
+                        jd -= 1;
+                        let jDayNo =
+                          365 * jy +
+                          Math.floor(jy / 33) * 8 +
+                          Math.floor(((jy % 33) + 3) / 4);
+                        for (let i = 0; i < jm; ++i) jDayNo += jDaysInMonth[i];
+                        jDayNo += jd;
+                        let gDayNo = jDayNo + 79;
+                        let gy = 1600 + 400 * Math.floor(gDayNo / 146097);
+                        gDayNo %= 146097;
+                        let leap = true;
+                        if (gDayNo >= 36525) {
+                          gDayNo--;
+                          gy += 100 * Math.floor(gDayNo / 36524);
+                          gDayNo %= 36524;
+                          if (gDayNo >= 365) gDayNo++;
+                          else leap = false;
+                        }
+                        gy += 4 * Math.floor(gDayNo / 1461);
+                        gDayNo %= 1461;
+                        if (gDayNo >= 366) {
+                          leap = false;
+                          gDayNo--;
+                          gy += Math.floor(gDayNo / 365);
+                          gDayNo = gDayNo % 365;
+                        }
+                        let gm = 0;
+                        for (; gm < 12; gm++) {
+                          let daysInMonth = gDaysInMonth[gm];
+                          if (gm === 1 && leap) daysInMonth++;
+                          if (gDayNo < daysInMonth) break;
+                          gDayNo -= daysInMonth;
+                        }
+                        let gd = gDayNo + 1;
+                        return new Date(gy, gm, gd);
+                      }
+                      function convertJalaliStringToFullPersian(dateStr) {
+                        const [jy, jm, jd] = toEnglishDigits(dateStr)
+                          .split("/")
+                          .map(Number);
+                        const gDate = toGregorian(jy, jm, jd);
+                        const weekdayIndex = gDate.getDay();
+                        const weekday = persianWeekdays[weekdayIndex];
+                        const monthName = persianMonths[jm - 1];
+                        return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                       }
                       const checkIn = $props.data.check_in;
                       const result = convertJalaliStringToFullPersian(checkIn);
@@ -704,7 +960,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
                         const weekdayIndex = gDate.getDay();
                         const weekday = persianWeekdays[weekdayIndex];
                         const monthName = persianMonths[jm - 1];
-                        return `${toPersianDigits(jd)} ${monthName} ${weekday}`;
+                        return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                       }
                       const checkIn = $props.data.check_in;
                       const result = convertJalaliStringToFullPersian(checkIn);
