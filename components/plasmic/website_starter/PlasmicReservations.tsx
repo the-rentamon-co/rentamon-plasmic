@@ -783,7 +783,7 @@ function PlasmicReservations__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["runCode"] = true
+              $steps["checkUserIsLoging"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -880,11 +880,11 @@ function PlasmicReservations__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
+                $steps["checkUserIsLoging"] != null &&
+                typeof $steps["checkUserIsLoging"] === "object" &&
+                typeof $steps["checkUserIsLoging"].then === "function"
               ) {
-                $steps["runCode"] = await $steps["runCode"];
+                $steps["checkUserIsLoging"] = await $steps["checkUserIsLoging"];
               }
 
               $steps["runCode3"] = true
@@ -1070,6 +1070,42 @@ function PlasmicReservations__RenderFunc(props: {
               ) {
                 $steps["checkBookingDetailPage"] = await $steps[
                   "checkBookingDetailPage"
+                ];
+              }
+
+              $steps["removeSmartBookingAlert"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function setCookie(name, value, hours) {
+                            let expires = "";
+                            if (hours) {
+                              const date = new Date();
+                              date.setTime(
+                                date.getTime() + hours * 60 * 60 * 1000
+                              );
+                              expires = "; expires=" + date.toUTCString();
+                            }
+                            document.cookie =
+                              name + "=" + (value || "") + expires + "; path=/";
+                          }
+                          return setCookie("visit_alert", "true", 72);
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["removeSmartBookingAlert"] != null &&
+                typeof $steps["removeSmartBookingAlert"] === "object" &&
+                typeof $steps["removeSmartBookingAlert"].then === "function"
+              ) {
+                $steps["removeSmartBookingAlert"] = await $steps[
+                  "removeSmartBookingAlert"
                 ];
               }
             }}
