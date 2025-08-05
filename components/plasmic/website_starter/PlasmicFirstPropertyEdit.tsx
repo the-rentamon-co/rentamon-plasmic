@@ -1430,6 +1430,31 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["updateLoading"] = await $steps["updateLoading"];
                       }
 
+                      $steps["goToPanel"] = true
+                        ? (() => {
+                            const actionArgs = { destination: `/panel` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToPanel"] != null &&
+                        typeof $steps["goToPanel"] === "object" &&
+                        typeof $steps["goToPanel"].then === "function"
+                      ) {
+                        $steps["goToPanel"] = await $steps["goToPanel"];
+                      }
+
                       $steps["setCookieFirstVisit"] =
                         $state.propTour === true
                           ? (() => {
@@ -1508,34 +1533,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["goToProLitePanel"] =
-                        $state.propTour === true
-                          ? (() => {
-                              const actionArgs = { destination: `/calendar` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["goToProLitePanel"] != null &&
-                        typeof $steps["goToProLitePanel"] === "object" &&
-                        typeof $steps["goToProLitePanel"].then === "function"
-                      ) {
-                        $steps["goToProLitePanel"] = await $steps[
-                          "goToProLitePanel"
-                        ];
-                      }
-
                       $steps["registrationSteps"] =
                         $state.propTour === true
                           ? (() => {
@@ -1609,31 +1606,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["updateLoading2"] = await $steps[
                           "updateLoading2"
                         ];
-                      }
-
-                      $steps["goToLitePanel"] = false
-                        ? (() => {
-                            const actionArgs = { destination: `/calendar` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToLitePanel"] != null &&
-                        typeof $steps["goToLitePanel"] === "object" &&
-                        typeof $steps["goToLitePanel"].then === "function"
-                      ) {
-                        $steps["goToLitePanel"] = await $steps["goToLitePanel"];
                       }
 
                       $steps["changePropertyPic"] = false

@@ -1416,24 +1416,23 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["goToProperties"] =
-                        $steps.apiRequest.status == 200
-                          ? (() => {
-                              const actionArgs = { destination: `/properties` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
+                      $steps["goToProperties"] = true
+                        ? (() => {
+                            const actionArgs = { destination: `/properties` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
                       if (
                         $steps["goToProperties"] != null &&
                         typeof $steps["goToProperties"] === "object" &&
