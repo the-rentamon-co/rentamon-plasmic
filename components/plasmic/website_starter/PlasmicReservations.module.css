@@ -304,12 +304,12 @@
 }
 @media (max-width: 500px) {
   .freeBox___7ZJdP {
-    padding: 10px 4px;
+    padding: 10px 0px;
   }
 }
 @media (max-width: 350px) {
   .freeBox___7ZJdP {
-    padding: 10px 2px 2px;
+    padding: 10px 4px 2px;
   }
 }
 .toastMessageRnt:global(.__wab_instance) {

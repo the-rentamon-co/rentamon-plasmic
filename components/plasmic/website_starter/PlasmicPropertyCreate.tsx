@@ -882,17 +882,34 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     }
                   />
 
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___2JvaQ
-                    )}
-                  >
-                    {
-                      "\u062d\u062f\u0627\u06a9\u062b\u0631 \u06f4 \u06a9\u0644\u0645\u0647 \u0645\u062c\u0627\u0632 \u0627\u0633\u062a"
+                  {(() => {
+                    try {
+                      return (
+                        $state.textInput &&
+                        $state.textInput.value.trim().split(/\s+/).length > 4
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
                     }
-                  </div>
+                  })() ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___2JvaQ
+                      )}
+                    >
+                      {
+                        "\u0644\u0637\u0641\u0627 \u06cc\u0647 \u0627\u0633\u0645 \u06a9\u0648\u062a\u0627\u0647\u200c\u062a\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                      }
+                    </div>
+                  ) : null}
                 </div>
                 <div
                   data-plasmic-name={"newButtons"}
@@ -1025,32 +1042,34 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["updateStep"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["step"]
-                              },
-                              operation: 0,
-                              value: ($state.step = 2)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
+                      $steps["updateStep"] =
+                        $state.textInput &&
+                        $state.textInput.value.trim().split(/\s+/).length <= 4
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["step"]
+                                },
+                                operation: 0,
+                                value: ($state.step = 2)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
 
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
                       if (
                         $steps["updateStep"] != null &&
                         typeof $steps["updateStep"] === "object" &&

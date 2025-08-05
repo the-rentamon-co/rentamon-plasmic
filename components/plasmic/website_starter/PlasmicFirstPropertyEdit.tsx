@@ -864,6 +864,35 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       ""
                     }
                   />
+
+                  {(() => {
+                    try {
+                      return (
+                        $state.textInput &&
+                        $state.textInput.value.trim().split(/\s+/).length > 4
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jSB
+                      )}
+                    >
+                      {
+                        "\u0644\u0637\u0641\u0627 \u06cc\u0647 \u0627\u0633\u0645 \u06a9\u0648\u062a\u0627\u0647\u200c\u062a\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                      }
+                    </div>
+                  ) : null}
                 </div>
                 <div
                   data-plasmic-name={"newButtons"}
@@ -915,32 +944,37 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["updateLoading"] = await $steps["updateLoading"];
                       }
 
-                      $steps["updateStep"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["step"]
-                              },
-                              operation: 2
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
+                      $steps["updateStep"] =
+                        $state.textInput &&
+                        $state.textInput.value.trim().split(/\s+/).length <= 4
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["step"]
+                                },
+                                operation: 2
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
 
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, oldValue + 1);
-                              return oldValue + 1;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, oldValue + 1);
+                                return oldValue + 1;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
                       if (
                         $steps["updateStep"] != null &&
                         typeof $steps["updateStep"] === "object" &&
@@ -1826,62 +1860,83 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                 {"\u0627\u0646\u0635\u0631\u0627\u0641"}
               </div>
             </div>
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? true
-                : (() => {
-                    try {
-                      return $state.propTour === true && $state.step === 2;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })()
-            ) ? (
-              <div
-                data-plasmic-name={"propGuide5"}
-                data-plasmic-override={overrides.propGuide5}
-                className={classNames(projectcss.all, sty.propGuide5)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__j0Y5F)}>
+            {(() => {
+              try {
+                return $state.propTour === true && $state.step === 2;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox__ofsQi)}>
+                {(
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? true
+                    : (() => {
+                        try {
+                          return $state.propTour === true && $state.step === 2;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                ) ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__naA0P
-                    )}
-                  >
-                    {
-                      "\u06cc\u0647 \u0639\u06a9\u0633 \u0628\u0627 \u062d\u062c\u0645 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f2 \u0645\u06af\u0627\u0628\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
-                    }
-                  </div>
-                </div>
-                {false ? (
-                  <div
-                    data-plasmic-name={"propGuide6"}
-                    data-plasmic-override={overrides.propGuide6}
-                    className={classNames(projectcss.all, sty.propGuide6)}
+                    data-plasmic-name={"propGuide5"}
+                    data-plasmic-override={overrides.propGuide5}
+                    className={classNames(projectcss.all, sty.propGuide5)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__df9G6)}
+                      className={classNames(projectcss.all, sty.freeBox__j0Y5F)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___8KLf4
+                          sty.text__naA0P
                         )}
                       >
                         {
-                          "\u06cc\u0647 \u0639\u06a9\u0633 \u0628\u0627 \u062d\u062c\u0645 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f2 \u0645\u06af\u0627\u0628\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                          "\u06cc\u0647 \u0639\u06a9\u0633 \u0647\u0645 \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
                         }
                       </div>
                     </div>
+                    {false ? (
+                      <div
+                        data-plasmic-name={"propGuide6"}
+                        data-plasmic-override={overrides.propGuide6}
+                        className={classNames(projectcss.all, sty.propGuide6)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__df9G6
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___8KLf4
+                            )}
+                          >
+                            {
+                              "\u06cc\u0647 \u0639\u06a9\u0633 \u0628\u0627 \u062d\u062c\u0645 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f2 \u0645\u06af\u0627\u0628\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                            }
+                          </div>
+                        </div>
+                      </div>
+                    ) : null}
                   </div>
                 ) : null}
               </div>
