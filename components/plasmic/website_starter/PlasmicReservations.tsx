@@ -1997,7 +1997,14 @@ function PlasmicReservations__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               customFunction: async () => {
-                                return undefined;
+                                return (() => {
+                                  return window.open(
+                                    `https://rentamon.com/bookings/${currentItem.alternative_booking_id.substring(
+                                      3
+                                    )}`,
+                                    "_blank"
+                                  );
+                                })();
                               }
                             };
                             return (({ customFunction }) => {
