@@ -1,6 +1,3 @@
-
-// src/lib/functions/compressImageFile.ts
-
 export async function compressImageFile(file: File, maxWidth = 800, quality = 0.7): Promise<File> {
   const image = new Image();
   const reader = new FileReader();
@@ -40,4 +37,3 @@ export async function compressImageFile(file: File, maxWidth = 800, quality = 0.
     reader.readAsDataURL(file);
   });
 }
-
