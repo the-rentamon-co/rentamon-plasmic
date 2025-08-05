@@ -385,13 +385,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 35%;
+  width: 30%;
   height: auto;
   justify-content: flex-start;
   align-items: center;
-  max-width: 35%;
-  min-width: 35%;
-  padding: 0px 22px 0px 0px;
+  padding: 0px;
 }
 @media (max-width: 1200px) {
   .property {
@@ -409,7 +407,6 @@
 @media (max-width: 350px) {
   .property {
     padding-right: 0px;
-    max-width: 36%;
   }
 }
 .text__dxAlP {
@@ -442,38 +439,36 @@
 }
 @media (max-width: 350px) {
   .text__dxAlP {
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
+    font-weight: 500;
   }
 }
 .guestName {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 22%;
+  width: 27%;
   height: auto;
-  max-width: 22%;
   justify-content: flex-start;
   align-items: center;
-  min-width: 22%;
   padding: 0px;
 }
 @media (max-width: 1200px) {
   .guestName {
-    max-width: 22%;
+    width: 30%;
   }
 }
 @media (max-width: 500px) {
   .guestName {
-    max-width: 35%;
-    width: 35%;
-    min-width: 35%;
+    width: 30%;
   }
 }
 @media (max-width: 350px) {
   .guestName {
     padding-right: 0px;
-    max-width: 36%;
+    max-width: none;
+    width: 35%;
   }
 }
 .text__yOpPu {
@@ -519,20 +514,36 @@
 }
 @media (max-width: 350px) {
   .text__yOpPu {
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
+    width: 100%;
+    height: auto;
+    min-width: 25%;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-weight: 500;
+    font-style: normal;
+    color: #203647;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
+    padding-right: 0px;
   }
 }
 .arriveDate {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 22%;
+  width: 20%;
   height: auto;
-  max-width: 22%;
+  max-width: 20%;
   justify-content: flex-start;
   align-items: center;
-  min-width: 22%;
+  min-width: 20%;
   padding: 0px;
 }
 @media (max-width: 1200px) {
@@ -590,19 +601,33 @@
 }
 @media (max-width: 350px) {
   .text__m4Cx2 {
-    font-size: 16px;
+    font-size: 15px;
+    width: 100%;
+    height: auto;
+    min-width: 25%;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-weight: 500;
+    font-style: normal;
+    color: #203647;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
   }
 }
 .source {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 22%;
+  width: 15%;
   height: auto;
-  max-width: 22%;
   justify-content: flex-start;
   align-items: center;
-  min-width: 22%;
   padding: 0px;
 }
 @media (max-width: 500px) {
@@ -657,7 +682,23 @@
 }
 @media (max-width: 350px) {
   .text__o8Lk1 {
-    font-size: 16px;
+    font-size: 15px;
+    width: 100%;
+    height: auto;
+    min-width: 25%;
+    max-width: 100%;
+    font-family: "Estedad";
+    font-weight: 500;
+    font-style: normal;
+    color: #203647;
+    text-align: center;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    user-select: text;
+    text-decoration-line: none;
+    text-overflow: clip;
   }
 }
 .reserveMainStack2 {

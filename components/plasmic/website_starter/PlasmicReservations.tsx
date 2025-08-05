@@ -1396,7 +1396,7 @@ function PlasmicReservations__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0645\u0647\u0645\u0627\u0646"
+                      ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                       : hasVariant(globalVariants, "screen", "mobile")
                       ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                       : "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
@@ -1433,7 +1433,11 @@ function PlasmicReservations__RenderFunc(props: {
                       sty.text__m4Cx2
                     )}
                   >
-                    {"\u062a\u0627\u0631\u06cc\u062e \u0648\u0631\u0648\u062f"}
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0648\u0631\u0648\u062f"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0648\u0631\u0648\u062f"
+                      : "\u062a\u0627\u0631\u06cc\u062e \u0648\u0631\u0648\u062f"}
                   </div>
                 </div>
                 <div
@@ -1945,7 +1949,7 @@ function PlasmicReservations__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["updateModalOpen4"] = true
+                      $steps["updateModalOpen4"] = false
                         ? (() => {
                             const actionArgs = {
                               destination: `/bookings/${(() => {
@@ -1986,6 +1990,28 @@ function PlasmicReservations__RenderFunc(props: {
                       ) {
                         $steps["updateModalOpen4"] = await $steps[
                           "updateModalOpen4"
+                        ];
+                      }
+
+                      $steps["updateModalOpen5"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return undefined;
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateModalOpen5"] != null &&
+                        typeof $steps["updateModalOpen5"] === "object" &&
+                        typeof $steps["updateModalOpen5"].then === "function"
+                      ) {
+                        $steps["updateModalOpen5"] = await $steps[
+                          "updateModalOpen5"
                         ];
                       }
                     }}

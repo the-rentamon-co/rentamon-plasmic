@@ -81,7 +81,7 @@
   min-width: 0;
   min-height: 0;
 }
-.freeBox__y5Sid {
+.pic {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -94,8 +94,13 @@
   min-height: 0;
   border-radius: 5px 16px 16px 5px;
 }
+@media (max-width: 1200px) {
+  .pic {
+    width: 30%;
+  }
+}
 @media (max-width: 500px) {
-  .freeBox__y5Sid {
+  .pic {
     width: 25%;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -117,6 +122,12 @@
   background: #ffffffe6;
   overflow: hidden;
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .freeBox__mk6VW {
+    padding-right: 4px;
+    padding-left: 2px;
+  }
 }
 .property {
   width: auto;
@@ -164,11 +175,11 @@
 .img > picture > img {
   object-fit: cover;
 }
-.freeBox__r11Q {
+.guestName {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 22%;
+  width: 35%;
   height: auto;
   max-width: 35%;
   justify-content: flex-start;
@@ -177,15 +188,23 @@
   padding-left: 2px;
 }
 @media (max-width: 1200px) {
-  .freeBox__r11Q {
-    width: 27%;
+  .guestName {
+    width: 30%;
+    max-width: 30%;
+    padding-right: 4px;
+    padding-left: 4px;
   }
 }
 @media (max-width: 500px) {
-  .freeBox__r11Q {
+  .guestName {
     width: 35%;
     padding-right: 2px;
     padding-left: 2px;
+  }
+}
+@media (max-width: 350px) {
+  .guestName {
+    max-width: none;
   }
 }
 .geustName {
@@ -223,23 +242,23 @@
     min-width: 0;
   }
 }
-.freeBox__vn8Pn {
+.date2 {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 22%;
+  width: 20%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
 }
 @media (max-width: 1200px) {
-  .freeBox__vn8Pn {
-    width: 10%;
+  .date2 {
+    width: 20%;
   }
 }
 @media (max-width: 500px) {
-  .freeBox__vn8Pn {
+  .date2 {
     width: 20%;
   }
 }
@@ -269,28 +288,28 @@
 }
 @media (max-width: 350px) {
   .date {
-    font-size: 13px;
+    font-size: 12px;
     width: 100%;
     min-width: 0;
   }
 }
-.freeBox___8MKj0 {
+.source {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 21%;
+  width: 20%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
 }
 @media (max-width: 1200px) {
-  .freeBox___8MKj0 {
-    width: 28%;
+  .source {
+    width: 20%;
   }
 }
 @media (max-width: 500px) {
-  .freeBox___8MKj0 {
+  .source {
     width: 20%;
   }
 }

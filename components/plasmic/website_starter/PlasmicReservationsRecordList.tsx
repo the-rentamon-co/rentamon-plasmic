@@ -105,10 +105,14 @@ export const PlasmicReservationsRecordList__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicReservationsRecordList__OverridesType = {
   tourGuideReservations?: Flex__<"div">;
+  pic?: Flex__<"div">;
   property?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
+  guestName?: Flex__<"div">;
   geustName?: Flex__<"div">;
+  date2?: Flex__<"div">;
   date?: Flex__<"div">;
+  source?: Flex__<"div">;
   website?: Flex__<"div">;
 };
 
@@ -290,7 +294,11 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
           )
         })}
       >
-        <div className={classNames(projectcss.all, sty.freeBox__y5Sid)}>
+        <div
+          data-plasmic-name={"pic"}
+          data-plasmic-override={overrides.pic}
+          className={classNames(projectcss.all, sty.pic)}
+        >
           <div className={classNames(projectcss.all, sty.freeBox__mk6VW)}>
             <div
               data-plasmic-name={"property"}
@@ -391,7 +399,11 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
             })()}
           />
         </div>
-        <div className={classNames(projectcss.all, sty.freeBox__r11Q)}>
+        <div
+          data-plasmic-name={"guestName"}
+          data-plasmic-override={overrides.guestName}
+          className={classNames(projectcss.all, sty.guestName)}
+        >
           <div
             data-plasmic-name={"geustName"}
             data-plasmic-override={overrides.geustName}
@@ -459,7 +471,11 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
             )}
           </div>
         </div>
-        <div className={classNames(projectcss.all, sty.freeBox__vn8Pn)}>
+        <div
+          data-plasmic-name={"date2"}
+          data-plasmic-override={overrides.date2}
+          className={classNames(projectcss.all, sty.date2)}
+        >
           <div
             data-plasmic-name={"date"}
             data-plasmic-override={overrides.date}
@@ -980,7 +996,11 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
             )}
           </div>
         </div>
-        <div className={classNames(projectcss.all, sty.freeBox___8MKj0)}>
+        <div
+          data-plasmic-name={"source"}
+          data-plasmic-override={overrides.source}
+          className={classNames(projectcss.all, sty.source)}
+        >
           <div
             data-plasmic-name={"website"}
             data-plasmic-override={overrides.website}
@@ -1061,16 +1081,24 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
 const PlasmicDescendants = {
   tourGuideReservations: [
     "tourGuideReservations",
+    "pic",
     "property",
     "img",
+    "guestName",
     "geustName",
+    "date2",
     "date",
+    "source",
     "website"
   ],
+  pic: ["pic", "property", "img"],
   property: ["property"],
   img: ["img"],
+  guestName: ["guestName", "geustName"],
   geustName: ["geustName"],
+  date2: ["date2", "date"],
   date: ["date"],
+  source: ["source", "website"],
   website: ["website"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1078,10 +1106,14 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   tourGuideReservations: "div";
+  pic: "div";
   property: "div";
   img: typeof PlasmicImg__;
+  guestName: "div";
   geustName: "div";
+  date2: "div";
   date: "div";
+  source: "div";
   website: "div";
 };
 
@@ -1145,10 +1177,14 @@ export const PlasmicReservationsRecordList = Object.assign(
   makeNodeComponent("tourGuideReservations"),
   {
     // Helper components rendering sub-elements
+    pic: makeNodeComponent("pic"),
     property: makeNodeComponent("property"),
     img: makeNodeComponent("img"),
+    guestName: makeNodeComponent("guestName"),
     geustName: makeNodeComponent("geustName"),
+    date2: makeNodeComponent("date2"),
     date: makeNodeComponent("date"),
+    source: makeNodeComponent("source"),
     website: makeNodeComponent("website"),
 
     // Metadata about props expected for PlasmicReservationsRecordList
