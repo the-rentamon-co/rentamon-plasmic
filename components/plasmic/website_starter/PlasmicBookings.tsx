@@ -4075,9 +4075,10 @@ function PlasmicBookings__RenderFunc(props: {
                                           ) {
                                             price = price / 10;
                                           }
-                                          return new Intl.NumberFormat(
+                                          real_price = new Intl.NumberFormat(
                                             "fa-IR"
                                           ).format(price);
+                                          return real_price + "  تومان";
                                         })();
                                       } catch (e) {
                                         if (
@@ -6887,10 +6888,11 @@ function PlasmicBookings__RenderFunc(props: {
                               <React.Fragment>
                                 {(() => {
                                   try {
-                                    return new Intl.NumberFormat(
-                                      "fa-IR"
-                                    ).format(
-                                      $state.booking.data.manual_booking.amount
+                                    return (
+                                      new Intl.NumberFormat("fa-IR").format(
+                                        $state.booking.data.manual_booking
+                                          .amount
+                                      ) + "  تومان"
                                     );
                                   } catch (e) {
                                     if (
@@ -7571,10 +7573,152 @@ function PlasmicBookings__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__dTdgL
+                            sty.text__yRHok
                           )}
                         >
-                          {""}
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (() => {
+                                  function numberToPersian(num) {
+                                    const units = [
+                                      "",
+                                      "یک",
+                                      "دو",
+                                      "سه",
+                                      "چهار",
+                                      "پنج",
+                                      "شش",
+                                      "هفت",
+                                      "هشت",
+                                      "نه"
+                                    ];
+
+                                    const tens = [
+                                      "",
+                                      "ده",
+                                      "بیست",
+                                      "سی",
+                                      "چهل",
+                                      "پنجاه",
+                                      "شصت",
+                                      "هفتاد",
+                                      "هشتاد",
+                                      "نود"
+                                    ];
+
+                                    const teens = [
+                                      "ده",
+                                      "یازده",
+                                      "دوازده",
+                                      "سیزده",
+                                      "چهارده",
+                                      "پانزده",
+                                      "شانزده",
+                                      "هفده",
+                                      "هجده",
+                                      "نوزده"
+                                    ];
+
+                                    const hundreds = [
+                                      "",
+                                      "صد",
+                                      "دویست",
+                                      "سیصد",
+                                      "چهارصد",
+                                      "پانصد",
+                                      "ششصد",
+                                      "هفتصد",
+                                      "هشتصد",
+                                      "نهصد"
+                                    ];
+
+                                    const groupNames = [
+                                      "",
+                                      "هزار",
+                                      "میلیون",
+                                      "میلیارد"
+                                    ];
+
+                                    if (num == null || num === "" || num === 0)
+                                      return "صفر";
+                                    const splitNumber = n => {
+                                      const str = n.toString();
+                                      const len = str.length;
+                                      if (len <= 3) return [n];
+                                      const groups = [];
+                                      let i = len;
+                                      while (i > 0) {
+                                        groups.unshift(
+                                          Number(
+                                            str.substring(Math.max(0, i - 3), i)
+                                          )
+                                        );
+                                        i -= 3;
+                                      }
+                                      return groups;
+                                    };
+                                    const convertGroup = n => {
+                                      if (n === 0) return "";
+                                      const h = Math.floor(n / 100);
+                                      const t = Math.floor((n % 100) / 10);
+                                      const u = n % 10;
+                                      const hundred = hundreds[h];
+                                      let tenUnit = "";
+                                      if (t === 1) {
+                                        tenUnit = teens[u];
+                                      } else {
+                                        tenUnit =
+                                          tens[t] +
+                                          (u > 0 ? " و " + units[u] : "");
+                                      }
+                                      return [hundred, tenUnit]
+                                        .filter(Boolean)
+                                        .join(" و ")
+                                        .trim();
+                                    };
+                                    const groups = splitNumber(num);
+                                    const result = groups
+                                      .map((g, i) => {
+                                        const groupText = convertGroup(g);
+                                        if (groupText) {
+                                          return (
+                                            groupText +
+                                            (groupNames[groups.length - i - 1]
+                                              ? " " +
+                                                groupNames[
+                                                  groups.length - i - 1
+                                                ]
+                                              : "")
+                                          );
+                                        }
+                                        return "";
+                                      })
+                                      .filter(Boolean)
+                                      .join(" و ");
+                                    const finalResult = result.startsWith("و ")
+                                      ? result.slice(2)
+                                      : result;
+                                    return finalResult.trim() + " تومان";
+                                  }
+                                  const input = $state.amount2?.value || "";
+                                  const output =
+                                    input === ""
+                                      ? "صفر"
+                                      : numberToPersian(Number(input));
+                                  return output;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
                         </div>
                       </div>
                       <div

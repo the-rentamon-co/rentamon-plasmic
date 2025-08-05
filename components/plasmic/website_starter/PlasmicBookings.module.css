@@ -4296,27 +4296,12 @@
   width: 463px;
   display: none;
 }
-.text__dTdgL {
+.text__yRHok {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: 4px;
-  font-family: "Estedad";
-  font-style: normal;
-  color: #203647;
-  text-align: right;
-  text-transform: none;
-  line-height: 1.5;
-  letter-spacing: normal;
-  white-space: pre-wrap;
-  user-select: text;
-  text-decoration-line: none;
-  text-overflow: clip;
   min-width: 0;
-  padding: 10px 2px 2px;
 }
 .p1 {
   display: flex;

@@ -374,22 +374,20 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["invokeGlobalAction2"] = true
+                  $steps["wait"] = true
                     ? (() => {
-                        const actionArgs = { args: [500] };
+                        const actionArgs = { args: [200] };
                         return $globalActions["Fragment.wait"]?.apply(null, [
                           ...actionArgs.args
                         ]);
                       })()
                     : undefined;
                   if (
-                    $steps["invokeGlobalAction2"] != null &&
-                    typeof $steps["invokeGlobalAction2"] === "object" &&
-                    typeof $steps["invokeGlobalAction2"].then === "function"
+                    $steps["wait"] != null &&
+                    typeof $steps["wait"] === "object" &&
+                    typeof $steps["wait"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction2"] = await $steps[
-                      "invokeGlobalAction2"
-                    ];
+                    $steps["wait"] = await $steps["wait"];
                   }
 
                   $steps["updateStep"] = true
@@ -535,22 +533,20 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["invokeGlobalAction2"] = true
+                  $steps["wait"] = true
                     ? (() => {
-                        const actionArgs = { args: [500] };
+                        const actionArgs = { args: [200] };
                         return $globalActions["Fragment.wait"]?.apply(null, [
                           ...actionArgs.args
                         ]);
                       })()
                     : undefined;
                   if (
-                    $steps["invokeGlobalAction2"] != null &&
-                    typeof $steps["invokeGlobalAction2"] === "object" &&
-                    typeof $steps["invokeGlobalAction2"].then === "function"
+                    $steps["wait"] != null &&
+                    typeof $steps["wait"] === "object" &&
+                    typeof $steps["wait"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction2"] = await $steps[
-                      "invokeGlobalAction2"
-                    ];
+                    $steps["wait"] = await $steps["wait"];
                   }
 
                   $steps["updateStep"] = true
@@ -709,22 +705,20 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     ];
                   }
 
-                  $steps["invokeGlobalAction2"] = true
+                  $steps["wait"] = true
                     ? (() => {
-                        const actionArgs = { args: [500] };
+                        const actionArgs = { args: [200] };
                         return $globalActions["Fragment.wait"]?.apply(null, [
                           ...actionArgs.args
                         ]);
                       })()
                     : undefined;
                   if (
-                    $steps["invokeGlobalAction2"] != null &&
-                    typeof $steps["invokeGlobalAction2"] === "object" &&
-                    typeof $steps["invokeGlobalAction2"].then === "function"
+                    $steps["wait"] != null &&
+                    typeof $steps["wait"] === "object" &&
+                    typeof $steps["wait"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction2"] = await $steps[
-                      "invokeGlobalAction2"
-                    ];
+                    $steps["wait"] = await $steps["wait"];
                   }
 
                   $steps["updateStep"] = true
@@ -887,6 +881,40 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
+                      $steps["updateLoading"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["loading"]
+                              },
+                              operation: 0,
+                              value: ($state.loading = true)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateLoading"] != null &&
+                        typeof $steps["updateLoading"] === "object" &&
+                        typeof $steps["updateLoading"].then === "function"
+                      ) {
+                        $steps["updateLoading"] = await $steps["updateLoading"];
+                      }
+
                       $steps["updateStep"] = true
                         ? (() => {
                             const actionArgs = {
@@ -921,14 +949,15 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["updateStep"] = await $steps["updateStep"];
                       }
 
-                      $steps["updateLoading"] = false
+                      $steps["updateLoading2"] = true
                         ? (() => {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
                                 variablePath: ["loading"]
                               },
-                              operation: 4
+                              operation: 0,
+                              value: ($state.loading = false)
                             };
                             return (({
                               variable,
@@ -941,18 +970,19 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                               }
                               const { objRoot, variablePath } = variable;
 
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;
                       if (
-                        $steps["updateLoading"] != null &&
-                        typeof $steps["updateLoading"] === "object" &&
-                        typeof $steps["updateLoading"].then === "function"
+                        $steps["updateLoading2"] != null &&
+                        typeof $steps["updateLoading2"] === "object" &&
+                        typeof $steps["updateLoading2"].then === "function"
                       ) {
-                        $steps["updateLoading"] = await $steps["updateLoading"];
+                        $steps["updateLoading2"] = await $steps[
+                          "updateLoading2"
+                        ];
                       }
 
                       $steps["invokeGlobalAction"] =
@@ -997,42 +1027,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       ) {
                         $steps["invokeGlobalAction"] = await $steps[
                           "invokeGlobalAction"
-                        ];
-                      }
-
-                      $steps["updateLoading2"] = false
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["loading"]
-                              },
-                              operation: 4
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateLoading2"] != null &&
-                        typeof $steps["updateLoading2"] === "object" &&
-                        typeof $steps["updateLoading2"].then === "function"
-                      ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
                         ];
                       }
 
@@ -1409,7 +1403,8 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                                 objRoot: $state,
                                 variablePath: ["loading"]
                               },
-                              operation: 4
+                              operation: 0,
+                              value: ($state.loading = true)
                             };
                             return (({
                               variable,
@@ -1422,9 +1417,8 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                               }
                               const { objRoot, variablePath } = variable;
 
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;
@@ -1514,32 +1508,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["goToLitePanel"] =
-                        $steps.changePropertyPic.status == 200
-                          ? (() => {
-                              const actionArgs = { destination: `/calendar` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["goToLitePanel"] != null &&
-                        typeof $steps["goToLitePanel"] === "object" &&
-                        typeof $steps["goToLitePanel"].then === "function"
-                      ) {
-                        $steps["goToLitePanel"] = await $steps["goToLitePanel"];
-                      }
-
                       $steps["goToProLitePanel"] =
                         $state.propTour === true
                           ? (() => {
@@ -1614,7 +1582,8 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                                 objRoot: $state,
                                 variablePath: ["loading"]
                               },
-                              operation: 4
+                              operation: 0,
+                              value: ($state.loading = false)
                             };
                             return (({
                               variable,
@@ -1627,9 +1596,8 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                               }
                               const { objRoot, variablePath } = variable;
 
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;
@@ -1641,6 +1609,31 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["updateLoading2"] = await $steps[
                           "updateLoading2"
                         ];
+                      }
+
+                      $steps["goToLitePanel"] = false
+                        ? (() => {
+                            const actionArgs = { destination: `/calendar` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToLitePanel"] != null &&
+                        typeof $steps["goToLitePanel"] === "object" &&
+                        typeof $steps["goToLitePanel"].then === "function"
+                      ) {
+                        $steps["goToLitePanel"] = await $steps["goToLitePanel"];
                       }
 
                       $steps["changePropertyPic"] = false
@@ -1710,45 +1703,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         typeof $steps["showToast"].then === "function"
                       ) {
                         $steps["showToast"] = await $steps["showToast"];
-                      }
-
-                      $steps["invokeGlobalAction"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                undefined,
-                                undefined,
-                                undefined,
-                                (() => {
-                                  try {
-                                    return undefined;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
                       }
                     }}
                   >

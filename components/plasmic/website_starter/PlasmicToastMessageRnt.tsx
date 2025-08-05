@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -92,11 +94,13 @@ export const PlasmicToastMessageRnt__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicToastMessageRnt__OverridesType = {
   root?: Flex__<"div">;
+  freeBox?: Flex__<"div">;
   alertIcon?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   alertText?: Flex__<"div">;
   alertButton?: Flex__<"div">;
   button?: Flex__<"div">;
+  closeButton?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultToastMessageRntProps {
@@ -146,219 +150,400 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "display",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
   });
 
   return (
-    <div
-      data-plasmic-name={"root"}
-      data-plasmic-override={overrides.root}
-      data-plasmic-root={true}
-      data-plasmic-for-node={forNode}
-      className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
-        projectcss.plasmic_tokens,
-        plasmic_antd_5_hostless_css.plasmic_tokens,
-        plasmic_plasmic_rich_components_css.plasmic_tokens,
-        sty.root,
-        "fadein"
-      )}
-    >
+    (() => {
+      try {
+        return $state.display;
+      } catch (e) {
+        if (
+          e instanceof TypeError ||
+          e?.plasmicType === "PlasmicUndefinedDataError"
+        ) {
+          return true;
+        }
+        throw e;
+      }
+    })() ? (
       <div
-        data-plasmic-name={"alertIcon"}
-        data-plasmic-override={overrides.alertIcon}
-        className={classNames(projectcss.all, sty.alertIcon)}
-      >
-        <PlasmicImg__
-          data-plasmic-name={"img"}
-          data-plasmic-override={overrides.img}
-          alt={""}
-          className={classNames(sty.img)}
-          displayHeight={
-            hasVariant(globalVariants, "screen", "smallMobile")
-              ? "26px"
-              : hasVariant(globalVariants, "screen", "mobile")
-              ? "28px"
-              : "43px"
-          }
-          displayMaxHeight={"none"}
-          displayMaxWidth={"100%"}
-          displayMinHeight={"0"}
-          displayMinWidth={"0"}
-          displayWidth={
-            hasVariant(globalVariants, "screen", "mobile") ? "26px" : "auto"
-          }
-          loading={"lazy"}
-          src={(() => {
-            try {
-              return $props.logo;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return {
-                  src: "/plasmic/website_starter/images/image72.svg",
-                  fullWidth: 42,
-                  fullHeight: 42,
-                  aspectRatio: 1
-                };
-              }
-              throw e;
-            }
-          })()}
-        />
-      </div>
-      <div
-        data-plasmic-name={"alertText"}
-        data-plasmic-override={overrides.alertText}
-        className={classNames(projectcss.all, sty.alertText)}
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
+        data-plasmic-root={true}
+        data-plasmic-for-node={forNode}
+        className={classNames(
+          projectcss.all,
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
+          plasmic_antd_5_hostless_css.plasmic_tokens,
+          plasmic_plasmic_rich_components_css.plasmic_tokens,
+          sty.root
+        )}
       >
         <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__c238
-          )}
+          data-plasmic-name={"freeBox"}
+          data-plasmic-override={overrides.freeBox}
+          className={classNames(projectcss.all, sty.freeBox, "fadein")}
         >
-          {hasVariant(globalVariants, "screen", "mobile") ? (
-            <React.Fragment>
-              {(() => {
+          <div
+            data-plasmic-name={"alertIcon"}
+            data-plasmic-override={overrides.alertIcon}
+            className={classNames(projectcss.all, sty.alertIcon)}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__vVbZm)}
+              displayHeight={
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "26px"
+                  : hasVariant(globalVariants, "screen", "mobile")
+                  ? "28px"
+                  : "43px"
+              }
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={
+                hasVariant(globalVariants, "screen", "mobile") ? "26px" : "auto"
+              }
+              loading={"lazy"}
+              src={(() => {
                 try {
-                  return $props.message;
+                  return $props.logo;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
                     e?.plasmicType === "PlasmicUndefinedDataError"
                   ) {
-                    return "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646";
+                    return {
+                      src: "/plasmic/website_starter/images/image72.svg",
+                      fullWidth: 42,
+                      fullHeight: 42,
+                      aspectRatio: 1
+                    };
                   }
                   throw e;
                 }
               })()}
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.message;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646";
-                  }
-                  throw e;
+            />
+          </div>
+          <div
+            data-plasmic-name={"alertText"}
+            data-plasmic-override={overrides.alertText}
+            className={classNames(projectcss.all, sty.alertText)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__c238
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "mobile") ? (
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $props.message;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $props.message;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\u060c \u0641\u0639\u0627\u0644\u0634 \u06a9\u0646";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              )}
+            </div>
+          </div>
+          <div
+            data-plasmic-name={"alertButton"}
+            data-plasmic-override={overrides.alertButton}
+            className={classNames(projectcss.all, sty.alertButton)}
+          >
+            <div
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames(projectcss.all, sty.button, "clickable")}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["goToSetting"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        destination: (() => {
+                          try {
+                            return $props.buttonLink;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return `/settings`;
+                            }
+                            throw e;
+                          }
+                        })()
+                      };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToSetting"] != null &&
+                  typeof $steps["goToSetting"] === "object" &&
+                  typeof $steps["goToSetting"].then === "function"
+                ) {
+                  $steps["goToSetting"] = await $steps["goToSetting"];
                 }
-              })()}
-            </React.Fragment>
-          )}
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__rKwK3
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $props.buttonText;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+            </div>
+          </div>
+          <div
+            data-plasmic-name={"closeButton"}
+            data-plasmic-override={overrides.closeButton}
+            className={classNames(projectcss.all, sty.closeButton)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function setCookie(name, value, hours) {
+                            let expires = "";
+                            if (hours) {
+                              const date = new Date();
+                              date.setTime(
+                                date.getTime() + hours * 60 * 60 * 1000
+                              );
+                              expires = "; expires=" + date.toUTCString();
+                            }
+                            document.cookie =
+                              name + "=" + (value || "") + expires + "; path=/";
+                          }
+                          return setCookie("visit_alert", "true", 72);
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["updateDisplay"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["display"]
+                      },
+                      operation: 4
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      const oldValue = $stateGet(objRoot, variablePath);
+                      $stateSet(objRoot, variablePath, !oldValue);
+                      return !oldValue;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateDisplay"] != null &&
+                typeof $steps["updateDisplay"] === "object" &&
+                typeof $steps["updateDisplay"].then === "function"
+              ) {
+                $steps["updateDisplay"] = await $steps["updateDisplay"];
+              }
+            }}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img___3XJ7)}
+              displayHeight={"18px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image24.svg",
+                fullWidth: 20,
+                fullHeight: 18,
+                aspectRatio: 1.111111
+              }}
+            />
+          </div>
         </div>
-      </div>
-      <div
-        data-plasmic-name={"alertButton"}
-        data-plasmic-override={overrides.alertButton}
-        className={classNames(projectcss.all, sty.alertButton)}
-      >
-        <div
-          data-plasmic-name={"button"}
-          data-plasmic-override={overrides.button}
-          className={classNames(projectcss.all, sty.button, "clickable")}
-          onClick={async event => {
+        <SideEffect
+          data-plasmic-name={"sideEffect"}
+          data-plasmic-override={overrides.sideEffect}
+          className={classNames("__wab_instance", sty.sideEffect)}
+          onMount={async () => {
             const $steps = {};
 
-            $steps["goToSetting"] = true
+            $steps["runCode"] = true
               ? (() => {
                   const actionArgs = {
-                    destination: (() => {
-                      try {
-                        return $props.buttonLink;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return `/settings`;
+                    customFunction: async () => {
+                      return (() => {
+                        console.log("here");
+                        if (!document.cookie.includes("visit_alert")) {
+                          $state.display = true;
+                          return console.log("here1");
+                        } else {
+                          $state.display = false;
+                          return console.log("here2");
                         }
-                        throw e;
-                      }
-                    })()
-                  };
-                  return (({ destination }) => {
-                    if (
-                      typeof destination === "string" &&
-                      destination.startsWith("#")
-                    ) {
-                      document
-                        .getElementById(destination.substr(1))
-                        .scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      __nextRouter?.push(destination);
+                      })();
                     }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
                   })?.apply(null, [actionArgs]);
                 })()
               : undefined;
             if (
-              $steps["goToSetting"] != null &&
-              typeof $steps["goToSetting"] === "object" &&
-              typeof $steps["goToSetting"].then === "function"
+              $steps["runCode"] != null &&
+              typeof $steps["runCode"] === "object" &&
+              typeof $steps["runCode"].then === "function"
             ) {
-              $steps["goToSetting"] = await $steps["goToSetting"];
+              $steps["runCode"] = await $steps["runCode"];
             }
           }}
-        >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__rKwK3
-            )}
-          >
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.buttonText;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "\u062a\u0646\u0638\u06cc\u0645\u0627\u062a";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          </div>
-        </div>
+        />
       </div>
-    </div>
+    ) : null
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "alertIcon", "img", "alertText", "alertButton", "button"],
-  alertIcon: ["alertIcon", "img"],
-  img: ["img"],
+  root: [
+    "root",
+    "freeBox",
+    "alertIcon",
+    "alertText",
+    "alertButton",
+    "button",
+    "closeButton",
+    "sideEffect"
+  ],
+  freeBox: [
+    "freeBox",
+    "alertIcon",
+    "alertText",
+    "alertButton",
+    "button",
+    "closeButton"
+  ],
+  alertIcon: ["alertIcon"],
   alertText: ["alertText"],
   alertButton: ["alertButton", "button"],
-  button: ["button"]
+  button: ["button"],
+  closeButton: ["closeButton"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  freeBox: "div";
   alertIcon: "div";
-  img: typeof PlasmicImg__;
   alertText: "div";
   alertButton: "div";
   button: "div";
+  closeButton: "div";
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -421,11 +606,13 @@ export const PlasmicToastMessageRnt = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    freeBox: makeNodeComponent("freeBox"),
     alertIcon: makeNodeComponent("alertIcon"),
-    img: makeNodeComponent("img"),
     alertText: makeNodeComponent("alertText"),
     alertButton: makeNodeComponent("alertButton"),
     button: makeNodeComponent("button"),
+    closeButton: makeNodeComponent("closeButton"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicToastMessageRnt
     internalVariantProps: PlasmicToastMessageRnt__VariantProps,

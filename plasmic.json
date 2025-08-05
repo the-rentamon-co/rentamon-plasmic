@@ -4347,15 +4347,7 @@
           "componentImportPath": "@/fragment/components/textarea"
         }
       ],
-      "customFunctions": [
-        {
-          "defaultExport": false,
-          "id": "compressImageFile",
-          "importPath": "@/lib/compressImageFile",
-          "name": "compressImageFile",
-          "namespace": null
-        }
-      ]
+      "customFunctions": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",

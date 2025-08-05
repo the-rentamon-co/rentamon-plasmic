@@ -105,11 +105,11 @@ export const PlasmicReservationsRecordList__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicReservationsRecordList__OverridesType = {
   tourGuideReservations?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
-  website?: Flex__<"div">;
   property?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
+  geustName?: Flex__<"div">;
   date?: Flex__<"div">;
-  name?: Flex__<"div">;
+  website?: Flex__<"div">;
 };
 
 export interface DefaultReservationsRecordListProps {
@@ -267,255 +267,535 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
       )}
     >
       <div
-        data-plasmic-name={"freeBox"}
-        data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox)}
+        className={classNames(projectcss.all, sty.freeBox___00Ie5, {
+          [sty.freeBoxcancelledBookings___00Ie5WA5M7]: hasVariant(
+            $state,
+            "cancelledBookings",
+            "cancelledBookings"
+          ),
+          [sty.freeBoxconfirmedBookings___00Ie5FwneE]: hasVariant(
+            $state,
+            "confirmedBookings",
+            "confirmedBookings"
+          ),
+          [sty.freeBoxpastBookingsBox___00Ie5Kh5Ba]: hasVariant(
+            $state,
+            "pastBookingsBox",
+            "pastBookingsBox"
+          ),
+          [sty.freeBoxpendingBookings___00Ie55H4X]: hasVariant(
+            $state,
+            "pendingBookings",
+            "pendingBookings"
+          )
+        })}
       >
-        <div
-          data-plasmic-name={"website"}
-          data-plasmic-override={overrides.website}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.website,
-            {
-              [sty.websitependingBookings]: hasVariant(
-                $state,
-                "pendingBookings",
-                "pendingBookings"
-              )
-            }
-          )}
-        >
-          {hasVariant(globalVariants, "screen", "smallMobile") ? (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.guest_name;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
-                  }
-                  throw e;
+        <div className={classNames(projectcss.all, sty.freeBox__y5Sid)}>
+          <div className={classNames(projectcss.all, sty.freeBox__mk6VW)}>
+            <div
+              data-plasmic-name={"property"}
+              data-plasmic-override={overrides.property}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.property,
+                {
+                  [sty.propertypendingBookings]: hasVariant(
+                    $state,
+                    "pendingBookings",
+                    "pendingBookings"
+                  )
                 }
-              })()}
-            </React.Fragment>
-          ) : hasVariant(globalVariants, "screen", "mobile") ? (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.guest_name;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
-                  }
-                  throw e;
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $props.data.property_name;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return " ";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $props.data.property_name;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return " ";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $props.data.property_name;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return " ";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              )}
+            </div>
+          </div>
+          <PlasmicImg__
+            data-plasmic-name={"img"}
+            data-plasmic-override={overrides.img}
+            alt={""}
+            className={classNames(sty.img)}
+            displayHeight={"100%"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"100%"}
+            loading={"lazy"}
+            src={(() => {
+              try {
+                return $props.data.property_pic_link;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return {
+                    src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
+                    fullWidth: 1247,
+                    fullHeight: 529,
+                    aspectRatio: undefined
+                  };
                 }
-              })()}
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.guest_name;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return " ";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          )}
+                throw e;
+              }
+            })()}
+          />
         </div>
-        <div
-          data-plasmic-name={"property"}
-          data-plasmic-override={overrides.property}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.property,
-            {
-              [sty.propertypendingBookings]: hasVariant(
-                $state,
-                "pendingBookings",
-                "pendingBookings"
-              )
-            }
-          )}
-        >
-          {hasVariant(globalVariants, "screen", "smallMobile") ? (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.GuestName;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
+        <div className={classNames(projectcss.all, sty.freeBox__r11Q)}>
+          <div
+            data-plasmic-name={"geustName"}
+            data-plasmic-override={overrides.geustName}
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.geustName,
+              {
+                [sty.geustNamependingBookings]: hasVariant(
+                  $state,
+                  "pendingBookings",
+                  "pendingBookings"
+                )
+              }
+            )}
+          >
+            {hasVariant(globalVariants, "screen", "smallMobile") ? (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.data.guest_name;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return " ";
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          ) : hasVariant(globalVariants, "screen", "mobile") ? (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.GuestName;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
+                })()}
+              </React.Fragment>
+            ) : hasVariant(globalVariants, "screen", "mobile") ? (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.data.guest_name;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return " ";
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.property_name;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return " ";
+                })()}
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.data.guest_name;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return " ";
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          )}
+                })()}
+              </React.Fragment>
+            )}
+          </div>
         </div>
-        <div
-          data-plasmic-name={"date"}
-          data-plasmic-override={overrides.date}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.date
-          )}
-        >
-          {hasVariant(globalVariants, "screen", "mobile") ? (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.check_in;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
+        <div className={classNames(projectcss.all, sty.freeBox__vn8Pn)}>
+          <div
+            data-plasmic-name={"date"}
+            data-plasmic-override={overrides.date}
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.date
+            )}
+          >
+            {hasVariant(globalVariants, "screen", "mobile") ? (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return (() => {
+                      const persianMonths = [
+                        "فروردین",
+                        "اردیبهشت",
+                        "خرداد",
+                        "تیر",
+                        "مرداد",
+                        "شهریور",
+                        "مهر",
+                        "آبان",
+                        "آذر",
+                        "دی",
+                        "بهمن",
+                        "اسفند"
+                      ];
+
+                      const persianWeekdays = [
+                        "یک‌شنبه",
+                        "دوشنبه",
+                        "سه‌شنبه",
+                        "چهارشنبه",
+                        "پنج‌شنبه",
+                        "جمعه",
+                        "شنبه"
+                      ];
+
+                      function toPersianDigits(input) {
+                        const persianDigits = [
+                          "۰",
+                          "۱",
+                          "۲",
+                          "۳",
+                          "۴",
+                          "۵",
+                          "۶",
+                          "۷",
+                          "۸",
+                          "۹"
+                        ];
+
+                        return input
+                          .toString()
+                          .replace(/\d/g, d => persianDigits[d]);
+                      }
+                      function toEnglishDigits(str) {
+                        const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+                        return str.replace(/[۰-۹]/g, d =>
+                          persianDigits.indexOf(d)
+                        );
+                      }
+                      function toGregorian(jy, jm, jd) {
+                        const jDaysInMonth = [
+                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                        ];
+
+                        const gDaysInMonth = [
+                          31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+                        ];
+
+                        jy -= 979;
+                        jm -= 1;
+                        jd -= 1;
+                        let jDayNo =
+                          365 * jy +
+                          Math.floor(jy / 33) * 8 +
+                          Math.floor(((jy % 33) + 3) / 4);
+                        for (let i = 0; i < jm; ++i) jDayNo += jDaysInMonth[i];
+                        jDayNo += jd;
+                        let gDayNo = jDayNo + 79;
+                        let gy = 1600 + 400 * Math.floor(gDayNo / 146097);
+                        gDayNo %= 146097;
+                        let leap = true;
+                        if (gDayNo >= 36525) {
+                          gDayNo--;
+                          gy += 100 * Math.floor(gDayNo / 36524);
+                          gDayNo %= 36524;
+                          if (gDayNo >= 365) gDayNo++;
+                          else leap = false;
+                        }
+                        gy += 4 * Math.floor(gDayNo / 1461);
+                        gDayNo %= 1461;
+                        if (gDayNo >= 366) {
+                          leap = false;
+                          gDayNo--;
+                          gy += Math.floor(gDayNo / 365);
+                          gDayNo = gDayNo % 365;
+                        }
+                        let gm = 0;
+                        for (; gm < 12; gm++) {
+                          let daysInMonth = gDaysInMonth[gm];
+                          if (gm === 1 && leap) daysInMonth++;
+                          if (gDayNo < daysInMonth) break;
+                          gDayNo -= daysInMonth;
+                        }
+                        let gd = gDayNo + 1;
+                        return new Date(gy, gm, gd);
+                      }
+                      function convertJalaliStringToFullPersian(dateStr) {
+                        const [jy, jm, jd] = toEnglishDigits(dateStr)
+                          .split("/")
+                          .map(Number);
+                        const gDate = toGregorian(jy, jm, jd);
+                        const weekdayIndex = gDate.getDay();
+                        const weekday = persianWeekdays[weekdayIndex];
+                        const monthName = persianMonths[jm - 1];
+                        return `${toPersianDigits(jd)} ${monthName} ${weekday}`;
+                      }
+                      const checkIn = $props.data.check_in;
+                      const result = convertJalaliStringToFullPersian(checkIn);
+                      return result;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return " ";
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.check_in;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return " ";
+                })()}
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return (() => {
+                      const persianMonths = [
+                        "فروردین",
+                        "اردیبهشت",
+                        "خرداد",
+                        "تیر",
+                        "مرداد",
+                        "شهریور",
+                        "مهر",
+                        "آبان",
+                        "آذر",
+                        "دی",
+                        "بهمن",
+                        "اسفند"
+                      ];
+
+                      const persianWeekdays = [
+                        "یک‌شنبه",
+                        "دوشنبه",
+                        "سه‌شنبه",
+                        "چهارشنبه",
+                        "پنج‌شنبه",
+                        "جمعه",
+                        "شنبه"
+                      ];
+
+                      function toPersianDigits(input) {
+                        const persianDigits = [
+                          "۰",
+                          "۱",
+                          "۲",
+                          "۳",
+                          "۴",
+                          "۵",
+                          "۶",
+                          "۷",
+                          "۸",
+                          "۹"
+                        ];
+
+                        return input
+                          .toString()
+                          .replace(/\d/g, d => persianDigits[d]);
+                      }
+                      function toEnglishDigits(str) {
+                        const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+                        return str.replace(/[۰-۹]/g, d =>
+                          persianDigits.indexOf(d)
+                        );
+                      }
+                      function toGregorian(jy, jm, jd) {
+                        const jDaysInMonth = [
+                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                        ];
+
+                        const gDaysInMonth = [
+                          31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+                        ];
+
+                        jy -= 979;
+                        jm -= 1;
+                        jd -= 1;
+                        let jDayNo =
+                          365 * jy +
+                          Math.floor(jy / 33) * 8 +
+                          Math.floor(((jy % 33) + 3) / 4);
+                        for (let i = 0; i < jm; ++i) jDayNo += jDaysInMonth[i];
+                        jDayNo += jd;
+                        let gDayNo = jDayNo + 79;
+                        let gy = 1600 + 400 * Math.floor(gDayNo / 146097);
+                        gDayNo %= 146097;
+                        let leap = true;
+                        if (gDayNo >= 36525) {
+                          gDayNo--;
+                          gy += 100 * Math.floor(gDayNo / 36524);
+                          gDayNo %= 36524;
+                          if (gDayNo >= 365) gDayNo++;
+                          else leap = false;
+                        }
+                        gy += 4 * Math.floor(gDayNo / 1461);
+                        gDayNo %= 1461;
+                        if (gDayNo >= 366) {
+                          leap = false;
+                          gDayNo--;
+                          gy += Math.floor(gDayNo / 365);
+                          gDayNo = gDayNo % 365;
+                        }
+                        let gm = 0;
+                        for (; gm < 12; gm++) {
+                          let daysInMonth = gDaysInMonth[gm];
+                          if (gm === 1 && leap) daysInMonth++;
+                          if (gDayNo < daysInMonth) break;
+                          gDayNo -= daysInMonth;
+                        }
+                        let gd = gDayNo + 1;
+                        return new Date(gy, gm, gd);
+                      }
+                      function convertJalaliStringToFullPersian(dateStr) {
+                        const [jy, jm, jd] = toEnglishDigits(dateStr)
+                          .split("/")
+                          .map(Number);
+                        const gDate = toGregorian(jy, jm, jd);
+                        const weekdayIndex = gDate.getDay();
+                        const weekday = persianWeekdays[weekdayIndex];
+                        const monthName = persianMonths[jm - 1];
+                        return `${toPersianDigits(jd)} ${monthName} ${weekday}`;
+                      }
+                      const checkIn = $props.data.check_in;
+                      const result = convertJalaliStringToFullPersian(checkIn);
+                      return result;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return " ";
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          )}
+                })()}
+              </React.Fragment>
+            )}
+          </div>
         </div>
-        <div
-          data-plasmic-name={"name"}
-          data-plasmic-override={overrides.name}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.name,
-            {
-              [sty.nameconfirmedBookings]: hasVariant(
-                $state,
-                "confirmedBookings",
-                "confirmedBookings"
-              ),
-              [sty.namepastBookingsBox]: hasVariant(
-                $state,
-                "pastBookingsBox",
-                "pastBookingsBox"
-              )
-            }
-          )}
-        >
-          {hasVariant(globalVariants, "screen", "smallMobile") ? (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.website;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
+        <div className={classNames(projectcss.all, sty.freeBox___8MKj0)}>
+          <div
+            data-plasmic-name={"website"}
+            data-plasmic-override={overrides.website}
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.website,
+              {
+                [sty.websiteconfirmedBookings]: hasVariant(
+                  $state,
+                  "confirmedBookings",
+                  "confirmedBookings"
+                ),
+                [sty.websitepastBookingsBox]: hasVariant(
+                  $state,
+                  "pastBookingsBox",
+                  "pastBookingsBox"
+                )
+              }
+            )}
+          >
+            {hasVariant(globalVariants, "screen", "smallMobile") ? (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.data.website;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return " ";
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          ) : hasVariant(globalVariants, "screen", "mobile") ? (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.website;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
+                })()}
+              </React.Fragment>
+            ) : hasVariant(globalVariants, "screen", "mobile") ? (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.data.website;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return " ";
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $props.data.website;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return " ";
+                })()}
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.data.website;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return " ";
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          )}
+                })()}
+              </React.Fragment>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -525,28 +805,28 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
 const PlasmicDescendants = {
   tourGuideReservations: [
     "tourGuideReservations",
-    "freeBox",
-    "website",
     "property",
+    "img",
+    "geustName",
     "date",
-    "name"
+    "website"
   ],
-  freeBox: ["freeBox", "website", "property", "date", "name"],
-  website: ["website"],
   property: ["property"],
+  img: ["img"],
+  geustName: ["geustName"],
   date: ["date"],
-  name: ["name"]
+  website: ["website"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   tourGuideReservations: "div";
-  freeBox: "div";
-  website: "div";
   property: "div";
+  img: typeof PlasmicImg__;
+  geustName: "div";
   date: "div";
-  name: "div";
+  website: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -609,11 +889,11 @@ export const PlasmicReservationsRecordList = Object.assign(
   makeNodeComponent("tourGuideReservations"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
-    website: makeNodeComponent("website"),
     property: makeNodeComponent("property"),
+    img: makeNodeComponent("img"),
+    geustName: makeNodeComponent("geustName"),
     date: makeNodeComponent("date"),
-    _name: makeNodeComponent("name"),
+    website: makeNodeComponent("website"),
 
     // Metadata about props expected for PlasmicReservationsRecordList
     internalVariantProps: PlasmicReservationsRecordList__VariantProps,

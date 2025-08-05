@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 50px;
+  height: 66px;
   max-width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +11,7 @@
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
   position: relative;
   min-width: 0;
-  border-radius: 100px;
+  border-radius: 20px;
 }
 @media (max-width: 500px) {
   .tourGuideReservations {
@@ -45,8 +45,13 @@
   align-items: center;
   row-gap: 0px;
   min-width: 0;
-  border-radius: 100px;
+  border-radius: 18px;
   border: 2px solid #2eb773;
+}
+@media (max-width: 350px) {
+  .tourGuideReservationsconfirmedBookings {
+    border-width: 1px;
+  }
 }
 .tourGuideReservationspendingBookings {
   width: 100%;
@@ -60,64 +65,67 @@
   row-gap: 0px;
   column-gap: 0px;
   min-width: 0;
-  border-radius: 100px;
+  border-radius: 18px;
   border: 2px dashed #2eb773;
 }
-.freeBox {
+.freeBox___00Ie5 {
   display: flex;
   flex-direction: row;
   position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+.freeBox__y5Sid {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 35%;
+  height: 100%;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  min-height: 0;
+  border-radius: 5px 16px 16px 5px;
+}
+@media (max-width: 500px) {
+  .freeBox__y5Sid {
+    width: 25%;
+  }
+}
+.freeBox__mk6VW {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
   width: 100%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #ffffffe6;
+  overflow: hidden;
   min-width: 0;
-  padding: 8px;
-}
-.website {
-  width: 33%;
-  height: auto;
-  max-width: 100%;
-  font-size: 16px;
-  user-select: none;
-  padding: 4px 20px 4px 4px;
-}
-@media (max-width: 1200px) {
-  .website {
-    width: 33%;
-    padding-left: 0px;
-    white-space: pre;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-}
-@media (max-width: 500px) {
-  .website {
-    width: 35%;
-    font-size: 15px;
-  }
-}
-@media (max-width: 350px) {
-  .website {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-size: 15px;
-    width: 38%;
-  }
 }
 .property {
-  width: 33%;
+  width: auto;
   height: auto;
   max-width: 100%;
   font-size: 16px;
-  position: relative;
   user-select: none;
-  padding: 4px 20px 4px 4px;
 }
 @media (max-width: 1200px) {
   .property {
-    width: 33%;
+    width: auto;
     padding-left: 0px;
     white-space: pre;
     text-overflow: ellipsis;
@@ -126,32 +134,121 @@
 }
 @media (max-width: 500px) {
   .property {
-    width: 35%;
+    width: 100%;
     font-size: 15px;
-    display: none;
+    text-align: center;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
   .property {
     text-overflow: ellipsis;
     overflow: hidden;
+    font-size: 14px;
+    width: 100%;
+    text-align: right;
+    padding-right: 2px;
+    min-width: 0;
+  }
+}
+.img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.freeBox__r11Q {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 22%;
+  height: auto;
+  max-width: 35%;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (max-width: 1200px) {
+  .freeBox__r11Q {
+    width: 27%;
+  }
+}
+@media (max-width: 500px) {
+  .freeBox__r11Q {
+    width: 30%;
+  }
+}
+.geustName {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  user-select: none;
+  text-align: center;
+  min-width: 0;
+}
+@media (max-width: 1200px) {
+  .geustName {
+    width: 100%;
+    padding-left: 0px;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-width: 0;
+  }
+}
+@media (max-width: 500px) {
+  .geustName {
+    width: 100%;
     font-size: 15px;
-    width: 38%;
+    min-width: 0;
+  }
+}
+@media (max-width: 350px) {
+  .geustName {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    width: 100%;
+    min-width: 0;
+  }
+}
+.freeBox__vn8Pn {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 22%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (max-width: 1200px) {
+  .freeBox__vn8Pn {
+    width: 10%;
+  }
+}
+@media (max-width: 500px) {
+  .freeBox__vn8Pn {
+    width: 20%;
   }
 }
 .date {
-  position: relative;
-  width: 33%;
+  width: 100%;
   height: auto;
   max-width: 100%;
   font-size: 16px;
   text-align: center;
   user-select: none;
-  padding: 4px 8px 4px 4px;
+  min-width: 0;
 }
 @media (max-width: 1200px) {
   .date {
-    width: 33%;
+    width: auto;
     text-align: center;
   }
 }
@@ -159,46 +256,68 @@
   .date {
     padding-left: 0px;
     padding-right: 0px;
-    width: 37%;
+    width: 100%;
     font-size: 15px;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
   .date {
-    font-size: 15px;
-    width: 40%;
+    font-size: 14px;
+    width: 100%;
+    min-width: 0;
   }
 }
-.name {
+.freeBox___8MKj0 {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  width: 33%;
+  width: 21%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (max-width: 1200px) {
+  .freeBox___8MKj0 {
+    width: 28%;
+  }
+}
+@media (max-width: 500px) {
+  .freeBox___8MKj0 {
+    width: 25%;
+  }
+}
+.website {
   height: auto;
   max-width: 100%;
   font-size: 16px;
-  text-align: left;
+  text-align: center;
   user-select: none;
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: 4px 0px 4px 20px;
+  width: 100%;
+  min-width: 0;
 }
 @media (max-width: 1200px) {
-  .name {
-    width: 33%;
+  .website {
+    width: auto;
     text-align: left;
   }
 }
 @media (max-width: 500px) {
-  .name {
-    width: 25%;
-    padding-right: 0px;
-    padding-left: 20px;
+  .website {
+    width: 100%;
     font-size: 15px;
+    text-align: center;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
-  .name {
-    width: 22%;
-    font-size: 15px;
+  .website {
+    width: 100%;
+    font-size: 14px;
+    min-width: 0;
   }
 }

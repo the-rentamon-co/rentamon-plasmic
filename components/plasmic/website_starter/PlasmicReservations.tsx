@@ -116,8 +116,8 @@ export type PlasmicReservations__OverridesType = {
   toastMessageRnt?: Flex__<typeof ToastMessageRnt>;
   container?: Flex__<"div">;
   titles?: Flex__<"div">;
-  guestName?: Flex__<"div">;
-  propertyName?: Flex__<"div">;
+  property?: Flex__<"div">;
+  guestName3?: Flex__<"div">;
   arriveDate?: Flex__<"div">;
   source?: Flex__<"div">;
   reserveMainStack2?: Flex__<"div">;
@@ -1348,9 +1348,9 @@ function PlasmicReservations__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.titles, "fadeinf")}
               >
                 <div
-                  data-plasmic-name={"guestName"}
-                  data-plasmic-override={overrides.guestName}
-                  className={classNames(projectcss.all, sty.guestName)}
+                  data-plasmic-name={"property"}
+                  data-plasmic-override={overrides.property}
+                  className={classNames(projectcss.all, sty.property)}
                 >
                   <div
                     className={classNames(
@@ -1362,23 +1362,27 @@ function PlasmicReservations__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0645\u0647\u0645\u0627\u0646"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0645\u0647\u0645\u0627\u0646"
-                      : "\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"}
+                      ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                      : "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                   </div>
                 </div>
                 <div
-                  data-plasmic-name={"propertyName"}
-                  data-plasmic-override={overrides.propertyName}
-                  className={classNames(projectcss.all, sty.propertyName)}
+                  data-plasmic-name={"guestName3"}
+                  data-plasmic-override={overrides.guestName3}
+                  className={classNames(projectcss.all, sty.guestName3)}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__k0T0L
+                      sty.text__yOpPu
                     )}
                   >
-                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0645\u0647\u0645\u0627\u0646"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0645\u0647\u0645\u0627\u0646"
+                      : "\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"}
                   </div>
                 </div>
                 <div
@@ -8771,8 +8775,8 @@ const PlasmicDescendants = {
     "toastMessageRnt",
     "container",
     "titles",
-    "guestName",
-    "propertyName",
+    "property",
+    "guestName3",
     "arriveDate",
     "source",
     "reserveMainStack2",
@@ -8876,8 +8880,8 @@ const PlasmicDescendants = {
   container: [
     "container",
     "titles",
-    "guestName",
-    "propertyName",
+    "property",
+    "guestName3",
     "arriveDate",
     "source",
     "reserveMainStack2",
@@ -8885,9 +8889,9 @@ const PlasmicDescendants = {
     "reserveMainStack",
     "reserveData"
   ],
-  titles: ["titles", "guestName", "propertyName", "arriveDate", "source"],
-  guestName: ["guestName"],
-  propertyName: ["propertyName"],
+  titles: ["titles", "property", "guestName3", "arriveDate", "source"],
+  property: ["property"],
+  guestName3: ["guestName3"],
   arriveDate: ["arriveDate"],
   source: ["source"],
   reserveMainStack2: ["reserveMainStack2", "reserveData2"],
@@ -9119,8 +9123,8 @@ type NodeDefaultElementType = {
   toastMessageRnt: typeof ToastMessageRnt;
   container: "div";
   titles: "div";
-  guestName: "div";
-  propertyName: "div";
+  property: "div";
+  guestName3: "div";
   arriveDate: "div";
   source: "div";
   reserveMainStack2: "div";
@@ -9284,8 +9288,8 @@ export const PlasmicReservations = Object.assign(
     toastMessageRnt: makeNodeComponent("toastMessageRnt"),
     container: makeNodeComponent("container"),
     titles: makeNodeComponent("titles"),
-    guestName: makeNodeComponent("guestName"),
-    propertyName: makeNodeComponent("propertyName"),
+    property: makeNodeComponent("property"),
+    guestName3: makeNodeComponent("guestName3"),
     arriveDate: makeNodeComponent("arriveDate"),
     source: makeNodeComponent("source"),
     reserveMainStack2: makeNodeComponent("reserveMainStack2"),
