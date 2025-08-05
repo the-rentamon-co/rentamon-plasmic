@@ -636,7 +636,7 @@ function PlasmicBookings__RenderFunc(props: {
                         const actionArgs = {
                           customFunction: async () => {
                             return (() => {
-                              return window.history.back();
+                              return window.close();
                             })();
                           }
                         };
