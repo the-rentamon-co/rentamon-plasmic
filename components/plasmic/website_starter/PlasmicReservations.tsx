@@ -2920,13 +2920,13 @@ function PlasmicReservations__RenderFunc(props: {
               })()}
               {(() => {
                 try {
-                  return $state.reserveData.data[0].item != "empty";
+                  return $state.reserveData.data.message == null;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
                     e?.plasmicType === "PlasmicUndefinedDataError"
                   ) {
-                    return true;
+                    return false;
                   }
                   throw e;
                 }
