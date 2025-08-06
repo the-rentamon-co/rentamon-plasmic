@@ -8139,33 +8139,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["showToast"] =
-                                $state.form.value.mihmanshophone.length ===
-                                  11 &&
-                                $state.form.value.mihmanshoPass !== "" &&
-                                $state.form.value.mihmanshoPass !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          undefined,
-                                          "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
-                                          "bottom-center",
-                                          6000
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["showToast"] != null &&
-                                typeof $steps["showToast"] === "object" &&
-                                typeof $steps["showToast"].then === "function"
-                              ) {
-                                $steps["showToast"] = await $steps["showToast"];
-                              }
-
                               $steps["connectionStatus"] = true
                                 ? (() => {
                                     const actionArgs = {
@@ -8237,30 +8210,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["mihmanshoContactX"] =
-                                $state.form.value.mihmanshophone !==
-                                  undefined &&
-                                $state.form.value.mihmanshophone.length >= 11 &&
-                                $state.form.value.mihmanshoPass !== undefined
-                                  ? (() => {
-                                      const actionArgs = { args: ["POST"] };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["mihmanshoContactX"] != null &&
-                                typeof $steps["mihmanshoContactX"] ===
-                                  "object" &&
-                                typeof $steps["mihmanshoContactX"].then ===
-                                  "function"
-                              ) {
-                                $steps["mihmanshoContactX"] = await $steps[
-                                  "mihmanshoContactX"
-                                ];
-                              }
-
                               $steps["platformSatus"] = true
                                 ? (() => {
                                     const actionArgs = {
@@ -8270,16 +8219,12 @@ function PlasmicActivation__RenderFunc(props: {
                                           $steps.mihmanshoVerify.data.status ===
                                           true
                                         ) {
-                                          $state.platformstatus.status.homsa =
-                                            true;
+                                          return ($state.platformstatus.status.mihmansho =
+                                            true);
                                         } else {
-                                          $state.platformstatus.status.homsa =
-                                            false;
+                                          return ($state.platformstatus.status.mihmansho =
+                                            false);
                                         }
-                                        console.log($steps.mihmanshoVerify);
-                                        return console.log(
-                                          $state.platformstatus
-                                        );
                                       })()
                                     };
                                     return (({
@@ -8310,6 +8255,30 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
+                              $steps["mihmanshoContactX"] =
+                                $state.form.value.mihmanshophone !==
+                                  undefined &&
+                                $state.form.value.mihmanshophone.length >= 11 &&
+                                $state.form.value.mihmanshoPass !== undefined
+                                  ? (() => {
+                                      const actionArgs = { args: ["POST"] };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["mihmanshoContactX"] != null &&
+                                typeof $steps["mihmanshoContactX"] ===
+                                  "object" &&
+                                typeof $steps["mihmanshoContactX"].then ===
+                                  "function"
+                              ) {
+                                $steps["mihmanshoContactX"] = await $steps[
+                                  "mihmanshoContactX"
+                                ];
+                              }
+
                               $steps["goToPanel"] = false
                                 ? (() => {
                                     const actionArgs = {
@@ -8337,6 +8306,29 @@ function PlasmicActivation__RenderFunc(props: {
                                 typeof $steps["goToPanel"].then === "function"
                               ) {
                                 $steps["goToPanel"] = await $steps["goToPanel"];
+                              }
+
+                              $steps["showToast"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
+                                        "bottom-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["showToast"] != null &&
+                                typeof $steps["showToast"] === "object" &&
+                                typeof $steps["showToast"].then === "function"
+                              ) {
+                                $steps["showToast"] = await $steps["showToast"];
                               }
                             }}
                             submitsForm={true}

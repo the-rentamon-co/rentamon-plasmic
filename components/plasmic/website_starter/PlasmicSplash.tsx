@@ -597,44 +597,6 @@ function PlasmicSplash__RenderFunc(props: {
                 ];
               }
 
-              $steps["updateErrorHandeling"] = false
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["isErrorHappen"]
-                      },
-                      operation: 0,
-                      value: (() => {
-                        console.log($steps.invokeGlobalAction.status);
-                        if ($steps.invokeGlobalAction.status != 200) {
-                          return ($state.isErrorHappen = true);
-                        } else {
-                          return ($state.isErrorHappen = false);
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateErrorHandeling"] != null &&
-                typeof $steps["updateErrorHandeling"] === "object" &&
-                typeof $steps["updateErrorHandeling"].then === "function"
-              ) {
-                $steps["updateErrorHandeling"] = await $steps[
-                  "updateErrorHandeling"
-                ];
-              }
-
               $steps["redirectAndSetUserCookie"] = true
                 ? (() => {
                     const actionArgs = {
@@ -664,12 +626,6 @@ function PlasmicSplash__RenderFunc(props: {
                             $steps.invokeGlobalAction.data.flag || 99,
                             0.3333
                           );
-                          console.log($steps.invokeGlobalAction.data);
-                          console.log($steps.invokeGlobalAction.data.flag);
-                          if ($steps.invokeGlobalAction.data.flag == 3) {
-                            window.location.href =
-                              "https://web.rentamon.com/panels/?prop_id=1";
-                          }
                           if ($steps.invokeGlobalAction.data.flag == 2) {
                             window.location.href =
                               "https://rentamon.com//calendar/";

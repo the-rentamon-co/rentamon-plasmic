@@ -2360,7 +2360,7 @@ function PlasmicReservations__RenderFunc(props: {
                               const actionArgs = {
                                 customFunction: async () => {
                                   return window.open(
-                                    `https://rentamon.com/bookings/${currentItem.alternative_booking_id.substring(
+                                    `https://rentamon.com/bookings/${currentItems.alternative_booking_id.substring(
                                       3
                                     )}`,
                                     "_blank"

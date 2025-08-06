@@ -545,10 +545,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                           if (vtRaw !== null) {
                             vt = parseInt(vtRaw, 10);
                             $state.vtStatus = vt;
-                            if (vt === 3) {
-                              return (window.location.href =
-                                "https://rentamon.com/splash-wp");
-                            } else if (vt === 1) {
+                            if (vt === 1) {
                               return (window.location.href =
                                 "https://rentamon.com/panel/");
                             }
@@ -611,19 +608,13 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         const current = parseInt($state.vtStatus, 10);
                         if (isNaN(current)) {
                           setCookie("vt", flag.toString(), 0.3333);
-                          if (flag === 3) {
-                            return (window.location.href =
-                              "https://rentamon.com/splash-wp");
-                          } else if (flag === 1) {
+                          if (flag === 1) {
                             return (window.location.href =
                               "https://rentamon.com/panel/");
                           }
                         } else if (flag !== current) {
                           setCookie("vt", flag.toString(), 0.3333);
-                          if (flag === 3) {
-                            return (window.location.href =
-                              "https://rentamon.com/splash-wp");
-                          } else if (flag === 1) {
+                          if (flag === 1) {
                             return (window.location.href =
                               "https://rentamon.com/panel/");
                           }
@@ -1442,7 +1433,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__cD5F7
+                        sty.formField__xxcp4
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1454,7 +1445,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__kLEkx
+                        sty.formField__zM9Lk
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1472,7 +1463,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__fso1A
+                          sty.text__q9Yny
                         )}
                       >
                         {"Submit"}

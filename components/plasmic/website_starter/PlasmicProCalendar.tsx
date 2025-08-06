@@ -660,10 +660,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                           if (vtRaw !== null) {
                             vt = parseInt(vtRaw, 10);
                             $state.vtStatus = vt;
-                            if (vt === 3) {
-                              return (window.location.href =
-                                "https://rentamon.com/splash-wp");
-                            } else if (vt === 2) {
+                            if (vt === 2) {
                               return (window.location.href =
                                 "https://rentamon.com/calendar/");
                             }
@@ -727,20 +724,13 @@ function PlasmicProCalendar__RenderFunc(props: {
                         const current = parseInt($state.vtStatus, 10);
                         if (isNaN(current)) {
                           setCookie("vt", flag.toString(), 0.3333);
-                          if (flag === 3) {
-                            console.log("here");
-                            return (window.location.href =
-                              "https://rentamon.com/splash-wp");
-                          } else if (flag === 2) {
+                          if (flag === 2) {
                             return (window.location.href =
                               "https://rentamon.com/calendar/");
                           }
                         } else if (flag !== current) {
                           setCookie("vt", flag.toString(), 0.3333);
-                          if (flag === 3) {
-                            return (window.location.href =
-                              "https://rentamon.com/splash-wp");
-                          } else if (flag === 2) {
+                          if (flag === 2) {
                             return (window.location.href =
                               "https://rentamon.com/calendar/");
                           }
