@@ -2313,7 +2313,7 @@ function PlasmicReservations__RenderFunc(props: {
                           $steps["runCode"] = await $steps["runCode"];
                         }
 
-                        $steps["goToBookings"] = true
+                        $steps["goToBookings"] = false
                           ? (() => {
                               const actionArgs = {
                                 destination: `/bookings/${(() => {
@@ -2353,6 +2353,34 @@ function PlasmicReservations__RenderFunc(props: {
                           typeof $steps["goToBookings"].then === "function"
                         ) {
                           $steps["goToBookings"] = await $steps["goToBookings"];
+                        }
+
+                        $steps["goToBookingInNewTab"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return window.open(
+                                    `https://rentamon.com/bookings/${currentItem.alternative_booking_id.substring(
+                                      3
+                                    )}`,
+                                    "_blank"
+                                  );
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToBookingInNewTab"] != null &&
+                          typeof $steps["goToBookingInNewTab"] === "object" &&
+                          typeof $steps["goToBookingInNewTab"].then ===
+                            "function"
+                        ) {
+                          $steps["goToBookingInNewTab"] = await $steps[
+                            "goToBookingInNewTab"
+                          ];
                         }
                       }}
                     >

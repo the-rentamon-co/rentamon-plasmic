@@ -4030,7 +4030,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {hasVariant(
                                   globalVariants,
                                   "screen",
-                                  "tablet"
+                                  "smallMobile"
                                 ) ? (
                                   <React.Fragment>
                                     {(() => {
@@ -4045,9 +4045,83 @@ function PlasmicBookings__RenderFunc(props: {
                                           ) {
                                             price = price / 10;
                                           }
-                                          return new Intl.NumberFormat(
-                                            "fa-IR"
-                                          ).format(price);
+                                          let real_price =
+                                            new Intl.NumberFormat(
+                                              "fa-IR"
+                                            ).format(price);
+                                          return real_price + "  تومان";
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "mobile"
+                                  ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          let price =
+                                            $state.booking.data.smart_booking
+                                              .amount;
+                                          if (
+                                            $state.booking.data.website ==
+                                            "jabama"
+                                          ) {
+                                            price = price / 10;
+                                          }
+                                          let real_price =
+                                            new Intl.NumberFormat(
+                                              "fa-IR"
+                                            ).format(price);
+                                          return real_price + "  تومان";
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "tablet"
+                                  ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          let price =
+                                            $state.booking.data.smart_booking
+                                              .amount;
+                                          if (
+                                            $state.booking.data.website ==
+                                            "jabama"
+                                          ) {
+                                            price = price / 10;
+                                          }
+                                          let real_price =
+                                            new Intl.NumberFormat(
+                                              "fa-IR"
+                                            ).format(price);
+                                          return real_price + "  تومان";
                                         })();
                                       } catch (e) {
                                         if (
@@ -4075,9 +4149,10 @@ function PlasmicBookings__RenderFunc(props: {
                                           ) {
                                             price = price / 10;
                                           }
-                                          real_price = new Intl.NumberFormat(
-                                            "fa-IR"
-                                          ).format(price);
+                                          let real_price =
+                                            new Intl.NumberFormat(
+                                              "fa-IR"
+                                            ).format(price);
                                           return real_price + "  تومان";
                                         })();
                                       } catch (e) {
