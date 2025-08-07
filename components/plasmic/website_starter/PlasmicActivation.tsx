@@ -5365,8 +5365,9 @@ function PlasmicActivation__RenderFunc(props: {
                                                   phone: faToEnDigits(
                                                     $state.jabamaSendOtp.value
                                                   ),
-                                                  otp: $state.form.value
-                                                    .jabamaOTP
+                                                  otp: faToEnDigits(
+                                                    $state.form.value.jabamaOTP
+                                                  )
                                                 };
                                               })();
                                             } catch (e) {
@@ -6030,7 +6031,9 @@ function PlasmicActivation__RenderFunc(props: {
                                                 phone: faToEnDigits(
                                                   $state.jajigaSend.value
                                                 ),
-                                                otp: $state.form.value.jajigaOTP
+                                                otp: faToEnDigits(
+                                                  $state.form.value.jajigaOTP
+                                                )
                                               };
                                             })();
                                           } catch (e) {
@@ -6742,7 +6745,9 @@ function PlasmicActivation__RenderFunc(props: {
                                                 phone: faToEnDigits(
                                                   $state.shabOtpSend.value
                                                 ),
-                                                otp: $state.form.value.shabOTP
+                                                otp: faToEnDigits(
+                                                  $state.form.value.shabOTP
+                                                )
                                               };
                                             })();
                                           } catch (e) {
@@ -7423,8 +7428,9 @@ function PlasmicActivation__RenderFunc(props: {
                                                 phone: faToEnDigits(
                                                   $state.otaghakSendOtp.value
                                                 ),
-                                                otp: $state.form.value
-                                                  .otaghakOTP,
+                                                otp: faToEnDigits(
+                                                  $state.form.value.otaghakOTP
+                                                ),
                                                 website: "otaghak"
                                               };
                                             })();
@@ -8103,13 +8109,24 @@ function PlasmicActivation__RenderFunc(props: {
                                           undefined,
                                           (() => {
                                             try {
-                                              return {
-                                                phone:
-                                                  $state.form.value
-                                                    .mihmanshophone,
-                                                otp: $state.form.value
-                                                  .mihmanshoPass
-                                              };
+                                              return (() => {
+                                                function faToEnDigits(str) {
+                                                  return str.replace(
+                                                    /[۰-۹]/g,
+                                                    d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                  );
+                                                }
+                                                return {
+                                                  phone: faToEnDigits(
+                                                    $state.form.value
+                                                      .mihmanshophone
+                                                  ),
+                                                  otp: faToEnDigits(
+                                                    $state.form.value
+                                                      .mihmanshoPass
+                                                  )
+                                                };
+                                              })();
                                             } catch (e) {
                                               if (
                                                 e instanceof TypeError ||
@@ -8760,11 +8777,22 @@ function PlasmicActivation__RenderFunc(props: {
                                           undefined,
                                           (() => {
                                             try {
-                                              return {
-                                                phone:
-                                                  $state.form.value.homsaphone,
-                                                otp: $state.form.value.homsaOTP
-                                              };
+                                              return (() => {
+                                                function faToEnDigits(str) {
+                                                  return str.replace(
+                                                    /[۰-۹]/g,
+                                                    d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                  );
+                                                }
+                                                return {
+                                                  phone: faToEnDigits(
+                                                    $state.form.value.homsaphone
+                                                  ),
+                                                  otp: faToEnDigits(
+                                                    $state.form.value.homsaOTP
+                                                  )
+                                                };
+                                              })();
                                             } catch (e) {
                                               if (
                                                 e instanceof TypeError ||
