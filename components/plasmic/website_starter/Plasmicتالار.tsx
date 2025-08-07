@@ -1470,23 +1470,7 @@ function Plasmicتالار__RenderFunc(props: {
                 </div>
               ) : null}
               {(
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? (() => {
-                      try {
-                        return (
-                          $state.profile2.data?.user_info?.websites?.length > 0
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })()
-                  : false
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
                 <div
                   data-plasmic-name={"instantReserve"}

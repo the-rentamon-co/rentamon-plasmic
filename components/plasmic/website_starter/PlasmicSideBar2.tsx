@@ -805,90 +805,104 @@ function PlasmicSideBar2__RenderFunc(props: {
             </div>
           ) : null}
         </div>
-        <div
-          className={classNames(
-            projectcss.all,
-            sty.freeBox__otMgi,
-            "clickable"
-          )}
-          onClick={async event => {
-            const $steps = {};
-
-            $steps["updateModalSidebarOpen"] = true
-              ? (() => {
-                  const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["modalSidebar", "open"]
-                    },
-                    operation: 0
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
+        {(() => {
+          try {
+            return $state.profile2.data?.user_info?.websites?.length > 0;
+          } catch (e) {
             if (
-              $steps["updateModalSidebarOpen"] != null &&
-              typeof $steps["updateModalSidebarOpen"] === "object" &&
-              typeof $steps["updateModalSidebarOpen"].then === "function"
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              return true;
             }
-
-            $steps["updateModalSidebarOpen2"] = true
-              ? (() => {
-                  const actionArgs = { destination: `/channel-manager` };
-                  return (({ destination }) => {
-                    if (
-                      typeof destination === "string" &&
-                      destination.startsWith("#")
-                    ) {
-                      document
-                        .getElementById(destination.substr(1))
-                        .scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      __nextRouter?.push(destination);
-                    }
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["updateModalSidebarOpen2"] != null &&
-              typeof $steps["updateModalSidebarOpen2"] === "object" &&
-              typeof $steps["updateModalSidebarOpen2"].then === "function"
-            ) {
-              $steps["updateModalSidebarOpen2"] = await $steps[
-                "updateModalSidebarOpen2"
-              ];
-            }
-          }}
-        >
-          <Icon96Icon
-            className={classNames(projectcss.all, sty.svg___1LXnE)}
-            role={"img"}
-          />
-
+            throw e;
+          }
+        })() ? (
           <div
             className={classNames(
               projectcss.all,
-              projectcss.__wab_text,
-              sty.text__biTo0
+              sty.freeBox__otMgi,
+              "clickable"
             )}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["updateModalSidebarOpen"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["modalSidebar", "open"]
+                      },
+                      operation: 0
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateModalSidebarOpen"] != null &&
+                typeof $steps["updateModalSidebarOpen"] === "object" &&
+                typeof $steps["updateModalSidebarOpen"].then === "function"
+              ) {
+                $steps["updateModalSidebarOpen"] = await $steps[
+                  "updateModalSidebarOpen"
+                ];
+              }
+
+              $steps["updateModalSidebarOpen2"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/channel-manager` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateModalSidebarOpen2"] != null &&
+                typeof $steps["updateModalSidebarOpen2"] === "object" &&
+                typeof $steps["updateModalSidebarOpen2"].then === "function"
+              ) {
+                $steps["updateModalSidebarOpen2"] = await $steps[
+                  "updateModalSidebarOpen2"
+                ];
+              }
+            }}
           >
-            {
-              "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
-            }
+            <Icon96Icon
+              className={classNames(projectcss.all, sty.svg___1LXnE)}
+              role={"img"}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__biTo0
+              )}
+            >
+              {
+                "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
+              }
+            </div>
           </div>
-        </div>
+        ) : null}
         <div
           className={classNames(
             projectcss.all,
@@ -1148,86 +1162,100 @@ function PlasmicSideBar2__RenderFunc(props: {
         </div>
         <div className={classNames(projectcss.all, sty.freeBox__sWbL)} />
 
-        <div
-          className={classNames(
-            projectcss.all,
-            sty.freeBox___9VXjg,
-            "clickable"
-          )}
-          onClick={async event => {
-            const $steps = {};
-
-            $steps["updateModalSidebarOpen"] = true
-              ? (() => {
-                  const actionArgs = {
-                    variable: {
-                      objRoot: $state,
-                      variablePath: ["modalSidebar", "open"]
-                    },
-                    operation: 0
-                  };
-                  return (({ variable, value, startIndex, deleteCount }) => {
-                    if (!variable) {
-                      return;
-                    }
-                    const { objRoot, variablePath } = variable;
-
-                    $stateSet(objRoot, variablePath, value);
-                    return value;
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
+        {(() => {
+          try {
+            return $state.profile2.data?.user_info?.websites?.length > 0;
+          } catch (e) {
             if (
-              $steps["updateModalSidebarOpen"] != null &&
-              typeof $steps["updateModalSidebarOpen"] === "object" &&
-              typeof $steps["updateModalSidebarOpen"].then === "function"
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              return true;
             }
-
-            $steps["goToSetting"] = true
-              ? (() => {
-                  const actionArgs = { destination: `/settings` };
-                  return (({ destination }) => {
-                    if (
-                      typeof destination === "string" &&
-                      destination.startsWith("#")
-                    ) {
-                      document
-                        .getElementById(destination.substr(1))
-                        .scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      __nextRouter?.push(destination);
-                    }
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["goToSetting"] != null &&
-              typeof $steps["goToSetting"] === "object" &&
-              typeof $steps["goToSetting"].then === "function"
-            ) {
-              $steps["goToSetting"] = await $steps["goToSetting"];
-            }
-          }}
-        >
-          <Icon48Icon
-            className={classNames(projectcss.all, sty.svg__gEzzh)}
-            role={"img"}
-          />
-
+            throw e;
+          }
+        })() ? (
           <div
             className={classNames(
               projectcss.all,
-              projectcss.__wab_text,
-              sty.text__gyivy
+              sty.freeBox___9VXjg,
+              "clickable"
             )}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["updateModalSidebarOpen"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["modalSidebar", "open"]
+                      },
+                      operation: 0
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateModalSidebarOpen"] != null &&
+                typeof $steps["updateModalSidebarOpen"] === "object" &&
+                typeof $steps["updateModalSidebarOpen"].then === "function"
+              ) {
+                $steps["updateModalSidebarOpen"] = await $steps[
+                  "updateModalSidebarOpen"
+                ];
+              }
+
+              $steps["goToSetting"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/settings` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToSetting"] != null &&
+                typeof $steps["goToSetting"] === "object" &&
+                typeof $steps["goToSetting"].then === "function"
+              ) {
+                $steps["goToSetting"] = await $steps["goToSetting"];
+              }
+            }}
           >
-            {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+            <Icon48Icon
+              className={classNames(projectcss.all, sty.svg__gEzzh)}
+              role={"img"}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__gyivy
+              )}
+            >
+              {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+            </div>
           </div>
-        </div>
+        ) : null}
         <div
           className={classNames(
             projectcss.all,
