@@ -1840,20 +1840,6 @@
           "componentType": "component"
         },
         {
-          "id": "yNr1o4whao4m",
-          "name": "FirstPropertyEditTest2",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicFirstPropertyEditTest2.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/property/edit/test2/[id].tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicFirstPropertyEditTest2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/property/edit/test2"
-        },
-        {
           "id": "0Vey5WEyBBAp",
           "name": "PropertyEdit",
           "type": "managed",
