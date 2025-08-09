@@ -914,10 +914,10 @@ function PlasmicProperties__RenderFunc(props: {
                           onClick={async event => {
                             const $steps = {};
 
-                            $steps["goToProperty"] = true
+                            $steps["goToPropertyEdit"] = true
                               ? (() => {
                                   const actionArgs = {
-                                    destination: `/property/${(() => {
+                                    destination: `/property/edit/${(() => {
                                       try {
                                         return currentItem.id;
                                       } catch (e) {
@@ -947,12 +947,13 @@ function PlasmicProperties__RenderFunc(props: {
                                 })()
                               : undefined;
                             if (
-                              $steps["goToProperty"] != null &&
-                              typeof $steps["goToProperty"] === "object" &&
-                              typeof $steps["goToProperty"].then === "function"
+                              $steps["goToPropertyEdit"] != null &&
+                              typeof $steps["goToPropertyEdit"] === "object" &&
+                              typeof $steps["goToPropertyEdit"].then ===
+                                "function"
                             ) {
-                              $steps["goToProperty"] = await $steps[
-                                "goToProperty"
+                              $steps["goToPropertyEdit"] = await $steps[
+                                "goToPropertyEdit"
                               ];
                             }
                           }}

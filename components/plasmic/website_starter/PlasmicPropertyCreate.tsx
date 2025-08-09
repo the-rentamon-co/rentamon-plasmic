@@ -97,7 +97,7 @@ export type PlasmicPropertyCreate__OverridesType = {
   newButtons?: Flex__<"div">;
   next?: Flex__<"div">;
   privious?: Flex__<"div">;
-  name2?: Flex__<"div">;
+  pic?: Flex__<"div">;
   title?: Flex__<"div">;
   imageFrame?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
@@ -1194,9 +1194,9 @@ function PlasmicPropertyCreate__RenderFunc(props: {
             }
           })() ? (
             <div
-              data-plasmic-name={"name2"}
-              data-plasmic-override={overrides.name2}
-              className={classNames(projectcss.all, sty.name2)}
+              data-plasmic-name={"pic"}
+              data-plasmic-override={overrides.pic}
+              className={classNames(projectcss.all, sty.pic)}
             >
               <div
                 data-plasmic-name={"title"}
@@ -1243,6 +1243,17 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         }
                       })()}
                     </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gtH0X
+                    )}
+                  >
+                    {
+                      "\u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0639\u06a9\u0633 \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                    }
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__oEdun)}>
@@ -1773,7 +1784,7 @@ const PlasmicDescendants = {
     "newButtons",
     "next",
     "privious",
-    "name2",
+    "pic",
     "title",
     "imageFrame",
     "embedHtml",
@@ -1791,8 +1802,8 @@ const PlasmicDescendants = {
   newButtons: ["newButtons", "next", "privious"],
   next: ["next"],
   privious: ["privious"],
-  name2: [
-    "name2",
+  pic: [
+    "pic",
     "title",
     "imageFrame",
     "embedHtml",
@@ -1830,7 +1841,7 @@ type NodeDefaultElementType = {
   newButtons: "div";
   next: "div";
   privious: "div";
-  name2: "div";
+  pic: "div";
   title: "div";
   imageFrame: "div";
   embedHtml: typeof Embed;
@@ -1909,7 +1920,7 @@ export const PlasmicPropertyCreate = Object.assign(
     newButtons: makeNodeComponent("newButtons"),
     next: makeNodeComponent("next"),
     privious: makeNodeComponent("privious"),
-    name2: makeNodeComponent("name2"),
+    pic: makeNodeComponent("pic"),
     title: makeNodeComponent("title"),
     imageFrame: makeNodeComponent("imageFrame"),
     embedHtml: makeNodeComponent("embedHtml"),
