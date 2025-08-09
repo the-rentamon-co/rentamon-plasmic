@@ -1998,10 +1998,19 @@ function PlasmicReservations__RenderFunc(props: {
                             const actionArgs = {
                               customFunction: async () => {
                                 return (() => {
+                                  let result = "";
+                                  const bookingId =
+                                    currentItem.alternative_booking_id;
+                                  if (
+                                    bookingId &&
+                                    bookingId.startsWith("RNT")
+                                  ) {
+                                    result = bookingId.substring(3);
+                                  } else {
+                                    result = bookingId;
+                                  }
                                   return window.open(
-                                    `https://rentamon.com/bookings/${currentItem.alternative_booking_id.substring(
-                                      3
-                                    )}`,
+                                    `https://rentamon.com/bookings/${result}`,
                                     "_blank"
                                   );
                                 })();
@@ -2359,12 +2368,23 @@ function PlasmicReservations__RenderFunc(props: {
                           ? (() => {
                               const actionArgs = {
                                 customFunction: async () => {
-                                  return window.open(
-                                    `https://rentamon.com/bookings/${currentItems.alternative_booking_id.substring(
-                                      3
-                                    )}`,
-                                    "_blank"
-                                  );
+                                  return (() => {
+                                    let result = "";
+                                    const bookingId =
+                                      currentItem.alternative_booking_id;
+                                    if (
+                                      bookingId &&
+                                      bookingId.startsWith("RNT")
+                                    ) {
+                                      result = bookingId.substring(3);
+                                    } else {
+                                      result = bookingId;
+                                    }
+                                    return window.open(
+                                      `https://rentamon.com/bookings/${result}`,
+                                      "_blank"
+                                    );
+                                  })();
                                 }
                               };
                               return (({ customFunction }) => {
