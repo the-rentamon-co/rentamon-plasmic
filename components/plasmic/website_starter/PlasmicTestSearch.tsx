@@ -155,7 +155,7 @@ function PlasmicTestSearch__RenderFunc(props: {
     $queries: {},
     $refs
   });
-
+  const searchTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   return (
     <React.Fragment>
       <Head></Head>
@@ -183,8 +183,6 @@ function PlasmicTestSearch__RenderFunc(props: {
             sty.root
           )}
         >
-          let searchTimeout: ReturnType<typeof setTimeout>;
-
       <TextInput2
         data-plasmic-name={"textInput2"}
         data-plasmic-override={overrides.textInput2}
