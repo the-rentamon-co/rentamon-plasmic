@@ -145,6 +145,18 @@ function PlasmicTestSearch__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "searchResults",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "isSearching",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -156,6 +168,16 @@ function PlasmicTestSearch__RenderFunc(props: {
     $refs
   });
   const searchTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  
+  // پاک کردن تایمر وقتی کامپوننت unmount می‌شود
+  React.useEffect(() => {
+    return () => {
+      if (searchTimeoutRef.current) {
+        clearTimeout(searchTimeoutRef.current);
+      }
+    };
+  }, []);
+  
   return (
     <React.Fragment>
       <Head></Head>
@@ -204,18 +226,25 @@ function PlasmicTestSearch__RenderFunc(props: {
           }
       
           // پاک کردن تایمر قبلی
-          clearTimeout(searchTimeout);
+          if (searchTimeoutRef.current) {
+            clearTimeout(searchTimeoutRef.current);
+          }
       
-          // ساخت تایمر جدید با 300ms فاصله
-          searchTimeout = setTimeout(() => {
+          // ساخت تایمر جدید با 500ms فاصله
+          searchTimeoutRef.current = setTimeout(() => {
             (async val => {
               const $steps = {};
+              
+              console.log("Searching for:", $state.textInput2.value);
+              
+              // تنظیم وضعیت جستجو
+              $stateSet($state, ["isSearching"], true);
       
               $steps["invokeGlobalAction"] = true
                 ? (() => {
                     const actionArgs = {
                       args: [
-                        undefined,
+                        "GET",
                         "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
                         (() => {
                           try {
@@ -234,6 +263,7 @@ function PlasmicTestSearch__RenderFunc(props: {
                         })()
                       ]
                     };
+                    console.log("Sending API request with params:", actionArgs.args[2]);
                     return $globalActions["Fragment.apiRequest"]?.apply(
                       null,
                       [...actionArgs.args]
@@ -245,10 +275,19 @@ function PlasmicTestSearch__RenderFunc(props: {
                 typeof $steps["invokeGlobalAction"] === "object" &&
                 typeof $steps["invokeGlobalAction"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
+                const result = await $steps["invokeGlobalAction"];
+                console.log("API request completed", result);
+                
+                // ذخیره نتایج
+                if (result && result.data) {
+                  $stateSet($state, ["searchResults"], result.data);
+                }
+                
+                // پایان وضعیت جستجو
+                $stateSet($state, ["isSearching"], false);
               }
             }).apply(null, eventArgs);
-          }, 300); // ← اینجا 300 میلی‌ثانیه تاخیر داریم
+          }, 500); // ← اینجا 500 میلی‌ثانیه تاخیر داریم
         }}
       />
 
@@ -273,6 +312,24 @@ function PlasmicTestSearch__RenderFunc(props: {
             }}
             value={generateStateValueProp($state, ["textInput", "value"]) ?? ""}
           />
+          
+          {/* نمایش وضعیت جستجو */}
+          {generateStateValueProp($state, ["isSearching"]) && (
+            <div style={{ padding: "10px", color: "#666" }}>
+              در حال جستجو...
+            </div>
+          )}
+          
+          {/* نمایش نتایج جستجو */}
+          {generateStateValueProp($state, ["searchResults"]) && 
+           generateStateValueProp($state, ["searchResults"]).length > 0 && (
+            <div style={{ padding: "10px" }}>
+              <h3>نتایج جستجو:</h3>
+              <pre style={{ background: "#f5f5f5", padding: "10px", borderRadius: "4px" }}>
+                {JSON.stringify(generateStateValueProp($state, ["searchResults"]), null, 2)}
+              </pre>
+            </div>
+          )}
         </div>
       </div>
     </React.Fragment>
