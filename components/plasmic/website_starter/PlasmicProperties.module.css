@@ -350,7 +350,7 @@
     height: 40px;
   }
 }
-.freeBox__kyYbv {
+.localStorage {
   display: grid;
   position: relative;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -363,19 +363,19 @@
   padding: 8px;
 }
 @media (max-width: 1200px) {
-  .freeBox__kyYbv {
+  .localStorage {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media (max-width: 500px) {
-  .freeBox__kyYbv {
+  .localStorage {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     flex-grow: 0;
     grid-row-gap: 20px;
   }
 }
 @media (max-width: 350px) {
-  .freeBox__kyYbv {
+  .localStorage {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }

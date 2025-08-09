@@ -96,6 +96,7 @@ export type PlasmicProperties__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   property?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  localStorage?: Flex__<"div">;
   propGuide?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -483,10 +484,9 @@ function PlasmicProperties__RenderFunc(props: {
                       />
 
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__kyYbv
-                        )}
+                        data-plasmic-name={"localStorage"}
+                        data-plasmic-override={overrides.localStorage}
+                        className={classNames(projectcss.all, sty.localStorage)}
                       >
                         {(_par =>
                           !_par ? [] : Array.isArray(_par) ? _par : [_par])(
@@ -531,50 +531,41 @@ function PlasmicProperties__RenderFunc(props: {
                               onClick={async event => {
                                 const $steps = {};
 
-                                $steps["goToProperty"] = true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        destination: `/property/${(() => {
-                                          try {
-                                            return currentItem.id;
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
+                                $steps["goToPropertyEdit"] =
+                                  $state.apiRequest.data.properties.filter(
+                                    item => item.property_name !== "اقامتگاه ۱"
+                                  ).length >= 1
+                                    ? (() => {
+                                        const actionArgs = {
+                                          destination: `/property/edit/${""}`
+                                        };
+                                        return (({ destination }) => {
+                                          if (
+                                            typeof destination === "string" &&
+                                            destination.startsWith("#")
+                                          ) {
+                                            document
+                                              .getElementById(
+                                                destination.substr(1)
+                                              )
+                                              .scrollIntoView({
+                                                behavior: "smooth"
+                                              });
+                                          } else {
+                                            __nextRouter?.push(destination);
                                           }
-                                        })()}`
-                                      };
-                                      return (({ destination }) => {
-                                        if (
-                                          typeof destination === "string" &&
-                                          destination.startsWith("#")
-                                        ) {
-                                          document
-                                            .getElementById(
-                                              destination.substr(1)
-                                            )
-                                            .scrollIntoView({
-                                              behavior: "smooth"
-                                            });
-                                        } else {
-                                          __nextRouter?.push(destination);
-                                        }
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
+                                        })?.apply(null, [actionArgs]);
+                                      })()
+                                    : undefined;
                                 if (
-                                  $steps["goToProperty"] != null &&
-                                  typeof $steps["goToProperty"] === "object" &&
-                                  typeof $steps["goToProperty"].then ===
+                                  $steps["goToPropertyEdit"] != null &&
+                                  typeof $steps["goToPropertyEdit"] ===
+                                    "object" &&
+                                  typeof $steps["goToPropertyEdit"].then ===
                                     "function"
                                 ) {
-                                  $steps["goToProperty"] = await $steps[
-                                    "goToProperty"
+                                  $steps["goToPropertyEdit"] = await $steps[
+                                    "goToPropertyEdit"
                                   ];
                                 }
                               }}
@@ -1582,6 +1573,7 @@ const PlasmicDescendants = {
     "profile2",
     "property",
     "apiRequest",
+    "localStorage",
     "propGuide",
     "sideEffect",
     "clarityRntComponent",
@@ -1592,8 +1584,9 @@ const PlasmicDescendants = {
   sideBar2: ["sideBar2"],
   sidebarLite: ["sidebarLite"],
   profile2: ["profile2"],
-  property: ["property", "apiRequest", "propGuide"],
-  apiRequest: ["apiRequest", "propGuide"],
+  property: ["property", "apiRequest", "localStorage", "propGuide"],
+  apiRequest: ["apiRequest", "localStorage", "propGuide"],
+  localStorage: ["localStorage"],
   propGuide: ["propGuide"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -1611,6 +1604,7 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   property: "div";
   apiRequest: typeof ApiRequest;
+  localStorage: "div";
   propGuide: "div";
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -1684,6 +1678,7 @@ export const PlasmicProperties = Object.assign(
     profile2: makeNodeComponent("profile2"),
     property: makeNodeComponent("property"),
     apiRequest: makeNodeComponent("apiRequest"),
+    localStorage: makeNodeComponent("localStorage"),
     propGuide: makeNodeComponent("propGuide"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
