@@ -2708,7 +2708,7 @@ function PlasmicBookings__RenderFunc(props: {
                     ? (() => {
                         try {
                           return (
-                            $state.booking.data.smart_booking != null &&
+                            $state.booking.data.smart_booking != null ||
                             $state.booking.data.auto_sync_status != null
                           );
                         } catch (e) {
