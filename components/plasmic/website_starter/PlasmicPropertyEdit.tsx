@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import VilaType from "../../VilaType"; // plasmic-import: Ovb_QdBC9YkI/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
@@ -92,6 +93,7 @@ export const PlasmicPropertyEdit__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPropertyEdit__OverridesType = {
   ویرایشاقامتگاه?: Flex__<"div">;
+  apiRequest?: Flex__<typeof ApiRequest>;
   type?: Flex__<"div">;
   name?: Flex__<"div">;
   textInput?: Flex__<typeof TextInput>;
@@ -198,6 +200,30 @@ function PlasmicPropertyEdit__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -242,6 +268,57 @@ function PlasmicPropertyEdit__RenderFunc(props: {
             sty.ویرایشاقامتگاه
           )}
         >
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qMvT
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__uikm0
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
+            }}
+            url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+          />
+
           {(() => {
             try {
               return $state.step == 0;
@@ -848,7 +925,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0627\u0633\u0645 \u062c\u062f\u06cc\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc \u0628\u0627\u0634\u0647\u061f"
+                      "\u0627\u0633\u0645 \u062c\u062f\u06cc\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0686\u06cc \u0628\u0627\u0634\u0647\u061f"
                     }
                   </div>
                   <div
@@ -859,7 +936,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0627\u06cc\u0646 \u0627\u0633\u0645 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                      "\u0627\u06cc\u0646 \u0627\u0633\u0645 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
                     }
                   </div>
                 </div>
@@ -884,9 +961,21 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                         return;
                       }
                     }}
-                    placeholder={
-                      "\u0645\u062b\u0644\u0627: \u0633\u0648\u06cc\u06cc\u062a \u0645\u0647\u062a\u0627\u0628"
-                    }
+                    placeholder={(() => {
+                      try {
+                        return $state.apiRequest.data.properties[
+                          $ctx.params.id - 1
+                        ].property_name;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
                     value={
                       generateStateValueProp($state, ["textInput", "value"]) ??
                       ""
@@ -2252,6 +2341,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
 const PlasmicDescendants = {
   ویرایشاقامتگاه: [
     "\u0648\u06cc\u0631\u0627\u06cc\u0634\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
+    "apiRequest",
     "type",
     "name",
     "textInput",
@@ -2277,6 +2367,7 @@ const PlasmicDescendants = {
     "faviconRntComponent",
     "sideEffect"
   ],
+  apiRequest: ["apiRequest"],
   type: ["type"],
   name: ["name", "textInput", "newButtons", "next", "privious"],
   textInput: ["textInput"],
@@ -2323,6 +2414,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   ویرایشاقامتگاه: "div";
+  apiRequest: typeof ApiRequest;
   type: "div";
   name: "div";
   textInput: typeof TextInput;
@@ -2414,6 +2506,7 @@ export const PlasmicPropertyEdit = Object.assign(
   ),
   {
     // Helper components rendering sub-elements
+    apiRequest: makeNodeComponent("apiRequest"),
     type: makeNodeComponent("type"),
     _name: makeNodeComponent("name"),
     textInput: makeNodeComponent("textInput"),
