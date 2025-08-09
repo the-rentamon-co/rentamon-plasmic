@@ -183,70 +183,76 @@ function PlasmicTestSearch__RenderFunc(props: {
             sty.root
           )}
         >
-          <TextInput2
-            data-plasmic-name={"textInput2"}
-            data-plasmic-override={overrides.textInput2}
-            className={classNames("__wab_instance", sty.textInput2)}
-            inputMode={"search"}
-            inputType={"search"}
-            onChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["textInput2", "value"]).apply(
-                null,
-                eventArgs
-              );
+          let searchTimeout: ReturnType<typeof setTimeout>;
 
-              if (
-                eventArgs.length > 1 &&
-                eventArgs[1] &&
-                eventArgs[1]._plasmic_state_init_
-              ) {
-                return;
-              }
-
-              (async val => {
-                const $steps = {};
-
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          undefined,
-                          "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
-                          (() => {
-                            try {
-                              return {
-                                q: $state.textInput2.value
-                              };
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
+      <TextInput2
+        data-plasmic-name={"textInput2"}
+        data-plasmic-override={overrides.textInput2}
+        className={classNames("__wab_instance", sty.textInput2)}
+        inputMode={"search"}
+        inputType={"search"}
+        onChange={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["textInput2", "value"]).apply(
+            null,
+            eventArgs
+          );
+      
+          if (
+            eventArgs.length > 1 &&
+            eventArgs[1] &&
+            eventArgs[1]._plasmic_state_init_
+          ) {
+            return;
+          }
+      
+          // پاک کردن تایمر قبلی
+          clearTimeout(searchTimeout);
+      
+          // ساخت تایمر جدید با 300ms فاصله
+          searchTimeout = setTimeout(() => {
+            (async val => {
+              const $steps = {};
+      
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
+                        (() => {
+                          try {
+                            return {
+                              q: $state.textInput2.value
+                            };
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
                             }
-                          })()
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
-                }
-              }).apply(null, eventArgs);
-            }}
-          />
+                            throw e;
+                          }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(
+                      null,
+                      [...actionArgs.args]
+                    );
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
+              }
+            }).apply(null, eventArgs);
+          }, 300); // ← اینجا 300 میلی‌ثانیه تاخیر داریم
+        }}
+      />
 
           <TextInput
             data-plasmic-name={"textInput"}
