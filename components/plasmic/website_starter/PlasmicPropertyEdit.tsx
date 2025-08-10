@@ -283,17 +283,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 {"Error fetching data"}
               </div>
             }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__uikm0
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
+            loadingDisplay={null}
             method={"GET"}
             onError={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(

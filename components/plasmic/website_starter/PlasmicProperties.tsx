@@ -522,22 +522,38 @@ function PlasmicProperties__RenderFunc(props: {
                             <div
                               className={classNames(
                                 projectcss.all,
-                                sty.freeBox___9MxO,
-                                hasVariant(globalVariants, "screen", "mobile")
-                                  ? "clickable"
-                                  : "clickable fadeinf"
+                                sty.freeBox___9RsNb
                               )}
                               key={currentIndex}
-                              onClick={async event => {
-                                const $steps = {};
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox___9MxO,
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "clickable"
+                                    : "clickable fadeinf"
+                                )}
+                                onClick={async event => {
+                                  const $steps = {};
 
-                                $steps["goToPropertyEdit"] =
-                                  $state.apiRequest.data.properties.filter(
-                                    item => item.property_name !== "اقامتگاه ۱"
-                                  ).length >= 1
+                                  $steps["goToPropertyEdit"] = true
                                     ? (() => {
                                         const actionArgs = {
-                                          destination: `/property/edit/${""}`
+                                          destination: `/property/edit/${(() => {
+                                            try {
+                                              return currentItem.id;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()}`
                                         };
                                         return (({ destination }) => {
                                           if (
@@ -557,121 +573,122 @@ function PlasmicProperties__RenderFunc(props: {
                                         })?.apply(null, [actionArgs]);
                                       })()
                                     : undefined;
-                                if (
-                                  $steps["goToPropertyEdit"] != null &&
-                                  typeof $steps["goToPropertyEdit"] ===
-                                    "object" &&
-                                  typeof $steps["goToPropertyEdit"].then ===
-                                    "function"
-                                ) {
-                                  $steps["goToPropertyEdit"] = await $steps[
-                                    "goToPropertyEdit"
-                                  ];
-                                }
-                              }}
-                            >
-                              {(() => {
-                                try {
-                                  return true;
-                                } catch (e) {
                                   if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
+                                    $steps["goToPropertyEdit"] != null &&
+                                    typeof $steps["goToPropertyEdit"] ===
+                                      "object" &&
+                                    typeof $steps["goToPropertyEdit"].then ===
+                                      "function"
                                   ) {
-                                    return true;
+                                    $steps["goToPropertyEdit"] = await $steps[
+                                      "goToPropertyEdit"
+                                    ];
                                   }
-                                  throw e;
-                                }
-                              })() ? (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__rfVv
-                                  )}
-                                >
-                                  <PlasmicImg__
-                                    alt={""}
-                                    className={classNames(
-                                      sty.img__ai6A,
-                                      hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "mobile"
-                                      )
-                                        ? "shine"
-                                        : ``
-                                    )}
-                                    displayHeight={
-                                      hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "mobile"
-                                      )
-                                        ? "100%"
-                                        : "100%"
-                                    }
-                                    displayMaxHeight={"none"}
-                                    displayMaxWidth={"100%"}
-                                    displayMinHeight={"0"}
-                                    displayMinWidth={"0"}
-                                    displayWidth={
-                                      hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "mobile"
-                                      )
-                                        ? "100%"
-                                        : "100%"
-                                    }
-                                    height={``}
-                                    loading={"lazy"}
-                                    src={(() => {
-                                      try {
-                                        return currentItem.profile_pic_link;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  />
-                                </div>
-                              ) : null}
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__oqlgW
-                                )}
+                                }}
                               >
+                                {(() => {
+                                  try {
+                                    return true;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })() ? (
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.freeBox__rfVv
+                                    )}
+                                  >
+                                    <PlasmicImg__
+                                      alt={""}
+                                      className={classNames(
+                                        sty.img__ai6A,
+                                        hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                          ? "shine"
+                                          : ``
+                                      )}
+                                      displayHeight={
+                                        hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                          ? "100%"
+                                          : "100%"
+                                      }
+                                      displayMaxHeight={"none"}
+                                      displayMaxWidth={"100%"}
+                                      displayMinHeight={"0"}
+                                      displayMinWidth={"0"}
+                                      displayWidth={
+                                        hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                          ? "100%"
+                                          : "100%"
+                                      }
+                                      height={``}
+                                      loading={"lazy"}
+                                      src={(() => {
+                                        try {
+                                          return currentItem.profile_pic_link;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    />
+                                  </div>
+                                ) : null}
                                 <div
                                   className={classNames(
                                     projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__wir2D
+                                    sty.freeBox__oqlgW
                                   )}
                                 >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return currentItem.property_name;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "\u0633\u0648\u0626\u06cc\u062a \u0645\u0628\u0644\u0647 \u0645\u0647\u062a\u0627\u0628";
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__wir2D
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem.property_name;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "\u0633\u0648\u0626\u06cc\u062a \u0645\u0628\u0644\u0647 \u0645\u0647\u062a\u0627\u0628";
+                                          }
+                                          throw e;
                                         }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
+                                      })()}
+                                    </React.Fragment>
+                                  </div>
                                 </div>
                               </div>
                             </div>

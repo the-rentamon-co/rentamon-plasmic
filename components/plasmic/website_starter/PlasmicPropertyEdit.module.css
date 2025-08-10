@@ -59,13 +59,6 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__uikm0 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
 .text__qMvT {
   position: relative;
   width: 100%;
@@ -287,11 +280,11 @@
 }
 .text__mKleg {
   position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 18px;
   user-select: none;
+  font-size: 18px;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
   min-width: 0;
 }
 .freeBox__bmhlj {
@@ -931,6 +924,7 @@
 .img__vM9E {
   object-fit: fill;
   max-width: 100%;
+  display: none;
   border-radius: 15px;
 }
 .img__vM9E > picture > img {
