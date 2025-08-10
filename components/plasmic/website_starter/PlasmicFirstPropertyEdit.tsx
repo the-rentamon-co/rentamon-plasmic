@@ -834,6 +834,17 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       "\u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u06cc \u0628\u0627\u0634\u0647\u061f"
                     }
                   </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___6OinV
+                    )}
+                  >
+                    {
+                      "\u0627\u0633\u0645 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                    }
+                  </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__n6Rn5)}>
                   <TextInput
@@ -1230,7 +1241,11 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return `برای «${$state.textInput.value}» یه عکس بذار`;
+                          return `${
+                            $state.textInput.value
+                              ? `برای «${$state.textInput.value}» یه عکس بذار`
+                              : `یه عکس برای اقامتگاهت بذار`
+                          }`;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -1242,6 +1257,17 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         }
                       })()}
                     </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__eloth
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0639\u06a9\u0633 \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                      : "\u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0639\u06a9\u0633 \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__pYgqq)}>
@@ -1837,9 +1863,9 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           sty.text__naA0P
                         )}
                       >
-                        {
-                          "\u06cc\u0647 \u0639\u06a9\u0633 \u0647\u0645 \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\n\u0627\u06cc\u0646 \u0639\u06a9\u0633 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
-                        }
+                        {hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u06cc\u0647 \u0639\u06a9\u0633 \u0647\u0645 \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\n\u0627\u06cc\u0646 \u0639\u06a9\u0633 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                          : "\u06cc\u0647 \u0639\u06a9\u0633 \u0647\u0645 \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\n\u0627\u06cc\u0646 \u0639\u06a9\u0633 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"}
                       </div>
                     </div>
                     {false ? (
@@ -1904,7 +1930,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633\n\u0627\u06cc\u0646 \u0627\u0633\u0645 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                    "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633\n\u0627\u06cc\u0646 \u0627\u0633\u0645 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
                   }
                 </div>
               </div>
@@ -2006,9 +2032,9 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       sty.text__yv5A
                     )}
                   >
-                    {
-                      "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633"
-                    }
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633\n\u0627\u06cc\u0646 \u0627\u0633\u0645 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                      : "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633"}
                   </div>
                 ) : null}
               </div>
@@ -2061,9 +2087,9 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       sty.text__jeRkc
                     )}
                   >
-                    {
-                      "\u06cc\u0647 \u0639\u06a9\u0633 \u0628\u0627 \u062d\u062c\u0645 \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06f2 \u0645\u06af\u0627\u0628\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
-                    }
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u06cc\u0647 \u0639\u06a9\u0633 \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\n\u0627\u06cc\u0646 \u0639\u06a9\u0633 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                      : "\u06cc\u0647 \u0639\u06a9\u0633 \u0647\u0645 \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\n\u0627\u06cc\u0646 \u0639\u06a9\u0633 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"}
                   </div>
                 ) : null}
               </div>

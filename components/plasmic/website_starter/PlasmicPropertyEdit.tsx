@@ -1349,7 +1349,13 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return `برای «${$state.textInput.value}» یه عکس بذار`;
+                          return `برای «${
+                            $state.textInput.value
+                              ? $state.textInput.value
+                              : $state.apiRequest.data.properties[
+                                  $ctx.params.id - 1
+                                ].property_name
+                          }» یه عکس بذار`;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||

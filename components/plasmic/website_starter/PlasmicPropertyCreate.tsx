@@ -1231,7 +1231,11 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return `برای «${$state.textInput.value}» یه عکس بذار`;
+                          return `${
+                            $state.textInput.value
+                              ? `برای «${$state.textInput.value}» یه عکس بذار`
+                              : `یه عکس برای اقامتگاهت بذار`
+                          }`;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||

@@ -1,26 +1,20 @@
 .ariaInput:global(.__wab_instance) {
   box-sizing: border-box;
   box-shadow: inset 0px 0px 0px 1px var(--token-nCyS8fyroW2i);
-  color: var(--token-Y7ZM7gj_nMYR);
-  font-family: var(--token-qkywJ1sQQ-h_);
+  color: #444444;
+  font-family: "Estedad";
   font-size: var(--token-wq-7W0QuaGtb);
   line-height: var(--token-otgoHRDIcFGD);
   width: 100%;
   position: relative;
   outline-style: none;
   min-width: 0;
-  border-radius: var(--token-MLwBcAFWQ57Z);
+  border-radius: var(--token-sq05VTixHzt0);
   padding: var(--token-MLwBcAFWQ57Z) var(--token-rGvKy1FLZXMz);
   border-style: none;
 }
 .ariaInput[data-disabled]:global(.__wab_instance) {
   cursor: not-allowed;
-}
-.ariaInput[data-focused]:global(.__wab_instance) {
-  outline-style: solid;
-  outline-width: var(--token-Xkcz3qrS_HH8);
-  outline-offset: 1px;
-  outline-color: var(--token-qkMXlUhOdBHU);
 }
 .ariaInputtype_soft:global(.__wab_instance) {
   background: var(--token-V6GfKFumB-_r);

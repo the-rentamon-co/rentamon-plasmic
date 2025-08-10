@@ -212,7 +212,7 @@ function PlasmicProperties__RenderFunc(props: {
         path: "propTour",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -1218,7 +1218,7 @@ function PlasmicProperties__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0631\u0648\u06cc \u062f\u06a9\u0645\u0647  +  \u0628\u0632\u0646 \u062a\u0627 \u0632\u06cc\u0631 \u06f1 \u062f\u0642\u06cc\u0642\u0647\n\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc"
+                              "\u0631\u0648\u06cc \u062f\u06a9\u0645\u0647  +  \u0628\u0627\u0644\u0627 \u0628\u0632\u0646 \u062a\u0627 \u0632\u06cc\u0631 \u06f1 \u062f\u0642\u06cc\u0642\u0647\n\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc"
                             }
                           </div>
                         </div>
