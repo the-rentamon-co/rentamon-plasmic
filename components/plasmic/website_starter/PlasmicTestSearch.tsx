@@ -235,7 +235,6 @@ function PlasmicTestSearch__RenderFunc(props: {
             (async val => {
               const $steps = {};
               
-              console.log("Searching for:", $state.textInput2.value);
               
               // تنظیم وضعیت جستجو
               $stateSet($state, ["isSearching"], true);
@@ -263,7 +262,6 @@ function PlasmicTestSearch__RenderFunc(props: {
                         })()
                       ]
                     };
-                    console.log("Sending API request with params:", actionArgs.args[2]);
                     return $globalActions["Fragment.apiRequest"]?.apply(
                       null,
                       [...actionArgs.args]
@@ -276,7 +274,7 @@ function PlasmicTestSearch__RenderFunc(props: {
                 typeof $steps["invokeGlobalAction"].then === "function"
               ) {
                 const result = await $steps["invokeGlobalAction"];
-                console.log("API request completed", result);
+                
                 
                 // ذخیره نتایج
                 if (result && result.data) {
