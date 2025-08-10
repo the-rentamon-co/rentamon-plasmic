@@ -212,7 +212,7 @@ function PlasmicProperties__RenderFunc(props: {
         path: "propTour",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]

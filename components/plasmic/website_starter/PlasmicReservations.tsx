@@ -2234,7 +2234,9 @@ function PlasmicReservations__RenderFunc(props: {
                             })()
                           : (() => {
                               try {
-                                return currentItem.id != null;
+                                return (
+                                  currentItem.alternative_booking_id != null
+                                );
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
