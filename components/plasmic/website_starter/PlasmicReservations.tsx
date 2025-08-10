@@ -115,6 +115,7 @@ export type PlasmicReservations__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   checkFeatureStatus?: Flex__<typeof ApiRequest>;
   toastMessageRnt?: Flex__<typeof ToastMessageRnt>;
+  search?: Flex__<"div">;
   textInput2?: Flex__<typeof TextInput2>;
   container?: Flex__<"div">;
   titles?: Flex__<"div">;
@@ -742,12 +743,6 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "searchDebounceTimer",
-        type: "private",
-        variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -762,15 +757,6 @@ function PlasmicReservations__RenderFunc(props: {
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
   });
-
-  // Cleanup debounce timer on unmount
-  React.useEffect(() => {
-    return () => {
-      if ($state.searchDebounceTimer) {
-        clearTimeout($state.searchDebounceTimer);
-      }
-    };
-  }, []);
 
   return (
     <React.Fragment>
@@ -1377,7 +1363,11 @@ function PlasmicReservations__RenderFunc(props: {
               </div>
             ) : null}
           </ApiRequest>
-          <div className={classNames(projectcss.all, sty.freeBox__q0PA8)}>
+          <div
+            data-plasmic-name={"search"}
+            data-plasmic-override={overrides.search}
+            className={classNames(projectcss.all, sty.search)}
+          >
             <TextInput2
               data-plasmic-name={"textInput2"}
               data-plasmic-override={overrides.textInput2}
@@ -1398,13 +1388,7 @@ function PlasmicReservations__RenderFunc(props: {
                   return;
                 }
 
-                // Clear previous timer
-                if ($state.searchDebounceTimer) {
-                  clearTimeout($state.searchDebounceTimer);
-                }
-
-                // Set new debounce timer
-                $state.searchDebounceTimer = setTimeout(async () => {
+                (async val => {
                   const $steps = {};
 
                   $steps["invokeGlobalAction"] = true
@@ -1445,7 +1429,7 @@ function PlasmicReservations__RenderFunc(props: {
                       "invokeGlobalAction"
                     ];
                   }
-                }, 500); // 500ms debounce delay
+                }).apply(null, eventArgs);
               }}
             />
           </div>
@@ -8985,6 +8969,7 @@ const PlasmicDescendants = {
     "profile",
     "checkFeatureStatus",
     "toastMessageRnt",
+    "search",
     "textInput2",
     "container",
     "titles",
@@ -9090,6 +9075,7 @@ const PlasmicDescendants = {
   profile: ["profile"],
   checkFeatureStatus: ["checkFeatureStatus", "toastMessageRnt"],
   toastMessageRnt: ["toastMessageRnt"],
+  search: ["search", "textInput2"],
   textInput2: ["textInput2"],
   container: [
     "container",
@@ -9335,6 +9321,7 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   checkFeatureStatus: typeof ApiRequest;
   toastMessageRnt: typeof ToastMessageRnt;
+  search: "div";
   textInput2: typeof TextInput2;
   container: "div";
   titles: "div";
@@ -9501,6 +9488,7 @@ export const PlasmicReservations = Object.assign(
     profile: makeNodeComponent("profile"),
     checkFeatureStatus: makeNodeComponent("checkFeatureStatus"),
     toastMessageRnt: makeNodeComponent("toastMessageRnt"),
+    search: makeNodeComponent("search"),
     textInput2: makeNodeComponent("textInput2"),
     container: makeNodeComponent("container"),
     titles: makeNodeComponent("titles"),
