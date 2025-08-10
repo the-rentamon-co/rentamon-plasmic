@@ -1464,31 +1464,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["updateLoading"] = await $steps["updateLoading"];
                       }
 
-                      $steps["goToPanel"] = true
-                        ? (() => {
-                            const actionArgs = { destination: `/panel` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToPanel"] != null &&
-                        typeof $steps["goToPanel"] === "object" &&
-                        typeof $steps["goToPanel"].then === "function"
-                      ) {
-                        $steps["goToPanel"] = await $steps["goToPanel"];
-                      }
-
                       $steps["setCookieFirstVisit"] =
                         $state.propTour === true
                           ? (() => {
@@ -1567,35 +1542,35 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["registrationSteps"] =
-                        $state.propTour === true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  "POST",
-                                  "https://gateway.rentamon.com/webhook/registration-steps-prop",
-                                  undefined,
-                                  (() => {
-                                    try {
-                                      return $state.propTour;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return undefined;
-                                      }
-                                      throw e;
+                      $steps["registrationSteps"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                "POST",
+                                "https://gateway.rentamon.com/webhook/registration-steps-prop",
+                                undefined,
+                                (() => {
+                                  try {
+                                    return $state.propTour;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
                                     }
-                                  })()
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.apiRequest"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
                       if (
                         $steps["registrationSteps"] != null &&
                         typeof $steps["registrationSteps"] === "object" &&
@@ -1604,6 +1579,31 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["registrationSteps"] = await $steps[
                           "registrationSteps"
                         ];
+                      }
+
+                      $steps["goToPanel"] = true
+                        ? (() => {
+                            const actionArgs = { destination: `/panel` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToPanel"] != null &&
+                        typeof $steps["goToPanel"] === "object" &&
+                        typeof $steps["goToPanel"].then === "function"
+                      ) {
+                        $steps["goToPanel"] = await $steps["goToPanel"];
                       }
 
                       $steps["updateLoading2"] = true
@@ -1640,75 +1640,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         $steps["updateLoading2"] = await $steps[
                           "updateLoading2"
                         ];
-                      }
-
-                      $steps["changePropertyPic"] = false
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://gateway.rentamon.com/webhook/change_property_pic",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return (() => {
-                                      let a = {
-                                        prop_id: "1",
-                                        property_pic: $state.upload.files[0]
-                                      };
-                                      return a;
-                                    })();
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["changePropertyPic"] != null &&
-                        typeof $steps["changePropertyPic"] === "object" &&
-                        typeof $steps["changePropertyPic"].then === "function"
-                      ) {
-                        $steps["changePropertyPic"] = await $steps[
-                          "changePropertyPic"
-                        ];
-                      }
-
-                      $steps["showToast"] = false
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "error",
-                                "\u0644\u0637\u0641\u0627 \u0639\u06a9\u0633 \u06a9\u0645 \u062d\u062c\u0645 \u062a\u0631\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646",
-                                "top-center",
-                                4000
-                              ]
-                            };
-                            return $globalActions["Fragment.showToast"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["showToast"] != null &&
-                        typeof $steps["showToast"] === "object" &&
-                        typeof $steps["showToast"].then === "function"
-                      ) {
-                        $steps["showToast"] = await $steps["showToast"];
                       }
                     }}
                   >
