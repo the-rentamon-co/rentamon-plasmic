@@ -327,6 +327,10 @@
   min-width: 0;
   padding: 8px;
 }
+.textInput2:global(.__wab_instance):global(.__wab_instance) {
+  max-width: 100%;
+  opacity: 0.1;
+}
 .container {
   display: flex;
   flex-direction: column;

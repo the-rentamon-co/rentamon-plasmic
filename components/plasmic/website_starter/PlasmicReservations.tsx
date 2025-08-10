@@ -64,6 +64,7 @@ import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxHmSdr/component
+import TextInput2 from "../../TextInput2"; // plasmic-import: MGm7xuldRCuA/component
 import ReservationsRecordList from "../../ReservationsRecordList"; // plasmic-import: dDeToLEgGJS_/component
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { AntdPagination } from "@plasmicpkgs/antd5/skinny/registerPagination";
@@ -114,6 +115,7 @@ export type PlasmicReservations__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   checkFeatureStatus?: Flex__<typeof ApiRequest>;
   toastMessageRnt?: Flex__<typeof ToastMessageRnt>;
+  textInput2?: Flex__<typeof TextInput2>;
   container?: Flex__<"div">;
   titles?: Flex__<"div">;
   property?: Flex__<"div">;
@@ -734,6 +736,12 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "textInput2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -1354,8 +1362,72 @@ function PlasmicReservations__RenderFunc(props: {
               </div>
             ) : null}
           </ApiRequest>
-          <div className={classNames(projectcss.all, sty.freeBox__q0PA8)} />
+          <div className={classNames(projectcss.all, sty.freeBox__q0PA8)}>
+            <TextInput2
+              data-plasmic-name={"textInput2"}
+              data-plasmic-override={overrides.textInput2}
+              className={classNames("__wab_instance", sty.textInput2)}
+              inputMode={"search"}
+              inputType={"search"}
+              onChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "textInput2",
+                  "value"
+                ]).apply(null, eventArgs);
 
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+
+                (async val => {
+                  const $steps = {};
+
+                  $steps["invokeGlobalAction"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            undefined,
+                            "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
+                            (() => {
+                              try {
+                                return {
+                                  q: $state.textInput2.value
+                                };
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction"] = await $steps[
+                      "invokeGlobalAction"
+                    ];
+                  }
+                }).apply(null, eventArgs);
+              }}
+            />
+          </div>
           <div
             data-plasmic-name={"container"}
             data-plasmic-override={overrides.container}
@@ -8892,6 +8964,7 @@ const PlasmicDescendants = {
     "profile",
     "checkFeatureStatus",
     "toastMessageRnt",
+    "textInput2",
     "container",
     "titles",
     "property",
@@ -8996,6 +9069,7 @@ const PlasmicDescendants = {
   profile: ["profile"],
   checkFeatureStatus: ["checkFeatureStatus", "toastMessageRnt"],
   toastMessageRnt: ["toastMessageRnt"],
+  textInput2: ["textInput2"],
   container: [
     "container",
     "titles",
@@ -9240,6 +9314,7 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   checkFeatureStatus: typeof ApiRequest;
   toastMessageRnt: typeof ToastMessageRnt;
+  textInput2: typeof TextInput2;
   container: "div";
   titles: "div";
   property: "div";
@@ -9405,6 +9480,7 @@ export const PlasmicReservations = Object.assign(
     profile: makeNodeComponent("profile"),
     checkFeatureStatus: makeNodeComponent("checkFeatureStatus"),
     toastMessageRnt: makeNodeComponent("toastMessageRnt"),
+    textInput2: makeNodeComponent("textInput2"),
     container: makeNodeComponent("container"),
     titles: makeNodeComponent("titles"),
     property: makeNodeComponent("property"),
