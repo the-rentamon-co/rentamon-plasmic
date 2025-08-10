@@ -466,7 +466,7 @@
 }
 .textInput2:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
-  opacity: 0.1;
+  opacity: 1;
   height: 38px;
   flex-shrink: 0;
 }
@@ -1327,6 +1327,7 @@
   .text__dMWfE {
     font-size: 14px;
     line-height: 1.8;
+    display: block;
   }
 }
 .returnButton {

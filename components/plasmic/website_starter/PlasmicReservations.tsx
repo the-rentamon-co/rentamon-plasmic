@@ -475,12 +475,6 @@ function PlasmicReservations__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "searchDebounceTimer",
-        type: "private",
-        variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
         path: "reservations",
         type: "private",
         variableType: "object",
@@ -1124,13 +1118,7 @@ function PlasmicReservations__RenderFunc(props: {
                         return;
                       }
 
-                      // Clear previous timer
-                      if ($state.searchDebounceTimer) {
-                        clearTimeout($state.searchDebounceTimer);
-                      }
-
-                      // Set new debounce timer
-                      $state.searchDebounceTimer = setTimeout(async () => {
+                      (async val => {
                         const $steps = {};
 
                         $steps["search"] = true
@@ -1190,7 +1178,7 @@ function PlasmicReservations__RenderFunc(props: {
                         ) {
                           $steps["updateData"] = await $steps["updateData"];
                         }
-                      }, 500); // 500ms debounce delay
+                      }).apply(null, eventArgs);
                     }}
                     padded={[]}
                     placeholder={"\u062c\u0633\u062a\u062c\u0648...."}
@@ -2044,7 +2032,7 @@ function PlasmicReservations__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0631\u0632\u0631\u0648\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc."
+                    "\u0645\u0648\u0631\u062f\u06cc \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f"
                   }
                 </div>
               ) : null}
@@ -2650,7 +2638,10 @@ function PlasmicReservations__RenderFunc(props: {
               })()}
               {(() => {
                 try {
-                  return $state.reservations.message == null;
+                  return (
+                    $state.reservations.message == null &&
+                    $state.textInput2.value == null
+                  );
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -2750,23 +2741,71 @@ function PlasmicReservations__RenderFunc(props: {
               ) : null}
             </div>
           ) : null}
-          <div
-            data-plasmic-name={"intro"}
-            data-plasmic-override={overrides.intro}
-            className={classNames(projectcss.all, sty.intro)}
-          >
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? true
+              : (() => {
+                  try {
+                    return true;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+          ) ? (
             <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__dMWfE
-              )}
+              data-plasmic-name={"intro"}
+              data-plasmic-override={overrides.intro}
+              className={classNames(projectcss.all, sty.intro)}
             >
-              {hasVariant(globalVariants, "screen", "mobile")
-                ? "\u0647\u0631 \u0632\u0645\u0627\u0646 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\u062a \u062b\u0628\u062a \u0634\u0647\u060c \u062c\u0632\u06cc\u06cc\u0627\u062a \u0627\u0648\u0646 \u0631\u0632\u0631\u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646\u200c\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0627\u0631\u06cc\u062e\u0686\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u06cc."
-                : "\u0647\u0631 \u0632\u0645\u0627\u0646 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\u062a \u062b\u0628\u062a \u0634\u0647\u060c \u062c\u0632\u06cc\u06cc\u0627\u062a \u0627\u0648\u0646 \u0631\u0632\u0631\u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646\u200c\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0627\u0631\u06cc\u062e\u0686\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u06cc."}
+              {(
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return $state.textInput2.value == null;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return false;
+                        }
+                        throw e;
+                      }
+                    })()
+                  : (() => {
+                      try {
+                        return $state.textInput2.value == null;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })()
+              ) ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dMWfE
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0647\u0631 \u0632\u0645\u0627\u0646 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\u062a \u062b\u0628\u062a \u0634\u0647\u060c \u062c\u0632\u06cc\u06cc\u0627\u062a \u0627\u0648\u0646 \u0631\u0632\u0631\u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646\u200c\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0627\u0631\u06cc\u062e\u0686\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u06cc."
+                    : "\u0647\u0631 \u0632\u0645\u0627\u0646 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\u062a \u062b\u0628\u062a \u0634\u0647\u060c \u062c\u0632\u06cc\u06cc\u0627\u062a \u0627\u0648\u0646 \u0631\u0632\u0631\u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646\u200c\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0627\u0631\u06cc\u062e\u0686\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u06cc."}
+                </div>
+              ) : null}
             </div>
-          </div>
+          ) : null}
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}

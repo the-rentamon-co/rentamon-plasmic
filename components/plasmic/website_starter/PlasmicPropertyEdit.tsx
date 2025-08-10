@@ -105,6 +105,7 @@ export type PlasmicPropertyEdit__OverridesType = {
   imageFrame?: Flex__<"div">;
   upload?: Flex__<typeof UploadWrapper>;
   embedHtml?: Flex__<typeof Embed>;
+  previousPicture?: Flex__<typeof PlasmicImg__>;
   newButtons2?: Flex__<"div">;
   next2?: Flex__<"div">;
   privious2?: Flex__<"div">;
@@ -1540,8 +1541,10 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   />
 
                   <PlasmicImg__
+                    data-plasmic-name={"previousPicture"}
+                    data-plasmic-override={overrides.previousPicture}
                     alt={""}
-                    className={classNames(sty.img__vM9E)}
+                    className={classNames(sty.previousPicture)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -2191,6 +2194,7 @@ const PlasmicDescendants = {
     "imageFrame",
     "upload",
     "embedHtml",
+    "previousPicture",
     "newButtons2",
     "next2",
     "privious2",
@@ -2218,6 +2222,7 @@ const PlasmicDescendants = {
     "imageFrame",
     "upload",
     "embedHtml",
+    "previousPicture",
     "newButtons2",
     "next2",
     "privious2"
@@ -2227,12 +2232,14 @@ const PlasmicDescendants = {
     "imageFrame",
     "upload",
     "embedHtml",
+    "previousPicture",
     "newButtons2",
     "next2",
     "privious2"
   ],
   upload: ["upload"],
   embedHtml: ["embedHtml"],
+  previousPicture: ["previousPicture"],
   newButtons2: ["newButtons2", "next2", "privious2"],
   next2: ["next2"],
   privious2: ["privious2"],
@@ -2264,6 +2271,7 @@ type NodeDefaultElementType = {
   imageFrame: "div";
   upload: typeof UploadWrapper;
   embedHtml: typeof Embed;
+  previousPicture: typeof PlasmicImg__;
   newButtons2: "div";
   next2: "div";
   privious2: "div";
@@ -2356,6 +2364,7 @@ export const PlasmicPropertyEdit = Object.assign(
     imageFrame: makeNodeComponent("imageFrame"),
     upload: makeNodeComponent("upload"),
     embedHtml: makeNodeComponent("embedHtml"),
+    previousPicture: makeNodeComponent("previousPicture"),
     newButtons2: makeNodeComponent("newButtons2"),
     next2: makeNodeComponent("next2"),
     privious2: makeNodeComponent("privious2"),

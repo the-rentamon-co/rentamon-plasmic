@@ -921,13 +921,13 @@
   padding: 10px 40px;
   border-width: 1px;
 }
-.img__vM9E {
+.previousPicture {
   object-fit: fill;
   max-width: 100%;
   display: none;
   border-radius: 15px;
 }
-.img__vM9E > picture > img {
+.previousPicture > picture > img {
   object-fit: fill;
 }
 .newButtons2 {
