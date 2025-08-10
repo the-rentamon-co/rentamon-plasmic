@@ -742,6 +742,12 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "searchDebounceTimer",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -756,6 +762,15 @@ function PlasmicReservations__RenderFunc(props: {
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsaSuSwU8JUYf()
   });
+
+  // Cleanup debounce timer on unmount
+  React.useEffect(() => {
+    return () => {
+      if ($state.searchDebounceTimer) {
+        clearTimeout($state.searchDebounceTimer);
+      }
+    };
+  }, []);
 
   return (
     <React.Fragment>
@@ -1383,7 +1398,13 @@ function PlasmicReservations__RenderFunc(props: {
                   return;
                 }
 
-                (async val => {
+                // Clear previous timer
+                if ($state.searchDebounceTimer) {
+                  clearTimeout($state.searchDebounceTimer);
+                }
+
+                // Set new debounce timer
+                $state.searchDebounceTimer = setTimeout(async () => {
                   const $steps = {};
 
                   $steps["invokeGlobalAction"] = true
@@ -1424,7 +1445,7 @@ function PlasmicReservations__RenderFunc(props: {
                       "invokeGlobalAction"
                     ];
                   }
-                }).apply(null, eventArgs);
+                }, 500); // 500ms debounce delay
               }}
             />
           </div>
