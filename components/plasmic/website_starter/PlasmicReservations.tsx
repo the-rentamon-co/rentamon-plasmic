@@ -1181,7 +1181,7 @@ function PlasmicReservations__RenderFunc(props: {
                       }).apply(null, eventArgs);
                     }}
                     padded={[]}
-                    placeholder={"\u062c\u0633\u062a\u062c\u0648...."}
+                    placeholder={"\u062c\u0633\u062a\u062c\u0648..."}
                   />
 
                   <div

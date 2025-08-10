@@ -498,7 +498,7 @@
   object-fit: cover;
   max-width: 100%;
   width: 22px;
-  opacity: 0.1;
+  opacity: 1;
 }
 .img__s47Jd > picture > img {
   object-fit: cover;
