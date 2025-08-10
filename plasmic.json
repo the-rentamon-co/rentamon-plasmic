@@ -1852,6 +1852,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/test-search"
+        },
+        {
+          "id": "dehhsrjP1Mnr",
+          "name": "PropertyEdit2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPropertyEdit2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/property/edit-2/[id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPropertyEdit2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/property/edit-2/[id]"
         }
       ],
       "icons": [
@@ -4246,6 +4260,11 @@
           "id": "Nbakh281dZIi",
           "name": "image 168",
           "filePath": "../public/plasmic/website_starter/images/image168.svg"
+        },
+        {
+          "id": "4wBmdv5HVC5h",
+          "name": "photo_2024-08-12_10-44-46.jpg",
+          "filePath": "../public/plasmic/website_starter/images/photo20240812104446Jpg.jpg"
         }
       ],
       "indirect": false,
