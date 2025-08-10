@@ -475,6 +475,12 @@ function PlasmicReservations__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
+        path: "searchDebounceTimer",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
         path: "reservations",
         type: "private",
         variableType: "object",
@@ -1118,7 +1124,13 @@ function PlasmicReservations__RenderFunc(props: {
                         return;
                       }
 
-                      (async val => {
+                      // Clear previous timer
+                      if ($state.searchDebounceTimer) {
+                        clearTimeout($state.searchDebounceTimer);
+                      }
+
+                      // Set new debounce timer
+                      $state.searchDebounceTimer = setTimeout(async () => {
                         const $steps = {};
 
                         $steps["search"] = true
@@ -1178,7 +1190,7 @@ function PlasmicReservations__RenderFunc(props: {
                         ) {
                           $steps["updateData"] = await $steps["updateData"];
                         }
-                      }).apply(null, eventArgs);
+                      }, 500); // 500ms debounce delay
                     }}
                     padded={[]}
                     placeholder={"\u062c\u0633\u062a\u062c\u0648...."}
