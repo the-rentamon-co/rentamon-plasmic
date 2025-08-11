@@ -5342,7 +5342,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       if ($state.settlement2.checked) {
                                         queryParams.push(
                                           `is_settled=${!$state.settlement2
-                                            .checked}`
+                                            .checked}&status=Past`
                                         );
                                       }
                                       if ($state.confierm2.checked) {
