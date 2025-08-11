@@ -115,9 +115,9 @@ export type PlasmicReservations__OverridesType = {
   searchBox?: Flex__<"div">;
   textInput2?: Flex__<typeof TextInput2>;
   searchIcon?: Flex__<"div">;
+  sort?: Flex__<"div">;
   filter?: Flex__<"div">;
   filterMenu?: Flex__<typeof AntdModal>;
-  sort?: Flex__<"div">;
   container?: Flex__<"div">;
   titles?: Flex__<"div">;
   property?: Flex__<"div">;
@@ -1259,6 +1259,12 @@ function PlasmicReservations__RenderFunc(props: {
                 </div>
               </div>
               <div
+                data-plasmic-name={"sort"}
+                data-plasmic-override={overrides.sort}
+                className={classNames(projectcss.all, sty.sort)}
+              />
+
+              <div
                 data-plasmic-name={"filter"}
                 data-plasmic-override={overrides.filter}
                 className={classNames(projectcss.all, sty.filter)}
@@ -1482,11 +1488,6 @@ function PlasmicReservations__RenderFunc(props: {
                   />
                 </div>
               </div>
-              <div
-                data-plasmic-name={"sort"}
-                data-plasmic-override={overrides.sort}
-                className={classNames(projectcss.all, sty.sort)}
-              />
             </div>
           </div>
           <div
@@ -6278,9 +6279,9 @@ const PlasmicDescendants = {
     "searchBox",
     "textInput2",
     "searchIcon",
+    "sort",
     "filter",
     "filterMenu",
-    "sort",
     "container",
     "titles",
     "property",
@@ -6347,9 +6348,9 @@ const PlasmicDescendants = {
     "searchBox",
     "textInput2",
     "searchIcon",
+    "sort",
     "filter",
-    "filterMenu",
-    "sort"
+    "filterMenu"
   ],
   filterAndSearch: [
     "filterAndSearch",
@@ -6357,17 +6358,17 @@ const PlasmicDescendants = {
     "searchBox",
     "textInput2",
     "searchIcon",
+    "sort",
     "filter",
-    "filterMenu",
-    "sort"
+    "filterMenu"
   ],
   search: ["search", "searchBox", "textInput2", "searchIcon"],
   searchBox: ["searchBox", "textInput2", "searchIcon"],
   textInput2: ["textInput2"],
   searchIcon: ["searchIcon"],
+  sort: ["sort"],
   filter: ["filter", "filterMenu"],
   filterMenu: ["filterMenu"],
-  sort: ["sort"],
   container: [
     "container",
     "titles",
@@ -6486,9 +6487,9 @@ type NodeDefaultElementType = {
   searchBox: "div";
   textInput2: typeof TextInput2;
   searchIcon: "div";
+  sort: "div";
   filter: "div";
   filterMenu: typeof AntdModal;
-  sort: "div";
   container: "div";
   titles: "div";
   property: "div";
@@ -6615,9 +6616,9 @@ export const PlasmicReservations = Object.assign(
     searchBox: makeNodeComponent("searchBox"),
     textInput2: makeNodeComponent("textInput2"),
     searchIcon: makeNodeComponent("searchIcon"),
+    sort: makeNodeComponent("sort"),
     filter: makeNodeComponent("filter"),
     filterMenu: makeNodeComponent("filterMenu"),
-    sort: makeNodeComponent("sort"),
     container: makeNodeComponent("container"),
     titles: makeNodeComponent("titles"),
     property: makeNodeComponent("property"),

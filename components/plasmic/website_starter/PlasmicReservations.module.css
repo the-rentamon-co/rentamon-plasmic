@@ -503,6 +503,23 @@
 .img__s47Jd > picture > img {
   object-fit: cover;
 }
+.sort {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 0px;
+}
+@media (max-width: 1200px) {
+  .sort {
+    width: auto;
+  }
+}
 .filter {
   display: flex;
   flex-direction: column;
@@ -633,23 +650,6 @@
 }
 .img__uNm4E > picture > img {
   object-fit: cover;
-}
-.sort {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  padding: 0px;
-}
-@media (max-width: 1200px) {
-  .sort {
-    width: auto;
-  }
 }
 .container {
   display: flex;
