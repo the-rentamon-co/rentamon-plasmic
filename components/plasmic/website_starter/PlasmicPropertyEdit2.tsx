@@ -188,6 +188,12 @@ function PlasmicPropertyEdit2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "upload.files",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
       }
     ],
     [$props, $ctx, $refs]
@@ -1323,41 +1329,48 @@ function PlasmicPropertyEdit2__RenderFunc(props: {
                     accept={"image/*"}
                     className={classNames("__wab_instance", sty.upload)}
                     dragAndDropFiles={false}
-                    files={[]}
+                    files={generateStateValueProp($state, ["upload", "files"])}
                     listType={"picture"}
                     maxCount={500}
-                    onFilesChange={async files => {
-                      const $steps = {};
+                    onFilesChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "upload",
+                        "files"
+                      ]).apply(null, eventArgs);
 
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  if ($state.upload.files.length > 1) {
-                                    const files = [...$state.upload.files];
-                                    files[0] = files[1];
-                                    files.splice(1, 1);
-                                    console.log(files);
-                                    return files;
-                                  } else {
-                                    return console.log("ok");
-                                  }
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
+                      (async files => {
+                        const $steps = {};
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    if ($state.upload.files.length > 1) {
+                                      const files = [...$state.upload.files];
+                                      files[0] = files[1];
+                                      files.splice(1, 1);
+                                      console.log(files);
+                                      return files;
+                                    } else {
+                                      return console.log("ok");
+                                    }
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }).apply(null, eventArgs);
                     }}
                     showUploadList={true}
                   >

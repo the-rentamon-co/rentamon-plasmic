@@ -128,6 +128,7 @@ export type PlasmicReservations__OverridesType = {
   reserveData2?: Flex__<typeof ApiRequest>;
   reserveMainStack?: Flex__<"div">;
   reserveData?: Flex__<typeof ApiRequest>;
+  بیخیال?: Flex__<"div">;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   pagination2?: Flex__<"div">;
   pagination?: Flex__<typeof AntdPagination>;
@@ -2697,6 +2698,107 @@ function PlasmicReservations__RenderFunc(props: {
                       )}
                     </div>
                   ) : null}
+                </div>
+              ) : null}
+              {(() => {
+                try {
+                  return $state.isTheFirstVisit && $state.tourSteps == 0;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__hwK3T)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["deleteCookie"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function deleteCookie(name) {
+                                  document.cookie =
+                                    name +
+                                    "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                }
+                                deleteCookie("isTheFirstVisit");
+                                console.log("delete cookie");
+                                $state.isTheFirstVisit = 0;
+                                return console.log(
+                                  "delete cookie",
+                                  $state.isTheFirstVisit
+                                );
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["deleteCookie"] != null &&
+                      typeof $steps["deleteCookie"] === "object" &&
+                      typeof $steps["deleteCookie"].then === "function"
+                    ) {
+                      $steps["deleteCookie"] = await $steps["deleteCookie"];
+                    }
+                  }}
+                >
+                  <div
+                    data-plasmic-name={"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
+                    data-plasmic-override={overrides.بیخیال}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.بیخیال
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["deleteCookie"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  function deleteCookie(name) {
+                                    document.cookie =
+                                      name +
+                                      "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                  }
+                                  deleteCookie("isTheFirstVisit");
+                                  console.log("delete cookie");
+                                  $state.isTheFirstVisit = 0;
+                                  return console.log(
+                                    "delete cookie",
+                                    $state.isTheFirstVisit
+                                  );
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["deleteCookie"] != null &&
+                        typeof $steps["deleteCookie"] === "object" &&
+                        typeof $steps["deleteCookie"].then === "function"
+                      ) {
+                        $steps["deleteCookie"] = await $steps["deleteCookie"];
+                      }
+                    }}
+                  >
+                    {"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
+                  </div>
                 </div>
               ) : null}
             </div>
@@ -6055,7 +6157,7 @@ function PlasmicReservations__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   $state.reservations =
-                                    $steps.sendRequest.data.result.data;
+                                    $steps.sendRequests.data.result.data;
                                   return console.log($state.reservations);
                                 })();
                               }
@@ -6189,6 +6291,7 @@ const PlasmicDescendants = {
     "reserveData2",
     "reserveMainStack",
     "reserveData",
+    "\u0628\u06cc\u062e\u06cc\u0627\u0644",
     "navbarRntFooter",
     "pagination2",
     "pagination",
@@ -6275,7 +6378,8 @@ const PlasmicDescendants = {
     "reserveMainStack2",
     "reserveData2",
     "reserveMainStack",
-    "reserveData"
+    "reserveData",
+    "\u0628\u06cc\u062e\u06cc\u0627\u0644"
   ],
   titles: ["titles", "property", "guestName", "arriveDate", "source"],
   property: ["property"],
@@ -6284,8 +6388,13 @@ const PlasmicDescendants = {
   source: ["source"],
   reserveMainStack2: ["reserveMainStack2", "reserveData2"],
   reserveData2: ["reserveData2"],
-  reserveMainStack: ["reserveMainStack", "reserveData"],
+  reserveMainStack: [
+    "reserveMainStack",
+    "reserveData",
+    "\u0628\u06cc\u062e\u06cc\u0627\u0644"
+  ],
   reserveData: ["reserveData"],
+  بیخیال: ["\u0628\u06cc\u062e\u06cc\u0627\u0644"],
   navbarRntFooter: ["navbarRntFooter"],
   pagination2: ["pagination2", "pagination"],
   pagination: ["pagination"],
@@ -6390,6 +6499,7 @@ type NodeDefaultElementType = {
   reserveData2: typeof ApiRequest;
   reserveMainStack: "div";
   reserveData: typeof ApiRequest;
+  بیخیال: "div";
   navbarRntFooter: typeof NavbarRntFooter;
   pagination2: "div";
   pagination: typeof AntdPagination;
@@ -6518,6 +6628,7 @@ export const PlasmicReservations = Object.assign(
     reserveData2: makeNodeComponent("reserveData2"),
     reserveMainStack: makeNodeComponent("reserveMainStack"),
     reserveData: makeNodeComponent("reserveData"),
+    بیخیال: makeNodeComponent("\u0628\u06cc\u062e\u06cc\u0627\u0644"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     pagination2: makeNodeComponent("pagination2"),
     pagination: makeNodeComponent("pagination"),
