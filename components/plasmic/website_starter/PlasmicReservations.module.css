@@ -1220,6 +1220,7 @@
   object-fit: cover;
 }
 .freeBox__giYau {
+  display: flex;
   flex-direction: column;
   width: 100%;
   height: auto;
@@ -1228,7 +1229,6 @@
   align-items: center;
   opacity: 1;
   min-width: 0;
-  display: none;
   border-radius: 15px;
   padding: 5px 2px;
 }
@@ -1242,7 +1242,6 @@
     align-items: center;
     column-gap: 0px;
     min-width: 0;
-    display: flex;
     padding: 0px;
   }
 }

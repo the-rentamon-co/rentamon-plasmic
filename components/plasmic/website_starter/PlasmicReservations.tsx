@@ -2510,7 +2510,8 @@ function PlasmicReservations__RenderFunc(props: {
                           const actionArgs = {
                             customFunction: async () => {
                               return (() => {
-                                const reservations = $state.reserveData.data;
+                                const reservations =
+                                  $state.reserveData.data.result.data;
                                 if (
                                   Array.isArray(reservations) &&
                                   reservations.length > 0
