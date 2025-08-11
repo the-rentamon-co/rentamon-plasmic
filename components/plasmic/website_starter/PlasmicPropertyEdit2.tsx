@@ -262,7 +262,19 @@ function PlasmicPropertyEdit2__RenderFunc(props: {
             ref={ref => {
               $refs["apiRequest"] = ref;
             }}
-            url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+            url={(() => {
+              try {
+                return `https://api-v2.rentamon.com/api/user_info?property_id=${$ctx.params.id}`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
 
           {(() => {
@@ -1502,12 +1514,24 @@ function PlasmicPropertyEdit2__RenderFunc(props: {
                           $steps["runCode"] = await $steps["runCode"];
                         }
                       }}
-                      src={{
-                        src: "/plasmic/website_starter/images/photo20240812104446Jpg.jpg",
-                        fullWidth: 1280,
-                        fullHeight: 721,
-                        aspectRatio: undefined
-                      }}
+                      src={(() => {
+                        try {
+                          return undefined;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return {
+                              src: "/plasmic/website_starter/images/photo20240812104446Jpg.jpg",
+                              fullWidth: 1280,
+                              fullHeight: 721,
+                              aspectRatio: undefined
+                            };
+                          }
+                          throw e;
+                        }
+                      })()}
                     />
                   </div>
                 </div>

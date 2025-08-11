@@ -65,15 +65,16 @@ import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/com
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxHmSdr/component
 import TextInput2 from "../../TextInput2"; // plasmic-import: MGm7xuldRCuA/component
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import ReservationsRecordList from "../../ReservationsRecordList"; // plasmic-import: dDeToLEgGJS_/component
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { AntdPagination } from "@plasmicpkgs/antd5/skinny/registerPagination";
 import { paginationHelpers as AntdPagination_Helpers } from "@plasmicpkgs/antd5/skinny/registerPagination";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
 
 import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
 
@@ -115,6 +116,7 @@ export type PlasmicReservations__OverridesType = {
   textInput2?: Flex__<typeof TextInput2>;
   searchIcon?: Flex__<"div">;
   filter?: Flex__<"div">;
+  filterMenu?: Flex__<typeof AntdModal>;
   sort?: Flex__<"div">;
   container?: Flex__<"div">;
   titles?: Flex__<"div">;
@@ -155,6 +157,16 @@ export type PlasmicReservations__OverridesType = {
   mizbon2?: Flex__<typeof PlasmicImg__>;
   homsa2?: Flex__<typeof PlasmicImg__>;
   otaghak2?: Flex__<typeof PlasmicImg__>;
+  title?: Flex__<"div">;
+  source2?: Flex__<"div">;
+  property2?: Flex__<"div">;
+  settlement?: Flex__<"div">;
+  settlement2?: Flex__<typeof Switch>;
+  confierm?: Flex__<"div">;
+  confierm2?: Flex__<typeof Switch>;
+  cancelled?: Flex__<"div">;
+  cancelled3?: Flex__<typeof Switch>;
+  button?: Flex__<"div">;
 };
 
 export interface DefaultReservationsProps {}
@@ -479,6 +491,42 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+      },
+      {
+        path: "filterMenu.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "showFilter",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "settlement2.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "confierm2.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "cancelled3.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "filterUrl",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -1160,10 +1208,8 @@ function PlasmicReservations__RenderFunc(props: {
                           ? (() => {
                               const actionArgs = {
                                 customFunction: async () => {
-                                  return (() => {
-                                    $state.reservations = $steps.search.data;
-                                    return console.log($state.reservations);
-                                  })();
+                                  return ($state.reservations =
+                                    $steps.search.data);
                                 }
                               };
                               return (({ customFunction }) => {
@@ -1213,8 +1259,226 @@ function PlasmicReservations__RenderFunc(props: {
                 data-plasmic-name={"filter"}
                 data-plasmic-override={overrides.filter}
                 className={classNames(projectcss.all, sty.filter)}
-              />
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__xcOzY)}
+                  onClick={async event => {
+                    const $steps = {};
 
+                    $steps["updateTest"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["showFilter"]
+                            },
+                            operation: 4,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateTest"] != null &&
+                      typeof $steps["updateTest"] === "object" &&
+                      typeof $steps["updateTest"].then === "function"
+                    ) {
+                      $steps["updateTest"] = await $steps["updateTest"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___3Pw5O
+                    )}
+                  >
+                    {"\u0641\u06cc\u0644\u062a\u0631"}
+                  </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__vuYJn)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image169.svg",
+                      fullWidth: 19,
+                      fullHeight: 16,
+                      aspectRatio: undefined
+                    }}
+                  />
+
+                  <AntdModal
+                    data-plasmic-name={"filterMenu"}
+                    data-plasmic-override={overrides.filterMenu}
+                    children={null}
+                    className={classNames("__wab_instance", sty.filterMenu)}
+                    defaultStylesClassName={classNames(
+                      projectcss.root_reset,
+                      projectcss.plasmic_default_styles,
+                      projectcss.plasmic_mixins,
+                      projectcss.plasmic_tokens,
+                      plasmic_antd_5_hostless_css.plasmic_tokens,
+                      plasmic_plasmic_rich_components_css.plasmic_tokens
+                    )}
+                    hideFooter={true}
+                    modalScopeClassName={sty["filterMenu__modal"]}
+                    onOpenChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "filterMenu",
+                        "open"
+                      ]).apply(null, eventArgs);
+                    }}
+                    open={generateStateValueProp($state, [
+                      "filterMenu",
+                      "open"
+                    ])}
+                    title={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox___32O6F
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__oWhg4
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__iosRu
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___1OLsG
+                              )}
+                            >
+                              {"\u0641\u06cc\u0644\u062a\u0631\u0647\u0627"}
+                            </div>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__h9IvM
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__zSafx)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image169.svg",
+                                fullWidth: 19,
+                                fullHeight: 16,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__d9VvJ
+                          )}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__uNm4E)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["updateFilterMenuOpen"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["filterMenu", "open"]
+                                      },
+                                      operation: 0,
+                                      value: false
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateFilterMenuOpen"] != null &&
+                                typeof $steps["updateFilterMenuOpen"] ===
+                                  "object" &&
+                                typeof $steps["updateFilterMenuOpen"].then ===
+                                  "function"
+                              ) {
+                                $steps["updateFilterMenuOpen"] = await $steps[
+                                  "updateFilterMenuOpen"
+                                ];
+                              }
+                            }}
+                            src={{
+                              src: "/plasmic/website_starter/images/image170.svg",
+                              fullWidth: 18,
+                              fullHeight: 18,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        </div>
+                      </div>
+                    }
+                    trigger={null}
+                  />
+                </div>
+              </div>
               <div
                 data-plasmic-name={"sort"}
                 data-plasmic-override={overrides.sort}
@@ -4721,6 +4985,985 @@ function PlasmicReservations__RenderFunc(props: {
               ) : null}
             </div>
           </AntdModal>
+          <div
+            className={classNames(
+              projectcss.all,
+              sty.freeBox__kxmPc,
+              (() => {
+                try {
+                  return $state.showFilter
+                    ? "modal-overlay open"
+                    : "modal-overlay";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
+            )}
+            onClick={async event => {
+              const $steps = {};
+            }}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__iBmls,
+                (() => {
+                  try {
+                    return $state.showFilter
+                      ? "modal-content open"
+                      : "modal-content";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()
+              )}
+            >
+              <div
+                data-plasmic-name={"title"}
+                data-plasmic-override={overrides.title}
+                className={classNames(projectcss.all, sty.title)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__juHHj)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__vTVaO)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___0K7Wf
+                      )}
+                    >
+                      {"\u0641\u06cc\u0644\u062a\u0631\u0647\u0627"}
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__joDmZ)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___8Qts4)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image169.svg",
+                        fullWidth: 19,
+                        fullHeight: 16,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__cwHUg)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___7Rv1C)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateTest"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["showFilter"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateTest"] != null &&
+                        typeof $steps["updateTest"] === "object" &&
+                        typeof $steps["updateTest"].then === "function"
+                      ) {
+                        $steps["updateTest"] = await $steps["updateTest"];
+                      }
+                    }}
+                    src={{
+                      src: "/plasmic/website_starter/images/image170.svg",
+                      fullWidth: 18,
+                      fullHeight: 18,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+              </div>
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"source2"}
+                  data-plasmic-override={overrides.source2}
+                  className={classNames(projectcss.all, sty.source2)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__zCkiP)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__trYSx)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__fRy0
+                        )}
+                      >
+                        {
+                          "\u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0639\u0631\u0641"
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ztlh)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__v52DG)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image171.svg",
+                        fullWidth: 11,
+                        fullHeight: 22,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"property2"}
+                  data-plasmic-override={overrides.property2}
+                  className={classNames(projectcss.all, sty.property2)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___0Qtox)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__bs1X)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__zoP1Y
+                        )}
+                      >
+                        {
+                          "\u0627\u0646\u062a\u062e\u0627\u0628 \u0648\u06cc\u0644\u0627"
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___50W93)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__aoRrn)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image171.svg",
+                        fullWidth: 11,
+                        fullHeight: 22,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"settlement"}
+                  data-plasmic-override={overrides.settlement}
+                  className={classNames(projectcss.all, sty.settlement)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__xjxqe)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__o4J6C)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___1Ap1D
+                        )}
+                      >
+                        {
+                          "\u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647\u200c\u0647\u0627"
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__aaslL)}
+                  >
+                    <Switch
+                      data-plasmic-name={"settlement2"}
+                      data-plasmic-override={overrides.settlement2}
+                      checked={generateStateValueProp($state, [
+                        "settlement2",
+                        "checked"
+                      ])}
+                      className={classNames("__wab_instance", sty.settlement2)}
+                      onCheckedChange={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "settlement2",
+                          "checked"
+                        ]).apply(null, eventArgs);
+
+                        (async checked => {
+                          const $steps = {};
+
+                          $steps["generateUrl"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      const baseUrl =
+                                        "https://gateway.rentamon.com/webhook/getReserve";
+                                      const queryParams = [];
+                                      queryParams.push(`v=2`);
+                                      queryParams.push(
+                                        `limit=${$state.dataSize}`
+                                      );
+                                      if ($state.settlement2.checked) {
+                                        queryParams.push(
+                                          `is_settled=${!$state.settlement2
+                                            .checked}`
+                                        );
+                                      }
+                                      if ($state.confierm2.checked) {
+                                        queryParams.push(`status=Confirmed`);
+                                      } else if ($state.cancelled3.checked) {
+                                        queryParams.push(`status=Cancelled`);
+                                      }
+                                      $state.filterUrl = `${baseUrl}?${queryParams.join(
+                                        "&"
+                                      )}`;
+                                      return $state.filterUrl;
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["generateUrl"] != null &&
+                            typeof $steps["generateUrl"] === "object" &&
+                            typeof $steps["generateUrl"].then === "function"
+                          ) {
+                            $steps["generateUrl"] = await $steps["generateUrl"];
+                          }
+
+                          $steps["sendRequest"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "GET",
+                                    (() => {
+                                      try {
+                                        return $state.filterUrl;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["sendRequest"] != null &&
+                            typeof $steps["sendRequest"] === "object" &&
+                            typeof $steps["sendRequest"].then === "function"
+                          ) {
+                            $steps["sendRequest"] = await $steps["sendRequest"];
+                          }
+
+                          $steps["updateReservations"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      $state.reservations =
+                                        $steps.sendRequest.data;
+                                      return console.log($state.reservations);
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateReservations"] != null &&
+                            typeof $steps["updateReservations"] === "object" &&
+                            typeof $steps["updateReservations"].then ===
+                              "function"
+                          ) {
+                            $steps["updateReservations"] = await $steps[
+                              "updateReservations"
+                            ];
+                          }
+                        }).apply(null, eventArgs);
+                      }}
+                    />
+                  </div>
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"confierm"}
+                  data-plasmic-override={overrides.confierm}
+                  className={classNames(projectcss.all, sty.confierm)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__mDfWz)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___2MrUv
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__fcz08
+                        )}
+                      >
+                        {"\u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647"}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ckgdr)}
+                  >
+                    <Switch
+                      data-plasmic-name={"confierm2"}
+                      data-plasmic-override={overrides.confierm2}
+                      checked={generateStateValueProp($state, [
+                        "confierm2",
+                        "checked"
+                      ])}
+                      className={classNames("__wab_instance", sty.confierm2)}
+                      onCheckedChange={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "confierm2",
+                          "checked"
+                        ]).apply(null, eventArgs);
+
+                        (async checked => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      if ($state.cancelled3.checked == true) {
+                                        return ($state.cancelled3.checked =
+                                          false);
+                                      }
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+
+                          $steps["generateUrl"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      const baseUrl =
+                                        "https://gateway.rentamon.com/webhook/getReserve";
+                                      const queryParams = [];
+                                      queryParams.push(`v=2`);
+                                      queryParams.push(
+                                        `limit=${$state.dataSize}`
+                                      );
+                                      if ($state.settlement2.checked) {
+                                        queryParams.push(
+                                          `is_settled=${!$state.settlement2
+                                            .checked}`
+                                        );
+                                      }
+                                      if ($state.confierm2.checked) {
+                                        queryParams.push(`status=Confirmed`);
+                                      } else if ($state.cancelled3.checked) {
+                                        queryParams.push(`status=Cancelled`);
+                                      }
+                                      $state.filterUrl = `${baseUrl}?${queryParams.join(
+                                        "&"
+                                      )}`;
+                                      return $state.filterUrl;
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["generateUrl"] != null &&
+                            typeof $steps["generateUrl"] === "object" &&
+                            typeof $steps["generateUrl"].then === "function"
+                          ) {
+                            $steps["generateUrl"] = await $steps["generateUrl"];
+                          }
+
+                          $steps["sendRequests"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return $state.filterUrl;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["sendRequests"] != null &&
+                            typeof $steps["sendRequests"] === "object" &&
+                            typeof $steps["sendRequests"].then === "function"
+                          ) {
+                            $steps["sendRequests"] = await $steps[
+                              "sendRequests"
+                            ];
+                          }
+
+                          $steps["updateReservations"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      $state.reservations =
+                                        $steps.sendRequests.data;
+                                      return console.log($state.reservations);
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateReservations"] != null &&
+                            typeof $steps["updateReservations"] === "object" &&
+                            typeof $steps["updateReservations"].then ===
+                              "function"
+                          ) {
+                            $steps["updateReservations"] = await $steps[
+                              "updateReservations"
+                            ];
+                          }
+                        }).apply(null, eventArgs);
+                      }}
+                    />
+                  </div>
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"cancelled"}
+                  data-plasmic-override={overrides.cancelled}
+                  className={classNames(projectcss.all, sty.cancelled)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__vToxj)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__axhzD)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___82D43
+                        )}
+                      >
+                        {"\u0644\u063a\u0648 \u0634\u062f\u0647"}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__kxrn2)}
+                  >
+                    <Switch
+                      data-plasmic-name={"cancelled3"}
+                      data-plasmic-override={overrides.cancelled3}
+                      checked={generateStateValueProp($state, [
+                        "cancelled3",
+                        "checked"
+                      ])}
+                      className={classNames("__wab_instance", sty.cancelled3)}
+                      onCheckedChange={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "cancelled3",
+                          "checked"
+                        ]).apply(null, eventArgs);
+
+                        (async checked => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      if ($state.confierm2.checked == true) {
+                                        return ($state.confierm2.checked =
+                                          false);
+                                      }
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+
+                          $steps["generateUrl"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      const baseUrl =
+                                        "https://gateway.rentamon.com/webhook/getReserve";
+                                      const queryParams = [];
+                                      queryParams.push(`v=2`);
+                                      queryParams.push(
+                                        `limit=${$state.dataSize}`
+                                      );
+                                      if ($state.settlement2.checked) {
+                                        queryParams.push(
+                                          `is_settled=${!$state.settlement2
+                                            .checked}`
+                                        );
+                                      }
+                                      if ($state.confierm2.checked) {
+                                        queryParams.push(`status=Confirmed`);
+                                      } else if ($state.cancelled3.checked) {
+                                        queryParams.push(`status=Cancelled`);
+                                      }
+                                      $state.filterUrl = `${baseUrl}?${queryParams.join(
+                                        "&"
+                                      )}`;
+                                      return $state.filterUrl;
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["generateUrl"] != null &&
+                            typeof $steps["generateUrl"] === "object" &&
+                            typeof $steps["generateUrl"].then === "function"
+                          ) {
+                            $steps["generateUrl"] = await $steps["generateUrl"];
+                          }
+
+                          $steps["sendRequests"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return $state.filterUrl;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["sendRequests"] != null &&
+                            typeof $steps["sendRequests"] === "object" &&
+                            typeof $steps["sendRequests"].then === "function"
+                          ) {
+                            $steps["sendRequests"] = await $steps[
+                              "sendRequests"
+                            ];
+                          }
+
+                          $steps["updateReservations"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      $state.reservations =
+                                        $steps.sendRequests.data;
+                                      return console.log($state.reservations);
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateReservations"] != null &&
+                            typeof $steps["updateReservations"] === "object" &&
+                            typeof $steps["updateReservations"].then ===
+                              "function"
+                          ) {
+                            $steps["updateReservations"] = await $steps[
+                              "updateReservations"
+                            ];
+                          }
+                        }).apply(null, eventArgs);
+                      }}
+                    />
+                  </div>
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames(projectcss.all, sty.button)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ng1Ta)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__kJeY)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__klqPu
+                        )}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["updateTest"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["showFilter"]
+                                  },
+                                  operation: 4
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  const oldValue = $stateGet(
+                                    objRoot,
+                                    variablePath
+                                  );
+                                  $stateSet(objRoot, variablePath, !oldValue);
+                                  return !oldValue;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateTest"] != null &&
+                            typeof $steps["updateTest"] === "object" &&
+                            typeof $steps["updateTest"].then === "function"
+                          ) {
+                            $steps["updateTest"] = await $steps["updateTest"];
+                          }
+                        }}
+                      >
+                        {"\u0645\u0634\u0627\u0647\u062f\u0647"}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__szNcq)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["removeAllFilter"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  $state.settlement2.checked = false;
+                                  $state.confierm2.checked = false;
+                                  return ($state.cancelled3.checked = false);
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["removeAllFilter"] != null &&
+                        typeof $steps["removeAllFilter"] === "object" &&
+                        typeof $steps["removeAllFilter"].then === "function"
+                      ) {
+                        $steps["removeAllFilter"] = await $steps[
+                          "removeAllFilter"
+                        ];
+                      }
+
+                      $steps["generateUrl"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  const baseUrl =
+                                    "https://gateway.rentamon.com/webhook/getReserve";
+                                  const queryParams = [];
+                                  queryParams.push(`v=2`);
+                                  queryParams.push(`limit=${$state.dataSize}`);
+                                  if ($state.settlement2.checked) {
+                                    queryParams.push(
+                                      `is_settled=${!$state.settlement2
+                                        .checked}`
+                                    );
+                                  }
+                                  if ($state.confierm2.checked) {
+                                    queryParams.push(`status=Confirmed`);
+                                  } else if ($state.cancelled3.checked) {
+                                    queryParams.push(`status=Cancelled`);
+                                  }
+                                  $state.filterUrl = `${baseUrl}?${queryParams.join(
+                                    "&"
+                                  )}`;
+                                  return $state.filterUrl;
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["generateUrl"] != null &&
+                        typeof $steps["generateUrl"] === "object" &&
+                        typeof $steps["generateUrl"].then === "function"
+                      ) {
+                        $steps["generateUrl"] = await $steps["generateUrl"];
+                      }
+
+                      $steps["sendRequests"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                undefined,
+                                (() => {
+                                  try {
+                                    return $state.filterUrl;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["sendRequests"] != null &&
+                        typeof $steps["sendRequests"] === "object" &&
+                        typeof $steps["sendRequests"].then === "function"
+                      ) {
+                        $steps["sendRequests"] = await $steps["sendRequests"];
+                      }
+
+                      $steps["updateReservations"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  $state.reservations =
+                                    $steps.sendRequests.data;
+                                  return console.log($state.reservations);
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateReservations"] != null &&
+                        typeof $steps["updateReservations"] === "object" &&
+                        typeof $steps["updateReservations"].then === "function"
+                      ) {
+                        $steps["updateReservations"] = await $steps[
+                          "updateReservations"
+                        ];
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__wdZ2T
+                      )}
+                    >
+                      {
+                        "\u067e\u0627\u06a9 \u06a9\u0631\u062f\u0646 \u0647\u0645\u0647"
+                      }
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -4745,6 +5988,7 @@ const PlasmicDescendants = {
     "textInput2",
     "searchIcon",
     "filter",
+    "filterMenu",
     "sort",
     "container",
     "titles",
@@ -4784,7 +6028,17 @@ const PlasmicDescendants = {
     "mihmansho2",
     "mizbon2",
     "homsa2",
-    "otaghak2"
+    "otaghak2",
+    "title",
+    "source2",
+    "property2",
+    "settlement",
+    "settlement2",
+    "confierm",
+    "confierm2",
+    "cancelled",
+    "cancelled3",
+    "button"
   ],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
@@ -4802,6 +6056,7 @@ const PlasmicDescendants = {
     "textInput2",
     "searchIcon",
     "filter",
+    "filterMenu",
     "sort"
   ],
   filterAndSearch: [
@@ -4811,13 +6066,15 @@ const PlasmicDescendants = {
     "textInput2",
     "searchIcon",
     "filter",
+    "filterMenu",
     "sort"
   ],
   search: ["search", "searchBox", "textInput2", "searchIcon"],
   searchBox: ["searchBox", "textInput2", "searchIcon"],
   textInput2: ["textInput2"],
   searchIcon: ["searchIcon"],
-  filter: ["filter"],
+  filter: ["filter", "filterMenu"],
+  filterMenu: ["filterMenu"],
   sort: ["sort"],
   container: [
     "container",
@@ -4900,7 +6157,17 @@ const PlasmicDescendants = {
   mihmansho2: ["mihmansho2"],
   mizbon2: ["mizbon2"],
   homsa2: ["homsa2"],
-  otaghak2: ["otaghak2"]
+  otaghak2: ["otaghak2"],
+  title: ["title"],
+  source2: ["source2"],
+  property2: ["property2"],
+  settlement: ["settlement", "settlement2"],
+  settlement2: ["settlement2"],
+  confierm: ["confierm", "confierm2"],
+  confierm2: ["confierm2"],
+  cancelled: ["cancelled", "cancelled3"],
+  cancelled3: ["cancelled3"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -4922,6 +6189,7 @@ type NodeDefaultElementType = {
   textInput2: typeof TextInput2;
   searchIcon: "div";
   filter: "div";
+  filterMenu: typeof AntdModal;
   sort: "div";
   container: "div";
   titles: "div";
@@ -4962,6 +6230,16 @@ type NodeDefaultElementType = {
   mizbon2: typeof PlasmicImg__;
   homsa2: typeof PlasmicImg__;
   otaghak2: typeof PlasmicImg__;
+  title: "div";
+  source2: "div";
+  property2: "div";
+  settlement: "div";
+  settlement2: typeof Switch;
+  confierm: "div";
+  confierm2: typeof Switch;
+  cancelled: "div";
+  cancelled3: typeof Switch;
+  button: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -5039,6 +6317,7 @@ export const PlasmicReservations = Object.assign(
     textInput2: makeNodeComponent("textInput2"),
     searchIcon: makeNodeComponent("searchIcon"),
     filter: makeNodeComponent("filter"),
+    filterMenu: makeNodeComponent("filterMenu"),
     sort: makeNodeComponent("sort"),
     container: makeNodeComponent("container"),
     titles: makeNodeComponent("titles"),
@@ -5079,6 +6358,16 @@ export const PlasmicReservations = Object.assign(
     mizbon2: makeNodeComponent("mizbon2"),
     homsa2: makeNodeComponent("homsa2"),
     otaghak2: makeNodeComponent("otaghak2"),
+    title: makeNodeComponent("title"),
+    source2: makeNodeComponent("source2"),
+    property2: makeNodeComponent("property2"),
+    settlement: makeNodeComponent("settlement"),
+    settlement2: makeNodeComponent("settlement2"),
+    confierm: makeNodeComponent("confierm"),
+    confierm2: makeNodeComponent("confierm2"),
+    cancelled: makeNodeComponent("cancelled"),
+    cancelled3: makeNodeComponent("cancelled3"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,

@@ -955,6 +955,7 @@
   height: 100%;
   min-width: 0;
   min-height: 0;
+  display: none;
 }
 .img___9Vhve > picture > img {
   object-fit: cover;

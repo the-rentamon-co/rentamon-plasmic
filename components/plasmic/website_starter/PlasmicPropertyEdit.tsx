@@ -93,7 +93,7 @@ export const PlasmicPropertyEdit__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPropertyEdit__OverridesType = {
   ویرایشاقامتگاه?: Flex__<"div">;
-  apiRequest?: Flex__<typeof ApiRequest>;
+  userInfoApiRequest?: Flex__<typeof ApiRequest>;
   type?: Flex__<"div">;
   name?: Flex__<"div">;
   textInput?: Flex__<typeof TextInput>;
@@ -203,28 +203,28 @@ function PlasmicPropertyEdit__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
-        path: "apiRequest.data",
+        path: "userInfoApiRequest.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "userInfoApiRequest"
       },
       {
-        path: "apiRequest.error",
+        path: "userInfoApiRequest.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "userInfoApiRequest"
       },
       {
-        path: "apiRequest.loading",
+        path: "userInfoApiRequest.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "userInfoApiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -270,9 +270,9 @@ function PlasmicPropertyEdit__RenderFunc(props: {
           )}
         >
           <ApiRequest
-            data-plasmic-name={"apiRequest"}
-            data-plasmic-override={overrides.apiRequest}
-            className={classNames("__wab_instance", sty.apiRequest)}
+            data-plasmic-name={"userInfoApiRequest"}
+            data-plasmic-override={overrides.userInfoApiRequest}
+            className={classNames("__wab_instance", sty.userInfoApiRequest)}
             errorDisplay={
               <div
                 className={classNames(
@@ -287,27 +287,39 @@ function PlasmicPropertyEdit__RenderFunc(props: {
             loadingDisplay={null}
             method={"GET"}
             onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
-                null,
-                eventArgs
-              );
+              generateStateOnChangeProp($state, [
+                "userInfoApiRequest",
+                "error"
+              ]).apply(null, eventArgs);
             }}
             onLoading={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, [
-                "apiRequest",
+                "userInfoApiRequest",
                 "loading"
               ]).apply(null, eventArgs);
             }}
             onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                null,
-                eventArgs
-              );
+              generateStateOnChangeProp($state, [
+                "userInfoApiRequest",
+                "data"
+              ]).apply(null, eventArgs);
             }}
             ref={ref => {
-              $refs["apiRequest"] = ref;
+              $refs["userInfoApiRequest"] = ref;
             }}
-            url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+            url={(() => {
+              try {
+                return `https://api-v2.rentamon.com/api/user_info?property_id=${$ctx.params.id}`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
 
           {(() => {
@@ -515,17 +527,62 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   }
                 />
 
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tfRbg
-                  )}
-                >
-                  {
-                    "\u0648\u06cc\u0644\u0627/\u0648\u06cc\u0644\u0627\u06cc\u06cc"
+                {(() => {
+                  try {
+                    return (
+                      $state.userInfoApiRequest.data.user_info.property_type !==
+                      "villa_cottage"
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
                   }
-                </div>
+                })() ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__tfRbg
+                    )}
+                  >
+                    {
+                      "\u0648\u06cc\u0644\u0627/\u0648\u06cc\u0644\u0627\u06cc\u06cc"
+                    }
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return (
+                      $state.userInfoApiRequest.data.user_info.property_type ===
+                      "villa_cottage"
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__g3Fv9
+                    )}
+                  >
+                    {
+                      "\u0648\u06cc\u0644\u0627/\u0648\u06cc\u0644\u0627\u06cc\u06cc"
+                    }
+                  </div>
+                ) : null}
               </div>
               <div
                 className={classNames(
@@ -687,17 +744,62 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   }
                 />
 
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mKleg
-                  )}
-                >
-                  {
-                    "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u06cc\u06cc\u062a"
+                {(() => {
+                  try {
+                    return (
+                      $state.userInfoApiRequest.data.user_info.property_type !==
+                      "apartment_suite"
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
                   }
-                </div>
+                })() ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mKleg
+                    )}
+                  >
+                    {
+                      "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u06cc\u06cc\u062a"
+                    }
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return (
+                      $state.userInfoApiRequest.data.user_info.property_type ===
+                      "apartment_suite"
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__r7B1R
+                    )}
+                  >
+                    {
+                      "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u06cc\u06cc\u062a"
+                    }
+                  </div>
+                ) : null}
               </div>
               <div
                 className={classNames(
@@ -859,17 +961,62 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   }
                 />
 
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bqWMf
-                  )}
-                >
-                  {
-                    "\u0628\u0648\u0645\u06af\u0631\u062f\u06cc/\u0647\u0627\u0633\u062a\u0644"
+                {(() => {
+                  try {
+                    return (
+                      $state.userInfoApiRequest.data.user_info.property_type !==
+                      "hotel_ecolodge"
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
                   }
-                </div>
+                })() ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bqWMf
+                    )}
+                  >
+                    {
+                      "\u0628\u0648\u0645\u06af\u0631\u062f\u06cc/\u0647\u0627\u0633\u062a\u0644"
+                    }
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return (
+                      $state.userInfoApiRequest.data.user_info.property_type ===
+                      "hotel_ecolodge"
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__glrl1
+                    )}
+                  >
+                    {
+                      "\u0628\u0648\u0645\u06af\u0631\u062f\u06cc/\u0647\u0627\u0633\u062a\u0644"
+                    }
+                  </div>
+                ) : null}
               </div>
             </div>
           ) : null}
@@ -954,7 +1101,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     }}
                     placeholder={(() => {
                       try {
-                        return $state.apiRequest.data.properties[
+                        return $state.userInfoApiRequest.data.properties[
                           $ctx.params.id - 1
                         ].property_name;
                       } catch (e) {
@@ -1343,7 +1490,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                           return `برای «${
                             $state.textInput.value
                               ? $state.textInput.value
-                              : $state.apiRequest.data.properties[
+                              : $state.userInfoApiRequest.data.properties[
                                   $ctx.params.id - 1
                                 ].property_name
                           }» یه عکس بذار`;
@@ -1555,7 +1702,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     loading={"lazy"}
                     src={(() => {
                       try {
-                        return $state.apiRequest.data.properties[
+                        return $state.userInfoApiRequest.data.properties[
                           $ctx.params.id - 1
                         ].profile_pic_link;
                       } catch (e) {
@@ -2182,7 +2329,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
 const PlasmicDescendants = {
   ویرایشاقامتگاه: [
     "\u0648\u06cc\u0631\u0627\u06cc\u0634\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
-    "apiRequest",
+    "userInfoApiRequest",
     "type",
     "name",
     "textInput",
@@ -2209,7 +2356,7 @@ const PlasmicDescendants = {
     "faviconRntComponent",
     "sideEffect"
   ],
-  apiRequest: ["apiRequest"],
+  userInfoApiRequest: ["userInfoApiRequest"],
   type: ["type"],
   name: ["name", "textInput", "newButtons", "next", "privious"],
   textInput: ["textInput"],
@@ -2259,7 +2406,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   ویرایشاقامتگاه: "div";
-  apiRequest: typeof ApiRequest;
+  userInfoApiRequest: typeof ApiRequest;
   type: "div";
   name: "div";
   textInput: typeof TextInput;
@@ -2352,7 +2499,7 @@ export const PlasmicPropertyEdit = Object.assign(
   ),
   {
     // Helper components rendering sub-elements
-    apiRequest: makeNodeComponent("apiRequest"),
+    userInfoApiRequest: makeNodeComponent("userInfoApiRequest"),
     type: makeNodeComponent("type"),
     _name: makeNodeComponent("name"),
     textInput: makeNodeComponent("textInput"),

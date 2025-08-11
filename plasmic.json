@@ -4265,6 +4265,21 @@
           "id": "4wBmdv5HVC5h",
           "name": "photo_2024-08-12_10-44-46.jpg",
           "filePath": "../public/plasmic/website_starter/images/photo20240812104446Jpg.jpg"
+        },
+        {
+          "id": "ZAlnfE-4vPOw",
+          "name": "image 169",
+          "filePath": "../public/plasmic/website_starter/images/image169.svg"
+        },
+        {
+          "id": "Bk9BsPsHg-MQ",
+          "name": "image 170",
+          "filePath": "../public/plasmic/website_starter/images/image170.svg"
+        },
+        {
+          "id": "Us9Zh3WZYjKR",
+          "name": "image 171",
+          "filePath": "../public/plasmic/website_starter/images/image171.svg"
         }
       ],
       "indirect": false,
