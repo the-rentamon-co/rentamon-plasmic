@@ -2520,7 +2520,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     JSON.stringify(reservations)
                                   );
                                 }
-                                $state.reservations = reservations;
+                                $state.reservations = reservations.result.data;
                                 return console.log(
                                   "$state.reservations",
                                   $state.reservations
@@ -2906,12 +2906,15 @@ function PlasmicReservations__RenderFunc(props: {
                       try {
                         return (
                           $state.reservations.message == null &&
-                          $state.textInput2.value == null &&
+                          ($state.textInput2.value == "" ||
+                            $state.textInput2.value == null) &&
                           !(
                             $state.cancelled3.checked ||
                             $state.confierm2.checked ||
                             $state.settlement2.checked
-                          )
+                          ) &&
+                          $state.reserveData.data.result.data.length !=
+                            $state.reserveData.data.result.meta.total_count
                         );
                       } catch (e) {
                         if (
@@ -2927,12 +2930,15 @@ function PlasmicReservations__RenderFunc(props: {
                       try {
                         return (
                           $state.reservations.message == null &&
-                          $state.textInput2.value == null &&
+                          ($state.textInput2.value == "" ||
+                            $state.textInput2.value == null) &&
                           !(
                             $state.cancelled3.checked ||
                             $state.confierm2.checked ||
                             $state.settlement2.checked
-                          )
+                          ) &&
+                          $state.reserveData.data.result.data.length !=
+                            $state.reserveData.data.result.meta.total_count
                         );
                       } catch (e) {
                         if (
