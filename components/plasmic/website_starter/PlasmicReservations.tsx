@@ -5158,7 +5158,7 @@ function PlasmicReservations__RenderFunc(props: {
                       }
                     }}
                     src={{
-                      src: "/plasmic/website_starter/images/image170.svg",
+                      src: "/plasmic/website_starter/images/image166.svg",
                       fullWidth: 18,
                       fullHeight: 18,
                       aspectRatio: undefined
@@ -6055,7 +6055,7 @@ function PlasmicReservations__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   $state.reservations =
-                                    $steps.sendRequests.data;
+                                    $steps.sendRequest.data.result.data;
                                   return console.log($state.reservations);
                                 })();
                               }
@@ -6097,6 +6097,42 @@ function PlasmicReservations__RenderFunc(props: {
                       ) {
                         $steps["invokeGlobalAction"] = await $steps[
                           "invokeGlobalAction"
+                        ];
+                      }
+
+                      $steps["updateShowFilter"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["showFilter"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateShowFilter"] != null &&
+                        typeof $steps["updateShowFilter"] === "object" &&
+                        typeof $steps["updateShowFilter"].then === "function"
+                      ) {
+                        $steps["updateShowFilter"] = await $steps[
+                          "updateShowFilter"
                         ];
                       }
                     }}
