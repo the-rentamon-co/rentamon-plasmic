@@ -1227,7 +1227,9 @@ function PlasmicReservations__RenderFunc(props: {
                       }).apply(null, eventArgs);
                     }}
                     padded={[]}
-                    placeholder={"\u062c\u0633\u062a\u062c\u0648..."}
+                    placeholder={
+                      "\u062c\u0633\u062a\u062c\u0648 \u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646..."
+                    }
                   />
 
                   <div
@@ -2521,7 +2523,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     JSON.stringify(reservations)
                                   );
                                 }
-                                $state.reservations = reservations.result.data;
+                                $state.reservations = reservations;
                                 return console.log(
                                   "$state.reservations",
                                   $state.reservations
@@ -5417,7 +5419,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       $state.reservations =
-                                        $steps.sendRequest.data;
+                                        $steps.sendRequest.data.result.data;
                                       return console.log($state.reservations);
                                     })();
                                   }
@@ -5625,7 +5627,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       $state.reservations =
-                                        $steps.sendRequests.data;
+                                        $steps.sendRequests.data.result.data;
                                       return console.log($state.reservations);
                                     })();
                                   }
@@ -5827,7 +5829,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       $state.reservations =
-                                        $steps.sendRequests.data;
+                                        $steps.sendRequests.data.result.data;
                                       return console.log($state.reservations);
                                     })();
                                   }
