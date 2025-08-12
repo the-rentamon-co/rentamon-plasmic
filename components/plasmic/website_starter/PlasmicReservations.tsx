@@ -473,7 +473,7 @@ function PlasmicReservations__RenderFunc(props: {
         path: "dataSize",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 50
+        initFunc: ({ $props, $state, $queries, $ctx }) => 1
       },
       {
         path: "loading",
@@ -2581,7 +2581,7 @@ function PlasmicReservations__RenderFunc(props: {
                 }}
                 url={(() => {
                   try {
-                    return `https://gateway.rentamon.com/webhook/getReserve?v=2&limit=${$state.dataSize}`;
+                    return `https://gateway.rentamon.com/webhook/getReserve?v=2&limit=1`;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -3099,7 +3099,7 @@ function PlasmicReservations__RenderFunc(props: {
                               variablePath: ["dataSize"]
                             },
                             operation: 0,
-                            value: ($state.dataSize = $state.dataSize + 30)
+                            value: ($state.dataSize = $state.dataSize + 1)
                           };
                           return (({
                             variable,
@@ -3125,38 +3125,64 @@ function PlasmicReservations__RenderFunc(props: {
                       $steps["updateDataSize"] = await $steps["updateDataSize"];
                     }
 
-                    $steps["updateLoading"] = true
+                    $steps["sendrequest"] = true
                       ? (() => {
                           const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["loading"]
-                            },
-                            operation: 0,
-                            value: ($state.loading = true)
+                            args: [
+                              undefined,
+                              (() => {
+                                try {
+                                  return `https://gateway.rentamon.com/webhook-test/getReserve?v=2&limit=${$state.dataSize}`;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            ]
                           };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                    if (
+                      $steps["sendrequest"] != null &&
+                      typeof $steps["sendrequest"] === "object" &&
+                      typeof $steps["sendrequest"].then === "function"
+                    ) {
+                      $steps["sendrequest"] = await $steps["sendrequest"];
+                    }
 
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
+                    $steps["updateReservations"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return ($state.reservations = [
+                                ...$state.reservations,
+                                ...$steps.sendrequest.data.result.data
+                              ]);
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
                           })?.apply(null, [actionArgs]);
                         })()
                       : undefined;
                     if (
-                      $steps["updateLoading"] != null &&
-                      typeof $steps["updateLoading"] === "object" &&
-                      typeof $steps["updateLoading"].then === "function"
+                      $steps["updateReservations"] != null &&
+                      typeof $steps["updateReservations"] === "object" &&
+                      typeof $steps["updateReservations"].then === "function"
                     ) {
-                      $steps["updateLoading"] = await $steps["updateLoading"];
+                      $steps["updateReservations"] = await $steps[
+                        "updateReservations"
+                      ];
                     }
                   }}
                 >
