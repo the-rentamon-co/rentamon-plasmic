@@ -577,6 +577,35 @@ function PlasmicReservations__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          console.log("here in the side effect local storage");
+                          const storedData =
+                            localStorage.getItem("reservations");
+                          if (storedData) {
+                            const parsedData = JSON.parse(storedData);
+                            $state.reservations = parsedData;
+                            return console.log("update reservations");
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
               $steps["checkUserIsLoging"] = true
                 ? (() => {
                     const actionArgs = {
