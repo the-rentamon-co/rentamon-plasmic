@@ -3072,7 +3072,7 @@ function PlasmicReservations__RenderFunc(props: {
                             $state.confierm2.checked ||
                             $state.settlement2.checked
                           ) &&
-                          $state.reserveData.data.result.data.length !=
+                          $state.reservations.length !=
                             $state.reserveData.data.result.meta.total_count
                         );
                       } catch (e) {
@@ -3183,6 +3183,26 @@ function PlasmicReservations__RenderFunc(props: {
                       $steps["updateReservations"] = await $steps[
                         "updateReservations"
                       ];
+                    }
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return undefined;
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
                     }
                   }}
                 >
