@@ -3132,7 +3132,7 @@ function PlasmicReservations__RenderFunc(props: {
                               undefined,
                               (() => {
                                 try {
-                                  return `https://gateway.rentamon.com/webhook-test/getReserve?v=2&limit=${$state.dataSize}`;
+                                  return `https://gateway.rentamon.com/webhook/getReserve?v=2&limit=${$state.dataSize}`;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
