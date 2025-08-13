@@ -628,15 +628,15 @@ function PlasmicSplash__RenderFunc(props: {
                           );
                           if ($steps.invokeGlobalAction.data.flag == 2) {
                             window.location.href =
-                              "https://app.rentamon.com//calendar/";
+                              "https://rentamon.com//calendar/";
                           }
                           if ($steps.invokeGlobalAction.data.flag == 1) {
                             window.location.href =
-                              "https://app.rentamon.com//panel/";
+                              "https://rentamon.com//panel/";
                           }
                           if ($steps.invokeGlobalAction.data.flag == 0) {
                             return (window.location.href =
-                              "https://app.rentamon.com//calendar/");
+                              "https://rentamon.com//calendar/");
                           }
                         })();
                       }

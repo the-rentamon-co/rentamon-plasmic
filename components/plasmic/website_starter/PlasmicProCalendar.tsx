@@ -2137,6 +2137,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                                     console.log("go to activation");
                                     return (window.location.href =
                                       "https://rentamon.com/activation/1/");
+                                  } else {
+                                    return location.reload();
                                   }
                                 })();
                               }

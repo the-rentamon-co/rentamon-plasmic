@@ -778,6 +778,10 @@ function PlasmicCalendar2__RenderFunc(props: {
             null,
             eventArgs
           );
+
+          (async error => {
+            const $steps = {};
+          }).apply(null, eventArgs);
         }}
         onLoading={async (...eventArgs: any) => {
           generateStateOnChangeProp($state, ["apiRequest", "loading"]).apply(
@@ -9938,7 +9942,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__oE5Mq
                 )}
               >
-                {"رزرو"}
+                {"\u0631\u0632\u0631\u0648"}
               </div>
             </div>
           </div>
@@ -9965,7 +9969,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text___3DCBm
                 )}
               >
-                {"بسته"}
+                {"\u0628\u0633\u062a\u0647"}
               </div>
             </div>
           </div>
@@ -9992,7 +9996,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__pBKau
                 )}
               >
-                {"تخفیف"}
+                {"\u062a\u062e\u0641\u06cc\u0641"}
               </div>
             </div>
           </div>
@@ -10019,7 +10023,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text___9D5GC
                 )}
               >
-                {"یادداشت"}
+                {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
               </div>
             </div>
           </div>
