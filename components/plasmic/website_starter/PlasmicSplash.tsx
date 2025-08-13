@@ -644,6 +644,22 @@ function PlasmicSplash__RenderFunc(props: {
                 ];
               }
 
+              $steps["updateSrc4"] = true
+                ? (() => {
+                    const actionArgs = { args: [200] };
+                    return $globalActions["Fragment.wait"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateSrc4"] != null &&
+                typeof $steps["updateSrc4"] === "object" &&
+                typeof $steps["updateSrc4"].then === "function"
+              ) {
+                $steps["updateSrc4"] = await $steps["updateSrc4"];
+              }
+
               $steps["updateSrc2"] =
                 $steps.invokeGlobalAction.data.flag == 1
                   ? (() => {
