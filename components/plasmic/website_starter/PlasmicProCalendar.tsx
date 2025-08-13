@@ -2138,7 +2138,10 @@ function PlasmicProCalendar__RenderFunc(props: {
                                     return (window.location.href =
                                       "https://rentamon.com/activation/1/");
                                   } else {
-                                    return location.reload();
+                                    console.log("here");
+                                    location.reload();
+                                    return (window.location.href =
+                                      "https://rentamon.com/panel/");
                                   }
                                 })();
                               }
