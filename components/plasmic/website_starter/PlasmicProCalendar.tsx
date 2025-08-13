@@ -536,7 +536,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                 ];
               }
 
-              $steps["runCode"] = true
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -2137,11 +2137,6 @@ function PlasmicProCalendar__RenderFunc(props: {
                                     console.log("go to activation");
                                     return (window.location.href =
                                       "https://rentamon.com/activation/1/");
-                                  } else {
-                                    console.log("here");
-                                    location.reload();
-                                    return (window.location.href =
-                                      "https://rentamon.com/panel/");
                                   }
                                 })();
                               }
