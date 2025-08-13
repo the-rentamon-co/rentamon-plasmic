@@ -621,23 +621,11 @@ function PlasmicSplash__RenderFunc(props: {
                             document.cookie =
                               name + "=" + (value || "") + expires + "; path=/";
                           }
-                          setCookie(
+                          return setCookie(
                             "vt",
                             $steps.invokeGlobalAction.data.flag || 99,
                             0.3333
                           );
-                          if ($steps.invokeGlobalAction.data.flag == 2) {
-                            window.location.href =
-                              "https://rentamon.com//calendar/";
-                          }
-                          if ($steps.invokeGlobalAction.data.flag == 1) {
-                            window.location.href =
-                              "https://rentamon.com//panel/";
-                          }
-                          if ($steps.invokeGlobalAction.data.flag == 0) {
-                            return (window.location.href =
-                              "https://rentamon.com//calendar/");
-                          }
                         })();
                       }
                     };
@@ -654,6 +642,59 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["redirectAndSetUserCookie"] = await $steps[
                   "redirectAndSetUserCookie"
                 ];
+              }
+
+              $steps["updateSrc2"] =
+                $steps.invokeGlobalAction.data.flag == 1
+                  ? (() => {
+                      const actionArgs = { destination: `/panel` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+              if (
+                $steps["updateSrc2"] != null &&
+                typeof $steps["updateSrc2"] === "object" &&
+                typeof $steps["updateSrc2"].then === "function"
+              ) {
+                $steps["updateSrc2"] = await $steps["updateSrc2"];
+              }
+
+              $steps["updateSrc3"] =
+                $steps.invokeGlobalAction.data.flag == 0 ||
+                $steps.invokeGlobalAction.data.flag == 2
+                  ? (() => {
+                      const actionArgs = { destination: `/calendar` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+              if (
+                $steps["updateSrc3"] != null &&
+                typeof $steps["updateSrc3"] === "object" &&
+                typeof $steps["updateSrc3"].then === "function"
+              ) {
+                $steps["updateSrc3"] = await $steps["updateSrc3"];
               }
             }}
           />
