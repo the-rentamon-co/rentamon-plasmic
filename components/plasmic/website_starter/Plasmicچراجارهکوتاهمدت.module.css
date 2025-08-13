@@ -186,6 +186,12 @@
     column-gap: 0px;
   }
 }
+@media (max-width: 350px) {
+  .introTitle {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
 .text__rzAd {
   position: relative;
   width: auto;
@@ -210,7 +216,7 @@
 @media (max-width: 350px) {
   .text__rzAd {
     padding-right: 0px;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .introDesc {

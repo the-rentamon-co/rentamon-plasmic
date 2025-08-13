@@ -2699,10 +2699,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                         const actionArgs = {
                           customFunction: async () => {
                             return (() => {
-                              return window.open(
-                                "https://www.goftino.com/c/WgsGXv",
-                                "_blank"
-                              );
+                              return (window.location.href =
+                                "https://sso.rentamon.com/");
                             })();
                           }
                         };
@@ -2721,12 +2719,12 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 }}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0646\u0633\u062e\u0647 \u067e\u06cc\u0634\u0631\u0641\u062a\u0647"
+                  ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
                   : hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0646\u0633\u062e\u0647 \u067e\u06cc\u0634\u0631\u0641\u062a\u0647"
+                  ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
                   : hasVariant(globalVariants, "screen", "tablet")
-                  ? "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0646\u0633\u062e\u0647 \u067e\u06cc\u0634\u0631\u0641\u062a\u0647"
-                  : "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0646\u0633\u062e\u0647 \u067e\u06cc\u0634\u0631\u0641\u062a\u0647"}
+                  ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
+                  : "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"}
               </div>
             </div>
           </div>

@@ -129,6 +129,11 @@
   text-decoration-line: none;
   text-overflow: clip;
 }
+@media (max-width: 350px) {
+  .text__qdhY {
+    font-size: 20px;
+  }
+}
 .text__aXfsu {
   position: relative;
   width: 100%;
@@ -149,6 +154,11 @@
   text-decoration-line: none;
   text-overflow: clip;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__aXfsu {
+    font-size: 15px;
+  }
 }
 @media (max-width: 350px) {
   .text__aXfsu {
@@ -243,7 +253,7 @@
     column-gap: 0px;
     row-gap: 0px;
     min-width: 0;
-    padding: 8px 0px 8px 8px;
+    padding: 8px 0px;
   }
 }
 .freeBox__lyGYi {
@@ -260,7 +270,7 @@
 }
 @media (max-width: 350px) {
   .freeBox__lyGYi {
-    padding-right: 9px;
+    padding-right: 37px;
   }
 }
 .text__ugVeN {
@@ -283,6 +293,11 @@
   text-decoration-line: none;
   text-overflow: clip;
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__ugVeN {
+    font-size: 17px;
+  }
 }
 .freeBox__igZQw {
   display: flex;
@@ -327,6 +342,11 @@
   text-decoration-line: none;
   text-overflow: clip;
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__wl24 {
+    font-size: 17px;
+  }
 }
 .item12 {
   display: flex;
@@ -401,10 +421,10 @@
 }
 .text__ib7W4 {
   padding-top: 0px;
-  font-size: 17px;
+  font-size: 16px;
   white-space: pre-wrap;
   font-family: "Estedad";
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   color: #203647;
   text-align: right;
@@ -420,7 +440,7 @@
   .text__ib7W4 {
     line-height: 1.8;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 @media (max-width: 350px) {
@@ -457,9 +477,9 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -474,7 +494,7 @@
 }
 @media (max-width: 500px) {
   .text__d8EzU {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -484,7 +504,7 @@
     max-width: 100%;
     font-family: "Estedad";
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -587,10 +607,10 @@
 }
 .text___9RMt {
   padding-top: 0px;
-  font-size: 17px;
+  font-size: 16px;
   white-space: pre-wrap;
   font-family: "Estedad";
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   color: #203647;
   text-align: right;
@@ -606,7 +626,7 @@
   .text___9RMt {
     line-height: 1.8;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 @media (max-width: 350px) {
@@ -655,9 +675,9 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -676,8 +696,8 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -698,7 +718,7 @@
     max-width: 100%;
     font-family: "Estedad";
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -801,10 +821,10 @@
 }
 .text__m11Mp {
   padding-top: 0px;
-  font-size: 17px;
+  font-size: 16px;
   white-space: pre-wrap;
   font-family: "Estedad";
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   color: #203647;
   text-align: right;
@@ -820,7 +840,7 @@
   .text__m11Mp {
     line-height: 1.8;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 @media (max-width: 350px) {
@@ -869,9 +889,9 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -890,8 +910,8 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -912,7 +932,7 @@
     max-width: 100%;
     font-family: "Estedad";
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1015,10 +1035,10 @@
 }
 .text__v2Dw6 {
   padding-top: 0px;
-  font-size: 17px;
+  font-size: 16px;
   white-space: pre-wrap;
   font-family: "Estedad";
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   color: #203647;
   text-align: right;
@@ -1034,7 +1054,7 @@
   .text__v2Dw6 {
     line-height: 1.8;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 @media (max-width: 350px) {
@@ -1083,9 +1103,9 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -1104,8 +1124,8 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1126,7 +1146,7 @@
     max-width: 100%;
     font-family: "Estedad";
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1229,10 +1249,10 @@
 }
 .text__lObgb {
   padding-top: 0px;
-  font-size: 17px;
+  font-size: 16px;
   white-space: pre-wrap;
   font-family: "Estedad";
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   color: #203647;
   text-align: right;
@@ -1248,7 +1268,7 @@
   .text__lObgb {
     line-height: 1.8;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 @media (max-width: 350px) {
@@ -1297,9 +1317,9 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -1318,8 +1338,8 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1340,7 +1360,7 @@
     max-width: 100%;
     font-family: "Estedad";
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1443,10 +1463,10 @@
 }
 .text__axLn8 {
   padding-top: 0px;
-  font-size: 17px;
+  font-size: 16px;
   white-space: pre-wrap;
   font-family: "Estedad";
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   color: #203647;
   text-align: right;
@@ -1462,7 +1482,7 @@
   .text__axLn8 {
     line-height: 1.8;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 @media (max-width: 350px) {
@@ -1511,9 +1531,9 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -1532,8 +1552,8 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1554,7 +1574,7 @@
     max-width: 100%;
     font-family: "Estedad";
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1657,10 +1677,10 @@
 }
 .text___9YP10 {
   padding-top: 0px;
-  font-size: 17px;
+  font-size: 16px;
   white-space: pre-wrap;
   font-family: "Estedad";
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   color: #203647;
   text-align: right;
@@ -1676,7 +1696,7 @@
   .text___9YP10 {
     line-height: 1.8;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 @media (max-width: 350px) {
@@ -1725,9 +1745,9 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
   color: #203647;
@@ -1746,8 +1766,8 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1768,7 +1788,7 @@
     max-width: 100%;
     font-family: "Estedad";
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
     color: #203647;
     text-align: center;
@@ -1884,7 +1904,7 @@
 }
 .text___6C64K {
   padding-top: 0px;
-  font-size: 17px;
+  font-size: 16px;
   width: auto;
   white-space: pre-wrap;
   line-height: 2;
@@ -1954,7 +1974,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   padding-right: 0px;
   text-align: center;
   padding-top: 0px;
@@ -1977,7 +1997,7 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     font-style: normal;
     color: #203647;
@@ -2109,7 +2129,7 @@
 }
 .text__sDnda {
   padding-top: 0px;
-  font-size: 17px;
+  font-size: 16px;
   white-space: pre-wrap;
   line-height: 2;
   font-family: "Estedad";
@@ -2175,7 +2195,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
   font-weight: 500;
   font-family: "Estedad";
@@ -2196,7 +2216,7 @@
     height: auto;
     max-width: 100%;
     font-family: "Estedad";
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     font-style: normal;
     color: #203647;
@@ -2233,7 +2253,6 @@
   }
 }
 .item18 {
-  display: flex;
   flex-direction: row;
   position: relative;
   width: 100%;
@@ -2244,6 +2263,7 @@
   border-bottom-width: 2px;
   border-bottom-style: dashed;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 @media (max-width: 500px) {
@@ -2321,7 +2341,7 @@
 }
 .text__kKci3 {
   padding-top: 0px;
-  font-size: 17px;
+  font-size: 16px;
   white-space: pre-wrap;
   font-family: "Estedad";
   font-weight: 500;
@@ -2492,7 +2512,7 @@
   height: auto;
   max-width: 100%;
   padding-top: 20px;
-  font-size: 17px;
+  font-size: 16px;
   padding-right: 0px;
   line-height: 1.5;
   font-family: "Estedad";
@@ -2512,7 +2532,7 @@
 @media (max-width: 500px) {
   .text__phAjf {
     padding-right: 29px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -2616,7 +2636,7 @@
   padding-right: 0px;
   line-height: 2;
   font-family: "Estedad";
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   color: #8165d6;
   text-align: center;
@@ -2637,6 +2657,7 @@
 @media (max-width: 350px) {
   .text__zSu {
     padding-right: 4px;
+    font-size: 14px;
   }
 }
 .freeBox__y9Qpf {
@@ -2677,7 +2698,7 @@
   height: auto;
   max-width: 100%;
   padding-top: 22px;
-  font-size: 17px;
+  font-size: 16px;
   padding-right: 0px;
   line-height: 2;
   font-family: "Estedad";
@@ -2699,6 +2720,7 @@
   .text__iazOe {
     padding-right: 0px;
     font-size: 15px;
+    font-weight: 500;
   }
 }
 @media (max-width: 350px) {
@@ -3414,6 +3436,7 @@
 @media (max-width: 350px) {
   .text__tbSin {
     padding-right: 4px;
+    font-size: 14px;
   }
 }
 .freeBox__jkFhU {
