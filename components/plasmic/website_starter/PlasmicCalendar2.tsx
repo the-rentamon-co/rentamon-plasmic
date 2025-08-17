@@ -9879,7 +9879,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   }
                 }}
               >
-                {"\u062b\u0628\u062a "}
+                {"ثبت"}
               </Button>
             </div>
           </div>
@@ -9942,7 +9942,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__oE5Mq
                 )}
               >
-                {"\u0631\u0632\u0631\u0648"}
+                {"رزرو"}
               </div>
             </div>
           </div>
@@ -9969,7 +9969,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text___3DCBm
                 )}
               >
-                {"\u0628\u0633\u062a\u0647"}
+                {"بسته"}
               </div>
             </div>
           </div>
@@ -9996,7 +9996,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__pBKau
                 )}
               >
-                {"\u062a\u062e\u0641\u06cc\u0641"}
+                {"تخفیف"}
               </div>
             </div>
           </div>
@@ -10023,7 +10023,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text___9D5GC
                 )}
               >
-                {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
+                {"یادداشت"}
               </div>
             </div>
           </div>
