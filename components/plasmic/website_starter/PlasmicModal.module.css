@@ -1,0 +1,103 @@
+.ariaDialogTrigger:global(.__wab_instance) {
+  position: relative;
+}
+.svg__klhuy {
+  position: relative;
+  height: 1em;
+}
+.svg__tp8K {
+  position: relative;
+  height: 1em;
+}
+.ariaModal:global(.__wab_instance) {
+  background: var(--token-8R7jjC_-F9FF);
+  display: block;
+  color: var(--token-Y7ZM7gj_nMYR);
+  font-family: var(--token-qkywJ1sQQ-h_);
+  font-size: var(--token-wq-7W0QuaGtb);
+  line-height: var(--token-otgoHRDIcFGD);
+  outline-style: none;
+  box-shadow: 0px 24px 48px -12px #00000040;
+  border-radius: var(--token-sq05VTixHzt0);
+}
+.pcls_u7LprNtCmrtW {
+  background: var(--token-TGA2b3IP3Z2x);
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  outline: none;
+}
+.ariaDialog:global(.__wab_instance) {
+  max-width: 90vw;
+  object-fit: cover;
+  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  outline-style: none;
+}
+.h3__vCxpx {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-weight: 700;
+  font-size: var(--token-Ij6Cd7VyikU3);
+  min-width: 0;
+  padding: var(--token-o4gfbR28mKoP);
+}
+.scrollableContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow: auto;
+  padding-left: var(--token-o4gfbR28mKoP);
+  padding-right: var(--token-o4gfbR28mKoP);
+}
+.freeBox__a6EJh {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: var(--token-q7eh_H453nLB);
+}
+.text__iwmhs {
+  position: relative;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-shrink: 0;
+  padding: var(--token-o4gfbR28mKoP);
+}
+.freeBox__fwOps {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  min-width: 0;
+}
+.svg__ihXLl {
+  position: relative;
+  height: 1em;
+}
+.text__bRBj {
+  padding-left: 0px;
+}
+.svg___1Zo47 {
+  position: relative;
+  height: 1em;
+}
