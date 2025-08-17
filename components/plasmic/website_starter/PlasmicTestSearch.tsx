@@ -33,7 +33,6 @@ import {
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants,
   generateOnMutateForSpec,
   generateStateOnChangeProp,
   generateStateOnChangePropForCodeComponents,
@@ -61,11 +60,14 @@ import {
 
 import TextInput2 from "../../TextInput2"; // plasmic-import: MGm7xuldRCuA/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
+import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
+import { _useStyleTokens as useStyleTokens_antd_5_hostless } from ""; // plasmic-import: ohDidvG9XsCeFumugENU3J/styleTokensProvider
+import { _useStyleTokens as useStyleTokens_plasmic_rich_components } from ""; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/styleTokensProvider
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
-import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicTestSearch.module.css"; // plasmic-import: kZSAE7HA3zLq/css
 
@@ -87,6 +89,7 @@ export type PlasmicTestSearch__OverridesType = {
   root?: Flex__<"div">;
   textInput2?: Flex__<typeof TextInput2>;
   textInput?: Flex__<typeof TextInput>;
+  apiRequest?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultTestSearchProps {}
@@ -147,16 +150,28 @@ function PlasmicTestSearch__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
-        path: "searchResults",
+        path: "apiRequest.data",
         type: "private",
-        variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       },
       {
-        path: "isSearching",
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -167,17 +182,13 @@ function PlasmicTestSearch__RenderFunc(props: {
     $queries: {},
     $refs
   });
-  const searchTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
-  
-  // پاک کردن تایمر وقتی کامپوننت unmount می‌شود
-  React.useEffect(() => {
-    return () => {
-      if (searchTimeoutRef.current) {
-        clearTimeout(searchTimeoutRef.current);
-      }
-    };
-  }, []);
-  
+
+  const styleTokensClassNames = _useStyleTokens();
+  const styleTokensClassNames_antd_5_hostless =
+    useStyleTokens_antd_5_hostless();
+  const styleTokensClassNames_plasmic_rich_components =
+    useStyleTokens_plasmic_rich_components();
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -199,95 +210,76 @@ function PlasmicTestSearch__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens,
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components,
             sty.root
           )}
         >
-      <TextInput2
-        data-plasmic-name={"textInput2"}
-        data-plasmic-override={overrides.textInput2}
-        className={classNames("__wab_instance", sty.textInput2)}
-        inputMode={"search"}
-        inputType={"search"}
-        onChange={async (...eventArgs: any) => {
-          generateStateOnChangeProp($state, ["textInput2", "value"]).apply(
-            null,
-            eventArgs
-          );
-      
-          if (
-            eventArgs.length > 1 &&
-            eventArgs[1] &&
-            eventArgs[1]._plasmic_state_init_
-          ) {
-            return;
-          }
-      
-          // پاک کردن تایمر قبلی
-          if (searchTimeoutRef.current) {
-            clearTimeout(searchTimeoutRef.current);
-          }
-      
-          // ساخت تایمر جدید با 500ms فاصله
-          searchTimeoutRef.current = setTimeout(() => {
-            (async val => {
-              const $steps = {};
-              
-              
-              // تنظیم وضعیت جستجو
-              $stateSet($state, ["isSearching"], true);
-      
-              $steps["invokeGlobalAction"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "GET",
-                        "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
-                        (() => {
-                          try {
-                            return {
-                              q: $state.textInput2.value
-                            };
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(
-                      null,
-                      [...actionArgs.args]
-                    );
-                  })()
-                : undefined;
+          <TextInput2
+            data-plasmic-name={"textInput2"}
+            data-plasmic-override={overrides.textInput2}
+            className={classNames("__wab_instance", sty.textInput2)}
+            inputMode={"search"}
+            inputType={"search"}
+            onChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["textInput2", "value"]).apply(
+                null,
+                eventArgs
+              );
+
               if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
+                eventArgs.length > 1 &&
+                eventArgs[1] &&
+                eventArgs[1]._plasmic_state_init_
               ) {
-                const result = await $steps["invokeGlobalAction"];
-                
-                
-                // ذخیره نتایج
-                if (result && result.data) {
-                  $stateSet($state, ["searchResults"], result.data);
-                }
-                
-                // پایان وضعیت جستجو
-                $stateSet($state, ["isSearching"], false);
+                return;
               }
-            }).apply(null, eventArgs);
-          }, 500); // ← اینجا 500 میلی‌ثانیه تاخیر داریم
-        }}
-      />
+
+              (async val => {
+                const $steps = {};
+
+                $steps["invokeGlobalAction"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          undefined,
+                          "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
+                          (() => {
+                            try {
+                              return {
+                                q: $state.textInput2.value
+                              };
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] = await $steps[
+                    "invokeGlobalAction"
+                  ];
+                }
+              }).apply(null, eventArgs);
+            }}
+          />
 
           <TextInput
             data-plasmic-name={"textInput"}
@@ -310,24 +302,59 @@ function PlasmicTestSearch__RenderFunc(props: {
             }}
             value={generateStateValueProp($state, ["textInput", "value"]) ?? ""}
           />
-          
-          {/* نمایش وضعیت جستجو */}
-          {generateStateValueProp($state, ["isSearching"]) && (
-            <div style={{ padding: "10px", color: "#666" }}>
-              در حال جستجو...
-            </div>
-          )}
-          
-          {/* نمایش نتایج جستجو */}
-          {generateStateValueProp($state, ["searchResults"]) && 
-           generateStateValueProp($state, ["searchResults"]).length > 0 && (
-            <div style={{ padding: "10px" }}>
-              <h3>نتایج جستجو:</h3>
-              <pre style={{ background: "#f5f5f5", padding: "10px", borderRadius: "4px" }}>
-                {JSON.stringify(generateStateValueProp($state, ["searchResults"]), null, 2)}
-              </pre>
-            </div>
-          )}
+
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ng16T
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__i6N9Q
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
+            }}
+            url={
+              "https://dev.rentamon.com/webhook/fd6476e4-de82-4bac-91e9-c575d414468a"
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -335,9 +362,10 @@ function PlasmicTestSearch__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "textInput2", "textInput"],
+  root: ["root", "textInput2", "textInput", "apiRequest"],
   textInput2: ["textInput2"],
-  textInput: ["textInput"]
+  textInput: ["textInput"],
+  apiRequest: ["apiRequest"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -346,6 +374,7 @@ type NodeDefaultElementType = {
   root: "div";
   textInput2: typeof TextInput2;
   textInput: typeof TextInput;
+  apiRequest: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -410,6 +439,7 @@ export const PlasmicTestSearch = Object.assign(
     // Helper components rendering sub-elements
     textInput2: makeNodeComponent("textInput2"),
     textInput: makeNodeComponent("textInput"),
+    apiRequest: makeNodeComponent("apiRequest"),
 
     // Metadata about props expected for PlasmicTestSearch
     internalVariantProps: PlasmicTestSearch__VariantProps,

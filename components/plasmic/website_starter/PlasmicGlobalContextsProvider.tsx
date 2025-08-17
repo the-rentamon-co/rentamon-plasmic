@@ -5,7 +5,8 @@
 // Plasmic Project: 7SNMkB8UMukVgcWJYokeAQ
 
 import * as React from "react";
-import { hasVariant, ensureGlobalVariants } from "@plasmicapp/react-web";
+
+import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { Fragment } from "@/fragment/fragment"; // plasmic-import: 2Zx_RdVTcu-q/codeComponent
 import { GrowthBook } from "@/fragment/growthbook"; // plasmic-import: oyqC-S2Y0_JR/codeComponent
 import { Splunk } from "@/fragment/splunk"; // plasmic-import: 1L5rk5eEXbTQ/codeComponent
@@ -17,16 +18,13 @@ export interface GlobalContextsProviderProps {
   fragmentProps?: Partial<
     Omit<React.ComponentProps<typeof Fragment>, "children">
   >;
-
   growthBookProps?: Partial<
     Omit<React.ComponentProps<typeof GrowthBook>, "children">
   >;
-
   splunkProps?: Partial<Omit<React.ComponentProps<typeof Splunk>, "children">>;
   antdConfigProviderProps?: Partial<
     Omit<React.ComponentProps<typeof AntdConfigProvider>, "children">
   >;
-
   embedCssProps?: Partial<
     Omit<React.ComponentProps<typeof EmbedCss>, "children">
   >;

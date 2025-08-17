@@ -33,7 +33,6 @@ import {
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants,
   generateOnMutateForSpec,
   generateStateOnChangeProp,
   generateStateOnChangePropForCodeComponents,
@@ -72,13 +71,13 @@ import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Textarea } from "@/fragment/components/textarea"; // plasmic-import: kolEMmvCWkE1/codeComponent
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
-
-import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
+import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
+import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
+import { _useStyleTokens as useStyleTokens_antd_5_hostless } from ""; // plasmic-import: ohDidvG9XsCeFumugENU3J/styleTokensProvider
+import { _useStyleTokens as useStyleTokens_plasmic_rich_components } from ""; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/styleTokensProvider
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
-import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicCalendar2.module.css"; // plasmic-import: RNhZtlNmydsH/css
 
@@ -744,9 +743,12 @@ function PlasmicCalendar2__RenderFunc(props: {
     $refs
   });
 
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantsaSuSwU8JUYf()
-  });
+  const globalVariants = _useGlobalVariants();
+  const styleTokensClassNames = _useStyleTokens();
+  const styleTokensClassNames_antd_5_hostless =
+    useStyleTokens_antd_5_hostless();
+  const styleTokensClassNames_plasmic_rich_components =
+    useStyleTokens_plasmic_rich_components();
 
   return (
     <div
@@ -759,9 +761,9 @@ function PlasmicCalendar2__RenderFunc(props: {
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
-        projectcss.plasmic_tokens,
-        plasmic_antd_5_hostless_css.plasmic_tokens,
-        plasmic_plasmic_rich_components_css.plasmic_tokens,
+        styleTokensClassNames,
+        styleTokensClassNames_antd_5_hostless,
+        styleTokensClassNames_plasmic_rich_components,
         sty.root
       )}
     >
@@ -2342,9 +2344,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components
           )}
           hideFooter={
             hasVariant(globalVariants, "screen", "mobile") ? true : true
@@ -3178,9 +3180,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components
           )}
           hideFooter={true}
           maskClosable={true}
@@ -4277,9 +4279,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components
           )}
           hideFooter={true}
           maskClosable={true}
@@ -5013,9 +5015,9 @@ function PlasmicCalendar2__RenderFunc(props: {
               projectcss.root_reset,
               projectcss.plasmic_default_styles,
               projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
+              styleTokensClassNames,
+              styleTokensClassNames_antd_5_hostless,
+              styleTokensClassNames_plasmic_rich_components
             )}
             hideFooter={true}
             maskClosable={false}
@@ -6208,9 +6210,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components
           )}
           hideFooter={true}
           modalScopeClassName={sty["block__modal"]}
@@ -7392,9 +7394,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components
           )}
           hideFooter={true}
           modalScopeClassName={sty["noteModal__modal"]}
@@ -7710,9 +7712,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components
           )}
           hideFooter={true}
           modalScopeClassName={sty["writeNoteModal__modal"]}
@@ -7917,9 +7919,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components
           )}
           hideFooter={true}
           modalScopeClassName={sty["updateNoteModal__modal"]}
@@ -8259,9 +8261,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components
           )}
           hideFooter={true}
           modalScopeClassName={sty["checkForChange__modal"]}
@@ -8734,9 +8736,9 @@ function PlasmicCalendar2__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components
           )}
           hideFooter={true}
           modalScopeClassName={sty["newDiscountModal__modal"]}
@@ -9879,7 +9881,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   }
                 }}
               >
-                {"ثبت"}
+                {"\u062b\u0628\u062a "}
               </Button>
             </div>
           </div>
@@ -9942,7 +9944,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__oE5Mq
                 )}
               >
-                {"رزرو"}
+                {"\u0631\u0632\u0631\u0648"}
               </div>
             </div>
           </div>
@@ -9969,7 +9971,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text___3DCBm
                 )}
               >
-                {"بسته"}
+                {"\u0628\u0633\u062a\u0647"}
               </div>
             </div>
           </div>
@@ -9996,7 +9998,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__pBKau
                 )}
               >
-                {"تخفیف"}
+                {"\u062a\u062e\u0641\u06cc\u0641"}
               </div>
             </div>
           </div>
@@ -10023,7 +10025,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text___9D5GC
                 )}
               >
-                {"یادداشت"}
+                {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
               </div>
             </div>
           </div>
@@ -10345,9 +10347,9 @@ function PlasmicCalendar2__RenderFunc(props: {
           projectcss.root_reset,
           projectcss.plasmic_default_styles,
           projectcss.plasmic_mixins,
-          projectcss.plasmic_tokens,
-          plasmic_antd_5_hostless_css.plasmic_tokens,
-          plasmic_plasmic_rich_components_css.plasmic_tokens
+          styleTokensClassNames,
+          styleTokensClassNames_antd_5_hostless,
+          styleTokensClassNames_plasmic_rich_components
         )}
         hideFooter={true}
         modalScopeClassName={sty["addingGuestInfo__modal"]}
