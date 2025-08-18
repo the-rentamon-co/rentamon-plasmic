@@ -836,29 +836,6 @@ function PlasmicProperties__RenderFunc(props: {
 
                     (async error => {
                       const $steps = {};
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  console.log("we have error");
-                                  return console.log($state.apiRequest.error);
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
                     }).apply(null, eventArgs);
                   }}
                   onLoading={async (...eventArgs: any) => {
@@ -882,13 +859,10 @@ function PlasmicProperties__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   const data = $state.apiRequest.data;
-                                  if (
-                                    data?.user_info &&
-                                    Object.keys(data.user_info).length > 0
-                                  ) {
+                                  if (Array.isArray(data) && data.length > 0) {
                                     return localStorage.setItem(
                                       "property_data",
-                                      JSON.stringify(data.properties)
+                                      JSON.stringify(data)
                                     );
                                   }
                                 })();
@@ -911,9 +885,7 @@ function PlasmicProperties__RenderFunc(props: {
                   ref={ref => {
                     $refs["apiRequest"] = ref;
                   }}
-                  url={
-                    "https://api-v2.rentamon.com/api/user_info?property_id=1"
-                  }
+                  url={"https://gateway.rentamon.com/webhook/properties"}
                 >
                   <div
                     className={classNames(projectcss.all, sty.freeBox__q1Cc)}
@@ -922,7 +894,7 @@ function PlasmicProperties__RenderFunc(props: {
                       !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                       (() => {
                         try {
-                          return $state.apiRequest.data.properties.filter(
+                          return $state.apiRequest.data.filter(
                             item => item.property_name !== "اقامتگاه ۱"
                           );
                         } catch (e) {
