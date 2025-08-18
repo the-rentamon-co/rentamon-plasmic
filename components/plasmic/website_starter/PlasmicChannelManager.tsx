@@ -2665,29 +2665,87 @@ function PlasmicChannelManager__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (() => {
+                        return (async () => {
                           const isPlasmicStudio =
                             Object.values($ctx.Fragment.previewApiConfig)
                               .length > 0;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
                           function getCookie(name) {
                             const value = `; ${globalThis.document.cookie}`;
                             const parts = value.split(`; ${name}=`);
-                            if (parts.length === 2) {
+                            if (parts.length === 2)
                               return parts.pop().split(";").shift();
-                            }
                           }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
                           const ussoAccessAvailable =
                             getCookie("usso_access_available") || false;
                           console.log(
-                            "وضعیت توکن دسترسی: ",
+                            "this is ussoAccessAvailable: ",
                             ussoAccessAvailable
                           );
                           if (!ussoAccessAvailable && !isPlasmicStudio) {
-                            console.log(
-                              "توکن دسترسی یافت نشد. در حال هدایت به صفحه ورود..."
-                            );
-                            return (window.location.href =
-                              "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/channel-manager/");
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/channel-manager/");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/channel-manager/";
+                                });
+                            }
                           }
                         })();
                       }

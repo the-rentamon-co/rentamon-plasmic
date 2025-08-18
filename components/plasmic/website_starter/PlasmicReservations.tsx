@@ -5519,7 +5519,8 @@ function PlasmicReservations__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       $state.reservations =
-                                        $steps.sendRequest.data.result.data;
+                                        $steps.sendRequest.data?.result?.data ??
+                                        $steps.sendRequest.data;
                                       return console.log($state.reservations);
                                     })();
                                   }

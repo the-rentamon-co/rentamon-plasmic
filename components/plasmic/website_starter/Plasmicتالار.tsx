@@ -149,6 +149,8 @@ export type Plasmicتالار__OverridesType = {
   right7?: Flex__<"div">;
   mid7?: Flex__<"div">;
   left6?: Flex__<"div">;
+  getUserWebsite?: Flex__<typeof ApiRequest>;
+  getUserBalance?: Flex__<typeof ApiRequest>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -269,6 +271,54 @@ function Plasmicتالار__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "getUserWebsite.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getUserWebsite"
+      },
+      {
+        path: "getUserWebsite.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getUserWebsite"
+      },
+      {
+        path: "getUserWebsite.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getUserWebsite"
+      },
+      {
+        path: "getUserBalance.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getUserBalance"
+      },
+      {
+        path: "getUserBalance.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getUserBalance"
+      },
+      {
+        path: "getUserBalance.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getUserBalance"
       }
     ],
     [$props, $ctx, $refs]
@@ -376,7 +426,7 @@ function Plasmicتالار__RenderFunc(props: {
                 ref={ref => {
                   $refs["profile2"] = ref;
                 }}
-                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+                url={"https://gateway.rentamon.com/webhook/me"}
               />
             </div>
           </div>
@@ -428,7 +478,7 @@ function Plasmicتالار__RenderFunc(props: {
                         loading={"lazy"}
                         src={(() => {
                           try {
-                            return $state.profile2.data.user_info.profile_image;
+                            return $state.profile2.data.profile_pic;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -468,9 +518,9 @@ function Plasmicتالار__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return $state.profile2.data.user_info.first_name.concat(
+                            return $state.profile2.data.first_name.concat(
                               " ",
-                              $state.profile2.data.user_info.last_name
+                              $state.profile2.data.last_name
                             );
                           } catch (e) {
                             if (
@@ -500,7 +550,7 @@ function Plasmicتالار__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return $state.profile2.data.user_info.phone_number;
+                            return $state.profile2.data.phone_number;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -786,7 +836,7 @@ function Plasmicتالار__RenderFunc(props: {
                                 return "";
                               }
                               return parseInt(
-                                $state.profile2.data.user_info.balance_info
+                                $state.getUserBalance.data.balance
                               ) < 100000
                                 ? "blinkBorderWallet clickable"
                                 : "clickable";
@@ -907,9 +957,9 @@ function Plasmicتالار__RenderFunc(props: {
                               try {
                                 return (() => {
                                   const balance_info =
-                                    $state.profile2.data.user_info.balance_info;
+                                    $state.getUserBalance.data.balance;
                                   const reducedBalance = Math.floor(
-                                    balance_info.balance / 10
+                                    balance_info / 10
                                   );
                                   const formattedBalance =
                                     new Intl.NumberFormat("fa-IR").format(
@@ -977,15 +1027,13 @@ function Plasmicتالار__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile")
                   ? (() => {
                       try {
-                        return (
-                          $state.profile2.data?.user_info?.websites?.length > 0
-                        );
+                        return $state.getUserWebsite.data.website.length != 0;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return true;
+                          return false;
                         }
                         throw e;
                       }
@@ -1994,6 +2042,89 @@ function Plasmicتالار__RenderFunc(props: {
                 </div>
               ) : null}
             </div>
+            <ApiRequest
+              data-plasmic-name={"getUserWebsite"}
+              data-plasmic-override={overrides.getUserWebsite}
+              className={classNames("__wab_instance", sty.getUserWebsite)}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xxefM
+                  )}
+                >
+                  {"Error fetching data"}
+                </div>
+              }
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "getUserWebsite",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "getUserWebsite",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "getUserWebsite",
+                  "data"
+                ]).apply(null, eventArgs);
+              }}
+              ref={ref => {
+                $refs["getUserWebsite"] = ref;
+              }}
+              url={"https://gateway.rentamon.com/webhook/me/websites"}
+            />
+
+            {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+              <ApiRequest
+                data-plasmic-name={"getUserBalance"}
+                data-plasmic-override={overrides.getUserBalance}
+                className={classNames("__wab_instance", sty.getUserBalance)}
+                errorDisplay={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zDsnD
+                    )}
+                  >
+                    {"Error fetching data"}
+                  </div>
+                }
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "getUserBalance",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "getUserBalance",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "getUserBalance",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["getUserBalance"] = ref;
+                }}
+                url={"https://gateway.rentamon.com/webhook/wallet/balance"}
+              />
+            ) : null}
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__sgL9C)} />
 
@@ -2024,6 +2155,26 @@ function Plasmicتالار__RenderFunc(props: {
               className={classNames("__wab_instance", sty.sideEffect)}
               onMount={async () => {
                 const $steps = {};
+
+                $steps["runCode2"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return undefined;
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode2"] != null &&
+                  typeof $steps["runCode2"] === "object" &&
+                  typeof $steps["runCode2"].then === "function"
+                ) {
+                  $steps["runCode2"] = await $steps["runCode2"];
+                }
 
                 $steps["runCode"] = true
                   ? (() => {
@@ -2226,6 +2377,8 @@ const PlasmicDescendants = {
     "right7",
     "mid7",
     "left6",
+    "getUserWebsite",
+    "getUserBalance",
     "navbarRntFooter",
     "sideEffect",
     "clarityRntComponent",
@@ -2286,7 +2439,9 @@ const PlasmicDescendants = {
     "logout",
     "right7",
     "mid7",
-    "left6"
+    "left6",
+    "getUserWebsite",
+    "getUserBalance"
   ],
   topProfile: [
     "topProfile",
@@ -2388,6 +2543,8 @@ const PlasmicDescendants = {
   right7: ["right7"],
   mid7: ["mid7"],
   left6: ["left6"],
+  getUserWebsite: ["getUserWebsite"],
+  getUserBalance: ["getUserBalance"],
   navbarRntFooter: ["navbarRntFooter"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -2453,6 +2610,8 @@ type NodeDefaultElementType = {
   right7: "div";
   mid7: "div";
   left6: "div";
+  getUserWebsite: typeof ApiRequest;
+  getUserBalance: typeof ApiRequest;
   navbarRntFooter: typeof NavbarRntFooter;
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -2574,6 +2733,8 @@ export const Plasmicتالار = Object.assign(
     right7: makeNodeComponent("right7"),
     mid7: makeNodeComponent("mid7"),
     left6: makeNodeComponent("left6"),
+    getUserWebsite: makeNodeComponent("getUserWebsite"),
+    getUserBalance: makeNodeComponent("getUserBalance"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
