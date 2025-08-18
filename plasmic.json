@@ -5351,8 +5351,8 @@
       "indirect": false,
       "globalContextsFilePath": "plasmic/website_starter/PlasmicGlobalContextsProvider.tsx",
       "splitsProviderFilePath": "",
-      "styleTokensProviderFilePath": "plasmic/website_starter/PlasmicStyleTokensProvider.tsx",
-      "projectModuleFilePath": "plasmic/website_starter/plasmic.tsx",
+      "styleTokensProviderFilePath": "",
+      "projectModuleFilePath": "",
       "codeComponents": [
         {
           "id": "VD7g96wRvPMs",
