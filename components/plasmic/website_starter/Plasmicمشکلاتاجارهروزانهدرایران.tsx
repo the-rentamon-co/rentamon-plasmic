@@ -107,9 +107,11 @@ export type Plasmicمشکلاتاجارهروزانهدرایران__OverridesTy
   benefitsTitle2?: Flex__<"div">;
   benefitsCaption2?: Flex__<"div">;
   ul?: Flex__<"ul">;
+  img3?: Flex__<"div">;
   benefits3?: Flex__<"div">;
   benefitsTitle3?: Flex__<"div">;
   benefitsTitle4?: Flex__<"div">;
+  img4?: Flex__<"div">;
   benefitsTitle5?: Flex__<"div">;
   benefitsTitle6?: Flex__<"div">;
   cta?: Flex__<"div">;
@@ -333,14 +335,11 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"auto"}
+                  displayWidth={"40%"}
                   loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/rentalRuleJpg.jpg",
-                    fullWidth: 700,
-                    fullHeight: 485,
-                    aspectRatio: undefined
-                  }}
+                  src={
+                    "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2F%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87-%DB%B1.jpg?versionId="
+                  }
                 />
               </div>
               <div
@@ -598,12 +597,9 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                         : "auto"
                     }
                     loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/rentalRuleLivingroomJpg.jpg",
-                      fullWidth: 700,
-                      fullHeight: 994,
-                      aspectRatio: undefined
-                    }}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2F%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87-%DB%B3.jpg?versionId="
+                    }
                   />
                 </div>
               </div>
@@ -792,7 +788,11 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                     "\u067e\u0633 \u062e\u0648\u0628\u0647 \u0642\u0628\u0644 \u0627\u0632 \u0634\u0631\u0648\u0639 \u0627\u062c\u0627\u0631\u0647\u060c \u0628\u0647 \u0647\u0645\u0633\u0627\u06cc\u0647\u200c\u0647\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u06cc\u060c \u0634\u0631\u0627\u06cc\u0637 \u0631\u0648 \u0628\u0631\u0627\u0634\u0648\u0646 \u062a\u0648\u0636\u06cc\u062d \u0628\u062f\u06cc \u0648 \u0627\u0632 \u0645\u0647\u0645\u0648\u0646\u0627\u062a \u0628\u062e\u0648\u0627\u06cc \u0628\u0647 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0633\u0627\u062e\u062a\u0645\u0648\u0646 \u0648 \u0645\u062d\u0644\u0647 \u0627\u062d\u062a\u0631\u0627\u0645 \u0628\u0630\u0627\u0631\u0646.\n\n\u0647\u0645\u0686\u0646\u06cc\u0646 \u0628\u0631\u062e\u06cc \u0645\u062c\u062a\u0645\u0639\u200c\u0647\u0627\u06cc \u0645\u0633\u06a9\u0648\u0646\u06cc \u062a\u0648 \u0627\u0633\u0627\u0633\u0646\u0627\u0645\u0647\u200c\u0634\u0648\u0646 \u0630\u06a9\u0631 \u06a9\u0631\u062f\u0646 \u06a9\u0647 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0645\u0645\u0646\u0648\u0639\u0647. \u06cc\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0647\u06cc\u0626\u062a\u200c\u0645\u062f\u06cc\u0631\u0647 \u0628\u0627\u0647\u0627\u0634 \u0645\u062e\u0627\u0644\u0641 \u0628\u0627\u0634\u0647.\r \u0642\u0628\u0644 \u0627\u0632 \u0634\u0631\u0648\u0639 \u0641\u0639\u0627\u0644\u06cc\u062a\u060c \u062d\u062a\u0645\u0627 \u0628\u0627 \u0645\u062f\u06cc\u0631 \u0633\u0627\u062e\u062a\u0645\u0648\u0646 \u06cc\u0627 \u0647\u06cc\u0626\u062a\u200c\u0645\u062f\u06cc\u0631\u0647 \u0647\u0645\u0627\u0647\u0646\u06af \u06a9\u0646. \u06af\u0627\u0647\u06cc \u0628\u0627 \u06cc\u0647 \u06af\u0641\u062a\u200c\u0648\u06af\u0648\u06cc \u0633\u0627\u062f\u0647 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0631\u0636\u0627\u06cc\u062a\u0634\u0648\u0646 \u0631\u0648 \u0628\u06af\u06cc\u0631\u06cc \u062a\u0627 \u0628\u0639\u062f\u0627 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u0646\u062e\u0648\u0631\u06cc.\r\n"
                   }
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__p76XQ)}>
+                <div
+                  data-plasmic-name={"img3"}
+                  data-plasmic-override={overrides.img3}
+                  className={classNames(projectcss.all, sty.img3)}
+                >
                   <PlasmicImg__
                     alt={
                       "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0645\u0646\u0632\u0644,\u0642\u0627\u0646\u0648\u0646 \u0627\u062c\u0627\u0631\u0647 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u0626\u06cc\u062a,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u06cc\u06cc\u062a"
@@ -803,14 +803,11 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                     displayMaxWidth={"100%"}
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
-                    displayWidth={"auto"}
+                    displayWidth={"40%"}
                     loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/bedroomJpg.jpg",
-                      fullWidth: 800,
-                      fullHeight: 533,
-                      aspectRatio: undefined
-                    }}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2F%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87-%DB%B2.jpg.jpg?versionId="
+                    }
                   />
                 </div>
               </div>
@@ -897,6 +894,28 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                       <React.Fragment>{""}</React.Fragment>
                     </React.Fragment>
                   </div>
+                </div>
+                <div
+                  data-plasmic-name={"img4"}
+                  data-plasmic-override={overrides.img4}
+                  className={classNames(projectcss.all, sty.img4)}
+                >
+                  <PlasmicImg__
+                    alt={
+                      "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0645\u0646\u0632\u0644,\u0642\u0627\u0646\u0648\u0646 \u0627\u062c\u0627\u0631\u0647 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u0626\u06cc\u062a,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u06cc\u06cc\u062a"
+                    }
+                    className={classNames(sty.img__bq4S)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"40%"}
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2F%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87-%DB%B4.jpg?versionId="
+                    }
+                  />
                 </div>
                 <div
                   data-plasmic-name={"benefitsTitle5"}
@@ -1070,9 +1089,11 @@ const PlasmicDescendants = {
     "benefitsTitle2",
     "benefitsCaption2",
     "ul",
+    "img3",
     "benefits3",
     "benefitsTitle3",
     "benefitsTitle4",
+    "img4",
     "benefitsTitle5",
     "benefitsTitle6",
     "cta",
@@ -1101,9 +1122,11 @@ const PlasmicDescendants = {
     "benefitsTitle2",
     "benefitsCaption2",
     "ul",
+    "img3",
     "benefits3",
     "benefitsTitle3",
     "benefitsTitle4",
+    "img4",
     "benefitsTitle5",
     "benefitsTitle6",
     "cta",
@@ -1127,9 +1150,11 @@ const PlasmicDescendants = {
     "benefitsTitle2",
     "benefitsCaption2",
     "ul",
+    "img3",
     "benefits3",
     "benefitsTitle3",
     "benefitsTitle4",
+    "img4",
     "benefitsTitle5",
     "benefitsTitle6",
     "cta",
@@ -1140,19 +1165,28 @@ const PlasmicDescendants = {
   certificates: ["certificates"],
   iamges: ["iamges"],
   relatedContents: ["relatedContents"],
-  neighbours: ["neighbours", "benefitsTitle2", "benefitsCaption2", "ul"],
+  neighbours: [
+    "neighbours",
+    "benefitsTitle2",
+    "benefitsCaption2",
+    "ul",
+    "img3"
+  ],
   benefitsTitle2: ["benefitsTitle2"],
   benefitsCaption2: ["benefitsCaption2", "ul"],
   ul: ["ul"],
+  img3: ["img3"],
   benefits3: [
     "benefits3",
     "benefitsTitle3",
     "benefitsTitle4",
+    "img4",
     "benefitsTitle5",
     "benefitsTitle6"
   ],
   benefitsTitle3: ["benefitsTitle3"],
   benefitsTitle4: ["benefitsTitle4"],
+  img4: ["img4"],
   benefitsTitle5: ["benefitsTitle5"],
   benefitsTitle6: ["benefitsTitle6"],
   cta: ["cta", "ctaText", "button"],
@@ -1185,9 +1219,11 @@ type NodeDefaultElementType = {
   benefitsTitle2: "div";
   benefitsCaption2: "div";
   ul: "ul";
+  img3: "div";
   benefits3: "div";
   benefitsTitle3: "div";
   benefitsTitle4: "div";
+  img4: "div";
   benefitsTitle5: "div";
   benefitsTitle6: "div";
   cta: "div";
@@ -1278,9 +1314,11 @@ export const Plasmicمشکلاتاجارهروزانهدرایران = Object.as
     benefitsTitle2: makeNodeComponent("benefitsTitle2"),
     benefitsCaption2: makeNodeComponent("benefitsCaption2"),
     ul: makeNodeComponent("ul"),
+    img3: makeNodeComponent("img3"),
     benefits3: makeNodeComponent("benefits3"),
     benefitsTitle3: makeNodeComponent("benefitsTitle3"),
     benefitsTitle4: makeNodeComponent("benefitsTitle4"),
+    img4: makeNodeComponent("img4"),
     benefitsTitle5: makeNodeComponent("benefitsTitle5"),
     benefitsTitle6: makeNodeComponent("benefitsTitle6"),
     cta: makeNodeComponent("cta"),

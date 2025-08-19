@@ -472,7 +472,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["setSourceCookie"] = await $steps["setSourceCookie"];
               }
 
-              $steps["checkIsUserLogin"] = false
+              $steps["checkIsUserLogin"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {

@@ -268,6 +268,7 @@
 .img__keyKn {
   object-fit: cover;
   max-width: 100%;
+  width: 40%;
   border-radius: 30px;
 }
 .img__keyKn > picture > img {
@@ -665,7 +666,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 50%;
+  width: 60%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
@@ -970,7 +971,7 @@
     font-size: 15px;
   }
 }
-.freeBox__p76XQ {
+.img3 {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -983,13 +984,14 @@
   padding: 20px 8px 8px;
 }
 @media (max-width: 1200px) {
-  .freeBox__p76XQ {
+  .img3 {
     padding-top: 0px;
   }
 }
 .img__eMct9 {
   object-fit: cover;
   max-width: 100%;
+  width: 40%;
   border-radius: 30px;
 }
 .img__eMct9 > picture > img {
@@ -1176,6 +1178,32 @@
 }
 .link__cTYh {
   font-family: "Estedad";
+}
+.img4 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 20px 8px 8px;
+}
+@media (max-width: 1200px) {
+  .img4 {
+    padding-top: 0px;
+  }
+}
+.img__bq4S {
+  object-fit: cover;
+  max-width: 100%;
+  width: 40%;
+  border-radius: 30px;
+}
+.img__bq4S > picture > img {
+  object-fit: cover;
 }
 .benefitsTitle5 {
   display: flex;
