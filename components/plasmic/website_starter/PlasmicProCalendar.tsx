@@ -572,6 +572,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                             }
                           }
                           setInterval(refreshToken, 300000);
+                          refreshToken();
                           function getCookie(name) {
                             const value = `; ${globalThis.document.cookie}`;
                             const parts = value.split(`; ${name}=`);

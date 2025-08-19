@@ -472,7 +472,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["setSourceCookie"] = await $steps["setSourceCookie"];
               }
 
-              $steps["checkIsUserLogin"] = true
+              $steps["checkIsUserLogin"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -572,22 +572,6 @@ function PlasmicSplash__RenderFunc(props: {
                 typeof $steps["checkIsUserLogin"].then === "function"
               ) {
                 $steps["checkIsUserLogin"] = await $steps["checkIsUserLogin"];
-              }
-
-              $steps["updateSrc4"] = true
-                ? (() => {
-                    const actionArgs = { args: [300] };
-                    return $globalActions["Fragment.wait"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateSrc4"] != null &&
-                typeof $steps["updateSrc4"] === "object" &&
-                typeof $steps["updateSrc4"].then === "function"
-              ) {
-                $steps["updateSrc4"] = await $steps["updateSrc4"];
               }
 
               $steps["invokeGlobalAction"] = true
