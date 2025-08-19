@@ -372,6 +372,33 @@
     font-size: 18px;
   }
 }
+.freeBox__pEw3E {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.text__oCVo5 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__oCVo5 {
+    font-size: 18px;
+  }
+}
 .freeBox___9XVfr {
   flex-direction: column;
   position: relative;

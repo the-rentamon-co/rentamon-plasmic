@@ -704,7 +704,7 @@ function PlasmicProperties__RenderFunc(props: {
                             const $steps = {};
 
                             $steps["goToPropertyEditFirstProperty"] =
-                              $state.apiRequest.data.properties.filter(
+                              $state.apiRequest.data.filter(
                                 item => item.property_name !== "اقامتگاه ۱"
                               ).length == 0
                                 ? (() => {
@@ -739,7 +739,7 @@ function PlasmicProperties__RenderFunc(props: {
                             }
 
                             $steps["goToPropertyCreate"] =
-                              $state.apiRequest.data.properties.filter(
+                              $state.apiRequest.data.filter(
                                 item => item.property_name !== "اقامتگاه ۱"
                               ).length >= 1
                                 ? (() => {
@@ -1069,7 +1069,7 @@ function PlasmicProperties__RenderFunc(props: {
                         const $steps = {};
 
                         $steps["goToPropertyEditFirstProperty"] =
-                          $state.apiRequest.data.properties.filter(
+                          $state.apiRequest.data.filter(
                             item => item.property_name !== "اقامتگاه ۱"
                           ).length == 0
                             ? (() => {
@@ -1102,7 +1102,7 @@ function PlasmicProperties__RenderFunc(props: {
                         }
 
                         $steps["goToPropertyCreate"] =
-                          $state.apiRequest.data.properties.filter(
+                          $state.apiRequest.data.filter(
                             item => item.property_name !== "اقامتگاه ۱"
                           ).length >= 1
                             ? (() => {

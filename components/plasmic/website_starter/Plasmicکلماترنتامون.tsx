@@ -363,6 +363,28 @@ function Plasmicکلماترنتامون__RenderFunc(props: {
                     : "\u0639\u0648\u062f\u062a \u0648\u062c\u0647"}
                 </div>
               </div>
+              <div className={classNames(projectcss.all, sty.freeBox__pEw3E)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__oCVo5
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile") ? (
+                    "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"
+                  ) : (
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
+                      </span>
+                    </React.Fragment>
+                  )}
+                </div>
+              </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___9XVfr)}>
               <ApiRequest
