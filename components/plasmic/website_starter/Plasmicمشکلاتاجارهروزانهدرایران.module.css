@@ -169,6 +169,7 @@
     padding-left: 10px;
     font-size: 16px;
     padding-top: 0px;
+    font-weight: 500;
   }
 }
 @media (max-width: 350px) {
@@ -265,6 +266,19 @@
   min-width: 0;
   padding: 20px 8px 8px;
 }
+@media (max-width: 500px) {
+  .freeBox__amqod {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 8px;
+  }
+}
 .img__keyKn {
   object-fit: cover;
   max-width: 100%;
@@ -273,6 +287,17 @@
 }
 .img__keyKn > picture > img {
   object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .img__keyKn {
+    width: 60%;
+  }
+}
+@media (max-width: 500px) {
+  .img__keyKn {
+    width: 100%;
+    min-width: 0;
+  }
 }
 .str {
   display: flex;
@@ -997,6 +1022,17 @@
 .img__eMct9 > picture > img {
   object-fit: cover;
 }
+@media (max-width: 1200px) {
+  .img__eMct9 {
+    width: 60%;
+  }
+}
+@media (max-width: 500px) {
+  .img__eMct9 {
+    width: 100%;
+    min-width: 0;
+  }
+}
 .benefits3 {
   display: flex;
   flex-direction: column;
@@ -1193,7 +1229,20 @@
 }
 @media (max-width: 1200px) {
   .img4 {
-    padding-top: 0px;
+    padding: 16px 0px;
+  }
+}
+@media (max-width: 500px) {
+  .img4 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 16px 8px;
   }
 }
 .img__bq4S {
@@ -1204,6 +1253,17 @@
 }
 .img__bq4S > picture > img {
   object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .img__bq4S {
+    width: 60%;
+  }
+}
+@media (max-width: 500px) {
+  .img__bq4S {
+    width: 100%;
+    min-width: 0;
+  }
 }
 .benefitsTitle5 {
   display: flex;
@@ -1414,7 +1474,7 @@
 @media (max-width: 350px) {
   .text__pfunG {
     line-height: 1.7;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .button {
@@ -1477,6 +1537,7 @@
 @media (max-width: 350px) {
   .text__h7WJy {
     max-width: 100%;
+    font-size: 17px;
   }
 }
 .rentamonFooter:global(.__wab_instance) {
