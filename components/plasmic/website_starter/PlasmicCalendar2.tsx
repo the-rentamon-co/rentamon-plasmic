@@ -2360,7 +2360,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             [sty["pcls_sRCzGPSdqNqE"]]: true
           })}
           modalScopeClassName={sty["modalDiscount__modal"]}
-          okText={"\u062a\u0627\u06cc\u06cc\u062f"}
+          okText={"تایید"}
           onOk={async () => {
             const $steps = {};
           }}
@@ -4291,7 +4291,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           hideFooter={true}
           maskClosable={true}
           modalScopeClassName={sty["modalChangePrice__modal"]}
-          okText={"\u062a\u0627\u06cc\u06cc\u062f"}
+          okText={"تایید"}
           onOk={async () => {
             const $steps = {};
           }}
@@ -9886,7 +9886,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   }
                 }}
               >
-                {"\u062b\u0628\u062a "}
+                {"ثبت"}
               </Button>
             </div>
           </div>
@@ -9949,7 +9949,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__oE5Mq
                 )}
               >
-                {"\u0631\u0632\u0631\u0648"}
+                {"رزرو"}
               </div>
             </div>
           </div>
@@ -9976,7 +9976,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text___3DCBm
                 )}
               >
-                {"\u0628\u0633\u062a\u0647"}
+                {"بسته"}
               </div>
             </div>
           </div>
@@ -10003,7 +10003,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__pBKau
                 )}
               >
-                {"\u062a\u062e\u0641\u06cc\u0641"}
+                {"تخفیف"}
               </div>
             </div>
           </div>
@@ -10030,7 +10030,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text___9D5GC
                 )}
               >
-                {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
+                {"یادداشت"}
               </div>
             </div>
           </div>
@@ -10551,7 +10551,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 );
               }}
               placeholder={
-                "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
+                "مبلغ (تومان)"
               }
               type={"number"}
               value={generateStateValueProp($state, ["input2", "value"])}
@@ -10568,7 +10568,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 );
               }}
               placeholder={
-                "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
+                "مبلغ (تومان)"
               }
               type={"number"}
               value={generateStateValueProp($state, ["amount", "value"])}
