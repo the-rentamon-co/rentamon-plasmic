@@ -159,6 +159,11 @@
     font-size: 17px;
   }
 }
+@media (max-width: 500px) {
+  .text__musna {
+    font-size: 16px;
+  }
+}
 .freeBox___6NgD {
   display: flex;
   flex-direction: column;
@@ -268,6 +273,11 @@
   .text__xral5 {
     line-height: 1.8;
     font-size: 17px;
+  }
+}
+@media (max-width: 500px) {
+  .text__xral5 {
+    font-size: 16px;
   }
 }
 .freeBox__wrGuV {
@@ -384,7 +394,7 @@
 }
 @media (max-width: 500px) {
   .text___45Xuh {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 ._1st {
