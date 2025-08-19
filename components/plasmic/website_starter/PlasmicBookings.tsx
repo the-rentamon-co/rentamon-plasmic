@@ -4621,9 +4621,9 @@ function PlasmicBookings__RenderFunc(props: {
                                   displayWidth={"auto"}
                                   loading={"lazy"}
                                   src={{
-                                    src: "/plasmic/website_starter/images/image141.svg",
-                                    fullWidth: 23,
-                                    fullHeight: 23,
+                                    src: "/plasmic/website_starter/images/image172.svg",
+                                    fullWidth: 22,
+                                    fullHeight: 22,
                                     aspectRatio: undefined
                                   }}
                                 />

@@ -172,7 +172,7 @@ function PlasmicAuthRedirect__RenderFunc(props: {
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
               displayMinWidth={"0"}
-              displayWidth={"auto"}
+              displayWidth={"80px"}
               loading={"lazy"}
               src={{
                 src: "/plasmic/website_starter/images/image140.gif",
