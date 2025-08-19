@@ -2932,6 +2932,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/words"
+        },
+        {
+          "id": "RdflGAZyXDUn",
+          "name": "قوانیناجارهروزانه2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicقوانیناجارهروزانه2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/rental-rules-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicقوانیناجارهروزانه2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/rental-rules-2"
+        },
+        {
+          "id": "_aFdYQil1-CA",
+          "name": "مشکلاتاجارهروزانهدرایران",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicمشکلاتاجارهروزانهدرایران.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/rental-guide.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicمشکلاتاجارهروزانهدرایران.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/rental-guide"
         }
       ],
       "icons": [

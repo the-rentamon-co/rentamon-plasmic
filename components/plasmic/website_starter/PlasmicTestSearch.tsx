@@ -62,6 +62,7 @@ import {
 import TextInput2 from "../../TextInput2"; // plasmic-import: MGm7xuldRCuA/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -89,6 +90,7 @@ export type PlasmicTestSearch__OverridesType = {
   textInput2?: Flex__<typeof TextInput2>;
   textInput?: Flex__<typeof TextInput>;
   apiRequest?: Flex__<typeof ApiRequest>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultTestSearchProps {}
@@ -348,6 +350,116 @@ function PlasmicTestSearch__RenderFunc(props: {
               "https://dev.rentamon.com/webhook/fd6476e4-de82-4bac-91e9-c575d414468a"
             }
           />
+
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              );
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href =
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/");
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(
+                                "https://sso.rentamon.com/auth/refresh",
+                                {
+                                  method: "GET",
+                                  credentials: "include"
+                                }
+                              )
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href =
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/";
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -355,10 +467,11 @@ function PlasmicTestSearch__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "textInput2", "textInput", "apiRequest"],
+  root: ["root", "textInput2", "textInput", "apiRequest", "sideEffect"],
   textInput2: ["textInput2"],
   textInput: ["textInput"],
-  apiRequest: ["apiRequest"]
+  apiRequest: ["apiRequest"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -368,6 +481,7 @@ type NodeDefaultElementType = {
   textInput2: typeof TextInput2;
   textInput: typeof TextInput;
   apiRequest: typeof ApiRequest;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -433,6 +547,7 @@ export const PlasmicTestSearch = Object.assign(
     textInput2: makeNodeComponent("textInput2"),
     textInput: makeNodeComponent("textInput"),
     apiRequest: makeNodeComponent("apiRequest"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicTestSearch
     internalVariantProps: PlasmicTestSearch__VariantProps,
