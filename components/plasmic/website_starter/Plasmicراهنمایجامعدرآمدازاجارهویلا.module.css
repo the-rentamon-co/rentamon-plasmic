@@ -847,9 +847,8 @@
 }
 @media (max-width: 500px) {
   .text__inaDo {
-    padding-right: 12px;
-    padding-left: 10px;
     font-size: 16px;
+    padding: 16px 12px 8px 10px;
   }
 }
 @media (max-width: 350px) {
@@ -914,7 +913,9 @@
   .text__usD5H {
     font-weight: 600;
     max-width: 96%;
-    font-size: 18px;
+    font-size: 17px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 }
 @media (max-width: 350px) {
@@ -1454,7 +1455,7 @@
   .text__cNnoU {
     font-weight: 600;
     max-width: 96%;
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 @media (max-width: 350px) {
@@ -1837,9 +1838,9 @@
 }
 @media (max-width: 500px) {
   .text__vtr9B {
-    padding-right: 0px;
-    padding-left: 0px;
     font-size: 16px;
+    font-weight: 500;
+    padding: 16px 0px 8px;
   }
 }
 @media (max-width: 350px) {
@@ -1886,6 +1887,8 @@
     font-weight: 600;
     max-width: 96%;
     font-size: 18px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 }
 @media (max-width: 350px) {

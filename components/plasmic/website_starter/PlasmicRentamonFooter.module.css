@@ -432,6 +432,11 @@
     font-weight: 600;
   }
 }
+@media (max-width: 500px) {
+  .text__xugAr {
+    font-weight: 500;
+  }
+}
 @media (max-width: 350px) {
   .text__xugAr {
     font-size: 18px;
@@ -744,6 +749,7 @@
   .text__zFLzn {
     line-height: 1.8;
     font-size: 18px;
+    font-weight: 500;
   }
 }
 .text__cOA3 {
