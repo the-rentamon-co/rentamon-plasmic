@@ -61,3 +61,13 @@
   max-width: 100%;
   object-fit: cover;
 }
+.text__ocYbA {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background: var(--token-dAT-hrQjCPpo);
+  font-size: 16px;
+  min-width: 0;
+  padding: 8px;
+}
