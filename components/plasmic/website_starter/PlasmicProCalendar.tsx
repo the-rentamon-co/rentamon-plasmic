@@ -213,8 +213,7 @@ function PlasmicProCalendar__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                const lastPropId = localStorage.getItem("last_property_id");
-                return lastPropId ? parseInt(lastPropId, 10) : 1;
+                return 1;
               })();
             } catch (e) {
               if (
@@ -595,7 +594,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                             if (!ussoRefreshAvailable) {
                               console.log("got here in redirect");
                               return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/login-test/");
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/auth-redirect/");
                             } else {
                               console.log("got here in refreshToken");
                               return fetch(
@@ -618,7 +617,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                                 .catch(error => {
                                   console.error("Error:", error);
                                   window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/login-test/";
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/auth-redirect/";
                                 });
                             }
                           }
@@ -1506,7 +1505,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return [{}];
+                                    return [];
                                   }
                                   throw e;
                                 }

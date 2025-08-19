@@ -2963,17 +2963,17 @@
         },
         {
           "id": "EqUkKzydUxXR",
-          "name": "LoginTest",
+          "name": "AuthRedirect",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicLoginTest.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicAuthRedirect.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/login-test.tsx"
+            "modulePath": "../src/pages/auth-redirect.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicLoginTest.module.css",
+          "cssFilePath": "plasmic/website_starter/PlasmicAuthRedirect.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/login-test"
+          "path": "/auth-redirect"
         }
       ],
       "icons": [

@@ -480,7 +480,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                             if (!ussoRefreshAvailable) {
                               console.log("got here in redirect");
                               return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash/");
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/auth-redirect/");
                             } else {
                               console.log("got here in refreshToken");
                               return fetch(
@@ -503,7 +503,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                                 .catch(error => {
                                   console.error("Error:", error);
                                   window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash/";
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/auth-redirect/";
                                 });
                             }
                           }
@@ -1433,7 +1433,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__tK4AM
+                        sty.formField__oe6N
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1445,7 +1445,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___441H
+                        sty.formField__nqbnG
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1463,7 +1463,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___1C4I8
+                          sty.text__hhu0O
                         )}
                       >
                         {"Submit"}
