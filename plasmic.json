@@ -2960,6 +2960,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/rental-guide"
+        },
+        {
+          "id": "EqUkKzydUxXR",
+          "name": "LoginTest",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicLoginTest.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/login-test.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicLoginTest.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/login-test"
         }
       ],
       "icons": [

@@ -337,40 +337,32 @@ function Plasmicکلماترنتامون__RenderFunc(props: {
                   {"\u062a\u0627\u06cc\u06cc\u062f"}
                 </div>
               </div>
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__pcIf)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__udmVc
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0628\u0631\u062f\u0627\u0634\u062a"
-                      : "\u062a\u0627\u06cc\u06cc\u062f"}
-                  </div>
+              <div className={classNames(projectcss.all, sty.freeBox__pcIf)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__udmVc
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0628\u0631\u062f\u0627\u0634\u062a"
+                    : "\u0628\u0631\u062f\u0627\u0634\u062a"}
                 </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__gktQq)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___1VFja
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0639\u0648\u062f\u062a \u0648\u062c\u0647"
-                      : "\u062a\u0627\u06cc\u06cc\u062f"}
-                  </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__gktQq)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___1VFja
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0639\u0648\u062f\u062a \u0648\u062c\u0647"
+                    : "\u0639\u0648\u062f\u062a \u0648\u062c\u0647"}
                 </div>
-              ) : null}
+              </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___9XVfr)}>
               <ApiRequest

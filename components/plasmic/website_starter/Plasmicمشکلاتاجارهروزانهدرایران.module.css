@@ -602,7 +602,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 90%;
+  max-width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
@@ -655,10 +655,11 @@
 }
 @media (max-width: 500px) {
   .text__cxZ3 {
-    width: 96%;
+    width: 100%;
     text-align: right;
     padding-top: 13px;
     font-size: 16px;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
@@ -666,26 +667,6 @@
     width: 100%;
     font-size: 15px;
   }
-}
-.link__jae96 {
-  font-family: "Estedad";
-  font-weight: 500;
-}
-.link__nn4Z3 {
-  font-family: "Estedad";
-  font-weight: 500;
-}
-.link__kAbTi {
-  font-family: "Estedad";
-  font-weight: 500;
-}
-.link__jj5Yg {
-  font-family: "Estedad";
-  font-weight: 500;
-}
-.link__aYw3T {
-  font-family: "Estedad";
-  font-weight: 500;
 }
 .iamges {
   display: flex;
@@ -1131,6 +1112,69 @@
     font-size: 15px;
   }
 }
+.benefitsTitle7 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 14px 8px 8px;
+}
+@media (max-width: 1200px) {
+  .benefitsTitle7 {
+    padding-right: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .benefitsTitle7 {
+    padding-right: 10px;
+  }
+}
+@media (max-width: 350px) {
+  .benefitsTitle7 {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+}
+.text___8MUq8 {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 17px;
+  line-height: 2;
+  color: var(--token-8nedppYkGVaH);
+  min-width: 0;
+  padding: 10px 0px;
+}
+@media (max-width: 1200px) {
+  .text___8MUq8 {
+    padding-right: 10px;
+    padding-left: 20px;
+    line-height: 1.8;
+  }
+}
+@media (max-width: 500px) {
+  .text___8MUq8 {
+    padding-right: 0px;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text___8MUq8 {
+    padding-right: 4px;
+    padding-left: 4px;
+    font-size: 15px;
+  }
+}
+.link__wcBza {
+  font-family: "Estedad";
+  font-weight: 600;
+}
 .benefitsTitle4 {
   display: flex;
   flex-direction: column;
@@ -1225,7 +1269,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 20px 8px 8px;
+  padding: 20px 8px;
 }
 @media (max-width: 1200px) {
   .img4 {
@@ -1513,7 +1557,7 @@
   background: #8165d6;
   color: #fcfcfc;
   padding-bottom: 18px;
-  font-size: 20px;
+  font-size: 17px;
   padding-top: 18px;
   font-weight: 600;
   cursor: pointer;
@@ -1532,6 +1576,7 @@
   .text__h7WJy {
     font-weight: 600;
     max-width: 96%;
+    font-size: 17px;
   }
 }
 @media (max-width: 350px) {

@@ -692,12 +692,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
             }
             src={
               hasVariant(globalVariants, "screen", "mobile")
-                ? {
-                    src: "/plasmic/website_starter/images/image144.svg",
-                    fullWidth: 24,
-                    fullHeight: 24,
-                    aspectRatio: 1
-                  }
+                ? "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2Fburger-menu-svgrepo-com.svg?versionId="
                 : "https://static1.plasmic.app/menu.svg"
             }
           />

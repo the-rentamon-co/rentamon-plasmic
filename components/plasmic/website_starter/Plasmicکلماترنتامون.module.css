@@ -337,6 +337,7 @@
   max-width: 100%;
   text-align: center;
   font-weight: 500;
+  font-size: 20px;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -363,6 +364,7 @@
   max-width: 100%;
   text-align: center;
   font-weight: 500;
+  font-size: 20px;
   min-width: 0;
 }
 @media (max-width: 500px) {
