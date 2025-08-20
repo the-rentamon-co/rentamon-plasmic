@@ -6738,80 +6738,79 @@ function PlasmicCalendar2__RenderFunc(props: {
                         (() => {
                           try {
                             return (() => {
-                              function gregorianToJalali(gy, gm, gd) {
-                                let g_d_m = [
-                                  0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
-                                  31
+                              function convertPersianNumbersToEnglish(str) {
+                                const persianNumbers = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
                                 ];
 
-                                let jy = gy <= 1600 ? 0 : 979;
-                                gy -= gy <= 1600 ? 621 : 1600;
-                                let gy2 = gm > 2 ? gy + 1 : gy;
-                                let days =
-                                  365 * gy +
-                                  Math.floor((gy2 + 3) / 4) -
-                                  Math.floor((gy2 + 99) / 100) +
-                                  Math.floor((gy2 + 399) / 400);
-                                for (let i = 0; i < gm; i++) days += g_d_m[i];
-                                days += gd - 1;
-                                let j_days = days - 79;
-                                let j_np = Math.floor(j_days / 12053);
-                                j_days %= 12053;
-                                jy += 33 * j_np + 4 * Math.floor(j_days / 1461);
-                                j_days %= 1461;
-                                if (j_days >= 366) {
-                                  jy += Math.floor((j_days - 1) / 365);
-                                  j_days = (j_days - 1) % 365;
-                                }
-                                let jm =
-                                  j_days < 186
-                                    ? 1 + Math.floor(j_days / 31)
-                                    : 7 + Math.floor((j_days - 186) / 30);
-                                let jd =
-                                  j_days < 186
-                                    ? 1 + (j_days % 31)
-                                    : 1 + ((j_days - 186) % 30);
-                                return {
-                                  jy,
-                                  jm,
-                                  jd
-                                };
+                                const englishNumbers = [
+                                  "0",
+                                  "1",
+                                  "2",
+                                  "3",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "7",
+                                  "8",
+                                  "9"
+                                ];
+
+                                return str.replace(
+                                  /[۰-۹]/g,
+                                  char =>
+                                    englishNumbers[persianNumbers.indexOf(char)]
+                                );
                               }
-                              function convertTimestampToJalali(timestamp) {
+                              function padZero(num) {
+                                return num.length === 1 ? `0${num}` : num;
+                              }
+                              function convertTimestampToPersianDate(
+                                timestamp
+                              ) {
                                 const date = new Date(timestamp * 1000);
-                                const gy = date.getFullYear();
-                                const gm = date.getMonth() + 1;
-                                const gd = date.getDate();
-                                const { jy, jm, jd } = gregorianToJalali(
-                                  gy,
-                                  gm,
-                                  gd
-                                );
-                                return `${jy}-${String(jm).padStart(
-                                  2,
-                                  "0"
-                                )}-${String(jd).padStart(2, "0")}`;
+                                const [year, month, day] = date
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(
+                                  year
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(month)
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(day)
+                                )}`;
+                                return formattedDate;
                               }
-                              function getTodayInJalali() {
-                                const now = new Date();
-                                const gy = now.getFullYear();
-                                const gm = now.getMonth() + 1;
-                                const gd = now.getDate();
-                                const { jy, jm, jd } = gregorianToJalali(
-                                  gy,
-                                  gm,
-                                  gd
-                                );
-                                return `${jy}-${String(jm).padStart(
-                                  2,
-                                  "0"
-                                )}-${String(jd).padStart(2, "0")}`;
+                              function getTodayInPersian() {
+                                const today = new Date();
+                                const [year, month, day] = today
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(
+                                  year
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(month)
+                                )}-${padZero(
+                                  convertPersianNumbersToEnglish(day)
+                                )}`;
+                                return formattedDate;
                               }
-                              let timestamps = $state.fragmentDatePicker.values;
-                              let today = getTodayInJalali();
-                              let jalaliDates = timestamps
-                                .map(ts => convertTimestampToJalali(ts))
-                                .filter(date => date >= today);
+                              const timestamps =
+                                $state.fragmentDatePicker.values;
+                              const today = getTodayInPersian();
+                              const jalaliDates = timestamps
+                                .map(ts => convertTimestampToPersianDate(ts))
+                                .filter(date => date >= today)
+                                .sort();
                               return {
                                 check_in: jalaliDates[0],
                                 check_out: jalaliDates[jalaliDates.length - 1],
