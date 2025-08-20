@@ -5398,8 +5398,8 @@
       "indirect": false,
       "globalContextsFilePath": "plasmic/website_starter/PlasmicGlobalContextsProvider.tsx",
       "splitsProviderFilePath": "",
-      "styleTokensProviderFilePath": "",
-      "projectModuleFilePath": "",
+      "styleTokensProviderFilePath": "plasmic/website_starter/PlasmicStyleTokensProvider.tsx",
+      "projectModuleFilePath": "plasmic/website_starter/plasmic.tsx",
       "codeComponents": [
         {
           "id": "VD7g96wRvPMs",
@@ -5490,6 +5490,30 @@
           "name": "Textarea",
           "displayName": "Textarea",
           "componentImportPath": "@/fragment/components/textarea"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "szjgMQpPpxhmkjnaBvZQJG",
+      "projectApiToken": "xBIsrWHdWZ9kVgFEGUt29LOZPWfm0XidYqRHqPhQXsEjDHevjIbp44nEYMIZ46YOoxrN8anfXjreTkDtFjTA",
+      "projectName": "react-parallax-tilt",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_parallax_tilt/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "styleTokensProviderFilePath": "plasmic/react_parallax_tilt/PlasmicStyleTokensProvider.tsx",
+      "projectModuleFilePath": "plasmic/react_parallax_tilt/plasmic.tsx",
+      "codeComponents": [
+        {
+          "id": "PfY466VIuq",
+          "name": "Tilt",
+          "displayName": "hostless-parallax-tilt",
+          "componentImportPath": "@plasmicpkgs/react-parallax-tilt"
         }
       ],
       "customFunctions": []

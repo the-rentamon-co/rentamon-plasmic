@@ -25,6 +25,7 @@
     "@plasmicpkgs/react-aria": "^0.0.141",
     "@plasmicpkgs/react-awesome-reveal": "^3.8.210",
     "@plasmicpkgs/react-chartjs-2": "^1.0.129",
+    "@plasmicpkgs/react-parallax-tilt": "^0.0.224",
     "@plasmicpkgs/react-slick": "^0.0.228",
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-select": "^2.1.1",

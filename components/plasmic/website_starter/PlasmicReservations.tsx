@@ -75,13 +75,13 @@ import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
-
-import { useScreenVariants as useScreenVariantsaSuSwU8JUYf } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: aSUSwU8jUYf-/globalVariant
+import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
+import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
+import { _useStyleTokens as useStyleTokens_antd_5_hostless } from "../antd_5_hostless/PlasmicStyleTokensProvider"; // plasmic-import: ohDidvG9XsCeFumugENU3J/styleTokensProvider
+import { _useStyleTokens as useStyleTokens_plasmic_rich_components } from "../plasmic_rich_components/PlasmicStyleTokensProvider"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/styleTokensProvider
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
-import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicReservations.module.css"; // plasmic-import: gvjKIi6-pXeG/css
 
@@ -539,9 +539,12 @@ function PlasmicReservations__RenderFunc(props: {
     $refs
   });
 
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantsaSuSwU8JUYf()
-  });
+  const globalVariants = _useGlobalVariants();
+  const styleTokensClassNames = _useStyleTokens();
+  const styleTokensClassNames_antd_5_hostless =
+    useStyleTokens_antd_5_hostless();
+  const styleTokensClassNames_plasmic_rich_components =
+    useStyleTokens_plasmic_rich_components();
 
   return (
     <React.Fragment>
@@ -564,9 +567,9 @@ function PlasmicReservations__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens,
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
+            styleTokensClassNames_plasmic_rich_components,
             sty.root
           )}
         >
@@ -1315,9 +1318,9 @@ function PlasmicReservations__RenderFunc(props: {
                       projectcss.root_reset,
                       projectcss.plasmic_default_styles,
                       projectcss.plasmic_mixins,
-                      projectcss.plasmic_tokens,
-                      plasmic_antd_5_hostless_css.plasmic_tokens,
-                      plasmic_plasmic_rich_components_css.plasmic_tokens
+                      styleTokensClassNames,
+                      styleTokensClassNames_antd_5_hostless,
+                      styleTokensClassNames_plasmic_rich_components
                     )}
                     hideFooter={true}
                     modalScopeClassName={sty["filterMenu__modal"]}
@@ -2536,13 +2539,17 @@ function PlasmicReservations__RenderFunc(props: {
 
               {(() => {
                 try {
-                  return $state.isTheFirstVisit && $state.tourSteps == 0;
+                  return (
+                    $state.isTheFirstVisit &&
+                    $state.tourSteps == 0 &&
+                    Object.keys($state.reservations).length > 0
+                  );
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
                     e?.plasmicType === "PlasmicUndefinedDataError"
                   ) {
-                    return true;
+                    return false;
                   }
                   throw e;
                 }
@@ -2565,13 +2572,17 @@ function PlasmicReservations__RenderFunc(props: {
                         })()
                       : (() => {
                           try {
-                            return $state.reserveData.data[0].item == null;
+                            return (
+                              $state.isTheFirstVisit &&
+                              $state.tourSteps == 0 &&
+                              Object.keys($state.reservations).length > 0
+                            );
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return true;
+                              return false;
                             }
                             throw e;
                           }
@@ -2597,12 +2608,50 @@ function PlasmicReservations__RenderFunc(props: {
                           style={{ fontWeight: 600 }}
                         >
                           {
-                            "\u062d\u0627\u0644\u0627 \u0631\u0648\u06cc \u0631\u0632\u0631\u0648 \u0628\u0632\u0646"
+                            "\u062d\u0627\u0644\u0627 \u0631\u0648\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u0628\u0632\u0646"
                           }
                         </span>
                       </React.Fragment>
                     </div>
                   ) : null}
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return !(
+                          $state.reservations && $state.reservations.length > 0
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })()
+                  : (() => {
+                      try {
+                        return !(
+                          $state.reservations && $state.reservations.length > 0
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return false;
+                        }
+                        throw e;
+                      }
+                    })()
+              ) ? (
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___4OUwB)}
+                >
                   {(
                     hasVariant(globalVariants, "screen", "mobile")
                       ? (() => {
@@ -2620,13 +2669,16 @@ function PlasmicReservations__RenderFunc(props: {
                         })()
                       : (() => {
                           try {
-                            return $state.reserveData.data[0].item != null;
+                            return !(
+                              $state.reservations &&
+                              $state.reservations.length > 0
+                            );
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return true;
+                              return false;
                             }
                             throw e;
                           }
@@ -2636,7 +2688,7 @@ function PlasmicReservations__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__xK6Af
+                        sty.text__skv1
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "mobile") ? (
@@ -2648,7 +2700,7 @@ function PlasmicReservations__RenderFunc(props: {
                             style={{ fontWeight: 600 }}
                           >
                             {
-                              "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0631\u0632\u0631\u0648\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc \u0627\u0648\u0644 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645 \u0628\u0631\u0648 \u0648 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u062b\u0628\u062a \u06a9\u0646"
+                              "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0631\u0632\u0631\u0648\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc!\r\u00a0\n\u0627\u0648\u0644 \u0627\u0632 \u0645\u0646\u0648\u06cc \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0631\u0648 \u0628\u0647 \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0648 \u00ab\u067e\u0631\u00bb \u06a9\u0646."
                             }
                           </span>
                         </React.Fragment>
@@ -3283,9 +3335,9 @@ function PlasmicReservations__RenderFunc(props: {
               projectcss.root_reset,
               projectcss.plasmic_default_styles,
               projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
+              styleTokensClassNames,
+              styleTokensClassNames_antd_5_hostless,
+              styleTokensClassNames_plasmic_rich_components
             )}
             hideFooter={true}
             modalScopeClassName={sty["finalModal__modal"]}
@@ -4061,9 +4113,9 @@ function PlasmicReservations__RenderFunc(props: {
               projectcss.root_reset,
               projectcss.plasmic_default_styles,
               projectcss.plasmic_mixins,
-              projectcss.plasmic_tokens,
-              plasmic_antd_5_hostless_css.plasmic_tokens,
-              plasmic_plasmic_rich_components_css.plasmic_tokens
+              styleTokensClassNames,
+              styleTokensClassNames_antd_5_hostless,
+              styleTokensClassNames_plasmic_rich_components
             )}
             hideFooter={true}
             modalScopeClassName={sty["confirmed__modal"]}
