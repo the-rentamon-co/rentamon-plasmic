@@ -1381,7 +1381,7 @@ function PlasmicReservations__RenderFunc(props: {
                               })()
                             : (() => {
                                 try {
-                                  return $state.searchInput.value == "";
+                                  return $state.searchInput.value == null;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
