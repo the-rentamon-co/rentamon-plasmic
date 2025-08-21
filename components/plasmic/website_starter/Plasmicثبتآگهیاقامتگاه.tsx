@@ -729,15 +729,6 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                             },
 
                             {
-                              ruleType: "advanced",
-                              custom: (rule, value) => {
-                                return /^09\d{9}$/;
-                              },
-                              message:
-                                "\u0644\u0637\u0641\u0627 \u0627\u0632  \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646"
-                            },
-
-                            {
                               ruleType: "min",
                               length: 11,
                               message:
@@ -874,65 +865,91 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["toast"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                undefined,
-                                `${$state.form.value.name} جان اطلاعات ثبت شد، بزودی با شما ارتباط می‌گیریم :)`,
-                                "top-center",
-                                5000
-                              ]
-                            };
-                            return $globalActions["Fragment.showToast"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
+                      $steps["successToast"] =
+                        $state.form.value.mobile !== "" &&
+                        /^09\d{9}$/.test($state.form.value.mobile)
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  `${$state.form.value.name} جان اطلاعات ثبت شد، بزودی با شما ارتباط می‌گیریم :)`,
+                                  "top-center",
+                                  5000
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
                       if (
-                        $steps["toast"] != null &&
-                        typeof $steps["toast"] === "object" &&
-                        typeof $steps["toast"].then === "function"
+                        $steps["successToast"] != null &&
+                        typeof $steps["successToast"] === "object" &&
+                        typeof $steps["successToast"].then === "function"
                       ) {
-                        $steps["toast"] = await $steps["toast"];
+                        $steps["successToast"] = await $steps["successToast"];
                       }
 
-                      $steps["apiRequest"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://gateway.rentamon.com/webhook/cross-listing-smf",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return $state.form.value;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
+                      $steps["apiRequest"] =
+                        $state.form.value.mobile !== ""
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://gateway.rentamon.com/webhook/cross-listing-smf",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $state.form.value;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
                       if (
                         $steps["apiRequest"] != null &&
                         typeof $steps["apiRequest"] === "object" &&
                         typeof $steps["apiRequest"].then === "function"
                       ) {
                         $steps["apiRequest"] = await $steps["apiRequest"];
+                      }
+
+                      $steps["errorToast"] =
+                        !$state.form.value.mobile ||
+                        !$state.form.value.mobile.match(/^09\d{9}$/)
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u062a\u0648 \u06a9\u0647 \u0647\u0646\u0648\u0632 \u0648\u0627\u0631\u062f \u0646\u06a9\u0631\u062f\u06cc!",
+                                  "top-center",
+                                  5000
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                      if (
+                        $steps["errorToast"] != null &&
+                        typeof $steps["errorToast"] === "object" &&
+                        typeof $steps["errorToast"].then === "function"
+                      ) {
+                        $steps["errorToast"] = await $steps["errorToast"];
                       }
 
                       $steps["wait"] = true
@@ -952,32 +969,33 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         $steps["wait"] = await $steps["wait"];
                       }
 
-                      $steps["updateModalOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["modal", "open"]
-                              },
-                              operation: 0,
-                              value: true
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
+                      $steps["updateModalOpen"] =
+                        $state.form.value.mobile !== ""
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["modal", "open"]
+                                },
+                                operation: 0,
+                                value: true
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
 
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
                       if (
                         $steps["updateModalOpen"] != null &&
                         typeof $steps["updateModalOpen"] === "object" &&

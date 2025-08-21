@@ -65,6 +65,7 @@ import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/com
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxHmSdr/component
 import TextInput2 from "../../TextInput2"; // plasmic-import: MGm7xuldRCuA/component
+import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import ReservationsRecordList from "../../ReservationsRecordList"; // plasmic-import: dDeToLEgGJS_/component
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
@@ -85,6 +86,7 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicReservations.module.css"; // plasmic-import: gvjKIi6-pXeG/css
 
+import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
@@ -114,6 +116,8 @@ export type PlasmicReservations__OverridesType = {
   search?: Flex__<"div">;
   searchBox?: Flex__<"div">;
   textInput2?: Flex__<typeof TextInput2>;
+  searchInput?: Flex__<typeof TextInput>;
+  remove?: Flex__<"div">;
   searchIcon?: Flex__<"div">;
   sort?: Flex__<"div">;
   filter?: Flex__<"div">;
@@ -525,6 +529,12 @@ function PlasmicReservations__RenderFunc(props: {
       },
       {
         path: "filterUrl",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "searchInput.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
@@ -1117,6 +1127,11 @@ function PlasmicReservations__RenderFunc(props: {
                   <TextInput2
                     data-plasmic-name={"textInput2"}
                     data-plasmic-override={overrides.textInput2}
+                    autoComplete={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? []
+                        : undefined
+                    }
                     className={classNames("__wab_instance", sty.textInput2)}
                     flat={[]}
                     inputMode={
@@ -1205,29 +1220,306 @@ function PlasmicReservations__RenderFunc(props: {
                     }
                   />
 
-                  <div
-                    data-plasmic-name={"searchIcon"}
-                    data-plasmic-override={overrides.searchIcon}
-                    className={classNames(projectcss.all, sty.searchIcon)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__s47Jd)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"22px"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image168.svg",
-                        fullWidth: 17,
-                        fullHeight: 18,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
+                  <TextInput
+                    data-plasmic-name={"searchInput"}
+                    data-plasmic-override={overrides.searchInput}
+                    className={classNames("__wab_instance", sty.searchInput)}
+                    endIcon={
+                      <React.Fragment>
+                        {(
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return $state.searchInput.value != "";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return false;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return $state.searchInput.value != "";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
+                          <div
+                            data-plasmic-name={"remove"}
+                            data-plasmic-override={overrides.remove}
+                            className={classNames(projectcss.all, sty.remove)}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return ($state.searchInput.value =
+                                          null);
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
+                              $steps["search"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
+                                        (() => {
+                                          try {
+                                            return {
+                                              q: $state.searchInput.value
+                                            };
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["search"] != null &&
+                                typeof $steps["search"] === "object" &&
+                                typeof $steps["search"].then === "function"
+                              ) {
+                                $steps["search"] = await $steps["search"];
+                              }
+
+                              $steps["runCode2"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return ($state.reservations =
+                                          $steps.search.data);
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode2"] != null &&
+                                typeof $steps["runCode2"] === "object" &&
+                                typeof $steps["runCode2"].then === "function"
+                              ) {
+                                $steps["runCode2"] = await $steps["runCode2"];
+                              }
+                            }}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__bfNfV)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"18px"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image166.svg",
+                                fullWidth: 18,
+                                fullHeight: 18,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          </div>
+                        ) : null}
+                        {(
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return $state.searchInput.value == "";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return false;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return $state.searchInput.value == "";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return false;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
+                          <div
+                            data-plasmic-name={"searchIcon"}
+                            data-plasmic-override={overrides.searchIcon}
+                            className={classNames(
+                              projectcss.all,
+                              sty.searchIcon
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__s47Jd)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "100%"
+                                  : "100%"
+                              }
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "27px"
+                                  : "22px"
+                              }
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image168.svg",
+                                fullWidth: 17,
+                                fullHeight: 18,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          </div>
+                        ) : null}
+                      </React.Fragment>
+                    }
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "searchInput",
+                          "value"
+                        ])((e => e.target?.value).apply(null, eventArgs));
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+
+                      (async event => {
+                        const $steps = {};
+
+                        $steps["search"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  undefined,
+                                  "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
+                                  (() => {
+                                    try {
+                                      return { q: $state.searchInput.value };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
+                                  undefined
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["search"] != null &&
+                          typeof $steps["search"] === "object" &&
+                          typeof $steps["search"].then === "function"
+                        ) {
+                          $steps["search"] = await $steps["search"];
+                        }
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return ($state.reservations =
+                                    $steps.search.data);
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
+                      }).apply(null, eventArgs);
+                    }}
+                    placeholder={
+                      "\u062c\u0633\u062a\u062c\u0648 \u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646..."
+                    }
+                    showEndIcon={true}
+                    type={"text"}
+                    value={
+                      generateStateValueProp($state, [
+                        "searchInput",
+                        "value"
+                      ]) ?? ""
+                    }
+                  />
                 </div>
               </div>
               <div
@@ -2620,8 +2912,11 @@ function PlasmicReservations__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile")
                   ? (() => {
                       try {
-                        return !(
-                          $state.reservations && $state.reservations.length > 0
+                        return (
+                          !(
+                            $state.reservations &&
+                            $state.reservations.length > 0
+                          ) && $state.isTheFirstVisit
                         );
                       } catch (e) {
                         if (
@@ -2635,8 +2930,11 @@ function PlasmicReservations__RenderFunc(props: {
                     })()
                   : (() => {
                       try {
-                        return !(
-                          $state.reservations && $state.reservations.length > 0
+                        return (
+                          !(
+                            $state.reservations &&
+                            $state.reservations.length > 0
+                          ) && $state.isTheFirstVisit
                         );
                       } catch (e) {
                         if (
@@ -5615,6 +5913,28 @@ function PlasmicReservations__RenderFunc(props: {
                               "invokeGlobalAction"
                             ];
                           }
+
+                          $steps["removeSearch"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return ($state.searchInput.value = null);
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["removeSearch"] != null &&
+                            typeof $steps["removeSearch"] === "object" &&
+                            typeof $steps["removeSearch"].then === "function"
+                          ) {
+                            $steps["removeSearch"] = await $steps[
+                              "removeSearch"
+                            ];
+                          }
                         }).apply(null, eventArgs);
                       }}
                     />
@@ -6022,6 +6342,28 @@ function PlasmicReservations__RenderFunc(props: {
                           ) {
                             $steps["showToast"] = await $steps["showToast"];
                           }
+
+                          $steps["removeSearch"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return ($state.searchInput.value = null);
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["removeSearch"] != null &&
+                            typeof $steps["removeSearch"] === "object" &&
+                            typeof $steps["removeSearch"].then === "function"
+                          ) {
+                            $steps["removeSearch"] = await $steps[
+                              "removeSearch"
+                            ];
+                          }
                         }).apply(null, eventArgs);
                       }}
                     />
@@ -6231,7 +6573,7 @@ function PlasmicReservations__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 undefined,
-                                "\u0641\u06cc\u0644\u062a\u0631\u0647\u0627 \u0628\u0631\u062f\u0627\u0634\u062a\u0647 \u0634\u062f",
+                                "\u0647\u0645\u0647 \u0641\u06cc\u0644\u062a\u0631 \u0647\u0627 \u0628\u0631\u062f\u0627\u0634\u062a\u0647 \u0634\u062f",
                                 "top-center"
                               ]
                             };
@@ -6296,7 +6638,7 @@ function PlasmicReservations__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u067e\u0627\u06a9 \u06a9\u0631\u062f\u0646 \u0647\u0645\u0647"
+                        "\u0628\u0631\u062f\u0627\u0634\u062a\u0646 \u0641\u06cc\u0644\u062a\u0631\u0647\u0627"
                       }
                     </div>
                   </div>
@@ -6326,6 +6668,8 @@ const PlasmicDescendants = {
     "search",
     "searchBox",
     "textInput2",
+    "searchInput",
+    "remove",
     "searchIcon",
     "sort",
     "filter",
@@ -6395,6 +6739,8 @@ const PlasmicDescendants = {
     "search",
     "searchBox",
     "textInput2",
+    "searchInput",
+    "remove",
     "searchIcon",
     "sort",
     "filter",
@@ -6405,14 +6751,25 @@ const PlasmicDescendants = {
     "search",
     "searchBox",
     "textInput2",
+    "searchInput",
+    "remove",
     "searchIcon",
     "sort",
     "filter",
     "filterMenu"
   ],
-  search: ["search", "searchBox", "textInput2", "searchIcon"],
-  searchBox: ["searchBox", "textInput2", "searchIcon"],
+  search: [
+    "search",
+    "searchBox",
+    "textInput2",
+    "searchInput",
+    "remove",
+    "searchIcon"
+  ],
+  searchBox: ["searchBox", "textInput2", "searchInput", "remove", "searchIcon"],
   textInput2: ["textInput2"],
+  searchInput: ["searchInput", "remove", "searchIcon"],
+  remove: ["remove"],
   searchIcon: ["searchIcon"],
   sort: ["sort"],
   filter: ["filter", "filterMenu"],
@@ -6534,6 +6891,8 @@ type NodeDefaultElementType = {
   search: "div";
   searchBox: "div";
   textInput2: typeof TextInput2;
+  searchInput: typeof TextInput;
+  remove: "div";
   searchIcon: "div";
   sort: "div";
   filter: "div";
@@ -6663,6 +7022,8 @@ export const PlasmicReservations = Object.assign(
     search: makeNodeComponent("search"),
     searchBox: makeNodeComponent("searchBox"),
     textInput2: makeNodeComponent("textInput2"),
+    searchInput: makeNodeComponent("searchInput"),
+    remove: makeNodeComponent("remove"),
     searchIcon: makeNodeComponent("searchIcon"),
     sort: makeNodeComponent("sort"),
     filter: makeNodeComponent("filter"),
