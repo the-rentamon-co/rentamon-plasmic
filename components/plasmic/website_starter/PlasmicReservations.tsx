@@ -1268,8 +1268,7 @@ function PlasmicReservations__RenderFunc(props: {
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {
-                                        return ($state.searchInput.value =
-                                          null);
+                                        return ($state.searchInput.value = "");
                                       }
                                     };
                                     return (({ customFunction }) => {
@@ -1381,14 +1380,14 @@ function PlasmicReservations__RenderFunc(props: {
                               })()
                             : (() => {
                                 try {
-                                  return $state.searchInput.value == null;
+                                  return $state.searchInput.value == "";
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return false;
+                                    return true;
                                   }
                                   throw e;
                                 }
@@ -5918,7 +5917,7 @@ function PlasmicReservations__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
-                                    return ($state.searchInput.value = null);
+                                    return ($state.searchInput.value = "");
                                   }
                                 };
                                 return (({ customFunction }) => {
@@ -6347,7 +6346,7 @@ function PlasmicReservations__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
-                                    return ($state.searchInput.value = null);
+                                    return ($state.searchInput.value = "");
                                   }
                                 };
                                 return (({ customFunction }) => {
