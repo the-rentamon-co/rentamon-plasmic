@@ -1991,16 +1991,16 @@ function PlasmicReservations__RenderFunc(props: {
                                 {
                                   GuestName:
                                     $state.reserveData2.data[currentIndex]
-                                      .GuestName,
+                                      .guest_name,
                                   platfromName:
                                     $state.reserveData2.data[currentIndex]
-                                      .platformName,
+                                      .website,
                                   enterDate:
                                     $state.reserveData2.data[currentIndex]
-                                      .checkIn,
+                                      .check_in,
                                   laveDate:
                                     $state.reserveData2.data[currentIndex]
-                                      .checkOut,
+                                      .check_out,
                                   propertyName:
                                     $state.reserveData2.data[currentIndex]
                                       .property_name,
@@ -2013,13 +2013,13 @@ function PlasmicReservations__RenderFunc(props: {
                                       .amount,
                                   night:
                                     $state.reserveData2.data[currentIndex]
-                                      .night,
+                                      .nights,
                                   guests_count:
                                     $state.reserveData2.data[currentIndex]
                                       .guests_count,
                                   reserve_id:
                                     $state.reserveData2.data[currentIndex]
-                                      .reserve_id,
+                                      .booking_id,
                                   room_id:
                                     $state.reserveData2.data[currentIndex]
                                       .room_id,
