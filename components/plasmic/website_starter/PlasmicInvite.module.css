@@ -235,7 +235,7 @@
 }
 @media (max-width: 500px) {
   .text___7R8Gd {
-    font-size: 16px;
+    font-size: 15px;
     text-align: right;
   }
 }
@@ -355,12 +355,17 @@
   font-size: 17px;
   text-align: center;
 }
+@media (max-width: 500px) {
+  .text__irRLm {
+    font-size: 15px;
+  }
+}
 @media (max-width: 350px) {
   .text__irRLm {
     width: 100%;
     height: auto;
     max-width: 100%;
-    font-size: 15px;
+    font-size: 14px;
     text-align: right;
     min-width: 0;
   }
@@ -418,7 +423,7 @@
 }
 @media (max-width: 500px) {
   .text__kLvIj {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -438,7 +443,7 @@
 }
 @media (max-width: 500px) {
   .text___7F7JG {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -629,12 +634,12 @@
 }
 @media (max-width: 500px) {
   .text__ppLu {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
   .text__ppLu {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 .introAutoSyncCaption2 {
@@ -666,7 +671,7 @@
 }
 @media (max-width: 500px) {
   .text___4YgAn {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -823,7 +828,7 @@
 }
 @media (max-width: 500px) {
   .text__c3YV {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {

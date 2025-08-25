@@ -698,12 +698,21 @@ function PlasmicInvite__RenderFunc(props: {
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
                     loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/handsOnAppPng2.png",
-                      fullWidth: 456,
-                      fullHeight: 600,
-                      aspectRatio: undefined
-                    }}
+                    src={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? {
+                            src: "/plasmic/website_starter/images/handsOnApp4042LowPng.png",
+                            fullWidth: 600,
+                            fullHeight: 865,
+                            aspectRatio: undefined
+                          }
+                        : {
+                            src: "/plasmic/website_starter/images/handsOnApp4042LowPng.png",
+                            fullWidth: 600,
+                            fullHeight: 865,
+                            aspectRatio: undefined
+                          }
+                    }
                   />
                 </div>
               </div>
