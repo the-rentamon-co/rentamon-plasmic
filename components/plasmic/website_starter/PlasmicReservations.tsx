@@ -688,7 +688,7 @@ function PlasmicReservations__RenderFunc(props: {
                             if (!ussoRefreshAvailable) {
                               console.log("got here in redirect");
                               return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/auth-redirect/");
+                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/reservations/");
                             } else {
                               console.log("got here in refreshToken");
                               return fetch(
@@ -711,7 +711,7 @@ function PlasmicReservations__RenderFunc(props: {
                                 .catch(error => {
                                   console.error("Error:", error);
                                   window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/auth-redirect/";
+                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/reservations/";
                                 });
                             }
                           }
