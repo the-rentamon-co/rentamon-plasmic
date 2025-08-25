@@ -159,7 +159,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   padding-right: 0px;
   line-height: 1.8;
@@ -304,10 +304,11 @@
 }
 .text__uRlUn {
   text-align: right;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.8;
   padding-right: 0px;
   padding-top: 14px;
+  font-weight: 500;
 }
 @media (max-width: 500px) {
   .text__uRlUn {
@@ -316,6 +317,25 @@
 }
 @media (max-width: 350px) {
   .text__uRlUn {
+    font-size: 15px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+.text__vRq0C {
+  text-align: right;
+  font-size: 17px;
+  line-height: 1.8;
+  padding-right: 0px;
+  padding-top: 9px;
+}
+@media (max-width: 500px) {
+  .text__vRq0C {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__vRq0C {
     font-size: 15px;
     padding-right: 8px;
     padding-left: 8px;
@@ -351,6 +371,7 @@
   }
 }
 .freeBox__ciToe {
+  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -359,14 +380,12 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  display: none;
   padding: 29px 8px 8px;
 }
 @media (max-width: 350px) {
   .freeBox__ciToe {
     padding-top: 31px;
     padding-bottom: 0px;
-    display: none;
   }
 }
 .text___1Ew7O {
@@ -382,6 +401,7 @@
   }
 }
 .freeBox__oQAg3 {
+  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -396,7 +416,6 @@
     )
     0% 0% / 100% 100% repeat;
   min-width: 0;
-  display: none;
   padding: 32px 8px 28px;
 }
 @media (max-width: 500px) {
@@ -470,7 +489,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 70%;
+  max-width: 80%;
   justify-content: center;
   align-items: center;
   min-width: 0;
@@ -510,7 +529,7 @@
 }
 .text___7S8Zm {
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.8;
   padding-right: 30px;
   padding-left: 30px;
@@ -714,7 +733,7 @@
 }
 .text__z4SpY {
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-right: 0px;
   padding-left: 0px;
@@ -744,7 +763,7 @@
 }
 @media (max-width: 350px) {
   .text__z4SpY {
-    font-size: 14px;
+    font-size: 13px;
     padding-top: 0px;
     text-align: center;
   }
@@ -1690,7 +1709,7 @@
 }
 .text__fzwa0 {
   text-align: right;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.8;
   padding-top: 30px;
   padding-right: 30px;
@@ -1723,7 +1742,7 @@
 }
 .text__wamHc {
   text-align: right;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 2;
   width: 100%;
   min-width: 0;
@@ -1839,7 +1858,10 @@
 @media (max-width: 500px) {
   .tips {
     max-width: 100%;
-    padding: 22px 0px 20px;
+    width: 100%;
+    grid-column-start: 1 !important;
+    grid-column-end: -1 !important;
+    padding: 31px 12px 55px;
   }
 }
 @media (max-width: 350px) {
@@ -1851,18 +1873,19 @@
     justify-content: flex-start;
     align-items: flex-start;
     column-gap: 0px;
-    min-width: 0;
-    padding: 0px 0px 20px;
+    grid-column-start: 1 !important;
+    grid-column-end: -1 !important;
+    padding: 0px 8px 46px;
   }
 }
 .text___8XjgW {
   text-align: right;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.8;
   width: 100%;
   font-weight: 600;
   min-width: 0;
-  padding: 30px 30px 0px;
+  padding: 30px 12px 0px 30px;
 }
 @media (max-width: 1200px) {
   .text___8XjgW {
@@ -1888,7 +1911,7 @@
 }
 .text__afnP3 {
   text-align: right;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.8;
   padding-top: 12px;
   padding-right: 30px;
@@ -1915,6 +1938,38 @@
   .text__afnP3 {
     font-size: 14px;
     padding-top: 12px;
+  }
+}
+.ul__eLnMx {
+  display: flex;
+  flex-direction: column;
+}
+.ul___6E6Ef {
+  display: flex;
+  flex-direction: column;
+}
+.ul___4W28U {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  .ul___4W28U {
+    padding: 0px 14px 0px 0px;
+  }
+}
+.ul__kaO80 {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 350px) {
+  .ul__kaO80 {
+    padding-right: 16px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .li__ysSF {
+    padding-top: 0px;
   }
 }
 .rentamonFooter:global(.__wab_instance) {
