@@ -311,33 +311,43 @@ function PlasmicInvite__RenderFunc(props: {
                   alt={""}
                   className={classNames(sty.img___2Zl6T)}
                   displayHeight={
-                    hasVariant(globalVariants, "screen", "mobile")
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "60px"
+                      : hasVariant(globalVariants, "screen", "mobile")
                       ? "70px"
                       : "100px"
                   }
                   displayMaxHeight={
-                    hasVariant(globalVariants, "screen", "mobile")
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "60px"
+                      : hasVariant(globalVariants, "screen", "mobile")
                       ? "70px"
                       : "100px"
                   }
                   displayMaxWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "60px"
+                      : hasVariant(globalVariants, "screen", "mobile")
                       ? "70px"
                       : "100px"
                   }
                   displayMinHeight={
-                    hasVariant(globalVariants, "screen", "mobile")
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "60px"
+                      : hasVariant(globalVariants, "screen", "mobile")
                       ? "70px"
                       : "100px"
                   }
                   displayMinWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "60px"
+                      : hasVariant(globalVariants, "screen", "mobile")
                       ? "70px"
                       : "100px"
                   }
                   displayWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "90px"
+                      ? "60px"
                       : hasVariant(globalVariants, "screen", "mobile")
                       ? "70px"
                       : "100px"
@@ -748,7 +758,7 @@ function PlasmicInvite__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641\u060c \u062f\u0631 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645\n\r\n\u2705 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r"
+                        "\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641\u060c \u062f\u0631 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645"
                       }
                     </div>
                   </div>
