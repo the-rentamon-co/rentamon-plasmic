@@ -124,6 +124,7 @@ export type PlasmicBookings__OverridesType = {
   guestInfo?: Flex__<"div">;
   bookInfo?: Flex__<"div">;
   bookPrice?: Flex__<"div">;
+  commission?: Flex__<"div">;
   bookPrice2?: Flex__<"div">;
   bookSettleStatus?: Flex__<"div">;
   error?: Flex__<"div">;
@@ -4002,20 +4003,9 @@ function PlasmicBookings__RenderFunc(props: {
                               sty.bookPrice,
                               (() => {
                                 try {
-                                  return (() => {
-                                    const website = $state.booking.data.website;
-                                    const forbiddenWebsites = [
-                                      "mihmansho",
-                                      "homsa"
-                                    ];
-
-                                    const isVisible =
-                                      !forbiddenWebsites.includes(website) &&
-                                      $state.accordionOpenSmartBooking;
-                                    return isVisible
-                                      ? "display_block"
-                                      : "display_hidden";
-                                  })();
+                                  return $state.accordionOpenSmartBooking
+                                    ? "display_block"
+                                    : "display_hidden";
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -4051,20 +4041,29 @@ function PlasmicBookings__RenderFunc(props: {
                                     {(() => {
                                       try {
                                         return (() => {
-                                          let price =
+                                          const website =
+                                            $state.booking.data.website;
+                                          const amount =
                                             $state.booking.data.smart_booking
                                               .amount;
-                                          if (
-                                            $state.booking.data.website ==
-                                            "jabama"
-                                          ) {
-                                            price = price / 10;
+                                          switch (website) {
+                                            case "jabama":
+                                              const priceInToman = amount / 10;
+                                              const formattedPrice =
+                                                new Intl.NumberFormat(
+                                                  "fa-IR"
+                                                ).format(priceInToman);
+                                              return `${formattedPrice} تومان`;
+                                            case "mihmansho":
+                                            case "homsa":
+                                              return "نامشخص";
+                                            default:
+                                              const defaultPrice =
+                                                new Intl.NumberFormat(
+                                                  "fa-IR"
+                                                ).format(amount);
+                                              return `${defaultPrice} تومان`;
                                           }
-                                          let real_price =
-                                            new Intl.NumberFormat(
-                                              "fa-IR"
-                                            ).format(price);
-                                          return real_price + "  تومان";
                                         })();
                                       } catch (e) {
                                         if (
@@ -4087,20 +4086,29 @@ function PlasmicBookings__RenderFunc(props: {
                                     {(() => {
                                       try {
                                         return (() => {
-                                          let price =
+                                          const website =
+                                            $state.booking.data.website;
+                                          const amount =
                                             $state.booking.data.smart_booking
                                               .amount;
-                                          if (
-                                            $state.booking.data.website ==
-                                            "jabama"
-                                          ) {
-                                            price = price / 10;
+                                          switch (website) {
+                                            case "jabama":
+                                              const priceInToman = amount / 10;
+                                              const formattedPrice =
+                                                new Intl.NumberFormat(
+                                                  "fa-IR"
+                                                ).format(priceInToman);
+                                              return `${formattedPrice} تومان`;
+                                            case "mihmansho":
+                                            case "homsa":
+                                              return "نامشخص";
+                                            default:
+                                              const defaultPrice =
+                                                new Intl.NumberFormat(
+                                                  "fa-IR"
+                                                ).format(amount);
+                                              return `${defaultPrice} تومان`;
                                           }
-                                          let real_price =
-                                            new Intl.NumberFormat(
-                                              "fa-IR"
-                                            ).format(price);
-                                          return real_price + "  تومان";
                                         })();
                                       } catch (e) {
                                         if (
@@ -4123,20 +4131,29 @@ function PlasmicBookings__RenderFunc(props: {
                                     {(() => {
                                       try {
                                         return (() => {
-                                          let price =
+                                          const website =
+                                            $state.booking.data.website;
+                                          const amount =
                                             $state.booking.data.smart_booking
                                               .amount;
-                                          if (
-                                            $state.booking.data.website ==
-                                            "jabama"
-                                          ) {
-                                            price = price / 10;
+                                          switch (website) {
+                                            case "jabama":
+                                              const priceInToman = amount / 10;
+                                              const formattedPrice =
+                                                new Intl.NumberFormat(
+                                                  "fa-IR"
+                                                ).format(priceInToman);
+                                              return `${formattedPrice} تومان`;
+                                            case "mihmansho":
+                                            case "homsa":
+                                              return "نامشخص";
+                                            default:
+                                              const defaultPrice =
+                                                new Intl.NumberFormat(
+                                                  "fa-IR"
+                                                ).format(amount);
+                                              return `${defaultPrice} تومان`;
                                           }
-                                          let real_price =
-                                            new Intl.NumberFormat(
-                                              "fa-IR"
-                                            ).format(price);
-                                          return real_price + "  تومان";
                                         })();
                                       } catch (e) {
                                         if (
@@ -4155,20 +4172,29 @@ function PlasmicBookings__RenderFunc(props: {
                                     {(() => {
                                       try {
                                         return (() => {
-                                          let price =
+                                          const website =
+                                            $state.booking.data.website;
+                                          const amount =
                                             $state.booking.data.smart_booking
                                               .amount;
-                                          if (
-                                            $state.booking.data.website ==
-                                            "jabama"
-                                          ) {
-                                            price = price / 10;
+                                          switch (website) {
+                                            case "jabama":
+                                              const priceInToman = amount / 10;
+                                              const formattedPrice =
+                                                new Intl.NumberFormat(
+                                                  "fa-IR"
+                                                ).format(priceInToman);
+                                              return `${formattedPrice} تومان`;
+                                            case "mihmansho":
+                                            case "homsa":
+                                              return "نامشخص";
+                                            default:
+                                              const defaultPrice =
+                                                new Intl.NumberFormat(
+                                                  "fa-IR"
+                                                ).format(amount);
+                                              return `${defaultPrice} تومان`;
                                           }
-                                          let real_price =
-                                            new Intl.NumberFormat(
-                                              "fa-IR"
-                                            ).format(price);
-                                          return real_price + "  تومان";
                                         })();
                                       } catch (e) {
                                         if (
@@ -4233,6 +4259,344 @@ function PlasmicBookings__RenderFunc(props: {
                                               englishWebsiteName
                                             ] || englishWebsiteName;
                                           const finalMessage = `مبلغ رزرو در ${farsiWebsiteName}:`;
+                                          return finalMessage;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            data-plasmic-name={"commission"}
+                            data-plasmic-override={overrides.commission}
+                            className={classNames(
+                              projectcss.all,
+                              sty.commission,
+                              (() => {
+                                try {
+                                  return $state.accordionOpenSmartBooking
+                                    ? "display_block"
+                                    : "display_hidden";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__nIKaY
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__xXNp2
+                                )}
+                              >
+                                {hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          const amount = Number(
+                                            $state.booking.data.smart_booking
+                                              .amount
+                                          );
+                                          const net_price = Number(
+                                            $state.booking.data.smart_booking
+                                              .net_price
+                                          );
+                                          const website =
+                                            $state.booking.data.website;
+                                          let total_price_toman;
+                                          if (
+                                            website === "mihmansho" ||
+                                            website === "homsa"
+                                          ) {
+                                            return "نامشخص";
+                                          }
+                                          if (website === "jabama") {
+                                            total_price_toman = amount / 10;
+                                          } else {
+                                            total_price_toman = amount;
+                                          }
+                                          if (total_price_toman < net_price) {
+                                            return "خطا: قیمت کل از قیمت خالص کمتر است.";
+                                          }
+                                          const commission_toman =
+                                            total_price_toman - net_price;
+                                          const commission_rate =
+                                            commission_toman /
+                                            total_price_toman;
+                                          const formatted_percentage =
+                                            new Intl.NumberFormat("fa-IR", {
+                                              style: "percent",
+                                              minimumFractionDigits: 0,
+                                              maximumFractionDigits: 2
+                                            }).format(commission_rate);
+                                          return formatted_percentage;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "mobile"
+                                  ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          const amount = Number(
+                                            $state.booking.data.smart_booking
+                                              .amount
+                                          );
+                                          const net_price = Number(
+                                            $state.booking.data.smart_booking
+                                              .net_price
+                                          );
+                                          const website =
+                                            $state.booking.data.website;
+                                          let total_price_toman;
+                                          if (
+                                            website === "mihmansho" ||
+                                            website === "homsa"
+                                          ) {
+                                            return "نامشخص";
+                                          }
+                                          if (website === "jabama") {
+                                            total_price_toman = amount / 10;
+                                          } else {
+                                            total_price_toman = amount;
+                                          }
+                                          if (total_price_toman < net_price) {
+                                            return "خطا: قیمت کل از قیمت خالص کمتر است.";
+                                          }
+                                          const commission_toman =
+                                            total_price_toman - net_price;
+                                          const commission_rate =
+                                            commission_toman /
+                                            total_price_toman;
+                                          const formatted_percentage =
+                                            new Intl.NumberFormat("fa-IR", {
+                                              style: "percent",
+                                              minimumFractionDigits: 0,
+                                              maximumFractionDigits: 2
+                                            }).format(commission_rate);
+                                          return formatted_percentage;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "tablet"
+                                  ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          const amount = Number(
+                                            $state.booking.data.smart_booking
+                                              .amount
+                                          );
+                                          const net_price = Number(
+                                            $state.booking.data.smart_booking
+                                              .net_price
+                                          );
+                                          const website =
+                                            $state.booking.data.website;
+                                          let total_price_toman;
+                                          if (
+                                            website === "mihmansho" ||
+                                            website === "homsa"
+                                          ) {
+                                            return "نامشخص";
+                                          }
+                                          if (website === "jabama") {
+                                            total_price_toman = amount / 10;
+                                          } else {
+                                            total_price_toman = amount;
+                                          }
+                                          if (total_price_toman < net_price) {
+                                            return "خطا: قیمت کل از قیمت خالص کمتر است.";
+                                          }
+                                          const commission_toman =
+                                            total_price_toman - net_price;
+                                          const commission_rate =
+                                            commission_toman /
+                                            total_price_toman;
+                                          const formatted_percentage =
+                                            new Intl.NumberFormat("fa-IR", {
+                                              style: "percent",
+                                              minimumFractionDigits: 0,
+                                              maximumFractionDigits: 2
+                                            }).format(commission_rate);
+                                          return formatted_percentage;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          const amount = Number(
+                                            $state.booking.data.smart_booking
+                                              .amount
+                                          );
+                                          const net_price = Number(
+                                            $state.booking.data.smart_booking
+                                              .net_price
+                                          );
+                                          const website =
+                                            $state.booking.data.website;
+                                          let total_price_toman;
+                                          if (
+                                            website === "mihmansho" ||
+                                            website === "homsa"
+                                          ) {
+                                            return "نامشخص";
+                                          }
+                                          if (website === "jabama") {
+                                            total_price_toman = amount / 10;
+                                          } else {
+                                            total_price_toman = amount;
+                                          }
+                                          if (total_price_toman < net_price) {
+                                            return "خطا: قیمت کل از قیمت خالص کمتر است.";
+                                          }
+                                          const commission_toman =
+                                            total_price_toman - net_price;
+                                          const commission_rate =
+                                            commission_toman /
+                                            total_price_toman;
+                                          const formatted_percentage =
+                                            new Intl.NumberFormat("fa-IR", {
+                                              style: "percent",
+                                              minimumFractionDigits: 0,
+                                              maximumFractionDigits: 2
+                                            }).format(commission_rate);
+                                          return formatted_percentage;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                )}
+                              </div>
+                            </div>
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox___1REu8
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__o0Yrd
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__cvZwE
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          const websiteFarsiNames = {
+                                            host: "میزبان",
+                                            jabama: "جاباما",
+                                            jajiga: "جاجیگا",
+                                            shab: "شب",
+                                            mizboon: "میزبون",
+                                            otaghak: "اتاقک",
+                                            homsa: "هومسا",
+                                            mihmansho: "میهمانشو",
+                                            divar: "دیوار",
+                                            others: "سایر",
+                                            offline: "حضوری",
+                                            Returning_Guest: "قبلی",
+                                            "Broker or Colleague":
+                                              "واسطه یا همکار",
+                                            social: "پیام‌رسان و شبکه‌اجتماعی",
+                                            garmeja: "گرمه‌جا"
+                                          };
+                                          const englishWebsiteName =
+                                            $state.booking.data.website;
+                                          const farsiWebsiteName =
+                                            websiteFarsiNames[
+                                              englishWebsiteName
+                                            ] || englishWebsiteName;
+                                          const finalMessage = `کارمزد (و مالیات) ${farsiWebsiteName}:`;
                                           return finalMessage;
                                         })();
                                       } catch (e) {
@@ -9072,6 +9436,7 @@ const PlasmicDescendants = {
     "guestInfo",
     "bookInfo",
     "bookPrice",
+    "commission",
     "bookPrice2",
     "bookSettleStatus",
     "error",
@@ -9162,6 +9527,7 @@ const PlasmicDescendants = {
     "guestInfo",
     "bookInfo",
     "bookPrice",
+    "commission",
     "bookPrice2",
     "bookSettleStatus",
     "error",
@@ -9215,6 +9581,7 @@ const PlasmicDescendants = {
     "guestInfo",
     "bookInfo",
     "bookPrice",
+    "commission",
     "bookPrice2",
     "bookSettleStatus",
     "error",
@@ -9245,6 +9612,7 @@ const PlasmicDescendants = {
     "guestInfo",
     "bookInfo",
     "bookPrice",
+    "commission",
     "bookPrice2",
     "bookSettleStatus",
     "error",
@@ -9258,6 +9626,7 @@ const PlasmicDescendants = {
     "guestInfo",
     "bookInfo",
     "bookPrice",
+    "commission",
     "bookPrice2",
     "bookSettleStatus",
     "error",
@@ -9268,6 +9637,7 @@ const PlasmicDescendants = {
   guestInfo: ["guestInfo"],
   bookInfo: ["bookInfo"],
   bookPrice: ["bookPrice"],
+  commission: ["commission"],
   bookPrice2: ["bookPrice2"],
   bookSettleStatus: ["bookSettleStatus", "error", "_true", "true2"],
   error: ["error"],
@@ -9422,6 +9792,7 @@ type NodeDefaultElementType = {
   guestInfo: "div";
   bookInfo: "div";
   bookPrice: "div";
+  commission: "div";
   bookPrice2: "div";
   bookSettleStatus: "div";
   error: "div";
@@ -9558,6 +9929,7 @@ export const PlasmicBookings = Object.assign(
     guestInfo: makeNodeComponent("guestInfo"),
     bookInfo: makeNodeComponent("bookInfo"),
     bookPrice: makeNodeComponent("bookPrice"),
+    commission: makeNodeComponent("commission"),
     bookPrice2: makeNodeComponent("bookPrice2"),
     bookSettleStatus: makeNodeComponent("bookSettleStatus"),
     error: makeNodeComponent("error"),

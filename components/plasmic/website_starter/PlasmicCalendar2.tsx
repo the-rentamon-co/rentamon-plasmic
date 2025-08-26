@@ -3412,7 +3412,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
             }}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__p8HqH)}>
+            <div className={classNames(projectcss.all, sty.freeBox__p8HqH, ``)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -4032,7 +4032,9 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
             }}
           >
-            <div className={classNames(projectcss.all, sty.freeBox___0YivI)}>
+            <div
+              className={classNames(projectcss.all, sty.freeBox___0YivI, ``)}
+            >
               <div
                 className={classNames(
                   projectcss.all,
@@ -4117,7 +4119,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
             }}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__abqGe)}>
+            <div className={classNames(projectcss.all, sty.freeBox__abqGe, ``)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -4258,7 +4260,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               }
             }}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__icirs)}>
+            <div className={classNames(projectcss.all, sty.freeBox__icirs, ``)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -6887,7 +6889,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           <div
             data-plasmic-name={"block2"}
             data-plasmic-override={overrides.block2}
-            className={classNames(projectcss.all, sty.block2, "clickable")}
+            className={classNames(projectcss.all, sty.block2, "clickable ")}
             onClick={async event => {
               const $steps = {};
 

@@ -2199,6 +2199,146 @@
     text-align: center;
   }
 }
+.commission {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom-width: 2px;
+  border-bottom-style: dashed;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 500px) {
+  .commission {
+    border-bottom-width: 1px;
+  }
+}
+@media (max-width: 350px) {
+  .commission {
+    border-bottom-width: 1px;
+  }
+}
+.freeBox__nIKaY {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 15px;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 350px) {
+  .freeBox__nIKaY {
+    padding: 0px;
+  }
+}
+.text__xXNp2 {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #acacac;
+  padding-left: 0px;
+}
+@media (max-width: 500px) {
+  .text__xXNp2 {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: #acacac;
+  }
+}
+@media (max-width: 350px) {
+  .text__xXNp2 {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #acacac;
+    text-align: center;
+  }
+}
+.freeBox___1REu8 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 350px) {
+  .freeBox___1REu8 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.freeBox__o0Yrd {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 15px;
+  min-width: 0;
+}
+.text__cvZwE {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #acacac;
+  padding-left: 0px;
+}
+@media (max-width: 500px) {
+  .text__cvZwE {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: #acacac;
+  }
+}
+@media (max-width: 350px) {
+  .text__cvZwE {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #acacac;
+    text-align: center;
+  }
+}
 .bookPrice2 {
   display: flex;
   flex-direction: row-reverse;
