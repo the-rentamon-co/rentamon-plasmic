@@ -7005,7 +7005,7 @@ function PlasmicReservations__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={
-                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fphoto_2025-08-26_17-47-00.jpg?versionId="
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fphoto_2025-08-26_18-11-39.jpg?versionId="
                     }
                   />
                 </div>
