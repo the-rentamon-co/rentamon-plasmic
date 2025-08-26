@@ -2106,9 +2106,9 @@
   height: auto;
   max-width: 100%;
   text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  color: #203647;
+  font-size: 14px;
+  font-weight: 400;
+  color: #acacac;
   padding-left: 0px;
 }
 @media (max-width: 500px) {
@@ -2118,9 +2118,9 @@
     max-width: 100%;
     padding-left: 0px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
-    color: #203647;
+    color: #acacac;
   }
 }
 @media (max-width: 350px) {
@@ -2170,13 +2170,230 @@
   height: auto;
   max-width: 100%;
   text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #acacac;
+  padding-left: 0px;
+}
+@media (max-width: 500px) {
+  .text__q1Tbt {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: #acacac;
+  }
+}
+@media (max-width: 350px) {
+  .text__q1Tbt {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #203647;
+    text-align: center;
+  }
+}
+.bookPrice3 {
+  flex-direction: row-reverse;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom-width: 2px;
+  border-bottom-style: dashed;
+  min-width: 0;
+  display: none;
+  padding: 8px;
+}
+@media (max-width: 500px) {
+  .bookPrice3 {
+    border-bottom-width: 1px;
+    display: flex;
+  }
+}
+@media (max-width: 350px) {
+  .bookPrice3 {
+    border-bottom-width: 1px;
+  }
+}
+.freeBox__co1M4 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 15px;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 350px) {
+  .freeBox__co1M4 {
+    padding: 0px;
+  }
+}
+.text__oSln {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #acacac;
+  padding-left: 0px;
+}
+@media (max-width: 500px) {
+  .text__oSln {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: #acacac;
+  }
+}
+@media (max-width: 350px) {
+  .text__oSln {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #203647;
+    text-align: center;
+  }
+}
+.freeBox__vKWfi {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 350px) {
+  .freeBox__vKWfi {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.freeBox__cntJv {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 15px;
+  min-width: 0;
+}
+.text__mZc49 {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #acacac;
+  padding-left: 0px;
+}
+@media (max-width: 500px) {
+  .text__mZc49 {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: #acacac;
+  }
+}
+@media (max-width: 350px) {
+  .text__mZc49 {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #203647;
+    text-align: center;
+  }
+}
+.bookPrice2 {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom-width: 2px;
+  border-bottom-style: dashed;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 500px) {
+  .bookPrice2 {
+    border-bottom-width: 1px;
+  }
+}
+@media (max-width: 350px) {
+  .bookPrice2 {
+    border-bottom-width: 1px;
+  }
+}
+.freeBox__tA78 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 15px;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 350px) {
+  .freeBox__tA78 {
+    padding: 0px;
+  }
+}
+.text__i64Fq {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
   font-size: 16px;
   font-weight: 500;
   color: #203647;
   padding-left: 0px;
 }
 @media (max-width: 500px) {
-  .text__q1Tbt {
+  .text__i64Fq {
     width: auto;
     height: auto;
     max-width: 100%;
@@ -2188,7 +2405,71 @@
   }
 }
 @media (max-width: 350px) {
-  .text__q1Tbt {
+  .text__i64Fq {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #203647;
+    text-align: center;
+  }
+}
+.freeBox__cEaWj {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 350px) {
+  .freeBox__cEaWj {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.freeBox__sydZj {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 15px;
+  min-width: 0;
+}
+.text__ij6Ke {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #203647;
+  padding-left: 0px;
+}
+@media (max-width: 500px) {
+  .text__ij6Ke {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    color: #203647;
+  }
+}
+@media (max-width: 350px) {
+  .text__ij6Ke {
     width: auto;
     height: auto;
     max-width: 100%;

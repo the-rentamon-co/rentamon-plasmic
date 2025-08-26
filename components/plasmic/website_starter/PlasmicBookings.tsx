@@ -124,6 +124,8 @@ export type PlasmicBookings__OverridesType = {
   guestInfo?: Flex__<"div">;
   bookInfo?: Flex__<"div">;
   bookPrice?: Flex__<"div">;
+  bookPrice3?: Flex__<"div">;
+  bookPrice2?: Flex__<"div">;
   bookCommission?: Flex__<"div">;
   bookNetPrice?: Flex__<"div">;
   bookSettleStatus?: Flex__<"div">;
@@ -4003,7 +4005,20 @@ function PlasmicBookings__RenderFunc(props: {
                               sty.bookPrice,
                               (() => {
                                 try {
-                                  return (() => {})();
+                                  return (() => {
+                                    const website = $state.booking.data.website;
+                                    const forbiddenWebsites = [
+                                      "mihmansho",
+                                      "homsa"
+                                    ];
+
+                                    const isVisible =
+                                      !forbiddenWebsites.includes(website) &&
+                                      $state.accordionOpenSmartBooking;
+                                    return isVisible
+                                      ? "display_block"
+                                      : "display_hidden";
+                                  })();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -4240,6 +4255,476 @@ function PlasmicBookings__RenderFunc(props: {
                             </div>
                           </div>
                           <div
+                            data-plasmic-name={"bookPrice3"}
+                            data-plasmic-override={overrides.bookPrice3}
+                            className={classNames(
+                              projectcss.all,
+                              sty.bookPrice3,
+                              (() => {
+                                try {
+                                  return (() => {})();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__co1M4
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__oSln
+                                )}
+                              >
+                                {hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          let price =
+                                            $state.booking.data.smart_booking
+                                              .amount;
+                                          if (
+                                            $state.booking.data.website ==
+                                            "jabama"
+                                          ) {
+                                            price = price / 10;
+                                          }
+                                          let real_price =
+                                            new Intl.NumberFormat(
+                                              "fa-IR"
+                                            ).format(price);
+                                          return real_price + "  تومان";
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "mobile"
+                                  ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          let amount = Number(
+                                            $state.booking.data.smart_booking
+                                              .amount
+                                          );
+                                          let net_price = Number(
+                                            $state.booking.data.smart_booking
+                                              .net_price
+                                          );
+                                          let website =
+                                            $state.booking.data.website;
+                                          let total_price_toman;
+                                          if (website === "jabama") {
+                                            total_price_toman = amount / 10;
+                                          } else {
+                                            total_price_toman = amount;
+                                          }
+                                          if (total_price_toman < net_price) {
+                                            return "خطا: قیمت کل از قیمت خالص کمتر است.";
+                                          }
+                                          let commission_toman =
+                                            total_price_toman - net_price;
+                                          let commission_rate =
+                                            commission_toman /
+                                            total_price_toman;
+                                          let formatted_percentage =
+                                            new Intl.NumberFormat("fa-IR", {
+                                              style: "percent",
+                                              minimumFractionDigits: 0,
+                                              maximumFractionDigits: 2
+                                            }).format(commission_rate);
+                                          return formatted_percentage;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "tablet"
+                                  ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          let price =
+                                            $state.booking.data.smart_booking
+                                              .amount;
+                                          if (
+                                            $state.booking.data.website ==
+                                            "jabama"
+                                          ) {
+                                            price = price / 10;
+                                          }
+                                          let real_price =
+                                            new Intl.NumberFormat(
+                                              "fa-IR"
+                                            ).format(price);
+                                          return real_price + "  تومان";
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          let amount = Number(
+                                            $state.booking.data.smart_booking
+                                              .amount
+                                          );
+                                          let net_price = Number(
+                                            $state.booking.data.smart_booking
+                                              .net_price
+                                          );
+                                          let website =
+                                            $state.booking.data.website;
+                                          let total_price_toman;
+                                          if (website === "jabama") {
+                                            total_price_toman = amount / 10;
+                                          } else {
+                                            total_price_toman = amount;
+                                          }
+                                          if (total_price_toman < net_price) {
+                                            return "خطا: قیمت کل از قیمت خالص کمتر است.";
+                                          }
+                                          let commission_toman =
+                                            total_price_toman - net_price;
+                                          let commission_rate =
+                                            commission_toman /
+                                            total_price_toman;
+                                          let formatted_percentage =
+                                            new Intl.NumberFormat("fa-IR", {
+                                              style: "percent",
+                                              minimumFractionDigits: 0,
+                                              maximumFractionDigits: 2
+                                            }).format(commission_rate);
+                                          return formatted_percentage;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                )}
+                              </div>
+                            </div>
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__vKWfi
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__cntJv
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__mZc49
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          const websiteFarsiNames = {
+                                            host: "میزبان",
+                                            jabama: "جاباما",
+                                            jajiga: "جاجیگا",
+                                            shab: "شب",
+                                            mizboon: "میزبون",
+                                            otaghak: "اتاقک",
+                                            homsa: "هومسا",
+                                            mihmansho: "میهمانشو",
+                                            divar: "دیوار",
+                                            others: "سایر",
+                                            offline: "حضوری",
+                                            Returning_Guest: "قبلی",
+                                            "Broker or Colleague":
+                                              "واسطه یا همکار",
+                                            social: "پیام‌رسان و شبکه‌اجتماعی",
+                                            garmeja: "گرمه‌جا"
+                                          };
+                                          const englishWebsiteName =
+                                            $state.booking.data.website;
+                                          const farsiWebsiteName =
+                                            websiteFarsiNames[
+                                              englishWebsiteName
+                                            ] || englishWebsiteName;
+                                          const finalMessage = `کارمزد (و مالیات) ${farsiWebsiteName}:`;
+                                          return finalMessage;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            data-plasmic-name={"bookPrice2"}
+                            data-plasmic-override={overrides.bookPrice2}
+                            className={classNames(
+                              projectcss.all,
+                              sty.bookPrice2,
+                              (() => {
+                                try {
+                                  return (() => {})();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__tA78
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__i64Fq
+                                )}
+                              >
+                                {hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          let price =
+                                            $state.booking.data.smart_booking
+                                              .amount;
+                                          if (
+                                            $state.booking.data.website ==
+                                            "jabama"
+                                          ) {
+                                            price = price / 10;
+                                          }
+                                          let real_price =
+                                            new Intl.NumberFormat(
+                                              "fa-IR"
+                                            ).format(price);
+                                          return real_price + "  تومان";
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "mobile"
+                                  ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          let price =
+                                            $state.booking.data.smart_booking
+                                              .net_price;
+                                          let real_price =
+                                            new Intl.NumberFormat(
+                                              "fa-IR"
+                                            ).format(price);
+                                          return real_price + "  تومان";
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "tablet"
+                                  ) ? (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          let price =
+                                            $state.booking.data.smart_booking
+                                              .amount;
+                                          if (
+                                            $state.booking.data.website ==
+                                            "jabama"
+                                          ) {
+                                            price = price / 10;
+                                          }
+                                          let real_price =
+                                            new Intl.NumberFormat(
+                                              "fa-IR"
+                                            ).format(price);
+                                          return real_price + "  تومان";
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                ) : (
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return (() => {
+                                          let price =
+                                            $state.booking.data.smart_booking
+                                              .net_price;
+                                          let real_price =
+                                            new Intl.NumberFormat(
+                                              "fa-IR"
+                                            ).format(price);
+                                          return real_price + "  تومان";
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return " ";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                )}
+                              </div>
+                            </div>
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__cEaWj
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__sydZj
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__ij6Ke
+                                  )}
+                                >
+                                  {
+                                    "\u062f\u0631\u0622\u0645\u062f \u062e\u0627\u0644\u0635 \u0634\u0645\u0627:"
+                                  }
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
                             data-plasmic-name={"bookCommission"}
                             data-plasmic-override={overrides.bookCommission}
                             className={classNames(
@@ -4361,9 +4846,7 @@ function PlasmicBookings__RenderFunc(props: {
                               sty.bookSettleStatus,
                               (() => {
                                 try {
-                                  return $state.accordionOpenSmartBooking
-                                    ? "display_block"
-                                    : "display_hidden";
+                                  return (() => {})();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -8996,6 +9479,8 @@ const PlasmicDescendants = {
     "guestInfo",
     "bookInfo",
     "bookPrice",
+    "bookPrice3",
+    "bookPrice2",
     "bookCommission",
     "bookNetPrice",
     "bookSettleStatus",
@@ -9087,6 +9572,8 @@ const PlasmicDescendants = {
     "guestInfo",
     "bookInfo",
     "bookPrice",
+    "bookPrice3",
+    "bookPrice2",
     "bookCommission",
     "bookNetPrice",
     "bookSettleStatus",
@@ -9141,6 +9628,8 @@ const PlasmicDescendants = {
     "guestInfo",
     "bookInfo",
     "bookPrice",
+    "bookPrice3",
+    "bookPrice2",
     "bookCommission",
     "bookNetPrice",
     "bookSettleStatus",
@@ -9172,6 +9661,8 @@ const PlasmicDescendants = {
     "guestInfo",
     "bookInfo",
     "bookPrice",
+    "bookPrice3",
+    "bookPrice2",
     "bookCommission",
     "bookNetPrice",
     "bookSettleStatus",
@@ -9186,6 +9677,8 @@ const PlasmicDescendants = {
     "guestInfo",
     "bookInfo",
     "bookPrice",
+    "bookPrice3",
+    "bookPrice2",
     "bookCommission",
     "bookNetPrice",
     "bookSettleStatus",
@@ -9197,6 +9690,8 @@ const PlasmicDescendants = {
   guestInfo: ["guestInfo"],
   bookInfo: ["bookInfo"],
   bookPrice: ["bookPrice"],
+  bookPrice3: ["bookPrice3"],
+  bookPrice2: ["bookPrice2"],
   bookCommission: ["bookCommission"],
   bookNetPrice: ["bookNetPrice"],
   bookSettleStatus: ["bookSettleStatus", "error", "_true", "true2"],
@@ -9352,6 +9847,8 @@ type NodeDefaultElementType = {
   guestInfo: "div";
   bookInfo: "div";
   bookPrice: "div";
+  bookPrice3: "div";
+  bookPrice2: "div";
   bookCommission: "div";
   bookNetPrice: "div";
   bookSettleStatus: "div";
@@ -9489,6 +9986,8 @@ export const PlasmicBookings = Object.assign(
     guestInfo: makeNodeComponent("guestInfo"),
     bookInfo: makeNodeComponent("bookInfo"),
     bookPrice: makeNodeComponent("bookPrice"),
+    bookPrice3: makeNodeComponent("bookPrice3"),
+    bookPrice2: makeNodeComponent("bookPrice2"),
     bookCommission: makeNodeComponent("bookCommission"),
     bookNetPrice: makeNodeComponent("bookNetPrice"),
     bookSettleStatus: makeNodeComponent("bookSettleStatus"),
