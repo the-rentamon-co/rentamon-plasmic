@@ -2751,6 +2751,16 @@
       }
     },
     {
+      "name": "Unnamed Style Token 18",
+      "type": "opacity",
+      "value": "50%",
+      "category": "opacity",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "xxlJy7f7b9Uc"
+      }
+    },
+    {
       "name": "Unnamed Style Token 2",
       "type": "spacing",
       "value": "1px",
