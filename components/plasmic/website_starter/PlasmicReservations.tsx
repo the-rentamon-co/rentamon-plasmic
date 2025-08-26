@@ -165,6 +165,7 @@ export type PlasmicReservations__OverridesType = {
   otaghak2?: Flex__<typeof PlasmicImg__>;
   searchAndFiltre?: Flex__<typeof AntdModal>;
   htmlVideo?: Flex__<typeof Video>;
+  filter2?: Flex__<"div">;
   title?: Flex__<"div">;
   source2?: Flex__<"div">;
   property2?: Flex__<"div">;
@@ -175,6 +176,7 @@ export type PlasmicReservations__OverridesType = {
   cancelled?: Flex__<"div">;
   cancelled3?: Flex__<typeof Switch>;
   button?: Flex__<"div">;
+  newbookingpricingalert?: Flex__<"div">;
 };
 
 export interface DefaultReservationsProps {}
@@ -548,6 +550,12 @@ function PlasmicReservations__RenderFunc(props: {
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? false : false
+      },
+      {
+        path: "bookingPricingNotify",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -927,15 +935,13 @@ function PlasmicReservations__RenderFunc(props: {
                 ];
               }
 
-              $steps["runCode4"] = false
+              $steps["runCode4"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          if (
-                            !document.cookie.includes("searchAndFilterNotify")
-                          ) {
-                            return ($state.searchAndFiltre.open = true);
+                          if (!document.cookie.includes("pricing_notify")) {
+                            return ($state.bookingPricingNotify = true);
                           }
                         })();
                       }
@@ -5749,9 +5755,15 @@ function PlasmicReservations__RenderFunc(props: {
               sty.freeBox__kxmPc,
               (() => {
                 try {
-                  return $state.showFilter
-                    ? "modal-overlay open"
-                    : "modal-overlay";
+                  return (() => {
+                    if ($state.showFilter == true) {
+                      return "modal-overlay open";
+                    }
+                    if ($state.bookingPricingNotify == true) {
+                      return "modal-overlay open";
+                    }
+                    return "modal-overlay";
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -5768,9 +5780,11 @@ function PlasmicReservations__RenderFunc(props: {
             }}
           >
             <div
+              data-plasmic-name={"filter2"}
+              data-plasmic-override={overrides.filter2}
               className={classNames(
                 projectcss.all,
-                sty.freeBox__iBmls,
+                sty.filter2,
                 (() => {
                   try {
                     return $state.showFilter
@@ -6917,6 +6931,174 @@ function PlasmicReservations__RenderFunc(props: {
                 </div>
               ) : null}
             </div>
+            <div
+              data-plasmic-name={"newbookingpricingalert"}
+              data-plasmic-override={overrides.newbookingpricingalert}
+              className={classNames(
+                projectcss.all,
+                sty.newbookingpricingalert,
+                (() => {
+                  try {
+                    return $state.bookingPricingNotify
+                      ? "modal-content open"
+                      : "modal-content";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()
+              )}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__tTTz)}>
+                <div className={classNames(projectcss.all, sty.freeBox__wQt9Q)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ikrTd)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__wphKv
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u062c\u062f\u0627\u06af\u0627\u0646\u0647 \u0628\u0628\u06cc\u0646\u06cc:"
+                        : "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u062c\u062f\u0627\u06af\u0627\u0646\u0647 \u0628\u0628\u06cc\u0646\u06cc:\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"}
+                    </div>
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? true
+                        : false
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___7YjDt
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile")
+                          ? "\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"
+                          : "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u062c\u062f\u0627\u06af\u0627\u0646\u0647 \u0628\u0628\u06cc\u0646\u06cc:\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"}
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__jwjou)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__px1Uq)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "290px"
+                    }
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fphoto_2025-08-26_17-47-00.jpg?versionId="
+                    }
+                  />
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__l0BFo
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateBookingPricingNotify"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["bookingPricingNotify"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateBookingPricingNotify"] != null &&
+                      typeof $steps["updateBookingPricingNotify"] ===
+                        "object" &&
+                      typeof $steps["updateBookingPricingNotify"].then ===
+                        "function"
+                    ) {
+                      $steps["updateBookingPricingNotify"] = await $steps[
+                        "updateBookingPricingNotify"
+                      ];
+                    }
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/";
+                                }
+                                return setCookie("pricing_notify", "true", 12);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  {"\u0628\u0627\u0634\u0647"}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -6988,6 +7170,7 @@ const PlasmicDescendants = {
     "otaghak2",
     "searchAndFiltre",
     "htmlVideo",
+    "filter2",
     "title",
     "source2",
     "property2",
@@ -6997,7 +7180,8 @@ const PlasmicDescendants = {
     "confierm2",
     "cancelled",
     "cancelled3",
-    "button"
+    "button",
+    "newbookingpricingalert"
   ],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
@@ -7138,6 +7322,19 @@ const PlasmicDescendants = {
   otaghak2: ["otaghak2"],
   searchAndFiltre: ["searchAndFiltre", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
+  filter2: [
+    "filter2",
+    "title",
+    "source2",
+    "property2",
+    "settlement",
+    "settlement2",
+    "confierm",
+    "confierm2",
+    "cancelled",
+    "cancelled3",
+    "button"
+  ],
   title: ["title"],
   source2: ["source2"],
   property2: ["property2"],
@@ -7147,7 +7344,8 @@ const PlasmicDescendants = {
   confierm2: ["confierm2"],
   cancelled: ["cancelled", "cancelled3"],
   cancelled3: ["cancelled3"],
-  button: ["button"]
+  button: ["button"],
+  newbookingpricingalert: ["newbookingpricingalert"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -7215,6 +7413,7 @@ type NodeDefaultElementType = {
   otaghak2: typeof PlasmicImg__;
   searchAndFiltre: typeof AntdModal;
   htmlVideo: typeof Video;
+  filter2: "div";
   title: "div";
   source2: "div";
   property2: "div";
@@ -7225,6 +7424,7 @@ type NodeDefaultElementType = {
   cancelled: "div";
   cancelled3: typeof Switch;
   button: "div";
+  newbookingpricingalert: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -7348,6 +7548,7 @@ export const PlasmicReservations = Object.assign(
     otaghak2: makeNodeComponent("otaghak2"),
     searchAndFiltre: makeNodeComponent("searchAndFiltre"),
     htmlVideo: makeNodeComponent("htmlVideo"),
+    filter2: makeNodeComponent("filter2"),
     title: makeNodeComponent("title"),
     source2: makeNodeComponent("source2"),
     property2: makeNodeComponent("property2"),
@@ -7358,6 +7559,7 @@ export const PlasmicReservations = Object.assign(
     cancelled: makeNodeComponent("cancelled"),
     cancelled3: makeNodeComponent("cancelled3"),
     button: makeNodeComponent("button"),
+    newbookingpricingalert: makeNodeComponent("newbookingpricingalert"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,
