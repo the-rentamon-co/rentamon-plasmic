@@ -4262,7 +4262,9 @@ function PlasmicBookings__RenderFunc(props: {
                               sty.bookPrice3,
                               (() => {
                                 try {
-                                  return (() => {})();
+                                  return (() => {
+                                    return "display_hidden";
+                                  })();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -4732,7 +4734,9 @@ function PlasmicBookings__RenderFunc(props: {
                               sty.bookCommission,
                               (() => {
                                 try {
-                                  return (() => {})();
+                                  return (() => {
+                                    return "display_hidden";
+                                  })();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
