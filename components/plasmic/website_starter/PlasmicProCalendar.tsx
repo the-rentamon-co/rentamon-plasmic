@@ -922,7 +922,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                 ];
               }
 
-              $steps["alertModalOpen"] = false
+              $steps["alertModalOpen"] = true
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
@@ -1104,118 +1104,241 @@ function PlasmicProCalendar__RenderFunc(props: {
                     sty.text__xsnqv
                   )}
                 >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 500 }}
-                    >
-                      {
-                        "\u0628\u0647 \u0639\u0644\u062a \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062f\u0631 \u0632\u06cc\u0631\u0633\u0627\u062e\u062a \u0634\u0631\u06a9\u062a \u0627\u0631\u0627\u0626\u0647 \u062f\u0647\u0646\u062f\u0647 \u0633\u0631\u0648\u06cc\u0633\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u06cc\u0646 \u0633\u0627\u0639\u062a\u200c \u06f2 \u062a\u0627 \u06f6 \u0628\u0627\u0645\u062f\u0627\u062f \u062c\u0645\u0639\u0647 \u06f3 \u062a\u06cc\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0627 \u0627\u062e\u062a\u0644\u0627\u0644 \u0647\u0645\u0631\u0627\u0647 \u0628\u0627\u0634\u0647.\r\n\r\n\u0644\u0637\u0641\u0627 \u062f\u0631 \u0627\u06cc\u0646 \u0628\u0627\u0632\u0647\u200c\u06cc \u0632\u0645\u0627\u0646\u06cc \u0645\u0648\u0627\u0638\u0628 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0628\u0627\u0634.\r\n\r\n\u0645\u0645\u0646\u0648\u0646 \u0627\u0632 \u0634\u06a9\u06cc\u0628\u0627\u06cc\u06cc \u0634\u0645\u0627 \ud83d\ude4f"
-                      }
-                    </span>
-                  </React.Fragment>
+                  {"\ud83c\udf81"}
                 </div>
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__wG5YE,
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "clickable"
-                    : undefined
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              function setCookie(name, value, hours) {
-                                let expires = "";
-                                if (hours) {
-                                  const date = new Date();
-                                  date.setTime(
-                                    date.getTime() + hours * 60 * 60 * 1000
-                                  );
-                                  expires = "; expires=" + date.toUTCString();
-                                }
-                                document.cookie =
-                                  name +
-                                  "=" +
-                                  (value || "") +
-                                  expires +
-                                  "; path=/";
-                              }
-                              return setCookie("shab_disconnrct", "true", 12);
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-
-                  $steps["updateAlertModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["alertModal", "open"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateAlertModalOpen"] != null &&
-                    typeof $steps["updateAlertModalOpen"] === "object" &&
-                    typeof $steps["updateAlertModalOpen"].then === "function"
-                  ) {
-                    $steps["updateAlertModalOpen"] = await $steps[
-                      "updateAlertModalOpen"
-                    ];
-                  }
-                }}
-              >
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__yI1Y
+                    sty.text___7Ag8K
                   )}
                 >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 400 }}
-                    >
-                      {"\u0628\u0627\u0634\u0647"}
-                    </span>
-                  </React.Fragment>
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u0628\u0627 \u062f\u0639\u0648\u062a \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\n\u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u06f3\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0628\u0627 \u062f\u0639\u0648\u062a \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\n\u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u06f3\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u0628\u0627 \u062f\u0639\u0648\u062a \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\n\u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u06f3\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"
+                    : "\u0628\u0627 \u062f\u0639\u0648\u062a \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\n\u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u06f3\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"}
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__fnmGc)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    sty.freeBox__wG5YE,
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "clickable"
+                      : undefined
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/";
+                                }
+                                return setCookie("shab_disconnrct", "true", 24);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+
+                    $steps["updateAlertModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["alertModal", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateAlertModalOpen"] != null &&
+                      typeof $steps["updateAlertModalOpen"] === "object" &&
+                      typeof $steps["updateAlertModalOpen"].then === "function"
+                    ) {
+                      $steps["updateAlertModalOpen"] = await $steps[
+                        "updateAlertModalOpen"
+                      ];
+                    }
+
+                    $steps["goToReferral"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/referral` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToReferral"] != null &&
+                      typeof $steps["goToReferral"] === "object" &&
+                      typeof $steps["goToReferral"].then === "function"
+                    ) {
+                      $steps["goToReferral"] = await $steps["goToReferral"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yI1Y
+                    )}
+                  >
+                    {
+                      "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647"
+                    }
+                  </div>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    sty.freeBox__a67Sx,
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "clickable"
+                      : undefined
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/";
+                                }
+                                return setCookie("shab_disconnrct", "true", 24);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+
+                    $steps["updateAlertModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["alertModal", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateAlertModalOpen"] != null &&
+                      typeof $steps["updateAlertModalOpen"] === "object" &&
+                      typeof $steps["updateAlertModalOpen"].then === "function"
+                    ) {
+                      $steps["updateAlertModalOpen"] = await $steps[
+                        "updateAlertModalOpen"
+                      ];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__tdFzu
+                    )}
+                  >
+                    {"\u0628\u0627\u0634\u0647 \u0628\u0639\u062f\u0627"}
+                  </div>
                 </div>
               </div>
               <Button
