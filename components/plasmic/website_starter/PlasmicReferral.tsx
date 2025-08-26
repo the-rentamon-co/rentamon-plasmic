@@ -120,7 +120,6 @@ export type PlasmicReferral__OverridesType = {
   smsImage?: Flex__<"div">;
   tips?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
-  sideEffect?: Flex__<typeof SideEffect>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -313,44 +312,6 @@ function PlasmicReferral__RenderFunc(props: {
             styleTokensClassNames_plasmic_rich_components,
             sty.root
           )}
-          onLoad={async event => {
-            const $steps = {};
-
-            $steps["invokeGlobalAction"] = true
-              ? (() => {
-                  const actionArgs = {
-                    args: [
-                      "POST",
-                      "https://gateway.rentamon.com/webhook/refferal-logs",
-                      undefined,
-                      (() => {
-                        try {
-                          return { source: "page" };
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()
-                    ]
-                  };
-                  return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                    ...actionArgs.args
-                  ]);
-                })()
-              : undefined;
-            if (
-              $steps["invokeGlobalAction"] != null &&
-              typeof $steps["invokeGlobalAction"] === "object" &&
-              typeof $steps["invokeGlobalAction"].then === "function"
-            ) {
-              $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
-            }
-          }}
         >
           <NavbarRntHeader
             data-plasmic-name={"navbarRntHeader"}
@@ -788,16 +749,18 @@ ${$state.textInput.value}
                         $steps["runCode2"] = await $steps["runCode2"];
                       }
 
-                      $steps["invokeGlobalAction"] = true
+                      $steps["log"] = true
                         ? (() => {
                             const actionArgs = {
                               args: [
-                                undefined,
+                                "POST",
                                 "https://gateway.rentamon.com/webhook/refferal-logs",
                                 undefined,
                                 (() => {
                                   try {
-                                    return { source: "button" };
+                                    return {
+                                      source: "button"
+                                    };
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
@@ -818,13 +781,11 @@ ${$state.textInput.value}
                           })()
                         : undefined;
                       if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
+                        $steps["log"] != null &&
+                        typeof $steps["log"] === "object" &&
+                        typeof $steps["log"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["log"] = await $steps["log"];
                       }
                     }}
                   >
@@ -2379,9 +2340,7 @@ ${$state.textInput.value}
           />
 
           <SideEffect
-            data-plasmic-name={"sideEffect"}
-            data-plasmic-override={overrides.sideEffect}
-            className={classNames("__wab_instance", sty.sideEffect)}
+            className={classNames("__wab_instance", sty.sideEffect___0K6F)}
             onMount={async () => {
               const $steps = {};
 
@@ -2529,6 +2488,49 @@ ${$state.textInput.value}
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
+          <SideEffect
+            className={classNames("__wab_instance", sty.sideEffect__n6TcE)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["log"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://gateway.rentamon.com/webhook/refferal-logs",
+                        undefined,
+                        (() => {
+                          try {
+                            return {
+                              source: "page"
+                            };
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["log"] != null &&
+                typeof $steps["log"] === "object" &&
+                typeof $steps["log"].then === "function"
+              ) {
+                $steps["log"] = await $steps["log"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2562,7 +2564,6 @@ const PlasmicDescendants = {
     "smsImage",
     "tips",
     "rentamonFooter",
-    "sideEffect",
     "navbarRntFooter",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -2637,7 +2638,6 @@ const PlasmicDescendants = {
   smsImage: ["smsImage"],
   tips: ["tips"],
   rentamonFooter: ["rentamonFooter"],
-  sideEffect: ["sideEffect"],
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -2671,7 +2671,6 @@ type NodeDefaultElementType = {
   smsImage: "div";
   tips: "div";
   rentamonFooter: typeof RentamonFooter;
-  sideEffect: typeof SideEffect;
   navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -2761,7 +2760,6 @@ export const PlasmicReferral = Object.assign(
     smsImage: makeNodeComponent("smsImage"),
     tips: makeNodeComponent("tips"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
-    sideEffect: makeNodeComponent("sideEffect"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
