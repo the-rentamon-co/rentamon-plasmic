@@ -112,6 +112,7 @@
     z-index: 1;
     padding-top: 10px;
     min-width: 0;
+    display: none;
   }
 }
 .notifBadge {

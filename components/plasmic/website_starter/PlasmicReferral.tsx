@@ -368,7 +368,7 @@ function PlasmicReferral__RenderFunc(props: {
                         ? "180px"
                         : hasVariant(globalVariants, "screen", "mobile")
                         ? "200px"
-                        : "auto"
+                        : "250px"
                     }
                     displayMaxHeight={"none"}
                     displayMaxWidth={
@@ -2038,14 +2038,20 @@ ${$state.textInput.value}
             <PlasmicImg__
               alt={""}
               className={classNames(sty.img__uxHdh)}
-              displayHeight={"auto"}
+              displayHeight={
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "200px"
+                  : "auto"
+              }
               displayMaxHeight={"none"}
               displayMaxWidth={
                 hasVariant(globalVariants, "screen", "mobile") ? "100%" : "100%"
               }
               displayMinHeight={"0"}
               displayMinWidth={"0"}
-              displayWidth={"100%"}
+              displayWidth={
+                hasVariant(globalVariants, "screen", "mobile") ? "100%" : "100%"
+              }
               loading={"lazy"}
               src={{
                 src: "/plasmic/website_starter/images/image81.png",
