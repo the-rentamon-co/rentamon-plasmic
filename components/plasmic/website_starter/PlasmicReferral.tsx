@@ -313,6 +313,44 @@ function PlasmicReferral__RenderFunc(props: {
             styleTokensClassNames_plasmic_rich_components,
             sty.root
           )}
+          onLoad={async event => {
+            const $steps = {};
+
+            $steps["invokeGlobalAction"] = true
+              ? (() => {
+                  const actionArgs = {
+                    args: [
+                      "POST",
+                      "https://gateway.rentamon.com/webhook/refferal-logs",
+                      undefined,
+                      (() => {
+                        try {
+                          return { source: "page" };
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                    ]
+                  };
+                  return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                    ...actionArgs.args
+                  ]);
+                })()
+              : undefined;
+            if (
+              $steps["invokeGlobalAction"] != null &&
+              typeof $steps["invokeGlobalAction"] === "object" &&
+              typeof $steps["invokeGlobalAction"].then === "function"
+            ) {
+              $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
+            }
+          }}
         >
           <NavbarRntHeader
             data-plasmic-name={"navbarRntHeader"}
@@ -366,7 +404,7 @@ function PlasmicReferral__RenderFunc(props: {
                     className={classNames(sty.img___0Yxcz)}
                     displayHeight={
                       hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "240px"
+                        ? "180px"
                         : hasVariant(globalVariants, "screen", "mobile")
                         ? "200px"
                         : "auto"
@@ -748,6 +786,45 @@ ${$state.textInput.value}
                         typeof $steps["runCode2"].then === "function"
                       ) {
                         $steps["runCode2"] = await $steps["runCode2"];
+                      }
+
+                      $steps["invokeGlobalAction"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                undefined,
+                                "https://gateway.rentamon.com/webhook/refferal-logs",
+                                undefined,
+                                (() => {
+                                  try {
+                                    return { source: "button" };
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] = await $steps[
+                          "invokeGlobalAction"
+                        ];
                       }
                     }}
                   >
