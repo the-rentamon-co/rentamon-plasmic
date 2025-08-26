@@ -368,7 +368,7 @@ function PlasmicReferral__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "240px"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "260px"
+                        ? "200px"
                         : "auto"
                     }
                     displayMaxHeight={"none"}
