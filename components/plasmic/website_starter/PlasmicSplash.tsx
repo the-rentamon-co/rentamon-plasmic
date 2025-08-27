@@ -277,19 +277,6 @@ function PlasmicSplash__RenderFunc(props: {
               <div
                 className={classNames(
                   projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xZcNv
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0645\u0645\u06a9\u0646\u0647 \u062e\u062f\u0645\u0627\u062a \u0646\u0627\u067e\u0627\u06cc\u062f\u0627\u0631 \u0628\u0627\u0634\u0647\n\n\r\n\u00a0\u062f\u0631\u0635\u0648\u0631\u062a \u0645\u0634\u0627\u0647\u062f\u0647 \u062e\u0637\u0627\u060c \u0644\u0637\u0641\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647\u00a0\r\n\u00a0\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\r"
-                  : hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u0644\u0637\u0641\u0627 \u0648\u0636\u0639\u06cc\u062a \u0627\u062a\u0635\u0627\u0644 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u062e\u0648\u062f \u0631\u0627 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u062f"
-                  : "\u0644\u0637\u0641\u0627 \u0648\u0636\u0639\u06cc\u062a \u0627\u062a\u0635\u0627\u0644 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u062e\u0648\u062f \u0631\u0627 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u062f"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
                   sty.freeBox__nxgSw,
                   "clickable fadein"
                 )}

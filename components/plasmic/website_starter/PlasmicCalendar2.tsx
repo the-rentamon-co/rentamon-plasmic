@@ -10517,7 +10517,11 @@ function PlasmicCalendar2__RenderFunc(props: {
               <AntdInputNumber
                 data-plasmic-name={"guestCount"}
                 data-plasmic-override={overrides.guestCount}
+                allowClear={true}
                 className={classNames("__wab_instance", sty.guestCount)}
+                controls={true}
+                max={50}
+                min={1}
                 onChange={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
                     "guestCount",
@@ -10529,7 +10533,22 @@ function PlasmicCalendar2__RenderFunc(props: {
                     ? "\u062a\u0639\u062f\u0627\u062f \u0646\u0641\u0631\u0627\u062a"
                     : "\u0646\u0641\u0631\u0627\u062a"
                 }
-                type={"number"}
+                type={(() => {
+                  try {
+                    return (() => {
+                      return ($state.numberInput2.valid =
+                        $state.numberInput2.value >= 1);
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "number";
+                    }
+                    throw e;
+                  }
+                })()}
                 value={generateStateValueProp($state, ["guestCount", "value"])}
               />
 
