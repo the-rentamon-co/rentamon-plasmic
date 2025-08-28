@@ -135,7 +135,7 @@ export type PlasmicSettings__OverridesType = {
   buttons?: Flex__<"div">;
   active?: Flex__<"div">;
   deactive?: Flex__<"div">;
-  activateReservations?: Flex__<typeof AntdModal>;
+  activateSmartbooking?: Flex__<typeof AntdModal>;
   buttons3?: Flex__<"div">;
   active3?: Flex__<"div">;
   cancel?: Flex__<"div">;
@@ -143,7 +143,7 @@ export type PlasmicSettings__OverridesType = {
   buttons2?: Flex__<"div">;
   deactive5?: Flex__<"div">;
   deactive2?: Flex__<"div">;
-  dEactivateReservations?: Flex__<typeof AntdModal>;
+  dEactivateSmartbooking?: Flex__<typeof AntdModal>;
   buttons4?: Flex__<"div">;
   active4?: Flex__<"div">;
   deactive4?: Flex__<"div">;
@@ -241,7 +241,7 @@ function PlasmicSettings__RenderFunc(props: {
             : false
       },
       {
-        path: "activateReservations.open",
+        path: "activateSmartbooking.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
@@ -254,7 +254,7 @@ function PlasmicSettings__RenderFunc(props: {
             : false
       },
       {
-        path: "dEactivateReservations.open",
+        path: "dEactivateSmartbooking.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
@@ -1348,7 +1348,7 @@ function PlasmicSettings__RenderFunc(props: {
                                     variable: {
                                       objRoot: $state,
                                       variablePath: [
-                                        "activateReservations",
+                                        "activateSmartbooking",
                                         "open"
                                       ]
                                     },
@@ -1389,7 +1389,7 @@ function PlasmicSettings__RenderFunc(props: {
                                     variable: {
                                       objRoot: $state,
                                       variablePath: [
-                                        "dEactivateReservations",
+                                        "dEactivateSmartbooking",
                                         "open"
                                       ]
                                     },
@@ -2243,11 +2243,11 @@ function PlasmicSettings__RenderFunc(props: {
                 </div>
               </AntdModal>
               <AntdModal
-                data-plasmic-name={"activateReservations"}
-                data-plasmic-override={overrides.activateReservations}
+                data-plasmic-name={"activateSmartbooking"}
+                data-plasmic-override={overrides.activateSmartbooking}
                 className={classNames(
                   "__wab_instance",
-                  sty.activateReservations
+                  sty.activateSmartbooking
                 )}
                 defaultStylesClassName={classNames(
                   projectcss.root_reset,
@@ -2259,15 +2259,15 @@ function PlasmicSettings__RenderFunc(props: {
                 )}
                 hideFooter={true}
                 maskClosable={false}
-                modalScopeClassName={sty["activateReservations__modal"]}
+                modalScopeClassName={sty["activateSmartbooking__modal"]}
                 onOpenChange={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
-                    "activateReservations",
+                    "activateSmartbooking",
                     "open"
                   ]).apply(null, eventArgs);
                 }}
                 open={generateStateValueProp($state, [
-                  "activateReservations",
+                  "activateSmartbooking",
                   "open"
                 ])}
                 title={
@@ -2307,12 +2307,12 @@ function PlasmicSettings__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
                       : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                      : "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646  \u0628\u0631\u0627\u06cc \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\r\n\r"}
+                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645\n\r"
+                      : "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__e0XaI)}>
@@ -2460,7 +2460,7 @@ function PlasmicSettings__RenderFunc(props: {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["activateReservations", "open"]
+                                variablePath: ["activateSmartbooking", "open"]
                               },
                               operation: 0
                             };
@@ -2729,10 +2729,10 @@ function PlasmicSettings__RenderFunc(props: {
                               const actionArgs = {
                                 variable: {
                                   objRoot: $state,
-                                  variablePath: ["activateReservations", "open"]
+                                  variablePath: ["activateSmartbooking", "open"]
                                 },
                                 operation: 0,
-                                value: $state.activateReservations.open == false
+                                value: $state.activateSmartbooking.open == false
                               };
                               return (({
                                 variable,
@@ -3188,11 +3188,11 @@ function PlasmicSettings__RenderFunc(props: {
                 </div>
               </AntdModal>
               <AntdModal
-                data-plasmic-name={"dEactivateReservations"}
-                data-plasmic-override={overrides.dEactivateReservations}
+                data-plasmic-name={"dEactivateSmartbooking"}
+                data-plasmic-override={overrides.dEactivateSmartbooking}
                 className={classNames(
                   "__wab_instance",
-                  sty.dEactivateReservations
+                  sty.dEactivateSmartbooking
                 )}
                 defaultStylesClassName={classNames(
                   projectcss.root_reset,
@@ -3204,15 +3204,15 @@ function PlasmicSettings__RenderFunc(props: {
                 )}
                 hideFooter={true}
                 maskClosable={false}
-                modalScopeClassName={sty["dEactivateReservations__modal"]}
+                modalScopeClassName={sty["dEactivateSmartbooking__modal"]}
                 onOpenChange={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
-                    "dEactivateReservations",
+                    "dEactivateSmartbooking",
                     "open"
                   ]).apply(null, eventArgs);
                 }}
                 open={generateStateValueProp($state, [
-                  "dEactivateReservations",
+                  "dEactivateSmartbooking",
                   "open"
                 ])}
                 title={
@@ -3252,10 +3252,12 @@ function PlasmicSettings__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\r\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\r\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                      ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                      : "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u0628\u062e\u0634 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u0634\u0645\u0627\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0634\u0645\u0627\u0631\u0647 \u062a\u0644\u0641\u0646 \u0645\u0647\u0645\u0627\u0646\u0650 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"}
+                      ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
+                      : "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645\n\r"}
                   </div>
                 </div>
                 <div
@@ -3351,7 +3353,7 @@ function PlasmicSettings__RenderFunc(props: {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["dEactivateReservations", "open"]
+                                variablePath: ["dEactivateSmartbooking", "open"]
                               },
                               operation: 0
                             };
@@ -3590,13 +3592,13 @@ function PlasmicSettings__RenderFunc(props: {
                                 variable: {
                                   objRoot: $state,
                                   variablePath: [
-                                    "dEactivateReservations",
+                                    "dEactivateSmartbooking",
                                     "open"
                                   ]
                                 },
                                 operation: 0,
                                 value:
-                                  $state.dEactivateReservations.open == false
+                                  $state.dEactivateSmartbooking.open == false
                               };
                               return (({
                                 variable,
@@ -4321,7 +4323,7 @@ const PlasmicDescendants = {
     "buttons",
     "active",
     "deactive",
-    "activateReservations",
+    "activateSmartbooking",
     "buttons3",
     "active3",
     "cancel",
@@ -4329,7 +4331,7 @@ const PlasmicDescendants = {
     "buttons2",
     "deactive5",
     "deactive2",
-    "dEactivateReservations",
+    "dEactivateSmartbooking",
     "buttons4",
     "active4",
     "deactive4",
@@ -4391,7 +4393,7 @@ const PlasmicDescendants = {
     "buttons",
     "active",
     "deactive",
-    "activateReservations",
+    "activateSmartbooking",
     "buttons3",
     "active3",
     "cancel",
@@ -4399,7 +4401,7 @@ const PlasmicDescendants = {
     "buttons2",
     "deactive5",
     "deactive2",
-    "dEactivateReservations",
+    "dEactivateSmartbooking",
     "buttons4",
     "active4",
     "deactive4",
@@ -4450,7 +4452,7 @@ const PlasmicDescendants = {
     "buttons",
     "active",
     "deactive",
-    "activateReservations",
+    "activateSmartbooking",
     "buttons3",
     "active3",
     "cancel",
@@ -4458,7 +4460,7 @@ const PlasmicDescendants = {
     "buttons2",
     "deactive5",
     "deactive2",
-    "dEactivateReservations",
+    "dEactivateSmartbooking",
     "buttons4",
     "active4",
     "deactive4",
@@ -4521,8 +4523,8 @@ const PlasmicDescendants = {
   buttons: ["buttons", "active", "deactive"],
   active: ["active"],
   deactive: ["deactive"],
-  activateReservations: [
-    "activateReservations",
+  activateSmartbooking: [
+    "activateSmartbooking",
     "buttons3",
     "active3",
     "cancel"
@@ -4539,8 +4541,8 @@ const PlasmicDescendants = {
   buttons2: ["buttons2", "deactive5", "deactive2"],
   deactive5: ["deactive5"],
   deactive2: ["deactive2"],
-  dEactivateReservations: [
-    "dEactivateReservations",
+  dEactivateSmartbooking: [
+    "dEactivateSmartbooking",
     "buttons4",
     "active4",
     "deactive4"
@@ -4610,7 +4612,7 @@ type NodeDefaultElementType = {
   buttons: "div";
   active: "div";
   deactive: "div";
-  activateReservations: typeof AntdModal;
+  activateSmartbooking: typeof AntdModal;
   buttons3: "div";
   active3: "div";
   cancel: "div";
@@ -4618,7 +4620,7 @@ type NodeDefaultElementType = {
   buttons2: "div";
   deactive5: "div";
   deactive2: "div";
-  dEactivateReservations: typeof AntdModal;
+  dEactivateSmartbooking: typeof AntdModal;
   buttons4: "div";
   active4: "div";
   deactive4: "div";
@@ -4740,7 +4742,7 @@ export const PlasmicSettings = Object.assign(
     buttons: makeNodeComponent("buttons"),
     active: makeNodeComponent("active"),
     deactive: makeNodeComponent("deactive"),
-    activateReservations: makeNodeComponent("activateReservations"),
+    activateSmartbooking: makeNodeComponent("activateSmartbooking"),
     buttons3: makeNodeComponent("buttons3"),
     active3: makeNodeComponent("active3"),
     cancel: makeNodeComponent("cancel"),
@@ -4748,7 +4750,7 @@ export const PlasmicSettings = Object.assign(
     buttons2: makeNodeComponent("buttons2"),
     deactive5: makeNodeComponent("deactive5"),
     deactive2: makeNodeComponent("deactive2"),
-    dEactivateReservations: makeNodeComponent("dEactivateReservations"),
+    dEactivateSmartbooking: makeNodeComponent("dEactivateSmartbooking"),
     buttons4: makeNodeComponent("buttons4"),
     active4: makeNodeComponent("active4"),
     deactive4: makeNodeComponent("deactive4"),
