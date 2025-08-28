@@ -63,6 +63,7 @@ import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMb
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 import { _useStyleTokens as useStyleTokens_antd_5_hostless } from "../antd_5_hostless/PlasmicStyleTokensProvider"; // plasmic-import: ohDidvG9XsCeFumugENU3J/styleTokensProvider
@@ -97,6 +98,7 @@ export type Plasmicقوانینومقرراتاستفادهازرنتامون__O
   introduction2?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultقوانینومقرراتاستفادهازرنتامونProps {}
@@ -139,6 +141,8 @@ function Plasmicقوانینومقرراتاستفادهازرنتامون__Rend
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const $globalActions = useGlobalActions?.();
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
@@ -2871,6 +2875,36 @@ function Plasmicقوانینومقرراتاستفادهازرنتامون__Rend
             data-plasmic-override={overrides.faviconRntComponent}
             className={classNames("__wab_instance", sty.faviconRntComponent)}
           />
+
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["token"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://gateway.rentamon.com/webhook/token"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["token"] != null &&
+                typeof $steps["token"] === "object" &&
+                typeof $steps["token"].then === "function"
+              ) {
+                $steps["token"] = await $steps["token"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2888,7 +2922,8 @@ const PlasmicDescendants = {
     "introduction",
     "introduction2",
     "rentamonFooter",
-    "faviconRntComponent"
+    "faviconRntComponent",
+    "sideEffect"
   ],
   navbarRntHeader: ["navbarRntHeader"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -2904,7 +2939,8 @@ const PlasmicDescendants = {
   introduction: ["introduction"],
   introduction2: ["introduction2"],
   rentamonFooter: ["rentamonFooter"],
-  faviconRntComponent: ["faviconRntComponent"]
+  faviconRntComponent: ["faviconRntComponent"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2920,6 +2956,7 @@ type NodeDefaultElementType = {
   introduction2: "div";
   rentamonFooter: typeof RentamonFooter;
   faviconRntComponent: typeof FaviconRntComponent;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2996,6 +3033,7 @@ export const Plasmicقوانینومقرراتاستفادهازرنتامون =
     introduction2: makeNodeComponent("introduction2"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for Plasmicقوانینومقرراتاستفادهازرنتامون
     internalVariantProps: Plasmicقوانینومقرراتاستفادهازرنتامون__VariantProps,
