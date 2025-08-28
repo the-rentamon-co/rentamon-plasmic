@@ -10530,7 +10530,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 }}
                 placeholder={
                   hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u062a\u0639\u062f\u0627\u062f \u0646\u0641\u0631\u0627\u062a"
+                    ? "\u0646\u0641\u0631\u0627\u062a"
                     : "\u0646\u0641\u0631\u0627\u062a"
                 }
                 type={(() => {
@@ -10858,24 +10858,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             >
               <Button
                 className={classNames("__wab_instance", sty.button__lhJj9)}
-                isDisabled={(() => {
-                  try {
-                    return (
-                      $state.input2.value <= 99999 ||
-                      $state.input2.value == null ||
-                      $state.input2.value >= 20000000 ||
-                      $state.watingForResponse
-                    );
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
-                  }
-                })()}
+                isDisabled={undefined}
                 onClick={async event => {
                   const $steps = {};
 
