@@ -1926,122 +1926,241 @@ function PlasmicCalendar2__RenderFunc(props: {
                     throw e;
                   }
                 })()}
-                dayStatus={(() => {
-                  try {
-                    return (() => {
-                      const currentDate = new Date();
-                      const yesterdayDate = new Date(
-                        currentDate.getTime() - 24 * 60 * 60 * 1000
-                      );
-                      const yesterdayTimestamp = Math.floor(
-                        yesterdayDate.getTime() / 1000
-                      );
-                      const minTimestamp = yesterdayTimestamp;
-                      const maxTimestamp = 1761214783;
-                      function getDayClass(dateProps, calendarData) {
-                        const dayIndex = dateProps.date.day - 1;
-                        const calendarItem = calendarData[dayIndex] || {};
-                        const bookDay = calendarItem.book_at
-                          ? calendarItem.book_at.split(".")[0]
-                          : undefined;
-                        const prevItem = calendarData[dayIndex - 1] || {};
-                        const nextItem = calendarData[dayIndex + 1] || {};
-                        const prevBookDay = prevItem.book_at
-                          ? prevItem.book_at.split(".")[0]
-                          : undefined;
-                        const nextBookDay = nextItem.book_at
-                          ? nextItem.book_at.split(".")[0]
-                          : undefined;
-                        if (
-                          dateProps.unix < minTimestamp ||
-                          dateProps.unix > maxTimestamp
-                        ) {
-                          if (calendarItem.status === "reserved") {
-                            if (
-                              !calendarData[dayIndex - 1] &&
-                              !calendarData[dayIndex + 1]
-                            ) {
-                              return "passedSingleReserve";
+                dayStatus={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const currentDate = new Date();
+                            const yesterdayDate = new Date(
+                              currentDate.getTime() - 24 * 60 * 60 * 1000
+                            );
+                            const yesterdayTimestamp = Math.floor(
+                              yesterdayDate.getTime() / 1000
+                            );
+                            const minTimestamp = yesterdayTimestamp;
+                            const maxTimestamp = 1763806783;
+                            function getDayClass(dateProps, calendarData) {
+                              const dayIndex = dateProps.date.day - 1;
+                              const calendarItem = calendarData[dayIndex] || {};
+                              const bookDay = calendarItem.book_at
+                                ? calendarItem.book_at.split(".")[0]
+                                : undefined;
+                              const prevItem = calendarData[dayIndex - 1] || {};
+                              const nextItem = calendarData[dayIndex + 1] || {};
+                              const prevBookDay = prevItem.book_at
+                                ? prevItem.book_at.split(".")[0]
+                                : undefined;
+                              const nextBookDay = nextItem.book_at
+                                ? nextItem.book_at.split(".")[0]
+                                : undefined;
+                              if (
+                                dateProps.unix < minTimestamp ||
+                                dateProps.unix > maxTimestamp
+                              ) {
+                                if (calendarItem.status === "reserved") {
+                                  if (
+                                    !calendarData[dayIndex - 1] &&
+                                    !calendarData[dayIndex + 1]
+                                  ) {
+                                    return "passedSingleReserve";
+                                  }
+                                  if (
+                                    bookDay !== prevBookDay &&
+                                    bookDay === nextBookDay
+                                  ) {
+                                    return "passedFirstDayReserve";
+                                  }
+                                  if (
+                                    bookDay === prevBookDay &&
+                                    bookDay === nextBookDay
+                                  ) {
+                                    return "passedMidDayReserve";
+                                  }
+                                  if (
+                                    bookDay !== nextBookDay &&
+                                    bookDay === prevBookDay
+                                  ) {
+                                    return "passedLastDayReserve";
+                                  }
+                                  return "passedSingleReserve";
+                                }
+                                return "disabled";
+                              }
+                              if (
+                                $state.fragmentDatePicker.values.includes(
+                                  dateProps.unix
+                                )
+                              ) {
+                                return "selected";
+                              }
+                              if (calendarItem.status === "reserved") {
+                                if (
+                                  !calendarData[dayIndex - 1] &&
+                                  !calendarData[dayIndex + 1]
+                                ) {
+                                  return "reserved";
+                                }
+                                if (
+                                  bookDay !== prevBookDay &&
+                                  bookDay === nextBookDay
+                                ) {
+                                  return "firstDayReserve";
+                                }
+                                if (
+                                  bookDay === prevBookDay &&
+                                  bookDay === nextBookDay
+                                ) {
+                                  return "midDayReserve";
+                                }
+                                if (
+                                  bookDay !== nextBookDay &&
+                                  bookDay === prevBookDay
+                                ) {
+                                  return "lastDayReserve";
+                                }
+                                return "reserved";
+                              }
+                              if (calendarItem.status === "blocked") {
+                                return "blocked";
+                              }
+                              if (calendarItem.discount_percentage > 0) {
+                                return "discount";
+                              }
+                              return calendarItem.status || "";
                             }
-                            if (
-                              bookDay !== prevBookDay &&
-                              bookDay === nextBookDay
-                            ) {
-                              return "passedFirstDayReserve";
+                            return getDayClass(
+                              dateProps,
+                              $state.apiRequest.data[1].calendar
+                            );
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return [];
+                          }
+                          throw e;
+                        }
+                      })()
+                    : (() => {
+                        try {
+                          return (() => {
+                            const currentDate = new Date();
+                            const yesterdayDate = new Date(
+                              currentDate.getTime() - 24 * 60 * 60 * 1000
+                            );
+                            const yesterdayTimestamp = Math.floor(
+                              yesterdayDate.getTime() / 1000
+                            );
+                            const minTimestamp = yesterdayTimestamp;
+                            const maxTimestamp = 1763806783;
+                            function getDayClass(dateProps, calendarData) {
+                              const dayIndex = dateProps.date.day - 1;
+                              const calendarItem = calendarData[dayIndex] || {};
+                              const bookDay = calendarItem.book_at
+                                ? calendarItem.book_at.split(".")[0]
+                                : undefined;
+                              const prevItem = calendarData[dayIndex - 1] || {};
+                              const nextItem = calendarData[dayIndex + 1] || {};
+                              const prevBookDay = prevItem.book_at
+                                ? prevItem.book_at.split(".")[0]
+                                : undefined;
+                              const nextBookDay = nextItem.book_at
+                                ? nextItem.book_at.split(".")[0]
+                                : undefined;
+                              if (
+                                dateProps.unix < minTimestamp ||
+                                dateProps.unix > maxTimestamp
+                              ) {
+                                if (calendarItem.status === "reserved") {
+                                  if (
+                                    !calendarData[dayIndex - 1] &&
+                                    !calendarData[dayIndex + 1]
+                                  ) {
+                                    return "passedSingleReserve";
+                                  }
+                                  if (
+                                    bookDay !== prevBookDay &&
+                                    bookDay === nextBookDay
+                                  ) {
+                                    return "passedFirstDayReserve";
+                                  }
+                                  if (
+                                    bookDay === prevBookDay &&
+                                    bookDay === nextBookDay
+                                  ) {
+                                    return "passedMidDayReserve";
+                                  }
+                                  if (
+                                    bookDay !== nextBookDay &&
+                                    bookDay === prevBookDay
+                                  ) {
+                                    return "passedLastDayReserve";
+                                  }
+                                  return "passedSingleReserve";
+                                }
+                                return "disabled";
+                              }
+                              if (
+                                $state.fragmentDatePicker.values.includes(
+                                  dateProps.unix
+                                )
+                              ) {
+                                return "selected";
+                              }
+                              if (calendarItem.status === "reserved") {
+                                if (
+                                  !calendarData[dayIndex - 1] &&
+                                  !calendarData[dayIndex + 1]
+                                ) {
+                                  return "reserved";
+                                }
+                                if (
+                                  bookDay !== prevBookDay &&
+                                  bookDay === nextBookDay
+                                ) {
+                                  return "firstDayReserve";
+                                }
+                                if (
+                                  bookDay === prevBookDay &&
+                                  bookDay === nextBookDay
+                                ) {
+                                  return "midDayReserve";
+                                }
+                                if (
+                                  bookDay !== nextBookDay &&
+                                  bookDay === prevBookDay
+                                ) {
+                                  return "lastDayReserve";
+                                }
+                                return "reserved";
+                              }
+                              if (calendarItem.status === "blocked") {
+                                return "blocked";
+                              }
+                              if (calendarItem.discount_percentage > 0) {
+                                return "discount";
+                              }
+                              return calendarItem.status || "";
                             }
-                            if (
-                              bookDay === prevBookDay &&
-                              bookDay === nextBookDay
-                            ) {
-                              return "passedMidDayReserve";
-                            }
-                            if (
-                              bookDay !== nextBookDay &&
-                              bookDay === prevBookDay
-                            ) {
-                              return "passedLastDayReserve";
-                            }
-                            return "passedSingleReserve";
-                          }
-                          return "disabled";
-                        }
-                        if (
-                          $state.fragmentDatePicker.values.includes(
-                            dateProps.unix
-                          )
-                        ) {
-                          return "selected";
-                        }
-                        if (calendarItem.status === "reserved") {
+                            return getDayClass(
+                              dateProps,
+                              $state.apiRequest.data[1].calendar
+                            );
+                          })();
+                        } catch (e) {
                           if (
-                            !calendarData[dayIndex - 1] &&
-                            !calendarData[dayIndex + 1]
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
-                            return "reserved";
+                            return [];
                           }
-                          if (
-                            bookDay !== prevBookDay &&
-                            bookDay === nextBookDay
-                          ) {
-                            return "firstDayReserve";
-                          }
-                          if (
-                            bookDay === prevBookDay &&
-                            bookDay === nextBookDay
-                          ) {
-                            return "midDayReserve";
-                          }
-                          if (
-                            bookDay !== nextBookDay &&
-                            bookDay === prevBookDay
-                          ) {
-                            return "lastDayReserve";
-                          }
-                          return "reserved";
+                          throw e;
                         }
-                        if (calendarItem.status === "blocked") {
-                          return "blocked";
-                        }
-                        if (calendarItem.discount_percentage > 0) {
-                          return "discount";
-                        }
-                        return calendarItem.status || "";
-                      }
-                      return getDayClass(
-                        dateProps,
-                        $state.apiRequest.data[1].calendar
-                      );
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
-                  }
-                })()}
+                      })()
+                }
                 holidays={(() => {
                   try {
                     return (() => {
