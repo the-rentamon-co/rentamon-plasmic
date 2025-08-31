@@ -324,7 +324,13 @@ function PlasmicProCalendar__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile") ? false : false
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+            ? false
+            : false
       },
       {
         path: "aiShow",
@@ -1101,25 +1107,16 @@ function PlasmicProCalendar__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__xsnqv
-                  )}
-                >
-                  {"\ud83c\udf81"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
                     sty.text___7Ag8K
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0628\u0627 \u062f\u0639\u0648\u062a \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\n\u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u06f3\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"
+                    ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0628\u0627 \u062f\u0639\u0648\u062a \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\n\u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u06f3\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"
+                    ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
                     : hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0628\u0627 \u062f\u0639\u0648\u062a \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\n\u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u06f3\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"
-                    : "\u0628\u0627 \u062f\u0639\u0648\u062a \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\n\u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u06f3\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631"}
+                    ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
+                    : "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"}
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__fnmGc)}>
@@ -1155,7 +1152,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie("shab_disconnrct", "true", 24);
+                                return setCookie("shab_disconnrct", "true", 9);
                               })();
                             }
                           };
@@ -1277,7 +1274,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie("shab_disconnrct", "true", 24);
+                                return setCookie("shab_disconnrct", "true", 12);
                               })();
                             }
                           };
@@ -2742,7 +2739,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\n\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646"
+                    "\u0622\u062e\u0631\u06cc\u0646 \u0631\u0648\u0632 \u062c\u0634\u0646\u0648\u0627\u0631\u0647\n\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646"
                   }
                 </div>
               </div>
