@@ -4699,7 +4699,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 8px 40px;
 }
 .freeBox__cLBa {
   display: flex;
@@ -4715,7 +4715,7 @@
   box-shadow: 4px 7px 16px 0px rgba(0, 0, 0, 0.2);
   min-width: 0;
   border-radius: 15px;
-  padding: 8px;
+  padding: 8px 8px 20px;
 }
 .freeBox__zj1Rz {
   display: flex;
