@@ -3693,7 +3693,19 @@ function PlasmicCalendar2__RenderFunc(props: {
             className={classNames(
               projectcss.all,
               sty.section__xsRl,
-              "clickable"
+              (() => {
+                try {
+                  return $props.isFirstVisit ? "unclickable" : "clickable";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
             )}
             onClick={async event => {
               const $steps = {};
@@ -4172,7 +4184,19 @@ function PlasmicCalendar2__RenderFunc(props: {
             className={classNames(
               projectcss.all,
               sty.section__gaoiv,
-              "clickable"
+              (() => {
+                try {
+                  return $props.isFirstVisit ? "unclickable" : "clickable";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
             )}
             onClick={async event => {
               const $steps = {};
@@ -4258,7 +4282,19 @@ function PlasmicCalendar2__RenderFunc(props: {
             className={classNames(
               projectcss.all,
               sty.section__wGeqr,
-              "clickable"
+              (() => {
+                try {
+                  return $props.isFirstVisit ? "unclickable" : "clickable";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
             )}
             onClick={async event => {
               const $steps = {};
@@ -5162,67 +5198,81 @@ function PlasmicCalendar2__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["fetchModal", "open"])}
             title={
-              <div
-                className={classNames(projectcss.all, sty.freeBox__mybxy)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateUpdateStyle"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["updateStyle"]
-                          },
-                          operation: 0,
-                          value: ($state.updateStyle = $state.updateStyle + 1)
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+              (() => {
+                try {
+                  return !$props.isFirstVisit;
+                } catch (e) {
                   if (
-                    $steps["updateUpdateStyle"] != null &&
-                    typeof $steps["updateUpdateStyle"] === "object" &&
-                    typeof $steps["updateUpdateStyle"].then === "function"
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
                   ) {
-                    $steps["updateUpdateStyle"] = await $steps[
-                      "updateUpdateStyle"
-                    ];
+                    return true;
                   }
-                }}
-              >
-                {(() => {
-                  try {
-                    return Object.keys($state.platformRequestStatus).length;
-                  } catch (e) {
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__mybxy)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateUpdateStyle"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["updateStyle"]
+                            },
+                            operation: 0,
+                            value: ($state.updateStyle = $state.updateStyle + 1)
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
                     if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
+                      $steps["updateUpdateStyle"] != null &&
+                      typeof $steps["updateUpdateStyle"] === "object" &&
+                      typeof $steps["updateUpdateStyle"].then === "function"
                     ) {
-                      return true;
+                      $steps["updateUpdateStyle"] = await $steps[
+                        "updateUpdateStyle"
+                      ];
                     }
-                    throw e;
-                  }
-                })() ? (
-                  <Icon23Icon
-                    className={classNames(projectcss.all, sty.svg__rElTd, ``)}
-                    role={"img"}
-                  />
-                ) : null}
-              </div>
+                  }}
+                >
+                  {(() => {
+                    try {
+                      return Object.keys($state.platformRequestStatus).length;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <Icon23Icon
+                      className={classNames(projectcss.all, sty.svg__rElTd, ``)}
+                      role={"img"}
+                    />
+                  ) : null}
+                </div>
+              ) : null
             }
             trigger={null}
             width={
@@ -5469,7 +5519,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                 </div>
               </div>
               <div
-                className={classNames(projectcss.all, sty.freeBox__xAfjs, ``)}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__xAfjs,
+                  (() => {
+                    try {
+                      return $props.isFirstVisit == true &&
+                        $state.tourSteps == 2
+                        ? "blinkBorderTourGuide clickable"
+                        : "";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                )}
               >
                 {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                   (() => {
@@ -7008,7 +7077,23 @@ function PlasmicCalendar2__RenderFunc(props: {
           <div
             data-plasmic-name={"block2"}
             data-plasmic-override={overrides.block2}
-            className={classNames(projectcss.all, sty.block2, "clickable ")}
+            className={classNames(
+              projectcss.all,
+              sty.block2,
+              (() => {
+                try {
+                  return $props.isFirstVisit ? "unclickable" : "clickable";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
+            )}
             onClick={async event => {
               const $steps = {};
 
