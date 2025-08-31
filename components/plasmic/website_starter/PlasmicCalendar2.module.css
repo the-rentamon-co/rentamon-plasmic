@@ -1523,6 +1523,19 @@
 .ok2 > picture > img {
   object-fit: cover;
 }
+.freeBox__hbWoQ {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  border-radius: 15px;
+  padding: 0px 0px 12px;
+}
 .button__sWmv0:global(.__wab_instance) {
   max-width: 86%;
   width: 100%;
