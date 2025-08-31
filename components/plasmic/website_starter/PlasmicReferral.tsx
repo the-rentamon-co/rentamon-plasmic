@@ -424,6 +424,17 @@ function PlasmicReferral__RenderFunc(props: {
                           className={
                             "plasmic_default__all plasmic_default__span"
                           }
+                          style={{ textDecorationLine: "line-through" }}
+                        >
+                          {
+                            "\u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646"
+                          }
+                        </span>
+                        <React.Fragment> </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
                           style={{ fontWeight: 500 }}
                         >
                           {
@@ -432,7 +443,7 @@ function PlasmicReferral__RenderFunc(props: {
                         </span>
                         <React.Fragment>
                           {
-                            " \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81 \u0628\u06af\u06cc\u0631.\n\u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u0645\u062b\u0627\u0644 \u0628\u0627 \u062f\u0639\u0648\u062a \u06f1\u06f0 \u0646\u0641\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u00ab\u0633\u0647 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\u00bb \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631\u06cc!"
+                            " \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81 \u0628\u06af\u06cc\u0631."
                           }
                         </React.Fragment>
                       </React.Fragment>
@@ -447,6 +458,17 @@ function PlasmicReferral__RenderFunc(props: {
                           className={
                             "plasmic_default__all plasmic_default__span"
                           }
+                          style={{ textDecorationLine: "line-through" }}
+                        >
+                          {
+                            "\u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646"
+                          }
+                        </span>
+                        <React.Fragment> </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
                           style={{ fontWeight: 700 }}
                         >
                           {
@@ -455,12 +477,44 @@ function PlasmicReferral__RenderFunc(props: {
                         </span>
                         <React.Fragment>
                           {
-                            " \u0647\u062f\u06cc\u0647 \ud83c\udf81 \u0628\u06af\u06cc\u0631.\n\u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u0645\u062b\u0627\u0644 \u0628\u0627 \u062f\u0639\u0648\u062a \u06f1\u06f0 \u0646\u0641\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u00ab\u0633\u0647 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646\u00bb \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631\u06cc!"
+                            " \u0647\u062f\u06cc\u0647 \ud83c\udf81 \u0628\u06af\u06cc\u0631."
                           }
                         </React.Fragment>
                       </React.Fragment>
                     ) : (
-                      "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u0645\u0628\u0644\u063a \u06f3\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646 \u0647\u062f\u06cc\u0647 \ud83c\udf81 \u0628\u06af\u06cc\u0631. \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u0645\u062b\u0627\u0644 \u0628\u0627 \u062f\u0639\u0648\u062a \u06f1\u06f0 \u0646\u0641\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u00ab\u0633\u0647 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646\u00bb \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631\u06cc!"
+                      <React.Fragment>
+                        <React.Fragment>
+                          {
+                            "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0646\u0641\u0631 \u0645\u0628\u0644\u063a "
+                          }
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ textDecorationLine: "line-through" }}
+                        >
+                          {
+                            "\u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646"
+                          }
+                        </span>
+                        <React.Fragment> </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 500 }}
+                        >
+                          {
+                            "\u06f3\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0646"
+                          }
+                        </span>
+                        <React.Fragment>
+                          {
+                            " \u0647\u062f\u06cc\u0647 \ud83c\udf81 \u0628\u06af\u06cc\u0631."
+                          }
+                        </React.Fragment>
+                      </React.Fragment>
                     )}
                   </div>
                   <div
