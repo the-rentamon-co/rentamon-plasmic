@@ -116,7 +116,6 @@ export type PlasmicProCalendar__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
   aiAgentIframe?: Flex__<typeof Iframe>;
-  referral?: Flex__<"div">;
   userAvailableFeature?: Flex__<typeof ApiRequest>;
   spacerDontTouch?: Flex__<"div">;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
@@ -1131,7 +1130,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["runCode"] = true
+                    $steps["runCode"] = false
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
@@ -1253,7 +1252,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["runCode"] = true
+                    $steps["runCode"] = false
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
@@ -2685,93 +2684,6 @@ function PlasmicProCalendar__RenderFunc(props: {
               />
             </div>
           ) : null}
-          <div
-            data-plasmic-name={"referral"}
-            data-plasmic-override={overrides.referral}
-            className={classNames(projectcss.all, sty.referral)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox__trN53,
-                "shine"
-              )}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToReferral"] = true
-                  ? (() => {
-                      const actionArgs = { destination: `/referral` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToReferral"] != null &&
-                  typeof $steps["goToReferral"] === "object" &&
-                  typeof $steps["goToReferral"].then === "function"
-                ) {
-                  $steps["goToReferral"] = await $steps["goToReferral"];
-                }
-              }}
-            >
-              <div
-                className={classNames(projectcss.all, sty.freeBox__r3Nsi)}
-                onClick={async event => {
-                  const $steps = {};
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eIbPw
-                  )}
-                >
-                  {
-                    "\u0622\u062e\u0631\u06cc\u0646 \u0631\u0648\u0632 \u062c\u0634\u0646\u0648\u0627\u0631\u0647\n\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646"
-                  }
-                </div>
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__b6Q0K,
-                  "blinking"
-                )}
-                onClick={async event => {
-                  const $steps = {};
-                }}
-              >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__diRKq)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  height={``}
-                  loading={"lazy"}
-                  src={
-                    "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Fgift-box-svgrepo-com.svg?versionId="
-                  }
-                  width={``}
-                />
-              </div>
-            </div>
-          </div>
           <ApiRequest
             data-plasmic-name={"userAvailableFeature"}
             data-plasmic-override={overrides.userAvailableFeature}
@@ -2982,7 +2894,6 @@ const PlasmicDescendants = {
     "profile",
     "calendar2",
     "aiAgentIframe",
-    "referral",
     "userAvailableFeature",
     "spacerDontTouch",
     "navbarRntFooter",
@@ -3035,7 +2946,6 @@ const PlasmicDescendants = {
   profile: ["profile"],
   calendar2: ["calendar2"],
   aiAgentIframe: ["aiAgentIframe"],
-  referral: ["referral"],
   userAvailableFeature: ["userAvailableFeature"],
   spacerDontTouch: ["spacerDontTouch"],
   navbarRntFooter: ["navbarRntFooter"],
@@ -3068,7 +2978,6 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
   aiAgentIframe: typeof Iframe;
-  referral: "div";
   userAvailableFeature: typeof ApiRequest;
   spacerDontTouch: "div";
   navbarRntFooter: typeof NavbarRntFooter;
@@ -3157,7 +3066,6 @@ export const PlasmicProCalendar = Object.assign(
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
     aiAgentIframe: makeNodeComponent("aiAgentIframe"),
-    referral: makeNodeComponent("referral"),
     userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     spacerDontTouch: makeNodeComponent("spacerDontTouch"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
