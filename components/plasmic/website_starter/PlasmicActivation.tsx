@@ -4461,8 +4461,8 @@ function PlasmicActivation__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["updateInput6Value3"] = $state
-                                .policiesCheckbox.isChecked
+                              $steps["setUserSource"] = $state.policiesCheckbox
+                                .isChecked
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
@@ -4493,14 +4493,39 @@ function PlasmicActivation__RenderFunc(props: {
                                   })()
                                 : undefined;
                               if (
-                                $steps["updateInput6Value3"] != null &&
-                                typeof $steps["updateInput6Value3"] ===
-                                  "object" &&
-                                typeof $steps["updateInput6Value3"].then ===
+                                $steps["setUserSource"] != null &&
+                                typeof $steps["setUserSource"] === "object" &&
+                                typeof $steps["setUserSource"].then ===
                                   "function"
                               ) {
-                                $steps["updateInput6Value3"] = await $steps[
-                                  "updateInput6Value3"
+                                $steps["setUserSource"] = await $steps[
+                                  "setUserSource"
+                                ];
+                              }
+
+                              $steps["errorToast"] = !$state.policiesCheckbox
+                                .isChecked
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u0644\u0637\u0641\u0627 \u0627\u0648\u0644 \u062a\u06cc\u06a9 \u067e\u0630\u06cc\u0631\u0634 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0631\u0648 \u0628\u0632\u0646!",
+                                        "top-center",
+                                        4000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["errorToast"] != null &&
+                                typeof $steps["errorToast"] === "object" &&
+                                typeof $steps["errorToast"].then === "function"
+                              ) {
+                                $steps["errorToast"] = await $steps[
+                                  "errorToast"
                                 ];
                               }
 
@@ -4532,59 +4557,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 typeof $steps["goToPage"].then === "function"
                               ) {
                                 $steps["goToPage"] = await $steps["goToPage"];
-                              }
-
-                              $steps["setCookieFirstVisit"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          function setCookie(
-                                            name,
-                                            value,
-                                            hours
-                                          ) {
-                                            let expires = "";
-                                            if (hours) {
-                                              const date = new Date();
-                                              date.setTime(
-                                                date.getTime() +
-                                                  hours * 60 * 60 * 1000
-                                              );
-                                              expires =
-                                                "; expires=" +
-                                                date.toUTCString();
-                                            }
-                                            document.cookie =
-                                              name +
-                                              "=" +
-                                              (value || "") +
-                                              expires +
-                                              "; path=/";
-                                          }
-                                          return setCookie(
-                                            "first_visit",
-                                            "true",
-                                            2
-                                          );
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["setCookieFirstVisit"] != null &&
-                                typeof $steps["setCookieFirstVisit"] ===
-                                  "object" &&
-                                typeof $steps["setCookieFirstVisit"].then ===
-                                  "function"
-                              ) {
-                                $steps["setCookieFirstVisit"] = await $steps[
-                                  "setCookieFirstVisit"
-                                ];
                               }
 
                               $steps["setCookiePropTour"] = true
@@ -4638,41 +4610,6 @@ function PlasmicActivation__RenderFunc(props: {
                                 $steps["setCookiePropTour"] = await $steps[
                                   "setCookiePropTour"
                                 ];
-                              }
-
-                              $steps["runCode"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          let user_type = $state.source;
-                                          console.log("user_type", user_type);
-                                          if (
-                                            user_type == "app_store" ||
-                                            user_type == "cafe_bazar" ||
-                                            user_type == "myket" ||
-                                            user_type == "unknown"
-                                          ) {
-                                            return (window.location.href =
-                                              "https://rentamon.com/calendar/");
-                                          } else {
-                                            return (window.location.href =
-                                              "https://rentamon.com/panel/");
-                                          }
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
                               }
 
                               $steps["wait"] = true
@@ -4733,6 +4670,94 @@ function PlasmicActivation__RenderFunc(props: {
                               ) {
                                 $steps["updateLoading2"] = await $steps[
                                   "updateLoading2"
+                                ];
+                              }
+
+                              $steps["runCode"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          let user_type = $state.source;
+                                          console.log("user_type", user_type);
+                                          if (
+                                            user_type == "app_store" ||
+                                            user_type == "cafe_bazar" ||
+                                            user_type == "myket" ||
+                                            user_type == "unknown"
+                                          ) {
+                                            return (window.location.href =
+                                              "https://rentamon.com/calendar/");
+                                          } else {
+                                            return (window.location.href =
+                                              "https://rentamon.com/panel/");
+                                          }
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
+                              $steps["setCookieFirstVisit"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          function setCookie(
+                                            name,
+                                            value,
+                                            hours
+                                          ) {
+                                            let expires = "";
+                                            if (hours) {
+                                              const date = new Date();
+                                              date.setTime(
+                                                date.getTime() +
+                                                  hours * 60 * 60 * 1000
+                                              );
+                                              expires =
+                                                "; expires=" +
+                                                date.toUTCString();
+                                            }
+                                            document.cookie =
+                                              name +
+                                              "=" +
+                                              (value || "") +
+                                              expires +
+                                              "; path=/";
+                                          }
+                                          return setCookie(
+                                            "first_visit",
+                                            "true",
+                                            2
+                                          );
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["setCookieFirstVisit"] != null &&
+                                typeof $steps["setCookieFirstVisit"] ===
+                                  "object" &&
+                                typeof $steps["setCookieFirstVisit"].then ===
+                                  "function"
+                              ) {
+                                $steps["setCookieFirstVisit"] = await $steps[
+                                  "setCookieFirstVisit"
                                 ];
                               }
                             }}
