@@ -499,7 +499,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 0px;
 }
 @media (max-width: 1200px) {
   .title14 {
@@ -517,7 +517,7 @@
   max-width: 100%;
   font-weight: 600;
   color: #444444;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
 }
 @media (max-width: 350px) {
@@ -537,6 +537,11 @@
   min-width: 0;
   padding: 8px 0px;
 }
+@media (max-width: 500px) {
+  .caption13 {
+    padding-top: 0px;
+  }
+}
 @media (max-width: 350px) {
   .caption13 {
     padding-bottom: 0px;
@@ -555,7 +560,7 @@
 }
 @media (max-width: 350px) {
   .text__xc1NB {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .freeBox__fpiMh {
@@ -739,7 +744,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 0px;
 }
 @media (max-width: 1200px) {
   .title15 {
@@ -757,7 +762,7 @@
   max-width: 100%;
   font-weight: 600;
   color: #444444;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
 }
 @media (max-width: 350px) {
@@ -783,6 +788,11 @@
     padding-right: 0px;
   }
 }
+@media (max-width: 500px) {
+  .caption14 {
+    padding-top: 0px;
+  }
+}
 @media (max-width: 350px) {
   .caption14 {
     width: 100%;
@@ -793,7 +803,7 @@
     align-items: center;
     column-gap: 0px;
     min-width: 0;
-    padding: 8px 0px 0px;
+    padding: 0px;
   }
 }
 .text__p31Yw {
@@ -944,7 +954,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 0px;
 }
 @media (max-width: 1200px) {
   .title16 {
@@ -962,7 +972,7 @@
   max-width: 100%;
   font-weight: 600;
   color: #444444;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
 }
 @media (max-width: 350px) {
@@ -990,6 +1000,11 @@
     padding-left: 0px;
   }
 }
+@media (max-width: 500px) {
+  .caption15 {
+    padding-top: 0px;
+  }
+}
 @media (max-width: 350px) {
   .caption15 {
     width: 100%;
@@ -1000,7 +1015,7 @@
     align-items: center;
     column-gap: 0px;
     min-width: 0;
-    padding: 8px 0px 0px;
+    padding: 0px;
   }
 }
 .text__at5Mx {
@@ -1148,7 +1163,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 0px;
 }
 @media (max-width: 1200px) {
   .title17 {
@@ -1173,7 +1188,7 @@
   max-width: 100%;
   font-weight: 600;
   color: #444444;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
 }
 @media (max-width: 350px) {
@@ -1199,6 +1214,11 @@
     padding-left: 0px;
   }
 }
+@media (max-width: 500px) {
+  .caption16 {
+    padding-top: 0px;
+  }
+}
 @media (max-width: 350px) {
   .caption16 {
     width: 100%;
@@ -1209,7 +1229,7 @@
     align-items: center;
     column-gap: 0px;
     min-width: 0;
-    padding: 8px 0px 0px;
+    padding: 0px;
   }
 }
 .text__ms3SB {
@@ -1350,6 +1370,7 @@
     min-width: auto;
     min-height: auto;
     max-height: none;
+    width: 70%;
     border-radius: 100px;
   }
 }
@@ -1363,7 +1384,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 0px;
 }
 @media (max-width: 1200px) {
   .title18 {
@@ -1388,7 +1409,7 @@
   max-width: 100%;
   font-weight: 600;
   color: #444444;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
 }
 @media (max-width: 350px) {
@@ -1414,6 +1435,11 @@
     padding-left: 0px;
   }
 }
+@media (max-width: 500px) {
+  .caption17 {
+    padding-top: 0px;
+  }
+}
 @media (max-width: 350px) {
   .caption17 {
     width: 100%;
@@ -1424,7 +1450,7 @@
     align-items: center;
     column-gap: 0px;
     min-width: 0;
-    padding: 8px 0px 0px;
+    padding: 0px;
   }
 }
 .text___3DnQx {
@@ -1604,7 +1630,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 0px;
 }
 @media (max-width: 1200px) {
   .title19 {
@@ -1642,7 +1668,7 @@
   max-width: 100%;
   font-weight: 600;
   color: #444444;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
 }
 @media (max-width: 350px) {
@@ -1673,6 +1699,11 @@
     padding-left: 0px;
   }
 }
+@media (max-width: 500px) {
+  .caption18 {
+    padding-top: 0px;
+  }
+}
 @media (max-width: 350px) {
   .caption18 {
     width: 100%;
@@ -1683,7 +1714,7 @@
     align-items: center;
     column-gap: 0px;
     min-width: 0;
-    padding: 8px 0px 0px;
+    padding: 0px;
   }
 }
 .text__jPxzh {

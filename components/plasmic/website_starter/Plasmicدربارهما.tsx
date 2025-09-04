@@ -775,12 +775,9 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : "auto"
                         }
                         loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/photo20240908194639300X300Jpg.jpg",
-                          fullWidth: 300,
-                          fullHeight: 300,
-                          aspectRatio: undefined
-                        }}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fmahan.jpg?versionId="
+                        }
                       />
                     </div>
                     <div
@@ -795,9 +792,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                           sty.text__mt7SY
                         )}
                       >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0639\u0644\u06cc\u0631\u0636\u0627 \u0646\u06cc\u06a9\u0648\u0646\u06cc\u0627"
-                          : "\u0633\u06cc\u062f \u0639\u0644\u06cc\u0631\u0636\u0627 \u0646\u06cc\u06a9\u0648\u0646\u06cc\u0627"}
+                        {hasVariant(globalVariants, "screen", "mobile")
+                          ? "\u0645\u0627\u0647\u0627\u0646"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u0645\u0627\u0647\u0627\u0646"
+                          : "\u0645\u0627\u0647\u0627\u0646"}
                       </div>
                     </div>
                     <div
@@ -811,38 +810,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                           projectcss.__wab_text,
                           sty.text__at5Mx
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/alireza-nikouniya/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
-                        {
-                          "\u062a\u0648\u0633\u0639\u0647\u200c\u062f\u0647\u0646\u062f\u0647 \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631"
-                        }
+                        {"\u0639\u0645\u0644\u06cc\u0627\u062a"}
                       </div>
                     </div>
                   </div>
@@ -1039,7 +1008,9 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : "120px"
                         }
                         displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "70%"
+                            : hasVariant(globalVariants, "screen", "mobile")
                             ? "70%"
                             : hasVariant(globalVariants, "screen", "tablet")
                             ? "80%"
