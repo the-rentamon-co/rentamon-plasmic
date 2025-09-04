@@ -106,28 +106,32 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   gridImages?: Flex__<"div">;
   devMindset?: Flex__<"div">;
   introAutoSyncTitle4?: Flex__<"div">;
-  team?: Flex__<"div">;
-  sectionTitle?: Flex__<"div">;
-  member13?: Flex__<"div">;
-  icon13?: Flex__<"div">;
-  title14?: Flex__<"div">;
-  caption13?: Flex__<"div">;
-  member14?: Flex__<"div">;
-  icon14?: Flex__<"div">;
-  title15?: Flex__<"div">;
-  caption14?: Flex__<"div">;
-  member16?: Flex__<"div">;
-  icon16?: Flex__<"div">;
-  title17?: Flex__<"div">;
-  caption16?: Flex__<"div">;
-  member17?: Flex__<"div">;
-  icon17?: Flex__<"div">;
-  title18?: Flex__<"div">;
-  caption17?: Flex__<"div">;
-  member18?: Flex__<"div">;
-  icon18?: Flex__<"div">;
-  title19?: Flex__<"div">;
-  caption18?: Flex__<"div">;
+  team2?: Flex__<"div">;
+  sectionTitle2?: Flex__<"div">;
+  member19?: Flex__<"div">;
+  icon19?: Flex__<"div">;
+  title20?: Flex__<"div">;
+  caption19?: Flex__<"div">;
+  member20?: Flex__<"div">;
+  icon20?: Flex__<"div">;
+  title21?: Flex__<"div">;
+  caption20?: Flex__<"div">;
+  member15?: Flex__<"div">;
+  icon15?: Flex__<"div">;
+  title16?: Flex__<"div">;
+  caption15?: Flex__<"div">;
+  member21?: Flex__<"div">;
+  icon21?: Flex__<"div">;
+  title22?: Flex__<"div">;
+  caption21?: Flex__<"div">;
+  member22?: Flex__<"div">;
+  icon22?: Flex__<"div">;
+  title23?: Flex__<"div">;
+  caption22?: Flex__<"div">;
+  member23?: Flex__<"div">;
+  icon23?: Flex__<"div">;
+  title24?: Flex__<"div">;
+  caption23?: Flex__<"div">;
   teamup?: Flex__<"div">;
   introAutoSyncTitle3?: Flex__<"div">;
   introAutoSyncCaption3?: Flex__<"div">;
@@ -978,151 +982,81 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
               </div>
             </div>
             <div
-              data-plasmic-name={"team"}
-              data-plasmic-override={overrides.team}
-              className={classNames(
-                projectcss.all,
-                sty.team,
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? "fadein"
-                  : "fadein"
-              )}
+              data-plasmic-name={"team2"}
+              data-plasmic-override={overrides.team2}
+              className={classNames(projectcss.all, sty.team2, "fadein")}
             >
               <div
-                data-plasmic-name={"sectionTitle"}
-                data-plasmic-override={overrides.sectionTitle}
-                className={classNames(projectcss.all, sty.sectionTitle)}
+                data-plasmic-name={"sectionTitle2"}
+                data-plasmic-override={overrides.sectionTitle2}
+                className={classNames(projectcss.all, sty.sectionTitle2)}
               >
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__dx7D2
+                    sty.text__ny5Yl
                   )}
                 >
                   {
-                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc\u200c\u0647\u0627"
+                    "\u0622\u0634\u0646\u0627\u06cc\u06cc \u0628\u0627 \u062a\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
                   }
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__md5G6)}>
-                <div className={classNames(projectcss.all, sty.freeBox__kZRiZ)}>
+              <div className={classNames(projectcss.all, sty.freeBox__zmYY)}>
+                <div className={classNames(projectcss.all, sty.freeBox__fxtkM)}>
                   <div
-                    data-plasmic-name={"member13"}
-                    data-plasmic-override={overrides.member13}
-                    className={classNames(projectcss.all, sty.member13)}
+                    data-plasmic-name={"member19"}
+                    data-plasmic-override={overrides.member19}
+                    className={classNames(projectcss.all, sty.member19)}
                   >
                     <div
-                      data-plasmic-name={"icon13"}
-                      data-plasmic-override={overrides.icon13}
-                      className={classNames(projectcss.all, sty.icon13)}
+                      data-plasmic-name={"icon19"}
+                      data-plasmic-override={overrides.icon19}
+                      className={classNames(projectcss.all, sty.icon19)}
                     >
                       <PlasmicImg__
                         alt={""}
-                        className={classNames(sty.img__lteJf)}
+                        className={classNames(sty.img__hTxU)}
                         displayHeight={"auto"}
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
-                        }
+                        displayWidth={"auto"}
                         loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/boojarJpg.jpg",
-                          fullWidth: 300,
-                          fullHeight: 300,
-                          aspectRatio: undefined
-                        }}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fboojar2.jpg?versionId="
+                        }
                       />
                     </div>
                     <div
-                      data-plasmic-name={"title14"}
-                      data-plasmic-override={overrides.title14}
-                      className={classNames(projectcss.all, sty.title14)}
+                      data-plasmic-name={"title20"}
+                      data-plasmic-override={overrides.title20}
+                      className={classNames(projectcss.all, sty.title20)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___8VX2S
+                          sty.text__bewaD
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["updatePropertyId"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["propertyId"]
-                                  },
-                                  operation: 0
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updatePropertyId"] != null &&
-                            typeof $steps["updatePropertyId"] === "object" &&
-                            typeof $steps["updatePropertyId"].then ===
-                              "function"
-                          ) {
-                            $steps["updatePropertyId"] = await $steps[
-                              "updatePropertyId"
-                            ];
-                          }
-                        }}
                       >
                         {
                           "\u0646\u0627\u0632\u0646\u06cc\u0646 \u0628\u0648\u062c\u0627\u0631"
@@ -1130,44 +1064,16 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                       </div>
                     </div>
                     <div
-                      data-plasmic-name={"caption13"}
-                      data-plasmic-override={overrides.caption13}
-                      className={classNames(projectcss.all, sty.caption13)}
+                      data-plasmic-name={"caption19"}
+                      data-plasmic-override={overrides.caption19}
+                      className={classNames(projectcss.all, sty.caption19)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__c0WvA
+                          sty.text___9RiYd
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/nazaninboojar/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
                         {
                           "\u0647\u0645\u200c\u0628\u0646\u06cc\u0627\u0646\u200c\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0645\u062d\u0635\u0648\u0644"
@@ -1176,92 +1082,58 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__blrcZ)}>
+                <div className={classNames(projectcss.all, sty.freeBox__xXkWt)}>
                   <div
-                    data-plasmic-name={"member14"}
-                    data-plasmic-override={overrides.member14}
-                    className={classNames(projectcss.all, sty.member14)}
+                    data-plasmic-name={"member20"}
+                    data-plasmic-override={overrides.member20}
+                    className={classNames(projectcss.all, sty.member20)}
                   >
                     <div
-                      data-plasmic-name={"icon14"}
-                      data-plasmic-override={overrides.icon14}
-                      className={classNames(projectcss.all, sty.icon14)}
+                      data-plasmic-name={"icon20"}
+                      data-plasmic-override={overrides.icon20}
+                      className={classNames(projectcss.all, sty.icon20)}
                     >
                       <PlasmicImg__
                         alt={""}
-                        className={classNames(sty.img___39TlK)}
+                        className={classNames(sty.img__hKe0A)}
                         displayHeight={"auto"}
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
-                        }
+                        displayWidth={"auto"}
                         loading={"lazy"}
                         src={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? {
-                                src: "/plasmic/website_starter/images/abolhassaniJpg.jpg",
-                                fullWidth: 300,
-                                fullHeight: 300,
-                                aspectRatio: undefined
-                              }
-                            : {
-                                src: "/plasmic/website_starter/images/photo20240703115630288X300Webp.webp",
-                                fullWidth: 288,
-                                fullHeight: 300,
-                                aspectRatio: undefined
-                              }
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fabolhassani.jpg?versionId="
                         }
                       />
                     </div>
                     <div
-                      data-plasmic-name={"title15"}
-                      data-plasmic-override={overrides.title15}
-                      className={classNames(projectcss.all, sty.title15)}
+                      data-plasmic-name={"title21"}
+                      data-plasmic-override={overrides.title21}
+                      className={classNames(projectcss.all, sty.title21)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__lzpwx
+                          sty.text__hC4Tw
                         )}
                       >
                         {
@@ -1270,44 +1142,16 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                       </div>
                     </div>
                     <div
-                      data-plasmic-name={"caption14"}
-                      data-plasmic-override={overrides.caption14}
-                      className={classNames(projectcss.all, sty.caption14)}
+                      data-plasmic-name={"caption20"}
+                      data-plasmic-override={overrides.caption20}
+                      className={classNames(projectcss.all, sty.caption20)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___2W3F6
+                          sty.text___95SH
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/zahra-abolhasani-375125315/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
                         {
                           "\u0645\u0648\u0641\u0642\u06cc\u062a \u06a9\u0627\u0631\u0628\u0631\u0627\u0646"
@@ -1316,92 +1160,132 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__f7ESu)}>
+                <div className={classNames(projectcss.all, sty.freeBox__uoBhw)}>
                   <div
-                    data-plasmic-name={"member16"}
-                    data-plasmic-override={overrides.member16}
-                    className={classNames(projectcss.all, sty.member16)}
+                    data-plasmic-name={"member15"}
+                    data-plasmic-override={overrides.member15}
+                    className={classNames(projectcss.all, sty.member15)}
                   >
                     <div
-                      data-plasmic-name={"icon16"}
-                      data-plasmic-override={overrides.icon16}
-                      className={classNames(projectcss.all, sty.icon16)}
+                      data-plasmic-name={"icon15"}
+                      data-plasmic-override={overrides.icon15}
+                      className={classNames(projectcss.all, sty.icon15)}
                     >
                       <PlasmicImg__
                         alt={""}
-                        className={classNames(sty.img__asyXq)}
+                        className={classNames(sty.img___2PyFu)}
                         displayHeight={"auto"}
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
-                        }
+                        displayWidth={"auto"}
                         loading={"lazy"}
                         src={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? {
-                                src: "/plasmic/website_starter/images/parsaJpg2.jpg",
-                                fullWidth: 300,
-                                fullHeight: 300,
-                                aspectRatio: undefined
-                              }
-                            : {
-                                src: "/plasmic/website_starter/images/parsaJpg.jpg",
-                                fullWidth: 243,
-                                fullHeight: 243,
-                                aspectRatio: undefined
-                              }
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fmahan.jpg?versionId="
                         }
                       />
                     </div>
                     <div
-                      data-plasmic-name={"title17"}
-                      data-plasmic-override={overrides.title17}
-                      className={classNames(projectcss.all, sty.title17)}
+                      data-plasmic-name={"title16"}
+                      data-plasmic-override={overrides.title16}
+                      className={classNames(projectcss.all, sty.title16)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__aaLiT
+                          sty.text__gye8J
+                        )}
+                      >
+                        {"\u0645\u0627\u0647\u0627\u0646"}
+                      </div>
+                    </div>
+                    <div
+                      data-plasmic-name={"caption15"}
+                      data-plasmic-override={overrides.caption15}
+                      className={classNames(projectcss.all, sty.caption15)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___8D3Ph
+                        )}
+                      >
+                        {"\u0639\u0645\u0644\u06cc\u0627\u062a"}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__cwTc9)}>
+                  <div
+                    data-plasmic-name={"member21"}
+                    data-plasmic-override={overrides.member21}
+                    className={classNames(projectcss.all, sty.member21)}
+                  >
+                    <div
+                      data-plasmic-name={"icon21"}
+                      data-plasmic-override={overrides.icon21}
+                      className={classNames(projectcss.all, sty.icon21)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__bz2Xq)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
+                            : "120px"
+                        }
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
+                            : "120px"
+                        }
+                        displayMinHeight={
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
+                            : "120px"
+                        }
+                        displayMinWidth={
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
+                            : "120px"
+                        }
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fparsa.jpg?versionId="
+                        }
+                      />
+                    </div>
+                    <div
+                      data-plasmic-name={"title22"}
+                      data-plasmic-override={overrides.title22}
+                      className={classNames(projectcss.all, sty.title22)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__cwHGf
                         )}
                       >
                         {
@@ -1410,175 +1294,94 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                       </div>
                     </div>
                     <div
-                      data-plasmic-name={"caption16"}
-                      data-plasmic-override={overrides.caption16}
-                      className={classNames(projectcss.all, sty.caption16)}
+                      data-plasmic-name={"caption21"}
+                      data-plasmic-override={overrides.caption21}
+                      className={classNames(projectcss.all, sty.caption21)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__xyxww
+                          sty.text__jJwmo
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/parsa-khosravi-70432a244/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
                         {
-                          "\u062a\u0648\u0633\u0639\u0647\u200c\u062f\u0647\u0646\u062f\u0647"
+                          "\u062a\u0648\u0633\u0639\u0647\u200c\u062f\u0647\u0646\u062f\u0647 \u0641\u0646\u06cc"
                         }
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__iBgzW)}>
+                <div className={classNames(projectcss.all, sty.freeBox__uaLim)}>
                   <div
-                    data-plasmic-name={"member17"}
-                    data-plasmic-override={overrides.member17}
-                    className={classNames(projectcss.all, sty.member17)}
+                    data-plasmic-name={"member22"}
+                    data-plasmic-override={overrides.member22}
+                    className={classNames(projectcss.all, sty.member22)}
                   >
                     <div
-                      data-plasmic-name={"icon17"}
-                      data-plasmic-override={overrides.icon17}
-                      className={classNames(projectcss.all, sty.icon17)}
+                      data-plasmic-name={"icon22"}
+                      data-plasmic-override={overrides.icon22}
+                      className={classNames(projectcss.all, sty.icon22)}
                     >
                       <PlasmicImg__
                         alt={""}
-                        className={classNames(sty.img__vUb5V)}
+                        className={classNames(sty.img__suBo)}
                         displayHeight={"auto"}
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
-                        }
+                        displayWidth={"auto"}
                         loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/small300X288Jpg2.jpg",
-                          fullWidth: 300,
-                          fullHeight: 300,
-                          aspectRatio: undefined
-                        }}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fsmall-300x288.jpg?versionId="
+                        }
                       />
                     </div>
                     <div
-                      data-plasmic-name={"title18"}
-                      data-plasmic-override={overrides.title18}
-                      className={classNames(projectcss.all, sty.title18)}
+                      data-plasmic-name={"title23"}
+                      data-plasmic-override={overrides.title23}
+                      className={classNames(projectcss.all, sty.title23)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__mycBa
+                          sty.text__oku8W
                         )}
                       >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647"
-                          : "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647"}
+                        {
+                          "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647"
+                        }
                       </div>
                     </div>
                     <div
-                      data-plasmic-name={"caption17"}
-                      data-plasmic-override={overrides.caption17}
-                      className={classNames(projectcss.all, sty.caption17)}
+                      data-plasmic-name={"caption22"}
+                      data-plasmic-override={overrides.caption22}
+                      className={classNames(projectcss.all, sty.caption22)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__e7GCb
+                          sty.text__zg1CV
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/mostafa-faghih/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
                         {
                           "\u0628\u0646\u06cc\u0627\u0646\u200c\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644"
@@ -1587,133 +1390,80 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__cOXwD)}>
+                <div className={classNames(projectcss.all, sty.freeBox__mkOk)}>
                   <div
-                    data-plasmic-name={"member18"}
-                    data-plasmic-override={overrides.member18}
-                    className={classNames(projectcss.all, sty.member18)}
+                    data-plasmic-name={"member23"}
+                    data-plasmic-override={overrides.member23}
+                    className={classNames(projectcss.all, sty.member23)}
                   >
                     <div
-                      data-plasmic-name={"icon18"}
-                      data-plasmic-override={overrides.icon18}
-                      className={classNames(projectcss.all, sty.icon18)}
+                      data-plasmic-name={"icon23"}
+                      data-plasmic-override={overrides.icon23}
+                      className={classNames(projectcss.all, sty.icon23)}
                     >
                       <PlasmicImg__
                         alt={""}
-                        className={classNames(sty.img___6GGcr)}
+                        className={classNames(sty.img__ma5I2)}
                         displayHeight={"auto"}
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
                         displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
+                          hasVariant(globalVariants, "screen", "tablet")
+                            ? "100px"
                             : "120px"
                         }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
-                        }
+                        displayWidth={"auto"}
                         loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/hamidiJpg.jpg",
-                          fullWidth: 300,
-                          fullHeight: 300,
-                          aspectRatio: undefined
-                        }}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fhamidi3.jpg?versionId="
+                        }
                       />
                     </div>
                     <div
-                      data-plasmic-name={"title19"}
-                      data-plasmic-override={overrides.title19}
-                      className={classNames(projectcss.all, sty.title19)}
+                      data-plasmic-name={"title24"}
+                      data-plasmic-override={overrides.title24}
+                      className={classNames(projectcss.all, sty.title24)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__xqcz
+                          sty.text___52Gv
                         )}
                       >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0645\u062d\u0645\u062f \u062d\u0633\u06cc\u0646 \u062d\u0645\u06cc\u062f\u06cc"
-                          : "\u0645\u062d\u0645\u062f\u062d\u0633\u06cc\u0646 \u062d\u0645\u06cc\u062f\u06cc"}
+                        {
+                          "\u0645\u062d\u0645\u062f\u062d\u0633\u06cc\u0646 \u062d\u0645\u06cc\u062f\u06cc"
+                        }
                       </div>
                     </div>
                     <div
-                      data-plasmic-name={"caption18"}
-                      data-plasmic-override={overrides.caption18}
-                      className={classNames(projectcss.all, sty.caption18)}
+                      data-plasmic-name={"caption23"}
+                      data-plasmic-override={overrides.caption23}
+                      className={classNames(projectcss.all, sty.caption23)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___4U9J7
+                          sty.text__ceF6
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/s-m-hossein-hamidi/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0645\u0634\u0627\u0648\u0631 \u0648 \u0631\u0627\u0647\u0628\u0631"
-                          : "\u0645\u0634\u0627\u0648\u0631 \u0648 \u0631\u0627\u0647\u0628\u0631 \u0645\u062d\u0635\u0648\u0644"}
+                        {
+                          "\u0645\u0634\u0627\u0648\u0631 \u0648 \u0631\u0627\u0647\u0628\u0631 \u0645\u062d\u0635\u0648\u0644"
+                        }
                       </div>
                     </div>
                   </div>
@@ -2083,28 +1833,32 @@ const PlasmicDescendants = {
     "gridImages",
     "devMindset",
     "introAutoSyncTitle4",
-    "team",
-    "sectionTitle",
-    "member13",
-    "icon13",
-    "title14",
-    "caption13",
-    "member14",
-    "icon14",
-    "title15",
-    "caption14",
-    "member16",
-    "icon16",
-    "title17",
-    "caption16",
-    "member17",
-    "icon17",
-    "title18",
-    "caption17",
-    "member18",
-    "icon18",
-    "title19",
-    "caption18",
+    "team2",
+    "sectionTitle2",
+    "member19",
+    "icon19",
+    "title20",
+    "caption19",
+    "member20",
+    "icon20",
+    "title21",
+    "caption20",
+    "member15",
+    "icon15",
+    "title16",
+    "caption15",
+    "member21",
+    "icon21",
+    "title22",
+    "caption21",
+    "member22",
+    "icon22",
+    "title23",
+    "caption22",
+    "member23",
+    "icon23",
+    "title24",
+    "caption23",
     "teamup",
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
@@ -2141,28 +1895,32 @@ const PlasmicDescendants = {
     "gridImages",
     "devMindset",
     "introAutoSyncTitle4",
-    "team",
-    "sectionTitle",
-    "member13",
-    "icon13",
-    "title14",
-    "caption13",
-    "member14",
-    "icon14",
-    "title15",
-    "caption14",
-    "member16",
-    "icon16",
-    "title17",
-    "caption16",
-    "member17",
-    "icon17",
-    "title18",
-    "caption17",
-    "member18",
-    "icon18",
-    "title19",
-    "caption18",
+    "team2",
+    "sectionTitle2",
+    "member19",
+    "icon19",
+    "title20",
+    "caption19",
+    "member20",
+    "icon20",
+    "title21",
+    "caption20",
+    "member15",
+    "icon15",
+    "title16",
+    "caption15",
+    "member21",
+    "icon21",
+    "title22",
+    "caption21",
+    "member22",
+    "icon22",
+    "title23",
+    "caption22",
+    "member23",
+    "icon23",
+    "title24",
+    "caption23",
     "teamup",
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
@@ -2206,51 +1964,59 @@ const PlasmicDescendants = {
   gridImages: ["gridImages"],
   devMindset: ["devMindset", "introAutoSyncTitle4"],
   introAutoSyncTitle4: ["introAutoSyncTitle4"],
-  team: [
-    "team",
-    "sectionTitle",
-    "member13",
-    "icon13",
-    "title14",
-    "caption13",
-    "member14",
-    "icon14",
-    "title15",
-    "caption14",
-    "member16",
-    "icon16",
-    "title17",
-    "caption16",
-    "member17",
-    "icon17",
-    "title18",
-    "caption17",
-    "member18",
-    "icon18",
-    "title19",
-    "caption18"
+  team2: [
+    "team2",
+    "sectionTitle2",
+    "member19",
+    "icon19",
+    "title20",
+    "caption19",
+    "member20",
+    "icon20",
+    "title21",
+    "caption20",
+    "member15",
+    "icon15",
+    "title16",
+    "caption15",
+    "member21",
+    "icon21",
+    "title22",
+    "caption21",
+    "member22",
+    "icon22",
+    "title23",
+    "caption22",
+    "member23",
+    "icon23",
+    "title24",
+    "caption23"
   ],
-  sectionTitle: ["sectionTitle"],
-  member13: ["member13", "icon13", "title14", "caption13"],
-  icon13: ["icon13"],
-  title14: ["title14"],
-  caption13: ["caption13"],
-  member14: ["member14", "icon14", "title15", "caption14"],
-  icon14: ["icon14"],
-  title15: ["title15"],
-  caption14: ["caption14"],
-  member16: ["member16", "icon16", "title17", "caption16"],
-  icon16: ["icon16"],
-  title17: ["title17"],
-  caption16: ["caption16"],
-  member17: ["member17", "icon17", "title18", "caption17"],
-  icon17: ["icon17"],
-  title18: ["title18"],
-  caption17: ["caption17"],
-  member18: ["member18", "icon18", "title19", "caption18"],
-  icon18: ["icon18"],
-  title19: ["title19"],
-  caption18: ["caption18"],
+  sectionTitle2: ["sectionTitle2"],
+  member19: ["member19", "icon19", "title20", "caption19"],
+  icon19: ["icon19"],
+  title20: ["title20"],
+  caption19: ["caption19"],
+  member20: ["member20", "icon20", "title21", "caption20"],
+  icon20: ["icon20"],
+  title21: ["title21"],
+  caption20: ["caption20"],
+  member15: ["member15", "icon15", "title16", "caption15"],
+  icon15: ["icon15"],
+  title16: ["title16"],
+  caption15: ["caption15"],
+  member21: ["member21", "icon21", "title22", "caption21"],
+  icon21: ["icon21"],
+  title22: ["title22"],
+  caption21: ["caption21"],
+  member22: ["member22", "icon22", "title23", "caption22"],
+  icon22: ["icon22"],
+  title23: ["title23"],
+  caption22: ["caption22"],
+  member23: ["member23", "icon23", "title24", "caption23"],
+  icon23: ["icon23"],
+  title24: ["title24"],
+  caption23: ["caption23"],
   teamup: [
     "teamup",
     "introAutoSyncTitle3",
@@ -2296,28 +2062,32 @@ type NodeDefaultElementType = {
   gridImages: "div";
   devMindset: "div";
   introAutoSyncTitle4: "div";
-  team: "div";
-  sectionTitle: "div";
-  member13: "div";
-  icon13: "div";
-  title14: "div";
-  caption13: "div";
-  member14: "div";
-  icon14: "div";
-  title15: "div";
-  caption14: "div";
-  member16: "div";
-  icon16: "div";
-  title17: "div";
-  caption16: "div";
-  member17: "div";
-  icon17: "div";
-  title18: "div";
-  caption17: "div";
-  member18: "div";
-  icon18: "div";
-  title19: "div";
-  caption18: "div";
+  team2: "div";
+  sectionTitle2: "div";
+  member19: "div";
+  icon19: "div";
+  title20: "div";
+  caption19: "div";
+  member20: "div";
+  icon20: "div";
+  title21: "div";
+  caption20: "div";
+  member15: "div";
+  icon15: "div";
+  title16: "div";
+  caption15: "div";
+  member21: "div";
+  icon21: "div";
+  title22: "div";
+  caption21: "div";
+  member22: "div";
+  icon22: "div";
+  title23: "div";
+  caption22: "div";
+  member23: "div";
+  icon23: "div";
+  title24: "div";
+  caption23: "div";
   teamup: "div";
   introAutoSyncTitle3: "div";
   introAutoSyncCaption3: "div";
@@ -2417,28 +2187,32 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     gridImages: makeNodeComponent("gridImages"),
     devMindset: makeNodeComponent("devMindset"),
     introAutoSyncTitle4: makeNodeComponent("introAutoSyncTitle4"),
-    team: makeNodeComponent("team"),
-    sectionTitle: makeNodeComponent("sectionTitle"),
-    member13: makeNodeComponent("member13"),
-    icon13: makeNodeComponent("icon13"),
-    title14: makeNodeComponent("title14"),
-    caption13: makeNodeComponent("caption13"),
-    member14: makeNodeComponent("member14"),
-    icon14: makeNodeComponent("icon14"),
-    title15: makeNodeComponent("title15"),
-    caption14: makeNodeComponent("caption14"),
-    member16: makeNodeComponent("member16"),
-    icon16: makeNodeComponent("icon16"),
-    title17: makeNodeComponent("title17"),
-    caption16: makeNodeComponent("caption16"),
-    member17: makeNodeComponent("member17"),
-    icon17: makeNodeComponent("icon17"),
-    title18: makeNodeComponent("title18"),
-    caption17: makeNodeComponent("caption17"),
-    member18: makeNodeComponent("member18"),
-    icon18: makeNodeComponent("icon18"),
-    title19: makeNodeComponent("title19"),
-    caption18: makeNodeComponent("caption18"),
+    team2: makeNodeComponent("team2"),
+    sectionTitle2: makeNodeComponent("sectionTitle2"),
+    member19: makeNodeComponent("member19"),
+    icon19: makeNodeComponent("icon19"),
+    title20: makeNodeComponent("title20"),
+    caption19: makeNodeComponent("caption19"),
+    member20: makeNodeComponent("member20"),
+    icon20: makeNodeComponent("icon20"),
+    title21: makeNodeComponent("title21"),
+    caption20: makeNodeComponent("caption20"),
+    member15: makeNodeComponent("member15"),
+    icon15: makeNodeComponent("icon15"),
+    title16: makeNodeComponent("title16"),
+    caption15: makeNodeComponent("caption15"),
+    member21: makeNodeComponent("member21"),
+    icon21: makeNodeComponent("icon21"),
+    title22: makeNodeComponent("title22"),
+    caption21: makeNodeComponent("caption21"),
+    member22: makeNodeComponent("member22"),
+    icon22: makeNodeComponent("icon22"),
+    title23: makeNodeComponent("title23"),
+    caption22: makeNodeComponent("caption22"),
+    member23: makeNodeComponent("member23"),
+    icon23: makeNodeComponent("icon23"),
+    title24: makeNodeComponent("title24"),
+    caption23: makeNodeComponent("caption23"),
     teamup: makeNodeComponent("teamup"),
     introAutoSyncTitle3: makeNodeComponent("introAutoSyncTitle3"),
     introAutoSyncCaption3: makeNodeComponent("introAutoSyncCaption3"),

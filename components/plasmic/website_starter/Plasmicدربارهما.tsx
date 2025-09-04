@@ -465,12 +465,9 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : "auto"
                         }
                         loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/boojarJpg.jpg",
-                          fullWidth: 300,
-                          fullHeight: 300,
-                          aspectRatio: undefined
-                        }}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fboojar2.jpg?versionId="
+                        }
                       />
                     </div>
                     <div
@@ -637,18 +634,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                         loading={"lazy"}
                         src={
                           hasVariant(globalVariants, "screen", "mobile")
-                            ? {
-                                src: "/plasmic/website_starter/images/abolhassaniJpg.jpg",
-                                fullWidth: 300,
-                                fullHeight: 300,
-                                aspectRatio: undefined
-                              }
-                            : {
-                                src: "/plasmic/website_starter/images/photo20240703115630288X300Webp.webp",
-                                fullWidth: 288,
-                                fullHeight: 300,
-                                aspectRatio: undefined
-                              }
+                            ? "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fabolhassani.jpg?versionId="
+                            : "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fabolhassani.jpg?versionId="
                         }
                       />
                     </div>
@@ -877,18 +864,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                         loading={"lazy"}
                         src={
                           hasVariant(globalVariants, "screen", "mobile")
-                            ? {
-                                src: "/plasmic/website_starter/images/parsaJpg2.jpg",
-                                fullWidth: 300,
-                                fullHeight: 300,
-                                aspectRatio: undefined
-                              }
-                            : {
-                                src: "/plasmic/website_starter/images/parsaJpg.jpg",
-                                fullWidth: 243,
-                                fullHeight: 243,
-                                aspectRatio: undefined
-                              }
+                            ? "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fparsa.jpg?versionId="
+                            : "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fparsa.jpg?versionId="
                         }
                       />
                     </div>
@@ -1017,12 +994,9 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : "auto"
                         }
                         loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/small300X288Jpg2.jpg",
-                          fullWidth: 300,
-                          fullHeight: 300,
-                          aspectRatio: undefined
-                        }}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fsmall-300x288.jpg?versionId="
+                        }
                       />
                     </div>
                     <div
@@ -1148,12 +1122,9 @@ function Plasmicدربارهما__RenderFunc(props: {
                             : "auto"
                         }
                         loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/hamidiJpg.jpg",
-                          fullWidth: 300,
-                          fullHeight: 300,
-                          aspectRatio: undefined
-                        }}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fhamidi3.jpg?versionId="
+                        }
                       />
                     </div>
                     <div
