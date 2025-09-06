@@ -837,11 +837,7 @@ function Plasmicتالار__RenderFunc(props: {
                               if ($props.isFirstVisit == true) {
                                 return "";
                               }
-                              return parseInt(
-                                $state.getUserBalance.data.balance
-                              ) < 100000
-                                ? "blinkBorderWallet clickable"
-                                : "clickable";
+                              return "clickable";
                             })();
                           } catch (e) {
                             if (
@@ -958,16 +954,7 @@ function Plasmicتالار__RenderFunc(props: {
                             {(() => {
                               try {
                                 return (() => {
-                                  const balance_info =
-                                    $state.getUserBalance.data.balance;
-                                  const reducedBalance = Math.floor(
-                                    balance_info / 10
-                                  );
-                                  const formattedBalance =
-                                    new Intl.NumberFormat("fa-IR").format(
-                                      reducedBalance
-                                    );
-                                  return `کیف پول: ${formattedBalance} تومان`;
+                                  return "در حال بروز رسانی";
                                 })();
                               } catch (e) {
                                 if (

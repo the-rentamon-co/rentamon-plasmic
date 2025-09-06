@@ -62,6 +62,7 @@ import {
 import TextInput2 from "../../TextInput2"; // plasmic-import: MGm7xuldRCuA/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -91,7 +92,10 @@ export type PlasmicTestSearch__OverridesType = {
   root?: Flex__<"div">;
   textInput2?: Flex__<typeof TextInput2>;
   textInput?: Flex__<typeof TextInput>;
+  getUserIp?: Flex__<typeof ApiRequest>;
   apiRequest?: Flex__<typeof ApiRequest>;
+  ipApi?: Flex__<typeof DataFetcher>;
+  h1?: Flex__<"h1">;
   sideEffect?: Flex__<typeof SideEffect>;
   img?: Flex__<typeof PlasmicImg__>;
 };
@@ -184,6 +188,30 @@ function PlasmicTestSearch__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "getUserIp.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getUserIp"
+      },
+      {
+        path: "getUserIp.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getUserIp"
+      },
+      {
+        path: "getUserIp.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getUserIp"
       }
     ],
     [$props, $ctx, $refs]
@@ -316,8 +344,98 @@ function PlasmicTestSearch__RenderFunc(props: {
           />
 
           <ApiRequest
+            data-plasmic-name={"getUserIp"}
+            data-plasmic-override={overrides.getUserIp}
+            className={classNames("__wab_instance", sty.getUserIp)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__v49V
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__kd9Sh
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["getUserIp", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["getUserIp", "loading"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["getUserIp", "data"]).apply(
+                null,
+                eventArgs
+              );
+
+              (async data => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return $state.getUserIp.data.ip_location !== "IR"
+                            ? ($state.isVpnOn = true)
+                            : ($state.isVpnOn = false);
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["getUserIp"] = ref;
+            }}
+            url={"https://ipinfo.io/json"}
+          />
+
+          <ApiRequest
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
+            body={(() => {
+              try {
+                return undefined;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
             className={classNames("__wab_instance", sty.apiRequest)}
             errorDisplay={
               <div
@@ -389,9 +507,65 @@ function PlasmicTestSearch__RenderFunc(props: {
             ref={ref => {
               $refs["apiRequest"] = ref;
             }}
-            url={"https://gateway.rentamon.com/webhook/whats-the-ip"}
-          />
-
+            url={``}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__qrFrK
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return undefined;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
+          </ApiRequest>
+          <DataFetcher
+            data-plasmic-name={"ipApi"}
+            data-plasmic-override={overrides.ipApi}
+            className={classNames("__wab_instance", sty.ipApi)}
+            dataName={"fetchedData"}
+            errorDisplay={
+              <DataCtxReader__>{$ctx => "Error fetching data"}</DataCtxReader__>
+            }
+            errorName={"fetchError"}
+            loadingDisplay={
+              <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
+            }
+            method={"GET"}
+            noLayout={false}
+            url={"https://ipinfo.io/json"}
+          >
+            <DataCtxReader__>
+              {$ctx => (
+                <h1
+                  data-plasmic-name={"h1"}
+                  data-plasmic-override={overrides.h1}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h1,
+                    projectcss.__wab_text,
+                    sty.h1
+                  )}
+                >
+                  {"You won't believe what happens next."}
+                </h1>
+              )}
+            </DataCtxReader__>
+          </DataFetcher>
           <SideEffect
             data-plasmic-name={"sideEffect"}
             data-plasmic-override={overrides.sideEffect}
@@ -576,6 +750,29 @@ function PlasmicTestSearch__RenderFunc(props: {
                 })()}
               </React.Fragment>
             </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__klRkQ
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return undefined;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
           </div>
           <div
             className={classNames(
@@ -647,10 +844,23 @@ function PlasmicTestSearch__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "textInput2", "textInput", "apiRequest", "sideEffect", "img"],
+  root: [
+    "root",
+    "textInput2",
+    "textInput",
+    "getUserIp",
+    "apiRequest",
+    "ipApi",
+    "h1",
+    "sideEffect",
+    "img"
+  ],
   textInput2: ["textInput2"],
   textInput: ["textInput"],
+  getUserIp: ["getUserIp"],
   apiRequest: ["apiRequest"],
+  ipApi: ["ipApi", "h1"],
+  h1: ["h1"],
   sideEffect: ["sideEffect"],
   img: ["img"]
 } as const;
@@ -661,7 +871,10 @@ type NodeDefaultElementType = {
   root: "div";
   textInput2: typeof TextInput2;
   textInput: typeof TextInput;
+  getUserIp: typeof ApiRequest;
   apiRequest: typeof ApiRequest;
+  ipApi: typeof DataFetcher;
+  h1: "h1";
   sideEffect: typeof SideEffect;
   img: typeof PlasmicImg__;
 };
@@ -728,7 +941,10 @@ export const PlasmicTestSearch = Object.assign(
     // Helper components rendering sub-elements
     textInput2: makeNodeComponent("textInput2"),
     textInput: makeNodeComponent("textInput"),
+    getUserIp: makeNodeComponent("getUserIp"),
     apiRequest: makeNodeComponent("apiRequest"),
+    ipApi: makeNodeComponent("ipApi"),
+    h1: makeNodeComponent("h1"),
     sideEffect: makeNodeComponent("sideEffect"),
     img: makeNodeComponent("img"),
 
