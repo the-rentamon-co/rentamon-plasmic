@@ -93,6 +93,7 @@ export type PlasmicTestSearch__OverridesType = {
   textInput?: Flex__<typeof TextInput>;
   apiRequest?: Flex__<typeof ApiRequest>;
   sideEffect?: Flex__<typeof SideEffect>;
+  img?: Flex__<typeof PlasmicImg__>;
 };
 
 export interface DefaultTestSearchProps {}
@@ -136,6 +137,8 @@ function PlasmicTestSearch__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const globalVariants = _useGlobalVariants();
+
   const $globalActions = useGlobalActions?.();
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
@@ -175,6 +178,12 @@ function PlasmicTestSearch__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest"
+      },
+      {
+        path: "isVpnOn",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -186,7 +195,6 @@ function PlasmicTestSearch__RenderFunc(props: {
     $refs
   });
 
-  const globalVariants = _useGlobalVariants();
   const styleTokensClassNames = _useStyleTokens();
   const styleTokensClassNames_antd_5_hostless =
     useStyleTokens_antd_5_hostless();
@@ -333,7 +341,7 @@ function PlasmicTestSearch__RenderFunc(props: {
                 {"Loading..."}
               </div>
             }
-            method={"GET"}
+            method={"POST"}
             onError={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
                 null,
@@ -351,13 +359,37 @@ function PlasmicTestSearch__RenderFunc(props: {
                 null,
                 eventArgs
               );
+
+              (async data => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return $state.apiRequest.data.ip_location !== "IR"
+                            ? ($state.isVpnOn = true)
+                            : ($state.isVpnOn = false);
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }).apply(null, eventArgs);
             }}
             ref={ref => {
               $refs["apiRequest"] = ref;
             }}
-            url={
-              "https://dev.rentamon.com/webhook/fd6476e4-de82-4bac-91e9-c575d414468a"
-            }
+            url={"https://gateway.rentamon.com/webhook/whats-the-ip"}
           />
 
           <SideEffect
@@ -366,6 +398,27 @@ function PlasmicTestSearch__RenderFunc(props: {
             className={classNames("__wab_instance", sty.sideEffect)}
             onMount={async () => {
               const $steps = {};
+
+              $steps["sendIpGetLocation"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/whats-the-ip"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["sendIpGetLocation"] != null &&
+                typeof $steps["sendIpGetLocation"] === "object" &&
+                typeof $steps["sendIpGetLocation"].then === "function"
+              ) {
+                $steps["sendIpGetLocation"] = await $steps["sendIpGetLocation"];
+              }
 
               $steps["runCode"] = true
                 ? (() => {
@@ -470,37 +523,122 @@ function PlasmicTestSearch__RenderFunc(props: {
             }}
           />
 
+          <div className={classNames(projectcss.all, sty.freeBox__tcz88)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ocYbA
+              )}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["invokeGlobalAction"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          undefined,
+                          "https://sso.rentamon.com/auth/refresh"
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] = await $steps[
+                    "invokeGlobalAction"
+                  ];
+                }
+              }}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $state.apiRequest.data.ip_location == "IR"
+                      ? "لطفا برای عملکرد بهتر رنتامون، فیلترشکنت رو خاموش کن"
+                      : "";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
+          </div>
           <div
             className={classNames(
               projectcss.all,
-              projectcss.__wab_text,
-              sty.text__ocYbA
+              sty.freeBox__vpu4Z,
+              (() => {
+                try {
+                  return $state.isVpnOn == true
+                    ? "modal-overlay open"
+                    : "modal-overlay";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
             )}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["invokeGlobalAction"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [undefined, "https://sso.rentamon.com/auth/refresh"]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
-              }
-            }}
           >
-            {"Enter some text"}
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox___3MCwL,
+                (() => {
+                  try {
+                    return $state.isVpnOn == true
+                      ? "modal-content open"
+                      : "modal-content open";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()
+              )}
+            >
+              <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/parsaJpg.jpg",
+                  fullWidth: 243,
+                  fullHeight: 243,
+                  aspectRatio: undefined
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -509,11 +647,12 @@ function PlasmicTestSearch__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "textInput2", "textInput", "apiRequest", "sideEffect"],
+  root: ["root", "textInput2", "textInput", "apiRequest", "sideEffect", "img"],
   textInput2: ["textInput2"],
   textInput: ["textInput"],
   apiRequest: ["apiRequest"],
-  sideEffect: ["sideEffect"]
+  sideEffect: ["sideEffect"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -524,6 +663,7 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   apiRequest: typeof ApiRequest;
   sideEffect: typeof SideEffect;
+  img: typeof PlasmicImg__;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -590,6 +730,7 @@ export const PlasmicTestSearch = Object.assign(
     textInput: makeNodeComponent("textInput"),
     apiRequest: makeNodeComponent("apiRequest"),
     sideEffect: makeNodeComponent("sideEffect"),
+    img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicTestSearch
     internalVariantProps: PlasmicTestSearch__VariantProps,

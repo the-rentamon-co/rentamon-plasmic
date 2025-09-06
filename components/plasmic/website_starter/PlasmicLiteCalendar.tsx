@@ -164,6 +164,8 @@ function PlasmicLiteCalendar__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const globalVariants = _useGlobalVariants();
+
   const $globalActions = useGlobalActions?.();
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
@@ -324,7 +326,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
     $refs
   });
 
-  const globalVariants = _useGlobalVariants();
   const styleTokensClassNames = _useStyleTokens();
   const styleTokensClassNames_antd_5_hostless =
     useStyleTokens_antd_5_hostless();
@@ -1436,7 +1437,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__cWhUt
+                        sty.formField__aqoBs
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1448,7 +1449,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__opv0
+                        sty.formField__heRsX
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1466,7 +1467,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__fPa6P
+                          sty.text__dg2Sr
                         )}
                       >
                         {"Submit"}
