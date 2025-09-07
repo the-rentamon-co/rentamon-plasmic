@@ -128,6 +128,8 @@ function PlasmicTestSearch__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const globalVariants = _useGlobalVariants();
+
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -235,6 +237,19 @@ function PlasmicTestSearch__RenderFunc(props: {
             }}
           />
 
+          <div className={classNames(projectcss.all, sty.freeBox___1WkQu)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__w07Om
+              )}
+            >
+              {
+                "\u0628\u0648\u06cc \u06af\u0644 \u0645\u062d\u0645\u062f\u06cc\n\u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062e\u0648\u0634 \u0622\u0645\u062f\u06cc"
+              }
+            </div>
+          </div>
           <div
             className={classNames(
               projectcss.all,
@@ -277,6 +292,33 @@ function PlasmicTestSearch__RenderFunc(props: {
                 })()
               )}
             >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__lEVw
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile") ? (
+                  "\u2620\ufe0f\n\u0634\u0648\u0627\u0647\u062f \u0648 \u0642\u0631\u0627\u0626\u0646 \u0646\u0634\u0648\u0646 \u0645\u06cc\u200c\u062f\u0647 \u0634\u0645\u0627 \u0628\u0627 \u0648\u06cc\u200c\u067e\u06cc\u200c\u0627\u0646 \u0627\u0648\u0645\u062f\u06cc.\r\n\u0644\u0637\u0641\u0627 \u0647\u0631 \u0686\u0647 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u062e\u0627\u0645\u0648\u0634\u0634 \u06a9\u0646!"
+                ) : (
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return "شواهد و قرائن نشون می‌ده شما با وی‌پی‌ان اومدی\nلطفا هر چه سریع‌تر خاموشش کن";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                )}
+              </div>
               <PlasmicImg__
                 data-plasmic-name={"img"}
                 data-plasmic-override={overrides.img}
