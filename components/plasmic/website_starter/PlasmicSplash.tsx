@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -71,6 +72,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSplash.module.css"; // plasmic-import: ew-lMhwJhrpF/css
 
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 import Icon79Icon from "./icons/PlasmicIcon__Icon79"; // plasmic-import: 8tMAV60HqJyj/icon
 
 createPlasmicElementProxy;
@@ -86,6 +89,9 @@ export const PlasmicSplash__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSplash__OverridesType = {
   root?: Flex__<"div">;
+  checkVpn?: Flex__<typeof SideEffect>;
+  vpnModal?: Flex__<"div">;
+  button?: Flex__<typeof Button>;
   center?: Flex__<"div">;
   svg?: Flex__<"svg">;
   sideEffect?: Flex__<typeof SideEffect>;
@@ -150,6 +156,12 @@ function PlasmicSplash__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "isVpnOn",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -195,6 +207,230 @@ function PlasmicSplash__RenderFunc(props: {
             hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
           )}
         >
+          <SideEffect
+            data-plasmic-name={"checkVpn"}
+            data-plasmic-override={overrides.checkVpn}
+            className={classNames("__wab_instance", sty.checkVpn)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          async function checkVPN() {
+                            const res = await fetch("https://ipapi.co/json/");
+                            const data = await res.json();
+                            const country = data.country;
+                            const org = data.org || "";
+                            if (country !== "IR") {
+                              $state.isVpnOn = true;
+                              return "not from Iran";
+                            }
+                            const datacenterKeywords = [
+                              "Arvan",
+                              "MihanWeb",
+                              "Hetzner",
+                              "OVH",
+                              "Google",
+                              "AWS"
+                            ];
+
+                            if (datacenterKeywords.some(k => org.includes(k))) {
+                              $state.isVpnOn = true;
+                              return "not from Iran";
+                            }
+                            $state.isVpnOn = false;
+                            return "";
+                          }
+                          return await checkVPN();
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
+
+          <div
+            data-plasmic-name={"vpnModal"}
+            data-plasmic-override={overrides.vpnModal}
+            className={classNames(
+              projectcss.all,
+              sty.vpnModal,
+              (() => {
+                try {
+                  return $state.isVpnOn == true
+                    ? "modal-overlay open"
+                    : "modal-overlay";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
+            )}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__kJ4N4)}>
+              <div className={classNames(projectcss.all, sty.freeBox__o1J0)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__dhAcM)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateIsVpnOn"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["isVpnOn"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateIsVpnOn"] != null &&
+                      typeof $steps["updateIsVpnOn"] === "object" &&
+                      typeof $steps["updateIsVpnOn"].then === "function"
+                    ) {
+                      $steps["updateIsVpnOn"] = await $steps["updateIsVpnOn"];
+                    }
+                  }}
+                  src={{
+                    src: "/plasmic/website_starter/images/image166.svg",
+                    fullWidth: 18,
+                    fullHeight: 18,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__sAknd
+                )}
+              >
+                {
+                  "\u0641\u06cc\u0644\u062a\u0631\u0634\u06a9\u0646 \u0631\u0648\u0634\u0646\u0647!"
+                }
+              </div>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__xqlOg)}
+                displayHeight={"200px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/vpnIconSvg.svg",
+                  fullWidth: 800,
+                  fullHeight: 800,
+                  aspectRatio: undefined
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__zg3Oa
+                )}
+              >
+                {
+                  "\u0628\u0631\u0627\u06cc \u0633\u0631\u0639\u062a \u0628\u0627\u0644\u0627\u062a\u0631 \u0648 \u0639\u0645\u0644\u06a9\u0631\u062f \u0628\u0647\u062a\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\r\n\u0644\u0637\u0641\u0627 \u0641\u06cc\u0644\u062a\u0631\u0634\u06a9\u0646\u062a \u0631\u0648 \u062e\u0627\u0645\u0648\u0634 \u06a9\u0646."
+                }
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__gfsYl)}>
+                <Button
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames("__wab_instance", sty.button)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateIsVpnOn"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["isVpnOn"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateIsVpnOn"] != null &&
+                      typeof $steps["updateIsVpnOn"] === "object" &&
+                      typeof $steps["updateIsVpnOn"].then === "function"
+                    ) {
+                      $steps["updateIsVpnOn"] = await $steps["updateIsVpnOn"];
+                    }
+                  }}
+                >
+                  {"\u0628\u0627\u0634\u0647"}
+                </Button>
+              </div>
+            </div>
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox__v4W4T)}>
             {(() => {
               try {
@@ -609,7 +845,19 @@ function PlasmicSplash__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "center", "svg", "sideEffect", "clarityRntComponent"],
+  root: [
+    "root",
+    "checkVpn",
+    "vpnModal",
+    "button",
+    "center",
+    "svg",
+    "sideEffect",
+    "clarityRntComponent"
+  ],
+  checkVpn: ["checkVpn"],
+  vpnModal: ["vpnModal", "button"],
+  button: ["button"],
   center: ["center", "svg"],
   svg: ["svg"],
   sideEffect: ["sideEffect"],
@@ -620,6 +868,9 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  checkVpn: typeof SideEffect;
+  vpnModal: "div";
+  button: typeof Button;
   center: "div";
   svg: "svg";
   sideEffect: typeof SideEffect;
@@ -686,6 +937,9 @@ export const PlasmicSplash = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    checkVpn: makeNodeComponent("checkVpn"),
+    vpnModal: makeNodeComponent("vpnModal"),
+    button: makeNodeComponent("button"),
     center: makeNodeComponent("center"),
     svg: makeNodeComponent("svg"),
     sideEffect: makeNodeComponent("sideEffect"),

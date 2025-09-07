@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 import { _useStyleTokens as useStyleTokens_antd_5_hostless } from "../antd_5_hostless/PlasmicStyleTokensProvider"; // plasmic-import: ohDidvG9XsCeFumugENU3J/styleTokensProvider
@@ -69,6 +70,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicTestSearch.module.css"; // plasmic-import: kZSAE7HA3zLq/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -83,8 +87,9 @@ export const PlasmicTestSearch__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTestSearch__OverridesType = {
   root?: Flex__<"div">;
-  sideEffect?: Flex__<typeof SideEffect>;
-  img?: Flex__<typeof PlasmicImg__>;
+  checkVpn?: Flex__<typeof SideEffect>;
+  vpnModal?: Flex__<"div">;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultTestSearchProps {}
@@ -181,10 +186,23 @@ function PlasmicTestSearch__RenderFunc(props: {
             sty.root
           )}
         >
+          <div className={classNames(projectcss.all, sty.freeBox___1WkQu)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__w07Om
+              )}
+            >
+              {
+                "\u0628\u0648\u06cc \u06af\u0644 \u0645\u062d\u0645\u062f\u06cc\n\u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062e\u0648\u0634 \u0622\u0645\u062f\u06cc"
+              }
+            </div>
+          </div>
           <SideEffect
-            data-plasmic-name={"sideEffect"}
-            data-plasmic-override={overrides.sideEffect}
-            className={classNames("__wab_instance", sty.sideEffect)}
+            data-plasmic-name={"checkVpn"}
+            data-plasmic-override={overrides.checkVpn}
+            className={classNames("__wab_instance", sty.checkVpn)}
             onMount={async () => {
               const $steps = {};
 
@@ -200,7 +218,7 @@ function PlasmicTestSearch__RenderFunc(props: {
                             const org = data.org || "";
                             if (country !== "IR") {
                               $state.isVpnOn = true;
-                              return "\u26A0️ لطفاً با آی‌پی ایران وارد شوید.";
+                              return "";
                             }
                             const datacenterKeywords = [
                               "Arvan",
@@ -213,10 +231,10 @@ function PlasmicTestSearch__RenderFunc(props: {
 
                             if (datacenterKeywords.some(k => org.includes(k))) {
                               $state.isVpnOn = true;
-                              return "\u26A0️ آی‌پی شما دیتاسنتری است (احتمال VPN). لطفاً با اینترنت خانگی/موبایل وصل شوید.";
+                              return "";
                             }
                             $state.isVpnOn = false;
-                            return "\u2705 اتصال شما مناسب است.";
+                            return "";
                           }
                           return await checkVPN();
                         })();
@@ -237,23 +255,12 @@ function PlasmicTestSearch__RenderFunc(props: {
             }}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___1WkQu)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__w07Om
-              )}
-            >
-              {
-                "\u0628\u0648\u06cc \u06af\u0644 \u0645\u062d\u0645\u062f\u06cc\n\u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062e\u0648\u0634 \u0622\u0645\u062f\u06cc"
-              }
-            </div>
-          </div>
           <div
+            data-plasmic-name={"vpnModal"}
+            data-plasmic-override={overrides.vpnModal}
             className={classNames(
               projectcss.all,
-              sty.freeBox__vpu4Z,
+              sty.vpnModal,
               (() => {
                 try {
                   return $state.isVpnOn == true
@@ -292,6 +299,120 @@ function PlasmicTestSearch__RenderFunc(props: {
                 })()
               )}
             >
+              <div className={classNames(projectcss.all, sty.freeBox__eZlvd)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__rt61I)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateIsVpnOn"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["isVpnOn"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateIsVpnOn"] != null &&
+                      typeof $steps["updateIsVpnOn"] === "object" &&
+                      typeof $steps["updateIsVpnOn"].then === "function"
+                    ) {
+                      $steps["updateIsVpnOn"] = await $steps["updateIsVpnOn"];
+                    }
+                  }}
+                  src={{
+                    src: "/plasmic/website_starter/images/image166.svg",
+                    fullWidth: 18,
+                    fullHeight: 18,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___9Sbos
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile") ? (
+                    "\u0641\u06cc\u0644\u062a\u0631\u0634\u06a9\u0646 \u0631\u0648\u0634\u0646\u0647!"
+                  ) : (
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return "شواهد و قرائن نشون می‌ده شما با وی‌پی‌ان اومدی\nلطفا هر چه سریع‌تر خاموشش کن";
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  )}
+                </div>
+              ) : null}
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__rpI9)}
+                displayHeight={"191px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? {
+                        src: "/plasmic/website_starter/images/vpnIconSvg.svg",
+                        fullWidth: 800,
+                        fullHeight: 800,
+                        aspectRatio: undefined
+                      }
+                    : {
+                        src: "/plasmic/website_starter/images/vpnIconSvg.svg",
+                        fullWidth: 800,
+                        fullHeight: 800,
+                        aspectRatio: undefined
+                      }
+                }
+              />
+
               <div
                 className={classNames(
                   projectcss.all,
@@ -300,7 +421,7 @@ function PlasmicTestSearch__RenderFunc(props: {
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobile") ? (
-                  "\u2620\ufe0f\n\u0634\u0648\u0627\u0647\u062f \u0648 \u0642\u0631\u0627\u0626\u0646 \u0646\u0634\u0648\u0646 \u0645\u06cc\u200c\u062f\u0647 \u0634\u0645\u0627 \u0628\u0627 \u0648\u06cc\u200c\u067e\u06cc\u200c\u0627\u0646 \u0627\u0648\u0645\u062f\u06cc.\r\n\u0644\u0637\u0641\u0627 \u0647\u0631 \u0686\u0647 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u062e\u0627\u0645\u0648\u0634\u0634 \u06a9\u0646!"
+                  "\u0628\u0631\u0627\u06cc \u0633\u0631\u0639\u062a \u0628\u0627\u0644\u0627\u062a\u0631 \u0648 \u0639\u0645\u0644\u06a9\u0631\u062f \u0628\u0647\u062a\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\r\n\u0644\u0637\u0641\u0627 \u0641\u06cc\u0644\u062a\u0631\u0634\u06a9\u0646\u062a \u0631\u0648 \u062e\u0627\u0645\u0648\u0634 \u06a9\u0646."
                 ) : (
                   <React.Fragment>
                     {(() => {
@@ -319,25 +440,52 @@ function PlasmicTestSearch__RenderFunc(props: {
                   </React.Fragment>
                 )}
               </div>
-              <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/parsaJpg.jpg",
-                  fullWidth: 243,
-                  fullHeight: 243,
-                  aspectRatio: undefined
-                }}
-              />
+              <div className={classNames(projectcss.all, sty.freeBox___76C3)}>
+                <Button
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames("__wab_instance", sty.button)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateIsVpnOn"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["isVpnOn"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateIsVpnOn"] != null &&
+                      typeof $steps["updateIsVpnOn"] === "object" &&
+                      typeof $steps["updateIsVpnOn"].then === "function"
+                    ) {
+                      $steps["updateIsVpnOn"] = await $steps["updateIsVpnOn"];
+                    }
+                  }}
+                >
+                  {"\u0628\u0627\u0634\u0647"}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -347,17 +495,19 @@ function PlasmicTestSearch__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "sideEffect", "img"],
-  sideEffect: ["sideEffect"],
-  img: ["img"]
+  root: ["root", "checkVpn", "vpnModal", "button"],
+  checkVpn: ["checkVpn"],
+  vpnModal: ["vpnModal", "button"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  sideEffect: typeof SideEffect;
-  img: typeof PlasmicImg__;
+  checkVpn: typeof SideEffect;
+  vpnModal: "div";
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -420,8 +570,9 @@ export const PlasmicTestSearch = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    sideEffect: makeNodeComponent("sideEffect"),
-    img: makeNodeComponent("img"),
+    checkVpn: makeNodeComponent("checkVpn"),
+    vpnModal: makeNodeComponent("vpnModal"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicTestSearch
     internalVariantProps: PlasmicTestSearch__VariantProps,

@@ -5379,6 +5379,11 @@
           "id": "9rrKex-G5Qmt",
           "name": "image 172",
           "filePath": "../public/plasmic/website_starter/images/image172.svg"
+        },
+        {
+          "id": "hF6bdxYveq_R",
+          "name": "vpn-icon.svg",
+          "filePath": "../public/plasmic/website_starter/images/vpnIconSvg.svg"
         }
       ],
       "indirect": false,
