@@ -357,7 +357,7 @@ function PlasmicSplash__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__xqlOg)}
-                displayHeight={"200px"}
+                displayHeight={"119px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
