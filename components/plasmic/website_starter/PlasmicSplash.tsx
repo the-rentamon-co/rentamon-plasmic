@@ -714,7 +714,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["setSourceCookie"] = await $steps["setSourceCookie"];
               }
 
-              $steps["invokeGlobalAction"] = true
+              $steps["getUserSegment"] = true
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -728,13 +728,27 @@ function PlasmicSplash__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
+                $steps["getUserSegment"] != null &&
+                typeof $steps["getUserSegment"] === "object" &&
+                typeof $steps["getUserSegment"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
+                $steps["getUserSegment"] = await $steps["getUserSegment"];
+              }
+
+              $steps["wait1Sec"] = $state.isVpnOn
+                ? (() => {
+                    const actionArgs = { args: [2000] };
+                    return $globalActions["Fragment.wait"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["wait1Sec"] != null &&
+                typeof $steps["wait1Sec"] === "object" &&
+                typeof $steps["wait1Sec"].then === "function"
+              ) {
+                $steps["wait1Sec"] = await $steps["wait1Sec"];
               }
 
               $steps["redirectAndSetUserCookie"] = true
@@ -743,9 +757,9 @@ function PlasmicSplash__RenderFunc(props: {
                       customFunction: async () => {
                         return (() => {
                           if (
-                            !$steps.invokeGlobalAction ||
-                            !$steps.invokeGlobalAction.data ||
-                            $steps.invokeGlobalAction.data.flag == null
+                            !$steps.getUserSegment ||
+                            !$steps.getUserSegment.data ||
+                            $steps.getUserSegment.data.flag == null
                           ) {
                             $state.isErrorHappen = true;
                           }
@@ -763,18 +777,18 @@ function PlasmicSplash__RenderFunc(props: {
                           }
                           setCookie(
                             "vt",
-                            $steps.invokeGlobalAction.data.flag || 99,
+                            $steps.getUserSegment.data.flag || 99,
                             0.3333
                           );
-                          if ($steps.invokeGlobalAction.data.flag == 2) {
+                          if ($steps.getUserSegment.data.flag == 2) {
                             window.location.href =
                               "https://rentamon.com//calendar/";
                           }
-                          if ($steps.invokeGlobalAction.data.flag == 1) {
+                          if ($steps.getUserSegment.data.flag == 1) {
                             window.location.href =
                               "https://rentamon.com//panel/";
                           }
-                          if ($steps.invokeGlobalAction.data.flag == 0) {
+                          if ($steps.getUserSegment.data.flag == 0) {
                             return (window.location.href =
                               "https://rentamon.com//calendar/");
                           }

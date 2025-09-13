@@ -228,6 +228,26 @@ function PlasmicTestSearch__RenderFunc(props: {
               data-plasmic-name={"apiRequest"}
               data-plasmic-override={overrides.apiRequest}
               className={classNames("__wab_instance", sty.apiRequest)}
+              config={(() => {
+                try {
+                  return (() => {
+                    const accessToken = document.cookie
+                      .split("; ")
+                      .find(row => row.startsWith("access_token"))
+                      .split("=")[1];
+                    console.log("accessToken", accessToken);
+                    return { header: { Authorization: accessToken } };
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
               errorDisplay={
                 <div
                   className={classNames(
@@ -272,7 +292,7 @@ function PlasmicTestSearch__RenderFunc(props: {
               ref={ref => {
                 $refs["apiRequest"] = ref;
               }}
-              url={"https://api-v2.rentamon.com/api/"}
+              url={"https://dev.rentamon.com/webhook/test-cors"}
             />
           </div>
           <SideEffect
