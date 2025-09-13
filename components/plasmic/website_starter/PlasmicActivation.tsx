@@ -150,6 +150,7 @@ export type PlasmicActivation__OverridesType = {
   false7?: Flex__<typeof PlasmicImg__>;
   apiRequest2?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
+  connect?: Flex__<"div">;
   form?: Flex__<typeof FormWrapper>;
   platforms?: Flex__<typeof FormItemWrapper>;
   policiesCheckbox?: Flex__<typeof Checkbox>;
@@ -1044,20 +1045,22 @@ function PlasmicActivation__RenderFunc(props: {
                 data-plasmic-override={overrides.platforms2}
                 className={classNames(projectcss.all, sty.platforms2)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__p9I76)}>
-                  {(() => {
-                    try {
-                      return $ctx.params.type == 3;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
+                {(() => {
+                  try {
+                    return true;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
                     }
-                  })() ? (
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__p9I76)}
+                  >
                     <div
                       data-plasmic-name={"jajiga"}
                       data-plasmic-override={overrides.jajiga}
@@ -1495,1085 +1498,67 @@ function PlasmicActivation__RenderFunc(props: {
                         {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
                       </div>
                     </div>
-                  ) : null}
-                  <div
-                    data-plasmic-name={"jabama"}
-                    data-plasmic-override={overrides.jabama}
-                    className={classNames(projectcss.all, sty.jabama)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: (() => {
-                                if (
-                                  $state.platformstatus.status.jabama !== true
-                                ) {
-                                  return ($state.step = 1);
-                                }
-                              })()
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-
-                      $steps["invokeGlobalAction"] =
-                        $state.platformstatus.status.jabama == true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  undefined,
-                                  "\u062c\u0627\u0628\u0627\u0645\u0627 \u0634\u0645\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
-                                  "top-center"
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
-                      }
-                    }}
-                  >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__xmY53)}
-                    >
-                      <PlasmicImg__
-                        data-plasmic-name={"paltform2"}
-                        data-plasmic-override={overrides.paltform2}
-                        alt={""}
-                        className={classNames(
-                          sty.paltform2,
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      !(
-                                        "jabama" in $state.platformstatus.status
-                                      )
-                                    ) {
-                                      return "disable";
-                                    } else {
-                                      return "";
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      !(
-                                        "jabama" in $state.platformstatus.status
-                                      )
-                                    ) {
-                                      return "disable";
-                                    } else {
-                                      return "";
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                        )}
-                        displayHeight={"47px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image19.svg",
-                          fullWidth: 45,
-                          fullHeight: 46,
-                          aspectRatio: 0.978261
-                        }}
-                      />
-
-                      {(
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    $state.platformstatus.status.jabama !== true
-                                  ) {
-                                    return false;
-                                  } else {
-                                    return true;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    $state.platformstatus.status.jabama !== true
-                                  ) {
-                                    return false;
-                                  } else {
-                                    return true;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                      ) ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"true2"}
-                          data-plasmic-override={overrides.true2}
-                          alt={""}
-                          className={classNames(sty.true2)}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image30.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    $state.platformstatus.status.jabama !==
-                                    false
-                                  ) {
-                                    return false;
-                                  } else {
-                                    return true;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    $state.platformstatus.status.jabama !==
-                                    false
-                                  ) {
-                                    return false;
-                                  } else {
-                                    return true;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                      ) ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"false2"}
-                          data-plasmic-override={overrides.false2}
-                          alt={""}
-                          className={classNames(sty.false2, "element")}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image29.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (!("jabama" in $state.platformstatus.status)) {
-                              return true;
-                            } else {
-                              return false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"add2"}
-                          data-plasmic-override={overrides.add2}
-                          alt={""}
-                          className={classNames(sty.add2)}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image22.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__t9UD,
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    !("jabama" in $state.platformstatus.status)
-                                  ) {
-                                    return "disable";
-                                  } else {
-                                    return "";
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    !("jabama" in $state.platformstatus.status)
-                                  ) {
-                                    return "disable";
-                                  } else {
-                                    return "";
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                      )}
-                    >
-                      {"\u062c\u0627\u0628\u0627\u0645\u0627"}
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"otaghak"}
-                    data-plasmic-override={overrides.otaghak}
-                    className={classNames(projectcss.all, sty.otaghak)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: (() => {
-                                if (
-                                  $state.platformstatus.status.otaghak !== true
-                                ) {
-                                  return ($state.step = 7);
-                                }
-                              })()
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-
-                      $steps["invokeGlobalAction"] =
-                        $state.platformstatus.status.otaghak == true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  undefined,
-                                  "\u0627\u062a\u0627\u0642\u06a9 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
-                                  "top-center"
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__qf6Tk)}
-                    >
-                      <PlasmicImg__
-                        data-plasmic-name={"paltform3"}
-                        data-plasmic-override={overrides.paltform3}
-                        alt={""}
-                        className={classNames(
-                          sty.paltform3,
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      !(
-                                        "otaghak" in
-                                        $state.platformstatus.status
-                                      )
-                                    ) {
-                                      return "disable";
-                                    } else {
-                                      return "";
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      !(
-                                        "otaghak" in
-                                        $state.platformstatus.status
-                                      )
-                                    ) {
-                                      return "disable";
-                                    } else {
-                                      return "";
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                        )}
-                        displayHeight={"47px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image13.svg",
-                          fullWidth: 46,
-                          fullHeight: 46,
-                          aspectRatio: 1
-                        }}
-                      />
-
-                      {(
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    $state.platformstatus.status.otaghak !==
-                                    true
-                                  ) {
-                                    return false;
-                                  } else {
-                                    return true;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    $state.platformstatus.status.otaghak !==
-                                    true
-                                  ) {
-                                    return false;
-                                  } else {
-                                    return true;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                      ) ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"true3"}
-                          data-plasmic-override={overrides.true3}
-                          alt={""}
-                          className={classNames(sty.true3)}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image30.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (
-                              $state.platformstatus.status.otaghak !== false
-                            ) {
-                              return false;
-                            } else {
-                              return true;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"false3"}
-                          data-plasmic-override={overrides.false3}
-                          alt={""}
-                          className={classNames(sty.false3, "element")}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image29.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (!("otaghak" in $state.platformstatus.status)) {
-                              return true;
-                            } else {
-                              return false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"add3"}
-                          data-plasmic-override={overrides.add3}
-                          alt={""}
-                          className={classNames(sty.add3)}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image22.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__lmtkh,
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    !("otaghak" in $state.platformstatus.status)
-                                  ) {
-                                    return "disable";
-                                  } else {
-                                    return "";
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    !("otaghak" in $state.platformstatus.status)
-                                  ) {
-                                    return "disable";
-                                  } else {
-                                    return "";
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                      )}
-                    >
-                      {"\u0627\u062a\u0627\u0642\u06a9"}
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"shab"}
-                    data-plasmic-override={overrides.shab}
-                    className={classNames(projectcss.all, sty.shab)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: (() => {
-                                if (
-                                  $state.platformstatus.status.shab !== true
-                                ) {
-                                  return ($state.step = 5);
-                                }
-                              })()
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-
-                      $steps["invokeGlobalAction"] =
-                        $state.platformstatus.status.shab == true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  undefined,
-                                  "\u0634\u0628 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
-                                  "top-center"
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__rkKgj)}
-                    >
-                      <PlasmicImg__
-                        data-plasmic-name={"paltform4"}
-                        data-plasmic-override={overrides.paltform4}
-                        alt={""}
-                        className={classNames(
-                          sty.paltform4,
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      !("shab" in $state.platformstatus.status)
-                                    ) {
-                                      return "disable";
-                                    } else {
-                                      return "";
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      !("shab" in $state.platformstatus.status)
-                                    ) {
-                                      return "disable";
-                                    } else {
-                                      return "";
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                        )}
-                        displayHeight={"47px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image20.svg",
-                          fullWidth: 46,
-                          fullHeight: 45,
-                          aspectRatio: 1.022222
-                        }}
-                      />
-
-                      {(
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    $state.platformstatus.status.shab !== true
-                                  ) {
-                                    return false;
-                                  } else {
-                                    return true;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    $state.platformstatus.status.shab !== true
-                                  ) {
-                                    return false;
-                                  } else {
-                                    return true;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                      ) ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"true4"}
-                          data-plasmic-override={overrides.true4}
-                          alt={""}
-                          className={classNames(sty.true4)}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image30.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if ($state.platformstatus.status.shab !== false) {
-                              return false;
-                            } else {
-                              return true;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"false4"}
-                          data-plasmic-override={overrides.false4}
-                          alt={""}
-                          className={classNames(sty.false4, "element")}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image29.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (!("shab" in $state.platformstatus.status)) {
-                              return true;
-                            } else {
-                              return false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"add4"}
-                          data-plasmic-override={overrides.add4}
-                          alt={""}
-                          className={classNames(sty.add4)}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image22.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__dVb0Q,
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    !("shab" in $state.platformstatus.status)
-                                  ) {
-                                    return "disable";
-                                  } else {
-                                    return "";
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    !("shab" in $state.platformstatus.status)
-                                  ) {
-                                    return "disable";
-                                  } else {
-                                    return "";
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                      )}
-                    >
-                      {"\u0634\u0628"}
-                    </div>
-                  </div>
-                  {false ? (
-                    <div
-                      data-plasmic-name={"mizbon"}
-                      data-plasmic-override={overrides.mizbon}
-                      className={classNames(projectcss.all, sty.mizbon)}
+                      data-plasmic-name={"jabama"}
+                      data-plasmic-override={overrides.jabama}
+                      className={classNames(projectcss.all, sty.jabama)}
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["invokeGlobalAction"] = true
+                        $steps["updateStateVariable"] = true
                           ? (() => {
                               const actionArgs = {
-                                args: [
-                                  "error",
-                                  "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0645\u06cc\u0632\u0628\u0648\u0646 \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u067e\u06cc\u0627\u0645 \u062f\u0647\u06cc\u062f",
-                                  "top-center"
-                                ]
+                                operation: 0,
+                                value: (() => {
+                                  if (
+                                    $state.platformstatus.status.jabama !== true
+                                  ) {
+                                    return ($state.step = 1);
+                                  }
+                                })()
                               };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
                             })()
                           : undefined;
+                        if (
+                          $steps["updateStateVariable"] != null &&
+                          typeof $steps["updateStateVariable"] === "object" &&
+                          typeof $steps["updateStateVariable"].then ===
+                            "function"
+                        ) {
+                          $steps["updateStateVariable"] = await $steps[
+                            "updateStateVariable"
+                          ];
+                        }
+
+                        $steps["invokeGlobalAction"] =
+                          $state.platformstatus.status.jabama == true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u062c\u0627\u0628\u0627\u0645\u0627 \u0634\u0645\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
                         if (
                           $steps["invokeGlobalAction"] != null &&
                           typeof $steps["invokeGlobalAction"] === "object" &&
@@ -2589,15 +1574,1334 @@ function PlasmicActivation__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox___4CpP
+                          sty.freeBox__xmY53
                         )}
                       >
                         <PlasmicImg__
-                          data-plasmic-name={"paltform5"}
-                          data-plasmic-override={overrides.paltform5}
+                          data-plasmic-name={"paltform2"}
+                          data-plasmic-override={overrides.paltform2}
                           alt={""}
                           className={classNames(
-                            sty.paltform5,
+                            sty.paltform2,
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        !(
+                                          "jabama" in
+                                          $state.platformstatus.status
+                                        )
+                                      ) {
+                                        return "disable";
+                                      } else {
+                                        return "";
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              : (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        !(
+                                          "jabama" in
+                                          $state.platformstatus.status
+                                        )
+                                      ) {
+                                        return "disable";
+                                      } else {
+                                        return "";
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          )}
+                          displayHeight={"47px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image19.svg",
+                            fullWidth: 45,
+                            fullHeight: 46,
+                            aspectRatio: 0.978261
+                          }}
+                        />
+
+                        {(
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.jabama !==
+                                      true
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.jabama !==
+                                      true
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"true2"}
+                            data-plasmic-override={overrides.true2}
+                            alt={""}
+                            className={classNames(sty.true2)}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image30.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.jabama !==
+                                      false
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.jabama !==
+                                      false
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"false2"}
+                            data-plasmic-override={overrides.false2}
+                            alt={""}
+                            className={classNames(sty.false2, "element")}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image29.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (!("jabama" in $state.platformstatus.status)) {
+                                return true;
+                              } else {
+                                return false;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"add2"}
+                            data-plasmic-override={overrides.add2}
+                            alt={""}
+                            className={classNames(sty.add2)}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image22.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__t9UD,
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      !(
+                                        "jabama" in $state.platformstatus.status
+                                      )
+                                    ) {
+                                      return "disable";
+                                    } else {
+                                      return "";
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      !(
+                                        "jabama" in $state.platformstatus.status
+                                      )
+                                    ) {
+                                      return "disable";
+                                    } else {
+                                      return "";
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        )}
+                      >
+                        {"\u062c\u0627\u0628\u0627\u0645\u0627"}
+                      </div>
+                    </div>
+                    <div
+                      data-plasmic-name={"otaghak"}
+                      data-plasmic-override={overrides.otaghak}
+                      className={classNames(projectcss.all, sty.otaghak)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateStateVariable"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                operation: 0,
+                                value: (() => {
+                                  if (
+                                    $state.platformstatus.status.otaghak !==
+                                    true
+                                  ) {
+                                    return ($state.step = 7);
+                                  }
+                                })()
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateStateVariable"] != null &&
+                          typeof $steps["updateStateVariable"] === "object" &&
+                          typeof $steps["updateStateVariable"].then ===
+                            "function"
+                        ) {
+                          $steps["updateStateVariable"] = await $steps[
+                            "updateStateVariable"
+                          ];
+                        }
+
+                        $steps["invokeGlobalAction"] =
+                          $state.platformstatus.status.otaghak == true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u0627\u062a\u0627\u0642\u06a9 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__qf6Tk
+                        )}
+                      >
+                        <PlasmicImg__
+                          data-plasmic-name={"paltform3"}
+                          data-plasmic-override={overrides.paltform3}
+                          alt={""}
+                          className={classNames(
+                            sty.paltform3,
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        !(
+                                          "otaghak" in
+                                          $state.platformstatus.status
+                                        )
+                                      ) {
+                                        return "disable";
+                                      } else {
+                                        return "";
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              : (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        !(
+                                          "otaghak" in
+                                          $state.platformstatus.status
+                                        )
+                                      ) {
+                                        return "disable";
+                                      } else {
+                                        return "";
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          )}
+                          displayHeight={"47px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image13.svg",
+                            fullWidth: 46,
+                            fullHeight: 46,
+                            aspectRatio: 1
+                          }}
+                        />
+
+                        {(
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.otaghak !==
+                                      true
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.otaghak !==
+                                      true
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"true3"}
+                            data-plasmic-override={overrides.true3}
+                            alt={""}
+                            className={classNames(sty.true3)}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image30.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (
+                                $state.platformstatus.status.otaghak !== false
+                              ) {
+                                return false;
+                              } else {
+                                return true;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"false3"}
+                            data-plasmic-override={overrides.false3}
+                            alt={""}
+                            className={classNames(sty.false3, "element")}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image29.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (
+                                !("otaghak" in $state.platformstatus.status)
+                              ) {
+                                return true;
+                              } else {
+                                return false;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"add3"}
+                            data-plasmic-override={overrides.add3}
+                            alt={""}
+                            className={classNames(sty.add3)}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image22.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__lmtkh,
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      !(
+                                        "otaghak" in
+                                        $state.platformstatus.status
+                                      )
+                                    ) {
+                                      return "disable";
+                                    } else {
+                                      return "";
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      !(
+                                        "otaghak" in
+                                        $state.platformstatus.status
+                                      )
+                                    ) {
+                                      return "disable";
+                                    } else {
+                                      return "";
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        )}
+                      >
+                        {"\u0627\u062a\u0627\u0642\u06a9"}
+                      </div>
+                    </div>
+                    <div
+                      data-plasmic-name={"shab"}
+                      data-plasmic-override={overrides.shab}
+                      className={classNames(projectcss.all, sty.shab)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateStateVariable"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                operation: 0,
+                                value: (() => {
+                                  if (
+                                    $state.platformstatus.status.shab !== true
+                                  ) {
+                                    return ($state.step = 5);
+                                  }
+                                })()
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateStateVariable"] != null &&
+                          typeof $steps["updateStateVariable"] === "object" &&
+                          typeof $steps["updateStateVariable"].then ===
+                            "function"
+                        ) {
+                          $steps["updateStateVariable"] = await $steps[
+                            "updateStateVariable"
+                          ];
+                        }
+
+                        $steps["invokeGlobalAction"] =
+                          $state.platformstatus.status.shab == true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u0634\u0628 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__rkKgj
+                        )}
+                      >
+                        <PlasmicImg__
+                          data-plasmic-name={"paltform4"}
+                          data-plasmic-override={overrides.paltform4}
+                          alt={""}
+                          className={classNames(
+                            sty.paltform4,
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        !(
+                                          "shab" in $state.platformstatus.status
+                                        )
+                                      ) {
+                                        return "disable";
+                                      } else {
+                                        return "";
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              : (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        !(
+                                          "shab" in $state.platformstatus.status
+                                        )
+                                      ) {
+                                        return "disable";
+                                      } else {
+                                        return "";
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          )}
+                          displayHeight={"47px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image20.svg",
+                            fullWidth: 46,
+                            fullHeight: 45,
+                            aspectRatio: 1.022222
+                          }}
+                        />
+
+                        {(
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.shab !== true
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      $state.platformstatus.status.shab !== true
+                                    ) {
+                                      return false;
+                                    } else {
+                                      return true;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        ) ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"true4"}
+                            data-plasmic-override={overrides.true4}
+                            alt={""}
+                            className={classNames(sty.true4)}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image30.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              if ($state.platformstatus.status.shab !== false) {
+                                return false;
+                              } else {
+                                return true;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"false4"}
+                            data-plasmic-override={overrides.false4}
+                            alt={""}
+                            className={classNames(sty.false4, "element")}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image29.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (!("shab" in $state.platformstatus.status)) {
+                                return true;
+                              } else {
+                                return false;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"add4"}
+                            data-plasmic-override={overrides.add4}
+                            alt={""}
+                            className={classNames(sty.add4)}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image22.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__dVb0Q,
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      !("shab" in $state.platformstatus.status)
+                                    ) {
+                                      return "disable";
+                                    } else {
+                                      return "";
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      !("shab" in $state.platformstatus.status)
+                                    ) {
+                                      return "disable";
+                                    } else {
+                                      return "";
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        )}
+                      >
+                        {"\u0634\u0628"}
+                      </div>
+                    </div>
+                    {false ? (
+                      <div
+                        data-plasmic-name={"mizbon"}
+                        data-plasmic-override={overrides.mizbon}
+                        className={classNames(projectcss.all, sty.mizbon)}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["invokeGlobalAction"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "error",
+                                    "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0645\u06cc\u0632\u0628\u0648\u0646 \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u067e\u06cc\u0627\u0645 \u062f\u0647\u06cc\u062f",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["invokeGlobalAction"] != null &&
+                            typeof $steps["invokeGlobalAction"] === "object" &&
+                            typeof $steps["invokeGlobalAction"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction"] = await $steps[
+                              "invokeGlobalAction"
+                            ];
+                          }
+                        }}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox___4CpP
+                          )}
+                        >
+                          <PlasmicImg__
+                            data-plasmic-name={"paltform5"}
+                            data-plasmic-override={overrides.paltform5}
+                            alt={""}
+                            className={classNames(
+                              sty.paltform5,
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? (() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          !(
+                                            "mizboon" in
+                                            $state.platformstatus.status
+                                          )
+                                        ) {
+                                          return "disable";
+                                        } else {
+                                          return "";
+                                        }
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                : (() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          !(
+                                            "mizboon" in
+                                            $state.platformstatus.status
+                                          )
+                                        ) {
+                                          return "disable";
+                                        } else {
+                                          return "";
+                                        }
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                            )}
+                            displayHeight={"47px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image15.svg",
+                              fullWidth: 46,
+                              fullHeight: 45,
+                              aspectRatio: 1.022222
+                            }}
+                          />
+
+                          {(
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        $state.platformstatus.status.mizboon !==
+                                        true
+                                      ) {
+                                        return false;
+                                      } else {
+                                        return true;
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              : (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        $state.platformstatus.status.mizboon !==
+                                        true
+                                      ) {
+                                        return false;
+                                      } else {
+                                        return true;
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          ) ? (
+                            <PlasmicImg__
+                              data-plasmic-name={"true5"}
+                              data-plasmic-override={overrides.true5}
+                              alt={""}
+                              className={classNames(sty.true5)}
+                              displayHeight={"18px"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image8.svg",
+                                fullWidth: 30,
+                                fullHeight: 30,
+                                aspectRatio: 1
+                              }}
+                            />
+                          ) : null}
+                          {(
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        $state.platformstatus.status.mizboon !==
+                                        false
+                                      ) {
+                                        return false;
+                                      } else {
+                                        return true;
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              : (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        $state.platformstatus.status.mizboon !==
+                                        false
+                                      ) {
+                                        return false;
+                                      } else {
+                                        return true;
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          ) ? (
+                            <PlasmicImg__
+                              data-plasmic-name={"false5"}
+                              data-plasmic-override={overrides.false5}
+                              alt={""}
+                              className={classNames(sty.false5, "element")}
+                              displayHeight={"18px"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image29.svg",
+                                fullWidth: 27,
+                                fullHeight: 27,
+                                aspectRatio: 1
+                              }}
+                            />
+                          ) : null}
+                          {(() => {
+                            try {
+                              return (() => {
+                                if (
+                                  !("mizboon" in $state.platformstatus.status)
+                                ) {
+                                  return true;
+                                } else {
+                                  return false;
+                                }
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <PlasmicImg__
+                              data-plasmic-name={"add5"}
+                              data-plasmic-override={overrides.add5}
+                              alt={""}
+                              className={classNames(sty.add5)}
+                              displayHeight={"18px"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image22.svg",
+                                fullWidth: 27,
+                                fullHeight: 27,
+                                aspectRatio: 1
+                              }}
+                            />
+                          ) : null}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__esMaJ,
                             hasVariant(globalVariants, "screen", "mobile")
                               ? (() => {
                                   try {
@@ -2650,75 +2954,195 @@ function PlasmicActivation__RenderFunc(props: {
                                   }
                                 })()
                           )}
-                          displayHeight={"47px"}
+                        >
+                          {"\u0645\u06cc\u0632\u0628\u0648\u0646"}
+                        </div>
+                      </div>
+                    ) : null}
+                    <div
+                      data-plasmic-name={"homsa"}
+                      data-plasmic-override={overrides.homsa}
+                      className={classNames(projectcss.all, sty.homsa)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateStateVariable"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                operation: 0,
+                                value: (() => {
+                                  if (
+                                    $state.platformstatus.status.homsa !== true
+                                  ) {
+                                    return ($state.step = 9);
+                                  }
+                                })()
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateStateVariable"] != null &&
+                          typeof $steps["updateStateVariable"] === "object" &&
+                          typeof $steps["updateStateVariable"].then ===
+                            "function"
+                        ) {
+                          $steps["updateStateVariable"] = await $steps[
+                            "updateStateVariable"
+                          ];
+                        }
+
+                        $steps["invokeGlobalAction"] =
+                          $state.platformstatus.status.homsa == true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u0647\u0648\u0645\u0633\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__uE1L
+                        )}
+                      >
+                        <PlasmicImg__
+                          data-plasmic-name={"paltform6"}
+                          data-plasmic-override={overrides.paltform6}
+                          alt={""}
+                          className={classNames(
+                            sty.paltform6,
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        !(
+                                          "homsa" in
+                                          $state.platformstatus.status
+                                        )
+                                      ) {
+                                        return "disable";
+                                      } else {
+                                        return "";
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              : (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        !(
+                                          "homsa" in
+                                          $state.platformstatus.status
+                                        )
+                                      ) {
+                                        return "disable";
+                                      } else {
+                                        return "";
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          )}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? "47px"
+                              : "47px"
+                          }
                           displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
+                          displayMaxWidth={
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
+                          }
                           displayMinHeight={"0"}
                           displayMinWidth={"0"}
                           displayWidth={"auto"}
                           loading={"lazy"}
                           src={{
-                            src: "/plasmic/website_starter/images/image15.svg",
+                            src: "/plasmic/website_starter/images/image18.svg",
                             fullWidth: 46,
                             fullHeight: 45,
                             aspectRatio: 1.022222
                           }}
                         />
 
-                        {(
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      $state.platformstatus.status.mizboon !==
-                                      true
-                                    ) {
-                                      return false;
-                                    } else {
-                                      return true;
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      $state.platformstatus.status.mizboon !==
-                                      true
-                                    ) {
-                                      return false;
-                                    } else {
-                                      return true;
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                        ) ? (
+                        {(() => {
+                          try {
+                            return (() => {
+                              if ($state.platformstatus.status.homsa !== true) {
+                                return false;
+                              } else {
+                                return true;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
                           <PlasmicImg__
-                            data-plasmic-name={"true5"}
-                            data-plasmic-override={overrides.true5}
+                            data-plasmic-name={"true6"}
+                            data-plasmic-override={overrides.true6}
                             alt={""}
-                            className={classNames(sty.true5)}
+                            className={classNames(sty.true6)}
                             displayHeight={"18px"}
                             displayMaxHeight={"none"}
                             displayMaxWidth={"100%"}
@@ -2727,67 +3151,39 @@ function PlasmicActivation__RenderFunc(props: {
                             displayWidth={"auto"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/image8.svg",
-                              fullWidth: 30,
-                              fullHeight: 30,
+                              src: "/plasmic/website_starter/images/image34.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
                               aspectRatio: 1
                             }}
                           />
                         ) : null}
-                        {(
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      $state.platformstatus.status.mizboon !==
-                                      false
-                                    ) {
-                                      return false;
-                                    } else {
-                                      return true;
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      $state.platformstatus.status.mizboon !==
-                                      false
-                                    ) {
-                                      return false;
-                                    } else {
-                                      return true;
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                        ) ? (
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (
+                                $state.platformstatus.status.homsa !== false
+                              ) {
+                                return false;
+                              } else {
+                                return true;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
                           <PlasmicImg__
-                            data-plasmic-name={"false5"}
-                            data-plasmic-override={overrides.false5}
+                            data-plasmic-name={"false6"}
+                            data-plasmic-override={overrides.false6}
                             alt={""}
-                            className={classNames(sty.false5, "element")}
+                            className={classNames(sty.false6, "element")}
                             displayHeight={"18px"}
                             displayMaxHeight={"none"}
                             displayMaxWidth={"100%"}
@@ -2806,9 +3202,7 @@ function PlasmicActivation__RenderFunc(props: {
                         {(() => {
                           try {
                             return (() => {
-                              if (
-                                !("mizboon" in $state.platformstatus.status)
-                              ) {
+                              if (!("homsa" in $state.platformstatus.status)) {
                                 return true;
                               } else {
                                 return false;
@@ -2825,10 +3219,10 @@ function PlasmicActivation__RenderFunc(props: {
                           }
                         })() ? (
                           <PlasmicImg__
-                            data-plasmic-name={"add5"}
-                            data-plasmic-override={overrides.add5}
+                            data-plasmic-name={"add6"}
+                            data-plasmic-override={overrides.add6}
                             alt={""}
-                            className={classNames(sty.add5)}
+                            className={classNames(sty.add6)}
                             displayHeight={"18px"}
                             displayMaxHeight={"none"}
                             displayMaxWidth={"100%"}
@@ -2849,14 +3243,347 @@ function PlasmicActivation__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__esMaJ,
+                          sty.text___5YUmm,
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      !("homsa" in $state.platformstatus.status)
+                                    ) {
+                                      return "disable";
+                                    } else {
+                                      return "";
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      !("homsa" in $state.platformstatus.status)
+                                    ) {
+                                      return "disable";
+                                    } else {
+                                      return "";
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        )}
+                      >
+                        {"\u0647\u0648\u0645\u0633\u0627"}
+                      </div>
+                    </div>
+                    <div
+                      data-plasmic-name={"mihmansho2"}
+                      data-plasmic-override={overrides.mihmansho2}
+                      className={classNames(projectcss.all, sty.mihmansho2)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateInput6Value"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["input6", "value"]
+                                },
+                                operation: 0,
+                                value: (() => {
+                                  if (
+                                    $state.platformstatus.status.mihmansho !==
+                                    true
+                                  ) {
+                                    return ($state.step = 10);
+                                  }
+                                })()
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateInput6Value"] != null &&
+                          typeof $steps["updateInput6Value"] === "object" &&
+                          typeof $steps["updateInput6Value"].then === "function"
+                        ) {
+                          $steps["updateInput6Value"] = await $steps[
+                            "updateInput6Value"
+                          ];
+                        }
+
+                        $steps["updateInput6Value2"] =
+                          $state.platformstatus.status.mihmansho == true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648 \u0634\u0645\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["updateInput6Value2"] != null &&
+                          typeof $steps["updateInput6Value2"] === "object" &&
+                          typeof $steps["updateInput6Value2"].then ===
+                            "function"
+                        ) {
+                          $steps["updateInput6Value2"] = await $steps[
+                            "updateInput6Value2"
+                          ];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__xfhh6
+                        )}
+                      >
+                        <PlasmicImg__
+                          data-plasmic-name={"paltform7"}
+                          data-plasmic-override={overrides.paltform7}
+                          alt={""}
+                          className={classNames(
+                            sty.paltform7,
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        !(
+                                          "mihmansho" in
+                                          $state.platformstatus.status
+                                        )
+                                      ) {
+                                        return "disable";
+                                      } else {
+                                        return "";
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              : (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        !(
+                                          "mihmansho" in
+                                          $state.platformstatus.status
+                                        )
+                                      ) {
+                                        return "disable";
+                                      } else {
+                                        return "";
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          )}
+                          displayHeight={"47px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image21.svg",
+                            fullWidth: 46,
+                            fullHeight: 45,
+                            aspectRatio: 1.022222
+                          }}
+                        />
+
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (
+                                $state.platformstatus.status.mihmansho !== true
+                              ) {
+                                return false;
+                              } else {
+                                return true;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"true7"}
+                            data-plasmic-override={overrides.true7}
+                            alt={""}
+                            className={classNames(sty.true7)}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image8.svg",
+                              fullWidth: 30,
+                              fullHeight: 30,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (
+                                !("mihmansho" in $state.platformstatus.status)
+                              ) {
+                                return true;
+                              } else {
+                                return false;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__cn7ID)}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image22.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              if (
+                                $state.platformstatus.status.mihmansho !== false
+                              ) {
+                                return false;
+                              } else {
+                                return true;
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"false7"}
+                            data-plasmic-override={overrides.false7}
+                            alt={""}
+                            className={classNames(sty.false7, "element")}
+                            displayHeight={"18px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image29.svg",
+                              fullWidth: 27,
+                              fullHeight: 27,
+                              aspectRatio: 1
+                            }}
+                          />
+                        ) : null}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__nhixE,
                           hasVariant(globalVariants, "screen", "mobile")
                             ? (() => {
                                 try {
                                   return (() => {
                                     if (
                                       !(
-                                        "mizboon" in
+                                        "mehmansho" in
                                         $state.platformstatus.status
                                       )
                                     ) {
@@ -2881,7 +3608,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   return (() => {
                                     if (
                                       !(
-                                        "mizboon" in
+                                        "mihmansho" in
                                         $state.platformstatus.status
                                       )
                                     ) {
@@ -2903,664 +3630,11 @@ function PlasmicActivation__RenderFunc(props: {
                               })()
                         )}
                       >
-                        {"\u0645\u06cc\u0632\u0628\u0648\u0646"}
+                        {"\u0645\u0647\u0645\u0627\u0646\u0634\u0648"}
                       </div>
                     </div>
-                  ) : null}
-                  <div
-                    data-plasmic-name={"homsa"}
-                    data-plasmic-override={overrides.homsa}
-                    className={classNames(projectcss.all, sty.homsa)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: (() => {
-                                if (
-                                  $state.platformstatus.status.homsa !== true
-                                ) {
-                                  return ($state.step = 9);
-                                }
-                              })()
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-
-                      $steps["invokeGlobalAction"] =
-                        $state.platformstatus.status.homsa == true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  undefined,
-                                  "\u0647\u0648\u0645\u0633\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
-                                  "top-center"
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__uE1L)}
-                    >
-                      <PlasmicImg__
-                        data-plasmic-name={"paltform6"}
-                        data-plasmic-override={overrides.paltform6}
-                        alt={""}
-                        className={classNames(
-                          sty.paltform6,
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      !("homsa" in $state.platformstatus.status)
-                                    ) {
-                                      return "disable";
-                                    } else {
-                                      return "";
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      !("homsa" in $state.platformstatus.status)
-                                    ) {
-                                      return "disable";
-                                    } else {
-                                      return "";
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                        )}
-                        displayHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "47px"
-                            : "47px"
-                        }
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "100%"
-                            : "100%"
-                        }
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image18.svg",
-                          fullWidth: 46,
-                          fullHeight: 45,
-                          aspectRatio: 1.022222
-                        }}
-                      />
-
-                      {(() => {
-                        try {
-                          return (() => {
-                            if ($state.platformstatus.status.homsa !== true) {
-                              return false;
-                            } else {
-                              return true;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"true6"}
-                          data-plasmic-override={overrides.true6}
-                          alt={""}
-                          className={classNames(sty.true6)}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image34.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if ($state.platformstatus.status.homsa !== false) {
-                              return false;
-                            } else {
-                              return true;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"false6"}
-                          data-plasmic-override={overrides.false6}
-                          alt={""}
-                          className={classNames(sty.false6, "element")}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image29.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (!("homsa" in $state.platformstatus.status)) {
-                              return true;
-                            } else {
-                              return false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"add6"}
-                          data-plasmic-override={overrides.add6}
-                          alt={""}
-                          className={classNames(sty.add6)}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image22.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___5YUmm,
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    !("homsa" in $state.platformstatus.status)
-                                  ) {
-                                    return "disable";
-                                  } else {
-                                    return "";
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    !("homsa" in $state.platformstatus.status)
-                                  ) {
-                                    return "disable";
-                                  } else {
-                                    return "";
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                      )}
-                    >
-                      {"\u0647\u0648\u0645\u0633\u0627"}
-                    </div>
                   </div>
-                  <div
-                    data-plasmic-name={"mihmansho2"}
-                    data-plasmic-override={overrides.mihmansho2}
-                    className={classNames(projectcss.all, sty.mihmansho2)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateInput6Value"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["input6", "value"]
-                              },
-                              operation: 0,
-                              value: (() => {
-                                if (
-                                  $state.platformstatus.status.mihmansho !==
-                                  true
-                                ) {
-                                  return ($state.step = 10);
-                                }
-                              })()
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateInput6Value"] != null &&
-                        typeof $steps["updateInput6Value"] === "object" &&
-                        typeof $steps["updateInput6Value"].then === "function"
-                      ) {
-                        $steps["updateInput6Value"] = await $steps[
-                          "updateInput6Value"
-                        ];
-                      }
-
-                      $steps["updateInput6Value2"] =
-                        $state.platformstatus.status.mihmansho == true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  undefined,
-                                  "\u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648 \u0634\u0645\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
-                                  "top-center"
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.showToast"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                      if (
-                        $steps["updateInput6Value2"] != null &&
-                        typeof $steps["updateInput6Value2"] === "object" &&
-                        typeof $steps["updateInput6Value2"].then === "function"
-                      ) {
-                        $steps["updateInput6Value2"] = await $steps[
-                          "updateInput6Value2"
-                        ];
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__xfhh6)}
-                    >
-                      <PlasmicImg__
-                        data-plasmic-name={"paltform7"}
-                        data-plasmic-override={overrides.paltform7}
-                        alt={""}
-                        className={classNames(
-                          sty.paltform7,
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      !(
-                                        "mihmansho" in
-                                        $state.platformstatus.status
-                                      )
-                                    ) {
-                                      return "disable";
-                                    } else {
-                                      return "";
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return (() => {
-                                    if (
-                                      !(
-                                        "mihmansho" in
-                                        $state.platformstatus.status
-                                      )
-                                    ) {
-                                      return "disable";
-                                    } else {
-                                      return "";
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                        )}
-                        displayHeight={"47px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image21.svg",
-                          fullWidth: 46,
-                          fullHeight: 45,
-                          aspectRatio: 1.022222
-                        }}
-                      />
-
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (
-                              $state.platformstatus.status.mihmansho !== true
-                            ) {
-                              return false;
-                            } else {
-                              return true;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"true7"}
-                          data-plasmic-override={overrides.true7}
-                          alt={""}
-                          className={classNames(sty.true7)}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image8.svg",
-                            fullWidth: 30,
-                            fullHeight: 30,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (
-                              !("mihmansho" in $state.platformstatus.status)
-                            ) {
-                              return true;
-                            } else {
-                              return false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__cn7ID)}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image22.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (
-                              $state.platformstatus.status.mihmansho !== false
-                            ) {
-                              return false;
-                            } else {
-                              return true;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          data-plasmic-name={"false7"}
-                          data-plasmic-override={overrides.false7}
-                          alt={""}
-                          className={classNames(sty.false7, "element")}
-                          displayHeight={"18px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image29.svg",
-                            fullWidth: 27,
-                            fullHeight: 27,
-                            aspectRatio: 1
-                          }}
-                        />
-                      ) : null}
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__nhixE,
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    !(
-                                      "mehmansho" in
-                                      $state.platformstatus.status
-                                    )
-                                  ) {
-                                    return "disable";
-                                  } else {
-                                    return "";
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    !(
-                                      "mihmansho" in
-                                      $state.platformstatus.status
-                                    )
-                                  ) {
-                                    return "disable";
-                                  } else {
-                                    return "";
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
-                      )}
-                    >
-                      {"\u0645\u0647\u0645\u0627\u0646\u0634\u0648"}
-                    </div>
-                  </div>
-                </div>
+                ) : null}
                 <ApiRequest
                   data-plasmic-name={"apiRequest2"}
                   data-plasmic-override={overrides.apiRequest2}
@@ -3809,9 +3883,11 @@ function PlasmicActivation__RenderFunc(props: {
             </div>
           ) : null}
           <div
+            data-plasmic-name={"connect"}
+            data-plasmic-override={overrides.connect}
             className={classNames(
               projectcss.all,
-              sty.freeBox__fLhZi,
+              sty.connect,
               hasVariant(globalVariants, "screen", "mobile")
                 ? "shadow"
                 : undefined
@@ -11513,6 +11589,7 @@ const PlasmicDescendants = {
     "false7",
     "apiRequest2",
     "modal",
+    "connect",
     "form",
     "platforms",
     "policiesCheckbox",
@@ -11718,6 +11795,80 @@ const PlasmicDescendants = {
   false7: ["false7"],
   apiRequest2: ["apiRequest2"],
   modal: ["modal"],
+  connect: [
+    "connect",
+    "form",
+    "platforms",
+    "policiesCheckbox",
+    "link",
+    "submitButton",
+    "loadingImg",
+    "jabamaSend",
+    "jabamaSendOtp",
+    "jabamasend2",
+    "jabamasend3",
+    "jabamaVerify",
+    "jabamaOtpInput",
+    "jabamaverify",
+    "jajigaSendForm",
+    "jajigaSend",
+    "jajigasend",
+    "jabamasend4",
+    "jajigaVerify",
+    "input6",
+    "jajigaverify",
+    "shabSend",
+    "shabOtpSend",
+    "shabSendButton",
+    "jabamasend5",
+    "shabVerify",
+    "input10",
+    "shabverify",
+    "otaghakSend",
+    "otaghakSendOtp",
+    "otaghaksend",
+    "jabamasend6",
+    "otaghakVerify",
+    "input12",
+    "otaghakverify",
+    "mihmansho",
+    "mihmanshoSend",
+    "input13",
+    "mihmanshosend",
+    "mihmanshosend6",
+    "mihmanshoVerify",
+    "input14",
+    "mihmanshoVerify3",
+    "jabamasend8",
+    "homsaverify",
+    "input15",
+    "input16",
+    "homsaVerify",
+    "jabamasend7",
+    "input17",
+    "mizboonsend",
+    "mizboonsend3",
+    "input18",
+    "mizboonverify",
+    "mizboonverify4",
+    "platformpropertyIds",
+    "jajigapp",
+    "input19",
+    "shabpp",
+    "input20",
+    "otaghakpp",
+    "input21",
+    "mihmanshopp",
+    "input22",
+    "homsapp",
+    "input23",
+    "mizboonpp",
+    "input24",
+    "jabamapp",
+    "input27",
+    "platformpropertyButton",
+    "platformpropertyButton2"
+  ],
   form: [
     "form",
     "platforms",
@@ -11973,6 +12124,7 @@ type NodeDefaultElementType = {
   false7: typeof PlasmicImg__;
   apiRequest2: typeof ApiRequest;
   modal: typeof AntdModal;
+  connect: "div";
   form: typeof FormWrapper;
   platforms: typeof FormItemWrapper;
   policiesCheckbox: typeof Checkbox;
@@ -12162,6 +12314,7 @@ export const PlasmicActivation = Object.assign(
     false7: makeNodeComponent("false7"),
     apiRequest2: makeNodeComponent("apiRequest2"),
     modal: makeNodeComponent("modal"),
+    connect: makeNodeComponent("connect"),
     form: makeNodeComponent("form"),
     platforms: makeNodeComponent("platforms"),
     policiesCheckbox: makeNodeComponent("policiesCheckbox"),

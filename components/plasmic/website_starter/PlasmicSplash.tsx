@@ -220,7 +220,9 @@ function PlasmicSplash__RenderFunc(props: {
                       customFunction: async () => {
                         return (async () => {
                           async function checkVPN() {
-                            const res = await fetch("https://ipapi.co/json/");
+                            const res = await fetch("https://ipapi.co/json/", {
+                              cache: "no-store"
+                            });
                             const data = await res.json();
                             const country = data.country;
                             const org = data.org || "";
@@ -244,7 +246,20 @@ function PlasmicSplash__RenderFunc(props: {
                             $state.isVpnOn = false;
                             return "";
                           }
-                          return await checkVPN();
+                          async function checkWithRetry(
+                            retries = 3,
+                            delay = 1500
+                          ) {
+                            for (let i = 0; i < retries; i++) {
+                              const result = await checkVPN();
+                              if (!$state.isVpnOn) {
+                                return result;
+                              }
+                              await new Promise(r => setTimeout(r, delay));
+                            }
+                            return "not from Iran";
+                          }
+                          return await checkWithRetry();
                         })();
                       }
                     };

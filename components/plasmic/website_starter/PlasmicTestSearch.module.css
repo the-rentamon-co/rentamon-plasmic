@@ -51,6 +51,25 @@
   font-weight: 600;
   font-size: 42px;
   min-width: 0;
+  display: none;
+}
+.apiRequest:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__fTkse {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text___2QmW1 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
 }
 .checkVpn:global(.__wab_instance) {
   max-width: 100%;
