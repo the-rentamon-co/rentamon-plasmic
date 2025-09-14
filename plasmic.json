@@ -5389,6 +5389,11 @@
           "id": "e2A-PNZZoi_-",
           "name": "shield-security-svgrepo-com.svg",
           "filePath": "../public/plasmic/website_starter/images/shieldSecuritySvgrepoComSvg.svg"
+        },
+        {
+          "id": "YEWt7bxxJYyg",
+          "name": "shield-security(1).svg",
+          "filePath": "../public/plasmic/website_starter/images/shieldSecurity1Svg.svg"
         }
       ],
       "indirect": false,

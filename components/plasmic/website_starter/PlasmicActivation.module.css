@@ -3523,7 +3523,7 @@
   min-width: 0;
   border-radius: 15px;
   padding: 8px;
-  border: 1px solid var(--token-8nedppYkGVaH);
+  border: 1px solid #acacac;
 }
 @media (max-width: 1200px) {
   .freeBox__h0Pz0 {
