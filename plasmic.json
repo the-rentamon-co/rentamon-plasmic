@@ -5384,6 +5384,11 @@
           "id": "hF6bdxYveq_R",
           "name": "vpn-icon.svg",
           "filePath": "../public/plasmic/website_starter/images/vpnIconSvg.svg"
+        },
+        {
+          "id": "e2A-PNZZoi_-",
+          "name": "shield-security-svgrepo-com.svg",
+          "filePath": "../public/plasmic/website_starter/images/shieldSecuritySvgrepoComSvg.svg"
         }
       ],
       "indirect": false,

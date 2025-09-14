@@ -222,6 +222,7 @@ export type PlasmicActivation__OverridesType = {
   input27?: Flex__<typeof AntdInput>;
   platformpropertyButton?: Flex__<typeof AntdButton>;
   platformpropertyButton2?: Flex__<typeof AntdButton>;
+  security?: Flex__<"div">;
   jabamasend9?: Flex__<typeof AntdButton>;
   guide?: Flex__<"div">;
   _1?: Flex__<"div">;
@@ -3693,21 +3694,50 @@ function PlasmicActivation__RenderFunc(props: {
                   }
                 />
 
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___4Yei8)}
-                >
+                {(() => {
+                  try {
+                    return (() => {
+                      const platforms = $state.platformstatus.status;
+                      const requiredWebsites = [
+                        "jabama",
+                        "jajiga",
+                        "shab",
+                        "otaghak",
+                        "homsa",
+                        "mihmansho"
+                      ];
+
+                      const allWebsitesExist = requiredWebsites.every(website =>
+                        platforms.hasOwnProperty(website)
+                      );
+                      return !allWebsitesExist;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___2Fcyl
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox___4Yei8)}
                   >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u060c \u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"
-                      : "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u060c\n\u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___2Fcyl
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u060c \u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"
+                        : "\u26a0\ufe0f\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u26a0\ufe0f\n\u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"}
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
               <AntdModal
                 data-plasmic-name={"modal"}
@@ -10334,6 +10364,101 @@ function PlasmicActivation__RenderFunc(props: {
                       </AntdButton>
                     </div>
                   </div>
+                  {(() => {
+                    try {
+                      return (() => {
+                        const platforms = $state.platformstatus.status;
+                        if (platforms && Object.keys(platforms).length > 0) {
+                          const hasFalse = Object.values(platforms).some(
+                            value => value === false
+                          );
+                          return hasFalse;
+                        }
+                        return false;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"security"}
+                      data-plasmic-override={overrides.security}
+                      className={classNames(projectcss.all, sty.security)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__h0Pz0
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img___12L9W)}
+                          displayHeight={"34px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"38px"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/shieldSecuritySvgrepoComSvg.svg",
+                            fullWidth: 800,
+                            fullHeight: 800,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__dghKg
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>
+                              {
+                                "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0634\u0645\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0646\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u062d\u0631\u0645\u0627\u0646\u0647 \u0633\u062a \u0648 \u0641\u0642\u0637 \u0628\u0631\u0627\u06cc "
+                              }
+                            </React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {
+                                "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645"
+                              }
+                            </span>
+                            <React.Fragment>{" \u0648 "}</React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {
+                                "\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648"
+                              }
+                            </span>
+                            <React.Fragment>
+                              {
+                                " \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647"
+                              }
+                            </React.Fragment>
+                          </React.Fragment>
+                        </div>
+                      </div>
+                    </div>
+                  ) : null}
                 </FormWrapper>
               );
             })()}
@@ -11661,6 +11786,7 @@ const PlasmicDescendants = {
     "input27",
     "platformpropertyButton",
     "platformpropertyButton2",
+    "security",
     "jabamasend9",
     "guide",
     "_1",
@@ -11867,7 +11993,8 @@ const PlasmicDescendants = {
     "jabamapp",
     "input27",
     "platformpropertyButton",
-    "platformpropertyButton2"
+    "platformpropertyButton2",
+    "security"
   ],
   form: [
     "form",
@@ -11940,7 +12067,8 @@ const PlasmicDescendants = {
     "jabamapp",
     "input27",
     "platformpropertyButton",
-    "platformpropertyButton2"
+    "platformpropertyButton2",
+    "security"
   ],
   platforms: [
     "platforms",
@@ -12062,6 +12190,7 @@ const PlasmicDescendants = {
   input27: ["input27"],
   platformpropertyButton: ["platformpropertyButton"],
   platformpropertyButton2: ["platformpropertyButton2"],
+  security: ["security"],
   jabamasend9: ["jabamasend9"],
   guide: ["guide", "_1", "_2", "_3"],
   _1: ["_1"],
@@ -12196,6 +12325,7 @@ type NodeDefaultElementType = {
   input27: typeof AntdInput;
   platformpropertyButton: typeof AntdButton;
   platformpropertyButton2: typeof AntdButton;
+  security: "div";
   jabamasend9: typeof AntdButton;
   guide: "div";
   _1: "div";
@@ -12386,6 +12516,7 @@ export const PlasmicActivation = Object.assign(
     input27: makeNodeComponent("input27"),
     platformpropertyButton: makeNodeComponent("platformpropertyButton"),
     platformpropertyButton2: makeNodeComponent("platformpropertyButton2"),
+    security: makeNodeComponent("security"),
     jabamasend9: makeNodeComponent("jabamasend9"),
     guide: makeNodeComponent("guide"),
     _1: makeNodeComponent("_1"),

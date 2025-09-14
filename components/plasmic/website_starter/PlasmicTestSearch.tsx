@@ -236,7 +236,13 @@ function PlasmicTestSearch__RenderFunc(props: {
                       .find(row => row.startsWith("access_token"))
                       .split("=")[1];
                     console.log("accessToken", accessToken);
-                    return { header: { Authorization: accessToken } };
+                    return {
+                      header: {
+                        Authorization: accessToken,
+                        "Content-Type": "application/json",
+                        Accept: "application/json"
+                      }
+                    };
                   })();
                 } catch (e) {
                   if (

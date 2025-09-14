@@ -189,13 +189,6 @@
   --plasmic-token-unnamed-style-token-18: var(--token-xxlJy7f7b9Uc);
 }
 
-@media (max-width: 1200px) {
-  .plasmic_tokens {
-    --token-8nedppYkGVaH: #8165d6;
-    --plasmic-token-main-purple: var(--token-8nedppYkGVaH);
-  }
-}
-
 @media (max-width: 500px) {
   .plasmic_tokens {
     --token-sq05VTixHzt0: 26px;
