@@ -10861,10 +10861,14 @@ function PlasmicActivation__RenderFunc(props: {
                                 "missingKeys:",
                                 missingKeys,
                                 "falseKeys:",
-                                falseKeys
+                                falseKeys,
+                                "step:",
+                                $state.step
                               );
                               return (
-                                missingKeys.length > 0 || falseKeys.length > 0
+                                $state.step !== 0 &&
+                                $ctx.params.type !== 1 &&
+                                (missingKeys.length > 0 || falseKeys.length > 0)
                               );
                             })();
                           } catch (e) {
@@ -10872,7 +10876,7 @@ function PlasmicActivation__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return false;
+                              return true;
                             }
                             throw e;
                           }
@@ -10921,6 +10925,7 @@ function PlasmicActivation__RenderFunc(props: {
                               );
                               return (
                                 $state.step !== 0 &&
+                                $ctx.params.type !== 1 &&
                                 (missingKeys.length > 0 || falseKeys.length > 0)
                               );
                             })();
@@ -10929,7 +10934,7 @@ function PlasmicActivation__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return false;
+                              return true;
                             }
                             throw e;
                           }
