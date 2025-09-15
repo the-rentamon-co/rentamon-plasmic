@@ -46,7 +46,7 @@
     padding: 1px;
   }
 }
-.guideText {
+.guide1 {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -65,7 +65,7 @@
   padding: 8px;
 }
 @media (max-width: 500px) {
-  .guideText {
+  .guide1 {
     z-index: 500;
   }
 }
@@ -734,7 +734,7 @@
     background: #f8f8f8;
   }
 }
-.section__rqNfm {
+.پر {
   display: grid;
   align-content: center;
   justify-items: flex-start;
@@ -754,7 +754,7 @@
   border-radius: 10px;
   padding: 0px 0 6px;
 }
-.section__rqNfm > * {
+.پر > * {
   grid-column: 4;
 }
 .freeBox__p8HqH {
@@ -849,8 +849,10 @@
   color: var(--token-8R7jjC_-F9FF);
   padding-right: 10px;
   cursor: pointer;
+  background: none;
+  font-weight: 600;
 }
-.section__xsRl {
+.خالیقیمتتخفیفParent {
   display: grid;
   align-content: center;
   justify-items: flex-start;
@@ -869,11 +871,38 @@
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
   padding: 6px 0px;
 }
-.section__xsRl > * {
+.خالیقیمتتخفیفParent > * {
   grid-column: 4;
 }
 @media (max-width: 500px) {
-  .section__xsRl > * {
+  .خالیقیمتتخفیفParent > * {
+    grid-column: 4;
+  }
+}
+.خالی {
+  display: grid;
+  align-content: center;
+  justify-items: flex-start;
+  width: 100%;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  cursor: pointer;
+  grid-column-start: 1 !important;
+  grid-column-end: -1 !important;
+  grid-template-columns:
+    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
+    min(
+      var(--plsmc-standard-width),
+      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
+    )
+    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+  padding: 6px 0px;
+}
+.خالی > * {
+  grid-column: 4;
+}
+@media (max-width: 500px) {
+  .خالی > * {
     grid-column: 4;
   }
 }
@@ -896,7 +925,7 @@
   padding-bottom: 5px;
   font-weight: 600;
 }
-.section__gaoiv {
+.قیمت {
   display: grid;
   align-content: center;
   justify-items: flex-start;
@@ -915,7 +944,7 @@
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
   padding: 6px 0px;
 }
-.section__gaoiv > * {
+.قیمت > * {
   grid-column: 4;
 }
 .freeBox__abqGe {
@@ -943,7 +972,7 @@
   color: #acacac;
   height: 18px;
 }
-.section__wGeqr {
+.تخفیف {
   display: grid;
   align-content: center;
   justify-items: flex-start;
@@ -962,7 +991,7 @@
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
   padding: 6px 0px;
 }
-.section__wGeqr > * {
+.تخفیف > * {
   grid-column: 4;
 }
 .freeBox__icirs {
@@ -1676,6 +1705,19 @@
   min-width: 0;
   padding: 0px;
 }
+.blockParent {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6px;
+  column-gap: 10px;
+  min-width: 0;
+}
 .block2 {
   display: flex;
   flex-direction: row;
@@ -1707,19 +1749,6 @@
   font-weight: 400;
   font-size: 16px;
   min-width: 0;
-}
-.text___4Wf5 {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  cursor: not-allowed;
-  color: var(--token-rhmrUZBooWNo);
-  min-width: 0;
-  display: none;
-  border-top: 0.5px solid var(--token-rhmrUZBooWNo);
-  border-bottom: 0.5px solid var(--token-rhmrUZBooWNo);
 }
 .freeBox__oV0Zq {
   display: flex;

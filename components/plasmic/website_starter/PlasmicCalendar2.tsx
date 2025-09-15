@@ -117,7 +117,7 @@ export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
 export type PlasmicCalendar2__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
-  guideText?: Flex__<"div">;
+  guide1?: Flex__<"div">;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   fragmentLongPress?: Flex__<typeof FragmentLongPress>;
   dayCell?: Flex__<typeof DayCell>;
@@ -126,6 +126,11 @@ export type PlasmicCalendar2__OverridesType = {
   textInput2?: Flex__<typeof TextInput>;
   modal?: Flex__<typeof AntdModal>;
   ثبتتغییرات?: Flex__<"div">;
+  پر?: Flex__<"section">;
+  خالیقیمتتخفیفParent?: Flex__<"section">;
+  خالی?: Flex__<"section">;
+  قیمت?: Flex__<"section">;
+  تخفیف?: Flex__<"section">;
   modalChangePrice?: Flex__<typeof AntdModal>;
   main2?: Flex__<"div">;
   input?: Flex__<typeof Input>;
@@ -141,6 +146,7 @@ export type PlasmicCalendar2__OverridesType = {
   ok2?: Flex__<typeof PlasmicImg__>;
   block?: Flex__<typeof AntdModal>;
   reserve?: Flex__<"div">;
+  blockParent?: Flex__<"div">;
   block2?: Flex__<"div">;
   noteModal?: Flex__<typeof AntdModal>;
   writeNoteModal?: Flex__<typeof AntdModal>;
@@ -1600,15 +1606,15 @@ function PlasmicCalendar2__RenderFunc(props: {
               e instanceof TypeError ||
               e?.plasmicType === "PlasmicUndefinedDataError"
             ) {
-              return true;
+              return false;
             }
             throw e;
           }
         })() ? (
           <div
-            data-plasmic-name={"guideText"}
-            data-plasmic-override={overrides.guideText}
-            className={classNames(projectcss.all, sty.guideText)}
+            data-plasmic-name={"guide1"}
+            data-plasmic-override={overrides.guide1}
+            className={classNames(projectcss.all, sty.guide1, "fadein2")}
           >
             {(() => {
               try {
@@ -1627,7 +1633,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__tKitd
+                  sty.text__tKitd,
+                  "fadein2"
                 )}
               >
                 {
@@ -1719,7 +1726,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>
                     {
-                      "\u0627\u06cc\u0646\u062c\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0622\u0646\u0644\u0627\u06cc\u0646 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647 \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u0647\u0645\u0631\u0627\u0647\u062a\u0647\n\n"
+                      "\u0627\u06cc\u0646\u062c\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0622\u0646\u0644\u0627\u06cc\u0646 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647 \u06a9\u0647 \u0647\u0645\u06cc\u0634\u0647 \u0647\u0645\u0631\u0627\u0647\u062a\u0647\n\u0628\u06cc\u0627 \u062a\u0633\u062a\u0634 \u06a9\u0646\u06cc\u0645\n\n"
                     }
                   </React.Fragment>
                   <span
@@ -1727,7 +1734,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     style={{ fontWeight: 600 }}
                   >
                     {
-                      "\u062d\u0627\u0644\u0627 \u0631\u0648\u06cc \u06cc\u06a9 \u0631\u0648\u0632 \u0628\u0632\u0646"
+                      "\u0627\u0648\u0644 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
                     }
                   </span>
                 </React.Fragment>
@@ -3463,9 +3470,11 @@ function PlasmicCalendar2__RenderFunc(props: {
             </div>
           </div>
           <section
+            data-plasmic-name={"\u067e\u0631"}
+            data-plasmic-override={overrides.پر}
             className={classNames(
               projectcss.all,
-              sty.section__rqNfm,
+              sty.پر,
               ` ${
                 $props.isFirstVisit == true && $state.tourSteps == 2
                   ? "blinkBorderTourGuide clickable"
@@ -3562,7 +3571,13 @@ function PlasmicCalendar2__RenderFunc(props: {
             }
           })() ? (
             <div className={classNames(projectcss.all, sty.freeBox__zXjCk)}>
-              <div className={classNames(projectcss.all, sty.freeBox__drCo6)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__drCo6,
+                  "fadein2"
+                )}
+              >
                 {(() => {
                   try {
                     return $state.tourSteps == 2;
@@ -3571,7 +3586,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return true;
+                      return false;
                     }
                     throw e;
                   }
@@ -3586,7 +3601,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     <React.Fragment>
                       <React.Fragment>
                         {
-                          "\u0627\u0632 \u0628\u06cc\u0646 \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647\u200c\u0647\u0627 \n"
+                          "\u0645\u062b\u0644\u0627 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0648\u0632 \u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u06cc\u060c\n\u067e\u0633 \u0627\u0632 \u0628\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647\u200c\u0647\u0627 \n"
                         }
                       </React.Fragment>
                       <span
@@ -3691,746 +3706,771 @@ function PlasmicCalendar2__RenderFunc(props: {
             </div>
           ) : null}
           <section
-            className={classNames(
-              projectcss.all,
-              sty.section__xsRl,
-              (() => {
-                try {
-                  return $props.isFirstVisit ? "unclickable" : "clickable";
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()
-            )}
+            data-plasmic-name={
+              "\u062e\u0627\u0644\u06cc\u0642\u06cc\u0645\u062a\u062a\u062e\u0641\u06cc\u0641Parent"
+            }
+            data-plasmic-override={overrides.خالیقیمتتخفیفParent}
+            className={classNames(projectcss.all, sty.خالیقیمتتخفیفParent)}
             onClick={async event => {
               const $steps = {};
 
-              $steps["updateFetchModalOpen"] =
-                $props.calendarType == "pro"
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["fetchModal", "open"]
-                        },
-                        operation: 0,
-                        value: (() => {
-                          const calendar = $state.selectedItem;
-                          const platforms = [
-                            "شب",
-                            "مهمانشو",
-                            "اتاقک",
-                            "جاباما",
-                            "جاجیگا",
-                            "هومسا",
-                            "میزبون"
-                          ];
-
-                          const result = calendar.some(item =>
-                            platforms.includes(item.website)
-                          );
-                          return !result;
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-              if (
-                $steps["updateFetchModalOpen"] != null &&
-                typeof $steps["updateFetchModalOpen"] === "object" &&
-                typeof $steps["updateFetchModalOpen"].then === "function"
-              ) {
-                $steps["updateFetchModalOpen"] = await $steps[
-                  "updateFetchModalOpen"
-                ];
-              }
-
-              $steps["updateStateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: ($state.modal.open = false)
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
-              ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
-              }
-
-              $steps["checkForChange"] =
-                $props.calendarType == "pro"
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["checkForChange", "open"]
-                        },
-                        operation: 0,
-                        value: (() => {
-                          const calendar = $state.selectedItem;
-                          const platforms = [
-                            "شب",
-                            "مهمانشو",
-                            "اتاقک",
-                            "جاباما",
-                            "جاجیگا",
-                            "هومسا",
-                            "میزبون"
-                          ];
-
-                          const result = calendar.some(item =>
-                            platforms.includes(item.website)
-                          );
-                          return result;
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-              if (
-                $steps["checkForChange"] != null &&
-                typeof $steps["checkForChange"] === "object" &&
-                typeof $steps["checkForChange"].then === "function"
-              ) {
-                $steps["checkForChange"] = await $steps["checkForChange"];
-              }
-
-              $steps["runCode"] = false
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          function convertPersianNumbersToEnglish(str) {
-                            const persianNumbers = [
-                              "۰",
-                              "۱",
-                              "۲",
-                              "۳",
-                              "۴",
-                              "۵",
-                              "۶",
-                              "۷",
-                              "۸",
-                              "۹"
-                            ];
-
-                            const englishNumbers = [
-                              "0",
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5",
-                              "6",
-                              "7",
-                              "8",
-                              "9"
-                            ];
-
-                            return str.replace(
-                              /[۰-۹]/g,
-                              char =>
-                                englishNumbers[persianNumbers.indexOf(char)] ||
-                                char
-                            );
-                          }
-                          function padZero(num) {
-                            return num.length === 1 ? `0${num}` : num;
-                          }
-                          function convertTimestampToPersianDateWithEnglishNumbers(
-                            timestamp
-                          ) {
-                            const date = new Date(timestamp * 1000);
-                            const [year, month, day] = date
-                              .toLocaleDateString("fa")
-                              .split("/");
-                            const formattedDate = `${convertPersianNumbersToEnglish(
-                              year
-                            )}-${padZero(
-                              convertPersianNumbersToEnglish(month)
-                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                            return formattedDate;
-                          }
-                          function getTodayInPersian() {
-                            const today = new Date();
-                            const [year, month, day] = today
-                              .toLocaleDateString("fa")
-                              .split("/");
-                            const formattedDate = `${convertPersianNumbersToEnglish(
-                              year
-                            )}-${padZero(
-                              convertPersianNumbersToEnglish(month)
-                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                            return formattedDate;
-                          }
-                          const todayInPersian = getTodayInPersian();
-                          const data = {
-                            days: [$state.fragmentDatePicker.values],
-                            property_id: $props.propertyId
-                          };
-                          $state.requestdata = data;
-                          data.days = data.days
-                            .map(timestampArray =>
-                              timestampArray
-                                .map(timestamp =>
-                                  convertTimestampToPersianDateWithEnglishNumbers(
-                                    timestamp
-                                  )
-                                )
-                                .filter(day => day >= todayInPersian)
-                            )
-                            .flat();
-                          fetch("https://api-v2.rentamon.com/api/setunblock", {
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json",
-                              Accept: "*/*"
-                            },
-                            credentials: "include",
-                            body: JSON.stringify(data)
-                          })
-                            .then(response => {
-                              if (!response.ok) {
-                                throw new Error(
-                                  `HTTP error! status: ${response.status}`
-                                );
-                              }
-                              return response.json();
-                            })
-                            .then(result => {
-                              $state.platformRequestStatus = result;
-                              console.log("Response saved to state:", result);
-                            })
-                            .catch(error => {
-                              console.error("Error:", error);
-                              $state.platformRequestStatus = {
-                                error: error.message
-                              };
-                            });
-                          return console.log(data);
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-
-              $steps["updateStateVariable2"] =
-                $props.calendarType == "lite"
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: ($state.updateStyle = $state.updateStyle + 1)
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-              if (
-                $steps["updateStateVariable2"] != null &&
-                typeof $steps["updateStateVariable2"] === "object" &&
-                typeof $steps["updateStateVariable2"].then === "function"
-              ) {
-                $steps["updateStateVariable2"] = await $steps[
-                  "updateStateVariable2"
-                ];
-              }
-
-              $steps["setUnblock"] = (() => {
-                const calendar = $state.selectedItem;
-                const platforms = [
-                  "شب",
-                  "مهمانشو",
-                  "اتاقک",
-                  "جاباما",
-                  "جاجیگا",
-                  "هومسا",
-                  "میزبون"
-                ];
-
-                const result = calendar.some(item =>
-                  platforms.includes(item.website)
-                );
-                return !result;
-              })()
+              $steps["toast"] = ($props.isFirstVisit ? true : false)
                 ? (() => {
                     const actionArgs = {
                       args: [
-                        "POST",
-                        "https://gateway.rentamon.com/webhook/set-unblock",
-                        undefined,
-                        (() => {
-                          try {
-                            return (() => {
-                              function convertPersianNumbersToEnglish(str) {
-                                const persianNumbers = [
-                                  "۰",
-                                  "۱",
-                                  "۲",
-                                  "۳",
-                                  "۴",
-                                  "۵",
-                                  "۶",
-                                  "۷",
-                                  "۸",
-                                  "۹"
-                                ];
-
-                                const englishNumbers = [
-                                  "0",
-                                  "1",
-                                  "2",
-                                  "3",
-                                  "4",
-                                  "5",
-                                  "6",
-                                  "7",
-                                  "8",
-                                  "9"
-                                ];
-
-                                return str.replace(
-                                  /[۰-۹]/g,
-                                  char =>
-                                    englishNumbers[
-                                      persianNumbers.indexOf(char)
-                                    ] || char
-                                );
-                              }
-                              function padZero(num) {
-                                return num.length === 1 ? `0${num}` : num;
-                              }
-                              function convertTimestampToPersianDateWithEnglishNumbers(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                const [year, month, day] = date
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(
-                                  year
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(month)
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(day)
-                                )}`;
-                                return formattedDate;
-                              }
-                              function getTodayInPersian() {
-                                const today = new Date();
-                                const [year, month, day] = today
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(
-                                  year
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(month)
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(day)
-                                )}`;
-                                return formattedDate;
-                              }
-                              const todayInPersian = getTodayInPersian();
-                              const data = {
-                                days: [$state.fragmentDatePicker.values],
-                                property_id: $props.propertyId
-                              };
-                              $state.requestdata = data;
-                              data.days = data.days
-                                .map(timestampArray =>
-                                  timestampArray
-                                    .map(timestamp =>
-                                      convertTimestampToPersianDateWithEnglishNumbers(
-                                        timestamp
-                                      )
-                                    )
-                                    .filter(day => day >= todayInPersian)
-                                )
-                                .flat();
-                              return data;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
+                        "error",
+                        "\u062f\u0631 \u062d\u0627\u0644\u062a \u062a\u0633\u062a \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647 \u06a9\u0627\u0631 \u0646\u0645\u06cc\u200c\u06a9\u0646\u0647!",
+                        "top-center",
+                        3000
                       ]
                     };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                    return $globalActions["Fragment.showToast"]?.apply(null, [
                       ...actionArgs.args
                     ]);
                   })()
                 : undefined;
               if (
-                $steps["setUnblock"] != null &&
-                typeof $steps["setUnblock"] === "object" &&
-                typeof $steps["setUnblock"].then === "function"
+                $steps["toast"] != null &&
+                typeof $steps["toast"] === "object" &&
+                typeof $steps["toast"].then === "function"
               ) {
-                $steps["setUnblock"] = await $steps["setUnblock"];
-              }
-
-              $steps["runCode2"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return ($state.platformRequestStatus =
-                          $steps.setUnblock.data[0]);
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode2"] != null &&
-                typeof $steps["runCode2"] === "object" &&
-                typeof $steps["runCode2"].then === "function"
-              ) {
-                $steps["runCode2"] = await $steps["runCode2"];
+                $steps["toast"] = await $steps["toast"];
               }
             }}
           >
-            <div
-              className={classNames(projectcss.all, sty.freeBox___0YivI, ``)}
+            <section
+              data-plasmic-name={"\u062e\u0627\u0644\u06cc"}
+              data-plasmic-override={overrides.خالی}
+              className={classNames(
+                projectcss.all,
+                sty.خالی,
+                (() => {
+                  try {
+                    return $props.isFirstVisit ? "unclickable" : "clickable";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()
+              )}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateFetchModalOpen"] =
+                  $props.calendarType == "pro"
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["fetchModal", "open"]
+                          },
+                          operation: 0,
+                          value: (() => {
+                            const calendar = $state.selectedItem;
+                            const platforms = [
+                              "شب",
+                              "مهمانشو",
+                              "اتاقک",
+                              "جاباما",
+                              "جاجیگا",
+                              "هومسا",
+                              "میزبون"
+                            ];
+
+                            const result = calendar.some(item =>
+                              platforms.includes(item.website)
+                            );
+                            return !result;
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["updateFetchModalOpen"] != null &&
+                  typeof $steps["updateFetchModalOpen"] === "object" &&
+                  typeof $steps["updateFetchModalOpen"].then === "function"
+                ) {
+                  $steps["updateFetchModalOpen"] = await $steps[
+                    "updateFetchModalOpen"
+                  ];
+                }
+
+                $steps["updateStateVariable"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: ($state.modal.open = false)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateStateVariable"] != null &&
+                  typeof $steps["updateStateVariable"] === "object" &&
+                  typeof $steps["updateStateVariable"].then === "function"
+                ) {
+                  $steps["updateStateVariable"] = await $steps[
+                    "updateStateVariable"
+                  ];
+                }
+
+                $steps["checkForChange"] =
+                  $props.calendarType == "pro"
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["checkForChange", "open"]
+                          },
+                          operation: 0,
+                          value: (() => {
+                            const calendar = $state.selectedItem;
+                            const platforms = [
+                              "شب",
+                              "مهمانشو",
+                              "اتاقک",
+                              "جاباما",
+                              "جاجیگا",
+                              "هومسا",
+                              "میزبون"
+                            ];
+
+                            const result = calendar.some(item =>
+                              platforms.includes(item.website)
+                            );
+                            return result;
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["checkForChange"] != null &&
+                  typeof $steps["checkForChange"] === "object" &&
+                  typeof $steps["checkForChange"].then === "function"
+                ) {
+                  $steps["checkForChange"] = await $steps["checkForChange"];
+                }
+
+                $steps["runCode"] = false
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            function convertPersianNumbersToEnglish(str) {
+                              const persianNumbers = [
+                                "۰",
+                                "۱",
+                                "۲",
+                                "۳",
+                                "۴",
+                                "۵",
+                                "۶",
+                                "۷",
+                                "۸",
+                                "۹"
+                              ];
+
+                              const englishNumbers = [
+                                "0",
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "9"
+                              ];
+
+                              return str.replace(
+                                /[۰-۹]/g,
+                                char =>
+                                  englishNumbers[
+                                    persianNumbers.indexOf(char)
+                                  ] || char
+                              );
+                            }
+                            function padZero(num) {
+                              return num.length === 1 ? `0${num}` : num;
+                            }
+                            function convertTimestampToPersianDateWithEnglishNumbers(
+                              timestamp
+                            ) {
+                              const date = new Date(timestamp * 1000);
+                              const [year, month, day] = date
+                                .toLocaleDateString("fa")
+                                .split("/");
+                              const formattedDate = `${convertPersianNumbersToEnglish(
+                                year
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(month)
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(day)
+                              )}`;
+                              return formattedDate;
+                            }
+                            function getTodayInPersian() {
+                              const today = new Date();
+                              const [year, month, day] = today
+                                .toLocaleDateString("fa")
+                                .split("/");
+                              const formattedDate = `${convertPersianNumbersToEnglish(
+                                year
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(month)
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(day)
+                              )}`;
+                              return formattedDate;
+                            }
+                            const todayInPersian = getTodayInPersian();
+                            const data = {
+                              days: [$state.fragmentDatePicker.values],
+                              property_id: $props.propertyId
+                            };
+                            $state.requestdata = data;
+                            data.days = data.days
+                              .map(timestampArray =>
+                                timestampArray
+                                  .map(timestamp =>
+                                    convertTimestampToPersianDateWithEnglishNumbers(
+                                      timestamp
+                                    )
+                                  )
+                                  .filter(day => day >= todayInPersian)
+                              )
+                              .flat();
+                            fetch(
+                              "https://api-v2.rentamon.com/api/setunblock",
+                              {
+                                method: "POST",
+                                headers: {
+                                  "Content-Type": "application/json",
+                                  Accept: "*/*"
+                                },
+                                credentials: "include",
+                                body: JSON.stringify(data)
+                              }
+                            )
+                              .then(response => {
+                                if (!response.ok) {
+                                  throw new Error(
+                                    `HTTP error! status: ${response.status}`
+                                  );
+                                }
+                                return response.json();
+                              })
+                              .then(result => {
+                                $state.platformRequestStatus = result;
+                                console.log("Response saved to state:", result);
+                              })
+                              .catch(error => {
+                                console.error("Error:", error);
+                                $state.platformRequestStatus = {
+                                  error: error.message
+                                };
+                              });
+                            return console.log(data);
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+
+                $steps["updateStateVariable2"] =
+                  $props.calendarType == "lite"
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: ($state.updateStyle = $state.updateStyle + 1)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["updateStateVariable2"] != null &&
+                  typeof $steps["updateStateVariable2"] === "object" &&
+                  typeof $steps["updateStateVariable2"].then === "function"
+                ) {
+                  $steps["updateStateVariable2"] = await $steps[
+                    "updateStateVariable2"
+                  ];
+                }
+
+                $steps["setUnblock"] = (() => {
+                  const calendar = $state.selectedItem;
+                  const platforms = [
+                    "شب",
+                    "مهمانشو",
+                    "اتاقک",
+                    "جاباما",
+                    "جاجیگا",
+                    "هومسا",
+                    "میزبون"
+                  ];
+
+                  const result = calendar.some(item =>
+                    platforms.includes(item.website)
+                  );
+                  return !result;
+                })()
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://gateway.rentamon.com/webhook/set-unblock",
+                          undefined,
+                          (() => {
+                            try {
+                              return (() => {
+                                function convertPersianNumbersToEnglish(str) {
+                                  const persianNumbers = [
+                                    "۰",
+                                    "۱",
+                                    "۲",
+                                    "۳",
+                                    "۴",
+                                    "۵",
+                                    "۶",
+                                    "۷",
+                                    "۸",
+                                    "۹"
+                                  ];
+
+                                  const englishNumbers = [
+                                    "0",
+                                    "1",
+                                    "2",
+                                    "3",
+                                    "4",
+                                    "5",
+                                    "6",
+                                    "7",
+                                    "8",
+                                    "9"
+                                  ];
+
+                                  return str.replace(
+                                    /[۰-۹]/g,
+                                    char =>
+                                      englishNumbers[
+                                        persianNumbers.indexOf(char)
+                                      ] || char
+                                  );
+                                }
+                                function padZero(num) {
+                                  return num.length === 1 ? `0${num}` : num;
+                                }
+                                function convertTimestampToPersianDateWithEnglishNumbers(
+                                  timestamp
+                                ) {
+                                  const date = new Date(timestamp * 1000);
+                                  const [year, month, day] = date
+                                    .toLocaleDateString("fa")
+                                    .split("/");
+                                  const formattedDate = `${convertPersianNumbersToEnglish(
+                                    year
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(month)
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(day)
+                                  )}`;
+                                  return formattedDate;
+                                }
+                                function getTodayInPersian() {
+                                  const today = new Date();
+                                  const [year, month, day] = today
+                                    .toLocaleDateString("fa")
+                                    .split("/");
+                                  const formattedDate = `${convertPersianNumbersToEnglish(
+                                    year
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(month)
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(day)
+                                  )}`;
+                                  return formattedDate;
+                                }
+                                const todayInPersian = getTodayInPersian();
+                                const data = {
+                                  days: [$state.fragmentDatePicker.values],
+                                  property_id: $props.propertyId
+                                };
+                                $state.requestdata = data;
+                                data.days = data.days
+                                  .map(timestampArray =>
+                                    timestampArray
+                                      .map(timestamp =>
+                                        convertTimestampToPersianDateWithEnglishNumbers(
+                                          timestamp
+                                        )
+                                      )
+                                      .filter(day => day >= todayInPersian)
+                                  )
+                                  .flat();
+                                return data;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["setUnblock"] != null &&
+                  typeof $steps["setUnblock"] === "object" &&
+                  typeof $steps["setUnblock"].then === "function"
+                ) {
+                  $steps["setUnblock"] = await $steps["setUnblock"];
+                }
+
+                $steps["runCode2"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return ($state.platformRequestStatus =
+                            $steps.setUnblock.data[0]);
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode2"] != null &&
+                  typeof $steps["runCode2"] === "object" &&
+                  typeof $steps["runCode2"].then === "function"
+                ) {
+                  $steps["runCode2"] = await $steps["runCode2"];
+                }
+              }}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rlhEr
-                )}
-                onClick={async event => {
-                  const $steps = {};
-                }}
+                className={classNames(projectcss.all, sty.freeBox___0YivI, ``)}
               >
-                {"\u062e\u0627\u0644\u06cc"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__rlhEr
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+                  }}
+                >
+                  {"\u062e\u0627\u0644\u06cc"}
+                </div>
               </div>
-            </div>
-          </section>
-          <section
-            className={classNames(
-              projectcss.all,
-              sty.section__gaoiv,
-              (() => {
-                try {
-                  return $props.isFirstVisit ? "unclickable" : "clickable";
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
+            </section>
+            <section
+              data-plasmic-name={"\u0642\u06cc\u0645\u062a"}
+              data-plasmic-override={overrides.قیمت}
+              className={classNames(
+                projectcss.all,
+                sty.قیمت,
+                (() => {
+                  try {
+                    return $props.isFirstVisit ? "unclickable" : "clickable";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
                   }
-                  throw e;
+                })()
+              )}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateModalChangePriceOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["modalChangePrice", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateModalChangePriceOpen"] != null &&
+                  typeof $steps["updateModalChangePriceOpen"] === "object" &&
+                  typeof $steps["updateModalChangePriceOpen"].then ===
+                    "function"
+                ) {
+                  $steps["updateModalChangePriceOpen"] = await $steps[
+                    "updateModalChangePriceOpen"
+                  ];
                 }
-              })()
-            )}
-            onClick={async event => {
-              const $steps = {};
 
-              $steps["updateModalChangePriceOpen"] = true
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["modalChangePrice", "open"]
-                      },
-                      operation: 0,
-                      value: true
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
+                $steps["updateStateVariable"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: (() => {
+                          return ($state.modal.open = false);
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
 
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateModalChangePriceOpen"] != null &&
-                typeof $steps["updateModalChangePriceOpen"] === "object" &&
-                typeof $steps["updateModalChangePriceOpen"].then === "function"
-              ) {
-                $steps["updateModalChangePriceOpen"] = await $steps[
-                  "updateModalChangePriceOpen"
-                ];
-              }
-
-              $steps["updateStateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        return ($state.modal.open = false);
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
-              ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
-              }
-            }}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__abqGe, ``)}>
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateStateVariable"] != null &&
+                  typeof $steps["updateStateVariable"] === "object" &&
+                  typeof $steps["updateStateVariable"].then === "function"
+                ) {
+                  $steps["updateStateVariable"] = await $steps[
+                    "updateStateVariable"
+                  ];
+                }
+              }}
+            >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__dBhqK
-                )}
+                className={classNames(projectcss.all, sty.freeBox__abqGe, ``)}
               >
-                {"\u0642\u06cc\u0645\u062a"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dBhqK
+                  )}
+                >
+                  {"\u0642\u06cc\u0645\u062a"}
+                </div>
+                <Icon16Icon
+                  className={classNames(projectcss.all, sty.svg__ocuJf)}
+                  role={"img"}
+                />
               </div>
-              <Icon16Icon
-                className={classNames(projectcss.all, sty.svg__ocuJf)}
-                role={"img"}
-              />
-            </div>
-          </section>
-          <section
-            className={classNames(
-              projectcss.all,
-              sty.section__wGeqr,
-              (() => {
-                try {
-                  return $props.isFirstVisit ? "unclickable" : "clickable";
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
+            </section>
+            <section
+              data-plasmic-name={"\u062a\u062e\u0641\u06cc\u0641"}
+              data-plasmic-override={overrides.تخفیف}
+              className={classNames(
+                projectcss.all,
+                sty.تخفیف,
+                (() => {
+                  try {
+                    return $props.isFirstVisit ? "unclickable" : "clickable";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
                   }
-                  throw e;
+                })()
+              )}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateNewDiscountModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["newDiscountModal", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateNewDiscountModalOpen"] != null &&
+                  typeof $steps["updateNewDiscountModalOpen"] === "object" &&
+                  typeof $steps["updateNewDiscountModalOpen"].then ===
+                    "function"
+                ) {
+                  $steps["updateNewDiscountModalOpen"] = await $steps[
+                    "updateNewDiscountModalOpen"
+                  ];
                 }
-              })()
-            )}
-            onClick={async event => {
-              const $steps = {};
 
-              $steps["updateNewDiscountModalOpen"] = true
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["newDiscountModal", "open"]
-                      },
-                      operation: 0,
-                      value:
-                        // const timestamps = $state.fragmentDatePicker.values;
-                        // const dates = timestamps.map(timestamp => {
-                        //   const date = new Date(timestamp * 1000);
-                        //   return date.toISOString().split("T")[0];
-                        // });
+                $steps["updateStateVariable"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: (() => {
+                          return ($state.modal.open = false);
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
 
-                        // const calendar = $state.apiRequest.data[1].calendar;
-
-                        // const prices = dates.map(date => {
-                        //   const item = calendar.find(entry => entry.date === date);
-                        //   return item?.price ?? null;
-                        // });
-
-                        // // اگر حتی یکی از priceها null باشه، false برگردون
-                        // if (prices.some(price => price === null)) {
-                        //   return false;
-                        // }
-
-                        // // بررسی اینکه آیا همه price‌ها برابرن
-                        // const firstPrice = prices[0];
-                        // const result = prices.every(price => price === firstPrice);
-                        // return result;
-
-                        // function checkAllItemsHaveSameOriginalPrice(items) {
-                        //   if (!items || items.length === 0) return false; // اگر لیست خالی بود، false برمی‌گردانیم یا هر تصمیم دلخواه
-
-                        //   // محاسبه قیمت اصلی اولین آیتم
-                        //   let firstItem = items[0];
-                        //   let firstOriginalPrice = firstItem.discount_percentage && firstItem.discount_percentage > 0
-                        //     ? firstItem.price / (1 - firstItem.discount_percentage / 100)
-                        //     : firstItem.price;
-
-                        //   // بررسی بقیه آیتم‌ها
-                        //   for (let i = 1; i < items.length; i++) {
-                        //     let item = items[i];
-                        //     let originalPrice = item.discount_percentage && item.discount_percentage > 0
-                        //       ? item.price / (1 - item.discount_percentage / 100)
-                        //       : item.price;
-
-                        //     // اگر قیمت اصلی آیتم فعلی با قیمت اصلی آیتم اول یکی نباشد
-                        //     if (originalPrice !== firstOriginalPrice) {
-                        //       return false;
-                        //     }
-                        //   }
-
-                        //   // اگر همه یکی بودند
-                        //   return true;
-                        // }
-
-                        // // مثال استفاده
-                        // const items = $state.selectedItem
-
-                        // const result = checkAllItemsHaveSameOriginalPrice(items);
-
-                        true
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateNewDiscountModalOpen"] != null &&
-                typeof $steps["updateNewDiscountModalOpen"] === "object" &&
-                typeof $steps["updateNewDiscountModalOpen"].then === "function"
-              ) {
-                $steps["updateNewDiscountModalOpen"] = await $steps[
-                  "updateNewDiscountModalOpen"
-                ];
-              }
-
-              $steps["updateStateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        return ($state.modal.open = false);
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
-              ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
-              }
-            }}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__icirs, ``)}>
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateStateVariable"] != null &&
+                  typeof $steps["updateStateVariable"] === "object" &&
+                  typeof $steps["updateStateVariable"].then === "function"
+                ) {
+                  $steps["updateStateVariable"] = await $steps[
+                    "updateStateVariable"
+                  ];
+                }
+              }}
+            >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__qtZio
-                )}
+                className={classNames(projectcss.all, sty.freeBox__icirs, ``)}
               >
-                {"\u062a\u062e\u0641\u06cc\u0641 \u066a"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qtZio
+                  )}
+                >
+                  {"\u062a\u062e\u0641\u06cc\u0641 \u066a"}
+                </div>
+                <Icon16Icon
+                  className={classNames(projectcss.all, sty.svg__ekicd)}
+                  role={"img"}
+                />
               </div>
-              <Icon16Icon
-                className={classNames(projectcss.all, sty.svg__ekicd)}
-                role={"img"}
-              />
-            </div>
+            </section>
           </section>
         </AntdModal>
         <AntdModal
@@ -6549,7 +6589,13 @@ function PlasmicCalendar2__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox__i6YVv)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__i6YVv,
+                "fadein2"
+              )}
+            >
               <div
                 className={classNames(
                   projectcss.all,
@@ -7097,528 +7143,488 @@ function PlasmicCalendar2__RenderFunc(props: {
             </div>
           </div>
           <div
-            data-plasmic-name={"block2"}
-            data-plasmic-override={overrides.block2}
-            className={classNames(
-              projectcss.all,
-              sty.block2,
-              (() => {
-                try {
-                  return $props.isFirstVisit ? "unclickable" : "clickable";
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()
-            )}
+            data-plasmic-name={"blockParent"}
+            data-plasmic-override={overrides.blockParent}
+            className={classNames(projectcss.all, sty.blockParent)}
             onClick={async event => {
               const $steps = {};
 
-              $steps["updateStateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: ($state.block.open = false)
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
-              ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
-              }
-
-              $steps["updateFetchModalOpen"] =
-                $props.calendarType == "pro"
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["fetchModal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-              if (
-                $steps["updateFetchModalOpen"] != null &&
-                typeof $steps["updateFetchModalOpen"] === "object" &&
-                typeof $steps["updateFetchModalOpen"].then === "function"
-              ) {
-                $steps["updateFetchModalOpen"] = await $steps[
-                  "updateFetchModalOpen"
-                ];
-              }
-
-              $steps["blockRequest"] = false
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          function convertPersianNumbersToEnglish(str) {
-                            const persianNumbers = [
-                              "۰",
-                              "۱",
-                              "۲",
-                              "۳",
-                              "۴",
-                              "۵",
-                              "۶",
-                              "۷",
-                              "۸",
-                              "۹"
-                            ];
-
-                            const englishNumbers = [
-                              "0",
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5",
-                              "6",
-                              "7",
-                              "8",
-                              "9"
-                            ];
-
-                            return str.replace(
-                              /[۰-۹]/g,
-                              char =>
-                                englishNumbers[persianNumbers.indexOf(char)] ||
-                                char
-                            );
-                          }
-                          function padZero(num) {
-                            return num.length === 1 ? `0${num}` : num;
-                          }
-                          function convertTimestampToPersianDateWithEnglishNumbers(
-                            timestamp
-                          ) {
-                            const date = new Date(timestamp * 1000);
-                            const [year, month, day] = date
-                              .toLocaleDateString("fa")
-                              .split("/");
-                            const formattedDate = `${convertPersianNumbersToEnglish(
-                              year
-                            )}-${padZero(
-                              convertPersianNumbersToEnglish(month)
-                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                            return formattedDate;
-                          }
-                          function getTodayInPersian() {
-                            const today = new Date();
-                            const [year, month, day] = today
-                              .toLocaleDateString("fa")
-                              .split("/");
-                            const formattedDate = `${convertPersianNumbersToEnglish(
-                              year
-                            )}-${padZero(
-                              convertPersianNumbersToEnglish(month)
-                            )}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                            return formattedDate;
-                          }
-                          const todayInPersian = getTodayInPersian();
-                          const data = {
-                            days: [$state.fragmentDatePicker.values],
-                            property_id: $props.propertyId,
-                            requested_by: "user",
-                            request_for: "block"
-                          };
-                          $state.requestdata = data;
-                          console.log($state.requestdata);
-                          console.log(data);
-                          data.days = data.days
-                            .map(timestampArray =>
-                              timestampArray
-                                .map(timestamp =>
-                                  convertTimestampToPersianDateWithEnglishNumbers(
-                                    timestamp
-                                  )
-                                )
-                                .filter(day => day >= todayInPersian)
-                            )
-                            .flat();
-                          return fetch(
-                            "https://api-v2.rentamon.com/api/setblock",
-                            {
-                              method: "POST",
-                              headers: {
-                                "Content-Type": "application/json",
-                                Accept: "*/*"
-                              },
-                              credentials: "include",
-                              body: JSON.stringify(data)
-                            }
-                          )
-                            .then(response => {
-                              if (!response.ok) {
-                                throw new Error(
-                                  `HTTP error! status: ${response.status}`
-                                );
-                              }
-                              return response.json();
-                            })
-                            .then(result => {
-                              $state.platformRequestStatus = result;
-                              console.log("Response saved to state:", result);
-                            })
-                            .catch(error => {
-                              console.error("Error:", error);
-                              $state.platformRequestStatus = {
-                                error: error.message
-                              };
-                            });
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["blockRequest"] != null &&
-                typeof $steps["blockRequest"] === "object" &&
-                typeof $steps["blockRequest"].then === "function"
-              ) {
-                $steps["blockRequest"] = await $steps["blockRequest"];
-              }
-
-              $steps["updateStateVariable2"] =
-                $props.calendarType == "lite"
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: ($state.updateStyle = $state.updateStyle + 1)
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-              if (
-                $steps["updateStateVariable2"] != null &&
-                typeof $steps["updateStateVariable2"] === "object" &&
-                typeof $steps["updateStateVariable2"].then === "function"
-              ) {
-                $steps["updateStateVariable2"] = await $steps[
-                  "updateStateVariable2"
-                ];
-              }
-
-              $steps["setBlock"] = true
+              $steps["toast"] = ($props.isFirstVisit ? true : false)
                 ? (() => {
                     const actionArgs = {
                       args: [
-                        "POST",
-                        "https://gateway.rentamon.com/webhook/set-block",
-                        undefined,
-                        (() => {
-                          try {
-                            return (() => {
-                              function convertPersianNumbersToEnglish(str) {
-                                const persianNumbers = [
-                                  "۰",
-                                  "۱",
-                                  "۲",
-                                  "۳",
-                                  "۴",
-                                  "۵",
-                                  "۶",
-                                  "۷",
-                                  "۸",
-                                  "۹"
-                                ];
-
-                                const englishNumbers = [
-                                  "0",
-                                  "1",
-                                  "2",
-                                  "3",
-                                  "4",
-                                  "5",
-                                  "6",
-                                  "7",
-                                  "8",
-                                  "9"
-                                ];
-
-                                return str.replace(
-                                  /[۰-۹]/g,
-                                  char =>
-                                    englishNumbers[
-                                      persianNumbers.indexOf(char)
-                                    ] || char
-                                );
-                              }
-                              function padZero(num) {
-                                return num.length === 1 ? `0${num}` : num;
-                              }
-                              function convertTimestampToPersianDateWithEnglishNumbers(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                const [year, month, day] = date
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(
-                                  year
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(month)
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(day)
-                                )}`;
-                                return formattedDate;
-                              }
-                              function getTodayInPersian() {
-                                const today = new Date();
-                                const [year, month, day] = today
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(
-                                  year
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(month)
-                                )}-${padZero(
-                                  convertPersianNumbersToEnglish(day)
-                                )}`;
-                                return formattedDate;
-                              }
-                              const todayInPersian = getTodayInPersian();
-                              const data = {
-                                days: [$state.fragmentDatePicker.values],
-                                property_id: $props.propertyId,
-                                requested_by: "user",
-                                request_for: "block"
-                              };
-                              $state.requestdata = data;
-                              data.days = data.days
-                                .map(timestampArray =>
-                                  timestampArray
-                                    .map(timestamp =>
-                                      convertTimestampToPersianDateWithEnglishNumbers(
-                                        timestamp
-                                      )
-                                    )
-                                    .filter(day => day >= todayInPersian)
-                                )
-                                .flat();
-                              return data;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
+                        "error",
+                        "\u062f\u0631 \u062d\u0627\u0644\u062a \u062a\u0633\u062a \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647 \u06a9\u0627\u0631 \u0646\u0645\u06cc\u200c\u06a9\u0646\u0647!",
+                        "top-center",
+                        3000
                       ]
                     };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                    return $globalActions["Fragment.showToast"]?.apply(null, [
                       ...actionArgs.args
                     ]);
                   })()
                 : undefined;
               if (
-                $steps["setBlock"] != null &&
-                typeof $steps["setBlock"] === "object" &&
-                typeof $steps["setBlock"].then === "function"
+                $steps["toast"] != null &&
+                typeof $steps["toast"] === "object" &&
+                typeof $steps["toast"].then === "function"
               ) {
-                $steps["setBlock"] = await $steps["setBlock"];
-              }
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return ($state.platformRequestStatus =
-                          $steps.setBlock.data[0]);
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
+                $steps["toast"] = await $steps["toast"];
               }
             }}
           >
-            <Icon24Icon
-              className={classNames(projectcss.all, sty.svg___2LfYe)}
-              role={"img"}
-            />
-
             <div
+              data-plasmic-name={"block2"}
+              data-plasmic-override={overrides.block2}
               className={classNames(
                 projectcss.all,
-                projectcss.__wab_text,
-                sty.text__wnE1G
+                sty.block2,
+                (() => {
+                  try {
+                    return $props.isFirstVisit ? "unclickable" : "clickable";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()
               )}
-            >
-              {
-                "\u0641\u0639\u0644\u0627 \u0627\u062c\u0627\u0631\u0647 \u0646\u0645\u06cc\u200c\u062f\u0645"
-              }
-            </div>
-          </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text___4Wf5,
-              "clickable"
-            )}
-            onClick={async event => {
-              const $steps = {};
+              onClick={async event => {
+                const $steps = {};
 
-              $steps["invokeGlobalAction"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://api.rentamon.com/api/setblock",
-                        undefined,
-                        (() => {
-                          try {
-                            return (() => {
-                              function convertTimestampToPersianDate(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                return date
-                                  .toLocaleDateString("fa")
-                                  .replace(/\//g, "-");
-                              }
-                              const data = {
-                                days: [$state.fragmentDatePicker.values],
-                                property_id: $props.propertyId,
-                                requested_by: "user",
-                                request_for: "block"
-                              };
-                              data.days = data.days
-                                .map(timestampArray =>
-                                  timestampArray.map(timestamp =>
-                                    convertTimestampToPersianDate(timestamp)
-                                  )
-                                )
-                                .flat();
-                              return data;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
+                $steps["updateStateVariable"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: ($state.block.open = false)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateStateVariable"] != null &&
+                  typeof $steps["updateStateVariable"] === "object" &&
+                  typeof $steps["updateStateVariable"].then === "function"
+                ) {
+                  $steps["updateStateVariable"] = await $steps[
+                    "updateStateVariable"
+                  ];
+                }
+
+                $steps["updateFetchModalOpen"] =
+                  $props.calendarType == "pro"
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["fetchModal", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
                           }
-                        })()
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
-              }
+                          const { objRoot, variablePath } = variable;
 
-              $steps["updateStateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        $state.platformRequestStatus =
-                          $steps.invokeGlobalAction.data;
-                        return console.log($state.platformRequestStatus);
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
                       })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
+                    : undefined;
+                if (
+                  $steps["updateFetchModalOpen"] != null &&
+                  typeof $steps["updateFetchModalOpen"] === "object" &&
+                  typeof $steps["updateFetchModalOpen"].then === "function"
+                ) {
+                  $steps["updateFetchModalOpen"] = await $steps[
+                    "updateFetchModalOpen"
+                  ];
+                }
 
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
-              ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
-              }
-            }}
-          >
-            {
-              "\u0648\u0627\u0633\u0634 \u0628\u0631\u0646\u0627\u0645\u0647 \u062f\u0627\u0631\u0645 \ud83d\ude0e"
-            }
+                $steps["blockRequest"] = false
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            function convertPersianNumbersToEnglish(str) {
+                              const persianNumbers = [
+                                "۰",
+                                "۱",
+                                "۲",
+                                "۳",
+                                "۴",
+                                "۵",
+                                "۶",
+                                "۷",
+                                "۸",
+                                "۹"
+                              ];
+
+                              const englishNumbers = [
+                                "0",
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "9"
+                              ];
+
+                              return str.replace(
+                                /[۰-۹]/g,
+                                char =>
+                                  englishNumbers[
+                                    persianNumbers.indexOf(char)
+                                  ] || char
+                              );
+                            }
+                            function padZero(num) {
+                              return num.length === 1 ? `0${num}` : num;
+                            }
+                            function convertTimestampToPersianDateWithEnglishNumbers(
+                              timestamp
+                            ) {
+                              const date = new Date(timestamp * 1000);
+                              const [year, month, day] = date
+                                .toLocaleDateString("fa")
+                                .split("/");
+                              const formattedDate = `${convertPersianNumbersToEnglish(
+                                year
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(month)
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(day)
+                              )}`;
+                              return formattedDate;
+                            }
+                            function getTodayInPersian() {
+                              const today = new Date();
+                              const [year, month, day] = today
+                                .toLocaleDateString("fa")
+                                .split("/");
+                              const formattedDate = `${convertPersianNumbersToEnglish(
+                                year
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(month)
+                              )}-${padZero(
+                                convertPersianNumbersToEnglish(day)
+                              )}`;
+                              return formattedDate;
+                            }
+                            const todayInPersian = getTodayInPersian();
+                            const data = {
+                              days: [$state.fragmentDatePicker.values],
+                              property_id: $props.propertyId,
+                              requested_by: "user",
+                              request_for: "block"
+                            };
+                            $state.requestdata = data;
+                            console.log($state.requestdata);
+                            console.log(data);
+                            data.days = data.days
+                              .map(timestampArray =>
+                                timestampArray
+                                  .map(timestamp =>
+                                    convertTimestampToPersianDateWithEnglishNumbers(
+                                      timestamp
+                                    )
+                                  )
+                                  .filter(day => day >= todayInPersian)
+                              )
+                              .flat();
+                            return fetch(
+                              "https://api-v2.rentamon.com/api/setblock",
+                              {
+                                method: "POST",
+                                headers: {
+                                  "Content-Type": "application/json",
+                                  Accept: "*/*"
+                                },
+                                credentials: "include",
+                                body: JSON.stringify(data)
+                              }
+                            )
+                              .then(response => {
+                                if (!response.ok) {
+                                  throw new Error(
+                                    `HTTP error! status: ${response.status}`
+                                  );
+                                }
+                                return response.json();
+                              })
+                              .then(result => {
+                                $state.platformRequestStatus = result;
+                                console.log("Response saved to state:", result);
+                              })
+                              .catch(error => {
+                                console.error("Error:", error);
+                                $state.platformRequestStatus = {
+                                  error: error.message
+                                };
+                              });
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["blockRequest"] != null &&
+                  typeof $steps["blockRequest"] === "object" &&
+                  typeof $steps["blockRequest"].then === "function"
+                ) {
+                  $steps["blockRequest"] = await $steps["blockRequest"];
+                }
+
+                $steps["updateStateVariable2"] =
+                  $props.calendarType == "lite"
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: ($state.updateStyle = $state.updateStyle + 1)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["updateStateVariable2"] != null &&
+                  typeof $steps["updateStateVariable2"] === "object" &&
+                  typeof $steps["updateStateVariable2"].then === "function"
+                ) {
+                  $steps["updateStateVariable2"] = await $steps[
+                    "updateStateVariable2"
+                  ];
+                }
+
+                $steps["setBlock"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://gateway.rentamon.com/webhook/set-block",
+                          undefined,
+                          (() => {
+                            try {
+                              return (() => {
+                                function convertPersianNumbersToEnglish(str) {
+                                  const persianNumbers = [
+                                    "۰",
+                                    "۱",
+                                    "۲",
+                                    "۳",
+                                    "۴",
+                                    "۵",
+                                    "۶",
+                                    "۷",
+                                    "۸",
+                                    "۹"
+                                  ];
+
+                                  const englishNumbers = [
+                                    "0",
+                                    "1",
+                                    "2",
+                                    "3",
+                                    "4",
+                                    "5",
+                                    "6",
+                                    "7",
+                                    "8",
+                                    "9"
+                                  ];
+
+                                  return str.replace(
+                                    /[۰-۹]/g,
+                                    char =>
+                                      englishNumbers[
+                                        persianNumbers.indexOf(char)
+                                      ] || char
+                                  );
+                                }
+                                function padZero(num) {
+                                  return num.length === 1 ? `0${num}` : num;
+                                }
+                                function convertTimestampToPersianDateWithEnglishNumbers(
+                                  timestamp
+                                ) {
+                                  const date = new Date(timestamp * 1000);
+                                  const [year, month, day] = date
+                                    .toLocaleDateString("fa")
+                                    .split("/");
+                                  const formattedDate = `${convertPersianNumbersToEnglish(
+                                    year
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(month)
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(day)
+                                  )}`;
+                                  return formattedDate;
+                                }
+                                function getTodayInPersian() {
+                                  const today = new Date();
+                                  const [year, month, day] = today
+                                    .toLocaleDateString("fa")
+                                    .split("/");
+                                  const formattedDate = `${convertPersianNumbersToEnglish(
+                                    year
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(month)
+                                  )}-${padZero(
+                                    convertPersianNumbersToEnglish(day)
+                                  )}`;
+                                  return formattedDate;
+                                }
+                                const todayInPersian = getTodayInPersian();
+                                const data = {
+                                  days: [$state.fragmentDatePicker.values],
+                                  property_id: $props.propertyId,
+                                  requested_by: "user",
+                                  request_for: "block"
+                                };
+                                $state.requestdata = data;
+                                data.days = data.days
+                                  .map(timestampArray =>
+                                    timestampArray
+                                      .map(timestamp =>
+                                        convertTimestampToPersianDateWithEnglishNumbers(
+                                          timestamp
+                                        )
+                                      )
+                                      .filter(day => day >= todayInPersian)
+                                  )
+                                  .flat();
+                                return data;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["setBlock"] != null &&
+                  typeof $steps["setBlock"] === "object" &&
+                  typeof $steps["setBlock"].then === "function"
+                ) {
+                  $steps["setBlock"] = await $steps["setBlock"];
+                }
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return ($state.platformRequestStatus =
+                            $steps.setBlock.data[0]);
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+
+                $steps["toast"] = ($props.isFirstVisit ? true : false)
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "error",
+                          "\u062f\u0631 \u062d\u0627\u0644\u062a \u062a\u0633\u062a \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647 \u06a9\u0627\u0631 \u0646\u0645\u06cc\u200c\u06a9\u0646\u0647!",
+                          "top-center",
+                          3000
+                        ]
+                      };
+                      return $globalActions["Fragment.showToast"]?.apply(null, [
+                        ...actionArgs.args
+                      ]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["toast"] != null &&
+                  typeof $steps["toast"] === "object" &&
+                  typeof $steps["toast"].then === "function"
+                ) {
+                  $steps["toast"] = await $steps["toast"];
+                }
+              }}
+            >
+              <Icon24Icon
+                className={classNames(projectcss.all, sty.svg___2LfYe)}
+                role={"img"}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__wnE1G
+                )}
+              >
+                {
+                  "\u0641\u0639\u0644\u0627 \u0627\u062c\u0627\u0631\u0647 \u0646\u0645\u06cc\u200c\u062f\u0645"
+                }
+              </div>
+            </div>
           </div>
         </AntdModal>
         <AntdModal
@@ -11574,7 +11580,13 @@ function PlasmicCalendar2__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox__isMPt)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                sty.freeBox__isMPt,
+                "fadein2"
+              )}
+            >
               <div
                 className={classNames(
                   projectcss.all,
@@ -11609,7 +11621,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "apiRequest",
-    "guideText",
+    "guide1",
     "fragmentDatePicker",
     "fragmentLongPress",
     "dayCell",
@@ -11618,6 +11630,11 @@ const PlasmicDescendants = {
     "textInput2",
     "modal",
     "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a",
+    "\u067e\u0631",
+    "\u062e\u0627\u0644\u06cc\u0642\u06cc\u0645\u062a\u062a\u062e\u0641\u06cc\u0641Parent",
+    "\u062e\u0627\u0644\u06cc",
+    "\u0642\u06cc\u0645\u062a",
+    "\u062a\u062e\u0641\u06cc\u0641",
     "modalChangePrice",
     "main2",
     "input",
@@ -11633,6 +11650,7 @@ const PlasmicDescendants = {
     "ok2",
     "block",
     "reserve",
+    "blockParent",
     "block2",
     "noteModal",
     "writeNoteModal",
@@ -11674,7 +11692,7 @@ const PlasmicDescendants = {
     "p5"
   ],
   apiRequest: ["apiRequest"],
-  guideText: ["guideText"],
+  guide1: ["guide1"],
   fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell"],
   fragmentLongPress: ["fragmentLongPress", "dayCell"],
   dayCell: ["dayCell"],
@@ -11683,9 +11701,24 @@ const PlasmicDescendants = {
   textInput2: ["textInput2"],
   modal: [
     "modal",
-    "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+    "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a",
+    "\u067e\u0631",
+    "\u062e\u0627\u0644\u06cc\u0642\u06cc\u0645\u062a\u062a\u062e\u0641\u06cc\u0641Parent",
+    "\u062e\u0627\u0644\u06cc",
+    "\u0642\u06cc\u0645\u062a",
+    "\u062a\u062e\u0641\u06cc\u0641"
   ],
   ثبتتغییرات: ["\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"],
+  پر: ["\u067e\u0631"],
+  خالیقیمتتخفیفParent: [
+    "\u062e\u0627\u0644\u06cc\u0642\u06cc\u0645\u062a\u062a\u062e\u0641\u06cc\u0641Parent",
+    "\u062e\u0627\u0644\u06cc",
+    "\u0642\u06cc\u0645\u062a",
+    "\u062a\u062e\u0641\u06cc\u0641"
+  ],
+  خالی: ["\u062e\u0627\u0644\u06cc"],
+  قیمت: ["\u0642\u06cc\u0645\u062a"],
+  تخفیف: ["\u062a\u062e\u0641\u06cc\u0641"],
   modalChangePrice: [
     "modalChangePrice",
     "main2",
@@ -11714,8 +11747,9 @@ const PlasmicDescendants = {
   fail: ["fail"],
   loading: ["loading"],
   ok2: ["ok2"],
-  block: ["block", "reserve", "block2"],
+  block: ["block", "reserve", "blockParent", "block2"],
   reserve: ["reserve"],
+  blockParent: ["blockParent", "block2"],
   block2: ["block2"],
   noteModal: ["noteModal"],
   writeNoteModal: ["writeNoteModal", "textarea"],
@@ -11807,7 +11841,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
-  guideText: "div";
+  guide1: "div";
   fragmentDatePicker: typeof DatePicker;
   fragmentLongPress: typeof FragmentLongPress;
   dayCell: typeof DayCell;
@@ -11816,6 +11850,11 @@ type NodeDefaultElementType = {
   textInput2: typeof TextInput;
   modal: typeof AntdModal;
   ثبتتغییرات: "div";
+  پر: "section";
+  خالیقیمتتخفیفParent: "section";
+  خالی: "section";
+  قیمت: "section";
+  تخفیف: "section";
   modalChangePrice: typeof AntdModal;
   main2: "div";
   input: typeof Input;
@@ -11831,6 +11870,7 @@ type NodeDefaultElementType = {
   ok2: typeof PlasmicImg__;
   block: typeof AntdModal;
   reserve: "div";
+  blockParent: "div";
   block2: "div";
   noteModal: typeof AntdModal;
   writeNoteModal: typeof AntdModal;
@@ -11933,7 +11973,7 @@ export const PlasmicCalendar2 = Object.assign(
   {
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
-    guideText: makeNodeComponent("guideText"),
+    guide1: makeNodeComponent("guide1"),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     fragmentLongPress: makeNodeComponent("fragmentLongPress"),
     dayCell: makeNodeComponent("dayCell"),
@@ -11944,6 +11984,13 @@ export const PlasmicCalendar2 = Object.assign(
     ثبتتغییرات: makeNodeComponent(
       "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
     ),
+    پر: makeNodeComponent("\u067e\u0631"),
+    خالیقیمتتخفیفParent: makeNodeComponent(
+      "\u062e\u0627\u0644\u06cc\u0642\u06cc\u0645\u062a\u062a\u062e\u0641\u06cc\u0641Parent"
+    ),
+    خالی: makeNodeComponent("\u062e\u0627\u0644\u06cc"),
+    قیمت: makeNodeComponent("\u0642\u06cc\u0645\u062a"),
+    تخفیف: makeNodeComponent("\u062a\u062e\u0641\u06cc\u0641"),
     modalChangePrice: makeNodeComponent("modalChangePrice"),
     main2: makeNodeComponent("main2"),
     input: makeNodeComponent("input"),
@@ -11959,6 +12006,7 @@ export const PlasmicCalendar2 = Object.assign(
     ok2: makeNodeComponent("ok2"),
     block: makeNodeComponent("block"),
     reserve: makeNodeComponent("reserve"),
+    blockParent: makeNodeComponent("blockParent"),
     block2: makeNodeComponent("block2"),
     noteModal: makeNodeComponent("noteModal"),
     writeNoteModal: makeNodeComponent("writeNoteModal"),

@@ -65,11 +65,11 @@ import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
-import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
@@ -150,6 +150,8 @@ export type PlasmicActivation__OverridesType = {
   false7?: Flex__<typeof PlasmicImg__>;
   apiRequest2?: Flex__<typeof ApiRequest>;
   modal?: Flex__<typeof AntdModal>;
+  allConnected?: Flex__<"div">;
+  jabamasend9?: Flex__<typeof AntdButton>;
   connect?: Flex__<"div">;
   form?: Flex__<typeof FormWrapper>;
   platforms?: Flex__<typeof FormItemWrapper>;
@@ -223,7 +225,6 @@ export type PlasmicActivation__OverridesType = {
   platformpropertyButton?: Flex__<typeof AntdButton>;
   platformpropertyButton2?: Flex__<typeof AntdButton>;
   security?: Flex__<"div">;
-  jabamasend9?: Flex__<typeof AntdButton>;
   guide?: Flex__<"div">;
   _1?: Flex__<"div">;
   _2?: Flex__<"div">;
@@ -3694,34 +3695,65 @@ function PlasmicActivation__RenderFunc(props: {
                   }
                 />
 
-                {(() => {
-                  try {
-                    return (() => {
-                      const platforms = $state.platformstatus.status;
-                      const requiredWebsites = [
-                        "jabama",
-                        "jajiga",
-                        "shab",
-                        "otaghak",
-                        "homsa",
-                        "mihmansho"
-                      ];
+                {(
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const platforms = $state.platformstatus.status;
+                            const requiredWebsites = [
+                              "jabama",
+                              "jajiga",
+                              "shab",
+                              "otaghak",
+                              "homsa",
+                              "mihmansho"
+                            ];
 
-                      const allWebsitesExist = requiredWebsites.every(website =>
-                        platforms.hasOwnProperty(website)
-                      );
-                      return !allWebsitesExist;
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return false;
-                    }
-                    throw e;
-                  }
-                })() ? (
+                            const allWebsitesExist = requiredWebsites.every(
+                              website => platforms.hasOwnProperty(website)
+                            );
+                            return !allWebsitesExist;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return false;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : (() => {
+                        try {
+                          return (() => {
+                            const platforms = $state.platformstatus.status;
+                            const requiredWebsites = [
+                              "jabama",
+                              "jajiga",
+                              "shab",
+                              "otaghak",
+                              "homsa",
+                              "mihmansho"
+                            ];
+
+                            const allWebsitesExist = requiredWebsites.every(
+                              website => platforms.hasOwnProperty(website)
+                            );
+                            return !allWebsitesExist;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return false;
+                          }
+                          throw e;
+                        }
+                      })()
+                ) ? (
                   <div
                     className={classNames(projectcss.all, sty.freeBox___4Yei8)}
                   >
@@ -3733,8 +3765,8 @@ function PlasmicActivation__RenderFunc(props: {
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u060c \u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u26a0\ufe0f\u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc\u26a0\ufe0f"
-                        : "\u26a0\ufe0f\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u26a0\ufe0f\n\u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"}
+                        ? "\u26a0\ufe0f\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u060c \u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \ufe0f\u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"
+                        : "\u26a0\ufe0f\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\n\u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"}
                     </div>
                   </div>
                 ) : null}
@@ -3910,6 +3942,151 @@ function PlasmicActivation__RenderFunc(props: {
                   </div>
                 </div>
               </AntdModal>
+            </div>
+          ) : null}
+          {(() => {
+            try {
+              return (() => {
+                const platforms = $state.platformstatus.status;
+                if (platforms && Object.keys(platforms).length > 0) {
+                  const allTrue = Object.values(platforms).every(
+                    value => value === true
+                  );
+                  return allTrue ? true : false;
+                }
+                return false;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div
+              data-plasmic-name={"allConnected"}
+              data-plasmic-override={overrides.allConnected}
+              className={classNames(projectcss.all, sty.allConnected)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img___4N2W)}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "72px"
+                    : "83px"
+                }
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image27.svg",
+                  fullWidth: 26,
+                  fullHeight: 26,
+                  aspectRatio: 1
+                }}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ixc0V
+                )}
+              >
+                {
+                  "\u0647\u0645\u0647\u200c\u06cc  \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a\u0646"
+                }
+              </div>
+              <AntdButton
+                data-plasmic-name={"jabamasend9"}
+                data-plasmic-override={overrides.jabamasend9}
+                className={classNames("__wab_instance", sty.jabamasend9)}
+                onClick={async () => {
+                  const $steps = {};
+
+                  $steps["update1"] = false
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["step"]
+                          },
+                          operation: 0,
+                          value: ($state.step = 14)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["update1"] != null &&
+                    typeof $steps["update1"] === "object" &&
+                    typeof $steps["update1"].then === "function"
+                  ) {
+                    $steps["update1"] = await $steps["update1"];
+                  }
+
+                  $steps["goToPanelCalendar"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/panel` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToPanelCalendar"] != null &&
+                    typeof $steps["goToPanelCalendar"] === "object" &&
+                    typeof $steps["goToPanelCalendar"].then === "function"
+                  ) {
+                    $steps["goToPanelCalendar"] = await $steps[
+                      "goToPanelCalendar"
+                    ];
+                  }
+                }}
+                submitsForm={true}
+                type={"primary"}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__w8Gmv
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"
+                    : "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"}
+                </div>
+              </AntdButton>
             </div>
           ) : null}
           <div
@@ -10364,28 +10541,117 @@ function PlasmicActivation__RenderFunc(props: {
                       </AntdButton>
                     </div>
                   </div>
-                  {(() => {
-                    try {
-                      return (() => {
-                        const platforms = $state.platformstatus.status;
-                        if (platforms && Object.keys(platforms).length > 0) {
-                          const hasFalse = Object.values(platforms).some(
-                            value => value === false
-                          );
-                          return hasFalse;
-                        }
-                        return false;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return (() => {
+                              const platforms =
+                                $state.platformstatus?.status || {};
+                              const requiredWebsites = [
+                                "jabama",
+                                "jajiga",
+                                "shab",
+                                "otaghak",
+                                "homsa",
+                                "mihmansho"
+                              ];
+
+                              function isExplicitFalse(v) {
+                                if (v === false) return true;
+                                if (v === null || v === undefined) return true;
+                                if (typeof v === "string") {
+                                  const s = v.trim().toLowerCase();
+                                  return s === "false" || s === "0" || s === "";
+                                }
+                                if (typeof v === "number") {
+                                  return v === 0;
+                                }
+                                return false;
+                              }
+                              const missingKeys = requiredWebsites.filter(
+                                k => !(k in platforms)
+                              );
+                              const falseKeys = requiredWebsites.filter(k =>
+                                isExplicitFalse(platforms[k])
+                              );
+                              console.log(
+                                "platforms:",
+                                platforms,
+                                "missingKeys:",
+                                missingKeys,
+                                "falseKeys:",
+                                falseKeys
+                              );
+                              return (
+                                missingKeys.length > 0 || falseKeys.length > 0
+                              );
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : (() => {
+                          try {
+                            return (() => {
+                              const platforms =
+                                $state.platformstatus?.status || {};
+                              const requiredWebsites = [
+                                "jabama",
+                                "jajiga",
+                                "shab",
+                                "otaghak",
+                                "homsa",
+                                "mihmansho"
+                              ];
+
+                              function isExplicitFalse(v) {
+                                if (v === false) return true;
+                                if (v === null || v === undefined) return true;
+                                if (typeof v === "string") {
+                                  const s = v.trim().toLowerCase();
+                                  return s === "false" || s === "0" || s === "";
+                                }
+                                if (typeof v === "number") {
+                                  return v === 0;
+                                }
+                                return false;
+                              }
+                              const missingKeys = requiredWebsites.filter(
+                                k => !(k in platforms)
+                              );
+                              const falseKeys = requiredWebsites.filter(k =>
+                                isExplicitFalse(platforms[k])
+                              );
+                              console.log(
+                                "platforms:",
+                                platforms,
+                                "missingKeys:",
+                                missingKeys,
+                                "falseKeys:",
+                                falseKeys
+                              );
+                              return (
+                                missingKeys.length > 0 || falseKeys.length > 0
+                              );
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })()
+                  ) ? (
                     <div
                       data-plasmic-name={"security"}
                       data-plasmic-override={overrides.security}
@@ -10499,143 +10765,6 @@ function PlasmicActivation__RenderFunc(props: {
               );
             })()}
           </div>
-          {(() => {
-            try {
-              return (() => {
-                const platforms = $state.platformstatus.status;
-                if (platforms && Object.keys(platforms).length > 0) {
-                  const allTrue = Object.values(platforms).every(
-                    value => value === true
-                  );
-                  return allTrue ? true : false;
-                }
-                return false;
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox__iDkE7)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img___4N2W)}
-                displayHeight={"105px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image27.svg",
-                  fullWidth: 26,
-                  fullHeight: 26,
-                  aspectRatio: 1
-                }}
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ixc0V
-                )}
-              >
-                {
-                  "\u0647\u0645\u0647\u200c\u06cc  \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a\u0646"
-                }
-              </div>
-              <AntdButton
-                data-plasmic-name={"jabamasend9"}
-                data-plasmic-override={overrides.jabamasend9}
-                className={classNames("__wab_instance", sty.jabamasend9)}
-                onClick={async () => {
-                  const $steps = {};
-
-                  $steps["update1"] = false
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["step"]
-                          },
-                          operation: 0,
-                          value: ($state.step = 14)
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["update1"] != null &&
-                    typeof $steps["update1"] === "object" &&
-                    typeof $steps["update1"].then === "function"
-                  ) {
-                    $steps["update1"] = await $steps["update1"];
-                  }
-
-                  $steps["goToPanelCalendar"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/panel` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToPanelCalendar"] != null &&
-                    typeof $steps["goToPanelCalendar"] === "object" &&
-                    typeof $steps["goToPanelCalendar"].then === "function"
-                  ) {
-                    $steps["goToPanelCalendar"] = await $steps[
-                      "goToPanelCalendar"
-                    ];
-                  }
-                }}
-                submitsForm={true}
-                type={"primary"}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__w8Gmv
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"
-                    : "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"}
-                </div>
-              </AntdButton>
-            </div>
-          ) : null}
           {(() => {
             try {
               return $state.step == 13;
@@ -11750,6 +11879,8 @@ const PlasmicDescendants = {
     "false7",
     "apiRequest2",
     "modal",
+    "allConnected",
+    "jabamasend9",
     "connect",
     "form",
     "platforms",
@@ -11823,7 +11954,6 @@ const PlasmicDescendants = {
     "platformpropertyButton",
     "platformpropertyButton2",
     "security",
-    "jabamasend9",
     "guide",
     "_1",
     "_2",
@@ -11957,6 +12087,8 @@ const PlasmicDescendants = {
   false7: ["false7"],
   apiRequest2: ["apiRequest2"],
   modal: ["modal"],
+  allConnected: ["allConnected", "jabamasend9"],
+  jabamasend9: ["jabamasend9"],
   connect: [
     "connect",
     "form",
@@ -12227,7 +12359,6 @@ const PlasmicDescendants = {
   platformpropertyButton: ["platformpropertyButton"],
   platformpropertyButton2: ["platformpropertyButton2"],
   security: ["security"],
-  jabamasend9: ["jabamasend9"],
   guide: ["guide", "_1", "_2", "_3"],
   _1: ["_1"],
   _2: ["_2"],
@@ -12289,6 +12420,8 @@ type NodeDefaultElementType = {
   false7: typeof PlasmicImg__;
   apiRequest2: typeof ApiRequest;
   modal: typeof AntdModal;
+  allConnected: "div";
+  jabamasend9: typeof AntdButton;
   connect: "div";
   form: typeof FormWrapper;
   platforms: typeof FormItemWrapper;
@@ -12362,7 +12495,6 @@ type NodeDefaultElementType = {
   platformpropertyButton: typeof AntdButton;
   platformpropertyButton2: typeof AntdButton;
   security: "div";
-  jabamasend9: typeof AntdButton;
   guide: "div";
   _1: "div";
   _2: "div";
@@ -12480,6 +12612,8 @@ export const PlasmicActivation = Object.assign(
     false7: makeNodeComponent("false7"),
     apiRequest2: makeNodeComponent("apiRequest2"),
     modal: makeNodeComponent("modal"),
+    allConnected: makeNodeComponent("allConnected"),
+    jabamasend9: makeNodeComponent("jabamasend9"),
     connect: makeNodeComponent("connect"),
     form: makeNodeComponent("form"),
     platforms: makeNodeComponent("platforms"),
@@ -12553,7 +12687,6 @@ export const PlasmicActivation = Object.assign(
     platformpropertyButton: makeNodeComponent("platformpropertyButton"),
     platformpropertyButton2: makeNodeComponent("platformpropertyButton2"),
     security: makeNodeComponent("security"),
-    jabamasend9: makeNodeComponent("jabamasend9"),
     guide: makeNodeComponent("guide"),
     _1: makeNodeComponent("_1"),
     _2: makeNodeComponent("_2"),
