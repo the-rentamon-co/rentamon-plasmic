@@ -1176,6 +1176,7 @@
   border-bottom-style: dotted;
   cursor: pointer;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 @media (max-width: 500px) {

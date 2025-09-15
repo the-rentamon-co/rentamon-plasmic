@@ -3948,6 +3948,9 @@ function PlasmicActivation__RenderFunc(props: {
             try {
               return (() => {
                 const platforms = $state.platformstatus.status;
+                if ($state.step === 0) {
+                  return false;
+                }
                 if (platforms && Object.keys(platforms).length > 0) {
                   const allTrue = Object.values(platforms).every(
                     value => value === true
@@ -10635,10 +10638,13 @@ function PlasmicActivation__RenderFunc(props: {
                                 "missingKeys:",
                                 missingKeys,
                                 "falseKeys:",
-                                falseKeys
+                                falseKeys,
+                                "step:",
+                                $state.step
                               );
                               return (
-                                missingKeys.length > 0 || falseKeys.length > 0
+                                $state.step !== 0 &&
+                                (missingKeys.length > 0 || falseKeys.length > 0)
                               );
                             })();
                           } catch (e) {
