@@ -1109,13 +1109,13 @@ function PlasmicActivation__RenderFunc(props: {
                           ];
                         }
 
-                        $steps["invokeGlobalAction"] =
+                        $steps["connectToast"] =
                           $state.platformstatus.status.jajiga == true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
                                     undefined,
-                                    "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "\u062c\u0627\u062c\u06cc\u06af\u0627\u062a \u0645\u062a\u0635\u0644 \u0647\u0633\u062a",
                                     "top-center"
                                   ]
                                 };
@@ -1125,14 +1125,61 @@ function PlasmicActivation__RenderFunc(props: {
                               })()
                             : undefined;
                         if (
-                          $steps["invokeGlobalAction"] != null &&
-                          typeof $steps["invokeGlobalAction"] === "object" &&
-                          typeof $steps["invokeGlobalAction"].then ===
-                            "function"
+                          $steps["connectToast"] != null &&
+                          typeof $steps["connectToast"] === "object" &&
+                          typeof $steps["connectToast"].then === "function"
                         ) {
-                          $steps["invokeGlobalAction"] = await $steps[
-                            "invokeGlobalAction"
+                          $steps["connectToast"] = await $steps["connectToast"];
+                        }
+
+                        $steps["disconnectToast"] =
+                          $state.platformstatus.status.jajiga == false
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "error",
+                                    "\u0627\u062a\u0635\u0627\u0644\u062a \u0628\u0627 \u00ab\u062c\u0627\u062c\u06cc\u06af\u0627\u00bb \u0642\u0637\u0639\u0647! \u0633\u0631\u06cc\u0639 \u0648\u0635\u0644\u0634 \u06a9\u0646",
+                                    "top-center",
+                                    3000
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["disconnectToast"] != null &&
+                          typeof $steps["disconnectToast"] === "object" &&
+                          typeof $steps["disconnectToast"].then === "function"
+                        ) {
+                          $steps["disconnectToast"] = await $steps[
+                            "disconnectToast"
                           ];
+                        }
+
+                        $steps["addToast"] = (() => {
+                          return !("jajiga" in $state.platformstatus.status);
+                        })()
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u062a \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["addToast"] != null &&
+                          typeof $steps["addToast"] === "object" &&
+                          typeof $steps["addToast"].then === "function"
+                        ) {
+                          $steps["addToast"] = await $steps["addToast"];
                         }
                       }}
                     >
@@ -1546,13 +1593,13 @@ function PlasmicActivation__RenderFunc(props: {
                           ];
                         }
 
-                        $steps["invokeGlobalAction"] =
+                        $steps["connectToast"] =
                           $state.platformstatus.status.jabama == true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
                                     undefined,
-                                    "\u062c\u0627\u0628\u0627\u0645\u0627 \u0634\u0645\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "\u062c\u0627\u0628\u0627\u0645\u0627\u062a \u0645\u062a\u0635\u0644 \u0647\u0633\u062a",
                                     "top-center"
                                   ]
                                 };
@@ -1562,14 +1609,60 @@ function PlasmicActivation__RenderFunc(props: {
                               })()
                             : undefined;
                         if (
-                          $steps["invokeGlobalAction"] != null &&
-                          typeof $steps["invokeGlobalAction"] === "object" &&
-                          typeof $steps["invokeGlobalAction"].then ===
-                            "function"
+                          $steps["connectToast"] != null &&
+                          typeof $steps["connectToast"] === "object" &&
+                          typeof $steps["connectToast"].then === "function"
                         ) {
-                          $steps["invokeGlobalAction"] = await $steps[
-                            "invokeGlobalAction"
+                          $steps["connectToast"] = await $steps["connectToast"];
+                        }
+
+                        $steps["disconnectToast"] =
+                          $state.platformstatus.status.jabama == false
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "error",
+                                    "\u0627\u062a\u0635\u0627\u0644\u062a \u0628\u0627 \u00ab\u062c\u0627\u0628\u0627\u0645\u0627\u00bb \u0642\u0637\u0639\u0647! \u0633\u0631\u06cc\u0639 \u0648\u0635\u0644\u0634 \u06a9\u0646",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["disconnectToast"] != null &&
+                          typeof $steps["disconnectToast"] === "object" &&
+                          typeof $steps["disconnectToast"].then === "function"
+                        ) {
+                          $steps["disconnectToast"] = await $steps[
+                            "disconnectToast"
                           ];
+                        }
+
+                        $steps["addToast"] = (() => {
+                          return !("jabama" in $state.platformstatus.status);
+                        })()
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u062c\u0627\u0628\u0627\u0645\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u062a \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["addToast"] != null &&
+                          typeof $steps["addToast"] === "object" &&
+                          typeof $steps["addToast"].then === "function"
+                        ) {
+                          $steps["addToast"] = await $steps["addToast"];
                         }
                       }}
                     >
@@ -1936,13 +2029,13 @@ function PlasmicActivation__RenderFunc(props: {
                           ];
                         }
 
-                        $steps["invokeGlobalAction"] =
+                        $steps["connectToast"] =
                           $state.platformstatus.status.otaghak == true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
                                     undefined,
-                                    "\u0627\u062a\u0627\u0642\u06a9 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "\u0627\u062a\u0627\u0642\u06a9\u062a \u0645\u062a\u0635\u0644 \u0647\u0633\u062a",
                                     "top-center"
                                   ]
                                 };
@@ -1952,14 +2045,60 @@ function PlasmicActivation__RenderFunc(props: {
                               })()
                             : undefined;
                         if (
-                          $steps["invokeGlobalAction"] != null &&
-                          typeof $steps["invokeGlobalAction"] === "object" &&
-                          typeof $steps["invokeGlobalAction"].then ===
-                            "function"
+                          $steps["connectToast"] != null &&
+                          typeof $steps["connectToast"] === "object" &&
+                          typeof $steps["connectToast"].then === "function"
                         ) {
-                          $steps["invokeGlobalAction"] = await $steps[
-                            "invokeGlobalAction"
+                          $steps["connectToast"] = await $steps["connectToast"];
+                        }
+
+                        $steps["disconnectToast"] =
+                          $state.platformstatus.status.otaghak == false
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "error",
+                                    "\u0627\u062a\u0635\u0627\u0644\u062a \u0628\u0627 \u00ab\u0627\u062a\u0627\u0642\u06a9\u00bb \u0642\u0637\u0639\u0647! \u0633\u0631\u06cc\u0639 \u0648\u0635\u0644\u0634 \u06a9\u0646",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["disconnectToast"] != null &&
+                          typeof $steps["disconnectToast"] === "object" &&
+                          typeof $steps["disconnectToast"].then === "function"
+                        ) {
+                          $steps["disconnectToast"] = await $steps[
+                            "disconnectToast"
                           ];
+                        }
+
+                        $steps["addToast"] = (() => {
+                          return !("otaghak" in $state.platformstatus.status);
+                        })()
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0627\u062a\u0627\u0642\u06a9 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u062a \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["addToast"] != null &&
+                          typeof $steps["addToast"] === "object" &&
+                          typeof $steps["addToast"].then === "function"
+                        ) {
+                          $steps["addToast"] = await $steps["addToast"];
                         }
                       }}
                     >
@@ -2301,13 +2440,13 @@ function PlasmicActivation__RenderFunc(props: {
                           ];
                         }
 
-                        $steps["invokeGlobalAction"] =
+                        $steps["connectToast"] =
                           $state.platformstatus.status.shab == true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
                                     undefined,
-                                    "\u0634\u0628 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "\u0634\u0628 \u0634\u0645\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a",
                                     "top-center"
                                   ]
                                 };
@@ -2317,14 +2456,60 @@ function PlasmicActivation__RenderFunc(props: {
                               })()
                             : undefined;
                         if (
-                          $steps["invokeGlobalAction"] != null &&
-                          typeof $steps["invokeGlobalAction"] === "object" &&
-                          typeof $steps["invokeGlobalAction"].then ===
-                            "function"
+                          $steps["connectToast"] != null &&
+                          typeof $steps["connectToast"] === "object" &&
+                          typeof $steps["connectToast"].then === "function"
                         ) {
-                          $steps["invokeGlobalAction"] = await $steps[
-                            "invokeGlobalAction"
+                          $steps["connectToast"] = await $steps["connectToast"];
+                        }
+
+                        $steps["disconnectToast"] =
+                          $state.platformstatus.status.shab == false
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "error",
+                                    "\u0627\u062a\u0635\u0627\u0644\u062a \u0628\u0627 \u00ab\u0634\u0628\u00bb \u0642\u0637\u0639\u0647! \u0633\u0631\u06cc\u0639 \u0648\u0635\u0644\u0634 \u06a9\u0646",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["disconnectToast"] != null &&
+                          typeof $steps["disconnectToast"] === "object" &&
+                          typeof $steps["disconnectToast"].then === "function"
+                        ) {
+                          $steps["disconnectToast"] = await $steps[
+                            "disconnectToast"
                           ];
+                        }
+
+                        $steps["addToast"] = (() => {
+                          return !("shab" in $state.platformstatus.status);
+                        })()
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0634\u0628 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u062a \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["addToast"] != null &&
+                          typeof $steps["addToast"] === "object" &&
+                          typeof $steps["addToast"].then === "function"
+                        ) {
+                          $steps["addToast"] = await $steps["addToast"];
                         }
                       }}
                     >
@@ -3007,13 +3192,13 @@ function PlasmicActivation__RenderFunc(props: {
                           ];
                         }
 
-                        $steps["invokeGlobalAction"] =
+                        $steps["connectToast"] =
                           $state.platformstatus.status.homsa == true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
                                     undefined,
-                                    "\u0647\u0648\u0645\u0633\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "\u0647\u0648\u0645\u0633\u0627\u062a \u0645\u062a\u0635\u0644 \u0647\u0633\u062a",
                                     "top-center"
                                   ]
                                 };
@@ -3023,14 +3208,60 @@ function PlasmicActivation__RenderFunc(props: {
                               })()
                             : undefined;
                         if (
-                          $steps["invokeGlobalAction"] != null &&
-                          typeof $steps["invokeGlobalAction"] === "object" &&
-                          typeof $steps["invokeGlobalAction"].then ===
-                            "function"
+                          $steps["connectToast"] != null &&
+                          typeof $steps["connectToast"] === "object" &&
+                          typeof $steps["connectToast"].then === "function"
                         ) {
-                          $steps["invokeGlobalAction"] = await $steps[
-                            "invokeGlobalAction"
+                          $steps["connectToast"] = await $steps["connectToast"];
+                        }
+
+                        $steps["disconnectToast"] =
+                          $state.platformstatus.status.homsa == false
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "error",
+                                    "\u0627\u062a\u0635\u0627\u0644\u062a \u0628\u0627 \u00ab\u0647\u0648\u0645\u0633\u0627\u00bb \u0642\u0637\u0639\u0647! \u0633\u0631\u06cc\u0639 \u0648\u0635\u0644\u0634 \u06a9\u0646",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["disconnectToast"] != null &&
+                          typeof $steps["disconnectToast"] === "object" &&
+                          typeof $steps["disconnectToast"].then === "function"
+                        ) {
+                          $steps["disconnectToast"] = await $steps[
+                            "disconnectToast"
                           ];
+                        }
+
+                        $steps["addToast"] = (() => {
+                          return !("homsa" in $state.platformstatus.status);
+                        })()
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0647\u0648\u0645\u0633\u0627 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u062a \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["addToast"] != null &&
+                          typeof $steps["addToast"] === "object" &&
+                          typeof $steps["addToast"].then === "function"
+                        ) {
+                          $steps["addToast"] = await $steps["addToast"];
                         }
                       }}
                     >
@@ -3346,13 +3577,13 @@ function PlasmicActivation__RenderFunc(props: {
                           ];
                         }
 
-                        $steps["updateInput6Value2"] =
+                        $steps["connectToast"] =
                           $state.platformstatus.status.mihmansho == true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
                                     undefined,
-                                    "\u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648 \u0634\u0645\u0627 \u0645\u062a\u0635\u0644 \u0627\u0633\u062a",
+                                    "\u0645\u0647\u0645\u0627\u0646\u0634\u0648 \u0634\u0645\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a",
                                     "top-center"
                                   ]
                                 };
@@ -3362,14 +3593,60 @@ function PlasmicActivation__RenderFunc(props: {
                               })()
                             : undefined;
                         if (
-                          $steps["updateInput6Value2"] != null &&
-                          typeof $steps["updateInput6Value2"] === "object" &&
-                          typeof $steps["updateInput6Value2"].then ===
-                            "function"
+                          $steps["connectToast"] != null &&
+                          typeof $steps["connectToast"] === "object" &&
+                          typeof $steps["connectToast"].then === "function"
                         ) {
-                          $steps["updateInput6Value2"] = await $steps[
-                            "updateInput6Value2"
+                          $steps["connectToast"] = await $steps["connectToast"];
+                        }
+
+                        $steps["disconnectToast"] =
+                          $state.platformstatus.status.mihmansho == false
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    "error",
+                                    "\u0627\u062a\u0635\u0627\u0644\u062a \u0628\u0627 \u00ab\u0645\u0647\u0645\u0627\u0646\u0634\u0648\u00bb \u0642\u0637\u0639\u0647! \u0633\u0631\u06cc\u0639 \u0648\u0635\u0644\u0634 \u06a9\u0646",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["disconnectToast"] != null &&
+                          typeof $steps["disconnectToast"] === "object" &&
+                          typeof $steps["disconnectToast"].then === "function"
+                        ) {
+                          $steps["disconnectToast"] = await $steps[
+                            "disconnectToast"
                           ];
+                        }
+
+                        $steps["addToast"] = (() => {
+                          return !("mihmansho" in $state.platformstatus.status);
+                        })()
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0645\u0647\u0645\u0627\u0646\u0634\u0648 \u0631\u0648 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645\u062a \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["addToast"] != null &&
+                          typeof $steps["addToast"] === "object" &&
+                          typeof $steps["addToast"].then === "function"
+                        ) {
+                          $steps["addToast"] = await $steps["addToast"];
                         }
                       }}
                     >
