@@ -2913,37 +2913,41 @@ function PlasmicTransactions__RenderFunc(props: {
                           })()}
                         </React.Fragment>
                       </div>
-                      {(() => {
-                        try {
-                          return currentItem.is_free;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
+                      <div
+                        className={classNames(projectcss.all, sty.freeBox__pW9)}
+                      >
+                        {(() => {
+                          try {
+                            return currentItem.is_free;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__a7Nc4)}
-                          displayHeight={"24px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image175.svg",
-                            fullWidth: 16,
-                            fullHeight: 17,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      ) : null}
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__a7Nc4)}
+                            displayHeight={"24px"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image175.svg",
+                              fullWidth: 16,
+                              fullHeight: 17,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                      </div>
                       <div
                         className={classNames(
                           projectcss.all,

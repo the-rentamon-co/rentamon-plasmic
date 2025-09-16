@@ -2968,7 +2968,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicActivationDuplicateConnection.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/connection.tsx"
+            "modulePath": "../src/pages/connections.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicActivationDuplicateConnection.module.css",
           "scheme": "blackbox",

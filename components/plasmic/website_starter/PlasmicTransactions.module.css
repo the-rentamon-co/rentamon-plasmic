@@ -2318,10 +2318,22 @@
     font-size: 14px;
   }
 }
+.freeBox__pW9 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 25px;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+}
 .img__a7Nc4 {
   object-fit: cover;
   max-width: 100%;
   height: 24px;
+  flex-shrink: 0;
 }
 .img__a7Nc4 > picture > img {
   object-fit: cover;
