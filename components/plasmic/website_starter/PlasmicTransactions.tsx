@@ -2562,194 +2562,213 @@ function PlasmicTransactions__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div
-                data-plasmic-name={"properties"}
-                data-plasmic-override={overrides.properties}
-                className={classNames(projectcss.all, sty.properties)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__ab711)}>
+              <div className={classNames(projectcss.all, sty.freeBox__ujSyz)}>
+                <div
+                  data-plasmic-name={"properties"}
+                  data-plasmic-override={overrides.properties}
+                  className={classNames(projectcss.all, sty.properties)}
+                >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ws6Ey
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__ab711)}
                   >
-                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ws6Ey
+                      )}
+                    >
+                      {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                    </div>
                   </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__oKk2K)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aj3T
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__oKk2K)}
                   >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $state.modalData.property_name;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return " ";
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__aj3T
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData.property_name;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
+                        })()}
+                      </React.Fragment>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div
-                data-plasmic-name={"totalAmount"}
-                data-plasmic-override={overrides.totalAmount}
-                className={classNames(projectcss.all, sty.totalAmount)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__dg3NX)}>
+              <div className={classNames(projectcss.all, sty.freeBox___3SsPf)}>
+                <div
+                  data-plasmic-name={"totalAmount"}
+                  data-plasmic-override={overrides.totalAmount}
+                  className={classNames(projectcss.all, sty.totalAmount)}
+                >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___0YUa1
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__dg3NX)}
                   >
-                    {"\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648"}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___0YUa1
+                      )}
+                    >
+                      {"\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648"}
+                    </div>
                   </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__necMc)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hPr6A
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__necMc)}
                   >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $state.modalData.reserved_amount + " تومان";
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return " ";
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hPr6A
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData.reserved_amount + " تومان";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
+                        })()}
+                      </React.Fragment>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div
-                data-plasmic-name={"reserveCode"}
-                data-plasmic-override={overrides.reserveCode}
-                className={classNames(projectcss.all, sty.reserveCode)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox___7TiX)}>
+              <div className={classNames(projectcss.all, sty.freeBox__ntJma)}>
+                <div
+                  data-plasmic-name={"reserveCode"}
+                  data-plasmic-override={overrides.reserveCode}
+                  className={classNames(projectcss.all, sty.reserveCode)}
+                >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dxj9F
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox___7TiX)}
                   >
-                    {"\u06a9\u062f \u0631\u0632\u0631\u0648"}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__dxj9F
+                      )}
+                    >
+                      {"\u06a9\u062f \u0631\u0632\u0631\u0648"}
+                    </div>
                   </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__fbZuj)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zZqaz
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
+                    className={classNames(projectcss.all, sty.freeBox__fbZuj)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__zZqaz
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
 
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  let result = "";
-                                  const bookingId = $state.modalData.booking_id;
-                                  if (
-                                    bookingId &&
-                                    bookingId.startsWith("RNT")
-                                  ) {
-                                    result = bookingId.substring(3);
-                                  } else {
-                                    result = bookingId;
-                                  }
-                                  return window.open(
-                                    `https://rentamon.com/bookings/${result}`,
-                                    "_blank"
-                                  );
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
-                    }}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $state.modalData.booking_id;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return " ";
-                          }
-                          throw e;
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    let result = "";
+                                    const bookingId =
+                                      $state.modalData.booking_id;
+                                    if (
+                                      bookingId &&
+                                      bookingId.startsWith("RNT")
+                                    ) {
+                                      result = bookingId.substring(3);
+                                    } else {
+                                      result = bookingId;
+                                    }
+                                    return window.open(
+                                      `https://rentamon.com/bookings/${result}`,
+                                      "_blank"
+                                    );
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
                         }
-                      })()}
-                    </React.Fragment>
+                      }}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData.booking_id;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__cnMt2)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? {
+                              src: "/plasmic/website_starter/images/image174.svg",
+                              fullWidth: 14,
+                              fullHeight: 14,
+                              aspectRatio: undefined
+                            }
+                          : {
+                              src: "/plasmic/website_starter/images/image174.svg",
+                              fullWidth: 14,
+                              fullHeight: 14,
+                              aspectRatio: undefined
+                            }
+                      }
+                    />
                   </div>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__cnMt2)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? {
-                            src: "/plasmic/website_starter/images/image174.svg",
-                            fullWidth: 14,
-                            fullHeight: 14,
-                            aspectRatio: undefined
-                          }
-                        : {
-                            src: "/plasmic/website_starter/images/image174.svg",
-                            fullWidth: 14,
-                            fullHeight: 14,
-                            aspectRatio: undefined
-                          }
-                    }
-                  />
                 </div>
               </div>
               <div
@@ -3245,6 +3264,15 @@ function PlasmicTransactions__RenderFunc(props: {
                   >
                     {"\u062c\u0645\u0639"}
                   </div>
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__bOoM)}
+                    />
+                  ) : null}
                 </div>
                 {(() => {
                   try {

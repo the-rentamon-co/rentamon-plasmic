@@ -1649,6 +1649,16 @@
   border-top-right-radius: 30px;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .withdraw2 {
+    padding: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .withdraw2 {
+    padding: 0px;
+  }
+}
 .title {
   display: flex;
   flex-direction: column;
@@ -1724,7 +1734,7 @@
 }
 @media (max-width: 350px) {
   .date {
-    padding: 0px;
+    padding: 8px;
   }
 }
 .freeBox__uFEj {
@@ -1738,6 +1748,11 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__uFEj {
+    max-width: 30%;
+  }
 }
 @media (max-width: 350px) {
   .freeBox__uFEj {
@@ -1788,6 +1803,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .freeBox__kDgqy {
+    padding: 8px;
+  }
+}
 @media (max-width: 350px) {
   .freeBox__kDgqy {
     padding-right: 0px;
@@ -1820,10 +1840,21 @@
     min-width: 0;
   }
 }
+.freeBox__ujSyz {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
 .properties {
   display: flex;
   flex-direction: row;
-  position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -1936,10 +1967,21 @@
     min-width: 0;
   }
 }
+.freeBox___3SsPf {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
 .totalAmount {
   display: flex;
   flex-direction: row;
-  position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -2062,10 +2104,21 @@
     min-width: 0;
   }
 }
+.freeBox__ntJma {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
 .reserveCode {
   display: flex;
   flex-direction: row;
-  position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -2445,6 +2498,17 @@
   .text__rZ3Do {
     font-size: 14px;
   }
+}
+.freeBox__bOoM {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 25px;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
 }
 .comment3 {
   display: flex;
