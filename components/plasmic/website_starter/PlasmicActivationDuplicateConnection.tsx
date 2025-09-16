@@ -149,6 +149,8 @@ export type PlasmicActivationDuplicateConnection__OverridesType = {
   true7?: Flex__<typeof PlasmicImg__>;
   false7?: Flex__<typeof PlasmicImg__>;
   apiRequest2?: Flex__<typeof ApiRequest>;
+  newPlatformPropertyAlert?: Flex__<"div">;
+  platformProperty?: Flex__<"div">;
   guideModal?: Flex__<typeof AntdModal>;
   allConnected?: Flex__<"div">;
   jabamasend9?: Flex__<typeof AntdButton>;
@@ -202,12 +204,6 @@ export type PlasmicActivationDuplicateConnection__OverridesType = {
   input16?: Flex__<typeof AntdInput>;
   homsaVerify?: Flex__<typeof AntdButton>;
   jabamasend7?: Flex__<typeof AntdButton>;
-  input17?: Flex__<typeof AntdInput>;
-  mizboonsend?: Flex__<typeof AntdButton>;
-  mizboonsend3?: Flex__<typeof AntdButton>;
-  input18?: Flex__<typeof AntdInput>;
-  mizboonverify?: Flex__<typeof AntdButton>;
-  mizboonverify4?: Flex__<typeof AntdButton>;
   platformpropertyIds?: Flex__<"div">;
   jajigapp?: Flex__<"div">;
   input19?: Flex__<typeof AntdInput>;
@@ -364,22 +360,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
       {
-        path: "input17.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
-      },
-      {
-        path: "input18.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
-      },
-      {
         path: "input19.value",
         type: "private",
         variableType: "text",
@@ -435,10 +415,8 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                if ($ctx.params.type == 3) {
+                {
                   return 1;
-                } else {
-                  return 0;
                 }
               })();
             } catch (e) {
@@ -446,7 +424,7 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return 3;
+                return 1;
               }
               throw e;
             }
@@ -4024,7 +4002,12 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                       })()
                 ) ? (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__aWPe4)}
+                    data-plasmic-name={"newPlatformPropertyAlert"}
+                    data-plasmic-override={overrides.newPlatformPropertyAlert}
+                    className={classNames(
+                      projectcss.all,
+                      sty.newPlatformPropertyAlert
+                    )}
                   >
                     <div
                       className={classNames(
@@ -4035,8 +4018,16 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                     >
                       {hasVariant(globalVariants, "screen", "mobile")
                         ? "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\u060c \u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \ufe0f\u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"
-                        : "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\n\u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc"}
+                        : "\u0628\u0631\u0627\u06cc \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f\n\u0644\u0627\u0632\u0645\u0647 \u06a9\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0627\u0648\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0627\u06cc\u0646\u200c\u062c\u0627 \u062b\u0628\u062a \u06a9\u0646\u06cc"}
                     </div>
+                    <div
+                      data-plasmic-name={"platformProperty"}
+                      data-plasmic-override={overrides.platformProperty}
+                      className={classNames(
+                        projectcss.all,
+                        sty.platformProperty
+                      )}
+                    />
                   </div>
                 ) : null}
               </div>
@@ -8684,530 +8675,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                       </FormItemWrapper>
                     </div>
                   ) : null}
-                  <FormItemWrapper
-                    className={classNames(
-                      "__wab_instance",
-                      sty.formField__s2RTf
-                    )}
-                    label={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___78LsZ
-                        )}
-                      >
-                        {
-                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a\u200c\u0646\u0627\u0645\u06cc \u062f\u0631 \u0645\u06cc\u0632\u0628\u0648\u0646:"
-                        }
-                      </div>
-                    }
-                    name={"mizboonphone"}
-                  >
-                    {(() => {
-                      const child$Props = {
-                        className: classNames("__wab_instance", sty.input17),
-                        onChange: async (...eventArgs: any) => {
-                          generateStateOnChangePropForCodeComponents(
-                            $state,
-                            "value",
-                            ["input17", "value"],
-                            AntdInput_Helpers
-                          ).apply(null, eventArgs);
-                        },
-                        placeholder: ``,
-                        size: "large",
-                        value: generateStateValueProp($state, [
-                          "input17",
-                          "value"
-                        ])
-                      };
-                      initializeCodeComponentStates(
-                        $state,
-                        [
-                          {
-                            name: "value",
-                            plasmicStateName: "input17.value"
-                          }
-                        ],
-                        [],
-                        AntdInput_Helpers ?? {},
-                        child$Props
-                      );
-
-                      return (
-                        <AntdInput
-                          data-plasmic-name={"input17"}
-                          data-plasmic-override={overrides.input17}
-                          {...child$Props}
-                        />
-                      );
-                    })()}
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__nRKfv)}
-                    >
-                      <AntdButton
-                        data-plasmic-name={"mizboonsend"}
-                        data-plasmic-override={overrides.mizboonsend}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.mizboonsend
-                        )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["updateStep"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["step"]
-                                  },
-                                  operation: 2
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue + 1
-                                  );
-                                  return oldValue + 1;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStep"] != null &&
-                            typeof $steps["updateStep"] === "object" &&
-                            typeof $steps["updateStep"].then === "function"
-                          ) {
-                            $steps["updateStep"] = await $steps["updateStep"];
-                          }
-
-                          $steps["invokeGlobalAction"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://gateway.rentamon.com/webhook/abcd",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return {
-                                          phone: $state.form.value.mizboonphone
-                                        };
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
-                          }
-                        }}
-                        submitsForm={true}
-                        type={"primary"}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__uBat9
-                          )}
-                        >
-                          {
-                            "\u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u062f \u0639\u0628\u0648\u0631"
-                          }
-                        </div>
-                      </AntdButton>
-                      <AntdButton
-                        data-plasmic-name={"mizboonsend3"}
-                        data-plasmic-override={overrides.mizboonsend3}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.mizboonsend3
-                        )}
-                        onClick={async () => {
-                          const $steps = {};
-
-                          $steps["updateStep"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["step"]
-                                  },
-                                  operation: 3
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  const oldValue = $stateGet(
-                                    objRoot,
-                                    variablePath
-                                  );
-                                  $stateSet(
-                                    objRoot,
-                                    variablePath,
-                                    oldValue - 1
-                                  );
-                                  return oldValue - 1;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStep"] != null &&
-                            typeof $steps["updateStep"] === "object" &&
-                            typeof $steps["updateStep"].then === "function"
-                          ) {
-                            $steps["updateStep"] = await $steps["updateStep"];
-                          }
-                        }}
-                        submitsForm={true}
-                        type={"primary"}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__zpAiR
-                          )}
-                        >
-                          {"\u0642\u0628\u0644\u06cc"}
-                        </div>
-                      </AntdButton>
-                    </div>
-                    {(() => {
-                      try {
-                        return $state.step == 13;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__lIsyL
-                        )}
-                      >
-                        <FormItemWrapper
-                          className={classNames(
-                            "__wab_instance",
-                            sty.formField__dFzDc
-                          )}
-                          label={
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__tYjoY
-                              )}
-                            >
-                              {
-                                "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0645\u06cc\u0632\u0628\u0648\u0646 (\u067e\u06cc\u0627\u0645\u06a9):"
-                              }
-                            </div>
-                          }
-                          name={"mizboonOTP"}
-                        >
-                          {(() => {
-                            const child$Props = {
-                              className: classNames(
-                                "__wab_instance",
-                                sty.input18
-                              ),
-                              onChange: async (...eventArgs: any) => {
-                                generateStateOnChangePropForCodeComponents(
-                                  $state,
-                                  "value",
-                                  ["input18", "value"],
-                                  AntdInput_Helpers
-                                ).apply(null, eventArgs);
-                              },
-                              placeholder: (() => {
-                                try {
-                                  return undefined;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })(),
-                              size: "large",
-                              value: generateStateValueProp($state, [
-                                "input18",
-                                "value"
-                              ])
-                            };
-                            initializeCodeComponentStates(
-                              $state,
-                              [
-                                {
-                                  name: "value",
-                                  plasmicStateName: "input18.value"
-                                }
-                              ],
-                              [],
-                              AntdInput_Helpers ?? {},
-                              child$Props
-                            );
-
-                            return (
-                              <AntdInput
-                                data-plasmic-name={"input18"}
-                                data-plasmic-override={overrides.input18}
-                                {...child$Props}
-                              />
-                            );
-                          })()}
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__lZa21
-                            )}
-                          >
-                            <AntdButton
-                              data-plasmic-name={"mizboonverify"}
-                              data-plasmic-override={overrides.mizboonverify}
-                              className={classNames(
-                                "__wab_instance",
-                                sty.mizboonverify
-                              )}
-                              onClick={async () => {
-                                const $steps = {};
-
-                                $steps["updateStep"] = true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2
-                                      };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
-                                        }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["updateStep"] != null &&
-                                  typeof $steps["updateStep"] === "object" &&
-                                  typeof $steps["updateStep"].then ===
-                                    "function"
-                                ) {
-                                  $steps["updateStep"] = await $steps[
-                                    "updateStep"
-                                  ];
-                                }
-
-                                $steps["invokeGlobalAction"] = true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          "https://gateway.rentamon.com/webhook/05d196d4-09ca-4f38-a274-e2cbfba43adf",
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return {
-                                                phone:
-                                                  $state.form.value
-                                                    .mizboonphone,
-                                                otp: $state.form.value
-                                                  .mizboonOTP
-                                              };
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["invokeGlobalAction"] != null &&
-                                  typeof $steps["invokeGlobalAction"] ===
-                                    "object" &&
-                                  typeof $steps["invokeGlobalAction"].then ===
-                                    "function"
-                                ) {
-                                  $steps["invokeGlobalAction"] = await $steps[
-                                    "invokeGlobalAction"
-                                  ];
-                                }
-                              }}
-                              submitsForm={true}
-                              type={"primary"}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__skYsl
-                                )}
-                              >
-                                {"\u0645\u062a\u0635\u0644 \u06a9\u0646"}
-                              </div>
-                            </AntdButton>
-                            <AntdButton
-                              data-plasmic-name={"mizboonverify4"}
-                              data-plasmic-override={overrides.mizboonverify4}
-                              className={classNames(
-                                "__wab_instance",
-                                sty.mizboonverify4
-                              )}
-                              onClick={async () => {
-                                const $steps = {};
-
-                                $steps["updateStep"] = true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2,
-                                        value: $state.step + 2
-                                      };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
-                                        }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["updateStep"] != null &&
-                                  typeof $steps["updateStep"] === "object" &&
-                                  typeof $steps["updateStep"].then ===
-                                    "function"
-                                ) {
-                                  $steps["updateStep"] = await $steps[
-                                    "updateStep"
-                                  ];
-                                }
-                              }}
-                              submitsForm={true}
-                              type={"primary"}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__nFKh
-                                )}
-                              >
-                                {
-                                  "\u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0646\u062f\u0627\u0631\u0645"
-                                }
-                              </div>
-                            </AntdButton>
-                          </div>
-                        </FormItemWrapper>
-                      </div>
-                    ) : null}
-                  </FormItemWrapper>
                   <div
                     data-plasmic-name={"platformpropertyIds"}
                     data-plasmic-override={overrides.platformpropertyIds}
@@ -10823,6 +10290,8 @@ const PlasmicDescendants = {
     "true7",
     "false7",
     "apiRequest2",
+    "newPlatformPropertyAlert",
+    "platformProperty",
     "guideModal",
     "allConnected",
     "jabamasend9",
@@ -10876,12 +10345,6 @@ const PlasmicDescendants = {
     "input16",
     "homsaVerify",
     "jabamasend7",
-    "input17",
-    "mizboonsend",
-    "mizboonsend3",
-    "input18",
-    "mizboonverify",
-    "mizboonverify4",
     "platformpropertyIds",
     "jajigapp",
     "input19",
@@ -10950,6 +10413,8 @@ const PlasmicDescendants = {
     "true7",
     "false7",
     "apiRequest2",
+    "newPlatformPropertyAlert",
+    "platformProperty",
     "guideModal"
   ],
   helptStack: ["helptStack"],
@@ -10989,7 +10454,9 @@ const PlasmicDescendants = {
     "paltform7",
     "true7",
     "false7",
-    "apiRequest2"
+    "apiRequest2",
+    "newPlatformPropertyAlert",
+    "platformProperty"
   ],
   jajigaStatus: ["jajigaStatus", "_true", "paltform", "_false", "add"],
   _true: ["_true"],
@@ -11026,6 +10493,8 @@ const PlasmicDescendants = {
   true7: ["true7"],
   false7: ["false7"],
   apiRequest2: ["apiRequest2"],
+  newPlatformPropertyAlert: ["newPlatformPropertyAlert", "platformProperty"],
+  platformProperty: ["platformProperty"],
   guideModal: ["guideModal"],
   allConnected: ["allConnected", "jabamasend9"],
   jabamasend9: ["jabamasend9"],
@@ -11080,12 +10549,6 @@ const PlasmicDescendants = {
     "input16",
     "homsaVerify",
     "jabamasend7",
-    "input17",
-    "mizboonsend",
-    "mizboonsend3",
-    "input18",
-    "mizboonverify",
-    "mizboonverify4",
     "platformpropertyIds",
     "jajigapp",
     "input19",
@@ -11155,12 +10618,6 @@ const PlasmicDescendants = {
     "input16",
     "homsaVerify",
     "jabamasend7",
-    "input17",
-    "mizboonsend",
-    "mizboonsend3",
-    "input18",
-    "mizboonverify",
-    "mizboonverify4",
     "platformpropertyIds",
     "jajigapp",
     "input19",
@@ -11292,12 +10749,6 @@ const PlasmicDescendants = {
   input16: ["input16"],
   homsaVerify: ["homsaVerify"],
   jabamasend7: ["jabamasend7"],
-  input17: ["input17"],
-  mizboonsend: ["mizboonsend"],
-  mizboonsend3: ["mizboonsend3"],
-  input18: ["input18"],
-  mizboonverify: ["mizboonverify"],
-  mizboonverify4: ["mizboonverify4"],
   platformpropertyIds: [
     "platformpropertyIds",
     "jajigapp",
@@ -11388,6 +10839,8 @@ type NodeDefaultElementType = {
   true7: typeof PlasmicImg__;
   false7: typeof PlasmicImg__;
   apiRequest2: typeof ApiRequest;
+  newPlatformPropertyAlert: "div";
+  platformProperty: "div";
   guideModal: typeof AntdModal;
   allConnected: "div";
   jabamasend9: typeof AntdButton;
@@ -11441,12 +10894,6 @@ type NodeDefaultElementType = {
   input16: typeof AntdInput;
   homsaVerify: typeof AntdButton;
   jabamasend7: typeof AntdButton;
-  input17: typeof AntdInput;
-  mizboonsend: typeof AntdButton;
-  mizboonsend3: typeof AntdButton;
-  input18: typeof AntdInput;
-  mizboonverify: typeof AntdButton;
-  mizboonverify4: typeof AntdButton;
   platformpropertyIds: "div";
   jajigapp: "div";
   input19: typeof AntdInput;
@@ -11579,6 +11026,8 @@ export const PlasmicActivationDuplicateConnection = Object.assign(
     true7: makeNodeComponent("true7"),
     false7: makeNodeComponent("false7"),
     apiRequest2: makeNodeComponent("apiRequest2"),
+    newPlatformPropertyAlert: makeNodeComponent("newPlatformPropertyAlert"),
+    platformProperty: makeNodeComponent("platformProperty"),
     guideModal: makeNodeComponent("guideModal"),
     allConnected: makeNodeComponent("allConnected"),
     jabamasend9: makeNodeComponent("jabamasend9"),
@@ -11632,12 +11081,6 @@ export const PlasmicActivationDuplicateConnection = Object.assign(
     input16: makeNodeComponent("input16"),
     homsaVerify: makeNodeComponent("homsaVerify"),
     jabamasend7: makeNodeComponent("jabamasend7"),
-    input17: makeNodeComponent("input17"),
-    mizboonsend: makeNodeComponent("mizboonsend"),
-    mizboonsend3: makeNodeComponent("mizboonsend3"),
-    input18: makeNodeComponent("input18"),
-    mizboonverify: makeNodeComponent("mizboonverify"),
-    mizboonverify4: makeNodeComponent("mizboonverify4"),
     platformpropertyIds: makeNodeComponent("platformpropertyIds"),
     jajigapp: makeNodeComponent("jajigapp"),
     input19: makeNodeComponent("input19"),

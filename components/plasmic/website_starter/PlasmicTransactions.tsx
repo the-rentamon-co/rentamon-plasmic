@@ -679,7 +679,7 @@ function PlasmicTransactions__RenderFunc(props: {
                                   operation: 0,
                                   value:
                                     // if ($state.apiRequest.data[currentIndex].transaction_type == "withdraw") {
-                                    //   return $state.showDetails = true
+                                    //   return $state.withdraw.open = true
                                     // } else {
                                     //   return $state.showDetails = true
                                     // }
@@ -2672,57 +2672,39 @@ function PlasmicTransactions__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["goToBookings"] = true
+                      $steps["runCode"] = true
                         ? (() => {
                             const actionArgs = {
-                              destination: `/bookings/${(() => {
-                                try {
-                                  return (() => {
-                                    let result = "";
-                                    const bookingId =
-                                      $state.modalData.booking_id;
-                                    if (
-                                      bookingId &&
-                                      bookingId.startsWith("RNT")
-                                    ) {
-                                      result = bookingId.substring(3);
-                                    } else {
-                                      result = bookingId;
-                                    }
-                                    return result;
-                                  })();
-                                } catch (e) {
+                              customFunction: async () => {
+                                return (() => {
+                                  let result = "";
+                                  const bookingId = $state.modalData.booking_id;
                                   if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
+                                    bookingId &&
+                                    bookingId.startsWith("RNT")
                                   ) {
-                                    return undefined;
+                                    result = bookingId.substring(3);
+                                  } else {
+                                    result = bookingId;
                                   }
-                                  throw e;
-                                }
-                              })()}`
-                            };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
+                                  return window.open(
+                                    `https://rentamon.com/bookings/${result}`,
+                                    "_blank"
+                                  );
+                                })();
                               }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;
                       if (
-                        $steps["goToBookings"] != null &&
-                        typeof $steps["goToBookings"] === "object" &&
-                        typeof $steps["goToBookings"].then === "function"
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
                       ) {
-                        $steps["goToBookings"] = await $steps["goToBookings"];
+                        $steps["runCode"] = await $steps["runCode"];
                       }
                     }}
                   >
@@ -2822,6 +2804,27 @@ function PlasmicTransactions__RenderFunc(props: {
                           projectcss.__wab_text,
                           sty.text__yktVa
                         )}
+                        style={(() => {
+                          try {
+                            return (() => {
+                              if (currentItem.is_free == true) {
+                                return {
+                                  "text-decoration-line": "line-through",
+                                  "text-decoration-color": "red",
+                                  "text-decoration-thickness": "1.5px"
+                                };
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
                       >
                         {hasVariant(globalVariants, "screen", "mobile") ? (
                           <React.Fragment>
@@ -2869,6 +2872,27 @@ function PlasmicTransactions__RenderFunc(props: {
                           projectcss.__wab_text,
                           sty.text__h09EG
                         )}
+                        style={(() => {
+                          try {
+                            return (() => {
+                              if (currentItem.is_free == true) {
+                                return {
+                                  "text-decoration-line": "line-through",
+                                  "text-decoration-color": "red",
+                                  "text-decoration-thickness": "1.5px"
+                                };
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
                       >
                         <React.Fragment>
                           {(() => {
@@ -2889,6 +2913,37 @@ function PlasmicTransactions__RenderFunc(props: {
                           })()}
                         </React.Fragment>
                       </div>
+                      {(() => {
+                        try {
+                          return currentItem.is_free;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__a7Nc4)}
+                          displayHeight={"24px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image175.svg",
+                            fullWidth: 16,
+                            fullHeight: 17,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      ) : null}
                       <div
                         className={classNames(
                           projectcss.all,
@@ -2966,7 +3021,10 @@ function PlasmicTransactions__RenderFunc(props: {
                               const features = $state.modalData.feature;
                               const totalCommission = features.reduce(
                                 (sum, item) => {
-                                  return sum + (item.commission_amount || 0);
+                                  if (!item.is_free) {
+                                    return sum + (item.commission_amount || 0);
+                                  }
+                                  return sum;
                                 },
                                 0
                               );
@@ -2978,7 +3036,7 @@ function PlasmicTransactions__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "\u06f1\u06f2\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646";
+                              return " ";
                             }
                             throw e;
                           }
@@ -3018,7 +3076,10 @@ function PlasmicTransactions__RenderFunc(props: {
                               const features = $state.modalData.feature;
                               const totalCommission = features.reduce(
                                 (sum, item) => {
-                                  return sum + (item.commission_amount || 0);
+                                  if (!item.is_free) {
+                                    return sum + (item.commission_amount || 0);
+                                  }
+                                  return sum;
                                 },
                                 0
                               );
@@ -3083,8 +3144,10 @@ function PlasmicTransactions__RenderFunc(props: {
                               const features = $state.modalData.feature;
                               const totals = features.reduce(
                                 (acc, item) => {
-                                  acc.amount += item.commission_amount || 0;
-                                  acc.rate += item.commission_rate || 0;
+                                  if (!item.is_free) {
+                                    acc.amount += item.commission_amount || 0;
+                                    acc.rate += item.commission_rate || 0;
+                                  }
                                   return acc;
                                 },
                                 {
@@ -3143,8 +3206,10 @@ function PlasmicTransactions__RenderFunc(props: {
                               const features = $state.modalData.feature;
                               const totals = features.reduce(
                                 (acc, item) => {
-                                  acc.amount += item.commission_amount || 0;
-                                  acc.rate += item.commission_rate || 0;
+                                  if (!item.is_free) {
+                                    acc.amount += item.commission_amount || 0;
+                                    acc.rate += item.commission_rate || 0;
+                                  }
                                   return acc;
                                 },
                                 {
