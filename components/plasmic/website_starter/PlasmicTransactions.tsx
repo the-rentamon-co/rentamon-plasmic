@@ -677,14 +677,16 @@ function PlasmicTransactions__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   operation: 0,
-                                  value:
-                                    // if ($state.apiRequest.data[currentIndex].transaction_type == "withdraw") {
-                                    //   return $state.showDetails = true
-                                    // } else {
-                                    //   return $state.showDetails = true
-                                    // }
-
-                                    ($state.showDetails = true)
+                                  value: (() => {
+                                    if (
+                                      $state.apiRequest.data[currentIndex]
+                                        .transaction_type == "withdraw"
+                                    ) {
+                                      return ($state.withdraw.open = true);
+                                    } else {
+                                      return ($state.deposit.open = true);
+                                    }
+                                  })()
                                 };
                                 return (({
                                   variable,
