@@ -109,6 +109,23 @@ export type PlasmicTransactions__OverridesType = {
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
+  withdraw2?: Flex__<"div">;
+  title?: Flex__<"div">;
+  date?: Flex__<"div">;
+  properties?: Flex__<"div">;
+  totalAmount?: Flex__<"div">;
+  reserveCode?: Flex__<"div">;
+  commission?: Flex__<"div">;
+  title2?: Flex__<"div">;
+  feature?: Flex__<"div">;
+  sum?: Flex__<"div">;
+  comment3?: Flex__<"div">;
+  deposit2?: Flex__<"div">;
+  title3?: Flex__<"div">;
+  date2?: Flex__<"div">;
+  properties2?: Flex__<"div">;
+  totalAmount2?: Flex__<"div">;
+  comment4?: Flex__<"div">;
 };
 
 export interface DefaultTransactionsProps {}
@@ -235,6 +252,12 @@ function PlasmicTransactions__RenderFunc(props: {
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+      },
+      {
+        path: "showDetails",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -593,7 +616,10 @@ function PlasmicTransactions__RenderFunc(props: {
                                             .is_reserved,
                                         comment:
                                           $state.apiRequest.data[currentIndex]
-                                            .comment
+                                            .comment,
+                                        booking_id: currentItem.booking_id,
+                                        transaction_type:
+                                          currentItem.transaction_type
                                       });
                                     } else {
                                       return ($state.modalData = {
@@ -612,7 +638,9 @@ function PlasmicTransactions__RenderFunc(props: {
                                             .is_reserved,
                                         comment:
                                           $state.apiRequest.data[currentIndex]
-                                            .comment
+                                            .comment,
+                                        transaction_type:
+                                          currentItem.transaction_type
                                       });
                                     }
                                   })()
@@ -649,16 +677,14 @@ function PlasmicTransactions__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   operation: 0,
-                                  value: (() => {
-                                    if (
-                                      $state.apiRequest.data[currentIndex]
-                                        .transaction_type == "withdraw"
-                                    ) {
-                                      return ($state.withdraw.open = true);
-                                    } else {
-                                      return ($state.deposit.open = true);
-                                    }
-                                  })()
+                                  value:
+                                    // if ($state.apiRequest.data[currentIndex].transaction_type == "withdraw") {
+                                    //   return $state.showDetails = true
+                                    // } else {
+                                    //   return $state.showDetails = true
+                                    // }
+
+                                    ($state.showDetails = true)
                                 };
                                 return (({
                                   variable,
@@ -2247,6 +2273,1221 @@ function PlasmicTransactions__RenderFunc(props: {
             data-plasmic-override={overrides.faviconRntComponent}
             className={classNames("__wab_instance", sty.faviconRntComponent)}
           />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              sty.freeBox__soTXc,
+              (() => {
+                try {
+                  return (() => {
+                    if ($state.showDetails == true) {
+                      return "modal-overlay open";
+                    }
+                    return "modal-overlay";
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()
+            )}
+          >
+            <div
+              data-plasmic-name={"withdraw2"}
+              data-plasmic-override={overrides.withdraw2}
+              className={classNames(
+                projectcss.all,
+                sty.withdraw2,
+                (() => {
+                  try {
+                    return $state.showDetails &&
+                      $state.modalData.transaction_type == "withdraw"
+                      ? "modal-content open"
+                      : "modal-content";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()
+              )}
+            >
+              <div
+                data-plasmic-name={"title"}
+                data-plasmic-override={overrides.title}
+                className={classNames(projectcss.all, sty.title)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__bqRzj)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__mVg1B)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateShowDetails"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["showDetails"]
+                              },
+                              operation: 0,
+                              value: ($state.showDetails = false)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateShowDetails"] != null &&
+                        typeof $steps["updateShowDetails"] === "object" &&
+                        typeof $steps["updateShowDetails"].then === "function"
+                      ) {
+                        $steps["updateShowDetails"] = await $steps[
+                          "updateShowDetails"
+                        ];
+                      }
+                    }}
+                    src={{
+                      src: "/plasmic/website_starter/images/image166.svg",
+                      fullWidth: 18,
+                      fullHeight: 18,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__rOwmd)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gzRXd
+                    )}
+                  >
+                    {"\u0628\u0631\u062f\u0627\u0634\u062a"}
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"date"}
+                data-plasmic-override={overrides.date}
+                className={classNames(projectcss.all, sty.date)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__uFEj)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__b6OdK
+                    )}
+                  >
+                    {
+                      "\u062a\u0627\u0631\u06cc\u062e \u062a\u0631\u0627\u06a9\u0646\u0634"
+                    }
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__kDgqy)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bvrN
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
+                            const persianMonths = [
+                              "فروردین",
+                              "اردیبهشت",
+                              "خرداد",
+                              "تیر",
+                              "مرداد",
+                              "شهریور",
+                              "مهر",
+                              "آبان",
+                              "آذر",
+                              "دی",
+                              "بهمن",
+                              "اسفند"
+                            ];
+
+                            const persianWeekdays = [
+                              "یک‌شنبه",
+                              "دوشنبه",
+                              "سه‌شنبه",
+                              "چهارشنبه",
+                              "پنج‌شنبه",
+                              "جمعه",
+                              "شنبه"
+                            ];
+
+                            function toPersianDigits(input) {
+                              const persianDigits = [
+                                "۰",
+                                "۱",
+                                "۲",
+                                "۳",
+                                "۴",
+                                "۵",
+                                "۶",
+                                "۷",
+                                "۸",
+                                "۹"
+                              ];
+
+                              return input
+                                .toString()
+                                .replace(/\d/g, d => persianDigits[d]);
+                            }
+                            function toJalali(gYear, gMonth, gDay) {
+                              const gDaysInMonth = [
+                                31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+                              ];
+
+                              const jDaysInMonth = [
+                                31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                              ];
+
+                              let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                              let gm = gMonth - 1;
+                              let gd = gDay - 1;
+                              let gDayNo =
+                                365 * gy +
+                                Math.floor((gy + 3) / 4) -
+                                Math.floor((gy + 99) / 100) +
+                                Math.floor((gy + 399) / 400);
+                              for (let i = 0; i < gm; ++i)
+                                gDayNo += gDaysInMonth[i];
+                              gDayNo += gd;
+                              let jDayNo = gDayNo - (gYear >= 1600 ? 79 : 0);
+                              let jNp = Math.floor(jDayNo / 12053);
+                              jDayNo %= 12053;
+                              let jYear =
+                                979 + 33 * jNp + 4 * Math.floor(jDayNo / 1461);
+                              jDayNo %= 1461;
+                              if (jDayNo >= 366) {
+                                jYear += Math.floor((jDayNo - 1) / 365);
+                                jDayNo = (jDayNo - 1) % 365;
+                              }
+                              let jMonth;
+                              for (
+                                jMonth = 0;
+                                jMonth < 11 && jDayNo >= jDaysInMonth[jMonth];
+                                ++jMonth
+                              )
+                                jDayNo -= jDaysInMonth[jMonth];
+                              let jDay = jDayNo + 1;
+                              return {
+                                jy: jYear + (gYear >= 1600 ? 1600 : 621),
+                                jm: jMonth + 1,
+                                jd: jDay
+                              };
+                            }
+                            function formatLondonTimeToTehranPersian(
+                              dateString
+                            ) {
+                              const date = new Date(dateString);
+                              const timePart = date.toLocaleTimeString(
+                                "fa-IR",
+                                {
+                                  timeZone: "Asia/Tehran",
+                                  hour12: false,
+                                  hour: "2-digit",
+                                  minute: "2-digit"
+                                }
+                              );
+                              const tehranDate = new Date(
+                                date.toLocaleString("en-US", {
+                                  timeZone: "Asia/Tehran"
+                                })
+                              );
+                              const gYear = tehranDate.getFullYear();
+                              const gMonth = tehranDate.getMonth() + 1;
+                              const gDay = tehranDate.getDate();
+                              const weekdayIndex = tehranDate.getDay();
+                              const { jm, jd } = toJalali(gYear, gMonth, gDay);
+                              const weekday = persianWeekdays[weekdayIndex];
+                              const monthName = persianMonths[jm - 1];
+                              return `${timePart} - ${weekday} ${toPersianDigits(
+                                jd
+                              )} ${monthName}`;
+                            }
+                            const inputTime = $state.modalData.date;
+                            const outputTime =
+                              formatLondonTimeToTehranPersian(inputTime);
+                            return outputTime;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return " ";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"properties"}
+                data-plasmic-override={overrides.properties}
+                className={classNames(projectcss.all, sty.properties)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__ab711)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ws6Ey
+                    )}
+                  >
+                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__oKk2K)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__aj3T
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.modalData.property_name;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return " ";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"totalAmount"}
+                data-plasmic-override={overrides.totalAmount}
+                className={classNames(projectcss.all, sty.totalAmount)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__dg3NX)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___0YUa1
+                    )}
+                  >
+                    {"\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__necMc)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__hPr6A
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.modalData.reserved_amount + " تومان";
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return " ";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"reserveCode"}
+                data-plasmic-override={overrides.reserveCode}
+                className={classNames(projectcss.all, sty.reserveCode)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox___7TiX)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dxj9F
+                    )}
+                  >
+                    {"\u06a9\u062f \u0631\u0632\u0631\u0648"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__fbZuj)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zZqaz
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToBookings"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: `/bookings/${(() => {
+                                try {
+                                  return (() => {
+                                    let result = "";
+                                    const bookingId =
+                                      $state.modalData.booking_id;
+                                    if (
+                                      bookingId &&
+                                      bookingId.startsWith("RNT")
+                                    ) {
+                                      result = bookingId.substring(3);
+                                    } else {
+                                      result = bookingId;
+                                    }
+                                    return result;
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}`
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToBookings"] != null &&
+                        typeof $steps["goToBookings"] === "object" &&
+                        typeof $steps["goToBookings"].then === "function"
+                      ) {
+                        $steps["goToBookings"] = await $steps["goToBookings"];
+                      }
+                    }}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.modalData.booking_id;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return " ";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__cnMt2)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? {
+                            src: "/plasmic/website_starter/images/image174.svg",
+                            fullWidth: 14,
+                            fullHeight: 14,
+                            aspectRatio: undefined
+                          }
+                        : {
+                            src: "/plasmic/website_starter/images/image174.svg",
+                            fullWidth: 14,
+                            fullHeight: 14,
+                            aspectRatio: undefined
+                          }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"commission"}
+                data-plasmic-override={overrides.commission}
+                className={classNames(projectcss.all, sty.commission)}
+              >
+                <div
+                  data-plasmic-name={"title2"}
+                  data-plasmic-override={overrides.title2}
+                  className={classNames(projectcss.all, sty.title2)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ebvQ9
+                    )}
+                  >
+                    {
+                      "\u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                    }
+                  </div>
+                </div>
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return $state.modalData.feature;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
+                    <div
+                      data-plasmic-name={"feature"}
+                      data-plasmic-override={overrides.feature}
+                      className={classNames(projectcss.all, sty.feature)}
+                      key={currentIndex}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__yktVa
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (() => {
+                                  let a = currentItem.commission_amount / 10;
+                                  return a.toLocaleString("fa") + " تومان";
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u06f1\u06f2\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (() => {
+                                  let a = currentItem.commission_amount / 10;
+                                  return a.toLocaleString("fa") + " تومان";
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u06f1\u06f2\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        )}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__h09EG
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (
+                                "%" +
+                                currentItem.commission_rate.toLocaleString("fa")
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return " ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__jd6Yw
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (
+                                " - " +
+                                (currentItem.feature_name == "auto_sync"
+                                  ? "بروز رسانی خودکار"
+                                  : "رزرو هوشمند")
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return " ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  );
+                })}
+                <div
+                  data-plasmic-name={"sum"}
+                  data-plasmic-override={overrides.sum}
+                  className={classNames(projectcss.all, sty.sum)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__eoTv
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const features = $state.modalData.feature;
+                              const sumOfCommissions = features.reduce(
+                                (total, feature) => {
+                                  if (feature.is_free) {
+                                    return total;
+                                  }
+                                  const commission =
+                                    Number(feature.commission_amount) || 0;
+                                  return total + commission;
+                                },
+                                0
+                              );
+                              $state.modalData.feature.totalCommission =
+                                sumOfCommissions;
+                              return (
+                                sumOfCommissions.toLocaleString("fa") + " تومان"
+                              );
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u06f1\u06f2\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const features = $state.modalData.feature;
+                              const sumOfCommissions = features.reduce(
+                                (total, feature) => {
+                                  if (feature.is_free) {
+                                    return total;
+                                  }
+                                  const commission =
+                                    Number(feature.commission_amount) || 0;
+                                  return total + commission;
+                                },
+                                0
+                              );
+                              const final_sum = sumOfCommissions / 10;
+                              $state.modalData.feature.totalCommission =
+                                sumOfCommissions;
+                              return final_sum.toLocaleString("fa") + " نومان";
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u06f1\u06f2\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    )}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__nopq8
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
+                            const features = $state.modalData.feature;
+                            const sumOfCommissions = features.reduce(
+                              (total, feature) => {
+                                if (feature.is_free) {
+                                  return total;
+                                }
+                                const commission =
+                                  Number(feature.commission_rate) || 0;
+                                return total + commission;
+                              },
+                              0
+                            );
+                            $state.modalData.feature.totalCommission =
+                              sumOfCommissions;
+                            return "%" + sumOfCommissions.toLocaleString("fa");
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return " ";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rZ3Do
+                    )}
+                  >
+                    {"\u062c\u0645\u0639"}
+                  </div>
+                </div>
+                {(() => {
+                  try {
+                    return $state.modalData.comment == true;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    data-plasmic-name={"comment3"}
+                    data-plasmic-override={overrides.comment3}
+                    className={classNames(projectcss.all, sty.comment3)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uN9V4
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $state.modalData.comment;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"deposit2"}
+              data-plasmic-override={overrides.deposit2}
+              className={classNames(
+                projectcss.all,
+                sty.deposit2,
+                (() => {
+                  try {
+                    return $state.showDetails &&
+                      $state.modalData.transaction_type == "deposit"
+                      ? "modal-content open"
+                      : "modal-content";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()
+              )}
+            >
+              <div
+                data-plasmic-name={"title3"}
+                data-plasmic-override={overrides.title3}
+                className={classNames(projectcss.all, sty.title3)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__rfIm5)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___4UhIh)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateShowDetails"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["showDetails"]
+                              },
+                              operation: 0,
+                              value: ($state.showDetails = false)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateShowDetails"] != null &&
+                        typeof $steps["updateShowDetails"] === "object" &&
+                        typeof $steps["updateShowDetails"].then === "function"
+                      ) {
+                        $steps["updateShowDetails"] = await $steps[
+                          "updateShowDetails"
+                        ];
+                      }
+                    }}
+                    src={{
+                      src: "/plasmic/website_starter/images/image166.svg",
+                      fullWidth: 18,
+                      fullHeight: 18,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__hh4Gh)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__pZnY6
+                    )}
+                  >
+                    {"\u0648\u0627\u0631\u06cc\u0632\n"}
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"date2"}
+                data-plasmic-override={overrides.date2}
+                className={classNames(projectcss.all, sty.date2)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__gEdhn)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ogEu
+                    )}
+                  >
+                    {
+                      "\u062a\u0627\u0631\u06cc\u062e \u062a\u0631\u0627\u06a9\u0646\u0634"
+                    }
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__agn3J)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__uf6EM
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
+                            const persianMonths = [
+                              "فروردین",
+                              "اردیبهشت",
+                              "خرداد",
+                              "تیر",
+                              "مرداد",
+                              "شهریور",
+                              "مهر",
+                              "آبان",
+                              "آذر",
+                              "دی",
+                              "بهمن",
+                              "اسفند"
+                            ];
+
+                            const persianWeekdays = [
+                              "یک‌شنبه",
+                              "دوشنبه",
+                              "سه‌شنبه",
+                              "چهارشنبه",
+                              "پنج‌شنبه",
+                              "جمعه",
+                              "شنبه"
+                            ];
+
+                            function toPersianDigits(input) {
+                              const persianDigits = [
+                                "۰",
+                                "۱",
+                                "۲",
+                                "۳",
+                                "۴",
+                                "۵",
+                                "۶",
+                                "۷",
+                                "۸",
+                                "۹"
+                              ];
+
+                              return input
+                                .toString()
+                                .replace(/\d/g, d => persianDigits[d]);
+                            }
+                            function toJalali(gYear, gMonth, gDay) {
+                              const gDaysInMonth = [
+                                31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+                              ];
+
+                              const jDaysInMonth = [
+                                31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                              ];
+
+                              let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                              let gm = gMonth - 1;
+                              let gd = gDay - 1;
+                              let gDayNo =
+                                365 * gy +
+                                Math.floor((gy + 3) / 4) -
+                                Math.floor((gy + 99) / 100) +
+                                Math.floor((gy + 399) / 400);
+                              for (let i = 0; i < gm; ++i)
+                                gDayNo += gDaysInMonth[i];
+                              gDayNo += gd;
+                              let jDayNo = gDayNo - (gYear >= 1600 ? 79 : 0);
+                              let jNp = Math.floor(jDayNo / 12053);
+                              jDayNo %= 12053;
+                              let jYear =
+                                979 + 33 * jNp + 4 * Math.floor(jDayNo / 1461);
+                              jDayNo %= 1461;
+                              if (jDayNo >= 366) {
+                                jYear += Math.floor((jDayNo - 1) / 365);
+                                jDayNo = (jDayNo - 1) % 365;
+                              }
+                              let jMonth;
+                              for (
+                                jMonth = 0;
+                                jMonth < 11 && jDayNo >= jDaysInMonth[jMonth];
+                                ++jMonth
+                              )
+                                jDayNo -= jDaysInMonth[jMonth];
+                              let jDay = jDayNo + 1;
+                              return {
+                                jy: jYear + (gYear >= 1600 ? 1600 : 621),
+                                jm: jMonth + 1,
+                                jd: jDay
+                              };
+                            }
+                            function formatLondonTimeToTehranPersian(
+                              dateString
+                            ) {
+                              const date = new Date(dateString);
+                              const timePart = date.toLocaleTimeString(
+                                "fa-IR",
+                                {
+                                  timeZone: "Asia/Tehran",
+                                  hour12: false,
+                                  hour: "2-digit",
+                                  minute: "2-digit"
+                                }
+                              );
+                              const tehranDate = new Date(
+                                date.toLocaleString("en-US", {
+                                  timeZone: "Asia/Tehran"
+                                })
+                              );
+                              const gYear = tehranDate.getFullYear();
+                              const gMonth = tehranDate.getMonth() + 1;
+                              const gDay = tehranDate.getDate();
+                              const weekdayIndex = tehranDate.getDay();
+                              const { jm, jd } = toJalali(gYear, gMonth, gDay);
+                              const weekday = persianWeekdays[weekdayIndex];
+                              const monthName = persianMonths[jm - 1];
+                              return `${timePart} - ${weekday} ${toPersianDigits(
+                                jd
+                              )} ${monthName}`;
+                            }
+                            const inputTime = $state.modalData.date;
+                            const outputTime =
+                              formatLondonTimeToTehranPersian(inputTime);
+                            return outputTime;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return " ";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"properties2"}
+                data-plasmic-override={overrides.properties2}
+                className={classNames(projectcss.all, sty.properties2)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__ydP9)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__qzZ7V
+                    )}
+                  >
+                    {"\u0648\u0627\u0631\u06cc\u0632"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__wOc0)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bZe3M
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.modalData.reserved_amount + " تومان";
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return " ";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"totalAmount2"}
+                data-plasmic-override={overrides.totalAmount2}
+                className={classNames(projectcss.all, sty.totalAmount2)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__jEfup)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___09Sx
+                    )}
+                  >
+                    {"\u0639\u0646\u0648\u0627\u0646"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__dd3QZ)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fwVVf
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.modalData.transaction_cause;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u0639\u0648\u062f\u062a \u0648\u062c\u0647";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              </div>
+              {(() => {
+                try {
+                  return $state.modalData.comment != null;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return false;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  data-plasmic-name={"comment4"}
+                  data-plasmic-override={overrides.comment4}
+                  className={classNames(projectcss.all, sty.comment4)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__aGe3G
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.modalData.comment;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return " ";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -2271,7 +3512,24 @@ const PlasmicDescendants = {
     "comment2",
     "navbarRntFooter",
     "clarityRntComponent",
-    "faviconRntComponent"
+    "faviconRntComponent",
+    "withdraw2",
+    "title",
+    "date",
+    "properties",
+    "totalAmount",
+    "reserveCode",
+    "commission",
+    "title2",
+    "feature",
+    "sum",
+    "comment3",
+    "deposit2",
+    "title3",
+    "date2",
+    "properties2",
+    "totalAmount2",
+    "comment4"
   ],
   header: ["header", "sideBar2", "profile", "tableHeader", "item"],
   sideBar2: ["sideBar2"],
@@ -2288,7 +3546,43 @@ const PlasmicDescendants = {
   comment2: ["comment2"],
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"]
+  faviconRntComponent: ["faviconRntComponent"],
+  withdraw2: [
+    "withdraw2",
+    "title",
+    "date",
+    "properties",
+    "totalAmount",
+    "reserveCode",
+    "commission",
+    "title2",
+    "feature",
+    "sum",
+    "comment3"
+  ],
+  title: ["title"],
+  date: ["date"],
+  properties: ["properties"],
+  totalAmount: ["totalAmount"],
+  reserveCode: ["reserveCode"],
+  commission: ["commission", "title2", "feature", "sum", "comment3"],
+  title2: ["title2"],
+  feature: ["feature"],
+  sum: ["sum"],
+  comment3: ["comment3"],
+  deposit2: [
+    "deposit2",
+    "title3",
+    "date2",
+    "properties2",
+    "totalAmount2",
+    "comment4"
+  ],
+  title3: ["title3"],
+  date2: ["date2"],
+  properties2: ["properties2"],
+  totalAmount2: ["totalAmount2"],
+  comment4: ["comment4"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2311,6 +3605,23 @@ type NodeDefaultElementType = {
   navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
+  withdraw2: "div";
+  title: "div";
+  date: "div";
+  properties: "div";
+  totalAmount: "div";
+  reserveCode: "div";
+  commission: "div";
+  title2: "div";
+  feature: "div";
+  sum: "div";
+  comment3: "div";
+  deposit2: "div";
+  title3: "div";
+  date2: "div";
+  properties2: "div";
+  totalAmount2: "div";
+  comment4: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2389,6 +3700,23 @@ export const PlasmicTransactions = Object.assign(
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
+    withdraw2: makeNodeComponent("withdraw2"),
+    title: makeNodeComponent("title"),
+    date: makeNodeComponent("date"),
+    properties: makeNodeComponent("properties"),
+    totalAmount: makeNodeComponent("totalAmount"),
+    reserveCode: makeNodeComponent("reserveCode"),
+    commission: makeNodeComponent("commission"),
+    title2: makeNodeComponent("title2"),
+    feature: makeNodeComponent("feature"),
+    sum: makeNodeComponent("sum"),
+    comment3: makeNodeComponent("comment3"),
+    deposit2: makeNodeComponent("deposit2"),
+    title3: makeNodeComponent("title3"),
+    date2: makeNodeComponent("date2"),
+    properties2: makeNodeComponent("properties2"),
+    totalAmount2: makeNodeComponent("totalAmount2"),
+    comment4: makeNodeComponent("comment4"),
 
     // Metadata about props expected for PlasmicTransactions
     internalVariantProps: PlasmicTransactions__VariantProps,

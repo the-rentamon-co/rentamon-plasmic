@@ -342,9 +342,13 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     sty.text__yoL2I
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                    : "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                    : "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
                 </div>
               </div>
               <div
@@ -518,6 +522,35 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     {"\u0647\u0648\u0645\u0633\u0627"}
                   </div>
                 </div>
+                <div className={classNames(projectcss.all, sty.freeBox__rtH0T)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__kfEre)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"60px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image.png",
+                      fullWidth: 88,
+                      fullHeight: 88,
+                      aspectRatio: undefined
+                    }}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___6MWV
+                    )}
+                  >
+                    {"\u0634\u0628"}
+                  </div>
+                </div>
               </div>
               <div
                 className={classNames(
@@ -570,7 +603,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0647\u0631 \u0633\u0627\u06cc\u062a \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u0639\u062a \u0632\u0645\u0627\u0646 \u0648 \u06a9\u0644\u06cc \u067e\u06cc\u06af\u06cc\u0631\u06cc \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u0647!"
+                    "\u062b\u0628\u062a \u0648\u06cc\u0644\u0627 \u0628\u0631\u0627\u06cc \u0627\u062c\u0627\u0631\u0647\u060c \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0633\u0627\u06cc\u062a \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u0639\u062a \u0632\u0645\u0627\u0646 \u0648 \u06a9\u0644\u06cc \u067e\u06cc\u06af\u06cc\u0631\u06cc \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u0647!"
                   }
                 </div>
                 <div
@@ -1676,9 +1709,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     sty.text__jMcWx
                   )}
                 >
-                  {
-                    "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u06cc\u062a\u060c \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u0648\u0642\u062a\u06cc \u0645\u0633\u0627\u0641\u0631 \u0627\u0633\u0645 \u0634\u0647\u0631 \u06cc\u0627 \u0648\u06cc\u0644\u0627\u06cc \u0634\u0645\u0627 \u0631\u0648 \u062c\u0633\u062a\u062c\u0648 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0627\u062d\u062a\u0645\u0627\u0644 \u062f\u06cc\u062f\u0647 \u0634\u062f\u0646 \u0634\u0645\u0627 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u06af\u0648\u06af\u0644 \u0686\u0646\u062f\u06cc\u0646 \u0628\u0631\u0627\u0628\u0631 \u0628\u0634\u0647. \u0648 \u0627\u06cc\u0646 \u06cc\u0639\u0646\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u0633\u0627\u0641\u0631 \u0648 \u062f\u0631\u0622\u0645\u062f!"
-                  }
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u062f\u0631\u062c \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u06cc\u062a\u060c \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u0648\u0642\u062a\u06cc \u0645\u0633\u0627\u0641\u0631 \u0627\u0633\u0645 \u0634\u0647\u0631 \u06cc\u0627 \u0648\u06cc\u0644\u0627\u06cc \u0634\u0645\u0627 \u0631\u0648 \u062c\u0633\u062a\u062c\u0648 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0627\u062d\u062a\u0645\u0627\u0644 \u062f\u06cc\u062f\u0647 \u0634\u062f\u0646 \u0634\u0645\u0627 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u06af\u0648\u06af\u0644 \u0686\u0646\u062f\u06cc\u0646 \u0628\u0631\u0627\u0628\u0631 \u0628\u0634\u0647. \u0648 \u0627\u06cc\u0646 \u06cc\u0639\u0646\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u0633\u0627\u0641\u0631 \u0648 \u062f\u0631\u0622\u0645\u062f!"
+                    : "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u06cc\u062a\u060c \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u0648\u0642\u062a\u06cc \u0645\u0633\u0627\u0641\u0631 \u0627\u0633\u0645 \u0634\u0647\u0631 \u06cc\u0627 \u0648\u06cc\u0644\u0627\u06cc \u0634\u0645\u0627 \u0631\u0648 \u062c\u0633\u062a\u062c\u0648 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0627\u062d\u062a\u0645\u0627\u0644 \u062f\u06cc\u062f\u0647 \u0634\u062f\u0646 \u0634\u0645\u0627 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u06af\u0648\u06af\u0644 \u0686\u0646\u062f\u06cc\u0646 \u0628\u0631\u0627\u0628\u0631 \u0628\u0634\u0647. \u0648 \u0627\u06cc\u0646 \u06cc\u0639\u0646\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u0633\u0627\u0641\u0631 \u0648 \u062f\u0631\u0622\u0645\u062f!"}
                 </div>
               </div>
             </div>
@@ -1720,6 +1753,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       >
                         {hasVariant(globalVariants, "screen", "smallMobile")
                           ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
                           : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
                       </PlasmicLink__>
                     }
@@ -1738,6 +1773,62 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         platform={"nextjs"}
                       >
                         {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                          : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
+                      }
+                    </span>
+                    <React.Fragment>{"\n- "}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__hwbso
+                        )}
+                        component={Link}
+                        href={"/best-villa-rental-sites"}
+                        platform={"nextjs"}
+                      >
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
+                          : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{"\n"}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__shuOg
+                        )}
+                        component={Link}
+                        href={"/vacation-rental-income"}
+                        platform={"nextjs"}
+                      >
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                          : hasVariant(globalVariants, "screen", "mobile")
                           ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                           : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                       </PlasmicLink__>
@@ -1770,6 +1861,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       >
                         {hasVariant(globalVariants, "screen", "smallMobile")
                           ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
                           : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
                       </PlasmicLink__>
                     }
@@ -1788,6 +1881,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         platform={"nextjs"}
                       >
                         {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                          : hasVariant(globalVariants, "screen", "mobile")
                           ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                           : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                       </PlasmicLink__>

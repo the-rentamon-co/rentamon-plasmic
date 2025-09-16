@@ -137,7 +137,25 @@ function Plasmicثبتآگهیاقامتگاه2__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+
+        <meta
+          key="description"
+          name="description"
+          content={Plasmicثبتآگهیاقامتگاه2.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={Plasmicثبتآگهیاقامتگاه2.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={Plasmicثبتآگهیاقامتگاه2.pageMetadata.description}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -314,7 +332,8 @@ export const Plasmicثبتآگهیاقامتگاه2 = Object.assign(
     // Page metadata
     pageMetadata: {
       title: "",
-      description: "",
+      description:
+        "ثبت رایگان آگهی ویلا، اقامتگاه و سوییت در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.\n",
       ogImageSrc: "",
       canonical: ""
     }

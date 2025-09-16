@@ -2960,6 +2960,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/auth-redirect"
+        },
+        {
+          "id": "X6rxWka4Bgj1",
+          "name": "ActivationDuplicateConnection",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicActivationDuplicateConnection.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/connection/[type].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicActivationDuplicateConnection.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/connection/[type]"
         }
       ],
       "icons": [
@@ -5394,6 +5408,16 @@
           "id": "YEWt7bxxJYyg",
           "name": "shield-security(1).svg",
           "filePath": "../public/plasmic/website_starter/images/shieldSecurity1Svg.svg"
+        },
+        {
+          "id": "cNwsRyV4hBk7",
+          "name": "image 173",
+          "filePath": "../public/plasmic/website_starter/images/image173.svg"
+        },
+        {
+          "id": "eQ0oUaurtcLk",
+          "name": "image 174",
+          "filePath": "../public/plasmic/website_starter/images/image174.svg"
         }
       ],
       "indirect": false,
