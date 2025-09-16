@@ -72,7 +72,6 @@ import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
-import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -231,12 +230,6 @@ export type PlasmicActivationDuplicateConnection__OverridesType = {
   _1?: Flex__<"div">;
   _2?: Flex__<"div">;
   _3?: Flex__<"div">;
-  guidePanel?: Flex__<"div">;
-  _4?: Flex__<"div">;
-  _5?: Flex__<"div">;
-  _6?: Flex__<"div">;
-  quotes?: Flex__<"div">;
-  testimonialsScrolling?: Flex__<typeof TestimonialsScrolling>;
   getNumberOfDisconnectedPlatforms?: Flex__<typeof ApiRequest>;
   sideEffect?: Flex__<typeof SideEffect>;
 };
@@ -5085,33 +5078,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                   ];
                                 }
 
-                                $steps["invokeGlobalAction"] =
-                                  $steps.jabamaVerify.status != 200
-                                    ? (() => {
-                                        const actionArgs = {
-                                          args: [
-                                            "error",
-                                            "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
-                                            "top-center"
-                                          ]
-                                        };
-                                        return $globalActions[
-                                          "Fragment.showToast"
-                                        ]?.apply(null, [...actionArgs.args]);
-                                      })()
-                                    : undefined;
-                                if (
-                                  $steps["invokeGlobalAction"] != null &&
-                                  typeof $steps["invokeGlobalAction"] ===
-                                    "object" &&
-                                  typeof $steps["invokeGlobalAction"].then ===
-                                    "function"
-                                ) {
-                                  $steps["invokeGlobalAction"] = await $steps[
-                                    "invokeGlobalAction"
-                                  ];
-                                }
-
                                 $steps["platformStatus"] = true
                                   ? (() => {
                                       const actionArgs = {
@@ -5155,6 +5121,33 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                 ) {
                                   $steps["platformStatus"] = await $steps[
                                     "platformStatus"
+                                  ];
+                                }
+
+                                $steps["invokeGlobalAction"] =
+                                  $steps.jabamaVerify.status != 200
+                                    ? (() => {
+                                        const actionArgs = {
+                                          args: [
+                                            "error",
+                                            "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
+                                            "top-center"
+                                          ]
+                                        };
+                                        return $globalActions[
+                                          "Fragment.showToast"
+                                        ]?.apply(null, [...actionArgs.args]);
+                                      })()
+                                    : undefined;
+                                if (
+                                  $steps["invokeGlobalAction"] != null &&
+                                  typeof $steps["invokeGlobalAction"] ===
+                                    "object" &&
+                                  typeof $steps["invokeGlobalAction"].then ===
+                                    "function"
+                                ) {
+                                  $steps["invokeGlobalAction"] = await $steps[
+                                    "invokeGlobalAction"
                                   ];
                                 }
                               }}
@@ -10629,472 +10622,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
               ) : null}
             </div>
           ) : null}
-          {(() => {
-            try {
-              return $state.step == 14 && $ctx.params.type == 1;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <div
-              data-plasmic-name={"guidePanel"}
-              data-plasmic-override={overrides.guidePanel}
-              className={classNames(projectcss.all, sty.guidePanel)}
-            >
-              {(() => {
-                try {
-                  return $state.panelGuide == 1;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <div
-                  data-plasmic-name={"_4"}
-                  data-plasmic-override={overrides._4}
-                  className={classNames(projectcss.all, sty._4)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__iSoO6)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "30px"
-                        : "50px"
-                    }
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: ($state.panelGuide = 2)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-                    }}
-                    src={{
-                      src: "/plasmic/website_starter/images/image36.svg",
-                      fullWidth: 21,
-                      fullHeight: 24,
-                      aspectRatio: 0.875
-                    }}
-                  />
-
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___2Vb1E)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "250px"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "400px"
-                        : "500px"
-                    }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/_1Low2Jpg.jpg",
-                      fullWidth: 278,
-                      fullHeight: 575,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </div>
-              ) : null}
-              {(() => {
-                try {
-                  return $state.panelGuide == 2;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <div
-                  data-plasmic-name={"_5"}
-                  data-plasmic-override={overrides._5}
-                  className={classNames(projectcss.all, sty._5)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__bWaus)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "30px"
-                        : "50px"
-                    }
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: ($state.panelGuide = 3)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-                    }}
-                    src={{
-                      src: "/plasmic/website_starter/images/image36.svg",
-                      fullWidth: 21,
-                      fullHeight: 24,
-                      aspectRatio: 0.875
-                    }}
-                  />
-
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__gkcn9)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "250px"
-                        : "500px"
-                    }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/_2Low2Jpg.jpg",
-                      fullWidth: 278,
-                      fullHeight: 575,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__lIl0L)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "30px"
-                        : "50px"
-                    }
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: ($state.panelGuide = 1)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-                    }}
-                    src={{
-                      src: "/plasmic/website_starter/images/image37.svg",
-                      fullWidth: 21,
-                      fullHeight: 24,
-                      aspectRatio: 0.875
-                    }}
-                  />
-                </div>
-              ) : null}
-              {(() => {
-                try {
-                  return $state.panelGuide == 3 && $ctx.params.type == 1;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <div
-                  data-plasmic-name={"_6"}
-                  data-plasmic-override={overrides._6}
-                  className={classNames(projectcss.all, sty._6)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__j8S4)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "30px"
-                        : "50px"
-                    }
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["goToPanelCalendar"] = true
-                        ? (() => {
-                            const actionArgs = { destination: `/panel` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToPanelCalendar"] != null &&
-                        typeof $steps["goToPanelCalendar"] === "object" &&
-                        typeof $steps["goToPanelCalendar"].then === "function"
-                      ) {
-                        $steps["goToPanelCalendar"] = await $steps[
-                          "goToPanelCalendar"
-                        ];
-                      }
-                    }}
-                    src={{
-                      src: "/plasmic/website_starter/images/image36.svg",
-                      fullWidth: 21,
-                      fullHeight: 24,
-                      aspectRatio: 0.875
-                    }}
-                  />
-
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__zhL)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "250px"
-                        : "500px"
-                    }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/_3Low2Jpg.jpg",
-                      fullWidth: 278,
-                      fullHeight: 575,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__bLjUn)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "30px"
-                        : "50px"
-                    }
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateStateVariable"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: ($state.panelGuide = 2)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
-                      }
-                    }}
-                    src={{
-                      src: "/plasmic/website_starter/images/image37.svg",
-                      fullWidth: 21,
-                      fullHeight: 24,
-                      aspectRatio: 0.875
-                    }}
-                  />
-                </div>
-              ) : null}
-            </div>
-          ) : null}
-          {(() => {
-            try {
-              return $ctx.params.type == 1;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <div
-              data-plasmic-name={"quotes"}
-              data-plasmic-override={overrides.quotes}
-              className={classNames(projectcss.all, sty.quotes)}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__nFi1U)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cWt7R
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                    : "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
-                </div>
-                <TestimonialsScrolling
-                  data-plasmic-name={"testimonialsScrolling"}
-                  data-plasmic-override={overrides.testimonialsScrolling}
-                  className={classNames(
-                    "__wab_instance",
-                    sty.testimonialsScrolling
-                  )}
-                />
-              </div>
-            </div>
-          ) : null}
           <div className={classNames(projectcss.all, sty.freeBox___1Dcyb)}>
             <div
               className={classNames(
@@ -11377,12 +10904,6 @@ const PlasmicDescendants = {
     "_1",
     "_2",
     "_3",
-    "guidePanel",
-    "_4",
-    "_5",
-    "_6",
-    "quotes",
-    "testimonialsScrolling",
     "getNumberOfDisconnectedPlatforms",
     "sideEffect"
   ],
@@ -11817,12 +11338,6 @@ const PlasmicDescendants = {
   _1: ["_1"],
   _2: ["_2"],
   _3: ["_3"],
-  guidePanel: ["guidePanel", "_4", "_5", "_6"],
-  _4: ["_4"],
-  _5: ["_5"],
-  _6: ["_6"],
-  quotes: ["quotes", "testimonialsScrolling"],
-  testimonialsScrolling: ["testimonialsScrolling"],
   getNumberOfDisconnectedPlatforms: ["getNumberOfDisconnectedPlatforms"],
   sideEffect: ["sideEffect"]
 } as const;
@@ -11954,12 +11469,6 @@ type NodeDefaultElementType = {
   _1: "div";
   _2: "div";
   _3: "div";
-  guidePanel: "div";
-  _4: "div";
-  _5: "div";
-  _6: "div";
-  quotes: "div";
-  testimonialsScrolling: typeof TestimonialsScrolling;
   getNumberOfDisconnectedPlatforms: typeof ApiRequest;
   sideEffect: typeof SideEffect;
 };
@@ -12151,12 +11660,6 @@ export const PlasmicActivationDuplicateConnection = Object.assign(
     _1: makeNodeComponent("_1"),
     _2: makeNodeComponent("_2"),
     _3: makeNodeComponent("_3"),
-    guidePanel: makeNodeComponent("guidePanel"),
-    _4: makeNodeComponent("_4"),
-    _5: makeNodeComponent("_5"),
-    _6: makeNodeComponent("_6"),
-    quotes: makeNodeComponent("quotes"),
-    testimonialsScrolling: makeNodeComponent("testimonialsScrolling"),
     getNumberOfDisconnectedPlatforms: makeNodeComponent(
       "getNumberOfDisconnectedPlatforms"
     ),
