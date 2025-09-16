@@ -380,7 +380,7 @@
     padding: 0px;
   }
 }
-.jajiga {
+.jajigaStatus {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -394,7 +394,7 @@
   padding: 0px;
 }
 @media (max-width: 350px) {
-  .jajiga {
+  .jajigaStatus {
     padding: 0px;
   }
 }
@@ -494,7 +494,7 @@
   margin-top: 2px;
   min-width: 0;
 }
-.jabama {
+.jabamaStatus {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -587,7 +587,7 @@
   margin-top: 2px;
   min-width: 0;
 }
-.otaghak {
+.otaghakStatus {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -601,7 +601,7 @@
   padding: 8px;
 }
 @media (max-width: 350px) {
-  .otaghak {
+  .otaghakStatus {
     padding: 0px;
   }
 }
@@ -685,7 +685,7 @@
   margin-top: 2px;
   min-width: 0;
 }
-.shab {
+.shabStatus {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -699,7 +699,7 @@
   padding: 8px;
 }
 @media (max-width: 350px) {
-  .shab {
+  .shabStatus {
     padding: 0px;
   }
 }
@@ -887,7 +887,7 @@
   margin-top: 2px;
   min-width: 0;
 }
-.homsa {
+.homsaStatus {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -901,7 +901,7 @@
   padding: 8px;
 }
 @media (max-width: 350px) {
-  .homsa {
+  .homsaStatus {
     padding: 0px;
   }
 }
@@ -987,7 +987,7 @@
   margin-top: 2px;
   min-width: 0;
 }
-.mihmansho2 {
+.mihmanshoStatus {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1001,7 +1001,7 @@
   padding: 8px;
 }
 @media (max-width: 350px) {
-  .mihmansho2 {
+  .mihmanshoStatus {
     padding: 0px;
   }
 }
@@ -1441,6 +1441,17 @@
     min-width: 0;
   }
 }
+.jabama {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
 .jabamaSend:global(.__wab_instance) {
   width: 100%;
   min-width: 0;
@@ -1704,6 +1715,18 @@
   padding-right: 0px;
   min-width: 0;
 }
+.jajiga {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
 .jajigaSendForm:global(.__wab_instance) {
   width: 100%;
   min-width: 0;
@@ -1957,6 +1980,18 @@
   font-size: 17px;
   font-weight: 600;
   min-width: 0;
+}
+.shab {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
 }
 .shabSend:global(.__wab_instance) {
   width: 100%;
@@ -2216,6 +2251,18 @@
   padding-right: 0px;
   font-size: 14px;
   min-width: 0;
+}
+.otaghak {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
 }
 .otaghakSend:global(.__wab_instance) {
   width: 100%;
@@ -2765,7 +2812,7 @@
   color: var(--token-8nedppYkGVaH);
   font-weight: 400;
 }
-.homsaverify {
+.homsa {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -2777,7 +2824,7 @@
   min-width: 0;
   padding: 8px;
 }
-.formField__cE2QM:global(.__wab_instance) {
+.homsaSend:global(.__wab_instance) {
   width: 100%;
   min-width: 0;
 }
@@ -2902,7 +2949,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.formField__vDe1:global(.__wab_instance) {
+.homsaVerify2:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
