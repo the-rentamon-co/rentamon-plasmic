@@ -4,7 +4,7 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicActivationDuplicateConnection } from "../../../components/plasmic/website_starter/PlasmicActivationDuplicateConnection";
+import { PlasmicActivationDuplicateConnection } from "../../components/plasmic/website_starter/PlasmicActivationDuplicateConnection";
 import { useRouter } from "next/router";
 
 function ActivationDuplicateConnection() {
