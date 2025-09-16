@@ -69,7 +69,6 @@ import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
-import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
@@ -151,16 +150,11 @@ export type PlasmicActivationDuplicateConnection__OverridesType = {
   true7?: Flex__<typeof PlasmicImg__>;
   false7?: Flex__<typeof PlasmicImg__>;
   apiRequest2?: Flex__<typeof ApiRequest>;
-  modal?: Flex__<typeof AntdModal>;
+  guideModal?: Flex__<typeof AntdModal>;
   allConnected?: Flex__<"div">;
   jabamasend9?: Flex__<typeof AntdButton>;
   connect?: Flex__<"div">;
   form?: Flex__<typeof FormWrapper>;
-  platforms?: Flex__<typeof FormItemWrapper>;
-  policiesCheckbox?: Flex__<typeof Checkbox>;
-  link?: Flex__<"a"> & Partial<LinkProps>;
-  submitButton?: Flex__<typeof AntdButton>;
-  loadingImg?: Flex__<typeof PlasmicImg__>;
   jabamaSend?: Flex__<typeof FormItemWrapper>;
   jabamaSendOtp?: Flex__<typeof Input>;
   jabamasend2?: Flex__<typeof AntdButton>;
@@ -468,12 +462,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
       {
-        path: "policiesCheckbox.isChecked",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
         path: "apiRequest2.data",
         type: "private",
         variableType: "object",
@@ -498,7 +486,7 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
         refName: "apiRequest2"
       },
       {
-        path: "modal.open",
+        path: "guideModal.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
@@ -996,7 +984,7 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                           const actionArgs = {
                             variable: {
                               objRoot: $state,
-                              variablePath: ["modal", "open"]
+                              variablePath: ["guideModal", "open"]
                             },
                             operation: 0,
                             value: true
@@ -4051,9 +4039,9 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                 ) : null}
               </div>
               <AntdModal
-                data-plasmic-name={"modal"}
-                data-plasmic-override={overrides.modal}
-                className={classNames("__wab_instance", sty.modal)}
+                data-plasmic-name={"guideModal"}
+                data-plasmic-override={overrides.guideModal}
+                className={classNames("__wab_instance", sty.guideModal)}
                 defaultStylesClassName={classNames(
                   projectcss.root_reset,
                   projectcss.plasmic_default_styles,
@@ -4064,14 +4052,14 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                 )}
                 hideFooter={true}
                 maskClosable={true}
-                modalScopeClassName={sty["modal__modal"]}
+                modalScopeClassName={sty["guideModal__modal"]}
                 onOpenChange={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                    null,
-                    eventArgs
-                  );
+                  generateStateOnChangeProp($state, [
+                    "guideModal",
+                    "open"
+                  ]).apply(null, eventArgs);
                 }}
-                open={generateStateValueProp($state, ["modal", "open"])}
+                open={generateStateValueProp($state, ["guideModal", "open"])}
                 title={
                   <React.Fragment>
                     <div
@@ -4104,7 +4092,7 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                               const actionArgs = {
                                 variable: {
                                   objRoot: $state,
-                                  variablePath: ["modal", "open"]
+                                  variablePath: ["guideModal", "open"]
                                 },
                                 operation: 0
                               };
@@ -4437,954 +4425,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                   data-plasmic-override={overrides.form}
                   {...child$Props}
                 >
-                  {(() => {
-                    try {
-                      return $state.step == 0 && $ctx.params.type == 1;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <FormItemWrapper
-                      data-plasmic-name={"platforms"}
-                      data-plasmic-override={overrides.platforms}
-                      className={classNames("__wab_instance", sty.platforms)}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___3Qljd
-                          )}
-                        >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return undefined;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        </div>
-                      }
-                      name={"platforms"}
-                      rules={[]}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___8Xwok
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__qS8Mq
-                          )}
-                        >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ fontWeight: 700, color: "#1F3546" }}
-                            >
-                              {
-                                "\u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062e\u0648\u0634 \u0627\u0648\u0645\u062f\u06cc\ud83d\udc4b"
-                              }
-                            </span>
-                            <React.Fragment>{"\n"}</React.Fragment>
-                          </React.Fragment>
-                        </div>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___4DpRb
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___3PhBf
-                          )}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__jA3T
-                          )}
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__rPUs0
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__dO1Iw
-                          )}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__sVdrY
-                          )}
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__twCem
-                        )}
-                      >
-                        <Checkbox
-                          data-plasmic-name={"policiesCheckbox"}
-                          data-plasmic-override={overrides.policiesCheckbox}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.policiesCheckbox
-                          )}
-                          isChecked={
-                            generateStateValueProp($state, [
-                              "policiesCheckbox",
-                              "isChecked"
-                            ]) ?? false
-                          }
-                          onChange={async (...eventArgs: any) => {
-                            ((...eventArgs) => {
-                              generateStateOnChangeProp($state, [
-                                "policiesCheckbox",
-                                "isChecked"
-                              ])(eventArgs[0]);
-                            }).apply(null, eventArgs);
-
-                            if (
-                              eventArgs.length > 1 &&
-                              eventArgs[1] &&
-                              eventArgs[1]._plasmic_state_init_
-                            ) {
-                              return;
-                            }
-
-                            (async isChecked => {
-                              const $steps = {};
-
-                              $steps["runCode2"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          function getCookieValue(cookieName) {
-                                            const cookies = document.cookie
-                                              .split(";")
-                                              .map(cookie => cookie.trim());
-                                            for (const cookie of cookies) {
-                                              const [name, value] =
-                                                cookie.split("=");
-                                              if (name === cookieName) {
-                                                return value;
-                                              }
-                                            }
-                                            return null;
-                                          }
-                                          if (
-                                            document.cookie.includes(
-                                              "invite_code"
-                                            )
-                                          ) {
-                                            console.log("in the invite");
-                                            const inviteCode =
-                                              getCookieValue("invite_code");
-                                            if (inviteCode != null) {
-                                              $state.invitationCode =
-                                                inviteCode;
-                                              $state.source = "referral";
-                                            }
-                                            console.log(
-                                              "invite_code:",
-                                              $state.invitationCode
-                                            );
-                                          }
-                                          console.log(
-                                            "beetween  to coundition"
-                                          );
-                                          if (
-                                            document.cookie.includes("source")
-                                          ) {
-                                            console.log("in the web_source");
-                                            const user_type =
-                                              getCookieValue("source");
-                                            console.log("user_type", user_type);
-                                            if (user_type != null) {
-                                              $state.source = user_type;
-                                            }
-                                          }
-                                          return console.log(
-                                            "source:",
-                                            $state.source
-                                          );
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode2"] != null &&
-                                typeof $steps["runCode2"] === "object" &&
-                                typeof $steps["runCode2"].then === "function"
-                              ) {
-                                $steps["runCode2"] = await $steps["runCode2"];
-                              }
-
-                              $steps["invokeGlobalAction"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "POST",
-                                        (() => {
-                                          try {
-                                            return (() => {
-                                              if ($ctx.params.type == "1") {
-                                                return "https://gateway.rentamon.com/webhook/user-registration?param=1";
-                                              } else {
-                                                return "";
-                                              }
-                                            })();
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })(),
-                                        undefined,
-                                        (() => {
-                                          try {
-                                            return {
-                                              source: $state.source
-                                            };
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })()
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.apiRequest"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["invokeGlobalAction"] != null &&
-                                typeof $steps["invokeGlobalAction"] ===
-                                  "object" &&
-                                typeof $steps["invokeGlobalAction"].then ===
-                                  "function"
-                              ) {
-                                $steps["invokeGlobalAction"] = await $steps[
-                                  "invokeGlobalAction"
-                                ];
-                              }
-
-                              $steps["invokeGlobalAction2"] =
-                                $steps.invokeGlobalAction.data.message !=
-                                "user is already registered"
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          "https://gateway.rentamon.com/webhook/add_referal_code",
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return (() => {
-                                                return {
-                                                  invitationCode:
-                                                    $state.invitationCode
-                                                };
-                                              })();
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["invokeGlobalAction2"] != null &&
-                                typeof $steps["invokeGlobalAction2"] ===
-                                  "object" &&
-                                typeof $steps["invokeGlobalAction2"].then ===
-                                  "function"
-                              ) {
-                                $steps["invokeGlobalAction2"] = await $steps[
-                                  "invokeGlobalAction2"
-                                ];
-                              }
-
-                              $steps["invokeGlobalAction3"] =
-                                $steps.invokeGlobalAction2.status == 200
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          undefined,
-                                          "\u06a9\u062f \u062f\u0639\u0648\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
-                                          "top-center"
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["invokeGlobalAction3"] != null &&
-                                typeof $steps["invokeGlobalAction3"] ===
-                                  "object" &&
-                                typeof $steps["invokeGlobalAction3"].then ===
-                                  "function"
-                              ) {
-                                $steps["invokeGlobalAction3"] = await $steps[
-                                  "invokeGlobalAction3"
-                                ];
-                              }
-                            }).apply(null, eventArgs);
-                          }}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__lYjDv
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobile") ? (
-                              <React.Fragment>
-                                <span
-                                  className={
-                                    "plasmic_default__all plasmic_default__span"
-                                  }
-                                  style={{ color: "#1F3546" }}
-                                >
-                                  {"\u0645\u0646 "}
-                                </span>
-                                <React.Fragment>{""}</React.Fragment>
-                                {
-                                  <PlasmicLink__
-                                    data-plasmic-name={"link"}
-                                    data-plasmic-override={overrides.link}
-                                    className={classNames(
-                                      projectcss.all,
-                                      projectcss.a,
-                                      projectcss.__wab_text,
-                                      projectcss.plasmic_default__inline,
-                                      sty.link
-                                    )}
-                                    component={Link}
-                                    href={"https://rentamon.com/terms-of-use/"}
-                                    platform={"nextjs"}
-                                  >
-                                    {hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "mobile"
-                                    ) ? (
-                                      <React.Fragment>
-                                        <span
-                                          className={
-                                            "plasmic_default__all plasmic_default__span"
-                                          }
-                                          style={{
-                                            color: "#8165D6",
-                                            fontWeight: 600
-                                          }}
-                                        >
-                                          {
-                                            "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
-                                          }
-                                        </span>
-                                      </React.Fragment>
-                                    ) : (
-                                      <React.Fragment>
-                                        <span
-                                          className={
-                                            "plasmic_default__all plasmic_default__span"
-                                          }
-                                          style={{
-                                            color: "#8165D6",
-                                            fontWeight: 600
-                                          }}
-                                        >
-                                          {
-                                            "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
-                                          }
-                                        </span>
-                                      </React.Fragment>
-                                    )}
-                                  </PlasmicLink__>
-                                }
-                                <React.Fragment>{""}</React.Fragment>
-                                <span
-                                  className={
-                                    "plasmic_default__all plasmic_default__span"
-                                  }
-                                  style={{ color: "#1F3546" }}
-                                >
-                                  {
-                                    " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645."
-                                  }
-                                </span>
-                              </React.Fragment>
-                            ) : (
-                              <React.Fragment>
-                                <span
-                                  className={
-                                    "plasmic_default__all plasmic_default__span"
-                                  }
-                                  style={{ color: "#1F3546" }}
-                                >
-                                  {"\u0645\u0646 "}
-                                </span>
-                                <React.Fragment>{""}</React.Fragment>
-                                {
-                                  <PlasmicLink__
-                                    data-plasmic-name={"link"}
-                                    data-plasmic-override={overrides.link}
-                                    className={classNames(
-                                      projectcss.all,
-                                      projectcss.a,
-                                      projectcss.__wab_text,
-                                      projectcss.plasmic_default__inline,
-                                      sty.link
-                                    )}
-                                    component={Link}
-                                    href={"https://rentamon.com/terms-of-use/"}
-                                    platform={"nextjs"}
-                                  >
-                                    {hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "mobile"
-                                    ) ? (
-                                      <React.Fragment>
-                                        <span
-                                          className={
-                                            "plasmic_default__all plasmic_default__span"
-                                          }
-                                          style={{
-                                            color: "#8165D6",
-                                            fontWeight: 600
-                                          }}
-                                        >
-                                          {
-                                            "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
-                                          }
-                                        </span>
-                                      </React.Fragment>
-                                    ) : (
-                                      <React.Fragment>
-                                        <span
-                                          className={
-                                            "plasmic_default__all plasmic_default__span"
-                                          }
-                                          style={{
-                                            color: "#8165D6",
-                                            fontWeight: 600
-                                          }}
-                                        >
-                                          {
-                                            "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a"
-                                          }
-                                        </span>
-                                      </React.Fragment>
-                                    )}
-                                  </PlasmicLink__>
-                                }
-                                <React.Fragment>{""}</React.Fragment>
-                                <span
-                                  className={
-                                    "plasmic_default__all plasmic_default__span"
-                                  }
-                                  style={{ color: "#1F3546" }}
-                                >
-                                  {
-                                    " \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u067e\u0630\u06cc\u0631\u0645."
-                                  }
-                                </span>
-                              </React.Fragment>
-                            )}
-                          </div>
-                        </Checkbox>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__eYcyd
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__xLyGm
-                          )}
-                        >
-                          <AntdButton
-                            data-plasmic-name={"submitButton"}
-                            data-plasmic-override={overrides.submitButton}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.submitButton
-                            )}
-                            onClick={async () => {
-                              const $steps = {};
-
-                              $steps["updateLoading"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["loading"]
-                                      },
-                                      operation: 4
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      const oldValue = $stateGet(
-                                        objRoot,
-                                        variablePath
-                                      );
-                                      $stateSet(
-                                        objRoot,
-                                        variablePath,
-                                        !oldValue
-                                      );
-                                      return !oldValue;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["updateLoading"] != null &&
-                                typeof $steps["updateLoading"] === "object" &&
-                                typeof $steps["updateLoading"].then ===
-                                  "function"
-                              ) {
-                                $steps["updateLoading"] = await $steps[
-                                  "updateLoading"
-                                ];
-                              }
-
-                              $steps["setUserSource"] = $state.policiesCheckbox
-                                .isChecked
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "POST",
-                                        "https://gateway.rentamon.com/webhook/set_user_source",
-                                        undefined,
-                                        (() => {
-                                          try {
-                                            return (() => {
-                                              return { source: $state.source };
-                                            })();
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })()
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.apiRequest"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["setUserSource"] != null &&
-                                typeof $steps["setUserSource"] === "object" &&
-                                typeof $steps["setUserSource"].then ===
-                                  "function"
-                              ) {
-                                $steps["setUserSource"] = await $steps[
-                                  "setUserSource"
-                                ];
-                              }
-
-                              $steps["errorToast"] = !$state.policiesCheckbox
-                                .isChecked
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "error",
-                                        "\u0644\u0637\u0641\u0627 \u0627\u0648\u0644 \u062a\u06cc\u06a9 \u067e\u0630\u06cc\u0631\u0634 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0631\u0648 \u0628\u0632\u0646!",
-                                        "top-center",
-                                        4000
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["errorToast"] != null &&
-                                typeof $steps["errorToast"] === "object" &&
-                                typeof $steps["errorToast"].then === "function"
-                              ) {
-                                $steps["errorToast"] = await $steps[
-                                  "errorToast"
-                                ];
-                              }
-
-                              $steps["goToPage"] = $state.policiesCheckbox
-                                .isChecked
-                                ? (() => {
-                                    const actionArgs = {
-                                      destination: `/properties`
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["goToPage"] != null &&
-                                typeof $steps["goToPage"] === "object" &&
-                                typeof $steps["goToPage"].then === "function"
-                              ) {
-                                $steps["goToPage"] = await $steps["goToPage"];
-                              }
-
-                              $steps["setCookiePropTour"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          function setCookie(
-                                            name,
-                                            value,
-                                            hours
-                                          ) {
-                                            let expires = "";
-                                            if (hours) {
-                                              const date = new Date();
-                                              date.setTime(
-                                                date.getTime() +
-                                                  hours * 60 * 60 * 1000
-                                              );
-                                              expires =
-                                                "; expires=" +
-                                                date.toUTCString();
-                                            }
-                                            document.cookie =
-                                              name +
-                                              "=" +
-                                              (value || "") +
-                                              expires +
-                                              "; path=/";
-                                          }
-                                          return setCookie(
-                                            "prop_tour",
-                                            "true",
-                                            168
-                                          );
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["setCookiePropTour"] != null &&
-                                typeof $steps["setCookiePropTour"] ===
-                                  "object" &&
-                                typeof $steps["setCookiePropTour"].then ===
-                                  "function"
-                              ) {
-                                $steps["setCookiePropTour"] = await $steps[
-                                  "setCookiePropTour"
-                                ];
-                              }
-
-                              $steps["wait"] = true
-                                ? (() => {
-                                    const actionArgs = { args: [1000] };
-                                    return $globalActions[
-                                      "Fragment.wait"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["wait"] != null &&
-                                typeof $steps["wait"] === "object" &&
-                                typeof $steps["wait"].then === "function"
-                              ) {
-                                $steps["wait"] = await $steps["wait"];
-                              }
-
-                              $steps["updateLoading2"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["loading"]
-                                      },
-                                      operation: 4
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      const oldValue = $stateGet(
-                                        objRoot,
-                                        variablePath
-                                      );
-                                      $stateSet(
-                                        objRoot,
-                                        variablePath,
-                                        !oldValue
-                                      );
-                                      return !oldValue;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["updateLoading2"] != null &&
-                                typeof $steps["updateLoading2"] === "object" &&
-                                typeof $steps["updateLoading2"].then ===
-                                  "function"
-                              ) {
-                                $steps["updateLoading2"] = await $steps[
-                                  "updateLoading2"
-                                ];
-                              }
-
-                              $steps["runCode"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          let user_type = $state.source;
-                                          console.log("user_type", user_type);
-                                          if (
-                                            user_type == "app_store" ||
-                                            user_type == "cafe_bazar" ||
-                                            user_type == "myket" ||
-                                            user_type == "unknown"
-                                          ) {
-                                            return (window.location.href =
-                                              "https://rentamon.com/calendar/");
-                                          } else {
-                                            return (window.location.href =
-                                              "https://rentamon.com/panel/");
-                                          }
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
-                              }
-
-                              $steps["setCookieFirstVisit"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          function setCookie(
-                                            name,
-                                            value,
-                                            hours
-                                          ) {
-                                            let expires = "";
-                                            if (hours) {
-                                              const date = new Date();
-                                              date.setTime(
-                                                date.getTime() +
-                                                  hours * 60 * 60 * 1000
-                                              );
-                                              expires =
-                                                "; expires=" +
-                                                date.toUTCString();
-                                            }
-                                            document.cookie =
-                                              name +
-                                              "=" +
-                                              (value || "") +
-                                              expires +
-                                              "; path=/";
-                                          }
-                                          return setCookie(
-                                            "first_visit",
-                                            "true",
-                                            2
-                                          );
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["setCookieFirstVisit"] != null &&
-                                typeof $steps["setCookieFirstVisit"] ===
-                                  "object" &&
-                                typeof $steps["setCookieFirstVisit"].then ===
-                                  "function"
-                              ) {
-                                $steps["setCookieFirstVisit"] = await $steps[
-                                  "setCookieFirstVisit"
-                                ];
-                              }
-                            }}
-                            submitsForm={true}
-                            type={"primary"}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__w2IgO
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text___10D94
-                                )}
-                              >
-                                {"\u0628\u0631\u06cc\u0645"}
-                              </div>
-                              {(() => {
-                                try {
-                                  return $state.loading;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
-                                  }
-                                  throw e;
-                                }
-                              })() ? (
-                                <PlasmicImg__
-                                  data-plasmic-name={"loadingImg"}
-                                  data-plasmic-override={overrides.loadingImg}
-                                  alt={""}
-                                  className={classNames(sty.loadingImg)}
-                                  displayHeight={"26px"}
-                                  displayMaxHeight={"none"}
-                                  displayMaxWidth={"100%"}
-                                  displayMinHeight={"0"}
-                                  displayMinWidth={"0"}
-                                  displayWidth={"auto"}
-                                  loading={"lazy"}
-                                  src={{
-                                    src: "/plasmic/website_starter/images/image140.gif",
-                                    fullWidth: 500,
-                                    fullHeight: 500,
-                                    aspectRatio: undefined
-                                  }}
-                                />
-                              ) : null}
-                            </div>
-                          </AntdButton>
-                        </div>
-                      </div>
-                    </FormItemWrapper>
-                  ) : null}
                   {(() => {
                     try {
                       return (
@@ -12168,16 +11208,11 @@ const PlasmicDescendants = {
     "true7",
     "false7",
     "apiRequest2",
-    "modal",
+    "guideModal",
     "allConnected",
     "jabamasend9",
     "connect",
     "form",
-    "platforms",
-    "policiesCheckbox",
-    "link",
-    "submitButton",
-    "loadingImg",
     "jabamaSend",
     "jabamaSendOtp",
     "jabamasend2",
@@ -12300,7 +11335,7 @@ const PlasmicDescendants = {
     "true7",
     "false7",
     "apiRequest2",
-    "modal"
+    "guideModal"
   ],
   helptStack: ["helptStack"],
   platforms2: [
@@ -12376,17 +11411,12 @@ const PlasmicDescendants = {
   true7: ["true7"],
   false7: ["false7"],
   apiRequest2: ["apiRequest2"],
-  modal: ["modal"],
+  guideModal: ["guideModal"],
   allConnected: ["allConnected", "jabamasend9"],
   jabamasend9: ["jabamasend9"],
   connect: [
     "connect",
     "form",
-    "platforms",
-    "policiesCheckbox",
-    "link",
-    "submitButton",
-    "loadingImg",
     "jabamaSend",
     "jabamaSendOtp",
     "jabamasend2",
@@ -12456,11 +11486,6 @@ const PlasmicDescendants = {
   ],
   form: [
     "form",
-    "platforms",
-    "policiesCheckbox",
-    "link",
-    "submitButton",
-    "loadingImg",
     "jabamaSend",
     "jabamaSendOtp",
     "jabamasend2",
@@ -12528,17 +11553,6 @@ const PlasmicDescendants = {
     "platformpropertyButton2",
     "security"
   ],
-  platforms: [
-    "platforms",
-    "policiesCheckbox",
-    "link",
-    "submitButton",
-    "loadingImg"
-  ],
-  policiesCheckbox: ["policiesCheckbox", "link"],
-  link: ["link"],
-  submitButton: ["submitButton", "loadingImg"],
-  loadingImg: ["loadingImg"],
   jabamaSend: ["jabamaSend", "jabamaSendOtp", "jabamasend2", "jabamasend3"],
   jabamaSendOtp: ["jabamaSendOtp"],
   jabamasend2: ["jabamasend2"],
@@ -12709,16 +11723,11 @@ type NodeDefaultElementType = {
   true7: typeof PlasmicImg__;
   false7: typeof PlasmicImg__;
   apiRequest2: typeof ApiRequest;
-  modal: typeof AntdModal;
+  guideModal: typeof AntdModal;
   allConnected: "div";
   jabamasend9: typeof AntdButton;
   connect: "div";
   form: typeof FormWrapper;
-  platforms: typeof FormItemWrapper;
-  policiesCheckbox: typeof Checkbox;
-  link: "a";
-  submitButton: typeof AntdButton;
-  loadingImg: typeof PlasmicImg__;
   jabamaSend: typeof FormItemWrapper;
   jabamaSendOtp: typeof Input;
   jabamasend2: typeof AntdButton;
@@ -12905,16 +11914,11 @@ export const PlasmicActivationDuplicateConnection = Object.assign(
     true7: makeNodeComponent("true7"),
     false7: makeNodeComponent("false7"),
     apiRequest2: makeNodeComponent("apiRequest2"),
-    modal: makeNodeComponent("modal"),
+    guideModal: makeNodeComponent("guideModal"),
     allConnected: makeNodeComponent("allConnected"),
     jabamasend9: makeNodeComponent("jabamasend9"),
     connect: makeNodeComponent("connect"),
     form: makeNodeComponent("form"),
-    platforms: makeNodeComponent("platforms"),
-    policiesCheckbox: makeNodeComponent("policiesCheckbox"),
-    link: makeNodeComponent("link"),
-    submitButton: makeNodeComponent("submitButton"),
-    loadingImg: makeNodeComponent("loadingImg"),
     jabamaSend: makeNodeComponent("jabamaSend"),
     jabamaSendOtp: makeNodeComponent("jabamaSendOtp"),
     jabamasend2: makeNodeComponent("jabamasend2"),

@@ -677,16 +677,14 @@ function PlasmicTransactions__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   operation: 0,
-                                  value: (() => {
-                                    if (
-                                      $state.apiRequest.data[currentIndex]
-                                        .transaction_type == "withdraw"
-                                    ) {
-                                      return ($state.withdraw.open = true);
-                                    } else {
-                                      return ($state.deposit.open = true);
-                                    }
-                                  })()
+                                  value:
+                                    // if ($state.apiRequest.data[currentIndex].transaction_type == "withdraw") {
+                                    //   return $state.showDetails = true
+                                    // } else {
+                                    //   return $state.showDetails = true
+                                    // }
+
+                                    ($state.showDetails = true)
                                 };
                                 return (({
                                   variable,
@@ -2934,28 +2932,46 @@ function PlasmicTransactions__RenderFunc(props: {
                       sty.text__eoTv
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                    {hasVariant(globalVariants, "screen", "smallMobile") ? (
                       <React.Fragment>
                         {(() => {
                           try {
                             return (() => {
                               const features = $state.modalData.feature;
-                              const sumOfCommissions = features.reduce(
-                                (total, feature) => {
-                                  if (feature.is_free) {
-                                    return total;
-                                  }
-                                  const commission =
-                                    Number(feature.commission_amount) || 0;
-                                  return total + commission;
+                              const totalCommission = features.reduce(
+                                (sum, item) => {
+                                  return sum + (item.commission_amount || 0);
                                 },
                                 0
                               );
-                              $state.modalData.feature.totalCommission =
-                                sumOfCommissions;
-                              return (
-                                sumOfCommissions.toLocaleString("fa") + " تومان"
+                              let total = totalCommission / 10;
+                              return total.toLocaleString("fa") + " تومان";
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const features = $state.modalData.feature;
+                              const totalCommission = features.reduce(
+                                (sum, item) => {
+                                  return sum + (item.commission_amount || 0);
+                                },
+                                0
                               );
+                              let total = totalCommission / 10;
+                              return total.toLocaleString("fa") + " تومان";
                             })();
                           } catch (e) {
                             if (
@@ -2968,34 +2984,53 @@ function PlasmicTransactions__RenderFunc(props: {
                           }
                         })()}
                       </React.Fragment>
-                    ) : (
+                    ) : hasVariant(globalVariants, "screen", "tablet") ? (
                       <React.Fragment>
                         {(() => {
                           try {
                             return (() => {
                               const features = $state.modalData.feature;
-                              const sumOfCommissions = features.reduce(
-                                (total, feature) => {
-                                  if (feature.is_free) {
-                                    return total;
-                                  }
-                                  const commission =
-                                    Number(feature.commission_amount) || 0;
-                                  return total + commission;
+                              const totalCommission = features.reduce(
+                                (sum, item) => {
+                                  return sum + (item.commission_amount || 0);
                                 },
                                 0
                               );
-                              const final_sum = sumOfCommissions / 10;
-                              $state.modalData.feature.totalCommission =
-                                sumOfCommissions;
-                              return final_sum.toLocaleString("fa") + " نومان";
+                              let total = totalCommission / 10;
+                              return total.toLocaleString("fa") + " تومان";
                             })();
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "\u06f1\u06f2\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646";
+                              return " ";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const features = $state.modalData.feature;
+                              const totalCommission = features.reduce(
+                                (sum, item) => {
+                                  return sum + (item.commission_amount || 0);
+                                },
+                                0
+                              );
+                              let total = totalCommission / 10;
+                              return total.toLocaleString("fa") + " تومان";
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
                             }
                             throw e;
                           }
@@ -3010,37 +3045,127 @@ function PlasmicTransactions__RenderFunc(props: {
                       sty.text__nopq8
                     )}
                   >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return (() => {
-                            const features = $state.modalData.feature;
-                            const sumOfCommissions = features.reduce(
-                              (total, feature) => {
-                                if (feature.is_free) {
-                                  return total;
+                    {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const features = $state.modalData.feature;
+                              const totals = features.reduce(
+                                (acc, item) => {
+                                  acc.amount += item.commission_amount || 0;
+                                  acc.rate += item.commission_rate || 0;
+                                  return acc;
+                                },
+                                {
+                                  amount: 0,
+                                  rate: 0
                                 }
-                                const commission =
-                                  Number(feature.commission_rate) || 0;
-                                return total + commission;
-                              },
-                              0
-                            );
-                            $state.modalData.feature.totalCommission =
-                              sumOfCommissions;
-                            return "%" + sumOfCommissions.toLocaleString("fa");
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return " ";
+                              );
+                              return "%" + totals.rate.toLocaleString("fa");
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
+                        })()}
+                      </React.Fragment>
+                    ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const features = $state.modalData.feature;
+                              const totals = features.reduce(
+                                (acc, item) => {
+                                  acc.amount += item.commission_amount || 0;
+                                  acc.rate += item.commission_rate || 0;
+                                  return acc;
+                                },
+                                {
+                                  amount: 0,
+                                  rate: 0
+                                }
+                              );
+                              return "%" + totals.rate.toLocaleString("fa");
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : hasVariant(globalVariants, "screen", "tablet") ? (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const features = $state.modalData.feature;
+                              const totals = features.reduce(
+                                (acc, item) => {
+                                  acc.amount += item.commission_amount || 0;
+                                  acc.rate += item.commission_rate || 0;
+                                  return acc;
+                                },
+                                {
+                                  amount: 0,
+                                  rate: 0
+                                }
+                              );
+                              return "%" + totals.rate.toLocaleString("fa");
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    ) : (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const features = $state.modalData.feature;
+                              const totals = features.reduce(
+                                (acc, item) => {
+                                  acc.amount += item.commission_amount || 0;
+                                  acc.rate += item.commission_rate || 0;
+                                  return acc;
+                                },
+                                {
+                                  amount: 0,
+                                  rate: 0
+                                }
+                              );
+                              return "%" + totals.rate.toLocaleString("fa");
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    )}
                   </div>
                   <div
                     className={classNames(
