@@ -2395,6 +2395,23 @@ function PlasmicTransactions__RenderFunc(props: {
                   >
                     {"\u0628\u0631\u062f\u0627\u0634\u062a"}
                   </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__l8Dbt)}
+                    displayHeight={"15px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image176.svg",
+                      fullWidth: 14,
+                      fullHeight: 12,
+                      aspectRatio: undefined
+                    }}
+                  />
                 </div>
               </div>
               <div
@@ -2663,6 +2680,41 @@ function PlasmicTransactions__RenderFunc(props: {
                   data-plasmic-name={"reserveCode"}
                   data-plasmic-override={overrides.reserveCode}
                   className={classNames(projectcss.all, sty.reserveCode)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                let result = "";
+                                const bookingId = $state.modalData.booking_id;
+                                if (bookingId && bookingId.startsWith("RNT")) {
+                                  result = bookingId.substring(3);
+                                } else {
+                                  result = bookingId;
+                                }
+                                return window.open(
+                                  `https://rentamon.com/bookings/${result}`,
+                                  "_blank"
+                                );
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
                 >
                   <div
                     className={classNames(projectcss.all, sty.freeBox___7TiX)}
@@ -2686,45 +2738,6 @@ function PlasmicTransactions__RenderFunc(props: {
                         projectcss.__wab_text,
                         sty.text__zZqaz
                       )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    let result = "";
-                                    const bookingId =
-                                      $state.modalData.booking_id;
-                                    if (
-                                      bookingId &&
-                                      bookingId.startsWith("RNT")
-                                    ) {
-                                      result = bookingId.substring(3);
-                                    } else {
-                                      result = bookingId;
-                                    }
-                                    return window.open(
-                                      `https://rentamon.com/bookings/${result}`,
-                                      "_blank"
-                                    );
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
                     >
                       <React.Fragment>
                         {(() => {
@@ -3255,15 +3268,6 @@ function PlasmicTransactions__RenderFunc(props: {
                       </React.Fragment>
                     )}
                   </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rZ3Do
-                    )}
-                  >
-                    {"\u062c\u0645\u0639"}
-                  </div>
                   {(
                     hasVariant(globalVariants, "screen", "mobile")
                       ? true
@@ -3273,6 +3277,15 @@ function PlasmicTransactions__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__bOoM)}
                     />
                   ) : null}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rZ3Do
+                    )}
+                  >
+                    {"\u062c\u0645\u0639"}
+                  </div>
                 </div>
                 {(() => {
                   try {
@@ -3414,8 +3427,25 @@ function PlasmicTransactions__RenderFunc(props: {
                       sty.text__pZnY6
                     )}
                   >
-                    {"\u0648\u0627\u0631\u06cc\u0632\n"}
+                    {"\u0648\u0627\u0631\u06cc\u0632"}
                   </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__riPsW)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image177.svg",
+                      fullWidth: 14,
+                      fullHeight: 12,
+                      aspectRatio: undefined
+                    }}
+                  />
                 </div>
               </div>
               <div
