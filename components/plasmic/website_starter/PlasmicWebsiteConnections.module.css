@@ -429,9 +429,39 @@
     border-bottom-width: 0px;
   }
 }
+.falseStatus {
+  object-fit: cover;
+  max-width: 100%;
+  align-self: flex-start;
+  width: 48px;
+  z-index: 1000;
+  position: absolute;
+  left: 140px;
+  top: 0px;
+  height: auto;
+  bottom: 0px;
+}
+.falseStatus > picture > img {
+  object-fit: cover;
+}
+.trueStatus {
+  object-fit: cover;
+  max-width: 100%;
+  align-self: flex-start;
+  width: 48px;
+  z-index: 1000;
+  position: absolute;
+  left: 140px;
+  top: 0px;
+  height: auto;
+}
+.trueStatus > picture > img {
+  object-fit: cover;
+}
 .img__j8JSx {
   object-fit: cover;
   max-width: 100%;
+  z-index: 0;
 }
 .img__j8JSx > picture > img {
   object-fit: cover;

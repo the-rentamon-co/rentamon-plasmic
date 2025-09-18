@@ -100,6 +100,8 @@ export type PlasmicWebsiteConnections__OverridesType = {
   apiRequest2?: Flex__<typeof ApiRequest>;
   localStorage?: Flex__<"div">;
   connectedPlatforms?: Flex__<"div">;
+  falseStatus?: Flex__<typeof PlasmicImg__>;
+  trueStatus?: Flex__<typeof PlasmicImg__>;
   newPlatform?: Flex__<"div">;
   connectedPlatforms2?: Flex__<"div">;
   newPlatform2?: Flex__<"div">;
@@ -631,6 +633,81 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                                     sty.freeBox___2BeF5
                                   )}
                                 >
+                                  {(() => {
+                                    try {
+                                      return currentItem.status === "false";
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return true;
+                                      }
+                                      throw e;
+                                    }
+                                  })() ? (
+                                    <PlasmicImg__
+                                      data-plasmic-name={"falseStatus"}
+                                      data-plasmic-override={
+                                        overrides.falseStatus
+                                      }
+                                      alt={""}
+                                      className={classNames(
+                                        sty.falseStatus,
+                                        "element"
+                                      )}
+                                      displayHeight={"auto"}
+                                      displayMaxHeight={"none"}
+                                      displayMaxWidth={"100%"}
+                                      displayMinHeight={"0"}
+                                      displayMinWidth={"0"}
+                                      displayWidth={"48px"}
+                                      loading={"lazy"}
+                                      src={{
+                                        src: "/plasmic/website_starter/images/image29.svg",
+                                        fullWidth: 27,
+                                        fullHeight: 27,
+                                        aspectRatio: 1
+                                      }}
+                                    />
+                                  ) : null}
+                                  {(() => {
+                                    try {
+                                      return currentItem.status === "true";
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return true;
+                                      }
+                                      throw e;
+                                    }
+                                  })() ? (
+                                    <PlasmicImg__
+                                      data-plasmic-name={"trueStatus"}
+                                      data-plasmic-override={
+                                        overrides.trueStatus
+                                      }
+                                      alt={""}
+                                      className={classNames(sty.trueStatus)}
+                                      displayHeight={"auto"}
+                                      displayMaxHeight={"none"}
+                                      displayMaxWidth={"100%"}
+                                      displayMinHeight={"0"}
+                                      displayMinWidth={"0"}
+                                      displayWidth={"48px"}
+                                      loading={"lazy"}
+                                      src={{
+                                        src: "/plasmic/website_starter/images/image30.svg",
+                                        fullWidth: 27,
+                                        fullHeight: 27,
+                                        aspectRatio: 1
+                                      }}
+                                    />
+                                  ) : null}
                                   <PlasmicImg__
                                     alt={""}
                                     className={classNames(sty.img__j8JSx)}
@@ -1616,6 +1693,8 @@ const PlasmicDescendants = {
     "apiRequest2",
     "localStorage",
     "connectedPlatforms",
+    "falseStatus",
+    "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
     "newPlatform2",
@@ -1635,6 +1714,8 @@ const PlasmicDescendants = {
     "apiRequest2",
     "localStorage",
     "connectedPlatforms",
+    "falseStatus",
+    "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
     "newPlatform2",
@@ -1645,6 +1726,8 @@ const PlasmicDescendants = {
     "apiRequest2",
     "localStorage",
     "connectedPlatforms",
+    "falseStatus",
+    "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
     "newPlatform2",
@@ -1654,13 +1737,23 @@ const PlasmicDescendants = {
     "apiRequest2",
     "localStorage",
     "connectedPlatforms",
+    "falseStatus",
+    "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
     "newPlatform2",
     "propGuide"
   ],
-  localStorage: ["localStorage", "connectedPlatforms", "newPlatform"],
-  connectedPlatforms: ["connectedPlatforms"],
+  localStorage: [
+    "localStorage",
+    "connectedPlatforms",
+    "falseStatus",
+    "trueStatus",
+    "newPlatform"
+  ],
+  connectedPlatforms: ["connectedPlatforms", "falseStatus", "trueStatus"],
+  falseStatus: ["falseStatus"],
+  trueStatus: ["trueStatus"],
   newPlatform: ["newPlatform"],
   connectedPlatforms2: ["connectedPlatforms2"],
   newPlatform2: ["newPlatform2"],
@@ -1684,6 +1777,8 @@ type NodeDefaultElementType = {
   apiRequest2: typeof ApiRequest;
   localStorage: "div";
   connectedPlatforms: "div";
+  falseStatus: typeof PlasmicImg__;
+  trueStatus: typeof PlasmicImg__;
   newPlatform: "div";
   connectedPlatforms2: "div";
   newPlatform2: "div";
@@ -1763,6 +1858,8 @@ export const PlasmicWebsiteConnections = Object.assign(
     apiRequest2: makeNodeComponent("apiRequest2"),
     localStorage: makeNodeComponent("localStorage"),
     connectedPlatforms: makeNodeComponent("connectedPlatforms"),
+    falseStatus: makeNodeComponent("falseStatus"),
+    trueStatus: makeNodeComponent("trueStatus"),
     newPlatform: makeNodeComponent("newPlatform"),
     connectedPlatforms2: makeNodeComponent("connectedPlatforms2"),
     newPlatform2: makeNodeComponent("newPlatform2"),
