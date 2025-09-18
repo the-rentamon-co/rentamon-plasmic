@@ -1181,7 +1181,7 @@
 }
 @media (max-width: 500px) {
   .instantReserve {
-    display: none;
+    display: flex;
   }
 }
 @media (max-width: 350px) {

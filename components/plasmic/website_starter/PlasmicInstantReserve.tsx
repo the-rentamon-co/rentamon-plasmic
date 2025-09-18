@@ -494,7 +494,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ fontWeight: 700 }}
                   >
-                    {"\u06f3\u06f1 \u062a\u06cc\u0631"}
+                    {"\u06f3\u06f0 \u0645\u0647\u0631"}
                   </span>
                 </React.Fragment>
               )}
@@ -505,103 +505,105 @@ function PlasmicInstantReserve__RenderFunc(props: {
             data-plasmic-override={overrides.topContainer2}
             className={classNames(projectcss.all, sty.topContainer2)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__pbFP)}>
-              <div
-                data-plasmic-name={"alertIcon"}
-                data-plasmic-override={overrides.alertIcon}
-                className={classNames(projectcss.all, sty.alertIcon)}
-              >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__mAxyx)}
-                  displayHeight={
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "100%"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "35px"
-                      : "43px"
-                  }
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/image72.svg",
-                    fullWidth: 42,
-                    fullHeight: 42,
-                    aspectRatio: 1
-                  }}
-                />
-              </div>
-              <div
-                data-plasmic-name={"alertText"}
-                data-plasmic-override={overrides.alertText}
-                className={classNames(projectcss.all, sty.alertText)}
-              >
+            {false ? (
+              <div className={classNames(projectcss.all, sty.freeBox__pbFP)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rnDcz
-                  )}
+                  data-plasmic-name={"alertIcon"}
+                  data-plasmic-override={overrides.alertIcon}
+                  className={classNames(projectcss.all, sty.alertIcon)}
                 >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0628\u0647\u200c\u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."
-                    : "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u060c \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."}
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"alertButton"}
-                data-plasmic-override={overrides.alertButton}
-                className={classNames(projectcss.all, sty.alertButton)}
-              >
-                <div
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames(projectcss.all, sty.button)}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["goToSetting"] = true
-                      ? (() => {
-                          const actionArgs = { destination: `/support` };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToSetting"] != null &&
-                      typeof $steps["goToSetting"] === "object" &&
-                      typeof $steps["goToSetting"].then === "function"
-                    ) {
-                      $steps["goToSetting"] = await $steps["goToSetting"];
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__mAxyx)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "35px"
+                        : "43px"
                     }
-                  }}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image72.svg",
+                      fullWidth: 42,
+                      fullHeight: 42,
+                      aspectRatio: 1
+                    }}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"alertText"}
+                  data-plasmic-override={overrides.alertText}
+                  className={classNames(projectcss.all, sty.alertText)}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__mg9Jn
+                      sty.text__rnDcz
                     )}
                   >
-                    {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0628\u0647\u200c\u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."
+                      : "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u060c \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."}
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"alertButton"}
+                  data-plasmic-override={overrides.alertButton}
+                  className={classNames(projectcss.all, sty.alertButton)}
+                >
+                  <div
+                    data-plasmic-name={"button"}
+                    data-plasmic-override={overrides.button}
+                    className={classNames(projectcss.all, sty.button)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToSetting"] = true
+                        ? (() => {
+                            const actionArgs = { destination: `/support` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToSetting"] != null &&
+                        typeof $steps["goToSetting"] === "object" &&
+                        typeof $steps["goToSetting"].then === "function"
+                      ) {
+                        $steps["goToSetting"] = await $steps["goToSetting"];
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__mg9Jn
+                      )}
+                    >
+                      {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ) : null}
           </section>
           <section
             data-plasmic-name={"mainSection"}
@@ -656,7 +658,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
               ref={ref => {
                 $refs["properties"] = ref;
               }}
-              url={"https://gateway.rentamon.com/webhook/property-instant?v=2"}
+              url={"https://gateway.rentamon.com/webhook/na-instant"}
             >
               <Select
                 data-plasmic-name={"selectProperty"}
@@ -800,6 +802,72 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           (async checked => {
                             const $steps = {};
 
+                            $steps["apiReqForInstant"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://gateway.rentamon.com/webhook/shab-instant",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return $state.shabSwitch.checked
+                                            ? {
+                                                action: "set_instant",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).id
+                                              }
+                                            : {
+                                                action: "unset_instant",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).id
+                                              };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      {
+                                        withCredentials: true,
+                                        headers: {
+                                          "Content-Type":
+                                            "application/x-www-form-urlencoded"
+                                        }
+                                      }
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["apiReqForInstant"] != null &&
+                              typeof $steps["apiReqForInstant"] === "object" &&
+                              typeof $steps["apiReqForInstant"].then ===
+                                "function"
+                            ) {
+                              $steps["apiReqForInstant"] = await $steps[
+                                "apiReqForInstant"
+                              ];
+                            }
+
                             $steps["turnOnSuccessToast"] =
                               $steps.apiRequestForInstant.status === 200 &&
                               $state.shabSwitch.checked
@@ -807,7 +875,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "success",
-                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u062e\u0631\u062f\u0627\u062f \u062f\u0631 \u0633\u0627\u06cc\u062a \u0634\u0628 \u0622\u0646\u06cc \u0634\u062f",
+                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0645\u0647\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0634\u0628 \u0622\u0646\u06cc \u0634\u062f",
                                         "top-center"
                                       ]
                                     };
@@ -825,6 +893,31 @@ function PlasmicInstantReserve__RenderFunc(props: {
                             ) {
                               $steps["turnOnSuccessToast"] = await $steps[
                                 "turnOnSuccessToast"
+                              ];
+                            }
+
+                            $steps["failedToast"] =
+                              $steps.apiRequestForInstant.status != 200
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u0622\u0646\u06cc \u0646\u0634\u062f!",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["failedToast"] != null &&
+                              typeof $steps["failedToast"] === "object" &&
+                              typeof $steps["failedToast"].then === "function"
+                            ) {
+                              $steps["failedToast"] = await $steps[
+                                "failedToast"
                               ];
                             }
 
@@ -856,7 +949,72 @@ function PlasmicInstantReserve__RenderFunc(props: {
                               ];
                             }
 
-                            $steps["apiRequestForInstant"] = true
+                            $steps["updateShabSwitchChecked"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["shabSwitch", "checked"]
+                                    },
+                                    operation: 0,
+                                    value: (() => {
+                                      if (
+                                        $steps.apiRequestForInstant.status ===
+                                        200
+                                      ) {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 4
+                                          ).is_instant =
+                                          $state.shabSwitch.checked);
+                                      } else {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 4
+                                          ).is_instant =
+                                          !$state.shabSwitch.checked);
+                                      }
+                                    })()
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateShabSwitchChecked"] != null &&
+                              typeof $steps["updateShabSwitchChecked"] ===
+                                "object" &&
+                              typeof $steps["updateShabSwitchChecked"].then ===
+                                "function"
+                            ) {
+                              $steps["updateShabSwitchChecked"] = await $steps[
+                                "updateShabSwitchChecked"
+                              ];
+                            }
+
+                            $steps["apiRequestForInstant"] = false
                               ? (() => {
                                   const actionArgs = {
                                     args: [
@@ -933,96 +1091,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
                             ) {
                               $steps["apiRequestForInstant"] = await $steps[
                                 "apiRequestForInstant"
-                              ];
-                            }
-
-                            $steps["failedToast"] =
-                              $steps.apiRequestForInstant.status != 200
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "error",
-                                        "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u062e\u0648\u0631\u062f",
-                                        "top-center"
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                            if (
-                              $steps["failedToast"] != null &&
-                              typeof $steps["failedToast"] === "object" &&
-                              typeof $steps["failedToast"].then === "function"
-                            ) {
-                              $steps["failedToast"] = await $steps[
-                                "failedToast"
-                              ];
-                            }
-
-                            $steps["updateShabSwitchChecked"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["shabSwitch", "checked"]
-                                    },
-                                    operation: 0,
-                                    value: (() => {
-                                      if (
-                                        $steps.apiRequestForInstant.status ===
-                                        200
-                                      ) {
-                                        return ($state.properties.data
-                                          .find(
-                                            property =>
-                                              property.property_name ===
-                                              $state.selectProperty.value
-                                          )
-                                          .website_ids.find(
-                                            website => website.website_id === 4
-                                          ).is_instant =
-                                          $state.shabSwitch.checked);
-                                      } else {
-                                        return ($state.properties.data
-                                          .find(
-                                            property =>
-                                              property.property_name ===
-                                              $state.selectProperty.value
-                                          )
-                                          .website_ids.find(
-                                            website => website.website_id === 4
-                                          ).is_instant =
-                                          !$state.shabSwitch.checked);
-                                      }
-                                    })()
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updateShabSwitchChecked"] != null &&
-                              typeof $steps["updateShabSwitchChecked"] ===
-                                "object" &&
-                              typeof $steps["updateShabSwitchChecked"].then ===
-                                "function"
-                            ) {
-                              $steps["updateShabSwitchChecked"] = await $steps[
-                                "updateShabSwitchChecked"
                               ];
                             }
                           }).apply(null, eventArgs);
@@ -1102,6 +1170,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                           "__wab_instance",
                           sty.otaghakSwitch
                         )}
+                        disabled={true}
                         onCheckedChange={async (...eventArgs: any) => {
                           generateStateOnChangeProp($state, [
                             "otaghakSwitch",
