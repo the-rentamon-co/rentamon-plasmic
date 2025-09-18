@@ -208,7 +208,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return "\u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0627\u0633\u062a\u062e\u0631\u062f\u0627\u0631 \u0628\u0647\u0627\u0631\u0627\u0646";
+                return undefined;
               }
               throw e;
             }
@@ -704,10 +704,24 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__strx4
+                      sty.text__c2Yw
                     )}
                   >
-                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return $state.properties.data[0].property_name;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
                   </div>
                 }
                 value={generateStateValueProp($state, [
