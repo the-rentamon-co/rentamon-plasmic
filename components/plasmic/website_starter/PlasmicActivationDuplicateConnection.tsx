@@ -4447,50 +4447,45 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["updateStep"] =
+                              $steps["goToActivationDuplicateConnection"] =
                                 $state.jabamaSendOtp.value !== undefined &&
                                 $state.jabamaSendOtp.value.length >= 11
                                   ? (() => {
                                       const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2
+                                        destination: `/connections?step=${"2"}`
                                       };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
                                         }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
                                       })?.apply(null, [actionArgs]);
                                     })()
                                   : undefined;
                               if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
+                                $steps["goToActivationDuplicateConnection"] !=
+                                  null &&
+                                typeof $steps[
+                                  "goToActivationDuplicateConnection"
+                                ] === "object" &&
+                                typeof $steps[
+                                  "goToActivationDuplicateConnection"
+                                ].then === "function"
                               ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
+                                $steps["goToActivationDuplicateConnection"] =
+                                  await $steps[
+                                    "goToActivationDuplicateConnection"
+                                  ];
                               }
 
                               $steps["jabamaSend"] =
@@ -4621,6 +4616,26 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return window.history.back();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
                               $steps["update1"] = false
                                 ? (() => {
                                     const actionArgs = {
@@ -4655,26 +4670,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                               ) {
                                 $steps["update1"] = await $steps["update1"];
                               }
-
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return window.history.back();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
-                              }
                             }}
                             submitsForm={true}
                             type={"primary"}
@@ -4700,7 +4695,7 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return true;
+                          return false;
                         }
                         throw e;
                       }
@@ -4856,30 +4851,21 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                   ];
                                 }
 
-                                $steps["successToast"] = (() => {
-                                  if (
-                                    $steps.jabamaVerify.data.status === true
-                                  ) {
-                                    return ($state.platformstatus.status.jabama =
-                                      true);
-                                  } else {
-                                    return ($state.platformstatus.status.jabama =
-                                      false);
-                                  }
-                                })()
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          undefined,
-                                          "\u062c\u0627\u0628\u0627\u0645\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
-                                          "top-center"
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
+                                $steps["successToast"] =
+                                  ($steps.jabamaVerify.status = 200)
+                                    ? (() => {
+                                        const actionArgs = {
+                                          args: [
+                                            undefined,
+                                            "\u062c\u0627\u0628\u0627\u0645\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
+                                            "top-center"
+                                          ]
+                                        };
+                                        return $globalActions[
+                                          "Fragment.showToast"
+                                        ]?.apply(null, [...actionArgs.args]);
+                                      })()
+                                    : undefined;
                                 if (
                                   $steps["successToast"] != null &&
                                   typeof $steps["successToast"] === "object" &&
@@ -5225,50 +5211,45 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["updateStep"] =
+                              $steps["goToActivationDuplicateConnection"] =
                                 $state.jajigaSend.value !== undefined &&
                                 $state.jajigaSend.value.length >= 11
                                   ? (() => {
                                       const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2
+                                        destination: `/connections?step=${"4"}`
                                       };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
                                         }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
                                       })?.apply(null, [actionArgs]);
                                     })()
                                   : undefined;
                               if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
+                                $steps["goToActivationDuplicateConnection"] !=
+                                  null &&
+                                typeof $steps[
+                                  "goToActivationDuplicateConnection"
+                                ] === "object" &&
+                                typeof $steps[
+                                  "goToActivationDuplicateConnection"
+                                ].then === "function"
                               ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
+                                $steps["goToActivationDuplicateConnection"] =
+                                  await $steps[
+                                    "goToActivationDuplicateConnection"
+                                  ];
                               }
 
                               $steps["jajigaSend"] =
@@ -5348,6 +5329,26 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return window.history.back();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
                               $steps["update1"] = false
                                 ? (() => {
                                     const actionArgs = {
@@ -5381,30 +5382,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                 typeof $steps["update1"].then === "function"
                               ) {
                                 $steps["update1"] = await $steps["update1"];
-                              }
-
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          return (window.location.href =
-                                            document.referrer ||
-                                            "https://rentamon.com/panel/");
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
                               }
                             }}
                             submitsForm={true}
@@ -5521,51 +5498,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["updateStep"] =
-                                $state.form.value.jajigaOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2
-                                      };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
-                                        }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
-                              ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
-                              }
-
                               $steps["jajigaVerify"] =
                                 $state.form.value.jajigaOTP !== undefined
                                   ? (() => {
@@ -5618,6 +5550,57 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                               ) {
                                 $steps["jajigaVerify"] = await $steps[
                                   "jajigaVerify"
+                                ];
+                              }
+
+                              $steps["successToast"] =
+                                ($steps.jajigaVerify.status = 200)
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          undefined,
+                                          "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["successToast"] != null &&
+                                typeof $steps["successToast"] === "object" &&
+                                typeof $steps["successToast"].then ===
+                                  "function"
+                              ) {
+                                $steps["successToast"] = await $steps[
+                                  "successToast"
+                                ];
+                              }
+
+                              $steps["errorToast"] =
+                                $steps.jajigaVerify.status != 200
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "error",
+                                          "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["errorToast"] != null &&
+                                typeof $steps["errorToast"] === "object" &&
+                                typeof $steps["errorToast"].then === "function"
+                              ) {
+                                $steps["errorToast"] = await $steps[
+                                  "errorToast"
                                 ];
                               }
 
@@ -5703,30 +5686,47 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["invokeGlobalAction"] =
-                                $steps.jajigaVerify.status != 200
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "error",
-                                          "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
-                                          "top-center"
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
+                              $steps["updateStep"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 2
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      const oldValue = $stateGet(
+                                        objRoot,
+                                        variablePath
+                                      );
+                                      $stateSet(
+                                        objRoot,
+                                        variablePath,
+                                        oldValue + 1
+                                      );
+                                      return oldValue + 1;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
                               if (
-                                $steps["invokeGlobalAction"] != null &&
-                                typeof $steps["invokeGlobalAction"] ===
-                                  "object" &&
-                                typeof $steps["invokeGlobalAction"].then ===
-                                  "function"
+                                $steps["updateStep"] != null &&
+                                typeof $steps["updateStep"] === "object" &&
+                                typeof $steps["updateStep"].then === "function"
                               ) {
-                                $steps["invokeGlobalAction"] = await $steps[
-                                  "invokeGlobalAction"
+                                $steps["updateStep"] = await $steps[
+                                  "updateStep"
                                 ];
                               }
                             }}
@@ -5916,50 +5916,45 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["updateStep"] =
+                              $steps["goToActivationDuplicateConnection"] =
                                 $state.shabOtpSend.value !== undefined &&
                                 $state.shabOtpSend.value.length >= 11
                                   ? (() => {
                                       const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2
+                                        destination: `/connections?step=${"6"}`
                                       };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
                                         }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
                                       })?.apply(null, [actionArgs]);
                                     })()
                                   : undefined;
                               if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
+                                $steps["goToActivationDuplicateConnection"] !=
+                                  null &&
+                                typeof $steps[
+                                  "goToActivationDuplicateConnection"
+                                ] === "object" &&
+                                typeof $steps[
+                                  "goToActivationDuplicateConnection"
+                                ].then === "function"
                               ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
+                                $steps["goToActivationDuplicateConnection"] =
+                                  await $steps[
+                                    "goToActivationDuplicateConnection"
+                                  ];
                               }
 
                               $steps["shabSend"] =
@@ -6081,6 +6076,26 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return window.history.back();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
                               $steps["update1"] = false
                                 ? (() => {
                                     const actionArgs = {
@@ -6114,30 +6129,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                 typeof $steps["update1"].then === "function"
                               ) {
                                 $steps["update1"] = await $steps["update1"];
-                              }
-
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          return (window.location.href =
-                                            document.referrer ||
-                                            "https://rentamon.com/panel/");
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
                               }
                             }}
                             submitsForm={true}
@@ -6254,51 +6245,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["updateStep"] =
-                                $state.form.value.shabOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2
-                                      };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
-                                        }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
-                              ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
-                              }
-
                               $steps["shabVerify"] =
                                 $state.form.value.shabOTP !== undefined
                                   ? (() => {
@@ -6350,6 +6296,57 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                               ) {
                                 $steps["shabVerify"] = await $steps[
                                   "shabVerify"
+                                ];
+                              }
+
+                              $steps["successToast"] =
+                                ($steps.shabVerify.status = 200)
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          undefined,
+                                          "\u0634\u0628 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["successToast"] != null &&
+                                typeof $steps["successToast"] === "object" &&
+                                typeof $steps["successToast"].then ===
+                                  "function"
+                              ) {
+                                $steps["successToast"] = await $steps[
+                                  "successToast"
+                                ];
+                              }
+
+                              $steps["errorToast"] =
+                                $steps.shabVerify.status != 200
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "error",
+                                          "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["errorToast"] != null &&
+                                typeof $steps["errorToast"] === "object" &&
+                                typeof $steps["errorToast"].then === "function"
+                              ) {
+                                $steps["errorToast"] = await $steps[
+                                  "errorToast"
                                 ];
                               }
 
@@ -6436,30 +6433,47 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["invokeGlobalAction"] =
-                                $steps.shabVerify.status != 200
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "error",
-                                          "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
-                                          "top-center"
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
+                              $steps["updateStep"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 2
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      const oldValue = $stateGet(
+                                        objRoot,
+                                        variablePath
+                                      );
+                                      $stateSet(
+                                        objRoot,
+                                        variablePath,
+                                        oldValue + 1
+                                      );
+                                      return oldValue + 1;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
                               if (
-                                $steps["invokeGlobalAction"] != null &&
-                                typeof $steps["invokeGlobalAction"] ===
-                                  "object" &&
-                                typeof $steps["invokeGlobalAction"].then ===
-                                  "function"
+                                $steps["updateStep"] != null &&
+                                typeof $steps["updateStep"] === "object" &&
+                                typeof $steps["updateStep"].then === "function"
                               ) {
-                                $steps["invokeGlobalAction"] = await $steps[
-                                  "invokeGlobalAction"
+                                $steps["updateStep"] = await $steps[
+                                  "updateStep"
                                 ];
                               }
                             }}
@@ -6654,50 +6668,45 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["updateStep"] =
+                              $steps["goToActivationDuplicateConnection"] =
                                 $state.otaghakSendOtp.value !== undefined &&
                                 $state.otaghakSendOtp.value.length >= 11
                                   ? (() => {
                                       const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2
+                                        destination: `/connections?step=${"8"}`
                                       };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
                                         }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
                                       })?.apply(null, [actionArgs]);
                                     })()
                                   : undefined;
                               if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
+                                $steps["goToActivationDuplicateConnection"] !=
+                                  null &&
+                                typeof $steps[
+                                  "goToActivationDuplicateConnection"
+                                ] === "object" &&
+                                typeof $steps[
+                                  "goToActivationDuplicateConnection"
+                                ].then === "function"
                               ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
+                                $steps["goToActivationDuplicateConnection"] =
+                                  await $steps[
+                                    "goToActivationDuplicateConnection"
+                                  ];
                               }
 
                               $steps["otaghakSend"] =
@@ -6778,6 +6787,26 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return window.history.back();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
                               $steps["update1"] = false
                                 ? (() => {
                                     const actionArgs = {
@@ -6812,30 +6841,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                               ) {
                                 $steps["update1"] = await $steps["update1"];
                               }
-
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          return (window.location.href =
-                                            document.referrer ||
-                                            "https://rentamon.com/panel/");
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
-                              }
                             }}
                             submitsForm={true}
                             type={"primary"}
@@ -6855,10 +6860,7 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                     ) : null}
                     {(() => {
                       try {
-                        return (
-                          $state.step == 8 &&
-                          $state.platformstatus.status.otaghak !== true
-                        );
+                        return $state.step == 8;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -6957,51 +6959,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["updateStep"] =
-                                $state.form.value.otaghakOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2
-                                      };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
-                                        }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
-                              ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
-                              }
-
                               $steps["otaghakVerify"] =
                                 $state.form.value.otaghakOTP !== undefined
                                   ? (() => {
@@ -7055,6 +7012,57 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                               ) {
                                 $steps["otaghakVerify"] = await $steps[
                                   "otaghakVerify"
+                                ];
+                              }
+
+                              $steps["successToast"] =
+                                ($steps.otaghakVerify.status = 200)
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          undefined,
+                                          " \u0627\u062a\u0627\u0642\u06a9 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["successToast"] != null &&
+                                typeof $steps["successToast"] === "object" &&
+                                typeof $steps["successToast"].then ===
+                                  "function"
+                              ) {
+                                $steps["successToast"] = await $steps[
+                                  "successToast"
+                                ];
+                              }
+
+                              $steps["errorToast"] =
+                                $steps.otaghakVerify.status != 200
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "error",
+                                          "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["errorToast"] != null &&
+                                typeof $steps["errorToast"] === "object" &&
+                                typeof $steps["errorToast"].then === "function"
+                              ) {
+                                $steps["errorToast"] = await $steps[
+                                  "errorToast"
                                 ];
                               }
 
@@ -7143,30 +7151,47 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["invokeGlobalAction"] =
-                                $steps.otaghakVerify.status != 200
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "error",
-                                          "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
-                                          "top-center"
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
+                              $steps["updateStep"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 2
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      const oldValue = $stateGet(
+                                        objRoot,
+                                        variablePath
+                                      );
+                                      $stateSet(
+                                        objRoot,
+                                        variablePath,
+                                        oldValue + 1
+                                      );
+                                      return oldValue + 1;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
                               if (
-                                $steps["invokeGlobalAction"] != null &&
-                                typeof $steps["invokeGlobalAction"] ===
-                                  "object" &&
-                                typeof $steps["invokeGlobalAction"].then ===
-                                  "function"
+                                $steps["updateStep"] != null &&
+                                typeof $steps["updateStep"] === "object" &&
+                                typeof $steps["updateStep"].then === "function"
                               ) {
-                                $steps["invokeGlobalAction"] = await $steps[
-                                  "invokeGlobalAction"
+                                $steps["updateStep"] = await $steps[
+                                  "updateStep"
                                 ];
                               }
                             }}
@@ -7969,6 +7994,26 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return window.history.back();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
                               $steps["update1"] = false
                                 ? (() => {
                                     const actionArgs = {
@@ -8002,30 +8047,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                 typeof $steps["update1"].then === "function"
                               ) {
                                 $steps["update1"] = await $steps["update1"];
-                              }
-
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          return (window.location.href =
-                                            document.referrer ||
-                                            "https://rentamon.com/panel/");
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
                               }
                             }}
                             submitsForm={true}
@@ -8492,6 +8513,26 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return window.history.back();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
                               $steps["update1"] = false
                                 ? (() => {
                                     const actionArgs = {
@@ -8525,30 +8566,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                 typeof $steps["update1"].then === "function"
                               ) {
                                 $steps["update1"] = await $steps["update1"];
-                              }
-
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          return (window.location.href =
-                                            document.referrer ||
-                                            "https://rentamon.com/panel/");
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
                               }
                             }}
                             submitsForm={true}

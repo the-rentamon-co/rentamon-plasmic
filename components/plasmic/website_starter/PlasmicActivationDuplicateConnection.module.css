@@ -1538,7 +1538,6 @@
   }
 }
 .freeBox__eTpk2 {
-  display: flex;
   flex-direction: column;
   width: 100%;
   height: auto;
@@ -1546,6 +1545,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .jabamaSendOtp:global(.__wab_instance) {
@@ -2201,7 +2201,7 @@
   width: 350px;
   background: var(--token-8nedppYkGVaH);
   height: 50px;
-  cursor: auto;
+  cursor: pointer;
   flex-shrink: 0;
   border-radius: 100px;
   margin: 10px 0px;
@@ -2350,7 +2350,6 @@
   }
 }
 .freeBox__p63Lx {
-  display: flex;
   flex-direction: column;
   width: 100%;
   height: auto;
@@ -2358,6 +2357,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .otaghakSendOtp:global(.__wab_instance) {
@@ -2476,6 +2476,7 @@
   background: var(--token-8nedppYkGVaH);
   font-size: 14px;
   height: 50px;
+  cursor: pointer;
   flex-shrink: 0;
   border-radius: 100px;
   margin: 10px 0px;

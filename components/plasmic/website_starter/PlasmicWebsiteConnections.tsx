@@ -101,6 +101,8 @@ export type PlasmicWebsiteConnections__OverridesType = {
   localStorage?: Flex__<"div">;
   connectedPlatforms?: Flex__<"div">;
   newPlatform?: Flex__<"div">;
+  connectedPlatforms2?: Flex__<"div">;
+  newPlatform2?: Flex__<"div">;
   propGuide?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -408,41 +410,41 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                 </div>
               ) : null}
             </div>
-          </div>
-          {(
-            hasVariant(globalVariants, "screen", "mobile")
-              ? (() => {
-                  try {
-                    return true;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
                       return true;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
                     }
-                    throw e;
+                  })()
+                : hasVariant(globalVariants, "screen", "tablet")
+                ? true
+                : true
+            ) ? (
+              <div className={classNames(projectcss.all, sty.freeBox__yAj92)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___5CUqs,
+                    "fadeinf"
+                  )}
+                >
+                  {
+                    "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
                   }
-                })()
-              : hasVariant(globalVariants, "screen", "tablet")
-              ? true
-              : true
-          ) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__yAj92)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___5CUqs,
-                  "fadeinf"
-                )}
-              >
-                {
-                  "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                }
+                </div>
               </div>
-            </div>
-          ) : null}
+            ) : null}
+          </div>
           <div
             data-plasmic-name={"platformsStack"}
             data-plasmic-override={overrides.platformsStack}
@@ -692,7 +694,7 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                                         "mobile"
                                       )
                                         ? "80%"
-                                        : undefined
+                                        : "80%"
                                     }
                                   />
                                 </div>
@@ -903,9 +905,7 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                       !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                       (() => {
                         try {
-                          return $state.apiRequest2.data.filter(
-                            item => item.property_name !== "اقامتگاه ۱"
-                          );
+                          return $state.apiRequest2.data;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -921,9 +921,11 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                       const currentIndex = __plasmic_idx_0;
                       return (
                         <div
+                          data-plasmic-name={"connectedPlatforms2"}
+                          data-plasmic-override={overrides.connectedPlatforms2}
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__x0APy,
+                            sty.connectedPlatforms2,
                             hasVariant(globalVariants, "screen", "mobile")
                               ? "clickable"
                               : "clickable fadeinf"
@@ -932,12 +934,29 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                           onClick={async event => {
                             const $steps = {};
 
-                            $steps["goToPropertyEdit"] = true
+                            $steps["goToActivationDuplicateConnection"] = true
                               ? (() => {
                                   const actionArgs = {
-                                    destination: `/property/edit/${(() => {
+                                    destination: `/connections?step=${(() => {
                                       try {
-                                        return currentItem.id;
+                                        return (() => {
+                                          switch (currentItem.website) {
+                                            case 2:
+                                              return 1;
+                                            case 3:
+                                              return 3;
+                                            case 4:
+                                              return 5;
+                                            case 6:
+                                              return 7;
+                                            case 7:
+                                              return 10;
+                                            case 8:
+                                              return 9;
+                                            default:
+                                              return null;
+                                          }
+                                        })();
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
@@ -965,14 +984,18 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                                 })()
                               : undefined;
                             if (
-                              $steps["goToPropertyEdit"] != null &&
-                              typeof $steps["goToPropertyEdit"] === "object" &&
-                              typeof $steps["goToPropertyEdit"].then ===
-                                "function"
+                              $steps["goToActivationDuplicateConnection"] !=
+                                null &&
+                              typeof $steps[
+                                "goToActivationDuplicateConnection"
+                              ] === "object" &&
+                              typeof $steps["goToActivationDuplicateConnection"]
+                                .then === "function"
                             ) {
-                              $steps["goToPropertyEdit"] = await $steps[
-                                "goToPropertyEdit"
-                              ];
+                              $steps["goToActivationDuplicateConnection"] =
+                                await $steps[
+                                  "goToActivationDuplicateConnection"
+                                ];
                             }
                           }}
                         >
@@ -992,36 +1015,49 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                             <div
                               className={classNames(
                                 projectcss.all,
-                                sty.freeBox__eaEff
+                                sty.freeBox__h4125
                               )}
                             >
                               <PlasmicImg__
                                 alt={""}
-                                className={classNames(
-                                  sty.img__watuF,
-                                  hasVariant(globalVariants, "screen", "mobile")
-                                    ? "shine"
-                                    : ``
-                                )}
-                                displayHeight={
-                                  hasVariant(globalVariants, "screen", "mobile")
-                                    ? "100%"
-                                    : "100%"
-                                }
+                                className={classNames(sty.img__at2Hg)}
+                                displayHeight={"auto"}
                                 displayMaxHeight={"none"}
                                 displayMaxWidth={"100%"}
                                 displayMinHeight={"0"}
                                 displayMinWidth={"0"}
-                                displayWidth={
+                                displayWidth={"auto"}
+                                height={
                                   hasVariant(globalVariants, "screen", "mobile")
-                                    ? "100%"
-                                    : "100%"
+                                    ? ``
+                                    : undefined
                                 }
-                                height={``}
                                 loading={"lazy"}
                                 src={(() => {
                                   try {
-                                    return currentItem.profile_pic_link;
+                                    return (() => {
+                                      switch (
+                                        $state.apiRequest2.data[currentIndex]
+                                          .website
+                                      ) {
+                                        case 2:
+                                          return "https://rentamon.com/plasmic/website_starter/images/image19.svg";
+                                        case 3:
+                                          return "https://rentamon.com/plasmic/website_starter/images/image9.svg";
+                                        case 4:
+                                          return "https://rentamon.com/plasmic/website_starter/images/image20.svg";
+                                        case 5:
+                                          return "https://site-assets.plasmic.app/e561cc4133f269c501fd49dd6e37e1b7.svg";
+                                        case 6:
+                                          return "https://rentamon.com/plasmic/website_starter/images/image13.svg";
+                                        case 7:
+                                          return "https://rentamon.com/plasmic/website_starter/images/image21.svg";
+                                        case 8:
+                                          return "https://rentamon.com/plasmic/website_starter/images/image18.svg";
+                                        default:
+                                          return "";
+                                      }
+                                    })();
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
@@ -1033,33 +1069,60 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                                     throw e;
                                   }
                                 })()}
+                                width={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "80%"
+                                    : "80%"
+                                }
                               />
                             </div>
                           ) : null}
                           <div
                             className={classNames(
                               projectcss.all,
-                              sty.freeBox__o5Md7
+                              sty.freeBox__sms9B
                             )}
                           >
                             <div
                               className={classNames(
                                 projectcss.all,
                                 projectcss.__wab_text,
-                                sty.text__gtHAc
+                                sty.text__ky5Wm
                               )}
                             >
                               <React.Fragment>
                                 {(() => {
                                   try {
-                                    return currentItem.property_name;
+                                    return (() => {
+                                      switch (
+                                        $state.apiRequest2.data[currentIndex]
+                                          .website
+                                      ) {
+                                        case 2:
+                                          return "جاباما";
+                                        case 3:
+                                          return "جاجیگا";
+                                        case 4:
+                                          return "شب";
+                                        case 5:
+                                          return "میزبون";
+                                        case 6:
+                                          return "اتاقک";
+                                        case 7:
+                                          return "مهمانشو";
+                                        case 8:
+                                          return "هومسا";
+                                        default:
+                                          return "";
+                                      }
+                                    })();
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
                                       e?.plasmicType ===
                                         "PlasmicUndefinedDataError"
                                     ) {
-                                      return "\u0633\u0648\u0626\u06cc\u062a \u0645\u0628\u0644\u0647 \u0645\u0647\u062a\u0627\u0628";
+                                      return "\u062c\u0627\u062c\u06cc\u06af\u0627";
                                     }
                                     throw e;
                                   }
@@ -1070,254 +1133,159 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                         </div>
                       );
                     })}
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox__kzXoC,
-                        "clickable fadeinf"
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["goToPropertyEditFirstProperty"] =
-                          $state.apiRequest2.data.filter(
-                            item => item.property_name !== "اقامتگاه ۱"
-                          ).length == 0
-                            ? (() => {
-                                const actionArgs = {
-                                  destination: `/property/edit/first-property`
-                                };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
+                    {(() => {
+                      try {
+                        return ![2, 3, 4, 6, 7, 8].every(required =>
+                          $state.apiRequest2.data.some(
+                            item => item.website === required
+                          )
+                        );
+                      } catch (e) {
                         if (
-                          $steps["goToPropertyEditFirstProperty"] != null &&
-                          typeof $steps["goToPropertyEditFirstProperty"] ===
-                            "object" &&
-                          typeof $steps["goToPropertyEditFirstProperty"]
-                            .then === "function"
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          $steps["goToPropertyEditFirstProperty"] =
-                            await $steps["goToPropertyEditFirstProperty"];
+                          return false;
                         }
-
-                        $steps["goToPropertyCreate"] =
-                          $state.apiRequest2.data.filter(
-                            item => item.property_name !== "اقامتگاه ۱"
-                          ).length >= 1
-                            ? (() => {
-                                const actionArgs = {
-                                  destination: `/property/create`
-                                };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                        if (
-                          $steps["goToPropertyCreate"] != null &&
-                          typeof $steps["goToPropertyCreate"] === "object" &&
-                          typeof $steps["goToPropertyCreate"].then ===
-                            "function"
-                        ) {
-                          $steps["goToPropertyCreate"] = await $steps[
-                            "goToPropertyCreate"
-                          ];
-                        }
-                      }}
-                    >
+                        throw e;
+                      }
+                    })() ? (
                       <div
+                        data-plasmic-name={"newPlatform2"}
+                        data-plasmic-override={overrides.newPlatform2}
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__jaIeA
+                          sty.newPlatform2,
+                          "clickable fadein"
                         )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__jufQ)}
-                          displayHeight={
-                            hasVariant(globalVariants, "screen", "mobile")
-                              ? "60px"
-                              : "52px"
-                          }
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image110.svg",
-                            fullWidth: 51,
-                            fullHeight: 51,
-                            aspectRatio: 1
-                          }}
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___6FKpg
-                        )}
+                        onClick={async event => {
+                          const $steps = {};
+                        }}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__iZwx
+                            sty.freeBox___3Sdrl
                           )}
                         >
-                          {hasVariant(globalVariants, "screen", "mobile")
-                            ? "\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                            : "\u0627\u06cc\u062c\u0627\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__nkVeq)}
+                            displayHeight={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? "60px"
+                                : "52px"
+                            }
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/image110.svg",
+                              fullWidth: 51,
+                              fullHeight: 51,
+                              aspectRatio: 1
+                            }}
+                          />
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___2GSHa)}
-                  >
-                    {(
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? (() => {
-                            try {
-                              return $state.propTour === true;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return true;
-                              }
-                              throw e;
-                            }
-                          })()
-                        : (() => {
-                            try {
-                              return $state.propTour === true;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return true;
-                              }
-                              throw e;
-                            }
-                          })()
-                    ) ? (
-                      <div
-                        data-plasmic-name={"propGuide"}
-                        data-plasmic-override={overrides.propGuide}
-                        className={classNames(projectcss.all, sty.propGuide)}
-                      >
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__mXPev
+                            sty.freeBox__gfS8U
                           )}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__ueXoF
+                              sty.text__wFgl
                             )}
                           >
-                            {
-                              "\u0631\u0648\u06cc \u062f\u06a9\u0645\u0647  +  \u0628\u0627\u0644\u0627 \u0628\u0632\u0646 \u062a\u0627 \u0632\u06cc\u0631 \u06f1 \u062f\u0642\u06cc\u0642\u0647\n\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc"
-                            }
+                            {hasVariant(globalVariants, "screen", "mobile")
+                              ? "\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                              : "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f"}
                           </div>
                         </div>
                       </div>
                     ) : null}
-                    {(() => {
-                      try {
-                        return $state.propTour === true;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__ny6A4
-                        )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["deleteCookie"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      function deleteCookie(name) {
-                                        document.cookie =
-                                          name +
-                                          "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                                      }
-                                      deleteCookie("prop_tour");
-                                      console.log("delete cookie");
-                                      $state.tourSteps = 0;
-                                      return console.log(
-                                        "delete cookie",
-                                        $state.tourSteps
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
+                  </div>
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___2GSHa
+                      )}
+                    >
+                      {(
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? (() => {
+                              try {
+                                return $state.propTour === true;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : false
+                      ) ? (
+                        <div
+                          data-plasmic-name={"propGuide"}
+                          data-plasmic-override={overrides.propGuide}
+                          className={classNames(projectcss.all, sty.propGuide)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__mXPev
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__ueXoF
+                              )}
+                            >
+                              {
+                                "\u0631\u0648\u06cc \u062f\u06a9\u0645\u0647  +  \u0628\u0627\u0644\u0627 \u0628\u0632\u0646 \u062a\u0627 \u0632\u06cc\u0631 \u06f1 \u062f\u0642\u06cc\u0642\u0647\n\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc"
+                              }
+                            </div>
+                          </div>
+                        </div>
+                      ) : null}
+                      {(() => {
+                        try {
+                          return $state.propTour === true;
+                        } catch (e) {
                           if (
-                            $steps["deleteCookie"] != null &&
-                            typeof $steps["deleteCookie"] === "object" &&
-                            typeof $steps["deleteCookie"].then === "function"
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
-                            $steps["deleteCookie"] = await $steps[
-                              "deleteCookie"
-                            ];
+                            return true;
                           }
-                        }}
-                      >
+                          throw e;
+                        }
+                      })() ? (
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__nWErA
+                            sty.freeBox__ny6A4
                           )}
                           onClick={async event => {
                             const $steps = {};
 
-                            $steps["deleteCookie"] = false
+                            $steps["deleteCookie"] = true
                               ? (() => {
                                   const actionArgs = {
                                     customFunction: async () => {
@@ -1353,11 +1321,58 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                             }
                           }}
                         >
-                          {"\u0628\u06cc\u200c\u062e\u06cc\u0627\u0644"}
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__nWErA
+                            )}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["deleteCookie"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          function deleteCookie(name) {
+                                            document.cookie =
+                                              name +
+                                              "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                          }
+                                          deleteCookie("prop_tour");
+                                          console.log("delete cookie");
+                                          $state.tourSteps = 0;
+                                          return console.log(
+                                            "delete cookie",
+                                            $state.tourSteps
+                                          );
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["deleteCookie"] != null &&
+                                typeof $steps["deleteCookie"] === "object" &&
+                                typeof $steps["deleteCookie"].then ===
+                                  "function"
+                              ) {
+                                $steps["deleteCookie"] = await $steps[
+                                  "deleteCookie"
+                                ];
+                              }
+                            }}
+                          >
+                            {"\u0628\u06cc\u200c\u062e\u06cc\u0627\u0644"}
+                          </div>
                         </div>
-                      </div>
-                    ) : null}
-                  </div>
+                      ) : null}
+                    </div>
+                  ) : null}
                 </ApiRequest>
               </div>
             </div>
@@ -1602,6 +1617,8 @@ const PlasmicDescendants = {
     "localStorage",
     "connectedPlatforms",
     "newPlatform",
+    "connectedPlatforms2",
+    "newPlatform2",
     "propGuide",
     "sideEffect",
     "clarityRntComponent",
@@ -1619,6 +1636,8 @@ const PlasmicDescendants = {
     "localStorage",
     "connectedPlatforms",
     "newPlatform",
+    "connectedPlatforms2",
+    "newPlatform2",
     "propGuide"
   ],
   platforms: [
@@ -1627,6 +1646,8 @@ const PlasmicDescendants = {
     "localStorage",
     "connectedPlatforms",
     "newPlatform",
+    "connectedPlatforms2",
+    "newPlatform2",
     "propGuide"
   ],
   apiRequest2: [
@@ -1634,11 +1655,15 @@ const PlasmicDescendants = {
     "localStorage",
     "connectedPlatforms",
     "newPlatform",
+    "connectedPlatforms2",
+    "newPlatform2",
     "propGuide"
   ],
   localStorage: ["localStorage", "connectedPlatforms", "newPlatform"],
   connectedPlatforms: ["connectedPlatforms"],
   newPlatform: ["newPlatform"],
+  connectedPlatforms2: ["connectedPlatforms2"],
+  newPlatform2: ["newPlatform2"],
   propGuide: ["propGuide"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -1660,6 +1685,8 @@ type NodeDefaultElementType = {
   localStorage: "div";
   connectedPlatforms: "div";
   newPlatform: "div";
+  connectedPlatforms2: "div";
+  newPlatform2: "div";
   propGuide: "div";
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -1737,6 +1764,8 @@ export const PlasmicWebsiteConnections = Object.assign(
     localStorage: makeNodeComponent("localStorage"),
     connectedPlatforms: makeNodeComponent("connectedPlatforms"),
     newPlatform: makeNodeComponent("newPlatform"),
+    connectedPlatforms2: makeNodeComponent("connectedPlatforms2"),
+    newPlatform2: makeNodeComponent("newPlatform2"),
     propGuide: makeNodeComponent("propGuide"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
