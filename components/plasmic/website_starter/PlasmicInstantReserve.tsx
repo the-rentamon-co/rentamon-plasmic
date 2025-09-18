@@ -208,7 +208,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return undefined;
+                return "\u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0627\u0633\u062a\u062e\u0631\u062f\u0627\u0631 \u0628\u0647\u0627\u0631\u0627\u0646";
               }
               throw e;
             }
@@ -494,7 +494,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ fontWeight: 700 }}
                   >
-                    {"\u06f3\u06f0 \u0645\u0647\u0631"}
+                    {"\u06f3\u06f1 \u0634\u0647\u0631\u06cc\u0648\u0631"}
                   </span>
                 </React.Fragment>
               )}
@@ -690,7 +690,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return [];
+                      return (() => {
+                        const __composite = [{ value: null }];
+                        __composite["0"]["value"] = " ";
+                        return __composite;
+                      })();
                     }
                     throw e;
                   }
@@ -875,7 +879,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "success",
-                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0645\u0647\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0634\u0628 \u0622\u0646\u06cc \u0634\u062f",
+                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0634\u0647\u0631\u06cc\u0648\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0634\u0628 \u0622\u0646\u06cc \u0634\u062f",
                                         "top-center"
                                       ]
                                     };
@@ -1187,7 +1191,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         undefined,
-                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u062e\u0631\u062f\u0627\u062f \u062f\u0631 \u0633\u0627\u06cc\u062a \u0627\u062a\u0627\u0642\u06a9 \u0622\u0646\u06cc \u0634\u062f",
+                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0634\u0647\u0631\u06cc\u0648\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0627\u062a\u0627\u0642\u06a9 \u0622\u0646\u06cc \u0634\u062f",
                                         "top-center"
                                       ]
                                     };
@@ -1302,7 +1306,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "error",
-                                        "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u062e\u0648\u0631\u062f",
+                                        "\u0622\u0646\u06cc \u0646\u0634\u062f!",
                                         "top-center"
                                       ]
                                     };
