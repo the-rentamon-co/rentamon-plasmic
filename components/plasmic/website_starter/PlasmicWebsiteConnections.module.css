@@ -173,6 +173,10 @@
   top: 0;
   right: 0;
 }
+.profile2:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .freeBox__yAj92 {
   display: flex;
   flex-direction: column;
@@ -219,27 +223,6 @@
   .text___5CUqs {
     font-size: 17px;
   }
-}
-.freeBox__ambKm {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 10%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-@media (max-width: 500px) {
-  .freeBox__ambKm {
-    display: none;
-  }
-}
-.profile2:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
 }
 .platformsStack {
   display: flex;

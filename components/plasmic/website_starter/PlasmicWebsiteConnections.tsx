@@ -372,76 +372,77 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                       }
                     })()}
                   />
+
+                  <ApiRequest
+                    data-plasmic-name={"profile2"}
+                    data-plasmic-override={overrides.profile2}
+                    className={classNames("__wab_instance", sty.profile2)}
+                    errorDisplay={null}
+                    loadingDisplay={null}
+                    method={"GET"}
+                    onError={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "profile2",
+                        "error"
+                      ]).apply(null, eventArgs);
+                    }}
+                    onLoading={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "profile2",
+                        "loading"
+                      ]).apply(null, eventArgs);
+                    }}
+                    onSuccess={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "profile2",
+                        "data"
+                      ]).apply(null, eventArgs);
+                    }}
+                    ref={ref => {
+                      $refs["profile2"] = ref;
+                    }}
+                    url={
+                      "https://api-v2.rentamon.com/api/user_info?property_id=1"
+                    }
+                  />
                 </div>
               ) : null}
             </div>
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return true;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })()
-                : hasVariant(globalVariants, "screen", "tablet")
-                ? true
-                : true
-            ) ? (
-              <div className={classNames(projectcss.all, sty.freeBox__yAj92)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___5CUqs,
-                    "fadeinf"
-                  )}
-                >
-                  {
-                    "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                  }
-                </div>
-              </div>
-            ) : null}
-            <div className={classNames(projectcss.all, sty.freeBox__ambKm)}>
-              <ApiRequest
-                data-plasmic-name={"profile2"}
-                data-plasmic-override={overrides.profile2}
-                className={classNames("__wab_instance", sty.profile2)}
-                errorDisplay={null}
-                loadingDisplay={null}
-                method={"GET"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "profile2",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "profile2",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, ["profile2", "data"]).apply(
-                    null,
-                    eventArgs
-                  );
-                }}
-                ref={ref => {
-                  $refs["profile2"] = ref;
-                }}
-                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-              />
-            </div>
           </div>
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? (() => {
+                  try {
+                    return true;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+              : hasVariant(globalVariants, "screen", "tablet")
+              ? true
+              : true
+          ) ? (
+            <div className={classNames(projectcss.all, sty.freeBox__yAj92)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___5CUqs,
+                  "fadeinf"
+                )}
+              >
+                {
+                  "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                }
+              </div>
+            </div>
+          ) : null}
           <div
             data-plasmic-name={"platformsStack"}
             data-plasmic-override={overrides.platformsStack}
@@ -637,6 +638,15 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                                     displayMinHeight={"0"}
                                     displayMinWidth={"0"}
                                     displayWidth={"auto"}
+                                    height={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? ``
+                                        : undefined
+                                    }
                                     loading={"lazy"}
                                     src={(() => {
                                       try {
@@ -675,6 +685,15 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                                         throw e;
                                       }
                                     })()}
+                                    width={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? "80%"
+                                        : undefined
+                                    }
                                   />
                                 </div>
                               ) : null}

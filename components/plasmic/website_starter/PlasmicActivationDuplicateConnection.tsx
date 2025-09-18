@@ -4799,51 +4799,6 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                               onClick={async () => {
                                 const $steps = {};
 
-                                $steps["updateStep"] = false
-                                  ? (() => {
-                                      const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2
-                                      };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
-                                        }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["updateStep"] != null &&
-                                  typeof $steps["updateStep"] === "object" &&
-                                  typeof $steps["updateStep"].then ===
-                                    "function"
-                                ) {
-                                  $steps["updateStep"] = await $steps[
-                                    "updateStep"
-                                  ];
-                                }
-
                                 $steps["jabamaVerify"] =
                                   $state.form.value.jabamaOTP !== undefined
                                     ? (() => {
@@ -4898,6 +4853,67 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                 ) {
                                   $steps["jabamaVerify"] = await $steps[
                                     "jabamaVerify"
+                                  ];
+                                }
+
+                                $steps["successToast"] = (() => {
+                                  if (
+                                    $steps.jabamaVerify.data.status === true
+                                  ) {
+                                    return ($state.platformstatus.status.jabama =
+                                      true);
+                                  } else {
+                                    return ($state.platformstatus.status.jabama =
+                                      false);
+                                  }
+                                })()
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          undefined,
+                                          "\u062c\u0627\u0628\u0627\u0645\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["successToast"] != null &&
+                                  typeof $steps["successToast"] === "object" &&
+                                  typeof $steps["successToast"].then ===
+                                    "function"
+                                ) {
+                                  $steps["successToast"] = await $steps[
+                                    "successToast"
+                                  ];
+                                }
+
+                                $steps["errorToast"] =
+                                  $steps.jabamaVerify.status != 200
+                                    ? (() => {
+                                        const actionArgs = {
+                                          args: [
+                                            "error",
+                                            "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
+                                            "top-center"
+                                          ]
+                                        };
+                                        return $globalActions[
+                                          "Fragment.showToast"
+                                        ]?.apply(null, [...actionArgs.args]);
+                                      })()
+                                    : undefined;
+                                if (
+                                  $steps["errorToast"] != null &&
+                                  typeof $steps["errorToast"] === "object" &&
+                                  typeof $steps["errorToast"].then ===
+                                    "function"
+                                ) {
+                                  $steps["errorToast"] = await $steps[
+                                    "errorToast"
                                   ];
                                 }
 
@@ -4974,30 +4990,48 @@ function PlasmicActivationDuplicateConnection__RenderFunc(props: {
                                   ];
                                 }
 
-                                $steps["invokeGlobalAction"] =
-                                  $steps.jabamaVerify.status != 200
-                                    ? (() => {
-                                        const actionArgs = {
-                                          args: [
-                                            "error",
-                                            "\u00ab\u0627\u062a\u0635\u0627\u0644 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f\u00bb",
-                                            "top-center"
-                                          ]
-                                        };
-                                        return $globalActions[
-                                          "Fragment.showToast"
-                                        ]?.apply(null, [...actionArgs.args]);
-                                      })()
-                                    : undefined;
+                                $steps["updateStep"] = false
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["step"]
+                                        },
+                                        operation: 2
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        const oldValue = $stateGet(
+                                          objRoot,
+                                          variablePath
+                                        );
+                                        $stateSet(
+                                          objRoot,
+                                          variablePath,
+                                          oldValue + 1
+                                        );
+                                        return oldValue + 1;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
                                 if (
-                                  $steps["invokeGlobalAction"] != null &&
-                                  typeof $steps["invokeGlobalAction"] ===
-                                    "object" &&
-                                  typeof $steps["invokeGlobalAction"].then ===
+                                  $steps["updateStep"] != null &&
+                                  typeof $steps["updateStep"] === "object" &&
+                                  typeof $steps["updateStep"].then ===
                                     "function"
                                 ) {
-                                  $steps["invokeGlobalAction"] = await $steps[
-                                    "invokeGlobalAction"
+                                  $steps["updateStep"] = await $steps[
+                                    "updateStep"
                                   ];
                                 }
                               }}
