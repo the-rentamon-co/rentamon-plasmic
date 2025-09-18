@@ -226,7 +226,6 @@
   height: 1em;
 }
 .platformStatus {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -236,6 +235,7 @@
   align-items: center;
   margin-top: 8px;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 @media (max-width: 500px) {
@@ -3075,7 +3075,6 @@
   }
 }
 .newPlatformPropertyAlert {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -3084,6 +3083,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 @media (max-width: 500px) {

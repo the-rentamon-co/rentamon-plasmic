@@ -2974,6 +2974,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/connection/[type]"
+        },
+        {
+          "id": "s5Ue8ma2bsNz",
+          "name": "WebsiteConnections",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicWebsiteConnections.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/connections2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicWebsiteConnections.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/connections2"
         }
       ],
       "icons": [
