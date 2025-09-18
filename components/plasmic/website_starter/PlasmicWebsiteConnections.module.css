@@ -332,7 +332,7 @@
     padding-top: 0px;
   }
 }
-.apiRequest:global(.__wab_instance) {
+.apiRequest2:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -1157,10 +1157,6 @@
   .text__nWErA {
     padding-right: 0px;
   }
-}
-.apiRequest2:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
 }
 .sideEffect:global(.__wab_instance) {
   max-width: 100%;

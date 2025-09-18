@@ -97,12 +97,11 @@ export type PlasmicWebsiteConnections__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   platformsStack?: Flex__<"div">;
   platforms?: Flex__<"div">;
-  apiRequest?: Flex__<typeof ApiRequest>;
+  apiRequest2?: Flex__<typeof ApiRequest>;
   localStorage?: Flex__<"div">;
   connectedPlatforms?: Flex__<"div">;
   newPlatform?: Flex__<"div">;
   propGuide?: Flex__<"div">;
-  apiRequest2?: Flex__<typeof ApiRequest>;
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -156,28 +155,28 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "apiRequest.data",
+        path: "apiRequest2.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "apiRequest2"
       },
       {
-        path: "apiRequest.error",
+        path: "apiRequest2.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "apiRequest2"
       },
       {
-        path: "apiRequest.loading",
+        path: "apiRequest2.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "apiRequest2"
       },
       {
         path: "profile2.data",
@@ -220,30 +219,6 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
-      },
-      {
-        path: "apiRequest2.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest2"
-      },
-      {
-        path: "apiRequest2.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest2"
-      },
-      {
-        path: "apiRequest2.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest2"
       }
     ],
     [$props, $ctx, $refs]
@@ -485,9 +460,9 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                 )}
               >
                 <ApiRequest
-                  data-plasmic-name={"apiRequest"}
-                  data-plasmic-override={overrides.apiRequest}
-                  className={classNames("__wab_instance", sty.apiRequest)}
+                  data-plasmic-name={"apiRequest2"}
+                  data-plasmic-override={overrides.apiRequest2}
+                  className={classNames("__wab_instance", sty.apiRequest2)}
                   errorDisplay={
                     <div
                       className={classNames(
@@ -840,10 +815,10 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                       </div>
                     </React.Fragment>
                   }
-                  method={"GET"}
+                  method={"POST"}
                   onError={async (...eventArgs: any) => {
                     generateStateOnChangeProp($state, [
-                      "apiRequest",
+                      "apiRequest2",
                       "error"
                     ]).apply(null, eventArgs);
 
@@ -853,13 +828,13 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                   }}
                   onLoading={async (...eventArgs: any) => {
                     generateStateOnChangeProp($state, [
-                      "apiRequest",
+                      "apiRequest2",
                       "loading"
                     ]).apply(null, eventArgs);
                   }}
                   onSuccess={async (...eventArgs: any) => {
                     generateStateOnChangeProp($state, [
-                      "apiRequest",
+                      "apiRequest2",
                       "data"
                     ]).apply(null, eventArgs);
 
@@ -871,7 +846,7 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                             const actionArgs = {
                               customFunction: async () => {
                                 return (() => {
-                                  const data = $state.apiRequest.data;
+                                  const data = $state.apiRequest2.data;
                                   if (Array.isArray(data) && data.length > 0) {
                                     return localStorage.setItem(
                                       "property_data",
@@ -896,9 +871,11 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                     }).apply(null, eventArgs);
                   }}
                   ref={ref => {
-                    $refs["apiRequest"] = ref;
+                    $refs["apiRequest2"] = ref;
                   }}
-                  url={"https://gateway.rentamon.com/webhook/properties"}
+                  url={
+                    "https://gateway.rentamon.com/webhook/connection-statuses"
+                  }
                 >
                   <div
                     className={classNames(projectcss.all, sty.freeBox__yz6Xw)}
@@ -907,7 +884,7 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                       !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                       (() => {
                         try {
-                          return $state.apiRequest.data.filter(
+                          return $state.apiRequest2.data.filter(
                             item => item.property_name !== "اقامتگاه ۱"
                           );
                         } catch (e) {
@@ -1084,7 +1061,7 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                         const $steps = {};
 
                         $steps["goToPropertyEditFirstProperty"] =
-                          $state.apiRequest.data.filter(
+                          $state.apiRequest2.data.filter(
                             item => item.property_name !== "اقامتگاه ۱"
                           ).length == 0
                             ? (() => {
@@ -1117,7 +1094,7 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                         }
 
                         $steps["goToPropertyCreate"] =
-                          $state.apiRequest.data.filter(
+                          $state.apiRequest2.data.filter(
                             item => item.property_name !== "اقامتگاه ۱"
                           ).length >= 1
                             ? (() => {
@@ -1364,36 +1341,6 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                   </div>
                 </ApiRequest>
               </div>
-              <ApiRequest
-                data-plasmic-name={"apiRequest2"}
-                data-plasmic-override={overrides.apiRequest2}
-                className={classNames("__wab_instance", sty.apiRequest2)}
-                errorDisplay={null}
-                loadingDisplay={null}
-                method={"POST"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
-                ref={ref => {
-                  $refs["apiRequest2"] = ref;
-                }}
-                url={"https://gateway.rentamon.com/webhook/connection-statuses"}
-              />
             </div>
           </div>
           <SideEffect
@@ -1632,12 +1579,11 @@ const PlasmicDescendants = {
     "profile2",
     "platformsStack",
     "platforms",
-    "apiRequest",
+    "apiRequest2",
     "localStorage",
     "connectedPlatforms",
     "newPlatform",
     "propGuide",
-    "apiRequest2",
     "sideEffect",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -1650,24 +1596,22 @@ const PlasmicDescendants = {
   platformsStack: [
     "platformsStack",
     "platforms",
-    "apiRequest",
+    "apiRequest2",
     "localStorage",
     "connectedPlatforms",
     "newPlatform",
-    "propGuide",
-    "apiRequest2"
+    "propGuide"
   ],
   platforms: [
     "platforms",
-    "apiRequest",
+    "apiRequest2",
     "localStorage",
     "connectedPlatforms",
     "newPlatform",
-    "propGuide",
-    "apiRequest2"
+    "propGuide"
   ],
-  apiRequest: [
-    "apiRequest",
+  apiRequest2: [
+    "apiRequest2",
     "localStorage",
     "connectedPlatforms",
     "newPlatform",
@@ -1677,7 +1621,6 @@ const PlasmicDescendants = {
   connectedPlatforms: ["connectedPlatforms"],
   newPlatform: ["newPlatform"],
   propGuide: ["propGuide"],
-  apiRequest2: ["apiRequest2"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -1694,12 +1637,11 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   platformsStack: "div";
   platforms: "div";
-  apiRequest: typeof ApiRequest;
+  apiRequest2: typeof ApiRequest;
   localStorage: "div";
   connectedPlatforms: "div";
   newPlatform: "div";
   propGuide: "div";
-  apiRequest2: typeof ApiRequest;
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -1772,12 +1714,11 @@ export const PlasmicWebsiteConnections = Object.assign(
     profile2: makeNodeComponent("profile2"),
     platformsStack: makeNodeComponent("platformsStack"),
     platforms: makeNodeComponent("platforms"),
-    apiRequest: makeNodeComponent("apiRequest"),
+    apiRequest2: makeNodeComponent("apiRequest2"),
     localStorage: makeNodeComponent("localStorage"),
     connectedPlatforms: makeNodeComponent("connectedPlatforms"),
     newPlatform: makeNodeComponent("newPlatform"),
     propGuide: makeNodeComponent("propGuide"),
-    apiRequest2: makeNodeComponent("apiRequest2"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
