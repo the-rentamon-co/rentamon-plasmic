@@ -61,6 +61,8 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
+import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
@@ -93,12 +95,24 @@ export type PlasmicInstantReserve__OverridesType = {
   topContainer?: Flex__<"section">;
   topContainer2?: Flex__<"section">;
   alertIcon?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   alertText?: Flex__<"div">;
   alertButton?: Flex__<"div">;
   button?: Flex__<"div">;
   mainSection?: Flex__<"section">;
   properties?: Flex__<typeof ApiRequest>;
+  selectProperty?: Flex__<typeof Select>;
+  shabContainer?: Flex__<"div">;
+  shabSwitch?: Flex__<typeof Switch>;
+  otaghakContainer?: Flex__<"div">;
+  otaghakSwitch?: Flex__<typeof Switch>;
+  jabamaContainer?: Flex__<"div">;
+  fragmentSwitch3?: Flex__<typeof Switch>;
+  jajigaContainer?: Flex__<"div">;
+  fragmentSwitch5?: Flex__<typeof Switch>;
+  mihmanshoContainer?: Flex__<"div">;
+  fragmentSwitch7?: Flex__<typeof Switch>;
+  homsaContainer?: Flex__<"div">;
+  fragmentSwitch4?: Flex__<typeof Switch>;
   desc?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   returnButton?: Flex__<"div">;
@@ -155,6 +169,62 @@ function PlasmicInstantReserve__RenderFunc(props: {
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
+        path: "shabSwitch.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.properties.data
+                .find(
+                  property =>
+                    property.property_name === $state.selectProperty.value
+                )
+                .website_ids.find(website => website.website_id === 4)
+                .is_instant;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "selectProperty.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.properties.data[0].property_name;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "fragmentSwitch3.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "fragmentSwitch4.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
         path: "properties.data",
         type: "private",
         variableType: "object",
@@ -177,6 +247,43 @@ function PlasmicInstantReserve__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "properties"
+      },
+      {
+        path: "fragmentSwitch5.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "fragmentSwitch7.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "otaghakSwitch.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.properties.data
+                .find(
+                  property =>
+                    property.property_name === $state.selectProperty.value
+                )
+                .website_ids.find(website => website.website_id === 6)
+                .is_instant;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "variable",
@@ -379,7 +486,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ fontWeight: 700 }}
                   >
-                    {"\u06f3\u06f1 \u0634\u0647\u0631\u06cc\u0648\u0631"}
+                    {"\u06f3\u06f1 \u062a\u06cc\u0631"}
                   </span>
                 </React.Fragment>
               )}
@@ -390,167 +497,1707 @@ function PlasmicInstantReserve__RenderFunc(props: {
             data-plasmic-override={overrides.topContainer2}
             className={classNames(projectcss.all, sty.topContainer2)}
           >
-            {false ? (
-              <div className={classNames(projectcss.all, sty.freeBox__pbFP)}>
+            <div className={classNames(projectcss.all, sty.freeBox__pbFP)}>
+              <div
+                data-plasmic-name={"alertIcon"}
+                data-plasmic-override={overrides.alertIcon}
+                className={classNames(projectcss.all, sty.alertIcon)}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__mAxyx)}
+                  displayHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "35px"
+                      : "43px"
+                  }
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image72.svg",
+                    fullWidth: 42,
+                    fullHeight: 42,
+                    aspectRatio: 1
+                  }}
+                />
+              </div>
+              <div
+                data-plasmic-name={"alertText"}
+                data-plasmic-override={overrides.alertText}
+                className={classNames(projectcss.all, sty.alertText)}
+              >
                 <div
-                  data-plasmic-name={"alertIcon"}
-                  data-plasmic-override={overrides.alertIcon}
-                  className={classNames(projectcss.all, sty.alertIcon)}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__rnDcz
+                  )}
                 >
-                  <PlasmicImg__
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
-                    alt={""}
-                    className={classNames(sty.img)}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "100%"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "35px"
-                        : "43px"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image72.svg",
-                      fullWidth: 42,
-                      fullHeight: 42,
-                      aspectRatio: 1
-                    }}
-                  />
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u0628\u0647\u200c\u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."
+                    : "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u060c \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."}
                 </div>
+              </div>
+              <div
+                data-plasmic-name={"alertButton"}
+                data-plasmic-override={overrides.alertButton}
+                className={classNames(projectcss.all, sty.alertButton)}
+              >
                 <div
-                  data-plasmic-name={"alertText"}
-                  data-plasmic-override={overrides.alertText}
-                  className={classNames(projectcss.all, sty.alertText)}
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames(projectcss.all, sty.button)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToSetting"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/support` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToSetting"] != null &&
+                      typeof $steps["goToSetting"] === "object" &&
+                      typeof $steps["goToSetting"].then === "function"
+                    ) {
+                      $steps["goToSetting"] = await $steps["goToSetting"];
+                    }
+                  }}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__rnDcz
+                      sty.text__mg9Jn
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0628\u0647\u200c\u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."
-                      : "\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u060c \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."}
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"alertButton"}
-                  data-plasmic-override={overrides.alertButton}
-                  className={classNames(projectcss.all, sty.alertButton)}
-                >
-                  <div
-                    data-plasmic-name={"button"}
-                    data-plasmic-override={overrides.button}
-                    className={classNames(projectcss.all, sty.button)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["goToSetting"] = true
-                        ? (() => {
-                            const actionArgs = { destination: `/support` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToSetting"] != null &&
-                        typeof $steps["goToSetting"] === "object" &&
-                        typeof $steps["goToSetting"].then === "function"
-                      ) {
-                        $steps["goToSetting"] = await $steps["goToSetting"];
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__mg9Jn
-                      )}
-                    >
-                      {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
-                    </div>
+                    {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
                   </div>
                 </div>
               </div>
-            ) : null}
+            </div>
           </section>
-          {false ? (
-            <section
-              data-plasmic-name={"mainSection"}
-              data-plasmic-override={overrides.mainSection}
-              className={classNames(projectcss.all, sty.mainSection, "fadein")}
+          <section
+            data-plasmic-name={"mainSection"}
+            data-plasmic-override={overrides.mainSection}
+            className={classNames(projectcss.all, sty.mainSection, "fadein")}
+          >
+            <ApiRequest
+              data-plasmic-name={"properties"}
+              data-plasmic-override={overrides.properties}
+              className={classNames("__wab_instance", sty.properties)}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xsnPs
+                  )}
+                >
+                  {"Error fetching data"}
+                </div>
+              }
+              loadingDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yosUl
+                  )}
+                >
+                  {"Loading..."}
+                </div>
+              }
+              method={"POST"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "properties",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "properties",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["properties", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["properties"] = ref;
+              }}
+              url={"https://gateway.rentamon.com/webhook/property-instant?v=2"}
             >
-              <ApiRequest
-                data-plasmic-name={"properties"}
-                data-plasmic-override={overrides.properties}
-                children={null}
-                className={classNames("__wab_instance", sty.properties)}
-                errorDisplay={
+              <Select
+                data-plasmic-name={"selectProperty"}
+                data-plasmic-override={overrides.selectProperty}
+                className={classNames("__wab_instance", sty.selectProperty)}
+                onChange={async (...eventArgs: any) => {
+                  ((...eventArgs) => {
+                    generateStateOnChangeProp($state, [
+                      "selectProperty",
+                      "value"
+                    ])(eventArgs[0]);
+                  }).apply(null, eventArgs);
+
+                  if (
+                    eventArgs.length > 1 &&
+                    eventArgs[1] &&
+                    eventArgs[1]._plasmic_state_init_
+                  ) {
+                    return;
+                  }
+                }}
+                options={(() => {
+                  try {
+                    return $state.properties.data.map(
+                      property => property.property_name
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
+                placeholder={
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__xsnPs
+                      sty.text__strx4
                     )}
                   >
-                    {"Error fetching data"}
+                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
                   </div>
                 }
-                loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yosUl
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
-                }
-                method={"POST"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "properties",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "properties",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "properties",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
-                ref={ref => {
-                  $refs["properties"] = ref;
-                }}
-                url={"https://gateway.rentamon.com/webhook/na-instant"}
+                value={generateStateValueProp($state, [
+                  "selectProperty",
+                  "value"
+                ])}
               />
-            </section>
-          ) : null}
+
+              {(() => {
+                try {
+                  return $state.properties.data;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return false;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div className={classNames(projectcss.all, sty.freeBox__gWfWp)}>
+                  {(() => {
+                    try {
+                      return $state.properties.data
+                        .find(
+                          property =>
+                            property.property_name ===
+                            $state.selectProperty.value
+                        )
+                        .website_ids.some(website => website.website_id === 4);
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"shabContainer"}
+                      data-plasmic-override={overrides.shabContainer}
+                      className={classNames(projectcss.all, sty.shabContainer)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__sSoSg
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__mFudq)}
+                          displayHeight={"44px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"44px"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image.png",
+                            fullWidth: 88,
+                            fullHeight: 88,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__jbz7
+                          )}
+                        >
+                          {"\u0634\u0628"}
+                        </div>
+                      </div>
+                      <Switch
+                        data-plasmic-name={"shabSwitch"}
+                        data-plasmic-override={overrides.shabSwitch}
+                        checked={generateStateValueProp($state, [
+                          "shabSwitch",
+                          "checked"
+                        ])}
+                        className={classNames("__wab_instance", sty.shabSwitch)}
+                        disabled={false}
+                        onCheckedChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "shabSwitch",
+                            "checked"
+                          ]).apply(null, eventArgs);
+
+                          (async checked => {
+                            const $steps = {};
+
+                            $steps["turnOnSuccessToast"] =
+                              $steps.apiRequestForInstant.status === 200 &&
+                              $state.shabSwitch.checked
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "success",
+                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u062e\u0631\u062f\u0627\u062f \u062f\u0631 \u0633\u0627\u06cc\u062a \u0634\u0628 \u0622\u0646\u06cc \u0634\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["turnOnSuccessToast"] != null &&
+                              typeof $steps["turnOnSuccessToast"] ===
+                                "object" &&
+                              typeof $steps["turnOnSuccessToast"].then ===
+                                "function"
+                            ) {
+                              $steps["turnOnSuccessToast"] = await $steps[
+                                "turnOnSuccessToast"
+                              ];
+                            }
+
+                            $steps["turnOffSuccessMessage"] =
+                              $steps.apiRequestForInstant.status === 200 &&
+                              !$state.shabSwitch.checked
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0634\u0628 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["turnOffSuccessMessage"] != null &&
+                              typeof $steps["turnOffSuccessMessage"] ===
+                                "object" &&
+                              typeof $steps["turnOffSuccessMessage"].then ===
+                                "function"
+                            ) {
+                              $steps["turnOffSuccessMessage"] = await $steps[
+                                "turnOffSuccessMessage"
+                              ];
+                            }
+
+                            $steps["apiRequestForInstant"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://gateway.rentamon.com/webhook/shab-instant?v=2",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return $state.shabSwitch.checked
+                                            ? {
+                                                action: "set_instant",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).property_id
+                                              }
+                                            : {
+                                                action: "unset_instant",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).property_id
+                                              };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return {};
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      (() => {
+                                        try {
+                                          return undefined;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return {
+                                              withCredentials: true,
+                                              headers: {
+                                                "Content-Type":
+                                                  "application/x-www-form-urlencoded"
+                                              }
+                                            };
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["apiRequestForInstant"] != null &&
+                              typeof $steps["apiRequestForInstant"] ===
+                                "object" &&
+                              typeof $steps["apiRequestForInstant"].then ===
+                                "function"
+                            ) {
+                              $steps["apiRequestForInstant"] = await $steps[
+                                "apiRequestForInstant"
+                              ];
+                            }
+
+                            $steps["failedToast"] =
+                              $steps.apiRequestForInstant.status != 200
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u062e\u0648\u0631\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["failedToast"] != null &&
+                              typeof $steps["failedToast"] === "object" &&
+                              typeof $steps["failedToast"].then === "function"
+                            ) {
+                              $steps["failedToast"] = await $steps[
+                                "failedToast"
+                              ];
+                            }
+
+                            $steps["updateShabSwitchChecked"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["shabSwitch", "checked"]
+                                    },
+                                    operation: 0,
+                                    value: (() => {
+                                      if (
+                                        $steps.apiRequestForInstant.status ===
+                                        200
+                                      ) {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 4
+                                          ).is_instant =
+                                          $state.shabSwitch.checked);
+                                      } else {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 4
+                                          ).is_instant =
+                                          !$state.shabSwitch.checked);
+                                      }
+                                    })()
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateShabSwitchChecked"] != null &&
+                              typeof $steps["updateShabSwitchChecked"] ===
+                                "object" &&
+                              typeof $steps["updateShabSwitchChecked"].then ===
+                                "function"
+                            ) {
+                              $steps["updateShabSwitchChecked"] = await $steps[
+                                "updateShabSwitchChecked"
+                              ];
+                            }
+                          }).apply(null, eventArgs);
+                        }}
+                      />
+                    </div>
+                  ) : null}
+                  {(() => {
+                    try {
+                      return $state.properties.data
+                        .find(
+                          property =>
+                            property.property_name ===
+                            $state.selectProperty.value
+                        )
+                        .website_ids.some(website => website.website_id === 6);
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"otaghakContainer"}
+                      data-plasmic-override={overrides.otaghakContainer}
+                      className={classNames(
+                        projectcss.all,
+                        sty.otaghakContainer
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__fMwrK
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__yrAV)}
+                          displayHeight={"44px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"44px"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/otaghakPng.png",
+                            fullWidth: 140,
+                            fullHeight: 140,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__txOIf
+                          )}
+                        >
+                          {"\u0627\u062a\u0627\u0642\u06a9"}
+                        </div>
+                      </div>
+                      <Switch
+                        data-plasmic-name={"otaghakSwitch"}
+                        data-plasmic-override={overrides.otaghakSwitch}
+                        checked={generateStateValueProp($state, [
+                          "otaghakSwitch",
+                          "checked"
+                        ])}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.otaghakSwitch
+                        )}
+                        onCheckedChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "otaghakSwitch",
+                            "checked"
+                          ]).apply(null, eventArgs);
+
+                          (async checked => {
+                            const $steps = {};
+
+                            $steps["turnOnSuccessToast"] =
+                              $steps.apiRequestForOtaghakInstant.status ===
+                                200 && $state.otaghakSwitch.checked
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u062e\u0631\u062f\u0627\u062f \u062f\u0631 \u0633\u0627\u06cc\u062a \u0627\u062a\u0627\u0642\u06a9 \u0622\u0646\u06cc \u0634\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["turnOnSuccessToast"] != null &&
+                              typeof $steps["turnOnSuccessToast"] ===
+                                "object" &&
+                              typeof $steps["turnOnSuccessToast"].then ===
+                                "function"
+                            ) {
+                              $steps["turnOnSuccessToast"] = await $steps[
+                                "turnOnSuccessToast"
+                              ];
+                            }
+
+                            $steps["turnOffSuccessToast"] =
+                              $steps.apiRequestForOtaghakInstant.status ===
+                                200 && !$state.otaghakSwitch.checked
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        " \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u062a\u0627\u0642\u06a9 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["turnOffSuccessToast"] != null &&
+                              typeof $steps["turnOffSuccessToast"] ===
+                                "object" &&
+                              typeof $steps["turnOffSuccessToast"].then ===
+                                "function"
+                            ) {
+                              $steps["turnOffSuccessToast"] = await $steps[
+                                "turnOffSuccessToast"
+                              ];
+                            }
+
+                            $steps["apiRequestForOtaghakInstant"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://gateway.rentamon.com/webhook/otaghak-instant?v=2",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return $state.otaghakSwitch.checked
+                                            ? {
+                                                action: "set_instant",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).property_id
+                                              }
+                                            : {
+                                                action: "unset_instant",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).property_id
+                                              };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      {}
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["apiRequestForOtaghakInstant"] != null &&
+                              typeof $steps["apiRequestForOtaghakInstant"] ===
+                                "object" &&
+                              typeof $steps["apiRequestForOtaghakInstant"]
+                                .then === "function"
+                            ) {
+                              $steps["apiRequestForOtaghakInstant"] =
+                                await $steps["apiRequestForOtaghakInstant"];
+                            }
+
+                            $steps["failedToast"] =
+                              $steps.apiRequestForOtaghakInstant.status != 200
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u062e\u0648\u0631\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["failedToast"] != null &&
+                              typeof $steps["failedToast"] === "object" &&
+                              typeof $steps["failedToast"].then === "function"
+                            ) {
+                              $steps["failedToast"] = await $steps[
+                                "failedToast"
+                              ];
+                            }
+
+                            $steps["updateOtaghakChecked"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["otaghakSwitch", "checked"]
+                                    },
+                                    operation: 0,
+                                    value: (() => {
+                                      if (
+                                        $steps.apiRequestForOtaghakInstant
+                                          .status === 200
+                                      ) {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 6
+                                          ).is_instant =
+                                          $state.otaghakSwitch.checked);
+                                      } else {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 6
+                                          ).is_instant =
+                                          !$state.otaghakSwitch.checked);
+                                      }
+                                    })()
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateOtaghakChecked"] != null &&
+                              typeof $steps["updateOtaghakChecked"] ===
+                                "object" &&
+                              typeof $steps["updateOtaghakChecked"].then ===
+                                "function"
+                            ) {
+                              $steps["updateOtaghakChecked"] = await $steps[
+                                "updateOtaghakChecked"
+                              ];
+                            }
+                          }).apply(null, eventArgs);
+                        }}
+                      />
+                    </div>
+                  ) : null}
+                  {(() => {
+                    try {
+                      return $state.properties.data
+                        .find(
+                          property =>
+                            property.property_name ===
+                            $state.selectProperty.value
+                        )
+                        .website_ids.some(website => website.website_id === 2);
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"jabamaContainer"}
+                      data-plasmic-override={overrides.jabamaContainer}
+                      className={classNames(
+                        projectcss.all,
+                        sty.jabamaContainer
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a.",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__bG0B
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__lelMq)}
+                          displayHeight={"44px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"44px"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/jabamaWebp.webp",
+                            fullWidth: 512,
+                            fullHeight: 512,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__ycA87
+                          )}
+                        >
+                          {"\u062c\u0627\u0628\u0627\u0645\u0627"}
+                        </div>
+                      </div>
+                      <Switch
+                        data-plasmic-name={"fragmentSwitch3"}
+                        data-plasmic-override={overrides.fragmentSwitch3}
+                        checked={generateStateValueProp($state, [
+                          "fragmentSwitch3",
+                          "checked"
+                        ])}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.fragmentSwitch3
+                        )}
+                        disabled={true}
+                        onCheckedChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "fragmentSwitch3",
+                            "checked"
+                          ]).apply(null, eventArgs);
+
+                          (async checked => {
+                            const $steps = {};
+
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return localStorage.setItem(
+                                        "IsShabInstant",
+                                        $state.fragmentSwitch3.checked
+                                      );
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
+                            ) {
+                              $steps["runCode"] = await $steps["runCode"];
+                            }
+
+                            $steps["invokeGlobalAction"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://dev.rentamon.com/webhook/shab-instant",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return $ctx.properties.find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          ).property_id;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return {
+                                              dates: "1403-05-30",
+                                              property_id: 1,
+                                              action: "unset_instant"
+                                            };
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      (() => {
+                                        try {
+                                          return {
+                                            headers: {
+                                              "Content-Type":
+                                                "application/x-www-form-urlencoded",
+                                              Authorization: `Bearer ${
+                                                document.cookie
+                                                  .split("; ")
+                                                  .find(row =>
+                                                    row.startsWith(
+                                                      "usso_access_token"
+                                                    )
+                                                  )
+                                                  .split("=")[1]
+                                              }`
+                                            },
+                                            withCredentials: true
+                                          };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return {
+                                              withCredentials: true,
+                                              headers: {
+                                                "Content-Type":
+                                                  "application/x-www-form-urlencoded"
+                                              }
+                                            };
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["invokeGlobalAction"] != null &&
+                              typeof $steps["invokeGlobalAction"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction"] = await $steps[
+                                "invokeGlobalAction"
+                              ];
+                            }
+                          }).apply(null, eventArgs);
+                        }}
+                      />
+                    </div>
+                  ) : null}
+                  {(() => {
+                    try {
+                      return $state.properties.data
+                        .find(
+                          property =>
+                            property.property_name ===
+                            $state.selectProperty.value
+                        )
+                        .website_ids.some(website => website.website_id === 3);
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"jajigaContainer"}
+                      data-plasmic-override={overrides.jajigaContainer}
+                      className={classNames(
+                        projectcss.all,
+                        sty.jajigaContainer
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a.",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__hp34R
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__kh6GL)}
+                          displayHeight={"44px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"44px"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/jajigaWebp.webp",
+                            fullWidth: 192,
+                            fullHeight: 192,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__l6SX
+                          )}
+                        >
+                          {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
+                        </div>
+                      </div>
+                      <Switch
+                        data-plasmic-name={"fragmentSwitch5"}
+                        data-plasmic-override={overrides.fragmentSwitch5}
+                        checked={generateStateValueProp($state, [
+                          "fragmentSwitch5",
+                          "checked"
+                        ])}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.fragmentSwitch5
+                        )}
+                        disabled={true}
+                        onCheckedChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "fragmentSwitch5",
+                            "checked"
+                          ]).apply(null, eventArgs);
+
+                          (async checked => {
+                            const $steps = {};
+
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return localStorage.setItem(
+                                        "IsShabInstant",
+                                        $state.fragmentSwitch5.checked
+                                      );
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
+                            ) {
+                              $steps["runCode"] = await $steps["runCode"];
+                            }
+
+                            $steps["invokeGlobalAction"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://dev.rentamon.com/webhook/shab-instant",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return $ctx.properties.find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          ).property_id;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return {
+                                              dates: "1403-05-30",
+                                              property_id: 1,
+                                              action: "unset_instant"
+                                            };
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      (() => {
+                                        try {
+                                          return {
+                                            headers: {
+                                              "Content-Type":
+                                                "application/x-www-form-urlencoded",
+                                              Authorization: `Bearer ${
+                                                document.cookie
+                                                  .split("; ")
+                                                  .find(row =>
+                                                    row.startsWith(
+                                                      "usso_access_token"
+                                                    )
+                                                  )
+                                                  .split("=")[1]
+                                              }`
+                                            },
+                                            withCredentials: true
+                                          };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return {
+                                              withCredentials: true,
+                                              headers: {
+                                                "Content-Type":
+                                                  "application/x-www-form-urlencoded"
+                                              }
+                                            };
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["invokeGlobalAction"] != null &&
+                              typeof $steps["invokeGlobalAction"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction"] = await $steps[
+                                "invokeGlobalAction"
+                              ];
+                            }
+                          }).apply(null, eventArgs);
+                        }}
+                      />
+                    </div>
+                  ) : null}
+                  {(() => {
+                    try {
+                      return $state.properties.data
+                        .find(
+                          property =>
+                            property.property_name ===
+                            $state.selectProperty.value
+                        )
+                        .website_ids.some(website => website.website_id === 7);
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"mihmanshoContainer"}
+                      data-plasmic-override={overrides.mihmanshoContainer}
+                      className={classNames(
+                        projectcss.all,
+                        sty.mihmanshoContainer
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a.",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__wmdgx
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__p9Gnf)}
+                          displayHeight={"44px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"44px"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/mihmanshoPng.png",
+                            fullWidth: 140,
+                            fullHeight: 140,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__pwh3K
+                          )}
+                        >
+                          {"\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
+                        </div>
+                      </div>
+                      <Switch
+                        data-plasmic-name={"fragmentSwitch7"}
+                        data-plasmic-override={overrides.fragmentSwitch7}
+                        checked={generateStateValueProp($state, [
+                          "fragmentSwitch7",
+                          "checked"
+                        ])}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.fragmentSwitch7
+                        )}
+                        disabled={true}
+                        onCheckedChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "fragmentSwitch7",
+                            "checked"
+                          ]).apply(null, eventArgs);
+
+                          (async checked => {
+                            const $steps = {};
+
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return localStorage.setItem(
+                                        "IsShabInstant",
+                                        $state.fragmentSwitch7.checked
+                                      );
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
+                            ) {
+                              $steps["runCode"] = await $steps["runCode"];
+                            }
+
+                            $steps["invokeGlobalAction"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://dev.rentamon.com/webhook/shab-instant",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return $ctx.properties.find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          ).property_id;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return {
+                                              dates: "1403-05-30",
+                                              property_id: 1,
+                                              action: "unset_instant"
+                                            };
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      (() => {
+                                        try {
+                                          return {
+                                            headers: {
+                                              "Content-Type":
+                                                "application/x-www-form-urlencoded",
+                                              Authorization: `Bearer ${
+                                                document.cookie
+                                                  .split("; ")
+                                                  .find(row =>
+                                                    row.startsWith(
+                                                      "usso_access_token"
+                                                    )
+                                                  )
+                                                  .split("=")[1]
+                                              }`
+                                            },
+                                            withCredentials: true
+                                          };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return {
+                                              withCredentials: true,
+                                              headers: {
+                                                "Content-Type":
+                                                  "application/x-www-form-urlencoded"
+                                              }
+                                            };
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["invokeGlobalAction"] != null &&
+                              typeof $steps["invokeGlobalAction"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction"] = await $steps[
+                                "invokeGlobalAction"
+                              ];
+                            }
+                          }).apply(null, eventArgs);
+                        }}
+                      />
+                    </div>
+                  ) : null}
+                  {(() => {
+                    try {
+                      return $state.properties.data
+                        .find(
+                          property =>
+                            property.property_name ===
+                            $state.selectProperty.value
+                        )
+                        .website_ids.some(website => website.website_id === 8);
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"homsaContainer"}
+                      data-plasmic-override={overrides.homsaContainer}
+                      className={classNames(projectcss.all, sty.homsaContainer)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a.",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] = await $steps[
+                            "invokeGlobalAction"
+                          ];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__dEi8S
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__oPsp5)}
+                          displayHeight={"44px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"44px"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/homsaWebp.webp",
+                            fullWidth: 512,
+                            fullHeight: 512,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__wuhmp
+                          )}
+                        >
+                          {"\u0647\u0648\u0645\u0633\u0627"}
+                        </div>
+                      </div>
+                      <Switch
+                        data-plasmic-name={"fragmentSwitch4"}
+                        data-plasmic-override={overrides.fragmentSwitch4}
+                        checked={generateStateValueProp($state, [
+                          "fragmentSwitch4",
+                          "checked"
+                        ])}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.fragmentSwitch4
+                        )}
+                        disabled={true}
+                        onCheckedChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "fragmentSwitch4",
+                            "checked"
+                          ]).apply(null, eventArgs);
+
+                          (async checked => {
+                            const $steps = {};
+
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return localStorage.setItem(
+                                        "IsShabInstant",
+                                        $state.fragmentSwitch4.checked
+                                      );
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
+                            ) {
+                              $steps["runCode"] = await $steps["runCode"];
+                            }
+
+                            $steps["invokeGlobalAction"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "POST",
+                                      "https://dev.rentamon.com/webhook/shab-instant",
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return $ctx.properties.find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          ).property_id;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return {
+                                              dates: "1403-05-30",
+                                              property_id: 1,
+                                              action: "unset_instant"
+                                            };
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      (() => {
+                                        try {
+                                          return {
+                                            headers: {
+                                              "Content-Type":
+                                                "application/x-www-form-urlencoded",
+                                              Authorization: `Bearer ${
+                                                document.cookie
+                                                  .split("; ")
+                                                  .find(row =>
+                                                    row.startsWith(
+                                                      "usso_access_token"
+                                                    )
+                                                  )
+                                                  .split("=")[1]
+                                              }`
+                                            },
+                                            withCredentials: true
+                                          };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return {
+                                              withCredentials: true,
+                                              headers: {
+                                                "Content-Type":
+                                                  "application/x-www-form-urlencoded"
+                                              }
+                                            };
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["invokeGlobalAction"] != null &&
+                              typeof $steps["invokeGlobalAction"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction"] = await $steps[
+                                "invokeGlobalAction"
+                              ];
+                            }
+                          }).apply(null, eventArgs);
+                        }}
+                      />
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
+            </ApiRequest>
+          </section>
           <div
             className={classNames(projectcss.all, sty.freeBox___3NzG5)}
             onClick={async event => {
@@ -894,12 +2541,24 @@ const PlasmicDescendants = {
     "topContainer",
     "topContainer2",
     "alertIcon",
-    "img",
     "alertText",
     "alertButton",
     "button",
     "mainSection",
     "properties",
+    "selectProperty",
+    "shabContainer",
+    "shabSwitch",
+    "otaghakContainer",
+    "otaghakSwitch",
+    "jabamaContainer",
+    "fragmentSwitch3",
+    "jajigaContainer",
+    "fragmentSwitch5",
+    "mihmanshoContainer",
+    "fragmentSwitch7",
+    "homsaContainer",
+    "fragmentSwitch4",
     "desc",
     "sideEffect",
     "returnButton",
@@ -914,18 +2573,60 @@ const PlasmicDescendants = {
   topContainer2: [
     "topContainer2",
     "alertIcon",
-    "img",
     "alertText",
     "alertButton",
     "button"
   ],
-  alertIcon: ["alertIcon", "img"],
-  img: ["img"],
+  alertIcon: ["alertIcon"],
   alertText: ["alertText"],
   alertButton: ["alertButton", "button"],
   button: ["button"],
-  mainSection: ["mainSection", "properties"],
-  properties: ["properties"],
+  mainSection: [
+    "mainSection",
+    "properties",
+    "selectProperty",
+    "shabContainer",
+    "shabSwitch",
+    "otaghakContainer",
+    "otaghakSwitch",
+    "jabamaContainer",
+    "fragmentSwitch3",
+    "jajigaContainer",
+    "fragmentSwitch5",
+    "mihmanshoContainer",
+    "fragmentSwitch7",
+    "homsaContainer",
+    "fragmentSwitch4"
+  ],
+  properties: [
+    "properties",
+    "selectProperty",
+    "shabContainer",
+    "shabSwitch",
+    "otaghakContainer",
+    "otaghakSwitch",
+    "jabamaContainer",
+    "fragmentSwitch3",
+    "jajigaContainer",
+    "fragmentSwitch5",
+    "mihmanshoContainer",
+    "fragmentSwitch7",
+    "homsaContainer",
+    "fragmentSwitch4"
+  ],
+  selectProperty: ["selectProperty"],
+  shabContainer: ["shabContainer", "shabSwitch"],
+  shabSwitch: ["shabSwitch"],
+  otaghakContainer: ["otaghakContainer", "otaghakSwitch"],
+  otaghakSwitch: ["otaghakSwitch"],
+  jabamaContainer: ["jabamaContainer", "fragmentSwitch3"],
+  fragmentSwitch3: ["fragmentSwitch3"],
+  jajigaContainer: ["jajigaContainer", "fragmentSwitch5"],
+  fragmentSwitch5: ["fragmentSwitch5"],
+  mihmanshoContainer: ["mihmanshoContainer", "fragmentSwitch7"],
+  fragmentSwitch7: ["fragmentSwitch7"],
+  homsaContainer: ["homsaContainer", "fragmentSwitch4"],
+  fragmentSwitch4: ["fragmentSwitch4"],
   desc: ["desc"],
   sideEffect: ["sideEffect"],
   returnButton: ["returnButton"],
@@ -944,12 +2645,24 @@ type NodeDefaultElementType = {
   topContainer: "section";
   topContainer2: "section";
   alertIcon: "div";
-  img: typeof PlasmicImg__;
   alertText: "div";
   alertButton: "div";
   button: "div";
   mainSection: "section";
   properties: typeof ApiRequest;
+  selectProperty: typeof Select;
+  shabContainer: "div";
+  shabSwitch: typeof Switch;
+  otaghakContainer: "div";
+  otaghakSwitch: typeof Switch;
+  jabamaContainer: "div";
+  fragmentSwitch3: typeof Switch;
+  jajigaContainer: "div";
+  fragmentSwitch5: typeof Switch;
+  mihmanshoContainer: "div";
+  fragmentSwitch7: typeof Switch;
+  homsaContainer: "div";
+  fragmentSwitch4: typeof Switch;
   desc: "div";
   sideEffect: typeof SideEffect;
   returnButton: "div";
@@ -1024,12 +2737,24 @@ export const PlasmicInstantReserve = Object.assign(
     topContainer: makeNodeComponent("topContainer"),
     topContainer2: makeNodeComponent("topContainer2"),
     alertIcon: makeNodeComponent("alertIcon"),
-    img: makeNodeComponent("img"),
     alertText: makeNodeComponent("alertText"),
     alertButton: makeNodeComponent("alertButton"),
     button: makeNodeComponent("button"),
     mainSection: makeNodeComponent("mainSection"),
     properties: makeNodeComponent("properties"),
+    selectProperty: makeNodeComponent("selectProperty"),
+    shabContainer: makeNodeComponent("shabContainer"),
+    shabSwitch: makeNodeComponent("shabSwitch"),
+    otaghakContainer: makeNodeComponent("otaghakContainer"),
+    otaghakSwitch: makeNodeComponent("otaghakSwitch"),
+    jabamaContainer: makeNodeComponent("jabamaContainer"),
+    fragmentSwitch3: makeNodeComponent("fragmentSwitch3"),
+    jajigaContainer: makeNodeComponent("jajigaContainer"),
+    fragmentSwitch5: makeNodeComponent("fragmentSwitch5"),
+    mihmanshoContainer: makeNodeComponent("mihmanshoContainer"),
+    fragmentSwitch7: makeNodeComponent("fragmentSwitch7"),
+    homsaContainer: makeNodeComponent("homsaContainer"),
+    fragmentSwitch4: makeNodeComponent("fragmentSwitch4"),
     desc: makeNodeComponent("desc"),
     sideEffect: makeNodeComponent("sideEffect"),
     returnButton: makeNodeComponent("returnButton"),

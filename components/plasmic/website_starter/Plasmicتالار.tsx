@@ -64,7 +64,6 @@ import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -155,7 +154,6 @@ export type Plasmicتالار__OverridesType = {
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
-  modal?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultتالارProps {}
@@ -322,13 +320,6 @@ function Plasmicتالار__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "getUserBalance"
-      },
-      {
-        path: "modal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -2373,30 +2364,6 @@ function Plasmicتالار__RenderFunc(props: {
                     "updateStateVariable"
                   ];
                 }
-
-                $steps["runCode3"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            if ($state.isNotify == false) {
-                              return ($state.modal.open = true);
-                            }
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode3"] != null &&
-                  typeof $steps["runCode3"] === "object" &&
-                  typeof $steps["runCode3"].then === "function"
-                ) {
-                  $steps["runCode3"] = await $steps["runCode3"];
-                }
               }}
             />
           ) : null}
@@ -2413,236 +2380,6 @@ function Plasmicتالار__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
-          <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              styleTokensClassNames
-            )}
-            hideFooter={true}
-            modalScopeClassName={sty["modal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["modal", "open"])}
-            title={null}
-            trigger={null}
-            width={
-              hasVariant(globalVariants, "screen", "mobile") ? "400" : undefined
-            }
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__umNL)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__tB8PM
-                )}
-              >
-                {
-                  "\u06af\u0632\u0627\u0631\u0634\u0627\u062a \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0634\u0641\u0627\u0641\u200c\u062a\u0631 \u0634\u062f!\r\n\u062f\u06cc\u06af\u0647 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062c\u0632\u06cc\u06cc\u0627\u062a \u0647\u0631 \u062a\u0631\u0627\u06a9\u0646\u0634 \u0648 \u0631\u0632\u0631\u0648 \u0631\u0648 \u06a9\u0627\u0645\u0644 \u0628\u06cc\u06cc\u0646\u06cc."
-                }
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img___2KpEj)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"255px"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/photo20250920141926Jpg.jpg",
-                  fullWidth: 1109,
-                  fullHeight: 1280,
-                  aspectRatio: undefined
-                }}
-              />
-
-              <div className={classNames(projectcss.all, sty.freeBox___9JuU)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eusEt
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function enableNotify() {
-                                  localStorage.setItem("is_notify", "true");
-                                }
-                                return enableNotify();
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-
-                    $steps["updateModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["modal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateModalOpen"] != null &&
-                      typeof $steps["updateModalOpen"] === "object" &&
-                      typeof $steps["updateModalOpen"].then === "function"
-                    ) {
-                      $steps["updateModalOpen"] = await $steps[
-                        "updateModalOpen"
-                      ];
-                    }
-
-                    $steps["goToTransactions"] = true
-                      ? (() => {
-                          const actionArgs = { destination: `/transactions` };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToTransactions"] != null &&
-                      typeof $steps["goToTransactions"] === "object" &&
-                      typeof $steps["goToTransactions"].then === "function"
-                    ) {
-                      $steps["goToTransactions"] = await $steps[
-                        "goToTransactions"
-                      ];
-                    }
-                  }}
-                >
-                  {"\u0645\u0634\u0627\u0647\u062f\u0647"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kijrZ
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function enableNotify() {
-                                  localStorage.setItem("is_notify", "true");
-                                }
-                                return enableNotify();
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-
-                    $steps["updateModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["modal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateModalOpen"] != null &&
-                      typeof $steps["updateModalOpen"] === "object" &&
-                      typeof $steps["updateModalOpen"].then === "function"
-                    ) {
-                      $steps["updateModalOpen"] = await $steps[
-                        "updateModalOpen"
-                      ];
-                    }
-                  }}
-                >
-                  {"\u0628\u0627\u0634\u0647"}
-                </div>
-              </div>
-            </div>
-          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -2712,8 +2449,7 @@ const PlasmicDescendants = {
     "navbarRntFooter",
     "sideEffect",
     "clarityRntComponent",
-    "faviconRntComponent",
-    "modal"
+    "faviconRntComponent"
   ],
   header: ["header", "headerTitle", "profile2"],
   headerTitle: ["headerTitle"],
@@ -2879,8 +2615,7 @@ const PlasmicDescendants = {
   navbarRntFooter: ["navbarRntFooter"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"],
-  modal: ["modal"]
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2948,7 +2683,6 @@ type NodeDefaultElementType = {
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
-  modal: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -3072,7 +2806,6 @@ export const Plasmicتالار = Object.assign(
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
-    modal: makeNodeComponent("modal"),
 
     // Metadata about props expected for Plasmicتالار
     internalVariantProps: Plasmicتالار__VariantProps,
