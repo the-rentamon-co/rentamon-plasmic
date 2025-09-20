@@ -100,7 +100,7 @@ export type PlasmicInstantReserve__OverridesType = {
   button?: Flex__<"div">;
   mainSection?: Flex__<"section">;
   properties?: Flex__<typeof ApiRequest>;
-  selectProperty?: Flex__<typeof Select>;
+  select?: Flex__<typeof Select>;
   shabContainer?: Flex__<"div">;
   shabSwitch?: Flex__<typeof Switch>;
   otaghakContainer?: Flex__<"div">;
@@ -177,8 +177,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
             try {
               return $state.properties.data
                 .find(
-                  property =>
-                    property.property_name === $state.selectProperty.value
+                  property => property.property_name === $state.select.value
                 )
                 .website_ids.find(website => website.website_id === 4)
                 .is_instant;
@@ -192,12 +191,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
               throw e;
             }
           })()
-      },
-      {
-        path: "selectProperty.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
         path: "fragmentSwitch3.checked",
@@ -256,8 +249,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
             try {
               return $state.properties.data
                 .find(
-                  property =>
-                    property.property_name === $state.selectProperty.value
+                  property => property.property_name === $state.select.value
                 )
                 .website_ids.find(website => website.website_id === 6)
                 .is_instant;
@@ -307,6 +299,12 @@ function PlasmicInstantReserve__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "select.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -640,31 +638,14 @@ function PlasmicInstantReserve__RenderFunc(props: {
               url={"https://gateway.rentamon.com/webhook/na-instant"}
             >
               <Select
-                data-plasmic-name={"selectProperty"}
-                data-plasmic-override={overrides.selectProperty}
-                aria-label={(() => {
-                  try {
-                    return $state.properties.data.map(property => ({
-                      label: property.property_name,
-                      value: property.id
-                    }));
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-                className={classNames("__wab_instance", sty.selectProperty)}
+                data-plasmic-name={"select"}
+                data-plasmic-override={overrides.select}
+                className={classNames("__wab_instance", sty.select)}
                 onChange={async (...eventArgs: any) => {
                   ((...eventArgs) => {
-                    generateStateOnChangeProp($state, [
-                      "selectProperty",
-                      "value"
-                    ])(eventArgs[0]);
+                    generateStateOnChangeProp($state, ["select", "value"])(
+                      eventArgs[0]
+                    );
                   }).apply(null, eventArgs);
 
                   if (
@@ -685,11 +666,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return (() => {
-                        const __composite = [{ value: null }];
-                        __composite["0"]["value"] = " ";
-                        return __composite;
-                      })();
+                      return [];
                     }
                     throw e;
                   }
@@ -699,18 +676,22 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__c2Yw
+                      sty.text__hiHEk
                     )}
                   >
-                    {
-                      "\u0627\u0646\u062a\u062e\u0627\u0628 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647..."
-                    }
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 400 }}
+                      >
+                        {
+                          "\u0627\u0646\u062a\u062e\u0627\u0628 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647..."
+                        }
+                      </span>
+                    </React.Fragment>
                   </div>
                 }
-                value={generateStateValueProp($state, [
-                  "selectProperty",
-                  "value"
-                ])}
+                value={generateStateValueProp($state, ["select", "value"])}
               />
 
               {(() => {
@@ -732,8 +713,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       return $state.properties.data
                         .find(
                           property =>
-                            property.property_name ===
-                            $state.selectProperty.value
+                            property.property_name === $state.select.value
                         )
                         .website_ids.some(website => website.website_id === 4);
                     } catch (e) {
@@ -819,8 +799,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                                   $state.properties.data.find(
                                                     property =>
                                                       property.property_name ===
-                                                      $state.selectProperty
-                                                        .value
+                                                      $state.select.value
                                                   ).id
                                               }
                                             : {
@@ -829,8 +808,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                                   $state.properties.data.find(
                                                     property =>
                                                       property.property_name ===
-                                                      $state.selectProperty
-                                                        .value
+                                                      $state.select.value
                                                   ).id
                                               };
                                         } catch (e) {
@@ -967,7 +945,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                           .find(
                                             property =>
                                               property.property_name ===
-                                              $state.selectProperty.value
+                                              $state.select.value
                                           )
                                           .website_ids.find(
                                             website => website.website_id === 4
@@ -978,7 +956,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                           .find(
                                             property =>
                                               property.property_name ===
-                                              $state.selectProperty.value
+                                              $state.select.value
                                           )
                                           .website_ids.find(
                                             website => website.website_id === 4
@@ -1031,8 +1009,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                                   $state.properties.data.find(
                                                     property =>
                                                       property.property_name ===
-                                                      $state.selectProperty
-                                                        .value
+                                                      $state.select.value
                                                   ).property_id
                                               }
                                             : {
@@ -1041,8 +1018,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                                   $state.properties.data.find(
                                                     property =>
                                                       property.property_name ===
-                                                      $state.selectProperty
-                                                        .value
+                                                      $state.select.value
                                                   ).property_id
                                               };
                                         } catch (e) {
@@ -1104,8 +1080,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       return $state.properties.data
                         .find(
                           property =>
-                            property.property_name ===
-                            $state.selectProperty.value
+                            property.property_name === $state.select.value
                         )
                         .website_ids.some(website => website.website_id === 6);
                     } catch (e) {
@@ -1253,8 +1228,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                                   $state.properties.data.find(
                                                     property =>
                                                       property.property_name ===
-                                                      $state.selectProperty
-                                                        .value
+                                                      $state.select.value
                                                   ).property_id
                                               }
                                             : {
@@ -1263,8 +1237,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                                   $state.properties.data.find(
                                                     property =>
                                                       property.property_name ===
-                                                      $state.selectProperty
-                                                        .value
+                                                      $state.select.value
                                                   ).property_id
                                               };
                                         } catch (e) {
@@ -1339,7 +1312,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                           .find(
                                             property =>
                                               property.property_name ===
-                                              $state.selectProperty.value
+                                              $state.select.value
                                           )
                                           .website_ids.find(
                                             website => website.website_id === 6
@@ -1350,7 +1323,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                           .find(
                                             property =>
                                               property.property_name ===
-                                              $state.selectProperty.value
+                                              $state.select.value
                                           )
                                           .website_ids.find(
                                             website => website.website_id === 6
@@ -1396,8 +1369,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       return $state.properties.data
                         .find(
                           property =>
-                            property.property_name ===
-                            $state.selectProperty.value
+                            property.property_name === $state.select.value
                         )
                         .website_ids.some(website => website.website_id === 2);
                     } catch (e) {
@@ -1536,7 +1508,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                           return $ctx.properties.find(
                                             property =>
                                               property.property_name ===
-                                              $state.selectProperty.value
+                                              $state.select.value
                                           ).property_id;
                                         } catch (e) {
                                           if (
@@ -1617,8 +1589,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       return $state.properties.data
                         .find(
                           property =>
-                            property.property_name ===
-                            $state.selectProperty.value
+                            property.property_name === $state.select.value
                         )
                         .website_ids.some(website => website.website_id === 3);
                     } catch (e) {
@@ -1757,7 +1728,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                           return $ctx.properties.find(
                                             property =>
                                               property.property_name ===
-                                              $state.selectProperty.value
+                                              $state.select.value
                                           ).property_id;
                                         } catch (e) {
                                           if (
@@ -1838,8 +1809,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       return $state.properties.data
                         .find(
                           property =>
-                            property.property_name ===
-                            $state.selectProperty.value
+                            property.property_name === $state.select.value
                         )
                         .website_ids.some(website => website.website_id === 7);
                     } catch (e) {
@@ -1978,7 +1948,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                           return $ctx.properties.find(
                                             property =>
                                               property.property_name ===
-                                              $state.selectProperty.value
+                                              $state.select.value
                                           ).property_id;
                                         } catch (e) {
                                           if (
@@ -2059,8 +2029,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       return $state.properties.data
                         .find(
                           property =>
-                            property.property_name ===
-                            $state.selectProperty.value
+                            property.property_name === $state.select.value
                         )
                         .website_ids.some(website => website.website_id === 8);
                     } catch (e) {
@@ -2196,7 +2165,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                           return $ctx.properties.find(
                                             property =>
                                               property.property_name ===
-                                              $state.selectProperty.value
+                                              $state.select.value
                                           ).property_id;
                                         } catch (e) {
                                           if (
@@ -2624,7 +2593,7 @@ const PlasmicDescendants = {
     "button",
     "mainSection",
     "properties",
-    "selectProperty",
+    "select",
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
@@ -2662,7 +2631,7 @@ const PlasmicDescendants = {
   mainSection: [
     "mainSection",
     "properties",
-    "selectProperty",
+    "select",
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
@@ -2678,7 +2647,7 @@ const PlasmicDescendants = {
   ],
   properties: [
     "properties",
-    "selectProperty",
+    "select",
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
@@ -2692,7 +2661,7 @@ const PlasmicDescendants = {
     "homsaContainer",
     "fragmentSwitch4"
   ],
-  selectProperty: ["selectProperty"],
+  select: ["select"],
   shabContainer: ["shabContainer", "shabSwitch"],
   shabSwitch: ["shabSwitch"],
   otaghakContainer: ["otaghakContainer", "otaghakSwitch"],
@@ -2728,7 +2697,7 @@ type NodeDefaultElementType = {
   button: "div";
   mainSection: "section";
   properties: typeof ApiRequest;
-  selectProperty: typeof Select;
+  select: typeof Select;
   shabContainer: "div";
   shabSwitch: typeof Switch;
   otaghakContainer: "div";
@@ -2820,7 +2789,7 @@ export const PlasmicInstantReserve = Object.assign(
     button: makeNodeComponent("button"),
     mainSection: makeNodeComponent("mainSection"),
     properties: makeNodeComponent("properties"),
-    selectProperty: makeNodeComponent("selectProperty"),
+    select: makeNodeComponent("select"),
     shabContainer: makeNodeComponent("shabContainer"),
     shabSwitch: makeNodeComponent("shabSwitch"),
     otaghakContainer: makeNodeComponent("otaghakContainer"),

@@ -728,19 +728,19 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                                             ].website
                                           ) {
                                             case 2:
-                                              return "https://rentamon.com/plasmic/website_starter/images/image19.svg";
+                                              return "https://media.rentamon.com/icon%2Fjabama-wide.jpg";
                                             case 3:
-                                              return "https://rentamon.com/plasmic/website_starter/images/image9.svg";
+                                              return "https://media.rentamon.com/icon%2Fjajiga-wide.jpg";
                                             case 4:
-                                              return "https://rentamon.com/plasmic/website_starter/images/image20.svg";
+                                              return "https://media.rentamon.com/icon%2Fshab-wide.jpg";
                                             case 5:
-                                              return "https://site-assets.plasmic.app/e561cc4133f269c501fd49dd6e37e1b7.svg";
+                                              return "https://media.rentamon.com/icon%2Fmizboon-wide.jpg";
                                             case 6:
-                                              return "https://rentamon.com/plasmic/website_starter/images/image13.svg";
+                                              return "https://media.rentamon.com/icon%2Fotaghak-wide.jpg";
                                             case 7:
-                                              return "https://rentamon.com/plasmic/website_starter/images/image21.svg";
+                                              return "https://media.rentamon.com/icon%2Fmihmansho-wide.jpg";
                                             case 8:
-                                              return "https://rentamon.com/plasmic/website_starter/images/image18.svg";
+                                              return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
                                             default:
                                               return "";
                                           }

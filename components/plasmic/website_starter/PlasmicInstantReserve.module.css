@@ -549,14 +549,10 @@
   min-width: 0;
   display: none;
 }
-.selectProperty:global(.__wab_instance) {
+.select:global(.__wab_instance) {
   max-width: 100%;
-  margin-top: 14px;
-  height: 35px;
-  width: 100%;
-  min-width: 0;
 }
-.text__c2Yw {
+.text__hiHEk {
   font-size: 16px;
   font-weight: 400;
 }
