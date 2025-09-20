@@ -78,8 +78,6 @@ import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: 
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
-import { _useStyleTokens as useStyleTokens_antd_5_hostless } from "../antd_5_hostless/PlasmicStyleTokensProvider"; // plasmic-import: ohDidvG9XsCeFumugENU3J/styleTokensProvider
-import { _useStyleTokens as useStyleTokens_plasmic_rich_components } from "../plasmic_rich_components/PlasmicStyleTokensProvider"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/styleTokensProvider
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -327,10 +325,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
   });
 
   const styleTokensClassNames = _useStyleTokens();
-  const styleTokensClassNames_antd_5_hostless =
-    useStyleTokens_antd_5_hostless();
-  const styleTokensClassNames_plasmic_rich_components =
-    useStyleTokens_plasmic_rich_components();
 
   return (
     <React.Fragment>
@@ -367,8 +361,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             styleTokensClassNames,
-            styleTokensClassNames_antd_5_hostless,
-            styleTokensClassNames_plasmic_rich_components,
             sty.root
           )}
         >
@@ -1367,9 +1359,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 projectcss.root_reset,
                 projectcss.plasmic_default_styles,
                 projectcss.plasmic_mixins,
-                styleTokensClassNames,
-                styleTokensClassNames_antd_5_hostless,
-                styleTokensClassNames_plasmic_rich_components
+                styleTokensClassNames
               )}
               hideFooter={true}
               modalScopeClassName={sty["proPanelModal__modal"]}
@@ -1437,7 +1427,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__e3Urq
+                        sty.formField__ddMbk
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1449,7 +1439,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__eFdrg
+                        sty.formField__ksSKo
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1467,7 +1457,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__a2XO
+                          sty.text__yhK5H
                         )}
                       >
                         {"Submit"}

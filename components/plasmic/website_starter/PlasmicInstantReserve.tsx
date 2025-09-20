@@ -70,8 +70,6 @@ import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: 
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
-import { _useStyleTokens as useStyleTokens_antd_5_hostless } from "../antd_5_hostless/PlasmicStyleTokensProvider"; // plasmic-import: ohDidvG9XsCeFumugENU3J/styleTokensProvider
-import { _useStyleTokens as useStyleTokens_plasmic_rich_components } from "../plasmic_rich_components/PlasmicStyleTokensProvider"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/styleTokensProvider
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -199,20 +197,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "selectProperty.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return $state.properties.data[0].property_name;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return undefined;
-              }
-              throw e;
-            }
-          })()
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
         path: "fragmentSwitch3.checked",
@@ -334,10 +319,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
   });
 
   const styleTokensClassNames = _useStyleTokens();
-  const styleTokensClassNames_antd_5_hostless =
-    useStyleTokens_antd_5_hostless();
-  const styleTokensClassNames_plasmic_rich_components =
-    useStyleTokens_plasmic_rich_components();
 
   return (
     <React.Fragment>
@@ -361,8 +342,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             styleTokensClassNames,
-            styleTokensClassNames_antd_5_hostless,
-            styleTokensClassNames_plasmic_rich_components,
             sty.root
           )}
         >
@@ -663,6 +642,22 @@ function PlasmicInstantReserve__RenderFunc(props: {
               <Select
                 data-plasmic-name={"selectProperty"}
                 data-plasmic-override={overrides.selectProperty}
+                aria-label={(() => {
+                  try {
+                    return $state.properties.data.map(property => ({
+                      label: property.property_name,
+                      value: property.id
+                    }));
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
                 className={classNames("__wab_instance", sty.selectProperty)}
                 onChange={async (...eventArgs: any) => {
                   ((...eventArgs) => {
@@ -707,21 +702,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
                       sty.text__c2Yw
                     )}
                   >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $state.properties.data[0].property_name;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
+                    {
+                      "\u0627\u0646\u062a\u062e\u0627\u0628 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647..."
+                    }
                   </div>
                 }
                 value={generateStateValueProp($state, [
