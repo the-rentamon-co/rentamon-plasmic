@@ -8856,19 +8856,7 @@ function PlasmicConnections__RenderFunc(props: {
                     throw e;
                   }
                 })()
-              : (() => {
-                  try {
-                    return false;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })()
+              : true
           ) ? (
             <div
               data-plasmic-name={"newPlatformPropertyAlert"}

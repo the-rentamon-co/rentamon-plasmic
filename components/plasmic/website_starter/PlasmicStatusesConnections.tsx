@@ -496,146 +496,76 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                         }
                       />
 
-                      <div
-                        data-plasmic-name={"localStorage"}
-                        data-plasmic-override={overrides.localStorage}
-                        className={classNames(projectcss.all, sty.localStorage)}
-                      >
-                        {(_par =>
-                          !_par ? [] : Array.isArray(_par) ? _par : [_par])(
-                          (() => {
-                            try {
-                              return $state.apiRequest2.data;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()
-                        ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                          const currentItem = __plasmic_item_0;
-                          const currentIndex = __plasmic_idx_0;
-                          return (
-                            <div
-                              data-plasmic-name={"connectedPlatforms"}
-                              data-plasmic-override={
-                                overrides.connectedPlatforms
-                              }
-                              className={classNames(
-                                projectcss.all,
-                                sty.connectedPlatforms,
-                                hasVariant(globalVariants, "screen", "mobile")
-                                  ? "clickable"
-                                  : undefined
-                              )}
-                              key={currentIndex}
-                              onClick={async event => {
-                                const $steps = {};
-
-                                $steps["goToActivationDuplicateConnection"] =
-                                  currentItem.status === "false"
-                                    ? (() => {
-                                        const actionArgs = {
-                                          destination: `/connections?step=${(() => {
-                                            try {
-                                              return (() => {
-                                                switch (currentItem.website) {
-                                                  case 2:
-                                                    return 1;
-                                                  case 3:
-                                                    return 3;
-                                                  case 4:
-                                                    return 5;
-                                                  case 6:
-                                                    return 7;
-                                                  case 7:
-                                                    return 10;
-                                                  case 8:
-                                                    return 9;
-                                                  default:
-                                                    return null;
-                                                }
-                                              })();
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()}`
-                                        };
-                                        return (({ destination }) => {
-                                          if (
-                                            typeof destination === "string" &&
-                                            destination.startsWith("#")
-                                          ) {
-                                            document
-                                              .getElementById(
-                                                destination.substr(1)
-                                              )
-                                              .scrollIntoView({
-                                                behavior: "smooth"
-                                              });
-                                          } else {
-                                            __nextRouter?.push(destination);
-                                          }
-                                        })?.apply(null, [actionArgs]);
-                                      })()
-                                    : undefined;
+                      {(
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? false
+                          : true
+                      ) ? (
+                        <div
+                          data-plasmic-name={"localStorage"}
+                          data-plasmic-override={overrides.localStorage}
+                          className={classNames(
+                            projectcss.all,
+                            sty.localStorage
+                          )}
+                        >
+                          {(_par =>
+                            !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                            (() => {
+                              try {
+                                return $state.apiRequest2.data;
+                              } catch (e) {
                                 if (
-                                  $steps["goToActivationDuplicateConnection"] !=
-                                    null &&
-                                  typeof $steps[
-                                    "goToActivationDuplicateConnection"
-                                  ] === "object" &&
-                                  typeof $steps[
-                                    "goToActivationDuplicateConnection"
-                                  ].then === "function"
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
                                 ) {
-                                  $steps["goToActivationDuplicateConnection"] =
-                                    await $steps[
-                                      "goToActivationDuplicateConnection"
-                                    ];
+                                  return [];
                                 }
+                                throw e;
+                              }
+                            })()
+                          ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                            const currentItem = __plasmic_item_0;
+                            const currentIndex = __plasmic_idx_0;
+                            return (
+                              <div
+                                data-plasmic-name={"connectedPlatforms"}
+                                data-plasmic-override={
+                                  overrides.connectedPlatforms
+                                }
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.connectedPlatforms,
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "clickable"
+                                    : undefined
+                                )}
+                                key={currentIndex}
+                                onClick={async event => {
+                                  const $steps = {};
 
-                                $steps["connectedToast"] =
-                                  currentItem.status === "true"
-                                    ? (() => {
-                                        const actionArgs = {
-                                          args: [
-                                            undefined,
-                                            (() => {
+                                  $steps["goToActivationDuplicateConnection"] =
+                                    currentItem.status === "false"
+                                      ? (() => {
+                                          const actionArgs = {
+                                            destination: `/connections?step=${(() => {
                                               try {
                                                 return (() => {
-                                                  switch (
-                                                    $state.apiRequest2.data[
-                                                      currentIndex
-                                                    ].website
-                                                  ) {
+                                                  switch (currentItem.website) {
                                                     case 2:
-                                                      return "جاباما وصله!";
+                                                      return 1;
                                                     case 3:
-                                                      return "جاجیگا وصله!";
+                                                      return 3;
                                                     case 4:
-                                                      return "شب وصله!";
-                                                    case 5:
-                                                      return "میزبون وصله!";
+                                                      return 5;
                                                     case 6:
-                                                      return "اتاقک وصله!";
+                                                      return 7;
                                                     case 7:
-                                                      return "مهمانشو وصله!";
+                                                      return 10;
                                                     case 8:
-                                                      return "هومسا وصله!";
+                                                      return 9;
                                                     default:
-                                                      return "";
+                                                      return null;
                                                   }
                                                 })();
                                               } catch (e) {
@@ -648,362 +578,453 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                                 }
                                                 throw e;
                                               }
-                                            })(),
-                                            "top-center"
-                                          ]
-                                        };
-                                        return $globalActions[
-                                          "Fragment.showToast"
-                                        ]?.apply(null, [...actionArgs.args]);
-                                      })()
-                                    : undefined;
-                                if (
-                                  $steps["connectedToast"] != null &&
-                                  typeof $steps["connectedToast"] ===
-                                    "object" &&
-                                  typeof $steps["connectedToast"].then ===
-                                    "function"
-                                ) {
-                                  $steps["connectedToast"] = await $steps[
-                                    "connectedToast"
-                                  ];
-                                }
-                              }}
-                            >
-                              {(() => {
-                                try {
-                                  return true;
-                                } catch (e) {
+                                            })()}`
+                                          };
+                                          return (({ destination }) => {
+                                            if (
+                                              typeof destination === "string" &&
+                                              destination.startsWith("#")
+                                            ) {
+                                              document
+                                                .getElementById(
+                                                  destination.substr(1)
+                                                )
+                                                .scrollIntoView({
+                                                  behavior: "smooth"
+                                                });
+                                            } else {
+                                              __nextRouter?.push(destination);
+                                            }
+                                          })?.apply(null, [actionArgs]);
+                                        })()
+                                      : undefined;
                                   if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
+                                    $steps[
+                                      "goToActivationDuplicateConnection"
+                                    ] != null &&
+                                    typeof $steps[
+                                      "goToActivationDuplicateConnection"
+                                    ] === "object" &&
+                                    typeof $steps[
+                                      "goToActivationDuplicateConnection"
+                                    ].then === "function"
                                   ) {
-                                    return false;
+                                    $steps[
+                                      "goToActivationDuplicateConnection"
+                                    ] = await $steps[
+                                      "goToActivationDuplicateConnection"
+                                    ];
                                   }
-                                  throw e;
-                                }
-                              })() ? (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox___2BeF5
-                                  )}
-                                >
-                                  {(() => {
-                                    try {
-                                      return currentItem.status === "false";
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return true;
-                                      }
-                                      throw e;
+
+                                  $steps["connectedToast"] =
+                                    currentItem.status === "true"
+                                      ? (() => {
+                                          const actionArgs = {
+                                            args: [
+                                              undefined,
+                                              (() => {
+                                                try {
+                                                  return (() => {
+                                                    switch (
+                                                      $state.apiRequest2.data[
+                                                        currentIndex
+                                                      ].website
+                                                    ) {
+                                                      case 2:
+                                                        return "جاباما وصله!";
+                                                      case 3:
+                                                        return "جاجیگا وصله!";
+                                                      case 4:
+                                                        return "شب وصله!";
+                                                      case 5:
+                                                        return "میزبون وصله!";
+                                                      case 6:
+                                                        return "اتاقک وصله!";
+                                                      case 7:
+                                                        return "مهمانشو وصله!";
+                                                      case 8:
+                                                        return "هومسا وصله!";
+                                                      default:
+                                                        return "";
+                                                    }
+                                                  })();
+                                                } catch (e) {
+                                                  if (
+                                                    e instanceof TypeError ||
+                                                    e?.plasmicType ===
+                                                      "PlasmicUndefinedDataError"
+                                                  ) {
+                                                    return undefined;
+                                                  }
+                                                  throw e;
+                                                }
+                                              })(),
+                                              "top-center"
+                                            ]
+                                          };
+                                          return $globalActions[
+                                            "Fragment.showToast"
+                                          ]?.apply(null, [...actionArgs.args]);
+                                        })()
+                                      : undefined;
+                                  if (
+                                    $steps["connectedToast"] != null &&
+                                    typeof $steps["connectedToast"] ===
+                                      "object" &&
+                                    typeof $steps["connectedToast"].then ===
+                                      "function"
+                                  ) {
+                                    $steps["connectedToast"] = await $steps[
+                                      "connectedToast"
+                                    ];
+                                  }
+                                }}
+                              >
+                                {(() => {
+                                  try {
+                                    return true;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return false;
                                     }
-                                  })() ? (
-                                    <PlasmicImg__
-                                      data-plasmic-name={"falseStatus"}
-                                      data-plasmic-override={
-                                        overrides.falseStatus
-                                      }
-                                      alt={""}
-                                      className={classNames(
-                                        sty.falseStatus,
-                                        "element"
-                                      )}
-                                      displayHeight={"auto"}
-                                      displayMaxHeight={"none"}
-                                      displayMaxWidth={"100%"}
-                                      displayMinHeight={"0"}
-                                      displayMinWidth={"0"}
-                                      displayWidth={"48px"}
-                                      loading={"lazy"}
-                                      src={{
-                                        src: "/plasmic/website_starter/images/image29.svg",
-                                        fullWidth: 27,
-                                        fullHeight: 27,
-                                        aspectRatio: 1
-                                      }}
-                                    />
-                                  ) : null}
-                                  {(() => {
-                                    try {
-                                      return currentItem.status === "true";
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return true;
-                                      }
-                                      throw e;
-                                    }
-                                  })() ? (
-                                    <PlasmicImg__
-                                      data-plasmic-name={"trueStatus"}
-                                      data-plasmic-override={
-                                        overrides.trueStatus
-                                      }
-                                      alt={""}
-                                      className={classNames(sty.trueStatus)}
-                                      displayHeight={"auto"}
-                                      displayMaxHeight={"none"}
-                                      displayMaxWidth={"100%"}
-                                      displayMinHeight={"0"}
-                                      displayMinWidth={"0"}
-                                      displayWidth={"48px"}
-                                      loading={"lazy"}
-                                      src={{
-                                        src: "/plasmic/website_starter/images/image30.svg",
-                                        fullWidth: 27,
-                                        fullHeight: 27,
-                                        aspectRatio: 1
-                                      }}
-                                    />
-                                  ) : null}
-                                  <PlasmicImg__
-                                    alt={""}
-                                    className={classNames(sty.img__j8JSx)}
-                                    displayHeight={"auto"}
-                                    displayMaxHeight={"none"}
-                                    displayMaxWidth={"100%"}
-                                    displayMinHeight={"0"}
-                                    displayMinWidth={"0"}
-                                    displayWidth={"auto"}
-                                    height={
-                                      hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "mobile"
-                                      )
-                                        ? ``
-                                        : undefined
-                                    }
-                                    loading={"lazy"}
-                                    src={(() => {
+                                    throw e;
+                                  }
+                                })() ? (
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.freeBox___2BeF5
+                                    )}
+                                  >
+                                    {(() => {
                                       try {
-                                        return (() => {
-                                          switch (
-                                            $state.apiRequest2.data[
-                                              currentIndex
-                                            ].website
-                                          ) {
-                                            case 2:
-                                              return "https://media.rentamon.com/icon%2Fjabama-wide.jpg";
-                                            case 3:
-                                              return "https://media.rentamon.com/icon%2Fjajiga-wide.jpg";
-                                            case 4:
-                                              return "https://media.rentamon.com/icon%2Fshab-wide.jpg";
-                                            case 6:
-                                              return "https://media.rentamon.com/icon%2Fotaghak-wide.jpg";
-                                            case 7:
-                                              return "https://media.rentamon.com/icon%2Fmihmansho-wide.jpg";
-                                            case 8:
-                                              return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
-                                            default:
-                                              return "";
-                                          }
-                                        })();
+                                        return currentItem.status === "false";
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
                                           e?.plasmicType ===
                                             "PlasmicUndefinedDataError"
                                         ) {
-                                          return undefined;
+                                          return true;
                                         }
                                         throw e;
                                       }
-                                    })()}
-                                    width={
-                                      hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "mobile"
-                                      )
-                                        ? "80%"
-                                        : "80%"
-                                    }
-                                  />
+                                    })() ? (
+                                      <PlasmicImg__
+                                        data-plasmic-name={"falseStatus"}
+                                        data-plasmic-override={
+                                          overrides.falseStatus
+                                        }
+                                        alt={""}
+                                        className={classNames(
+                                          sty.falseStatus,
+                                          "element"
+                                        )}
+                                        displayHeight={"auto"}
+                                        displayMaxHeight={"none"}
+                                        displayMaxWidth={"100%"}
+                                        displayMinHeight={"0"}
+                                        displayMinWidth={"0"}
+                                        displayWidth={"48px"}
+                                        loading={"lazy"}
+                                        src={{
+                                          src: "/plasmic/website_starter/images/image29.svg",
+                                          fullWidth: 27,
+                                          fullHeight: 27,
+                                          aspectRatio: 1
+                                        }}
+                                      />
+                                    ) : null}
+                                    {(() => {
+                                      try {
+                                        return currentItem.status === "true";
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return true;
+                                        }
+                                        throw e;
+                                      }
+                                    })() ? (
+                                      <PlasmicImg__
+                                        data-plasmic-name={"trueStatus"}
+                                        data-plasmic-override={
+                                          overrides.trueStatus
+                                        }
+                                        alt={""}
+                                        className={classNames(sty.trueStatus)}
+                                        displayHeight={"auto"}
+                                        displayMaxHeight={"none"}
+                                        displayMaxWidth={"100%"}
+                                        displayMinHeight={"0"}
+                                        displayMinWidth={"0"}
+                                        displayWidth={"48px"}
+                                        loading={"lazy"}
+                                        src={{
+                                          src: "/plasmic/website_starter/images/image30.svg",
+                                          fullWidth: 27,
+                                          fullHeight: 27,
+                                          aspectRatio: 1
+                                        }}
+                                      />
+                                    ) : null}
+                                    <PlasmicImg__
+                                      alt={""}
+                                      className={classNames(sty.img__j8JSx)}
+                                      displayHeight={"auto"}
+                                      displayMaxHeight={"none"}
+                                      displayMaxWidth={"100%"}
+                                      displayMinHeight={"0"}
+                                      displayMinWidth={"0"}
+                                      displayWidth={"auto"}
+                                      height={
+                                        hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                          ? ``
+                                          : undefined
+                                      }
+                                      loading={"lazy"}
+                                      src={(() => {
+                                        try {
+                                          return (() => {
+                                            switch (
+                                              $state.apiRequest2.data[
+                                                currentIndex
+                                              ].website
+                                            ) {
+                                              case 2:
+                                                return "https://media.rentamon.com/icon%2Fjabama-wide.jpg";
+                                              case 3:
+                                                return "https://media.rentamon.com/icon%2Fjajiga-wide.jpg";
+                                              case 4:
+                                                return "https://media.rentamon.com/icon%2Fshab-wide.jpg";
+                                              case 6:
+                                                return "https://media.rentamon.com/icon%2Fotaghak-wide.jpg";
+                                              case 7:
+                                                return "https://media.rentamon.com/icon%2Fmihmansho-wide.jpg";
+                                              case 8:
+                                                return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
+                                              default:
+                                                return "";
+                                            }
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                      width={
+                                        hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                          ? "80%"
+                                          : "80%"
+                                      }
+                                    />
+                                  </div>
+                                ) : null}
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox___36Cuo
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__ir3V7
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return (() => {
+                                            switch (
+                                              $state.apiRequest2.data[
+                                                currentIndex
+                                              ].website
+                                            ) {
+                                              case 2:
+                                                return "جاباما";
+                                              case 3:
+                                                return "جاجیگا";
+                                              case 4:
+                                                return "شب";
+                                              case 5:
+                                                return "میزبون";
+                                              case 6:
+                                                return "اتاقک";
+                                              case 7:
+                                                return "مهمانشو";
+                                              case 8:
+                                                return "هومسا";
+                                              default:
+                                                return "";
+                                            }
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "\u062c\u0627\u062c\u06cc\u06af\u0627";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </div>
                                 </div>
-                              ) : null}
+                              </div>
+                            );
+                          })}
+                          {(() => {
+                            try {
+                              return [2, 3, 4, 6, 7, 8].some(
+                                required =>
+                                  !$state.apiRequest2.data.some(
+                                    item => item.website === required
+                                  )
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              data-plasmic-name={"newPlatform"}
+                              data-plasmic-override={overrides.newPlatform}
+                              className={classNames(
+                                projectcss.all,
+                                sty.newPlatform,
+                                "clickable fadein"
+                              )}
+                              onClick={async event => {
+                                const $steps = {};
+
+                                $steps["goToPlatformsConnections"] = [
+                                  2, 3, 4, 6, 7, 8
+                                ].some(
+                                  required =>
+                                    !$state.apiRequest2.data.some(
+                                      item => item.website === required
+                                    )
+                                )
+                                  ? (() => {
+                                      const actionArgs = {};
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["goToPlatformsConnections"] != null &&
+                                  typeof $steps["goToPlatformsConnections"] ===
+                                    "object" &&
+                                  typeof $steps["goToPlatformsConnections"]
+                                    .then === "function"
+                                ) {
+                                  $steps["goToPlatformsConnections"] =
+                                    await $steps["goToPlatformsConnections"];
+                                }
+                              }}
+                            >
                               <div
                                 className={classNames(
                                   projectcss.all,
-                                  sty.freeBox___36Cuo
+                                  sty.freeBox__hBpt
+                                )}
+                              >
+                                <PlasmicImg__
+                                  alt={""}
+                                  className={classNames(sty.img___5I63B)}
+                                  displayHeight={
+                                    hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    )
+                                      ? "60px"
+                                      : "52px"
+                                  }
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"auto"}
+                                  loading={"lazy"}
+                                  src={{
+                                    src: "/plasmic/website_starter/images/image110.svg",
+                                    fullWidth: 51,
+                                    fullHeight: 51,
+                                    aspectRatio: 1
+                                  }}
+                                />
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__mkH6B
                                 )}
                               >
                                 <div
                                   className={classNames(
                                     projectcss.all,
                                     projectcss.__wab_text,
-                                    sty.text__ir3V7
+                                    sty.text__gzMS
                                   )}
                                 >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return (() => {
-                                          switch (
-                                            $state.apiRequest2.data[
-                                              currentIndex
-                                            ].website
-                                          ) {
-                                            case 2:
-                                              return "جاباما";
-                                            case 3:
-                                              return "جاجیگا";
-                                            case 4:
-                                              return "شب";
-                                            case 5:
-                                              return "میزبون";
-                                            case 6:
-                                              return "اتاقک";
-                                            case 7:
-                                              return "مهمانشو";
-                                            case 8:
-                                              return "هومسا";
-                                            default:
-                                              return "";
-                                          }
-                                        })();
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "\u062c\u0627\u062c\u06cc\u06af\u0627";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
+                                  {hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "mobile"
+                                  )
+                                    ? "\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                                    : "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f"}
                                 </div>
                               </div>
                             </div>
-                          );
-                        })}
-                        {(() => {
-                          try {
-                            return [2, 3, 4, 6, 7, 8].some(
-                              required =>
-                                !$state.apiRequest2.data.some(
-                                  item => item.website === required
-                                )
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
-                          }
-                        })() ? (
-                          <div
-                            data-plasmic-name={"newPlatform"}
-                            data-plasmic-override={overrides.newPlatform}
-                            className={classNames(
-                              projectcss.all,
-                              sty.newPlatform,
-                              "clickable fadein"
-                            )}
-                            onClick={async event => {
-                              const $steps = {};
-
-                              $steps["goToPlatformsConnections"] = [
-                                2, 3, 4, 6, 7, 8
-                              ].some(
-                                required =>
-                                  !$state.apiRequest2.data.some(
-                                    item => item.website === required
-                                  )
-                              )
-                                ? (() => {
-                                    const actionArgs = {};
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["goToPlatformsConnections"] != null &&
-                                typeof $steps["goToPlatformsConnections"] ===
-                                  "object" &&
-                                typeof $steps["goToPlatformsConnections"]
-                                  .then === "function"
-                              ) {
-                                $steps["goToPlatformsConnections"] =
-                                  await $steps["goToPlatformsConnections"];
-                              }
-                            }}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__hBpt
-                              )}
-                            >
-                              <PlasmicImg__
-                                alt={""}
-                                className={classNames(sty.img___5I63B)}
-                                displayHeight={
-                                  hasVariant(globalVariants, "screen", "mobile")
-                                    ? "60px"
-                                    : "52px"
-                                }
-                                displayMaxHeight={"none"}
-                                displayMaxWidth={"100%"}
-                                displayMinHeight={"0"}
-                                displayMinWidth={"0"}
-                                displayWidth={"auto"}
-                                loading={"lazy"}
-                                src={{
-                                  src: "/plasmic/website_starter/images/image110.svg",
-                                  fullWidth: 51,
-                                  fullHeight: 51,
-                                  aspectRatio: 1
-                                }}
-                              />
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__mkH6B
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__gzMS
-                                )}
-                              >
-                                {hasVariant(globalVariants, "screen", "mobile")
-                                  ? "\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                                  : "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f"}
-                              </div>
-                            </div>
-                          </div>
-                        ) : null}
-                      </div>
+                          ) : null}
+                        </div>
+                      ) : null}
                     </React.Fragment>
                   }
                   method={"POST"}
@@ -1105,7 +1126,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                             const $steps = {};
 
                             $steps["goToConnections"] =
-                              currentItem.status === "false"
+                              currentItems.status === "false"
                                 ? (() => {
                                     const actionArgs = {
                                       destination: `/connections?step=${(() => {
@@ -1168,7 +1189,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                             }
 
                             $steps["connectedToast"] =
-                              currentItem.status === "true"
+                              currentItems.status === "true"
                                 ? (() => {
                                     const actionArgs = {
                                       args: [

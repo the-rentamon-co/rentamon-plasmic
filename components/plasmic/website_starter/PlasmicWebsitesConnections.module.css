@@ -1125,6 +1125,18 @@
 .img__r5SIi > picture > img {
   object-fit: cover;
 }
+@media (max-width: 500px) {
+  .img__r5SIi {
+    height: 60px;
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 350px) {
+  .img__r5SIi {
+    height: 54px;
+    flex-shrink: 0;
+  }
+}
 .text__o4YS9 {
   position: relative;
   width: 100%;

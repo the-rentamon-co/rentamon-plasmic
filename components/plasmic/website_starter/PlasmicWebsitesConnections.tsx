@@ -1505,7 +1505,13 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__r5SIi)}
-                        displayHeight={"72px"}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "54px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                            ? "60px"
+                            : "72px"
+                        }
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
@@ -1528,7 +1534,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                         )}
                       >
                         {
-                          "\u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u062f\u0627\u0631\u06cc!\n\u062e\u06cc\u0627\u0644\u062a \u0631\u0627\u062d\u062a!"
+                          " \u0647\u0645\u0647\u200c\u06cc  \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062a\u062d\u062a \u067e\u0648\u0634\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u062a\u0635\u0644 \u0634\u062f\u0646"
                         }
                       </div>
                     </div>
