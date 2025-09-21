@@ -256,7 +256,9 @@ function Plasmicتالار__RenderFunc(props: {
             try {
               return (() => {
                 function isNotifyEnabled() {
-                  return localStorage.getItem("is_notify") !== null;
+                  return (
+                    localStorage.getItem("is_transactions_notify") !== null
+                  );
                 }
                 if (isNotifyEnabled()) {
                   return true;

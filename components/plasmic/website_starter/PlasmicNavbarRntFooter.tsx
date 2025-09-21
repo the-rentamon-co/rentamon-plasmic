@@ -200,7 +200,8 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   return null;
                 }
                 function isNotifyEnabled() {
-                  const isNotify = localStorage.getItem("is_notify") !== null;
+                  const isNotify =
+                    localStorage.getItem("is_transactions_notify") !== null;
                   const hasFirstVisit = getCookieValue("first_visit") !== null;
                   const hasPropTour = getCookieValue("prop_tour") !== null;
                   return isNotify || hasFirstVisit || hasPropTour;

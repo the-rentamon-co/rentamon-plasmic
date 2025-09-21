@@ -3767,9 +3767,14 @@ function PlasmicTransactions__RenderFunc(props: {
                 sty.notify,
                 (() => {
                   try {
-                    return $state.showDetails
-                      ? "modal-content open"
-                      : "modal-content";
+                    return (() => {
+                      if ($state.modalData.transaction_type != null) {
+                        return "modal-content";
+                      }
+                      return $state.showDetails
+                        ? "modal-content open"
+                        : "modal-content";
+                    })();
                   } catch (e) {
                     if (
                       e instanceof TypeError ||

@@ -528,7 +528,22 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                                 sty.connectedPlatforms,
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? "clickable"
-                                  : "clickable fadeinf"
+                                  : (() => {
+                                      try {
+                                        return currentItem.status === "true"
+                                          ? "unclickable"
+                                          : "clickable fadeinf";
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
                               )}
                               key={currentIndex}
                               onClick={async event => {
@@ -602,6 +617,31 @@ function PlasmicWebsiteConnections__RenderFunc(props: {
                                     await $steps[
                                       "goToActivationDuplicateConnection"
                                     ];
+                                }
+
+                                $steps["invokeGlobalAction"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          undefined,
+                                          `${undefined}${undefined}`
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["invokeGlobalAction"] != null &&
+                                  typeof $steps["invokeGlobalAction"] ===
+                                    "object" &&
+                                  typeof $steps["invokeGlobalAction"].then ===
+                                    "function"
+                                ) {
+                                  $steps["invokeGlobalAction"] = await $steps[
+                                    "invokeGlobalAction"
+                                  ];
                                 }
                               }}
                             >
