@@ -1742,37 +1742,19 @@ function PlasmicProCalendar__RenderFunc(props: {
                           ref={ref => {
                             $refs["apiRequest"] = ref;
                           }}
-                          url={(() => {
-                            try {
-                              return `https://api-v2.rentamon.com/api/website_statuses/?property_id=${$state.propId}`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()}
+                          url={
+                            "https://gateway.rentamon.com/webhook/calendar-statuses"
+                          }
                         >
                           {(() => {
                             try {
                               return (() => {
-                                if (
-                                  Object.keys($state.apiRequest.data.status)
-                                    .length === 0 &&
-                                  !$state.apiRequest.loading
-                                ) {
-                                  return false;
-                                } else {
-                                  const statuses =
-                                    $state.apiRequest.data.status;
-                                  const allTrue = Object.values(statuses).every(
-                                    value => value === true
-                                  );
-                                  return allTrue ? true : false;
-                                }
+                                return !!(
+                                  $state.apiRequest.data?.[0]?.status &&
+                                  Object.values(
+                                    $state.apiRequest.data[0].status
+                                  ).every(v => v === true)
+                                );
                               })();
                             } catch (e) {
                               if (
@@ -1868,16 +1850,12 @@ function PlasmicProCalendar__RenderFunc(props: {
                           {(() => {
                             try {
                               return (() => {
-                                if ($state.apiRequest.data == null) {
-                                  return false;
-                                } else {
-                                  const statuses =
-                                    $state.apiRequest.data.status;
-                                  const anyFalse = Object.values(statuses).some(
-                                    value => value === false
-                                  );
-                                  return anyFalse ? true : false;
-                                }
+                                return !!(
+                                  $state.apiRequest.data?.[0]?.status &&
+                                  Object.values(
+                                    $state.apiRequest.data[0].status
+                                  ).some(v => v === false)
+                                );
                               })();
                             } catch (e) {
                               if (
@@ -1969,7 +1947,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                           {(() => {
                             try {
                               return (
-                                Object.keys($state.apiRequest.data.status)
+                                Object.keys($state.apiRequest.data[0].status)
                                   .length === 0
                               );
                             } catch (e) {
