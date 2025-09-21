@@ -4898,49 +4898,39 @@ function PlasmicConnections__RenderFunc(props: {
                                   ];
                                 }
 
-                                $steps["updateStep"] = false
-                                  ? (() => {
-                                      const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 2
-                                      };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
-                                        }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        const oldValue = $stateGet(
-                                          objRoot,
-                                          variablePath
-                                        );
-                                        $stateSet(
-                                          objRoot,
-                                          variablePath,
-                                          oldValue + 1
-                                        );
-                                        return oldValue + 1;
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
+                                $steps["goToStatusesConnections"] =
+                                  $steps.jabamaVerify.data.status === true
+                                    ? (() => {
+                                        const actionArgs = {
+                                          destination: `/statuses`
+                                        };
+                                        return (({ destination }) => {
+                                          if (
+                                            typeof destination === "string" &&
+                                            destination.startsWith("#")
+                                          ) {
+                                            document
+                                              .getElementById(
+                                                destination.substr(1)
+                                              )
+                                              .scrollIntoView({
+                                                behavior: "smooth"
+                                              });
+                                          } else {
+                                            __nextRouter?.push(destination);
+                                          }
+                                        })?.apply(null, [actionArgs]);
+                                      })()
+                                    : undefined;
                                 if (
-                                  $steps["updateStep"] != null &&
-                                  typeof $steps["updateStep"] === "object" &&
-                                  typeof $steps["updateStep"].then ===
-                                    "function"
+                                  $steps["goToStatusesConnections"] != null &&
+                                  typeof $steps["goToStatusesConnections"] ===
+                                    "object" &&
+                                  typeof $steps["goToStatusesConnections"]
+                                    .then === "function"
                                 ) {
-                                  $steps["updateStep"] = await $steps[
-                                    "updateStep"
-                                  ];
+                                  $steps["goToStatusesConnections"] =
+                                    await $steps["goToStatusesConnections"];
                                 }
                               }}
                               submitsForm={true}
@@ -5501,21 +5491,21 @@ function PlasmicConnections__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["errorToast"] = !$steps.jajigaVerify?.data
-                                ?.status
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "error",
-                                        "\u0627\u062a\u0635\u0627\u0644 \u0628\u0627 \u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f!",
-                                        "top-center"
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
+                              $steps["errorToast"] =
+                                $steps.jajigaVerify.data.status !== true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "error",
+                                          "\u0627\u062a\u0635\u0627\u0644 \u0628\u0627 \u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f!",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
                               if (
                                 $steps["errorToast"] != null &&
                                 typeof $steps["errorToast"] === "object" &&
@@ -5608,48 +5598,39 @@ function PlasmicConnections__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["updateStep"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["step"]
-                                      },
-                                      operation: 2
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      const oldValue = $stateGet(
-                                        objRoot,
-                                        variablePath
-                                      );
-                                      $stateSet(
-                                        objRoot,
-                                        variablePath,
-                                        oldValue + 1
-                                      );
-                                      return oldValue + 1;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                              $steps["goToStatusesConnections"] =
+                                $steps.jajigaVerify.data.status === true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/statuses`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
                               if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
+                                $steps["goToStatusesConnections"] != null &&
+                                typeof $steps["goToStatusesConnections"] ===
+                                  "object" &&
+                                typeof $steps["goToStatusesConnections"]
+                                  .then === "function"
                               ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
+                                $steps["goToStatusesConnections"] =
+                                  await $steps["goToStatusesConnections"];
                               }
                             }}
                             submitsForm={true}
@@ -6355,48 +6336,39 @@ function PlasmicConnections__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["updateStep"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["step"]
-                                      },
-                                      operation: 2
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      const oldValue = $stateGet(
-                                        objRoot,
-                                        variablePath
-                                      );
-                                      $stateSet(
-                                        objRoot,
-                                        variablePath,
-                                        oldValue + 1
-                                      );
-                                      return oldValue + 1;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                              $steps["goToStatusesConnections"] =
+                                $steps.shabVerify.data.status === true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/statuses`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
                               if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
+                                $steps["goToStatusesConnections"] != null &&
+                                typeof $steps["goToStatusesConnections"] ===
+                                  "object" &&
+                                typeof $steps["goToStatusesConnections"]
+                                  .then === "function"
                               ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
+                                $steps["goToStatusesConnections"] =
+                                  await $steps["goToStatusesConnections"];
                               }
                             }}
                             submitsForm={true}
@@ -7073,48 +7045,39 @@ function PlasmicConnections__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["updateStep"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["step"]
-                                      },
-                                      operation: 2
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      const oldValue = $stateGet(
-                                        objRoot,
-                                        variablePath
-                                      );
-                                      $stateSet(
-                                        objRoot,
-                                        variablePath,
-                                        oldValue + 1
-                                      );
-                                      return oldValue + 1;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                              $steps["goToStatusesConnections"] =
+                                $steps.otaghakVerify.data.status === true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/statuses`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
                               if (
-                                $steps["updateStep"] != null &&
-                                typeof $steps["updateStep"] === "object" &&
-                                typeof $steps["updateStep"].then === "function"
+                                $steps["goToStatusesConnections"] != null &&
+                                typeof $steps["goToStatusesConnections"] ===
+                                  "object" &&
+                                typeof $steps["goToStatusesConnections"]
+                                  .then === "function"
                               ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
+                                $steps["goToStatusesConnections"] =
+                                  await $steps["goToStatusesConnections"];
                               }
                             }}
                             submitsForm={true}
@@ -7746,29 +7709,6 @@ function PlasmicConnections__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["showToast"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        undefined,
-                                        "\u062d\u0627\u0644\u0627 \u0648\u0642\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\u0647!",
-                                        "bottom-center",
-                                        6000
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["showToast"] != null &&
-                                typeof $steps["showToast"] === "object" &&
-                                typeof $steps["showToast"].then === "function"
-                              ) {
-                                $steps["showToast"] = await $steps["showToast"];
-                              }
-
                               $steps["connectionStatus"] = true
                                 ? (() => {
                                     const actionArgs = {
@@ -7837,59 +7777,6 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["connectionStatus"] = await $steps[
                                   "connectionStatus"
-                                ];
-                              }
-
-                              $steps["goToPanel"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      destination: `/panel`
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["goToPanel"] != null &&
-                                typeof $steps["goToPanel"] === "object" &&
-                                typeof $steps["goToPanel"].then === "function"
-                              ) {
-                                $steps["goToPanel"] = await $steps["goToPanel"];
-                              }
-
-                              $steps["mihmanshoContactX"] =
-                                $state.form.value.mihmanshophone !==
-                                  undefined &&
-                                $state.form.value.mihmanshophone.length >= 11 &&
-                                $state.form.value.mihmanshoPass !== undefined
-                                  ? (() => {
-                                      const actionArgs = { args: ["POST"] };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["mihmanshoContactX"] != null &&
-                                typeof $steps["mihmanshoContactX"] ===
-                                  "object" &&
-                                typeof $steps["mihmanshoContactX"].then ===
-                                  "function"
-                              ) {
-                                $steps["mihmanshoContactX"] = await $steps[
-                                  "mihmanshoContactX"
                                 ];
                               }
                             }}
@@ -8341,72 +8228,6 @@ function PlasmicConnections__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["homsaContactX"] =
-                                $state.form.value.homsaphone !== undefined &&
-                                $state.form.value.homsaphone.length >= 11 &&
-                                $state.form.value.homsaOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = { args: ["POST"] };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["homsaContactX"] != null &&
-                                typeof $steps["homsaContactX"] === "object" &&
-                                typeof $steps["homsaContactX"].then ===
-                                  "function"
-                              ) {
-                                $steps["homsaContactX"] = await $steps[
-                                  "homsaContactX"
-                                ];
-                              }
-
-                              $steps["updateState"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["step"]
-                                      },
-                                      operation: 2
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      const oldValue = $stateGet(
-                                        objRoot,
-                                        variablePath
-                                      );
-                                      $stateSet(
-                                        objRoot,
-                                        variablePath,
-                                        oldValue + 1
-                                      );
-                                      return oldValue + 1;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["updateState"] != null &&
-                                typeof $steps["updateState"] === "object" &&
-                                typeof $steps["updateState"].then === "function"
-                              ) {
-                                $steps["updateState"] = await $steps[
-                                  "updateState"
-                                ];
-                              }
-
                               $steps["successToast"] =
                                 $steps.homsaVerify.data.status === true
                                   ? (() => {
@@ -8431,6 +8252,41 @@ function PlasmicConnections__RenderFunc(props: {
                                 $steps["successToast"] = await $steps[
                                   "successToast"
                                 ];
+                              }
+
+                              $steps["goToStatusesConnections"] =
+                                $steps.homsaVerify.data.status === true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/statuses`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["goToStatusesConnections"] != null &&
+                                typeof $steps["goToStatusesConnections"] ===
+                                  "object" &&
+                                typeof $steps["goToStatusesConnections"]
+                                  .then === "function"
+                              ) {
+                                $steps["goToStatusesConnections"] =
+                                  await $steps["goToStatusesConnections"];
                               }
                             }}
                             submitsForm={true}
