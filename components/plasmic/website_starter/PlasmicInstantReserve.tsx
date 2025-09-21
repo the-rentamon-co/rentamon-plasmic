@@ -492,65 +492,63 @@ function PlasmicInstantReserve__RenderFunc(props: {
               </div>
             ) : null}
           </section>
-          {false ? (
-            <section
-              data-plasmic-name={"mainSection"}
-              data-plasmic-override={overrides.mainSection}
-              className={classNames(projectcss.all, sty.mainSection, "fadein")}
-            >
-              <ApiRequest
-                data-plasmic-name={"properties"}
-                data-plasmic-override={overrides.properties}
-                children={null}
-                className={classNames("__wab_instance", sty.properties)}
-                errorDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xsnPs
-                    )}
-                  >
-                    {"Error fetching data"}
-                  </div>
-                }
-                loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yosUl
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
-                }
-                method={"POST"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "properties",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "properties",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "properties",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
-                ref={ref => {
-                  $refs["properties"] = ref;
-                }}
-                url={"https://gateway.rentamon.com/webhook/na-instant"}
-              />
-            </section>
-          ) : null}
+          <section
+            data-plasmic-name={"mainSection"}
+            data-plasmic-override={overrides.mainSection}
+            className={classNames(projectcss.all, sty.mainSection, "fadein")}
+          >
+            <ApiRequest
+              data-plasmic-name={"properties"}
+              data-plasmic-override={overrides.properties}
+              children={null}
+              className={classNames("__wab_instance", sty.properties)}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xsnPs
+                  )}
+                >
+                  {"Error fetching data"}
+                </div>
+              }
+              loadingDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yosUl
+                  )}
+                >
+                  {"Loading..."}
+                </div>
+              }
+              method={"POST"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "properties",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "properties",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["properties", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["properties"] = ref;
+              }}
+              url={"https://gateway.rentamon.com/webhook/na-instant"}
+            />
+          </section>
           <div
             className={classNames(projectcss.all, sty.freeBox___3NzG5)}
             onClick={async event => {

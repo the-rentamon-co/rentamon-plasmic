@@ -2990,15 +2990,15 @@
           "path": "/statuses"
         },
         {
-          "id": "PIbNlRUQg-G4",
-          "name": "PlatformsConnections",
+          "id": "wjpY8LK3df7G",
+          "name": "WebsitesConnections",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicPlatformsConnections.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicWebsitesConnections.tsx",
           "importSpec": {
             "modulePath": "../src/pages/websites.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicPlatformsConnections.module.css",
+          "cssFilePath": "plasmic/website_starter/PlasmicWebsitesConnections.module.css",
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/websites"

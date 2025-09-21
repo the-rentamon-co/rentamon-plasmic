@@ -435,7 +435,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                    "\u0627\u062a\u0635\u0627\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
                   }
                 </div>
               </div>
@@ -928,9 +928,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                   )
                               )
                                 ? (() => {
-                                    const actionArgs = {
-                                      destination: `/websites`
-                                    };
+                                    const actionArgs = {};
                                     return (({ destination }) => {
                                       if (
                                         typeof destination === "string" &&
@@ -1253,134 +1251,176 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                 sty.freeBox__h4125
                               )}
                             >
-                              {(() => {
-                                try {
-                                  return currentItems.status === "false";
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
-                                  }
-                                  throw e;
-                                }
-                              })() ? (
-                                <PlasmicImg__
-                                  data-plasmic-name={"falseStatus2"}
-                                  data-plasmic-override={overrides.falseStatus2}
-                                  alt={""}
-                                  className={classNames(
-                                    sty.falseStatus2,
-                                    "element"
-                                  )}
-                                  displayHeight={"auto"}
-                                  displayMaxHeight={"none"}
-                                  displayMaxWidth={"100%"}
-                                  displayMinHeight={"0"}
-                                  displayMinWidth={"0"}
-                                  displayWidth={"48px"}
-                                  loading={"lazy"}
-                                  src={{
-                                    src: "/plasmic/website_starter/images/image29.svg",
-                                    fullWidth: 27,
-                                    fullHeight: 27,
-                                    aspectRatio: 1
-                                  }}
-                                />
-                              ) : null}
-                              {(() => {
-                                try {
-                                  return currentItems.status === "true";
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
-                                  }
-                                  throw e;
-                                }
-                              })() ? (
-                                <PlasmicImg__
-                                  data-plasmic-name={"trueStatus2"}
-                                  data-plasmic-override={overrides.trueStatus2}
-                                  alt={""}
-                                  className={classNames(sty.trueStatus2)}
-                                  displayHeight={"auto"}
-                                  displayMaxHeight={"none"}
-                                  displayMaxWidth={"100%"}
-                                  displayMinHeight={"0"}
-                                  displayMinWidth={"0"}
-                                  displayWidth={"48px"}
-                                  loading={"lazy"}
-                                  src={{
-                                    src: "/plasmic/website_starter/images/image30.svg",
-                                    fullWidth: 27,
-                                    fullHeight: 27,
-                                    aspectRatio: 1
-                                  }}
-                                />
-                              ) : null}
-                              <PlasmicImg__
-                                alt={""}
-                                className={classNames(sty.img__at2Hg)}
-                                displayHeight={"auto"}
-                                displayMaxHeight={"none"}
-                                displayMaxWidth={"100%"}
-                                displayMinHeight={"0"}
-                                displayMinWidth={"0"}
-                                displayWidth={"auto"}
-                                height={
-                                  hasVariant(globalVariants, "screen", "mobile")
-                                    ? ``
-                                    : undefined
-                                }
-                                loading={"lazy"}
-                                src={(() => {
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__fzaon
+                                )}
+                              >
+                                {(() => {
                                   try {
-                                    return (() => {
-                                      switch (
-                                        $state.apiRequest2.data[currentIndexs]
-                                          .website
-                                      ) {
-                                        case 2:
-                                          return "https://media.rentamon.com/icon%2Fjabama-wide.jpg";
-                                        case 3:
-                                          return "https://media.rentamon.com/icon%2Fjajiga-wide.jpg";
-                                        case 4:
-                                          return "https://media.rentamon.com/icon%2Fshab-wide.jpg";
-                                        case 5:
-                                          return "https://media.rentamon.com/icon%2Fmizboon-wide.jpg";
-                                        case 6:
-                                          return "https://media.rentamon.com/icon%2Fotaghak-wide.jpg";
-                                        case 7:
-                                          return "https://media.rentamon.com/icon%2Fmihmansho-wide.jpg";
-                                        case 8:
-                                          return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
-                                        default:
-                                          return "";
-                                      }
-                                    })();
+                                    return currentItems.status === "false";
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
                                       e?.plasmicType ===
                                         "PlasmicUndefinedDataError"
                                     ) {
-                                      return undefined;
+                                      return true;
                                     }
                                     throw e;
                                   }
-                                })()}
-                                width={
-                                  hasVariant(globalVariants, "screen", "mobile")
-                                    ? "80%"
-                                    : "80%"
-                                }
-                              />
+                                })() ? (
+                                  <PlasmicImg__
+                                    data-plasmic-name={"falseStatus2"}
+                                    data-plasmic-override={
+                                      overrides.falseStatus2
+                                    }
+                                    alt={""}
+                                    className={classNames(
+                                      sty.falseStatus2,
+                                      "element"
+                                    )}
+                                    displayHeight={"auto"}
+                                    displayMaxHeight={"none"}
+                                    displayMaxWidth={"100%"}
+                                    displayMinHeight={"0"}
+                                    displayMinWidth={"0"}
+                                    displayWidth={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? "32px"
+                                        : "36px"
+                                    }
+                                    loading={"lazy"}
+                                    src={{
+                                      src: "/plasmic/website_starter/images/image29.svg",
+                                      fullWidth: 27,
+                                      fullHeight: 27,
+                                      aspectRatio: 1
+                                    }}
+                                  />
+                                ) : null}
+                                {(() => {
+                                  try {
+                                    return currentItems.status === "true";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })() ? (
+                                  <PlasmicImg__
+                                    data-plasmic-name={"trueStatus2"}
+                                    data-plasmic-override={
+                                      overrides.trueStatus2
+                                    }
+                                    alt={""}
+                                    className={classNames(sty.trueStatus2)}
+                                    displayHeight={"auto"}
+                                    displayMaxHeight={"none"}
+                                    displayMaxWidth={"100%"}
+                                    displayMinHeight={"0"}
+                                    displayMinWidth={"0"}
+                                    displayWidth={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? "32px"
+                                        : "36px"
+                                    }
+                                    loading={"lazy"}
+                                    src={{
+                                      src: "/plasmic/website_starter/images/image30.svg",
+                                      fullWidth: 27,
+                                      fullHeight: 27,
+                                      aspectRatio: 1
+                                    }}
+                                  />
+                                ) : null}
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__wCX6
+                                )}
+                              >
+                                <PlasmicImg__
+                                  alt={""}
+                                  className={classNames(sty.img__at2Hg)}
+                                  displayHeight={"auto"}
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"auto"}
+                                  height={
+                                    hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    )
+                                      ? ``
+                                      : undefined
+                                  }
+                                  loading={"lazy"}
+                                  src={(() => {
+                                    try {
+                                      return (() => {
+                                        switch (
+                                          $state.apiRequest2.data[currentIndexs]
+                                            .website
+                                        ) {
+                                          case 2:
+                                            return "https://media.rentamon.com/icon%2Fjabama-wide.jpg";
+                                          case 3:
+                                            return "https://media.rentamon.com/icon%2Fjajiga-wide.jpg";
+                                          case 4:
+                                            return "https://media.rentamon.com/icon%2Fshab-wide.jpg";
+                                          case 5:
+                                            return "https://media.rentamon.com/icon%2Fmizboon-wide.jpg";
+                                          case 6:
+                                            return "https://media.rentamon.com/icon%2Fotaghak-wide.jpg";
+                                          case 7:
+                                            return "https://media.rentamon.com/icon%2Fmihmansho-wide.jpg";
+                                          case 8:
+                                            return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
+                                          default:
+                                            return "";
+                                        }
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                  width={
+                                    hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    )
+                                      ? "80%"
+                                      : "80%"
+                                  }
+                                />
+                              </div>
                             </div>
                           ) : null}
                           <div
@@ -1477,7 +1517,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                               )
                           )
                             ? (() => {
-                                const actionArgs = { destination: `/websites` };
+                                const actionArgs = {};
                                 return (({ destination }) => {
                                   if (
                                     typeof destination === "string" &&
@@ -1515,8 +1555,14 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                             alt={""}
                             className={classNames(sty.img__nkVeq)}
                             displayHeight={
-                              hasVariant(globalVariants, "screen", "mobile")
-                                ? "60px"
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "36px"
+                                : hasVariant(globalVariants, "screen", "mobile")
+                                ? "44px"
                                 : "52px"
                             }
                             displayMaxHeight={"none"}
