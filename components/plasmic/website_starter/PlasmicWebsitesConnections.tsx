@@ -265,7 +265,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
               data-plasmic-name={"navbarRntFooter"}
               data-plasmic-override={overrides.navbarRntFooter}
               className={classNames("__wab_instance", sty.navbarRntFooter)}
-              navPage={"properties"}
+              navPage={``}
               userType={(() => {
                 try {
                   return $state.userType;

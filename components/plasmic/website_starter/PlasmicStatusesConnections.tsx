@@ -266,7 +266,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
               data-plasmic-name={"navbarRntFooter"}
               data-plasmic-override={overrides.navbarRntFooter}
               className={classNames("__wab_instance", sty.navbarRntFooter)}
-              navPage={"properties"}
+              navPage={``}
               userType={(() => {
                 try {
                   return $state.userType;
@@ -1783,102 +1783,6 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                 typeof $steps["updateStep2"].then === "function"
               ) {
                 $steps["updateStep2"] = await $steps["updateStep2"];
-              }
-
-              $steps["invokeGlobalAction"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://gateway.rentamon.com/webhook/get_user_segment"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
-              }
-
-              $steps["updateStep"] = true
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["step"]
-                      },
-                      operation: 0,
-                      value: ($state.userType =
-                        $steps.invokeGlobalAction.data.flag)
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStep"] != null &&
-                typeof $steps["updateStep"] === "object" &&
-                typeof $steps["updateStep"].then === "function"
-              ) {
-                $steps["updateStep"] = await $steps["updateStep"];
-              }
-
-              $steps["checkPropTourCookie"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          function getCookieValue(cookieName) {
-                            const cookies = document.cookie
-                              .split(";")
-                              .map(cookie => cookie.trim());
-                            for (const cookie of cookies) {
-                              const [name, value] = cookie.split("=");
-                              if (name === cookieName) {
-                                return value;
-                              }
-                            }
-                            return null;
-                          }
-                          if (document.cookie.includes("prop_tour")) {
-                            console.log("in the visit");
-                            const prop_tour = getCookieValue("prop_tour");
-                            if (prop_tour != null) {
-                              $state.propTour = true;
-                            }
-                            return console.log("prop_tour:", $state.propTour);
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["checkPropTourCookie"] != null &&
-                typeof $steps["checkPropTourCookie"] === "object" &&
-                typeof $steps["checkPropTourCookie"].then === "function"
-              ) {
-                $steps["checkPropTourCookie"] = await $steps[
-                  "checkPropTourCookie"
-                ];
               }
             }}
           />
