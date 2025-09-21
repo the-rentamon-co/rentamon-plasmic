@@ -2963,31 +2963,45 @@
         },
         {
           "id": "X6rxWka4Bgj1",
-          "name": "ActivationDuplicateConnection",
+          "name": "Connections",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicActivationDuplicateConnection.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicConnections.tsx",
           "importSpec": {
             "modulePath": "../src/pages/connections.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicActivationDuplicateConnection.module.css",
+          "cssFilePath": "plasmic/website_starter/PlasmicConnections.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/connection/[type]"
+          "path": "/connections"
         },
         {
           "id": "s5Ue8ma2bsNz",
-          "name": "WebsiteConnections",
+          "name": "StatusesConnections",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicWebsiteConnections.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicStatusesConnections.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/connections2.tsx"
+            "modulePath": "../src/pages/statuses.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicWebsiteConnections.module.css",
+          "cssFilePath": "plasmic/website_starter/PlasmicStatusesConnections.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/connections2"
+          "path": "/statuses"
+        },
+        {
+          "id": "PIbNlRUQg-G4",
+          "name": "PlatformsConnections",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPlatformsConnections.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/websites.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPlatformsConnections.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/websites"
         }
       ],
       "icons": [

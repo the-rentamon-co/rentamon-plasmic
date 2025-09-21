@@ -2426,6 +2426,9 @@ function Plasmicتالار__RenderFunc(props: {
               styleTokensClassNames
             )}
             hideFooter={true}
+            maskClosable={
+              hasVariant(globalVariants, "screen", "mobile") ? false : undefined
+            }
             modalScopeClassName={sty["modal__modal"]}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["modal", "open"]).apply(
@@ -2486,7 +2489,10 @@ function Plasmicتالار__RenderFunc(props: {
                             customFunction: async () => {
                               return (() => {
                                 function enableNotify() {
-                                  localStorage.setItem("is_notify", "true");
+                                  localStorage.setItem(
+                                    "is_transactions_notify",
+                                    "true"
+                                  );
                                 }
                                 return enableNotify();
                               })();
@@ -2585,7 +2591,10 @@ function Plasmicتالار__RenderFunc(props: {
                             customFunction: async () => {
                               return (() => {
                                 function enableNotify() {
-                                  localStorage.setItem("is_notify", "true");
+                                  localStorage.setItem(
+                                    "is_transactions_notify",
+                                    "true"
+                                  );
                                 }
                                 return enableNotify();
                               })();
