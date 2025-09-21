@@ -269,7 +269,7 @@
   flex-direction: column;
   width: 100%;
   height: auto;
-  max-width: 70%;
+  max-width: 100%;
   justify-content: flex-start;
   align-items: center;
   background: #fafafa;
@@ -353,7 +353,7 @@
 .localStorage {
   display: grid;
   position: relative;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -424,9 +424,7 @@
 @media (max-width: 350px) {
   .freeBox___9MxO {
     max-width: 100%;
-    height: 220px;
-    min-height: 220px;
-    max-height: 220px;
+    height: 160px;
     align-items: center;
     justify-content: space-between;
     flex-shrink: 0;
@@ -532,22 +530,34 @@
 @media (max-width: 500px) {
   .text__wir2D {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
   }
 }
-.freeBox__sBuze {
+.freeBox___4Dq7O {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.freeBox__sBuze {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   height: 220px;
   max-width: 200px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background: var(--token-8R7jjC_-F9FF);
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   min-width: 0;
+  flex-shrink: 0;
   border-radius: 30px;
   padding: 0px 0px 8px;
   border: 2px solid #ececec;
@@ -573,6 +583,7 @@
     max-height: 180px;
     cursor: pointer;
     min-width: 0;
+    flex-shrink: 0;
     border-radius: 30px;
     padding: 0px 0px 8px;
     border: 2px solid #ececec;
@@ -581,9 +592,10 @@
 @media (max-width: 350px) {
   .freeBox__sBuze {
     max-width: 100%;
-    height: 220px;
-    min-height: 220px;
-    max-height: 220px;
+    height: 160px;
+    min-height: 160px;
+    max-height: 160px;
+    flex-shrink: 0;
   }
 }
 .freeBox__mooUv {
@@ -679,7 +691,8 @@
 }
 @media (max-width: 500px) {
   .text__nIC {
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 16px;
   }
 }
 .text__xkWcY {

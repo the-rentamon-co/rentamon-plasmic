@@ -3002,6 +3002,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/websites"
+        },
+        {
+          "id": "Iw2MSsVvK_9m",
+          "name": "Connections2Duplicate",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicConnections2Duplicate.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/connections-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicConnections2Duplicate.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/connections-2"
         }
       ],
       "icons": [

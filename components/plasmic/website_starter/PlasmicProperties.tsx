@@ -693,128 +693,141 @@ function PlasmicProperties__RenderFunc(props: {
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__sBuze,
-                            "clickable fadein"
+                            sty.freeBox___4Dq7O
                           )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["goToPropertyEditFirstProperty"] =
-                              $state.apiRequest.data.filter(
-                                item => item.property_name !== "اقامتگاه ۱"
-                              ).length == 0
-                                ? (() => {
-                                    const actionArgs = {
-                                      destination: `/property/edit/first-property`
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                            if (
-                              $steps["goToPropertyEditFirstProperty"] != null &&
-                              typeof $steps["goToPropertyEditFirstProperty"] ===
-                                "object" &&
-                              typeof $steps["goToPropertyEditFirstProperty"]
-                                .then === "function"
-                            ) {
-                              $steps["goToPropertyEditFirstProperty"] =
-                                await $steps["goToPropertyEditFirstProperty"];
-                            }
-
-                            $steps["goToPropertyCreate"] =
-                              $state.apiRequest.data.filter(
-                                item => item.property_name !== "اقامتگاه ۱"
-                              ).length >= 1
-                                ? (() => {
-                                    const actionArgs = {
-                                      destination: `/property/create`
-                                    };
-                                    return (({ destination }) => {
-                                      if (
-                                        typeof destination === "string" &&
-                                        destination.startsWith("#")
-                                      ) {
-                                        document
-                                          .getElementById(destination.substr(1))
-                                          .scrollIntoView({
-                                            behavior: "smooth"
-                                          });
-                                      } else {
-                                        __nextRouter?.push(destination);
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                            if (
-                              $steps["goToPropertyCreate"] != null &&
-                              typeof $steps["goToPropertyCreate"] ===
-                                "object" &&
-                              typeof $steps["goToPropertyCreate"].then ===
-                                "function"
-                            ) {
-                              $steps["goToPropertyCreate"] = await $steps[
-                                "goToPropertyCreate"
-                              ];
-                            }
-                          }}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
-                              sty.freeBox__mooUv
+                              sty.freeBox__sBuze,
+                              "clickable fadein"
                             )}
-                          >
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img__siplE)}
-                              displayHeight={
-                                hasVariant(globalVariants, "screen", "mobile")
-                                  ? "60px"
-                                  : "52px"
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["goToPropertyEditFirstProperty"] =
+                                $state.apiRequest.data.filter(
+                                  item => item.property_name !== "اقامتگاه ۱"
+                                ).length == 0
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/property/edit/first-property`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["goToPropertyEditFirstProperty"] !=
+                                  null &&
+                                typeof $steps[
+                                  "goToPropertyEditFirstProperty"
+                                ] === "object" &&
+                                typeof $steps["goToPropertyEditFirstProperty"]
+                                  .then === "function"
+                              ) {
+                                $steps["goToPropertyEditFirstProperty"] =
+                                  await $steps["goToPropertyEditFirstProperty"];
                               }
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={"auto"}
-                              loading={"lazy"}
-                              src={{
-                                src: "/plasmic/website_starter/images/image110.svg",
-                                fullWidth: 51,
-                                fullHeight: 51,
-                                aspectRatio: 1
-                              }}
-                            />
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox___10ONd
-                            )}
+
+                              $steps["goToPropertyCreate"] =
+                                $state.apiRequest.data.filter(
+                                  item => item.property_name !== "اقامتگاه ۱"
+                                ).length >= 1
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/property/create`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["goToPropertyCreate"] != null &&
+                                typeof $steps["goToPropertyCreate"] ===
+                                  "object" &&
+                                typeof $steps["goToPropertyCreate"].then ===
+                                  "function"
+                              ) {
+                                $steps["goToPropertyCreate"] = await $steps[
+                                  "goToPropertyCreate"
+                                ];
+                              }
+                            }}
                           >
                             <div
                               className={classNames(
                                 projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__nIC
+                                sty.freeBox__mooUv
                               )}
                             >
-                              {hasVariant(globalVariants, "screen", "mobile")
-                                ? "\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                                : "\u0627\u06cc\u062c\u0627\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__siplE)}
+                                displayHeight={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "60px"
+                                    : "52px"
+                                }
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"100%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={"auto"}
+                                loading={"lazy"}
+                                src={{
+                                  src: "/plasmic/website_starter/images/image110.svg",
+                                  fullWidth: 51,
+                                  fullHeight: 51,
+                                  aspectRatio: 1
+                                }}
+                              />
+                            </div>
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox___10ONd
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__nIC
+                                )}
+                              >
+                                {hasVariant(globalVariants, "screen", "mobile")
+                                  ? "\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                                  : "\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                              </div>
                             </div>
                           </div>
                         </div>

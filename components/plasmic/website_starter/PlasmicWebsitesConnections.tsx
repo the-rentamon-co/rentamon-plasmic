@@ -432,7 +432,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u06a9\u062f\u0648\u0645 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646\u06cc\u061f"
+                    "\u0633\u0627\u06cc\u062a\u06cc \u06a9\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646\u06cc \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
                   }
                 </div>
               </div>
