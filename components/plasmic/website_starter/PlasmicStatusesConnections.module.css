@@ -335,6 +335,7 @@
   }
 }
 .localStorage {
+  display: grid;
   position: relative;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   width: 100%;
@@ -343,7 +344,6 @@
   grid-column-gap: 10px;
   grid-row-gap: 30px;
   min-width: 0;
-  display: none;
   padding: 8px;
 }
 @media (max-width: 1200px) {
@@ -754,6 +754,34 @@
     min-height: 66%;
     border-bottom-width: 0px;
   }
+}
+.falseStatus2 {
+  object-fit: cover;
+  max-width: 100%;
+  align-self: flex-start;
+  width: 48px;
+  z-index: 1000;
+  position: absolute;
+  left: 140px;
+  top: 0px;
+  height: auto;
+}
+.falseStatus2 > picture > img {
+  object-fit: cover;
+}
+.trueStatus2 {
+  object-fit: cover;
+  max-width: 100%;
+  align-self: flex-start;
+  width: 48px;
+  z-index: 1000;
+  position: absolute;
+  left: 140px;
+  top: 0px;
+  height: auto;
+}
+.trueStatus2 > picture > img {
+  object-fit: cover;
 }
 .img__at2Hg {
   object-fit: cover;

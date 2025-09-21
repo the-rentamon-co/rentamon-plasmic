@@ -102,6 +102,8 @@ export type PlasmicStatusesConnections__OverridesType = {
   trueStatus?: Flex__<typeof PlasmicImg__>;
   newPlatform?: Flex__<"div">;
   connectedPlatforms2?: Flex__<"div">;
+  falseStatus2?: Flex__<typeof PlasmicImg__>;
+  trueStatus2?: Flex__<typeof PlasmicImg__>;
   newPlatform2?: Flex__<"div">;
   propGuide?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
@@ -677,7 +679,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return true;
+                                    return false;
                                   }
                                   throw e;
                                 }
@@ -916,6 +918,45 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                             )}
                             onClick={async event => {
                               const $steps = {};
+
+                              $steps["goToPlatformsConnections"] = [
+                                2, 3, 4, 6, 7, 8
+                              ].some(
+                                required =>
+                                  !$state.apiRequest2.data.some(
+                                    item => item.website === required
+                                  )
+                              )
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: `/websites`
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["goToPlatformsConnections"] != null &&
+                                typeof $steps["goToPlatformsConnections"] ===
+                                  "object" &&
+                                typeof $steps["goToPlatformsConnections"]
+                                  .then === "function"
+                              ) {
+                                $steps["goToPlatformsConnections"] =
+                                  await $steps["goToPlatformsConnections"];
+                              }
                             }}
                           >
                             <div
@@ -1073,7 +1114,24 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                     const actionArgs = {
                                       destination: `/connections?step=${(() => {
                                         try {
-                                          return undefined;
+                                          return (() => {
+                                            switch (currentItems.website) {
+                                              case 2:
+                                                return 1;
+                                              case 3:
+                                                return 3;
+                                              case 4:
+                                                return 5;
+                                              case 6:
+                                                return 7;
+                                              case 7:
+                                                return 10;
+                                              case 8:
+                                                return 9;
+                                              default:
+                                                return null;
+                                            }
+                                          })();
                                         } catch (e) {
                                           if (
                                             e instanceof TypeError ||
@@ -1124,7 +1182,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                             return (() => {
                                               switch (
                                                 $state.apiRequest2.data[
-                                                  currentIndex
+                                                  currentIndexs
                                                 ].website
                                               ) {
                                                 case 2:
@@ -1184,7 +1242,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return true;
+                                return false;
                               }
                               throw e;
                             }
@@ -1194,47 +1252,78 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                 projectcss.all,
                                 sty.freeBox__h4125
                               )}
-                              onClick={async event => {
-                                const $steps = {};
-
-                                $steps["updateStep"] = true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        variable: {
-                                          objRoot: $state,
-                                          variablePath: ["step"]
-                                        },
-                                        operation: 0
-                                      };
-                                      return (({
-                                        variable,
-                                        value,
-                                        startIndex,
-                                        deleteCount
-                                      }) => {
-                                        if (!variable) {
-                                          return;
-                                        }
-                                        const { objRoot, variablePath } =
-                                          variable;
-
-                                        $stateSet(objRoot, variablePath, value);
-                                        return value;
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["updateStep"] != null &&
-                                  typeof $steps["updateStep"] === "object" &&
-                                  typeof $steps["updateStep"].then ===
-                                    "function"
-                                ) {
-                                  $steps["updateStep"] = await $steps[
-                                    "updateStep"
-                                  ];
-                                }
-                              }}
                             >
+                              {(() => {
+                                try {
+                                  return currentItems.status === "false";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })() ? (
+                                <PlasmicImg__
+                                  data-plasmic-name={"falseStatus2"}
+                                  data-plasmic-override={overrides.falseStatus2}
+                                  alt={""}
+                                  className={classNames(
+                                    sty.falseStatus2,
+                                    "element"
+                                  )}
+                                  displayHeight={"auto"}
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"48px"}
+                                  loading={"lazy"}
+                                  src={{
+                                    src: "/plasmic/website_starter/images/image29.svg",
+                                    fullWidth: 27,
+                                    fullHeight: 27,
+                                    aspectRatio: 1
+                                  }}
+                                />
+                              ) : null}
+                              {(() => {
+                                try {
+                                  return currentItems.status === "true";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })() ? (
+                                <PlasmicImg__
+                                  data-plasmic-name={"trueStatus2"}
+                                  data-plasmic-override={overrides.trueStatus2}
+                                  alt={""}
+                                  className={classNames(sty.trueStatus2)}
+                                  displayHeight={"auto"}
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"48px"}
+                                  loading={"lazy"}
+                                  src={{
+                                    src: "/plasmic/website_starter/images/image30.svg",
+                                    fullWidth: 27,
+                                    fullHeight: 27,
+                                    aspectRatio: 1
+                                  }}
+                                />
+                              ) : null}
                               <PlasmicImg__
                                 alt={""}
                                 className={classNames(sty.img__at2Hg)}
@@ -1258,19 +1347,19 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                           .website
                                       ) {
                                         case 2:
-                                          return "https://rentamon.com/plasmic/website_starter/images/image19.svg";
+                                          return "https://media.rentamon.com/icon%2Fjabama-wide.jpg";
                                         case 3:
-                                          return "https://rentamon.com/plasmic/website_starter/images/image9.svg";
+                                          return "https://media.rentamon.com/icon%2Fjajiga-wide.jpg";
                                         case 4:
-                                          return "https://rentamon.com/plasmic/website_starter/images/image20.svg";
+                                          return "https://media.rentamon.com/icon%2Fshab-wide.jpg";
                                         case 5:
-                                          return "https://site-assets.plasmic.app/e561cc4133f269c501fd49dd6e37e1b7.svg";
+                                          return "https://media.rentamon.com/icon%2Fmizboon-wide.jpg";
                                         case 6:
-                                          return "https://rentamon.com/plasmic/website_starter/images/image13.svg";
+                                          return "https://media.rentamon.com/icon%2Fotaghak-wide.jpg";
                                         case 7:
-                                          return "https://rentamon.com/plasmic/website_starter/images/image21.svg";
+                                          return "https://media.rentamon.com/icon%2Fmihmansho-wide.jpg";
                                         case 8:
-                                          return "https://rentamon.com/plasmic/website_starter/images/image18.svg";
+                                          return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
                                         default:
                                           return "";
                                       }
@@ -1352,10 +1441,11 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                     })}
                     {(() => {
                       try {
-                        return ![2, 3, 4, 6, 7, 8].every(required =>
-                          $state.apiRequest2.data.some(
-                            item => item.website === required
-                          )
+                        return [2, 3, 4, 6, 7, 8].some(
+                          required =>
+                            !$state.apiRequest2.data.some(
+                              item => item.website === required
+                            )
                         );
                       } catch (e) {
                         if (
@@ -1377,6 +1467,42 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                         )}
                         onClick={async event => {
                           const $steps = {};
+
+                          $steps["goToPlatformsConnections"] = [
+                            2, 3, 4, 6, 7, 8
+                          ].some(
+                            required =>
+                              !$state.apiRequest2.data.some(
+                                item => item.website === required
+                              )
+                          )
+                            ? (() => {
+                                const actionArgs = { destination: `/websites` };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["goToPlatformsConnections"] != null &&
+                            typeof $steps["goToPlatformsConnections"] ===
+                              "object" &&
+                            typeof $steps["goToPlatformsConnections"].then ===
+                              "function"
+                          ) {
+                            $steps["goToPlatformsConnections"] = await $steps[
+                              "goToPlatformsConnections"
+                            ];
+                          }
                         }}
                       >
                         <div
@@ -1730,6 +1856,8 @@ const PlasmicDescendants = {
     "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
+    "falseStatus2",
+    "trueStatus2",
     "newPlatform2",
     "propGuide",
     "sideEffect",
@@ -1751,6 +1879,8 @@ const PlasmicDescendants = {
     "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
+    "falseStatus2",
+    "trueStatus2",
     "newPlatform2",
     "propGuide"
   ],
@@ -1763,6 +1893,8 @@ const PlasmicDescendants = {
     "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
+    "falseStatus2",
+    "trueStatus2",
     "newPlatform2",
     "propGuide"
   ],
@@ -1774,6 +1906,8 @@ const PlasmicDescendants = {
     "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
+    "falseStatus2",
+    "trueStatus2",
     "newPlatform2",
     "propGuide"
   ],
@@ -1788,7 +1922,9 @@ const PlasmicDescendants = {
   falseStatus: ["falseStatus"],
   trueStatus: ["trueStatus"],
   newPlatform: ["newPlatform"],
-  connectedPlatforms2: ["connectedPlatforms2"],
+  connectedPlatforms2: ["connectedPlatforms2", "falseStatus2", "trueStatus2"],
+  falseStatus2: ["falseStatus2"],
+  trueStatus2: ["trueStatus2"],
   newPlatform2: ["newPlatform2"],
   propGuide: ["propGuide"],
   sideEffect: ["sideEffect"],
@@ -1814,6 +1950,8 @@ type NodeDefaultElementType = {
   trueStatus: typeof PlasmicImg__;
   newPlatform: "div";
   connectedPlatforms2: "div";
+  falseStatus2: typeof PlasmicImg__;
+  trueStatus2: typeof PlasmicImg__;
   newPlatform2: "div";
   propGuide: "div";
   sideEffect: typeof SideEffect;
@@ -1895,6 +2033,8 @@ export const PlasmicStatusesConnections = Object.assign(
     trueStatus: makeNodeComponent("trueStatus"),
     newPlatform: makeNodeComponent("newPlatform"),
     connectedPlatforms2: makeNodeComponent("connectedPlatforms2"),
+    falseStatus2: makeNodeComponent("falseStatus2"),
+    trueStatus2: makeNodeComponent("trueStatus2"),
     newPlatform2: makeNodeComponent("newPlatform2"),
     propGuide: makeNodeComponent("propGuide"),
     sideEffect: makeNodeComponent("sideEffect"),

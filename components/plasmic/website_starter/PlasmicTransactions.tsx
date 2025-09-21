@@ -3938,7 +3938,7 @@ function PlasmicTransactions__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
-                              return $state.showDetails == false;
+                              return ($state.showDetails = false);
                             }
                           };
                           return (({ customFunction }) => {
