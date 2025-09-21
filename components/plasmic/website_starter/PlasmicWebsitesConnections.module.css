@@ -671,7 +671,7 @@
 .freeBox__wyHoo {
   display: grid;
   position: relative;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   width: 100%;
   height: auto;
   max-width: 100%;

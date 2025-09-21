@@ -798,8 +798,6 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                               return "https://media.rentamon.com/icon%2Fjajiga-wide.jpg";
                                             case 4:
                                               return "https://media.rentamon.com/icon%2Fshab-wide.jpg";
-                                            case 5:
-                                              return "https://media.rentamon.com/icon%2Fmizboon-wide.jpg";
                                             case 6:
                                               return "https://media.rentamon.com/icon%2Fotaghak-wide.jpg";
                                             case 7:
@@ -1387,8 +1385,6 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                             return "https://media.rentamon.com/icon%2Fjajiga-wide.jpg";
                                           case 4:
                                             return "https://media.rentamon.com/icon%2Fshab-wide.jpg";
-                                          case 5:
-                                            return "https://media.rentamon.com/icon%2Fmizboon-wide.jpg";
                                           case 6:
                                             return "https://media.rentamon.com/icon%2Fotaghak-wide.jpg";
                                           case 7:
