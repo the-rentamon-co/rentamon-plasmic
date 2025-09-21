@@ -1517,7 +1517,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                               )
                           )
                             ? (() => {
-                                const actionArgs = {};
+                                const actionArgs = { destination: `/websites` };
                                 return (({ destination }) => {
                                   if (
                                     typeof destination === "string" &&
@@ -1593,7 +1593,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                             )}
                           >
                             {hasVariant(globalVariants, "screen", "mobile")
-                              ? "\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                              ? "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f"
                               : "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f"}
                           </div>
                         </div>

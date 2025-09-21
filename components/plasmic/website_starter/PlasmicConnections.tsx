@@ -8856,7 +8856,7 @@ function PlasmicConnections__RenderFunc(props: {
                     throw e;
                   }
                 })()
-              : false
+              : true
           ) ? (
             <div
               data-plasmic-name={"newPlatformPropertyAlert"}

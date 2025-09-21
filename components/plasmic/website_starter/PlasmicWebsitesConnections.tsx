@@ -1483,7 +1483,19 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                             throw e;
                           }
                         })()
-                      : true
+                      : (() => {
+                          try {
+                            return !$state.apiRequest2.data[0];
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })()
                   ) ? (
                     <div
                       data-plasmic-name={"allConnected"}
@@ -1522,6 +1534,46 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                     </div>
                   ) : null}
                 </ApiRequest>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__em2Wb)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return window.history.back();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__zIqd5)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__v68QE
+                      )}
+                    >
+                      {"\u0627\u0646\u0635\u0631\u0627\u0641"}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
