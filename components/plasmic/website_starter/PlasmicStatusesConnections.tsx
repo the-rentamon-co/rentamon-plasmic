@@ -1817,19 +1817,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
-          {(() => {
-            try {
-              return !$state.onboarded;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return false;
-              }
-              throw e;
-            }
-          })() ? (
+          {false ? (
             <AntdModal
               data-plasmic-name={"onboardingModal"}
               data-plasmic-override={overrides.onboardingModal}
