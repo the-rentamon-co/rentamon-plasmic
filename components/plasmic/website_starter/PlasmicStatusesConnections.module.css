@@ -436,11 +436,11 @@
   align-self: flex-start;
   width: 48px;
   z-index: 1000;
-  position: absolute;
-  left: 140px;
-  top: 0px;
+  position: relative;
+  left: auto;
+  top: auto;
   height: auto;
-  bottom: 0px;
+  bottom: auto;
 }
 .falseStatus > picture > img {
   object-fit: cover;
@@ -451,9 +451,9 @@
   align-self: flex-start;
   width: 48px;
   z-index: 1000;
-  position: absolute;
-  left: 140px;
-  top: 0px;
+  position: relative;
+  left: auto;
+  top: auto;
   height: auto;
 }
 .trueStatus > picture > img {
@@ -789,6 +789,10 @@
 @media (max-width: 500px) {
   .falseStatus2 {
     width: 32px;
+    top: auto;
+    left: auto;
+    right: auto;
+    position: relative;
   }
 }
 .trueStatus2 {
@@ -797,6 +801,9 @@
   width: 36px;
   height: auto;
   align-self: flex-start;
+  position: relative;
+  left: auto;
+  top: auto;
 }
 .trueStatus2 > picture > img {
   object-fit: cover;
@@ -804,6 +811,10 @@
 @media (max-width: 500px) {
   .trueStatus2 {
     width: 32px;
+    top: auto;
+    left: auto;
+    right: auto;
+    position: relative;
   }
 }
 .freeBox__wCX6 {

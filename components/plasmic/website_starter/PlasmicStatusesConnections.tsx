@@ -537,8 +537,20 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                   projectcss.all,
                                   sty.connectedPlatforms,
                                   hasVariant(globalVariants, "screen", "mobile")
-                                    ? "clickable"
-                                    : undefined
+                                    ? `clickable fadeinf ${`${
+                                        currentItems.status === "false"
+                                          ? "disconnected"
+                                          : currentItems.status === "true"
+                                          ? "connected"
+                                          : ""
+                                      }`}`
+                                    : `clickable fadeinf ${`${
+                                        currentItem.status === "false"
+                                          ? "disconnected"
+                                          : currentItem.status === "true"
+                                          ? "connected"
+                                          : ""
+                                      }`}`
                                 )}
                                 key={currentIndex}
                                 onClick={async event => {
@@ -722,7 +734,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                         alt={""}
                                         className={classNames(
                                           sty.falseStatus,
-                                          "element"
+                                          "element "
                                         )}
                                         displayHeight={"auto"}
                                         displayMaxHeight={"none"}
@@ -1118,8 +1130,20 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                             projectcss.all,
                             sty.connectedPlatforms2,
                             hasVariant(globalVariants, "screen", "mobile")
-                              ? "clickable"
-                              : "clickable fadeinf"
+                              ? `clickable fadeinf ${`${
+                                  currentItems.status === "false"
+                                    ? "disconnected"
+                                    : currentItems.status === "true"
+                                    ? "connected"
+                                    : ""
+                                }`}`
+                              : `clickable fadeinf ${`${
+                                  currentItems.status === "false"
+                                    ? "disconnected"
+                                    : currentItems.status === "true"
+                                    ? "connected"
+                                    : ""
+                                }`}`
                           )}
                           key={currentIndexs}
                           onClick={async event => {
@@ -1296,10 +1320,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                       overrides.falseStatus2
                                     }
                                     alt={""}
-                                    className={classNames(
-                                      sty.falseStatus2,
-                                      "element"
-                                    )}
+                                    className={classNames(sty.falseStatus2, ``)}
                                     displayHeight={"auto"}
                                     displayMaxHeight={"none"}
                                     displayMaxWidth={"100%"}
