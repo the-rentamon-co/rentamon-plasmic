@@ -107,7 +107,6 @@ export type PlasmicStatusesConnections__OverridesType = {
   falseStatus2?: Flex__<typeof PlasmicImg__>;
   trueStatus2?: Flex__<typeof PlasmicImg__>;
   newPlatform2?: Flex__<"div">;
-  propGuide?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   onboardingModal?: Flex__<typeof AntdModal>;
@@ -1654,61 +1653,6 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                       </div>
                     ) : null}
                   </div>
-                  {(
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? true
-                      : false
-                  ) ? (
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___2GSHa
-                      )}
-                    >
-                      {(
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? (() => {
-                              try {
-                                return $state.propTour === true;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : false
-                      ) ? (
-                        <div
-                          data-plasmic-name={"propGuide"}
-                          data-plasmic-override={overrides.propGuide}
-                          className={classNames(projectcss.all, sty.propGuide)}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__mXPev
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__ueXoF
-                              )}
-                            >
-                              {
-                                "\u0631\u0648\u06cc \u062f\u06a9\u0645\u0647  +  \u0628\u0627\u0644\u0627 \u0628\u0632\u0646 \u062a\u0627 \u0632\u06cc\u0631 \u06f1 \u062f\u0642\u06cc\u0642\u0647\n\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc"
-                              }
-                            </div>
-                          </div>
-                        </div>
-                      ) : null}
-                    </div>
-                  ) : null}
                 </ApiRequest>
               </div>
             </div>
@@ -1929,7 +1873,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
               }
               trigger={null}
               width={
-                hasVariant(globalVariants, "screen", "mobile") ? "400" : "400"
+                hasVariant(globalVariants, "screen", "mobile") ? "400" : "350"
               }
               wrapClassName={classNames({ [sty["pcls_lCSKfLn_D_22"]]: true })}
             >
@@ -2075,7 +2019,6 @@ const PlasmicDescendants = {
     "falseStatus2",
     "trueStatus2",
     "newPlatform2",
-    "propGuide",
     "clarityRntComponent",
     "faviconRntComponent",
     "onboardingModal",
@@ -2099,8 +2042,7 @@ const PlasmicDescendants = {
     "connectedPlatforms2",
     "falseStatus2",
     "trueStatus2",
-    "newPlatform2",
-    "propGuide"
+    "newPlatform2"
   ],
   platforms: [
     "platforms",
@@ -2113,8 +2055,7 @@ const PlasmicDescendants = {
     "connectedPlatforms2",
     "falseStatus2",
     "trueStatus2",
-    "newPlatform2",
-    "propGuide"
+    "newPlatform2"
   ],
   apiRequest2: [
     "apiRequest2",
@@ -2126,8 +2067,7 @@ const PlasmicDescendants = {
     "connectedPlatforms2",
     "falseStatus2",
     "trueStatus2",
-    "newPlatform2",
-    "propGuide"
+    "newPlatform2"
   ],
   localStorage: [
     "localStorage",
@@ -2144,7 +2084,6 @@ const PlasmicDescendants = {
   falseStatus2: ["falseStatus2"],
   trueStatus2: ["trueStatus2"],
   newPlatform2: ["newPlatform2"],
-  propGuide: ["propGuide"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   onboardingModal: ["onboardingModal", "htmlVideo", "h3"],
@@ -2173,7 +2112,6 @@ type NodeDefaultElementType = {
   falseStatus2: typeof PlasmicImg__;
   trueStatus2: typeof PlasmicImg__;
   newPlatform2: "div";
-  propGuide: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   onboardingModal: typeof AntdModal;
@@ -2258,7 +2196,6 @@ export const PlasmicStatusesConnections = Object.assign(
     falseStatus2: makeNodeComponent("falseStatus2"),
     trueStatus2: makeNodeComponent("trueStatus2"),
     newPlatform2: makeNodeComponent("newPlatform2"),
-    propGuide: makeNodeComponent("propGuide"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     onboardingModal: makeNodeComponent("onboardingModal"),
