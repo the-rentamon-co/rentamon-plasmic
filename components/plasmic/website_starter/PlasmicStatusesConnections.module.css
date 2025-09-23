@@ -1134,6 +1134,7 @@
   max-width: 100%;
   object-fit: cover;
   justify-self: center;
+  display: none;
 }
 .freeBox__lEfYv {
   display: flex;
