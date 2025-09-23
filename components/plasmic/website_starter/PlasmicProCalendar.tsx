@@ -1804,10 +1804,10 @@ function PlasmicProCalendar__RenderFunc(props: {
                               onClick={async event => {
                                 const $steps = {};
 
-                                $steps["goToActivation"] = true
+                                $steps["goToStatusesConnections"] = true
                                   ? (() => {
                                       const actionArgs = {
-                                        destination: `/activation/${"3"}`
+                                        destination: `/statuses`
                                       };
                                       return (({ destination }) => {
                                         if (
@@ -1828,15 +1828,14 @@ function PlasmicProCalendar__RenderFunc(props: {
                                     })()
                                   : undefined;
                                 if (
-                                  $steps["goToActivation"] != null &&
-                                  typeof $steps["goToActivation"] ===
+                                  $steps["goToStatusesConnections"] != null &&
+                                  typeof $steps["goToStatusesConnections"] ===
                                     "object" &&
-                                  typeof $steps["goToActivation"].then ===
-                                    "function"
+                                  typeof $steps["goToStatusesConnections"]
+                                    .then === "function"
                                 ) {
-                                  $steps["goToActivation"] = await $steps[
-                                    "goToActivation"
-                                  ];
+                                  $steps["goToStatusesConnections"] =
+                                    await $steps["goToStatusesConnections"];
                                 }
                               }}
                               src={{
@@ -1901,10 +1900,10 @@ function PlasmicProCalendar__RenderFunc(props: {
                               onClick={async event => {
                                 const $steps = {};
 
-                                $steps["goToActivation"] = true
+                                $steps["goToStatusesConnections"] = true
                                   ? (() => {
                                       const actionArgs = {
-                                        destination: `/activation/${"3"}`
+                                        destination: `/statuses`
                                       };
                                       return (({ destination }) => {
                                         if (
@@ -1925,15 +1924,14 @@ function PlasmicProCalendar__RenderFunc(props: {
                                     })()
                                   : undefined;
                                 if (
-                                  $steps["goToActivation"] != null &&
-                                  typeof $steps["goToActivation"] ===
+                                  $steps["goToStatusesConnections"] != null &&
+                                  typeof $steps["goToStatusesConnections"] ===
                                     "object" &&
-                                  typeof $steps["goToActivation"].then ===
-                                    "function"
+                                  typeof $steps["goToStatusesConnections"]
+                                    .then === "function"
                                 ) {
-                                  $steps["goToActivation"] = await $steps[
-                                    "goToActivation"
-                                  ];
+                                  $steps["goToStatusesConnections"] =
+                                    await $steps["goToStatusesConnections"];
                                 }
                               }}
                               src={{
@@ -1991,10 +1989,10 @@ function PlasmicProCalendar__RenderFunc(props: {
                               onClick={async event => {
                                 const $steps = {};
 
-                                $steps["goToActivation"] = true
+                                $steps["goToStatusesConnections"] = true
                                   ? (() => {
                                       const actionArgs = {
-                                        destination: `/activation/${"3"}`
+                                        destination: `/statuses`
                                       };
                                       return (({ destination }) => {
                                         if (
@@ -2015,15 +2013,14 @@ function PlasmicProCalendar__RenderFunc(props: {
                                     })()
                                   : undefined;
                                 if (
-                                  $steps["goToActivation"] != null &&
-                                  typeof $steps["goToActivation"] ===
+                                  $steps["goToStatusesConnections"] != null &&
+                                  typeof $steps["goToStatusesConnections"] ===
                                     "object" &&
-                                  typeof $steps["goToActivation"].then ===
-                                    "function"
+                                  typeof $steps["goToStatusesConnections"]
+                                    .then === "function"
                                 ) {
-                                  $steps["goToActivation"] = await $steps[
-                                    "goToActivation"
-                                  ];
+                                  $steps["goToStatusesConnections"] =
+                                    await $steps["goToStatusesConnections"];
                                 }
                               }}
                               src={{

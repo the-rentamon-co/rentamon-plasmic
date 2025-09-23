@@ -1347,7 +1347,7 @@
   justify-self: flex-start;
   min-width: 0;
   border-radius: 30px;
-  padding: 0px 0px 40px;
+  padding: 40px 0px;
   border: 0px solid var(--token-BribYzXeckiT);
 }
 @media (max-width: 1200px) {
@@ -1364,6 +1364,7 @@
     box-shadow: none;
     padding-right: 0px;
     padding-left: 0px;
+    padding-top: 80px;
     border-width: 0px;
   }
 }
