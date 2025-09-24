@@ -103,6 +103,7 @@ export type PlasmicHomepage__OverridesType = {
   introCalendarRight?: Flex__<"div">;
   introCalendarRight3?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
+  introCalendarRight5?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
   introCalendarRight4?: Flex__<"div">;
   introAutoSync?: Flex__<"div">;
@@ -378,6 +379,26 @@ function PlasmicHomepage__RenderFunc(props: {
                         "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Fali-kermani.mp4?versionId="
                       }
                     />
+                  </div>
+                  <div
+                    data-plasmic-name={"introCalendarRight5"}
+                    data-plasmic-override={overrides.introCalendarRight5}
+                    className={classNames(
+                      projectcss.all,
+                      sty.introCalendarRight5
+                    )}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__oKzEl
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u0639\u0644\u06cc \u06a9\u0631\u0645\u0627\u0646\u06cc\u00bb \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                        : "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u0639\u0644\u06cc \u06a9\u0631\u0645\u0627\u0646\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
+                    </div>
                   </div>
                 </div>
                 <div
@@ -1517,6 +1538,7 @@ const PlasmicDescendants = {
     "introCalendarRight",
     "introCalendarRight3",
     "htmlVideo",
+    "introCalendarRight5",
     "introCalendarLeft",
     "introCalendarRight4",
     "introAutoSync",
@@ -1579,6 +1601,7 @@ const PlasmicDescendants = {
     "introCalendarRight",
     "introCalendarRight3",
     "htmlVideo",
+    "introCalendarRight5",
     "introCalendarLeft",
     "introCalendarRight4",
     "introAutoSync",
@@ -1620,6 +1643,7 @@ const PlasmicDescendants = {
     "introCalendarRight",
     "introCalendarRight3",
     "htmlVideo",
+    "introCalendarRight5",
     "introCalendarLeft",
     "introCalendarRight4"
   ],
@@ -1630,15 +1654,18 @@ const PlasmicDescendants = {
     "introCalendarRight",
     "introCalendarRight3",
     "htmlVideo",
+    "introCalendarRight5",
     "introCalendarLeft"
   ],
   introCalendarRight: [
     "introCalendarRight",
     "introCalendarRight3",
-    "htmlVideo"
+    "htmlVideo",
+    "introCalendarRight5"
   ],
   introCalendarRight3: ["introCalendarRight3", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
+  introCalendarRight5: ["introCalendarRight5"],
   introCalendarLeft: ["introCalendarLeft"],
   introCalendarRight4: ["introCalendarRight4"],
   introAutoSync: [
@@ -1768,6 +1795,7 @@ type NodeDefaultElementType = {
   introCalendarRight: "div";
   introCalendarRight3: "div";
   htmlVideo: typeof Video;
+  introCalendarRight5: "div";
   introCalendarLeft: "div";
   introCalendarRight4: "div";
   introAutoSync: "div";
@@ -1890,6 +1918,7 @@ export const PlasmicHomepage = Object.assign(
     introCalendarRight: makeNodeComponent("introCalendarRight"),
     introCalendarRight3: makeNodeComponent("introCalendarRight3"),
     htmlVideo: makeNodeComponent("htmlVideo"),
+    introCalendarRight5: makeNodeComponent("introCalendarRight5"),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
     introCalendarRight4: makeNodeComponent("introCalendarRight4"),
     introAutoSync: makeNodeComponent("introAutoSync"),

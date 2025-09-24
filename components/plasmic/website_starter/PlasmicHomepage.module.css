@@ -253,6 +253,12 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 1200px) {
+  .introCalendarRight {
+    row-gap: 10px;
+    column-gap: 0px;
+  }
+}
 @media (max-width: 500px) {
   .introCalendarRight {
     padding-top: 0px;
@@ -298,6 +304,53 @@
   object-fit: cover;
   border-radius: 20px;
 }
+.introCalendarRight5 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 1200px) {
+  .introCalendarRight5 {
+    padding: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .introCalendarRight5 {
+    padding-top: 8px;
+  }
+}
+@media (max-width: 350px) {
+  .introCalendarRight5 {
+    padding-top: 0px;
+  }
+}
+.text__oKzEl {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 17px;
+  user-select: none;
+  text-align: center;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__oKzEl {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__oKzEl {
+    font-size: 15px;
+  }
+}
 .introCalendarLeft {
   display: flex;
   flex-direction: column;
@@ -340,7 +393,7 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  padding: 30px 8px 44px;
+  padding: 30px 8px 36px;
 }
 @media (max-width: 1200px) {
   .introCalendarRight4 {

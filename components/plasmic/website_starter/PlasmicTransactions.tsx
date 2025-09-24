@@ -3921,7 +3921,7 @@ function PlasmicTransactions__RenderFunc(props: {
                   loop={true}
                   muted={true}
                   src={
-                    "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Fdoc_2025-09-20_14-02-25.mp4?versionId="
+                    "https://media.rentamon.com/gif%2Fdoc_2025-09-20_14-02-25.mp4"
                   }
                 />
 

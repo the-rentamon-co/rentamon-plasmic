@@ -1134,7 +1134,38 @@
   max-width: 100%;
   object-fit: cover;
   justify-self: center;
-  display: none;
+}
+@media (max-width: 500px) {
+  .onboardingModal:global(.__wab_instance) {
+    display: flex;
+  }
+}
+.freeBox__mixvp {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 0px;
+}
+.h3 {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-weight: 500;
+  text-align: center;
+  color: #444444;
+  font-family: "Estedad";
+  font-size: var(--token-Ij6Cd7VyikU3);
+  line-height: 1.8;
+  background: none;
+  min-width: 0;
+  border-radius: 30px;
+  padding: var(--token-o4gfbR28mKoP) 0rem;
 }
 .freeBox__lEfYv {
   display: flex;
@@ -1145,32 +1176,34 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 .freeBox__tWIfG {
   display: flex;
   flex-direction: column;
   position: relative;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   row-gap: var(--token-q7eh_H453nLB);
   align-self: center;
   padding-bottom: 20px;
 }
 .htmlVideo:global(.__wab_instance) {
-  width: 250px;
+  width: auto;
   height: auto;
   max-width: 100%;
   object-fit: cover;
   text-align: center;
   align-self: center;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
 }
 .freeBox___4HHvC {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: auto;
-  max-width: 50%;
+  max-width: 100%;
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
@@ -1182,6 +1215,7 @@
 }
 @media (max-width: 500px) {
   .freeBox___4HHvC {
+    max-width: 100%;
     padding: 0px;
   }
 }
@@ -1195,27 +1229,12 @@
   font-weight: 600;
   font-size: 17px;
   min-width: 0;
-  padding: 14px 8px;
+  padding: 8px;
 }
 @media (max-width: 500px) {
   .text__xLsQt {
-    padding: 14px 8px;
+    padding: 8px;
   }
-}
-.h3 {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-weight: 600;
-  text-align: center;
-  color: var(--token-8nedppYkGVaH);
-  font-family: "Estedad";
-  font-size: var(--token-Ij6Cd7VyikU3);
-  line-height: 1.5;
-  background: none;
-  min-width: 0;
-  border-radius: 30px;
-  padding: var(--token-o4gfbR28mKoP);
 }
 .sideEffect__ozbtc:global(.__wab_instance) {
   max-width: 100%;
