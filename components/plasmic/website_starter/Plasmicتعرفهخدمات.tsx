@@ -62,6 +62,7 @@ import {
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import Checkbox from "../../Checkbox"; // plasmic-import: kNwK3iA1B39P/component
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -123,6 +124,10 @@ export type Plasmicتعرفهخدمات__OverridesType = {
   value?: Flex__<"div">;
   toman?: Flex__<"div">;
   commission?: Flex__<"div">;
+  introCalendarRight?: Flex__<"div">;
+  introCalendarRight3?: Flex__<"div">;
+  htmlVideo?: Flex__<typeof Video>;
+  introCalendarRight5?: Flex__<"div">;
   cta1st?: Flex__<"div">;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
@@ -2160,19 +2165,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__y9Qpf)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__iazOe
-              )}
-            >
-              {
-                "\u062a\u0627\u0632\u0647 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0622\u0634\u0646\u0627 \u0634\u062f\u06cc\u061f\n\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f\u060c \u0628\u0631\u0627\u06cc \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647"
-              }
-            </div>
-          </div>
           <div className={classNames(projectcss.all, sty.freeBox__mims1)}>
             <div className={classNames(projectcss.all, sty.freeBox__aBc11)}>
               <div
@@ -2674,53 +2666,115 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   </div>
                 </div>
               </div>
+              <div
+                data-plasmic-name={"introCalendarRight"}
+                data-plasmic-override={overrides.introCalendarRight}
+                className={classNames(projectcss.all, sty.introCalendarRight)}
+              >
+                <div
+                  data-plasmic-name={"introCalendarRight3"}
+                  data-plasmic-override={overrides.introCalendarRight3}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introCalendarRight3
+                  )}
+                >
+                  <Video
+                    data-plasmic-name={"htmlVideo"}
+                    data-plasmic-override={overrides.htmlVideo}
+                    autoPlay={true}
+                    className={classNames("__wab_instance", sty.htmlVideo)}
+                    controls={true}
+                    loop={true}
+                    muted={true}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Fmr.gheysari.mp4?versionId="
+                    }
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"introCalendarRight5"}
+                  data-plasmic-override={overrides.introCalendarRight5}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introCalendarRight5
+                  )}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kLbRg
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u062d\u0631\u0645\u062a\u200c\u0627\u0644\u0647 \u0642\u06cc\u0635\u0631\u06cc\u00bb \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u062d\u0631\u0645\u062a\u200c\u0627\u0644\u0647 \u0642\u06cc\u0635\u0631\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                      : "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u062d\u0631\u0645\u062a\u200c\u0627\u0644\u0647 \u0642\u06cc\u0635\u0631\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
+                  </div>
+                </div>
+              </div>
             </div>
-            <div
-              data-plasmic-name={"cta1st"}
-              data-plasmic-override={overrides.cta1st}
-              className={classNames(projectcss.all, sty.cta1st)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__y9Qpf)}>
+              <div
+                data-plasmic-name={"cta1st"}
+                data-plasmic-override={overrides.cta1st}
+                className={classNames(projectcss.all, sty.cta1st)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___6Zx8G,
+                    "clickable"
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return (window.location.href =
+                                  "https://sso.rentamon.com/");
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u0627\u06cc\u0646\u062c\u0627 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
+                    : "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"}
+                </div>
+              </div>
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text___6Zx8G,
-                  "clickable"
+                  sty.text__iazOe
                 )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return (window.location.href =
-                                "https://sso.rentamon.com/");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
-                  : hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
-                  : hasVariant(globalVariants, "screen", "tablet")
-                  ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
-                  : "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"}
+                  ? "\u062a\u0627 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                  : "\u062a\u0627\u0632\u0647 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0622\u0634\u0646\u0627 \u0634\u062f\u06cc\u061f\n\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f\u060c \u0628\u0631\u0627\u06cc \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647"}
               </div>
             </div>
           </div>
@@ -3031,6 +3085,10 @@ const PlasmicDescendants = {
     "value",
     "toman",
     "commission",
+    "introCalendarRight",
+    "introCalendarRight3",
+    "htmlVideo",
+    "introCalendarRight5",
     "cta1st",
     "qA",
     "accordionMain",
@@ -3096,12 +3154,32 @@ const PlasmicDescendants = {
   item110: ["item110"],
   item111: ["item111"],
   services: ["services"],
-  calc: ["calc", "input2", "valueText", "value", "toman", "commission"],
+  calc: [
+    "calc",
+    "input2",
+    "valueText",
+    "value",
+    "toman",
+    "commission",
+    "introCalendarRight",
+    "introCalendarRight3",
+    "htmlVideo",
+    "introCalendarRight5"
+  ],
   input2: ["input2"],
   valueText: ["valueText"],
   value: ["value"],
   toman: ["toman"],
   commission: ["commission"],
+  introCalendarRight: [
+    "introCalendarRight",
+    "introCalendarRight3",
+    "htmlVideo",
+    "introCalendarRight5"
+  ],
+  introCalendarRight3: ["introCalendarRight3", "htmlVideo"],
+  htmlVideo: ["htmlVideo"],
+  introCalendarRight5: ["introCalendarRight5"],
   cta1st: ["cta1st"],
   qA: [
     "qA",
@@ -3164,6 +3242,10 @@ type NodeDefaultElementType = {
   value: "div";
   toman: "div";
   commission: "div";
+  introCalendarRight: "div";
+  introCalendarRight3: "div";
+  htmlVideo: typeof Video;
+  introCalendarRight5: "div";
   cta1st: "div";
   qA: "div";
   accordionMain: typeof AntdAccordion;
@@ -3272,6 +3354,10 @@ export const Plasmicتعرفهخدمات = Object.assign(
     value: makeNodeComponent("value"),
     toman: makeNodeComponent("toman"),
     commission: makeNodeComponent("commission"),
+    introCalendarRight: makeNodeComponent("introCalendarRight"),
+    introCalendarRight3: makeNodeComponent("introCalendarRight3"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
+    introCalendarRight5: makeNodeComponent("introCalendarRight5"),
     cta1st: makeNodeComponent("cta1st"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),
