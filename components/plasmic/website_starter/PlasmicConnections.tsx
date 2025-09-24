@@ -4481,7 +4481,7 @@ function PlasmicConnections__RenderFunc(props: {
                                                     );
                                                   }
                                                 ) +
-                                                " در جاباما حساب کاربری نداری!"
+                                                " در جاباما میزبان نیستی!"
                                               );
                                             } catch (e) {
                                               if (

@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -101,9 +102,11 @@ export type PlasmicHomepage__OverridesType = {
   introCalendar4?: Flex__<"div">;
   introCalendarRight?: Flex__<"div">;
   introCalendarRight3?: Flex__<"div">;
-  introCalendarRight4?: Flex__<"div">;
+  htmlVideo?: Flex__<typeof Video>;
   introCalendarLeft?: Flex__<"div">;
+  introCalendarRight4?: Flex__<"div">;
   introAutoSync?: Flex__<"div">;
+  stack?: Flex__<"div">;
   introAutoSyncTitle?: Flex__<"div">;
   introAutoSyncCaption?: Flex__<"div">;
   introAutoSyncDesc?: Flex__<"div">;
@@ -134,7 +137,6 @@ export type PlasmicHomepage__OverridesType = {
   testimonialsScrolling?: Flex__<typeof TestimonialsScrolling>;
   screenshots?: Flex__<"div">;
   screenshotsRight?: Flex__<"div">;
-  screenshotsCaption?: Flex__<"div">;
   screenshotsLeft?: Flex__<"div">;
   carousel?: Flex__<typeof Embed>;
   addingVillaIntoPltforms?: Flex__<"div">;
@@ -307,38 +309,43 @@ function PlasmicHomepage__RenderFunc(props: {
               data-plasmic-override={overrides.introCalendar}
               className={classNames(projectcss.all, sty.introCalendar)}
             >
-              <div
-                data-plasmic-name={"introCalendarTitle"}
-                data-plasmic-override={overrides.introCalendarTitle}
-                className={classNames(projectcss.all, sty.introCalendarTitle)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__xtAhz)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__s3R23
-                  )}
+                  data-plasmic-name={"introCalendarTitle"}
+                  data-plasmic-override={overrides.introCalendarTitle}
+                  className={classNames(projectcss.all, sty.introCalendarTitle)}
                 >
-                  {
-                    "\u062a\u0642\u0648\u06cc\u0645 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648... \u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0627\u0632 \u00ab\u06cc\u06a9\u200c\u062c\u0627\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u0647\r"
-                  }
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__s3R23
+                    )}
+                  >
+                    {
+                      "\u062a\u0642\u0648\u06cc\u0645 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648... \u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0627\u0632 \u00ab\u06cc\u06a9\u200c\u062c\u0627\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u0647\r"
+                    }
+                  </div>
                 </div>
-              </div>
-              <div
-                data-plasmic-name={"introCalendarCaption"}
-                data-plasmic-override={overrides.introCalendarCaption}
-                className={classNames(projectcss.all, sty.introCalendarCaption)}
-              >
                 <div
+                  data-plasmic-name={"introCalendarCaption"}
+                  data-plasmic-override={overrides.introCalendarCaption}
                   className={classNames(
                     projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__x1QZw
+                    sty.introCalendarCaption
                   )}
                 >
-                  {
-                    "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u0633\u062a \u0648 \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0631\u0648 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647!\r\n\r"
-                  }
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__x1QZw
+                    )}
+                  >
+                    {
+                      "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0631\u0627\u06cc \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0627\u0633\u062a."
+                    }
+                  </div>
                 </div>
               </div>
               <div
@@ -359,91 +366,18 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.introCalendarRight3
                     )}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__y1MaM
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u2705 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u06a9\u0627\u0647\u0634 \u06f1\u06f0 \u0628\u0631\u0627\u0628\u0631\u06cc \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627\n\u2705 \u06a9\u0627\u0647\u0634 \u0627\u062d\u062a\u0645\u0627\u0644 \u062e\u0637\u0627"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u2705 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u06a9\u0627\u0647\u0634 \u06f1\u06f0 \u0628\u0631\u0627\u0628\u0631\u06cc \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627\n\u2705 \u06a9\u0627\u0647\u0634 \u0627\u062d\u062a\u0645\u0627\u0644 \u062e\u0637\u0627"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u2705 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u06a9\u0627\u0647\u0634 \u06f1\u06f0 \u0628\u0631\u0627\u0628\u0631\u06cc \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627\n\u2705 \u06a9\u0627\u0647\u0634 \u0627\u062d\u062a\u0645\u0627\u0644 \u062e\u0637\u0627"
-                        : "\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647\n\u2705 \u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641\u060c \u062f\u0631 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645\n\r\n\u2705 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r"}
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"introCalendarRight4"}
-                    data-plasmic-override={overrides.introCalendarRight4}
-                    className={classNames(
-                      projectcss.all,
-                      sty.introCalendarRight4
-                    )}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__lwviT,
-                        "clickable"
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["goToHttpsRentamonComSplashSrcWeb"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                destination:
-                                  "https://rentamon.com/splash?src=web"
-                              };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["goToHttpsRentamonComSplashSrcWeb"] != null &&
-                          typeof $steps["goToHttpsRentamonComSplashSrcWeb"] ===
-                            "object" &&
-                          typeof $steps["goToHttpsRentamonComSplashSrcWeb"]
-                            .then === "function"
-                        ) {
-                          $steps["goToHttpsRentamonComSplashSrcWeb"] =
-                            await $steps["goToHttpsRentamonComSplashSrcWeb"];
-                        }
-                      }}
-                    >
-                      {
-                        "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                    <Video
+                      data-plasmic-name={"htmlVideo"}
+                      data-plasmic-override={overrides.htmlVideo}
+                      autoPlay={true}
+                      className={classNames("__wab_instance", sty.htmlVideo)}
+                      controls={true}
+                      loop={true}
+                      muted={true}
+                      src={
+                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Fali-kermani.mp4?versionId="
                       }
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__t3HG4
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                        : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
-                    </div>
+                    />
                   </div>
                 </div>
                 <div
@@ -466,6 +400,73 @@ function PlasmicHomepage__RenderFunc(props: {
                   />
                 </div>
               </div>
+              <div
+                data-plasmic-name={"introCalendarRight4"}
+                data-plasmic-override={overrides.introCalendarRight4}
+                className={classNames(projectcss.all, sty.introCalendarRight4)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__lwviT,
+                    "clickable"
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToHttpsRentamonComSplashSrcWeb"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: "https://rentamon.com/splash?src=web"
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToHttpsRentamonComSplashSrcWeb"] != null &&
+                      typeof $steps["goToHttpsRentamonComSplashSrcWeb"] ===
+                        "object" &&
+                      typeof $steps["goToHttpsRentamonComSplashSrcWeb"].then ===
+                        "function"
+                    ) {
+                      $steps["goToHttpsRentamonComSplashSrcWeb"] = await $steps[
+                        "goToHttpsRentamonComSplashSrcWeb"
+                      ];
+                    }
+                  }}
+                >
+                  {
+                    "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__t3HG4
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                    : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
+                </div>
+              </div>
             </div>
             <div
               data-plasmic-name={"introAutoSync"}
@@ -473,97 +474,106 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames(projectcss.all, sty.introAutoSync)}
             >
               <div
-                data-plasmic-name={"introAutoSyncTitle"}
-                data-plasmic-override={overrides.introAutoSyncTitle}
-                className={classNames(projectcss.all, sty.introAutoSyncTitle)}
+                data-plasmic-name={"stack"}
+                data-plasmic-override={overrides.stack}
+                className={classNames(projectcss.all, sty.stack)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__izNyD
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631\u060c \u0628\u062f\u0648\u0646 \u0631\u06cc\u0633\u06a9 \u062c\u0631\u06cc\u0645\u0647"
-                    : "\u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631\u060c \u0628\u062f\u0648\u0646 \u0631\u06cc\u0633\u06a9 \u062c\u0631\u06cc\u0645\u0647"}
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"introAutoSyncCaption"}
-                data-plasmic-override={overrides.introAutoSyncCaption}
-                className={classNames(projectcss.all, sty.introAutoSyncCaption)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bNchH
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u200f\u200f\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647. \u0627\u06af\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0627\u06cc\u0646 \u0647\u0645\u0627\u0647\u0646\u06af\u06cc\u060c \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f \u0648 \u062c\u0631\u06cc\u0645\u0647 \u0628\u0634\u06cc\u060c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062a\u0627 \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646 \u062e\u0633\u0627\u0631\u062a \u0631\u0648 \u062c\u0628\u0631\u0627\u0646 \u0645\u06cc\u200c\u06a9\u0646\u0647.\n\r\n\r"
-                    : "\u200f\u200f\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647. \u0627\u06af\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0627\u06cc\u0646 \u0647\u0645\u0627\u0647\u0646\u06af\u06cc\u060c \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f \u0648 \u062c\u0631\u06cc\u0645\u0647 \u0628\u0634\u06cc\u060c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062a\u0627 \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646 \u062e\u0633\u0627\u0631\u062a \u0631\u0648 \u062c\u0628\u0631\u0627\u0646 \u0645\u06cc\u200c\u06a9\u0646\u0647.\n\r\n\r"}
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"introAutoSyncDesc"}
-                data-plasmic-override={overrides.introAutoSyncDesc}
-                className={classNames(projectcss.all, sty.introAutoSyncDesc)}
-              >
-                <div
-                  data-plasmic-name={"introAutoSyncBenefits"}
-                  data-plasmic-override={overrides.introAutoSyncBenefits}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introAutoSyncBenefits
-                  )}
+                  data-plasmic-name={"introAutoSyncTitle"}
+                  data-plasmic-override={overrides.introAutoSyncTitle}
+                  className={classNames(projectcss.all, sty.introAutoSyncTitle)}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__csa9P
-                    )}
-                  >
-                    {
-                      "\u0645\u0632\u06cc\u062a \u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627:"
-                    }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__jfko
+                      sty.text__izNyD
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                      : "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"}
+                      ? "\u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631\u060c \u0628\u062f\u0648\u0646 \u0631\u06cc\u0633\u06a9 \u062c\u0631\u06cc\u0645\u0647"
+                      : "\u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631\u060c \u0628\u062f\u0648\u0646 \u0631\u06cc\u0633\u06a9 \u062c\u0631\u06cc\u0645\u0647"}
                   </div>
                 </div>
                 <div
-                  data-plasmic-name={"introAutoSyncGif"}
-                  data-plasmic-override={overrides.introAutoSyncGif}
+                  data-plasmic-name={"introAutoSyncCaption"}
+                  data-plasmic-override={overrides.introAutoSyncCaption}
                   className={classNames(
                     projectcss.all,
-                    sty.introAutoSyncGif,
-                    "fadein"
+                    sty.introAutoSyncCaption
                   )}
                 >
-                  <Embed
+                  <div
                     className={classNames(
-                      "__wab_instance",
-                      sty.embedHtml__gDn1
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bNchH
                     )}
-                    code={
-                      '<video\r\n    src="https://media.rentamon.com/video%2Fauto-sync.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
-                    }
-                  />
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u200f\u200f\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647. \u0627\u06af\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0627\u06cc\u0646 \u0647\u0645\u0627\u0647\u0646\u06af\u06cc\u060c \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f \u0648 \u062c\u0631\u06cc\u0645\u0647 \u0628\u0634\u06cc\u060c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062a\u0627 \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646 \u062e\u0633\u0627\u0631\u062a \u0631\u0648 \u062c\u0628\u0631\u0627\u0646 \u0645\u06cc\u200c\u06a9\u0646\u0647.\n\r\n\r"
+                      : "\u200f\u200f\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647. \u0627\u06af\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0627\u06cc\u0646 \u0647\u0645\u0627\u0647\u0646\u06af\u06cc\u060c \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f \u0648 \u062c\u0631\u06cc\u0645\u0647 \u0628\u0634\u06cc\u060c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062a\u0627 \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646 \u062e\u0633\u0627\u0631\u062a \u0631\u0648 \u062c\u0628\u0631\u0627\u0646 \u0645\u06cc\u200c\u06a9\u0646\u0647.\n\r\n\r"}
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"introAutoSyncDesc"}
+                  data-plasmic-override={overrides.introAutoSyncDesc}
+                  className={classNames(projectcss.all, sty.introAutoSyncDesc)}
+                >
+                  <div
+                    data-plasmic-name={"introAutoSyncBenefits"}
+                    data-plasmic-override={overrides.introAutoSyncBenefits}
+                    className={classNames(
+                      projectcss.all,
+                      sty.introAutoSyncBenefits
+                    )}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__csa9P
+                      )}
+                    >
+                      {
+                        "\u0645\u0632\u06cc\u062a \u0633\u06cc\u0633\u062a\u0645 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627:"
+                      }
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jfko
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                        : "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"}
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"introAutoSyncGif"}
+                    data-plasmic-override={overrides.introAutoSyncGif}
+                    className={classNames(
+                      projectcss.all,
+                      sty.introAutoSyncGif,
+                      "fadein"
+                    )}
+                  >
+                    <Embed
+                      className={classNames(
+                        "__wab_instance",
+                        sty.embedHtml__gDn1
+                      )}
+                      code={
+                        '<video\r\n    src="https://media.rentamon.com/video%2Fauto-sync.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
+                      }
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -889,7 +899,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.embedHtml__ixk23)}
                 code={
                   hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
+                    ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
                     : hasVariant(globalVariants, "screen", "mobile")
                     ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
                     : hasVariant(globalVariants, "screen", "tablet")
@@ -910,21 +920,15 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames(projectcss.all, sty.screenshotsRight)}
             >
               <div
-                data-plasmic-name={"screenshotsCaption"}
-                data-plasmic-override={overrides.screenshotsCaption}
-                className={classNames(projectcss.all, sty.screenshotsCaption)}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__lLqoZ
+                )}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__lLqoZ
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0645\u0634\u0627\u0647\u062f\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u0627\u0646  \u0648 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u062f\u0631 \u06cc\u06a9\u062c\u0627"
-                    : "\u0645\u0634\u0627\u0647\u062f\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u0627\u0646  \u0648 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u062f\u0631 \u06cc\u06a9\u062c\u0627"}
-                </div>
+                {hasVariant(globalVariants, "screen", "tablet")
+                  ? "\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627 \u062f\u0631 \u06cc\u06a9 \u062c\u0627"
+                  : "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627 \u062f\u0631 \u06cc\u06a9\u062c\u0627"}
               </div>
             </div>
             <div
@@ -1512,9 +1516,11 @@ const PlasmicDescendants = {
     "introCalendar4",
     "introCalendarRight",
     "introCalendarRight3",
-    "introCalendarRight4",
+    "htmlVideo",
     "introCalendarLeft",
+    "introCalendarRight4",
     "introAutoSync",
+    "stack",
     "introAutoSyncTitle",
     "introAutoSyncCaption",
     "introAutoSyncDesc",
@@ -1545,7 +1551,6 @@ const PlasmicDescendants = {
     "testimonialsScrolling",
     "screenshots",
     "screenshotsRight",
-    "screenshotsCaption",
     "screenshotsLeft",
     "carousel",
     "addingVillaIntoPltforms",
@@ -1573,9 +1578,11 @@ const PlasmicDescendants = {
     "introCalendar4",
     "introCalendarRight",
     "introCalendarRight3",
-    "introCalendarRight4",
+    "htmlVideo",
     "introCalendarLeft",
+    "introCalendarRight4",
     "introAutoSync",
+    "stack",
     "introAutoSyncTitle",
     "introAutoSyncCaption",
     "introAutoSyncDesc",
@@ -1612,8 +1619,9 @@ const PlasmicDescendants = {
     "introCalendar4",
     "introCalendarRight",
     "introCalendarRight3",
-    "introCalendarRight4",
-    "introCalendarLeft"
+    "htmlVideo",
+    "introCalendarLeft",
+    "introCalendarRight4"
   ],
   introCalendarTitle: ["introCalendarTitle"],
   introCalendarCaption: ["introCalendarCaption"],
@@ -1621,19 +1629,29 @@ const PlasmicDescendants = {
     "introCalendar4",
     "introCalendarRight",
     "introCalendarRight3",
-    "introCalendarRight4",
+    "htmlVideo",
     "introCalendarLeft"
   ],
   introCalendarRight: [
     "introCalendarRight",
     "introCalendarRight3",
-    "introCalendarRight4"
+    "htmlVideo"
   ],
-  introCalendarRight3: ["introCalendarRight3"],
-  introCalendarRight4: ["introCalendarRight4"],
+  introCalendarRight3: ["introCalendarRight3", "htmlVideo"],
+  htmlVideo: ["htmlVideo"],
   introCalendarLeft: ["introCalendarLeft"],
+  introCalendarRight4: ["introCalendarRight4"],
   introAutoSync: [
     "introAutoSync",
+    "stack",
+    "introAutoSyncTitle",
+    "introAutoSyncCaption",
+    "introAutoSyncDesc",
+    "introAutoSyncBenefits",
+    "introAutoSyncGif"
+  ],
+  stack: [
+    "stack",
     "introAutoSyncTitle",
     "introAutoSyncCaption",
     "introAutoSyncDesc",
@@ -1701,12 +1719,10 @@ const PlasmicDescendants = {
   screenshots: [
     "screenshots",
     "screenshotsRight",
-    "screenshotsCaption",
     "screenshotsLeft",
     "carousel"
   ],
-  screenshotsRight: ["screenshotsRight", "screenshotsCaption"],
-  screenshotsCaption: ["screenshotsCaption"],
+  screenshotsRight: ["screenshotsRight"],
   screenshotsLeft: ["screenshotsLeft", "carousel"],
   carousel: ["carousel"],
   addingVillaIntoPltforms: ["addingVillaIntoPltforms", "reg"],
@@ -1751,9 +1767,11 @@ type NodeDefaultElementType = {
   introCalendar4: "div";
   introCalendarRight: "div";
   introCalendarRight3: "div";
-  introCalendarRight4: "div";
+  htmlVideo: typeof Video;
   introCalendarLeft: "div";
+  introCalendarRight4: "div";
   introAutoSync: "div";
+  stack: "div";
   introAutoSyncTitle: "div";
   introAutoSyncCaption: "div";
   introAutoSyncDesc: "div";
@@ -1784,7 +1802,6 @@ type NodeDefaultElementType = {
   testimonialsScrolling: typeof TestimonialsScrolling;
   screenshots: "div";
   screenshotsRight: "div";
-  screenshotsCaption: "div";
   screenshotsLeft: "div";
   carousel: typeof Embed;
   addingVillaIntoPltforms: "div";
@@ -1872,9 +1889,11 @@ export const PlasmicHomepage = Object.assign(
     introCalendar4: makeNodeComponent("introCalendar4"),
     introCalendarRight: makeNodeComponent("introCalendarRight"),
     introCalendarRight3: makeNodeComponent("introCalendarRight3"),
-    introCalendarRight4: makeNodeComponent("introCalendarRight4"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
+    introCalendarRight4: makeNodeComponent("introCalendarRight4"),
     introAutoSync: makeNodeComponent("introAutoSync"),
+    stack: makeNodeComponent("stack"),
     introAutoSyncTitle: makeNodeComponent("introAutoSyncTitle"),
     introAutoSyncCaption: makeNodeComponent("introAutoSyncCaption"),
     introAutoSyncDesc: makeNodeComponent("introAutoSyncDesc"),
@@ -1905,7 +1924,6 @@ export const PlasmicHomepage = Object.assign(
     testimonialsScrolling: makeNodeComponent("testimonialsScrolling"),
     screenshots: makeNodeComponent("screenshots"),
     screenshotsRight: makeNodeComponent("screenshotsRight"),
-    screenshotsCaption: makeNodeComponent("screenshotsCaption"),
     screenshotsLeft: makeNodeComponent("screenshotsLeft"),
     carousel: makeNodeComponent("carousel"),
     addingVillaIntoPltforms: makeNodeComponent("addingVillaIntoPltforms"),
