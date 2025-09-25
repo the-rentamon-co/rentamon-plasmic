@@ -2916,6 +2916,11 @@
 .img__pemI9 > picture > img {
   object-fit: cover;
 }
+@media (max-width: 1200px) {
+  .img__pemI9 {
+    display: block;
+  }
+}
 @media (max-width: 500px) {
   .img__pemI9 {
     height: 24px;
@@ -2927,6 +2932,7 @@
   .img__pemI9 {
     height: 18px;
     max-width: 100%;
+    display: block;
   }
 }
 .freeBox__ljl7 {

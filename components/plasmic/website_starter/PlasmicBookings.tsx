@@ -5445,12 +5445,16 @@ function PlasmicBookings__RenderFunc(props: {
                                 />
                               ) : null}
                               {(
-                                hasVariant(globalVariants, "screen", "mobile")
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
                                   ? (() => {
                                       try {
-                                        return $state.booking.data.auto_sync_status.some(
-                                          platform => !platform.status
-                                        );
+                                        return Object.values(
+                                          $state.booking.data.auto_sync
+                                        ).some(status => status !== "succeed");
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
@@ -5458,6 +5462,48 @@ function PlasmicBookings__RenderFunc(props: {
                                             "PlasmicUndefinedDataError"
                                         ) {
                                           return true;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  : hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    )
+                                  ? (() => {
+                                      try {
+                                        return Object.values(
+                                          $state.booking.data.auto_sync
+                                        ).some(status => status !== "succeed");
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return true;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  : hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "tablet"
+                                    )
+                                  ? (() => {
+                                      try {
+                                        return Object.values(
+                                          $state.booking.data.auto_sync
+                                        ).some(status => status !== "succeed");
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return false;
                                         }
                                         throw e;
                                       }
