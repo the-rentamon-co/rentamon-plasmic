@@ -8754,13 +8754,13 @@ function PlasmicBookings__RenderFunc(props: {
                                         return (() => {
                                           $state.booking.data.website =
                                             $state.guestReferrer.value;
-                                          $state.booking.data.manual_booking.guests_count =
+                                          $state.booking.data.reservations.guests_count =
                                             $state.guestCount.value;
-                                          $state.booking.data.manual_booking.amount =
+                                          $state.booking.data.reservations.amount =
                                             $state.amount2.value;
-                                          $state.booking.data.manual_booking.guest_name =
+                                          $state.booking.data.reservations.guest_name =
                                             $state.guestName2.value;
-                                          return ($state.booking.data.manual_booking.guest_phone_number =
+                                          return ($state.booking.data.reservations.guest_phone_number =
                                             $state.phoneNumber.value);
                                         })();
                                       }
