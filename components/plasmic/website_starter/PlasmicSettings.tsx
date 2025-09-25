@@ -702,6 +702,30 @@ function PlasmicSettings__RenderFunc(props: {
                   data-plasmic-name={"opt1"}
                   data-plasmic-override={overrides.opt1}
                   className={classNames(projectcss.all, sty.opt1)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["invokeGlobalAction"] =
+                      $state.freeFeatureCredits.data.auto_sync.total !=
+                      $state.freeFeatureCredits.data.auto_sync.used
+                        ? (() => {
+                            const actionArgs = { args: [] };
+                            return $globalActions["Fragment.showToast"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                    if (
+                      $steps["invokeGlobalAction"] != null &&
+                      typeof $steps["invokeGlobalAction"] === "object" &&
+                      typeof $steps["invokeGlobalAction"].then === "function"
+                    ) {
+                      $steps["invokeGlobalAction"] = await $steps[
+                        "invokeGlobalAction"
+                      ];
+                    }
+                  }}
                 >
                   <div
                     data-plasmic-name={"p1"}
@@ -1145,6 +1169,35 @@ function PlasmicSettings__RenderFunc(props: {
                   data-plasmic-name={"opt12"}
                   data-plasmic-override={overrides.opt12}
                   className={classNames(projectcss.all, sty.opt12)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["toast"] =
+                      $state.freeFeatureCredits.data.smart_bookings.total !=
+                      $state.freeFeatureCredits.data.smart_bookings.used
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                undefined,
+                                "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646 \u062f\u0627\u0631\u06cc!",
+                                "top-center",
+                                5000
+                              ]
+                            };
+                            return $globalActions["Fragment.showToast"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                    if (
+                      $steps["toast"] != null &&
+                      typeof $steps["toast"] === "object" &&
+                      typeof $steps["toast"].then === "function"
+                    ) {
+                      $steps["toast"] = await $steps["toast"];
+                    }
+                  }}
                 >
                   <div
                     data-plasmic-name={"p12"}

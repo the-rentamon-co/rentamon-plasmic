@@ -1643,7 +1643,7 @@ function PlasmicBookings__RenderFunc(props: {
               }}
               url={(() => {
                 try {
-                  return `https://gateway.rentamon.com/webhook/booking-v2?booking_id=RNT${$ctx.params.booking_id}`;
+                  return `https://gateway.rentamon.com/webhook/booking-v2?booking_id=${$ctx.params.booking_id}`;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||

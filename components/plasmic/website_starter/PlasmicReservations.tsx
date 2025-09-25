@@ -2365,16 +2365,8 @@ function PlasmicReservations__RenderFunc(props: {
                                   let result = "";
                                   const bookingId =
                                     currentItem.alternative_booking_id;
-                                  if (
-                                    bookingId &&
-                                    bookingId.startsWith("RNT")
-                                  ) {
-                                    result = bookingId.substring(3);
-                                  } else {
-                                    result = bookingId;
-                                  }
                                   return window.open(
-                                    `https://rentamon.com/bookings/${result}`,
+                                    `https://rentamon.com/bookings/${bookingId}`,
                                     "_blank"
                                   );
                                 })();
@@ -2705,16 +2697,8 @@ function PlasmicReservations__RenderFunc(props: {
                                     let result = "";
                                     const bookingId =
                                       currentItem.alternative_booking_id;
-                                    if (
-                                      bookingId &&
-                                      bookingId.startsWith("RNT")
-                                    ) {
-                                      result = bookingId.substring(3);
-                                    } else {
-                                      result = bookingId;
-                                    }
                                     return window.open(
-                                      `https://rentamon.com/bookings/${result}`,
+                                      `https://rentamon.com/bookings/${bookingId}`,
                                       "_blank"
                                     );
                                   })();
