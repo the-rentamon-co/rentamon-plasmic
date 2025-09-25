@@ -2727,7 +2727,7 @@ function PlasmicBookings__RenderFunc(props: {
                     {(() => {
                       try {
                         return (
-                          $state.booking.data.feature_handled.smart_booking ==
+                          $state.booking.data.feature_handled.manual_booking !=
                           true
                         );
                       } catch (e) {
@@ -2744,6 +2744,26 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-name={"smartBooking"}
                         data-plasmic-override={overrides.smartBooking}
                         className={classNames(projectcss.all, sty.smartBooking)}
+                        style={(() => {
+                          try {
+                            return (() => {
+                              if (
+                                $state.booking.data.feature_handled
+                                  .smart_booking == true
+                              ) {
+                                return { order: 0 };
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
                       >
                         <div
                           data-plasmic-name={"data"}
@@ -5287,8 +5307,8 @@ function PlasmicBookings__RenderFunc(props: {
                         ? (() => {
                             try {
                               return (
-                                $state.booking.data.feature_handled
-                                  .auto_sync_status != null ||
+                                $state.booking.data.feature_handled.auto_sync !=
+                                  null ||
                                 $state.booking.data.feature_handled
                                   .smart_booking != null
                               );
@@ -5325,6 +5345,26 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-name={"autoSync"}
                         data-plasmic-override={overrides.autoSync}
                         className={classNames(projectcss.all, sty.autoSync)}
+                        style={(() => {
+                          try {
+                            return (() => {
+                              if (
+                                $state.booking.data.feature_handled.auto_sync ==
+                                true
+                              ) {
+                                return { order: 0 };
+                              }
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
                       >
                         <div
                           data-plasmic-name={"data2"}
@@ -7562,7 +7602,9 @@ function PlasmicBookings__RenderFunc(props: {
               </div>
               {(() => {
                 try {
-                  return $state.booking.data.reservations != null;
+                  return (
+                    $state.booking.data.feature_handled.manual_booking == true
+                  );
                 } catch (e) {
                   if (
                     e instanceof TypeError ||

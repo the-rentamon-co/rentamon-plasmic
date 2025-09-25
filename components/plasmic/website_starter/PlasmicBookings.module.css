@@ -1594,6 +1594,7 @@
   transition-property: all;
   transition-duration: 1s;
   transition-delay: 1s;
+  order: 2;
   min-width: 0;
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;
@@ -2806,6 +2807,7 @@
   transition-property: all;
   transition-duration: 1s;
   transition-delay: 1s;
+  order: 3;
   min-width: 0;
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;
