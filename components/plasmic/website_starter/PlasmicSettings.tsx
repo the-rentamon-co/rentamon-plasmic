@@ -705,11 +705,18 @@ function PlasmicSettings__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["invokeGlobalAction"] =
+                    $steps["toast"] =
                       $state.freeFeatureCredits.data.auto_sync.total !=
                       $state.freeFeatureCredits.data.auto_sync.used
                         ? (() => {
-                            const actionArgs = { args: [] };
+                            const actionArgs = {
+                              args: [
+                                undefined,
+                                "\u0647\u0646\u0648\u0632 \u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646 \u062f\u0627\u0631\u06cc!",
+                                "top-center",
+                                5000
+                              ]
+                            };
                             return $globalActions["Fragment.showToast"]?.apply(
                               null,
                               [...actionArgs.args]
@@ -717,13 +724,11 @@ function PlasmicSettings__RenderFunc(props: {
                           })()
                         : undefined;
                     if (
-                      $steps["invokeGlobalAction"] != null &&
-                      typeof $steps["invokeGlobalAction"] === "object" &&
-                      typeof $steps["invokeGlobalAction"].then === "function"
+                      $steps["toast"] != null &&
+                      typeof $steps["toast"] === "object" &&
+                      typeof $steps["toast"].then === "function"
                     ) {
-                      $steps["invokeGlobalAction"] = await $steps[
-                        "invokeGlobalAction"
-                      ];
+                      $steps["toast"] = await $steps["toast"];
                     }
                   }}
                 >
