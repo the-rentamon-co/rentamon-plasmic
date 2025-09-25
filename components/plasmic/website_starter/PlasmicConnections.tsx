@@ -7667,51 +7667,6 @@ function PlasmicConnections__RenderFunc(props: {
                                 ];
                               }
 
-                              $steps["platformSatus"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      operation: 0,
-                                      value: (() => {
-                                        if (
-                                          $steps.mihmanshoVerify.data.status ===
-                                          true
-                                        ) {
-                                          return ($state.platformstatus.status.mihmansho =
-                                            true);
-                                        } else {
-                                          return ($state.platformstatus.status.mihmansho =
-                                            false);
-                                        }
-                                      })()
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      $stateSet(objRoot, variablePath, value);
-                                      return value;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["platformSatus"] != null &&
-                                typeof $steps["platformSatus"] === "object" &&
-                                typeof $steps["platformSatus"].then ===
-                                  "function"
-                              ) {
-                                $steps["platformSatus"] = await $steps[
-                                  "platformSatus"
-                                ];
-                              }
-
                               $steps["connectionStatus"] = true
                                 ? (() => {
                                     const actionArgs = {
@@ -7780,6 +7735,135 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["connectionStatus"] = await $steps[
                                   "connectionStatus"
+                                ];
+                              }
+
+                              $steps["submittedToast"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u062b\u0628\u062a \u0634\u062f!",
+                                        "top-center",
+                                        (() => {
+                                          try {
+                                            return (
+                                              $state.form.value
+                                                .mihmanshophone !== undefined &&
+                                              $state.form.value.mihmanshophone
+                                                .length >= 11 &&
+                                              $state.form.value
+                                                .mihmanshoPass !== undefined
+                                            );
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["submittedToast"] != null &&
+                                typeof $steps["submittedToast"] === "object" &&
+                                typeof $steps["submittedToast"].then ===
+                                  "function"
+                              ) {
+                                $steps["submittedToast"] = await $steps[
+                                  "submittedToast"
+                                ];
+                              }
+
+                              $steps["goToProCalendar"] =
+                                $state.form.value.mihmanshophone !==
+                                  undefined &&
+                                $state.form.value.mihmanshophone.length >= 11 &&
+                                $state.form.value.mihmanshoPass !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/panel`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["goToProCalendar"] != null &&
+                                typeof $steps["goToProCalendar"] === "object" &&
+                                typeof $steps["goToProCalendar"].then ===
+                                  "function"
+                              ) {
+                                $steps["goToProCalendar"] = await $steps[
+                                  "goToProCalendar"
+                                ];
+                              }
+
+                              $steps["platformSatus"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      operation: 0,
+                                      value: (() => {
+                                        if (
+                                          $steps.mihmanshoVerify.data.status ===
+                                          true
+                                        ) {
+                                          return ($state.platformstatus.status.mihmansho =
+                                            true);
+                                        } else {
+                                          return ($state.platformstatus.status.mihmansho =
+                                            false);
+                                        }
+                                      })()
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["platformSatus"] != null &&
+                                typeof $steps["platformSatus"] === "object" &&
+                                typeof $steps["platformSatus"].then ===
+                                  "function"
+                              ) {
+                                $steps["platformSatus"] = await $steps[
+                                  "platformSatus"
                                 ];
                               }
                             }}

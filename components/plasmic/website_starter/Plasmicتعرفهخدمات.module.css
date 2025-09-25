@@ -3642,6 +3642,7 @@
 }
 @media (max-width: 500px) {
   .introCalendarRight3 {
+    max-width: 80%;
     padding: 8px 16px;
   }
 }
@@ -3649,6 +3650,7 @@
   .introCalendarRight3 {
     padding-right: 18px;
     padding-left: 18px;
+    max-width: 90%;
   }
 }
 .htmlVideo:global(.__wab_instance) {
@@ -3662,6 +3664,7 @@
   .htmlVideo:global(.__wab_instance) {
     width: 100%;
     min-width: 0;
+    border-radius: 30px;
   }
 }
 .introCalendarRight5 {

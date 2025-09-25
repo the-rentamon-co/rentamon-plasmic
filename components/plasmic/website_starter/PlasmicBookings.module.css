@@ -2593,6 +2593,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 1200px) {
+  ._true {
+    display: flex;
+  }
+}
 @media (max-width: 350px) {
   ._true {
     padding: 0px;
@@ -2807,6 +2812,11 @@
   -webkit-transition-delay: 1s;
   border-radius: 30px;
   padding: 10px;
+}
+@media (max-width: 500px) {
+  .autoSync {
+    display: flex;
+  }
 }
 @media (max-width: 350px) {
   .autoSync {

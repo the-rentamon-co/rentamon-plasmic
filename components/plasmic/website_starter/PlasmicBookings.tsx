@@ -329,7 +329,7 @@ function PlasmicBookings__RenderFunc(props: {
                 {
                   return (() => {
                     const raw = String(
-                      $state.booking.data.manual_booking.guests_count || ""
+                      $state.booking.data.reservations.guests_count || ""
                     );
                     const fa2en = {
                       "۰": "0",
@@ -372,7 +372,7 @@ function PlasmicBookings__RenderFunc(props: {
                 {
                   return (() => {
                     const raw = String(
-                      $state.booking.data.manual_booking.amount || ""
+                      $state.booking.data.reservations.amount || ""
                     );
                     const fa2en = {
                       "۰": "0",
@@ -418,10 +418,10 @@ function PlasmicBookings__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                if ($state.booking.data.manual_booking.guest_name == "-") {
+                if ($state.booking.data.reservations.guest_name == "-") {
                   return null;
                 } else {
-                  return $state.booking.data.manual_booking.guest_name;
+                  return $state.booking.data.reservations.guest_name;
                 }
               })();
             } catch (e) {
@@ -444,11 +444,11 @@ function PlasmicBookings__RenderFunc(props: {
             try {
               return (() => {
                 if (
-                  $state.booking.data.manual_booking.guest_phone_number == "-"
+                  $state.booking.data.reservations.guest_phone_number == "-"
                 ) {
                   return null;
                 } else {
-                  return $state.booking.data.manual_booking.guest_phone_number;
+                  return $state.booking.data.reservations.guest_phone_number;
                 }
               })();
             } catch (e) {
@@ -1643,7 +1643,7 @@ function PlasmicBookings__RenderFunc(props: {
               }}
               url={(() => {
                 try {
-                  return `https://gateway.rentamon.com/webhook/booking?booking_id=RNT${$ctx.params.booking_id}`;
+                  return `https://gateway.rentamon.com/webhook/booking-v2?booking_id=RNT${$ctx.params.booking_id}`;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -2704,8 +2704,10 @@ function PlasmicBookings__RenderFunc(props: {
                     ? (() => {
                         try {
                           return (
-                            $state.booking.data.smart_booking != null ||
-                            $state.booking.data.auto_sync_status != null
+                            $state.booking.data.feature_handled.smart_booking ==
+                              true ||
+                            $state.booking.data.feature_handled.auto_sync ==
+                              true
                           );
                         } catch (e) {
                           if (
@@ -2724,7 +2726,10 @@ function PlasmicBookings__RenderFunc(props: {
                   >
                     {(() => {
                       try {
-                        return $state.booking.data.smart_booking != null;
+                        return (
+                          $state.booking.data.feature_handled.smart_booking ==
+                          true
+                        );
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -2867,7 +2872,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 component={Link}
                                 href={(() => {
                                   try {
-                                    return `tel:${$state.booking.data.smart_booking.guest_phone_number}`;
+                                    return `tel:${$state.booking.data.reservations.guest_phone_number}`;
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
@@ -2890,7 +2895,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     {(() => {
                                       try {
                                         return (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.reservations
                                             .guest_phone_number ||
                                           "موبایل مهمان: ؟"
                                         );
@@ -2915,7 +2920,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     {(() => {
                                       try {
                                         return (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.reservations
                                             .guest_phone_number ||
                                           "موبایل مهمان: ؟"
                                         );
@@ -2936,7 +2941,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     {(() => {
                                       try {
                                         return (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.reservations
                                             .guest_phone_number ||
                                           "موبایل مهمان: ؟"
                                         );
@@ -2977,7 +2982,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     {(() => {
                                       try {
                                         return (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.reservations
                                             .guest_name || "نام مهمان :‌ ؟"
                                         );
                                       } catch (e) {
@@ -3001,7 +3006,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     {(() => {
                                       try {
                                         return (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.reservations
                                             .guest_name || "؟"
                                         );
                                       } catch (e) {
@@ -3021,7 +3026,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     {(() => {
                                       try {
                                         return (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.reservations
                                             .guest_name || "؟"
                                         );
                                       } catch (e) {
@@ -3030,7 +3035,7 @@ function PlasmicBookings__RenderFunc(props: {
                                           e?.plasmicType ===
                                             "PlasmicUndefinedDataError"
                                         ) {
-                                          return "\u062e\u0633\u0631\u0648 \u067e\u0627\u0631\u0633\u0627\u06cc\u06cc";
+                                          return " ";
                                         }
                                         throw e;
                                       }
@@ -3216,7 +3221,7 @@ function PlasmicBookings__RenderFunc(props: {
                                             )} ${monthName}`;
                                           }
                                           const checkIn =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .created_at;
                                           const result =
                                             convertDateToJalaliFullString(
@@ -3375,7 +3380,7 @@ function PlasmicBookings__RenderFunc(props: {
                                             )} ${monthName}`;
                                           }
                                           const checkIn =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .created_at;
                                           const result =
                                             convertDateToJalaliFullString(
@@ -3534,7 +3539,7 @@ function PlasmicBookings__RenderFunc(props: {
                                             )} ${monthName}`;
                                           }
                                           const checkIn =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .created_at;
                                           const result =
                                             convertDateToJalaliFullString(
@@ -3689,7 +3694,7 @@ function PlasmicBookings__RenderFunc(props: {
                                             )} ${monthName}`;
                                           }
                                           const checkIn =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .created_at;
                                           const result =
                                             convertDateToJalaliFullString(
@@ -3786,7 +3791,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       {(() => {
                                         try {
                                           return (
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .night + " شب" || "نفرات"
                                           );
                                         } catch (e) {
@@ -3811,13 +3816,13 @@ function PlasmicBookings__RenderFunc(props: {
                                         try {
                                           return (() => {
                                             if (
-                                              $state.booking.data.smart_booking
+                                              $state.booking.data.reservations
                                                 .night == null
                                             ) {
                                               return "مدت اقامت";
                                             }
                                             return (
-                                              $state.booking.data.smart_booking
+                                              $state.booking.data.reservations
                                                 .night + " شب" || "مدت اقامت"
                                             );
                                           })();
@@ -3839,13 +3844,13 @@ function PlasmicBookings__RenderFunc(props: {
                                         try {
                                           return (() => {
                                             if (
-                                              $state.booking.data.smart_booking
+                                              $state.booking.data.reservations
                                                 .night == null
                                             ) {
                                               return "مدت اقامت";
                                             }
                                             return (
-                                              $state.booking.data.smart_booking
+                                              $state.booking.data.reservations
                                                 .night + " شب" || "مدت اقامت"
                                             );
                                           })();
@@ -3933,13 +3938,13 @@ function PlasmicBookings__RenderFunc(props: {
                                         try {
                                           return (() => {
                                             if (
-                                              $state.booking.data.smart_booking
+                                              $state.booking.data.reservations
                                                 .guests_count == null
                                             ) {
                                               return "نفرات";
                                             }
                                             return (
-                                              $state.booking.data.smart_booking
+                                              $state.booking.data.reservations
                                                 .guests_count + " نفر"
                                             );
                                           })();
@@ -3949,7 +3954,7 @@ function PlasmicBookings__RenderFunc(props: {
                                             e?.plasmicType ===
                                               "PlasmicUndefinedDataError"
                                           ) {
-                                            return "\u06f5 \u0646\u0641\u0631";
+                                            return " ";
                                           }
                                           throw e;
                                         }
@@ -3961,13 +3966,13 @@ function PlasmicBookings__RenderFunc(props: {
                                         try {
                                           return (() => {
                                             if (
-                                              $state.booking.data.smart_booking
+                                              $state.booking.data.reservations
                                                 .guests_count == null
                                             ) {
                                               return "نفرات";
                                             }
                                             return (
-                                              $state.booking.data.smart_booking
+                                              $state.booking.data.reservations
                                                 .guests_count + " نفر"
                                             );
                                           })();
@@ -4037,7 +4042,7 @@ function PlasmicBookings__RenderFunc(props: {
                                           const website =
                                             $state.booking.data.website;
                                           const amount =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .amount;
                                           switch (website) {
                                             case "jabama":
@@ -4082,7 +4087,7 @@ function PlasmicBookings__RenderFunc(props: {
                                           const website =
                                             $state.booking.data.website;
                                           const amount =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .amount;
                                           switch (website) {
                                             case "jabama":
@@ -4127,7 +4132,7 @@ function PlasmicBookings__RenderFunc(props: {
                                           const website =
                                             $state.booking.data.website;
                                           const amount =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .amount;
                                           switch (website) {
                                             case "jabama":
@@ -4168,7 +4173,7 @@ function PlasmicBookings__RenderFunc(props: {
                                           const website =
                                             $state.booking.data.website;
                                           const amount =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .amount;
                                           switch (website) {
                                             case "jabama":
@@ -4317,11 +4322,11 @@ function PlasmicBookings__RenderFunc(props: {
                                       try {
                                         return (() => {
                                           const amount = Number(
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .amount
                                           );
                                           const net_price = Number(
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .net_price
                                           );
                                           const website =
@@ -4376,11 +4381,11 @@ function PlasmicBookings__RenderFunc(props: {
                                       try {
                                         return (() => {
                                           const amount = Number(
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .amount
                                           );
                                           const net_price = Number(
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .net_price
                                           );
                                           const website =
@@ -4435,11 +4440,11 @@ function PlasmicBookings__RenderFunc(props: {
                                       try {
                                         return (() => {
                                           const amount = Number(
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .amount
                                           );
                                           const net_price = Number(
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .net_price
                                           );
                                           const website =
@@ -4490,11 +4495,11 @@ function PlasmicBookings__RenderFunc(props: {
                                       try {
                                         return (() => {
                                           const amount = Number(
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .amount
                                           );
                                           const net_price = Number(
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .net_price
                                           );
                                           const website =
@@ -4653,7 +4658,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       try {
                                         return (() => {
                                           let price =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .net_price;
                                           let real_price =
                                             new Intl.NumberFormat(
@@ -4683,7 +4688,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       try {
                                         return (() => {
                                           let price =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .net_price;
                                           let real_price =
                                             new Intl.NumberFormat(
@@ -4713,7 +4718,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       try {
                                         return (() => {
                                           let price =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .net_price;
                                           let real_price =
                                             new Intl.NumberFormat(
@@ -4739,7 +4744,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       try {
                                         return (() => {
                                           let price =
-                                            $state.booking.data.smart_booking
+                                            $state.booking.data.reservations
                                               .net_price;
                                           let real_price =
                                             new Intl.NumberFormat(
@@ -4813,8 +4818,8 @@ function PlasmicBookings__RenderFunc(props: {
                             {(() => {
                               try {
                                 return (
-                                  $state.booking.data.smart_booking
-                                    .is_settled == false
+                                  $state.booking.data.reservations.is_settled ==
+                                  false
                                 );
                               } catch (e) {
                                 if (
@@ -4943,22 +4948,43 @@ function PlasmicBookings__RenderFunc(props: {
                                 </div>
                               </div>
                             ) : null}
-                            {(() => {
-                              try {
-                                return (
-                                  $state.booking.data.smart_booking
-                                    .is_settled == true
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })() ? (
+                            {(
+                              hasVariant(globalVariants, "screen", "tablet")
+                                ? (() => {
+                                    try {
+                                      return (
+                                        $state.booking.data.reservations
+                                          .is_settled == true
+                                      );
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return false;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                : (() => {
+                                    try {
+                                      return (
+                                        $state.booking.data.smart_booking
+                                          .is_settled == true
+                                      );
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return false;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                            ) ? (
                               <div
                                 data-plasmic-name={"_true"}
                                 data-plasmic-override={overrides._true}
@@ -5086,7 +5112,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 ? (() => {
                                     try {
                                       return (
-                                        $state.booking.data.smart_booking
+                                        $state.booking.data.reservations
                                           .is_settled == null
                                       );
                                     } catch (e) {
@@ -5103,7 +5129,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 : (() => {
                                     try {
                                       return (
-                                        $state.booking.data.smart_booking
+                                        $state.booking.data.reservations
                                           .is_settled == null
                                       );
                                     } catch (e) {
@@ -5256,22 +5282,45 @@ function PlasmicBookings__RenderFunc(props: {
                         </div>
                       </div>
                     ) : null}
-                    {(() => {
-                      try {
-                        return (
-                          $state.booking.data.auto_sync_status != null ||
-                          $state.booking.data.smart_booking != null
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            try {
+                              return (
+                                $state.booking.data.feature_handled
+                                  .auto_sync_status != null ||
+                                $state.booking.data.feature_handled
+                                  .smart_booking != null
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return (
+                                $state.booking.data.feature_handled.auto_sync !=
+                                  null ||
+                                $state.booking.data.feature_handled
+                                  .smart_booking != null
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
                       <div
                         data-plasmic-name={"autoSync"}
                         data-plasmic-override={overrides.autoSync}
@@ -5311,8 +5360,8 @@ function PlasmicBookings__RenderFunc(props: {
                                   try {
                                     return (() => {
                                       if (
-                                        $state.booking.data.auto_sync_status ==
-                                        null
+                                        $state.booking.data.feature_handled
+                                          .auto_sync == null
                                       ) {
                                         return "display_hidden";
                                       }
@@ -5335,9 +5384,9 @@ function PlasmicBookings__RenderFunc(props: {
                             >
                               {(() => {
                                 try {
-                                  return !$state.booking.data.auto_sync_status.some(
-                                    platform => !platform.status
-                                  );
+                                  return Object.values(
+                                    $state.booking.data.auto_sync
+                                  ).every(status => status === "succeed");
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -5415,9 +5464,9 @@ function PlasmicBookings__RenderFunc(props: {
                                     })()
                                   : (() => {
                                       try {
-                                        return $state.booking.data.auto_sync_status.some(
-                                          platform => !platform.status
-                                        );
+                                        return Object.values(
+                                          $state.booking.data.auto_sync
+                                        ).some(status => status !== "succeed");
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
@@ -5576,7 +5625,8 @@ function PlasmicBookings__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return (
-                                    $state.booking.data.auto_sync_status != null
+                                    $state.booking.data.feature_handled
+                                      .auto_sync != null
                                   );
                                 } catch (e) {
                                   if (
@@ -5620,7 +5670,8 @@ function PlasmicBookings__RenderFunc(props: {
                               {(() => {
                                 try {
                                   return (
-                                    $state.booking.data.auto_sync_status == null
+                                    $state.booking.data.feature_handled
+                                      .auto_sync == null
                                   );
                                 } catch (e) {
                                   if (
@@ -5651,7 +5702,19 @@ function PlasmicBookings__RenderFunc(props: {
                             !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                             (() => {
                               try {
-                                return $state.booking.data.auto_sync_status;
+                                return (() => {
+                                  const autoSyncObject =
+                                    $state.booking.data.auto_sync;
+                                  const websiteList = Object.entries(
+                                    autoSyncObject
+                                  ).map(([name, syncStatus]) => {
+                                    return {
+                                      website_name: name,
+                                      status: syncStatus === "succeed"
+                                    };
+                                  });
+                                  return websiteList;
+                                })();
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -6034,7 +6097,9 @@ function PlasmicBookings__RenderFunc(props: {
                 ) : null}
                 {(() => {
                   try {
-                    return $state.booking.data.manual_booking != null;
+                    return (
+                      $state.booking.data.feature_handled.manual_booking != null
+                    );
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -6160,7 +6225,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.manual_booking
+                                      $state.booking.data.reservations
                                         .guest_phone_number || "موبایل مهمان: ؟"
                                     );
                                   } catch (e) {
@@ -6184,7 +6249,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.manual_booking
+                                      $state.booking.data.reservations
                                         .guest_phone_number || "موبایل مهمان: ؟"
                                     );
                                   } catch (e) {
@@ -6204,7 +6269,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.manual_booking
+                                      $state.booking.data.reservations
                                         .guest_phone_number || "موبایل مهمان: ؟"
                                     );
                                   } catch (e) {
@@ -6244,7 +6309,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.manual_booking
+                                      $state.booking.data.reservations
                                         .guest_name || "نام مهمان :‌ ؟"
                                     );
                                   } catch (e) {
@@ -6268,7 +6333,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.manual_booking
+                                      $state.booking.data.reservations
                                         .guest_name || "؟"
                                     );
                                   } catch (e) {
@@ -6288,7 +6353,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 {(() => {
                                   try {
                                     return (
-                                      $state.booking.data.manual_booking
+                                      $state.booking.data.reservations
                                         .guest_name || "؟"
                                     );
                                   } catch (e) {
@@ -6456,7 +6521,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         )} ${monthName}`;
                                       }
                                       const checkIn =
-                                        $state.booking.data.manual_booking
+                                        $state.booking.data.reservations
                                           .created_at;
                                       const result =
                                         convertDateToJalaliFullString(checkIn);
@@ -6605,7 +6670,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         )} ${monthName}`;
                                       }
                                       const checkIn =
-                                        $state.booking.data.manual_booking
+                                        $state.booking.data.reservations
                                           .created_at;
                                       const result =
                                         convertDateToJalaliFullString(checkIn);
@@ -6754,7 +6819,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         )} ${monthName}`;
                                       }
                                       const checkIn =
-                                        $state.booking.data.manual_booking
+                                        $state.booking.data.reservations
                                           .created_at;
                                       const result =
                                         convertDateToJalaliFullString(checkIn);
@@ -6899,7 +6964,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         )} ${monthName}`;
                                       }
                                       const checkIn =
-                                        $state.booking.data.manual_booking
+                                        $state.booking.data.reservations
                                           .created_at;
                                       const result =
                                         convertDateToJalaliFullString(checkIn);
@@ -6984,8 +7049,8 @@ function PlasmicBookings__RenderFunc(props: {
                                   {(() => {
                                     try {
                                       return (
-                                        $state.booking.data.manual_booking
-                                          .night + " شب" || "نفرات"
+                                        $state.booking.data.reservations.night +
+                                          " شب" || "نفرات"
                                       );
                                     } catch (e) {
                                       if (
@@ -7009,13 +7074,13 @@ function PlasmicBookings__RenderFunc(props: {
                                     try {
                                       return (() => {
                                         if (
-                                          $state.booking.data.manual_booking
+                                          $state.booking.data.reservations
                                             .night == null
                                         ) {
                                           return "مدت اقامت";
                                         }
                                         return (
-                                          $state.booking.data.manual_booking
+                                          $state.booking.data.reservations
                                             .night + " شب" || "مدت اقامت"
                                         );
                                       })();
@@ -7037,13 +7102,13 @@ function PlasmicBookings__RenderFunc(props: {
                                     try {
                                       return (() => {
                                         if (
-                                          $state.booking.data.manual_booking
+                                          $state.booking.data.reservations
                                             .night == null
                                         ) {
                                           return "مدت اقامت";
                                         }
                                         return (
-                                          $state.booking.data.manual_booking
+                                          $state.booking.data.reservations
                                             .night + " شب" || "مدت اقامت"
                                         );
                                       })();
@@ -7121,13 +7186,13 @@ function PlasmicBookings__RenderFunc(props: {
                                     try {
                                       return (() => {
                                         if (
-                                          $state.booking.data.manual_booking
+                                          $state.booking.data.reservations
                                             .guests_count == null
                                         ) {
                                           return "نفرات";
                                         }
                                         return (
-                                          $state.booking.data.manual_booking
+                                          $state.booking.data.reservations
                                             .guests_count + " نفر"
                                         );
                                       })();
@@ -7149,13 +7214,13 @@ function PlasmicBookings__RenderFunc(props: {
                                     try {
                                       return (() => {
                                         if (
-                                          $state.booking.data.manual_booking
+                                          $state.booking.data.reservations
                                             .guests_count == null
                                         ) {
                                           return "نفرات";
                                         }
                                         return (
-                                          $state.booking.data.manual_booking
+                                          $state.booking.data.reservations
                                             .guests_count + " نفر"
                                         );
                                       })();
@@ -7299,7 +7364,7 @@ function PlasmicBookings__RenderFunc(props: {
                             ? (() => {
                                 try {
                                   return (
-                                    $state.booking.data.manual_booking.amount ==
+                                    $state.booking.data.reservations.amount ==
                                     null
                                   );
                                 } catch (e) {
@@ -7316,7 +7381,7 @@ function PlasmicBookings__RenderFunc(props: {
                             : (() => {
                                 try {
                                   return (
-                                    $state.booking.data.manual_booking.amount ==
+                                    $state.booking.data.reservations.amount ==
                                     null
                                   );
                                 } catch (e) {
@@ -7401,8 +7466,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   try {
                                     return (
                                       new Intl.NumberFormat("fa-IR").format(
-                                        $state.booking.data.manual_booking
-                                          .amount
+                                        $state.booking.data.reservations.amount
                                       ) + "  تومان"
                                     );
                                   } catch (e) {
@@ -7452,7 +7516,7 @@ function PlasmicBookings__RenderFunc(props: {
               </div>
               {(() => {
                 try {
-                  return $state.booking.data.manual_booking != null;
+                  return $state.booking.data.reservations != null;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
