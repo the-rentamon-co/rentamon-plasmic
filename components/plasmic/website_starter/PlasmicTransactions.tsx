@@ -1055,7 +1055,7 @@ function PlasmicTransactions__RenderFunc(props: {
                 $steps["runCode"] = await $steps["runCode"];
               }
 
-              $steps["runCode2"] = true
+              $steps["runCode2"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {

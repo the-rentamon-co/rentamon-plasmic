@@ -187,26 +187,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                function getCookieValue(cookieName) {
-                  const cookies = document.cookie
-                    .split(";")
-                    .map(cookie => cookie.trim());
-                  for (const cookie of cookies) {
-                    const [name, value] = cookie.split("=");
-                    if (name === cookieName) {
-                      return value;
-                    }
-                  }
-                  return null;
-                }
-                function isNotifyEnabled() {
-                  const isNotify =
-                    localStorage.getItem("is_transactions_notify") !== null;
-                  const hasFirstVisit = getCookieValue("first_visit") !== null;
-                  const hasPropTour = getCookieValue("prop_tour") !== null;
-                  return isNotify || hasFirstVisit || hasPropTour;
-                }
-                return isNotifyEnabled();
+                return true;
               })();
             } catch (e) {
               if (
