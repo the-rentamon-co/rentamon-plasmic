@@ -5467,8 +5467,7 @@ function PlasmicConnections__RenderFunc(props: {
                               }
 
                               $steps["successToast"] =
-                                $steps.jajigaVerify?.data?.status === true ||
-                                $steps.jajigaVerify?.data?.status === 200
+                                $steps.jajigaVerify.data.status === true
                                   ? (() => {
                                       const actionArgs = {
                                         args: [
