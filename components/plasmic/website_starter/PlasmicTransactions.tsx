@@ -2708,13 +2708,8 @@ function PlasmicTransactions__RenderFunc(props: {
                               return (() => {
                                 let result = "";
                                 const bookingId = $state.modalData.booking_id;
-                                if (bookingId && bookingId.startsWith("RNT")) {
-                                  result = bookingId.substring(3);
-                                } else {
-                                  result = bookingId;
-                                }
                                 return window.open(
-                                  `https://rentamon.com/bookings/${result}`,
+                                  `https://rentamon.com/bookings/${bookingId}`,
                                   "_blank"
                                 );
                               })();
