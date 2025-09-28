@@ -1529,11 +1529,14 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                     })}
                     {(() => {
                       try {
-                        return [2, 3, 4, 6, 7, 8].some(
-                          required =>
-                            !$state.apiRequest2.data.some(
-                              item => item.website === required
-                            )
+                        return (
+                          !$state.apiRequest2.data?.length ||
+                          [2, 3, 4, 6, 7, 8].some(
+                            required =>
+                              !$state.apiRequest2.data.some(
+                                item => item.website === required
+                              )
+                          )
                         );
                       } catch (e) {
                         if (
