@@ -5485,6 +5485,11 @@
           "id": "mqHgOl6YenEq",
           "name": "photo_2025-09-20_14-19-26.jpg",
           "filePath": "../public/plasmic/website_starter/images/photo20250920141926Jpg.jpg"
+        },
+        {
+          "id": "YdglCMeRDf5e",
+          "name": "image 178",
+          "filePath": "../public/plasmic/website_starter/images/image178.svg"
         }
       ],
       "indirect": false,
@@ -5631,6 +5636,6 @@
   "nextjsConfig": {
     "pagesDir": "../src/pages"
   },
-  "cliVersion": "0.1.343",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.343/dist/plasmic.schema.json"
+  "cliVersion": "0.1.344",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.344/dist/plasmic.schema.json"
 }

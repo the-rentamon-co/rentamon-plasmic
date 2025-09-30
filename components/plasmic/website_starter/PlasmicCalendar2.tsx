@@ -139,6 +139,7 @@ export type PlasmicCalendar2__OverridesType = {
   userPlatform?: Flex__<typeof ApiRequest>;
   loading2?: Flex__<typeof PlasmicImg__>;
   ok?: Flex__<typeof PlasmicImg__>;
+  ok3?: Flex__<typeof PlasmicImg__>;
   fail?: Flex__<typeof PlasmicImg__>;
   loading?: Flex__<typeof PlasmicImg__>;
   ok2?: Flex__<typeof PlasmicImg__>;
@@ -5690,6 +5691,71 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 fullWidth: 26,
                                 fullHeight: 26,
                                 aspectRatio: 1
+                              }}
+                            />
+                          ) : null}
+                          {(() => {
+                            try {
+                              return (() => {
+                                if (
+                                  !$state.platformRequestStatus ||
+                                  !$state.platformRequestStatus.data ||
+                                  Object.keys($state.platformRequestStatus.data)
+                                    .length === 0
+                                ) {
+                                  return false;
+                                }
+                                const platforms =
+                                  $state.platformRequestStatus.data;
+                                if (platforms[currentItem]) {
+                                  const item = platforms[currentItem];
+                                  if (
+                                    item.final_status === "pending" &&
+                                    item.status_code === 200
+                                  ) {
+                                    return true;
+                                  } else {
+                                    return false;
+                                  }
+                                } else {
+                                  return false;
+                                }
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <PlasmicImg__
+                              data-plasmic-name={"ok3"}
+                              data-plasmic-override={overrides.ok3}
+                              alt={""}
+                              className={classNames(sty.ok3)}
+                              displayHeight={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "30px"
+                                  : "30px"
+                              }
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? "lazy"
+                                  : "eager"
+                              }
+                              src={{
+                                src: "/plasmic/website_starter/images/image178.svg",
+                                fullWidth: 36,
+                                fullHeight: 36,
+                                aspectRatio: undefined
                               }}
                             />
                           ) : null}
@@ -11615,6 +11681,7 @@ const PlasmicDescendants = {
     "userPlatform",
     "loading2",
     "ok",
+    "ok3",
     "fail",
     "loading",
     "ok2",
@@ -11706,14 +11773,24 @@ const PlasmicDescendants = {
     "userPlatform",
     "loading2",
     "ok",
+    "ok3",
     "fail",
     "loading",
     "ok2"
   ],
   getJabamaSmartPriceStatus: ["getJabamaSmartPriceStatus"],
-  userPlatform: ["userPlatform", "loading2", "ok", "fail", "loading", "ok2"],
+  userPlatform: [
+    "userPlatform",
+    "loading2",
+    "ok",
+    "ok3",
+    "fail",
+    "loading",
+    "ok2"
+  ],
   loading2: ["loading2"],
   ok: ["ok"],
+  ok3: ["ok3"],
   fail: ["fail"],
   loading: ["loading"],
   ok2: ["ok2"],
@@ -11835,6 +11912,7 @@ type NodeDefaultElementType = {
   userPlatform: typeof ApiRequest;
   loading2: typeof PlasmicImg__;
   ok: typeof PlasmicImg__;
+  ok3: typeof PlasmicImg__;
   fail: typeof PlasmicImg__;
   loading: typeof PlasmicImg__;
   ok2: typeof PlasmicImg__;
@@ -11971,6 +12049,7 @@ export const PlasmicCalendar2 = Object.assign(
     userPlatform: makeNodeComponent("userPlatform"),
     loading2: makeNodeComponent("loading2"),
     ok: makeNodeComponent("ok"),
+    ok3: makeNodeComponent("ok3"),
     fail: makeNodeComponent("fail"),
     loading: makeNodeComponent("loading"),
     ok2: makeNodeComponent("ok2"),
