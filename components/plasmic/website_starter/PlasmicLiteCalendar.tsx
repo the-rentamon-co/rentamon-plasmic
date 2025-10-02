@@ -412,9 +412,8 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 typeof $steps["getLcalStorageData"] === "object" &&
                 typeof $steps["getLcalStorageData"].then === "function"
               ) {
-                $steps["getLcalStorageData"] = await $steps[
-                  "getLcalStorageData"
-                ];
+                $steps["getLcalStorageData"] =
+                  await $steps["getLcalStorageData"];
               }
 
               $steps["runCode"] = true
@@ -633,9 +632,8 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 typeof $steps["updateStateVariable3"] === "object" &&
                 typeof $steps["updateStateVariable3"].then === "function"
               ) {
-                $steps["updateStateVariable3"] = await $steps[
-                  "updateStateVariable3"
-                ];
+                $steps["updateStateVariable3"] =
+                  await $steps["updateStateVariable3"];
               }
 
               $steps["runCode3"] = true
@@ -742,9 +740,8 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 typeof $steps["invokeGlobalAction"] === "object" &&
                 typeof $steps["invokeGlobalAction"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
+                $steps["invokeGlobalAction"] =
+                  await $steps["invokeGlobalAction"];
               }
             }}
           />
@@ -834,9 +831,8 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                           typeof $steps["updateStateVariable"].then ===
                             "function"
                         ) {
-                          $steps["updateStateVariable"] = await $steps[
-                            "updateStateVariable"
-                          ];
+                          $steps["updateStateVariable"] =
+                            await $steps["updateStateVariable"];
                         }
 
                         $steps["invokeGlobalAction"] = true
@@ -876,9 +872,8 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                           typeof $steps["invokeGlobalAction"].then ===
                             "function"
                         ) {
-                          $steps["invokeGlobalAction"] = await $steps[
-                            "invokeGlobalAction"
-                          ];
+                          $steps["invokeGlobalAction"] =
+                            await $steps["invokeGlobalAction"];
                         }
                       }).apply(null, eventArgs);
                     }}
@@ -969,10 +964,10 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "80px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "100%"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                          ? "130px"
-                          : "auto"
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "130px"
+                              : "auto"
                       }
                       displayMaxHeight={"none"}
                       displayMaxWidth={"none"}
@@ -1076,9 +1071,8 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         typeof $steps["goToProperties"] === "object" &&
                         typeof $steps["goToProperties"].then === "function"
                       ) {
-                        $steps["goToProperties"] = await $steps[
-                          "goToProperties"
-                        ];
+                        $steps["goToProperties"] =
+                          await $steps["goToProperties"];
                       }
                     }}
                   >
@@ -1427,7 +1421,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__nS2T1
+                        sty.formField__rxhEl
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1439,7 +1433,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__izOl
+                        sty.formField__totwg
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1457,7 +1451,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___3BNus
+                          sty.text__xVxHj
                         )}
                       >
                         {"Submit"}
@@ -1594,7 +1588,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicLiteCalendar__VariantsArgs;
     args?: PlasmicLiteCalendar__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicLiteCalendar__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicLiteCalendar__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicLiteCalendar__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

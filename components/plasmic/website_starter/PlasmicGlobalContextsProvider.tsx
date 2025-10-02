@@ -188,15 +188,15 @@ export default function GlobalContextsProvider(
               "themeStyles" in antdConfigProviderProps
                 ? antdConfigProviderProps.themeStyles!
                 : true
-                ? {
-                    fontFamily: "Estedad",
-                    fontSize: "12px",
-                    fontWeight: "400",
-                    lineHeight: "1.5",
-                    color: "#203647",
-                    letterSpacing: "normal"
-                  }
-                : undefined
+                  ? {
+                      fontFamily: "Estedad",
+                      fontSize: "12px",
+                      fontWeight: "400",
+                      lineHeight: "1.5",
+                      color: "#203647",
+                      letterSpacing: "normal"
+                    }
+                  : undefined
             }
             wireframe={
               antdConfigProviderProps && "wireframe" in antdConfigProviderProps

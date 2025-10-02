@@ -432,8 +432,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                     }
                   })()
                 : hasVariant(globalVariants, "screen", "tablet")
-                ? true
-                : true
+                  ? true
+                  : true
             ) ? (
               <div className={classNames(projectcss.all, sty.freeBox__yAj92)}>
                 <div
@@ -547,20 +547,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                   projectcss.all,
                                   sty.connectedPlatforms,
                                   hasVariant(globalVariants, "screen", "mobile")
-                                    ? `clickable fadeinf ${`${
-                                        currentItems.status === "false"
-                                          ? "disconnected"
-                                          : currentItems.status === "true"
-                                          ? "connected"
-                                          : ""
-                                      }`}`
-                                    : `clickable fadeinf ${`${
-                                        currentItem.status === "false"
-                                          ? "disconnected"
-                                          : currentItem.status === "true"
-                                          ? "connected"
-                                          : ""
-                                      }`}`
+                                    ? `clickable fadeinf ${`${currentItems.status === "false" ? "disconnected" : currentItems.status === "true" ? "connected" : ""}`}`
+                                    : `clickable fadeinf ${`${currentItem.status === "false" ? "disconnected" : currentItem.status === "true" ? "connected" : ""}`}`
                                 )}
                                 key={currentIndex}
                                 onClick={async event => {
@@ -633,9 +621,10 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                   ) {
                                     $steps[
                                       "goToActivationDuplicateConnection"
-                                    ] = await $steps[
-                                      "goToActivationDuplicateConnection"
-                                    ];
+                                    ] =
+                                      await $steps[
+                                        "goToActivationDuplicateConnection"
+                                      ];
                                   }
 
                                   $steps["connectedToast"] =
@@ -696,9 +685,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                     typeof $steps["connectedToast"].then ===
                                       "function"
                                   ) {
-                                    $steps["connectedToast"] = await $steps[
-                                      "connectedToast"
-                                    ];
+                                    $steps["connectedToast"] =
+                                      await $steps["connectedToast"];
                                   }
                                 }}
                               >
@@ -1140,20 +1128,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                             projectcss.all,
                             sty.connectedPlatforms2,
                             hasVariant(globalVariants, "screen", "mobile")
-                              ? `clickable fadeinf ${`${
-                                  currentItems.status === "false"
-                                    ? "disconnected"
-                                    : currentItems.status === "true"
-                                    ? "connected"
-                                    : ""
-                                }`}`
-                              : `clickable fadeinf ${`${
-                                  currentItems.status === "false"
-                                    ? "disconnected"
-                                    : currentItems.status === "true"
-                                    ? "connected"
-                                    : ""
-                                }`}`
+                              ? `clickable fadeinf ${`${currentItems.status === "false" ? "disconnected" : currentItems.status === "true" ? "connected" : ""}`}`
+                              : `clickable fadeinf ${`${currentItems.status === "false" ? "disconnected" : currentItems.status === "true" ? "connected" : ""}`}`
                           )}
                           key={currentIndexs}
                           onClick={async event => {
@@ -1217,9 +1193,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                               typeof $steps["goToConnections"].then ===
                                 "function"
                             ) {
-                              $steps["goToConnections"] = await $steps[
-                                "goToConnections"
-                              ];
+                              $steps["goToConnections"] =
+                                await $steps["goToConnections"];
                             }
 
                             $steps["connectedToast"] =
@@ -1279,9 +1254,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                               typeof $steps["connectedToast"].then ===
                                 "function"
                             ) {
-                              $steps["connectedToast"] = await $steps[
-                                "connectedToast"
-                              ];
+                              $steps["connectedToast"] =
+                                await $steps["connectedToast"];
                             }
                           }}
                         >
@@ -1559,30 +1533,32 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                         onClick={async event => {
                           const $steps = {};
 
-                          $steps["goToPlatformsConnections"] = [
-                            2, 3, 4, 6, 7, 8
-                          ].some(
-                            required =>
-                              !$state.apiRequest2.data.some(
-                                item => item.website === required
-                              )
-                          )
-                            ? (() => {
-                                const actionArgs = { destination: `/websites` };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
+                          $steps["goToPlatformsConnections"] =
+                            !$state.apiRequest2.data?.length ||
+                            [2, 3, 4, 6, 7, 8].some(
+                              required =>
+                                !$state.apiRequest2.data.some(
+                                  item => item.website === required
+                                )
+                            )
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: `/websites`
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                           if (
                             $steps["goToPlatformsConnections"] != null &&
                             typeof $steps["goToPlatformsConnections"] ===
@@ -1590,9 +1566,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                             typeof $steps["goToPlatformsConnections"].then ===
                               "function"
                           ) {
-                            $steps["goToPlatformsConnections"] = await $steps[
-                              "goToPlatformsConnections"
-                            ];
+                            $steps["goToPlatformsConnections"] =
+                              await $steps["goToPlatformsConnections"];
                           }
                         }}
                       >
@@ -1613,8 +1588,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                               )
                                 ? "36px"
                                 : hasVariant(globalVariants, "screen", "mobile")
-                                ? "44px"
-                                : "52px"
+                                  ? "44px"
+                                  : "52px"
                             }
                             displayMaxHeight={"none"}
                             displayMaxWidth={"100%"}
@@ -1963,9 +1938,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                       typeof $steps["updateOnboarded"] === "object" &&
                       typeof $steps["updateOnboarded"].then === "function"
                     ) {
-                      $steps["updateOnboarded"] = await $steps[
-                        "updateOnboarded"
-                      ];
+                      $steps["updateOnboarded"] =
+                        await $steps["updateOnboarded"];
                     }
                   }}
                 >
@@ -2147,7 +2121,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicStatusesConnections__VariantsArgs;
     args?: PlasmicStatusesConnections__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicStatusesConnections__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicStatusesConnections__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicStatusesConnections__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

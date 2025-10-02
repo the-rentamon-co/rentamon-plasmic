@@ -398,8 +398,8 @@ function PlasmicConnections__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : false
+              ? false
+              : false
       },
       {
         path: "platformstatus",
@@ -887,9 +887,8 @@ function PlasmicConnections__RenderFunc(props: {
                       typeof $steps["updateModalOpen"] === "object" &&
                       typeof $steps["updateModalOpen"].then === "function"
                     ) {
-                      $steps["updateModalOpen"] = await $steps[
-                        "updateModalOpen"
-                      ];
+                      $steps["updateModalOpen"] =
+                        await $steps["updateModalOpen"];
                     }
                   }}
                 >
@@ -971,9 +970,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["updateStateVariable"].then ===
                             "function"
                         ) {
-                          $steps["updateStateVariable"] = await $steps[
-                            "updateStateVariable"
-                          ];
+                          $steps["updateStateVariable"] =
+                            await $steps["updateStateVariable"];
                         }
 
                         $steps["connectToast"] =
@@ -1020,9 +1018,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["disconnectToast"] === "object" &&
                           typeof $steps["disconnectToast"].then === "function"
                         ) {
-                          $steps["disconnectToast"] = await $steps[
-                            "disconnectToast"
-                          ];
+                          $steps["disconnectToast"] =
+                            await $steps["disconnectToast"];
                         }
 
                         $steps["addToast"] = (() => {
@@ -1082,52 +1079,52 @@ function PlasmicConnections__RenderFunc(props: {
                                 }
                               })()
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return (() => {
+                              ? (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        $state.platformstatus.status.jajiga !==
+                                        true
+                                      ) {
+                                        return false;
+                                      } else {
+                                        return true;
+                                      }
+                                    })();
+                                  } catch (e) {
                                     if (
-                                      $state.platformstatus.status.jajiga !==
-                                      true
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
                                     ) {
-                                      return false;
-                                    } else {
                                       return true;
                                     }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
+                                    throw e;
                                   }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return (() => {
+                                })()
+                              : (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        $state.platformstatus.status.jajiga !==
+                                        true
+                                      ) {
+                                        return false;
+                                      } else {
+                                        return true;
+                                      }
+                                    })();
+                                  } catch (e) {
                                     if (
-                                      $state.platformstatus.status.jajiga !==
-                                      true
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
                                     ) {
-                                      return false;
-                                    } else {
                                       return true;
                                     }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
+                                    throw e;
                                   }
-                                  throw e;
-                                }
-                              })()
+                                })()
                         ) ? (
                           <PlasmicImg__
                             data-plasmic-name={"_true"}
@@ -1248,52 +1245,52 @@ function PlasmicConnections__RenderFunc(props: {
                                 }
                               })()
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return (() => {
+                              ? (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        $state.platformstatus.status.jajiga !==
+                                        false
+                                      ) {
+                                        return false;
+                                      } else {
+                                        return true;
+                                      }
+                                    })();
+                                  } catch (e) {
                                     if (
-                                      $state.platformstatus.status.jajiga !==
-                                      false
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
                                     ) {
-                                      return false;
-                                    } else {
                                       return true;
                                     }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
+                                    throw e;
                                   }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return (() => {
+                                })()
+                              : (() => {
+                                  try {
+                                    return (() => {
+                                      if (
+                                        $state.platformstatus.status.jajiga !==
+                                        false
+                                      ) {
+                                        return false;
+                                      } else {
+                                        return true;
+                                      }
+                                    })();
+                                  } catch (e) {
                                     if (
-                                      $state.platformstatus.status.jajiga !==
-                                      false
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
                                     ) {
-                                      return false;
-                                    } else {
                                       return true;
                                     }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
+                                    throw e;
                                   }
-                                  throw e;
-                                }
-                              })()
+                                })()
                         ) ? (
                           <PlasmicImg__
                             data-plasmic-name={"_false"}
@@ -1455,9 +1452,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["updateStateVariable"].then ===
                             "function"
                         ) {
-                          $steps["updateStateVariable"] = await $steps[
-                            "updateStateVariable"
-                          ];
+                          $steps["updateStateVariable"] =
+                            await $steps["updateStateVariable"];
                         }
 
                         $steps["connectToast"] =
@@ -1503,9 +1499,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["disconnectToast"] === "object" &&
                           typeof $steps["disconnectToast"].then === "function"
                         ) {
-                          $steps["disconnectToast"] = await $steps[
-                            "disconnectToast"
-                          ];
+                          $steps["disconnectToast"] =
+                            await $steps["disconnectToast"];
                         }
 
                         $steps["addToast"] = (() => {
@@ -1891,9 +1886,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["updateStateVariable"].then ===
                             "function"
                         ) {
-                          $steps["updateStateVariable"] = await $steps[
-                            "updateStateVariable"
-                          ];
+                          $steps["updateStateVariable"] =
+                            await $steps["updateStateVariable"];
                         }
 
                         $steps["connectToast"] =
@@ -1939,9 +1933,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["disconnectToast"] === "object" &&
                           typeof $steps["disconnectToast"].then === "function"
                         ) {
-                          $steps["disconnectToast"] = await $steps[
-                            "disconnectToast"
-                          ];
+                          $steps["disconnectToast"] =
+                            await $steps["disconnectToast"];
                         }
 
                         $steps["addToast"] = (() => {
@@ -2302,9 +2295,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["updateStateVariable"].then ===
                             "function"
                         ) {
-                          $steps["updateStateVariable"] = await $steps[
-                            "updateStateVariable"
-                          ];
+                          $steps["updateStateVariable"] =
+                            await $steps["updateStateVariable"];
                         }
 
                         $steps["connectToast"] =
@@ -2350,9 +2342,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["disconnectToast"] === "object" &&
                           typeof $steps["disconnectToast"].then === "function"
                         ) {
-                          $steps["disconnectToast"] = await $steps[
-                            "disconnectToast"
-                          ];
+                          $steps["disconnectToast"] =
+                            await $steps["disconnectToast"];
                         }
 
                         $steps["addToast"] = (() => {
@@ -2685,9 +2676,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["invokeGlobalAction"].then ===
                             "function"
                         ) {
-                          $steps["invokeGlobalAction"] = await $steps[
-                            "invokeGlobalAction"
-                          ];
+                          $steps["invokeGlobalAction"] =
+                            await $steps["invokeGlobalAction"];
                         }
                       }}
                     >
@@ -3052,9 +3042,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["updateStateVariable"].then ===
                             "function"
                         ) {
-                          $steps["updateStateVariable"] = await $steps[
-                            "updateStateVariable"
-                          ];
+                          $steps["updateStateVariable"] =
+                            await $steps["updateStateVariable"];
                         }
 
                         $steps["connectToast"] =
@@ -3100,9 +3089,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["disconnectToast"] === "object" &&
                           typeof $steps["disconnectToast"].then === "function"
                         ) {
-                          $steps["disconnectToast"] = await $steps[
-                            "disconnectToast"
-                          ];
+                          $steps["disconnectToast"] =
+                            await $steps["disconnectToast"];
                         }
 
                         $steps["addToast"] = (() => {
@@ -3440,9 +3428,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["updateInput6Value"] === "object" &&
                           typeof $steps["updateInput6Value"].then === "function"
                         ) {
-                          $steps["updateInput6Value"] = await $steps[
-                            "updateInput6Value"
-                          ];
+                          $steps["updateInput6Value"] =
+                            await $steps["updateInput6Value"];
                         }
 
                         $steps["connectToast"] =
@@ -3488,9 +3475,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["disconnectToast"] === "object" &&
                           typeof $steps["disconnectToast"].then === "function"
                         ) {
-                          $steps["disconnectToast"] = await $steps[
-                            "disconnectToast"
-                          ];
+                          $steps["disconnectToast"] =
+                            await $steps["disconnectToast"];
                         }
 
                         $steps["addToast"] = (() => {
@@ -3917,9 +3903,8 @@ function PlasmicConnections__RenderFunc(props: {
                           typeof $steps["updateModalOpen"] === "object" &&
                           typeof $steps["updateModalOpen"].then === "function"
                         ) {
-                          $steps["updateModalOpen"] = await $steps[
-                            "updateModalOpen"
-                          ];
+                          $steps["updateModalOpen"] =
+                            await $steps["updateModalOpen"];
                         }
                       }}
                     >
@@ -4011,7 +3996,19 @@ function PlasmicConnections__RenderFunc(props: {
               </AntdModal>
             </div>
           ) : null}
-          {false ? (
+          {(() => {
+            try {
+              return true;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
             <div
               data-plasmic-name={"allConnected"}
               data-plasmic-override={overrides.allConnected}
@@ -4113,9 +4110,8 @@ function PlasmicConnections__RenderFunc(props: {
                     typeof $steps["goToPanelCalendar"] === "object" &&
                     typeof $steps["goToPanelCalendar"].then === "function"
                   ) {
-                    $steps["goToPanelCalendar"] = await $steps[
-                      "goToPanelCalendar"
-                    ];
+                    $steps["goToPanelCalendar"] =
+                      await $steps["goToPanelCalendar"];
                   }
                 }}
                 submitsForm={true}
@@ -4458,9 +4454,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["jabamaSend"] === "object" &&
                                 typeof $steps["jabamaSend"].then === "function"
                               ) {
-                                $steps["jabamaSend"] = await $steps[
-                                  "jabamaSend"
-                                ];
+                                $steps["jabamaSend"] =
+                                  await $steps["jabamaSend"];
                               }
 
                               $steps["invokeGlobalAction"] =
@@ -4509,9 +4504,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["invokeGlobalAction"].then ===
                                   "function"
                               ) {
-                                $steps["invokeGlobalAction"] = await $steps[
-                                  "invokeGlobalAction"
-                                ];
+                                $steps["invokeGlobalAction"] =
+                                  await $steps["invokeGlobalAction"];
                               }
                             }}
                             submitsForm={true}
@@ -4769,9 +4763,8 @@ function PlasmicConnections__RenderFunc(props: {
                                   typeof $steps["jabamaVerify"].then ===
                                     "function"
                                 ) {
-                                  $steps["jabamaVerify"] = await $steps[
-                                    "jabamaVerify"
-                                  ];
+                                  $steps["jabamaVerify"] =
+                                    await $steps["jabamaVerify"];
                                 }
 
                                 $steps["successToast"] =
@@ -4795,9 +4788,8 @@ function PlasmicConnections__RenderFunc(props: {
                                   typeof $steps["successToast"].then ===
                                     "function"
                                 ) {
-                                  $steps["successToast"] = await $steps[
-                                    "successToast"
-                                  ];
+                                  $steps["successToast"] =
+                                    await $steps["successToast"];
                                 }
 
                                 $steps["errorToast"] = !$steps.jabamaVerify
@@ -4821,9 +4813,8 @@ function PlasmicConnections__RenderFunc(props: {
                                   typeof $steps["errorToast"].then ===
                                     "function"
                                 ) {
-                                  $steps["errorToast"] = await $steps[
-                                    "errorToast"
-                                  ];
+                                  $steps["errorToast"] =
+                                    await $steps["errorToast"];
                                 }
 
                                 $steps["jabamaContact"] =
@@ -4848,9 +4839,8 @@ function PlasmicConnections__RenderFunc(props: {
                                   typeof $steps["jabamaContact"].then ===
                                     "function"
                                 ) {
-                                  $steps["jabamaContact"] = await $steps[
-                                    "jabamaContact"
-                                  ];
+                                  $steps["jabamaContact"] =
+                                    await $steps["jabamaContact"];
                                 }
 
                                 $steps["platformStatus"] = true
@@ -4862,11 +4852,9 @@ function PlasmicConnections__RenderFunc(props: {
                                             $steps.jabamaVerify.data.status ===
                                             true
                                           ) {
-                                            return ($state.platformstatus.status.jabama =
-                                              true);
+                                            return ($state.platformstatus.status.jabama = true);
                                           } else {
-                                            return ($state.platformstatus.status.jabama =
-                                              false);
+                                            return ($state.platformstatus.status.jabama = false);
                                           }
                                         })()
                                       };
@@ -4894,9 +4882,8 @@ function PlasmicConnections__RenderFunc(props: {
                                   typeof $steps["platformStatus"].then ===
                                     "function"
                                 ) {
-                                  $steps["platformStatus"] = await $steps[
-                                    "platformStatus"
-                                  ];
+                                  $steps["platformStatus"] =
+                                    await $steps["platformStatus"];
                                 }
 
                                 $steps["goToStatusesConnections"] =
@@ -5212,9 +5199,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["jajigaSend"] === "object" &&
                                 typeof $steps["jajigaSend"].then === "function"
                               ) {
-                                $steps["jajigaSend"] = await $steps[
-                                  "jajigaSend"
-                                ];
+                                $steps["jajigaSend"] =
+                                  await $steps["jajigaSend"];
                               }
                             }}
                             submitsForm={true}
@@ -5461,9 +5447,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["jajigaVerify"].then ===
                                   "function"
                               ) {
-                                $steps["jajigaVerify"] = await $steps[
-                                  "jajigaVerify"
-                                ];
+                                $steps["jajigaVerify"] =
+                                  await $steps["jajigaVerify"];
                               }
 
                               $steps["successToast"] =
@@ -5487,9 +5472,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["successToast"].then ===
                                   "function"
                               ) {
-                                $steps["successToast"] = await $steps[
-                                  "successToast"
-                                ];
+                                $steps["successToast"] =
+                                  await $steps["successToast"];
                               }
 
                               $steps["errorToast"] =
@@ -5513,9 +5497,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["errorToast"] === "object" &&
                                 typeof $steps["errorToast"].then === "function"
                               ) {
-                                $steps["errorToast"] = await $steps[
-                                  "errorToast"
-                                ];
+                                $steps["errorToast"] =
+                                  await $steps["errorToast"];
                               }
 
                               $steps["jajigacontact"] =
@@ -5553,9 +5536,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["jajigacontact"].then ===
                                   "function"
                               ) {
-                                $steps["jajigacontact"] = await $steps[
-                                  "jajigacontact"
-                                ];
+                                $steps["jajigacontact"] =
+                                  await $steps["jajigacontact"];
                               }
 
                               $steps["platformStatus"] = true
@@ -5564,11 +5546,9 @@ function PlasmicConnections__RenderFunc(props: {
                                       operation: 0,
                                       value: (() => {
                                         if ($steps.jajigaVerify.status == 200) {
-                                          return ($state.platformstatus.status.jajiga =
-                                            true);
+                                          return ($state.platformstatus.status.jajiga = true);
                                         } else {
-                                          return ($state.platformstatus.status.jajiga =
-                                            false);
+                                          return ($state.platformstatus.status.jajiga = false);
                                         }
                                       })()
                                     };
@@ -5595,9 +5575,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["platformStatus"].then ===
                                   "function"
                               ) {
-                                $steps["platformStatus"] = await $steps[
-                                  "platformStatus"
-                                ];
+                                $steps["platformStatus"] =
+                                  await $steps["platformStatus"];
                               }
 
                               $steps["goToStatusesConnections"] =
@@ -5951,9 +5930,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["repeatTest"] === "object" &&
                                 typeof $steps["repeatTest"].then === "function"
                               ) {
-                                $steps["repeatTest"] = await $steps[
-                                  "repeatTest"
-                                ];
+                                $steps["repeatTest"] =
+                                  await $steps["repeatTest"];
                               }
                             }}
                             submitsForm={true}
@@ -6199,9 +6177,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["shabVerify"] === "object" &&
                                 typeof $steps["shabVerify"].then === "function"
                               ) {
-                                $steps["shabVerify"] = await $steps[
-                                  "shabVerify"
-                                ];
+                                $steps["shabVerify"] =
+                                  await $steps["shabVerify"];
                               }
 
                               $steps["successToast"] =
@@ -6225,9 +6202,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["successToast"].then ===
                                   "function"
                               ) {
-                                $steps["successToast"] = await $steps[
-                                  "successToast"
-                                ];
+                                $steps["successToast"] =
+                                  await $steps["successToast"];
                               }
 
                               $steps["errorToast"] = !$steps.shabVerify?.data
@@ -6250,9 +6226,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["errorToast"] === "object" &&
                                 typeof $steps["errorToast"].then === "function"
                               ) {
-                                $steps["errorToast"] = await $steps[
-                                  "errorToast"
-                                ];
+                                $steps["errorToast"] =
+                                  await $steps["errorToast"];
                               }
 
                               $steps["shabContact"] =
@@ -6289,9 +6264,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["shabContact"] === "object" &&
                                 typeof $steps["shabContact"].then === "function"
                               ) {
-                                $steps["shabContact"] = await $steps[
-                                  "shabContact"
-                                ];
+                                $steps["shabContact"] =
+                                  await $steps["shabContact"];
                               }
 
                               $steps["platformStatus"] = true
@@ -6302,11 +6276,9 @@ function PlasmicConnections__RenderFunc(props: {
                                         if (
                                           $steps.shabVerify.data.status === true
                                         ) {
-                                          return ($state.platformstatus.status.shab =
-                                            true);
+                                          return ($state.platformstatus.status.shab = true);
                                         } else {
-                                          return ($state.platformstatus.status.shab =
-                                            false);
+                                          return ($state.platformstatus.status.shab = false);
                                         }
                                       })()
                                     };
@@ -6333,9 +6305,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["platformStatus"].then ===
                                   "function"
                               ) {
-                                $steps["platformStatus"] = await $steps[
-                                  "platformStatus"
-                                ];
+                                $steps["platformStatus"] =
+                                  await $steps["platformStatus"];
                               }
 
                               $steps["goToStatusesConnections"] =
@@ -6653,9 +6624,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["otaghakSend"] === "object" &&
                                 typeof $steps["otaghakSend"].then === "function"
                               ) {
-                                $steps["otaghakSend"] = await $steps[
-                                  "otaghakSend"
-                                ];
+                                $steps["otaghakSend"] =
+                                  await $steps["otaghakSend"];
                               }
                             }}
                             submitsForm={true}
@@ -6906,9 +6876,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["otaghakVerify"].then ===
                                   "function"
                               ) {
-                                $steps["otaghakVerify"] = await $steps[
-                                  "otaghakVerify"
-                                ];
+                                $steps["otaghakVerify"] =
+                                  await $steps["otaghakVerify"];
                               }
 
                               $steps["successToast"] =
@@ -6932,9 +6901,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["successToast"].then ===
                                   "function"
                               ) {
-                                $steps["successToast"] = await $steps[
-                                  "successToast"
-                                ];
+                                $steps["successToast"] =
+                                  await $steps["successToast"];
                               }
 
                               $steps["errorToast"] = !$steps.otaghakVerify?.data
@@ -6957,9 +6925,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["errorToast"] === "object" &&
                                 typeof $steps["errorToast"].then === "function"
                               ) {
-                                $steps["errorToast"] = await $steps[
-                                  "errorToast"
-                                ];
+                                $steps["errorToast"] =
+                                  await $steps["errorToast"];
                               }
 
                               $steps["otaghakContact"] =
@@ -6997,9 +6964,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["otaghakContact"].then ===
                                   "function"
                               ) {
-                                $steps["otaghakContact"] = await $steps[
-                                  "otaghakContact"
-                                ];
+                                $steps["otaghakContact"] =
+                                  await $steps["otaghakContact"];
                               }
 
                               $steps["platformStatus"] = true
@@ -7011,11 +6977,9 @@ function PlasmicConnections__RenderFunc(props: {
                                           $steps.otaghakVerify.data.status ===
                                           true
                                         ) {
-                                          return ($state.platformstatus.status.otaghak =
-                                            true);
+                                          return ($state.platformstatus.status.otaghak = true);
                                         } else {
-                                          return ($state.platformstatus.status.otaghak =
-                                            false);
+                                          return ($state.platformstatus.status.otaghak = false);
                                         }
                                       })()
                                     };
@@ -7042,9 +7006,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["platformStatus"].then ===
                                   "function"
                               ) {
-                                $steps["platformStatus"] = await $steps[
-                                  "platformStatus"
-                                ];
+                                $steps["platformStatus"] =
+                                  await $steps["platformStatus"];
                               }
 
                               $steps["goToStatusesConnections"] =
@@ -7284,9 +7247,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["invokeGlobalAction"].then ===
                                   "function"
                               ) {
-                                $steps["invokeGlobalAction"] = await $steps[
-                                  "invokeGlobalAction"
-                                ];
+                                $steps["invokeGlobalAction"] =
+                                  await $steps["invokeGlobalAction"];
                               }
                             },
                             placeholder: ``,
@@ -7372,9 +7334,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["updateStep"] === "object" &&
                                 typeof $steps["updateStep"].then === "function"
                               ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
+                                $steps["updateStep"] =
+                                  await $steps["updateStep"];
                               }
 
                               $steps["mihmanshoSend"] = true
@@ -7414,9 +7375,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["mihmanshoSend"].then ===
                                   "function"
                               ) {
-                                $steps["mihmanshoSend"] = await $steps[
-                                  "mihmanshoSend"
-                                ];
+                                $steps["mihmanshoSend"] =
+                                  await $steps["mihmanshoSend"];
                               }
                             }}
                             submitsForm={true}
@@ -7476,9 +7436,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["updateStep"] === "object" &&
                                 typeof $steps["updateStep"].then === "function"
                               ) {
-                                $steps["updateStep"] = await $steps[
-                                  "updateStep"
-                                ];
+                                $steps["updateStep"] =
+                                  await $steps["updateStep"];
                               }
                             }}
                             submitsForm={true}
@@ -7661,9 +7620,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["mihmanshoVerify"].then ===
                                   "function"
                               ) {
-                                $steps["mihmanshoVerify"] = await $steps[
-                                  "mihmanshoVerify"
-                                ];
+                                $steps["mihmanshoVerify"] =
+                                  await $steps["mihmanshoVerify"];
                               }
 
                               $steps["connectionStatus"] = true
@@ -7732,9 +7690,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["connectionStatus"].then ===
                                   "function"
                               ) {
-                                $steps["connectionStatus"] = await $steps[
-                                  "connectionStatus"
-                                ];
+                                $steps["connectionStatus"] =
+                                  await $steps["connectionStatus"];
                               }
 
                               $steps["submittedToast"] = true
@@ -7778,9 +7735,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["submittedToast"].then ===
                                   "function"
                               ) {
-                                $steps["submittedToast"] = await $steps[
-                                  "submittedToast"
-                                ];
+                                $steps["submittedToast"] =
+                                  await $steps["submittedToast"];
                               }
 
                               $steps["goToProCalendar"] =
@@ -7816,9 +7772,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["goToProCalendar"].then ===
                                   "function"
                               ) {
-                                $steps["goToProCalendar"] = await $steps[
-                                  "goToProCalendar"
-                                ];
+                                $steps["goToProCalendar"] =
+                                  await $steps["goToProCalendar"];
                               }
 
                               $steps["platformSatus"] = false
@@ -7830,11 +7785,9 @@ function PlasmicConnections__RenderFunc(props: {
                                           $steps.mihmanshoVerify.data.status ===
                                           true
                                         ) {
-                                          return ($state.platformstatus.status.mihmansho =
-                                            true);
+                                          return ($state.platformstatus.status.mihmansho = true);
                                         } else {
-                                          return ($state.platformstatus.status.mihmansho =
-                                            false);
+                                          return ($state.platformstatus.status.mihmansho = false);
                                         }
                                       })()
                                     };
@@ -7861,9 +7814,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["platformSatus"].then ===
                                   "function"
                               ) {
-                                $steps["platformSatus"] = await $steps[
-                                  "platformSatus"
-                                ];
+                                $steps["platformSatus"] =
+                                  await $steps["platformSatus"];
                               }
                             }}
                             submitsForm={true}
@@ -8284,9 +8236,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["homsaVerify"] === "object" &&
                                 typeof $steps["homsaVerify"].then === "function"
                               ) {
-                                $steps["homsaVerify"] = await $steps[
-                                  "homsaVerify"
-                                ];
+                                $steps["homsaVerify"] =
+                                  await $steps["homsaVerify"];
                               }
 
                               $steps["errorToast"] = !$steps.homsaVerify?.data
@@ -8309,9 +8260,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["errorToast"] === "object" &&
                                 typeof $steps["errorToast"].then === "function"
                               ) {
-                                $steps["errorToast"] = await $steps[
-                                  "errorToast"
-                                ];
+                                $steps["errorToast"] =
+                                  await $steps["errorToast"];
                               }
 
                               $steps["successToast"] =
@@ -8335,9 +8285,8 @@ function PlasmicConnections__RenderFunc(props: {
                                 typeof $steps["successToast"].then ===
                                   "function"
                               ) {
-                                $steps["successToast"] = await $steps[
-                                  "successToast"
-                                ];
+                                $steps["successToast"] =
+                                  await $steps["successToast"];
                               }
 
                               $steps["goToStatusesConnections"] =
@@ -8770,9 +8719,8 @@ function PlasmicConnections__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -8799,8 +8747,8 @@ function PlasmicConnections__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "250px"
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? "300px"
-                        : "300px"
+                          ? "300px"
+                          : "300px"
                     }
                     loading={"lazy"}
                     src={{
@@ -8874,9 +8822,8 @@ function PlasmicConnections__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -8903,8 +8850,8 @@ function PlasmicConnections__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "250px"
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? "300px"
-                        : "300px"
+                          ? "300px"
+                          : "300px"
                     }
                     loading={"lazy"}
                     src={{
@@ -8959,9 +8906,8 @@ function PlasmicConnections__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -9035,9 +8981,8 @@ function PlasmicConnections__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -9064,8 +9009,8 @@ function PlasmicConnections__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "250px"
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? "300px"
-                        : "300px"
+                          ? "300px"
+                          : "300px"
                     }
                     loading={"lazy"}
                     src={{
@@ -9120,9 +9065,8 @@ function PlasmicConnections__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -9245,9 +9189,8 @@ function PlasmicConnections__RenderFunc(props: {
                 typeof $steps["invokeGlobalAction"] === "object" &&
                 typeof $steps["invokeGlobalAction"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
+                $steps["invokeGlobalAction"] =
+                  await $steps["invokeGlobalAction"];
               }
 
               $steps["runCode"] =
@@ -9876,7 +9819,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicConnections__VariantsArgs;
     args?: PlasmicConnections__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicConnections__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicConnections__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicConnections__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
