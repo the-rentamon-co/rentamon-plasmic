@@ -419,8 +419,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                     }
                   })()
                 : hasVariant(globalVariants, "screen", "tablet")
-                ? true
-                : true
+                  ? true
+                  : true
             ) ? (
               <div className={classNames(projectcss.all, sty.freeBox___6NrM)}>
                 <div
@@ -604,9 +604,10 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                                   ) {
                                     $steps[
                                       "goToActivationDuplicateConnection"
-                                    ] = await $steps[
-                                      "goToActivationDuplicateConnection"
-                                    ];
+                                    ] =
+                                      await $steps[
+                                        "goToActivationDuplicateConnection"
+                                      ];
                                   }
 
                                   $steps["connectedToast"] =
@@ -667,9 +668,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                                     typeof $steps["connectedToast"].then ===
                                       "function"
                                   ) {
-                                    $steps["connectedToast"] = await $steps[
-                                      "connectedToast"
-                                    ];
+                                    $steps["connectedToast"] =
+                                      await $steps["connectedToast"];
                                   }
                                 }}
                               >
@@ -1175,9 +1175,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                               typeof $steps["goToConnections"].then ===
                                 "function"
                             ) {
-                              $steps["goToConnections"] = await $steps[
-                                "goToConnections"
-                              ];
+                              $steps["goToConnections"] =
+                                await $steps["goToConnections"];
                             }
                           }}
                         >
@@ -1358,9 +1357,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                             typeof $steps["goToPlatformsConnections"].then ===
                               "function"
                           ) {
-                            $steps["goToPlatformsConnections"] = await $steps[
-                              "goToPlatformsConnections"
-                            ];
+                            $steps["goToPlatformsConnections"] =
+                              await $steps["goToPlatformsConnections"];
                           }
                         }}
                       >
@@ -1483,19 +1481,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                             throw e;
                           }
                         })()
-                      : (() => {
-                          try {
-                            return !$state.apiRequest2.data[0];
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
-                          }
-                        })()
+                      : false
                   ) ? (
                     <div
                       data-plasmic-name={"allConnected"}
@@ -1509,8 +1495,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "54px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "60px"
-                            : "72px"
+                              ? "60px"
+                              : "72px"
                         }
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
@@ -1710,9 +1696,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                 typeof $steps["invokeGlobalAction"] === "object" &&
                 typeof $steps["invokeGlobalAction"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
+                $steps["invokeGlobalAction"] =
+                  await $steps["invokeGlobalAction"];
               }
 
               $steps["updateStep"] = true
@@ -1783,9 +1768,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                 typeof $steps["checkPropTourCookie"] === "object" &&
                 typeof $steps["checkPropTourCookie"].then === "function"
               ) {
-                $steps["checkPropTourCookie"] = await $steps[
-                  "checkPropTourCookie"
-                ];
+                $steps["checkPropTourCookie"] =
+                  await $steps["checkPropTourCookie"];
               }
             }}
           />
@@ -1934,7 +1918,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicWebsitesConnections__VariantsArgs;
     args?: PlasmicWebsitesConnections__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicWebsitesConnections__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicWebsitesConnections__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicWebsitesConnections__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
