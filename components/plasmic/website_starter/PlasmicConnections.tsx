@@ -3996,19 +3996,7 @@ function PlasmicConnections__RenderFunc(props: {
               </AntdModal>
             </div>
           ) : null}
-          {(() => {
-            try {
-              return true;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
+          {false ? (
             <div
               data-plasmic-name={"allConnected"}
               data-plasmic-override={overrides.allConnected}
