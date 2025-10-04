@@ -283,8 +283,8 @@ function PlasmicReservations__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+              ? false
+              : false
       },
       {
         path: "finalModal.open",
@@ -781,9 +781,8 @@ function PlasmicReservations__RenderFunc(props: {
                 typeof $steps["invokeGlobalAction"] === "object" &&
                 typeof $steps["invokeGlobalAction"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
+                $steps["invokeGlobalAction"] =
+                  await $steps["invokeGlobalAction"];
               }
 
               $steps["updateStateVariable"] = true
@@ -833,9 +832,8 @@ function PlasmicReservations__RenderFunc(props: {
                 typeof $steps["updateStateVariable"] === "object" &&
                 typeof $steps["updateStateVariable"].then === "function"
               ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
+                $steps["updateStateVariable"] =
+                  await $steps["updateStateVariable"];
               }
 
               $steps["runCode2"] = true
@@ -913,9 +911,8 @@ function PlasmicReservations__RenderFunc(props: {
                 typeof $steps["removeSmartBookingAlert"] === "object" &&
                 typeof $steps["removeSmartBookingAlert"].then === "function"
               ) {
-                $steps["removeSmartBookingAlert"] = await $steps[
-                  "removeSmartBookingAlert"
-                ];
+                $steps["removeSmartBookingAlert"] =
+                  await $steps["removeSmartBookingAlert"];
               }
 
               $steps["runCode4"] = false
@@ -1190,7 +1187,69 @@ function PlasmicReservations__RenderFunc(props: {
           <div
             data-plasmic-name={"filterSection"}
             data-plasmic-override={overrides.filterSection}
-            className={classNames(projectcss.all, sty.filterSection)}
+            className={classNames(
+              projectcss.all,
+              sty.filterSection,
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return (() => {
+                        if (window.scrollY > 10) {
+                          return "sticky-header scrolled";
+                        } else {
+                          return "sticky-header";
+                        }
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                : "sticky-header"
+            )}
+            onScroll={async event => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (
+                          //  // افزودن یک Event Listener برای اسکرول صفحه
+                          //   window.addEventListener('scroll', () => {
+                          //     // اگر کاربر بیشتر از ۱۰ پیکسل به پایین اسکرول کرده باشد
+                          //     console.log("scroll")
+                          //     if (window.scrollY > 10) {
+                          //       // کلاس .scrolled را به هدر اضافه کن
+                          //       header.classList.add('scrolled');
+                          //     } else {
+                          //       // در غیر این صورت (اگر در بالای صفحه باشد)، کلاس را حذف کن
+                          //       header.classList.remove('scrolled');
+                          //     }
+                          //   });
+
+                          console.log("scroll")
+                        );
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
           >
             <div
               data-plasmic-name={"filterAndSearch"}
@@ -1813,9 +1872,8 @@ function PlasmicReservations__RenderFunc(props: {
                                 typeof $steps["updateFilterMenuOpen"].then ===
                                   "function"
                               ) {
-                                $steps["updateFilterMenuOpen"] = await $steps[
-                                  "updateFilterMenuOpen"
-                                ];
+                                $steps["updateFilterMenuOpen"] =
+                                  await $steps["updateFilterMenuOpen"];
                               }
                             }}
                             src={{
@@ -1843,20 +1901,20 @@ function PlasmicReservations__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "mobile")
                 ? true
                 : hasVariant(globalVariants, "screen", "tablet")
-                ? true
-                : (() => {
-                    try {
-                      return $state.reserveData.data[0].item != "empty";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
+                  ? true
+                  : (() => {
+                      try {
+                        return $state.reserveData.data[0].item != "empty";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return false;
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()
+                    })()
             ) ? (
               <div
                 data-plasmic-name={"titles"}
@@ -1878,8 +1936,8 @@ function PlasmicReservations__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      : "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                        ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                        : "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                   </div>
                 </div>
                 <div
@@ -1897,8 +1955,8 @@ function PlasmicReservations__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0645\u0647\u0645\u0627\u0646"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0645\u0647\u0645\u0627\u0646"
-                      : "\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"}
+                        ? "\u0645\u0647\u0645\u0627\u0646"
+                        : "\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"}
                   </div>
                 </div>
                 <div
@@ -1916,8 +1974,8 @@ function PlasmicReservations__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0648\u0631\u0648\u062f"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0648\u0631\u0648\u062f"
-                      : "\u062a\u0627\u0631\u06cc\u062e \u0648\u0631\u0648\u062f"}
+                        ? "\u0648\u0631\u0648\u062f"
+                        : "\u062a\u0627\u0631\u06cc\u062e \u0648\u0631\u0648\u062f"}
                   </div>
                 </div>
                 <div
@@ -2035,9 +2093,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
 
                       $steps["updateModalOpen2"] = true
@@ -2071,9 +2128,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["updateModalOpen2"] === "object" &&
                         typeof $steps["updateModalOpen2"].then === "function"
                       ) {
-                        $steps["updateModalOpen2"] = await $steps[
-                          "updateModalOpen2"
-                        ];
+                        $steps["updateModalOpen2"] =
+                          await $steps["updateModalOpen2"];
                       }
                     }}
                   >
@@ -2313,9 +2369,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
 
                       $steps["updateModalOpen3"] = true
@@ -2352,9 +2407,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["updateModalOpen3"] === "object" &&
                         typeof $steps["updateModalOpen3"].then === "function"
                       ) {
-                        $steps["updateModalOpen3"] = await $steps[
-                          "updateModalOpen3"
-                        ];
+                        $steps["updateModalOpen3"] =
+                          await $steps["updateModalOpen3"];
                       }
 
                       $steps["updateModalOpen5"] = true
@@ -2382,9 +2436,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["updateModalOpen5"] === "object" &&
                         typeof $steps["updateModalOpen5"].then === "function"
                       ) {
-                        $steps["updateModalOpen5"] = await $steps[
-                          "updateModalOpen5"
-                        ];
+                        $steps["updateModalOpen5"] =
+                          await $steps["updateModalOpen5"];
                       }
                     }}
                   >
@@ -2715,9 +2768,8 @@ function PlasmicReservations__RenderFunc(props: {
                           typeof $steps["goToBookingInNewTab"].then ===
                             "function"
                         ) {
-                          $steps["goToBookingInNewTab"] = await $steps[
-                            "goToBookingInNewTab"
-                          ];
+                          $steps["goToBookingInNewTab"] =
+                            await $steps["goToBookingInNewTab"];
                         }
                       }}
                     >
@@ -2853,11 +2905,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     JSON.stringify(reservations)
                                   );
                                 }
-                                $state.reservations = reservations;
-                                return console.log(
-                                  "$state.reservations",
-                                  $state.reservations
-                                );
+                                return ($state.reservations = reservations);
                               })();
                             }
                           };
@@ -3315,9 +3363,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["updateReserveDataPage"].then ===
                           "function"
                       ) {
-                        $steps["updateReserveDataPage"] = await $steps[
-                          "updateReserveDataPage"
-                        ];
+                        $steps["updateReserveDataPage"] =
+                          await $steps["updateReserveDataPage"];
                       }
                     }).apply(null, eventArgs);
                   },
@@ -3534,9 +3581,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateReservations"] === "object" &&
                       typeof $steps["updateReservations"].then === "function"
                     ) {
-                      $steps["updateReservations"] = await $steps[
-                        "updateReservations"
-                      ];
+                      $steps["updateReservations"] =
+                        await $steps["updateReservations"];
                     }
                   }}
                 >
@@ -3923,9 +3969,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["invokeGlobalAction"] === "object" &&
                       typeof $steps["invokeGlobalAction"].then === "function"
                     ) {
-                      $steps["invokeGlobalAction"] = await $steps[
-                        "invokeGlobalAction"
-                      ];
+                      $steps["invokeGlobalAction"] =
+                        await $steps["invokeGlobalAction"];
                     }
 
                     $steps["updateStateVariable"] = true
@@ -3958,9 +4003,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateStateVariable"] === "object" &&
                       typeof $steps["updateStateVariable"].then === "function"
                     ) {
-                      $steps["updateStateVariable"] = await $steps[
-                        "updateStateVariable"
-                      ];
+                      $steps["updateStateVariable"] =
+                        await $steps["updateStateVariable"];
                     }
 
                     $steps["updateFinalModalOpen"] = true
@@ -3993,9 +4037,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateFinalModalOpen"] === "object" &&
                       typeof $steps["updateFinalModalOpen"].then === "function"
                     ) {
-                      $steps["updateFinalModalOpen"] = await $steps[
-                        "updateFinalModalOpen"
-                      ];
+                      $steps["updateFinalModalOpen"] =
+                        await $steps["updateFinalModalOpen"];
                     }
                   }}
                 >
@@ -4096,9 +4139,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["invokeGlobalAction"] === "object" &&
                       typeof $steps["invokeGlobalAction"].then === "function"
                     ) {
-                      $steps["invokeGlobalAction"] = await $steps[
-                        "invokeGlobalAction"
-                      ];
+                      $steps["invokeGlobalAction"] =
+                        await $steps["invokeGlobalAction"];
                     }
 
                     $steps["updateStateVariable"] = true
@@ -4131,9 +4173,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateStateVariable"] === "object" &&
                       typeof $steps["updateStateVariable"].then === "function"
                     ) {
-                      $steps["updateStateVariable"] = await $steps[
-                        "updateStateVariable"
-                      ];
+                      $steps["updateStateVariable"] =
+                        await $steps["updateStateVariable"];
                     }
 
                     $steps["updateFinalModalOpen"] = true
@@ -4166,9 +4207,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateFinalModalOpen"] === "object" &&
                       typeof $steps["updateFinalModalOpen"].then === "function"
                     ) {
-                      $steps["updateFinalModalOpen"] = await $steps[
-                        "updateFinalModalOpen"
-                      ];
+                      $steps["updateFinalModalOpen"] =
+                        await $steps["updateFinalModalOpen"];
                     }
                   }}
                 >
@@ -4264,9 +4304,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["invokeGlobalAction"] === "object" &&
                       typeof $steps["invokeGlobalAction"].then === "function"
                     ) {
-                      $steps["invokeGlobalAction"] = await $steps[
-                        "invokeGlobalAction"
-                      ];
+                      $steps["invokeGlobalAction"] =
+                        await $steps["invokeGlobalAction"];
                     }
 
                     $steps["updateStateVariable"] = true
@@ -4299,9 +4338,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateStateVariable"] === "object" &&
                       typeof $steps["updateStateVariable"].then === "function"
                     ) {
-                      $steps["updateStateVariable"] = await $steps[
-                        "updateStateVariable"
-                      ];
+                      $steps["updateStateVariable"] =
+                        await $steps["updateStateVariable"];
                     }
 
                     $steps["updateFinalModalOpen"] = true
@@ -4334,9 +4372,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateFinalModalOpen"] === "object" &&
                       typeof $steps["updateFinalModalOpen"].then === "function"
                     ) {
-                      $steps["updateFinalModalOpen"] = await $steps[
-                        "updateFinalModalOpen"
-                      ];
+                      $steps["updateFinalModalOpen"] =
+                        await $steps["updateFinalModalOpen"];
                     }
                   }}
                 >
@@ -4409,9 +4446,8 @@ function PlasmicReservations__RenderFunc(props: {
                     typeof $steps["updateAcceptModalOpen"] === "object" &&
                     typeof $steps["updateAcceptModalOpen"].then === "function"
                   ) {
-                    $steps["updateAcceptModalOpen"] = await $steps[
-                      "updateAcceptModalOpen"
-                    ];
+                    $steps["updateAcceptModalOpen"] =
+                      await $steps["updateAcceptModalOpen"];
                   }
 
                   $steps["updateConfirmedOpen"] = true
@@ -4445,9 +4481,8 @@ function PlasmicReservations__RenderFunc(props: {
                     typeof $steps["updateConfirmedOpen"] === "object" &&
                     typeof $steps["updateConfirmedOpen"].then === "function"
                   ) {
-                    $steps["updateConfirmedOpen"] = await $steps[
-                      "updateConfirmedOpen"
-                    ];
+                    $steps["updateConfirmedOpen"] =
+                      await $steps["updateConfirmedOpen"];
                   }
                 }}
                 submitsForm={true}
@@ -4532,9 +4567,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["updateConfirmedOpen"] === "object" &&
                         typeof $steps["updateConfirmedOpen"].then === "function"
                       ) {
-                        $steps["updateConfirmedOpen"] = await $steps[
-                          "updateConfirmedOpen"
-                        ];
+                        $steps["updateConfirmedOpen"] =
+                          await $steps["updateConfirmedOpen"];
                       }
                     }}
                     src={{
@@ -5184,9 +5218,8 @@ function PlasmicReservations__RenderFunc(props: {
                     typeof $steps["updateModalOpen3"] === "object" &&
                     typeof $steps["updateModalOpen3"].then === "function"
                   ) {
-                    $steps["updateModalOpen3"] = await $steps[
-                      "updateModalOpen3"
-                    ];
+                    $steps["updateModalOpen3"] =
+                      await $steps["updateModalOpen3"];
                   }
 
                   $steps["updateModalOpen"] = true
@@ -5253,9 +5286,8 @@ function PlasmicReservations__RenderFunc(props: {
                     typeof $steps["updateModalOpen2"] === "object" &&
                     typeof $steps["updateModalOpen2"].then === "function"
                   ) {
-                    $steps["updateModalOpen2"] = await $steps[
-                      "updateModalOpen2"
-                    ];
+                    $steps["updateModalOpen2"] =
+                      await $steps["updateModalOpen2"];
                   }
                 }}
               >
@@ -5342,9 +5374,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateSelectedAction"] === "object" &&
                       typeof $steps["updateSelectedAction"].then === "function"
                     ) {
-                      $steps["updateSelectedAction"] = await $steps[
-                        "updateSelectedAction"
-                      ];
+                      $steps["updateSelectedAction"] =
+                        await $steps["updateSelectedAction"];
                     }
 
                     $steps["updateConfirmedOpen"] = true
@@ -5377,9 +5408,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateConfirmedOpen"] === "object" &&
                       typeof $steps["updateConfirmedOpen"].then === "function"
                     ) {
-                      $steps["updateConfirmedOpen"] = await $steps[
-                        "updateConfirmedOpen"
-                      ];
+                      $steps["updateConfirmedOpen"] =
+                        await $steps["updateConfirmedOpen"];
                     }
 
                     $steps["updateAcceptModalOpen"] = true
@@ -5413,9 +5443,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateAcceptModalOpen"] === "object" &&
                       typeof $steps["updateAcceptModalOpen"].then === "function"
                     ) {
-                      $steps["updateAcceptModalOpen"] = await $steps[
-                        "updateAcceptModalOpen"
-                      ];
+                      $steps["updateAcceptModalOpen"] =
+                        await $steps["updateAcceptModalOpen"];
                     }
                   }}
                   size={"medium"}
@@ -5506,9 +5535,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateConfirmedOpen"] === "object" &&
                       typeof $steps["updateConfirmedOpen"].then === "function"
                     ) {
-                      $steps["updateConfirmedOpen"] = await $steps[
-                        "updateConfirmedOpen"
-                      ];
+                      $steps["updateConfirmedOpen"] =
+                        await $steps["updateConfirmedOpen"];
                     }
                   }}
                   size={"medium"}
@@ -5866,8 +5894,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       );
                                       if ($state.settlement2.checked) {
                                         queryParams.push(
-                                          `is_settled=${!$state.settlement2
-                                            .checked}&status=Past`
+                                          `is_settled=${!$state.settlement2.checked}&status=Past`
                                         );
                                       }
                                       if ($state.confierm2.checked) {
@@ -5875,9 +5902,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       } else if ($state.cancelled3.checked) {
                                         queryParams.push(`status=Cancelled`);
                                       }
-                                      $state.filterUrl = `${baseUrl}?${queryParams.join(
-                                        "&"
-                                      )}`;
+                                      $state.filterUrl = `${baseUrl}?${queryParams.join("&")}`;
                                       return $state.filterUrl;
                                     })();
                                   }
@@ -5952,9 +5977,8 @@ function PlasmicReservations__RenderFunc(props: {
                             typeof $steps["updateReservations"].then ===
                               "function"
                           ) {
-                            $steps["updateReservations"] = await $steps[
-                              "updateReservations"
-                            ];
+                            $steps["updateReservations"] =
+                              await $steps["updateReservations"];
                           }
 
                           $steps["invokeGlobalAction"] = true
@@ -5977,9 +6001,8 @@ function PlasmicReservations__RenderFunc(props: {
                             typeof $steps["invokeGlobalAction"].then ===
                               "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
+                            $steps["invokeGlobalAction"] =
+                              await $steps["invokeGlobalAction"];
                           }
 
                           $steps["removeSearch"] = true
@@ -5999,9 +6022,8 @@ function PlasmicReservations__RenderFunc(props: {
                             typeof $steps["removeSearch"] === "object" &&
                             typeof $steps["removeSearch"].then === "function"
                           ) {
-                            $steps["removeSearch"] = await $steps[
-                              "removeSearch"
-                            ];
+                            $steps["removeSearch"] =
+                              await $steps["removeSearch"];
                           }
                         }).apply(null, eventArgs);
                       }}
@@ -6063,8 +6085,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       $state.cancelled3.checked = false;
-                                      return ($state.settlement2.checked =
-                                        false);
+                                      return ($state.settlement2.checked = false);
                                     })();
                                   }
                                 };
@@ -6095,8 +6116,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       );
                                       if ($state.settlement2.checked) {
                                         queryParams.push(
-                                          `is_settled=${!$state.settlement2
-                                            .checked}`
+                                          `is_settled=${!$state.settlement2.checked}`
                                         );
                                       }
                                       if ($state.confierm2.checked) {
@@ -6104,9 +6124,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       } else if ($state.cancelled3.checked) {
                                         queryParams.push(`status=Cancelled`);
                                       }
-                                      $state.filterUrl = `${baseUrl}?${queryParams.join(
-                                        "&"
-                                      )}`;
+                                      $state.filterUrl = `${baseUrl}?${queryParams.join("&")}`;
                                       return $state.filterUrl;
                                     })();
                                   }
@@ -6155,9 +6173,8 @@ function PlasmicReservations__RenderFunc(props: {
                             typeof $steps["sendRequests"] === "object" &&
                             typeof $steps["sendRequests"].then === "function"
                           ) {
-                            $steps["sendRequests"] = await $steps[
-                              "sendRequests"
-                            ];
+                            $steps["sendRequests"] =
+                              await $steps["sendRequests"];
                           }
 
                           $steps["updateReservations"] = true
@@ -6182,9 +6199,8 @@ function PlasmicReservations__RenderFunc(props: {
                             typeof $steps["updateReservations"].then ===
                               "function"
                           ) {
-                            $steps["updateReservations"] = await $steps[
-                              "updateReservations"
-                            ];
+                            $steps["updateReservations"] =
+                              await $steps["updateReservations"];
                           }
 
                           $steps["showToast"] = true
@@ -6265,8 +6281,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       $state.confierm2.checked = false;
-                                      return ($state.settlement2.checked =
-                                        false);
+                                      return ($state.settlement2.checked = false);
                                     })();
                                   }
                                 };
@@ -6297,8 +6312,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       );
                                       if ($state.settlement2.checked) {
                                         queryParams.push(
-                                          `is_settled=${!$state.settlement2
-                                            .checked}`
+                                          `is_settled=${!$state.settlement2.checked}`
                                         );
                                       }
                                       if ($state.confierm2.checked) {
@@ -6306,9 +6320,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       } else if ($state.cancelled3.checked) {
                                         queryParams.push(`status=Cancelled`);
                                       }
-                                      $state.filterUrl = `${baseUrl}?${queryParams.join(
-                                        "&"
-                                      )}`;
+                                      $state.filterUrl = `${baseUrl}?${queryParams.join("&")}`;
                                       return $state.filterUrl;
                                     })();
                                   }
@@ -6357,9 +6369,8 @@ function PlasmicReservations__RenderFunc(props: {
                             typeof $steps["sendRequests"] === "object" &&
                             typeof $steps["sendRequests"].then === "function"
                           ) {
-                            $steps["sendRequests"] = await $steps[
-                              "sendRequests"
-                            ];
+                            $steps["sendRequests"] =
+                              await $steps["sendRequests"];
                           }
 
                           $steps["updateReservations"] = true
@@ -6384,9 +6395,8 @@ function PlasmicReservations__RenderFunc(props: {
                             typeof $steps["updateReservations"].then ===
                               "function"
                           ) {
-                            $steps["updateReservations"] = await $steps[
-                              "updateReservations"
-                            ];
+                            $steps["updateReservations"] =
+                              await $steps["updateReservations"];
                           }
 
                           $steps["showToast"] = true
@@ -6428,9 +6438,8 @@ function PlasmicReservations__RenderFunc(props: {
                             typeof $steps["removeSearch"] === "object" &&
                             typeof $steps["removeSearch"].then === "function"
                           ) {
-                            $steps["removeSearch"] = await $steps[
-                              "removeSearch"
-                            ];
+                            $steps["removeSearch"] =
+                              await $steps["removeSearch"];
                           }
                         }).apply(null, eventArgs);
                       }}
@@ -6529,9 +6538,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["removeAllFilter"] === "object" &&
                         typeof $steps["removeAllFilter"].then === "function"
                       ) {
-                        $steps["removeAllFilter"] = await $steps[
-                          "removeAllFilter"
-                        ];
+                        $steps["removeAllFilter"] =
+                          await $steps["removeAllFilter"];
                       }
 
                       $steps["generateUrl"] = true
@@ -6546,8 +6554,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   queryParams.push(`limit=${$state.dataSize}`);
                                   if ($state.settlement2.checked) {
                                     queryParams.push(
-                                      `is_settled=${!$state.settlement2
-                                        .checked}`
+                                      `is_settled=${!$state.settlement2.checked}`
                                     );
                                   }
                                   if ($state.confierm2.checked) {
@@ -6555,9 +6562,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   } else if ($state.cancelled3.checked) {
                                     queryParams.push(`status=Cancelled`);
                                   }
-                                  $state.filterUrl = `${baseUrl}?${queryParams.join(
-                                    "&"
-                                  )}`;
+                                  $state.filterUrl = `${baseUrl}?${queryParams.join("&")}`;
                                   return $state.filterUrl;
                                 })();
                               }
@@ -6631,9 +6636,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["updateReservations"] === "object" &&
                         typeof $steps["updateReservations"].then === "function"
                       ) {
-                        $steps["updateReservations"] = await $steps[
-                          "updateReservations"
-                        ];
+                        $steps["updateReservations"] =
+                          await $steps["updateReservations"];
                       }
 
                       $steps["invokeGlobalAction"] = true
@@ -6656,9 +6660,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction"] === "object" &&
                         typeof $steps["invokeGlobalAction"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["invokeGlobalAction"] =
+                          await $steps["invokeGlobalAction"];
                       }
 
                       $steps["updateShowFilter"] = true
@@ -6692,9 +6695,8 @@ function PlasmicReservations__RenderFunc(props: {
                         typeof $steps["updateShowFilter"] === "object" &&
                         typeof $steps["updateShowFilter"].then === "function"
                       ) {
-                        $steps["updateShowFilter"] = await $steps[
-                          "updateShowFilter"
-                        ];
+                        $steps["updateShowFilter"] =
+                          await $steps["updateShowFilter"];
                       }
                     }}
                   >
@@ -6833,9 +6835,8 @@ function PlasmicReservations__RenderFunc(props: {
                       typeof $steps["updateBookingPricingNotify"].then ===
                         "function"
                     ) {
-                      $steps["updateBookingPricingNotify"] = await $steps[
-                        "updateBookingPricingNotify"
-                      ];
+                      $steps["updateBookingPricingNotify"] =
+                        await $steps["updateBookingPricingNotify"];
                     }
 
                     $steps["runCode"] = true
@@ -7214,7 +7215,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicReservations__VariantsArgs;
     args?: PlasmicReservations__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicReservations__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicReservations__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicReservations__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
