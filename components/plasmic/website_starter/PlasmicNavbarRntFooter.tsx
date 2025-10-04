@@ -187,7 +187,26 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                return true;
+                function getCookieValue(cookieName) {
+                  const cookies = document.cookie
+                    .split(";")
+                    .map(cookie => cookie.trim());
+                  for (const cookie of cookies) {
+                    const [name, value] = cookie.split("=");
+                    if (name === cookieName) {
+                      return value;
+                    }
+                  }
+                  return null;
+                }
+                function isNotifyEnabled() {
+                  const isNotify =
+                    localStorage.getItem("merge_reservations") !== null;
+                  const hasFirstVisit = getCookieValue("first_visit") !== null;
+                  const hasPropTour = getCookieValue("prop_tour") !== null;
+                  return isNotify || hasFirstVisit || hasPropTour;
+                }
+                return isNotifyEnabled();
               })();
             } catch (e) {
               if (
@@ -342,20 +361,20 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                     }
                   })()
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return $props.navPage == "menu";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
+                  ? (() => {
+                      try {
+                        return $props.navPage == "menu";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return false;
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()
-                : true
+                    })()
+                  : true
             ) ? (
               <div
                 data-plasmic-name={"top4"}
@@ -394,20 +413,20 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                     }
                   })()
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return $props.navPage !== "menu";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
+                  ? (() => {
+                      try {
+                        return $props.navPage !== "menu";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()
-                : true
+                    })()
+                  : true
             ) ? (
               <div
                 data-plasmic-name={"normMenu"}
@@ -531,9 +550,8 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 typeof $steps["invokeGlobalAction"] === "object" &&
                 typeof $steps["invokeGlobalAction"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
+                $steps["invokeGlobalAction"] =
+                  await $steps["invokeGlobalAction"];
               }
 
               $steps["goToPanelCalendar"] = false
@@ -866,11 +884,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
             className={classNames(
               projectcss.all,
               sty.props,
-              `clickable${
-                $state.isTheFirstVisit == true
-                  ? "blinkBorderTourGuide clickable"
-                  : "clickable"
-              }`
+              `clickable${$state.isTheFirstVisit == true ? "blinkBorderTourGuide clickable" : "clickable"}`
             )}
             onClick={async event => {
               const $steps = {};
@@ -1262,7 +1276,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicNavbarRntFooter__VariantsArgs;
     args?: PlasmicNavbarRntFooter__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicNavbarRntFooter__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicNavbarRntFooter__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicNavbarRntFooter__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

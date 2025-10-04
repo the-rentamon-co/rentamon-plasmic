@@ -1465,22 +1465,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                   ) : null}
                   {(
                     hasVariant(globalVariants, "screen", "mobile")
-                      ? (() => {
-                          try {
-                            return !(
-                              $state.apiRequest2.data &&
-                              $state.apiRequest2.data.length
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })()
+                      ? false
                       : false
                   ) ? (
                     <div

@@ -256,9 +256,7 @@ function Plasmicتالار__RenderFunc(props: {
             try {
               return (() => {
                 function isNotifyEnabled() {
-                  return (
-                    localStorage.getItem("is_transactions_notify") !== null
-                  );
+                  return localStorage.getItem("merge_reservations") !== null;
                 }
                 if (isNotifyEnabled()) {
                   return true;
@@ -582,8 +580,8 @@ function Plasmicتالار__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               undefined,
-                              "\u062d\u0627\u0644\u0627 \u062f\u0631 \u0628\u062e\u0634 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062b\u0628\u062a \u06a9\u0631\u062f\u06cc \u0631\u0648 \u00ab\u0648\u06cc\u0631\u0627\u06cc\u0634\u00bb \u06cc\u0627 \u00ab\u0644\u063a\u0648\u00bb \u06a9\u0646\u06cc",
-                              undefined,
+                              "\u0628\u0647 \u0632\u0648\u062f\u06cc \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0645\u0627\u0645\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0633\u062a\u06cc \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631\u062a \u0631\u0648 \u062f\u0631 \u0628\u062e\u0634 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb \u0628\u0628\u06cc\u0646\u06cc.",
+                              "top-center",
                               6000
                             ]
                           };
@@ -598,9 +596,8 @@ function Plasmicتالار__RenderFunc(props: {
                       typeof $steps["invokeGlobalAction"] === "object" &&
                       typeof $steps["invokeGlobalAction"].then === "function"
                     ) {
-                      $steps["invokeGlobalAction"] = await $steps[
-                        "invokeGlobalAction"
-                      ];
+                      $steps["invokeGlobalAction"] =
+                        await $steps["invokeGlobalAction"];
                     }
 
                     $steps["runCode"] = true
@@ -609,7 +606,10 @@ function Plasmicتالار__RenderFunc(props: {
                             customFunction: async () => {
                               return (() => {
                                 function enableNotify() {
-                                  localStorage.setItem("is_notify", "true");
+                                  localStorage.setItem(
+                                    "merge_reservations",
+                                    "true"
+                                  );
                                 }
                                 return enableNotify();
                               })();
@@ -834,50 +834,50 @@ function Plasmicتالار__RenderFunc(props: {
                           }
                         })()
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? (() => {
-                          try {
-                            return (() => {
-                              if ($props.isFirstVisit == true) {
-                                return "";
+                        ? (() => {
+                            try {
+                              return (() => {
+                                if ($props.isFirstVisit == true) {
+                                  return "";
+                                }
+                                return parseInt(
+                                  $state.getUserBalance.data.balance
+                                ) < 100000
+                                  ? "blinkBorderWallet clickable"
+                                  : "clickable";
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
                               }
-                              return parseInt(
-                                $state.getUserBalance.data.balance
-                              ) < 100000
-                                ? "blinkBorderWallet clickable"
-                                : "clickable";
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()
-                      : (() => {
-                          try {
-                            return (
-                              // if ($props.isFirstVisit == true) {
-                              //   return ""
-                              // }
-                              parseInt(
-                                $state.profile2.data.user_info.balance_info
-                              ) < 100000
-                                ? "blinkBorderWallet clickable"
-                                : "clickable"
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
+                          })()
+                        : (() => {
+                            try {
+                              return (
+                                // if ($props.isFirstVisit == true) {
+                                //   return ""
+                                // }
+                                parseInt(
+                                  $state.profile2.data.user_info.balance_info
+                                ) < 100000
+                                  ? "blinkBorderWallet clickable"
+                                  : "clickable"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()
+                          })()
                   )}
                   onClick={async event => {
                     const $steps = {};
@@ -1100,9 +1100,8 @@ function Plasmicتالار__RenderFunc(props: {
                       typeof $steps["goToChannelManager"] === "object" &&
                       typeof $steps["goToChannelManager"].then === "function"
                     ) {
-                      $steps["goToChannelManager"] = await $steps[
-                        "goToChannelManager"
-                      ];
+                      $steps["goToChannelManager"] =
+                        await $steps["goToChannelManager"];
                     }
                   }}
                 >
@@ -1574,9 +1573,8 @@ function Plasmicتالار__RenderFunc(props: {
                     typeof $steps["invokeGlobalAction"] === "object" &&
                     typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
                   }
                 }}
               >
@@ -2314,9 +2312,8 @@ function Plasmicتالار__RenderFunc(props: {
                   typeof $steps["invokeGlobalAction"] === "object" &&
                   typeof $steps["invokeGlobalAction"].then === "function"
                 ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
+                  $steps["invokeGlobalAction"] =
+                    await $steps["invokeGlobalAction"];
                 }
 
                 $steps["updateStateVariable"] = true
@@ -2371,9 +2368,8 @@ function Plasmicتالار__RenderFunc(props: {
                   typeof $steps["updateStateVariable"] === "object" &&
                   typeof $steps["updateStateVariable"].then === "function"
                 ) {
-                  $steps["updateStateVariable"] = await $steps[
-                    "updateStateVariable"
-                  ];
+                  $steps["updateStateVariable"] =
+                    await $steps["updateStateVariable"];
                 }
 
                 $steps["runCode3"] = false
@@ -2541,9 +2537,8 @@ function Plasmicتالار__RenderFunc(props: {
                       typeof $steps["updateModalOpen"] === "object" &&
                       typeof $steps["updateModalOpen"].then === "function"
                     ) {
-                      $steps["updateModalOpen"] = await $steps[
-                        "updateModalOpen"
-                      ];
+                      $steps["updateModalOpen"] =
+                        await $steps["updateModalOpen"];
                     }
 
                     $steps["goToTransactions"] = true
@@ -2568,9 +2563,8 @@ function Plasmicتالار__RenderFunc(props: {
                       typeof $steps["goToTransactions"] === "object" &&
                       typeof $steps["goToTransactions"].then === "function"
                     ) {
-                      $steps["goToTransactions"] = await $steps[
-                        "goToTransactions"
-                      ];
+                      $steps["goToTransactions"] =
+                        await $steps["goToTransactions"];
                     }
                   }}
                 >
@@ -2643,9 +2637,8 @@ function Plasmicتالار__RenderFunc(props: {
                       typeof $steps["updateModalOpen"] === "object" &&
                       typeof $steps["updateModalOpen"].then === "function"
                     ) {
-                      $steps["updateModalOpen"] = await $steps[
-                        "updateModalOpen"
-                      ];
+                      $steps["updateModalOpen"] =
+                        await $steps["updateModalOpen"];
                     }
                   }}
                 >
@@ -2973,7 +2966,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicتالار__VariantsArgs;
     args?: Plasmicتالار__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicتالار__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicتالار__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicتالار__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

@@ -542,7 +542,7 @@ function PlasmicReservations__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
-        path: "bookingPricingNotify",
+        path: "notify",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
@@ -915,13 +915,15 @@ function PlasmicReservations__RenderFunc(props: {
                   await $steps["removeSmartBookingAlert"];
               }
 
-              $steps["runCode4"] = false
+              $steps["runCode4"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          if (!document.cookie.includes("pricing_notify")) {
-                            return ($state.bookingPricingNotify = true);
+                          if (
+                            !document.cookie.includes("reservations_notify")
+                          ) {
+                            return ($state.notify = true);
                           }
                         })();
                       }
@@ -5569,7 +5571,7 @@ function PlasmicReservations__RenderFunc(props: {
                     if ($state.showFilter == true) {
                       return "modal-overlay open";
                     }
-                    if ($state.bookingPricingNotify == true) {
+                    if ($state.notify == true) {
                       return "modal-overlay open";
                     }
                     return "modal-overlay";
@@ -6723,7 +6725,7 @@ function PlasmicReservations__RenderFunc(props: {
                 sty.newbookingpricingalert,
                 (() => {
                   try {
-                    return $state.bookingPricingNotify
+                    return $state.notify
                       ? "modal-content open"
                       : "modal-content";
                   } catch (e) {
@@ -6751,8 +6753,8 @@ function PlasmicReservations__RenderFunc(props: {
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u062c\u062f\u0627\u06af\u0627\u0646\u0647 \u0628\u0628\u06cc\u0646\u06cc:"
-                        : "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u062c\u062f\u0627\u06af\u0627\u0646\u0647 \u0628\u0628\u06cc\u0646\u06cc:\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"}
+                        ? "\u0628\u0647 \u0632\u0648\u062f\u06cc \u0627\u06cc\u0646\u200c\u062c\u0627 \u0647\u0645\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0633\u062a\u06cc \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0648 \u06cc\u06a9\u062c\u0627 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc."
+                        : "\u0628\u0647 \u0632\u0648\u062f\u06cc \u0627\u06cc\u0646\u200c\u062c\u0627 \u0647\u0645\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0633\u062a\u06cc \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0648 \u06cc\u06a9\u062c\u0627 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc."}
                     </div>
                     {(
                       hasVariant(globalVariants, "screen", "mobile")
@@ -6807,7 +6809,7 @@ function PlasmicReservations__RenderFunc(props: {
                           const actionArgs = {
                             variable: {
                               objRoot: $state,
-                              variablePath: ["bookingPricingNotify"]
+                              variablePath: ["notify"]
                             },
                             operation: 4
                           };
@@ -6860,7 +6862,11 @@ function PlasmicReservations__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie("pricing_notify", "true", 12);
+                                return setCookie(
+                                  "reservations_notify",
+                                  "true",
+                                  24
+                                );
                               })();
                             }
                           };
