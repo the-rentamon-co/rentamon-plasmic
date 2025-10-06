@@ -3282,7 +3282,7 @@
 }
 @media (max-width: 500px) {
   .freeBox__ikrTd {
-    padding: 12px;
+    padding: 12px 12px 39px;
   }
 }
 .text__wphKv {
@@ -3295,8 +3295,9 @@
 }
 @media (max-width: 500px) {
   .text__wphKv {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 17px;
+    line-height: 1.8;
   }
 }
 .text___7YjDt {
