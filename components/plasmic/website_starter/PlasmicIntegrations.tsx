@@ -91,8 +91,8 @@ export type PlasmicIntegrations__OverridesType = {
   introApi?: Flex__<"div">;
   introApiTitle?: Flex__<"div">;
   introApiCaption?: Flex__<"div">;
-  platforms?: Flex__<"div">;
   platformsTitle?: Flex__<"div">;
+  platforms?: Flex__<"div">;
   platformNames4?: Flex__<"div">;
   platformNames5?: Flex__<"div">;
   platformNames6?: Flex__<"div">;
@@ -114,6 +114,9 @@ export type PlasmicIntegrations__OverridesType = {
   platformNames19?: Flex__<"div">;
   platformNames20?: Flex__<"div">;
   platformNames21?: Flex__<"div">;
+  platformNames22?: Flex__<"div">;
+  platformNames23?: Flex__<"div">;
+  platformNames24?: Flex__<"div">;
   benefits?: Flex__<"div">;
   benefitsTitle?: Flex__<"div">;
   benefitsCaption?: Flex__<"div">;
@@ -121,10 +124,8 @@ export type PlasmicIntegrations__OverridesType = {
   autoSyncGif?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
   bot?: Flex__<"div">;
-  more?: Flex__<"div">;
-  moreDecs?: Flex__<"div">;
-  screenshot?: Flex__<"div">;
   apiAccess?: Flex__<"div">;
+  moreDecs?: Flex__<"div">;
   apidog?: Flex__<"div">;
   requestDemo?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
@@ -279,7 +280,24 @@ function PlasmicIntegrations__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0627\u06cc\u0646 API\u060c \u0634\u0645\u0627 \u0631\u0648 \u0628\u0647 \u062c\u0645\u0639 \u0628\u0632\u0631\u06af\u062a\u0631\u06cc\u0646 \u0627\u06a9\u0648\u0633\u06cc\u0633\u062a\u0645 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0648\u0627\u0631\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0627\u06cc\u0646 integration \u06a9\u0627\u0631\u0647\u0627\u06cc\u06cc \u0645\u062b\u0644 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u0648\u062c\u0648\u062f\u06cc (inventory) \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u062f\u0631 \u067e\u0644\u062a\u0641\u0631\u0645 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06cc\u0627 \u0633\u0627\u06cc\u062a \u0634\u062e\u0635\u06cc \u0634\u0645\u0627 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647."
+                    "\u0641\u0631\u0642\u06cc \u0646\u0645\u06cc\u200c\u06a9\u0646\u0647 \u06a9\u0647 \u0633\u0627\u06cc\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0648\u0645\u06af\u0631\u062f\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc \u0648 \u06cc\u0627 \u067e\u0644\u062a\u0641\u0631\u0645 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0627\u06cc\u0646 API \u0634\u0645\u0627 \u0631\u0648 \u0628\u0647 \u062c\u0645\u0639 \u0628\u0632\u0631\u06af\u062a\u0631\u06cc\u0646 \u0627\u06a9\u0648\u0633\u06cc\u0633\u062a\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627\u06cc \u0622\u0646\u0644\u0627\u06cc\u0646 \u06a9\u0634\u0648\u0631 \u0648\u0627\u0631\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0627\u06cc\u0646 integration \u06a9\u0627\u0631\u0647\u0627\u06cc\u06cc \u0645\u062b\u0644 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u0648\u062c\u0648\u062f\u06cc (inventory) \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u062f\u0631 \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634\u060c \u0633\u0627\u062f\u0647 \u0648 \u0633\u0631\u06cc\u0639 \u0645\u06cc\u200c\u06a9\u0646\u0647."
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"platformsTitle"}
+                data-plasmic-override={overrides.platformsTitle}
+                className={classNames(projectcss.all, sty.platformsTitle)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__eWeM1
+                  )}
+                >
+                  {
+                    "\u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0633\u0631\u0648\u06cc\u0633\u200c\u062f\u0647\u06cc \u062f\u0627\u0631\u0647:"
                   }
                 </div>
               </div>
@@ -288,23 +306,6 @@ function PlasmicIntegrations__RenderFunc(props: {
                 data-plasmic-override={overrides.platforms}
                 className={classNames(projectcss.all, sty.platforms)}
               >
-                <div
-                  data-plasmic-name={"platformsTitle"}
-                  data-plasmic-override={overrides.platformsTitle}
-                  className={classNames(projectcss.all, sty.platformsTitle)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eWeM1
-                    )}
-                  >
-                    {
-                      "\u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0633\u0631\u0648\u06cc\u0633\u200c\u062f\u0647\u06cc \u062f\u0627\u0631\u0647:"
-                    }
-                  </div>
-                </div>
                 <div
                   className={classNames(projectcss.all, sty.freeBox___9Inv7)}
                 >
@@ -322,23 +323,33 @@ function PlasmicIntegrations__RenderFunc(props: {
                         alt={""}
                         className={classNames(sty.img__qc2P6)}
                         displayHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxWidth={"100%"}
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image62.png",
@@ -381,7 +392,15 @@ function PlasmicIntegrations__RenderFunc(props: {
                                 sty.link__bxhI3
                               )}
                               component={Link}
-                              href={"jajiga.com"}
+                              href={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "https://jajiga.com"
+                                  : "https://jajiga.com"
+                              }
                               platform={"nextjs"}
                             >
                               {"jajiga.com\r"}
@@ -406,27 +425,39 @@ function PlasmicIntegrations__RenderFunc(props: {
                         alt={""}
                         className={classNames(sty.img___15Tro)}
                         displayHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
+                          hasVariant(globalVariants, "screen", "smallMobile")
                             ? "100%"
-                            : "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image63.png",
@@ -469,7 +500,15 @@ function PlasmicIntegrations__RenderFunc(props: {
                                 sty.link__vbk3N
                               )}
                               component={Link}
-                              href={"shab.ir"}
+                              href={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "https://shab.ir"
+                                  : "https://shab.ir"
+                              }
                               platform={"nextjs"}
                             >
                               {"shab.ir"}
@@ -494,27 +533,39 @@ function PlasmicIntegrations__RenderFunc(props: {
                         alt={""}
                         className={classNames(sty.img__fZlHi)}
                         displayHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
+                          hasVariant(globalVariants, "screen", "smallMobile")
                             ? "100%"
-                            : "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image64.png",
@@ -557,7 +608,15 @@ function PlasmicIntegrations__RenderFunc(props: {
                                 sty.link___50Fcn
                               )}
                               component={Link}
-                              href={"\u00a0jabama.com \u00a0"}
+                              href={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "https://jabama.com \u00a0"
+                                  : "https://jabama.com"
+                              }
                               platform={"nextjs"}
                             >
                               {"jabama.com\r"}
@@ -585,27 +644,39 @@ function PlasmicIntegrations__RenderFunc(props: {
                         alt={""}
                         className={classNames(sty.img__k8U6I)}
                         displayHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
+                          hasVariant(globalVariants, "screen", "smallMobile")
                             ? "100%"
-                            : "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image65.png",
@@ -651,7 +722,15 @@ function PlasmicIntegrations__RenderFunc(props: {
                                 sty.link__meLct
                               )}
                               component={Link}
-                              href={"\u00a0\u00a0otaghak.com"}
+                              href={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "https://otaghak.com"
+                                  : "https://otaghak.com"
+                              }
                               platform={"nextjs"}
                             >
                               {"otaghak.com"}
@@ -681,27 +760,39 @@ function PlasmicIntegrations__RenderFunc(props: {
                         alt={""}
                         className={classNames(sty.img___2BYj0)}
                         displayHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
+                          hasVariant(globalVariants, "screen", "smallMobile")
                             ? "100%"
-                            : "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image66.png",
@@ -747,7 +838,15 @@ function PlasmicIntegrations__RenderFunc(props: {
                                 sty.link___3BqXz
                               )}
                               component={Link}
-                              href={"\u00a0homsa.net \u00a0"}
+                              href={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "https://homsa.net \u00a0"
+                                  : "https://homsa.net"
+                              }
                               platform={"nextjs"}
                             >
                               {"homsa.net\r"}
@@ -775,27 +874,39 @@ function PlasmicIntegrations__RenderFunc(props: {
                         alt={""}
                         className={classNames(sty.img__iaMkL)}
                         displayHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
+                          hasVariant(globalVariants, "screen", "smallMobile")
                             ? "100%"
-                            : "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image67.png",
@@ -841,7 +952,15 @@ function PlasmicIntegrations__RenderFunc(props: {
                                 sty.link__hLww7
                               )}
                               component={Link}
-                              href={"\u00a0mizboon.com \u00a0"}
+                              href={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "https://mizboon.com \u00a0"
+                                  : "https://mizboon.com"
+                              }
                               platform={"nextjs"}
                             >
                               {"mizboon.com\r"}
@@ -869,27 +988,39 @@ function PlasmicIntegrations__RenderFunc(props: {
                         alt={""}
                         className={classNames(sty.img__lgixk)}
                         displayHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
+                          hasVariant(globalVariants, "screen", "smallMobile")
                             ? "100%"
-                            : "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
                         }
                         displayMinHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : "auto"
+                        }
                         loading={"lazy"}
                         src={{
                           src: "/plasmic/website_starter/images/image68.png",
@@ -935,10 +1066,132 @@ function PlasmicIntegrations__RenderFunc(props: {
                                 sty.link__axvxy
                               )}
                               component={Link}
-                              href={"\u00a0mihmansho.com \u00a0"}
+                              href={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "https://mihmansho.com \u00a0"
+                                  : "https://mihmansho.com"
+                              }
                               platform={"nextjs"}
                             >
                               {"mihmansho.com\r"}
+                            </PlasmicLink__>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"platformNames22"}
+                    data-plasmic-override={overrides.platformNames22}
+                    className={classNames(projectcss.all, sty.platformNames22)}
+                  >
+                    <div
+                      data-plasmic-name={"platformNames23"}
+                      data-plasmic-override={overrides.platformNames23}
+                      className={classNames(
+                        projectcss.all,
+                        sty.platformNames23
+                      )}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__t8UvM)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
+                        }
+                        displayMaxHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
+                        }
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
+                        }
+                        displayMinHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
+                        }
+                        displayMinWidth={"0"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "40px"
+                            : "auto"
+                        }
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/websitePng.png",
+                          fullWidth: 512,
+                          fullHeight: 512,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    </div>
+                    <div
+                      data-plasmic-name={"platformNames24"}
+                      data-plasmic-override={overrides.platformNames24}
+                      className={classNames(
+                        projectcss.all,
+                        sty.platformNames24
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___3Ip9N
+                        )}
+                      >
+                        {"\u0633\u0627\u06cc\u062a \u0634\u0645\u0627"}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__dqaRd
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__te2CZ
+                              )}
+                              component={Link}
+                              href={
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? "https://mihmansho.com \u00a0"
+                                  : "#"
+                              }
+                              platform={"nextjs"}
+                            >
+                              {"yourwebsite.com\r"}
                             </PlasmicLink__>
                           }
                           <React.Fragment>{""}</React.Fragment>
@@ -966,9 +1219,9 @@ function PlasmicIntegrations__RenderFunc(props: {
                     sty.text__oja5I
                   )}
                 >
-                  {
-                    "\u0645\u0632\u0627\u06cc\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 API"
-                  }
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0645\u0632\u0627\u06cc\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 API"
+                    : "\u0645\u0632\u0627\u06cc\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 API"}
                 </div>
               </div>
               <div
@@ -1004,7 +1257,19 @@ function PlasmicIntegrations__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u0645\u0648\u062c\u0648\u062f\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0645\u06cc\u0632\u0628\u0627\u0646 (inventory) \u0628\u0647 \u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0627 \u0633\u0627\u06cc\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u0647\u0645\u06af\u0627\u0645\u200c\u0633\u0627\u0632\u06cc (sync) \u0645\u06cc\u200c\u0634\u0647."
+                            "\u0647\u0645\u200c\u06af\u0627\u0645\u200c\u0633\u0627\u0632\u06cc (sync) \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0645\u06cc\u0632\u0628\u0627\u0646 (inventory) \u0628\u0627 \u0633\u0627\u06cc\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u0648 \u06cc\u0627 \u0633\u0627\u06cc\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__stWhX
+                          )}
+                        >
+                          {
+                            "\u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 (double booking) \u062f\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641"
                           }
                         </li>
                         <li
@@ -1016,7 +1281,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u062f\u0631\u0635\u0648\u0631\u062a \u062a\u063a\u06cc\u06cc\u0631 \u0648\u0636\u0639\u06cc\u062a/\u0642\u06cc\u0645\u062a/\u0627\u0639\u0645\u0627\u0644 \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631 \u0631\u0648\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u062a\u0648\u0633\u0637 \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0627\u06cc\u0646 \u0627\u0642\u062f\u0627\u0645 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u062b\u0628\u062a \u0645\u06cc\u200c\u0634\u0647."
+                            "\u0628\u0647\u200c\u0631\u0648\u0632 \u0628\u0648\u062f\u0646 \u06f1\u06f0\u06f0 \u062f\u0631\u0635\u062f\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0645\u06cc\u0632\u0628\u0627\u0646"
                           }
                         </li>
                         <li
@@ -1024,11 +1289,35 @@ function PlasmicIntegrations__RenderFunc(props: {
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li__xTjd4
+                            sty.li__lfWym
                           )}
                         >
                           {
-                            "\u0627\u0645\u06a9\u0627\u0646 import \u06cc\u06a9\u062c\u0627 \u0635\u062f\u0647\u0627 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0647 \u067e\u0644\u062a\u0641\u0631\u0645 \u0634\u0645\u0627 (\u062f\u0631 \u0634\u0631\u0627\u06cc\u0637 \u062e\u0627\u0635) \u0648\u062c\u0648\u062f \u062f\u0627\u0631\u0647"
+                            "\u06a9\u0627\u0647\u0634 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0631\u0636\u0627\u06cc\u062a \u0645\u06cc\u0632\u0628\u0627\u0646 \u0648 \u0645\u06cc\u0647\u0645\u0627\u0646\u060c \u062f\u0631 \u062a\u0639\u0627\u0645\u0644 \u0628\u0627 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__rOEh
+                          )}
+                        >
+                          {
+                            "\u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u06cc\u0644 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0641\u0639\u0627\u0644 \u0628\u0647 \u0639\u0636\u0648\u06cc\u062a \u062f\u0631 \u067e\u0644\u062a\u0641\u0631\u0645 \u0634\u0645\u0627"
+                          }
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__puCGq
+                          )}
+                        >
+                          {
+                            "\u06a9\u0627\u0647\u0634 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u062a\u06cc\u0645 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 (host support team)"
                           }
                         </li>
                       </ul>
@@ -1036,6 +1325,8 @@ function PlasmicIntegrations__RenderFunc(props: {
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
                 </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__lbWw)}>
                 <div
                   className={classNames(
                     projectcss.all,
@@ -1044,7 +1335,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062a\u0642\u0648\u06cc\u0645 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u062e\u0648\u0627\u0647\u062f \u0628\u0648\u062f \u0648 \u0686\u0627\u0644\u0634\u200c\u0647\u0627\u06cc \u062a\u06cc\u0645 \u0639\u0645\u0644\u06cc\u0627\u062a \u0648 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u062f\u0631 \u0628\u062e\u0634 \u062a\u0627\u0645\u06cc\u0646 (supply) \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u0634\u0646. \u0628\u0627 \u0627\u0632 \u0628\u06cc\u0646 \u0628\u0631\u062f\u0646 \u0627\u06cc\u0646 \u062f\u063a\u062f\u063a\u0647\u200c\u0647\u0627\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0645\u0631\u06a9\u0632\u062a \u0631\u0648 \u0631\u0648\u06cc \u0631\u0634\u062f \u0648 \u062a\u0648\u0633\u0639\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u060c \u062e\u0635\u0648\u0635\u0627 \u0633\u0645\u062a demand\u060c \u0628\u06af\u0630\u0627\u0631\u06cc."
+                    "\u062a\u0642\u0648\u06cc\u0645 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u062e\u0648\u0627\u0647\u062f \u0628\u0648\u062f \u0648 \u0686\u0627\u0644\u0634\u200c\u0647\u0627\u06cc \u062a\u06cc\u0645 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0648\u060c \u0647\u0645\u0686\u0646\u06cc\u0646 \u0631\u0634\u062f \u0628\u062e\u0634 \u062a\u0627\u0645\u06cc\u0646 (supply) \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u0634\u0646. \u0628\u0627 \u0627\u0632 \u0628\u06cc\u0646 \u0628\u0631\u062f\u0646 \u0627\u06cc\u0646 \u062f\u063a\u062f\u063a\u0647\u200c\u0647\u0627\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0645\u0631\u06a9\u0632\u062a \u0631\u0648 \u0631\u0648\u06cc \u0631\u0634\u062f \u0648 \u062a\u0648\u0633\u0639\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u060c \u062e\u0635\u0648\u0635\u0627 \u0633\u0645\u062a demand\u060c \u0628\u06af\u0630\u0627\u0631\u06cc."
                   }
                 </div>
               </div>
@@ -1071,9 +1362,9 @@ function PlasmicIntegrations__RenderFunc(props: {
               className={classNames(projectcss.all, sty.bot)}
             >
               <div
-                data-plasmic-name={"more"}
-                data-plasmic-override={overrides.more}
-                className={classNames(projectcss.all, sty.more)}
+                data-plasmic-name={"apiAccess"}
+                data-plasmic-override={overrides.apiAccess}
+                className={classNames(projectcss.all, sty.apiAccess)}
               >
                 <div
                   data-plasmic-name={"moreDecs"}
@@ -1099,49 +1390,10 @@ function PlasmicIntegrations__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0627\u06cc\u0646 \u0641\u0631\u0622\u06cc\u0646\u062f \u062a\u0636\u0645\u06cc\u0646 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u06a9\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0627 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627 \u0647\u0645\u0627\u0647\u0646\u06af \u0628\u0627\u0634\u0647."
+                      "\u0627\u06cc\u0646 \u0641\u0631\u0622\u06cc\u0646\u062f \u062a\u0636\u0645\u06cc\u0646 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u06a9\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0627 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u06a9\u0644\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634 \u0647\u0645\u0627\u0647\u0646\u06af \u0628\u0627\u0634\u0647."
                     }
                   </div>
                 </div>
-                <div
-                  data-plasmic-name={"screenshot"}
-                  data-plasmic-override={overrides.screenshot}
-                  className={classNames(projectcss.all, sty.screenshot)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__lddAz)}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "100%"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "410px"
-                        : "auto"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "100%"
-                        : "auto"
-                    }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/_2Png.png",
-                      fullWidth: 344,
-                      fullHeight: 700,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"apiAccess"}
-                data-plasmic-override={overrides.apiAccess}
-                className={classNames(projectcss.all, sty.apiAccess)}
-              >
                 <div
                   data-plasmic-name={"apidog"}
                   data-plasmic-override={overrides.apidog}
@@ -1241,8 +1493,8 @@ const PlasmicDescendants = {
     "introApi",
     "introApiTitle",
     "introApiCaption",
-    "platforms",
     "platformsTitle",
+    "platforms",
     "platformNames4",
     "platformNames5",
     "platformNames6",
@@ -1264,6 +1516,9 @@ const PlasmicDescendants = {
     "platformNames19",
     "platformNames20",
     "platformNames21",
+    "platformNames22",
+    "platformNames23",
+    "platformNames24",
     "benefits",
     "benefitsTitle",
     "benefitsCaption",
@@ -1271,10 +1526,8 @@ const PlasmicDescendants = {
     "autoSyncGif",
     "htmlVideo",
     "bot",
-    "more",
-    "moreDecs",
-    "screenshot",
     "apiAccess",
+    "moreDecs",
     "apidog",
     "requestDemo",
     "rentamonFooter",
@@ -1287,8 +1540,8 @@ const PlasmicDescendants = {
     "introApi",
     "introApiTitle",
     "introApiCaption",
-    "platforms",
     "platformsTitle",
+    "platforms",
     "platformNames4",
     "platformNames5",
     "platformNames6",
@@ -1310,6 +1563,9 @@ const PlasmicDescendants = {
     "platformNames19",
     "platformNames20",
     "platformNames21",
+    "platformNames22",
+    "platformNames23",
+    "platformNames24",
     "benefits",
     "benefitsTitle",
     "benefitsCaption",
@@ -1317,10 +1573,8 @@ const PlasmicDescendants = {
     "autoSyncGif",
     "htmlVideo",
     "bot",
-    "more",
-    "moreDecs",
-    "screenshot",
     "apiAccess",
+    "moreDecs",
     "apidog",
     "requestDemo"
   ],
@@ -1328,8 +1582,8 @@ const PlasmicDescendants = {
     "introApi",
     "introApiTitle",
     "introApiCaption",
-    "platforms",
     "platformsTitle",
+    "platforms",
     "platformNames4",
     "platformNames5",
     "platformNames6",
@@ -1350,13 +1604,16 @@ const PlasmicDescendants = {
     "platformNames18",
     "platformNames19",
     "platformNames20",
-    "platformNames21"
+    "platformNames21",
+    "platformNames22",
+    "platformNames23",
+    "platformNames24"
   ],
   introApiTitle: ["introApiTitle"],
   introApiCaption: ["introApiCaption"],
+  platformsTitle: ["platformsTitle"],
   platforms: [
     "platforms",
-    "platformsTitle",
     "platformNames4",
     "platformNames5",
     "platformNames6",
@@ -1377,9 +1634,11 @@ const PlasmicDescendants = {
     "platformNames18",
     "platformNames19",
     "platformNames20",
-    "platformNames21"
+    "platformNames21",
+    "platformNames22",
+    "platformNames23",
+    "platformNames24"
   ],
-  platformsTitle: ["platformsTitle"],
   platformNames4: ["platformNames4", "platformNames5", "platformNames6"],
   platformNames5: ["platformNames5"],
   platformNames6: ["platformNames6"],
@@ -1401,6 +1660,9 @@ const PlasmicDescendants = {
   platformNames19: ["platformNames19", "platformNames20", "platformNames21"],
   platformNames20: ["platformNames20"],
   platformNames21: ["platformNames21"],
+  platformNames22: ["platformNames22", "platformNames23", "platformNames24"],
+  platformNames23: ["platformNames23"],
+  platformNames24: ["platformNames24"],
   benefits: [
     "benefits",
     "benefitsTitle",
@@ -1414,19 +1676,9 @@ const PlasmicDescendants = {
   ul: ["ul"],
   autoSyncGif: ["autoSyncGif", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
-  bot: [
-    "bot",
-    "more",
-    "moreDecs",
-    "screenshot",
-    "apiAccess",
-    "apidog",
-    "requestDemo"
-  ],
-  more: ["more", "moreDecs", "screenshot"],
+  bot: ["bot", "apiAccess", "moreDecs", "apidog", "requestDemo"],
+  apiAccess: ["apiAccess", "moreDecs", "apidog", "requestDemo"],
   moreDecs: ["moreDecs"],
-  screenshot: ["screenshot"],
-  apiAccess: ["apiAccess", "apidog", "requestDemo"],
   apidog: ["apidog"],
   requestDemo: ["requestDemo"],
   rentamonFooter: ["rentamonFooter"],
@@ -1443,8 +1695,8 @@ type NodeDefaultElementType = {
   introApi: "div";
   introApiTitle: "div";
   introApiCaption: "div";
-  platforms: "div";
   platformsTitle: "div";
+  platforms: "div";
   platformNames4: "div";
   platformNames5: "div";
   platformNames6: "div";
@@ -1466,6 +1718,9 @@ type NodeDefaultElementType = {
   platformNames19: "div";
   platformNames20: "div";
   platformNames21: "div";
+  platformNames22: "div";
+  platformNames23: "div";
+  platformNames24: "div";
   benefits: "div";
   benefitsTitle: "div";
   benefitsCaption: "div";
@@ -1473,10 +1728,8 @@ type NodeDefaultElementType = {
   autoSyncGif: "div";
   htmlVideo: typeof Video;
   bot: "div";
-  more: "div";
-  moreDecs: "div";
-  screenshot: "div";
   apiAccess: "div";
+  moreDecs: "div";
   apidog: "div";
   requestDemo: "div";
   rentamonFooter: typeof RentamonFooter;
@@ -1495,7 +1748,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicIntegrations__VariantsArgs;
     args?: PlasmicIntegrations__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicIntegrations__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicIntegrations__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicIntegrations__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -1549,8 +1804,8 @@ export const PlasmicIntegrations = Object.assign(
     introApi: makeNodeComponent("introApi"),
     introApiTitle: makeNodeComponent("introApiTitle"),
     introApiCaption: makeNodeComponent("introApiCaption"),
-    platforms: makeNodeComponent("platforms"),
     platformsTitle: makeNodeComponent("platformsTitle"),
+    platforms: makeNodeComponent("platforms"),
     platformNames4: makeNodeComponent("platformNames4"),
     platformNames5: makeNodeComponent("platformNames5"),
     platformNames6: makeNodeComponent("platformNames6"),
@@ -1572,6 +1827,9 @@ export const PlasmicIntegrations = Object.assign(
     platformNames19: makeNodeComponent("platformNames19"),
     platformNames20: makeNodeComponent("platformNames20"),
     platformNames21: makeNodeComponent("platformNames21"),
+    platformNames22: makeNodeComponent("platformNames22"),
+    platformNames23: makeNodeComponent("platformNames23"),
+    platformNames24: makeNodeComponent("platformNames24"),
     benefits: makeNodeComponent("benefits"),
     benefitsTitle: makeNodeComponent("benefitsTitle"),
     benefitsCaption: makeNodeComponent("benefitsCaption"),
@@ -1579,10 +1837,8 @@ export const PlasmicIntegrations = Object.assign(
     autoSyncGif: makeNodeComponent("autoSyncGif"),
     htmlVideo: makeNodeComponent("htmlVideo"),
     bot: makeNodeComponent("bot"),
-    more: makeNodeComponent("more"),
-    moreDecs: makeNodeComponent("moreDecs"),
-    screenshot: makeNodeComponent("screenshot"),
     apiAccess: makeNodeComponent("apiAccess"),
+    moreDecs: makeNodeComponent("moreDecs"),
     apidog: makeNodeComponent("apidog"),
     requestDemo: makeNodeComponent("requestDemo"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),

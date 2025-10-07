@@ -5495,6 +5495,11 @@
           "id": "IXP6mqYGjg2J",
           "name": "depositphotos_141435840-stock-illustration-play-button-icon.jpg",
           "filePath": "../public/plasmic/website_starter/images/depositphotos141435840StockIllustrationPlayButtonIconJpg.webp"
+        },
+        {
+          "id": "GvX80a_TJlhH",
+          "name": "website.png",
+          "filePath": "../public/plasmic/website_starter/images/websitePng.png"
         }
       ],
       "indirect": false,
