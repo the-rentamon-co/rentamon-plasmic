@@ -6802,7 +6802,7 @@ function PlasmicReservations__RenderFunc(props: {
                       loop={false}
                       muted={false}
                       poster={
-                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fphoto_2025-10-07_17-47-28.jpg?versionId="
+                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fphoto_2025-10-07_18-03-27.jpg?versionId="
                       }
                       src={
                         "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Freservations-page.mp4?versionId="
