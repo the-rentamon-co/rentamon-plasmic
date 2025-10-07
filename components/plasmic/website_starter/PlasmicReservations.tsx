@@ -6774,38 +6774,6 @@ function PlasmicReservations__RenderFunc(props: {
               <div className={classNames(projectcss.all, sty.freeBox__tTTz)}>
                 <div className={classNames(projectcss.all, sty.freeBox__wQt9Q)}>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__ikrTd)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__wphKv
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u062a\u0645\u0627\u0645\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u067e\u0631\u062f\u0627\u0632\u0634 \u06a9\u0631\u062f\u0647 \u0631\u0648 \u0627\u06cc\u0646\u200c\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc."
-                        : "\u062a\u0645\u0627\u0645\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u067e\u0631\u062f\u0627\u0632\u0634 \u06a9\u0631\u062f\u0647 \u0631\u0648 \u0627\u06cc\u0646\u200c\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc."}
-                    </div>
-                    {(
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? true
-                        : false
-                    ) ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___7YjDt
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobile")
-                          ? "\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"
-                          : "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u062c\u062f\u0627\u06af\u0627\u0646\u0647 \u0628\u0628\u06cc\u0646\u06cc:\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"}
-                      </div>
-                    ) : null}
-                  </div>
-                  <div
                     className={classNames(projectcss.all, sty.freeBox__wyjyZ)}
                   >
                     {(
@@ -6833,6 +6801,9 @@ function PlasmicReservations__RenderFunc(props: {
                       controls={true}
                       loop={false}
                       muted={false}
+                      poster={
+                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fphoto_2025-10-07_17-47-28.jpg?versionId="
+                      }
                       src={
                         "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Freservations-page.mp4?versionId="
                       }
@@ -6929,7 +6900,7 @@ function PlasmicReservations__RenderFunc(props: {
                                 return setCookie(
                                   "reservations_notify_final",
                                   "true",
-                                  24
+                                  16
                                 );
                               })();
                             }

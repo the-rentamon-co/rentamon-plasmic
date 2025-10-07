@@ -3231,11 +3231,11 @@
   background: #ffffff;
   box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.2);
   min-width: 0;
-  padding: 20px;
+  padding: 0px 20px 20px;
 }
 @media (max-width: 500px) {
   .newbookingpricingalert {
-    padding: 10px;
+    padding: 6px 6px 10px;
   }
 }
 .freeBox__tTTz {
@@ -3250,6 +3250,13 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .freeBox__tTTz {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+}
 .freeBox__wQt9Q {
   display: flex;
   flex-direction: column;
@@ -3260,7 +3267,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 0px 8px 8px;
 }
 @media (max-width: 500px) {
   .freeBox__wQt9Q {
@@ -3274,53 +3281,6 @@
     padding: 0px;
   }
 }
-.freeBox__ikrTd {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-@media (max-width: 500px) {
-  .freeBox__ikrTd {
-    padding: 12px 12px 39px;
-  }
-}
-.text__wphKv {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  font-size: 17px;
-  min-width: 0;
-}
-@media (max-width: 500px) {
-  .text__wphKv {
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 1.8;
-  }
-}
-.text___7YjDt {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: right;
-  font-size: 17px;
-  min-width: 0;
-}
-@media (max-width: 500px) {
-  .text___7YjDt {
-    font-weight: 400;
-    font-size: 16px;
-    display: none;
-  }
-}
 .freeBox__wyjyZ {
   display: flex;
   flex-direction: column;
@@ -3331,11 +3291,11 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBox__wyjyZ {
-    padding: 12px 12px 39px;
+    padding: 0px 0px 39px;
   }
 }
 .text__bqFjg {
@@ -3354,11 +3314,19 @@
   }
 }
 .htmlVideo:global(.__wab_instance) {
-  width: 300px;
+  width: 400px;
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  opacity: 0.5;
   border-radius: 30px;
+}
+@media (max-width: 500px) {
+  .htmlVideo:global(.__wab_instance) {
+    width: 100%;
+    min-width: 0;
+    border-radius: 20px;
+  }
 }
 .freeBox__jwjou {
   flex-direction: column;
@@ -3397,7 +3365,7 @@
 .text__l0BFo {
   width: 100%;
   height: auto;
-  max-width: 30%;
+  max-width: 400px;
   text-align: center;
   font-size: 17px;
   background: var(--token-8nedppYkGVaH);
@@ -3414,7 +3382,9 @@
 }
 @media (max-width: 500px) {
   .text__l0BFo {
-    max-width: 85%;
+    max-width: 96%;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 }
 @media (max-width: 350px) {
