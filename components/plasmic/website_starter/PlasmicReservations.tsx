@@ -76,6 +76,7 @@ import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -172,6 +173,7 @@ export type PlasmicReservations__OverridesType = {
   cancelled3?: Flex__<typeof Switch>;
   button?: Flex__<"div">;
   newbookingpricingalert?: Flex__<"div">;
+  htmlVideo?: Flex__<typeof Video>;
 };
 
 export interface DefaultReservationsProps {}
@@ -921,7 +923,9 @@ function PlasmicReservations__RenderFunc(props: {
                       customFunction: async () => {
                         return (() => {
                           if (
-                            !document.cookie.includes("reservations_notify")
+                            !document.cookie.includes(
+                              "reservations_notify_final"
+                            )
                           ) {
                             return ($state.notify = true);
                           }
@@ -1433,7 +1437,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         undefined,
-                                        "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
+                                        "https://gateway.rentamon.com/webhook/bookings/search",
                                         (() => {
                                           try {
                                             return {
@@ -1598,7 +1602,7 @@ function PlasmicReservations__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   undefined,
-                                  "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
+                                  "https://gateway.rentamon.com/webhook/bookings/search",
                                   (() => {
                                     try {
                                       return { q: $state.searchInput.value };
@@ -2321,7 +2325,7 @@ function PlasmicReservations__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["updateStateVariable"] = true
+                      $steps["updateStateVariable"] = false
                         ? (() => {
                             const actionArgs = {
                               operation: 0,
@@ -2419,8 +2423,7 @@ function PlasmicReservations__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   let result = "";
-                                  const bookingId =
-                                    currentItem.alternative_booking_id;
+                                  const bookingId = currentItem.booking_id;
                                   return window.open(
                                     `https://rentamon.com/bookings/${bookingId}`,
                                     "_blank"
@@ -2468,9 +2471,7 @@ function PlasmicReservations__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "mobile")
                           ? (() => {
                               try {
-                                return (
-                                  currentItem.alternative_booking_id != null
-                                );
+                                return currentItem.booking_id != null;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -2483,9 +2484,7 @@ function PlasmicReservations__RenderFunc(props: {
                             })()
                           : (() => {
                               try {
-                                return (
-                                  currentItem.alternative_booking_id != null
-                                );
+                                return currentItem.booking_id != null;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -2500,7 +2499,7 @@ function PlasmicReservations__RenderFunc(props: {
                         <ReservationsRecordList
                           cancelledBookings={(() => {
                             try {
-                              return currentItem.status == "Cancelled";
+                              return currentItem.status == "cancelled";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -2517,7 +2516,7 @@ function PlasmicReservations__RenderFunc(props: {
                           )}
                           confirmedBookings={(() => {
                             try {
-                              return currentItem.status == "Confirmed";
+                              return currentItem.status == "reserve";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -2557,7 +2556,7 @@ function PlasmicReservations__RenderFunc(props: {
                           })()}
                           pastBookingsBox={(() => {
                             try {
-                              return currentItem.status == "Past";
+                              return currentItem.status == "past";
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -2588,7 +2587,7 @@ function PlasmicReservations__RenderFunc(props: {
                           return (() => {
                             if (
                               currentItem.is_settled == false &&
-                              currentItem.status === "Past"
+                              currentItem.status === "past"
                             ) {
                               return true;
                             } else {
@@ -2623,28 +2622,65 @@ function PlasmicReservations__RenderFunc(props: {
                           }}
                         />
                       ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (
-                              currentItem.is_settled == null &&
-                              currentItem.status === "Past"
-                            ) {
-                              return true;
-                            } else {
-                              return false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
+                      {(
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? (() => {
+                              try {
+                                return (() => {
+                                  if (
+                                    currentItem.feature_handled.smart_booking ==
+                                    null
+                                  ) {
+                                    return false;
+                                  }
+                                  if (
+                                    currentItem.is_settled == null &&
+                                    currentItem.status === "past"
+                                  ) {
+                                    return true;
+                                  } else {
+                                    return false;
+                                  }
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : (() => {
+                              try {
+                                return (() => {
+                                  if (
+                                    currentItem.feature_handled.smart_booking ==
+                                    null
+                                  ) {
+                                    return false;
+                                  }
+                                  if (
+                                    currentItem.is_settled == null &&
+                                    currentItem.status === "past"
+                                  ) {
+                                    return true;
+                                  } else {
+                                    return false;
+                                  }
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
+                              }
+                            })()
+                      ) ? (
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__zkyxz)}
@@ -2669,10 +2705,7 @@ function PlasmicReservations__RenderFunc(props: {
               })}
               {(() => {
                 try {
-                  return (
-                    ($state.reservations.message != null) &
-                    ($state.isTheFirstVisit != true)
-                  );
+                  return Object.keys($state.reservations).length == 0;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -2897,7 +2930,7 @@ function PlasmicReservations__RenderFunc(props: {
                             customFunction: async () => {
                               return (() => {
                                 const reservations =
-                                  $state.reserveData.data.result.data;
+                                  $state.reserveData.data.result.bookings;
                                 if (
                                   Array.isArray(reservations) &&
                                   reservations.length > 0
@@ -2930,7 +2963,7 @@ function PlasmicReservations__RenderFunc(props: {
                 }}
                 url={(() => {
                   try {
-                    return `https://gateway.rentamon.com/webhook/getReserve?v=2&limit=1`;
+                    return `https://gateway.rentamon.com/webhook/bookings?v=2&limit=1`;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -3535,7 +3568,7 @@ function PlasmicReservations__RenderFunc(props: {
                               undefined,
                               (() => {
                                 try {
-                                  return `https://gateway.rentamon.com/webhook/getReserve?v=2&limit=${$state.dataSize}`;
+                                  return `https://gateway.rentamon.com/webhook/bookings?v=2&limit=${$state.dataSize}`;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -3569,7 +3602,7 @@ function PlasmicReservations__RenderFunc(props: {
                             customFunction: async () => {
                               return ($state.reservations = [
                                 ...$state.reservations,
-                                ...$steps.sendrequest.data.result.data
+                                ...$steps.sendrequest.data.result.bookings
                               ]);
                             }
                           };
@@ -5888,7 +5921,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       const baseUrl =
-                                        "https://gateway.rentamon.com/webhook/getReserve";
+                                        "https://gateway.rentamon.com/webhook/booking/unsettled";
                                       const queryParams = [];
                                       queryParams.push(`v=2`);
                                       queryParams.push(
@@ -5961,10 +5994,10 @@ function PlasmicReservations__RenderFunc(props: {
                                 const actionArgs = {
                                   customFunction: async () => {
                                     return (() => {
-                                      $state.reservations =
-                                        $steps.sendRequest.data?.result?.data ??
-                                        $steps.sendRequest.data;
-                                      return console.log($state.reservations);
+                                      return ($state.reservations =
+                                        $steps.sendRequest.data?.result
+                                          ?.bookings ??
+                                        $steps.sendRequest.data);
                                     })();
                                   }
                                 };
@@ -6306,7 +6339,7 @@ function PlasmicReservations__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       const baseUrl =
-                                        "https://gateway.rentamon.com/webhook/getReserve";
+                                        "https://gateway.rentamon.com/webhook/bookings";
                                       const queryParams = [];
                                       queryParams.push(`v=2`);
                                       queryParams.push(
@@ -6320,7 +6353,7 @@ function PlasmicReservations__RenderFunc(props: {
                                       if ($state.confierm2.checked) {
                                         queryParams.push(`status=Confirmed`);
                                       } else if ($state.cancelled3.checked) {
-                                        queryParams.push(`status=Cancelled`);
+                                        queryParams.push(`status=cancelled`);
                                       }
                                       $state.filterUrl = `${baseUrl}?${queryParams.join("&")}`;
                                       return $state.filterUrl;
@@ -6380,9 +6413,8 @@ function PlasmicReservations__RenderFunc(props: {
                                 const actionArgs = {
                                   customFunction: async () => {
                                     return (() => {
-                                      $state.reservations =
-                                        $steps.sendRequests.data.result.data;
-                                      return console.log($state.reservations);
+                                      return ($state.reservations =
+                                        $steps.sendRequests.data.result.bookings);
                                     })();
                                   }
                                 };
@@ -6550,7 +6582,7 @@ function PlasmicReservations__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   const baseUrl =
-                                    "https://gateway.rentamon.com/webhook/getReserve";
+                                    "https://gateway.rentamon.com/webhook/bookings";
                                   const queryParams = [];
                                   queryParams.push(`v=2`);
                                   queryParams.push(`limit=${$state.dataSize}`);
@@ -6622,9 +6654,8 @@ function PlasmicReservations__RenderFunc(props: {
                             const actionArgs = {
                               customFunction: async () => {
                                 return (() => {
-                                  $state.reservations =
-                                    $steps.sendRequests.data.result.data;
-                                  return console.log($state.reservations);
+                                  return ($state.reservations =
+                                    $steps.sendRequests.data.result.bookings);
                                 })();
                               }
                             };
@@ -6753,8 +6784,8 @@ function PlasmicReservations__RenderFunc(props: {
                       )}
                     >
                       {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0628\u0647 \u0632\u0648\u062f\u06cc \u0647\u0645\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u00ab\u062f\u0633\u062a\u06cc\u00bb \u0648 \u00ab\u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u0631\u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u062c\u0627 \u0628\u0628\u06cc\u0646\u06cc."
-                        : "\u0628\u0647 \u0632\u0648\u062f\u06cc \u0647\u0645\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u00ab\u062f\u0633\u062a\u06cc\u00bb \u0648 \u00ab\u062e\u0648\u062f\u06a9\u0627\u0631\u00bb \u0631\u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u062c\u0627 \u0628\u0628\u06cc\u0646\u06cc."}
+                        ? "\u062a\u0645\u0627\u0645\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u067e\u0631\u062f\u0627\u0632\u0634 \u06a9\u0631\u062f\u0647 \u0631\u0648 \u0627\u06cc\u0646\u200c\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc."
+                        : "\u062a\u0645\u0627\u0645\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u067e\u0631\u062f\u0627\u0632\u0634 \u06a9\u0631\u062f\u0647 \u0631\u0648 \u0627\u06cc\u0646\u200c\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc."}
                     </div>
                     {(
                       hasVariant(globalVariants, "screen", "mobile")
@@ -6773,6 +6804,39 @@ function PlasmicReservations__RenderFunc(props: {
                           : "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u062c\u062f\u0627\u06af\u0627\u0646\u0647 \u0628\u0628\u06cc\u0646\u06cc:\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"}
                       </div>
                     ) : null}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__wyjyZ)}
+                  >
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? true
+                        : false
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__bqFjg
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile")
+                          ? "\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"
+                          : "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u062c\u062f\u0627\u06af\u0627\u0646\u0647 \u0628\u0628\u06cc\u0646\u06cc:\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"}
+                      </div>
+                    ) : null}
+                    <Video
+                      data-plasmic-name={"htmlVideo"}
+                      data-plasmic-override={overrides.htmlVideo}
+                      autoPlay={true}
+                      className={classNames("__wab_instance", sty.htmlVideo)}
+                      controls={false}
+                      loop={false}
+                      muted={false}
+                      src={
+                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Freservations-page.mp4?versionId="
+                      }
+                    />
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__jwjou)}>
@@ -6863,7 +6927,7 @@ function PlasmicReservations__RenderFunc(props: {
                                     "; path=/";
                                 }
                                 return setCookie(
-                                  "reservations_notify",
+                                  "reservations_notify_final",
                                   "true",
                                   24
                                 );
@@ -6968,7 +7032,8 @@ const PlasmicDescendants = {
     "cancelled",
     "cancelled3",
     "button",
-    "newbookingpricingalert"
+    "newbookingpricingalert",
+    "htmlVideo"
   ],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
@@ -7130,7 +7195,8 @@ const PlasmicDescendants = {
   cancelled: ["cancelled", "cancelled3"],
   cancelled3: ["cancelled3"],
   button: ["button"],
-  newbookingpricingalert: ["newbookingpricingalert"]
+  newbookingpricingalert: ["newbookingpricingalert", "htmlVideo"],
+  htmlVideo: ["htmlVideo"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -7208,6 +7274,7 @@ type NodeDefaultElementType = {
   cancelled3: typeof Switch;
   button: "div";
   newbookingpricingalert: "div";
+  htmlVideo: typeof Video;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -7343,6 +7410,7 @@ export const PlasmicReservations = Object.assign(
     cancelled3: makeNodeComponent("cancelled3"),
     button: makeNodeComponent("button"),
     newbookingpricingalert: makeNodeComponent("newbookingpricingalert"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
 
     // Metadata about props expected for PlasmicReservations
     internalVariantProps: PlasmicReservations__VariantProps,

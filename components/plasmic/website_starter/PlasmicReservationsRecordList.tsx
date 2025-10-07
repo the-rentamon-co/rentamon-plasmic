@@ -305,6 +305,28 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
                 projectcss.__wab_text,
                 sty.property,
                 {
+                  [sty.propertycancelledBookings]: hasVariant(
+                    $state,
+                    "cancelledBookings",
+                    "cancelledBookings"
+                  ),
+                  [sty.propertyconfirmedBookings]: hasVariant(
+                    $state,
+                    "confirmedBookings",
+                    "confirmedBookings"
+                  ),
+                  [sty.propertypastBookingsBox]: hasVariant(
+                    $state,
+                    "pastBookingsBox",
+                    "pastBookingsBox"
+                  ),
+                  [sty.propertypastBookingsBox_cancelledBookings]:
+                    hasVariant($state, "pastBookingsBox", "pastBookingsBox") &&
+                    hasVariant(
+                      $state,
+                      "cancelledBookings",
+                      "cancelledBookings"
+                    ),
                   [sty.propertypendingBookings]: hasVariant(
                     $state,
                     "pendingBookings",
@@ -317,7 +339,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
                 <React.Fragment>
                   {(() => {
                     try {
-                      return $props.data.property_name;
+                      return $props.data.property.name;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -333,7 +355,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
                 <React.Fragment>
                   {(() => {
                     try {
-                      return $props.data.property_name;
+                      return $props.data.property.name;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -349,7 +371,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
                 <React.Fragment>
                   {(() => {
                     try {
-                      return $props.data.property_name;
+                      return $props.data.property.name;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -378,7 +400,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
             loading={"lazy"}
             src={(() => {
               try {
-                return $props.data.property_pic_link;
+                return $props.data.property.property_pic;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -409,6 +431,11 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
               projectcss.__wab_text,
               sty.geustName,
               {
+                [sty.geustNameconfirmedBookings]: hasVariant(
+                  $state,
+                  "confirmedBookings",
+                  "confirmedBookings"
+                ),
                 [sty.geustNamependingBookings]: hasVariant(
                   $state,
                   "pendingBookings",
@@ -421,7 +448,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
               <React.Fragment>
                 {(() => {
                   try {
-                    return $props.data.guest_name;
+                    return $props.data.guest.name || "-";
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -437,7 +464,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
               <React.Fragment>
                 {(() => {
                   try {
-                    return $props.data.guest_name;
+                    return $props.data.guest.name || "-";
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -453,7 +480,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
               <React.Fragment>
                 {(() => {
                   try {
-                    return $props.data.guest_name;
+                    return $props.data.guest.name || "-";
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -530,73 +557,62 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
                           .toString()
                           .replace(/\d/g, d => persianDigits[d]);
                       }
-                      function toEnglishDigits(str) {
-                        const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
-                        return str.replace(/[۰-۹]/g, d =>
-                          persianDigits.indexOf(d)
-                        );
-                      }
-                      function toGregorian(jy, jm, jd) {
-                        const jDaysInMonth = [
-                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
-                        ];
-
+                      function toJalali(gYear, gMonth, gDay) {
                         const gDaysInMonth = [
                           31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
                         ];
 
-                        jy -= 979;
-                        jm -= 1;
-                        jd -= 1;
-                        let jDayNo =
-                          365 * jy +
-                          Math.floor(jy / 33) * 8 +
-                          Math.floor(((jy % 33) + 3) / 4);
-                        for (let i = 0; i < jm; ++i) jDayNo += jDaysInMonth[i];
-                        jDayNo += jd;
-                        let gDayNo = jDayNo + 79;
-                        let gy = 1600 + 400 * Math.floor(gDayNo / 146097);
-                        gDayNo %= 146097;
-                        let leap = true;
-                        if (gDayNo >= 36525) {
-                          gDayNo--;
-                          gy += 100 * Math.floor(gDayNo / 36524);
-                          gDayNo %= 36524;
-                          if (gDayNo >= 365) gDayNo++;
-                          else leap = false;
+                        const jDaysInMonth = [
+                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                        ];
+
+                        let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                        let gm = gMonth - 1;
+                        let gd = gDay - 1;
+                        let gDayNo =
+                          365 * gy +
+                          Math.floor((gy + 3) / 4) -
+                          Math.floor((gy + 99) / 100) +
+                          Math.floor((gy + 399) / 400);
+                        for (let i = 0; i < gm; ++i) gDayNo += gDaysInMonth[i];
+                        gDayNo += gd;
+                        let jDayNo = gDayNo - (gYear >= 1600 ? 79 : 0);
+                        let jNp = Math.floor(jDayNo / 12053);
+                        jDayNo %= 12053;
+                        let jYear =
+                          979 + 33 * jNp + 4 * Math.floor(jDayNo / 1461);
+                        jDayNo %= 1461;
+                        if (jDayNo >= 366) {
+                          jYear += Math.floor((jDayNo - 1) / 365);
+                          jDayNo = (jDayNo - 1) % 365;
                         }
-                        gy += 4 * Math.floor(gDayNo / 1461);
-                        gDayNo %= 1461;
-                        if (gDayNo >= 366) {
-                          leap = false;
-                          gDayNo--;
-                          gy += Math.floor(gDayNo / 365);
-                          gDayNo = gDayNo % 365;
-                        }
-                        let gm = 0;
-                        for (; gm < 12; gm++) {
-                          let daysInMonth = gDaysInMonth[gm];
-                          if (gm === 1 && leap) daysInMonth++;
-                          if (gDayNo < daysInMonth) break;
-                          gDayNo -= daysInMonth;
-                        }
-                        let gd = gDayNo + 1;
-                        return new Date(gy, gm, gd);
+                        let jMonth;
+                        for (
+                          jMonth = 0;
+                          jMonth < 11 && jDayNo >= jDaysInMonth[jMonth];
+                          ++jMonth
+                        )
+                          jDayNo -= jDaysInMonth[jMonth];
+                        let jDay = jDayNo + 1;
+                        return {
+                          jy: jYear + (gYear >= 1600 ? 1600 : 621),
+                          jm: jMonth + 1,
+                          jd: jDay
+                        };
                       }
-                      function convertJalaliStringToFullPersian(dateStr) {
-                        const [jy, jm, jd] = toEnglishDigits(dateStr)
-                          .split("/")
-                          .map(Number);
-                        const gDate = toGregorian(jy, jm, jd);
-                        const weekdayIndex = gDate.getDay();
+                      function convertDateToJalaliFullString(dateString) {
+                        const date = new Date(dateString);
+                        const gYear = date.getFullYear();
+                        const gMonth = date.getMonth() + 1;
+                        const gDay = date.getDate();
+                        const weekdayIndex = date.getDay();
+                        const { jy, jm, jd } = toJalali(gYear, gMonth, gDay);
                         const weekday = persianWeekdays[weekdayIndex];
                         const monthName = persianMonths[jm - 1];
-                        return `${weekday}\n${toPersianDigits(
-                          jd
-                        )} ${monthName}`;
+                        return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                       }
                       const checkIn = $props.data.check_in;
-                      const result = convertJalaliStringToFullPersian(checkIn);
+                      const result = convertDateToJalaliFullString(checkIn);
                       return result;
                     })();
                   } catch (e) {
@@ -658,73 +674,62 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
                           .toString()
                           .replace(/\d/g, d => persianDigits[d]);
                       }
-                      function toEnglishDigits(str) {
-                        const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
-                        return str.replace(/[۰-۹]/g, d =>
-                          persianDigits.indexOf(d)
-                        );
-                      }
-                      function toGregorian(jy, jm, jd) {
-                        const jDaysInMonth = [
-                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
-                        ];
-
+                      function toJalali(gYear, gMonth, gDay) {
                         const gDaysInMonth = [
                           31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
                         ];
 
-                        jy -= 979;
-                        jm -= 1;
-                        jd -= 1;
-                        let jDayNo =
-                          365 * jy +
-                          Math.floor(jy / 33) * 8 +
-                          Math.floor(((jy % 33) + 3) / 4);
-                        for (let i = 0; i < jm; ++i) jDayNo += jDaysInMonth[i];
-                        jDayNo += jd;
-                        let gDayNo = jDayNo + 79;
-                        let gy = 1600 + 400 * Math.floor(gDayNo / 146097);
-                        gDayNo %= 146097;
-                        let leap = true;
-                        if (gDayNo >= 36525) {
-                          gDayNo--;
-                          gy += 100 * Math.floor(gDayNo / 36524);
-                          gDayNo %= 36524;
-                          if (gDayNo >= 365) gDayNo++;
-                          else leap = false;
+                        const jDaysInMonth = [
+                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                        ];
+
+                        let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                        let gm = gMonth - 1;
+                        let gd = gDay - 1;
+                        let gDayNo =
+                          365 * gy +
+                          Math.floor((gy + 3) / 4) -
+                          Math.floor((gy + 99) / 100) +
+                          Math.floor((gy + 399) / 400);
+                        for (let i = 0; i < gm; ++i) gDayNo += gDaysInMonth[i];
+                        gDayNo += gd;
+                        let jDayNo = gDayNo - (gYear >= 1600 ? 79 : 0);
+                        let jNp = Math.floor(jDayNo / 12053);
+                        jDayNo %= 12053;
+                        let jYear =
+                          979 + 33 * jNp + 4 * Math.floor(jDayNo / 1461);
+                        jDayNo %= 1461;
+                        if (jDayNo >= 366) {
+                          jYear += Math.floor((jDayNo - 1) / 365);
+                          jDayNo = (jDayNo - 1) % 365;
                         }
-                        gy += 4 * Math.floor(gDayNo / 1461);
-                        gDayNo %= 1461;
-                        if (gDayNo >= 366) {
-                          leap = false;
-                          gDayNo--;
-                          gy += Math.floor(gDayNo / 365);
-                          gDayNo = gDayNo % 365;
-                        }
-                        let gm = 0;
-                        for (; gm < 12; gm++) {
-                          let daysInMonth = gDaysInMonth[gm];
-                          if (gm === 1 && leap) daysInMonth++;
-                          if (gDayNo < daysInMonth) break;
-                          gDayNo -= daysInMonth;
-                        }
-                        let gd = gDayNo + 1;
-                        return new Date(gy, gm, gd);
+                        let jMonth;
+                        for (
+                          jMonth = 0;
+                          jMonth < 11 && jDayNo >= jDaysInMonth[jMonth];
+                          ++jMonth
+                        )
+                          jDayNo -= jDaysInMonth[jMonth];
+                        let jDay = jDayNo + 1;
+                        return {
+                          jy: jYear + (gYear >= 1600 ? 1600 : 621),
+                          jm: jMonth + 1,
+                          jd: jDay
+                        };
                       }
-                      function convertJalaliStringToFullPersian(dateStr) {
-                        const [jy, jm, jd] = toEnglishDigits(dateStr)
-                          .split("/")
-                          .map(Number);
-                        const gDate = toGregorian(jy, jm, jd);
-                        const weekdayIndex = gDate.getDay();
+                      function convertDateToJalaliFullString(dateString) {
+                        const date = new Date(dateString);
+                        const gYear = date.getFullYear();
+                        const gMonth = date.getMonth() + 1;
+                        const gDay = date.getDate();
+                        const weekdayIndex = date.getDay();
+                        const { jy, jm, jd } = toJalali(gYear, gMonth, gDay);
                         const weekday = persianWeekdays[weekdayIndex];
                         const monthName = persianMonths[jm - 1];
-                        return `${weekday}\n${toPersianDigits(
-                          jd
-                        )} ${monthName}`;
+                        return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                       }
                       const checkIn = $props.data.check_in;
-                      const result = convertJalaliStringToFullPersian(checkIn);
+                      const result = convertDateToJalaliFullString(checkIn);
                       return result;
                     })();
                   } catch (e) {
@@ -786,71 +791,62 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
                           .toString()
                           .replace(/\d/g, d => persianDigits[d]);
                       }
-                      function toEnglishDigits(str) {
-                        const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
-                        return str.replace(/[۰-۹]/g, d =>
-                          persianDigits.indexOf(d)
-                        );
-                      }
-                      function toGregorian(jy, jm, jd) {
-                        const jDaysInMonth = [
-                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
-                        ];
-
+                      function toJalali(gYear, gMonth, gDay) {
                         const gDaysInMonth = [
                           31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
                         ];
 
-                        jy -= 979;
-                        jm -= 1;
-                        jd -= 1;
-                        let jDayNo =
-                          365 * jy +
-                          Math.floor(jy / 33) * 8 +
-                          Math.floor(((jy % 33) + 3) / 4);
-                        for (let i = 0; i < jm; ++i) jDayNo += jDaysInMonth[i];
-                        jDayNo += jd;
-                        let gDayNo = jDayNo + 79;
-                        let gy = 1600 + 400 * Math.floor(gDayNo / 146097);
-                        gDayNo %= 146097;
-                        let leap = true;
-                        if (gDayNo >= 36525) {
-                          gDayNo--;
-                          gy += 100 * Math.floor(gDayNo / 36524);
-                          gDayNo %= 36524;
-                          if (gDayNo >= 365) gDayNo++;
-                          else leap = false;
+                        const jDaysInMonth = [
+                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                        ];
+
+                        let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                        let gm = gMonth - 1;
+                        let gd = gDay - 1;
+                        let gDayNo =
+                          365 * gy +
+                          Math.floor((gy + 3) / 4) -
+                          Math.floor((gy + 99) / 100) +
+                          Math.floor((gy + 399) / 400);
+                        for (let i = 0; i < gm; ++i) gDayNo += gDaysInMonth[i];
+                        gDayNo += gd;
+                        let jDayNo = gDayNo - (gYear >= 1600 ? 79 : 0);
+                        let jNp = Math.floor(jDayNo / 12053);
+                        jDayNo %= 12053;
+                        let jYear =
+                          979 + 33 * jNp + 4 * Math.floor(jDayNo / 1461);
+                        jDayNo %= 1461;
+                        if (jDayNo >= 366) {
+                          jYear += Math.floor((jDayNo - 1) / 365);
+                          jDayNo = (jDayNo - 1) % 365;
                         }
-                        gy += 4 * Math.floor(gDayNo / 1461);
-                        gDayNo %= 1461;
-                        if (gDayNo >= 366) {
-                          leap = false;
-                          gDayNo--;
-                          gy += Math.floor(gDayNo / 365);
-                          gDayNo = gDayNo % 365;
-                        }
-                        let gm = 0;
-                        for (; gm < 12; gm++) {
-                          let daysInMonth = gDaysInMonth[gm];
-                          if (gm === 1 && leap) daysInMonth++;
-                          if (gDayNo < daysInMonth) break;
-                          gDayNo -= daysInMonth;
-                        }
-                        let gd = gDayNo + 1;
-                        return new Date(gy, gm, gd);
+                        let jMonth;
+                        for (
+                          jMonth = 0;
+                          jMonth < 11 && jDayNo >= jDaysInMonth[jMonth];
+                          ++jMonth
+                        )
+                          jDayNo -= jDaysInMonth[jMonth];
+                        let jDay = jDayNo + 1;
+                        return {
+                          jy: jYear + (gYear >= 1600 ? 1600 : 621),
+                          jm: jMonth + 1,
+                          jd: jDay
+                        };
                       }
-                      function convertJalaliStringToFullPersian(dateStr) {
-                        const [jy, jm, jd] = toEnglishDigits(dateStr)
-                          .split("/")
-                          .map(Number);
-                        const gDate = toGregorian(jy, jm, jd);
-                        const weekdayIndex = gDate.getDay();
+                      function convertDateToJalaliFullString(dateString) {
+                        const date = new Date(dateString);
+                        const gYear = date.getFullYear();
+                        const gMonth = date.getMonth() + 1;
+                        const gDay = date.getDate();
+                        const weekdayIndex = date.getDay();
+                        const { jy, jm, jd } = toJalali(gYear, gMonth, gDay);
                         const weekday = persianWeekdays[weekdayIndex];
                         const monthName = persianMonths[jm - 1];
                         return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                       }
                       const checkIn = $props.data.check_in;
-                      const result = convertJalaliStringToFullPersian(checkIn);
+                      const result = convertDateToJalaliFullString(checkIn);
                       return result;
                     })();
                   } catch (e) {
@@ -912,71 +908,62 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
                           .toString()
                           .replace(/\d/g, d => persianDigits[d]);
                       }
-                      function toEnglishDigits(str) {
-                        const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
-                        return str.replace(/[۰-۹]/g, d =>
-                          persianDigits.indexOf(d)
-                        );
-                      }
-                      function toGregorian(jy, jm, jd) {
-                        const jDaysInMonth = [
-                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
-                        ];
-
+                      function toJalali(gYear, gMonth, gDay) {
                         const gDaysInMonth = [
                           31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
                         ];
 
-                        jy -= 979;
-                        jm -= 1;
-                        jd -= 1;
-                        let jDayNo =
-                          365 * jy +
-                          Math.floor(jy / 33) * 8 +
-                          Math.floor(((jy % 33) + 3) / 4);
-                        for (let i = 0; i < jm; ++i) jDayNo += jDaysInMonth[i];
-                        jDayNo += jd;
-                        let gDayNo = jDayNo + 79;
-                        let gy = 1600 + 400 * Math.floor(gDayNo / 146097);
-                        gDayNo %= 146097;
-                        let leap = true;
-                        if (gDayNo >= 36525) {
-                          gDayNo--;
-                          gy += 100 * Math.floor(gDayNo / 36524);
-                          gDayNo %= 36524;
-                          if (gDayNo >= 365) gDayNo++;
-                          else leap = false;
+                        const jDaysInMonth = [
+                          31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                        ];
+
+                        let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                        let gm = gMonth - 1;
+                        let gd = gDay - 1;
+                        let gDayNo =
+                          365 * gy +
+                          Math.floor((gy + 3) / 4) -
+                          Math.floor((gy + 99) / 100) +
+                          Math.floor((gy + 399) / 400);
+                        for (let i = 0; i < gm; ++i) gDayNo += gDaysInMonth[i];
+                        gDayNo += gd;
+                        let jDayNo = gDayNo - (gYear >= 1600 ? 79 : 0);
+                        let jNp = Math.floor(jDayNo / 12053);
+                        jDayNo %= 12053;
+                        let jYear =
+                          979 + 33 * jNp + 4 * Math.floor(jDayNo / 1461);
+                        jDayNo %= 1461;
+                        if (jDayNo >= 366) {
+                          jYear += Math.floor((jDayNo - 1) / 365);
+                          jDayNo = (jDayNo - 1) % 365;
                         }
-                        gy += 4 * Math.floor(gDayNo / 1461);
-                        gDayNo %= 1461;
-                        if (gDayNo >= 366) {
-                          leap = false;
-                          gDayNo--;
-                          gy += Math.floor(gDayNo / 365);
-                          gDayNo = gDayNo % 365;
-                        }
-                        let gm = 0;
-                        for (; gm < 12; gm++) {
-                          let daysInMonth = gDaysInMonth[gm];
-                          if (gm === 1 && leap) daysInMonth++;
-                          if (gDayNo < daysInMonth) break;
-                          gDayNo -= daysInMonth;
-                        }
-                        let gd = gDayNo + 1;
-                        return new Date(gy, gm, gd);
+                        let jMonth;
+                        for (
+                          jMonth = 0;
+                          jMonth < 11 && jDayNo >= jDaysInMonth[jMonth];
+                          ++jMonth
+                        )
+                          jDayNo -= jDaysInMonth[jMonth];
+                        let jDay = jDayNo + 1;
+                        return {
+                          jy: jYear + (gYear >= 1600 ? 1600 : 621),
+                          jm: jMonth + 1,
+                          jd: jDay
+                        };
                       }
-                      function convertJalaliStringToFullPersian(dateStr) {
-                        const [jy, jm, jd] = toEnglishDigits(dateStr)
-                          .split("/")
-                          .map(Number);
-                        const gDate = toGregorian(jy, jm, jd);
-                        const weekdayIndex = gDate.getDay();
+                      function convertDateToJalaliFullString(dateString) {
+                        const date = new Date(dateString);
+                        const gYear = date.getFullYear();
+                        const gMonth = date.getMonth() + 1;
+                        const gDay = date.getDate();
+                        const weekdayIndex = date.getDay();
+                        const { jy, jm, jd } = toJalali(gYear, gMonth, gDay);
                         const weekday = persianWeekdays[weekdayIndex];
                         const monthName = persianMonths[jm - 1];
                         return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                       }
                       const checkIn = $props.data.check_in;
-                      const result = convertJalaliStringToFullPersian(checkIn);
+                      const result = convertDateToJalaliFullString(checkIn);
                       return result;
                     })();
                   } catch (e) {
@@ -1023,7 +1010,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
               <React.Fragment>
                 {(() => {
                   try {
-                    return $props.data.website;
+                    return $props.data.website_name;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -1039,7 +1026,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
               <React.Fragment>
                 {(() => {
                   try {
-                    return $props.data.website;
+                    return $props.data.website_name;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -1055,7 +1042,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
               <React.Fragment>
                 {(() => {
                   try {
-                    return $props.data.website;
+                    return $props.data.website_name;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -1125,7 +1112,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicReservationsRecordList__VariantsArgs;
     args?: PlasmicReservationsRecordList__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicReservationsRecordList__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicReservationsRecordList__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicReservationsRecordList__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

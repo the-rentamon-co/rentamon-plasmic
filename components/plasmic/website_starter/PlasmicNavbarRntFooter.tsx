@@ -201,7 +201,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 }
                 function isNotifyEnabled() {
                   const isNotify =
-                    localStorage.getItem("merge_reservations") !== null;
+                    localStorage.getItem("reservations_update_notif") !== null;
                   const hasFirstVisit = getCookieValue("first_visit") !== null;
                   const hasPropTour = getCookieValue("prop_tour") !== null;
                   return isNotify || hasFirstVisit || hasPropTour;

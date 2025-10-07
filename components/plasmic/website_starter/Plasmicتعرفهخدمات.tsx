@@ -845,8 +845,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       {hasVariant(globalVariants, "screen", "smallMobile")
                         ? "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"
-                        : "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"}
+                          ? "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"
+                          : "\u067e\u0631 \u06a9\u0631\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a\r"}
                     </div>
                   </Checkbox>
                 </div>
@@ -1062,28 +1062,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   )}
                   onClick={async event => {
                     const $steps = {};
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                return window.open("/new-calendar", "_blank");
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
                   }}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile") ? (
@@ -2562,8 +2540,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       {hasVariant(globalVariants, "screen", "smallMobile")
                         ? "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"
-                        : "\u062a\u062e\u0645\u06cc\u0646 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"}
+                          ? "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"
+                          : "\u062a\u062e\u0645\u06cc\u0646 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"}
                     </div>
                     <div
                       data-plasmic-name={"value"}
@@ -2621,8 +2599,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       {hasVariant(globalVariants, "screen", "smallMobile")
                         ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0628\u0647 \u0627\u0632\u0627\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648:"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0628\u0647 \u0627\u0632\u0627\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648:"
-                        : "\u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648:"}
+                          ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0628\u0647 \u0627\u0632\u0627\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648:"
+                          : "\u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0627\u0632\u0627\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648:"}
                     </div>
                     <div
                       data-plasmic-name={"commission"}
@@ -2710,8 +2688,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u062d\u0631\u0645\u062a\u200c\u0627\u0644\u0647 \u0642\u06cc\u0635\u0631\u06cc\u00bb \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u062d\u0631\u0645\u062a\u200c\u0627\u0644\u0647 \u0642\u06cc\u0635\u0631\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                      : "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u062d\u0631\u0645\u062a\u200c\u0627\u0644\u0647 \u0642\u06cc\u0635\u0631\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
+                        ? "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u062d\u0631\u0645\u062a\u200c\u0627\u0644\u0647 \u0642\u06cc\u0635\u0631\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                        : "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u062d\u0631\u0645\u062a\u200c\u0627\u0644\u0647 \u0642\u06cc\u0635\u0631\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
                   </div>
                 </div>
               </div>
@@ -2759,10 +2737,10 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   {hasVariant(globalVariants, "screen", "smallMobile")
                     ? "\u0627\u06cc\u0646\u062c\u0627 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
-                    : "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"}
+                      ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"
+                        : "\u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646"}
                 </div>
               </div>
               <div
@@ -3271,7 +3249,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicتعرفهخدمات__VariantsArgs;
     args?: Plasmicتعرفهخدمات__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicتعرفهخدمات__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicتعرفهخدمات__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicتعرفهخدمات__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

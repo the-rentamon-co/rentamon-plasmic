@@ -256,7 +256,9 @@ function Plasmicتالار__RenderFunc(props: {
             try {
               return (() => {
                 function isNotifyEnabled() {
-                  return localStorage.getItem("merge_reservations") !== null;
+                  return (
+                    localStorage.getItem("reservations_update_notif") !== null
+                  );
                 }
                 if (isNotifyEnabled()) {
                   return true;
@@ -580,7 +582,7 @@ function Plasmicتالار__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               undefined,
-                              "\u0628\u0647 \u0632\u0648\u062f\u06cc \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0645\u0627\u0645\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0633\u062a\u06cc \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631\u062a \u0631\u0648 \u062f\u0631 \u0628\u062e\u0634 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb \u0628\u0628\u06cc\u0646\u06cc.",
+                              "\u062a\u0645\u0627\u0645\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u067e\u0631\u062f\u0627\u0632\u0634 \u06a9\u0631\u062f\u0647 \u0631\u0648 \u062f\u0631 \u0628\u062e\u0634 \u00ab\u0631\u0632\u0631\u0648\u200c\u0647\u0627\u06cc \u0645\u0646\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc.",
                               "top-center",
                               6000
                             ]
@@ -607,7 +609,7 @@ function Plasmicتالار__RenderFunc(props: {
                               return (() => {
                                 function enableNotify() {
                                   localStorage.setItem(
-                                    "merge_reservations",
+                                    "reservations_update_notif",
                                     "true"
                                   );
                                 }
