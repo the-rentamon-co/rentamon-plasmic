@@ -713,18 +713,18 @@ function PlasmicYalda__RenderFunc(props: {
                                 }
                               })()
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? {
-                                src: "/plasmic/website_starter/images/_13549867Png.png",
-                                fullWidth: 256,
-                                fullHeight: 256,
-                                aspectRatio: undefined
-                              }
-                            : {
-                                src: "/plasmic/website_starter/images/_13549867Png.png",
-                                fullWidth: 256,
-                                fullHeight: 256,
-                                aspectRatio: undefined
-                              }
+                              ? {
+                                  src: "/plasmic/website_starter/images/_13549867Png.png",
+                                  fullWidth: 256,
+                                  fullHeight: 256,
+                                  aspectRatio: undefined
+                                }
+                              : {
+                                  src: "/plasmic/website_starter/images/_13549867Png.png",
+                                  fullWidth: 256,
+                                  fullHeight: 256,
+                                  aspectRatio: undefined
+                                }
                         }
                         width={
                           hasVariant(globalVariants, "screen", "mobile")
@@ -1335,7 +1335,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicYalda__VariantsArgs;
     args?: PlasmicYalda__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicYalda__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicYalda__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicYalda__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

@@ -564,61 +564,61 @@ function PlasmicBookings__RenderFunc(props: {
                         }
                       })()
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? (() => {
-                        try {
-                          return $state.booking.data.property_pic_link;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return {
-                              src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
-                              fullWidth: 1247,
-                              fullHeight: 529,
-                              aspectRatio: undefined
-                            };
+                      ? (() => {
+                          try {
+                            return $state.booking.data.property_pic_link;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return {
+                                src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
+                                fullWidth: 1247,
+                                fullHeight: 529,
+                                aspectRatio: undefined
+                              };
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? (() => {
-                        try {
-                          return $state.booking.data.property_pic_link;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return {
-                              src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
-                              fullWidth: 1247,
-                              fullHeight: 529,
-                              aspectRatio: undefined
-                            };
-                          }
-                          throw e;
-                        }
-                      })()
-                    : (() => {
-                        try {
-                          return $state.booking.data.property_pic_link;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return {
-                              src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
-                              fullWidth: 1247,
-                              fullHeight: 529,
-                              aspectRatio: undefined
-                            };
-                          }
-                          throw e;
-                        }
-                      })()
+                        })()
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            try {
+                              return $state.booking.data.property_pic_link;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return {
+                                  src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
+                                  fullWidth: 1247,
+                                  fullHeight: 529,
+                                  aspectRatio: undefined
+                                };
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return $state.booking.data.property_pic_link;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return {
+                                  src: "/plasmic/website_starter/images/homeCoverJpg.jpg",
+                                  fullWidth: 1247,
+                                  fullHeight: 529,
+                                  aspectRatio: undefined
+                                };
+                              }
+                              throw e;
+                            }
+                          })()
                 }
               />
 
@@ -657,10 +657,10 @@ function PlasmicBookings__RenderFunc(props: {
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "34px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "38px"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "48px"
-                      : "40px"
+                        ? "38px"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "48px"
+                          : "40px"
                   }
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
@@ -754,10 +754,10 @@ function PlasmicBookings__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "23px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "26px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "46px"
-                            : "40px"
+                              ? "26px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "46px"
+                                : "40px"
                         }
                         displayMaxHeight={"none"}
                         displayMaxWidth={
@@ -819,10 +819,10 @@ function PlasmicBookings__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "23px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "26px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "40px"
-                            : "40px"
+                              ? "26px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "40px"
+                                : "40px"
                         }
                         displayMaxHeight={"none"}
                         displayMaxWidth={
@@ -884,10 +884,10 @@ function PlasmicBookings__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "23px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "26px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "46px"
-                            : "40px"
+                              ? "26px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "46px"
+                                : "40px"
                         }
                         displayMaxHeight={"none"}
                         displayMaxWidth={
@@ -949,10 +949,10 @@ function PlasmicBookings__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "23px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "26px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "46px"
-                            : "40px"
+                              ? "26px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "46px"
+                                : "40px"
                         }
                         displayMaxHeight={"none"}
                         displayMaxWidth={
@@ -1014,10 +1014,10 @@ function PlasmicBookings__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "23px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "26px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "46px"
-                            : "40px"
+                              ? "26px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "46px"
+                                : "40px"
                         }
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
@@ -1071,10 +1071,10 @@ function PlasmicBookings__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "23px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "26px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "46px"
-                            : "40px"
+                              ? "26px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "46px"
+                                : "40px"
                         }
                         displayMaxHeight={"none"}
                         displayMaxWidth={
@@ -1476,10 +1476,10 @@ function PlasmicBookings__RenderFunc(props: {
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "28px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "33px"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "48px"
-                      : "60px"
+                        ? "33px"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "48px"
+                          : "60px"
                   }
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
@@ -1523,10 +1523,10 @@ function PlasmicBookings__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "23px"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "26px"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "46px"
-                        : "63px"
+                          ? "26px"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "46px"
+                            : "63px"
                     }
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -1793,9 +1793,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   );
                                   const weekday = persianWeekdays[weekdayIndex];
                                   const monthName = persianMonths[jm - 1];
-                                  return `${weekday} ${toPersianDigits(
-                                    jd
-                                  )} ${monthName}`;
+                                  return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                 }
                                 const checkIn = $state.booking.data.check_in;
                                 const result =
@@ -1926,9 +1924,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   );
                                   const weekday = persianWeekdays[weekdayIndex];
                                   const monthName = persianMonths[jm - 1];
-                                  return `${weekday} ${toPersianDigits(
-                                    jd
-                                  )} ${monthName}`;
+                                  return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                 }
                                 const checkIn = $state.booking.data.check_in;
                                 const result =
@@ -2059,9 +2055,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   );
                                   const weekday = persianWeekdays[weekdayIndex];
                                   const monthName = persianMonths[jm - 1];
-                                  return `${weekday} ${toPersianDigits(
-                                    jd
-                                  )} ${monthName}`;
+                                  return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                 }
                                 const checkIn = $state.booking.data.check_in;
                                 const result =
@@ -2110,32 +2104,32 @@ function PlasmicBookings__RenderFunc(props: {
                             }
                           })()
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? (() => {
-                            try {
-                              return $state.booking.data.status == "reserve";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return true;
+                          ? (() => {
+                              try {
+                                return $state.booking.data.status == "reserve";
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()
-                        : (() => {
-                            try {
-                              return $state.booking.data.status == "reserve";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return false;
+                            })()
+                          : (() => {
+                              try {
+                                return $state.booking.data.status == "reserve";
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()
+                            })()
                     ) ? (
                       <div
                         className={classNames(
@@ -2321,9 +2315,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   );
                                   const weekday = persianWeekdays[weekdayIndex];
                                   const monthName = persianMonths[jm - 1];
-                                  return `${weekday} ${toPersianDigits(
-                                    jd
-                                  )} ${monthName}`;
+                                  return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                 }
                                 const checkIn = $state.booking.data.check_out;
                                 const result =
@@ -2454,9 +2446,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   );
                                   const weekday = persianWeekdays[weekdayIndex];
                                   const monthName = persianMonths[jm - 1];
-                                  return `${weekday} ${toPersianDigits(
-                                    jd
-                                  )} ${monthName}`;
+                                  return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                 }
                                 const checkIn = $state.booking.data.check_out;
                                 const result =
@@ -2587,9 +2577,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   );
                                   const weekday = persianWeekdays[weekdayIndex];
                                   const monthName = persianMonths[jm - 1];
-                                  return `${weekday} ${toPersianDigits(
-                                    jd
-                                  )} ${monthName}`;
+                                  return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                 }
                                 const checkIn = $state.booking.data.check_out;
                                 const result =
@@ -2635,9 +2623,8 @@ function PlasmicBookings__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction"] === "object" &&
                         typeof $steps["invokeGlobalAction"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["invokeGlobalAction"] =
+                          await $steps["invokeGlobalAction"];
                       }
                     }}
                   >
@@ -2866,12 +2853,12 @@ function PlasmicBookings__RenderFunc(props: {
                                   )
                                     ? "14px"
                                     : hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "mobile"
-                                      )
-                                    ? "16px"
-                                    : "auto"
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                      ? "16px"
+                                      : "auto"
                                 }
                                 loading={"lazy"}
                                 src={{
@@ -3236,9 +3223,7 @@ function PlasmicBookings__RenderFunc(props: {
                                               persianWeekdays[weekdayIndex];
                                             const monthName =
                                               persianMonths[jm - 1];
-                                            return `${weekday} ${toPersianDigits(
-                                              jd
-                                            )} ${monthName}`;
+                                            return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                           }
                                           const checkIn =
                                             $state.booking.data.reservations
@@ -3395,9 +3380,7 @@ function PlasmicBookings__RenderFunc(props: {
                                               persianWeekdays[weekdayIndex];
                                             const monthName =
                                               persianMonths[jm - 1];
-                                            return `${weekday} ${toPersianDigits(
-                                              jd
-                                            )} ${monthName}`;
+                                            return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                           }
                                           const checkIn =
                                             $state.booking.data.reservations
@@ -3554,9 +3537,7 @@ function PlasmicBookings__RenderFunc(props: {
                                               persianWeekdays[weekdayIndex];
                                             const monthName =
                                               persianMonths[jm - 1];
-                                            return `${weekday} ${toPersianDigits(
-                                              jd
-                                            )} ${monthName}`;
+                                            return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                           }
                                           const checkIn =
                                             $state.booking.data.reservations
@@ -3709,9 +3690,7 @@ function PlasmicBookings__RenderFunc(props: {
                                               persianWeekdays[weekdayIndex];
                                             const monthName =
                                               persianMonths[jm - 1];
-                                            return `${weekday} ${toPersianDigits(
-                                              jd
-                                            )} ${monthName}`;
+                                            return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                           }
                                           const checkIn =
                                             $state.booking.data.reservations
@@ -3762,12 +3741,12 @@ function PlasmicBookings__RenderFunc(props: {
                                     )
                                       ? "100%"
                                       : hasVariant(
-                                          globalVariants,
-                                          "screen",
-                                          "mobile"
-                                        )
-                                      ? "100%"
-                                      : "100%"
+                                            globalVariants,
+                                            "screen",
+                                            "mobile"
+                                          )
+                                        ? "100%"
+                                        : "100%"
                                   }
                                   displayMinHeight={"0"}
                                   displayMinWidth={"0"}
@@ -3779,12 +3758,12 @@ function PlasmicBookings__RenderFunc(props: {
                                     )
                                       ? "14px"
                                       : hasVariant(
-                                          globalVariants,
-                                          "screen",
-                                          "mobile"
-                                        )
-                                      ? "16px"
-                                      : "auto"
+                                            globalVariants,
+                                            "screen",
+                                            "mobile"
+                                          )
+                                        ? "16px"
+                                        : "auto"
                                   }
                                   loading={"lazy"}
                                   src={{
@@ -3908,12 +3887,12 @@ function PlasmicBookings__RenderFunc(props: {
                                     )
                                       ? "100%"
                                       : hasVariant(
-                                          globalVariants,
-                                          "screen",
-                                          "mobile"
-                                        )
-                                      ? "100%"
-                                      : "100%"
+                                            globalVariants,
+                                            "screen",
+                                            "mobile"
+                                          )
+                                        ? "100%"
+                                        : "100%"
                                   }
                                   displayMinHeight={"0"}
                                   displayMinWidth={"0"}
@@ -3925,12 +3904,12 @@ function PlasmicBookings__RenderFunc(props: {
                                     )
                                       ? "14px"
                                       : hasVariant(
-                                          globalVariants,
-                                          "screen",
-                                          "mobile"
-                                        )
-                                      ? "16px"
-                                      : "auto"
+                                            globalVariants,
+                                            "screen",
+                                            "mobile"
+                                          )
+                                        ? "16px"
+                                        : "auto"
                                   }
                                   loading={"lazy"}
                                   src={{
@@ -4923,9 +4902,8 @@ function PlasmicBookings__RenderFunc(props: {
                                     typeof $steps["invokeGlobalAction"].then ===
                                       "function"
                                   ) {
-                                    $steps["invokeGlobalAction"] = await $steps[
-                                      "invokeGlobalAction"
-                                    ];
+                                    $steps["invokeGlobalAction"] =
+                                      await $steps["invokeGlobalAction"];
                                   }
                                 }}
                               >
@@ -5078,9 +5056,8 @@ function PlasmicBookings__RenderFunc(props: {
                                     typeof $steps["invokeGlobalAction"].then ===
                                       "function"
                                   ) {
-                                    $steps["invokeGlobalAction"] = await $steps[
-                                      "invokeGlobalAction"
-                                    ];
+                                    $steps["invokeGlobalAction"] =
+                                      await $steps["invokeGlobalAction"];
                                   }
                                 }}
                               >
@@ -5258,9 +5235,8 @@ function PlasmicBookings__RenderFunc(props: {
                               typeof $steps["updateAccordionOpen"].then ===
                                 "function"
                             ) {
-                              $steps["updateAccordionOpen"] = await $steps[
-                                "updateAccordionOpen"
-                              ];
+                              $steps["updateAccordionOpen"] =
+                                await $steps["updateAccordionOpen"];
                             }
                           }}
                         >
@@ -5449,12 +5425,12 @@ function PlasmicBookings__RenderFunc(props: {
                                     )
                                       ? "18px"
                                       : hasVariant(
-                                          globalVariants,
-                                          "screen",
-                                          "mobile"
-                                        )
-                                      ? "24px"
-                                      : "27px"
+                                            globalVariants,
+                                            "screen",
+                                            "mobile"
+                                          )
+                                        ? "24px"
+                                        : "27px"
                                   }
                                   displayMaxHeight={"none"}
                                   displayMaxWidth={
@@ -5465,12 +5441,12 @@ function PlasmicBookings__RenderFunc(props: {
                                     )
                                       ? "100%"
                                       : hasVariant(
-                                          globalVariants,
-                                          "screen",
-                                          "mobile"
-                                        )
-                                      ? "100%"
-                                      : "100%"
+                                            globalVariants,
+                                            "screen",
+                                            "mobile"
+                                          )
+                                        ? "100%"
+                                        : "100%"
                                   }
                                   displayMinHeight={"0"}
                                   displayMinWidth={"0"}
@@ -5507,63 +5483,69 @@ function PlasmicBookings__RenderFunc(props: {
                                       }
                                     })()
                                   : hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "mobile"
-                                    )
-                                  ? (() => {
-                                      try {
-                                        return Object.values(
-                                          $state.booking.data.auto_sync
-                                        ).some(status => status !== "succeed");
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return true;
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                    ? (() => {
+                                        try {
+                                          return Object.values(
+                                            $state.booking.data.auto_sync
+                                          ).some(
+                                            status => status !== "succeed"
+                                          );
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return true;
+                                          }
+                                          throw e;
                                         }
-                                        throw e;
-                                      }
-                                    })()
-                                  : hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "tablet"
-                                    )
-                                  ? (() => {
-                                      try {
-                                        return Object.values(
-                                          $state.booking.data.auto_sync
-                                        ).some(status => status !== "succeed");
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return false;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  : (() => {
-                                      try {
-                                        return Object.values(
-                                          $state.booking.data.auto_sync
-                                        ).some(status => status !== "succeed");
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return false;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
+                                      })()
+                                    : hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "tablet"
+                                        )
+                                      ? (() => {
+                                          try {
+                                            return Object.values(
+                                              $state.booking.data.auto_sync
+                                            ).some(
+                                              status => status !== "succeed"
+                                            );
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return false;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      : (() => {
+                                          try {
+                                            return Object.values(
+                                              $state.booking.data.auto_sync
+                                            ).some(
+                                              status => status !== "succeed"
+                                            );
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return false;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
                               ) ? (
                                 <PlasmicImg__
                                   alt={""}
@@ -5576,12 +5558,12 @@ function PlasmicBookings__RenderFunc(props: {
                                     )
                                       ? "18px"
                                       : hasVariant(
-                                          globalVariants,
-                                          "screen",
-                                          "mobile"
-                                        )
-                                      ? "24px"
-                                      : "27px"
+                                            globalVariants,
+                                            "screen",
+                                            "mobile"
+                                          )
+                                        ? "24px"
+                                        : "27px"
                                   }
                                   displayMaxHeight={"none"}
                                   displayMaxWidth={
@@ -5592,12 +5574,12 @@ function PlasmicBookings__RenderFunc(props: {
                                     )
                                       ? "100%"
                                       : hasVariant(
-                                          globalVariants,
-                                          "screen",
-                                          "mobile"
-                                        )
-                                      ? "100%"
-                                      : "100%"
+                                            globalVariants,
+                                            "screen",
+                                            "mobile"
+                                          )
+                                        ? "100%"
+                                        : "100%"
                                   }
                                   displayMinHeight={"0"}
                                   displayMinWidth={"0"}
@@ -5650,12 +5632,12 @@ function PlasmicBookings__RenderFunc(props: {
                                   )
                                     ? "100%"
                                     : hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "mobile"
-                                      )
-                                    ? "100%"
-                                    : "100%"
+                                          globalVariants,
+                                          "screen",
+                                          "mobile"
+                                        )
+                                      ? "100%"
+                                      : "100%"
                                 }
                                 displayMinHeight={"0"}
                                 displayMinWidth={"0"}
@@ -5948,18 +5930,18 @@ function PlasmicBookings__RenderFunc(props: {
                                         )
                                           ? "22px"
                                           : hasVariant(
-                                              globalVariants,
-                                              "screen",
-                                              "mobile"
-                                            )
-                                          ? "24px"
-                                          : hasVariant(
-                                              globalVariants,
-                                              "screen",
-                                              "tablet"
-                                            )
-                                          ? "24px"
-                                          : "27px"
+                                                globalVariants,
+                                                "screen",
+                                                "mobile"
+                                              )
+                                            ? "24px"
+                                            : hasVariant(
+                                                  globalVariants,
+                                                  "screen",
+                                                  "tablet"
+                                                )
+                                              ? "24px"
+                                              : "27px"
                                       }
                                       displayMaxHeight={"none"}
                                       displayMaxWidth={
@@ -5970,12 +5952,12 @@ function PlasmicBookings__RenderFunc(props: {
                                         )
                                           ? "100%"
                                           : hasVariant(
-                                              globalVariants,
-                                              "screen",
-                                              "mobile"
-                                            )
-                                          ? "100%"
-                                          : "100%"
+                                                globalVariants,
+                                                "screen",
+                                                "mobile"
+                                              )
+                                            ? "100%"
+                                            : "100%"
                                       }
                                       displayMinHeight={"0"}
                                       displayMinWidth={"0"}
@@ -6046,12 +6028,12 @@ function PlasmicBookings__RenderFunc(props: {
                                         )
                                           ? "22px"
                                           : hasVariant(
-                                              globalVariants,
-                                              "screen",
-                                              "tablet"
-                                            )
-                                          ? "24px"
-                                          : "27px"
+                                                globalVariants,
+                                                "screen",
+                                                "tablet"
+                                              )
+                                            ? "24px"
+                                            : "27px"
                                       }
                                       displayMaxHeight={"none"}
                                       displayMaxWidth={"100%"}
@@ -6118,9 +6100,8 @@ function PlasmicBookings__RenderFunc(props: {
                               typeof $steps["updateAccordionOpen"].then ===
                                 "function"
                             ) {
-                              $steps["updateAccordionOpen"] = await $steps[
-                                "updateAccordionOpen"
-                              ];
+                              $steps["updateAccordionOpen"] =
+                                await $steps["updateAccordionOpen"];
                             }
                           }}
                         >
@@ -6602,9 +6583,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         const weekday =
                                           persianWeekdays[weekdayIndex];
                                         const monthName = persianMonths[jm - 1];
-                                        return `${weekday} ${toPersianDigits(
-                                          jd
-                                        )} ${monthName}`;
+                                        return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                       }
                                       const checkIn =
                                         $state.booking.data.reservations
@@ -6751,9 +6730,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         const weekday =
                                           persianWeekdays[weekdayIndex];
                                         const monthName = persianMonths[jm - 1];
-                                        return `${weekday} ${toPersianDigits(
-                                          jd
-                                        )} ${monthName}`;
+                                        return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                       }
                                       const checkIn =
                                         $state.booking.data.reservations
@@ -6900,9 +6877,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         const weekday =
                                           persianWeekdays[weekdayIndex];
                                         const monthName = persianMonths[jm - 1];
-                                        return `${weekday} ${toPersianDigits(
-                                          jd
-                                        )} ${monthName}`;
+                                        return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                       }
                                       const checkIn =
                                         $state.booking.data.reservations
@@ -7045,9 +7020,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         const weekday =
                                           persianWeekdays[weekdayIndex];
                                         const monthName = persianMonths[jm - 1];
-                                        return `${weekday} ${toPersianDigits(
-                                          jd
-                                        )} ${monthName}`;
+                                        return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                       }
                                       const checkIn =
                                         $state.booking.data.reservations
@@ -7096,12 +7069,12 @@ function PlasmicBookings__RenderFunc(props: {
                                 )
                                   ? "100%"
                                   : hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "mobile"
-                                    )
-                                  ? "100%"
-                                  : "100%"
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                    ? "100%"
+                                    : "100%"
                               }
                               displayMinHeight={"0"}
                               displayMinWidth={"0"}
@@ -7232,12 +7205,12 @@ function PlasmicBookings__RenderFunc(props: {
                                 )
                                   ? "100%"
                                   : hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "mobile"
-                                    )
-                                  ? "100%"
-                                  : "100%"
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                    ? "100%"
+                                    : "100%"
                               }
                               displayMinHeight={"0"}
                               displayMinWidth={"0"}
@@ -7665,9 +7638,8 @@ function PlasmicBookings__RenderFunc(props: {
                         typeof $steps["updateUpdateManualReserveOpen"].then ===
                           "function"
                       ) {
-                        $steps["updateUpdateManualReserveOpen"] = await $steps[
-                          "updateUpdateManualReserveOpen"
-                        ];
+                        $steps["updateUpdateManualReserveOpen"] =
+                          await $steps["updateUpdateManualReserveOpen"];
                       }
                     }}
                   >
@@ -8040,9 +8012,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       date.getMonth() + 1,
                                       date.getDate()
                                     );
-                                    return `${formatPersianNumber(
-                                      jd
-                                    )} ${jalaliMonthName(jm)}`;
+                                    return `${formatPersianNumber(jd)} ${jalaliMonthName(jm)}`;
                                   }
                                   const checkIn = $state.booking.data.check_in;
                                   const checkOut =
@@ -8586,9 +8556,8 @@ function PlasmicBookings__RenderFunc(props: {
                                 typeof $steps["validationData"].then ===
                                   "function"
                               ) {
-                                $steps["validationData"] = await $steps[
-                                  "validationData"
-                                ];
+                                $steps["validationData"] =
+                                  await $steps["validationData"];
                               }
 
                               $steps["closeModal"] = $steps.validationData
@@ -8625,9 +8594,8 @@ function PlasmicBookings__RenderFunc(props: {
                                 typeof $steps["closeModal"] === "object" &&
                                 typeof $steps["closeModal"].then === "function"
                               ) {
-                                $steps["closeModal"] = await $steps[
-                                  "closeModal"
-                                ];
+                                $steps["closeModal"] =
+                                  await $steps["closeModal"];
                               }
 
                               $steps["requestForUpdate"] = $steps.validationData
@@ -8679,9 +8647,8 @@ function PlasmicBookings__RenderFunc(props: {
                                 typeof $steps["requestForUpdate"].then ===
                                   "function"
                               ) {
-                                $steps["requestForUpdate"] = await $steps[
-                                  "requestForUpdate"
-                                ];
+                                $steps["requestForUpdate"] =
+                                  await $steps["requestForUpdate"];
                               }
 
                               $steps["showTrueToast"] = $steps.validationData
@@ -8704,9 +8671,8 @@ function PlasmicBookings__RenderFunc(props: {
                                 typeof $steps["showTrueToast"].then ===
                                   "function"
                               ) {
-                                $steps["showTrueToast"] = await $steps[
-                                  "showTrueToast"
-                                ];
+                                $steps["showTrueToast"] =
+                                  await $steps["showTrueToast"];
                               }
 
                               $steps["showFalseToast"] = !$steps.validationData
@@ -8742,9 +8708,8 @@ function PlasmicBookings__RenderFunc(props: {
                                 typeof $steps["showFalseToast"].then ===
                                   "function"
                               ) {
-                                $steps["showFalseToast"] = await $steps[
-                                  "showFalseToast"
-                                ];
+                                $steps["showFalseToast"] =
+                                  await $steps["showFalseToast"];
                               }
 
                               $steps["updateFront"] = $steps.validationData
@@ -8775,9 +8740,8 @@ function PlasmicBookings__RenderFunc(props: {
                                 typeof $steps["updateFront"] === "object" &&
                                 typeof $steps["updateFront"].then === "function"
                               ) {
-                                $steps["updateFront"] = await $steps[
-                                  "updateFront"
-                                ];
+                                $steps["updateFront"] =
+                                  await $steps["updateFront"];
                               }
                             }}
                             submitsForm={false}
@@ -9034,9 +8998,8 @@ function PlasmicBookings__RenderFunc(props: {
                             typeof $steps["invokeGlobalAction"].then ===
                               "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
+                            $steps["invokeGlobalAction"] =
+                              await $steps["invokeGlobalAction"];
                           }
 
                           $steps["updateCancelManualReserveOpen"] = true
@@ -9098,9 +9061,8 @@ function PlasmicBookings__RenderFunc(props: {
                             typeof $steps["invokeGlobalAction2"].then ===
                               "function"
                           ) {
-                            $steps["invokeGlobalAction2"] = await $steps[
-                              "invokeGlobalAction2"
-                            ];
+                            $steps["invokeGlobalAction2"] =
+                              await $steps["invokeGlobalAction2"];
                           }
                         }}
                       >
@@ -9284,9 +9246,8 @@ function PlasmicBookings__RenderFunc(props: {
                           typeof $steps["invokeGlobalAction"].then ===
                             "function"
                         ) {
-                          $steps["invokeGlobalAction"] = await $steps[
-                            "invokeGlobalAction"
-                          ];
+                          $steps["invokeGlobalAction"] =
+                            await $steps["invokeGlobalAction"];
                         }
 
                         $steps["runCode2"] = true
@@ -9996,7 +9957,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicBookings__VariantsArgs;
     args?: PlasmicBookings__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicBookings__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicBookings__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicBookings__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
