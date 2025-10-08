@@ -3016,6 +3016,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/connections-2"
+        },
+        {
+          "id": "1Dq3z-3HeAOL",
+          "name": "Instant2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicInstant2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/instant.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicInstant2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/instant"
         }
       ],
       "icons": [

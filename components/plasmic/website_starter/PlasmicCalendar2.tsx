@@ -8708,6 +8708,48 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ) {
                   $steps["runCode2"] = await $steps["runCode2"];
                 }
+
+                $steps["invokeGlobalAction"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://gateway.rentamon.com/webhook/reservations/cancelation",
+                          undefined,
+                          (() => {
+                            try {
+                              return (() => {
+                                const bookingIds = ($state.selectedItem ?? [])
+                                  .map(item => item.booking_id)
+                                  .filter(id => id != null);
+                                return { dates: [...new Set(bookingIds)] };
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["invokeGlobalAction"] != null &&
+                  typeof $steps["invokeGlobalAction"] === "object" &&
+                  typeof $steps["invokeGlobalAction"].then === "function"
+                ) {
+                  $steps["invokeGlobalAction"] =
+                    await $steps["invokeGlobalAction"];
+                }
               }}
             >
               <div

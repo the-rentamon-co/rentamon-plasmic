@@ -61,6 +61,8 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
+import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
@@ -93,12 +95,24 @@ export type PlasmicInstantReserve__OverridesType = {
   topContainer?: Flex__<"section">;
   topContainer2?: Flex__<"section">;
   alertIcon?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   alertText?: Flex__<"div">;
   alertButton?: Flex__<"div">;
   button?: Flex__<"div">;
   mainSection?: Flex__<"section">;
   properties?: Flex__<typeof ApiRequest>;
+  selectProperty?: Flex__<typeof Select>;
+  shabContainer?: Flex__<"div">;
+  shabSwitch?: Flex__<typeof Switch>;
+  otaghakContainer?: Flex__<"div">;
+  otaghakSwitch?: Flex__<typeof Switch>;
+  jabamaContainer?: Flex__<"div">;
+  fragmentSwitch3?: Flex__<typeof Switch>;
+  jajigaContainer?: Flex__<"div">;
+  fragmentSwitch5?: Flex__<typeof Switch>;
+  mihmanshoContainer?: Flex__<"div">;
+  fragmentSwitch7?: Flex__<typeof Switch>;
+  homsaContainer?: Flex__<"div">;
+  fragmentSwitch4?: Flex__<typeof Switch>;
   desc?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   returnButton?: Flex__<"div">;
@@ -213,6 +227,48 @@ function PlasmicInstantReserve__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "selectProperty.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "shabSwitch.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "otaghakSwitch.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "fragmentSwitch3.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "fragmentSwitch5.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "fragmentSwitch7.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "fragmentSwitch4.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -398,16 +454,14 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.alertIcon)}
                 >
                   <PlasmicImg__
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img)}
+                    className={classNames(sty.img__mAxyx)}
                     displayHeight={
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "35px"
-                        : "43px"
+                          ? "35px"
+                          : "43px"
                     }
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -500,7 +554,6 @@ function PlasmicInstantReserve__RenderFunc(props: {
             <ApiRequest
               data-plasmic-name={"properties"}
               data-plasmic-override={overrides.properties}
-              children={null}
               className={classNames("__wab_instance", sty.properties)}
               errorDisplay={
                 <div
@@ -547,7 +600,380 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 $refs["properties"] = ref;
               }}
               url={"https://gateway.rentamon.com/webhook/na-instant"}
-            />
+            >
+              <Select
+                data-plasmic-name={"selectProperty"}
+                data-plasmic-override={overrides.selectProperty}
+                className={classNames("__wab_instance", sty.selectProperty)}
+                onChange={async (...eventArgs: any) => {
+                  ((...eventArgs) => {
+                    generateStateOnChangeProp($state, [
+                      "selectProperty",
+                      "value"
+                    ])(eventArgs[0]);
+                  }).apply(null, eventArgs);
+
+                  if (
+                    eventArgs.length > 1 &&
+                    eventArgs[1] &&
+                    eventArgs[1]._plasmic_state_init_
+                  ) {
+                    return;
+                  }
+                }}
+                options={[
+                  { value: "option1", label: "Option 1" },
+                  { value: "option2", label: "Option 2" }
+                ]}
+                placeholder={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___8SwRt
+                    )}
+                  >
+                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
+                  </div>
+                }
+                value={generateStateValueProp($state, [
+                  "selectProperty",
+                  "value"
+                ])}
+              />
+
+              <div className={classNames(projectcss.all, sty.freeBox__kJN)}>
+                <div
+                  data-plasmic-name={"shabContainer"}
+                  data-plasmic-override={overrides.shabContainer}
+                  className={classNames(projectcss.all, sty.shabContainer)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___3UtGf)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__df0I0)}
+                      displayHeight={"44px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"44px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image.png",
+                        fullWidth: 88,
+                        fullHeight: 88,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___2RycJ
+                      )}
+                    >
+                      {"\u0634\u0628"}
+                    </div>
+                  </div>
+                  <Switch
+                    data-plasmic-name={"shabSwitch"}
+                    data-plasmic-override={overrides.shabSwitch}
+                    checked={generateStateValueProp($state, [
+                      "shabSwitch",
+                      "checked"
+                    ])}
+                    className={classNames("__wab_instance", sty.shabSwitch)}
+                    disabled={false}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "shabSwitch",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                    }}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"otaghakContainer"}
+                  data-plasmic-override={overrides.otaghakContainer}
+                  className={classNames(projectcss.all, sty.otaghakContainer)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__cm7Ha)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__fPt4F)}
+                      displayHeight={"44px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"44px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/otaghakPng.png",
+                        fullWidth: 140,
+                        fullHeight: 140,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__bQnww
+                      )}
+                    >
+                      {"\u0627\u062a\u0627\u0642\u06a9"}
+                    </div>
+                  </div>
+                  <Switch
+                    data-plasmic-name={"otaghakSwitch"}
+                    data-plasmic-override={overrides.otaghakSwitch}
+                    checked={generateStateValueProp($state, [
+                      "otaghakSwitch",
+                      "checked"
+                    ])}
+                    className={classNames("__wab_instance", sty.otaghakSwitch)}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "otaghakSwitch",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                    }}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"jabamaContainer"}
+                  data-plasmic-override={overrides.jabamaContainer}
+                  className={classNames(projectcss.all, sty.jabamaContainer)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__mr1ZJ)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__rgd1N)}
+                      displayHeight={"44px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"44px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/jabamaWebp.webp",
+                        fullWidth: 512,
+                        fullHeight: 512,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__r1CfW
+                      )}
+                    >
+                      {"\u062c\u0627\u0628\u0627\u0645\u0627"}
+                    </div>
+                  </div>
+                  <Switch
+                    data-plasmic-name={"fragmentSwitch3"}
+                    data-plasmic-override={overrides.fragmentSwitch3}
+                    checked={generateStateValueProp($state, [
+                      "fragmentSwitch3",
+                      "checked"
+                    ])}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentSwitch3
+                    )}
+                    disabled={true}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "fragmentSwitch3",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                    }}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"jajigaContainer"}
+                  data-plasmic-override={overrides.jajigaContainer}
+                  className={classNames(projectcss.all, sty.jajigaContainer)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ofiI)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__mhrv)}
+                      displayHeight={"44px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"44px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/jajigaWebp.webp",
+                        fullWidth: 192,
+                        fullHeight: 192,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__bDj29
+                      )}
+                    >
+                      {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
+                    </div>
+                  </div>
+                  <Switch
+                    data-plasmic-name={"fragmentSwitch5"}
+                    data-plasmic-override={overrides.fragmentSwitch5}
+                    checked={generateStateValueProp($state, [
+                      "fragmentSwitch5",
+                      "checked"
+                    ])}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentSwitch5
+                    )}
+                    disabled={true}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "fragmentSwitch5",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                    }}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"mihmanshoContainer"}
+                  data-plasmic-override={overrides.mihmanshoContainer}
+                  className={classNames(projectcss.all, sty.mihmanshoContainer)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__raZzS)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__bfX3D)}
+                      displayHeight={"44px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"44px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/mihmanshoPng.png",
+                        fullWidth: 140,
+                        fullHeight: 140,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___9KcOi
+                      )}
+                    >
+                      {"\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
+                    </div>
+                  </div>
+                  <Switch
+                    data-plasmic-name={"fragmentSwitch7"}
+                    data-plasmic-override={overrides.fragmentSwitch7}
+                    checked={generateStateValueProp($state, [
+                      "fragmentSwitch7",
+                      "checked"
+                    ])}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentSwitch7
+                    )}
+                    disabled={true}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "fragmentSwitch7",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                    }}
+                  />
+                </div>
+                <div
+                  data-plasmic-name={"homsaContainer"}
+                  data-plasmic-override={overrides.homsaContainer}
+                  className={classNames(projectcss.all, sty.homsaContainer)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__lIt1N)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__n5Kpd)}
+                      displayHeight={"44px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"44px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/homsaWebp.webp",
+                        fullWidth: 512,
+                        fullHeight: 512,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__oaKOv
+                      )}
+                    >
+                      {"\u0647\u0648\u0645\u0633\u0627"}
+                    </div>
+                  </div>
+                  <Switch
+                    data-plasmic-name={"fragmentSwitch4"}
+                    data-plasmic-override={overrides.fragmentSwitch4}
+                    checked={generateStateValueProp($state, [
+                      "fragmentSwitch4",
+                      "checked"
+                    ])}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.fragmentSwitch4
+                    )}
+                    disabled={true}
+                    onCheckedChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "fragmentSwitch4",
+                        "checked"
+                      ]).apply(null, eventArgs);
+                    }}
+                  />
+                </div>
+              </div>
+            </ApiRequest>
           </section>
           <div
             className={classNames(projectcss.all, sty.freeBox___3NzG5)}
@@ -788,9 +1214,8 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 typeof $steps["updateStateVariable"] === "object" &&
                 typeof $steps["updateStateVariable"].then === "function"
               ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
+                $steps["updateStateVariable"] =
+                  await $steps["updateStateVariable"];
               }
             }}
           />
@@ -892,12 +1317,24 @@ const PlasmicDescendants = {
     "topContainer",
     "topContainer2",
     "alertIcon",
-    "img",
     "alertText",
     "alertButton",
     "button",
     "mainSection",
     "properties",
+    "selectProperty",
+    "shabContainer",
+    "shabSwitch",
+    "otaghakContainer",
+    "otaghakSwitch",
+    "jabamaContainer",
+    "fragmentSwitch3",
+    "jajigaContainer",
+    "fragmentSwitch5",
+    "mihmanshoContainer",
+    "fragmentSwitch7",
+    "homsaContainer",
+    "fragmentSwitch4",
     "desc",
     "sideEffect",
     "returnButton",
@@ -912,18 +1349,60 @@ const PlasmicDescendants = {
   topContainer2: [
     "topContainer2",
     "alertIcon",
-    "img",
     "alertText",
     "alertButton",
     "button"
   ],
-  alertIcon: ["alertIcon", "img"],
-  img: ["img"],
+  alertIcon: ["alertIcon"],
   alertText: ["alertText"],
   alertButton: ["alertButton", "button"],
   button: ["button"],
-  mainSection: ["mainSection", "properties"],
-  properties: ["properties"],
+  mainSection: [
+    "mainSection",
+    "properties",
+    "selectProperty",
+    "shabContainer",
+    "shabSwitch",
+    "otaghakContainer",
+    "otaghakSwitch",
+    "jabamaContainer",
+    "fragmentSwitch3",
+    "jajigaContainer",
+    "fragmentSwitch5",
+    "mihmanshoContainer",
+    "fragmentSwitch7",
+    "homsaContainer",
+    "fragmentSwitch4"
+  ],
+  properties: [
+    "properties",
+    "selectProperty",
+    "shabContainer",
+    "shabSwitch",
+    "otaghakContainer",
+    "otaghakSwitch",
+    "jabamaContainer",
+    "fragmentSwitch3",
+    "jajigaContainer",
+    "fragmentSwitch5",
+    "mihmanshoContainer",
+    "fragmentSwitch7",
+    "homsaContainer",
+    "fragmentSwitch4"
+  ],
+  selectProperty: ["selectProperty"],
+  shabContainer: ["shabContainer", "shabSwitch"],
+  shabSwitch: ["shabSwitch"],
+  otaghakContainer: ["otaghakContainer", "otaghakSwitch"],
+  otaghakSwitch: ["otaghakSwitch"],
+  jabamaContainer: ["jabamaContainer", "fragmentSwitch3"],
+  fragmentSwitch3: ["fragmentSwitch3"],
+  jajigaContainer: ["jajigaContainer", "fragmentSwitch5"],
+  fragmentSwitch5: ["fragmentSwitch5"],
+  mihmanshoContainer: ["mihmanshoContainer", "fragmentSwitch7"],
+  fragmentSwitch7: ["fragmentSwitch7"],
+  homsaContainer: ["homsaContainer", "fragmentSwitch4"],
+  fragmentSwitch4: ["fragmentSwitch4"],
   desc: ["desc"],
   sideEffect: ["sideEffect"],
   returnButton: ["returnButton"],
@@ -942,12 +1421,24 @@ type NodeDefaultElementType = {
   topContainer: "section";
   topContainer2: "section";
   alertIcon: "div";
-  img: typeof PlasmicImg__;
   alertText: "div";
   alertButton: "div";
   button: "div";
   mainSection: "section";
   properties: typeof ApiRequest;
+  selectProperty: typeof Select;
+  shabContainer: "div";
+  shabSwitch: typeof Switch;
+  otaghakContainer: "div";
+  otaghakSwitch: typeof Switch;
+  jabamaContainer: "div";
+  fragmentSwitch3: typeof Switch;
+  jajigaContainer: "div";
+  fragmentSwitch5: typeof Switch;
+  mihmanshoContainer: "div";
+  fragmentSwitch7: typeof Switch;
+  homsaContainer: "div";
+  fragmentSwitch4: typeof Switch;
   desc: "div";
   sideEffect: typeof SideEffect;
   returnButton: "div";
@@ -967,7 +1458,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicInstantReserve__VariantsArgs;
     args?: PlasmicInstantReserve__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicInstantReserve__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicInstantReserve__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicInstantReserve__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -1022,12 +1515,24 @@ export const PlasmicInstantReserve = Object.assign(
     topContainer: makeNodeComponent("topContainer"),
     topContainer2: makeNodeComponent("topContainer2"),
     alertIcon: makeNodeComponent("alertIcon"),
-    img: makeNodeComponent("img"),
     alertText: makeNodeComponent("alertText"),
     alertButton: makeNodeComponent("alertButton"),
     button: makeNodeComponent("button"),
     mainSection: makeNodeComponent("mainSection"),
     properties: makeNodeComponent("properties"),
+    selectProperty: makeNodeComponent("selectProperty"),
+    shabContainer: makeNodeComponent("shabContainer"),
+    shabSwitch: makeNodeComponent("shabSwitch"),
+    otaghakContainer: makeNodeComponent("otaghakContainer"),
+    otaghakSwitch: makeNodeComponent("otaghakSwitch"),
+    jabamaContainer: makeNodeComponent("jabamaContainer"),
+    fragmentSwitch3: makeNodeComponent("fragmentSwitch3"),
+    jajigaContainer: makeNodeComponent("jajigaContainer"),
+    fragmentSwitch5: makeNodeComponent("fragmentSwitch5"),
+    mihmanshoContainer: makeNodeComponent("mihmanshoContainer"),
+    fragmentSwitch7: makeNodeComponent("fragmentSwitch7"),
+    homsaContainer: makeNodeComponent("homsaContainer"),
+    fragmentSwitch4: makeNodeComponent("fragmentSwitch4"),
     desc: makeNodeComponent("desc"),
     sideEffect: makeNodeComponent("sideEffect"),
     returnButton: makeNodeComponent("returnButton"),
