@@ -1533,13 +1533,7 @@ function Plasmicتالار__RenderFunc(props: {
                   sty.instantReserve,
                   (() => {
                     try {
-                      return (() => {
-                        if ($state.userType == 1) {
-                          return "display_block clickable";
-                        } else {
-                          return "hidden clickable";
-                        }
-                      })();
+                      return (() => {})();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||

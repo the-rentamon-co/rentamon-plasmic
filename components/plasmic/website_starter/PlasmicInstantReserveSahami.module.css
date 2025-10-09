@@ -250,28 +250,24 @@
     grid-column: 4;
   }
 }
-.text__qkgw {
+.text__c1Aal {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: 100%;
-  font-family: "Estedad";
-  font-weight: 500;
   text-align: center;
   font-size: 17px;
-  color: #444444;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  font-weight: 500;
   min-width: 0;
-  min-height: 0;
+}
+@media (max-width: 500px) {
+  .text__c1Aal {
+    font-size: 16px;
+  }
 }
 @media (max-width: 350px) {
-  .text__qkgw {
-    font-size: 16px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    height: 100%;
-    min-height: 0;
+  .text__c1Aal {
+    font-size: 15px;
   }
 }
 .topContainer2 {
@@ -296,6 +292,11 @@
 }
 .topContainer2 > * {
   grid-column: 4;
+}
+@media (max-width: 500px) {
+  .topContainer2 > * {
+    grid-column: 4;
+  }
 }
 @media (max-width: 350px) {
   .topContainer2 {

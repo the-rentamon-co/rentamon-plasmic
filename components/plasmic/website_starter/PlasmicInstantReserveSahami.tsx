@@ -568,26 +568,12 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__qkgw
+                sty.text__c1Aal
               )}
             >
-              {hasVariant(globalVariants, "screen", "mobile") ? (
-                <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "\u062a\u063a\u06cc\u06cc\u0631 \u062d\u0627\u0644\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0647 \u00ab\u0622\u0646\u06cc\u00bb \u062a\u0627 "
-                    }
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"\u06f3\u06f1 \u062e\u0631\u062f\u0627\u062f"}
-                  </span>
-                </React.Fragment>
-              ) : (
-                "\u062a\u063a\u06cc\u06cc\u0631 \u062d\u0627\u0644\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0647 \u00ab\u0622\u0646\u06cc\u00bb \u062a\u0627 \u062a\u0627\u0631\u06cc\u062e \u06f3\u06f0 \u0645\u0647\u0631"
-              )}
+              {
+                "\u062a\u063a\u06cc\u06cc\u0631 \u062d\u0627\u0644\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0647 \u00ab\u0622\u0646\u06cc\u00bb  \u062a\u0627 \u06f3\u06f0 \u0645\u0647\u0631"
+              }
             </div>
           </section>
           <section
