@@ -283,6 +283,12 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "auth",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -741,7 +747,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         (async checked => {
                           const $steps = {};
 
-                          $steps["updateVariable2"] = true
+                          $steps["reqToInitiator"] = true
                             ? (() => {
                                 const actionArgs = {
                                   args: [
@@ -781,6 +787,25 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                         }
                                         throw e;
                                       }
+                                    })(),
+                                    (() => {
+                                      try {
+                                        return {
+                                          headers: {
+                                            Authorization:
+                                              "Bearer " + $state.auth
+                                          }
+                                        };
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
                                     })()
                                   ]
                                 };
@@ -790,28 +815,50 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["updateVariable2"] != null &&
-                            typeof $steps["updateVariable2"] === "object" &&
-                            typeof $steps["updateVariable2"].then === "function"
+                            $steps["reqToInitiator"] != null &&
+                            typeof $steps["reqToInitiator"] === "object" &&
+                            typeof $steps["reqToInitiator"].then === "function"
                           ) {
-                            $steps["updateVariable2"] =
-                              await $steps["updateVariable2"];
+                            $steps["reqToInitiator"] =
+                              await $steps["reqToInitiator"];
                           }
 
-                          $steps["turnOnSuccessToast"] = false
+                          $steps["log"] = true
                             ? (() => {
                                 const actionArgs = {
-                                  args: [
-                                    undefined,
-                                    "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0645\u0647\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0634\u0628 \u0622\u0646\u06cc \u0634\u062f",
-                                    "top-center"
-                                  ]
+                                  customFunction: async () => {
+                                    return console.log($state.auth);
+                                  }
                                 };
-                                return $globalActions[
-                                  "Fragment.showToast"
-                                ]?.apply(null, [...actionArgs.args]);
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
+                          if (
+                            $steps["log"] != null &&
+                            typeof $steps["log"] === "object" &&
+                            typeof $steps["log"].then === "function"
+                          ) {
+                            $steps["log"] = await $steps["log"];
+                          }
+
+                          $steps["turnOnSuccessToast"] =
+                            $steps.apiRequestForInstant.status === 200 &&
+                            $state.shabSwitch.checked
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      undefined,
+                                      "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0645\u0647\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0634\u0628 \u0622\u0646\u06cc \u0634\u062f",
+                                      "top-center"
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
                           if (
                             $steps["turnOnSuccessToast"] != null &&
                             typeof $steps["turnOnSuccessToast"] === "object" &&
@@ -1343,7 +1390,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["runCode"] = true
+              $steps["refreshToken"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -1440,65 +1487,42 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
+                $steps["refreshToken"] != null &&
+                typeof $steps["refreshToken"] === "object" &&
+                typeof $steps["refreshToken"].then === "function"
               ) {
-                $steps["runCode"] = await $steps["runCode"];
+                $steps["refreshToken"] = await $steps["refreshToken"];
               }
 
-              $steps["checkOldUser"] = true
+              $steps["sendTokenViaCookie"] = true
                 ? (() => {
                     const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://api-v2.rentamon.com/api/is_user_old"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["checkOldUser"] != null &&
-                typeof $steps["checkOldUser"] === "object" &&
-                typeof $steps["checkOldUser"].then === "function"
-              ) {
-                $steps["checkOldUser"] = await $steps["checkOldUser"];
-              }
-
-              $steps["updateStateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        if ($steps.checkOldUser.data.flag == 3) {
-                          $state.isOld = true;
-                        } else {
-                          $state.isOld = false;
-                        }
-                        return console.log($state.isOld);
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
+                      customFunction: async () => {
+                        return (() => {
+                          var getCookie = name => {
+                            const cookies = document.cookie.split("; ");
+                            for (let cookie of cookies) {
+                              const [key, value] = cookie.split("=");
+                              if (key === name) return JSON.parse(value);
+                            }
+                            return "";
+                          };
+                          return ($state.auth = getCookie("usso_access_token"));
+                        })();
                       }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
                     })?.apply(null, [actionArgs]);
                   })()
                 : undefined;
               if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
+                $steps["sendTokenViaCookie"] != null &&
+                typeof $steps["sendTokenViaCookie"] === "object" &&
+                typeof $steps["sendTokenViaCookie"].then === "function"
               ) {
-                $steps["updateStateVariable"] =
-                  await $steps["updateStateVariable"];
+                $steps["sendTokenViaCookie"] =
+                  await $steps["sendTokenViaCookie"];
               }
             }}
           />

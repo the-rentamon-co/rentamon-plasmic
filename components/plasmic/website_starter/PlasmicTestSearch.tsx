@@ -62,6 +62,7 @@ import {
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
+import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -90,6 +91,7 @@ export type PlasmicTestSearch__OverridesType = {
   checkVpn?: Flex__<typeof SideEffect>;
   vpnModal?: Flex__<"div">;
   button?: Flex__<typeof Button>;
+  httpRestApiFetcher?: Flex__<typeof DataFetcher>;
 };
 
 export interface DefaultTestSearchProps {}
@@ -220,6 +222,19 @@ function PlasmicTestSearch__RenderFunc(props: {
               data-plasmic-name={"apiRequest"}
               data-plasmic-override={overrides.apiRequest}
               className={classNames("__wab_instance", sty.apiRequest)}
+              config={(() => {
+                try {
+                  return undefined;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
               errorDisplay={
                 <div
                   className={classNames(
@@ -556,6 +571,22 @@ function PlasmicTestSearch__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <DataFetcher
+            data-plasmic-name={"httpRestApiFetcher"}
+            data-plasmic-override={overrides.httpRestApiFetcher}
+            className={classNames("__wab_instance", sty.httpRestApiFetcher)}
+            dataName={"fetchedData"}
+            errorDisplay={
+              <DataCtxReader__>{$ctx => "Error fetching data"}</DataCtxReader__>
+            }
+            errorName={"fetchError"}
+            loadingDisplay={
+              <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
+            }
+            method={"GET"}
+            noLayout={false}
+            url={"https://api.github.com/users/plasmicapp/repos"}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -563,11 +594,19 @@ function PlasmicTestSearch__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "apiRequest", "checkVpn", "vpnModal", "button"],
+  root: [
+    "root",
+    "apiRequest",
+    "checkVpn",
+    "vpnModal",
+    "button",
+    "httpRestApiFetcher"
+  ],
   apiRequest: ["apiRequest"],
   checkVpn: ["checkVpn"],
   vpnModal: ["vpnModal", "button"],
-  button: ["button"]
+  button: ["button"],
+  httpRestApiFetcher: ["httpRestApiFetcher"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -578,6 +617,7 @@ type NodeDefaultElementType = {
   checkVpn: typeof SideEffect;
   vpnModal: "div";
   button: typeof Button;
+  httpRestApiFetcher: typeof DataFetcher;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -646,6 +686,7 @@ export const PlasmicTestSearch = Object.assign(
     checkVpn: makeNodeComponent("checkVpn"),
     vpnModal: makeNodeComponent("vpnModal"),
     button: makeNodeComponent("button"),
+    httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
 
     // Metadata about props expected for PlasmicTestSearch
     internalVariantProps: PlasmicTestSearch__VariantProps,
