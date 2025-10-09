@@ -334,10 +334,10 @@ function PlasmicSideBar2__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "20px"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "27px"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "30px"
-                    : "30px"
+                      ? "27px"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "30px"
+                        : "30px"
                 }
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -440,10 +440,10 @@ function PlasmicSideBar2__RenderFunc(props: {
         hasVariant(globalVariants, "screen", "smallMobile")
           ? "96%"
           : hasVariant(globalVariants, "screen", "mobile")
-          ? "90%"
-          : hasVariant(globalVariants, "screen", "tablet")
-          ? "60%"
-          : "30%"
+            ? "90%"
+            : hasVariant(globalVariants, "screen", "tablet")
+              ? "60%"
+              : "30%"
       }
       wrapClassName={classNames({ [sty["pcls_CJNwevy9HtLv"]]: true })}
     >
@@ -569,9 +569,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["updateModalSidebarOpen2"] = true
@@ -596,9 +595,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen2"] === "object" &&
               typeof $steps["updateModalSidebarOpen2"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen2"] = await $steps[
-                "updateModalSidebarOpen2"
-              ];
+              $steps["updateModalSidebarOpen2"] =
+                await $steps["updateModalSidebarOpen2"];
             }
           }}
         >
@@ -707,9 +705,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["updateModalSidebarOpen2"] = true
@@ -734,9 +731,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen2"] === "object" &&
               typeof $steps["updateModalSidebarOpen2"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen2"] = await $steps[
-                "updateModalSidebarOpen2"
-              ];
+              $steps["updateModalSidebarOpen2"] =
+                await $steps["updateModalSidebarOpen2"];
             }
           }}
         >
@@ -846,9 +842,8 @@ function PlasmicSideBar2__RenderFunc(props: {
                 typeof $steps["updateModalSidebarOpen"] === "object" &&
                 typeof $steps["updateModalSidebarOpen"].then === "function"
               ) {
-                $steps["updateModalSidebarOpen"] = await $steps[
-                  "updateModalSidebarOpen"
-                ];
+                $steps["updateModalSidebarOpen"] =
+                  await $steps["updateModalSidebarOpen"];
               }
 
               $steps["updateModalSidebarOpen2"] = true
@@ -873,9 +868,8 @@ function PlasmicSideBar2__RenderFunc(props: {
                 typeof $steps["updateModalSidebarOpen2"] === "object" &&
                 typeof $steps["updateModalSidebarOpen2"].then === "function"
               ) {
-                $steps["updateModalSidebarOpen2"] = await $steps[
-                  "updateModalSidebarOpen2"
-                ];
+                $steps["updateModalSidebarOpen2"] =
+                  await $steps["updateModalSidebarOpen2"];
               }
             }}
           >
@@ -931,9 +925,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["goToPanelCalendar"] = true
@@ -1013,9 +1006,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["updateModalSidebarOpen2"] = true
@@ -1040,9 +1032,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen2"] === "object" &&
               typeof $steps["updateModalSidebarOpen2"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen2"] = await $steps[
-                "updateModalSidebarOpen2"
-              ];
+              $steps["updateModalSidebarOpen2"] =
+                await $steps["updateModalSidebarOpen2"];
             }
           }}
         >
@@ -1108,14 +1099,13 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["goToInstantReserve"] = true
               ? (() => {
-                  const actionArgs = { destination: `/instant-reserve` };
+                  const actionArgs = { destination: `/instant` };
                   return (({ destination }) => {
                     if (
                       typeof destination === "string" &&
@@ -1203,9 +1193,8 @@ function PlasmicSideBar2__RenderFunc(props: {
                 typeof $steps["updateModalSidebarOpen"] === "object" &&
                 typeof $steps["updateModalSidebarOpen"].then === "function"
               ) {
-                $steps["updateModalSidebarOpen"] = await $steps[
-                  "updateModalSidebarOpen"
-                ];
+                $steps["updateModalSidebarOpen"] =
+                  await $steps["updateModalSidebarOpen"];
               }
 
               $steps["goToSetting"] = true
@@ -1284,9 +1273,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["goToSupport"] = true
@@ -1367,9 +1355,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["goToHomepage"] = true
@@ -1447,9 +1434,8 @@ function PlasmicSideBar2__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["runCode"] = true
@@ -1583,7 +1569,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicSideBar2__VariantsArgs;
     args?: PlasmicSideBar2__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicSideBar2__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicSideBar2__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicSideBar2__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

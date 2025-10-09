@@ -1554,7 +1554,34 @@ function Plasmicتالار__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["invokeGlobalAction"] = true
+                  $steps["goToInstantReserveSahami"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/instant` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToInstantReserveSahami"] != null &&
+                    typeof $steps["goToInstantReserveSahami"] === "object" &&
+                    typeof $steps["goToInstantReserveSahami"].then ===
+                      "function"
+                  ) {
+                    $steps["goToInstantReserveSahami"] =
+                      await $steps["goToInstantReserveSahami"];
+                  }
+
+                  $steps["invokeGlobalAction"] = false
                     ? (() => {
                         const actionArgs = {
                           args: [

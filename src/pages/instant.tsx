@@ -4,23 +4,23 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicInstant2 } from "../../components/plasmic/website_starter/PlasmicInstant2";
+import { PlasmicInstantReserveSahami } from "../../components/plasmic/website_starter/PlasmicInstantReserveSahami";
 import { useRouter } from "next/router";
 
-function Instant2() {
-  // Use PlasmicInstant2 to render this component as it was
+function InstantReserveSahami() {
+  // Use PlasmicInstantReserveSahami to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicInstant2 are:
+  // Props you can pass into PlasmicInstantReserveSahami are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicInstant2 is wrapped by your project's global
+  // By default, PlasmicInstantReserveSahami is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -32,10 +32,10 @@ function Instant2() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicInstant2 />
+        <PlasmicInstantReserveSahami />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default Instant2;
+export default InstantReserveSahami;

@@ -748,7 +748,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               ref={ref => {
                 $refs["properties"] = ref;
               }}
-              url={"https://gateway.rentamon.com/webhook/na-instant"}
+              url={"https://gateway.rentamon.com/webhook/instant/property"}
             >
               <Select
                 data-plasmic-name={"selectProperty"}
@@ -1001,7 +1001,8 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                       args: [
                                         undefined,
                                         "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0645\u0647\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0634\u0628 \u0622\u0646\u06cc \u0634\u062f",
-                                        "top-center"
+                                        "top-center",
+                                        6000
                                       ]
                                     };
                                     return $globalActions[
@@ -1030,7 +1031,8 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                       args: [
                                         undefined,
                                         "\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0634\u0628 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
-                                        "top-center"
+                                        "top-center",
+                                        6000
                                       ]
                                     };
                                     return $globalActions[
@@ -1055,9 +1057,10 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
-                                        undefined,
+                                        "error",
                                         "\u06cc\u0647 \u0645\u0634\u06a9\u0644\u06cc \u067e\u06cc\u0634 \u0627\u0648\u0645\u062f",
-                                        "top-center"
+                                        "top-center",
+                                        6000
                                       ]
                                     };
                                     return $globalActions[
@@ -1152,7 +1155,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return true;
+                        return false;
                       }
                       throw e;
                     }
@@ -1230,7 +1233,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return true;
+                        return false;
                       }
                       throw e;
                     }
@@ -1308,7 +1311,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return true;
+                        return false;
                       }
                       throw e;
                     }
@@ -1386,7 +1389,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return true;
+                        return false;
                       }
                       throw e;
                     }
@@ -1464,7 +1467,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return true;
+                        return false;
                       }
                       throw e;
                     }
