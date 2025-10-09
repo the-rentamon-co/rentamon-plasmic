@@ -1135,20 +1135,6 @@
           "componentType": "component"
         },
         {
-          "id": "qnoSvk5APDQU",
-          "name": "InstantReserve",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicInstantReserve.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/instant-reserve.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicInstantReserve.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/instant-reserve"
-        },
-        {
           "id": "35iXAFb28kzU",
           "name": "PropertyName",
           "type": "managed",
@@ -3030,6 +3016,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/instant"
+        },
+        {
+          "id": "qnoSvk5APDQU",
+          "name": "InstantReserveSahami",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicInstantReserveSahami.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/instant-reserve.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicInstantReserveSahami.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/instant-reserve"
+        },
+        {
+          "id": "4MUzq-HjAv1h",
+          "name": "InstantReserve2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicInstantReserve2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/instant-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicInstantReserve2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/instant-2"
         }
       ],
       "icons": [
