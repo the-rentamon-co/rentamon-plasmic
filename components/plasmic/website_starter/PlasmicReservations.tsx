@@ -5920,24 +5920,16 @@ function PlasmicReservations__RenderFunc(props: {
                                 const actionArgs = {
                                   customFunction: async () => {
                                     return (() => {
-                                      const baseUrl =
-                                        "https://gateway.rentamon.com/webhook/booking/unsettled";
-                                      const queryParams = [];
-                                      queryParams.push(`v=2`);
-                                      queryParams.push(
-                                        `limit=${$state.dataSize}`
-                                      );
+                                      let baseUrl;
                                       if ($state.settlement2.checked) {
-                                        queryParams.push(
-                                          `is_settled=${!$state.settlement2.checked}&status=Past`
-                                        );
+                                        baseUrl =
+                                          "https://gateway.rentamon.com/webhook/booking/unsettled";
+                                      } else {
+                                        baseUrl =
+                                          "https://gateway.rentamon.com/webhook/bookings";
                                       }
-                                      if ($state.confierm2.checked) {
-                                        queryParams.push(`status=Confirmed`);
-                                      } else if ($state.cancelled3.checked) {
-                                        queryParams.push(`status=Cancelled`);
-                                      }
-                                      $state.filterUrl = `${baseUrl}?${queryParams.join("&")}`;
+                                      const finalUrl = `${baseUrl}?limit=${$state.dataSize}`;
+                                      $state.filterUrl = finalUrl;
                                       return $state.filterUrl;
                                     })();
                                   }

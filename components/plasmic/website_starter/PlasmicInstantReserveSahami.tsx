@@ -59,8 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
@@ -68,6 +68,7 @@ import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -90,6 +91,7 @@ export const PlasmicInstantReserveSahami__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicInstantReserveSahami__OverridesType = {
   root?: Flex__<"div">;
+  instantProperty?: Flex__<typeof ApiRequest>;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
@@ -252,7 +254,22 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
         path: "shabSwitch.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.instantProperty.data.some(
+                item => item.website_id === 4 && item.is_instant
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "otaghakSwitch.checked",
@@ -289,6 +306,30 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "instantProperty.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "instantProperty"
+      },
+      {
+        path: "instantProperty.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "instantProperty"
+      },
+      {
+        path: "instantProperty.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "instantProperty"
       }
     ],
     [$props, $ctx, $refs]
@@ -327,6 +368,106 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
             sty.root
           )}
         >
+          <ApiRequest
+            data-plasmic-name={"instantProperty"}
+            data-plasmic-override={overrides.instantProperty}
+            className={classNames("__wab_instance", sty.instantProperty)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__rGd0H
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__iHEtm
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "instantProperty",
+                "error"
+              ]).apply(null, eventArgs);
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "instantProperty",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "instantProperty",
+                "data"
+              ]).apply(null, eventArgs);
+
+              (async data => {
+                const $steps = {};
+
+                $steps["updateVariable"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["variable"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateVariable"] != null &&
+                  typeof $steps["updateVariable"] === "object" &&
+                  typeof $steps["updateVariable"].then === "function"
+                ) {
+                  $steps["updateVariable"] = await $steps["updateVariable"];
+                }
+              }).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["instantProperty"] = ref;
+            }}
+            url={(() => {
+              try {
+                return `https://gateway.rentamon.com/webhook/instant/property?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
+          />
+
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
@@ -690,162 +831,176 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                 }
               })() ? (
                 <div className={classNames(projectcss.all, sty.freeBox__kJN)}>
-                  <div
-                    data-plasmic-name={"shabContainer"}
-                    data-plasmic-override={overrides.shabContainer}
-                    className={classNames(projectcss.all, sty.shabContainer)}
-                  >
+                  {(() => {
+                    try {
+                      return $state.profile2.data.user_info.websites.includes(
+                        "shab"
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })() ? (
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___3UtGf
-                      )}
+                      data-plasmic-name={"shabContainer"}
+                      data-plasmic-override={overrides.shabContainer}
+                      className={classNames(projectcss.all, sty.shabContainer)}
                     >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__df0I0)}
-                        displayHeight={"44px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"44px"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image.png",
-                          fullWidth: 88,
-                          fullHeight: 88,
-                          aspectRatio: undefined
-                        }}
-                      />
-
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___2RycJ
+                          sty.freeBox___3UtGf
                         )}
                       >
-                        {"\u0634\u0628"}
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__df0I0)}
+                          displayHeight={"44px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"44px"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image.png",
+                            fullWidth: 88,
+                            fullHeight: 88,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___2RycJ
+                          )}
+                        >
+                          {"\u0634\u0628"}
+                        </div>
                       </div>
-                    </div>
-                    <Switch
-                      data-plasmic-name={"shabSwitch"}
-                      data-plasmic-override={overrides.shabSwitch}
-                      checked={generateStateValueProp($state, [
-                        "shabSwitch",
-                        "checked"
-                      ])}
-                      className={classNames("__wab_instance", sty.shabSwitch)}
-                      disabled={false}
-                      onCheckedChange={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
+                      <Switch
+                        data-plasmic-name={"shabSwitch"}
+                        data-plasmic-override={overrides.shabSwitch}
+                        checked={generateStateValueProp($state, [
                           "shabSwitch",
                           "checked"
-                        ]).apply(null, eventArgs);
+                        ])}
+                        className={classNames("__wab_instance", sty.shabSwitch)}
+                        disabled={false}
+                        onCheckedChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "shabSwitch",
+                            "checked"
+                          ]).apply(null, eventArgs);
 
-                        (async checked => {
-                          const $steps = {};
+                          (async checked => {
+                            const $steps = {};
 
-                          $steps["reqToInitiator"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    "POST",
-                                    "https://gateway.rentamon.com/webhook/instant/Initiator",
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return $state.shabSwitch.checked
-                                          ? {
-                                              is_instant: "true",
-                                              property_id:
-                                                $state.properties.data.find(
-                                                  property =>
-                                                    property.property_name ===
-                                                    $state.selectProperty.value
-                                                ).id,
-                                              website_id: "4"
-                                            }
-                                          : {
-                                              is_instant: "false",
-                                              property_id:
-                                                $state.properties.data.find(
-                                                  property =>
-                                                    property.property_name ===
-                                                    $state.selectProperty.value
-                                                ).id,
-                                              website_id: "4"
-                                            };
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
+                            $steps["reqToInitiator"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "GET",
+                                      "https://gateway.rentamon.com/webhook/instant/Initiator",
+                                      (() => {
+                                        try {
+                                          return $state.shabSwitch.checked
+                                            ? {
+                                                is_instant: "true",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).id,
+                                                website_id: "4"
+                                              }
+                                            : {
+                                                is_instant: "false",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).id,
+                                                website_id: "4"
+                                              };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
                                         }
-                                        throw e;
-                                      }
-                                    })(),
-                                    (() => {
-                                      try {
-                                        return {
-                                          headers: {
+                                      })(),
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return {
                                             Authorization:
                                               "Bearer " + $state.auth
+                                          };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
                                           }
-                                        };
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
+                                          throw e;
                                         }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["reqToInitiator"] != null &&
-                            typeof $steps["reqToInitiator"] === "object" &&
-                            typeof $steps["reqToInitiator"].then === "function"
-                          ) {
-                            $steps["reqToInitiator"] =
-                              await $steps["reqToInitiator"];
-                          }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["reqToInitiator"] != null &&
+                              typeof $steps["reqToInitiator"] === "object" &&
+                              typeof $steps["reqToInitiator"].then ===
+                                "function"
+                            ) {
+                              $steps["reqToInitiator"] =
+                                await $steps["reqToInitiator"];
+                            }
 
-                          $steps["log"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return console.log($state.auth);
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["log"] != null &&
-                            typeof $steps["log"] === "object" &&
-                            typeof $steps["log"].then === "function"
-                          ) {
-                            $steps["log"] = await $steps["log"];
-                          }
+                            $steps["log"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return console.log($state.auth);
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["log"] != null &&
+                              typeof $steps["log"] === "object" &&
+                              typeof $steps["log"].then === "function"
+                            ) {
+                              $steps["log"] = await $steps["log"];
+                            }
 
-                          $steps["turnOnSuccessToast"] =
-                            $steps.apiRequestForInstant.status === 200 &&
-                            $state.shabSwitch.checked
+                            $steps["turnOnSuccessToast"] = false
                               ? (() => {
                                   const actionArgs = {
                                     args: [
@@ -859,19 +1014,18 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                   ]?.apply(null, [...actionArgs.args]);
                                 })()
                               : undefined;
-                          if (
-                            $steps["turnOnSuccessToast"] != null &&
-                            typeof $steps["turnOnSuccessToast"] === "object" &&
-                            typeof $steps["turnOnSuccessToast"].then ===
-                              "function"
-                          ) {
-                            $steps["turnOnSuccessToast"] =
-                              await $steps["turnOnSuccessToast"];
-                          }
+                            if (
+                              $steps["turnOnSuccessToast"] != null &&
+                              typeof $steps["turnOnSuccessToast"] ===
+                                "object" &&
+                              typeof $steps["turnOnSuccessToast"].then ===
+                                "function"
+                            ) {
+                              $steps["turnOnSuccessToast"] =
+                                await $steps["turnOnSuccessToast"];
+                            }
 
-                          $steps["turnOffSuccessMessage"] =
-                            $steps.apiRequestForInstant.status === 200 &&
-                            !$state.shabSwitch.checked
+                            $steps["turnOffSuccessMessage"] = false
                               ? (() => {
                                   const actionArgs = {
                                     args: [
@@ -885,140 +1039,144 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                   ]?.apply(null, [...actionArgs.args]);
                                 })()
                               : undefined;
-                          if (
-                            $steps["turnOffSuccessMessage"] != null &&
-                            typeof $steps["turnOffSuccessMessage"] ===
-                              "object" &&
-                            typeof $steps["turnOffSuccessMessage"].then ===
-                              "function"
-                          ) {
-                            $steps["turnOffSuccessMessage"] =
-                              await $steps["turnOffSuccessMessage"];
-                          }
+                            if (
+                              $steps["turnOffSuccessMessage"] != null &&
+                              typeof $steps["turnOffSuccessMessage"] ===
+                                "object" &&
+                              typeof $steps["turnOffSuccessMessage"].then ===
+                                "function"
+                            ) {
+                              $steps["turnOffSuccessMessage"] =
+                                await $steps["turnOffSuccessMessage"];
+                            }
 
-                          $steps["failedToast"] =
-                            $steps.apiRequestForInstant.status != 200
+                            $steps["failedToast"] =
+                              $steps.apiRequestForInstant.status != 200
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u06cc\u0647 \u0645\u0634\u06a9\u0644\u06cc \u067e\u06cc\u0634 \u0627\u0648\u0645\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["failedToast"] != null &&
+                              typeof $steps["failedToast"] === "object" &&
+                              typeof $steps["failedToast"].then === "function"
+                            ) {
+                              $steps["failedToast"] =
+                                await $steps["failedToast"];
+                            }
+
+                            $steps["updateShabSwitchChecked"] = false
                               ? (() => {
                                   const actionArgs = {
-                                    args: [
-                                      undefined,
-                                      "\u06cc\u0647 \u0645\u0634\u06a9\u0644\u06cc \u067e\u06cc\u0634 \u0627\u0648\u0645\u062f",
-                                      "top-center"
-                                    ]
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["shabSwitch", "checked"]
+                                    },
+                                    operation: 0,
+                                    value: (() => {
+                                      if (
+                                        $steps.apiRequestForInstant.status ===
+                                        200
+                                      ) {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 4
+                                          ).is_instant =
+                                          $state.shabSwitch.checked);
+                                      } else {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 4
+                                          ).is_instant =
+                                          !$state.shabSwitch.checked);
+                                      }
+                                    })()
                                   };
-                                  return $globalActions[
-                                    "Fragment.showToast"
-                                  ]?.apply(null, [...actionArgs.args]);
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
                                 })()
                               : undefined;
-                          if (
-                            $steps["failedToast"] != null &&
-                            typeof $steps["failedToast"] === "object" &&
-                            typeof $steps["failedToast"].then === "function"
-                          ) {
-                            $steps["failedToast"] = await $steps["failedToast"];
-                          }
+                            if (
+                              $steps["updateShabSwitchChecked"] != null &&
+                              typeof $steps["updateShabSwitchChecked"] ===
+                                "object" &&
+                              typeof $steps["updateShabSwitchChecked"].then ===
+                                "function"
+                            ) {
+                              $steps["updateShabSwitchChecked"] =
+                                await $steps["updateShabSwitchChecked"];
+                            }
 
-                          $steps["updateShabSwitchChecked"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["shabSwitch", "checked"]
-                                  },
-                                  operation: 0,
-                                  value: (() => {
-                                    if (
-                                      $steps.apiRequestForInstant.status === 200
-                                    ) {
-                                      return ($state.properties.data
-                                        .find(
-                                          property =>
-                                            property.property_name ===
-                                            $state.selectProperty.value
-                                        )
-                                        .website_ids.find(
-                                          website => website.website_id === 4
-                                        ).is_instant =
-                                        $state.shabSwitch.checked);
-                                    } else {
-                                      return ($state.properties.data
-                                        .find(
-                                          property =>
-                                            property.property_name ===
-                                            $state.selectProperty.value
-                                        )
-                                        .website_ids.find(
-                                          website => website.website_id === 4
-                                        ).is_instant =
-                                        !$state.shabSwitch.checked);
+                            $steps["updateVariable"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["variable"]
+                                    },
+                                    operation: 0
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
                                     }
-                                  })()
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
+                                    const { objRoot, variablePath } = variable;
 
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateShabSwitchChecked"] != null &&
-                            typeof $steps["updateShabSwitchChecked"] ===
-                              "object" &&
-                            typeof $steps["updateShabSwitchChecked"].then ===
-                              "function"
-                          ) {
-                            $steps["updateShabSwitchChecked"] =
-                              await $steps["updateShabSwitchChecked"];
-                          }
-
-                          $steps["updateVariable"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["variable"]
-                                  },
-                                  operation: 0
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateVariable"] != null &&
-                            typeof $steps["updateVariable"] === "object" &&
-                            typeof $steps["updateVariable"].then === "function"
-                          ) {
-                            $steps["updateVariable"] =
-                              await $steps["updateVariable"];
-                          }
-                        }).apply(null, eventArgs);
-                      }}
-                    />
-                  </div>
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateVariable"] != null &&
+                              typeof $steps["updateVariable"] === "object" &&
+                              typeof $steps["updateVariable"].then ===
+                                "function"
+                            ) {
+                              $steps["updateVariable"] =
+                                await $steps["updateVariable"];
+                            }
+                          }).apply(null, eventArgs);
+                        }}
+                      />
+                    </div>
+                  ) : null}
                   <div
                     data-plasmic-name={"otaghakContainer"}
                     data-plasmic-override={overrides.otaghakContainer}
@@ -1066,6 +1224,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         "__wab_instance",
                         sty.otaghakSwitch
                       )}
+                      disabled={true}
                       onCheckedChange={async (...eventArgs: any) => {
                         generateStateOnChangeProp($state, [
                           "otaghakSwitch",
@@ -1493,37 +1652,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               ) {
                 $steps["refreshToken"] = await $steps["refreshToken"];
               }
-
-              $steps["sendTokenViaCookie"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          var getCookie = name => {
-                            const cookies = document.cookie.split("; ");
-                            for (let cookie of cookies) {
-                              const [key, value] = cookie.split("=");
-                              if (key === name) return JSON.parse(value);
-                            }
-                            return "";
-                          };
-                          return ($state.auth = getCookie("usso_access_token"));
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["sendTokenViaCookie"] != null &&
-                typeof $steps["sendTokenViaCookie"] === "object" &&
-                typeof $steps["sendTokenViaCookie"].then === "function"
-              ) {
-                $steps["sendTokenViaCookie"] =
-                  await $steps["sendTokenViaCookie"];
-              }
             }}
           />
 
@@ -1618,6 +1746,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "instantProperty",
     "header",
     "sideBar2",
     "profile2",
@@ -1649,6 +1778,7 @@ const PlasmicDescendants = {
     "clarityRntComponent",
     "faviconRntComponent"
   ],
+  instantProperty: ["instantProperty"],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
@@ -1722,6 +1852,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  instantProperty: typeof ApiRequest;
   header: "div";
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
@@ -1816,6 +1947,7 @@ export const PlasmicInstantReserveSahami = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    instantProperty: makeNodeComponent("instantProperty"),
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),

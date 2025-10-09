@@ -67,6 +67,24 @@
     grid-column: 4;
   }
 }
+.instantProperty:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__iHEtm {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__rGd0H {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
 .header {
   display: flex;
   flex-direction: row;
@@ -675,7 +693,7 @@
   justify-content: space-between;
   align-items: center;
   background: none;
-  opacity: 1;
+  opacity: 0.5;
   pointer-events: none;
   filter: blur(0px);
   padding: 8px 0px 8px 8px;
