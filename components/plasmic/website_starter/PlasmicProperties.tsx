@@ -377,8 +377,8 @@ function PlasmicProperties__RenderFunc(props: {
                     }
                   })()
                 : hasVariant(globalVariants, "screen", "tablet")
-                ? true
-                : true
+                  ? true
+                  : true
             ) ? (
               <div className={classNames(projectcss.all, sty.freeBox__ykwHb)}>
                 <div
@@ -576,9 +576,8 @@ function PlasmicProperties__RenderFunc(props: {
                                     typeof $steps["goToPropertyEdit"].then ===
                                       "function"
                                   ) {
-                                    $steps["goToPropertyEdit"] = await $steps[
-                                      "goToPropertyEdit"
-                                    ];
+                                    $steps["goToPropertyEdit"] =
+                                      await $steps["goToPropertyEdit"];
                                   }
                                 }}
                               >
@@ -777,9 +776,8 @@ function PlasmicProperties__RenderFunc(props: {
                                 typeof $steps["goToPropertyCreate"].then ===
                                   "function"
                               ) {
-                                $steps["goToPropertyCreate"] = await $steps[
-                                  "goToPropertyCreate"
-                                ];
+                                $steps["goToPropertyCreate"] =
+                                  await $steps["goToPropertyCreate"];
                               }
                             }}
                           >
@@ -968,9 +966,8 @@ function PlasmicProperties__RenderFunc(props: {
                               typeof $steps["goToPropertyEdit"].then ===
                                 "function"
                             ) {
-                              $steps["goToPropertyEdit"] = await $steps[
-                                "goToPropertyEdit"
-                              ];
+                              $steps["goToPropertyEdit"] =
+                                await $steps["goToPropertyEdit"];
                             }
                           }}
                         >
@@ -1138,9 +1135,8 @@ function PlasmicProperties__RenderFunc(props: {
                           typeof $steps["goToPropertyCreate"].then ===
                             "function"
                         ) {
-                          $steps["goToPropertyCreate"] = await $steps[
-                            "goToPropertyCreate"
-                          ];
+                          $steps["goToPropertyCreate"] =
+                            await $steps["goToPropertyCreate"];
                         }
                       }}
                     >
@@ -1218,7 +1214,7 @@ function PlasmicProperties__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return true;
+                                return false;
                               }
                               throw e;
                             }
@@ -1300,9 +1296,8 @@ function PlasmicProperties__RenderFunc(props: {
                             typeof $steps["deleteCookie"] === "object" &&
                             typeof $steps["deleteCookie"].then === "function"
                           ) {
-                            $steps["deleteCookie"] = await $steps[
-                              "deleteCookie"
-                            ];
+                            $steps["deleteCookie"] =
+                              await $steps["deleteCookie"];
                           }
                         }}
                       >
@@ -1345,9 +1340,8 @@ function PlasmicProperties__RenderFunc(props: {
                               typeof $steps["deleteCookie"] === "object" &&
                               typeof $steps["deleteCookie"].then === "function"
                             ) {
-                              $steps["deleteCookie"] = await $steps[
-                                "deleteCookie"
-                              ];
+                              $steps["deleteCookie"] =
+                                await $steps["deleteCookie"];
                             }
                           }}
                         >
@@ -1487,9 +1481,8 @@ function PlasmicProperties__RenderFunc(props: {
                 typeof $steps["invokeGlobalAction"] === "object" &&
                 typeof $steps["invokeGlobalAction"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
+                $steps["invokeGlobalAction"] =
+                  await $steps["invokeGlobalAction"];
               }
 
               $steps["updateStep"] = true
@@ -1560,9 +1553,8 @@ function PlasmicProperties__RenderFunc(props: {
                 typeof $steps["checkPropTourCookie"] === "object" &&
                 typeof $steps["checkPropTourCookie"].then === "function"
               ) {
-                $steps["checkPropTourCookie"] = await $steps[
-                  "checkPropTourCookie"
-                ];
+                $steps["checkPropTourCookie"] =
+                  await $steps["checkPropTourCookie"];
               }
             }}
           />
@@ -1645,7 +1637,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicProperties__VariantsArgs;
     args?: PlasmicProperties__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicProperties__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicProperties__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicProperties__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

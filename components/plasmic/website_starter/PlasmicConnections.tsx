@@ -4648,8 +4648,13 @@ function PlasmicConnections__RenderFunc(props: {
                                 AntdInput_Helpers
                               ).apply(null, eventArgs);
                             },
-                            placeholder:
-                              "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
+                            placeholder: hasVariant(
+                              globalVariants,
+                              "screen",
+                              "mobile"
+                            )
+                              ? "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f (\u0628\u062e\u0634 \u0647\u0631\u0632\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u067e\u06cc\u0627\u0645\u06a9\u062a \u0631\u0648 \u0628\u0628\u06cc\u0646)"
+                              : "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
                             size: "large",
                             value: generateStateValueProp($state, [
                               "jabamaOtpInput",
@@ -5340,8 +5345,13 @@ function PlasmicConnections__RenderFunc(props: {
                                 AntdInput_Helpers
                               ).apply(null, eventArgs);
                             },
-                            placeholder:
-                              "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
+                            placeholder: hasVariant(
+                              globalVariants,
+                              "screen",
+                              "mobile"
+                            )
+                              ? "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f (\u0628\u062e\u0634 \u0647\u0631\u0632\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u067e\u06cc\u0627\u0645\u06a9\u062a \u0631\u0648 \u0628\u0628\u06cc\u0646)"
+                              : "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
                             size: "large",
                             value: generateStateValueProp($state, [
                               "input6",
@@ -6071,8 +6081,13 @@ function PlasmicConnections__RenderFunc(props: {
                                 AntdInput_Helpers
                               ).apply(null, eventArgs);
                             },
-                            placeholder:
-                              "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
+                            placeholder: hasVariant(
+                              globalVariants,
+                              "screen",
+                              "mobile"
+                            )
+                              ? "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f (\u0628\u062e\u0634 \u0647\u0631\u0632\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u067e\u06cc\u0627\u0645\u06a9\u062a \u0631\u0648 \u0628\u0628\u06cc\u0646)"
+                              : "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
                             size: "large",
                             value: generateStateValueProp($state, [
                               "input10",
@@ -6768,8 +6783,13 @@ function PlasmicConnections__RenderFunc(props: {
                                 AntdInput_Helpers
                               ).apply(null, eventArgs);
                             },
-                            placeholder:
-                              "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
+                            placeholder: hasVariant(
+                              globalVariants,
+                              "screen",
+                              "mobile"
+                            )
+                              ? "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f (\u0628\u062e\u0634 \u0647\u0631\u0632\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u067e\u06cc\u0627\u0645\u06a9\u062a \u0631\u0648 \u0628\u0628\u06cc\u0646)"
+                              : "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
                             size: "large",
                             value: generateStateValueProp($state, [
                               "input12",
@@ -7160,9 +7180,9 @@ function PlasmicConnections__RenderFunc(props: {
                                   sty.text__i6JFy
                                 )}
                               >
-                                {
-                                  "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648:"
-                                }
+                                {hasVariant(globalVariants, "screen", "mobile")
+                                  ? "\u0634\u0645\u0627\u0631\u0647 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648:"
+                                  : "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648:"}
                               </div>
                             </div>
                           </div>

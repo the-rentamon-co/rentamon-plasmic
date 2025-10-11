@@ -460,9 +460,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     typeof $steps["invokeGlobalAction"] === "object" &&
                     typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
                   }
 
                   $steps["wait"] = true
@@ -664,9 +663,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     typeof $steps["invokeGlobalAction"] === "object" &&
                     typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
                   }
 
                   $steps["wait"] = true
@@ -881,9 +879,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     typeof $steps["invokeGlobalAction"] === "object" &&
                     typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
                   }
 
                   $steps["wait"] = true
@@ -1265,9 +1262,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                         typeof $steps["updateLoading2"] === "object" &&
                         typeof $steps["updateLoading2"].then === "function"
                       ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
-                        ];
+                        $steps["updateLoading2"] =
+                          await $steps["updateLoading2"];
                       }
 
                       $steps["invokeGlobalAction"] =
@@ -1310,9 +1306,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction"] === "object" &&
                         typeof $steps["invokeGlobalAction"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["invokeGlobalAction"] =
+                          await $steps["invokeGlobalAction"];
                       }
 
                       $steps["goToLiteCalendar"] = false
@@ -1337,9 +1332,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                         typeof $steps["goToLiteCalendar"] === "object" &&
                         typeof $steps["goToLiteCalendar"].then === "function"
                       ) {
-                        $steps["goToLiteCalendar"] = await $steps[
-                          "goToLiteCalendar"
-                        ];
+                        $steps["goToLiteCalendar"] =
+                          await $steps["goToLiteCalendar"];
                       }
                     }}
                   >
@@ -1483,13 +1477,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return `برای «${
-                            $state.textInput.value
-                              ? $state.textInput.value
-                              : $state.userInfoApiRequest.data.properties[
-                                  $ctx.params.id - 1
-                                ].property_name
-                          }» یه عکس بذار`;
+                          return `برای «${$state.textInput.value ? $state.textInput.value : $state.userInfoApiRequest.data.properties[$ctx.params.id - 1].property_name}» یک عکس بذار`;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -1510,8 +1498,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0639\u06a9\u0633 \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
-                      : "\u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0639\u06a9\u0633 \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"}
+                      ? "\u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0627\u06cc\u0646 \u0639\u06a9\u0633 \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
+                      : "\u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0627\u06cc\u0646 \u0639\u06a9\u0633 \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__aBGzQ)}>
@@ -1679,7 +1667,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     data-plasmic-override={overrides.embedHtml}
                     className={classNames("__wab_instance", sty.embedHtml)}
                     code={
-                      '<script src="https://unpkg.com/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>\r\n\r\n<div class="plasmic_default__all plasmic_default__div FirstPropertyEditTest2__freeBox__nmOuz">\r\n  <span class="ant-upload-wrapper __wab_instance FirstPropertyEditTest2__upload__scmdc css-10hmd9l">\r\n    <div class="ant-upload ant-upload-select">\r\n      <span class="ant-upload">\r\n        <input id="profile-upload" type="file" accept="image/*" style="display: none;" />\r\n        <label for="profile-upload" style="cursor: pointer;">\r\n          <div id="upload-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">\r\n            <div class="FirstPropertyEditTest2__img__see5C __wab_img-wrapper">\r\n              <img id="preview-img" alt="" \r\n                src="https://media.rentamon.com/icon%2Fclipicon.svg"\r\n                style="width: 50px; height: 50px; object-fit: cover; border-radius: 6px;" />\r\n            </div>\r\n            <div id="upload-text" style="font-size: 16px; margin-top: 4px; text-align: center;">\r\n              \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062a\u0635\u0648\u06cc\u0631\r\n            </div>\r\n          </div>\r\n        </label>\r\n      </span>\r\n    </div>\r\n    <div class="ant-upload-list ant-upload-list-picture"></div>\r\n  </span>\r\n</div>\r\n\r\n<script>\r\n  const input = document.getElementById(\'profile-upload\');\r\n  const previewImg = document.getElementById(\'preview-img\');\r\n  const uploadText = document.getElementById(\'upload-text\');\r\n\r\n  input.addEventListener(\'change\', async (event) => {\r\n    const file = event.target.files[0];\r\n    if (!file) return;\r\n\r\n    const options = {\r\n      maxSizeMB: 0.3,\r\n      maxWidthOrHeight: 800,\r\n      useWebWorker: true,\r\n    };\r\n\r\n    try {\r\n      uploadText.textContent = "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc...";\r\n      uploadText.style.fontSize = "16px";\r\n\r\n      const compressedFile = await imageCompression(file, options);\r\n\r\n      const base64Full = await new Promise((resolve, reject) => {\r\n        const reader = new FileReader();\r\n        reader.onload = () => resolve(reader.result);\r\n        reader.onerror = reject;\r\n        reader.readAsDataURL(compressedFile);\r\n      });\r\n\r\n      const base64Content = base64Full.split(\',\')[1];\r\n\r\n      // \u062a\u063a\u06cc\u06cc\u0631 \u0633\u0627\u06cc\u0632 \u062a\u0635\u0648\u06cc\u0631 \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0628\u0639\u062f \u0627\u0632 \u0622\u067e\u0644\u0648\u062f\r\n      previewImg.src = base64Full;\r\n      previewImg.style.width = "200px";\r\n      previewImg.style.height = "110px";\r\n\r\n      const payload = {\r\n        property_pic: {\r\n          uid: `rc-upload-${Date.now()}-${file.name}`,\r\n          name: file.name,\r\n          size: compressedFile.size,\r\n          type: compressedFile.type,\r\n          lastModified: file.lastModified,\r\n          contents: base64Content\r\n        }\r\n      };\r\n\r\n      await fetch(\'https://gateway.rentamon.com/webhook/change_property_pic\', {\r\n        method: \'POST\',\r\n        headers: {\r\n          \'Content-Type\': \'application/json\',\r\n        },\r\n        body: JSON.stringify(payload),\r\n      });\r\n\r\n      uploadText.textContent = "\u2705";\r\n      uploadText.style.color = "#0C9D61";\r\n      uploadText.style.fontSize = "16px";\r\n    } catch (error) {\r\n      console.error(\'Upload error:\', error);\r\n      uploadText.textContent = "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc!";\r\n      uploadText.style.color = "#EC2D30";\r\n      uploadText.style.fontSize = "16px";\r\n    }\r\n  });\r\n</script>\r\n'
+                      '<script src="https://unpkg.com/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>\r\n\r\n<div class="plasmic_default__all plasmic_default__div FirstPropertyEditTest2__freeBox__nmOuz">\r\n  <span class="ant-upload-wrapper __wab_instance FirstPropertyEditTest2__upload__scmdc css-10hmd9l">\r\n    <div class="ant-upload ant-upload-select">\r\n      <span class="ant-upload">\r\n        <input id="profile-upload" type="file" accept="image/*" style="display: none;" />\r\n        <label for="profile-upload" style="cursor: pointer;">\r\n          <div id="upload-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">\r\n            <div class="FirstPropertyEditTest2__img__see5C __wab_img-wrapper">\r\n              <img id="preview-img" alt="" \r\n                src="https://media.rentamon.com/icon%2Fclipicon.svg"\r\n                style="width: 50px; height: 50px; object-fit: cover; border-radius: 6px;" />\r\n            </div>\r\n            <div id="upload-text" style="font-size: 16px; margin-top: 4px; text-align: center;">\r\n              \u0628\u0632\u0646 \u0627\u06cc\u0646\u200c\u062c\u0627 (\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0639\u06a9\u0633)\r\n            </div>\r\n          </div>\r\n        </label>\r\n      </span>\r\n    </div>\r\n    <div class="ant-upload-list ant-upload-list-picture"></div>\r\n  </span>\r\n</div>\r\n\r\n<script>\r\n  const input = document.getElementById(\'profile-upload\');\r\n  const previewImg = document.getElementById(\'preview-img\');\r\n  const uploadText = document.getElementById(\'upload-text\');\r\n\r\n  input.addEventListener(\'change\', async (event) => {\r\n    const file = event.target.files[0];\r\n    if (!file) return;\r\n\r\n    const options = {\r\n      maxSizeMB: 0.3,\r\n      maxWidthOrHeight: 800,\r\n      useWebWorker: true,\r\n    };\r\n\r\n    try {\r\n      uploadText.textContent = "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc...";\r\n      uploadText.style.fontSize = "16px";\r\n\r\n      const compressedFile = await imageCompression(file, options);\r\n\r\n      const base64Full = await new Promise((resolve, reject) => {\r\n        const reader = new FileReader();\r\n        reader.onload = () => resolve(reader.result);\r\n        reader.onerror = reject;\r\n        reader.readAsDataURL(compressedFile);\r\n      });\r\n\r\n      const base64Content = base64Full.split(\',\')[1];\r\n\r\n      // \u062a\u063a\u06cc\u06cc\u0631 \u0633\u0627\u06cc\u0632 \u062a\u0635\u0648\u06cc\u0631 \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0628\u0639\u062f \u0627\u0632 \u0622\u067e\u0644\u0648\u062f\r\n      previewImg.src = base64Full;\r\n      previewImg.style.width = "200px";\r\n      previewImg.style.height = "110px";\r\n\r\n      const payload = {\r\n        property_pic: {\r\n          uid: `rc-upload-${Date.now()}-${file.name}`,\r\n          name: file.name,\r\n          size: compressedFile.size,\r\n          type: compressedFile.type,\r\n          lastModified: file.lastModified,\r\n          contents: base64Content\r\n        }\r\n      };\r\n\r\n      await fetch(\'https://gateway.rentamon.com/webhook/change_property_pic\', {\r\n        method: \'POST\',\r\n        headers: {\r\n          \'Content-Type\': \'application/json\',\r\n        },\r\n        body: JSON.stringify(payload),\r\n      });\r\n\r\n      uploadText.textContent = "\u2705";\r\n      uploadText.style.color = "#0C9D61";\r\n      uploadText.style.fontSize = "16px";\r\n    } catch (error) {\r\n      console.error(\'Upload error:\', error);\r\n      uploadText.textContent = "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc!";\r\n      uploadText.style.color = "#EC2D30";\r\n      uploadText.style.fontSize = "16px";\r\n    }\r\n  });\r\n</script>\r\n'
                     }
                   />
 
@@ -1820,9 +1808,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                         typeof $steps["updateLoading2"] === "object" &&
                         typeof $steps["updateLoading2"].then === "function"
                       ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
-                        ];
+                        $steps["updateLoading2"] =
+                          await $steps["updateLoading2"];
                       }
                     }}
                   >
@@ -1864,7 +1851,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                         sty.text__gVmd6
                       )}
                     >
-                      {"\u0630\u062e\u06cc\u0631\u0647"}
+                      {"\u0630\u062e\u06cc\u0631\u0647 \u0634\u0648\u062f"}
                     </div>
                   </div>
                   <div
@@ -1920,7 +1907,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                         sty.text__jMysY
                       )}
                     >
-                      {"\u0642\u0628\u0644"}
+                      {"\u0644\u063a\u0648"}
                     </div>
                   </div>
                 </div>
@@ -2310,9 +2297,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 typeof $steps["checkPropTourCookie"] === "object" &&
                 typeof $steps["checkPropTourCookie"].then === "function"
               ) {
-                $steps["checkPropTourCookie"] = await $steps[
-                  "checkPropTourCookie"
-                ];
+                $steps["checkPropTourCookie"] =
+                  await $steps["checkPropTourCookie"];
               }
             }}
           />
@@ -2441,7 +2427,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicPropertyEdit__VariantsArgs;
     args?: PlasmicPropertyEdit__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicPropertyEdit__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicPropertyEdit__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicPropertyEdit__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
