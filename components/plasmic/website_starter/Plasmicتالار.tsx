@@ -1531,19 +1531,21 @@ function Plasmicتالار__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   sty.instantReserve,
-                  (() => {
-                    try {
-                      return (() => {})();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? ``
+                    : (() => {
+                        try {
+                          return (() => {})();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
                 )}
                 onClick={async event => {
                   const $steps = {};

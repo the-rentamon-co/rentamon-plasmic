@@ -1174,11 +1174,6 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 500px) {
-  .instantReserve {
-    display: none;
-  }
-}
 @media (max-width: 350px) {
   .instantReserve {
     width: 100%;
@@ -1203,7 +1198,7 @@
   max-width: 16%;
   justify-content: center;
   align-items: flex-end;
-  opacity: 0.3;
+  opacity: 1;
   min-width: 0;
   padding: 8px;
 }
@@ -1245,6 +1240,11 @@
   opacity: 0.3;
   min-width: 0;
   padding: 8px 0px 8px 8px;
+}
+@media (max-width: 500px) {
+  .mid4 {
+    opacity: 1;
+  }
 }
 @media (max-width: 350px) {
   .mid4 {
@@ -1308,6 +1308,11 @@
   opacity: 0.3;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .left3 {
+    opacity: 1;
+  }
 }
 @media (max-width: 350px) {
   .left3 {
