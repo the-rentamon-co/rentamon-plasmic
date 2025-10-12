@@ -92,6 +92,7 @@ export const PlasmicInstantReserveSahami__ArgProps = new Array<ArgPropType>();
 export type PlasmicInstantReserveSahami__OverridesType = {
   root?: Flex__<"div">;
   instantProperty?: Flex__<typeof ApiRequest>;
+  instantPropertyWebsite?: Flex__<typeof ApiRequest>;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
@@ -330,6 +331,30 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "instantProperty"
+      },
+      {
+        path: "instantPropertyWebsite.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "instantPropertyWebsite"
+      },
+      {
+        path: "instantPropertyWebsite.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "instantPropertyWebsite"
+      },
+      {
+        path: "instantPropertyWebsite.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "instantPropertyWebsite"
       }
     ],
     [$props, $ctx, $refs]
@@ -456,6 +481,69 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
             url={(() => {
               try {
                 return `https://gateway.rentamon.com/webhook/instant/property?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
+          />
+
+          <ApiRequest
+            data-plasmic-name={"instantPropertyWebsite"}
+            data-plasmic-override={overrides.instantPropertyWebsite}
+            className={classNames("__wab_instance", sty.instantPropertyWebsite)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__hDIbQ
+                )}
+              >
+                {"Error fetching data"}
+              </div>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__vXkFz
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "instantPropertyWebsite",
+                "error"
+              ]).apply(null, eventArgs);
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "instantPropertyWebsite",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "instantPropertyWebsite",
+                "data"
+              ]).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["instantPropertyWebsite"] = ref;
+            }}
+            url={(() => {
+              try {
+                return `https://gateway.rentamon.com/webhook/instant/property/websites-status?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -755,6 +843,43 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                   ) {
                     return;
                   }
+
+                  (async value => {
+                    const $steps = {};
+
+                    $steps["updateVariable"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["variable"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateVariable"] != null &&
+                      typeof $steps["updateVariable"] === "object" &&
+                      typeof $steps["updateVariable"].then === "function"
+                    ) {
+                      $steps["updateVariable"] = await $steps["updateVariable"];
+                    }
+                  }).apply(null, eventArgs);
                 }}
                 options={(() => {
                   try {
@@ -807,8 +932,8 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                 <div className={classNames(projectcss.all, sty.freeBox__kJN)}>
                   {(() => {
                     try {
-                      return $state.profile2.data.user_info.websites.includes(
-                        "shab"
+                      return $state.instantPropertyWebsite.data.some(
+                        item => item.website_id === "4"
                       );
                     } catch (e) {
                       if (
@@ -1133,8 +1258,8 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.profile2.data.user_info.websites.includes(
-                        "otaghak"
+                      return $state.instantPropertyWebsite.data.some(
+                        item => item.website_id === "6"
                       );
                     } catch (e) {
                       if (
@@ -1211,8 +1336,8 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.profile2.data.user_info.websites.includes(
-                        "jabama"
+                      return $state.instantPropertyWebsite.data.some(
+                        item => item.website_id === "2"
                       );
                     } catch (e) {
                       if (
@@ -1289,8 +1414,8 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.profile2.data.user_info.websites.includes(
-                        "jajiga"
+                      return $state.instantPropertyWebsite.data.some(
+                        item => item.website_id === "3"
                       );
                     } catch (e) {
                       if (
@@ -1367,8 +1492,8 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.profile2.data.user_info.websites.includes(
-                        "mihmansho"
+                      return $state.instantPropertyWebsite.data.some(
+                        item => item.website_id === "7"
                       );
                     } catch (e) {
                       if (
@@ -1445,8 +1570,8 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                   ) : null}
                   {(() => {
                     try {
-                      return $state.profile2.data.user_info.websites.includes(
-                        "homsa"
+                      return $state.instantPropertyWebsite.data.some(
+                        item => item.website_id === "8"
                       );
                     } catch (e) {
                       if (
@@ -1805,6 +1930,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "instantProperty",
+    "instantPropertyWebsite",
     "header",
     "sideBar2",
     "profile2",
@@ -1837,6 +1963,7 @@ const PlasmicDescendants = {
     "faviconRntComponent"
   ],
   instantProperty: ["instantProperty"],
+  instantPropertyWebsite: ["instantPropertyWebsite"],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
@@ -1911,6 +2038,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   instantProperty: typeof ApiRequest;
+  instantPropertyWebsite: typeof ApiRequest;
   header: "div";
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
@@ -2006,6 +2134,7 @@ export const PlasmicInstantReserveSahami = Object.assign(
   {
     // Helper components rendering sub-elements
     instantProperty: makeNodeComponent("instantProperty"),
+    instantPropertyWebsite: makeNodeComponent("instantPropertyWebsite"),
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
