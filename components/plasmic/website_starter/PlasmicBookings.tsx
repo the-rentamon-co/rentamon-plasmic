@@ -4792,400 +4792,406 @@ function PlasmicBookings__RenderFunc(props: {
                               </div>
                             </div>
                           </div>
-                          <div
-                            data-plasmic-name={"bookSettleStatus"}
-                            data-plasmic-override={overrides.bookSettleStatus}
-                            className={classNames(
-                              projectcss.all,
-                              sty.bookSettleStatus,
-                              (() => {
+                          {(() => {
+                            try {
+                              return (
+                                new Date() >
+                                new Date($state.booking.data.check_out)
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <div
+                              data-plasmic-name={"bookSettleStatus"}
+                              data-plasmic-override={overrides.bookSettleStatus}
+                              className={classNames(
+                                projectcss.all,
+                                sty.bookSettleStatus
+                              )}
+                            >
+                              {(() => {
                                 try {
-                                  return (() => {})();
+                                  return (
+                                    $state.booking.data.reservations
+                                      .is_settled == false
+                                  );
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return undefined;
+                                    return true;
                                   }
                                   throw e;
                                 }
-                              })()
-                            )}
-                          >
-                            {(() => {
-                              try {
-                                return (
-                                  $state.booking.data.reservations.is_settled ==
-                                  false
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })() ? (
-                              <div
-                                data-plasmic-name={"error"}
-                                data-plasmic-override={overrides.error}
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.error
-                                )}
-                                onClick={async event => {
-                                  const $steps = {};
+                              })() ? (
+                                <div
+                                  data-plasmic-name={"error"}
+                                  data-plasmic-override={overrides.error}
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.error
+                                  )}
+                                  onClick={async event => {
+                                    const $steps = {};
 
-                                  $steps["invokeGlobalAction"] = true
-                                    ? (() => {
-                                        const actionArgs = {
-                                          args: [
-                                            "error",
-                                            (() => {
-                                              try {
-                                                return (() => {
-                                                  const websiteFarsiNames = {
-                                                    host: "میزبان",
-                                                    jabama: "جاباما",
-                                                    jajiga: "جاجیگا",
-                                                    shab: "شب",
-                                                    mizboon: "میزبون",
-                                                    otaghak: "اتاقک",
-                                                    homsa: "هومسا",
-                                                    mihmansho: "میهمانشو",
-                                                    divar: "دیوار",
-                                                    others: "سایر",
-                                                    offline: "حضوری",
-                                                    Returning_Guest: "قبلی",
-                                                    "Broker or Colleague":
-                                                      "واسطه یا همکار",
-                                                    social:
-                                                      "پیام‌رسان و شبکه‌اجتماعی",
-                                                    garmeja: "گرمه‌جا"
-                                                  };
-                                                  const englishWebsiteName =
-                                                    $state.booking.data.website;
-                                                  const farsiWebsiteName =
-                                                    websiteFarsiNames[
-                                                      englishWebsiteName
-                                                    ] || englishWebsiteName;
-                                                  const finalMessage = `${farsiWebsiteName} هنوز درآمد این رزرو رو باشما تسویه نکرده`;
-                                                  return finalMessage;
-                                                })();
-                                              } catch (e) {
-                                                if (
-                                                  e instanceof TypeError ||
-                                                  e?.plasmicType ===
-                                                    "PlasmicUndefinedDataError"
-                                                ) {
-                                                  return undefined;
+                                    $steps["invokeGlobalAction"] = true
+                                      ? (() => {
+                                          const actionArgs = {
+                                            args: [
+                                              "error",
+                                              (() => {
+                                                try {
+                                                  return (() => {
+                                                    const websiteFarsiNames = {
+                                                      host: "میزبان",
+                                                      jabama: "جاباما",
+                                                      jajiga: "جاجیگا",
+                                                      shab: "شب",
+                                                      mizboon: "میزبون",
+                                                      otaghak: "اتاقک",
+                                                      homsa: "هومسا",
+                                                      mihmansho: "میهمانشو",
+                                                      divar: "دیوار",
+                                                      others: "سایر",
+                                                      offline: "حضوری",
+                                                      Returning_Guest: "قبلی",
+                                                      "Broker or Colleague":
+                                                        "واسطه یا همکار",
+                                                      social:
+                                                        "پیام‌رسان و شبکه‌اجتماعی",
+                                                      garmeja: "گرمه‌جا"
+                                                    };
+                                                    const englishWebsiteName =
+                                                      $state.booking.data
+                                                        .website;
+                                                    const farsiWebsiteName =
+                                                      websiteFarsiNames[
+                                                        englishWebsiteName
+                                                      ] || englishWebsiteName;
+                                                    const finalMessage = `${farsiWebsiteName} هنوز درآمد این رزرو رو باشما تسویه نکرده`;
+                                                    return finalMessage;
+                                                  })();
+                                                } catch (e) {
+                                                  if (
+                                                    e instanceof TypeError ||
+                                                    e?.plasmicType ===
+                                                      "PlasmicUndefinedDataError"
+                                                  ) {
+                                                    return undefined;
+                                                  }
+                                                  throw e;
                                                 }
-                                                throw e;
-                                              }
-                                            })(),
-                                            "top-center"
-                                          ]
-                                        };
-                                        return $globalActions[
-                                          "Fragment.showToast"
-                                        ]?.apply(null, [...actionArgs.args]);
-                                      })()
-                                    : undefined;
-                                  if (
-                                    $steps["invokeGlobalAction"] != null &&
-                                    typeof $steps["invokeGlobalAction"] ===
-                                      "object" &&
-                                    typeof $steps["invokeGlobalAction"].then ===
-                                      "function"
-                                  ) {
-                                    $steps["invokeGlobalAction"] =
-                                      await $steps["invokeGlobalAction"];
-                                  }
-                                }}
-                              >
-                                <PlasmicImg__
-                                  alt={""}
-                                  className={classNames(sty.img__qOrc4)}
-                                  displayHeight={
-                                    hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "smallMobile"
-                                    )
-                                      ? "18px"
-                                      : "auto"
-                                  }
-                                  displayMaxHeight={"none"}
-                                  displayMaxWidth={"100%"}
-                                  displayMinHeight={"0"}
-                                  displayMinWidth={"0"}
-                                  displayWidth={"auto"}
-                                  loading={"lazy"}
-                                  src={{
-                                    src: "/plasmic/website_starter/images/image141.svg",
-                                    fullWidth: 23,
-                                    fullHeight: 23,
-                                    aspectRatio: undefined
+                                              })(),
+                                              "top-center"
+                                            ]
+                                          };
+                                          return $globalActions[
+                                            "Fragment.showToast"
+                                          ]?.apply(null, [...actionArgs.args]);
+                                        })()
+                                      : undefined;
+                                    if (
+                                      $steps["invokeGlobalAction"] != null &&
+                                      typeof $steps["invokeGlobalAction"] ===
+                                        "object" &&
+                                      typeof $steps["invokeGlobalAction"]
+                                        .then === "function"
+                                    ) {
+                                      $steps["invokeGlobalAction"] =
+                                        await $steps["invokeGlobalAction"];
+                                    }
                                   }}
-                                />
+                                >
+                                  <PlasmicImg__
+                                    alt={""}
+                                    className={classNames(sty.img__qOrc4)}
+                                    displayHeight={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      )
+                                        ? "18px"
+                                        : "auto"
+                                    }
+                                    displayMaxHeight={"none"}
+                                    displayMaxWidth={"100%"}
+                                    displayMinHeight={"0"}
+                                    displayMinWidth={"0"}
+                                    displayWidth={"auto"}
+                                    loading={"lazy"}
+                                    src={{
+                                      src: "/plasmic/website_starter/images/image141.svg",
+                                      fullWidth: 23,
+                                      fullHeight: 23,
+                                      aspectRatio: undefined
+                                    }}
+                                  />
 
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__yiaF
+                                    )}
+                                  >
+                                    {
+                                      "\u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647"
+                                    }
+                                  </div>
+                                </div>
+                              ) : null}
+                              {(
+                                hasVariant(globalVariants, "screen", "tablet")
+                                  ? (() => {
+                                      try {
+                                        return (
+                                          $state.booking.data.reservations
+                                            .is_settled == true
+                                        );
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return false;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  : (() => {
+                                      try {
+                                        return (
+                                          $state.booking.data.smart_booking
+                                            .is_settled == true
+                                        );
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return false;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                              ) ? (
                                 <div
+                                  data-plasmic-name={"_true"}
+                                  data-plasmic-override={overrides._true}
                                   className={classNames(
                                     projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__yiaF
+                                    sty._true
                                   )}
-                                >
-                                  {
-                                    "\u062a\u0633\u0648\u06cc\u0647 \u0646\u0634\u062f\u0647"
-                                  }
-                                </div>
-                              </div>
-                            ) : null}
-                            {(
-                              hasVariant(globalVariants, "screen", "tablet")
-                                ? (() => {
-                                    try {
-                                      return (
-                                        $state.booking.data.reservations
-                                          .is_settled == true
-                                      );
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return false;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
-                                : (() => {
-                                    try {
-                                      return (
-                                        $state.booking.data.smart_booking
-                                          .is_settled == true
-                                      );
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return false;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
-                            ) ? (
-                              <div
-                                data-plasmic-name={"_true"}
-                                data-plasmic-override={overrides._true}
-                                className={classNames(
-                                  projectcss.all,
-                                  sty._true
-                                )}
-                                onClick={async event => {
-                                  const $steps = {};
+                                  onClick={async event => {
+                                    const $steps = {};
 
-                                  $steps["invokeGlobalAction"] = true
-                                    ? (() => {
-                                        const actionArgs = {
-                                          args: [
-                                            undefined,
-                                            (() => {
-                                              try {
-                                                return (() => {
-                                                  const websiteFarsiNames = {
-                                                    host: "میزبان",
-                                                    jabama: "جاباما",
-                                                    jajiga: "جاجیگا",
-                                                    shab: "شب",
-                                                    mizboon: "میزبون",
-                                                    otaghak: "اتاقک",
-                                                    homsa: "هومسا",
-                                                    mihmansho: "میهمانشو",
-                                                    divar: "دیوار",
-                                                    others: "سایر",
-                                                    offline: "حضوری",
-                                                    Returning_Guest: "قبلی",
-                                                    "Broker or Colleague":
-                                                      "واسطه یا همکار",
-                                                    social:
-                                                      "پیام‌رسان و شبکه‌اجتماعی",
-                                                    garmeja: "گرمه‌جا"
-                                                  };
-                                                  const englishWebsiteName =
-                                                    $state.booking.data.website;
-                                                  const farsiWebsiteName =
-                                                    websiteFarsiNames[
-                                                      englishWebsiteName
-                                                    ] || englishWebsiteName;
-                                                  const finalMessage = `${farsiWebsiteName} درآمد این رزرو رو با شما تسویه کرده`;
-                                                  return finalMessage;
-                                                })();
-                                              } catch (e) {
-                                                if (
-                                                  e instanceof TypeError ||
-                                                  e?.plasmicType ===
-                                                    "PlasmicUndefinedDataError"
-                                                ) {
-                                                  return undefined;
+                                    $steps["invokeGlobalAction"] = true
+                                      ? (() => {
+                                          const actionArgs = {
+                                            args: [
+                                              undefined,
+                                              (() => {
+                                                try {
+                                                  return (() => {
+                                                    const websiteFarsiNames = {
+                                                      host: "میزبان",
+                                                      jabama: "جاباما",
+                                                      jajiga: "جاجیگا",
+                                                      shab: "شب",
+                                                      mizboon: "میزبون",
+                                                      otaghak: "اتاقک",
+                                                      homsa: "هومسا",
+                                                      mihmansho: "میهمانشو",
+                                                      divar: "دیوار",
+                                                      others: "سایر",
+                                                      offline: "حضوری",
+                                                      Returning_Guest: "قبلی",
+                                                      "Broker or Colleague":
+                                                        "واسطه یا همکار",
+                                                      social:
+                                                        "پیام‌رسان و شبکه‌اجتماعی",
+                                                      garmeja: "گرمه‌جا"
+                                                    };
+                                                    const englishWebsiteName =
+                                                      $state.booking.data
+                                                        .website;
+                                                    const farsiWebsiteName =
+                                                      websiteFarsiNames[
+                                                        englishWebsiteName
+                                                      ] || englishWebsiteName;
+                                                    const finalMessage = `${farsiWebsiteName} درآمد این رزرو رو با شما تسویه کرده`;
+                                                    return finalMessage;
+                                                  })();
+                                                } catch (e) {
+                                                  if (
+                                                    e instanceof TypeError ||
+                                                    e?.plasmicType ===
+                                                      "PlasmicUndefinedDataError"
+                                                  ) {
+                                                    return undefined;
+                                                  }
+                                                  throw e;
                                                 }
-                                                throw e;
-                                              }
-                                            })(),
-                                            "top-center",
-                                            4500
-                                          ]
-                                        };
-                                        return $globalActions[
-                                          "Fragment.showToast"
-                                        ]?.apply(null, [...actionArgs.args]);
-                                      })()
-                                    : undefined;
-                                  if (
-                                    $steps["invokeGlobalAction"] != null &&
-                                    typeof $steps["invokeGlobalAction"] ===
-                                      "object" &&
-                                    typeof $steps["invokeGlobalAction"].then ===
-                                      "function"
-                                  ) {
-                                    $steps["invokeGlobalAction"] =
-                                      await $steps["invokeGlobalAction"];
-                                  }
-                                }}
-                              >
-                                <PlasmicImg__
-                                  alt={""}
-                                  className={classNames(sty.img__eWUza)}
-                                  displayHeight={
-                                    hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "smallMobile"
-                                    )
-                                      ? "18px"
-                                      : "auto"
-                                  }
-                                  displayMaxHeight={"none"}
-                                  displayMaxWidth={"100%"}
-                                  displayMinHeight={"0"}
-                                  displayMinWidth={"0"}
-                                  displayWidth={"auto"}
-                                  loading={"lazy"}
-                                  src={{
-                                    src: "/plasmic/website_starter/images/image172.svg",
-                                    fullWidth: 22,
-                                    fullHeight: 22,
-                                    aspectRatio: undefined
+                                              })(),
+                                              "top-center",
+                                              4500
+                                            ]
+                                          };
+                                          return $globalActions[
+                                            "Fragment.showToast"
+                                          ]?.apply(null, [...actionArgs.args]);
+                                        })()
+                                      : undefined;
+                                    if (
+                                      $steps["invokeGlobalAction"] != null &&
+                                      typeof $steps["invokeGlobalAction"] ===
+                                        "object" &&
+                                      typeof $steps["invokeGlobalAction"]
+                                        .then === "function"
+                                    ) {
+                                      $steps["invokeGlobalAction"] =
+                                        await $steps["invokeGlobalAction"];
+                                    }
                                   }}
-                                />
+                                >
+                                  <PlasmicImg__
+                                    alt={""}
+                                    className={classNames(sty.img__eWUza)}
+                                    displayHeight={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      )
+                                        ? "18px"
+                                        : "auto"
+                                    }
+                                    displayMaxHeight={"none"}
+                                    displayMaxWidth={"100%"}
+                                    displayMinHeight={"0"}
+                                    displayMinWidth={"0"}
+                                    displayWidth={"auto"}
+                                    loading={"lazy"}
+                                    src={{
+                                      src: "/plasmic/website_starter/images/image172.svg",
+                                      fullWidth: 22,
+                                      fullHeight: 22,
+                                      aspectRatio: undefined
+                                    }}
+                                  />
 
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__di7DJ
+                                    )}
+                                  >
+                                    {
+                                      "\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"
+                                    }
+                                  </div>
+                                </div>
+                              ) : null}
+                              {(
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "smallMobile"
+                                )
+                                  ? (() => {
+                                      try {
+                                        return (
+                                          $state.booking.data.reservations
+                                            .is_settled == null
+                                        );
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return true;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  : (() => {
+                                      try {
+                                        return (
+                                          $state.booking.data.reservations
+                                            .is_settled == null
+                                        );
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return true;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                              ) ? (
                                 <div
+                                  data-plasmic-name={"true2"}
+                                  data-plasmic-override={overrides.true2}
                                   className={classNames(
                                     projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__di7DJ
+                                    sty.true2
                                   )}
                                 >
-                                  {
-                                    "\u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647"
-                                  }
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__skgW4
+                                    )}
+                                  >
+                                    {"\u061f"}
+                                  </div>
                                 </div>
-                              </div>
-                            ) : null}
-                            {(
-                              hasVariant(
-                                globalVariants,
-                                "screen",
-                                "smallMobile"
-                              )
-                                ? (() => {
-                                    try {
-                                      return (
-                                        $state.booking.data.reservations
-                                          .is_settled == null
-                                      );
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return true;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
-                                : (() => {
-                                    try {
-                                      return (
-                                        $state.booking.data.reservations
-                                          .is_settled == null
-                                      );
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return true;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
-                            ) ? (
+                              ) : null}
                               <div
-                                data-plasmic-name={"true2"}
-                                data-plasmic-override={overrides.true2}
                                 className={classNames(
                                   projectcss.all,
-                                  sty.true2
+                                  sty.freeBox___90Cmi
                                 )}
                               >
                                 <div
                                   className={classNames(
                                     projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__skgW4
+                                    sty.freeBox__iznGv
                                   )}
                                 >
-                                  {"\u061f"}
-                                </div>
-                              </div>
-                            ) : null}
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___90Cmi
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__iznGv
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__pVcZ
-                                  )}
-                                >
-                                  {
-                                    "\u0648\u0636\u0639\u06cc\u062a \u0645\u0627\u0644\u06cc:"
-                                  }
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__pVcZ
+                                    )}
+                                  >
+                                    {
+                                      "\u0648\u0636\u0639\u06cc\u062a \u0645\u0627\u0644\u06cc:"
+                                    }
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          ) : null}
                         </div>
                         <div
                           data-plasmic-name={"openAndCloseButton"}

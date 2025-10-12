@@ -598,13 +598,11 @@ function PlasmicReservations__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          console.log("here in the side effect local storage");
                           const storedData =
                             localStorage.getItem("reservations");
                           if (storedData) {
                             const parsedData = JSON.parse(storedData);
-                            $state.reservations = parsedData;
-                            return console.log("update reservations");
+                            return ($state.reservations = parsedData);
                           }
                         })();
                       }
@@ -917,7 +915,7 @@ function PlasmicReservations__RenderFunc(props: {
                   await $steps["removeSmartBookingAlert"];
               }
 
-              $steps["runCode4"] = true
+              $steps["runCode4"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -2746,162 +2744,7 @@ function PlasmicReservations__RenderFunc(props: {
                     }
                   </div>
                 }
-                loadingDisplay={(_par =>
-                  !_par ? [] : Array.isArray(_par) ? _par : [_par])(
-                  (() => {
-                    try {
-                      return (() => {
-                        const storedData = localStorage.getItem("reservations");
-                        if (storedData) {
-                          const parsedData = JSON.parse(storedData);
-                          return parsedData;
-                        }
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return [];
-                      }
-                      throw e;
-                    }
-                  })()
-                ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                  const currentItems = __plasmic_item_0;
-                  const currentIndexs = __plasmic_idx_0;
-                  return (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__giYau)}
-                      key={currentIndexs}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["goToBookingInNewTab"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    let result = "";
-                                    const bookingId =
-                                      currentItem.alternative_booking_id;
-                                    return window.open(
-                                      `https://rentamon.com/bookings/${bookingId}`,
-                                      "_blank"
-                                    );
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["goToBookingInNewTab"] != null &&
-                          typeof $steps["goToBookingInNewTab"] === "object" &&
-                          typeof $steps["goToBookingInNewTab"].then ===
-                            "function"
-                        ) {
-                          $steps["goToBookingInNewTab"] =
-                            await $steps["goToBookingInNewTab"];
-                        }
-                      }}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__strKl
-                        )}
-                      >
-                        <ReservationsRecordList
-                          cancelledBookings={(() => {
-                            try {
-                              return currentItems.status == "Cancelled";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.reservationsRecordList__lgeZv
-                          )}
-                          confirmedBookings={(() => {
-                            try {
-                              return currentItems.status == "Confirmed";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                          currentIndex={(() => {
-                            try {
-                              return currentIndexs;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()}
-                          data={(() => {
-                            try {
-                              return currentItems;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()}
-                          pastBookingsBox={(() => {
-                            try {
-                              return currentItems.status == "Past";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                          pendingBookings={(() => {
-                            try {
-                              return currentItems.status == "Pending";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
+                loadingDisplay={null}
                 method={"GET"}
                 onError={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
