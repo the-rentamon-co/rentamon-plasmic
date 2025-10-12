@@ -4972,7 +4972,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   : (() => {
                                       try {
                                         return (
-                                          $state.booking.data.smart_booking
+                                          $state.booking.data.reservations
                                             .is_settled == true
                                         );
                                       } catch (e) {
