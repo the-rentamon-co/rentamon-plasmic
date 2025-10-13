@@ -108,7 +108,7 @@ export type PlasmicInstantReserveSahami__OverridesType = {
   shabContainer?: Flex__<"div">;
   shabSwitch?: Flex__<typeof Switch>;
   otaghakContainer?: Flex__<"div">;
-  otaghakSwitch?: Flex__<typeof Switch>;
+  shabSwitch2?: Flex__<typeof Switch>;
   jabamaContainer?: Flex__<"div">;
   fragmentSwitch3?: Flex__<typeof Switch>;
   jajigaContainer?: Flex__<"div">;
@@ -273,12 +273,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
           })()
       },
       {
-        path: "otaghakSwitch.checked",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
         path: "fragmentSwitch3.checked",
         type: "private",
         variableType: "text",
@@ -355,6 +349,27 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "instantPropertyWebsite"
+      },
+      {
+        path: "shabSwitch2.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.instantProperty.data.some(
+                item => item.website_id === 6 && item.is_instant
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -1274,22 +1289,276 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         </div>
                       </div>
                       <Switch
-                        data-plasmic-name={"otaghakSwitch"}
-                        data-plasmic-override={overrides.otaghakSwitch}
+                        data-plasmic-name={"shabSwitch2"}
+                        data-plasmic-override={overrides.shabSwitch2}
                         checked={generateStateValueProp($state, [
-                          "otaghakSwitch",
+                          "shabSwitch2",
                           "checked"
                         ])}
                         className={classNames(
                           "__wab_instance",
-                          sty.otaghakSwitch
+                          sty.shabSwitch2
                         )}
-                        disabled={true}
+                        disabled={false}
                         onCheckedChange={async (...eventArgs: any) => {
                           generateStateOnChangeProp($state, [
-                            "otaghakSwitch",
+                            "shabSwitch2",
                             "checked"
                           ]).apply(null, eventArgs);
+
+                          (async checked => {
+                            const $steps = {};
+
+                            $steps["apiRequestForInstant"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "GET",
+                                      "https://gateway.rentamon.com/webhook/instant/Initiator",
+                                      (() => {
+                                        try {
+                                          return $state.shabSwitch2.checked
+                                            ? {
+                                                is_instant: "true",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).id,
+                                                website_id: "6"
+                                              }
+                                            : {
+                                                is_instant: "false",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).id,
+                                                website_id: "6"
+                                              };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return {
+                                            Authorization:
+                                              "Bearer " + $state.auth
+                                          };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["apiRequestForInstant"] != null &&
+                              typeof $steps["apiRequestForInstant"] ===
+                                "object" &&
+                              typeof $steps["apiRequestForInstant"].then ===
+                                "function"
+                            ) {
+                              $steps["apiRequestForInstant"] =
+                                await $steps["apiRequestForInstant"];
+                            }
+
+                            $steps["log"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return console.log(
+                                        $steps.apiRequestForInstant
+                                      );
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["log"] != null &&
+                              typeof $steps["log"] === "object" &&
+                              typeof $steps["log"].then === "function"
+                            ) {
+                              $steps["log"] = await $steps["log"];
+                            }
+
+                            $steps["turnOnSuccessToast"] =
+                              $steps.apiRequestForInstant.data.status ==
+                                "succeeded" &&
+                              $steps.apiRequestForInstant.data.is_instant ==
+                                true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0645\u0647\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0627\u062a\u0627\u0642\u06a9 \u0622\u0646\u06cc \u0634\u062f",
+                                        "top-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["turnOnSuccessToast"] != null &&
+                              typeof $steps["turnOnSuccessToast"] ===
+                                "object" &&
+                              typeof $steps["turnOnSuccessToast"].then ===
+                                "function"
+                            ) {
+                              $steps["turnOnSuccessToast"] =
+                                await $steps["turnOnSuccessToast"];
+                            }
+
+                            $steps["turnOffSuccessMessage"] =
+                              $steps.apiRequestForInstant.data.status ==
+                                "succeeded" &&
+                              $steps.apiRequestForInstant.data.is_instant ==
+                                false
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u062a\u0627\u0642\u06a9 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
+                                        "top-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["turnOffSuccessMessage"] != null &&
+                              typeof $steps["turnOffSuccessMessage"] ===
+                                "object" &&
+                              typeof $steps["turnOffSuccessMessage"].then ===
+                                "function"
+                            ) {
+                              $steps["turnOffSuccessMessage"] =
+                                await $steps["turnOffSuccessMessage"];
+                            }
+
+                            $steps["failedToast"] =
+                              $steps.apiRequestForInstant.data.status ==
+                              "failed"
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u06cc\u0647 \u0645\u0634\u06a9\u0644\u06cc \u067e\u06cc\u0634 \u0627\u0648\u0645\u062f",
+                                        "top-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["failedToast"] != null &&
+                              typeof $steps["failedToast"] === "object" &&
+                              typeof $steps["failedToast"].then === "function"
+                            ) {
+                              $steps["failedToast"] =
+                                await $steps["failedToast"];
+                            }
+
+                            $steps["updateShabSwitchChecked"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["shabSwitch2", "checked"]
+                                    },
+                                    operation: 0,
+                                    value: (() => {
+                                      if (
+                                        $steps.apiRequestForInstant.status ===
+                                        200
+                                      ) {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 4
+                                          ).is_instant =
+                                          $state.shabSwitch2.checked);
+                                      } else {
+                                        return ($state.properties.data
+                                          .find(
+                                            property =>
+                                              property.property_name ===
+                                              $state.selectProperty.value
+                                          )
+                                          .website_ids.find(
+                                            website => website.website_id === 4
+                                          ).is_instant =
+                                          !$state.shabSwitch2.checked);
+                                      }
+                                    })()
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateShabSwitchChecked"] != null &&
+                              typeof $steps["updateShabSwitchChecked"] ===
+                                "object" &&
+                              typeof $steps["updateShabSwitchChecked"].then ===
+                                "function"
+                            ) {
+                              $steps["updateShabSwitchChecked"] =
+                                await $steps["updateShabSwitchChecked"];
+                            }
+                          }).apply(null, eventArgs);
                         }}
                       />
                     </div>
@@ -1906,7 +2175,7 @@ const PlasmicDescendants = {
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
-    "otaghakSwitch",
+    "shabSwitch2",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -1946,7 +2215,7 @@ const PlasmicDescendants = {
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
-    "otaghakSwitch",
+    "shabSwitch2",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -1962,7 +2231,7 @@ const PlasmicDescendants = {
     "shabContainer",
     "shabSwitch",
     "otaghakContainer",
-    "otaghakSwitch",
+    "shabSwitch2",
     "jabamaContainer",
     "fragmentSwitch3",
     "jajigaContainer",
@@ -1975,8 +2244,8 @@ const PlasmicDescendants = {
   selectProperty: ["selectProperty"],
   shabContainer: ["shabContainer", "shabSwitch"],
   shabSwitch: ["shabSwitch"],
-  otaghakContainer: ["otaghakContainer", "otaghakSwitch"],
-  otaghakSwitch: ["otaghakSwitch"],
+  otaghakContainer: ["otaghakContainer", "shabSwitch2"],
+  shabSwitch2: ["shabSwitch2"],
   jabamaContainer: ["jabamaContainer", "fragmentSwitch3"],
   fragmentSwitch3: ["fragmentSwitch3"],
   jajigaContainer: ["jajigaContainer", "fragmentSwitch5"],
@@ -2014,7 +2283,7 @@ type NodeDefaultElementType = {
   shabContainer: "div";
   shabSwitch: typeof Switch;
   otaghakContainer: "div";
-  otaghakSwitch: typeof Switch;
+  shabSwitch2: typeof Switch;
   jabamaContainer: "div";
   fragmentSwitch3: typeof Switch;
   jajigaContainer: "div";
@@ -2110,7 +2379,7 @@ export const PlasmicInstantReserveSahami = Object.assign(
     shabContainer: makeNodeComponent("shabContainer"),
     shabSwitch: makeNodeComponent("shabSwitch"),
     otaghakContainer: makeNodeComponent("otaghakContainer"),
-    otaghakSwitch: makeNodeComponent("otaghakSwitch"),
+    shabSwitch2: makeNodeComponent("shabSwitch2"),
     jabamaContainer: makeNodeComponent("jabamaContainer"),
     fragmentSwitch3: makeNodeComponent("fragmentSwitch3"),
     jajigaContainer: makeNodeComponent("jajigaContainer"),

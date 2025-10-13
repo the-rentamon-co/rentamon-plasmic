@@ -2039,11 +2039,11 @@ function PlasmicReservations__RenderFunc(props: {
                               value: ($state.modalData = [
                                 {
                                   GuestName:
-                                    $state.reserveData2.data[currentIndex]
-                                      .guest_name,
+                                    $state.reserveData2.data[currentIndex].guest
+                                      .name,
                                   platfromName:
                                     $state.reserveData2.data[currentIndex]
-                                      .website,
+                                      .website_name,
                                   enterDate:
                                     $state.reserveData2.data[currentIndex]
                                       .check_in,
@@ -2052,10 +2052,10 @@ function PlasmicReservations__RenderFunc(props: {
                                       .check_out,
                                   propertyName:
                                     $state.reserveData2.data[currentIndex]
-                                      .property_name,
+                                      .property.name,
                                   status: "Pending",
                                   phone_number:
-                                    $state.reserveData2.data[currentIndex]
+                                    $state.reserveData2.data[currentIndex].guest
                                       .phone_number,
                                   amount:
                                     $state.reserveData2.data[currentIndex]
