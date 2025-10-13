@@ -2072,7 +2072,13 @@ function PlasmicReservations__RenderFunc(props: {
                                   room_id:
                                     $state.reserveData2.data[currentIndex]
                                       .room_id,
-                                  id: $state.reserveData2.data[currentIndex].id
+                                  id: $state.reserveData2.data[currentIndex].id,
+                                  check_in_per:
+                                    $state.reserveData2.data[currentIndex]
+                                      .check_in_persian,
+                                  check_out_per:
+                                    $state.reserveData2.data[currentIndex]
+                                      .check_out_persian
                                 }
                               ])
                             };
@@ -4967,7 +4973,7 @@ function PlasmicReservations__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return $state.modalData[0].enterDate;
+                          return $state.modalData[0].check_in_per;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -5005,7 +5011,7 @@ function PlasmicReservations__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return $state.modalData[0].laveDate;
+                          return $state.modalData[0].check_out_per;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
