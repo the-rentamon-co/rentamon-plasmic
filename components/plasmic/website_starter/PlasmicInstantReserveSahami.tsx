@@ -2617,6 +2617,9 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               </div>
             }
             trigger={null}
+            width={
+              hasVariant(globalVariants, "screen", "mobile") ? "80%" : undefined
+            }
           >
             <div className={classNames(projectcss.all, sty.freeBox___5ObgL)}>
               <div
