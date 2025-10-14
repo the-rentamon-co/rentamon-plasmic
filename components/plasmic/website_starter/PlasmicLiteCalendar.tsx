@@ -1254,19 +1254,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             data-plasmic-override={overrides.calendar2}
             calendarType={"lite"}
             className={classNames("__wab_instance", sty.calendar2)}
-            featurePermission={(() => {
-              try {
-                return $state.userAvailableFeature.data;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
-                }
-                throw e;
-              }
-            })()}
             isFirstVisit={(() => {
               try {
                 return $state.isTheFirstVisit;
@@ -1421,7 +1408,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__dJuHu
+                        sty.formField__zVAp5
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1433,7 +1420,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__cjFdp
+                        sty.formField__vNpu
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1451,7 +1438,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___8P1S6
+                          sty.text__izFwK
                         )}
                       >
                         {"Submit"}

@@ -1101,10 +1101,6 @@
 .img__okyVc > picture > img {
   object-fit: cover;
 }
-.userAvailableFeature:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .spacerDontTouch {
   flex-direction: column;
   position: relative;

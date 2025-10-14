@@ -99,7 +99,6 @@ export const PlasmicCalendar2__VariantProps = new Array<VariantPropType>();
 export type PlasmicCalendar2__ArgsType = {
   propertyId?: number;
   daystatuses?: any;
-  featurePermission?: any;
   calendarType?: string;
   isFirstVisit?: boolean;
 };
@@ -107,7 +106,6 @@ type ArgPropType = keyof PlasmicCalendar2__ArgsType;
 export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
   "propertyId",
   "daystatuses",
-  "featurePermission",
   "calendarType",
   "isFirstVisit"
 );
@@ -190,7 +188,6 @@ export type PlasmicCalendar2__OverridesType = {
 export interface DefaultCalendar2Props {
   propertyId?: number;
   daystatuses?: any;
-  featurePermission?: any;
   calendarType?: string;
   isFirstVisit?: boolean;
   className?: string;
@@ -2367,6 +2364,55 @@ function PlasmicCalendar2__RenderFunc(props: {
                 typeof $steps["updateTourSteps"].then === "function"
               ) {
                 $steps["updateTourSteps"] = await $steps["updateTourSteps"];
+              }
+
+              $steps["runCode"] = false
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          const values = $state.fragmentDatePicker.values;
+                          if (values.length === 0) {
+                            const newTimestamp = Math.floor(
+                              new Date("2025-10-17").getTime() / 1000
+                            );
+                            $state.fragmentDatePicker.values = [newTimestamp];
+                            return $state.fragmentDatePicker.values;
+                          }
+                          const lastTimestamp = values.at(-1);
+                          const lastDate = new Date(lastTimestamp * 1000);
+                          const hours = lastDate.getHours();
+                          const minutes = lastDate.getMinutes();
+                          const seconds = lastDate.getSeconds();
+                          const newDate = new Date(
+                            2025,
+                            9,
+                            17,
+                            hours,
+                            minutes,
+                            seconds
+                          );
+                          const newTimestamp = Math.floor(
+                            newDate.getTime() / 1000
+                          );
+                          const updatedValues = [...values, newTimestamp];
+
+                          $state.fragmentDatePicker.values = updatedValues;
+                          return updatedValues;
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
               }
             }).apply(null, eventArgs);
           }}
@@ -10202,55 +10248,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                 typeof $steps["updateModalOpen"].then === "function"
               ) {
                 $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-              }
-
-              $steps["updateCheckForChangeOpen"] = false
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["checkForChange", "open"]
-                      },
-                      operation: 0,
-                      value: (() => {
-                        const timestamps = $state.fragmentDatePicker.values;
-                        const dates = timestamps.map(timestamp => {
-                          const date = new Date(timestamp * 1000);
-                          return date.toISOString().split("T")[0];
-                        });
-                        const calendar = $state.apiRequest.data[1].calendar;
-                        const result = dates.some(date => {
-                          const item = calendar.find(
-                            entry => entry.date === date
-                          );
-                          return (
-                            item &&
-                            item.website !== "" &&
-                            item.website !== "رزرو" &&
-                            item.website != null
-                          );
-                        });
-                        return result;
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateCheckForChangeOpen"] != null &&
-                typeof $steps["updateCheckForChangeOpen"] === "object" &&
-                typeof $steps["updateCheckForChangeOpen"].then === "function"
-              ) {
-                $steps["updateCheckForChangeOpen"] =
-                  await $steps["updateCheckForChangeOpen"];
               }
 
               $steps["invokeGlobalAction"] = (() => {

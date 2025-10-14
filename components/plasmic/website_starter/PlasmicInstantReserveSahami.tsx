@@ -79,11 +79,15 @@ import sty from "./PlasmicInstantReserveSahami.module.css"; // plasmic-import: q
 
 createPlasmicElementProxy;
 
-export type PlasmicInstantReserveSahami__VariantMembers = {};
-export type PlasmicInstantReserveSahami__VariantsArgs = {};
+export type PlasmicInstantReserveSahami__VariantMembers = {
+  otaghakSwitchValue: "otaghakSwitchValue";
+};
+export type PlasmicInstantReserveSahami__VariantsArgs = {
+  otaghakSwitchValue?: SingleBooleanChoiceArg<"otaghakSwitchValue">;
+};
 type VariantPropType = keyof PlasmicInstantReserveSahami__VariantsArgs;
 export const PlasmicInstantReserveSahami__VariantProps =
-  new Array<VariantPropType>();
+  new Array<VariantPropType>("otaghakSwitchValue");
 
 export type PlasmicInstantReserveSahami__ArgsType = {};
 type ArgPropType = keyof PlasmicInstantReserveSahami__ArgsType;
@@ -258,9 +262,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return $state.instantProperty.data.some(
-                item => item.website_id === 4 && item.is_instant
-              );
+              return $state.isShabSwitchChecked;
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -357,6 +359,32 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
+              return $state.isOtaghakSwitchChecked;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "otaghakSwitchValue",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          $props.otaghakSwitchValue
+      },
+      {
+        path: "isOtaghakSwitchChecked",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
               return $state.instantProperty.data.some(
                 item => item.website_id === 6 && item.is_instant
               );
@@ -365,7 +393,28 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return undefined;
+                return 0;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "isShabSwitchChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.instantProperty.data.some(
+                item => item.website_id === 4 && item.is_instant
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
               }
               throw e;
             }
@@ -977,6 +1026,44 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                           (async checked => {
                             const $steps = {};
 
+                            $steps["updateIsShabSwitchChecked"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["isShabSwitchChecked"]
+                                    },
+                                    operation: 0,
+                                    value: ($state.isShabSwitchChecked =
+                                      !$state.isShabSwitchChecked)
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateIsShabSwitchChecked"] != null &&
+                              typeof $steps["updateIsShabSwitchChecked"] ===
+                                "object" &&
+                              typeof $steps["updateIsShabSwitchChecked"]
+                                .then === "function"
+                            ) {
+                              $steps["updateIsShabSwitchChecked"] =
+                                await $steps["updateIsShabSwitchChecked"];
+                            }
+
                             $steps["apiRequestForInstant"] = true
                               ? (() => {
                                   const actionArgs = {
@@ -1077,6 +1164,47 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                               $steps["log"] = await $steps["log"];
                             }
 
+                            $steps["updateIsShabSwitchChecked2"] =
+                              $steps.apiRequestForInstant.data.status ==
+                              "failed"
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["isShabSwitchChecked"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.isShabSwitchChecked =
+                                        !$state.isShabSwitchChecked)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["updateIsShabSwitchChecked2"] != null &&
+                              typeof $steps["updateIsShabSwitchChecked2"] ===
+                                "object" &&
+                              typeof $steps["updateIsShabSwitchChecked2"]
+                                .then === "function"
+                            ) {
+                              $steps["updateIsShabSwitchChecked2"] =
+                                await $steps["updateIsShabSwitchChecked2"];
+                            }
+
                             $steps["turnOnSuccessToast"] =
                               $steps.apiRequestForInstant.data.status ==
                                 "succeeded" &&
@@ -1162,70 +1290,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                               $steps["failedToast"] =
                                 await $steps["failedToast"];
                             }
-
-                            $steps["updateShabSwitchChecked"] = false
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["shabSwitch", "checked"]
-                                    },
-                                    operation: 0,
-                                    value: (() => {
-                                      if (
-                                        $steps.apiRequestForInstant.status ===
-                                        200
-                                      ) {
-                                        return ($state.properties.data
-                                          .find(
-                                            property =>
-                                              property.property_name ===
-                                              $state.selectProperty.value
-                                          )
-                                          .website_ids.find(
-                                            website => website.website_id === 4
-                                          ).is_instant =
-                                          $state.shabSwitch.checked);
-                                      } else {
-                                        return ($state.properties.data
-                                          .find(
-                                            property =>
-                                              property.property_name ===
-                                              $state.selectProperty.value
-                                          )
-                                          .website_ids.find(
-                                            website => website.website_id === 4
-                                          ).is_instant =
-                                          !$state.shabSwitch.checked);
-                                      }
-                                    })()
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updateShabSwitchChecked"] != null &&
-                              typeof $steps["updateShabSwitchChecked"] ===
-                                "object" &&
-                              typeof $steps["updateShabSwitchChecked"].then ===
-                                "function"
-                            ) {
-                              $steps["updateShabSwitchChecked"] =
-                                await $steps["updateShabSwitchChecked"];
-                            }
                           }).apply(null, eventArgs);
                         }}
                       />
@@ -1297,7 +1361,14 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         ])}
                         className={classNames(
                           "__wab_instance",
-                          sty.shabSwitch2
+                          sty.shabSwitch2,
+                          {
+                            [sty.shabSwitch2otaghakSwitchValue]: hasVariant(
+                              $state,
+                              "otaghakSwitchValue",
+                              "otaghakSwitchValue"
+                            )
+                          }
                         )}
                         disabled={false}
                         onCheckedChange={async (...eventArgs: any) => {
@@ -1308,6 +1379,44 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
 
                           (async checked => {
                             const $steps = {};
+
+                            $steps["updateShabSwitchValue"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["isOtaghakSwitchChecked"]
+                                    },
+                                    operation: 0,
+                                    value: ($state.isOtaghakSwitchChecked =
+                                      !$state.isOtaghakSwitchChecked)
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateShabSwitchValue"] != null &&
+                              typeof $steps["updateShabSwitchValue"] ===
+                                "object" &&
+                              typeof $steps["updateShabSwitchValue"].then ===
+                                "function"
+                            ) {
+                              $steps["updateShabSwitchValue"] =
+                                await $steps["updateShabSwitchValue"];
+                            }
 
                             $steps["apiRequestForInstant"] = true
                               ? (() => {
@@ -1409,6 +1518,47 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                               $steps["log"] = await $steps["log"];
                             }
 
+                            $steps["updateIsOtaghakSwitchChecked"] =
+                              $steps.apiRequestForInstant.data.status ==
+                              "failed"
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["isOtaghakSwitchChecked"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.isOtaghakSwitchChecked =
+                                        !$state.isOtaghakSwitchChecked)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["updateIsOtaghakSwitchChecked"] != null &&
+                              typeof $steps["updateIsOtaghakSwitchChecked"] ===
+                                "object" &&
+                              typeof $steps["updateIsOtaghakSwitchChecked"]
+                                .then === "function"
+                            ) {
+                              $steps["updateIsOtaghakSwitchChecked"] =
+                                await $steps["updateIsOtaghakSwitchChecked"];
+                            }
+
                             $steps["turnOnSuccessToast"] =
                               $steps.apiRequestForInstant.data.status ==
                                 "succeeded" &&
@@ -1493,70 +1643,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                             ) {
                               $steps["failedToast"] =
                                 await $steps["failedToast"];
-                            }
-
-                            $steps["updateShabSwitchChecked"] = false
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["shabSwitch2", "checked"]
-                                    },
-                                    operation: 0,
-                                    value: (() => {
-                                      if (
-                                        $steps.apiRequestForInstant.status ===
-                                        200
-                                      ) {
-                                        return ($state.properties.data
-                                          .find(
-                                            property =>
-                                              property.property_name ===
-                                              $state.selectProperty.value
-                                          )
-                                          .website_ids.find(
-                                            website => website.website_id === 4
-                                          ).is_instant =
-                                          $state.shabSwitch2.checked);
-                                      } else {
-                                        return ($state.properties.data
-                                          .find(
-                                            property =>
-                                              property.property_name ===
-                                              $state.selectProperty.value
-                                          )
-                                          .website_ids.find(
-                                            website => website.website_id === 4
-                                          ).is_instant =
-                                          !$state.shabSwitch2.checked);
-                                      }
-                                    })()
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updateShabSwitchChecked"] != null &&
-                              typeof $steps["updateShabSwitchChecked"] ===
-                                "object" &&
-                              typeof $steps["updateShabSwitchChecked"].then ===
-                                "function"
-                            ) {
-                              $steps["updateShabSwitchChecked"] =
-                                await $steps["updateShabSwitchChecked"];
                             }
                           }).apply(null, eventArgs);
                         }}

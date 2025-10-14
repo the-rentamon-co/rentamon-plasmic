@@ -114,7 +114,6 @@ export type PlasmicProCalendar__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   calendar2?: Flex__<typeof Calendar2>;
   aiAgentIframe?: Flex__<typeof Iframe>;
-  userAvailableFeature?: Flex__<typeof ApiRequest>;
   spacerDontTouch?: Flex__<"div">;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -295,30 +294,6 @@ function PlasmicProCalendar__RenderFunc(props: {
         })
       },
       {
-        path: "userAvailableFeature.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "userAvailableFeature"
-      },
-      {
-        path: "userAvailableFeature.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "userAvailableFeature"
-      },
-      {
-        path: "userAvailableFeature.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "userAvailableFeature"
-      },
-      {
         path: "alertModal.open",
         type: "private",
         variableType: "boolean",
@@ -326,10 +301,10 @@ function PlasmicProCalendar__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : false
       },
       {
         path: "aiShow",
@@ -491,6 +466,28 @@ function PlasmicProCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
+              $steps["getCalendarSegment"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/user/calendar/segment"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["getCalendarSegment"] != null &&
+                typeof $steps["getCalendarSegment"] === "object" &&
+                typeof $steps["getCalendarSegment"].then === "function"
+              ) {
+                $steps["getCalendarSegment"] =
+                  await $steps["getCalendarSegment"];
+              }
+
               $steps["getLcalStorageData"] = true
                 ? (() => {
                     const actionArgs = {
@@ -532,9 +529,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                 typeof $steps["getLcalStorageData"] === "object" &&
                 typeof $steps["getLcalStorageData"].then === "function"
               ) {
-                $steps["getLcalStorageData"] = await $steps[
-                  "getLcalStorageData"
-                ];
+                $steps["getLcalStorageData"] =
+                  await $steps["getLcalStorageData"];
               }
 
               $steps["runCode"] = true
@@ -754,9 +750,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                 typeof $steps["updateStateVariable3"] === "object" &&
                 typeof $steps["updateStateVariable3"].then === "function"
               ) {
-                $steps["updateStateVariable3"] = await $steps[
-                  "updateStateVariable3"
-                ];
+                $steps["updateStateVariable3"] =
+                  await $steps["updateStateVariable3"];
               }
 
               $steps["runCode2"] = true
@@ -780,7 +775,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                 $steps["runCode2"] = await $steps["runCode2"];
               }
 
-              $steps["updateStateVariable"] = true
+              $steps["updateStateVariable"] = false
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
@@ -806,9 +801,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                 typeof $steps["updateStateVariable"] === "object" &&
                 typeof $steps["updateStateVariable"].then === "function"
               ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
+                $steps["updateStateVariable"] =
+                  await $steps["updateStateVariable"];
               }
 
               $steps["getFirstTimeCookie"] = true
@@ -847,9 +841,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                 typeof $steps["getFirstTimeCookie"] === "object" &&
                 typeof $steps["getFirstTimeCookie"].then === "function"
               ) {
-                $steps["getFirstTimeCookie"] = await $steps[
-                  "getFirstTimeCookie"
-                ];
+                $steps["getFirstTimeCookie"] =
+                  await $steps["getFirstTimeCookie"];
               }
 
               $steps["runCode3"] = true
@@ -915,38 +908,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                 typeof $steps["invokeGlobalAction"] === "object" &&
                 typeof $steps["invokeGlobalAction"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] = await $steps[
-                  "invokeGlobalAction"
-                ];
-              }
-
-              $steps["alertModalOpen"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        if (!document.cookie.includes("shab_disconnrct")) {
-                          return ($state.alertModal.open = true);
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["alertModalOpen"] != null &&
-                typeof $steps["alertModalOpen"] === "object" &&
-                typeof $steps["alertModalOpen"].then === "function"
-              ) {
-                $steps["alertModalOpen"] = await $steps["alertModalOpen"];
+                $steps["invokeGlobalAction"] =
+                  await $steps["invokeGlobalAction"];
               }
             }}
           />
@@ -1078,9 +1041,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                         typeof $steps["updateAlertModalOpen"].then ===
                           "function"
                       ) {
-                        $steps["updateAlertModalOpen"] = await $steps[
-                          "updateAlertModalOpen"
-                        ];
+                        $steps["updateAlertModalOpen"] =
+                          await $steps["updateAlertModalOpen"];
                       }
                     }}
                     src={{
@@ -1109,10 +1071,10 @@ function PlasmicProCalendar__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
-                      : "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"}
+                        ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
+                          : "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__fnmGc)}>
@@ -1201,9 +1163,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                         typeof $steps["updateAlertModalOpen"].then ===
                           "function"
                       ) {
-                        $steps["updateAlertModalOpen"] = await $steps[
-                          "updateAlertModalOpen"
-                        ];
+                        $steps["updateAlertModalOpen"] =
+                          await $steps["updateAlertModalOpen"];
                       }
 
                       $steps["goToReferral"] = true
@@ -1329,9 +1290,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                         typeof $steps["updateAlertModalOpen"].then ===
                           "function"
                       ) {
-                        $steps["updateAlertModalOpen"] = await $steps[
-                          "updateAlertModalOpen"
-                        ];
+                        $steps["updateAlertModalOpen"] =
+                          await $steps["updateAlertModalOpen"];
                       }
                     }}
                   >
@@ -1560,9 +1520,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                               typeof $steps["updateStateVariable"].then ===
                                 "function"
                             ) {
-                              $steps["updateStateVariable"] = await $steps[
-                                "updateStateVariable"
-                              ];
+                              $steps["updateStateVariable"] =
+                                await $steps["updateStateVariable"];
                             }
 
                             $steps["invokeGlobalAction"] = true
@@ -1603,9 +1562,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                               typeof $steps["invokeGlobalAction"].then ===
                                 "function"
                             ) {
-                              $steps["invokeGlobalAction"] = await $steps[
-                                "invokeGlobalAction"
-                              ];
+                              $steps["invokeGlobalAction"] =
+                                await $steps["invokeGlobalAction"];
                             }
                           }).apply(null, eventArgs);
                         }}
@@ -1679,32 +1637,32 @@ function PlasmicProCalendar__RenderFunc(props: {
                             }
                           })()
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? (() => {
-                            try {
-                              return $state.isTheFirstVisit == false;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return false;
+                          ? (() => {
+                              try {
+                                return $state.isTheFirstVisit == false;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()
-                        : (() => {
-                            try {
-                              return $state.isTheFirstVisit === false;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return false;
+                            })()
+                          : (() => {
+                              try {
+                                return $state.isTheFirstVisit === false;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()
+                            })()
                     ) ? (
                       <div
                         data-plasmic-name={"r2"}
@@ -1780,12 +1738,12 @@ function PlasmicProCalendar__RenderFunc(props: {
                                 )
                                   ? "26px"
                                   : hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "mobile"
-                                    )
-                                  ? "30px"
-                                  : "34px"
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                    ? "30px"
+                                    : "34px"
                               }
                               displayMaxHeight={"none"}
                               displayMaxWidth={
@@ -1880,12 +1838,12 @@ function PlasmicProCalendar__RenderFunc(props: {
                                 )
                                   ? "26px"
                                   : hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "mobile"
-                                    )
-                                  ? "30px"
-                                  : "34px"
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                    ? "30px"
+                                    : "34px"
                               }
                               displayMaxHeight={"none"}
                               displayMaxWidth={
@@ -1969,12 +1927,12 @@ function PlasmicProCalendar__RenderFunc(props: {
                                 )
                                   ? "26px"
                                   : hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "mobile"
-                                    )
-                                  ? "30px"
-                                  : "34px"
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                    ? "30px"
+                                    : "34px"
                               }
                               displayMaxHeight={"none"}
                               displayMaxWidth={
@@ -2080,55 +2038,55 @@ function PlasmicProCalendar__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "60px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "60px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "70px"
-                            : "80px"
+                              ? "60px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "70px"
+                                : "80px"
                         }
                         displayMaxHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "60px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "60px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "70px"
-                            : "80px"
+                              ? "60px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "70px"
+                                : "80px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "90px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "88px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "120px"
-                            : "120px"
+                              ? "88px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "120px"
+                                : "120px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "60px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "60px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "70px"
-                            : "0"
+                              ? "60px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "70px"
+                                : "0"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "90px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "88px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "120px"
-                            : "120px"
+                              ? "88px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "120px"
+                                : "120px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "90px"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "88px"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "120px"
-                            : "auto"
+                              ? "88px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "120px"
+                                : "auto"
                         }
                         loading={"lazy"}
                         src={(() => {
@@ -2199,9 +2157,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                           typeof $steps["goToProperties"] === "object" &&
                           typeof $steps["goToProperties"].then === "function"
                         ) {
-                          $steps["goToProperties"] = await $steps[
-                            "goToProperties"
-                          ];
+                          $steps["goToProperties"] =
+                            await $steps["goToProperties"];
                         }
                       }}
                     >
@@ -2407,9 +2364,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                         typeof $steps["updateIsModalShow"] === "object" &&
                         typeof $steps["updateIsModalShow"].then === "function"
                       ) {
-                        $steps["updateIsModalShow"] = await $steps[
-                          "updateIsModalShow"
-                        ];
+                        $steps["updateIsModalShow"] =
+                          await $steps["updateIsModalShow"];
                       }
 
                       $steps["runCode"] = true
@@ -2475,19 +2431,6 @@ function PlasmicProCalendar__RenderFunc(props: {
             data-plasmic-override={overrides.calendar2}
             calendarType={"pro"}
             className={classNames("__wab_instance", sty.calendar2)}
-            featurePermission={(() => {
-              try {
-                return $state.userAvailableFeature.data;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
-                }
-                throw e;
-              }
-            })()}
             isFirstVisit={(() => {
               try {
                 return $state.isTheFirstVisit == true;
@@ -2554,8 +2497,8 @@ function PlasmicProCalendar__RenderFunc(props: {
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "30px"
                       : hasVariant(globalVariants, "screen", "tablet")
-                      ? "20px"
-                      : "34px"
+                        ? "20px"
+                        : "34px"
                   }
                   loading={"lazy"}
                   onClick={async event => {
@@ -2669,55 +2612,12 @@ function PlasmicProCalendar__RenderFunc(props: {
               />
             </div>
           ) : null}
-          <ApiRequest
-            data-plasmic-name={"userAvailableFeature"}
-            data-plasmic-override={overrides.userAvailableFeature}
-            className={classNames("__wab_instance", sty.userAvailableFeature)}
-            errorDisplay={null}
-            loadingDisplay={null}
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "userAvailableFeature",
-                "error"
-              ]).apply(null, eventArgs);
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "userAvailableFeature",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "userAvailableFeature",
-                "data"
-              ]).apply(null, eventArgs);
-            }}
-            ref={ref => {
-              $refs["userAvailableFeature"] = ref;
-            }}
-            url={(() => {
-              try {
-                return `https://gateway.rentamon.com/webhook/get_user_available_feature?prop_id=${$state.propId}`;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return "https://gateway.rentamon.com/webhook/get_user_available_feature";
-                }
-                throw e;
-              }
-            })()}
-          />
-
           {(
             hasVariant(globalVariants, "screen", "smallMobile")
               ? true
               : hasVariant(globalVariants, "screen", "mobile")
-              ? true
-              : false
+                ? true
+                : false
           ) ? (
             <div
               data-plasmic-name={"spacerDontTouch"}
@@ -2877,7 +2777,6 @@ const PlasmicDescendants = {
     "profile",
     "calendar2",
     "aiAgentIframe",
-    "userAvailableFeature",
     "spacerDontTouch",
     "navbarRntFooter",
     "clarityRntComponent",
@@ -2929,7 +2828,6 @@ const PlasmicDescendants = {
   profile: ["profile"],
   calendar2: ["calendar2"],
   aiAgentIframe: ["aiAgentIframe"],
-  userAvailableFeature: ["userAvailableFeature"],
   spacerDontTouch: ["spacerDontTouch"],
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -2961,7 +2859,6 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   calendar2: typeof Calendar2;
   aiAgentIframe: typeof Iframe;
-  userAvailableFeature: typeof ApiRequest;
   spacerDontTouch: "div";
   navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -2980,7 +2877,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicProCalendar__VariantsArgs;
     args?: PlasmicProCalendar__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicProCalendar__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicProCalendar__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicProCalendar__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -3049,7 +2948,6 @@ export const PlasmicProCalendar = Object.assign(
     profile: makeNodeComponent("profile"),
     calendar2: makeNodeComponent("calendar2"),
     aiAgentIframe: makeNodeComponent("aiAgentIframe"),
-    userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     spacerDontTouch: makeNodeComponent("spacerDontTouch"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
