@@ -2060,47 +2060,29 @@ function PlasmicCalendar2__RenderFunc(props: {
                             function getDayClass(dateProps, calendarData) {
                               const dayIndex = dateProps.date.day - 1;
                               const calendarItem = calendarData[dayIndex] || {};
-                              const bookDay = calendarItem.book_at
-                                ? calendarItem.book_at.split(".")[0]
-                                : undefined;
+                              const currentBookingId = calendarItem.booking_id;
                               const prevItem = calendarData[dayIndex - 1] || {};
                               const nextItem = calendarData[dayIndex + 1] || {};
-                              const prevBookDay = prevItem.book_at
-                                ? prevItem.book_at.split(".")[0]
-                                : undefined;
-                              const nextBookDay = nextItem.book_at
-                                ? nextItem.book_at.split(".")[0]
-                                : undefined;
+                              const prevBookingId = prevItem.booking_id;
+                              const nextBookingId = nextItem.booking_id;
                               if (
                                 dateProps.unix < minTimestamp ||
                                 dateProps.unix > maxTimestamp
                               ) {
-                                if (calendarItem.status === "reserved") {
-                                  if (
-                                    !calendarData[dayIndex - 1] &&
-                                    !calendarData[dayIndex + 1]
-                                  ) {
+                                if (
+                                  calendarItem.status === "reserved" &&
+                                  currentBookingId
+                                ) {
+                                  const isFirstDay =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDay =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDay && isLastDay)
                                     return "passedSingleReserve";
-                                  }
-                                  if (
-                                    bookDay !== prevBookDay &&
-                                    bookDay === nextBookDay
-                                  ) {
+                                  if (isFirstDay)
                                     return "passedFirstDayReserve";
-                                  }
-                                  if (
-                                    bookDay === prevBookDay &&
-                                    bookDay === nextBookDay
-                                  ) {
-                                    return "passedMidDayReserve";
-                                  }
-                                  if (
-                                    bookDay !== nextBookDay &&
-                                    bookDay === prevBookDay
-                                  ) {
-                                    return "passedLastDayReserve";
-                                  }
-                                  return "passedSingleReserve";
+                                  if (isLastDay) return "passedLastDayReserve";
+                                  return "passedMidDayReserve";
                                 }
                                 return "disabled";
                               }
@@ -2112,29 +2094,16 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 return "selected";
                               }
                               if (calendarItem.status === "reserved") {
-                                if (
-                                  !calendarData[dayIndex - 1] &&
-                                  !calendarData[dayIndex + 1]
-                                ) {
-                                  return "reserved";
-                                }
-                                if (
-                                  bookDay !== prevBookDay &&
-                                  bookDay === nextBookDay
-                                ) {
-                                  return "firstDayReserve";
-                                }
-                                if (
-                                  bookDay === prevBookDay &&
-                                  bookDay === nextBookDay
-                                ) {
+                                if (currentBookingId) {
+                                  const isFirstDay =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDay =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDay && isLastDay)
+                                    return "reserved";
+                                  if (isFirstDay) return "firstDayReserve";
+                                  if (isLastDay) return "lastDayReserve";
                                   return "midDayReserve";
-                                }
-                                if (
-                                  bookDay !== nextBookDay &&
-                                  bookDay === prevBookDay
-                                ) {
-                                  return "lastDayReserve";
                                 }
                                 return "reserved";
                               }
