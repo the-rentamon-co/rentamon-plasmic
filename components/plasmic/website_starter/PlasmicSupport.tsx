@@ -135,7 +135,6 @@ export type PlasmicSupport__OverridesType = {
   html?: Flex__<"div">;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
-  goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
 };
@@ -1320,15 +1319,6 @@ function PlasmicSupport__RenderFunc(props: {
               data-plasmic-override={overrides.clarityRntComponent}
               className={classNames("__wab_instance", sty.clarityRntComponent)}
             />
-
-            <Embed
-              data-plasmic-name={"goftino"}
-              data-plasmic-override={overrides.goftino}
-              className={classNames("__wab_instance", sty.goftino)}
-              code={
-                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
-              }
-            />
           </div>
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
@@ -1394,7 +1384,6 @@ const PlasmicDescendants = {
     "html",
     "faviconRntComponent",
     "clarityRntComponent",
-    "goftino",
     "rentamonFooter",
     "navbarRntFooter"
   ],
@@ -1535,10 +1524,9 @@ const PlasmicDescendants = {
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
-  html: ["html", "faviconRntComponent", "clarityRntComponent", "goftino"],
+  html: ["html", "faviconRntComponent", "clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
-  goftino: ["goftino"],
   rentamonFooter: ["rentamonFooter"],
   navbarRntFooter: ["navbarRntFooter"]
 } as const;
@@ -1591,7 +1579,6 @@ type NodeDefaultElementType = {
   html: "div";
   faviconRntComponent: typeof FaviconRntComponent;
   clarityRntComponent: typeof ClarityRntComponent;
-  goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
   navbarRntFooter: typeof NavbarRntFooter;
 };
@@ -1702,7 +1689,6 @@ export const PlasmicSupport = Object.assign(
     html: makeNodeComponent("html"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
-    goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
 
