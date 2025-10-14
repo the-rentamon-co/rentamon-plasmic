@@ -105,6 +105,7 @@ export type PlasmicSupport__OverridesType = {
   icon6?: Flex__<"div">;
   title6?: Flex__<"div">;
   caption6?: Flex__<"div">;
+  goftino2?: Flex__<"div">;
   contact10?: Flex__<"div">;
   icon10?: Flex__<"div">;
   title10?: Flex__<"div">;
@@ -134,6 +135,7 @@ export type PlasmicSupport__OverridesType = {
   html?: Flex__<"div">;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
+  goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
 };
@@ -529,9 +531,8 @@ function PlasmicSupport__RenderFunc(props: {
                                 typeof $steps["updatePropertyId"].then ===
                                   "function"
                               ) {
-                                $steps["updatePropertyId"] = await $steps[
-                                  "updatePropertyId"
-                                ];
+                                $steps["updatePropertyId"] =
+                                  await $steps["updatePropertyId"];
                               }
                             }}
                           >
@@ -560,10 +561,9 @@ function PlasmicSupport__RenderFunc(props: {
                       </div>
                     </div>
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___2Eyto
-                      )}
+                      data-plasmic-name={"goftino2"}
+                      data-plasmic-override={overrides.goftino2}
+                      className={classNames(projectcss.all, sty.goftino2)}
                     >
                       <div
                         data-plasmic-name={"contact10"}
@@ -662,9 +662,8 @@ function PlasmicSupport__RenderFunc(props: {
                                 typeof $steps["updatePropertyId"].then ===
                                   "function"
                               ) {
-                                $steps["updatePropertyId"] = await $steps[
-                                  "updatePropertyId"
-                                ];
+                                $steps["updatePropertyId"] =
+                                  await $steps["updatePropertyId"];
                               }
                             }}
                           >
@@ -804,9 +803,8 @@ function PlasmicSupport__RenderFunc(props: {
                                 typeof $steps["updatePropertyId"].then ===
                                   "function"
                               ) {
-                                $steps["updatePropertyId"] = await $steps[
-                                  "updatePropertyId"
-                                ];
+                                $steps["updatePropertyId"] =
+                                  await $steps["updatePropertyId"];
                               }
                             }}
                           >
@@ -946,9 +944,8 @@ function PlasmicSupport__RenderFunc(props: {
                                 typeof $steps["updatePropertyId"].then ===
                                   "function"
                               ) {
-                                $steps["updatePropertyId"] = await $steps[
-                                  "updatePropertyId"
-                                ];
+                                $steps["updatePropertyId"] =
+                                  await $steps["updatePropertyId"];
                               }
                             }}
                           >
@@ -1074,9 +1071,8 @@ function PlasmicSupport__RenderFunc(props: {
                                 typeof $steps["updatePropertyId"].then ===
                                   "function"
                               ) {
-                                $steps["updatePropertyId"] = await $steps[
-                                  "updatePropertyId"
-                                ];
+                                $steps["updatePropertyId"] =
+                                  await $steps["updatePropertyId"];
                               }
                             }}
                           >
@@ -1202,9 +1198,8 @@ function PlasmicSupport__RenderFunc(props: {
                                 typeof $steps["updatePropertyId"].then ===
                                   "function"
                               ) {
-                                $steps["updatePropertyId"] = await $steps[
-                                  "updatePropertyId"
-                                ];
+                                $steps["updatePropertyId"] =
+                                  await $steps["updatePropertyId"];
                               }
                             }}
                           >
@@ -1245,8 +1240,8 @@ function PlasmicSupport__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"
-                      : "\u0633\u0627\u0639\u0627\u062a \u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc: \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"}
+                        ? "\u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"
+                        : "\u0633\u0627\u0639\u0627\u062a \u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc: \u0627\u0632 \u0633\u0627\u0639\u062a \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"}
                   </div>
                 </div>
               </div>
@@ -1301,8 +1296,8 @@ function PlasmicSupport__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "mobile")
                         ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
-                        : '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
+                          ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
+                          : '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
                     }
                   />
                 </div>
@@ -1324,6 +1319,15 @@ function PlasmicSupport__RenderFunc(props: {
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}
               className={classNames("__wab_instance", sty.clarityRntComponent)}
+            />
+
+            <Embed
+              data-plasmic-name={"goftino"}
+              data-plasmic-override={overrides.goftino}
+              className={classNames("__wab_instance", sty.goftino)}
+              code={
+                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+              }
             />
           </div>
           <RentamonFooter
@@ -1360,6 +1364,7 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
+    "goftino2",
     "contact10",
     "icon10",
     "title10",
@@ -1389,6 +1394,7 @@ const PlasmicDescendants = {
     "html",
     "faviconRntComponent",
     "clarityRntComponent",
+    "goftino",
     "rentamonFooter",
     "navbarRntFooter"
   ],
@@ -1407,6 +1413,7 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
+    "goftino2",
     "contact10",
     "icon10",
     "title10",
@@ -1445,6 +1452,7 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
+    "goftino2",
     "contact10",
     "icon10",
     "title10",
@@ -1474,6 +1482,7 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
+    "goftino2",
     "contact10",
     "icon10",
     "title10",
@@ -1499,6 +1508,7 @@ const PlasmicDescendants = {
   icon6: ["icon6"],
   title6: ["title6"],
   caption6: ["caption6"],
+  goftino2: ["goftino2", "contact10", "icon10", "title10", "caption10"],
   contact10: ["contact10", "icon10", "title10", "caption10"],
   icon10: ["icon10"],
   title10: ["title10"],
@@ -1525,9 +1535,10 @@ const PlasmicDescendants = {
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
-  html: ["html", "faviconRntComponent", "clarityRntComponent"],
+  html: ["html", "faviconRntComponent", "clarityRntComponent", "goftino"],
   faviconRntComponent: ["faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
+  goftino: ["goftino"],
   rentamonFooter: ["rentamonFooter"],
   navbarRntFooter: ["navbarRntFooter"]
 } as const;
@@ -1550,6 +1561,7 @@ type NodeDefaultElementType = {
   icon6: "div";
   title6: "div";
   caption6: "div";
+  goftino2: "div";
   contact10: "div";
   icon10: "div";
   title10: "div";
@@ -1579,6 +1591,7 @@ type NodeDefaultElementType = {
   html: "div";
   faviconRntComponent: typeof FaviconRntComponent;
   clarityRntComponent: typeof ClarityRntComponent;
+  goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
   navbarRntFooter: typeof NavbarRntFooter;
 };
@@ -1594,7 +1607,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicSupport__VariantsArgs;
     args?: PlasmicSupport__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicSupport__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicSupport__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicSupport__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -1657,6 +1672,7 @@ export const PlasmicSupport = Object.assign(
     icon6: makeNodeComponent("icon6"),
     title6: makeNodeComponent("title6"),
     caption6: makeNodeComponent("caption6"),
+    goftino2: makeNodeComponent("goftino2"),
     contact10: makeNodeComponent("contact10"),
     icon10: makeNodeComponent("icon10"),
     title10: makeNodeComponent("title10"),
@@ -1686,6 +1702,7 @@ export const PlasmicSupport = Object.assign(
     html: makeNodeComponent("html"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
+    goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
 

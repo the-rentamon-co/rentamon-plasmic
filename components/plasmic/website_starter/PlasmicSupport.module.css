@@ -682,8 +682,7 @@
     font-size: 15px;
   }
 }
-.freeBox___2Eyto {
-  display: flex;
+.goftino2 {
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -692,6 +691,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .contact10 {
@@ -1972,6 +1972,7 @@
   }
 }
 .html {
+  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -1981,12 +1982,18 @@
   align-items: center;
   opacity: 0;
   min-width: 0;
-  display: none;
   padding: 8px;
 }
 .faviconRntComponent:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
   display: none;
+}
+.clarityRntComponent:global(.__wab_instance) {
+  display: none;
+}
+.goftino:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
 }
 .rentamonFooter:global(.__wab_instance) {
   max-width: 100%;
