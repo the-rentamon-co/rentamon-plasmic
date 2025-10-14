@@ -379,6 +379,18 @@ function PlasmicProCalendar__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "variable2",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "reservationsMode",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -486,6 +498,32 @@ function PlasmicProCalendar__RenderFunc(props: {
               ) {
                 $steps["getCalendarSegment"] =
                   await $steps["getCalendarSegment"];
+              }
+
+              $steps["updateVariable2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          $steps.getCalendarSegment.data.segment ==
+                          "calendar-v2"
+                            ? ($state.reservationsMode = true)
+                            : ($statet.reservationsMode = false);
+                          return console.log($state.reservationsMode);
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateVariable2"] != null &&
+                typeof $steps["updateVariable2"] === "object" &&
+                typeof $steps["updateVariable2"].then === "function"
+              ) {
+                $steps["updateVariable2"] = await $steps["updateVariable2"];
               }
 
               $steps["getLcalStorageData"] = true
@@ -910,6 +948,34 @@ function PlasmicProCalendar__RenderFunc(props: {
               ) {
                 $steps["invokeGlobalAction"] =
                   await $steps["invokeGlobalAction"];
+              }
+
+              $steps["updateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["variable"]
+                      },
+                      operation: 0
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateVariable"] != null &&
+                typeof $steps["updateVariable"] === "object" &&
+                typeof $steps["updateVariable"].then === "function"
+              ) {
+                $steps["updateVariable"] = await $steps["updateVariable"];
               }
             }}
           />
@@ -2453,6 +2519,19 @@ function PlasmicProCalendar__RenderFunc(props: {
                   e?.plasmicType === "PlasmicUndefinedDataError"
                 ) {
                   return 1;
+                }
+                throw e;
+              }
+            })()}
+            reservationsMode={(() => {
+              try {
+                return $state.reservationsMode;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return false;
                 }
                 throw e;
               }

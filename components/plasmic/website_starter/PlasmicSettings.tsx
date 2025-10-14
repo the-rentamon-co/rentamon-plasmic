@@ -222,10 +222,10 @@ function PlasmicSettings__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : false
       },
       {
         path: "dEactivateAutosync.open",
@@ -235,10 +235,10 @@ function PlasmicSettings__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : false
       },
       {
         path: "activateSmartbooking.open",
@@ -248,10 +248,10 @@ function PlasmicSettings__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : false
       },
       {
         path: "dEactivateSmartbooking.open",
@@ -261,10 +261,10 @@ function PlasmicSettings__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : true
       },
       {
         path: "loading",
@@ -625,10 +625,10 @@ function PlasmicSettings__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0648\u06cc\u0698\u06af\u06cc \u0641\u0639\u0627\u0644\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0633\u0631 \u0645\u06cc\u200c\u0634\u0647."
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0648\u06cc\u0698\u06af\u06cc \u0641\u0639\u0627\u0644\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0633\u0631 \u0645\u06cc\u200c\u0634\u0647."
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0648\u06cc\u0698\u06af\u06cc \u0641\u0639\u0627\u0644\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0633\u0631 \u0645\u06cc\u200c\u0634\u0647."
-                      : "\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0648\u06cc\u0698\u06af\u06cc \u0641\u0639\u0627\u0644\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0633\u0631 \u0645\u06cc\u200c\u0634\u0647."}
+                        ? "\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0648\u06cc\u0698\u06af\u06cc \u0641\u0639\u0627\u0644\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0633\u0631 \u0645\u06cc\u200c\u0634\u0647."
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0648\u06cc\u0698\u06af\u06cc \u0641\u0639\u0627\u0644\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0633\u0631 \u0645\u06cc\u200c\u0634\u0647."
+                          : "\u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0648\u06cc\u0698\u06af\u06cc \u0641\u0639\u0627\u0644\u060c \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0633\u0631 \u0645\u06cc\u200c\u0634\u0647."}
                   </div>
                 </div>
               </div>
@@ -853,9 +853,8 @@ function PlasmicSettings__RenderFunc(props: {
                                 const number =
                                   $state.apiRequest2.data[0].default_rate;
                                 return (
-                                  `${new Intl.NumberFormat("fa-IR").format(
-                                    number
-                                  )}` + " % "
+                                  `${new Intl.NumberFormat("fa-IR").format(number)}` +
+                                  " % "
                                 );
                               })();
                             } catch (e) {
@@ -953,9 +952,8 @@ function PlasmicSettings__RenderFunc(props: {
                             typeof $steps["updateActivateAutosyncOpen"].then ===
                               "function"
                           ) {
-                            $steps["updateActivateAutosyncOpen"] = await $steps[
-                              "updateActivateAutosyncOpen"
-                            ];
+                            $steps["updateActivateAutosyncOpen"] =
+                              await $steps["updateActivateAutosyncOpen"];
                           }
 
                           $steps["updateDEactivateAutosyncOpen"] =
@@ -1035,94 +1033,100 @@ function PlasmicSettings__RenderFunc(props: {
                         }
                       })()
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? (() => {
-                        try {
-                          return (() => {
-                            const data = $state.freeFeatureCredits?.data;
-                            if (data == null) {
-                              return false;
-                            }
-                            const autoSync = data.auto_sync;
-                            if (autoSync?.used === autoSync?.total) {
-                              const updatedAt = new Date(autoSync?.updated_at);
-                              const now = new Date();
-                              const daysPassed =
-                                (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 1) {
+                      ? (() => {
+                          try {
+                            return (() => {
+                              const data = $state.freeFeatureCredits?.data;
+                              if (data == null) {
                                 return false;
                               }
-                            }
-                            return true;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })()
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? (() => {
-                        try {
-                          return (() => {
-                            const data = $state.freeFeatureCredits?.data;
-                            if (data == null) {
-                              return false;
-                            }
-                            const autoSync = data.auto_sync;
-                            if (autoSync?.used === autoSync?.total) {
-                              const updatedAt = new Date(autoSync?.updated_at);
-                              const now = new Date();
-                              const daysPassed =
-                                (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 1) {
-                                return false;
+                              const autoSync = data.auto_sync;
+                              if (autoSync?.used === autoSync?.total) {
+                                const updatedAt = new Date(
+                                  autoSync?.updated_at
+                                );
+                                const now = new Date();
+                                const daysPassed =
+                                  (now - updatedAt) / (1000 * 60 * 60 * 24);
+                                if (daysPassed > 1) {
+                                  return false;
+                                }
                               }
+                              return true;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
                             }
-                            return true;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()
-                    : (() => {
-                        try {
-                          return (() => {
-                            const data = $state.freeFeatureCredits?.data;
-                            if (data == null) {
-                              return false;
-                            }
-                            const autoSync = data.auto_sync;
-                            if (autoSync?.used === autoSync?.total) {
-                              const updatedAt = new Date(autoSync?.updated_at);
-                              const now = new Date();
-                              const daysPassed =
-                                (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 4) {
-                                return false;
+                        })()
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            try {
+                              return (() => {
+                                const data = $state.freeFeatureCredits?.data;
+                                if (data == null) {
+                                  return false;
+                                }
+                                const autoSync = data.auto_sync;
+                                if (autoSync?.used === autoSync?.total) {
+                                  const updatedAt = new Date(
+                                    autoSync?.updated_at
+                                  );
+                                  const now = new Date();
+                                  const daysPassed =
+                                    (now - updatedAt) / (1000 * 60 * 60 * 24);
+                                  if (daysPassed > 1) {
+                                    return false;
+                                  }
+                                }
+                                return true;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
                               }
+                              throw e;
                             }
-                            return true;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })()
+                          })()
+                        : (() => {
+                            try {
+                              return (() => {
+                                const data = $state.freeFeatureCredits?.data;
+                                if (data == null) {
+                                  return false;
+                                }
+                                const autoSync = data.auto_sync;
+                                if (autoSync?.used === autoSync?.total) {
+                                  const updatedAt = new Date(
+                                    autoSync?.updated_at
+                                  );
+                                  const now = new Date();
+                                  const daysPassed =
+                                    (now - updatedAt) / (1000 * 60 * 60 * 24);
+                                  if (daysPassed > 4) {
+                                    return false;
+                                  }
+                                }
+                                return true;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
                 ) ? (
                   <div
                     data-plasmic-name={"free1"}
@@ -1325,9 +1329,8 @@ function PlasmicSettings__RenderFunc(props: {
                                 const number =
                                   $state.apiRequest.data[0].default_rate;
                                 return (
-                                  `${new Intl.NumberFormat("fa-IR").format(
-                                    number
-                                  )}` + " % "
+                                  `${new Intl.NumberFormat("fa-IR").format(number)}` +
+                                  " % "
                                 );
                               })();
                             } catch (e) {
@@ -1514,100 +1517,104 @@ function PlasmicSettings__RenderFunc(props: {
                         }
                       })()
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? (() => {
-                        try {
-                          return (() => {
-                            const data = $state.freeFeatureCredits?.data;
-                            if (data == null) {
-                              return false;
-                            }
-                            const smartbooking = data.smart_bookings;
-                            if (smartbooking?.used === smartbooking?.total) {
-                              const updatedAt = new Date(
-                                smartbooking?.updated_at
-                              );
-                              const now = new Date();
-                              const daysPassed =
-                                (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 1) {
+                      ? (() => {
+                          try {
+                            return (() => {
+                              const data = $state.freeFeatureCredits?.data;
+                              if (data == null) {
                                 return false;
                               }
-                            }
-                            return true;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })()
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? (() => {
-                        try {
-                          return (() => {
-                            const data = $state.freeFeatureCredits?.data;
-                            if (data == null) {
-                              return false;
-                            }
-                            const smartbooking = data.smart_bookings;
-                            if (smartbooking?.used === smartbooking?.total) {
-                              const updatedAt = new Date(
-                                smartbooking?.updated_at
-                              );
-                              const now = new Date();
-                              const daysPassed =
-                                (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 1) {
-                                return false;
+                              const smartbooking = data.smart_bookings;
+                              if (smartbooking?.used === smartbooking?.total) {
+                                const updatedAt = new Date(
+                                  smartbooking?.updated_at
+                                );
+                                const now = new Date();
+                                const daysPassed =
+                                  (now - updatedAt) / (1000 * 60 * 60 * 24);
+                                if (daysPassed > 1) {
+                                  return false;
+                                }
                               }
+                              return true;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
                             }
-                            return true;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()
-                    : (() => {
-                        try {
-                          return (() => {
-                            const data = $state.freeFeatureCredits?.data;
-                            if (data == null) {
-                              return false;
-                            }
-                            const smartbooking = data.smart_bookings;
-                            if (smartbooking?.used === smartbooking?.total) {
-                              const updatedAt = new Date(
-                                smartbooking?.updated_at
-                              );
-                              const now = new Date();
-                              const daysPassed =
-                                (now - updatedAt) / (1000 * 60 * 60 * 24);
-                              if (daysPassed > 4) {
-                                return false;
+                        })()
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            try {
+                              return (() => {
+                                const data = $state.freeFeatureCredits?.data;
+                                if (data == null) {
+                                  return false;
+                                }
+                                const smartbooking = data.smart_bookings;
+                                if (
+                                  smartbooking?.used === smartbooking?.total
+                                ) {
+                                  const updatedAt = new Date(
+                                    smartbooking?.updated_at
+                                  );
+                                  const now = new Date();
+                                  const daysPassed =
+                                    (now - updatedAt) / (1000 * 60 * 60 * 24);
+                                  if (daysPassed > 1) {
+                                    return false;
+                                  }
+                                }
+                                return true;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
                               }
+                              throw e;
                             }
-                            return true;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })()
+                          })()
+                        : (() => {
+                            try {
+                              return (() => {
+                                const data = $state.freeFeatureCredits?.data;
+                                if (data == null) {
+                                  return false;
+                                }
+                                const smartbooking = data.smart_bookings;
+                                if (
+                                  smartbooking?.used === smartbooking?.total
+                                ) {
+                                  const updatedAt = new Date(
+                                    smartbooking?.updated_at
+                                  );
+                                  const now = new Date();
+                                  const daysPassed =
+                                    (now - updatedAt) / (1000 * 60 * 60 * 24);
+                                  if (daysPassed > 4) {
+                                    return false;
+                                  }
+                                }
+                                return true;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
                 ) ? (
                   <div
                     data-plasmic-name={"free2"}
@@ -1672,16 +1679,16 @@ function PlasmicSettings__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "auto"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "30px"
-                          : "auto"
+                            ? "30px"
+                            : "auto"
                       }
                       displayMaxHeight={"none"}
                       displayMaxWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "100%"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "100%"
-                          : "100%"
+                            ? "100%"
+                            : "100%"
                       }
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
@@ -1689,8 +1696,8 @@ function PlasmicSettings__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "auto"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "100%"
-                          : "auto"
+                            ? "100%"
+                            : "auto"
                       }
                       loading={"lazy"}
                       src={{
@@ -1913,9 +1920,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction"] === "object" &&
                         typeof $steps["invokeGlobalAction"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["invokeGlobalAction"] =
+                          await $steps["invokeGlobalAction"];
                       }
 
                       $steps["updateModalActivateAutosyncOpen"] = true
@@ -1988,9 +1994,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateAutoSyncSwitchChecked"].then ===
                           "function"
                       ) {
-                        $steps["updateAutoSyncSwitchChecked"] = await $steps[
-                          "updateAutoSyncSwitchChecked"
-                        ];
+                        $steps["updateAutoSyncSwitchChecked"] =
+                          await $steps["updateAutoSyncSwitchChecked"];
                       }
 
                       $steps["invokeGlobalAction2"] =
@@ -2013,9 +2018,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction2"] === "object" &&
                         typeof $steps["invokeGlobalAction2"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction2"] = await $steps[
-                          "invokeGlobalAction2"
-                        ];
+                        $steps["invokeGlobalAction2"] =
+                          await $steps["invokeGlobalAction2"];
                       }
 
                       $steps["updateLoading2"] = true
@@ -2049,9 +2053,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateLoading2"] === "object" &&
                         typeof $steps["updateLoading2"].then === "function"
                       ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
-                        ];
+                        $steps["updateLoading2"] =
+                          await $steps["updateLoading2"];
                       }
 
                       $steps["updateLowBalanceOpen"] =
@@ -2087,9 +2090,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateLowBalanceOpen"].then ===
                           "function"
                       ) {
-                        $steps["updateLowBalanceOpen"] = await $steps[
-                          "updateLowBalanceOpen"
-                        ];
+                        $steps["updateLowBalanceOpen"] =
+                          await $steps["updateLowBalanceOpen"];
                       }
 
                       $steps["updateSelectedFeature"] = true
@@ -2124,9 +2126,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateSelectedFeature"].then ===
                           "function"
                       ) {
-                        $steps["updateSelectedFeature"] = await $steps[
-                          "updateSelectedFeature"
-                        ];
+                        $steps["updateSelectedFeature"] =
+                          await $steps["updateSelectedFeature"];
                       }
                     }}
                   >
@@ -2243,9 +2244,8 @@ function PlasmicSettings__RenderFunc(props: {
                           typeof $steps["updateAutoSyncSwitchChecked"].then ===
                             "function"
                         ) {
-                          $steps["updateAutoSyncSwitchChecked"] = await $steps[
-                            "updateAutoSyncSwitchChecked"
-                          ];
+                          $steps["updateAutoSyncSwitchChecked"] =
+                            await $steps["updateAutoSyncSwitchChecked"];
                         }
 
                         $steps["updateModalActivateOpen"] = true
@@ -2280,9 +2280,8 @@ function PlasmicSettings__RenderFunc(props: {
                           typeof $steps["updateModalActivateOpen"].then ===
                             "function"
                         ) {
-                          $steps["updateModalActivateOpen"] = await $steps[
-                            "updateModalActivateOpen"
-                          ];
+                          $steps["updateModalActivateOpen"] =
+                            await $steps["updateModalActivateOpen"];
                         }
                       }}
                     >
@@ -2343,8 +2342,8 @@ function PlasmicSettings__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627 \u0628\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0646:"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627 \u0628\u0647 \u0628\u0631\u0646\u0627\u0645\u0647 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0646:"
-                      : "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627 \u0628\u0647 \u0628\u0631\u0646\u0627\u0645\u0647 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0646:"}
+                        ? "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627 \u0628\u0647 \u0628\u0631\u0646\u0627\u0645\u0647 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0646:"
+                        : "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627 \u0628\u0647 \u0628\u0631\u0646\u0627\u0645\u0647 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u0634\u0646:"}
                   </div>
                   <div
                     className={classNames(
@@ -2356,10 +2355,10 @@ function PlasmicSettings__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645\n\r"
-                      : "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"}
+                        ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645\n\r"
+                          : "\u2705 \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u2705 \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u2705 \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__e0XaI)}>
@@ -2458,9 +2457,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction"] === "object" &&
                         typeof $steps["invokeGlobalAction"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["invokeGlobalAction"] =
+                          await $steps["invokeGlobalAction"];
                       }
 
                       $steps["updateReservationSwitchChecked"] = true
@@ -2497,9 +2495,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateReservationSwitchChecked"].then ===
                           "function"
                       ) {
-                        $steps["updateReservationSwitchChecked"] = await $steps[
-                          "updateReservationSwitchChecked"
-                        ];
+                        $steps["updateReservationSwitchChecked"] =
+                          await $steps["updateReservationSwitchChecked"];
                       }
 
                       $steps["updateModalActivateReservationsOpen"] = true
@@ -2569,9 +2566,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateLoading2"] === "object" &&
                         typeof $steps["updateLoading2"].then === "function"
                       ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
-                        ];
+                        $steps["updateLoading2"] =
+                          await $steps["updateLoading2"];
                       }
 
                       $steps["invokeGlobalAction2"] =
@@ -2594,9 +2590,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction2"] === "object" &&
                         typeof $steps["invokeGlobalAction2"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction2"] = await $steps[
-                          "invokeGlobalAction2"
-                        ];
+                        $steps["invokeGlobalAction2"] =
+                          await $steps["invokeGlobalAction2"];
                       }
 
                       $steps["updateLowBalanceOpen"] =
@@ -2632,9 +2627,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateLowBalanceOpen"].then ===
                           "function"
                       ) {
-                        $steps["updateLowBalanceOpen"] = await $steps[
-                          "updateLowBalanceOpen"
-                        ];
+                        $steps["updateLowBalanceOpen"] =
+                          await $steps["updateLowBalanceOpen"];
                       }
 
                       $steps["updateSelectedFeature"] = true
@@ -2669,9 +2663,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateSelectedFeature"].then ===
                           "function"
                       ) {
-                        $steps["updateSelectedFeature"] = await $steps[
-                          "updateSelectedFeature"
-                        ];
+                        $steps["updateSelectedFeature"] =
+                          await $steps["updateSelectedFeature"];
                       }
                     }}
                   >
@@ -2804,9 +2797,8 @@ function PlasmicSettings__RenderFunc(props: {
                           typeof $steps["updateModalActivateOpen"].then ===
                             "function"
                         ) {
-                          $steps["updateModalActivateOpen"] = await $steps[
-                            "updateModalActivateOpen"
-                          ];
+                          $steps["updateModalActivateOpen"] =
+                            await $steps["updateModalActivateOpen"];
                         }
                       }}
                     >
@@ -2949,9 +2941,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction"] === "object" &&
                         typeof $steps["invokeGlobalAction"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["invokeGlobalAction"] =
+                          await $steps["invokeGlobalAction"];
                       }
 
                       $steps["updateModalDEactivateAutosyncOpen"] = true
@@ -3023,9 +3014,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateAutoSyncSwitchChecked"].then ===
                           "function"
                       ) {
-                        $steps["updateAutoSyncSwitchChecked"] = await $steps[
-                          "updateAutoSyncSwitchChecked"
-                        ];
+                        $steps["updateAutoSyncSwitchChecked"] =
+                          await $steps["updateAutoSyncSwitchChecked"];
                       }
 
                       $steps["invokeGlobalAction2"] =
@@ -3049,9 +3039,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction2"] === "object" &&
                         typeof $steps["invokeGlobalAction2"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction2"] = await $steps[
-                          "invokeGlobalAction2"
-                        ];
+                        $steps["invokeGlobalAction2"] =
+                          await $steps["invokeGlobalAction2"];
                       }
 
                       $steps["updateLoading2"] = true
@@ -3085,9 +3074,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateLoading2"] === "object" &&
                         typeof $steps["updateLoading2"].then === "function"
                       ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
-                        ];
+                        $steps["updateLoading2"] =
+                          await $steps["updateLoading2"];
                       }
                     }}
                   >
@@ -3183,9 +3171,8 @@ function PlasmicSettings__RenderFunc(props: {
                           typeof $steps["updateAutoSyncSwitchChecked"].then ===
                             "function"
                         ) {
-                          $steps["updateAutoSyncSwitchChecked"] = await $steps[
-                            "updateAutoSyncSwitchChecked"
-                          ];
+                          $steps["updateAutoSyncSwitchChecked"] =
+                            await $steps["updateAutoSyncSwitchChecked"];
                         }
 
                         $steps["updateSwitch1IsSelected2"] = true
@@ -3221,9 +3208,8 @@ function PlasmicSettings__RenderFunc(props: {
                           typeof $steps["updateSwitch1IsSelected2"].then ===
                             "function"
                         ) {
-                          $steps["updateSwitch1IsSelected2"] = await $steps[
-                            "updateSwitch1IsSelected2"
-                          ];
+                          $steps["updateSwitch1IsSelected2"] =
+                            await $steps["updateSwitch1IsSelected2"];
                         }
                       }}
                     >
@@ -3269,8 +3255,8 @@ function PlasmicSettings__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u063a\u06cc\u0631 \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u063a\u06cc\u0631 \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
-                      : "\u063a\u06cc\u0631 \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"}
+                        ? "\u063a\u06cc\u0631 \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                        : "\u063a\u06cc\u0631 \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"}
                   </div>
                 }
                 trigger={null}
@@ -3297,10 +3283,10 @@ function PlasmicSettings__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
-                      : "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645\n\r"}
+                        ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645"
+                          : "\u274c \u0627\u0645\u06a9\u0627\u0646 \u062a\u0627\u06cc\u06cc\u062f \u06cc\u0627 \u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\n\u274c \u0630\u062e\u06cc\u0631\u0647\u200c\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0646\u0645\u0627\u06cc\u0634 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u00ab\u062a\u0633\u0648\u06cc\u0647 \u062f\u0631\u0622\u0645\u062f\u00bb \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\n\u274c \u0627\u0631\u0633\u0627\u0644 \u0648 \u06cc\u0627\u062f\u0622\u0648\u0631\u06cc \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u062f\u0631 \u067e\u06cc\u0627\u0645\u200c\u0631\u0633\u0627\u0646 \u0628\u0644\u0647 \u0648 \u062a\u0644\u06af\u0631\u0627\u0645\n\r"}
                   </div>
                 </div>
                 <div
@@ -3386,9 +3372,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction"] === "object" &&
                         typeof $steps["invokeGlobalAction"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["invokeGlobalAction"] =
+                          await $steps["invokeGlobalAction"];
                       }
 
                       $steps["updateModalDEactivateReservationsOpen"] = true
@@ -3462,9 +3447,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateReservationSwitchChecked"].then ===
                           "function"
                       ) {
-                        $steps["updateReservationSwitchChecked"] = await $steps[
-                          "updateReservationSwitchChecked"
-                        ];
+                        $steps["updateReservationSwitchChecked"] =
+                          await $steps["updateReservationSwitchChecked"];
                       }
 
                       $steps["invokeGlobalAction2"] =
@@ -3488,9 +3472,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction2"] === "object" &&
                         typeof $steps["invokeGlobalAction2"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction2"] = await $steps[
-                          "invokeGlobalAction2"
-                        ];
+                        $steps["invokeGlobalAction2"] =
+                          await $steps["invokeGlobalAction2"];
                       }
 
                       $steps["updateLoading2"] = true
@@ -3524,9 +3507,8 @@ function PlasmicSettings__RenderFunc(props: {
                         typeof $steps["updateLoading2"] === "object" &&
                         typeof $steps["updateLoading2"].then === "function"
                       ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
-                        ];
+                        $steps["updateLoading2"] =
+                          await $steps["updateLoading2"];
                       }
                     }}
                   >
@@ -3666,9 +3648,8 @@ function PlasmicSettings__RenderFunc(props: {
                           typeof $steps["updateSwitch1IsSelected2"].then ===
                             "function"
                         ) {
-                          $steps["updateSwitch1IsSelected2"] = await $steps[
-                            "updateSwitch1IsSelected2"
-                          ];
+                          $steps["updateSwitch1IsSelected2"] =
+                            await $steps["updateSwitch1IsSelected2"];
                         }
                       }}
                     >
@@ -3772,9 +3753,7 @@ function PlasmicSettings__RenderFunc(props: {
                           if ($state.pricingSwitch.checked === true) {
                             sum += 0.5;
                           }
-                          return `${new Intl.NumberFormat("fa-IR").format(
-                            sum
-                          )} %`;
+                          return `${new Intl.NumberFormat("fa-IR").format(sum)} %`;
                         })();
                       } catch (e) {
                         if (
@@ -4262,9 +4241,8 @@ function PlasmicSettings__RenderFunc(props: {
                       typeof $steps["updateLowBalanceOpen"] === "object" &&
                       typeof $steps["updateLowBalanceOpen"].then === "function"
                     ) {
-                      $steps["updateLowBalanceOpen"] = await $steps[
-                        "updateLowBalanceOpen"
-                      ];
+                      $steps["updateLowBalanceOpen"] =
+                        await $steps["updateLowBalanceOpen"];
                     }
                   }}
                 >
@@ -4692,7 +4670,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicSettings__VariantsArgs;
     args?: PlasmicSettings__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicSettings__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicSettings__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicSettings__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

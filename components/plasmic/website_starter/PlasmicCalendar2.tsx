@@ -101,13 +101,15 @@ export type PlasmicCalendar2__ArgsType = {
   daystatuses?: any;
   calendarType?: string;
   isFirstVisit?: boolean;
+  reservationsMode?: boolean;
 };
 type ArgPropType = keyof PlasmicCalendar2__ArgsType;
 export const PlasmicCalendar2__ArgProps = new Array<ArgPropType>(
   "propertyId",
   "daystatuses",
   "calendarType",
-  "isFirstVisit"
+  "isFirstVisit",
+  "reservationsMode"
 );
 
 export type PlasmicCalendar2__OverridesType = {
@@ -190,6 +192,7 @@ export interface DefaultCalendar2Props {
   daystatuses?: any;
   calendarType?: string;
   isFirstVisit?: boolean;
+  reservationsMode?: boolean;
   className?: string;
 }
 
@@ -214,7 +217,8 @@ function PlasmicCalendar2__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          isFirstVisit: false
+          isFirstVisit: false,
+          reservationsMode: false
         },
         Object.fromEntries(
           Object.entries(props.args).filter(([_, v]) => v !== undefined)
@@ -2366,39 +2370,85 @@ function PlasmicCalendar2__RenderFunc(props: {
                 $steps["updateTourSteps"] = await $steps["updateTourSteps"];
               }
 
-              $steps["runCode"] = false
+              $steps["runCode"] = $props.reservationsMode
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          const values = $state.fragmentDatePicker.values;
-                          if (values.length === 0) {
-                            const newTimestamp = Math.floor(
-                              new Date("2025-10-17").getTime() / 1000
-                            );
-                            $state.fragmentDatePicker.values = [newTimestamp];
-                            return $state.fragmentDatePicker.values;
+                          const allSelectedItems = $state.selectedItem || [];
+                          if (allSelectedItems.length === 0) {
+                            if ($state.fragmentDatePicker.values.length > 0) {
+                              $state.fragmentDatePicker.values = [];
+                            }
+                            return;
                           }
-                          const lastTimestamp = values.at(-1);
-                          const lastDate = new Date(lastTimestamp * 1000);
-                          const hours = lastDate.getHours();
-                          const minutes = lastDate.getMinutes();
-                          const seconds = lastDate.getSeconds();
-                          const newDate = new Date(
-                            2025,
-                            9,
-                            17,
-                            hours,
-                            minutes,
-                            seconds
-                          );
-                          const newTimestamp = Math.floor(
-                            newDate.getTime() / 1000
-                          );
-                          const updatedValues = [...values, newTimestamp];
-
-                          $state.fragmentDatePicker.values = updatedValues;
-                          return updatedValues;
+                          const lastSelectedItem = allSelectedItems.at(-1);
+                          const previousItems = allSelectedItems.slice(0, -1);
+                          if (lastSelectedItem.booking_id) {
+                            const bookingId = lastSelectedItem.booking_id;
+                            const isDeselecting =
+                              previousItems.length > 0 &&
+                              previousItems.every(
+                                item => item.booking_id === bookingId
+                              );
+                            if (isDeselecting) {
+                              $state.selectedItem = [];
+                              return ($state.fragmentDatePicker.values = []);
+                            } else {
+                              const allCalendarDays =
+                                $state.apiRequest.data[1].calendar;
+                              const fullBookingGroup = allCalendarDays.filter(
+                                day => day.booking_id === bookingId
+                              );
+                              $state.selectedItem = fullBookingGroup;
+                              const referenceTimestamp =
+                                $state.fragmentDatePicker.values[0] ||
+                                Date.now();
+                              const referenceDate = new Date(
+                                referenceTimestamp * 1000
+                              );
+                              const hours = referenceDate.getHours();
+                              const minutes = referenceDate.getMinutes();
+                              const seconds = referenceDate.getSeconds();
+                              const finalTimestamps = fullBookingGroup.map(
+                                item => {
+                                  const [year, month, day] = item.date
+                                    .split("-")
+                                    .map(Number);
+                                  const newDate = new Date(
+                                    year,
+                                    month - 1,
+                                    day,
+                                    hours,
+                                    minutes,
+                                    seconds
+                                  );
+                                  return Math.floor(newDate.getTime() / 1000);
+                                }
+                              );
+                              return ($state.fragmentDatePicker.values =
+                                finalTimestamps);
+                            }
+                          } else {
+                            const miscellaneousItems = allSelectedItems.filter(
+                              item => !item.booking_id
+                            );
+                            $state.selectedItem = miscellaneousItems;
+                            const miscDates = new Set(
+                              miscellaneousItems.map(item => item.date)
+                            );
+                            const currentTimestamps =
+                              $state.fragmentDatePicker.values;
+                            const finalTimestamps = currentTimestamps.filter(
+                              ts => {
+                                const d = new Date(ts * 1000);
+                                const dateString = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+                                return miscDates.has(dateString);
+                              }
+                            );
+                            return ($state.fragmentDatePicker.values =
+                              finalTimestamps);
+                          }
                         })();
                       }
                     };
