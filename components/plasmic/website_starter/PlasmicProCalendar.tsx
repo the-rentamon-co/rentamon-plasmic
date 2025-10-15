@@ -478,54 +478,6 @@ function PlasmicProCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["getCalendarSegment"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://gateway.rentamon.com/webhook/user/calendar/segment"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["getCalendarSegment"] != null &&
-                typeof $steps["getCalendarSegment"] === "object" &&
-                typeof $steps["getCalendarSegment"].then === "function"
-              ) {
-                $steps["getCalendarSegment"] =
-                  await $steps["getCalendarSegment"];
-              }
-
-              $steps["updateVariable2"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          $steps.getCalendarSegment.data.segment ==
-                          "calendar-v2"
-                            ? ($state.reservationsMode = true)
-                            : ($statet.reservationsMode = false);
-                          return console.log($state.reservationsMode);
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateVariable2"] != null &&
-                typeof $steps["updateVariable2"] === "object" &&
-                typeof $steps["updateVariable2"].then === "function"
-              ) {
-                $steps["updateVariable2"] = await $steps["updateVariable2"];
-              }
-
               $steps["getLcalStorageData"] = true
                 ? (() => {
                     const actionArgs = {
@@ -569,6 +521,52 @@ function PlasmicProCalendar__RenderFunc(props: {
               ) {
                 $steps["getLcalStorageData"] =
                   await $steps["getLcalStorageData"];
+              }
+
+              $steps["getCalendarSegment"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/user/calendar/segment"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["getCalendarSegment"] != null &&
+                typeof $steps["getCalendarSegment"] === "object" &&
+                typeof $steps["getCalendarSegment"].then === "function"
+              ) {
+                $steps["getCalendarSegment"] =
+                  await $steps["getCalendarSegment"];
+              }
+
+              $steps["addCalendarSegmentOnState"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return $steps.getCalendarSegment.data.segment ==
+                          "calendar-v2"
+                          ? ($state.reservationsMode = true)
+                          : ($statet.reservationsMode = false);
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["addCalendarSegmentOnState"] != null &&
+                typeof $steps["addCalendarSegmentOnState"] === "object" &&
+                typeof $steps["addCalendarSegmentOnState"].then === "function"
+              ) {
+                $steps["addCalendarSegmentOnState"] =
+                  await $steps["addCalendarSegmentOnState"];
               }
 
               $steps["runCode"] = true
@@ -813,36 +811,6 @@ function PlasmicProCalendar__RenderFunc(props: {
                 $steps["runCode2"] = await $steps["runCode2"];
               }
 
-              $steps["updateStateVariable"] = false
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        if ($steps.runCode2.data.status != "access denied") {
-                          return ($state.feature.reservation = true);
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
-              ) {
-                $steps["updateStateVariable"] =
-                  await $steps["updateStateVariable"];
-              }
-
               $steps["getFirstTimeCookie"] = true
                 ? (() => {
                     const actionArgs = {
@@ -948,34 +916,6 @@ function PlasmicProCalendar__RenderFunc(props: {
               ) {
                 $steps["invokeGlobalAction"] =
                   await $steps["invokeGlobalAction"];
-              }
-
-              $steps["updateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["variable"]
-                      },
-                      operation: 0
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateVariable"] != null &&
-                typeof $steps["updateVariable"] === "object" &&
-                typeof $steps["updateVariable"].then === "function"
-              ) {
-                $steps["updateVariable"] = await $steps["updateVariable"];
               }
             }}
           />
