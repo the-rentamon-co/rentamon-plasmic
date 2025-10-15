@@ -637,13 +637,9 @@ function PlasmicBookings__RenderFunc(props: {
                                 document.referrer ===
                                 "https://rentamon.com/reservations/"
                               ) {
-                                return window.close();
-                              } else if (
-                                document.referrer ===
-                                "https://rentamon.com/panel/"
-                              ) {
-                                return window.back();
+                                window.close();
                               }
+                              return history.back();
                             })();
                           }
                         };
