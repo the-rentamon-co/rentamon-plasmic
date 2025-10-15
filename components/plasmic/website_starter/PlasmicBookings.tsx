@@ -6276,7 +6276,7 @@ function PlasmicBookings__RenderFunc(props: {
                             component={Link}
                             href={(() => {
                               try {
-                                return `tel:${$state.booking.data.manual_booking.guest_phone_number}`;
+                                return `tel:${$state.booking.data.reservations.guest_phone_number}`;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||

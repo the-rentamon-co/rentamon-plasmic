@@ -464,8 +464,8 @@ function PlasmicSplash__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "50px"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "60px"
-                    : "80px"
+                      ? "60px"
+                      : "80px"
                 }
                 loading={"lazy"}
                 src={{
@@ -499,8 +499,8 @@ function PlasmicSplash__RenderFunc(props: {
                 {hasVariant(globalVariants, "screen", "smallMobile")
                   ? "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u067e\u0646\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc..."
                   : hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u067e\u0646\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc..."
-                  : "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u067e\u0646\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc..."}
+                    ? "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u067e\u0646\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc..."
+                    : "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u067e\u0646\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc..."}
               </div>
             ) : null}
           </div>
@@ -797,59 +797,8 @@ function PlasmicSplash__RenderFunc(props: {
                 typeof $steps["redirectAndSetUserCookie"] === "object" &&
                 typeof $steps["redirectAndSetUserCookie"].then === "function"
               ) {
-                $steps["redirectAndSetUserCookie"] = await $steps[
-                  "redirectAndSetUserCookie"
-                ];
-              }
-
-              $steps["updateSrc2"] = false
-                ? (() => {
-                    const actionArgs = { destination: `/panel` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateSrc2"] != null &&
-                typeof $steps["updateSrc2"] === "object" &&
-                typeof $steps["updateSrc2"].then === "function"
-              ) {
-                $steps["updateSrc2"] = await $steps["updateSrc2"];
-              }
-
-              $steps["updateSrc3"] = false
-                ? (() => {
-                    const actionArgs = { destination: `/calendar` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateSrc3"] != null &&
-                typeof $steps["updateSrc3"] === "object" &&
-                typeof $steps["updateSrc3"].then === "function"
-              ) {
-                $steps["updateSrc3"] = await $steps["updateSrc3"];
+                $steps["redirectAndSetUserCookie"] =
+                  await $steps["redirectAndSetUserCookie"];
               }
             }}
           />
@@ -909,7 +858,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicSplash__VariantsArgs;
     args?: PlasmicSplash__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicSplash__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicSplash__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicSplash__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
