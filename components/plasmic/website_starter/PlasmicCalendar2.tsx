@@ -10144,6 +10144,9 @@ function PlasmicCalendar2__RenderFunc(props: {
               ? (() => {
                   try {
                     return (() => {
+                      if ($props.reservationsMode == false) {
+                        return true;
+                      }
                       const items = $state.selectedItem;
                       if (!items || items.length === 0) {
                         return true;
@@ -10454,6 +10457,9 @@ function PlasmicCalendar2__RenderFunc(props: {
               ? (() => {
                   try {
                     return (() => {
+                      if ($props.reservationsMode == false) {
+                        return false;
+                      }
                       const items = $state.selectedItem;
                       if (!items || items.length === 0) {
                         return false;
