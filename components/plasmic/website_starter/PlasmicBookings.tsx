@@ -4350,6 +4350,11 @@ function PlasmicBookings__RenderFunc(props: {
                                           const commission_rate =
                                             commission_toman /
                                             total_price_toman;
+                                          if (
+                                            !Number.isFinite(commission_rate)
+                                          ) {
+                                            return "?";
+                                          }
                                           const formatted_percentage =
                                             new Intl.NumberFormat("fa-IR", {
                                               style: "percent",
@@ -4409,6 +4414,11 @@ function PlasmicBookings__RenderFunc(props: {
                                           const commission_rate =
                                             commission_toman /
                                             total_price_toman;
+                                          if (
+                                            !Number.isFinite(commission_rate)
+                                          ) {
+                                            return "?";
+                                          }
                                           const formatted_percentage =
                                             new Intl.NumberFormat("fa-IR", {
                                               style: "percent",
@@ -4468,6 +4478,11 @@ function PlasmicBookings__RenderFunc(props: {
                                           const commission_rate =
                                             commission_toman /
                                             total_price_toman;
+                                          if (
+                                            !Number.isFinite(commission_rate)
+                                          ) {
+                                            return "?";
+                                          }
                                           const formatted_percentage =
                                             new Intl.NumberFormat("fa-IR", {
                                               style: "percent",
@@ -4523,6 +4538,11 @@ function PlasmicBookings__RenderFunc(props: {
                                           const commission_rate =
                                             commission_toman /
                                             total_price_toman;
+                                          if (
+                                            !Number.isFinite(commission_rate)
+                                          ) {
+                                            return "?";
+                                          }
                                           const formatted_percentage =
                                             new Intl.NumberFormat("fa-IR", {
                                               style: "percent",

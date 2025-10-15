@@ -3015,6 +3015,7 @@
 @media (max-width: 500px) {
   .button__fNtwK:global(.__wab_instance) {
     height: 100%;
+    display: flex;
   }
 }
 @media (max-width: 350px) {
@@ -3070,6 +3071,80 @@
   }
 }
 .svg___0He {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.visitBookings:global(.__wab_instance) {
+  max-width: 100%;
+  width: 100%;
+  transition-property: all;
+  transition-duration: 1s;
+  max-height: 60px;
+  min-width: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 1s;
+}
+@media (max-width: 500px) {
+  .visitBookings:global(.__wab_instance) {
+    height: 100%;
+    display: flex;
+  }
+}
+@media (max-width: 350px) {
+  .visitBookings:global(.__wab_instance) {
+    height: 60px;
+    flex-shrink: 0;
+  }
+}
+.freeBox__uuhK {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.img__tGkrY {
+  object-fit: cover;
+  max-width: 100%;
+  width: 30px;
+  flex-shrink: 0;
+}
+.img__tGkrY > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 500px) {
+  .img__tGkrY {
+    width: 40px;
+    flex-shrink: 0;
+  }
+}
+.text__dYewd {
+  margin-left: 0px;
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  color: #fcfcfc;
+}
+@media (max-width: 500px) {
+  .text__dYewd {
+    font-size: 17px;
+    color: #fcfcfc;
+  }
+}
+@media (max-width: 350px) {
+  .text__dYewd {
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+.svg__jkqPw {
   position: relative;
   object-fit: cover;
   width: auto;
