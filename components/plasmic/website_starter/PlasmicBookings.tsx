@@ -632,7 +632,18 @@ function PlasmicBookings__RenderFunc(props: {
                         const actionArgs = {
                           customFunction: async () => {
                             return (() => {
-                              return window.close();
+                              console.log(document.referrer);
+                              if (
+                                document.referrer ===
+                                "https://rentamon.com/reservations/"
+                              ) {
+                                return window.close();
+                              } else if (
+                                document.referrer ===
+                                "https://rentamon.com/panel/"
+                              ) {
+                                return window.back();
+                              }
                             })();
                           }
                         };
