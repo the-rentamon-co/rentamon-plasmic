@@ -479,97 +479,6 @@ function PlasmicProCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["getLcalStorageData"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          if (
-                            $state.profile.loading ||
-                            !$state.profile.data ||
-                            !$state.profile.data.properties ||
-                            $state.profile.data.properties.length <= 0
-                          ) {
-                            const storedData =
-                              localStorage.getItem("user_info");
-                            if (storedData) {
-                              try {
-                                const parsedData = JSON.parse(storedData);
-                                if (
-                                  parsedData &&
-                                  typeof parsedData === "object"
-                                ) {
-                                  return ($state.profile.data = {
-                                    user_info: parsedData.user_info,
-                                    properties: parsedData.properties
-                                  });
-                                }
-                              } catch (e) {}
-                            }
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["getLcalStorageData"] != null &&
-                typeof $steps["getLcalStorageData"] === "object" &&
-                typeof $steps["getLcalStorageData"].then === "function"
-              ) {
-                $steps["getLcalStorageData"] =
-                  await $steps["getLcalStorageData"];
-              }
-
-              $steps["getCalendarSegment"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://gateway.rentamon.com/webhook/user/calendar/segment"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["getCalendarSegment"] != null &&
-                typeof $steps["getCalendarSegment"] === "object" &&
-                typeof $steps["getCalendarSegment"].then === "function"
-              ) {
-                $steps["getCalendarSegment"] =
-                  await $steps["getCalendarSegment"];
-              }
-
-              $steps["addCalendarSegmentOnState"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return $steps.getCalendarSegment.data.segment ==
-                          "calendar-v2"
-                          ? ($state.reservationsMode = true)
-                          : ($statet.reservationsMode = false);
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["addCalendarSegmentOnState"] != null &&
-                typeof $steps["addCalendarSegmentOnState"] === "object" &&
-                typeof $steps["addCalendarSegmentOnState"].then === "function"
-              ) {
-                $steps["addCalendarSegmentOnState"] =
-                  await $steps["addCalendarSegmentOnState"];
-              }
-
               $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {
@@ -670,6 +579,97 @@ function PlasmicProCalendar__RenderFunc(props: {
                 typeof $steps["runCode"].then === "function"
               ) {
                 $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["getLcalStorageData"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          if (
+                            $state.profile.loading ||
+                            !$state.profile.data ||
+                            !$state.profile.data.properties ||
+                            $state.profile.data.properties.length <= 0
+                          ) {
+                            const storedData =
+                              localStorage.getItem("user_info");
+                            if (storedData) {
+                              try {
+                                const parsedData = JSON.parse(storedData);
+                                if (
+                                  parsedData &&
+                                  typeof parsedData === "object"
+                                ) {
+                                  return ($state.profile.data = {
+                                    user_info: parsedData.user_info,
+                                    properties: parsedData.properties
+                                  });
+                                }
+                              } catch (e) {}
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["getLcalStorageData"] != null &&
+                typeof $steps["getLcalStorageData"] === "object" &&
+                typeof $steps["getLcalStorageData"].then === "function"
+              ) {
+                $steps["getLcalStorageData"] =
+                  await $steps["getLcalStorageData"];
+              }
+
+              $steps["getCalendarSegment"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/user/calendar/segment"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["getCalendarSegment"] != null &&
+                typeof $steps["getCalendarSegment"] === "object" &&
+                typeof $steps["getCalendarSegment"].then === "function"
+              ) {
+                $steps["getCalendarSegment"] =
+                  await $steps["getCalendarSegment"];
+              }
+
+              $steps["addCalendarSegmentOnState"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return $steps.getCalendarSegment.data.segment ==
+                          "calendar-v2"
+                          ? ($state.reservationsMode = true)
+                          : ($statet.reservationsMode = false);
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["addCalendarSegmentOnState"] != null &&
+                typeof $steps["addCalendarSegmentOnState"] === "object" &&
+                typeof $steps["addCalendarSegmentOnState"].then === "function"
+              ) {
+                $steps["addCalendarSegmentOnState"] =
+                  await $steps["addCalendarSegmentOnState"];
               }
 
               $steps["checkVtCookie"] = true
