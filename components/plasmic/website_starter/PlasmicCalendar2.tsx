@@ -519,46 +519,93 @@ function PlasmicCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (() => {
-                const notesAndTimestamps =
-                  $state.apiRequest.data[2].notesAndTimestamps;
-                const selectedTimestamp = $state.dateProp.unix;
-                function timestampToDateString(timestamp) {
-                  if (!timestamp || isNaN(parseInt(timestamp, 10))) {
-                    return null;
+          hasVariant(globalVariants, "screen", "mobile")
+            ? (() => {
+                try {
+                  return (() => {
+                    const notesAndTimestamps =
+                      $state.apiRequest.data[2].notesAndTimestamps;
+                    const selectedTimestamp = $state.dateProp.unix;
+                    function timestampToDateString(timestamp) {
+                      if (!timestamp || isNaN(parseInt(timestamp, 10))) {
+                        return null;
+                      }
+                      const date = new Date(parseInt(timestamp, 10) * 1000);
+                      if (isNaN(date.getTime())) {
+                        return null;
+                      }
+                      return date.toISOString().split("T")[0];
+                    }
+                    const selectedDate =
+                      timestampToDateString(selectedTimestamp);
+                    if (!selectedDate) {
+                      return [];
+                    }
+                    const filteredNotes = notesAndTimestamps.filter(
+                      noteItem => {
+                        const noteDate = timestampToDateString(
+                          noteItem.timestamps
+                        );
+                        return noteDate === selectedDate;
+                      }
+                    );
+                    return filteredNotes[0].noteText;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
                   }
-                  const date = new Date(parseInt(timestamp, 10) * 1000);
-                  if (isNaN(date.getTime())) {
-                    return null;
+                  throw e;
+                }
+              })()
+            : (() => {
+                try {
+                  return (() => {
+                    const notesAndTimestamps =
+                      $state.apiRequest.data[2].notesAndTimestamps;
+                    const selectedTimestamp = $state.dateProp.unix;
+                    function timestampToDateString(timestamp) {
+                      if (!timestamp || isNaN(parseInt(timestamp, 10))) {
+                        return null;
+                      }
+                      const date = new Date(parseInt(timestamp, 10) * 1000);
+                      if (isNaN(date.getTime())) {
+                        return null;
+                      }
+                      return date.toISOString().split("T")[0];
+                    }
+                    const selectedDate =
+                      timestampToDateString(selectedTimestamp);
+                    if (!selectedDate) {
+                      console.error(
+                        "Selected timestamp is invalid:",
+                        selectedTimestamp
+                      );
+                      return [];
+                    }
+                    const filteredNotes = notesAndTimestamps.filter(
+                      noteItem => {
+                        const noteDate = timestampToDateString(
+                          noteItem.timestamps
+                        );
+                        return noteDate === selectedDate;
+                      }
+                    );
+                    return filteredNotes[0].noteText;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
                   }
-                  return date.toISOString().split("T")[0];
+                  throw e;
                 }
-                const selectedDate = timestampToDateString(selectedTimestamp);
-                if (!selectedDate) {
-                  console.error(
-                    "Selected timestamp is invalid:",
-                    selectedTimestamp
-                  );
-                  return [];
-                }
-                const filteredNotes = notesAndTimestamps.filter(noteItem => {
-                  const noteDate = timestampToDateString(noteItem.timestamps);
-                  return noteDate === selectedDate;
-                });
-                return filteredNotes[0].noteText;
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return undefined;
-              }
-              throw e;
-            }
-          })()
+              })()
       },
       {
         path: "year",
@@ -7954,56 +8001,103 @@ function PlasmicCalendar2__RenderFunc(props: {
                   {
                     name: "textarea2.value",
                     initFunc: ({ $props, $state, $queries }) =>
-                      (() => {
-                        try {
-                          return (() => {
-                            const notesAndTimestamps =
-                              $state.apiRequest.data[2].notesAndTimestamps;
-                            const selectedTimestamp = $state.dateProp.unix;
-                            function timestampToDateString(timestamp) {
-                              if (
-                                !timestamp ||
-                                isNaN(parseInt(timestamp, 10))
-                              ) {
-                                return null;
-                              }
-                              const date = new Date(
-                                parseInt(timestamp, 10) * 1000
-                              );
-                              if (isNaN(date.getTime())) {
-                                return null;
-                              }
-                              return date.toISOString().split("T")[0];
-                            }
-                            const selectedDate =
-                              timestampToDateString(selectedTimestamp);
-                            if (!selectedDate) {
-                              console.error(
-                                "Selected timestamp is invalid:",
-                                selectedTimestamp
-                              );
-                              return [];
-                            }
-                            const filteredNotes = notesAndTimestamps.filter(
-                              noteItem => {
-                                const noteDate = timestampToDateString(
-                                  noteItem.timestamps
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            try {
+                              return (() => {
+                                const notesAndTimestamps =
+                                  $state.apiRequest.data[2].notesAndTimestamps;
+                                const selectedTimestamp = $state.dateProp.unix;
+                                function timestampToDateString(timestamp) {
+                                  if (
+                                    !timestamp ||
+                                    isNaN(parseInt(timestamp, 10))
+                                  ) {
+                                    return null;
+                                  }
+                                  const date = new Date(
+                                    parseInt(timestamp, 10) * 1000
+                                  );
+                                  if (isNaN(date.getTime())) {
+                                    return null;
+                                  }
+                                  return date.toISOString().split("T")[0];
+                                }
+                                const selectedDate =
+                                  timestampToDateString(selectedTimestamp);
+                                if (!selectedDate) {
+                                  return [];
+                                }
+                                const filteredNotes = notesAndTimestamps.filter(
+                                  noteItem => {
+                                    const noteDate = timestampToDateString(
+                                      noteItem.timestamps
+                                    );
+                                    return noteDate === selectedDate;
+                                  }
                                 );
-                                return noteDate === selectedDate;
+                                return filteredNotes[0].noteText;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
                               }
-                            );
-                            return filteredNotes[0].noteText;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return (() => {
+                                const notesAndTimestamps =
+                                  $state.apiRequest.data[2].notesAndTimestamps;
+                                const selectedTimestamp = $state.dateProp.unix;
+                                function timestampToDateString(timestamp) {
+                                  if (
+                                    !timestamp ||
+                                    isNaN(parseInt(timestamp, 10))
+                                  ) {
+                                    return null;
+                                  }
+                                  const date = new Date(
+                                    parseInt(timestamp, 10) * 1000
+                                  );
+                                  if (isNaN(date.getTime())) {
+                                    return null;
+                                  }
+                                  return date.toISOString().split("T")[0];
+                                }
+                                const selectedDate =
+                                  timestampToDateString(selectedTimestamp);
+                                if (!selectedDate) {
+                                  console.error(
+                                    "Selected timestamp is invalid:",
+                                    selectedTimestamp
+                                  );
+                                  return [];
+                                }
+                                const filteredNotes = notesAndTimestamps.filter(
+                                  noteItem => {
+                                    const noteDate = timestampToDateString(
+                                      noteItem.timestamps
+                                    );
+                                    return noteDate === selectedDate;
+                                  }
+                                );
+                                return filteredNotes[0].noteText;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
                   }
                 ],
                 []
@@ -8016,6 +8110,15 @@ function PlasmicCalendar2__RenderFunc(props: {
                 />
               );
             })()}
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ypR7F
+              )}
+            >
+              {"Enter some text"}
+            </div>
             <Button
               className={classNames("__wab_instance", sty.button__nLk2Q)}
               onClick={async event => {
