@@ -1419,7 +1419,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                           ) {
                             updates.status = "reserved";
                             updates.website = "رزرو";
-                            updates.book_at = new Date().toISOString();
+                            updates.booking_id = $state.manualReserveBookingId;
                           } else if (
                             $state.requestdata.request_for === "unblock" ||
                             !$state.requestdata.request_for
