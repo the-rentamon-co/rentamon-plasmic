@@ -639,7 +639,9 @@ function PlasmicBookings__RenderFunc(props: {
                               ) {
                                 window.close();
                               }
-                              return "https://rentamon.com/panel/";
+                              return window.location.replace(
+                                "https://rentamon.com/panel/"
+                              );
                             })();
                           }
                         };
