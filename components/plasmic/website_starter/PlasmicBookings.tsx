@@ -389,7 +389,8 @@ function PlasmicBookings__RenderFunc(props: {
                     const englishStr = raw
                       .replace(/[۰-۹]/g, ch => fa2en[ch])
                       .replace(/[٬,]/g, "");
-                    return Number(englishStr);
+                    const finalAmount = Number(englishStr);
+                    return finalAmount === 0 ? "مبلغ کل (تومان)" : finalAmount;
                   })();
                 }
               })();
@@ -8247,6 +8248,12 @@ function PlasmicBookings__RenderFunc(props: {
                               try {
                                 return (() => {
                                   function numberToPersian(num) {
+                                    if (num == null || num !== num) {
+                                      return "";
+                                    }
+                                    if (num === 0) {
+                                      return "صفر";
+                                    }
                                     const units = [
                                       "",
                                       "یک",
@@ -8303,76 +8310,67 @@ function PlasmicBookings__RenderFunc(props: {
                                       "",
                                       "هزار",
                                       "میلیون",
-                                      "میلیارد"
+                                      "میلیارد",
+                                      "تریلیون",
+                                      "کوادریلیون"
                                     ];
 
-                                    if (num == null || num === "" || num === 0)
-                                      return "صفر";
-                                    const splitNumber = n => {
-                                      const str = n.toString();
-                                      const len = str.length;
-                                      if (len <= 3) return [n];
-                                      const groups = [];
-                                      let i = len;
-                                      while (i > 0) {
-                                        groups.unshift(
-                                          Number(
-                                            str.substring(Math.max(0, i - 3), i)
-                                          )
-                                        );
-                                        i -= 3;
-                                      }
-                                      return groups;
-                                    };
                                     const convertGroup = n => {
-                                      if (n === 0) return "";
                                       const h = Math.floor(n / 100);
                                       const t = Math.floor((n % 100) / 10);
                                       const u = n % 10;
-                                      const hundred = hundreds[h];
-                                      let tenUnit = "";
-                                      if (t === 1) {
-                                        tenUnit = teens[u];
-                                      } else {
-                                        tenUnit =
-                                          tens[t] +
-                                          (u > 0 ? " و " + units[u] : "");
+                                      const parts = [];
+                                      if (h > 0) {
+                                        parts.push(hundreds[h]);
                                       }
-                                      return [hundred, tenUnit]
-                                        .filter(Boolean)
-                                        .join(" و ")
-                                        .trim();
+                                      if (t === 1) {
+                                        parts.push(teens[u]);
+                                      } else {
+                                        if (t > 0) {
+                                          parts.push(tens[t]);
+                                        }
+                                        if (u > 0) {
+                                          parts.push(units[u]);
+                                        }
+                                      }
+                                      return parts.join(" و ");
+                                    };
+                                    const splitNumber = n => {
+                                      const groups = [];
+                                      let tempNum = Math.abs(n);
+                                      if (tempNum === 0) return [0];
+                                      while (tempNum > 0) {
+                                        groups.unshift(tempNum % 1000);
+                                        tempNum = Math.floor(tempNum / 1000);
+                                      }
+                                      return groups;
                                     };
                                     const groups = splitNumber(num);
-                                    const result = groups
+                                    const maxGroupIndex = groups.length - 1;
+                                    const resultParts = groups
                                       .map((g, i) => {
                                         const groupText = convertGroup(g);
                                         if (groupText) {
+                                          const groupName =
+                                            groupNames[maxGroupIndex - i] || "";
                                           return (
                                             groupText +
-                                            (groupNames[groups.length - i - 1]
-                                              ? " " +
-                                                groupNames[
-                                                  groups.length - i - 1
-                                                ]
-                                              : "")
+                                            (groupName ? " " + groupName : "")
                                           );
                                         }
                                         return "";
                                       })
-                                      .filter(Boolean)
-                                      .join(" و ");
-                                    const finalResult = result.startsWith("و ")
-                                      ? result.slice(2)
-                                      : result;
-                                    return finalResult.trim() + " تومان";
+                                      .filter(Boolean);
+                                    const finalResult = resultParts.join(" و ");
+                                    const prefix = num < 0 ? "منفی " : "";
+                                    return prefix + finalResult + " تومان";
                                   }
                                   const input = $state.amount2?.value || "";
-                                  const output =
-                                    input === ""
-                                      ? "صفر"
-                                      : numberToPersian(Number(input));
-                                  return output;
+                                  if (input === "") {
+                                    return "صفر";
+                                  }
+                                  const numberValue = Number(input);
+                                  return numberToPersian(numberValue);
                                 })();
                               } catch (e) {
                                 if (
