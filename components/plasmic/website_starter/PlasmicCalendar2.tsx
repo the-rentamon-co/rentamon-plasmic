@@ -186,6 +186,7 @@ export type PlasmicCalendar2__OverridesType = {
   p2?: Flex__<"div">;
   phoneNumber?: Flex__<typeof TextInput>;
   p5?: Flex__<"div">;
+  reserveData?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultCalendar2Props {
@@ -789,6 +790,30 @@ function PlasmicCalendar2__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "getJabamaSmartPriceStatus"
+      },
+      {
+        path: "reserveData.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "reserveData"
+      },
+      {
+        path: "reserveData.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "reserveData"
+      },
+      {
+        path: "reserveData.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "reserveData"
       }
     ],
     [$props, $ctx, $refs]
@@ -10844,7 +10869,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                 );
               }}
               placeholder={
-                "\u0645\u0628\u0644\u063a (\u062a\u0648\u0645\u0627\u0646)"
+                "\u0645\u0628\u0644\u063a \u06a9\u0644 (\u062a\u0648\u0645\u0627\u0646)"
               }
               type={"number"}
               value={generateStateValueProp($state, ["input2", "value"])}
@@ -11645,6 +11670,143 @@ function PlasmicCalendar2__RenderFunc(props: {
           ) : null}
         </div>
       </AntdModal>
+      <ApiRequest
+        data-plasmic-name={"reserveData"}
+        data-plasmic-override={overrides.reserveData}
+        className={classNames("__wab_instance", sty.reserveData)}
+        errorDisplay={
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__dXKcM
+            )}
+          >
+            {"Error fetching data"}
+          </div>
+        }
+        loadingDisplay={null}
+        method={"GET"}
+        onError={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["reserveData", "error"]).apply(
+            null,
+            eventArgs
+          );
+        }}
+        onLoading={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["reserveData", "loading"]).apply(
+            null,
+            eventArgs
+          );
+        }}
+        onSuccess={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["reserveData", "data"]).apply(
+            null,
+            eventArgs
+          );
+
+          (async data => {
+            const $steps = {};
+
+            $steps["runCode"] = true
+              ? (() => {
+                  const actionArgs = {
+                    customFunction: async () => {
+                      return (() => {
+                        const calendarData =
+                          $state.apiRequest?.data?.[1]?.calendar;
+                        const reserveData = $state.reserveData?.data;
+                        if (
+                          !Array.isArray(calendarData) ||
+                          !Array.isArray(reserveData)
+                        ) {
+                          return calendarData;
+                        }
+                        const reserveMap = reserveData.reduce((acc, item) => {
+                          if (item && item.booking_id) {
+                            acc[item.booking_id] = item.amount;
+                          }
+                          return acc;
+                        }, {});
+                        calendarData.forEach(item => {
+                          const bookingId = item.booking_id;
+                          if (bookingId in reserveMap) {
+                            const amount = reserveMap[bookingId];
+                            if (amount == null || amount == 0) {
+                              item.price = null;
+                              return;
+                            }
+                            const amountNumber = parseInt(amount, 10);
+                            item.price = isNaN(amountNumber)
+                              ? amount
+                              : (amountNumber / 1000).toLocaleString();
+                          }
+                        });
+                        return calendarData;
+                      })();
+                    }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["runCode"] != null &&
+              typeof $steps["runCode"] === "object" &&
+              typeof $steps["runCode"].then === "function"
+            ) {
+              $steps["runCode"] = await $steps["runCode"];
+            }
+          }).apply(null, eventArgs);
+        }}
+        ref={ref => {
+          $refs["reserveData"] = ref;
+        }}
+        url={(() => {
+          try {
+            return (() => {
+              function toEnglishDigits(str) {
+                return String(str).replace(/[۰-۹]/g, function (char) {
+                  return String.fromCharCode(char.charCodeAt(0) - 1728);
+                });
+              }
+              let initialDateParts = new Date()
+                .toLocaleDateString("fa")
+                .split("/");
+              let initialYear = initialDateParts[0];
+              let initialMonth = initialDateParts[1];
+              const secondSpan = document.querySelector(
+                ".rmdp-header-values span:nth-child(3)"
+              );
+              let yearStr = "";
+              if (secondSpan && secondSpan.textContent) {
+                yearStr = secondSpan.textContent;
+                $state.year = yearStr;
+              } else {
+                yearStr = $state.year ?? initialYear;
+              }
+              let monStr = $state.fragmentDatePicker?.month ?? initialMonth;
+              const yearEn = toEnglishDigits(yearStr);
+              const monStrEn = toEnglishDigits(monStr);
+              const propIdEn = toEnglishDigits($props.propertyId);
+              const monPadded = monStrEn.padStart(2, "0");
+              let mon = parseInt(monStrEn, 10);
+              let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+              const finalUrl = `https://gateway.rentamon.com/webhook/bookings/calendar?start_date=${yearEn}-${monPadded}-01&end_date=${yearEn}-${monPadded}-${daysInMonth}&property_id=${propIdEn}`;
+              return finalUrl;
+            })();
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
+      />
     </div>
   ) as React.ReactElement | null;
 }
@@ -11723,7 +11885,8 @@ const PlasmicDescendants = {
     "guestName",
     "p2",
     "phoneNumber",
-    "p5"
+    "p5",
+    "reserveData"
   ],
   apiRequest: ["apiRequest"],
   guide1: ["guide1"],
@@ -11878,7 +12041,8 @@ const PlasmicDescendants = {
   guestName: ["guestName"],
   p2: ["p2", "phoneNumber"],
   phoneNumber: ["phoneNumber"],
-  p5: ["p5"]
+  p5: ["p5"],
+  reserveData: ["reserveData"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -11957,6 +12121,7 @@ type NodeDefaultElementType = {
   p2: "div";
   phoneNumber: typeof TextInput;
   p5: "div";
+  reserveData: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -12097,6 +12262,7 @@ export const PlasmicCalendar2 = Object.assign(
     p2: makeNodeComponent("p2"),
     phoneNumber: makeNodeComponent("phoneNumber"),
     p5: makeNodeComponent("p5"),
+    reserveData: makeNodeComponent("reserveData"),
 
     // Metadata about props expected for PlasmicCalendar2
     internalVariantProps: PlasmicCalendar2__VariantProps,
