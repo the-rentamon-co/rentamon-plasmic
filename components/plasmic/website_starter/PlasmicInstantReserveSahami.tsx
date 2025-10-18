@@ -721,7 +721,18 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               )}
             >
               {
-                "\u062a\u063a\u06cc\u06cc\u0631 \u062d\u0627\u0644\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0647 \u00ab\u0622\u0646\u06cc\u00bb  \u062a\u0627 \u06f3\u06f0 \u0645\u0647\u0631"
+                "\u062a\u063a\u06cc\u06cc\u0631 \u062d\u0627\u0644\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0647 \u00ab\u0622\u0646\u06cc\u00bb "
+              }
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__o44RS
+              )}
+            >
+              {
+                "\u0648\u0642\u062a\u06cc \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0631\u0648 \u0631\u0648\u0634\u0646 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u060c \u0647\u0645\u06cc\u0634\u0647 \u0641\u0639\u0627\u0644\u0647 \u062a\u0627 \u0648\u0642\u062a\u06cc \u062e\u0648\u062f\u062a \u062e\u0627\u0645\u0648\u0634\u0634 \u06a9\u0646\u06cc"
               }
             </div>
           </section>
@@ -1242,32 +1253,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                 await $steps["updateIsShabSwitchChecked2"];
                             }
 
-                            $steps["failedToast"] =
-                              $steps.apiRequestForInstant.data.status ==
-                              "failed"
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "error",
-                                        "\u06cc\u0647 \u0645\u0634\u06a9\u0644\u06cc \u067e\u06cc\u0634 \u0627\u0648\u0645\u062f",
-                                        "top-center",
-                                        6000
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                            if (
-                              $steps["failedToast"] != null &&
-                              typeof $steps["failedToast"] === "object" &&
-                              typeof $steps["failedToast"].then === "function"
-                            ) {
-                              $steps["failedToast"] =
-                                await $steps["failedToast"];
-                            }
-
                             $steps["turnOnSuccessToast"] =
                               $steps.apiRequestForInstant.data.status ==
                                 "succeeded" &&
@@ -1277,7 +1262,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         undefined,
-                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0645\u0647\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0634\u0628 \u0622\u0646\u06cc \u0634\u062f",
+                                        "\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0634\u0628 \u0641\u0639\u0627\u0644 \u0634\u062f",
                                         "top-center",
                                         6000
                                       ]
@@ -1326,6 +1311,32 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                             ) {
                               $steps["turnOffSuccessMessage"] =
                                 await $steps["turnOffSuccessMessage"];
+                            }
+
+                            $steps["failedToast"] =
+                              $steps.apiRequestForInstant.data.status ==
+                              "failed"
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u06cc\u0647 \u0645\u0634\u06a9\u0644\u06cc \u067e\u06cc\u0634 \u0627\u0648\u0645\u062f",
+                                        "top-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["failedToast"] != null &&
+                              typeof $steps["failedToast"] === "object" &&
+                              typeof $steps["failedToast"].then === "function"
+                            ) {
+                              $steps["failedToast"] =
+                                await $steps["failedToast"];
                             }
                           }).apply(null, eventArgs);
                         }}
@@ -1624,7 +1635,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         undefined,
-                                        "\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645\u062a \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0645\u0647\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0627\u062a\u0627\u0642\u06a9 \u0622\u0646\u06cc \u0634\u062f",
+                                        "\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u062a\u0627\u0642\u06a9 \u0641\u0639\u0627\u0644 \u0634\u062f",
                                         "top-center",
                                         6000
                                       ]
@@ -1756,45 +1767,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
 
                           (async checked => {
                             const $steps = {};
-
-                            $steps["updateJabamaModalOpen"] =
-                              !$state.isJabamaSwitchChecked
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["jabamaModal", "open"]
-                                      },
-                                      operation: 0,
-                                      value: true
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      $stateSet(objRoot, variablePath, value);
-                                      return value;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                            if (
-                              $steps["updateJabamaModalOpen"] != null &&
-                              typeof $steps["updateJabamaModalOpen"] ===
-                                "object" &&
-                              typeof $steps["updateJabamaModalOpen"].then ===
-                                "function"
-                            ) {
-                              $steps["updateJabamaModalOpen"] =
-                                await $steps["updateJabamaModalOpen"];
-                            }
 
                             $steps["updateShabSwitchValue"] = true
                               ? (() => {

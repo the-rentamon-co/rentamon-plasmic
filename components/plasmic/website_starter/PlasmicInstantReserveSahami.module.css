@@ -260,6 +260,28 @@
     font-size: 15px;
   }
 }
+.text__o44RS {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 400;
+  color: #858585;
+  margin-top: 12px;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__o44RS {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__o44RS {
+    font-size: 15px;
+  }
+}
 .topContainer2 {
   display: grid;
   position: relative;

@@ -172,6 +172,7 @@ export type PlasmicBookings__OverridesType = {
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   sideEffect?: Flex__<typeof SideEffect>;
+  fetchModal?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultBookingsProps {}
@@ -479,13 +480,25 @@ function PlasmicBookings__RenderFunc(props: {
         path: "cancelManualReserve.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "isTheFirstVisit",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "fetchModal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "unblockStatus",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
       }
     ],
     [$props, $ctx, $refs]
@@ -9035,6 +9048,64 @@ function PlasmicBookings__RenderFunc(props: {
                               await $steps["invokeGlobalAction"];
                           }
 
+                          $steps["runCode"] = false
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      if (
+                                        $steps.invokeGlobalAction.data.status ==
+                                        true
+                                      ) {
+                                        $state.unblockStatus =
+                                          $steps.invokeGlobalAction.data.data;
+                                        return console.log(
+                                          $state.unblockStatus
+                                        );
+                                      } else {
+                                        return ($state.unblockStatus =
+                                          $steps.invokeGlobalAction.data.status);
+                                      }
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+
+                          $steps["invokeGlobalAction2"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "\u0631\u0632\u0631\u0648 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f",
+                                    "top-center"
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.showToast"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["invokeGlobalAction2"] != null &&
+                            typeof $steps["invokeGlobalAction2"] === "object" &&
+                            typeof $steps["invokeGlobalAction2"].then ===
+                              "function"
+                          ) {
+                            $steps["invokeGlobalAction2"] =
+                              await $steps["invokeGlobalAction2"];
+                          }
+
                           $steps["updateCancelManualReserveOpen"] = true
                             ? (() => {
                                 const actionArgs = {
@@ -9072,30 +9143,6 @@ function PlasmicBookings__RenderFunc(props: {
                           ) {
                             $steps["updateCancelManualReserveOpen"] =
                               await $steps["updateCancelManualReserveOpen"];
-                          }
-
-                          $steps["invokeGlobalAction2"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    undefined,
-                                    "\u0631\u0632\u0631\u0648 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u00ab\u0644\u063a\u0648\u00bb \u0634\u062f",
-                                    "top-center"
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.showToast"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalAction2"] != null &&
-                            typeof $steps["invokeGlobalAction2"] === "object" &&
-                            typeof $steps["invokeGlobalAction2"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalAction2"] =
-                              await $steps["invokeGlobalAction2"];
                           }
                         }}
                       >
@@ -9537,6 +9584,90 @@ function PlasmicBookings__RenderFunc(props: {
               }
             }}
           />
+
+          <AntdModal
+            data-plasmic-name={"fetchModal"}
+            data-plasmic-override={overrides.fetchModal}
+            className={classNames("__wab_instance", sty.fetchModal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              styleTokensClassNames
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["fetchModal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["fetchModal", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["fetchModal", "open"])}
+            title={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__xkZg
+                )}
+              >
+                {
+                  "\u0646\u062a\u06cc\u062c\u0647 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u0631\u0648\u0632 \u0647\u0627\u06cc \u0631\u0632\u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0627"
+                }
+              </div>
+            }
+            trigger={null}
+          >
+            {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+              (() => {
+                try {
+                  return $state.unblockStatus;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return [];
+                  }
+                  throw e;
+                }
+              })()
+            ).map((__plasmic_item_0, __plasmic_idx_0) => {
+              const currentItem = __plasmic_item_0;
+              const currentIndex = __plasmic_idx_0;
+              return (
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__tlFPv)}
+                  key={currentIndex}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__uhso5
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return currentItem.otaghak.status_code;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                </div>
+              );
+            })}
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -9620,7 +9751,8 @@ const PlasmicDescendants = {
     "html",
     "clarityRntComponent",
     "faviconRntComponent",
-    "sideEffect"
+    "sideEffect",
+    "fetchModal"
   ],
   detail2: [
     "detail2",
@@ -9895,7 +10027,8 @@ const PlasmicDescendants = {
   html: ["html", "clarityRntComponent", "faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  sideEffect: ["sideEffect"]
+  sideEffect: ["sideEffect"],
+  fetchModal: ["fetchModal"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -9977,6 +10110,7 @@ type NodeDefaultElementType = {
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   sideEffect: typeof SideEffect;
+  fetchModal: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -10116,6 +10250,7 @@ export const PlasmicBookings = Object.assign(
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     sideEffect: makeNodeComponent("sideEffect"),
+    fetchModal: makeNodeComponent("fetchModal"),
 
     // Metadata about props expected for PlasmicBookings
     internalVariantProps: PlasmicBookings__VariantProps,
