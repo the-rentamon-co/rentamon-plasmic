@@ -314,6 +314,7 @@ function PlasmicTestSearch__RenderFunc(props: {
               className={classNames("__wab_instance", sty.datePicker)}
               customDayCell={false}
               locale={"fa"}
+              mode={"multiple"}
               onChange={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, [
                   "datePicker",
