@@ -2228,19 +2228,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                           "__wab_instance",
                           sty.jajigaSwitch
                         )}
-                        disabled={(() => {
-                          try {
-                            return !$state.jajigaPermission.data.permission;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
-                          }
-                        })()}
+                        disabled={true}
                         onCheckedChange={async (...eventArgs: any) => {
                           generateStateOnChangeProp($state, [
                             "jajigaSwitch",
