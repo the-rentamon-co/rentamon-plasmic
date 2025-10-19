@@ -71,6 +71,10 @@
   max-width: 100%;
   object-fit: cover;
 }
+.jajigaPermission:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .instantPropertyWebsite:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -854,9 +858,9 @@
   justify-content: space-between;
   align-items: center;
   background: none;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
-  cursor: not-allowed;
+  cursor: default;
   filter: blur(0px);
   padding: 8px 0px 8px 8px;
 }
@@ -906,13 +910,6 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
-}
-.fragmentSwitch5:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  margin-right: 0px;
-  width: 45px;
-  flex-shrink: 0;
 }
 .mihmanshoContainer {
   display: flex;

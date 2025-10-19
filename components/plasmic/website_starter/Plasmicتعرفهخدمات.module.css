@@ -3740,15 +3740,7 @@
     padding-top: 4px;
     padding-bottom: 4px;
     width: 100%;
-    background: linear-gradient(
-        90deg,
-        #81a2bb00 0%,
-        #81a2bbb3 10%,
-        #81a2bb 55%,
-        #81a2bbb3 90%,
-        #81a2bb00 100%
-      )
-      0% 0% / 100% 100% repeat;
+    background: #81a2bb;
     min-width: 0;
     border-radius: 0px;
   }
@@ -3854,7 +3846,8 @@
     padding-right: 0px;
     font-size: 15px;
     font-weight: 500;
-    padding-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 49px;
   }
 }
 @media (max-width: 350px) {
@@ -4135,10 +4128,6 @@
   opacity: 0;
   min-width: 0;
   padding: 8px;
-}
-.goftino:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
 }
 .clarityRntComponent:global(.__wab_instance) {
   display: none;

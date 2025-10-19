@@ -5514,6 +5514,16 @@
           "id": "GvX80a_TJlhH",
           "name": "website.png",
           "filePath": "../public/plasmic/website_starter/images/websitePng.png"
+        },
+        {
+          "id": "-xkQH9bPiBIr",
+          "name": "image 179",
+          "filePath": "../public/plasmic/website_starter/images/image179.svg"
+        },
+        {
+          "id": "u3caGB6hFNdU",
+          "name": "image 180",
+          "filePath": "../public/plasmic/website_starter/images/image180.svg"
         }
       ],
       "indirect": false,

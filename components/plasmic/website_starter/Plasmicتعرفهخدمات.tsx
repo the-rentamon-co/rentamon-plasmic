@@ -66,7 +66,6 @@ import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
@@ -136,7 +135,6 @@ export type Plasmicتعرفهخدمات__OverridesType = {
   _4?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
   html?: Flex__<"div">;
-  goftino?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
@@ -2751,7 +2749,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 )}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "\u062a\u0627 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                  ? "\u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
                   : "\u062a\u0627\u0632\u0647 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0622\u0634\u0646\u0627 \u0634\u062f\u06cc\u061f\n\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f\u060c \u0628\u0631\u0627\u06cc \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647"}
               </div>
             </div>
@@ -2988,15 +2986,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               data-plasmic-override={overrides.html}
               className={classNames(projectcss.all, sty.html)}
             >
-              <Embed
-                data-plasmic-name={"goftino"}
-                data-plasmic-override={overrides.goftino}
-                className={classNames("__wab_instance", sty.goftino)}
-                code={
-                  '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
-                }
-              />
-
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}
@@ -3075,7 +3064,6 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "html",
-    "goftino",
     "clarityRntComponent",
     "faviconRntComponent",
     "rentamonFooter"
@@ -3167,7 +3155,6 @@ const PlasmicDescendants = {
     "_4",
     "_5",
     "html",
-    "goftino",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -3176,8 +3163,7 @@ const PlasmicDescendants = {
   _1: ["_1"],
   _4: ["_4"],
   _5: ["_5"],
-  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
-  goftino: ["goftino"],
+  html: ["html", "clarityRntComponent", "faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   rentamonFooter: ["rentamonFooter"]
@@ -3232,7 +3218,6 @@ type NodeDefaultElementType = {
   _4: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
   html: "div";
-  goftino: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   rentamonFooter: typeof RentamonFooter;
@@ -3346,7 +3331,6 @@ export const Plasmicتعرفهخدمات = Object.assign(
     _4: makeNodeComponent("_4"),
     _5: makeNodeComponent("_5"),
     html: makeNodeComponent("html"),
-    goftino: makeNodeComponent("goftino"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
