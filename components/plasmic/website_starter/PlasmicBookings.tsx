@@ -9112,7 +9112,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     "PUT",
-                                    "https://gateway.rentamon.com/webhook-test/bookings/status/cancelled",
+                                    "https://gateway.rentamon.com/webhook/bookings/status/cancelled",
                                     undefined,
                                     (() => {
                                       try {
