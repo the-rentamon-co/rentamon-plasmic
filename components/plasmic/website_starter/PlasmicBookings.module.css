@@ -4851,6 +4851,10 @@
 .fetchModal:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 20%;
+  right: 0;
 }
 .propertyWebsite:global(.__wab_instance) {
   max-width: 100%;

@@ -244,26 +244,6 @@
     grid-column: 4;
   }
 }
-.text__c1Aal {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  font-size: 17px;
-  font-weight: 500;
-  min-width: 0;
-}
-@media (max-width: 500px) {
-  .text__c1Aal {
-    font-size: 16px;
-  }
-}
-@media (max-width: 350px) {
-  .text__c1Aal {
-    font-size: 15px;
-  }
-}
 .text__o44RS {
   position: relative;
   width: 100%;
@@ -272,7 +252,7 @@
   text-align: center;
   font-size: 17px;
   font-weight: 400;
-  color: #858585;
+  color: #696969;
   margin-top: 12px;
   min-width: 0;
 }
@@ -858,7 +838,7 @@
   justify-content: space-between;
   align-items: center;
   background: none;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   cursor: default;
   filter: blur(0px);
@@ -910,6 +890,10 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
+}
+.jajigaSwitch:global(.__wab_instance) {
+  cursor: auto;
+  pointer-events: auto;
 }
 .mihmanshoContainer {
   display: flex;

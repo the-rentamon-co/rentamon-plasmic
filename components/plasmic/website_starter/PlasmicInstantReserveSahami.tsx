@@ -840,17 +840,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__c1Aal
-              )}
-            >
-              {
-                "\u062a\u063a\u06cc\u06cc\u0631 \u062d\u0627\u0644\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u0628\u0647 \u00ab\u0622\u0646\u06cc\u00bb "
-              }
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
                 sty.text__o44RS
               )}
             >
@@ -2228,7 +2217,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                           "__wab_instance",
                           sty.jajigaSwitch
                         )}
-                        disabled={true}
                         onCheckedChange={async (...eventArgs: any) => {
                           generateStateOnChangeProp($state, [
                             "jajigaSwitch",
@@ -2237,6 +2225,32 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
 
                           (async checked => {
                             const $steps = {};
+
+                            $steps["notAllowedToast"] = !$state.jajigaPermission
+                              .data.permission
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "error",
+                                      "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062a\u0648\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0642\u0627\u0628\u0644\u06cc\u062a \u0622\u0646\u06cc \u0634\u062f\u0646 \u0646\u062f\u0627\u0631\u0647",
+                                      "top-center",
+                                      6000
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["notAllowedToast"] != null &&
+                              typeof $steps["notAllowedToast"] === "object" &&
+                              typeof $steps["notAllowedToast"].then ===
+                                "function"
+                            ) {
+                              $steps["notAllowedToast"] =
+                                await $steps["notAllowedToast"];
+                            }
 
                             $steps["updateShabSwitchValue"] = true
                               ? (() => {
@@ -2378,7 +2392,9 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
 
                             $steps["updateIsJajigaSwitchChecked"] =
                               $steps.apiRequestForInstant.data.status ==
-                                "failed" || "not_allowed"
+                                "failed" ||
+                              $steps.apiRequestForInstant.data.status ==
+                                "not_allowed"
                                 ? (() => {
                                     const actionArgs = {
                                       variable: {
@@ -2501,33 +2517,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                             ) {
                               $steps["turnOffSuccessMessage"] =
                                 await $steps["turnOffSuccessMessage"];
-                            }
-
-                            $steps["notAllowedToast"] =
-                              $steps.apiRequestForInstant.data.status ==
-                              "not_allowed"
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "error",
-                                        "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0627\u062c\u0627\u0632\u0647 \u0622\u0646\u06cc \u06a9\u0631\u062f\u0646 \u0646\u0645\u06cc\u062f\u0647",
-                                        "top-center",
-                                        6000
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                            if (
-                              $steps["notAllowedToast"] != null &&
-                              typeof $steps["notAllowedToast"] === "object" &&
-                              typeof $steps["notAllowedToast"].then ===
-                                "function"
-                            ) {
-                              $steps["notAllowedToast"] =
-                                await $steps["notAllowedToast"];
                             }
                           }).apply(null, eventArgs);
                         }}
