@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { DataFetcher } from "@plasmicpkgs/plasmic-query";
@@ -88,6 +89,7 @@ export const PlasmicTestSearch__ArgProps = new Array<ArgPropType>();
 export type PlasmicTestSearch__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  datePicker?: Flex__<typeof DatePicker>;
   checkVpn?: Flex__<typeof SideEffect>;
   vpnModal?: Flex__<"div">;
   button?: Flex__<typeof Button>;
@@ -168,6 +170,30 @@ function PlasmicTestSearch__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest"
+      },
+      {
+        path: "datePicker.value",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "datePicker.values",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "datePicker.month",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "datePicker.year",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -280,6 +306,62 @@ function PlasmicTestSearch__RenderFunc(props: {
                 $refs["apiRequest"] = ref;
               }}
               url={"https://dev.rentamon.com/webhook/test-cors"}
+            />
+
+            <DatePicker
+              data-plasmic-name={"datePicker"}
+              data-plasmic-override={overrides.datePicker}
+              className={classNames("__wab_instance", sty.datePicker)}
+              customDayCell={false}
+              locale={"fa"}
+              onChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "datePicker",
+                  "value"
+                ]).apply(null, eventArgs);
+                generateStateOnChangeProp($state, [
+                  "datePicker",
+                  "values"
+                ]).apply(null, eventArgs);
+
+                (async date => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return console.log($state.datePicker.values);
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }).apply(null, eventArgs);
+              }}
+              onMonthChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "datePicker",
+                  "month"
+                ]).apply(null, eventArgs);
+              }}
+              onYearChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["datePicker", "year"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              value={generateStateValueProp($state, ["datePicker", "value"])}
+              values={generateStateValueProp($state, ["datePicker", "values"])}
             />
           </div>
           <SideEffect
@@ -597,12 +679,14 @@ const PlasmicDescendants = {
   root: [
     "root",
     "apiRequest",
+    "datePicker",
     "checkVpn",
     "vpnModal",
     "button",
     "httpRestApiFetcher"
   ],
   apiRequest: ["apiRequest"],
+  datePicker: ["datePicker"],
   checkVpn: ["checkVpn"],
   vpnModal: ["vpnModal", "button"],
   button: ["button"],
@@ -614,6 +698,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
+  datePicker: typeof DatePicker;
   checkVpn: typeof SideEffect;
   vpnModal: "div";
   button: typeof Button;
@@ -683,6 +768,7 @@ export const PlasmicTestSearch = Object.assign(
   {
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
+    datePicker: makeNodeComponent("datePicker"),
     checkVpn: makeNodeComponent("checkVpn"),
     vpnModal: makeNodeComponent("vpnModal"),
     button: makeNodeComponent("button"),

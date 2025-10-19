@@ -174,6 +174,7 @@ export type PlasmicBookings__OverridesType = {
   sideEffect?: Flex__<typeof SideEffect>;
   fetchModal?: Flex__<typeof AntdModal>;
   propertyWebsite?: Flex__<typeof ApiRequest>;
+  loading2?: Flex__<typeof PlasmicImg__>;
   platformName?: Flex__<"div">;
   true3?: Flex__<typeof PlasmicImg__>;
   _false?: Flex__<typeof PlasmicImg__>;
@@ -9627,349 +9628,396 @@ function PlasmicBookings__RenderFunc(props: {
             }}
           />
 
-          <AntdModal
-            data-plasmic-name={"fetchModal"}
-            data-plasmic-override={overrides.fetchModal}
-            className={classNames("__wab_instance", sty.fetchModal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              styleTokensClassNames
-            )}
-            hideFooter={true}
-            modalScopeClassName={sty["fetchModal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["fetchModal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["fetchModal", "open"])}
-            title={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xkZg
-                )}
-              >
-                {
-                  "\u0646\u062a\u06cc\u062c\u0647 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u0631\u0648\u0632 \u0647\u0627\u06cc \u0631\u0632\u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0627"
-                }
-              </div>
-            }
-            trigger={null}
-            width={"350"}
-          >
-            <ApiRequest
-              data-plasmic-name={"propertyWebsite"}
-              data-plasmic-override={overrides.propertyWebsite}
-              className={classNames("__wab_instance", sty.propertyWebsite)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "propertyWebsite",
-                  "error"
-                ]).apply(null, eventArgs);
+          <div className={classNames(projectcss.all, sty.freeBox__r6Zps)}>
+            <AntdModal
+              data-plasmic-name={"fetchModal"}
+              data-plasmic-override={overrides.fetchModal}
+              className={classNames("__wab_instance", sty.fetchModal)}
+              defaultStylesClassName={classNames(
+                projectcss.root_reset,
+                projectcss.plasmic_default_styles,
+                projectcss.plasmic_mixins,
+                styleTokensClassNames
+              )}
+              hideFooter={true}
+              modalScopeClassName={sty["fetchModal__modal"]}
+              onOpenChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["fetchModal", "open"]).apply(
+                  null,
+                  eventArgs
+                );
               }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "propertyWebsite",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "propertyWebsite",
-                  "data"
-                ]).apply(null, eventArgs);
-              }}
-              ref={ref => {
-                $refs["propertyWebsite"] = ref;
-              }}
-              url={(() => {
-                try {
-                  return `https://gateway.rentamon.com/webhook/proeprty/platform?booking_id=${$ctx.params.booking_id}`;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
+              open={generateStateValueProp($state, ["fetchModal", "open"])}
+              title={
+                <div className={classNames(projectcss.all, sty.freeBox__vz6L)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xkZg
+                    )}
+                  >
+                    {
+                      "\u0646\u062a\u06cc\u062c\u0647 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                    }
+                  </div>
+                </div>
+              }
+              trigger={null}
+              width={
+                hasVariant(globalVariants, "screen", "mobile") ? "340" : "350"
+              }
             >
-              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-                (() => {
+              <ApiRequest
+                data-plasmic-name={"propertyWebsite"}
+                data-plasmic-override={overrides.propertyWebsite}
+                className={classNames("__wab_instance", sty.propertyWebsite)}
+                errorDisplay={null}
+                loadingDisplay={
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__yIYyC)}
+                  >
+                    <PlasmicImg__
+                      data-plasmic-name={"loading2"}
+                      data-plasmic-override={overrides.loading2}
+                      alt={""}
+                      className={classNames(sty.loading2)}
+                      displayHeight={"49px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image140.gif",
+                        fullWidth: 500,
+                        fullHeight: 500,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                }
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "propertyWebsite",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "propertyWebsite",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "propertyWebsite",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["propertyWebsite"] = ref;
+                }}
+                url={(() => {
                   try {
-                    return (() => {
-                      const persianNames = {
-                        host: "میزبان",
-                        jabama: "جاباما",
-                        jajiga: "جاجیگا",
-                        shab: "شب",
-                        mizboon: "میزبون",
-                        otaghak: "اتاقک",
-                        homsa: "هومسا",
-                        mihmansho: "میهمانشو",
-                        divar: "دیوار",
-                        others: "سایر",
-                        offline: "حضوری",
-                        Returning_Guest: "قبلی",
-                        "Broker or Colleague": "واسطه یا همکار",
-                        social: "پیام‌رسان و شبکه‌اجتماعی",
-                        garmeja: "گرمه‌جا"
-                      };
-                      const englishWebsites =
-                        $state.propertyWebsite.data.website;
-                      const websitePairs = englishWebsites.map(siteName => {
-                        return {
-                          original: siteName,
-                          persian: persianNames[siteName] || siteName
-                        };
-                      });
-                      return websitePairs;
-                    })();
+                    return `https://gateway.rentamon.com/webhook/proeprty/platform?booking_id=${$ctx.params.booking_id}`;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return [];
+                      return undefined;
                     }
                     throw e;
                   }
-                })()
-              ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                const currentItem = __plasmic_item_0;
-                const currentIndex = __plasmic_idx_0;
-                return (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__tlFPv)}
-                    key={currentIndex}
-                  >
+                })()}
+              >
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return (() => {
+                        const persianNames = {
+                          host: "میزبان",
+                          jabama: "جاباما",
+                          jajiga: "جاجیگا",
+                          shab: "شب",
+                          mizboon: "میزبون",
+                          otaghak: "اتاقک",
+                          homsa: "هومسا",
+                          mihmansho: "میهمانشو",
+                          divar: "دیوار",
+                          others: "سایر",
+                          offline: "حضوری",
+                          Returning_Guest: "قبلی",
+                          "Broker or Colleague": "واسطه یا همکار",
+                          social: "پیام‌رسان و شبکه‌اجتماعی",
+                          garmeja: "گرمه‌جا"
+                        };
+                        const englishWebsites =
+                          $state.propertyWebsite.data.website;
+                        const websitePairs = englishWebsites.map(siteName => {
+                          return {
+                            original: siteName,
+                            persian: persianNames[siteName] || siteName
+                          };
+                        });
+                        return websitePairs;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___0Yq3L
-                      )}
+                      className={classNames(projectcss.all, sty.freeBox__tlFPv)}
+                      key={currentIndex}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox___4IwNh
+                          sty.freeBox___0Yq3L
                         )}
                       >
                         <div
-                          data-plasmic-name={"platformName"}
-                          data-plasmic-override={overrides.platformName}
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.platformName
+                            sty.freeBox___4IwNh
                           )}
                         >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return currentItem.persian;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "";
+                          <div
+                            data-plasmic-name={"platformName"}
+                            data-plasmic-override={overrides.platformName}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.platformName
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return currentItem.persian;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
                                 }
-                                throw e;
+                              })()}
+                            </React.Fragment>
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__uyRSz
+                          )}
+                        >
+                          {(() => {
+                            try {
+                              return (() => {
+                                const platformStatusInfo =
+                                  $state.unblockStatus[currentItem.original];
+                                return (
+                                  platformStatusInfo?.status_code === 200 &&
+                                  platformStatusInfo?.final_status === true
+                                );
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
                               }
-                            })()}
-                          </React.Fragment>
+                              throw e;
+                            }
+                          })() ? (
+                            <PlasmicImg__
+                              data-plasmic-name={"true3"}
+                              data-plasmic-override={overrides.true3}
+                              alt={""}
+                              className={classNames(sty.true3)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image179.svg",
+                                fullWidth: 26,
+                                fullHeight: 26,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          ) : null}
+                          {(() => {
+                            try {
+                              return (() => {
+                                const platformStatusInfo =
+                                  $state.unblockStatus[currentItem.original];
+                                const statusCode =
+                                  platformStatusInfo?.status_code;
+                                return (
+                                  (statusCode != null && statusCode !== 200) ||
+                                  platformStatusInfo?.final_status === false
+                                );
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <PlasmicImg__
+                              data-plasmic-name={"_false"}
+                              data-plasmic-override={overrides._false}
+                              alt={""}
+                              className={classNames(sty._false)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image180.svg",
+                                fullWidth: 26,
+                                fullHeight: 26,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          ) : null}
+                          {(() => {
+                            try {
+                              return (() => {
+                                const obj = $state.unblockStatus;
+                                return (
+                                  obj == null ||
+                                  (typeof obj === "object" &&
+                                    Object.keys(obj).length === 0)
+                                );
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <PlasmicImg__
+                              data-plasmic-name={"loading"}
+                              data-plasmic-override={overrides.loading}
+                              alt={""}
+                              className={classNames(sty.loading)}
+                              displayHeight={"30px"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={{
+                                src: "/plasmic/website_starter/images/image140.gif",
+                                fullWidth: 500,
+                                fullHeight: 500,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          ) : null}
                         </div>
                       </div>
+                    </div>
+                  );
+                })}
+                <div className={classNames(projectcss.all, sty.freeBox__z6N8L)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___1F9Fx)}
+                  >
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button___5El8G
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateFetchModalOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["fetchModal", "open"]
+                                },
+                                operation: 0
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateFetchModalOpen"] != null &&
+                          typeof $steps["updateFetchModalOpen"] === "object" &&
+                          typeof $steps["updateFetchModalOpen"].then ===
+                            "function"
+                        ) {
+                          $steps["updateFetchModalOpen"] =
+                            await $steps["updateFetchModalOpen"];
+                        }
+                      }}
+                    >
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__uyRSz
+                          projectcss.__wab_text,
+                          sty.text__ocCv
                         )}
                       >
-                        {(() => {
-                          try {
-                            return (() => {
-                              const platformStatusInfo =
-                                $state.unblockStatus[currentItem.original];
-                              return (
-                                platformStatusInfo?.status_code === 200 &&
-                                platformStatusInfo?.final_status === true
-                              );
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
-                          }
-                        })() ? (
-                          <PlasmicImg__
-                            data-plasmic-name={"true3"}
-                            data-plasmic-override={overrides.true3}
-                            alt={""}
-                            className={classNames(sty.true3)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            src={{
-                              src: "/plasmic/website_starter/images/image179.svg",
-                              fullWidth: 26,
-                              fullHeight: 26,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        ) : null}
-                        {(() => {
-                          try {
-                            return (() => {
-                              const platformStatusInfo =
-                                $state.unblockStatus[currentItem.original];
-                              const statusCode =
-                                platformStatusInfo?.status_code;
-                              return (
-                                (statusCode != null && statusCode !== 200) ||
-                                platformStatusInfo?.final_status === false
-                              );
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
-                          }
-                        })() ? (
-                          <PlasmicImg__
-                            data-plasmic-name={"_false"}
-                            data-plasmic-override={overrides._false}
-                            alt={""}
-                            className={classNames(sty._false)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            src={{
-                              src: "/plasmic/website_starter/images/image180.svg",
-                              fullWidth: 26,
-                              fullHeight: 26,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        ) : null}
-                        {(() => {
-                          try {
-                            return (() => {
-                              const obj = $state.unblockStatus;
-                              return (
-                                obj == null ||
-                                (typeof obj === "object" &&
-                                  Object.keys(obj).length === 0)
-                              );
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })() ? (
-                          <PlasmicImg__
-                            data-plasmic-name={"loading"}
-                            data-plasmic-override={overrides.loading}
-                            alt={""}
-                            className={classNames(sty.loading)}
-                            displayHeight={"30px"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            src={{
-                              src: "/plasmic/website_starter/images/image140.gif",
-                              fullWidth: 500,
-                              fullHeight: 500,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        ) : null}
+                        {"\u0628\u0627\u0634\u0647"}
                       </div>
-                    </div>
+                    </Button>
                   </div>
-                );
-              })}
-              <div className={classNames(projectcss.all, sty.freeBox___1F9Fx)}>
-                <Button
-                  className={classNames("__wab_instance", sty.button___5El8G)}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateFetchModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["fetchModal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateFetchModalOpen"] != null &&
-                      typeof $steps["updateFetchModalOpen"] === "object" &&
-                      typeof $steps["updateFetchModalOpen"].then === "function"
-                    ) {
-                      $steps["updateFetchModalOpen"] =
-                        await $steps["updateFetchModalOpen"];
-                    }
-                  }}
-                >
-                  {"\u0628\u0627\u0634\u0647"}
-                </Button>
-              </div>
-            </ApiRequest>
-          </AntdModal>
+                </div>
+              </ApiRequest>
+            </AntdModal>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -10056,6 +10104,7 @@ const PlasmicDescendants = {
     "sideEffect",
     "fetchModal",
     "propertyWebsite",
+    "loading2",
     "platformName",
     "true3",
     "_false",
@@ -10338,6 +10387,7 @@ const PlasmicDescendants = {
   fetchModal: [
     "fetchModal",
     "propertyWebsite",
+    "loading2",
     "platformName",
     "true3",
     "_false",
@@ -10345,11 +10395,13 @@ const PlasmicDescendants = {
   ],
   propertyWebsite: [
     "propertyWebsite",
+    "loading2",
     "platformName",
     "true3",
     "_false",
     "loading"
   ],
+  loading2: ["loading2"],
   platformName: ["platformName"],
   true3: ["true3"],
   _false: ["_false"],
@@ -10437,6 +10489,7 @@ type NodeDefaultElementType = {
   sideEffect: typeof SideEffect;
   fetchModal: typeof AntdModal;
   propertyWebsite: typeof ApiRequest;
+  loading2: typeof PlasmicImg__;
   platformName: "div";
   true3: typeof PlasmicImg__;
   _false: typeof PlasmicImg__;
@@ -10582,6 +10635,7 @@ export const PlasmicBookings = Object.assign(
     sideEffect: makeNodeComponent("sideEffect"),
     fetchModal: makeNodeComponent("fetchModal"),
     propertyWebsite: makeNodeComponent("propertyWebsite"),
+    loading2: makeNodeComponent("loading2"),
     platformName: makeNodeComponent("platformName"),
     true3: makeNodeComponent("true3"),
     _false: makeNodeComponent("_false"),
