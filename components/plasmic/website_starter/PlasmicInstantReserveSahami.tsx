@@ -515,6 +515,25 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "jajigaPermission"
+      },
+      {
+        path: "perJajiga",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.jajigaPermission.data.permission;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -2290,7 +2309,8 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                 await $steps["updateShabSwitchValue"];
                             }
 
-                            $steps["apiRequestForInstant"] = true
+                            $steps["apiRequestForInstant"] = $state
+                              .jajigaPermission.data.permission
                               ? (() => {
                                   const actionArgs = {
                                     args: [
@@ -2390,38 +2410,33 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                               $steps["log"] = await $steps["log"];
                             }
 
-                            $steps["updateIsJajigaSwitchChecked"] =
-                              $steps.apiRequestForInstant.data.status ==
-                                "failed" ||
-                              $steps.apiRequestForInstant.data.status ==
-                                "not_allowed"
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["isJajigaSwitchChecked"]
-                                      },
-                                      operation: 0,
-                                      value: ($state.isJajigaSwitchChecked =
-                                        !$state.isJajigaSwitchChecked)
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
+                            $steps["updateIsJajigaSwitchChecked"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["isJajigaSwitchChecked"]
+                                    },
+                                    operation: 0,
+                                    value: ($state.isJajigaSwitchChecked =
+                                      !$state.isJajigaSwitchChecked)
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
 
-                                      $stateSet(objRoot, variablePath, value);
-                                      return value;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
                               $steps["updateIsJajigaSwitchChecked"] != null &&
                               typeof $steps["updateIsJajigaSwitchChecked"] ===

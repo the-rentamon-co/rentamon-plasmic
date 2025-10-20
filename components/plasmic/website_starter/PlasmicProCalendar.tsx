@@ -94,7 +94,6 @@ export const PlasmicProCalendar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicProCalendar__OverridesType = {
   root?: Flex__<"div">;
-  sideEffect?: Flex__<typeof SideEffect>;
   header2?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
@@ -473,9 +472,7 @@ function PlasmicProCalendar__RenderFunc(props: {
           )}
         >
           <SideEffect
-            data-plasmic-name={"sideEffect"}
-            data-plasmic-override={overrides.sideEffect}
-            className={classNames("__wab_instance", sty.sideEffect)}
+            className={classNames("__wab_instance", sty.sideEffect__tZb7N)}
             onMount={async () => {
               const $steps = {};
 
@@ -791,27 +788,6 @@ function PlasmicProCalendar__RenderFunc(props: {
                   await $steps["updateStateVariable3"];
               }
 
-              $steps["runCode2"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "GET",
-                        "https://gateway.rentamon.com/webhook/check_reserve"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode2"] != null &&
-                typeof $steps["runCode2"] === "object" &&
-                typeof $steps["runCode2"].then === "function"
-              ) {
-                $steps["runCode2"] = await $steps["runCode2"];
-              }
-
               $steps["getFirstTimeCookie"] = true
                 ? (() => {
                     const actionArgs = {
@@ -879,6 +855,13 @@ function PlasmicProCalendar__RenderFunc(props: {
               ) {
                 $steps["runCode3"] = await $steps["runCode3"];
               }
+            }}
+          />
+
+          <SideEffect
+            className={classNames("__wab_instance", sty.sideEffect__rNtx8)}
+            onMount={async () => {
+              const $steps = {};
 
               $steps["invokeGlobalAction"] = true
                 ? (() => {
@@ -917,6 +900,28 @@ function PlasmicProCalendar__RenderFunc(props: {
               ) {
                 $steps["invokeGlobalAction"] =
                   await $steps["invokeGlobalAction"];
+              }
+
+              $steps["invokeGlobalAction2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/check_reserve"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction2"] != null &&
+                typeof $steps["invokeGlobalAction2"] === "object" &&
+                typeof $steps["invokeGlobalAction2"].then === "function"
+              ) {
+                $steps["invokeGlobalAction2"] =
+                  await $steps["invokeGlobalAction2"];
               }
             }}
           />
@@ -2777,7 +2782,6 @@ function PlasmicProCalendar__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "sideEffect",
     "header2",
     "sideBar2",
     "profile2",
@@ -2803,7 +2807,6 @@ const PlasmicDescendants = {
     "faviconRntComponent",
     "modal"
   ],
-  sideEffect: ["sideEffect"],
   header2: ["header2", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
@@ -2859,7 +2862,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  sideEffect: typeof SideEffect;
   header2: "div";
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
@@ -2948,7 +2950,6 @@ export const PlasmicProCalendar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    sideEffect: makeNodeComponent("sideEffect"),
     header2: makeNodeComponent("header2"),
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
