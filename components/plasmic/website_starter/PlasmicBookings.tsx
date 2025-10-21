@@ -9073,7 +9073,11 @@ function PlasmicBookings__RenderFunc(props: {
                               await $steps["closeCancelledModal"];
                           }
 
-                          $steps["openFetchModal"] = true
+                          $steps["openFetchModal"] = (
+                            $state.propertyWebsite.data.website.length == 0
+                              ? false
+                              : true
+                          )
                             ? (() => {
                                 const actionArgs = {
                                   variable: {
@@ -9106,6 +9110,31 @@ function PlasmicBookings__RenderFunc(props: {
                           ) {
                             $steps["openFetchModal"] =
                               await $steps["openFetchModal"];
+                          }
+
+                          $steps["showToastForLite"] =
+                            $state.propertyWebsite.data.website.length == 0
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      undefined,
+                                      "\u0631\u0632\u0631\u0648 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0644\u063a\u0648 \u0634\u062f",
+                                      "top-center"
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                          if (
+                            $steps["showToastForLite"] != null &&
+                            typeof $steps["showToastForLite"] === "object" &&
+                            typeof $steps["showToastForLite"].then ===
+                              "function"
+                          ) {
+                            $steps["showToastForLite"] =
+                              await $steps["showToastForLite"];
                           }
 
                           $steps["requestToUnblock"] = true
