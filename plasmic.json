@@ -3030,6 +3030,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/instant-2"
+        },
+        {
+          "id": "RJaZxeFbz5F5",
+          "name": "SplashWithVpnModal",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSplashWithVpnModal.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/splash-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSplashWithVpnModal.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/splash-2"
         }
       ],
       "icons": [

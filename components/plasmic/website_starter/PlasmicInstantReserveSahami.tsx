@@ -2734,15 +2734,13 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         {"\u0622\u0646\u06cc "}
                       </span>
                       <React.Fragment>
-                        {"\u0634\u062f\u0646 \u0627\u06cc\u0646 "}
+                        {"\u0634\u062f\u0646 \u062d\u0633\u0627\u0628\u062a"}
                       </React.Fragment>
                       <span
                         className={"plasmic_default__all plasmic_default__span"}
                         style={{ fontWeight: 700 }}
                       >
-                        {
-                          "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a "
-                        }
+                        {" "}
                       </span>
                       <React.Fragment>
                         {"\u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627 "}
