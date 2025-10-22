@@ -116,7 +116,7 @@ export type PlasmicInstantReserveSahami__OverridesType = {
   mihmanshoContainer?: Flex__<"div">;
   fragmentSwitch7?: Flex__<typeof Switch>;
   homsaContainer?: Flex__<"div">;
-  fragmentSwitch4?: Flex__<typeof Switch>;
+  homsaSwitch?: Flex__<typeof Switch>;
   jajigaContainer?: Flex__<"div">;
   jajigaSwitch?: Flex__<typeof Switch>;
   jajigaAlert?: Flex__<"div">;
@@ -277,12 +277,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
       },
       {
         path: "fragmentSwitch7.checked",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "fragmentSwitch4.checked",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
@@ -525,6 +519,46 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
           (() => {
             try {
               return $state.jajigaPermission.data.permission;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "isHomsaSwitchChecked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.instantProperty.data.some(
+                item => item.website_id === 8 && item.is_instant
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "homsaSwitch.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.isHomsaSwitchChecked;
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -2233,7 +2267,21 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                       />
                     </div>
                   ) : null}
-                  {false ? (
+                  {(() => {
+                    try {
+                      return $state.instantPropertyWebsite.data.some(
+                        item => item.website_id === "8"
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })() ? (
                     <div
                       data-plasmic-name={"homsaContainer"}
                       data-plasmic-override={overrides.homsaContainer}
@@ -2274,22 +2322,291 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         </div>
                       </div>
                       <Switch
-                        data-plasmic-name={"fragmentSwitch4"}
-                        data-plasmic-override={overrides.fragmentSwitch4}
+                        data-plasmic-name={"homsaSwitch"}
+                        data-plasmic-override={overrides.homsaSwitch}
                         checked={generateStateValueProp($state, [
-                          "fragmentSwitch4",
+                          "homsaSwitch",
                           "checked"
                         ])}
                         className={classNames(
                           "__wab_instance",
-                          sty.fragmentSwitch4
+                          sty.homsaSwitch
                         )}
-                        disabled={true}
+                        disabled={false}
                         onCheckedChange={async (...eventArgs: any) => {
                           generateStateOnChangeProp($state, [
-                            "fragmentSwitch4",
+                            "homsaSwitch",
                             "checked"
                           ]).apply(null, eventArgs);
+
+                          (async checked => {
+                            const $steps = {};
+
+                            $steps["updateShabSwitchValue"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["isHomsaSwitchChecked"]
+                                    },
+                                    operation: 0,
+                                    value: ($state.isHomsaSwitchChecked =
+                                      !$state.isHomsaSwitchChecked)
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateShabSwitchValue"] != null &&
+                              typeof $steps["updateShabSwitchValue"] ===
+                                "object" &&
+                              typeof $steps["updateShabSwitchValue"].then ===
+                                "function"
+                            ) {
+                              $steps["updateShabSwitchValue"] =
+                                await $steps["updateShabSwitchValue"];
+                            }
+
+                            $steps["apiRequestForInstant"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      "GET",
+                                      "https://gateway.rentamon.com/webhook/instant/Initiator",
+                                      (() => {
+                                        try {
+                                          return $state.homsaSwitch.checked
+                                            ? {
+                                                is_instant: "true",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).id,
+                                                website_id: "8"
+                                              }
+                                            : {
+                                                is_instant: "false",
+                                                property_id:
+                                                  $state.properties.data.find(
+                                                    property =>
+                                                      property.property_name ===
+                                                      $state.selectProperty
+                                                        .value
+                                                  ).id,
+                                                website_id: "8"
+                                              };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
+                                      undefined,
+                                      (() => {
+                                        try {
+                                          return {
+                                            Authorization:
+                                              "Bearer " + $state.auth
+                                          };
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })()
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.apiRequest"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["apiRequestForInstant"] != null &&
+                              typeof $steps["apiRequestForInstant"] ===
+                                "object" &&
+                              typeof $steps["apiRequestForInstant"].then ===
+                                "function"
+                            ) {
+                              $steps["apiRequestForInstant"] =
+                                await $steps["apiRequestForInstant"];
+                            }
+
+                            $steps["log"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return console.log(
+                                        $steps.apiRequestForInstant
+                                      );
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["log"] != null &&
+                              typeof $steps["log"] === "object" &&
+                              typeof $steps["log"].then === "function"
+                            ) {
+                              $steps["log"] = await $steps["log"];
+                            }
+
+                            $steps["updateIsHomsaSwitchChecked"] =
+                              $steps.apiRequestForInstant.data.status ==
+                              "failed"
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["isHomsaSwitchChecked"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.isHomsaSwitchChecked =
+                                        !$state.isHomsaSwitchChecked)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["updateIsHomsaSwitchChecked"] != null &&
+                              typeof $steps["updateIsHomsaSwitchChecked"] ===
+                                "object" &&
+                              typeof $steps["updateIsHomsaSwitchChecked"]
+                                .then === "function"
+                            ) {
+                              $steps["updateIsHomsaSwitchChecked"] =
+                                await $steps["updateIsHomsaSwitchChecked"];
+                            }
+
+                            $steps["failedToast"] =
+                              $steps.apiRequestForInstant.data.status ==
+                              "failed"
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u06cc\u0647 \u0645\u0634\u06a9\u0644\u06cc \u0645\u0648\u0642\u0639 \u0622\u0646\u06cc \u06a9\u0631\u062f\u0646 \u0647\u0648\u0645\u0633\u0627 \u067e\u06cc\u0634 \u0627\u0648\u0645\u062f",
+                                        "top-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["failedToast"] != null &&
+                              typeof $steps["failedToast"] === "object" &&
+                              typeof $steps["failedToast"].then === "function"
+                            ) {
+                              $steps["failedToast"] =
+                                await $steps["failedToast"];
+                            }
+
+                            $steps["turnOnSuccessToast"] =
+                              $steps.apiRequestForInstant.data.status ==
+                                "succeeded" &&
+                              $steps.apiRequestForInstant.data.is_instant ==
+                                true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0647\u0648\u0645\u0633\u0627 \u0641\u0639\u0627\u0644 \u0634\u062f",
+                                        "top-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["turnOnSuccessToast"] != null &&
+                              typeof $steps["turnOnSuccessToast"] ===
+                                "object" &&
+                              typeof $steps["turnOnSuccessToast"].then ===
+                                "function"
+                            ) {
+                              $steps["turnOnSuccessToast"] =
+                                await $steps["turnOnSuccessToast"];
+                            }
+
+                            $steps["turnOffSuccessMessage"] =
+                              $steps.apiRequestForInstant.data.status ==
+                                "succeeded" &&
+                              $steps.apiRequestForInstant.data.is_instant ==
+                                false
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0647\u0648\u0645\u0633\u0627 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0634\u062f",
+                                        "top-center",
+                                        6000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["turnOffSuccessMessage"] != null &&
+                              typeof $steps["turnOffSuccessMessage"] ===
+                                "object" &&
+                              typeof $steps["turnOffSuccessMessage"].then ===
+                                "function"
+                            ) {
+                              $steps["turnOffSuccessMessage"] =
+                                await $steps["turnOffSuccessMessage"];
+                            }
+                          }).apply(null, eventArgs);
                         }}
                       />
                     </div>
@@ -2694,66 +3011,33 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                 >
                   {hasVariant(globalVariants, "screen", "mobile") ? (
                     <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0634\u0645\u0627 \u0646\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u062d\u0631\u0645\u0627\u0646\u0647 \u0633\u062a \u0648 \u0641\u0642\u0637 \u0628\u0631\u0627\u06cc "
-                        }
-                      </React.Fragment>
                       <span
                         className={"plasmic_default__all plasmic_default__span"}
                         style={{ fontWeight: 700 }}
                       >
                         {
-                          "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645"
-                        }
-                      </span>
-                      <React.Fragment>{" \u0648 "}</React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          "\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648"
+                          "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0627\u062c\u0627\u0632\u0647 \u0646\u0645\u06cc\u200c\u062f\u0647\u00a0 "
                         }
                       </span>
                       <React.Fragment>
                         {
-                          " \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."
+                          "\u062d\u0633\u0627\u0628\u062a \u0622\u0646\u06cc \u0634\u0647!\n\u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\u0648 \u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
                         }
                       </React.Fragment>
                     </React.Fragment>
                   ) : (
                     <React.Fragment>
-                      <React.Fragment>
-                        {"\u0627\u0645\u06a9\u0627\u0646 "}
-                      </React.Fragment>
                       <span
                         className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
+                        style={{ fontWeight: 500 }}
                       >
-                        {"\u0622\u0646\u06cc "}
-                      </span>
-                      <React.Fragment>
-                        {"\u0634\u062f\u0646 \u062d\u0633\u0627\u0628\u062a"}
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {" "}
-                      </span>
-                      <React.Fragment>
-                        {"\u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627 "}
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {"\u063a\u06cc\u0631\u0641\u0639\u0627\u0644\u0647"}
+                        {
+                          "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0627\u062c\u0627\u0632\u0647 \u0646\u0645\u06cc\u200c\u062f\u0647"
+                        }
                       </span>
                       <React.Fragment>
                         {
-                          ".\n\u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\u0648 \u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
+                          " \u062d\u0633\u0627\u0628\u062a \u0622\u0646\u06cc \u0634\u0647!\n\u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\u0648 \u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
                         }
                       </React.Fragment>
                     </React.Fragment>
@@ -3185,7 +3469,7 @@ const PlasmicDescendants = {
     "mihmanshoContainer",
     "fragmentSwitch7",
     "homsaContainer",
-    "fragmentSwitch4",
+    "homsaSwitch",
     "jajigaContainer",
     "jajigaSwitch",
     "jajigaAlert",
@@ -3229,7 +3513,7 @@ const PlasmicDescendants = {
     "mihmanshoContainer",
     "fragmentSwitch7",
     "homsaContainer",
-    "fragmentSwitch4",
+    "homsaSwitch",
     "jajigaContainer",
     "jajigaSwitch",
     "jajigaAlert"
@@ -3246,7 +3530,7 @@ const PlasmicDescendants = {
     "mihmanshoContainer",
     "fragmentSwitch7",
     "homsaContainer",
-    "fragmentSwitch4",
+    "homsaSwitch",
     "jajigaContainer",
     "jajigaSwitch"
   ],
@@ -3259,8 +3543,8 @@ const PlasmicDescendants = {
   jabamaSwitch: ["jabamaSwitch"],
   mihmanshoContainer: ["mihmanshoContainer", "fragmentSwitch7"],
   fragmentSwitch7: ["fragmentSwitch7"],
-  homsaContainer: ["homsaContainer", "fragmentSwitch4"],
-  fragmentSwitch4: ["fragmentSwitch4"],
+  homsaContainer: ["homsaContainer", "homsaSwitch"],
+  homsaSwitch: ["homsaSwitch"],
   jajigaContainer: ["jajigaContainer", "jajigaSwitch"],
   jajigaSwitch: ["jajigaSwitch"],
   jajigaAlert: ["jajigaAlert"],
@@ -3302,7 +3586,7 @@ type NodeDefaultElementType = {
   mihmanshoContainer: "div";
   fragmentSwitch7: typeof Switch;
   homsaContainer: "div";
-  fragmentSwitch4: typeof Switch;
+  homsaSwitch: typeof Switch;
   jajigaContainer: "div";
   jajigaSwitch: typeof Switch;
   jajigaAlert: "div";
@@ -3402,7 +3686,7 @@ export const PlasmicInstantReserveSahami = Object.assign(
     mihmanshoContainer: makeNodeComponent("mihmanshoContainer"),
     fragmentSwitch7: makeNodeComponent("fragmentSwitch7"),
     homsaContainer: makeNodeComponent("homsaContainer"),
-    fragmentSwitch4: makeNodeComponent("fragmentSwitch4"),
+    homsaSwitch: makeNodeComponent("homsaSwitch"),
     jajigaContainer: makeNodeComponent("jajigaContainer"),
     jajigaSwitch: makeNodeComponent("jajigaSwitch"),
     jajigaAlert: makeNodeComponent("jajigaAlert"),

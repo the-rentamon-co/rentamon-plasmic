@@ -510,13 +510,13 @@
 .mainSection {
   display: grid;
   position: relative;
-  align-content: flex-start;
+  align-content: center;
   justify-items: center;
   width: 100%;
   height: auto;
   max-width: 387px;
   background: #fcfcfc;
-  min-height: 70vh;
+  min-height: 100%;
   min-width: 0;
   grid-template-columns:
     var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
@@ -526,7 +526,7 @@
     )
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
   border-radius: 30px;
-  padding: 0px;
+  padding: 0px 0px 32px;
   margin: 0px;
   border-width: 2px;
 }
@@ -536,6 +536,13 @@
 @media (max-width: 1200px) {
   .mainSection > * {
     grid-column: 4;
+  }
+}
+@media (max-width: 500px) {
+  .mainSection {
+    padding-bottom: 36px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -912,8 +919,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  opacity: 0.5;
-  cursor: not-allowed;
+  opacity: 1;
+  cursor: auto;
   padding: 8px 0px 8px 8px;
 }
 .freeBox__lIt1N {
@@ -963,7 +970,7 @@
   text-decoration-line: none;
   text-overflow: clip;
 }
-.fragmentSwitch4:global(.__wab_instance) {
+.homsaSwitch:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   margin-right: 0px;
@@ -987,7 +994,7 @@
   background: none;
   opacity: 1;
   pointer-events: none;
-  cursor: default;
+  cursor: auto;
   filter: blur(0px);
   padding: 8px 0px 8px 8px;
 }
@@ -1048,15 +1055,16 @@
   flex-direction: row;
   position: relative;
   align-items: center;
-  justify-content: flex-end;
-  width: 100%;
+  justify-content: center;
+  width: 310px;
   height: auto;
   max-width: 100%;
-  background: var(--token-O4qz_eXOc86K);
-  min-width: 0;
+  background: #ff4e4e26;
+  justify-self: center;
   border-radius: 15px;
   padding: 8px;
-  border: 1px solid var(--token-nCyS8fyroW2i);
+  margin: 0px;
+  border: 1px solid #ff4e4e;
 }
 @media (max-width: 1200px) {
   .jajigaAlert {
@@ -1068,9 +1076,8 @@
   .jajigaAlert {
     animation: none;
     padding-left: 4px;
-    width: 100%;
+    width: 310px;
     height: 100%;
-    min-width: 0;
     min-height: 0;
   }
 }
@@ -1088,9 +1095,10 @@
   height: auto;
   max-width: 100%;
   font-size: 14px;
-  text-align: center;
+  text-align: right;
   font-weight: 300;
   line-height: 2;
+  margin-left: 0px;
   min-width: 0;
 }
 @media (max-width: 1200px) {

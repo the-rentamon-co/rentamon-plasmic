@@ -1160,7 +1160,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px 14px;
+  padding: 20px 14px;
 }
 @media (max-width: 500px) {
   .freeBox__em2Wb {

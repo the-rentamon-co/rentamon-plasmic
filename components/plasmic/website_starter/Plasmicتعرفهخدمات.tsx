@@ -2708,27 +2708,34 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["runCode"] = true
+                    $steps["goToHttpsRentamonComSplashSrcWeb"] = true
                       ? (() => {
                           const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                return (window.location.href =
-                                  "https://sso.rentamon.com/");
-                              })();
-                            }
+                            destination: "https://rentamon.com/splash?src=web"
                           };
-                          return (({ customFunction }) => {
-                            return customFunction();
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
                           })?.apply(null, [actionArgs]);
                         })()
                       : undefined;
                     if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
+                      $steps["goToHttpsRentamonComSplashSrcWeb"] != null &&
+                      typeof $steps["goToHttpsRentamonComSplashSrcWeb"] ===
+                        "object" &&
+                      typeof $steps["goToHttpsRentamonComSplashSrcWeb"].then ===
+                        "function"
                     ) {
-                      $steps["runCode"] = await $steps["runCode"];
+                      $steps["goToHttpsRentamonComSplashSrcWeb"] =
+                        await $steps["goToHttpsRentamonComSplashSrcWeb"];
                     }
                   }}
                 >
