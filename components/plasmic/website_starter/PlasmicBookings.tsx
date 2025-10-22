@@ -180,7 +180,7 @@ export type PlasmicBookings__OverridesType = {
   _false?: Flex__<typeof PlasmicImg__>;
   loading?: Flex__<typeof PlasmicImg__>;
   loading2?: Flex__<typeof PlasmicImg__>;
-  modal?: Flex__<typeof AntdModal>;
+  actions?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultBookingsProps {}
@@ -539,7 +539,7 @@ function PlasmicBookings__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
-        path: "modal.open",
+        path: "actions.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
@@ -7990,7 +7990,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 const actionArgs = {
                                   variable: {
                                     objRoot: $state,
-                                    variablePath: ["modal", "open"]
+                                    variablePath: ["actions", "open"]
                                   },
                                   operation: 0,
                                   value: true
@@ -9205,7 +9205,7 @@ function PlasmicBookings__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return `در صورت تایید، این روزها برای واحد «${$state.booking.data.property_name}» «خالی» می‌شن.`;
+                              return `در صورت تایید، این بازه برای واحد «${$state.booking.data.property_name}» «خالی» می‌شه.`;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -9231,19 +9231,20 @@ function PlasmicBookings__RenderFunc(props: {
                         onClick={async event => {
                           const $steps = {};
 
-                          $steps["updateFront"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return ($state.booking.data.status =
-                                      "cancelled");
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
+                          $steps["updateFront"] =
+                            $state.unblockFor == "cancel"
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return ($state.booking.data.status =
+                                        "cancelled");
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                           if (
                             $steps["updateFront"] != null &&
                             typeof $steps["updateFront"] === "object" &&
@@ -10323,9 +10324,9 @@ function PlasmicBookings__RenderFunc(props: {
             </AntdModal>
           </div>
           <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
+            data-plasmic-name={"actions"}
+            data-plasmic-override={overrides.actions}
+            className={classNames("__wab_instance", sty.actions)}
             defaultStylesClassName={classNames(
               projectcss.root_reset,
               projectcss.plasmic_default_styles,
@@ -10333,26 +10334,85 @@ function PlasmicBookings__RenderFunc(props: {
               styleTokensClassNames
             )}
             hideFooter={true}
-            modalScopeClassName={sty["modal__modal"]}
+            modalScopeClassName={sty["actions__modal"]}
             onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
+              generateStateOnChangeProp($state, ["actions", "open"]).apply(
                 null,
                 eventArgs
               );
             }}
-            open={generateStateValueProp($state, ["modal", "open"])}
+            open={generateStateValueProp($state, ["actions", "open"])}
             title={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__b0Jx0
-                )}
-              >
-                {
-                  "\u0686\u0631\u0627 \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u00ab\u062e\u0627\u0644\u06cc\u00bb \u06a9\u0646\u06cc\u061f"
-                }
-              </div>
+              <React.Fragment>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__ynwJr)}
+                  displayHeight={"13px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"13px"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["actions", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalOpen"] != null &&
+                      typeof $steps["updateModalOpen"] === "object" &&
+                      typeof $steps["updateModalOpen"].then === "function"
+                    ) {
+                      $steps["updateModalOpen"] =
+                        await $steps["updateModalOpen"];
+                    }
+                  }}
+                  src={{
+                    src: "/plasmic/website_starter/images/image181.svg",
+                    fullWidth: 17,
+                    fullHeight: 17,
+                    aspectRatio: undefined
+                  }}
+                />
+
+                <div className={classNames(projectcss.all, sty.freeBox__uz7Px)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__b0Jx0
+                    )}
+                  >
+                    {
+                      "\u0686\u0631\u0627 \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u00ab\u062e\u0627\u0644\u06cc\u00bb \u06a9\u0646\u06cc\u061f"
+                    }
+                  </div>
+                </div>
+              </React.Fragment>
             }
             trigger={null}
             width={"320px"}
@@ -10367,7 +10427,7 @@ function PlasmicBookings__RenderFunc(props: {
                       const actionArgs = {
                         variable: {
                           objRoot: $state,
-                          variablePath: ["modal", "open"]
+                          variablePath: ["actions", "open"]
                         },
                         operation: 0
                       };
@@ -10530,7 +10590,7 @@ function PlasmicBookings__RenderFunc(props: {
                       const actionArgs = {
                         variable: {
                           objRoot: $state,
-                          variablePath: ["modal", "open"]
+                          variablePath: ["actions", "open"]
                         },
                         operation: 0
                       };
@@ -10700,7 +10760,7 @@ const PlasmicDescendants = {
     "_false",
     "loading",
     "loading2",
-    "modal"
+    "actions"
   ],
   detail2: [
     "detail2",
@@ -10985,7 +11045,7 @@ const PlasmicDescendants = {
   _false: ["_false"],
   loading: ["loading"],
   loading2: ["loading2"],
-  modal: ["modal"]
+  actions: ["actions"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -11073,7 +11133,7 @@ type NodeDefaultElementType = {
   _false: typeof PlasmicImg__;
   loading: typeof PlasmicImg__;
   loading2: typeof PlasmicImg__;
-  modal: typeof AntdModal;
+  actions: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -11219,7 +11279,7 @@ export const PlasmicBookings = Object.assign(
     _false: makeNodeComponent("_false"),
     loading: makeNodeComponent("loading"),
     loading2: makeNodeComponent("loading2"),
-    modal: makeNodeComponent("modal"),
+    actions: makeNodeComponent("actions"),
 
     // Metadata about props expected for PlasmicBookings
     internalVariantProps: PlasmicBookings__VariantProps,

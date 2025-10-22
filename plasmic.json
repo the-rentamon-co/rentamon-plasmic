@@ -5538,6 +5538,11 @@
           "id": "u3caGB6hFNdU",
           "name": "image 180",
           "filePath": "../public/plasmic/website_starter/images/image180.svg"
+        },
+        {
+          "id": "dYMTwlwntSlr",
+          "name": "image 181",
+          "filePath": "../public/plasmic/website_starter/images/image181.svg"
         }
       ],
       "indirect": false,
