@@ -3246,6 +3246,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  order: 5;
   min-width: 0;
   padding: 8px;
 }
@@ -3386,6 +3387,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  order: 5;
   min-width: 0;
   padding: 8px;
 }

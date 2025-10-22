@@ -6470,8 +6470,9 @@ function PlasmicBookings__RenderFunc(props: {
                     {(() => {
                       try {
                         return (
-                          !$state.booking.data.feature_handled.manual_booking &&
-                          $state.reservationsMode
+                          // !$state.booking.data.feature_handled.manual_booking && $state.reservationsMode
+
+                          false
                         );
                       } catch (e) {
                         if (
