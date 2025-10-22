@@ -4418,7 +4418,7 @@
   object-fit: cover;
   align-self: flex-end;
 }
-.svg {
+.svg__pvE7G {
   object-fit: cover;
   max-width: 100%;
   color: #acacac;
@@ -5091,32 +5091,9 @@
   max-width: 100%;
   object-fit: cover;
 }
-.freeBox__cg6Ph {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  border-bottom-style: dashed;
-  border-bottom-width: 1px;
-  min-width: 0;
-  padding: 8px;
-}
-.text__nMdn6 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 17px;
-  font-weight: 600;
-  text-align: right;
-  min-width: 0;
-}
 .freeBox__sdBm {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -5124,6 +5101,8 @@
   align-items: center;
   border-bottom-style: dashed;
   border-bottom-width: 1px;
+  cursor: pointer;
+  column-gap: 10px;
   min-width: 0;
   padding: 8px;
 }
@@ -5132,8 +5111,66 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   text-align: right;
+  min-width: 0;
+}
+.svg__owjx3 {
+  animation: none;
+  object-fit: cover;
+  max-width: 100%;
+  color: #acacac;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+@media (max-width: 500px) {
+  .svg__owjx3 {
+    animation: none;
+  }
+}
+.freeBox__cg6Ph {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  column-gap: 10px;
+  min-width: 0;
+  padding: 10px 8px 8px;
+}
+.text__nMdn6 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: right;
+  min-width: 0;
+}
+.svg__j4B8P {
+  animation: none;
+  object-fit: cover;
+  max-width: 100%;
+  color: #acacac;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+@media (max-width: 500px) {
+  .svg__j4B8P {
+    animation: none;
+  }
+}
+.text__b0Jx0 {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background: var(--token-O4qz_eXOc86K);
   min-width: 0;
 }

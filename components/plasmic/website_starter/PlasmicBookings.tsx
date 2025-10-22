@@ -83,6 +83,8 @@ import Icon83Icon from "./icons/PlasmicIcon__Icon83"; // plasmic-import: gfE8Zaa
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
+import Icon25Icon from "./icons/PlasmicIcon__Icon25"; // plasmic-import: JGzy20bJEzcD/icon
+import Icon24Icon from "./icons/PlasmicIcon__Icon24"; // plasmic-import: zCddQXMUCxH0/icon
 
 createPlasmicElementProxy;
 
@@ -154,7 +156,6 @@ export type PlasmicBookings__OverridesType = {
   guestReferrer?: Flex__<typeof Select>;
   count2?: Flex__<"div">;
   guestCount?: Flex__<typeof AntdInputNumber>;
-  svg?: Flex__<"svg">;
   p3?: Flex__<"div">;
   amount2?: Flex__<typeof Input>;
   amount?: Flex__<typeof AntdInputNumber>;
@@ -542,6 +543,12 @@ function PlasmicBookings__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "unblockFor",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -7873,6 +7880,42 @@ function PlasmicBookings__RenderFunc(props: {
                             $steps["checkIfReserveBeCancelShowToast"] =
                               await $steps["checkIfReserveBeCancelShowToast"];
                           }
+
+                          $steps["updateUnblockFor"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["unblockFor"]
+                                  },
+                                  operation: 0,
+                                  value: "cancel"
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateUnblockFor"] != null &&
+                            typeof $steps["updateUnblockFor"] === "object" &&
+                            typeof $steps["updateUnblockFor"].then ===
+                              "function"
+                          ) {
+                            $steps["updateUnblockFor"] =
+                              await $steps["updateUnblockFor"];
+                          }
                         }}
                       >
                         <PlasmicImg__
@@ -7900,7 +7943,7 @@ function PlasmicBookings__RenderFunc(props: {
                             sty.text__nfqW0
                           )}
                         >
-                          {"\u0644\u063a\u0648 \u0631\u0632\u0631\u0648"}
+                          {"\u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646"}
                         </div>
                       </div>
                     ) : null}
@@ -8374,9 +8417,10 @@ function PlasmicBookings__RenderFunc(props: {
                           />
 
                           <Icon83Icon
-                            data-plasmic-name={"svg"}
-                            data-plasmic-override={overrides.svg}
-                            className={classNames(projectcss.all, sty.svg)}
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg__pvE7G
+                            )}
                             role={"img"}
                           />
                         </div>
@@ -9088,25 +9132,51 @@ function PlasmicBookings__RenderFunc(props: {
                                     .toString()
                                     .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
                                 }
-                                function formatJalaliDate(isoDateStr) {
+                                function formatJalaliDateVerbose(isoDateStr) {
+                                  const weekdays = [
+                                    "یکشنبه",
+                                    "دوشنبه",
+                                    "سه شنبه",
+                                    "چهارشنبه",
+                                    "پنجشنبه",
+                                    "جمعه",
+                                    "شنبه"
+                                  ];
+
+                                  const jalaliMonths = [
+                                    "",
+                                    "فروردین",
+                                    "اردیبهشت",
+                                    "خرداد",
+                                    "تیر",
+                                    "مرداد",
+                                    "شهریور",
+                                    "مهر",
+                                    "آبان",
+                                    "آذر",
+                                    "دی",
+                                    "بهمن",
+                                    "اسفند"
+                                  ];
+
                                   const date = new Date(isoDateStr);
+                                  const dayName = weekdays[date.getDay()];
                                   const [jy, jm, jd] = gregorianToJalali(
                                     date.getFullYear(),
                                     date.getMonth() + 1,
                                     date.getDate()
                                   );
-                                  const pad = n =>
-                                    formatPersianNumber(
-                                      n.toString().padStart(2, "0")
-                                    );
-                                  return `${pad(jy)}/${pad(jm)}/${pad(jd)}`;
+                                  const monthName = jalaliMonths[jm];
+                                  const dayNumber = formatPersianNumber(jd);
+                                  return `${dayName} ${dayNumber} ${monthName}`;
                                 }
                                 const checkIn = $state.booking.data.check_in;
                                 const checkOut = $state.booking.data.check_out;
-                                const checkInJalali = formatJalaliDate(checkIn);
+                                const checkInJalali =
+                                  formatJalaliDateVerbose(checkIn);
                                 const checkOutJalali =
-                                  formatJalaliDate(checkOut);
-                                const message = `مطمئنی می‌خوای رزرو  ${checkInJalali}  تا  ${checkOutJalali} رو لغو کنی؟`;
+                                  formatJalaliDateVerbose(checkOut);
+                                const message = `مطمئنی می‌خوای رزرو ${checkInJalali} تا${checkOutJalali} رو خالی کنی؟`;
                                 return message;
                               })();
                             } catch (e) {
@@ -9135,7 +9205,7 @@ function PlasmicBookings__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return `در صورت لغو، این روزها برای واحد «${$state.booking.data.property_name}» خالی می‌شن.`;
+                              return `در صورت تایید، این روزها برای واحد «${$state.booking.data.property_name}» «خالی» می‌شن.`;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -9289,7 +9359,26 @@ function PlasmicBookings__RenderFunc(props: {
                                 const actionArgs = {
                                   args: [
                                     "PUT",
-                                    "https://gateway.rentamon.com/webhook/bookings/status/cancelled",
+                                    (() => {
+                                      try {
+                                        return (() => {
+                                          if ($state.unblockFor == "cancel") {
+                                            return "https://gateway.rentamon.com/webhook/bookings/status/cancelled";
+                                          } else {
+                                            return "https://gateway.rentamon.com/webhook/bookings/early-checkout";
+                                          }
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })(),
                                     undefined,
                                     (() => {
                                       try {
@@ -9336,11 +9425,8 @@ function PlasmicBookings__RenderFunc(props: {
                                         $steps.requestToUnblock.data.status ==
                                         true
                                       ) {
-                                        $state.unblockStatus =
-                                          $steps.requestToUnblock.data.data;
-                                        return console.log(
-                                          $state.unblockStatus
-                                        );
+                                        return ($state.unblockStatus =
+                                          $steps.requestToUnblock.data.data);
                                       } else {
                                         return ($state.unblockStatus =
                                           $steps.requestToUnblock.data.status);
@@ -10255,23 +10341,133 @@ function PlasmicBookings__RenderFunc(props: {
               );
             }}
             open={generateStateValueProp($state, ["modal", "open"])}
-            title={null}
-            trigger={null}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__cg6Ph)}>
+            title={
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__nMdn6
+                  sty.text__b0Jx0
                 )}
               >
                 {
-                  "\u0644\u063a\u0648 \u06a9\u0631\u062f\u0646 \u0631\u0632\u0631\u0648"
+                  "\u0686\u0631\u0627 \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u00ab\u062e\u0627\u0644\u06cc\u00bb \u06a9\u0646\u06cc\u061f"
                 }
               </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__sdBm)}>
+            }
+            trigger={null}
+            width={"320px"}
+          >
+            <div
+              className={classNames(projectcss.all, sty.freeBox__sdBm)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["modal", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateModalOpen"] != null &&
+                  typeof $steps["updateModalOpen"] === "object" &&
+                  typeof $steps["updateModalOpen"].then === "function"
+                ) {
+                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                }
+
+                $steps["updateUnblockFor"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["unblockFor"]
+                        },
+                        operation: 0,
+                        value: (() => {
+                          return "early_check_out";
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateUnblockFor"] != null &&
+                  typeof $steps["updateUnblockFor"] === "object" &&
+                  typeof $steps["updateUnblockFor"].then === "function"
+                ) {
+                  $steps["updateUnblockFor"] = await $steps["updateUnblockFor"];
+                }
+
+                $steps["updateCancelManualReserveOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["cancelManualReserve", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateCancelManualReserveOpen"] != null &&
+                  typeof $steps["updateCancelManualReserveOpen"] === "object" &&
+                  typeof $steps["updateCancelManualReserveOpen"].then ===
+                    "function"
+                ) {
+                  $steps["updateCancelManualReserveOpen"] =
+                    await $steps["updateCancelManualReserveOpen"];
+                }
+              }}
+            >
               <div
                 className={classNames(
                   projectcss.all,
@@ -10280,9 +10476,138 @@ function PlasmicBookings__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0644\u063a\u0648 \u06a9\u0631\u062f\u0646 \u0631\u0632\u0631\u0648"
+                  "\u0645\u0633\u0627\u0641\u0631 \u0632\u0648\u062f\u062a\u0631 \u0645\u06cc\u200c\u0631\u0647"
                 }
               </div>
+              <Icon25Icon
+                className={classNames(projectcss.all, sty.svg__owjx3)}
+                role={"img"}
+              />
+            </div>
+            <div
+              className={classNames(projectcss.all, sty.freeBox__cg6Ph)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateCancelManualReserveOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["cancelManualReserve", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateCancelManualReserveOpen"] != null &&
+                  typeof $steps["updateCancelManualReserveOpen"] === "object" &&
+                  typeof $steps["updateCancelManualReserveOpen"].then ===
+                    "function"
+                ) {
+                  $steps["updateCancelManualReserveOpen"] =
+                    await $steps["updateCancelManualReserveOpen"];
+                }
+
+                $steps["updateModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["modal", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateModalOpen"] != null &&
+                  typeof $steps["updateModalOpen"] === "object" &&
+                  typeof $steps["updateModalOpen"].then === "function"
+                ) {
+                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                }
+
+                $steps["updateUnblockFor"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["unblockFor"]
+                        },
+                        operation: 0,
+                        value: (() => {
+                          return "cancel";
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateUnblockFor"] != null &&
+                  typeof $steps["updateUnblockFor"] === "object" &&
+                  typeof $steps["updateUnblockFor"].then === "function"
+                ) {
+                  $steps["updateUnblockFor"] = await $steps["updateUnblockFor"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__nMdn6
+                )}
+              >
+                {"\u0631\u0632\u0631\u0648 \u0644\u063a\u0648 \u0634\u062f"}
+              </div>
+              <Icon24Icon
+                className={classNames(projectcss.all, sty.svg__j4B8P)}
+                role={"img"}
+              />
             </div>
           </AntdModal>
         </div>
@@ -10351,7 +10676,6 @@ const PlasmicDescendants = {
     "guestReferrer",
     "count2",
     "guestCount",
-    "svg",
     "p3",
     "amount2",
     "amount",
@@ -10450,7 +10774,6 @@ const PlasmicDescendants = {
     "guestReferrer",
     "count2",
     "guestCount",
-    "svg",
     "p3",
     "amount2",
     "amount",
@@ -10589,7 +10912,6 @@ const PlasmicDescendants = {
     "guestReferrer",
     "count2",
     "guestCount",
-    "svg",
     "p3",
     "amount2",
     "amount",
@@ -10610,7 +10932,6 @@ const PlasmicDescendants = {
     "guestReferrer",
     "count2",
     "guestCount",
-    "svg",
     "p3",
     "amount2",
     "amount",
@@ -10627,14 +10948,12 @@ const PlasmicDescendants = {
     "referrer",
     "guestReferrer",
     "count2",
-    "guestCount",
-    "svg"
+    "guestCount"
   ],
   referrer: ["referrer", "guestReferrer"],
   guestReferrer: ["guestReferrer"],
-  count2: ["count2", "guestCount", "svg"],
+  count2: ["count2", "guestCount"],
   guestCount: ["guestCount"],
-  svg: ["svg"],
   p3: ["p3", "amount2", "amount"],
   amount2: ["amount2"],
   amount: ["amount"],
@@ -10730,7 +11049,6 @@ type NodeDefaultElementType = {
   guestReferrer: typeof Select;
   count2: "div";
   guestCount: typeof AntdInputNumber;
-  svg: "svg";
   p3: "div";
   amount2: typeof Input;
   amount: typeof AntdInputNumber;
@@ -10877,7 +11195,6 @@ export const PlasmicBookings = Object.assign(
     guestReferrer: makeNodeComponent("guestReferrer"),
     count2: makeNodeComponent("count2"),
     guestCount: makeNodeComponent("guestCount"),
-    svg: makeNodeComponent("svg"),
     p3: makeNodeComponent("p3"),
     amount2: makeNodeComponent("amount2"),
     amount: makeNodeComponent("amount"),
