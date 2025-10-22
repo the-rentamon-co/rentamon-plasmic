@@ -757,6 +757,11 @@
 .پر > * {
   grid-column: 4;
 }
+@media (max-width: 500px) {
+  .پر > * {
+    grid-column: 4;
+  }
+}
 .freeBox__p8HqH {
   display: flex;
   flex-direction: row;

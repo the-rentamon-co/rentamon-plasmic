@@ -85,6 +85,7 @@ import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHR
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 import Icon25Icon from "./icons/PlasmicIcon__Icon25"; // plasmic-import: JGzy20bJEzcD/icon
 import Icon24Icon from "./icons/PlasmicIcon__Icon24"; // plasmic-import: zCddQXMUCxH0/icon
+import Icon23Icon from "./icons/PlasmicIcon__Icon23"; // plasmic-import: TftNRT31euw0/icon
 
 createPlasmicElementProxy;
 
@@ -181,6 +182,7 @@ export type PlasmicBookings__OverridesType = {
   loading?: Flex__<typeof PlasmicImg__>;
   loading2?: Flex__<typeof PlasmicImg__>;
   actions?: Flex__<typeof AntdModal>;
+  ثبتتغییرات?: Flex__<"div">;
 };
 
 export interface DefaultBookingsProps {}
@@ -10343,21 +10345,13 @@ function PlasmicBookings__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["actions", "open"])}
             title={
-              <React.Fragment>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__ynwJr)}
-                  displayHeight={"13px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"13px"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
+              <div className={classNames(projectcss.all, sty.freeBox__td0R5)}>
+                <Icon23Icon
+                  className={classNames(projectcss.all, sty.svg__sEf3W)}
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["updateModalOpen"] = true
+                    $steps["updateActionsOpen"] = true
                       ? (() => {
                           const actionArgs = {
                             variable: {
@@ -10383,40 +10377,40 @@ function PlasmicBookings__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["updateModalOpen"] != null &&
-                      typeof $steps["updateModalOpen"] === "object" &&
-                      typeof $steps["updateModalOpen"].then === "function"
+                      $steps["updateActionsOpen"] != null &&
+                      typeof $steps["updateActionsOpen"] === "object" &&
+                      typeof $steps["updateActionsOpen"].then === "function"
                     ) {
-                      $steps["updateModalOpen"] =
-                        await $steps["updateModalOpen"];
+                      $steps["updateActionsOpen"] =
+                        await $steps["updateActionsOpen"];
                     }
                   }}
-                  src={{
-                    src: "/plasmic/website_starter/images/image181.svg",
-                    fullWidth: 17,
-                    fullHeight: 17,
-                    aspectRatio: undefined
-                  }}
+                  role={"img"}
                 />
-
-                <div className={classNames(projectcss.all, sty.freeBox__uz7Px)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__b0Jx0
-                    )}
-                  >
-                    {
-                      "\u0686\u0631\u0627 \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u00ab\u062e\u0627\u0644\u06cc\u00bb \u06a9\u0646\u06cc\u061f"
-                    }
-                  </div>
-                </div>
-              </React.Fragment>
+              </div>
             }
             trigger={null}
             width={"320px"}
           >
+            <div
+              data-plasmic-name={
+                "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+              }
+              data-plasmic-override={overrides.ثبتتغییرات}
+              className={classNames(projectcss.all, sty.ثبتتغییرات)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__b0Jx0
+                )}
+              >
+                {
+                  "\u0686\u0631\u0627 \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u00ab\u062e\u0627\u0644\u06cc\u00bb \u06a9\u0646\u06cc\u061f"
+                }
+              </div>
+            </div>
             <div
               className={classNames(projectcss.all, sty.freeBox__sdBm)}
               onClick={async event => {
@@ -10760,7 +10754,8 @@ const PlasmicDescendants = {
     "_false",
     "loading",
     "loading2",
-    "actions"
+    "actions",
+    "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
   ],
   detail2: [
     "detail2",
@@ -11045,7 +11040,11 @@ const PlasmicDescendants = {
   _false: ["_false"],
   loading: ["loading"],
   loading2: ["loading2"],
-  actions: ["actions"]
+  actions: [
+    "actions",
+    "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+  ],
+  ثبتتغییرات: ["\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -11134,6 +11133,7 @@ type NodeDefaultElementType = {
   loading: typeof PlasmicImg__;
   loading2: typeof PlasmicImg__;
   actions: typeof AntdModal;
+  ثبتتغییرات: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -11280,6 +11280,9 @@ export const PlasmicBookings = Object.assign(
     loading: makeNodeComponent("loading"),
     loading2: makeNodeComponent("loading2"),
     actions: makeNodeComponent("actions"),
+    ثبتتغییرات: makeNodeComponent(
+      "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+    ),
 
     // Metadata about props expected for PlasmicBookings
     internalVariantProps: PlasmicBookings__VariantProps,
