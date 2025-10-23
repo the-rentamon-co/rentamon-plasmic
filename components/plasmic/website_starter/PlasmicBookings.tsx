@@ -11928,121 +11928,13 @@ function PlasmicBookings__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return (() => {
-                                function gregorianToJalali(gy, gm, gd) {
-                                  const g_d_m = [
-                                    0,
-                                    31,
-                                    (gy % 4 === 0 && gy % 100 !== 0) ||
-                                    gy % 400 === 0
-                                      ? 29
-                                      : 28,
-                                    31,
-                                    30,
-                                    31,
-                                    30,
-                                    31,
-                                    31,
-                                    30,
-                                    31,
-                                    30,
-                                    31
-                                  ];
-
-                                  let jy = gy <= 1600 ? 0 : 979;
-                                  gy -= gy <= 1600 ? 621 : 1600;
-                                  let gy2 = gm > 2 ? gy + 1 : gy;
-                                  let days =
-                                    365 * gy +
-                                    Math.floor((gy2 + 3) / 4) -
-                                    Math.floor((gy2 + 99) / 100) +
-                                    Math.floor((gy2 + 399) / 400);
-                                  for (let i = 0; i < gm; ++i) days += g_d_m[i];
-                                  days += gd - 1;
-                                  let j_day_no = days - 79;
-                                  let j_np = Math.floor(j_day_no / 12053);
-                                  j_day_no %= 12053;
-                                  jy +=
-                                    33 * j_np + 4 * Math.floor(j_day_no / 1461);
-                                  j_day_no %= 1461;
-                                  if (j_day_no >= 366) {
-                                    jy += Math.floor((j_day_no - 1) / 365);
-                                    j_day_no = (j_day_no - 1) % 365;
-                                  }
-                                  const jm_list = [
-                                    0, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30,
-                                    30, 29
-                                  ];
-
-                                  let jm, jd;
-                                  for (
-                                    jm = 1;
-                                    jm <= 12 && j_day_no >= jm_list[jm];
-                                    ++jm
-                                  ) {
-                                    j_day_no -= jm_list[jm];
-                                  }
-                                  jd = j_day_no + 1;
-                                  return [jy, jm, jd];
-                                }
-                                function formatPersianNumber(num) {
-                                  return num
-                                    .toString()
-                                    .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
-                                }
-                                function formatJalaliDateVerbose(isoDateStr) {
-                                  const weekdays = [
-                                    "یکشنبه",
-                                    "دوشنبه",
-                                    "سه شنبه",
-                                    "چهارشنبه",
-                                    "پنجشنبه",
-                                    "جمعه",
-                                    "شنبه"
-                                  ];
-
-                                  const jalaliMonths = [
-                                    "",
-                                    "فروردین",
-                                    "اردیبهشت",
-                                    "خرداد",
-                                    "تیر",
-                                    "مرداد",
-                                    "شهریور",
-                                    "مهر",
-                                    "آبان",
-                                    "آذر",
-                                    "دی",
-                                    "بهمن",
-                                    "اسفند"
-                                  ];
-
-                                  const date = new Date(isoDateStr);
-                                  const dayName = weekdays[date.getDay()];
-                                  const [jy, jm, jd] = gregorianToJalali(
-                                    date.getFullYear(),
-                                    date.getMonth() + 1,
-                                    date.getDate()
-                                  );
-                                  const monthName = jalaliMonths[jm];
-                                  const dayNumber = formatPersianNumber(jd);
-                                  return `${dayName} ${dayNumber} ${monthName}`;
-                                }
-                                const checkIn = $state.booking.data.check_in;
-                                const checkOut = $state.booking.data.check_out;
-                                const checkInJalali =
-                                  formatJalaliDateVerbose(checkIn);
-                                const checkOutJalali =
-                                  formatJalaliDateVerbose(checkOut);
-                                const message = `مطمئنی می‌خوای رزرو ${checkInJalali} تا${checkOutJalali} رو خالی کنی؟`;
-                                return message;
-                              })();
+                              return `مطمئنی می‌خوای این رزرو رو ${$state.unblockFor == "cancel" ? "لغو" : "اتمام"} کنی؟`;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return " ";
+                                return "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0644\u063a\u0648 \u06a9\u0646\u06cc\u061f";
                               }
                               throw e;
                             }
@@ -12051,30 +11943,213 @@ function PlasmicBookings__RenderFunc(props: {
                       </div>
                     </div>
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__k4D2)}
+                      className={classNames(projectcss.all, sty.freeBox__pgagI)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__hZiqB
+                          sty.freeBox___0YD8T
                         )}
                       >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return `در صورت تایید، این بازه برای واحد «${$state.booking.data.property_name}» «خالی» می‌شه.`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0628\u0631\u0627\u06cc \u0648\u0627\u062d\u062f \u00ab\u0648\u06cc\u0644\u0627\u06cc\u06cc \u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0628\u0647\u0627\u0631\u0627\u0646\u00bb \u062e\u0627\u0644\u06cc \u0645\u06cc\u200c\u0634\u0646.";
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__e00Ew
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return (() => {
+                                  function gregorianToJalali(gy, gm, gd) {
+                                    const g_d_m = [
+                                      0,
+                                      31,
+                                      (gy % 4 === 0 && gy % 100 !== 0) ||
+                                      gy % 400 === 0
+                                        ? 29
+                                        : 28,
+                                      31,
+                                      30,
+                                      31,
+                                      30,
+                                      31,
+                                      31,
+                                      30,
+                                      31,
+                                      30,
+                                      31
+                                    ];
+
+                                    let jy = gy <= 1600 ? 0 : 979;
+                                    gy -= gy <= 1600 ? 621 : 1600;
+                                    let gy2 = gm > 2 ? gy + 1 : gy;
+                                    let days =
+                                      365 * gy +
+                                      Math.floor((gy2 + 3) / 4) -
+                                      Math.floor((gy2 + 99) / 100) +
+                                      Math.floor((gy2 + 399) / 400);
+                                    for (let i = 0; i < gm; ++i)
+                                      days += g_d_m[i];
+                                    days += gd - 1;
+                                    let j_day_no = days - 79;
+                                    let j_np = Math.floor(j_day_no / 12053);
+                                    j_day_no %= 12053;
+                                    jy +=
+                                      33 * j_np +
+                                      4 * Math.floor(j_day_no / 1461);
+                                    j_day_no %= 1461;
+                                    if (j_day_no >= 366) {
+                                      jy += Math.floor((j_day_no - 1) / 365);
+                                      j_day_no = (j_day_no - 1) % 365;
+                                    }
+                                    const jm_list = [
+                                      0, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30,
+                                      30, 29
+                                    ];
+
+                                    let jm, jd;
+                                    for (
+                                      jm = 1;
+                                      jm <= 12 && j_day_no >= jm_list[jm];
+                                      ++jm
+                                    ) {
+                                      j_day_no -= jm_list[jm];
+                                    }
+                                    jd = j_day_no + 1;
+                                    return [jy, jm, jd];
+                                  }
+                                  function formatPersianNumber(num) {
+                                    return num
+                                      .toString()
+                                      .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+                                  }
+                                  function formatJalaliDateVerbose(isoDateStr) {
+                                    const weekdays = [
+                                      "یکشنبه",
+                                      "دوشنبه",
+                                      "سه شنبه",
+                                      "چهارشنبه",
+                                      "پنجشنبه",
+                                      "جمعه",
+                                      "شنبه"
+                                    ];
+
+                                    const jalaliMonths = [
+                                      "",
+                                      "فروردین",
+                                      "اردیبهشت",
+                                      "خرداد",
+                                      "تیر",
+                                      "مرداد",
+                                      "شهریور",
+                                      "مهر",
+                                      "آبان",
+                                      "آذر",
+                                      "دی",
+                                      "بهمن",
+                                      "اسفند"
+                                    ];
+
+                                    const date = new Date(isoDateStr);
+                                    const dayName = weekdays[date.getDay()];
+                                    const [jy, jm, jd] = gregorianToJalali(
+                                      date.getFullYear(),
+                                      date.getMonth() + 1,
+                                      date.getDate()
+                                    );
+                                    const monthName = jalaliMonths[jm];
+                                    const dayNumber = formatPersianNumber(jd);
+                                    return `${dayName} ${dayNumber} ${monthName}`;
+                                  }
+                                  const checkIn = $state.booking.data.check_in;
+                                  const checkOut =
+                                    $state.booking.data.check_out;
+                                  const checkInJalali =
+                                    formatJalaliDateVerbose(checkIn);
+                                  const checkOutJalali =
+                                    formatJalaliDateVerbose(checkOut);
+                                  const message = ` ${checkInJalali} تا ${checkOutJalali}`;
+                                  return message;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0628\u0631\u0627\u06cc \u0648\u0627\u062d\u062f \u00ab\u0648\u06cc\u0644\u0627\u06cc\u06cc \u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0628\u0647\u0627\u0631\u0627\u0646\u00bb \u062e\u0627\u0644\u06cc \u0645\u06cc\u200c\u0634\u0646.";
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
+                            })()}
+                          </React.Fragment>
+                        </div>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__fbdwe)}
+                          displayHeight={"25px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image183.svg",
+                            fullWidth: 24,
+                            fullHeight: 24,
+                            aspectRatio: 1
+                          }}
+                        />
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__zYtJu
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__z8VTp)}
+                          displayHeight={"27px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image184.svg",
+                            fullWidth: 24,
+                            fullHeight: 24,
+                            aspectRatio: 1
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__hpOqY
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return `اقامتگاه ${$state.booking.data.property_name}`;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0628\u0631\u0627\u06cc \u0648\u0627\u062d\u062f \u00ab\u0648\u06cc\u0644\u0627\u06cc\u06cc \u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0628\u0647\u0627\u0631\u0627\u0646\u00bb \u062e\u0627\u0644\u06cc \u0645\u06cc\u200c\u0634\u0646.";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -12317,7 +12392,7 @@ function PlasmicBookings__RenderFunc(props: {
                             sty.text__rC0Mx
                           )}
                         >
-                          {"\u062a\u0627\u06cc\u06cc\u062f"}
+                          {"\u062e\u0627\u0644\u06cc \u06a9\u0646"}
                         </div>
                       </Button>
                       <AntdButton
@@ -12380,7 +12455,7 @@ function PlasmicBookings__RenderFunc(props: {
                             sty.text__iwgQk
                           )}
                         >
-                          {"\u0646\u0647"}
+                          {"\u0646\u0647!"}
                         </div>
                       </AntdButton>
                     </div>
