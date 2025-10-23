@@ -5543,6 +5543,26 @@
           "id": "dYMTwlwntSlr",
           "name": "image 181",
           "filePath": "../public/plasmic/website_starter/images/image181.svg"
+        },
+        {
+          "id": "DJM5eYhQPW9D",
+          "name": "calendar-xmark-alt-svgrepo-com.svg",
+          "filePath": "../public/plasmic/website_starter/images/calendarXmarkAltSvgrepoComSvg.svg"
+        },
+        {
+          "id": "0YxKY7nO-lNm",
+          "name": "image 182",
+          "filePath": "../public/plasmic/website_starter/images/image182.svg"
+        },
+        {
+          "id": "J_iFqhlH3dHI",
+          "name": "image 183",
+          "filePath": "../public/plasmic/website_starter/images/image183.svg"
+        },
+        {
+          "id": "yWelSgFQAm9E",
+          "name": "image 184",
+          "filePath": "../public/plasmic/website_starter/images/image184.svg"
         }
       ],
       "indirect": false,

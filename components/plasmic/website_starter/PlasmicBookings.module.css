@@ -3290,13 +3290,63 @@
   min-width: 0;
   padding: 8px;
 }
-.text__rBmA5 {
+.freeBox__nUk {
+  display: flex;
+  flex-direction: row-reverse;
   position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+  min-width: 0;
+  padding: 8px;
+}
+.text__rBmA5 {
   width: 100%;
   height: auto;
   max-width: 100%;
   font-size: 16px;
   font-weight: 400;
+  min-width: 0;
+}
+.img__dmGv {
+  object-fit: cover;
+  max-width: 100%;
+  height: 25px;
+}
+.img__dmGv > picture > img {
+  object-fit: cover;
+}
+.freeBox__pNIx {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  min-width: 0;
+  padding: 8px;
+}
+.img__p2Q0N {
+  object-fit: cover;
+  max-width: 100%;
+  height: 27px;
+}
+.img__p2Q0N > picture > img {
+  object-fit: cover;
+}
+.text__hasNb {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 7px;
   min-width: 0;
 }
 .freeBox__a4Js6 {
@@ -3810,7 +3860,7 @@
   font-weight: 500;
   min-width: 0;
 }
-.freeBox__gvdF0 {
+.freeBox___5WxlU {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -3821,13 +3871,63 @@
   min-width: 0;
   padding: 8px;
 }
-.text__vVsQb {
+.freeBox__adcQw {
+  display: flex;
+  flex-direction: row-reverse;
   position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+  min-width: 0;
+  padding: 8px;
+}
+.text__xf9Hl {
   width: 100%;
   height: auto;
   max-width: 100%;
   font-size: 16px;
   font-weight: 400;
+  min-width: 0;
+}
+.img__u90Jz {
+  object-fit: cover;
+  max-width: 100%;
+  height: 25px;
+}
+.img__u90Jz > picture > img {
+  object-fit: cover;
+}
+.freeBox__jM9VH {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  min-width: 0;
+  padding: 8px;
+}
+.img__xsxPc {
+  object-fit: cover;
+  max-width: 100%;
+  height: 27px;
+}
+.img__xsxPc > picture > img {
+  object-fit: cover;
+}
+.text__s9Pb0 {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 7px;
   min-width: 0;
 }
 .freeBox__zKx9E {
