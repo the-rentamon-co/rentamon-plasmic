@@ -118,6 +118,7 @@ export type PlasmicProCalendar__OverridesType = {
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   modal?: Flex__<typeof AntdModal>;
+  instantModal?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultProCalendarProps {}
@@ -388,6 +389,12 @@ function PlasmicProCalendar__RenderFunc(props: {
       },
       {
         path: "reservationsMode",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "instantModal.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
@@ -2773,6 +2780,100 @@ function PlasmicProCalendar__RenderFunc(props: {
               </div>
             </div>
           </AntdModal>
+          <AntdModal
+            data-plasmic-name={"instantModal"}
+            data-plasmic-override={overrides.instantModal}
+            className={classNames("__wab_instance", sty.instantModal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              styleTokensClassNames
+            )}
+            hideFooter={true}
+            maskClosable={false}
+            modalScopeClassName={sty["instantModal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["instantModal", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["instantModal", "open"])}
+            title={
+              <div className={classNames(projectcss.all, sty.freeBox__pTw)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__y6Xif
+                  )}
+                >
+                  {
+                    "\u26a1\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0641\u0639\u0627\u0644 \u0634\u062f!"
+                  }
+                </div>
+              </div>
+            }
+            trigger={null}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___2PlJk)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ugSRp
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u062f\u06cc\u06af\u0647 \u0644\u0627\u0632\u0645 \u0646\u06cc\u0633\u062a \u0647\u0631\u0645\u0627\u0647 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0627\u062e\u0644 \u0633\u0627\u06cc\u062a \u0647\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0646\u06cc.\n \u06cc\u06a9 \u0628\u0627\u0631 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648\u0634\u0646 \u06a9\u0646 \u0648 "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 500 }}
+                  >
+                    {
+                      "\u062a\u0627 \u0648\u0642\u062a\u06cc \u062e\u0627\u0645\u0648\u0634 \u0646\u06a9\u0631\u062f\u06cc"
+                    }
+                  </span>
+                  <React.Fragment>
+                    {
+                      " \u062e\u06cc\u0627\u0644\u062a \u0631\u0627\u062d\u062a \u0628\u0627\u0634\u0647 \u06a9\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u062a \u0622\u0646\u06cc \u067e\u0631\u062f\u0627\u0632\u0634 \u0645\u06cc\u0634\u0646."
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox___3GMf8)}>
+              <div className={classNames(projectcss.all, sty.freeBox__ofqfP)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mwR
+                  )}
+                >
+                  {
+                    "\u0645\u06cc\u200c\u062e\u0648\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u0645 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u0645"
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox___7HnvS)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__g9Ksf
+                  )}
+                >
+                  {"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
+                </div>
+              </div>
+            </div>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -2805,7 +2906,8 @@ const PlasmicDescendants = {
     "navbarRntFooter",
     "clarityRntComponent",
     "faviconRntComponent",
-    "modal"
+    "modal",
+    "instantModal"
   ],
   header2: ["header2", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
@@ -2855,7 +2957,8 @@ const PlasmicDescendants = {
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  modal: ["modal"]
+  modal: ["modal"],
+  instantModal: ["instantModal"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2886,6 +2989,7 @@ type NodeDefaultElementType = {
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   modal: typeof AntdModal;
+  instantModal: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2974,6 +3078,7 @@ export const PlasmicProCalendar = Object.assign(
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     modal: makeNodeComponent("modal"),
+    instantModal: makeNodeComponent("instantModal"),
 
     // Metadata about props expected for PlasmicProCalendar
     internalVariantProps: PlasmicProCalendar__VariantProps,

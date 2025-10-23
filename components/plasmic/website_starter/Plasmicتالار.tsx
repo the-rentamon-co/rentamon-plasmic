@@ -1620,10 +1620,22 @@ function Plasmicتالار__RenderFunc(props: {
                 <div
                   data-plasmic-name={"mid4"}
                   data-plasmic-override={overrides.mid4}
-                  className={classNames(projectcss.all, sty.mid4)}
+                  className={classNames(
+                    projectcss.all,
+                    sty.mid4,
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "blinking"
+                      : undefined
+                  )}
                 >
                   <div
-                    className={classNames(projectcss.all, sty.freeBox___9SPft)}
+                    className={classNames(
+                      projectcss.all,
+                      sty.freeBox___9SPft,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? ``
+                        : undefined
+                    )}
                   >
                     <div
                       className={classNames(

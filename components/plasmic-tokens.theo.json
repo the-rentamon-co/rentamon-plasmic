@@ -2761,6 +2761,16 @@
       }
     },
     {
+      "name": "Unnamed Style Token 19",
+      "type": "color",
+      "value": "#FFFFFF",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "yVKhDsWBR9K7"
+      }
+    },
+    {
       "name": "Unnamed Style Token 2",
       "type": "spacing",
       "value": "1px",
