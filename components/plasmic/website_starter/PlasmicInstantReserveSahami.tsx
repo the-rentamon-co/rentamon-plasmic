@@ -127,6 +127,8 @@ export type PlasmicInstantReserveSahami__OverridesType = {
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   jabamaModal?: Flex__<typeof AntdModal>;
   active4?: Flex__<"div">;
+  notificationModal?: Flex__<typeof AntdModal>;
+  active5?: Flex__<"div">;
 };
 
 export interface DefaultInstantReserveSahamiProps {}
@@ -602,6 +604,35 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "notificationModal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+              ? false
+              : (() => {
+                  try {
+                    return $state.showNewFeatureBadge;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })()
+      },
+      {
+        path: "showNewFeatureBadge",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -3567,6 +3598,38 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               ) {
                 $steps["refreshToken"] = await $steps["refreshToken"];
               }
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          return (function () {
+                            function getCookie(name) {
+                              const value = `; ${document.cookie}`;
+                              const parts = value.split(`; ${name}=`);
+                              if (parts.length === 2)
+                                return parts.pop().split(";").shift();
+                              return null;
+                            }
+                            const seen = getCookie("featureBadgeSeen");
+                            $state.showNewFeatureBadge = seen !== "true";
+                          })();
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
             }}
           />
 
@@ -3709,7 +3772,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\u0648 \u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
+                  "\ud83d\udcc5 \u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u2705 \u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\ud83d\udcac \u0648 \u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
                 }
               </div>
             </div>
@@ -3807,6 +3870,169 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               </div>
             </div>
           </AntdModal>
+          <AntdModal
+            data-plasmic-name={"notificationModal"}
+            data-plasmic-override={overrides.notificationModal}
+            className={classNames("__wab_instance", sty.notificationModal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              styleTokensClassNames
+            )}
+            hideFooter={true}
+            maskClosable={false}
+            modalContentClassName={classNames({
+              [sty["pcls_I52sdjfXyY6E"]]: true
+            })}
+            modalScopeClassName={sty["notificationModal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "notificationModal",
+                "open"
+              ]).apply(null, eventArgs);
+            }}
+            open={generateStateValueProp($state, ["notificationModal", "open"])}
+            title={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___7JlJ
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 600 }}
+                  >
+                    {
+                      "\u26a1\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0641\u0639\u0627\u0644 \u0634\u062f!"
+                    }
+                  </span>
+                </React.Fragment>
+              </div>
+            }
+            trigger={null}
+            width={
+              hasVariant(globalVariants, "screen", "mobile") ? "80%" : undefined
+            }
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__a7Wi1)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__vlR79
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u062f\u06cc\u06af\u0647 \u0644\u0627\u0632\u0645 \u0646\u06cc\u0633\u062a \u0647\u0631\u0645\u0627\u0647 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0627\u062e\u0644 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0646\u06cc.\n \u06cc\u06a9 \u0628\u0627\u0631 \u062f\u0627\u062e\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648\u0634\u0646 \u06a9\u0646 \u0648 \u00a0\u062a\u0627 "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {
+                      "\u0648\u0642\u062a\u06cc \u062e\u0627\u0645\u0648\u0634 \u0646\u06a9\u0631\u062f\u06cc"
+                    }
+                  </span>
+                  <React.Fragment>
+                    {
+                      "\u00a0 \u062e\u06cc\u0627\u0644\u062a \u0631\u0627\u062d\u062a \u0628\u0627\u0634\u0647 \u06a9\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\u062a \u0622\u0646\u06cc \u067e\u0631\u062f\u0627\u0632\u0634 \u0645\u06cc\u200c\u0634\u0646."
+                    }
+                  </React.Fragment>
+                </React.Fragment>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__cZJsO)}>
+              <div
+                data-plasmic-name={"active5"}
+                data-plasmic-override={overrides.active5}
+                className={classNames(projectcss.all, sty.active5)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cB7TD
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateJabamaModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["notificationModal", "open"]
+                            },
+                            operation: 0,
+                            value: false
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateJabamaModalOpen"] != null &&
+                      typeof $steps["updateJabamaModalOpen"] === "object" &&
+                      typeof $steps["updateJabamaModalOpen"].then === "function"
+                    ) {
+                      $steps["updateJabamaModalOpen"] =
+                        await $steps["updateJabamaModalOpen"];
+                    }
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return (function () {
+                                  const date = new Date();
+                                  date.setTime(
+                                    date.getTime() + 3 * 24 * 60 * 60 * 1000
+                                  );
+                                  document.cookie = `FeatureBadgeSeen=true; expires=${date.toUTCString()}; path=/`;
+                                  $state.showNewFeatureBadge = false;
+                                })();
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  {"\u0628\u0627\u0634\u0647"}
+                </div>
+              </div>
+            </div>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -3850,7 +4076,9 @@ const PlasmicDescendants = {
     "clarityRntComponent",
     "faviconRntComponent",
     "jabamaModal",
-    "active4"
+    "active4",
+    "notificationModal",
+    "active5"
   ],
   instantProperty: ["instantProperty"],
   jajigaPermission: ["jajigaPermission"],
@@ -3923,7 +4151,9 @@ const PlasmicDescendants = {
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   jabamaModal: ["jabamaModal", "active4"],
-  active4: ["active4"]
+  active4: ["active4"],
+  notificationModal: ["notificationModal", "active5"],
+  active5: ["active5"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -3965,6 +4195,8 @@ type NodeDefaultElementType = {
   faviconRntComponent: typeof FaviconRntComponent;
   jabamaModal: typeof AntdModal;
   active4: "div";
+  notificationModal: typeof AntdModal;
+  active5: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -4064,6 +4296,8 @@ export const PlasmicInstantReserveSahami = Object.assign(
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     jabamaModal: makeNodeComponent("jabamaModal"),
     active4: makeNodeComponent("active4"),
+    notificationModal: makeNodeComponent("notificationModal"),
+    active5: makeNodeComponent("active5"),
 
     // Metadata about props expected for PlasmicInstantReserveSahami
     internalVariantProps: PlasmicInstantReserveSahami__VariantProps,
