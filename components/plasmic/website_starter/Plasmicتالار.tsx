@@ -1694,7 +1694,7 @@ function Plasmicتالار__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return false;
+                                    return true;
                                   }
                                   throw e;
                                 }

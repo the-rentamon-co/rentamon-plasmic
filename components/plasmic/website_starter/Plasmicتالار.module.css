@@ -1225,7 +1225,7 @@
   align-items: center;
   opacity: 1;
   min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 @media (max-width: 500px) {
   .right4 {
@@ -1255,7 +1255,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 0px 0px 0px 6px;
 }
 .freeBox__jVrHa {
   display: flex;
@@ -1295,6 +1295,7 @@
     padding-left: 0px;
     justify-content: flex-end;
     align-items: center;
+    padding-right: 6px;
     row-gap: 0px;
   }
 }
