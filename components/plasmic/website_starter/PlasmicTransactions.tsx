@@ -124,8 +124,6 @@ export type PlasmicTransactions__OverridesType = {
   properties2?: Flex__<"div">;
   totalAmount2?: Flex__<"div">;
   comment4?: Flex__<"div">;
-  notify?: Flex__<"div">;
-  title4?: Flex__<"div">;
 };
 
 export interface DefaultTransactionsProps {}
@@ -3745,234 +3743,6 @@ function PlasmicTransactions__RenderFunc(props: {
                 </div>
               ) : null}
             </div>
-            <div
-              data-plasmic-name={"notify"}
-              data-plasmic-override={overrides.notify}
-              className={classNames(
-                projectcss.all,
-                sty.notify,
-                (() => {
-                  try {
-                    return (() => {
-                      if ($state.modalData.transaction_type != null) {
-                        return "modal-content";
-                      }
-                      return $state.showDetails
-                        ? "modal-content open"
-                        : "modal-content";
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()
-              )}
-            >
-              <div
-                data-plasmic-name={"title4"}
-                data-plasmic-override={overrides.title4}
-                className={classNames(projectcss.all, sty.title4)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___1Bes1)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__m4Ov)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateShowDetails"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["showDetails"]
-                              },
-                              operation: 0,
-                              value: ($state.showDetails = false)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateShowDetails"] != null &&
-                        typeof $steps["updateShowDetails"] === "object" &&
-                        typeof $steps["updateShowDetails"].then === "function"
-                      ) {
-                        $steps["updateShowDetails"] =
-                          await $steps["updateShowDetails"];
-                      }
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  function setCookie(name, value, hours) {
-                                    let expires = "";
-                                    if (hours) {
-                                      const date = new Date();
-                                      date.setTime(
-                                        date.getTime() + hours * 60 * 60 * 1000
-                                      );
-                                      expires =
-                                        "; expires=" + date.toUTCString();
-                                    }
-                                    document.cookie =
-                                      name +
-                                      "=" +
-                                      (value || "") +
-                                      expires +
-                                      "; path=/";
-                                  }
-                                  return setCookie(
-                                    "transactions_notify",
-                                    "true",
-                                    12
-                                  );
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
-                    }}
-                    src={{
-                      src: "/plasmic/website_starter/images/image166.svg",
-                      fullWidth: 18,
-                      fullHeight: 18,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___9JFoj)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wuaZs
-                    )}
-                  >
-                    {
-                      "\u0627\u0632 \u062d\u0627\u0644\u0627 \u0628\u0647 \u0628\u0639\u062f \u062f\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0645\u0628\u0644\u063a \u062f\u0642\u06cc\u0642 \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0648 \u0647\u0645 \u0628\u0628\u06cc\u0646\u06cc \r"
-                    }
-                  </div>
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__aVcGw)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cUayA
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["runCode2"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return ($state.showDetails = false);
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode2"] != null &&
-                      typeof $steps["runCode2"] === "object" &&
-                      typeof $steps["runCode2"].then === "function"
-                    ) {
-                      $steps["runCode2"] = await $steps["runCode2"];
-                    }
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function setCookie(name, value, hours) {
-                                  let expires = "";
-                                  if (hours) {
-                                    const date = new Date();
-                                    date.setTime(
-                                      date.getTime() + hours * 60 * 60 * 1000
-                                    );
-                                    expires = "; expires=" + date.toUTCString();
-                                  }
-                                  document.cookie =
-                                    name +
-                                    "=" +
-                                    (value || "") +
-                                    expires +
-                                    "; path=/";
-                                }
-                                return setCookie(
-                                  "transactions_notify",
-                                  "true",
-                                  12
-                                );
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-                  }}
-                >
-                  {"\u0628\u0627\u0634\u0647"}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -4015,9 +3785,7 @@ const PlasmicDescendants = {
     "date2",
     "properties2",
     "totalAmount2",
-    "comment4",
-    "notify",
-    "title4"
+    "comment4"
   ],
   header: ["header", "sideBar2", "profile", "tableHeader", "item"],
   sideBar2: ["sideBar2"],
@@ -4070,9 +3838,7 @@ const PlasmicDescendants = {
   date2: ["date2"],
   properties2: ["properties2"],
   totalAmount2: ["totalAmount2"],
-  comment4: ["comment4"],
-  notify: ["notify", "title4"],
-  title4: ["title4"]
+  comment4: ["comment4"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -4112,8 +3878,6 @@ type NodeDefaultElementType = {
   properties2: "div";
   totalAmount2: "div";
   comment4: "div";
-  notify: "div";
-  title4: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -4211,8 +3975,6 @@ export const PlasmicTransactions = Object.assign(
     properties2: makeNodeComponent("properties2"),
     totalAmount2: makeNodeComponent("totalAmount2"),
     comment4: makeNodeComponent("comment4"),
-    notify: makeNodeComponent("notify"),
-    title4: makeNodeComponent("title4"),
 
     // Metadata about props expected for PlasmicTransactions
     internalVariantProps: PlasmicTransactions__VariantProps,

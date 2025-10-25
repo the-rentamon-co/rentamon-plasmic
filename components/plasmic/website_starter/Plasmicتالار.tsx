@@ -75,7 +75,7 @@ import sty from "./Plasmicتالار.module.css"; // plasmic-import: awYJCWS6Hou
 
 import Icon74Icon from "./icons/PlasmicIcon__Icon74"; // plasmic-import: 8KZpBYIvE0K7/icon
 import Icon80Icon from "./icons/PlasmicIcon__Icon80"; // plasmic-import: aDrwOfA5XwKS/icon
-import Icon70Icon from "./icons/PlasmicIcon__Icon70"; // plasmic-import: A-bs_J5BMn_p/icon
+import InstantBookingSvgIcon from "./icons/PlasmicIcon__InstantBookingSvg"; // plasmic-import: A-ryV1haFhKU/icon
 import Icon71Icon from "./icons/PlasmicIcon__Icon71"; // plasmic-import: DdEZyyc0OzIH/icon
 import Icon78Icon from "./icons/PlasmicIcon__Icon78"; // plasmic-import: z2I2p-YJGmt6/icon
 import Icon73Icon from "./icons/PlasmicIcon__Icon73"; // plasmic-import: 2w7kXiGQZLrZ/icon
@@ -1611,7 +1611,7 @@ function Plasmicتالار__RenderFunc(props: {
                     data-plasmic-override={overrides.right4}
                     className={classNames(projectcss.all, sty.right4)}
                   >
-                    <Icon70Icon
+                    <InstantBookingSvgIcon
                       className={classNames(projectcss.all, sty.svg__esVgu)}
                       role={"img"}
                     />
@@ -1620,13 +1620,7 @@ function Plasmicتالار__RenderFunc(props: {
                 <div
                   data-plasmic-name={"mid4"}
                   data-plasmic-override={overrides.mid4}
-                  className={classNames(
-                    projectcss.all,
-                    sty.mid4,
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "blinking"
-                      : undefined
-                  )}
+                  className={classNames(projectcss.all, sty.mid4)}
                 >
                   <div
                     className={classNames(

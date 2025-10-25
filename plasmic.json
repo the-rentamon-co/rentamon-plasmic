@@ -3656,6 +3656,11 @@
           "id": "7jfamKqOhb85",
           "name": "Line153Icon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Line153.tsx"
+        },
+        {
+          "id": "A-ryV1haFhKU",
+          "name": "InstantBookingSvgIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__InstantBookingSvg.tsx"
         }
       ],
       "images": [
