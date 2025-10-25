@@ -3975,6 +3975,35 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return (function () {
+                                  const date = new Date();
+                                  date.setTime(
+                                    date.getTime() + 3 * 24 * 60 * 60 * 1000
+                                  );
+                                  document.cookie = `featureBadgeSeen=true; expires=${date.toUTCString()}; path=/`;
+                                  $state.showNewFeatureBadge = false;
+                                })();
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+
                     $steps["updateJabamaModalOpen"] = true
                       ? (() => {
                           const actionArgs = {
@@ -4008,35 +4037,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                     ) {
                       $steps["updateJabamaModalOpen"] =
                         await $steps["updateJabamaModalOpen"];
-                    }
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                return (function () {
-                                  const date = new Date();
-                                  date.setTime(
-                                    date.getTime() + 3 * 24 * 60 * 60 * 1000
-                                  );
-                                  document.cookie = `FeatureBadgeSeen=true; expires=${date.toUTCString()}; path=/`;
-                                  $state.showNewFeatureBadge = false;
-                                })();
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
                     }
                   }}
                 >
