@@ -3108,23 +3108,6 @@
   min-width: 0;
   padding: 8px;
 }
-.htmlVideo:global(.__wab_instance) {
-  width: 249px;
-  height: auto;
-  max-width: 100%;
-  object-fit: cover;
-}
-@media (max-width: 500px) {
-  .htmlVideo:global(.__wab_instance) {
-    border-radius: 15px;
-  }
-}
-@media (max-width: 350px) {
-  .htmlVideo:global(.__wab_instance) {
-    margin-right: 0px;
-    width: 231px;
-  }
-}
 .text__cUayA {
   width: 100%;
   height: auto;

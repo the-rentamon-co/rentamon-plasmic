@@ -67,7 +67,6 @@ import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -127,7 +126,6 @@ export type PlasmicTransactions__OverridesType = {
   comment4?: Flex__<"div">;
   notify?: Flex__<"div">;
   title4?: Flex__<"div">;
-  htmlVideo?: Flex__<typeof Video>;
 };
 
 export interface DefaultTransactionsProps {}
@@ -231,10 +229,10 @@ function PlasmicTransactions__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : false
       },
       {
         path: "deposit.open",
@@ -244,10 +242,10 @@ function PlasmicTransactions__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : false
       },
       {
         path: "modalData",
@@ -431,10 +429,10 @@ function PlasmicTransactions__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0639\u0646\u0648\u0627\u0646"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0639\u0646\u0648\u0627\u0646"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0639\u0646\u0648\u0627\u0646"
-                      : "\u0639\u0646\u0648\u0627\u0646"}
+                        ? "\u0639\u0646\u0648\u0627\u0646"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u0639\u0646\u0648\u0627\u0646"
+                          : "\u0639\u0646\u0648\u0627\u0646"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__o5AF)}>
@@ -664,9 +662,8 @@ function PlasmicTransactions__RenderFunc(props: {
                             typeof $steps["updateStateVariable2"].then ===
                               "function"
                           ) {
-                            $steps["updateStateVariable2"] = await $steps[
-                              "updateStateVariable2"
-                            ];
+                            $steps["updateStateVariable2"] =
+                              await $steps["updateStateVariable2"];
                           }
 
                           $steps["updateStateVariable"] = true
@@ -704,9 +701,8 @@ function PlasmicTransactions__RenderFunc(props: {
                             typeof $steps["updateStateVariable"].then ===
                               "function"
                           ) {
-                            $steps["updateStateVariable"] = await $steps[
-                              "updateStateVariable"
-                            ];
+                            $steps["updateStateVariable"] =
+                              await $steps["updateStateVariable"];
                           }
                         }}
                       >
@@ -1654,10 +1650,14 @@ function PlasmicTransactions__RenderFunc(props: {
                               )
                                 ? "\u06f0 %"
                                 : hasVariant(globalVariants, "screen", "mobile")
-                                ? "\u06f0 %"
-                                : hasVariant(globalVariants, "screen", "tablet")
-                                ? "\u06f0 %"
-                                : "\u06f0 %"}
+                                  ? "\u06f0 %"
+                                  : hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "tablet"
+                                      )
+                                    ? "\u06f0 %"
+                                    : "\u06f0 %"}
                             </div>
                           ) : null}
                           {(() => {
@@ -1819,9 +1819,8 @@ function PlasmicTransactions__RenderFunc(props: {
                   typeof $steps["goToقوانینرنتامون"] === "object" &&
                   typeof $steps["goToقوانینرنتامون"].then === "function"
                 ) {
-                  $steps["goToقوانینرنتامون"] = await $steps[
-                    "goToقوانینرنتامون"
-                  ];
+                  $steps["goToقوانینرنتامون"] =
+                    await $steps["goToقوانینرنتامون"];
                 }
               }}
             >
@@ -1919,9 +1918,8 @@ function PlasmicTransactions__RenderFunc(props: {
                     typeof $steps["updateWithdrawOpen"] === "object" &&
                     typeof $steps["updateWithdrawOpen"].then === "function"
                   ) {
-                    $steps["updateWithdrawOpen"] = await $steps[
-                      "updateWithdrawOpen"
-                    ];
+                    $steps["updateWithdrawOpen"] =
+                      await $steps["updateWithdrawOpen"];
                   }
                 }}
               >
@@ -2241,9 +2239,8 @@ function PlasmicTransactions__RenderFunc(props: {
                     typeof $steps["updateDepositOpen"] === "object" &&
                     typeof $steps["updateDepositOpen"].then === "function"
                   ) {
-                    $steps["updateDepositOpen"] = await $steps[
-                      "updateDepositOpen"
-                    ];
+                    $steps["updateDepositOpen"] =
+                      await $steps["updateDepositOpen"];
                   }
                 }}
               >
@@ -2390,9 +2387,8 @@ function PlasmicTransactions__RenderFunc(props: {
                         typeof $steps["updateShowDetails"] === "object" &&
                         typeof $steps["updateShowDetails"].then === "function"
                       ) {
-                        $steps["updateShowDetails"] = await $steps[
-                          "updateShowDetails"
-                        ];
+                        $steps["updateShowDetails"] =
+                          await $steps["updateShowDetails"];
                       }
                     }}
                     src={{
@@ -2574,9 +2570,7 @@ function PlasmicTransactions__RenderFunc(props: {
                               const { jm, jd } = toJalali(gYear, gMonth, gDay);
                               const weekday = persianWeekdays[weekdayIndex];
                               const monthName = persianMonths[jm - 1];
-                              return `${timePart} - ${weekday} ${toPersianDigits(
-                                jd
-                              )} ${monthName}`;
+                              return `${timePart} - ${weekday} ${toPersianDigits(jd)} ${monthName}`;
                             }
                             const inputTime = $state.modalData.date;
                             const outputTime =
@@ -3419,9 +3413,8 @@ function PlasmicTransactions__RenderFunc(props: {
                         typeof $steps["updateShowDetails"] === "object" &&
                         typeof $steps["updateShowDetails"].then === "function"
                       ) {
-                        $steps["updateShowDetails"] = await $steps[
-                          "updateShowDetails"
-                        ];
+                        $steps["updateShowDetails"] =
+                          await $steps["updateShowDetails"];
                       }
                     }}
                     src={{
@@ -3603,9 +3596,7 @@ function PlasmicTransactions__RenderFunc(props: {
                               const { jm, jd } = toJalali(gYear, gMonth, gDay);
                               const weekday = persianWeekdays[weekdayIndex];
                               const monthName = persianMonths[jm - 1];
-                              return `${timePart} - ${weekday} ${toPersianDigits(
-                                jd
-                              )} ${monthName}`;
+                              return `${timePart} - ${weekday} ${toPersianDigits(jd)} ${monthName}`;
                             }
                             const inputTime = $state.modalData.date;
                             const outputTime =
@@ -3834,9 +3825,8 @@ function PlasmicTransactions__RenderFunc(props: {
                         typeof $steps["updateShowDetails"] === "object" &&
                         typeof $steps["updateShowDetails"].then === "function"
                       ) {
-                        $steps["updateShowDetails"] = await $steps[
-                          "updateShowDetails"
-                        ];
+                        $steps["updateShowDetails"] =
+                          await $steps["updateShowDetails"];
                       }
 
                       $steps["runCode"] = true
@@ -3907,19 +3897,6 @@ function PlasmicTransactions__RenderFunc(props: {
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__aVcGw)}>
-                <Video
-                  data-plasmic-name={"htmlVideo"}
-                  data-plasmic-override={overrides.htmlVideo}
-                  autoPlay={true}
-                  className={classNames("__wab_instance", sty.htmlVideo)}
-                  controls={false}
-                  loop={true}
-                  muted={true}
-                  src={
-                    "https://media.rentamon.com/gif%2Fdoc_2025-09-20_14-02-25.mp4"
-                  }
-                />
-
                 <div
                   className={classNames(
                     projectcss.all,
@@ -4040,8 +4017,7 @@ const PlasmicDescendants = {
     "totalAmount2",
     "comment4",
     "notify",
-    "title4",
-    "htmlVideo"
+    "title4"
   ],
   header: ["header", "sideBar2", "profile", "tableHeader", "item"],
   sideBar2: ["sideBar2"],
@@ -4095,9 +4071,8 @@ const PlasmicDescendants = {
   properties2: ["properties2"],
   totalAmount2: ["totalAmount2"],
   comment4: ["comment4"],
-  notify: ["notify", "title4", "htmlVideo"],
-  title4: ["title4"],
-  htmlVideo: ["htmlVideo"]
+  notify: ["notify", "title4"],
+  title4: ["title4"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -4139,7 +4114,6 @@ type NodeDefaultElementType = {
   comment4: "div";
   notify: "div";
   title4: "div";
-  htmlVideo: typeof Video;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -4153,7 +4127,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicTransactions__VariantsArgs;
     args?: PlasmicTransactions__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicTransactions__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicTransactions__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicTransactions__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -4237,7 +4213,6 @@ export const PlasmicTransactions = Object.assign(
     comment4: makeNodeComponent("comment4"),
     notify: makeNodeComponent("notify"),
     title4: makeNodeComponent("title4"),
-    htmlVideo: makeNodeComponent("htmlVideo"),
 
     // Metadata about props expected for PlasmicTransactions
     internalVariantProps: PlasmicTransactions__VariantProps,
