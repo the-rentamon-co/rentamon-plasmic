@@ -336,7 +336,7 @@ function Plasmicتالار__RenderFunc(props: {
         path: "showNewFeatureBadge",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -1670,7 +1670,7 @@ function Plasmicتالار__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__zlhco)}
                     >
                       {(
-                        hasVariant(globalVariants, "screen", "mobile")
+                        hasVariant(globalVariants, "screen", "smallMobile")
                           ? (() => {
                               try {
                                 return $state.showNewFeatureBadge;
@@ -1684,7 +1684,22 @@ function Plasmicتالار__RenderFunc(props: {
                                 throw e;
                               }
                             })()
-                          : true
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return $state.showNewFeatureBadge;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return false;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : true
                       ) ? (
                         <div
                           className={classNames(
