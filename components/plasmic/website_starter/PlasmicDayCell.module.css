@@ -546,6 +546,12 @@
 .textdayStatus_selected__ltKp2MbNkx {
   color: #ffffff;
 }
+.textdayStatus_lastDayReserve__ltKp2VreYs {
+  display: block;
+}
+.textdayStatus_midDayReserve__ltKp2XrGdN {
+  display: block;
+}
 .textdayStatus_passedFirstDayReserve__ltKp2OhsA4 {
   color: #c5c5c5;
 }

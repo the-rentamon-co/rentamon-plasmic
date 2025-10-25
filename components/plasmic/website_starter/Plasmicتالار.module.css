@@ -1216,13 +1216,13 @@
   }
 }
 .right4 {
-  flex-direction: column;
+  flex-direction: row-reverse;
   position: relative;
   width: 100%;
   height: auto;
   max-width: 16%;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   opacity: 1;
   min-width: 0;
   padding: 8px;
@@ -1252,6 +1252,23 @@
   width: 26px;
   height: 26px;
   flex-shrink: 0;
+}
+.freeBox__jVrHa {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 9px;
+  height: 9px;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--token-pZV_D4O-0Dnd);
+  left: auto;
+  top: auto;
+  right: auto;
+  flex-shrink: 0;
+  border-radius: 100px;
+  padding: 0px;
 }
 .mid4 {
   display: flex;

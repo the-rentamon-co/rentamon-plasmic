@@ -297,29 +297,12 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               data-plasmic-override={overrides.notifStackFixator}
               className={classNames(projectcss.all, sty.notifStackFixator)}
             >
-              {(
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? (() => {
-                      try {
-                        return !$state.isNotify;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })()
-                  : true
-              ) ? (
-                <div
-                  data-plasmic-name={"notifBadge"}
-                  data-plasmic-override={overrides.notifBadge}
-                  className={classNames(projectcss.all, sty.notifBadge)}
-                />
-              ) : null}
+              <div
+                data-plasmic-name={"notifBadge"}
+                data-plasmic-override={overrides.notifBadge}
+                className={classNames(projectcss.all, sty.notifBadge)}
+              />
+
               <div
                 data-plasmic-name={"stack"}
                 data-plasmic-override={overrides.stack}

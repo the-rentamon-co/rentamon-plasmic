@@ -119,7 +119,6 @@ export type PlasmicInstantReserveSahami__OverridesType = {
   jabamaSwitch?: Flex__<typeof Switch>;
   jajigaContainer?: Flex__<"div">;
   jajigaSwitch?: Flex__<typeof Switch>;
-  jajigaAlert?: Flex__<"div">;
   desc?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   returnButton?: Flex__<"div">;
@@ -2954,6 +2953,46 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                         projectcss.all,
                         sty.jajigaContainer
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateJabamaModalOpen"] = !$state
+                          .jajigaPermission.data.permission
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["jabamaModal", "open"]
+                                },
+                                operation: 0,
+                                value: true
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateJabamaModalOpen"] != null &&
+                          typeof $steps["updateJabamaModalOpen"] === "object" &&
+                          typeof $steps["updateJabamaModalOpen"].then ===
+                            "function"
+                        ) {
+                          $steps["updateJabamaModalOpen"] =
+                            await $steps["updateJabamaModalOpen"];
+                        }
+                      }}
                     >
                       <div
                         className={classNames(
@@ -3000,19 +3039,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                           "__wab_instance",
                           sty.jajigaSwitch
                         )}
-                        disabled={(() => {
-                          try {
-                            return !$state.jajigaPermission.data.permission;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()}
                         onCheckedChange={async (...eventArgs: any) => {
                           generateStateOnChangeProp($state, [
                             "jajigaSwitch",
@@ -3021,32 +3047,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
 
                           (async checked => {
                             const $steps = {};
-
-                            $steps["notAllowedToast"] = !$state.jajigaPermission
-                              .data.permission
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "error",
-                                      "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062a\u0648\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0642\u0627\u0628\u0644\u06cc\u062a \u0622\u0646\u06cc \u0634\u062f\u0646 \u0646\u062f\u0627\u0631\u0647",
-                                      "top-center",
-                                      6000
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.showToast"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["notAllowedToast"] != null &&
-                              typeof $steps["notAllowedToast"] === "object" &&
-                              typeof $steps["notAllowedToast"].then ===
-                                "function"
-                            ) {
-                              $steps["notAllowedToast"] =
-                                await $steps["notAllowedToast"];
-                            }
 
                             $steps["updateShabSwitchValue"] = true
                               ? (() => {
@@ -3084,6 +3084,63 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                             ) {
                               $steps["updateShabSwitchValue"] =
                                 await $steps["updateShabSwitchValue"];
+                            }
+
+                            $steps["wait"] = !$state.jajigaPermission.data
+                              .permission
+                              ? (() => {
+                                  const actionArgs = { args: [200] };
+                                  return $globalActions["Fragment.wait"]?.apply(
+                                    null,
+                                    [...actionArgs.args]
+                                  );
+                                })()
+                              : undefined;
+                            if (
+                              $steps["wait"] != null &&
+                              typeof $steps["wait"] === "object" &&
+                              typeof $steps["wait"].then === "function"
+                            ) {
+                              $steps["wait"] = await $steps["wait"];
+                            }
+
+                            $steps["updateIsJajigaSwitchChecked2"] = !$state
+                              .jajigaPermission.data.permission
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["isJajigaSwitchChecked"]
+                                    },
+                                    operation: 0,
+                                    value: ($state.isJajigaSwitchChecked =
+                                      !$state.isJajigaSwitchChecked)
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    $stateSet(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["updateIsJajigaSwitchChecked2"] != null &&
+                              typeof $steps["updateIsJajigaSwitchChecked2"] ===
+                                "object" &&
+                              typeof $steps["updateIsJajigaSwitchChecked2"]
+                                .then === "function"
+                            ) {
+                              $steps["updateIsJajigaSwitchChecked2"] =
+                                await $steps["updateIsJajigaSwitchChecked2"];
                             }
 
                             $steps["apiRequestForInstant"] = $state
@@ -3187,33 +3244,36 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                               $steps["log"] = await $steps["log"];
                             }
 
-                            $steps["updateIsJajigaSwitchChecked"] = false
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["isJajigaSwitchChecked"]
-                                    },
-                                    operation: 0,
-                                    value: ($state.isJajigaSwitchChecked =
-                                      !$state.isJajigaSwitchChecked)
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
+                            $steps["updateIsJajigaSwitchChecked"] =
+                              $steps.apiRequestForInstant.data.status ==
+                              "failed"
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["isJajigaSwitchChecked"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.isJajigaSwitchChecked =
+                                        !$state.isJajigaSwitchChecked)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
 
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
                             if (
                               $steps["updateIsJajigaSwitchChecked"] != null &&
                               typeof $steps["updateIsJajigaSwitchChecked"] ===
@@ -3318,72 +3378,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                 </div>
               ) : null}
             </ApiRequest>
-            {(() => {
-              try {
-                return (
-                  !$state.jajigaPermission.data.permission &&
-                  $state.instantPropertyWebsite.data.some(
-                    item => item.website_id === "3"
-                  )
-                );
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return false;
-                }
-                throw e;
-              }
-            })() ? (
-              <div
-                data-plasmic-name={"jajigaAlert"}
-                data-plasmic-override={overrides.jajigaAlert}
-                className={classNames(projectcss.all, sty.jajigaAlert)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__f3VWd
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile") ? (
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0627\u062c\u0627\u0632\u0647 \u0646\u0645\u06cc\u200c\u062f\u0647\u00a0 "
-                        }
-                      </span>
-                      <React.Fragment>
-                        {
-                          "\u062d\u0633\u0627\u0628\u062a \u0622\u0646\u06cc \u0634\u0647!\n\u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\u0648 \u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 500 }}
-                      >
-                        {
-                          "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0627\u062c\u0627\u0632\u0647 \u0646\u0645\u06cc\u200c\u062f\u0647"
-                        }
-                      </span>
-                      <React.Fragment>
-                        {
-                          " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0622\u0646\u06cc \u0634\u0647!\n\u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\u0648 \u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  )}
-                </div>
-              </div>
-            ) : null}
           </section>
           <div
             className={classNames(projectcss.all, sty.freeBox___3NzG5)}
@@ -3695,7 +3689,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                     style={{ fontWeight: 600 }}
                   >
                     {
-                      "\u0631\u0648\u0634\u0646 \u06a9\u0631\u062f\u0646 \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u062c\u0627\u0628\u0627\u0645\u0627"
+                      "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0627\u062c\u0627\u0632\u0647 \u0646\u0645\u06cc\u200c\u062f\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0622\u0646\u06cc \u0634\u0647!"
                     }
                   </span>
                 </React.Fragment>
@@ -3715,7 +3709,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                 )}
               >
                 {
-                  " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627  \u0622\u0646\u06cc \u0645\u06cc\u0645\u0648\u0646\u0647 \u062a\u0627 \u0648\u0642\u062a\u06cc \u062e\u0627\u0645\u0648\u0634\u0634 \u06a9\u0646\u06cc."
+                  "\u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\u0648 \u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
                 }
               </div>
             </div>
@@ -3733,6 +3727,44 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                   )}
                   onClick={async event => {
                     const $steps = {};
+
+                    $steps["updateIsJajigaSwitchChecked"] = false
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["isJajigaSwitchChecked"]
+                            },
+                            operation: 0,
+                            value: ($state.isJajigaSwitchChecked =
+                              !$state.isJajigaSwitchChecked)
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateIsJajigaSwitchChecked"] != null &&
+                      typeof $steps["updateIsJajigaSwitchChecked"] ===
+                        "object" &&
+                      typeof $steps["updateIsJajigaSwitchChecked"].then ===
+                        "function"
+                    ) {
+                      $steps["updateIsJajigaSwitchChecked"] =
+                        await $steps["updateIsJajigaSwitchChecked"];
+                    }
 
                     $steps["updateJabamaModalOpen"] = true
                       ? (() => {
@@ -3811,7 +3843,6 @@ const PlasmicDescendants = {
     "jabamaSwitch",
     "jajigaContainer",
     "jajigaSwitch",
-    "jajigaAlert",
     "desc",
     "sideEffect",
     "returnButton",
@@ -3854,8 +3885,7 @@ const PlasmicDescendants = {
     "jabamaContainer",
     "jabamaSwitch",
     "jajigaContainer",
-    "jajigaSwitch",
-    "jajigaAlert"
+    "jajigaSwitch"
   ],
   properties: [
     "properties",
@@ -3886,7 +3916,6 @@ const PlasmicDescendants = {
   jabamaSwitch: ["jabamaSwitch"],
   jajigaContainer: ["jajigaContainer", "jajigaSwitch"],
   jajigaSwitch: ["jajigaSwitch"],
-  jajigaAlert: ["jajigaAlert"],
   desc: ["desc"],
   sideEffect: ["sideEffect"],
   returnButton: ["returnButton"],
@@ -3928,7 +3957,6 @@ type NodeDefaultElementType = {
   jabamaSwitch: typeof Switch;
   jajigaContainer: "div";
   jajigaSwitch: typeof Switch;
-  jajigaAlert: "div";
   desc: "div";
   sideEffect: typeof SideEffect;
   returnButton: "div";
@@ -4028,7 +4056,6 @@ export const PlasmicInstantReserveSahami = Object.assign(
     jabamaSwitch: makeNodeComponent("jabamaSwitch"),
     jajigaContainer: makeNodeComponent("jajigaContainer"),
     jajigaSwitch: makeNodeComponent("jajigaSwitch"),
-    jajigaAlert: makeNodeComponent("jajigaAlert"),
     desc: makeNodeComponent("desc"),
     sideEffect: makeNodeComponent("sideEffect"),
     returnButton: makeNodeComponent("returnButton"),

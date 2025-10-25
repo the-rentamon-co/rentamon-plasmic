@@ -1601,6 +1601,26 @@ function Plasmicتالار__RenderFunc(props: {
                     $steps["invokeGlobalAction"] =
                       await $steps["invokeGlobalAction"];
                   }
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return undefined;
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
                 }}
               >
                 {(
@@ -1614,6 +1634,10 @@ function Plasmicتالار__RenderFunc(props: {
                     <InstantBookingSvgIcon
                       className={classNames(projectcss.all, sty.svg__esVgu)}
                       role={"img"}
+                    />
+
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__jVrHa)}
                     />
                   </div>
                 ) : null}
