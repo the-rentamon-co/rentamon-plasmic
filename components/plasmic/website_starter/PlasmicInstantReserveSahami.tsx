@@ -611,7 +611,19 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
-            ? false
+            ? (() => {
+                try {
+                  return $state.showNewFeatureBadge;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return false;
+                  }
+                  throw e;
+                }
+              })()
             : hasVariant(globalVariants, "screen", "tablet")
               ? false
               : (() => {
@@ -622,7 +634,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return true;
+                      return false;
                     }
                     throw e;
                   }
@@ -3508,7 +3520,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                                 return parts.pop().split(";").shift();
                               return null;
                             }
-                            const seen = getCookie("FeatureBadgeSeen");
+                            const seen = getCookie("featureBadgeSeen");
                             $state.showNewFeatureBadge = seen !== "true";
                           })();
                         })();
