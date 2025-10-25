@@ -357,7 +357,8 @@
 }
 @media (max-width: 1200px) {
   .modal__modal :global(.ant-modal-content) {
-    background: linear-gradient(#fcfcfc, #fcfcfc),
+    background:
+      linear-gradient(#fcfcfc, #fcfcfc),
       linear-gradient(0deg, #ce9fff 0%, #56b9ff 100%) 0% 0% / 100% 100% repeat;
     outline: none;
   }
@@ -670,7 +671,8 @@
   justify-content: flex-start;
   align-items: center;
   margin-top: 0em;
-  background: linear-gradient(
+  background:
+    linear-gradient(
         58deg,
         #fcfcfc 0%,
         #ececec80 24%,
@@ -1994,4 +1996,8 @@
 }
 .navbarRntFooter:global(.__wab_instance) {
   max-width: 100%;
+}
+.apiRequest:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
 }

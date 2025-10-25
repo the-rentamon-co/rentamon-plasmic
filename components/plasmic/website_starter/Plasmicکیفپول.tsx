@@ -138,6 +138,7 @@ export type Plasmicکیفپول__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   sideEffect?: Flex__<typeof SideEffect>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  apiRequest?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultکیفپولProps {}
@@ -206,10 +207,10 @@ function Plasmicکیفپول__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : false
       },
       {
         path: "tokenResponse",
@@ -283,6 +284,30 @@ function Plasmicکیفپول__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => "1000000"
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -343,8 +368,8 @@ function Plasmicکیفپول__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "smallMobile")
                 ? "fadeinf"
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? "fadeinf"
-                : "fadeinf"
+                  ? "fadeinf"
+                  : "fadeinf"
             )}
           >
             <div className={classNames(projectcss.all, sty.freeBox__aD3Fh)}>
@@ -460,8 +485,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                     {(() => {
                       try {
                         return (() => {
-                          const balance_info =
-                            $state.profile2.data.user_info.balance_info;
+                          const balance_info = $state.apiRequest.data;
                           const reducedBalance = Math.floor(
                             balance_info.balance / 10
                           );
@@ -531,8 +555,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "clickable"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "clickable"
-                    : "clickable"
+                      ? "clickable"
+                      : "clickable"
                 )}
               >
                 {
@@ -579,8 +603,8 @@ function Plasmicکیفپول__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "smallMobile")
                 ? "320"
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? "400"
-                : undefined
+                  ? "400"
+                  : undefined
             }
           >
             <div className={classNames(projectcss.all, sty.freeBox__ryKkA)}>
@@ -889,9 +913,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                           typeof $steps["updateStateVariable"].then ===
                             "function"
                         ) {
-                          $steps["updateStateVariable"] = await $steps[
-                            "updateStateVariable"
-                          ];
+                          $steps["updateStateVariable"] =
+                            await $steps["updateStateVariable"];
                         }
                       }).apply(null, eventArgs);
                     }}
@@ -1165,17 +1188,16 @@ function Plasmicکیفپول__RenderFunc(props: {
                       typeof $steps["updateInput2Value"] === "object" &&
                       typeof $steps["updateInput2Value"].then === "function"
                     ) {
-                      $steps["updateInput2Value"] = await $steps[
-                        "updateInput2Value"
-                      ];
+                      $steps["updateInput2Value"] =
+                        await $steps["updateInput2Value"];
                     }
                   }}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile")
                     ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                    : "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
+                      ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                      : "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                 </div>
                 <div
                   className={classNames(
@@ -1220,17 +1242,16 @@ function Plasmicکیفپول__RenderFunc(props: {
                       typeof $steps["updateInput2Value"] === "object" &&
                       typeof $steps["updateInput2Value"].then === "function"
                     ) {
-                      $steps["updateInput2Value"] = await $steps[
-                        "updateInput2Value"
-                      ];
+                      $steps["updateInput2Value"] =
+                        await $steps["updateInput2Value"];
                     }
                   }}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile")
                     ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                    : "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
+                      ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                      : "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                 </div>
                 <div
                   className={classNames(
@@ -1275,17 +1296,16 @@ function Plasmicکیفپول__RenderFunc(props: {
                       typeof $steps["updateInput2Value"] === "object" &&
                       typeof $steps["updateInput2Value"].then === "function"
                     ) {
-                      $steps["updateInput2Value"] = await $steps[
-                        "updateInput2Value"
-                      ];
+                      $steps["updateInput2Value"] =
+                        await $steps["updateInput2Value"];
                     }
                   }}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile")
                     ? "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                    : "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
+                      ? "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                      : "\u06f5 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                 </div>
               </div>
             </div>
@@ -1371,9 +1391,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                     typeof $steps["invokeGlobalAction"] === "object" &&
                     typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
                   }
 
                   $steps["updateAccordionMainActivePanelId"] =
@@ -1415,9 +1434,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                     typeof $steps["updateAccordionMainActivePanelId"].then ===
                       "function"
                   ) {
-                    $steps["updateAccordionMainActivePanelId"] = await $steps[
-                      "updateAccordionMainActivePanelId"
-                    ];
+                    $steps["updateAccordionMainActivePanelId"] =
+                      await $steps["updateAccordionMainActivePanelId"];
                   }
 
                   $steps["updateAccordionMainActivePanelId2"] =
@@ -1454,9 +1472,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                     typeof $steps["updateAccordionMainActivePanelId2"].then ===
                       "function"
                   ) {
-                    $steps["updateAccordionMainActivePanelId2"] = await $steps[
-                      "updateAccordionMainActivePanelId2"
-                    ];
+                    $steps["updateAccordionMainActivePanelId2"] =
+                      await $steps["updateAccordionMainActivePanelId2"];
                   }
 
                   $steps["updateAccordionMainActivePanelId3"] =
@@ -1493,9 +1510,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                     typeof $steps["updateAccordionMainActivePanelId3"].then ===
                       "function"
                   ) {
-                    $steps["updateAccordionMainActivePanelId3"] = await $steps[
-                      "updateAccordionMainActivePanelId3"
-                    ];
+                    $steps["updateAccordionMainActivePanelId3"] =
+                      await $steps["updateAccordionMainActivePanelId3"];
                   }
 
                   $steps["updateAccordionMainActivePanelId4"] =
@@ -1521,9 +1537,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                     typeof $steps["updateAccordionMainActivePanelId4"].then ===
                       "function"
                   ) {
-                    $steps["updateAccordionMainActivePanelId4"] = await $steps[
-                      "updateAccordionMainActivePanelId4"
-                    ];
+                    $steps["updateAccordionMainActivePanelId4"] =
+                      await $steps["updateAccordionMainActivePanelId4"];
                   }
                 }}
               >
@@ -1580,8 +1595,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                 {hasVariant(globalVariants, "screen", "smallMobile")
                   ? "\u062f\u0631 \u0635\u0648\u0631\u062a \u0639\u062f\u0645 \u0631\u0636\u0627\u06cc\u062a \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0628\u06cc\u200c\u0642\u06cc\u062f\u0648\u0634\u0631\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."
                   : hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u062f\u0631 \u0635\u0648\u0631\u062a \u0639\u062f\u0645 \u0631\u0636\u0627\u06cc\u062a \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0628\u06cc\u200c\u0642\u06cc\u062f\u0648\u0634\u0631\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."
-                  : "\u062f\u0631 \u0635\u0648\u0631\u062a \u0639\u062f\u0645 \u0631\u0636\u0627\u06cc\u062a \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0628\u06cc \u0642\u06cc\u062f\u0648\u0634\u0631\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."}
+                    ? "\u062f\u0631 \u0635\u0648\u0631\u062a \u0639\u062f\u0645 \u0631\u0636\u0627\u06cc\u062a \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0628\u06cc\u200c\u0642\u06cc\u062f\u0648\u0634\u0631\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."
+                    : "\u062f\u0631 \u0635\u0648\u0631\u062a \u0639\u062f\u0645 \u0631\u0636\u0627\u06cc\u062a \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0628\u06cc \u0642\u06cc\u062f\u0648\u0634\u0631\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."}
               </div>
               <div
                 className={classNames(
@@ -1700,10 +1715,10 @@ function Plasmicکیفپول__RenderFunc(props: {
               {hasVariant(globalVariants, "screen", "smallMobile")
                 ? "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646"
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? "\u00ab\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647\u200c  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u00bb"
-                : hasVariant(globalVariants, "screen", "tablet")
-                ? "\u00ab\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647\u200c  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u00bb"
-                : "\u00ab\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647\u200c  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0632\u0646 \u0627\u06cc\u0646\u062c\u0627\u00bb"}
+                  ? "\u00ab\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647\u200c  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u00bb"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u00ab\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647\u200c  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646\u00bb"
+                    : "\u00ab\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647\u200c  \u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0632\u0646 \u0627\u06cc\u0646\u062c\u0627\u00bb"}
             </div>
           </div>
           <div
@@ -2228,6 +2243,37 @@ function Plasmicکیفپول__RenderFunc(props: {
                 : undefined
             }
           />
+
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={null}
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
+            }}
+            url={"https://gateway.rentamon.com/webhook/wallet/balance"}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2277,7 +2323,8 @@ const PlasmicDescendants = {
     "rentamonFooter",
     "profile",
     "sideEffect",
-    "navbarRntFooter"
+    "navbarRntFooter",
+    "apiRequest"
   ],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
@@ -2342,7 +2389,8 @@ const PlasmicDescendants = {
   rentamonFooter: ["rentamonFooter"],
   profile: ["profile"],
   sideEffect: ["sideEffect"],
-  navbarRntFooter: ["navbarRntFooter"]
+  navbarRntFooter: ["navbarRntFooter"],
+  apiRequest: ["apiRequest"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2390,6 +2438,7 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   sideEffect: typeof SideEffect;
   navbarRntFooter: typeof NavbarRntFooter;
+  apiRequest: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2403,7 +2452,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicکیفپول__VariantsArgs;
     args?: Plasmicکیفپول__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicکیفپول__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicکیفپول__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicکیفپول__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -2493,6 +2544,7 @@ export const Plasmicکیفپول = Object.assign(
     profile: makeNodeComponent("profile"),
     sideEffect: makeNodeComponent("sideEffect"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    apiRequest: makeNodeComponent("apiRequest"),
 
     // Metadata about props expected for Plasmicکیفپول
     internalVariantProps: Plasmicکیفپول__VariantProps,

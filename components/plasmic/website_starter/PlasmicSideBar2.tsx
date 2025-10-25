@@ -105,6 +105,7 @@ export type PlasmicSideBar2__OverridesType = {
   profile?: Flex__<"div">;
   walletamount?: Flex__<"div">;
   favicon?: Flex__<typeof Embed>;
+  apiRequest?: Flex__<typeof ApiRequest>;
   checkUserPendingReserve?: Flex__<typeof ApiRequest>;
 };
 
@@ -209,6 +210,30 @@ function PlasmicSideBar2__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -614,8 +639,7 @@ function PlasmicSideBar2__RenderFunc(props: {
                 {(() => {
                   try {
                     return (() => {
-                      const balance_info =
-                        $props.userData.user_info.balance_info;
+                      const balance_info = $state.apiRequest.data;
                       const reducedBalance = Math.floor(
                         balance_info.balance / 10
                       );
@@ -1530,6 +1554,37 @@ function PlasmicSideBar2__RenderFunc(props: {
           '<script>\r\n  // \u0633\u0627\u062e\u062a\u0646 \u0644\u06cc\u0646\u06a9 favicon\r\n  const faviconLink = document.createElement("link");\r\n  faviconLink.rel = "icon";\r\n  faviconLink.href = "https://rentamon-files.storage.iran.liara.space/icon/icon.svg";\r\n  faviconLink.sizes = "192x192";\r\n  document.head.appendChild(faviconLink);\r\n\r\n\r\n\r\n\r\n\r\n\r\n// \u062a\u0646\u0638\u06cc\u0645\u0627\u062a PWA \r\nconst appleTouchIcon = document.createElement("link");\r\nappleTouchIcon.rel = "apple-touch-icon";\r\nappleTouchIcon.href = "https://rentamon-files.storage.iran.liara.space/icon/appicon.png";\r\nappleTouchIcon.sizes = "180x180";\r\ndocument.head.appendChild(appleTouchIcon);\r\n\r\n// \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0631\u0646\u06af \u0648 \u0646\u0645\u0627\u06cc\u0634 PWA\r\nconst themeColorMeta = document.createElement("meta");\r\nthemeColorMeta.name = "theme-color";\r\nthemeColorMeta.content = "#fcfcfc";\r\ndocument.head.appendChild(themeColorMeta);\r\n\r\nconst appleWebAppMeta = document.createElement("meta");\r\nappleWebAppMeta.name = "apple-mobile-web-app-capable";\r\nappleWebAppMeta.content = "yes";\r\ndocument.head.appendChild(appleWebAppMeta);\r\n\r\nconst appleWebAppTitle = document.createElement("meta");\r\nappleWebAppTitle.name = "apple-mobile-web-app-title";\r\nappleWebAppTitle.content = "\u0631\u0646\u062a\u0627\u0645\u0648\u0646";\r\ndocument.head.appendChild(appleWebAppTitle);\r\n\r\nconst metaAppleWebAppStatusBar = document.createElement("meta");\r\nmetaAppleWebAppStatusBar.name = "apple-mobile-web-app-status-bar-style";\r\nmetaAppleWebAppStatusBar.content = "default";\r\ndocument.head.appendChild(metaAppleWebAppStatusBar);\r\n\r\n// \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 manifest.json\r\nconst manifestLink = document.createElement("link");\r\nmanifestLink.rel = "manifest";\r\ndocument.head.appendChild(manifestLink);\r\n\r\n// \u0633\u0627\u062e\u062a \u0648 \u062b\u0628\u062a manifest.json \u062f\u0627\u062e\u0644 \u0635\u0641\u062d\u0647\r\nconst manifestContent = {\r\n  name: "\u0631\u0646\u062a\u0627\u0645\u0648\u0646",\r\n  short_name: "\u0631\u0646\u062a\u0627\u0645\u0648\u0646",\r\n  icons: [\r\n    {\r\n      src: "https://rentamon-files.storage.iran.liara.space/icon/appicon.png",\r\n      sizes: "192x192",\r\n      type: "image/png"\r\n    },\r\n    {\r\n      src: "https://rentamon-files.storage.iran.liara.space/icon/appicon.png",\r\n      sizes: "512x512",\r\n      type: "image/png"\r\n    }\r\n  ],\r\n  theme_color: "#fcfcfc",\r\n  background_color: "#fcfcfc",\r\n  display: "standalone",\r\n  start_url: "/",\r\n  scope: "/",\r\n  \r\n};\r\n\r\n// \u0627\u06cc\u062c\u0627\u062f \u0641\u0627\u06cc\u0644 \u0648 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0628\u0647 \u0645\u0631\u0648\u0631\u06af\u0631\r\nconst manifestBlob = new Blob([JSON.stringify(manifestContent)], { type: "application/json" });\r\nconst manifestURL = URL.createObjectURL(manifestBlob);\r\nmanifestLink.href = manifestURL;\r\n\r\n// \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 Splash Screen \u0628\u0631\u0627\u06cc iOS\r\nconst splashScreen = document.createElement("link");\r\nsplashScreen.rel = "apple-touch-startup-image";\r\nsplashScreen.href = "https://rentamon-files.storage.iran.liara.space/icon/appicon.png";\r\ndocument.head.appendChild(splashScreen);\r\n\r\n\r\n// \u062b\u0628\u062a Service Worker \u0628\u0631\u0627\u06cc \u0642\u0627\u0628\u0644\u06cc\u062a\u200c\u0647\u0627\u06cc PWA\r\nif ("serviceWorker" in navigator) {\r\n  window.addEventListener("load", () => {\r\n    navigator.serviceWorker\r\n      .register("sw.js")\r\n      .then(reg => console.log("Service Worker \u062b\u0628\u062a \u0634\u062f", reg))\r\n      .catch(err => console.error("\u062e\u0637\u0627 \u062f\u0631 \u062b\u0628\u062a Service Worker", err));\r\n  });\r\n}\r\n</script>\r\n\r\n<!-- Service Worker \u062f\u0627\u062e\u0644\u06cc (sw.js) -->\r\n<script>\r\nif (!navigator.serviceWorker.controller) {\r\n  const swScript = document.createElement("script");\r\n  swScript.textContent = `\r\n    self.addEventListener("install", event => {\r\n      console.log("Service Worker \u0646\u0635\u0628 \u0634\u062f.");\r\n      event.waitUntil(\r\n        caches.open("rentamon-cache").then(cache => {\r\n          return cache.addAll([\r\n            "/",\r\n            "/index.html",\r\n            "/styles.css",\r\n            "/script.js",\r\n            "https://rentamon-files.storage.iran.liara.space/icon/icon.svg",\r\n            "https://rentamon-files.storage.iran.liara.space/icon/splashscreen.svg"\r\n          ]);\r\n        })\r\n      );\r\n    });\r\n\r\n    self.addEventListener("fetch", event => {\r\n      event.respondWith(\r\n        caches.match(event.request).then(response => {\r\n          return response || fetch(event.request);\r\n        })\r\n      );\r\n    });\r\n  `;\r\n  document.body.appendChild(swScript);\r\n}\r\n</script>\r\n\r\n'
         }
       />
+
+      <ApiRequest
+        data-plasmic-name={"apiRequest"}
+        data-plasmic-override={overrides.apiRequest}
+        className={classNames("__wab_instance", sty.apiRequest)}
+        errorDisplay={null}
+        loadingDisplay={null}
+        method={"GET"}
+        onError={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+            null,
+            eventArgs
+          );
+        }}
+        onLoading={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["apiRequest", "loading"]).apply(
+            null,
+            eventArgs
+          );
+        }}
+        onSuccess={async (...eventArgs: any) => {
+          generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+            null,
+            eventArgs
+          );
+        }}
+        ref={ref => {
+          $refs["apiRequest"] = ref;
+        }}
+        url={"https://gateway.rentamon.com/webhook/wallet/balance"}
+      />
     </AntdModal>
   ) as React.ReactElement | null;
 }
@@ -1540,11 +1595,13 @@ const PlasmicDescendants = {
     "profile",
     "walletamount",
     "favicon",
+    "apiRequest",
     "checkUserPendingReserve"
   ],
   profile: ["profile"],
   walletamount: ["walletamount"],
   favicon: ["favicon"],
+  apiRequest: ["apiRequest"],
   checkUserPendingReserve: ["checkUserPendingReserve"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1555,6 +1612,7 @@ type NodeDefaultElementType = {
   profile: "div";
   walletamount: "div";
   favicon: typeof Embed;
+  apiRequest: typeof ApiRequest;
   checkUserPendingReserve: typeof ApiRequest;
 };
 
@@ -1623,6 +1681,7 @@ export const PlasmicSideBar2 = Object.assign(
     profile: makeNodeComponent("profile"),
     walletamount: makeNodeComponent("walletamount"),
     favicon: makeNodeComponent("favicon"),
+    apiRequest: makeNodeComponent("apiRequest"),
     checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),
 
     // Metadata about props expected for PlasmicSideBar2
