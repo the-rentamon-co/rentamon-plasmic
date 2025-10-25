@@ -128,11 +128,6 @@
   max-height: 10px;
   border-radius: 30px;
 }
-@media (max-width: 500px) {
-  .notifBadge {
-    display: none;
-  }
-}
 .stack {
   display: flex;
   flex-direction: column;

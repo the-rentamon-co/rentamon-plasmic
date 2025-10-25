@@ -331,6 +331,12 @@ function Plasmicتالار__RenderFunc(props: {
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? false : undefined
+      },
+      {
+        path: "showNewFeatureBadge",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -1621,6 +1627,35 @@ function Plasmicتالار__RenderFunc(props: {
                   ) {
                     $steps["runCode"] = await $steps["runCode"];
                   }
+
+                  $steps["runCode2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              return (function () {
+                                const date = new Date();
+                                date.setTime(
+                                  date.getTime() + 3 * 24 * 60 * 60 * 1000
+                                );
+                                document.cookie = `featureBadgeSeen=true; expires=${date.toUTCString()}; path=/`;
+                                $state.showNewFeatureBadge = false;
+                              })();
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode2"] != null &&
+                    typeof $steps["runCode2"] === "object" &&
+                    typeof $steps["runCode2"].then === "function"
+                  ) {
+                    $steps["runCode2"] = await $steps["runCode2"];
+                  }
                 }}
               >
                 {(
@@ -1631,14 +1666,38 @@ function Plasmicتالار__RenderFunc(props: {
                     data-plasmic-override={overrides.right4}
                     className={classNames(projectcss.all, sty.right4)}
                   >
-                    <InstantBookingSvgIcon
-                      className={classNames(projectcss.all, sty.svg__esVgu)}
-                      role={"img"}
-                    />
-
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__jVrHa)}
-                    />
+                      className={classNames(projectcss.all, sty.freeBox__zlhco)}
+                    >
+                      {(
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? (() => {
+                              try {
+                                return $state.showNewFeatureBadge;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__jVrHa
+                          )}
+                        />
+                      ) : null}
+                      <InstantBookingSvgIcon
+                        className={classNames(projectcss.all, sty.svg__esVgu)}
+                        role={"img"}
+                      />
+                    </div>
                   </div>
                 ) : null}
                 <div
@@ -2449,6 +2508,38 @@ function Plasmicتالار__RenderFunc(props: {
                   typeof $steps["runCode3"].then === "function"
                 ) {
                   $steps["runCode3"] = await $steps["runCode3"];
+                }
+
+                $steps["runCode4"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return (function () {
+                              function getCookie(name) {
+                                const value = `; ${document.cookie}`;
+                                const parts = value.split(`; ${name}=`);
+                                if (parts.length === 2)
+                                  return parts.pop().split(";").shift();
+                                return null;
+                              }
+                              const seen = getCookie("featureBadgeSeen");
+                              $state.showNewFeatureBadge = seen !== "true";
+                            })();
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode4"] != null &&
+                  typeof $steps["runCode4"] === "object" &&
+                  typeof $steps["runCode4"].then === "function"
+                ) {
+                  $steps["runCode4"] = await $steps["runCode4"];
                 }
               }}
             />

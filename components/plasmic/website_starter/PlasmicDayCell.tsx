@@ -843,7 +843,7 @@ function PlasmicDayCell__RenderFunc(props: {
             })}
           >
             {(
-              hasVariant($state, "dayStatus", "midDayReserve")
+              hasVariant($state, "dayStatus", "passedLastDayReserve")
                 ? (() => {
                     try {
                       return !$props.calendarV2;
@@ -857,7 +857,7 @@ function PlasmicDayCell__RenderFunc(props: {
                       throw e;
                     }
                   })()
-                : hasVariant($state, "dayStatus", "lastDayReserve")
+                : hasVariant($state, "dayStatus", "passedMidDayReserve")
                   ? (() => {
                       try {
                         return !$props.calendarV2;
@@ -871,13 +871,41 @@ function PlasmicDayCell__RenderFunc(props: {
                         throw e;
                       }
                     })()
-                  : hasVariant($state, "dayStatus", "blocked")
-                    ? true
-                    : hasVariant($state, "dayStatus", "disabled")
-                      ? true
-                      : hasVariant(globalVariants, "screen", "mobile")
+                  : hasVariant($state, "dayStatus", "midDayReserve")
+                    ? (() => {
+                        try {
+                          return !$props.calendarV2;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : hasVariant($state, "dayStatus", "lastDayReserve")
+                      ? (() => {
+                          try {
+                            return !$props.calendarV2;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : hasVariant($state, "dayStatus", "blocked")
                         ? true
-                        : true
+                        : hasVariant($state, "dayStatus", "disabled")
+                          ? true
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? true
+                            : true
             ) ? (
               <div
                 className={classNames(

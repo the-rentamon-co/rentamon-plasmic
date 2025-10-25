@@ -223,6 +223,25 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "checkUserPendingReserve"
+      },
+      {
+        path: "showNavbarBadge",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return true;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -297,12 +316,29 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               data-plasmic-override={overrides.notifStackFixator}
               className={classNames(projectcss.all, sty.notifStackFixator)}
             >
-              <div
-                data-plasmic-name={"notifBadge"}
-                data-plasmic-override={overrides.notifBadge}
-                className={classNames(projectcss.all, sty.notifBadge)}
-              />
-
+              {(
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return $state.showNavbarBadge;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })()
+                  : true
+              ) ? (
+                <div
+                  data-plasmic-name={"notifBadge"}
+                  data-plasmic-override={overrides.notifBadge}
+                  className={classNames(projectcss.all, sty.notifBadge)}
+                />
+              ) : null}
               <div
                 data-plasmic-name={"stack"}
                 data-plasmic-override={overrides.stack}
@@ -1073,6 +1109,38 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               typeof $steps["runCode2"].then === "function"
             ) {
               $steps["runCode2"] = await $steps["runCode2"];
+            }
+
+            $steps["runCode3"] = true
+              ? (() => {
+                  const actionArgs = {
+                    customFunction: async () => {
+                      return (() => {
+                        return (function () {
+                          function getCookie(name) {
+                            const value = `; ${document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                            return null;
+                          }
+                          const seen = getCookie("featureBadgeSeen");
+                          $state.showNavbarBadge = seen !== "true";
+                        })();
+                      })();
+                    }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["runCode3"] != null &&
+              typeof $steps["runCode3"] === "object" &&
+              typeof $steps["runCode3"].then === "function"
+            ) {
+              $steps["runCode3"] = await $steps["runCode3"];
             }
           }}
         />
