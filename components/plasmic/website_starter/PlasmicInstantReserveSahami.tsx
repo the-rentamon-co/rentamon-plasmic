@@ -622,7 +622,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return false;
+                      return true;
                     }
                     throw e;
                   }
@@ -3495,6 +3495,38 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          return (function () {
+                            function getCookie(name) {
+                              const value = `; ${document.cookie}`;
+                              const parts = value.split(`; ${name}=`);
+                              if (parts.length === 2)
+                                return parts.pop().split(";").shift();
+                              return null;
+                            }
+                            const seen = getCookie("FeatureBadgeSeen");
+                            $state.showNewFeatureBadge = seen !== "true";
+                          })();
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
               $steps["refreshToken"] = true
                 ? (() => {
                     const actionArgs = {
@@ -3597,38 +3629,6 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                 typeof $steps["refreshToken"].then === "function"
               ) {
                 $steps["refreshToken"] = await $steps["refreshToken"];
-              }
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          return (function () {
-                            function getCookie(name) {
-                              const value = `; ${document.cookie}`;
-                              const parts = value.split(`; ${name}=`);
-                              if (parts.length === 2)
-                                return parts.pop().split(";").shift();
-                              return null;
-                            }
-                            const seen = getCookie("featureBadgeSeen");
-                            $state.showNewFeatureBadge = seen !== "true";
-                          })();
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
               }
             }}
           />
