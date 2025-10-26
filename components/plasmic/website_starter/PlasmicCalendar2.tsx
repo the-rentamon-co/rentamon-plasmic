@@ -1946,19 +1946,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               <DayCell
                 data-plasmic-name={"dayCell"}
                 data-plasmic-override={overrides.dayCell}
-                calendarV2={(() => {
-                  try {
-                    return $props.reservationsMode;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return false;
-                    }
-                    throw e;
-                  }
-                })()}
+                calendarV2={false}
                 className={classNames("__wab_instance", sty.dayCell)}
                 dayNumber={(() => {
                   try {

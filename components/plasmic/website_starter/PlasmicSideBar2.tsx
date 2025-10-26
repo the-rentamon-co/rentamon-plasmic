@@ -74,7 +74,7 @@ import sty from "./PlasmicSideBar2.module.css"; // plasmic-import: 03ZPQfFyBXgI/
 import Icon26Icon from "./icons/PlasmicIcon__Icon26"; // plasmic-import: re7g4HwqLfNb/icon
 import Icon96Icon from "./icons/PlasmicIcon__Icon96"; // plasmic-import: KF8kMPq8z-hR/icon
 import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7Hmg/icon
-import Icon7Icon from "./icons/PlasmicIcon__Icon7"; // plasmic-import: G4zLKDdGFlpV/icon
+import InstantBookingSvgIcon from "./icons/PlasmicIcon__InstantBookingSvg"; // plasmic-import: A-ryV1haFhKU/icon
 import Icon48Icon from "./icons/PlasmicIcon__Icon48"; // plasmic-import: EUsJ3MtRCJEN/icon
 import Icon78Icon from "./icons/PlasmicIcon__Icon78"; // plasmic-import: z2I2p-YJGmt6/icon
 import Icon44Icon from "./icons/PlasmicIcon__Icon44"; // plasmic-import: Oyz_u64i1BAc/icon
@@ -1153,7 +1153,7 @@ function PlasmicSideBar2__RenderFunc(props: {
             }
           }}
         >
-          <Icon7Icon
+          <InstantBookingSvgIcon
             className={classNames(projectcss.all, sty.svg__oeo6L)}
             role={"img"}
           />
