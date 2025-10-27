@@ -59,6 +59,17 @@
 .rootdayStatus_passedFirstDayReserve {
   background: none;
 }
+.rootdayStatus_firstDayReserveV2 {
+  flex-grow: 0;
+}
+.rootdayStatus_midDayReserveV2 {
+  max-width: 100%;
+  min-width: 100%;
+}
+.rootdayStatus_reservedV2 {
+  background: none;
+  min-width: 98%;
+}
 .freeBox__jPegP {
   display: flex;
   flex-direction: column;
@@ -102,6 +113,9 @@
   column-gap: 0px;
   min-width: 0;
   padding: 0px;
+}
+.freeBoxdayStatus_lastDayReserveV2__jPegPkfRpo {
+  max-width: 100%;
 }
 .cell {
   height: 80px;
@@ -225,6 +239,26 @@
 .celldayStatus_passedSingleReserve {
   background: #4fdfb10d;
 }
+.celldayStatus_firstDayReserveV2 {
+  background: #4fdfb1;
+  overflow: visible;
+  border-radius: 0px 20px 20px 0px;
+}
+.celldayStatus_lastDayReserveV2 {
+  background: #4fdfb1;
+  border-radius: 20px 0px 0px 20px;
+}
+.celldayStatus_midDayReserveV2 {
+  background: #4fdfb1;
+  min-width: 100%;
+  max-width: 100%;
+  border-radius: 0px;
+}
+.celldayStatus_reservedV2 {
+  background: #4fdfb1;
+  overflow: hidden;
+  border-radius: 10px;
+}
 .freeBox__aE9Ge {
   display: flex;
   flex-direction: column;
@@ -246,6 +280,9 @@
   }
 }
 .freeBoxdayStatus_midDayReserve__aE9GexrGdN {
+  min-width: 100%;
+}
+.freeBoxdayStatus_midDayReserveV2__aE9GeBi4Ie {
   min-width: 100%;
 }
 .text__sLeDq {
@@ -298,6 +335,9 @@
 }
 .textdayStatus_passedSingleReserve__sLeDqfNqAx {
   color: #c5c5c5;
+}
+.textdayStatus_reservedV2__sLeDqSbYT {
+  color: var(--token-7MRjbe724hDb);
 }
 .holidays2 {
   position: relative;
@@ -406,6 +446,17 @@
 .holidays2dayStatus_passedSingleReserve {
   color: #d9363e40;
 }
+.holidays2dayStatus_reservedV2 {
+  color: var(--token-Bo2_tT25lwh4);
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: "Estedad";
+  font-weight: 500;
+  text-align: center;
+  margin-top: 2px;
+  min-width: 0;
+}
 .freeBox__gKj3 {
   display: flex;
   flex-direction: column;
@@ -437,6 +488,13 @@
 }
 .freeBoxdayStatus_midDayReserve__gKj3XrGdN {
   padding-top: 0px;
+}
+.freeBoxdayStatus_lastDayReserveV2__gKj3KfRpo {
+  display: none;
+}
+.freeBoxdayStatus_midDayReserveV2__gKj3Bi4Ie {
+  padding-top: 0px;
+  display: none;
 }
 .text__kqTC {
   position: relative;
@@ -490,6 +548,9 @@
 .textdayStatus_passedSingleReserve__kqTCfNqAx {
   color: #c5c5c5;
 }
+.textdayStatus_reservedV2__kqTCSbYT {
+  color: var(--token-7MRjbe724hDb);
+}
 .freeBox__cD9Fr {
   display: flex;
   flex-direction: column;
@@ -508,23 +569,24 @@
   }
 }
 .text__ltKp2 {
-  position: sticky;
   width: 100%;
   height: auto;
   max-width: 100%;
   text-align: center;
   color: #2f2f2f;
   font-weight: 400;
+  user-select: none;
+  z-index: 1;
   left: 0px;
   top: 10px;
-  z-index: 1;
-  user-select: none;
+  position: sticky;
   min-width: 0;
 }
 @media (max-width: 500px) {
   .text__ltKp2 {
     font-size: 14px;
     font-weight: 400;
+    white-space: pre;
     display: block;
   }
 }
@@ -534,6 +596,7 @@
 .textdayStatus_reserved__ltKp26WcTl {
   color: var(--token-7MRjbe724hDb);
   font-weight: 400;
+  text-align: center;
 }
 .textdayStatus_disabled__ltKp2Okz0Z {
   color: var(--token-aAU8kfeqE6Ao);
@@ -565,6 +628,48 @@
 }
 .textdayStatus_passedSingleReserve__ltKp2FNqAx {
   color: #c5c5c5;
+}
+.textdayStatus_firstDayReserveV2__ltKp27GAmv {
+  text-align: center;
+  white-space: pre;
+  padding-right: 8px;
+}
+.textdayStatus_lastDayReserveV2__ltKp2KfRpo {
+  display: none;
+}
+.textdayStatus_midDayReserveV2__ltKp2Bi4Ie {
+  display: none;
+}
+.textdayStatus_reservedV2__ltKp2SbYT {
+  color: var(--token-7MRjbe724hDb);
+  font-weight: 400;
+  text-align: right;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: 4px;
+  padding-left: 4px;
+  display: none;
+}
+@media (max-width: 350px) {
+  .textdayStatus_reservedV2__ltKp2SbYT {
+    display: none;
+  }
+}
+.text__aVz9M {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 0;
+  display: none;
+}
+.textdayStatus_reservedV2__aVz9MSbYT {
+  text-align: center;
+  display: block;
 }
 .p {
   display: flex;
