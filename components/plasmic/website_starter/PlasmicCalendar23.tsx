@@ -10687,7 +10687,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062f\u06cc\u062f\u0646 \u062c\u0632\u06cc\u06cc\u0627\u062a \u0631\u0632\u0631\u0648"
+                    "\u062c\u0632\u06cc\u06cc\u0627\u062a \u0631\u0632\u0631\u0648"
                   }
                 </div>
               </div>
