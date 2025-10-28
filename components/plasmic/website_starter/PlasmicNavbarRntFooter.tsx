@@ -307,13 +307,15 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile")
                   ? (() => {
                       try {
-                        return $state.showNavbarBadge;
+                        return (() => {
+                          return false;
+                        })();
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return true;
+                          return false;
                         }
                         throw e;
                       }
@@ -721,7 +723,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return true;
+                        return false;
                       }
                       throw e;
                     }
@@ -751,7 +753,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "1";
+                          return " ";
                         }
                         throw e;
                       }

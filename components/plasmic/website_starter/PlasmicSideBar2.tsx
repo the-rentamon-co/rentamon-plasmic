@@ -160,6 +160,8 @@ function PlasmicSideBar2__RenderFunc(props: {
 
   const globalVariants = _useGlobalVariants();
 
+  const $globalActions = useGlobalActions?.();
+
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -1098,6 +1100,29 @@ function PlasmicSideBar2__RenderFunc(props: {
           onClick={async event => {
             const $steps = {};
 
+            $steps["updateModalSidebarOpen2"] = true
+              ? (() => {
+                  const actionArgs = {
+                    args: [
+                      "error",
+                      "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc...",
+                      "top-center"
+                    ]
+                  };
+                  return $globalActions["Fragment.showToast"]?.apply(null, [
+                    ...actionArgs.args
+                  ]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen2"] != null &&
+              typeof $steps["updateModalSidebarOpen2"] === "object" &&
+              typeof $steps["updateModalSidebarOpen2"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen2"] =
+                await $steps["updateModalSidebarOpen2"];
+            }
+
             $steps["updateModalSidebarOpen"] = true
               ? (() => {
                   const actionArgs = {
@@ -1127,7 +1152,7 @@ function PlasmicSideBar2__RenderFunc(props: {
                 await $steps["updateModalSidebarOpen"];
             }
 
-            $steps["goToInstantReserve"] = true
+            $steps["goToInstantReserve"] = false
               ? (() => {
                   const actionArgs = { destination: `/instant` };
                   return (({ destination }) => {

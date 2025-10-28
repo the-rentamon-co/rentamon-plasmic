@@ -1556,7 +1556,31 @@ function Plasmicتالار__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["goToInstantReserveSahami"] = true
+                  $steps["invokeGlobalAction2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "error",
+                            "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc...",
+                            "top-center"
+                          ]
+                        };
+                        return $globalActions["Fragment.showToast"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction2"] != null &&
+                    typeof $steps["invokeGlobalAction2"] === "object" &&
+                    typeof $steps["invokeGlobalAction2"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction2"] =
+                      await $steps["invokeGlobalAction2"];
+                  }
+
+                  $steps["goToInstantReserveSahami"] = false
                     ? (() => {
                         const actionArgs = { destination: `/instant` };
                         return (({ destination }) => {
@@ -1632,15 +1656,13 @@ function Plasmicتالار__RenderFunc(props: {
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
-                            return (() => {
-                              return (function () {
-                                const date = new Date();
-                                date.setTime(
-                                  date.getTime() + 3 * 24 * 60 * 60 * 1000
-                                );
-                                document.cookie = `featureBadgeSeen=true; expires=${date.toUTCString()}; path=/`;
-                                $state.showNewFeatureBadge = false;
-                              })();
+                            return (function () {
+                              const date = new Date();
+                              date.setTime(
+                                date.getTime() + 3 * 24 * 60 * 60 * 1000
+                              );
+                              document.cookie = `featureBadgeSeen=true; expires=${date.toUTCString()}; path=/`;
+                              $state.showNewFeatureBadge = false;
                             })();
                           }
                         };
