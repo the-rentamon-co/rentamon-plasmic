@@ -11473,7 +11473,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                                                         .value ==
                                                       "Broker or Colleague"
                                                     ? "واسطه"
-                                                    : "سایر"
+                                                    : "سایر",
+                                    guest_name: $state.guestName.value
                                   };
                                 }
                                 return day;
