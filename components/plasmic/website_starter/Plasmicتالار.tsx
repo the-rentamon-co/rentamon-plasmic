@@ -1669,45 +1669,6 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       className={classNames(projectcss.all, sty.freeBox__zlhco)}
                     >
-                      {(
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? (() => {
-                              try {
-                                return $state.showNewFeatureBadge;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return $state.showNewFeatureBadge;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : true
-                      ) ? (
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__jVrHa
-                          )}
-                        />
-                      ) : null}
                       <InstantBookingSvgIcon
                         className={classNames(projectcss.all, sty.svg__esVgu)}
                         role={"img"}

@@ -1265,49 +1265,6 @@
     align-items: center;
   }
 }
-.freeBox__jVrHa {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 10px;
-  height: 10px;
-  max-width: 10px;
-  justify-content: flex-start;
-  align-items: center;
-  background: var(--token-pZV_D4O-0Dnd);
-  left: auto;
-  top: auto;
-  right: auto;
-  min-width: 10px;
-  min-height: 10px;
-  max-height: 10px;
-  flex-shrink: 0;
-  border-radius: 100px;
-  padding: 0px;
-}
-@media (max-width: 500px) {
-  .freeBox__jVrHa {
-    left: auto;
-    top: auto;
-    right: auto;
-    align-self: flex-start;
-    display: flex;
-  }
-}
-@media (max-width: 350px) {
-  .freeBox__jVrHa {
-    display: flex;
-    flex-direction: row;
-    left: 26px;
-    top: 0px;
-    padding-left: 0px;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 6px;
-    position: absolute;
-    row-gap: 0px;
-  }
-}
 .svg__esVgu {
   object-fit: cover;
   max-width: 100%;
