@@ -1249,13 +1249,17 @@ function PlasmicDayCell__RenderFunc(props: {
                             throw e;
                           }
                         })()
-                      : hasVariant($state, "dayStatus", "midDayReserve")
+                      : hasVariant($state, "dayStatus", "passedLastDayReserve")
                         ? true
-                        : hasVariant($state, "dayStatus", "lastDayReserve")
+                        : hasVariant($state, "dayStatus", "passedMidDayReserve")
                           ? true
-                          : hasVariant($state, "dayStatus", "disabled")
+                          : hasVariant($state, "dayStatus", "midDayReserve")
                             ? true
-                            : true
+                            : hasVariant($state, "dayStatus", "lastDayReserve")
+                              ? true
+                              : hasVariant($state, "dayStatus", "disabled")
+                                ? true
+                                : true
             ) ? (
               <div
                 className={classNames(projectcss.all, sty.freeBox__rEGp, {
@@ -1278,8 +1282,14 @@ function PlasmicDayCell__RenderFunc(props: {
                   ),
                   [sty.freeBoxdayStatus_passedFirstDayReserveV2__rEGplYuad]:
                     hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
+                  [sty.freeBoxdayStatus_passedLastDayReserve__rEGpMjPP]:
+                    hasVariant($state, "dayStatus", "passedLastDayReserve"),
+                  [sty.freeBoxdayStatus_passedMidDayReserve__rEGPo7Nt2]:
+                    hasVariant($state, "dayStatus", "passedMidDayReserve"),
                   [sty.freeBoxdayStatus_passedReservedV2__rEGPrqoWb]:
                     hasVariant($state, "dayStatus", "passedReservedV2"),
+                  [sty.freeBoxdayStatus_passedSingleReserve__rEGPfNqAx]:
+                    hasVariant($state, "dayStatus", "passedSingleReserve"),
                   [sty.freeBoxdayStatus_reservedV2__rEGpSbYT]: hasVariant(
                     $state,
                     "dayStatus",

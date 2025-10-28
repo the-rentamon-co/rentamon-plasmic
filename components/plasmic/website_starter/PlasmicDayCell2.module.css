@@ -3,24 +3,36 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  height: 80px;
-  justify-content: center;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
   align-items: center;
   margin-left: 0px;
   margin-right: 0px;
-  background: none;
-  flex-shrink: 1;
-  min-width: 100%;
-  grid-column-start: 1 !important;
-  grid-column-end: -1 !important;
-  padding: 2px 0px 0px;
+  min-width: 0;
+  padding: 8px;
 }
 @media (max-width: 500px) {
   .root {
-    justify-self: flex-start;
+    margin-top: 4px;
+  }
+}
+.freeBox__mXkCy {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  flex-shrink: 1;
+  min-width: 100%;
+  padding: 2px 0px 0px;
+}
+@media (max-width: 500px) {
+  .freeBox__mXkCy {
     height: 74px;
     background: none;
-    margin-top: 4px;
     display: block;
     flex-shrink: 0;
     flex-grow: 0;
@@ -32,7 +44,7 @@
   }
 }
 @media (max-width: 350px) {
-  .root {
+  .freeBox__mXkCy {
     width: 100%;
     height: 64px;
     max-width: 40px;
@@ -42,46 +54,47 @@
     align-items: center;
     column-gap: 0px;
     min-width: 0;
+    flex-shrink: 0;
     padding: 0px;
   }
 }
-.rootdayStatus_reserved {
+.freeBoxdayStatus_reserved__mXkCyVf0A8 {
   background: none;
   min-width: 98%;
 }
-.rootdayStatus_firstDayReserve {
+.freeBoxdayStatus_firstDayReserve__mXkCyXcLe3 {
   flex-grow: 0;
 }
-.rootdayStatus_midDayReserve {
+.freeBoxdayStatus_midDayReserve__mXkCyzCt7G {
   max-width: 100%;
   min-width: 100%;
 }
-.rootdayStatus_passedFirstDayReserve {
+.freeBoxdayStatus_passedFirstDayReserve__mXkCYhR4Iw {
   background: none;
 }
-.rootdayStatus_firstDayReserveV2 {
+.freeBoxdayStatus_firstDayReserveV2__mXkCYlxm0M {
   flex-grow: 0;
   padding-right: 1px;
 }
-.rootdayStatus_lastDayReserveV2 {
+.freeBoxdayStatus_lastDayReserveV2__mXkCyHbxR {
   padding-left: 1px;
 }
-.rootdayStatus_midDayReserveV2 {
+.freeBoxdayStatus_midDayReserveV2__mXkCYx8Qvw {
   max-width: 100%;
   min-width: 100%;
 }
-.rootdayStatus_reservedV2 {
+.freeBoxdayStatus_reservedV2__mXkCy75Ot {
   background: none;
   min-width: 98%;
 }
-.rootdayStatus_passedFirstDayReserveV2 {
+.freeBoxdayStatus_passedFirstDayReserveV2__mXkCYhpmmI {
   flex-grow: 0;
 }
-.rootdayStatus_passedMidDayReserveV2 {
+.freeBoxdayStatus_passedMidDayReserveV2__mXkCyzPpWv {
   max-width: 100%;
   min-width: 100%;
 }
-.rootdayStatus_passedReservedV2 {
+.freeBoxdayStatus_passedReservedV2__mXkCyiSdsA {
   background: none;
   min-width: 98%;
 }

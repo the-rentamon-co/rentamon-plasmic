@@ -729,6 +729,12 @@
 .freeBoxdayStatus_midDayReserve__rEGPxrGdN {
   display: none;
 }
+.freeBoxdayStatus_passedMidDayReserve__rEGPo7Nt2 {
+  display: none;
+}
+.freeBoxdayStatus_passedLastDayReserve__rEGpMjPP {
+  display: none;
+}
 .freeBoxdayStatus_firstDayReserveV2__rEGp7GAmv {
   width: auto;
   height: auto;

@@ -279,11 +279,6 @@ function PlasmicDayCell2__RenderFunc(props: {
         projectcss.plasmic_mixins,
         styleTokensClassNames,
         sty.root,
-        hasVariant($state, "dayStatus", "disabledV2")
-          ? "disablebutton"
-          : hasVariant($state, "dayStatus", "disabled")
-            ? "disablebutton"
-            : undefined,
         {
           [sty.rootdayStatus_blocked]: hasVariant(
             $state,
@@ -398,841 +393,924 @@ function PlasmicDayCell2__RenderFunc(props: {
       )}
     >
       <div
-        className={classNames(projectcss.all, sty.freeBox___9Ndlb, {
-          [sty.freeBoxdayStatus_disabledV2___9Ndlb6ARxq]: hasVariant(
-            $state,
-            "dayStatus",
-            "disabledV2"
-          ),
-          [sty.freeBoxdayStatus_disabled___9Ndlb9Zm4Q]: hasVariant(
-            $state,
-            "dayStatus",
-            "disabled"
-          ),
-          [sty.freeBoxdayStatus_discount___9Ndlb58PIn]: hasVariant(
-            $state,
-            "dayStatus",
-            "discount"
-          ),
-          [sty.freeBoxdayStatus_firstDayReserveV2___9NdlBlxm0M]: hasVariant(
-            $state,
-            "dayStatus",
-            "firstDayReserveV2"
-          ),
-          [sty.freeBoxdayStatus_lastDayReserveV2___9NdlbHbxR]: hasVariant(
-            $state,
-            "dayStatus",
-            "lastDayReserveV2"
-          ),
-          [sty.freeBoxdayStatus_lastDayReserve___9Ndlbzrpyu]: hasVariant(
-            $state,
-            "dayStatus",
-            "lastDayReserve"
-          ),
-          [sty.freeBoxdayStatus_passedFirstDayReserve___9NdlBhR4Iw]: hasVariant(
-            $state,
-            "dayStatus",
-            "passedFirstDayReserve"
-          ),
-          [sty.freeBoxdayStatus_passedLastDayReserveV2___9NdlBsnHmp]:
-            hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
-          [sty.freeBoxdayStatus_passedLastDayReserve___9NdlBnJrzh]: hasVariant(
-            $state,
-            "dayStatus",
-            "passedLastDayReserve"
-          ),
-          [sty.freeBoxdayStatus_passedMidDayReserve___9Ndlbltd9T]: hasVariant(
-            $state,
-            "dayStatus",
-            "passedMidDayReserve"
-          ),
-          [sty.freeBoxdayStatus_passedReservedV2___9NdlbiSdsA]: hasVariant(
-            $state,
-            "dayStatus",
-            "passedReservedV2"
-          ),
-          [sty.freeBoxdayStatus_passedSingleReserve___9Ndlblp2Ep]: hasVariant(
-            $state,
-            "dayStatus",
-            "passedSingleReserve"
-          ),
-          [sty.freeBoxdayStatus_reservedV2___9Ndlb75Ot]: hasVariant(
-            $state,
-            "dayStatus",
-            "reservedV2"
-          ),
-          [sty.freeBoxdayStatus_selected_selected___9NdlbPzhv6LSVo3]:
-            hasVariant($state, "selected", "selected") &&
-            hasVariant($state, "dayStatus", "selected"),
-          [sty.freeBoxselected___9NdlBlSVo3]: hasVariant(
-            $state,
-            "selected",
-            "selected"
-          )
-        })}
-      >
-        <div
-          data-plasmic-name={"cell"}
-          data-plasmic-override={overrides.cell}
-          className={classNames(projectcss.all, sty.cell, "noteEffect", {
-            [sty.celldayStatus_blocked]: hasVariant(
+        className={classNames(
+          projectcss.all,
+          sty.freeBox__mXkCy,
+          hasVariant($state, "dayStatus", "disabledV2")
+            ? "disablebutton"
+            : hasVariant($state, "dayStatus", "disabled")
+              ? "disablebutton"
+              : undefined,
+          {
+            [sty.freeBoxdayStatus_blocked__mXkCy3FCqw]: hasVariant(
               $state,
               "dayStatus",
               "blocked"
             ),
-            [sty.celldayStatus_disabledV2]: hasVariant(
+            [sty.freeBoxdayStatus_disabledV2__mXkCy6ARxq]: hasVariant(
               $state,
               "dayStatus",
               "disabledV2"
             ),
-            [sty.celldayStatus_disabled]: hasVariant(
+            [sty.freeBoxdayStatus_disabled__mXkCy9Zm4Q]: hasVariant(
               $state,
               "dayStatus",
               "disabled"
             ),
-            [sty.celldayStatus_discount]: hasVariant(
+            [sty.freeBoxdayStatus_discount__mXkCy58PIn]: hasVariant(
               $state,
               "dayStatus",
               "discount"
             ),
-            [sty.celldayStatus_firstDayReserveV2]: hasVariant(
+            [sty.freeBoxdayStatus_firstDayReserveV2__mXkCYlxm0M]: hasVariant(
               $state,
               "dayStatus",
               "firstDayReserveV2"
             ),
-            [sty.celldayStatus_firstDayReserve]: hasVariant(
+            [sty.freeBoxdayStatus_firstDayReserve__mXkCyXcLe3]: hasVariant(
               $state,
               "dayStatus",
               "firstDayReserve"
             ),
-            [sty.celldayStatus_lastDayReserveV2]: hasVariant(
+            [sty.freeBoxdayStatus_lastDayReserveV2__mXkCyHbxR]: hasVariant(
               $state,
               "dayStatus",
               "lastDayReserveV2"
             ),
-            [sty.celldayStatus_lastDayReserve]: hasVariant(
+            [sty.freeBoxdayStatus_lastDayReserve__mXkCyzrpyu]: hasVariant(
               $state,
               "dayStatus",
               "lastDayReserve"
             ),
-            [sty.celldayStatus_midDayReserveV2]: hasVariant(
+            [sty.freeBoxdayStatus_midDayReserveV2__mXkCYx8Qvw]: hasVariant(
               $state,
               "dayStatus",
               "midDayReserveV2"
             ),
-            [sty.celldayStatus_midDayReserve]: hasVariant(
+            [sty.freeBoxdayStatus_midDayReserve__mXkCyzCt7G]: hasVariant(
               $state,
               "dayStatus",
               "midDayReserve"
             ),
-            [sty.celldayStatus_passedFirstDayReserveV2]: hasVariant(
-              $state,
-              "dayStatus",
-              "passedFirstDayReserveV2"
-            ),
-            [sty.celldayStatus_passedFirstDayReserve]: hasVariant(
-              $state,
-              "dayStatus",
-              "passedFirstDayReserve"
-            ),
-            [sty.celldayStatus_passedLastDayReserveV2]: hasVariant(
-              $state,
-              "dayStatus",
-              "passedLastDayReserveV2"
-            ),
-            [sty.celldayStatus_passedLastDayReserve]: hasVariant(
+            [sty.freeBoxdayStatus_passedFirstDayReserveV2__mXkCYhpmmI]:
+              hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
+            [sty.freeBoxdayStatus_passedFirstDayReserve__mXkCYhR4Iw]:
+              hasVariant($state, "dayStatus", "passedFirstDayReserve"),
+            [sty.freeBoxdayStatus_passedLastDayReserveV2__mXkCYsnHmp]:
+              hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
+            [sty.freeBoxdayStatus_passedLastDayReserve__mXkCYnJrzh]: hasVariant(
               $state,
               "dayStatus",
               "passedLastDayReserve"
             ),
-            [sty.celldayStatus_passedMidDayReserveV2]: hasVariant(
-              $state,
-              "dayStatus",
-              "passedMidDayReserveV2"
-            ),
-            [sty.celldayStatus_passedMidDayReserve]: hasVariant(
+            [sty.freeBoxdayStatus_passedMidDayReserveV2__mXkCyzPpWv]:
+              hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
+            [sty.freeBoxdayStatus_passedMidDayReserve__mXkCyltd9T]: hasVariant(
               $state,
               "dayStatus",
               "passedMidDayReserve"
             ),
-            [sty.celldayStatus_passedReservedV2]: hasVariant(
+            [sty.freeBoxdayStatus_passedReservedV2__mXkCyiSdsA]: hasVariant(
               $state,
               "dayStatus",
               "passedReservedV2"
             ),
-            [sty.celldayStatus_passedSingleReserve]: hasVariant(
+            [sty.freeBoxdayStatus_passedSingleReserve__mXkCylp2Ep]: hasVariant(
               $state,
               "dayStatus",
               "passedSingleReserve"
             ),
-            [sty.celldayStatus_reservedV2]: hasVariant(
+            [sty.freeBoxdayStatus_reservedV2__mXkCy75Ot]: hasVariant(
               $state,
               "dayStatus",
               "reservedV2"
             ),
-            [sty.celldayStatus_reserved]: hasVariant(
+            [sty.freeBoxdayStatus_reserved__mXkCyVf0A8]: hasVariant(
               $state,
               "dayStatus",
               "reserved"
             ),
-            [sty.celldayStatus_selected]: hasVariant(
+            [sty.freeBoxdayStatus_selected__mXkCyPzhv6]: hasVariant(
               $state,
               "dayStatus",
               "selected"
             ),
-            [sty.cellselected]: hasVariant($state, "selected", "selected")
+            [sty.freeBoxdayStatus_selected_selected__mXkCyPzhv6LSVo3]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "selected"),
+            [sty.freeBoxselected__mXkCYlSVo3]: hasVariant(
+              $state,
+              "selected",
+              "selected"
+            )
+          }
+        )}
+      >
+        <div
+          className={classNames(projectcss.all, sty.freeBox___9Ndlb, {
+            [sty.freeBoxdayStatus_disabledV2___9Ndlb6ARxq]: hasVariant(
+              $state,
+              "dayStatus",
+              "disabledV2"
+            ),
+            [sty.freeBoxdayStatus_disabled___9Ndlb9Zm4Q]: hasVariant(
+              $state,
+              "dayStatus",
+              "disabled"
+            ),
+            [sty.freeBoxdayStatus_discount___9Ndlb58PIn]: hasVariant(
+              $state,
+              "dayStatus",
+              "discount"
+            ),
+            [sty.freeBoxdayStatus_firstDayReserveV2___9NdlBlxm0M]: hasVariant(
+              $state,
+              "dayStatus",
+              "firstDayReserveV2"
+            ),
+            [sty.freeBoxdayStatus_lastDayReserveV2___9NdlbHbxR]: hasVariant(
+              $state,
+              "dayStatus",
+              "lastDayReserveV2"
+            ),
+            [sty.freeBoxdayStatus_lastDayReserve___9Ndlbzrpyu]: hasVariant(
+              $state,
+              "dayStatus",
+              "lastDayReserve"
+            ),
+            [sty.freeBoxdayStatus_passedFirstDayReserve___9NdlBhR4Iw]:
+              hasVariant($state, "dayStatus", "passedFirstDayReserve"),
+            [sty.freeBoxdayStatus_passedLastDayReserveV2___9NdlBsnHmp]:
+              hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
+            [sty.freeBoxdayStatus_passedLastDayReserve___9NdlBnJrzh]:
+              hasVariant($state, "dayStatus", "passedLastDayReserve"),
+            [sty.freeBoxdayStatus_passedMidDayReserve___9Ndlbltd9T]: hasVariant(
+              $state,
+              "dayStatus",
+              "passedMidDayReserve"
+            ),
+            [sty.freeBoxdayStatus_passedReservedV2___9NdlbiSdsA]: hasVariant(
+              $state,
+              "dayStatus",
+              "passedReservedV2"
+            ),
+            [sty.freeBoxdayStatus_passedSingleReserve___9Ndlblp2Ep]: hasVariant(
+              $state,
+              "dayStatus",
+              "passedSingleReserve"
+            ),
+            [sty.freeBoxdayStatus_reservedV2___9Ndlb75Ot]: hasVariant(
+              $state,
+              "dayStatus",
+              "reservedV2"
+            ),
+            [sty.freeBoxdayStatus_selected_selected___9NdlbPzhv6LSVo3]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "selected"),
+            [sty.freeBoxselected___9NdlBlSVo3]: hasVariant(
+              $state,
+              "selected",
+              "selected"
+            )
           })}
         >
           <div
-            className={classNames(projectcss.all, sty.freeBox___20P4Y, {
-              [sty.freeBoxdayStatus_disabledV2___20P4Y6ARxq]: hasVariant(
-                $state,
-                "dayStatus",
-                "disabledV2"
-              ),
-              [sty.freeBoxdayStatus_disabled___20P4Y9Zm4Q]: hasVariant(
-                $state,
-                "dayStatus",
-                "disabled"
-              ),
-              [sty.freeBoxdayStatus_midDayReserveV2___20P4Yx8Qvw]: hasVariant(
-                $state,
-                "dayStatus",
-                "midDayReserveV2"
-              ),
-              [sty.freeBoxdayStatus_midDayReserve___20P4YzCt7G]: hasVariant(
-                $state,
-                "dayStatus",
-                "midDayReserve"
-              ),
-              [sty.freeBoxdayStatus_passedMidDayReserveV2___20P4YzPpWv]:
-                hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
-              [sty.freeBoxdayStatus_passedReservedV2___20P4YiSdsA]: hasVariant(
-                $state,
-                "dayStatus",
-                "passedReservedV2"
-              ),
-              [sty.freeBoxdayStatus_reservedV2___20P4Y75Ot]: hasVariant(
-                $state,
-                "dayStatus",
-                "reservedV2"
-              ),
-              [sty.freeBoxdayStatus_reserved___20P4YVf0A8]: hasVariant(
-                $state,
-                "dayStatus",
-                "reserved"
-              ),
-              [sty.freeBoxselected___20P4YlSVo3]: hasVariant(
-                $state,
-                "selected",
-                "selected"
-              )
-            })}
-          >
-            {(() => {
-              try {
-                return (() => {
-                  if ($props.holidays === "true") {
-                    return false;
-                  } else {
-                    return true;
-                  }
-                })();
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__fgKpw,
-                  {
-                    [sty.textdayStatus_blocked__fgKpw3FCqw]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "blocked"
-                    ),
-                    [sty.textdayStatus_disabledV2__fgKpw6ARxq]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabledV2"
-                    ),
-                    [sty.textdayStatus_disabled__fgKpw9Zm4Q]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabled"
-                    ),
-                    [sty.textdayStatus_discount__fgKpw58PIn]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "discount"
-                    ),
-                    [sty.textdayStatus_firstDayReserveV2__fgKpwlxm0M]:
-                      hasVariant($state, "dayStatus", "firstDayReserveV2"),
-                    [sty.textdayStatus_firstDayReserve__fgKpwXcLe3]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "firstDayReserve"
-                    ),
-                    [sty.textdayStatus_lastDayReserveV2__fgKpwHbxR]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "lastDayReserveV2"
-                    ),
-                    [sty.textdayStatus_lastDayReserve__fgKpwZrpyu]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "lastDayReserve"
-                    ),
-                    [sty.textdayStatus_midDayReserveV2__fgKpwx8Qvw]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserveV2"
-                    ),
-                    [sty.textdayStatus_midDayReserve__fgKpwZCt7G]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserve"
-                    ),
-                    [sty.textdayStatus_passedFirstDayReserveV2__fgKpwhpmmI]:
-                      hasVariant(
-                        $state,
-                        "dayStatus",
-                        "passedFirstDayReserveV2"
-                      ),
-                    [sty.textdayStatus_passedFirstDayReserve__fgKpwhR4Iw]:
-                      hasVariant($state, "dayStatus", "passedFirstDayReserve"),
-                    [sty.textdayStatus_passedLastDayReserveV2__fgKpwsnHmp]:
-                      hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
-                    [sty.textdayStatus_passedLastDayReserve__fgKpwnJrzh]:
-                      hasVariant($state, "dayStatus", "passedLastDayReserve"),
-                    [sty.textdayStatus_passedMidDayReserveV2__fgKpwZPpWv]:
-                      hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
-                    [sty.textdayStatus_passedMidDayReserve__fgKpwLtd9T]:
-                      hasVariant($state, "dayStatus", "passedMidDayReserve"),
-                    [sty.textdayStatus_passedReservedV2__fgKpwISdsA]:
-                      hasVariant($state, "dayStatus", "passedReservedV2"),
-                    [sty.textdayStatus_passedSingleReserve__fgKpwLp2Ep]:
-                      hasVariant($state, "dayStatus", "passedSingleReserve"),
-                    [sty.textdayStatus_reservedV2__fgKpw75Ot]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reservedV2"
-                    ),
-                    [sty.textdayStatus_reserved__fgKpwVf0A8]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reserved"
-                    ),
-                    [sty.textdayStatus_selected__fgKpwPzhv6]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "selected"
-                    ),
-                    [sty.textdayStatus_selected_selected__fgKpwPzhv6LSVo3]:
-                      hasVariant($state, "selected", "selected") &&
-                      hasVariant($state, "dayStatus", "selected"),
-                    [sty.textselected__fgKpwlSVo3]: hasVariant(
-                      $state,
-                      "selected",
-                      "selected"
-                    )
-                  }
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $props.dayNumber;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            ) : null}
-            {(() => {
-              try {
-                return (() => {
-                  if ($props.holidays == "true") {
-                    return true;
-                  } else {
-                    return false;
-                  }
-                })();
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <div
-                data-plasmic-name={"holidays2"}
-                data-plasmic-override={overrides.holidays2}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.holidays2,
-                  {
-                    [sty.holidays2dayStatus_blocked]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "blocked"
-                    ),
-                    [sty.holidays2dayStatus_disabledV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabledV2"
-                    ),
-                    [sty.holidays2dayStatus_disabled]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabled"
-                    ),
-                    [sty.holidays2dayStatus_discount]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "discount"
-                    ),
-                    [sty.holidays2dayStatus_firstDayReserveV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "firstDayReserveV2"
-                    ),
-                    [sty.holidays2dayStatus_firstDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "firstDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_lastDayReserveV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "lastDayReserveV2"
-                    ),
-                    [sty.holidays2dayStatus_lastDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "lastDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_midDayReserveV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserveV2"
-                    ),
-                    [sty.holidays2dayStatus_midDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_passedFirstDayReserveV2]:
-                      hasVariant(
-                        $state,
-                        "dayStatus",
-                        "passedFirstDayReserveV2"
-                      ),
-                    [sty.holidays2dayStatus_passedFirstDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedFirstDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_passedLastDayReserveV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedLastDayReserveV2"
-                    ),
-                    [sty.holidays2dayStatus_passedLastDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedLastDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_passedMidDayReserveV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedMidDayReserveV2"
-                    ),
-                    [sty.holidays2dayStatus_passedMidDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedMidDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_passedReservedV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedReservedV2"
-                    ),
-                    [sty.holidays2dayStatus_passedSingleReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedSingleReserve"
-                    ),
-                    [sty.holidays2dayStatus_reservedV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reservedV2"
-                    ),
-                    [sty.holidays2dayStatus_reserved]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reserved"
-                    ),
-                    [sty.holidays2dayStatus_selected]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "selected"
-                    ),
-                    [sty.holidays2selected]: hasVariant(
-                      $state,
-                      "selected",
-                      "selected"
-                    )
-                  }
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $props.dayNumber;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            ) : null}
-          </div>
-          <div
-            className={classNames(projectcss.all, sty.freeBox___6Yvqv, {
-              [sty.freeBoxdayStatus_blocked___6Yvqv3FCqw]: hasVariant(
+            data-plasmic-name={"cell"}
+            data-plasmic-override={overrides.cell}
+            className={classNames(projectcss.all, sty.cell, "noteEffect", {
+              [sty.celldayStatus_blocked]: hasVariant(
                 $state,
                 "dayStatus",
                 "blocked"
               ),
-              [sty.freeBoxdayStatus_disabledV2___6Yvqv6ARxq]: hasVariant(
+              [sty.celldayStatus_disabledV2]: hasVariant(
                 $state,
                 "dayStatus",
                 "disabledV2"
               ),
-              [sty.freeBoxdayStatus_disabled___6Yvqv9Zm4Q]: hasVariant(
+              [sty.celldayStatus_disabled]: hasVariant(
                 $state,
                 "dayStatus",
                 "disabled"
               ),
-              [sty.freeBoxdayStatus_firstDayReserveV2___6YvqVlxm0M]: hasVariant(
+              [sty.celldayStatus_discount]: hasVariant(
+                $state,
+                "dayStatus",
+                "discount"
+              ),
+              [sty.celldayStatus_firstDayReserveV2]: hasVariant(
                 $state,
                 "dayStatus",
                 "firstDayReserveV2"
               ),
-              [sty.freeBoxdayStatus_firstDayReserve___6YvqvXcLe3]: hasVariant(
+              [sty.celldayStatus_firstDayReserve]: hasVariant(
                 $state,
                 "dayStatus",
                 "firstDayReserve"
               ),
-              [sty.freeBoxdayStatus_lastDayReserveV2___6YvqvHbxR]: hasVariant(
+              [sty.celldayStatus_lastDayReserveV2]: hasVariant(
                 $state,
                 "dayStatus",
                 "lastDayReserveV2"
               ),
-              [sty.freeBoxdayStatus_midDayReserveV2___6YvqVx8Qvw]: hasVariant(
-                $state,
-                "dayStatus",
-                "midDayReserveV2"
-              ),
-              [sty.freeBoxdayStatus_midDayReserve___6YvqvzCt7G]: hasVariant(
-                $state,
-                "dayStatus",
-                "midDayReserve"
-              ),
-              [sty.freeBoxdayStatus_passedFirstDayReserveV2___6YvqVhpmmI]:
-                hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
-              [sty.freeBoxdayStatus_passedFirstDayReserve___6YvqVhR4Iw]:
-                hasVariant($state, "dayStatus", "passedFirstDayReserve"),
-              [sty.freeBoxdayStatus_passedLastDayReserveV2___6YvqVsnHmp]:
-                hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
-              [sty.freeBoxdayStatus_passedLastDayReserve___6YvqVnJrzh]:
-                hasVariant($state, "dayStatus", "passedLastDayReserve"),
-              [sty.freeBoxdayStatus_passedMidDayReserveV2___6YvqvzPpWv]:
-                hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
-              [sty.freeBoxdayStatus_passedMidDayReserve___6Yvqvltd9T]:
-                hasVariant($state, "dayStatus", "passedMidDayReserve"),
-              [sty.freeBoxdayStatus_passedReservedV2___6YvqviSdsA]: hasVariant(
-                $state,
-                "dayStatus",
-                "passedReservedV2"
-              ),
-              [sty.freeBoxdayStatus_passedSingleReserve___6Yvqvlp2Ep]:
-                hasVariant($state, "dayStatus", "passedSingleReserve"),
-              [sty.freeBoxdayStatus_reservedV2___6Yvqv75Ot]: hasVariant(
-                $state,
-                "dayStatus",
-                "reservedV2"
-              ),
-              [sty.freeBoxdayStatus_reserved___6YvqvVf0A8]: hasVariant(
-                $state,
-                "dayStatus",
-                "reserved"
-              ),
-              [sty.freeBoxdayStatus_selected___6YvqvPzhv6]: hasVariant(
-                $state,
-                "dayStatus",
-                "selected"
-              ),
-              [sty.freeBoxselected___6YvqVlSVo3]: hasVariant(
-                $state,
-                "selected",
-                "selected"
-              )
-            })}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__lXDgF,
-                {
-                  [sty.textdayStatus_blocked__lXDgF3FCqw]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "blocked"
-                  ),
-                  [sty.textdayStatus_disabledV2__lXDgF6ARxq]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "disabledV2"
-                  ),
-                  [sty.textdayStatus_disabled__lXDgF9Zm4Q]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "disabled"
-                  ),
-                  [sty.textdayStatus_discount__lXDgF58PIn]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "discount"
-                  ),
-                  [sty.textdayStatus_firstDayReserveV2__lXDgFlxm0M]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "firstDayReserveV2"
-                  ),
-                  [sty.textdayStatus_firstDayReserve__lXDgFXcLe3]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "firstDayReserve"
-                  ),
-                  [sty.textdayStatus_lastDayReserveV2__lXDgFHbxR]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "lastDayReserveV2"
-                  ),
-                  [sty.textdayStatus_lastDayReserve__lXDgFzrpyu]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "lastDayReserve"
-                  ),
-                  [sty.textdayStatus_midDayReserveV2__lXDgFx8Qvw]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "midDayReserveV2"
-                  ),
-                  [sty.textdayStatus_midDayReserve__lXDgFzCt7G]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "midDayReserve"
-                  ),
-                  [sty.textdayStatus_passedFirstDayReserveV2__lXDgFhpmmI]:
-                    hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
-                  [sty.textdayStatus_passedFirstDayReserve__lXDgFhR4Iw]:
-                    hasVariant($state, "dayStatus", "passedFirstDayReserve"),
-                  [sty.textdayStatus_passedLastDayReserveV2__lXDgFsnHmp]:
-                    hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
-                  [sty.textdayStatus_passedLastDayReserve__lXDgFnJrzh]:
-                    hasVariant($state, "dayStatus", "passedLastDayReserve"),
-                  [sty.textdayStatus_passedMidDayReserveV2__lXDgFzPpWv]:
-                    hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
-                  [sty.textdayStatus_passedMidDayReserve__lXDgFltd9T]:
-                    hasVariant($state, "dayStatus", "passedMidDayReserve"),
-                  [sty.textdayStatus_passedReservedV2__lXDgFiSdsA]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "passedReservedV2"
-                  ),
-                  [sty.textdayStatus_passedSingleReserve__lXDgFlp2Ep]:
-                    hasVariant($state, "dayStatus", "passedSingleReserve"),
-                  [sty.textdayStatus_reservedV2__lXDgF75Ot]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "reservedV2"
-                  ),
-                  [sty.textdayStatus_reserved__lXDgFVf0A8]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "reserved"
-                  ),
-                  [sty.textdayStatus_selected__lXDgFPzhv6]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "selected"
-                  ),
-                  [sty.textselected__lXDgFlSVo3]: hasVariant(
-                    $state,
-                    "selected",
-                    "selected"
-                  )
-                }
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $props.platform;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "\u0631\u0632\u0648\u0631 ";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              ) : hasVariant(globalVariants, "screen", "mobile") ? (
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $props.platform;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "\u0631\u0632\u0648\u0631 ";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              ) : (
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $props.platform;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "\u0631\u0632\u0648\u0631 ";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              )}
-            </div>
-          </div>
-          <div
-            className={classNames(projectcss.all, sty.freeBox__vb8Yk, {
-              [sty.freeBoxdayStatus_firstDayReserveV2__vb8Yklxm0M]: hasVariant(
-                $state,
-                "dayStatus",
-                "firstDayReserveV2"
-              ),
-              [sty.freeBoxdayStatus_firstDayReserve__vb8YkXcLe3]: hasVariant(
-                $state,
-                "dayStatus",
-                "firstDayReserve"
-              ),
-              [sty.freeBoxdayStatus_lastDayReserveV2__vb8YkHbxR]: hasVariant(
-                $state,
-                "dayStatus",
-                "lastDayReserveV2"
-              ),
-              [sty.freeBoxdayStatus_lastDayReserve__vb8YkZrpyu]: hasVariant(
+              [sty.celldayStatus_lastDayReserve]: hasVariant(
                 $state,
                 "dayStatus",
                 "lastDayReserve"
               ),
-              [sty.freeBoxdayStatus_midDayReserveV2__vb8Ykx8Qvw]: hasVariant(
+              [sty.celldayStatus_midDayReserveV2]: hasVariant(
                 $state,
                 "dayStatus",
                 "midDayReserveV2"
               ),
-              [sty.freeBoxdayStatus_midDayReserve__vb8YkZCt7G]: hasVariant(
+              [sty.celldayStatus_midDayReserve]: hasVariant(
                 $state,
                 "dayStatus",
                 "midDayReserve"
               ),
-              [sty.freeBoxdayStatus_passedFirstDayReserveV2__vb8YkhpmmI]:
-                hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
-              [sty.freeBoxdayStatus_passedLastDayReserveV2__vb8YksnHmp]:
-                hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
-              [sty.freeBoxdayStatus_passedMidDayReserveV2__vb8YkZPpWv]:
-                hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
-              [sty.freeBoxdayStatus_passedMidDayReserve__vb8YkLtd9T]:
-                hasVariant($state, "dayStatus", "passedMidDayReserve"),
-              [sty.freeBoxdayStatus_passedReservedV2__vb8YkISdsA]: hasVariant(
+              [sty.celldayStatus_passedFirstDayReserveV2]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedFirstDayReserveV2"
+              ),
+              [sty.celldayStatus_passedFirstDayReserve]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedFirstDayReserve"
+              ),
+              [sty.celldayStatus_passedLastDayReserveV2]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedLastDayReserveV2"
+              ),
+              [sty.celldayStatus_passedLastDayReserve]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedLastDayReserve"
+              ),
+              [sty.celldayStatus_passedMidDayReserveV2]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedMidDayReserveV2"
+              ),
+              [sty.celldayStatus_passedMidDayReserve]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedMidDayReserve"
+              ),
+              [sty.celldayStatus_passedReservedV2]: hasVariant(
                 $state,
                 "dayStatus",
                 "passedReservedV2"
               ),
-              [sty.freeBoxdayStatus_reservedV2__vb8Yk75Ot]: hasVariant(
+              [sty.celldayStatus_passedSingleReserve]: hasVariant(
+                $state,
+                "dayStatus",
+                "passedSingleReserve"
+              ),
+              [sty.celldayStatus_reservedV2]: hasVariant(
                 $state,
                 "dayStatus",
                 "reservedV2"
               ),
-              [sty.freeBoxdayStatus_reserved__vb8YkVf0A8]: hasVariant(
+              [sty.celldayStatus_reserved]: hasVariant(
                 $state,
                 "dayStatus",
                 "reserved"
               ),
-              [sty.freeBoxselected__vb8YklSVo3]: hasVariant(
+              [sty.celldayStatus_selected]: hasVariant(
                 $state,
-                "selected",
+                "dayStatus",
                 "selected"
-              )
+              ),
+              [sty.cellselected]: hasVariant($state, "selected", "selected")
             })}
           >
-            {(
-              hasVariant($state, "dayStatus", "passedReservedV2")
-                ? (() => {
-                    try {
-                      return $props.isSmartBooking;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
+            <div
+              className={classNames(projectcss.all, sty.freeBox___20P4Y, {
+                [sty.freeBoxdayStatus_disabledV2___20P4Y6ARxq]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabledV2"
+                ),
+                [sty.freeBoxdayStatus_disabled___20P4Y9Zm4Q]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabled"
+                ),
+                [sty.freeBoxdayStatus_midDayReserveV2___20P4Yx8Qvw]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "midDayReserveV2"
+                ),
+                [sty.freeBoxdayStatus_midDayReserve___20P4YzCt7G]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "midDayReserve"
+                ),
+                [sty.freeBoxdayStatus_passedMidDayReserveV2___20P4YzPpWv]:
+                  hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
+                [sty.freeBoxdayStatus_passedReservedV2___20P4YiSdsA]:
+                  hasVariant($state, "dayStatus", "passedReservedV2"),
+                [sty.freeBoxdayStatus_reservedV2___20P4Y75Ot]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reservedV2"
+                ),
+                [sty.freeBoxdayStatus_reserved___20P4YVf0A8]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reserved"
+                ),
+                [sty.freeBoxselected___20P4YlSVo3]: hasVariant(
+                  $state,
+                  "selected",
+                  "selected"
+                )
+              })}
+            >
+              {(() => {
+                try {
+                  return (() => {
+                    if ($props.holidays === "true") {
+                      return false;
+                    } else {
+                      return true;
                     }
-                  })()
-                : hasVariant($state, "dayStatus", "passedFirstDayReserveV2")
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fgKpw,
+                    {
+                      [sty.textdayStatus_blocked__fgKpw3FCqw]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "blocked"
+                      ),
+                      [sty.textdayStatus_disabledV2__fgKpw6ARxq]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "disabledV2"
+                      ),
+                      [sty.textdayStatus_disabled__fgKpw9Zm4Q]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "disabled"
+                      ),
+                      [sty.textdayStatus_discount__fgKpw58PIn]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "discount"
+                      ),
+                      [sty.textdayStatus_firstDayReserveV2__fgKpwlxm0M]:
+                        hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                      [sty.textdayStatus_firstDayReserve__fgKpwXcLe3]:
+                        hasVariant($state, "dayStatus", "firstDayReserve"),
+                      [sty.textdayStatus_lastDayReserveV2__fgKpwHbxR]:
+                        hasVariant($state, "dayStatus", "lastDayReserveV2"),
+                      [sty.textdayStatus_lastDayReserve__fgKpwZrpyu]:
+                        hasVariant($state, "dayStatus", "lastDayReserve"),
+                      [sty.textdayStatus_midDayReserveV2__fgKpwx8Qvw]:
+                        hasVariant($state, "dayStatus", "midDayReserveV2"),
+                      [sty.textdayStatus_midDayReserve__fgKpwZCt7G]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "midDayReserve"
+                      ),
+                      [sty.textdayStatus_passedFirstDayReserveV2__fgKpwhpmmI]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "passedFirstDayReserveV2"
+                        ),
+                      [sty.textdayStatus_passedFirstDayReserve__fgKpwhR4Iw]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "passedFirstDayReserve"
+                        ),
+                      [sty.textdayStatus_passedLastDayReserveV2__fgKpwsnHmp]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "passedLastDayReserveV2"
+                        ),
+                      [sty.textdayStatus_passedLastDayReserve__fgKpwnJrzh]:
+                        hasVariant($state, "dayStatus", "passedLastDayReserve"),
+                      [sty.textdayStatus_passedMidDayReserveV2__fgKpwZPpWv]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "passedMidDayReserveV2"
+                        ),
+                      [sty.textdayStatus_passedMidDayReserve__fgKpwLtd9T]:
+                        hasVariant($state, "dayStatus", "passedMidDayReserve"),
+                      [sty.textdayStatus_passedReservedV2__fgKpwISdsA]:
+                        hasVariant($state, "dayStatus", "passedReservedV2"),
+                      [sty.textdayStatus_passedSingleReserve__fgKpwLp2Ep]:
+                        hasVariant($state, "dayStatus", "passedSingleReserve"),
+                      [sty.textdayStatus_reservedV2__fgKpw75Ot]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "reservedV2"
+                      ),
+                      [sty.textdayStatus_reserved__fgKpwVf0A8]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "reserved"
+                      ),
+                      [sty.textdayStatus_selected__fgKpwPzhv6]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "selected"
+                      ),
+                      [sty.textdayStatus_selected_selected__fgKpwPzhv6LSVo3]:
+                        hasVariant($state, "selected", "selected") &&
+                        hasVariant($state, "dayStatus", "selected"),
+                      [sty.textselected__fgKpwlSVo3]: hasVariant(
+                        $state,
+                        "selected",
+                        "selected"
+                      )
+                    }
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $props.dayNumber;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+              ) : null}
+              {(() => {
+                try {
+                  return (() => {
+                    if ($props.holidays == "true") {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  data-plasmic-name={"holidays2"}
+                  data-plasmic-override={overrides.holidays2}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.holidays2,
+                    {
+                      [sty.holidays2dayStatus_blocked]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "blocked"
+                      ),
+                      [sty.holidays2dayStatus_disabledV2]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "disabledV2"
+                      ),
+                      [sty.holidays2dayStatus_disabled]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "disabled"
+                      ),
+                      [sty.holidays2dayStatus_discount]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "discount"
+                      ),
+                      [sty.holidays2dayStatus_firstDayReserveV2]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "firstDayReserveV2"
+                      ),
+                      [sty.holidays2dayStatus_firstDayReserve]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "firstDayReserve"
+                      ),
+                      [sty.holidays2dayStatus_lastDayReserveV2]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "lastDayReserveV2"
+                      ),
+                      [sty.holidays2dayStatus_lastDayReserve]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "lastDayReserve"
+                      ),
+                      [sty.holidays2dayStatus_midDayReserveV2]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "midDayReserveV2"
+                      ),
+                      [sty.holidays2dayStatus_midDayReserve]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "midDayReserve"
+                      ),
+                      [sty.holidays2dayStatus_passedFirstDayReserveV2]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "passedFirstDayReserveV2"
+                        ),
+                      [sty.holidays2dayStatus_passedFirstDayReserve]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "passedFirstDayReserve"
+                        ),
+                      [sty.holidays2dayStatus_passedLastDayReserveV2]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "passedLastDayReserveV2"
+                        ),
+                      [sty.holidays2dayStatus_passedLastDayReserve]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "passedLastDayReserve"
+                      ),
+                      [sty.holidays2dayStatus_passedMidDayReserveV2]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "passedMidDayReserveV2"
+                        ),
+                      [sty.holidays2dayStatus_passedMidDayReserve]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "passedMidDayReserve"
+                      ),
+                      [sty.holidays2dayStatus_passedReservedV2]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "passedReservedV2"
+                      ),
+                      [sty.holidays2dayStatus_passedSingleReserve]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "passedSingleReserve"
+                      ),
+                      [sty.holidays2dayStatus_reservedV2]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "reservedV2"
+                      ),
+                      [sty.holidays2dayStatus_reserved]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "reserved"
+                      ),
+                      [sty.holidays2dayStatus_selected]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "selected"
+                      ),
+                      [sty.holidays2selected]: hasVariant(
+                        $state,
+                        "selected",
+                        "selected"
+                      )
+                    }
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $props.dayNumber;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+              ) : null}
+            </div>
+            <div
+              className={classNames(projectcss.all, sty.freeBox___6Yvqv, {
+                [sty.freeBoxdayStatus_blocked___6Yvqv3FCqw]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "blocked"
+                ),
+                [sty.freeBoxdayStatus_disabledV2___6Yvqv6ARxq]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabledV2"
+                ),
+                [sty.freeBoxdayStatus_disabled___6Yvqv9Zm4Q]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabled"
+                ),
+                [sty.freeBoxdayStatus_firstDayReserveV2___6YvqVlxm0M]:
+                  hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                [sty.freeBoxdayStatus_firstDayReserve___6YvqvXcLe3]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "firstDayReserve"
+                ),
+                [sty.freeBoxdayStatus_lastDayReserveV2___6YvqvHbxR]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "lastDayReserveV2"
+                ),
+                [sty.freeBoxdayStatus_midDayReserveV2___6YvqVx8Qvw]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "midDayReserveV2"
+                ),
+                [sty.freeBoxdayStatus_midDayReserve___6YvqvzCt7G]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "midDayReserve"
+                ),
+                [sty.freeBoxdayStatus_passedFirstDayReserveV2___6YvqVhpmmI]:
+                  hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
+                [sty.freeBoxdayStatus_passedFirstDayReserve___6YvqVhR4Iw]:
+                  hasVariant($state, "dayStatus", "passedFirstDayReserve"),
+                [sty.freeBoxdayStatus_passedLastDayReserveV2___6YvqVsnHmp]:
+                  hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
+                [sty.freeBoxdayStatus_passedLastDayReserve___6YvqVnJrzh]:
+                  hasVariant($state, "dayStatus", "passedLastDayReserve"),
+                [sty.freeBoxdayStatus_passedMidDayReserveV2___6YvqvzPpWv]:
+                  hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
+                [sty.freeBoxdayStatus_passedMidDayReserve___6Yvqvltd9T]:
+                  hasVariant($state, "dayStatus", "passedMidDayReserve"),
+                [sty.freeBoxdayStatus_passedReservedV2___6YvqviSdsA]:
+                  hasVariant($state, "dayStatus", "passedReservedV2"),
+                [sty.freeBoxdayStatus_passedSingleReserve___6Yvqvlp2Ep]:
+                  hasVariant($state, "dayStatus", "passedSingleReserve"),
+                [sty.freeBoxdayStatus_reservedV2___6Yvqv75Ot]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reservedV2"
+                ),
+                [sty.freeBoxdayStatus_reserved___6YvqvVf0A8]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reserved"
+                ),
+                [sty.freeBoxdayStatus_selected___6YvqvPzhv6]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "selected"
+                ),
+                [sty.freeBoxselected___6YvqVlSVo3]: hasVariant(
+                  $state,
+                  "selected",
+                  "selected"
+                )
+              })}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__lXDgF,
+                  {
+                    [sty.textdayStatus_blocked__lXDgF3FCqw]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "blocked"
+                    ),
+                    [sty.textdayStatus_disabledV2__lXDgF6ARxq]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "disabledV2"
+                    ),
+                    [sty.textdayStatus_disabled__lXDgF9Zm4Q]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "disabled"
+                    ),
+                    [sty.textdayStatus_discount__lXDgF58PIn]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "discount"
+                    ),
+                    [sty.textdayStatus_firstDayReserveV2__lXDgFlxm0M]:
+                      hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                    [sty.textdayStatus_firstDayReserve__lXDgFXcLe3]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "firstDayReserve"
+                    ),
+                    [sty.textdayStatus_lastDayReserveV2__lXDgFHbxR]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "lastDayReserveV2"
+                    ),
+                    [sty.textdayStatus_lastDayReserve__lXDgFzrpyu]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "lastDayReserve"
+                    ),
+                    [sty.textdayStatus_midDayReserveV2__lXDgFx8Qvw]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "midDayReserveV2"
+                    ),
+                    [sty.textdayStatus_midDayReserve__lXDgFzCt7G]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "midDayReserve"
+                    ),
+                    [sty.textdayStatus_passedFirstDayReserveV2__lXDgFhpmmI]:
+                      hasVariant(
+                        $state,
+                        "dayStatus",
+                        "passedFirstDayReserveV2"
+                      ),
+                    [sty.textdayStatus_passedFirstDayReserve__lXDgFhR4Iw]:
+                      hasVariant($state, "dayStatus", "passedFirstDayReserve"),
+                    [sty.textdayStatus_passedLastDayReserveV2__lXDgFsnHmp]:
+                      hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
+                    [sty.textdayStatus_passedLastDayReserve__lXDgFnJrzh]:
+                      hasVariant($state, "dayStatus", "passedLastDayReserve"),
+                    [sty.textdayStatus_passedMidDayReserveV2__lXDgFzPpWv]:
+                      hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
+                    [sty.textdayStatus_passedMidDayReserve__lXDgFltd9T]:
+                      hasVariant($state, "dayStatus", "passedMidDayReserve"),
+                    [sty.textdayStatus_passedReservedV2__lXDgFiSdsA]:
+                      hasVariant($state, "dayStatus", "passedReservedV2"),
+                    [sty.textdayStatus_passedSingleReserve__lXDgFlp2Ep]:
+                      hasVariant($state, "dayStatus", "passedSingleReserve"),
+                    [sty.textdayStatus_reservedV2__lXDgF75Ot]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "reservedV2"
+                    ),
+                    [sty.textdayStatus_reserved__lXDgFVf0A8]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "reserved"
+                    ),
+                    [sty.textdayStatus_selected__lXDgFPzhv6]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "selected"
+                    ),
+                    [sty.textselected__lXDgFlSVo3]: hasVariant(
+                      $state,
+                      "selected",
+                      "selected"
+                    )
+                  }
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $props.platform;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0631\u0632\u0648\u0631 ";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $props.platform;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0631\u0632\u0648\u0631 ";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $props.platform;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0631\u0632\u0648\u0631 ";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                )}
+              </div>
+            </div>
+            <div
+              className={classNames(projectcss.all, sty.freeBox__vb8Yk, {
+                [sty.freeBoxdayStatus_firstDayReserveV2__vb8Yklxm0M]:
+                  hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                [sty.freeBoxdayStatus_firstDayReserve__vb8YkXcLe3]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "firstDayReserve"
+                ),
+                [sty.freeBoxdayStatus_lastDayReserveV2__vb8YkHbxR]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "lastDayReserveV2"
+                ),
+                [sty.freeBoxdayStatus_lastDayReserve__vb8YkZrpyu]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "lastDayReserve"
+                ),
+                [sty.freeBoxdayStatus_midDayReserveV2__vb8Ykx8Qvw]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "midDayReserveV2"
+                ),
+                [sty.freeBoxdayStatus_midDayReserve__vb8YkZCt7G]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "midDayReserve"
+                ),
+                [sty.freeBoxdayStatus_passedFirstDayReserveV2__vb8YkhpmmI]:
+                  hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
+                [sty.freeBoxdayStatus_passedLastDayReserveV2__vb8YksnHmp]:
+                  hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
+                [sty.freeBoxdayStatus_passedMidDayReserveV2__vb8YkZPpWv]:
+                  hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
+                [sty.freeBoxdayStatus_passedMidDayReserve__vb8YkLtd9T]:
+                  hasVariant($state, "dayStatus", "passedMidDayReserve"),
+                [sty.freeBoxdayStatus_passedReservedV2__vb8YkISdsA]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedReservedV2"
+                ),
+                [sty.freeBoxdayStatus_reservedV2__vb8Yk75Ot]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reservedV2"
+                ),
+                [sty.freeBoxdayStatus_reserved__vb8YkVf0A8]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reserved"
+                ),
+                [sty.freeBoxselected__vb8YklSVo3]: hasVariant(
+                  $state,
+                  "selected",
+                  "selected"
+                )
+              })}
+            >
+              {(
+                hasVariant($state, "dayStatus", "passedReservedV2")
                   ? (() => {
                       try {
                         return $props.isSmartBooking;
@@ -1246,10 +1324,10 @@ function PlasmicDayCell2__RenderFunc(props: {
                         throw e;
                       }
                     })()
-                  : hasVariant($state, "dayStatus", "disabledV2")
+                  : hasVariant($state, "dayStatus", "passedFirstDayReserveV2")
                     ? (() => {
                         try {
-                          return $props.calendarV2;
+                          return $props.isSmartBooking;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -1260,10 +1338,10 @@ function PlasmicDayCell2__RenderFunc(props: {
                           throw e;
                         }
                       })()
-                    : hasVariant($state, "dayStatus", "reservedV2")
+                    : hasVariant($state, "dayStatus", "disabledV2")
                       ? (() => {
                           try {
-                            return $props.isSmartBooking;
+                            return $props.calendarV2;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -1274,7 +1352,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                             throw e;
                           }
                         })()
-                      : hasVariant($state, "dayStatus", "firstDayReserveV2")
+                      : hasVariant($state, "dayStatus", "reservedV2")
                         ? (() => {
                             try {
                               return $props.isSmartBooking;
@@ -1288,66 +1366,387 @@ function PlasmicDayCell2__RenderFunc(props: {
                               throw e;
                             }
                           })()
-                        : hasVariant($state, "dayStatus", "midDayReserve")
-                          ? true
-                          : hasVariant($state, "dayStatus", "lastDayReserve")
+                        : hasVariant($state, "dayStatus", "firstDayReserveV2")
+                          ? (() => {
+                              try {
+                                return $props.isSmartBooking;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : hasVariant($state, "dayStatus", "midDayReserve")
                             ? true
-                            : true
-            ) ? (
-              <div
-                className={classNames(projectcss.all, sty.freeBox___7HH4, {
-                  [sty.freeBoxdayStatus_disabledV2___7HH46ARxq]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "disabledV2"
-                  ),
-                  [sty.freeBoxdayStatus_firstDayReserveV2___7HH4Lxm0M]:
-                    hasVariant($state, "dayStatus", "firstDayReserveV2"),
-                  [sty.freeBoxdayStatus_firstDayReserve___7HH4XcLe3]:
-                    hasVariant($state, "dayStatus", "firstDayReserve"),
-                  [sty.freeBoxdayStatus_lastDayReserve___7HH4Zrpyu]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "lastDayReserve"
-                  ),
-                  [sty.freeBoxdayStatus_midDayReserve___7HH4ZCt7G]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "midDayReserve"
-                  ),
-                  [sty.freeBoxdayStatus_passedFirstDayReserveV2___7HH4HpmmI]:
-                    hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
-                  [sty.freeBoxdayStatus_passedLastDayReserve___7HH4NJrzh]:
-                    hasVariant($state, "dayStatus", "passedLastDayReserve"),
-                  [sty.freeBoxdayStatus_passedReservedV2___7HH4ISdsA]:
-                    hasVariant($state, "dayStatus", "passedReservedV2"),
-                  [sty.freeBoxdayStatus_reservedV2___7HH475Ot]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "reservedV2"
-                  )
-                })}
-              >
-                {(
-                  hasVariant($state, "dayStatus", "passedReservedV2") &&
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? true
-                    : hasVariant($state, "dayStatus", "passedReservedV2")
+                            : hasVariant($state, "dayStatus", "lastDayReserve")
+                              ? true
+                              : true
+              ) ? (
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___7HH4, {
+                    [sty.freeBoxdayStatus_disabledV2___7HH46ARxq]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "disabledV2"
+                    ),
+                    [sty.freeBoxdayStatus_firstDayReserveV2___7HH4Lxm0M]:
+                      hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                    [sty.freeBoxdayStatus_firstDayReserve___7HH4XcLe3]:
+                      hasVariant($state, "dayStatus", "firstDayReserve"),
+                    [sty.freeBoxdayStatus_lastDayReserve___7HH4Zrpyu]:
+                      hasVariant($state, "dayStatus", "lastDayReserve"),
+                    [sty.freeBoxdayStatus_midDayReserve___7HH4ZCt7G]:
+                      hasVariant($state, "dayStatus", "midDayReserve"),
+                    [sty.freeBoxdayStatus_passedFirstDayReserveV2___7HH4HpmmI]:
+                      hasVariant(
+                        $state,
+                        "dayStatus",
+                        "passedFirstDayReserveV2"
+                      ),
+                    [sty.freeBoxdayStatus_passedLastDayReserve___7HH4NJrzh]:
+                      hasVariant($state, "dayStatus", "passedLastDayReserve"),
+                    [sty.freeBoxdayStatus_passedReservedV2___7HH4ISdsA]:
+                      hasVariant($state, "dayStatus", "passedReservedV2"),
+                    [sty.freeBoxdayStatus_reservedV2___7HH475Ot]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "reservedV2"
+                    )
+                  })}
+                >
+                  {(
+                    hasVariant($state, "dayStatus", "passedReservedV2") &&
+                    hasVariant(globalVariants, "screen", "smallMobile")
                       ? true
-                      : hasVariant(
-                            $state,
-                            "dayStatus",
-                            "passedLastDayReserveV2"
-                          )
+                      : hasVariant($state, "dayStatus", "passedReservedV2")
                         ? true
                         : hasVariant(
                               $state,
                               "dayStatus",
-                              "passedMidDayReserveV2"
+                              "passedLastDayReserveV2"
                             )
                           ? true
-                          : hasVariant($state, "dayStatus", "disabledV2")
+                          : hasVariant(
+                                $state,
+                                "dayStatus",
+                                "passedMidDayReserveV2"
+                              )
                             ? true
+                            : hasVariant($state, "dayStatus", "disabledV2")
+                              ? true
+                              : hasVariant($state, "dayStatus", "reservedV2") &&
+                                  hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "smallMobile"
+                                  )
+                                ? true
+                                : hasVariant($state, "dayStatus", "reservedV2")
+                                  ? true
+                                  : hasVariant(
+                                        $state,
+                                        "dayStatus",
+                                        "midDayReserveV2"
+                                      )
+                                    ? true
+                                    : hasVariant(
+                                          $state,
+                                          "dayStatus",
+                                          "lastDayReserveV2"
+                                        )
+                                      ? true
+                                      : hasVariant(
+                                            $state,
+                                            "dayStatus",
+                                            "passedLastDayReserve"
+                                          )
+                                        ? (() => {
+                                            try {
+                                              return !$props.calendarV2;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return true;
+                                              }
+                                              throw e;
+                                            }
+                                          })()
+                                        : hasVariant(
+                                              $state,
+                                              "dayStatus",
+                                              "passedMidDayReserve"
+                                            )
+                                          ? (() => {
+                                              try {
+                                                return !$props.calendarV2;
+                                              } catch (e) {
+                                                if (
+                                                  e instanceof TypeError ||
+                                                  e?.plasmicType ===
+                                                    "PlasmicUndefinedDataError"
+                                                ) {
+                                                  return true;
+                                                }
+                                                throw e;
+                                              }
+                                            })()
+                                          : hasVariant(
+                                                $state,
+                                                "dayStatus",
+                                                "midDayReserve"
+                                              )
+                                            ? (() => {
+                                                try {
+                                                  return !$props.calendarV2;
+                                                } catch (e) {
+                                                  if (
+                                                    e instanceof TypeError ||
+                                                    e?.plasmicType ===
+                                                      "PlasmicUndefinedDataError"
+                                                  ) {
+                                                    return true;
+                                                  }
+                                                  throw e;
+                                                }
+                                              })()
+                                            : hasVariant(
+                                                  $state,
+                                                  "dayStatus",
+                                                  "lastDayReserve"
+                                                )
+                                              ? (() => {
+                                                  try {
+                                                    return !$props.calendarV2;
+                                                  } catch (e) {
+                                                    if (
+                                                      e instanceof TypeError ||
+                                                      e?.plasmicType ===
+                                                        "PlasmicUndefinedDataError"
+                                                    ) {
+                                                      return true;
+                                                    }
+                                                    throw e;
+                                                  }
+                                                })()
+                                              : hasVariant(
+                                                    $state,
+                                                    "dayStatus",
+                                                    "selected"
+                                                  )
+                                                ? true
+                                                : hasVariant(
+                                                      $state,
+                                                      "dayStatus",
+                                                      "blocked"
+                                                    )
+                                                  ? true
+                                                  : hasVariant(
+                                                        $state,
+                                                        "dayStatus",
+                                                        "disabled"
+                                                      )
+                                                    ? true
+                                                    : hasVariant(
+                                                          $state,
+                                                          "selected",
+                                                          "selected"
+                                                        )
+                                                      ? true
+                                                      : hasVariant(
+                                                            globalVariants,
+                                                            "screen",
+                                                            "mobile"
+                                                          )
+                                                        ? true
+                                                        : true
+                  ) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__bIcAo,
+                        {
+                          [sty.textdayStatus_blocked__bIcAo3FCqw]: hasVariant(
+                            $state,
+                            "dayStatus",
+                            "blocked"
+                          ),
+                          [sty.textdayStatus_disabledV2__bIcAo6ARxq]:
+                            hasVariant($state, "dayStatus", "disabledV2"),
+                          [sty.textdayStatus_disabled__bIcAo9Zm4Q]: hasVariant(
+                            $state,
+                            "dayStatus",
+                            "disabled"
+                          ),
+                          [sty.textdayStatus_discount__bIcAo58PIn]: hasVariant(
+                            $state,
+                            "dayStatus",
+                            "discount"
+                          ),
+                          [sty.textdayStatus_firstDayReserveV2__bIcAOlxm0M]:
+                            hasVariant(
+                              $state,
+                              "dayStatus",
+                              "firstDayReserveV2"
+                            ),
+                          [sty.textdayStatus_firstDayReserve__bIcAoXcLe3]:
+                            hasVariant($state, "dayStatus", "firstDayReserve"),
+                          [sty.textdayStatus_lastDayReserveV2__bIcAoHbxR]:
+                            hasVariant($state, "dayStatus", "lastDayReserveV2"),
+                          [sty.textdayStatus_lastDayReserve__bIcAozrpyu]:
+                            hasVariant($state, "dayStatus", "lastDayReserve"),
+                          [sty.textdayStatus_midDayReserveV2__bIcAOx8Qvw]:
+                            hasVariant($state, "dayStatus", "midDayReserveV2"),
+                          [sty.textdayStatus_midDayReserve__bIcAozCt7G]:
+                            hasVariant($state, "dayStatus", "midDayReserve"),
+                          [sty.textdayStatus_passedFirstDayReserveV2__bIcAOhpmmI]:
+                            hasVariant(
+                              $state,
+                              "dayStatus",
+                              "passedFirstDayReserveV2"
+                            ),
+                          [sty.textdayStatus_passedFirstDayReserve__bIcAOhR4Iw]:
+                            hasVariant(
+                              $state,
+                              "dayStatus",
+                              "passedFirstDayReserve"
+                            ),
+                          [sty.textdayStatus_passedLastDayReserveV2__bIcAOsnHmp]:
+                            hasVariant(
+                              $state,
+                              "dayStatus",
+                              "passedLastDayReserveV2"
+                            ),
+                          [sty.textdayStatus_passedLastDayReserve__bIcAOnJrzh]:
+                            hasVariant(
+                              $state,
+                              "dayStatus",
+                              "passedLastDayReserve"
+                            ),
+                          [sty.textdayStatus_passedMidDayReserveV2__bIcAozPpWv]:
+                            hasVariant(
+                              $state,
+                              "dayStatus",
+                              "passedMidDayReserveV2"
+                            ),
+                          [sty.textdayStatus_passedMidDayReserve__bIcAoltd9T]:
+                            hasVariant(
+                              $state,
+                              "dayStatus",
+                              "passedMidDayReserve"
+                            ),
+                          [sty.textdayStatus_passedReservedV2__bIcAoiSdsA]:
+                            hasVariant($state, "dayStatus", "passedReservedV2"),
+                          [sty.textdayStatus_passedSingleReserve__bIcAolp2Ep]:
+                            hasVariant(
+                              $state,
+                              "dayStatus",
+                              "passedSingleReserve"
+                            ),
+                          [sty.textdayStatus_reservedV2__bIcAo75Ot]: hasVariant(
+                            $state,
+                            "dayStatus",
+                            "reservedV2"
+                          ),
+                          [sty.textdayStatus_reserved__bIcAoVf0A8]: hasVariant(
+                            $state,
+                            "dayStatus",
+                            "reserved"
+                          ),
+                          [sty.textdayStatus_selected__bIcAoPzhv6]: hasVariant(
+                            $state,
+                            "dayStatus",
+                            "selected"
+                          ),
+                          [sty.textselected__bIcAOlSVo3]: hasVariant(
+                            $state,
+                            "selected",
+                            "selected"
+                          )
+                        }
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $props.price;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
+              {(
+                hasVariant($state, "dayStatus", "passedReservedV2") &&
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? true
+                  : hasVariant($state, "dayStatus", "passedReservedV2")
+                    ? (() => {
+                        try {
+                          return !$props.isSmartBooking;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : hasVariant($state, "dayStatus", "passedLastDayReserveV2")
+                      ? true
+                      : hasVariant($state, "dayStatus", "passedMidDayReserveV2")
+                        ? true
+                        : hasVariant(
+                              $state,
+                              "dayStatus",
+                              "passedFirstDayReserveV2"
+                            )
+                          ? (() => {
+                              try {
+                                return !$props.isSmartBooking;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : hasVariant($state, "dayStatus", "disabledV2")
+                            ? (() => {
+                                try {
+                                  return !$props.calendarV2;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return true;
+                                  }
+                                  throw e;
+                                }
+                              })()
                             : hasVariant($state, "dayStatus", "reservedV2") &&
                                 hasVariant(
                                   globalVariants,
@@ -1356,7 +1755,20 @@ function PlasmicDayCell2__RenderFunc(props: {
                                 )
                               ? true
                               : hasVariant($state, "dayStatus", "reservedV2")
-                                ? true
+                                ? (() => {
+                                    try {
+                                      return !$props.isSmartBooking;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return true;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
                                 : hasVariant(
                                       $state,
                                       "dayStatus",
@@ -1372,11 +1784,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                                     : hasVariant(
                                           $state,
                                           "dayStatus",
-                                          "passedLastDayReserve"
+                                          "firstDayReserveV2"
                                         )
                                       ? (() => {
                                           try {
-                                            return !$props.calendarV2;
+                                            return !$props.isSmartBooking;
                                           } catch (e) {
                                             if (
                                               e instanceof TypeError ||
@@ -1391,7 +1803,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                                       : hasVariant(
                                             $state,
                                             "dayStatus",
-                                            "passedMidDayReserve"
+                                            "passedLastDayReserve"
                                           )
                                         ? (() => {
                                             try {
@@ -1410,7 +1822,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                                         : hasVariant(
                                               $state,
                                               "dayStatus",
-                                              "midDayReserve"
+                                              "passedMidDayReserve"
                                             )
                                           ? (() => {
                                               try {
@@ -1429,7 +1841,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                                           : hasVariant(
                                                 $state,
                                                 "dayStatus",
-                                                "lastDayReserve"
+                                                "midDayReserve"
                                               )
                                             ? (() => {
                                                 try {
@@ -1448,9 +1860,22 @@ function PlasmicDayCell2__RenderFunc(props: {
                                             : hasVariant(
                                                   $state,
                                                   "dayStatus",
-                                                  "selected"
+                                                  "lastDayReserve"
                                                 )
-                                              ? true
+                                              ? (() => {
+                                                  try {
+                                                    return !$props.calendarV2;
+                                                  } catch (e) {
+                                                    if (
+                                                      e instanceof TypeError ||
+                                                      e?.plasmicType ===
+                                                        "PlasmicUndefinedDataError"
+                                                    ) {
+                                                      return true;
+                                                    }
+                                                    throw e;
+                                                  }
+                                                })()
                                               : hasVariant(
                                                     $state,
                                                     "dayStatus",
@@ -1464,469 +1889,128 @@ function PlasmicDayCell2__RenderFunc(props: {
                                                     )
                                                   ? true
                                                   : hasVariant(
-                                                        $state,
-                                                        "selected",
-                                                        "selected"
+                                                        globalVariants,
+                                                        "screen",
+                                                        "mobile"
                                                       )
                                                     ? true
-                                                    : hasVariant(
-                                                          globalVariants,
-                                                          "screen",
-                                                          "mobile"
-                                                        )
-                                                      ? true
-                                                      : true
-                ) ? (
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bIcAo,
-                      {
-                        [sty.textdayStatus_blocked__bIcAo3FCqw]: hasVariant(
+                                                    : false
+              ) ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___9RWtF,
+                    {
+                      [sty.textdayStatus_blocked___9RWtF3FCqw]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "blocked"
+                      ),
+                      [sty.textdayStatus_disabledV2___9RWtF6ARxq]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "disabledV2"
+                      ),
+                      [sty.textdayStatus_disabled___9RWtF9Zm4Q]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "disabled"
+                      ),
+                      [sty.textdayStatus_discount___9RWtF58PIn]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "discount"
+                      ),
+                      [sty.textdayStatus_firstDayReserveV2___9RWtFlxm0M]:
+                        hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                      [sty.textdayStatus_firstDayReserve___9RWtFXcLe3]:
+                        hasVariant($state, "dayStatus", "firstDayReserve"),
+                      [sty.textdayStatus_lastDayReserveV2___9RWtFHbxR]:
+                        hasVariant($state, "dayStatus", "lastDayReserveV2"),
+                      [sty.textdayStatus_lastDayReserve___9RWtFzrpyu]:
+                        hasVariant($state, "dayStatus", "lastDayReserve"),
+                      [sty.textdayStatus_midDayReserveV2___9RWtFx8Qvw]:
+                        hasVariant($state, "dayStatus", "midDayReserveV2"),
+                      [sty.textdayStatus_midDayReserve___9RWtFzCt7G]:
+                        hasVariant($state, "dayStatus", "midDayReserve"),
+                      [sty.textdayStatus_passedFirstDayReserveV2___9RWtFhpmmI]:
+                        hasVariant(
                           $state,
                           "dayStatus",
-                          "blocked"
+                          "passedFirstDayReserveV2"
                         ),
-                        [sty.textdayStatus_disabledV2__bIcAo6ARxq]: hasVariant(
+                      [sty.textdayStatus_passedFirstDayReserve___9RWtFhR4Iw]:
+                        hasVariant(
                           $state,
                           "dayStatus",
-                          "disabledV2"
+                          "passedFirstDayReserve"
                         ),
-                        [sty.textdayStatus_disabled__bIcAo9Zm4Q]: hasVariant(
+                      [sty.textdayStatus_passedLastDayReserveV2___9RWtFsnHmp]:
+                        hasVariant(
                           $state,
                           "dayStatus",
-                          "disabled"
+                          "passedLastDayReserveV2"
                         ),
-                        [sty.textdayStatus_discount__bIcAo58PIn]: hasVariant(
+                      [sty.textdayStatus_passedLastDayReserve___9RWtFnJrzh]:
+                        hasVariant($state, "dayStatus", "passedLastDayReserve"),
+                      [sty.textdayStatus_passedMidDayReserveV2___9RWtFzPpWv]:
+                        hasVariant(
                           $state,
                           "dayStatus",
-                          "discount"
+                          "passedMidDayReserveV2"
                         ),
-                        [sty.textdayStatus_firstDayReserveV2__bIcAOlxm0M]:
-                          hasVariant($state, "dayStatus", "firstDayReserveV2"),
-                        [sty.textdayStatus_firstDayReserve__bIcAoXcLe3]:
-                          hasVariant($state, "dayStatus", "firstDayReserve"),
-                        [sty.textdayStatus_lastDayReserveV2__bIcAoHbxR]:
-                          hasVariant($state, "dayStatus", "lastDayReserveV2"),
-                        [sty.textdayStatus_lastDayReserve__bIcAozrpyu]:
-                          hasVariant($state, "dayStatus", "lastDayReserve"),
-                        [sty.textdayStatus_midDayReserveV2__bIcAOx8Qvw]:
-                          hasVariant($state, "dayStatus", "midDayReserveV2"),
-                        [sty.textdayStatus_midDayReserve__bIcAozCt7G]:
-                          hasVariant($state, "dayStatus", "midDayReserve"),
-                        [sty.textdayStatus_passedFirstDayReserveV2__bIcAOhpmmI]:
-                          hasVariant(
-                            $state,
-                            "dayStatus",
-                            "passedFirstDayReserveV2"
-                          ),
-                        [sty.textdayStatus_passedFirstDayReserve__bIcAOhR4Iw]:
-                          hasVariant(
-                            $state,
-                            "dayStatus",
-                            "passedFirstDayReserve"
-                          ),
-                        [sty.textdayStatus_passedLastDayReserveV2__bIcAOsnHmp]:
-                          hasVariant(
-                            $state,
-                            "dayStatus",
-                            "passedLastDayReserveV2"
-                          ),
-                        [sty.textdayStatus_passedLastDayReserve__bIcAOnJrzh]:
-                          hasVariant(
-                            $state,
-                            "dayStatus",
-                            "passedLastDayReserve"
-                          ),
-                        [sty.textdayStatus_passedMidDayReserveV2__bIcAozPpWv]:
-                          hasVariant(
-                            $state,
-                            "dayStatus",
-                            "passedMidDayReserveV2"
-                          ),
-                        [sty.textdayStatus_passedMidDayReserve__bIcAoltd9T]:
-                          hasVariant(
-                            $state,
-                            "dayStatus",
-                            "passedMidDayReserve"
-                          ),
-                        [sty.textdayStatus_passedReservedV2__bIcAoiSdsA]:
-                          hasVariant($state, "dayStatus", "passedReservedV2"),
-                        [sty.textdayStatus_passedSingleReserve__bIcAolp2Ep]:
-                          hasVariant(
-                            $state,
-                            "dayStatus",
-                            "passedSingleReserve"
-                          ),
-                        [sty.textdayStatus_reservedV2__bIcAo75Ot]: hasVariant(
-                          $state,
-                          "dayStatus",
-                          "reservedV2"
-                        ),
-                        [sty.textdayStatus_reserved__bIcAoVf0A8]: hasVariant(
-                          $state,
-                          "dayStatus",
-                          "reserved"
-                        ),
-                        [sty.textdayStatus_selected__bIcAoPzhv6]: hasVariant(
-                          $state,
-                          "dayStatus",
-                          "selected"
-                        ),
-                        [sty.textselected__bIcAOlSVo3]: hasVariant(
-                          $state,
-                          "selected",
-                          "selected"
-                        )
-                      }
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $props.price;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                ) : null}
-              </div>
-            ) : null}
-            {(
-              hasVariant($state, "dayStatus", "passedReservedV2") &&
-              hasVariant(globalVariants, "screen", "smallMobile")
-                ? true
-                : hasVariant($state, "dayStatus", "passedReservedV2")
-                  ? (() => {
+                      [sty.textdayStatus_passedMidDayReserve___9RWtFltd9T]:
+                        hasVariant($state, "dayStatus", "passedMidDayReserve"),
+                      [sty.textdayStatus_passedReservedV2___9RWtFiSdsA]:
+                        hasVariant($state, "dayStatus", "passedReservedV2"),
+                      [sty.textdayStatus_passedSingleReserve___9RWtFlp2Ep]:
+                        hasVariant($state, "dayStatus", "passedSingleReserve"),
+                      [sty.textdayStatus_reservedV2___9RWtF75Ot]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "reservedV2"
+                      ),
+                      [sty.textdayStatus_reserved___9RWtFVf0A8]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "reserved"
+                      ),
+                      [sty.textdayStatus_selected___9RWtFPzhv6]: hasVariant(
+                        $state,
+                        "dayStatus",
+                        "selected"
+                      ),
+                      [sty.textselected___9RWtFlSVo3]: hasVariant(
+                        $state,
+                        "selected",
+                        "selected"
+                      )
+                    }
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
                       try {
-                        return !$props.isSmartBooking;
+                        return $props.price;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return true;
+                          return "";
                         }
                         throw e;
                       }
-                    })()
-                  : hasVariant($state, "dayStatus", "passedLastDayReserveV2")
-                    ? true
-                    : hasVariant($state, "dayStatus", "passedMidDayReserveV2")
-                      ? true
-                      : hasVariant(
-                            $state,
-                            "dayStatus",
-                            "passedFirstDayReserveV2"
-                          )
-                        ? (() => {
-                            try {
-                              return !$props.isSmartBooking;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return true;
-                              }
-                              throw e;
-                            }
-                          })()
-                        : hasVariant($state, "dayStatus", "disabledV2")
-                          ? (() => {
-                              try {
-                                return !$props.calendarV2;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : hasVariant($state, "dayStatus", "reservedV2") &&
-                              hasVariant(
-                                globalVariants,
-                                "screen",
-                                "smallMobile"
-                              )
-                            ? true
-                            : hasVariant($state, "dayStatus", "reservedV2")
-                              ? (() => {
-                                  try {
-                                    return !$props.isSmartBooking;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return true;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                              : hasVariant(
-                                    $state,
-                                    "dayStatus",
-                                    "midDayReserveV2"
-                                  )
-                                ? true
-                                : hasVariant(
-                                      $state,
-                                      "dayStatus",
-                                      "lastDayReserveV2"
-                                    )
-                                  ? true
-                                  : hasVariant(
-                                        $state,
-                                        "dayStatus",
-                                        "firstDayReserveV2"
-                                      )
-                                    ? (() => {
-                                        try {
-                                          return !$props.isSmartBooking;
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return true;
-                                          }
-                                          throw e;
-                                        }
-                                      })()
-                                    : hasVariant(
-                                          $state,
-                                          "dayStatus",
-                                          "passedLastDayReserve"
-                                        )
-                                      ? (() => {
-                                          try {
-                                            return !$props.calendarV2;
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return true;
-                                            }
-                                            throw e;
-                                          }
-                                        })()
-                                      : hasVariant(
-                                            $state,
-                                            "dayStatus",
-                                            "passedMidDayReserve"
-                                          )
-                                        ? (() => {
-                                            try {
-                                              return !$props.calendarV2;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return true;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        : hasVariant(
-                                              $state,
-                                              "dayStatus",
-                                              "midDayReserve"
-                                            )
-                                          ? (() => {
-                                              try {
-                                                return !$props.calendarV2;
-                                              } catch (e) {
-                                                if (
-                                                  e instanceof TypeError ||
-                                                  e?.plasmicType ===
-                                                    "PlasmicUndefinedDataError"
-                                                ) {
-                                                  return true;
-                                                }
-                                                throw e;
-                                              }
-                                            })()
-                                          : hasVariant(
-                                                $state,
-                                                "dayStatus",
-                                                "lastDayReserve"
-                                              )
-                                            ? (() => {
-                                                try {
-                                                  return !$props.calendarV2;
-                                                } catch (e) {
-                                                  if (
-                                                    e instanceof TypeError ||
-                                                    e?.plasmicType ===
-                                                      "PlasmicUndefinedDataError"
-                                                  ) {
-                                                    return true;
-                                                  }
-                                                  throw e;
-                                                }
-                                              })()
-                                            : hasVariant(
-                                                  $state,
-                                                  "dayStatus",
-                                                  "blocked"
-                                                )
-                                              ? true
-                                              : hasVariant(
-                                                    $state,
-                                                    "dayStatus",
-                                                    "disabled"
-                                                  )
-                                                ? true
-                                                : hasVariant(
-                                                      globalVariants,
-                                                      "screen",
-                                                      "mobile"
-                                                    )
-                                                  ? true
-                                                  : false
-            ) ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___9RWtF,
-                  {
-                    [sty.textdayStatus_blocked___9RWtF3FCqw]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "blocked"
-                    ),
-                    [sty.textdayStatus_disabledV2___9RWtF6ARxq]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabledV2"
-                    ),
-                    [sty.textdayStatus_disabled___9RWtF9Zm4Q]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabled"
-                    ),
-                    [sty.textdayStatus_discount___9RWtF58PIn]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "discount"
-                    ),
-                    [sty.textdayStatus_firstDayReserveV2___9RWtFlxm0M]:
-                      hasVariant($state, "dayStatus", "firstDayReserveV2"),
-                    [sty.textdayStatus_firstDayReserve___9RWtFXcLe3]:
-                      hasVariant($state, "dayStatus", "firstDayReserve"),
-                    [sty.textdayStatus_lastDayReserveV2___9RWtFHbxR]:
-                      hasVariant($state, "dayStatus", "lastDayReserveV2"),
-                    [sty.textdayStatus_lastDayReserve___9RWtFzrpyu]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "lastDayReserve"
-                    ),
-                    [sty.textdayStatus_midDayReserveV2___9RWtFx8Qvw]:
-                      hasVariant($state, "dayStatus", "midDayReserveV2"),
-                    [sty.textdayStatus_midDayReserve___9RWtFzCt7G]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserve"
-                    ),
-                    [sty.textdayStatus_passedFirstDayReserveV2___9RWtFhpmmI]:
-                      hasVariant(
-                        $state,
-                        "dayStatus",
-                        "passedFirstDayReserveV2"
-                      ),
-                    [sty.textdayStatus_passedFirstDayReserve___9RWtFhR4Iw]:
-                      hasVariant($state, "dayStatus", "passedFirstDayReserve"),
-                    [sty.textdayStatus_passedLastDayReserveV2___9RWtFsnHmp]:
-                      hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
-                    [sty.textdayStatus_passedLastDayReserve___9RWtFnJrzh]:
-                      hasVariant($state, "dayStatus", "passedLastDayReserve"),
-                    [sty.textdayStatus_passedMidDayReserveV2___9RWtFzPpWv]:
-                      hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
-                    [sty.textdayStatus_passedMidDayReserve___9RWtFltd9T]:
-                      hasVariant($state, "dayStatus", "passedMidDayReserve"),
-                    [sty.textdayStatus_passedReservedV2___9RWtFiSdsA]:
-                      hasVariant($state, "dayStatus", "passedReservedV2"),
-                    [sty.textdayStatus_passedSingleReserve___9RWtFlp2Ep]:
-                      hasVariant($state, "dayStatus", "passedSingleReserve"),
-                    [sty.textdayStatus_reservedV2___9RWtF75Ot]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reservedV2"
-                    ),
-                    [sty.textdayStatus_reserved___9RWtFVf0A8]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reserved"
-                    ),
-                    [sty.textdayStatus_selected___9RWtFPzhv6]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "selected"
-                    ),
-                    [sty.textselected___9RWtFlSVo3]: hasVariant(
-                      $state,
-                      "selected",
-                      "selected"
-                    )
-                  }
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $props.price;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            ) : null}
+                    })()}
+                  </React.Fragment>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
-      </div>
-      {(
-        hasVariant($state, "dayStatus", "disabledV2")
-          ? (() => {
-              try {
-                return $props.note;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })()
-          : hasVariant($state, "dayStatus", "disabled")
+        {(
+          hasVariant($state, "dayStatus", "disabledV2")
             ? (() => {
                 try {
                   return $props.note;
@@ -1940,94 +2024,109 @@ function PlasmicDayCell2__RenderFunc(props: {
                   throw e;
                 }
               })()
-            : (() => {
-                try {
-                  return $props.note;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
+            : hasVariant($state, "dayStatus", "disabled")
+              ? (() => {
+                  try {
+                    return $props.note;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()
-      ) ? (
-        <p
-          data-plasmic-name={"p"}
-          data-plasmic-override={overrides.p}
-          className={classNames(
-            projectcss.all,
-            projectcss.p,
-            sty.p,
-            hasVariant($state, "dayStatus", "disabledV2")
-              ? "2"
-              : hasVariant($state, "dayStatus", "passedFirstDayReserve")
+                })()
+              : (() => {
+                  try {
+                    return $props.note;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+        ) ? (
+          <p
+            data-plasmic-name={"p"}
+            data-plasmic-override={overrides.p}
+            className={classNames(
+              projectcss.all,
+              projectcss.p,
+              sty.p,
+              hasVariant($state, "dayStatus", "disabledV2")
                 ? "2"
-                : hasVariant($state, "dayStatus", "disabled")
+                : hasVariant($state, "dayStatus", "passedFirstDayReserve")
                   ? "2"
-                  : undefined,
-            {
-              [sty.pdayStatus_disabledV2]: hasVariant(
-                $state,
-                "dayStatus",
-                "disabledV2"
-              ),
-              [sty.pdayStatus_disabled]: hasVariant(
-                $state,
-                "dayStatus",
-                "disabled"
-              ),
-              [sty.pdayStatus_lastDayReserveV2]: hasVariant(
-                $state,
-                "dayStatus",
-                "lastDayReserveV2"
-              ),
-              [sty.pdayStatus_passedFirstDayReserve]: hasVariant(
-                $state,
-                "dayStatus",
-                "passedFirstDayReserve"
-              ),
-              [sty.pdayStatus_passedLastDayReserveV2]: hasVariant(
-                $state,
-                "dayStatus",
-                "passedLastDayReserveV2"
-              ),
-              [sty.pdayStatus_passedLastDayReserve]: hasVariant(
-                $state,
-                "dayStatus",
-                "passedLastDayReserve"
-              ),
-              [sty.pdayStatus_passedMidDayReserve]: hasVariant(
-                $state,
-                "dayStatus",
-                "passedMidDayReserve"
-              ),
-              [sty.pdayStatus_passedReservedV2]: hasVariant(
-                $state,
-                "dayStatus",
-                "passedReservedV2"
-              ),
-              [sty.pdayStatus_passedSingleReserve]: hasVariant(
-                $state,
-                "dayStatus",
-                "passedSingleReserve"
-              ),
-              [sty.pdayStatus_reservedV2]: hasVariant(
-                $state,
-                "dayStatus",
-                "reservedV2"
-              ),
-              [sty.pdayStatus_reserved]: hasVariant(
-                $state,
-                "dayStatus",
-                "reserved"
-              )
-            }
-          )}
-        />
-      ) : null}
+                  : hasVariant($state, "dayStatus", "disabled")
+                    ? "2"
+                    : undefined,
+              {
+                [sty.pdayStatus_disabledV2]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabledV2"
+                ),
+                [sty.pdayStatus_disabled]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabled"
+                ),
+                [sty.pdayStatus_lastDayReserveV2]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "lastDayReserveV2"
+                ),
+                [sty.pdayStatus_passedFirstDayReserve]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedFirstDayReserve"
+                ),
+                [sty.pdayStatus_passedLastDayReserveV2]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedLastDayReserveV2"
+                ),
+                [sty.pdayStatus_passedLastDayReserve]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedLastDayReserve"
+                ),
+                [sty.pdayStatus_passedMidDayReserve]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedMidDayReserve"
+                ),
+                [sty.pdayStatus_passedReservedV2]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedReservedV2"
+                ),
+                [sty.pdayStatus_passedSingleReserve]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedSingleReserve"
+                ),
+                [sty.pdayStatus_reservedV2]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reservedV2"
+                ),
+                [sty.pdayStatus_reserved]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reserved"
+                )
+              }
+            )}
+          />
+        ) : null}
+      </div>
     </div>
   ) as React.ReactElement | null;
 }
