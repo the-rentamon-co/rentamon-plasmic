@@ -145,28 +145,6 @@
     min-width: 0;
   }
 }
-.dayCell:global(.__wab_instance) {
-  max-width: 100%;
-  width: 100%;
-  min-width: 100%;
-}
-@media (max-width: 1200px) {
-  .dayCell:global(.__wab_instance) {
-    width: 100%;
-    min-width: 0;
-  }
-}
-@media (max-width: 500px) {
-  .dayCell:global(.__wab_instance) {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-@media (max-width: 350px) {
-  .dayCell:global(.__wab_instance) {
-    max-width: 40px;
-  }
-}
 .freeBox__wW1T {
   display: flex;
   flex-direction: column;
@@ -192,6 +170,9 @@
     display: none;
     padding: 0px;
   }
+}
+.dayCell2:global(.__wab_instance) {
+  max-width: 100%;
 }
 .modalDiscount:global(.__wab_instance) {
   max-width: 100%;

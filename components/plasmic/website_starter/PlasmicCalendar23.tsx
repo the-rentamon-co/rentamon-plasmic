@@ -63,7 +63,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
 import FragmentLongPress from "../../FragmentLongPress"; // plasmic-import: F6FdGjFt2-9F/component
-import DayCell from "../../DayCell"; // plasmic-import: cU6Nt4MA6DXT/component
+import DayCell2 from "../../DayCell2"; // plasmic-import: KYzeJuIix3i-/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
@@ -118,7 +118,7 @@ export type PlasmicCalendar23__OverridesType = {
   guide1?: Flex__<"div">;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   fragmentLongPress?: Flex__<typeof FragmentLongPress>;
-  dayCell?: Flex__<typeof DayCell>;
+  dayCell2?: Flex__<typeof DayCell2>;
   modalDiscount?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
   textInput2?: Flex__<typeof TextInput>;
@@ -1943,11 +1943,15 @@ function PlasmicCalendar23__RenderFunc(props: {
                 const $steps = {};
               }}
             >
-              <DayCell
-                data-plasmic-name={"dayCell"}
-                data-plasmic-override={overrides.dayCell}
-                calendarV2={false}
-                className={classNames("__wab_instance", sty.dayCell)}
+              <div
+                className={classNames(projectcss.all, sty.freeBox__wW1T)}
+                id={``}
+              />
+
+              <DayCell2
+                data-plasmic-name={"dayCell2"}
+                data-plasmic-override={overrides.dayCell2}
+                className={classNames("__wab_instance", sty.dayCell2)}
                 dayNumber={(() => {
                   try {
                     return (() => {
@@ -2003,7 +2007,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   }
                 })()}
                 dayStatus={
-                  hasVariant(globalVariants, "screen", "smallMobile")
+                  hasVariant(globalVariants, "screen", "mobile")
                     ? (() => {
                         try {
                           return (() => {
@@ -2037,13 +2041,14 @@ function PlasmicCalendar23__RenderFunc(props: {
                                   const isLastDay =
                                     currentBookingId !== nextBookingId;
                                   if (isFirstDay && isLastDay)
-                                    return "passedSingleReserve";
+                                    return "passedReservedV2";
                                   if (isFirstDay)
-                                    return "passedFirstDayReserve";
-                                  if (isLastDay) return "passedLastDayReserve";
-                                  return "passedMidDayReserve";
+                                    return "passedFirstDayReserveV2";
+                                  if (isLastDay)
+                                    return "passedLastDayReserveV2";
+                                  return "passedMidDayReserveV2";
                                 }
-                                return "disabled";
+                                return "disabledV2";
                               }
                               if (
                                 $state.fragmentDatePicker.values.includes(
@@ -2067,7 +2072,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                                 return "reservedV2";
                               }
                               if (calendarItem.status === "blocked") {
-                                return "blocked";
+                                return "reservedV2";
                               }
                               if (calendarItem.discount_percentage > 0) {
                                 return "discount";
@@ -2089,187 +2094,92 @@ function PlasmicCalendar23__RenderFunc(props: {
                           throw e;
                         }
                       })()
-                    : hasVariant(globalVariants, "screen", "mobile")
-                      ? (() => {
-                          try {
-                            return (() => {
-                              const currentDate = new Date();
-                              const yesterdayDate = new Date(
-                                currentDate.getTime() - 24 * 60 * 60 * 1000
-                              );
-                              const yesterdayTimestamp = Math.floor(
-                                yesterdayDate.getTime() / 1000
-                              );
-                              const minTimestamp = yesterdayTimestamp;
-                              const maxTimestamp = 1768988921;
-                              function getDayClass(dateProps, calendarData) {
-                                const dayIndex = dateProps.date.day - 1;
-                                const calendarItem =
-                                  calendarData[dayIndex] || {};
-                                const currentBookingId =
-                                  calendarItem.booking_id;
-                                const prevItem =
-                                  calendarData[dayIndex - 1] || {};
-                                const nextItem =
-                                  calendarData[dayIndex + 1] || {};
-                                const prevBookingId = prevItem.booking_id;
-                                const nextBookingId = nextItem.booking_id;
+                    : (() => {
+                        try {
+                          return (() => {
+                            const currentDate = new Date();
+                            const yesterdayDate = new Date(
+                              currentDate.getTime() - 24 * 60 * 60 * 1000
+                            );
+                            const yesterdayTimestamp = Math.floor(
+                              yesterdayDate.getTime() / 1000
+                            );
+                            const minTimestamp = yesterdayTimestamp;
+                            const maxTimestamp = 1768988921;
+                            function getDayClass(dateProps, calendarData) {
+                              const dayIndex = dateProps.date.day - 1;
+                              const calendarItem = calendarData[dayIndex] || {};
+                              const currentBookingId = calendarItem.booking_id;
+                              const prevItem = calendarData[dayIndex - 1] || {};
+                              const nextItem = calendarData[dayIndex + 1] || {};
+                              const prevBookingId = prevItem.booking_id;
+                              const nextBookingId = nextItem.booking_id;
+                              if (
+                                dateProps.unix < minTimestamp ||
+                                dateProps.unix > maxTimestamp
+                              ) {
                                 if (
-                                  dateProps.unix < minTimestamp ||
-                                  dateProps.unix > maxTimestamp
+                                  calendarItem.status === "reserved" &&
+                                  currentBookingId
                                 ) {
-                                  if (
-                                    calendarItem.status === "reserved" &&
-                                    currentBookingId
-                                  ) {
-                                    const isFirstDay =
-                                      currentBookingId !== prevBookingId;
-                                    const isLastDay =
-                                      currentBookingId !== nextBookingId;
-                                    if (isFirstDay && isLastDay)
-                                      return "passedSingleReserve";
-                                    if (isFirstDay)
-                                      return "passedFirstDayReserve";
-                                    if (isLastDay)
-                                      return "passedLastDayReserve";
-                                    return "passedMidDayReserve";
-                                  }
-                                  return "disabled";
+                                  const isFirstDay =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDay =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDay && isLastDay)
+                                    return "passedReservedV2";
+                                  if (isFirstDay)
+                                    return "passedFirstDayReserveV2";
+                                  if (isLastDay)
+                                    return "passedLastDayReserveV2";
+                                  return "passedMidDayReserveV2";
                                 }
-                                if (
-                                  $state.fragmentDatePicker.values.includes(
-                                    dateProps.unix
-                                  )
-                                ) {
-                                  return "selected";
-                                }
-                                if (calendarItem.status === "reserved") {
-                                  if (currentBookingId) {
-                                    const isFirstDay =
-                                      currentBookingId !== prevBookingId;
-                                    const isLastDay =
-                                      currentBookingId !== nextBookingId;
-                                    if (isFirstDay && isLastDay)
-                                      return "reservedV2";
-                                    if (isFirstDay) return "firstDayReserveV2";
-                                    if (isLastDay) return "lastDayReserveV2";
-                                    return "midDayReserveV2";
-                                  }
-                                  return "reservedV2";
-                                }
-                                if (calendarItem.status === "blocked") {
-                                  return "blocked";
-                                }
-                                if (calendarItem.discount_percentage > 0) {
-                                  return "discount";
-                                }
-                                return calendarItem.status || "";
+                                return "disabledV2";
                               }
-                              return getDayClass(
-                                dateProps,
-                                $state.apiRequest.data[1].calendar
-                              );
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [];
-                            }
-                            throw e;
-                          }
-                        })()
-                      : (() => {
-                          try {
-                            return (() => {
-                              const currentDate = new Date();
-                              const yesterdayDate = new Date(
-                                currentDate.getTime() - 24 * 60 * 60 * 1000
-                              );
-                              const yesterdayTimestamp = Math.floor(
-                                yesterdayDate.getTime() / 1000
-                              );
-                              const minTimestamp = yesterdayTimestamp;
-                              const maxTimestamp = 1768988921;
-                              function getDayClass(dateProps, calendarData) {
-                                const dayIndex = dateProps.date.day - 1;
-                                const calendarItem =
-                                  calendarData[dayIndex] || {};
-                                const currentBookingId =
-                                  calendarItem.booking_id;
-                                const prevItem =
-                                  calendarData[dayIndex - 1] || {};
-                                const nextItem =
-                                  calendarData[dayIndex + 1] || {};
-                                const prevBookingId = prevItem.booking_id;
-                                const nextBookingId = nextItem.booking_id;
-                                if (
-                                  dateProps.unix < minTimestamp ||
-                                  dateProps.unix > maxTimestamp
-                                ) {
-                                  if (
-                                    calendarItem.status === "reserved" &&
-                                    currentBookingId
-                                  ) {
-                                    const isFirstDay =
-                                      currentBookingId !== prevBookingId;
-                                    const isLastDay =
-                                      currentBookingId !== nextBookingId;
-                                    if (isFirstDay && isLastDay)
-                                      return "passedSingleReserve";
-                                    if (isFirstDay)
-                                      return "passedFirstDayReserve";
-                                    if (isLastDay)
-                                      return "passedLastDayReserve";
-                                    return "passedMidDayReserve";
-                                  }
-                                  return "disabled";
-                                }
-                                if (
-                                  $state.fragmentDatePicker.values.includes(
-                                    dateProps.unix
-                                  )
-                                ) {
-                                  return "selected";
-                                }
-                                if (calendarItem.status === "reserved") {
-                                  if (currentBookingId) {
-                                    const isFirstDay =
-                                      currentBookingId !== prevBookingId;
-                                    const isLastDay =
-                                      currentBookingId !== nextBookingId;
-                                    if (isFirstDay && isLastDay)
-                                      return "reservedV2";
-                                    if (isFirstDay) return "firstDayReserveV2";
-                                    if (isLastDay) return "lastDayReserveV2";
-                                    return "midDayReserveV2";
-                                  }
-                                  return "reservedV2";
-                                }
-                                if (calendarItem.status === "blocked") {
-                                  return "blocked";
-                                }
-                                if (calendarItem.discount_percentage > 0) {
-                                  return "discount";
-                                }
-                                return calendarItem.status || "";
+                              if (
+                                $state.fragmentDatePicker.values.includes(
+                                  dateProps.unix
+                                )
+                              ) {
+                                return "selected";
                               }
-                              return getDayClass(
-                                dateProps,
-                                $state.apiRequest.data[1].calendar
-                              );
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [];
+                              if (calendarItem.status === "reserved") {
+                                if (currentBookingId) {
+                                  const isFirstDay =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDay =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDay && isLastDay)
+                                    return "reservedV2";
+                                  if (isFirstDay) return "firstDayReserveV2";
+                                  if (isLastDay) return "lastDayReserveV2";
+                                  return "midDayReserveV2";
+                                }
+                                return "reservedV2";
+                              }
+                              if (calendarItem.status === "blocked") {
+                                return "reservedV2";
+                              }
+                              if (calendarItem.discount_percentage > 0) {
+                                return "discount";
+                              }
+                              return calendarItem.status || "";
                             }
-                            throw e;
+                            return getDayClass(
+                              dateProps,
+                              $state.apiRequest.data[1].calendar
+                            );
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return [];
                           }
-                        })()
+                          throw e;
+                        }
+                      })()
                 }
                 holidays={(() => {
                   try {
@@ -2288,6 +2198,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                     throw e;
                   }
                 })()}
+                isSmartBooking={true}
                 note={(() => {
                   try {
                     return $state.apiRequest.data[1].calendar[
@@ -2318,51 +2229,40 @@ function PlasmicCalendar23__RenderFunc(props: {
                     throw e;
                   }
                 })()}
-                price={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? (() => {
-                        try {
-                          return (() => {
-                            if (
-                              $state.apiRequest.data[1].calendar[
-                                dateProps.date.day - 1
-                              ].status == "reserved"
-                            ) {
-                              return $state.apiRequest.data[1].calendar[
-                                dateProps.date.day - 1
-                              ].guest_name;
-                            } else {
-                              return $state.apiRequest.data[1].calendar[
-                                dateProps.date.day - 1
-                              ].price;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()
-                    : (() => {
-                        try {
-                          return $state.apiRequest.data[1].calendar[
-                            dateProps.date.day - 1
-                          ].price;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()
-                }
+                price={(() => {
+                  try {
+                    return (() => {
+                      if (
+                        $state.apiRequest.data[1].calendar[
+                          dateProps.date.day - 1
+                        ].status == "reserved"
+                      ) {
+                        return $state.apiRequest.data[1].calendar[
+                          dateProps.date.day - 1
+                        ].guest_name;
+                      }
+                      if (
+                        $state.apiRequest.data[1].calendar[
+                          dateProps.date.day - 1
+                        ].status == "blocked"
+                      ) {
+                        return "غیرفعال";
+                      } else {
+                        return $state.apiRequest.data[1].calendar[
+                          dateProps.date.day - 1
+                        ].price;
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
                 selected={(() => {
                   try {
                     return $state.fragmentDatePicker.values.includes(
@@ -2378,11 +2278,6 @@ function PlasmicCalendar23__RenderFunc(props: {
                     throw e;
                   }
                 })()}
-              />
-
-              <div
-                className={classNames(projectcss.all, sty.freeBox__wW1T)}
-                id={``}
               />
             </FragmentLongPress>
           )}
@@ -11793,6 +11688,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                               : (amountNumber / 1000).toLocaleString();
                           }
                         });
+                        console.log(calendarData);
                         return calendarData;
                       })();
                     }
@@ -11869,7 +11765,7 @@ const PlasmicDescendants = {
     "guide1",
     "fragmentDatePicker",
     "fragmentLongPress",
-    "dayCell",
+    "dayCell2",
     "modalDiscount",
     "main",
     "textInput2",
@@ -11941,9 +11837,9 @@ const PlasmicDescendants = {
   ],
   apiRequest: ["apiRequest"],
   guide1: ["guide1"],
-  fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell"],
-  fragmentLongPress: ["fragmentLongPress", "dayCell"],
-  dayCell: ["dayCell"],
+  fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell2"],
+  fragmentLongPress: ["fragmentLongPress", "dayCell2"],
+  dayCell2: ["dayCell2"],
   modalDiscount: ["modalDiscount", "main", "textInput2"],
   main: ["main", "textInput2"],
   textInput2: ["textInput2"],
@@ -12104,7 +12000,7 @@ type NodeDefaultElementType = {
   guide1: "div";
   fragmentDatePicker: typeof DatePicker;
   fragmentLongPress: typeof FragmentLongPress;
-  dayCell: typeof DayCell;
+  dayCell2: typeof DayCell2;
   modalDiscount: typeof AntdModal;
   main: "div";
   textInput2: typeof TextInput;
@@ -12241,7 +12137,7 @@ export const PlasmicCalendar23 = Object.assign(
     guide1: makeNodeComponent("guide1"),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     fragmentLongPress: makeNodeComponent("fragmentLongPress"),
-    dayCell: makeNodeComponent("dayCell"),
+    dayCell2: makeNodeComponent("dayCell2"),
     modalDiscount: makeNodeComponent("modalDiscount"),
     main: makeNodeComponent("main"),
     textInput2: makeNodeComponent("textInput2"),

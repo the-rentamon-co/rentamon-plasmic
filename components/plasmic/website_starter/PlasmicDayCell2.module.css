@@ -61,6 +61,10 @@
 }
 .rootdayStatus_firstDayReserveV2 {
   flex-grow: 0;
+  padding-right: 1px;
+}
+.rootdayStatus_lastDayReserveV2 {
+  padding-left: 1px;
 }
 .rootdayStatus_midDayReserveV2 {
   max-width: 100%;
@@ -81,25 +85,25 @@
   background: none;
   min-width: 98%;
 }
-.freeBox__jPegP {
+.freeBox___9Ndlb {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 96%;
+  max-width: 100%;
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
   padding: 0px;
 }
 @media (max-width: 1200px) {
-  .freeBox__jPegP {
+  .freeBox___9Ndlb {
     max-width: 100%;
   }
 }
 @media (max-width: 500px) {
-  .freeBox__jPegP {
+  .freeBox___9Ndlb {
     position: absolute;
     top: 2px;
     left: 0px;
@@ -107,14 +111,20 @@
   }
 }
 @media (max-width: 350px) {
-  .freeBox__jPegP {
+  .freeBox___9Ndlb {
     margin: 0px;
   }
 }
-.freeBoxdayStatus_lastDayReserve__jPegPvreYs {
+@media (max-width: 500px) {
+  .freeBoxdayStatus_discount___9Ndlb58PIn {
+    padding-right: 1px;
+    padding-left: 1px;
+  }
+}
+.freeBoxdayStatus_lastDayReserve___9Ndlbzrpyu {
   max-width: 100%;
 }
-.freeBoxdayStatus_passedFirstDayReserve__jPegPohsA4 {
+.freeBoxdayStatus_passedFirstDayReserve___9NdlBhR4Iw {
   width: 100%;
   height: auto;
   max-width: 96%;
@@ -125,10 +135,30 @@
   min-width: 0;
   padding: 0px;
 }
-.freeBoxdayStatus_lastDayReserveV2__jPegPkfRpo {
+@media (max-width: 500px) {
+  .freeBoxdayStatus_firstDayReserveV2___9NdlBlxm0M {
+    padding-right: 1px;
+  }
+}
+.freeBoxdayStatus_lastDayReserveV2___9NdlbHbxR {
   max-width: 100%;
 }
-.freeBoxdayStatus_passedLastDayReserveV2__jPegPOkKzh {
+@media (max-width: 500px) {
+  .freeBoxdayStatus_lastDayReserveV2___9NdlbHbxR {
+    padding-left: 1px;
+  }
+}
+.freeBoxdayStatus_reservedV2___9Ndlb75Ot {
+  padding-right: 1px;
+  padding-left: 1px;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_reservedV2___9Ndlb75Ot {
+    padding-right: 1px;
+    padding-left: 1px;
+  }
+}
+.freeBoxdayStatus_passedLastDayReserveV2___9NdlBsnHmp {
   max-width: 100%;
 }
 .cell {
@@ -138,16 +168,17 @@
   width: 100%;
   flex-direction: column;
   display: flex;
-  background: #e5e5e5;
+  background: var(--token-8R7jjC_-F9FF);
   overflow: hidden;
   min-width: 0;
   flex-shrink: 0;
-  border-radius: 10px;
+  border-radius: 0px;
   padding: 10px 0px;
 }
 @media (max-width: 1200px) {
   .cell {
-    max-width: 95%;
+    max-width: 100%;
+    background: var(--token-O4qz_eXOc86K);
   }
 }
 @media (max-width: 500px) {
@@ -159,11 +190,12 @@
     align-items: center;
     height: 74px;
     flex-shrink: 0;
-    max-width: 96%;
+    max-width: 100%;
     row-gap: 1px;
+    background: var(--token-8R7jjC_-F9FF);
     column-gap: 0px;
     min-width: 0;
-    border-radius: 9px;
+    border-radius: 0px;
     padding: 2px 0px 0px;
   }
 }
@@ -173,20 +205,28 @@
     height: 64px;
     padding-top: 0px;
     row-gap: 0px;
+    background: var(--token-O4qz_eXOc86K);
     column-gap: 0px;
     flex-shrink: 0;
   }
 }
 .cellselected {
-  background: #203647;
+  background: var(--token-8nedppYkGVaH);
+  border-radius: 10px;
 }
 .celldayStatus_reserved {
   background: #4fdfb1;
   border-radius: 10px;
 }
 .celldayStatus_discount {
-  background: var(--token-5pBr4MZPegMc);
+  background: var(--token-8R7jjC_-F9FF);
+  border-radius: 5px;
   border: 2px solid var(--token-VZ6qPYp5VPBy);
+}
+@media (max-width: 500px) {
+  .celldayStatus_discount {
+    border-radius: 5px;
+  }
 }
 .celldayStatus_disabled {
   background: #fcfcfc;
@@ -195,7 +235,7 @@
   background: #fbb142;
 }
 .celldayStatus_selected {
-  background: #203647;
+  background: var(--token-8nedppYkGVaH);
 }
 .celldayStatus_firstDayReserve {
   background: #4fdfb1;
@@ -256,11 +296,11 @@
 .celldayStatus_firstDayReserveV2 {
   background: #404040;
   overflow: visible;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0px 10px 10px 0px;
 }
 .celldayStatus_lastDayReserveV2 {
   background: #404040;
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 10px 0px 0px 10px;
 }
 .celldayStatus_midDayReserveV2 {
   background: #404040;
@@ -293,11 +333,11 @@
   border-radius: 20px 0px 0px 20px;
 }
 .celldayStatus_passedReservedV2 {
-  background: #40404066;
+  background: #4040401a;
   overflow: hidden;
   border-radius: 10px;
 }
-.freeBox__aE9Ge {
+.freeBox___20P4Y {
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -313,20 +353,20 @@
   padding: 0px;
 }
 @media (max-width: 500px) {
-  .freeBox__aE9Ge {
+  .freeBox___20P4Y {
     margin: 0px;
   }
 }
-.freeBoxdayStatus_midDayReserve__aE9GexrGdN {
+.freeBoxdayStatus_midDayReserve___20P4YzCt7G {
   min-width: 100%;
 }
-.freeBoxdayStatus_midDayReserveV2__aE9GeBi4Ie {
+.freeBoxdayStatus_midDayReserveV2___20P4Yx8Qvw {
   min-width: 100%;
 }
-.freeBoxdayStatus_passedMidDayReserveV2__aE9GeMnIj {
+.freeBoxdayStatus_passedMidDayReserveV2___20P4YzPpWv {
   min-width: 100%;
 }
-.text__sLeDq {
+.text__fgKpw {
   position: relative;
   color: var(--token-C-5xNZALkGon);
   font-family: "Estedad";
@@ -343,7 +383,7 @@
   min-width: 0;
 }
 @media (max-width: 500px) {
-  .text__sLeDq {
+  .text__fgKpw {
     margin-top: 0px;
     font-weight: 400;
     padding-right: 0px;
@@ -353,55 +393,55 @@
     flex-shrink: 0;
   }
 }
-.textselected__sLeDq2Pr1U {
+.textselected__fgKpwlSVo3 {
   color: #ffffff;
 }
-.textdayStatus_reserved__sLeDq6WcTl {
+.textdayStatus_reserved__fgKpwVf0A8 {
   color: var(--token-7MRjbe724hDb);
 }
-.textdayStatus_disabled__sLeDqOkz0Z {
+.textdayStatus_disabled__fgKpw9Zm4Q {
   color: #c5c5c5;
 }
-.textdayStatus_selected__sLeDqmbNkx {
+.textdayStatus_selected__fgKpwPzhv6 {
   color: #ffffff;
 }
-.textdayStatus_passedFirstDayReserve__sLeDqohsA4 {
+.textdayStatus_passedFirstDayReserve__fgKpwhR4Iw {
   color: #c5c5c5;
 }
-.textdayStatus_passedMidDayReserve__sLeDqo7Nt2 {
+.textdayStatus_passedMidDayReserve__fgKpwLtd9T {
   color: #c5c5c5;
 }
-.textdayStatus_passedLastDayReserve__sLeDqMjPP {
+.textdayStatus_passedLastDayReserve__fgKpwnJrzh {
   color: #c5c5c5;
 }
-.textdayStatus_passedSingleReserve__sLeDqfNqAx {
+.textdayStatus_passedSingleReserve__fgKpwLp2Ep {
   color: #c5c5c5;
 }
-.textdayStatus_firstDayReserveV2__sLeDq7GAmv {
+.textdayStatus_firstDayReserveV2__fgKpwlxm0M {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_lastDayReserveV2__sLeDqkfRpo {
+.textdayStatus_lastDayReserveV2__fgKpwHbxR {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_midDayReserveV2__sLeDqBi4Ie {
+.textdayStatus_midDayReserveV2__fgKpwx8Qvw {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_reservedV2__sLeDqSbYT {
+.textdayStatus_reservedV2__fgKpw75Ot {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_disabledV2__sLeDqhaJHg {
+.textdayStatus_disabledV2__fgKpw6ARxq {
   color: #c5c5c5;
 }
-.textdayStatus_passedFirstDayReserveV2__sLeDqLYuad {
+.textdayStatus_passedFirstDayReserveV2__fgKpwhpmmI {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_passedMidDayReserveV2__sLeDqMnIj {
+.textdayStatus_passedMidDayReserveV2__fgKpwZPpWv {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_passedLastDayReserveV2__sLeDqOkKzh {
+.textdayStatus_passedLastDayReserveV2__fgKpwsnHmp {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_passedReservedV2__sLeDqrqoWb {
+.textdayStatus_passedReservedV2__fgKpwISdsA {
   color: var(--token-8R7jjC_-F9FF);
 }
 .holidays2 {
@@ -424,7 +464,7 @@
     max-width: 100%;
     margin-top: 2px;
     font-family: "Estedad";
-    font-weight: 400;
+    font-weight: 500;
     color: var(--token-Bo2_tT25lwh4);
     text-align: center;
     min-width: 0;
@@ -440,6 +480,7 @@
     font-weight: 400;
     color: var(--token-Bo2_tT25lwh4);
     text-align: center;
+    font-size: 14px;
     min-width: 0;
   }
 }
@@ -462,10 +503,15 @@
   height: auto;
   max-width: 100%;
   font-family: "Estedad";
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
   margin-top: 2px;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .holidays2selected {
+    font-weight: 400;
+  }
 }
 .holidays2dayStatus_reserved {
   color: var(--token-Bo2_tT25lwh4);
@@ -499,6 +545,11 @@
   text-align: center;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .holidays2dayStatus_selected {
+    font-weight: 400;
+  }
+}
 .holidays2dayStatus_passedFirstDayReserve {
   color: #d9363e40;
 }
@@ -522,6 +573,11 @@
   margin-top: 2px;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .holidays2dayStatus_reservedV2 {
+    font-weight: 400;
+  }
+}
 .holidays2dayStatus_disabledV2 {
   color: #c5c5c5;
   width: 100%;
@@ -544,7 +600,17 @@
   margin-top: 2px;
   min-width: 0;
 }
-.freeBox__gKj3 {
+@media (max-width: 500px) {
+  .holidays2dayStatus_passedReservedV2 {
+    font-weight: 400;
+  }
+}
+@media (max-width: 350px) {
+  .holidays2dayStatus_passedReservedV2 {
+    font-weight: 400;
+  }
+}
+.freeBox___6Yvqv {
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -560,37 +626,37 @@
   padding: 0px;
 }
 @media (max-width: 500px) {
-  .freeBox__gKj3 {
+  .freeBox___6Yvqv {
     width: 100%;
     margin: 0px;
   }
 }
 @media (max-width: 350px) {
-  .freeBox__gKj3 {
+  .freeBox___6Yvqv {
     padding-top: 2px;
   }
 }
-.freeBoxdayStatus_blocked__gKj377F30 {
+.freeBoxdayStatus_blocked___6Yvqv3FCqw {
   display: none;
 }
-.freeBoxdayStatus_midDayReserve__gKj3XrGdN {
+.freeBoxdayStatus_midDayReserve___6YvqvzCt7G {
   padding-top: 0px;
 }
-.freeBoxdayStatus_lastDayReserveV2__gKj3KfRpo {
+.freeBoxdayStatus_lastDayReserveV2___6YvqvHbxR {
   display: none;
 }
-.freeBoxdayStatus_midDayReserveV2__gKj3Bi4Ie {
-  padding-top: 0px;
-  display: none;
-}
-.freeBoxdayStatus_passedMidDayReserveV2__gKj3MnIj {
+.freeBoxdayStatus_midDayReserveV2___6YvqVx8Qvw {
   padding-top: 0px;
   display: none;
 }
-.freeBoxdayStatus_passedLastDayReserveV2__gKj3OkKzh {
+.freeBoxdayStatus_passedMidDayReserveV2___6YvqvzPpWv {
+  padding-top: 0px;
   display: none;
 }
-.text__kqTC {
+.freeBoxdayStatus_passedLastDayReserveV2___6YvqVsnHmp {
+  display: none;
+}
+.text__lXDgF {
   position: relative;
   width: 100%;
   height: auto;
@@ -602,7 +668,7 @@
   min-width: 0;
 }
 @media (max-width: 500px) {
-  .text__kqTC {
+  .text__lXDgF {
     font-size: 14px;
     width: 100%;
     height: auto;
@@ -615,62 +681,65 @@
   }
 }
 @media (max-width: 350px) {
-  .text__kqTC {
+  .text__lXDgF {
     font-size: 14px;
     font-weight: 400;
   }
 }
-.textselected__kqTC2Pr1U {
+.textselected__lXDgFlSVo3 {
   color: var(--token-jgohepLVeKvh);
 }
-.textdayStatus_reserved__kqTC6WcTl {
+.textdayStatus_reserved__lXDgFVf0A8 {
   color: var(--token-7MRjbe724hDb);
 }
-.textdayStatus_disabled__kqTCokz0Z {
+.textdayStatus_disabled__lXDgF9Zm4Q {
   color: var(--token-WRVnC_GIUCgN);
   font-weight: 300;
 }
-.textdayStatus_passedFirstDayReserve__kqTCohsA4 {
-  color: #c5c5c5;
-}
-.textdayStatus_passedMidDayReserve__kqTCo7Nt2 {
-  color: #c5c5c5;
-}
-.textdayStatus_passedLastDayReserve__kqTCMjPP {
-  color: #c5c5c5;
-}
-.textdayStatus_passedSingleReserve__kqTCfNqAx {
-  color: #c5c5c5;
-}
-.textdayStatus_firstDayReserveV2__kqTC7GAmv {
+.textdayStatus_selected__lXDgFPzhv6 {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_lastDayReserveV2__kqTCkfRpo {
+.textdayStatus_passedFirstDayReserve__lXDgFhR4Iw {
+  color: #c5c5c5;
+}
+.textdayStatus_passedMidDayReserve__lXDgFltd9T {
+  color: #c5c5c5;
+}
+.textdayStatus_passedLastDayReserve__lXDgFnJrzh {
+  color: #c5c5c5;
+}
+.textdayStatus_passedSingleReserve__lXDgFlp2Ep {
+  color: #c5c5c5;
+}
+.textdayStatus_firstDayReserveV2__lXDgFlxm0M {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_midDayReserveV2__kqTCbi4Ie {
+.textdayStatus_lastDayReserveV2__lXDgFHbxR {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_reservedV2__kqTCSbYT {
+.textdayStatus_midDayReserveV2__lXDgFx8Qvw {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_disabledV2__kqTChaJHg {
+.textdayStatus_reservedV2__lXDgF75Ot {
+  color: var(--token-8R7jjC_-F9FF);
+}
+.textdayStatus_disabledV2__lXDgF6ARxq {
   color: var(--token-WRVnC_GIUCgN);
   font-weight: 300;
 }
-.textdayStatus_passedFirstDayReserveV2__kqTClYuad {
+.textdayStatus_passedFirstDayReserveV2__lXDgFhpmmI {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_passedMidDayReserveV2__kqTCMnIj {
+.textdayStatus_passedMidDayReserveV2__lXDgFzPpWv {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_passedLastDayReserveV2__kqTCOkKzh {
+.textdayStatus_passedLastDayReserveV2__lXDgFsnHmp {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_passedReservedV2__kqTCrqoWb {
+.textdayStatus_passedReservedV2__lXDgFiSdsA {
   color: var(--token-8R7jjC_-F9FF);
 }
-.freeBox__cD9Fr {
+.freeBox__vb8Yk {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -683,29 +752,29 @@
   padding: 0px;
 }
 @media (max-width: 500px) {
-  .freeBox__cD9Fr {
+  .freeBox__vb8Yk {
     margin: 0px;
   }
 }
-.freeBoxdayStatus_firstDayReserveV2__cD9Fr7GAmv {
+.freeBoxdayStatus_firstDayReserveV2__vb8Yklxm0M {
   overflow: visible;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 4px;
 }
-.freeBoxdayStatus_reservedV2__cD9FrSbYT {
+.freeBoxdayStatus_reservedV2__vb8Yk75Ot {
   padding: 0px 4px;
 }
-.freeBoxdayStatus_passedFirstDayReserveV2__cD9FrLYuad {
+.freeBoxdayStatus_passedFirstDayReserveV2__vb8YkhpmmI {
   overflow: visible;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 4px;
 }
-.freeBoxdayStatus_passedReservedV2__cD9FrrqoWb {
+.freeBoxdayStatus_passedReservedV2__vb8YkISdsA {
   padding: 0px 4px;
 }
-.freeBox__rEGp {
+.freeBox___7HH4 {
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -720,16 +789,13 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBoxdayStatus_disabled__rEGpokz0Z {
+.freeBoxdayStatus_lastDayReserve___7HH4Zrpyu {
   display: none;
 }
-.freeBoxdayStatus_lastDayReserve__rEGPvreYs {
+.freeBoxdayStatus_midDayReserve___7HH4ZCt7G {
   display: none;
 }
-.freeBoxdayStatus_midDayReserve__rEGPxrGdN {
-  display: none;
-}
-.freeBoxdayStatus_firstDayReserveV2__rEGp7GAmv {
+.freeBoxdayStatus_firstDayReserveV2___7HH4Lxm0M {
   width: auto;
   height: auto;
   background: #bfe3b4;
@@ -747,30 +813,33 @@
   padding: 0px;
 }
 @media (max-width: 350px) {
-  .freeBoxdayStatus_firstDayReserveV2__rEGp7GAmv {
+  .freeBoxdayStatus_firstDayReserveV2___7HH4Lxm0M {
     width: auto;
     max-width: none;
   }
 }
-.freeBoxdayStatus_reservedV2__rEGpSbYT {
+.freeBoxdayStatus_reservedV2___7HH475Ot {
   background: #bfe3b4;
   display: flex;
   border-radius: 30px;
   padding: 0px;
 }
 @media (max-width: 500px) {
-  .freeBoxdayStatus_reservedV2__rEGpSbYT {
+  .freeBoxdayStatus_reservedV2___7HH475Ot {
     position: relative;
     left: auto;
     top: auto;
   }
 }
 @media (max-width: 350px) {
-  .freeBoxdayStatus_reservedV2__rEGpSbYT {
+  .freeBoxdayStatus_reservedV2___7HH475Ot {
     padding: 0px;
   }
 }
-.freeBoxdayStatus_passedFirstDayReserveV2__rEGplYuad {
+.freeBoxdayStatus_disabledV2___7HH46ARxq {
+  display: flex;
+}
+.freeBoxdayStatus_passedFirstDayReserveV2___7HH4HpmmI {
   width: auto;
   height: auto;
   background: #bfe3b4;
@@ -788,30 +857,30 @@
   padding: 0px;
 }
 @media (max-width: 350px) {
-  .freeBoxdayStatus_passedFirstDayReserveV2__rEGplYuad {
+  .freeBoxdayStatus_passedFirstDayReserveV2___7HH4HpmmI {
     width: auto;
     max-width: none;
   }
 }
-.freeBoxdayStatus_passedReservedV2__rEGPrqoWb {
-  background: #bfe3b4;
+.freeBoxdayStatus_passedReservedV2___7HH4ISdsA {
+  background: #bfe3b480;
   display: flex;
   border-radius: 30px;
   padding: 0px;
 }
 @media (max-width: 500px) {
-  .freeBoxdayStatus_passedReservedV2__rEGPrqoWb {
+  .freeBoxdayStatus_passedReservedV2___7HH4ISdsA {
     position: relative;
     left: auto;
     top: auto;
   }
 }
 @media (max-width: 350px) {
-  .freeBoxdayStatus_passedReservedV2__rEGPrqoWb {
+  .freeBoxdayStatus_passedReservedV2___7HH4ISdsA {
     padding: 0px;
   }
 }
-.text__ltKp2 {
+.text__bIcAo {
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -822,66 +891,68 @@
   min-width: 0;
 }
 @media (max-width: 500px) {
-  .text__ltKp2 {
+  .text__bIcAo {
     font-size: 14px;
     font-weight: 400;
     white-space: pre;
     display: block;
   }
 }
-.textselected__ltKp22Pr1U {
+.textselected__bIcAOlSVo3 {
   color: #ffffff;
+  display: none;
 }
-.textdayStatus_reserved__ltKp26WcTl {
+.textdayStatus_reserved__bIcAoVf0A8 {
   color: var(--token-7MRjbe724hDb);
   font-weight: 400;
   text-align: center;
 }
-.textdayStatus_disabled__ltKp2Okz0Z {
+.textdayStatus_disabled__bIcAo9Zm4Q {
   color: var(--token-aAU8kfeqE6Ao);
   font-weight: 300;
   display: block;
 }
-.textdayStatus_blocked__ltKp277F30 {
+.textdayStatus_blocked__bIcAo3FCqw {
   display: none;
 }
-.textdayStatus_selected__ltKp2MbNkx {
+.textdayStatus_selected__bIcAoPzhv6 {
   color: #ffffff;
+  display: none;
 }
-.textdayStatus_lastDayReserve__ltKp2VreYs {
+.textdayStatus_lastDayReserve__bIcAozrpyu {
   display: block;
 }
-.textdayStatus_midDayReserve__ltKp2XrGdN {
+.textdayStatus_midDayReserve__bIcAozCt7G {
   display: block;
 }
-.textdayStatus_passedFirstDayReserve__ltKp2OhsA4 {
+.textdayStatus_passedFirstDayReserve__bIcAOhR4Iw {
   color: #c5c5c5;
 }
-.textdayStatus_passedMidDayReserve__ltKp2O7Nt2 {
-  color: #c5c5c5;
-  display: block;
-}
-.textdayStatus_passedLastDayReserve__ltKp2MjPP {
+.textdayStatus_passedMidDayReserve__bIcAoltd9T {
   color: #c5c5c5;
   display: block;
 }
-.textdayStatus_passedSingleReserve__ltKp2FNqAx {
+.textdayStatus_passedLastDayReserve__bIcAOnJrzh {
+  color: #c5c5c5;
+  display: block;
+}
+.textdayStatus_passedSingleReserve__bIcAolp2Ep {
   color: #c5c5c5;
 }
-.textdayStatus_firstDayReserveV2__ltKp27GAmv {
+.textdayStatus_firstDayReserveV2__bIcAOlxm0M {
   text-align: center;
   white-space: pre;
   color: #404040;
   padding: 1px 3px;
 }
-.textdayStatus_lastDayReserveV2__ltKp2KfRpo {
+.textdayStatus_lastDayReserveV2__bIcAoHbxR {
   display: none;
 }
-.textdayStatus_midDayReserveV2__ltKp2Bi4Ie {
+.textdayStatus_midDayReserveV2__bIcAOx8Qvw {
   color: var(--token-8R7jjC_-F9FF);
   display: none;
 }
-.textdayStatus_reservedV2__ltKp2SbYT {
+.textdayStatus_reservedV2__bIcAo75Ot {
   color: #404040;
   font-weight: 400;
   text-align: center;
@@ -891,31 +962,31 @@
   display: block;
 }
 @media (max-width: 350px) {
-  .textdayStatus_reservedV2__ltKp2SbYT {
+  .textdayStatus_reservedV2__bIcAo75Ot {
     display: block;
     padding: 0px;
   }
 }
-.textdayStatus_disabledV2__ltKp2HaJHg {
+.textdayStatus_disabledV2__bIcAo6ARxq {
   color: var(--token-aAU8kfeqE6Ao);
   font-weight: 300;
   display: block;
 }
-.textdayStatus_passedFirstDayReserveV2__ltKp2LYuad {
+.textdayStatus_passedFirstDayReserveV2__bIcAOhpmmI {
   text-align: center;
   white-space: pre;
   color: #404040;
   padding: 1px 3px;
 }
-.textdayStatus_passedMidDayReserveV2__ltKp2MnIj {
+.textdayStatus_passedMidDayReserveV2__bIcAozPpWv {
   color: var(--token-8R7jjC_-F9FF);
   display: none;
 }
-.textdayStatus_passedLastDayReserveV2__ltKp2OkKzh {
+.textdayStatus_passedLastDayReserveV2__bIcAOsnHmp {
   display: none;
 }
-.textdayStatus_passedReservedV2__ltKp2RqoWb {
-  color: #404040;
+.textdayStatus_passedReservedV2__bIcAoiSdsA {
+  color: #40404066;
   font-weight: 400;
   text-align: center;
   white-space: pre;
@@ -924,12 +995,12 @@
   display: block;
 }
 @media (max-width: 350px) {
-  .textdayStatus_passedReservedV2__ltKp2RqoWb {
+  .textdayStatus_passedReservedV2__bIcAoiSdsA {
     display: block;
     padding: 0px;
   }
 }
-.text__ieD1X {
+.text___9RWtF {
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -940,67 +1011,67 @@
   min-width: 0;
 }
 @media (max-width: 500px) {
-  .text__ieD1X {
+  .text___9RWtF {
     font-size: 14px;
     font-weight: 400;
     white-space: pre;
     display: none;
   }
 }
-.textselected__ieD1X2Pr1U {
+.textselected___9RWtFlSVo3 {
   color: #ffffff;
 }
-.textdayStatus_reserved__ieD1X6WcTl {
+.textdayStatus_reserved___9RWtFVf0A8 {
   color: var(--token-7MRjbe724hDb);
   font-weight: 400;
   text-align: center;
 }
-.textdayStatus_disabled__ieD1Xokz0Z {
+.textdayStatus_disabled___9RWtF9Zm4Q {
   color: var(--token-aAU8kfeqE6Ao);
   font-weight: 300;
   display: block;
 }
-.textdayStatus_blocked__ieD1X77F30 {
+.textdayStatus_blocked___9RWtF3FCqw {
   display: none;
 }
-.textdayStatus_selected__ieD1XmbNkx {
+.textdayStatus_selected___9RWtFPzhv6 {
   color: #ffffff;
 }
-.textdayStatus_lastDayReserve__ieD1XvreYs {
+.textdayStatus_lastDayReserve___9RWtFzrpyu {
   display: block;
 }
-.textdayStatus_midDayReserve__ieD1XxrGdN {
+.textdayStatus_midDayReserve___9RWtFzCt7G {
   display: block;
 }
-.textdayStatus_passedFirstDayReserve__ieD1XohsA4 {
+.textdayStatus_passedFirstDayReserve___9RWtFhR4Iw {
   color: #c5c5c5;
 }
-.textdayStatus_passedMidDayReserve__ieD1Xo7Nt2 {
-  color: #c5c5c5;
-  display: block;
-}
-.textdayStatus_passedLastDayReserve__ieD1XMjPP {
+.textdayStatus_passedMidDayReserve___9RWtFltd9T {
   color: #c5c5c5;
   display: block;
 }
-.textdayStatus_passedSingleReserve__ieD1XfNqAx {
+.textdayStatus_passedLastDayReserve___9RWtFnJrzh {
+  color: #c5c5c5;
+  display: block;
+}
+.textdayStatus_passedSingleReserve___9RWtFlp2Ep {
   color: #c5c5c5;
 }
-.textdayStatus_firstDayReserveV2__ieD1X7GAmv {
+.textdayStatus_firstDayReserveV2___9RWtFlxm0M {
   text-align: center;
   white-space: pre;
   padding-right: 0px;
   color: var(--token-8R7jjC_-F9FF);
   display: block;
 }
-.textdayStatus_lastDayReserveV2__ieD1XkfRpo {
+.textdayStatus_lastDayReserveV2___9RWtFHbxR {
   display: none;
 }
-.textdayStatus_midDayReserveV2__ieD1Xbi4Ie {
+.textdayStatus_midDayReserveV2___9RWtFx8Qvw {
   color: var(--token-8R7jjC_-F9FF);
   display: none;
 }
-.textdayStatus_reservedV2__ieD1XSbYT {
+.textdayStatus_reservedV2___9RWtF75Ot {
   color: var(--token-8R7jjC_-F9FF);
   font-weight: 400;
   text-align: center;
@@ -1010,31 +1081,31 @@
   display: block;
 }
 @media (max-width: 350px) {
-  .textdayStatus_reservedV2__ieD1XSbYT {
+  .textdayStatus_reservedV2___9RWtF75Ot {
     display: block;
     padding: 0px;
   }
 }
-.textdayStatus_disabledV2__ieD1XhaJHg {
+.textdayStatus_disabledV2___9RWtF6ARxq {
   color: var(--token-aAU8kfeqE6Ao);
   font-weight: 300;
   display: block;
 }
-.textdayStatus_passedFirstDayReserveV2__ieD1XlYuad {
+.textdayStatus_passedFirstDayReserveV2___9RWtFhpmmI {
   text-align: center;
   white-space: pre;
   padding-right: 0px;
   color: var(--token-8R7jjC_-F9FF);
   display: block;
 }
-.textdayStatus_passedMidDayReserveV2__ieD1XMnIj {
+.textdayStatus_passedMidDayReserveV2___9RWtFzPpWv {
   color: var(--token-8R7jjC_-F9FF);
   display: none;
 }
-.textdayStatus_passedLastDayReserveV2__ieD1XOkKzh {
+.textdayStatus_passedLastDayReserveV2___9RWtFsnHmp {
   display: none;
 }
-.textdayStatus_passedReservedV2__ieD1XrqoWb {
+.textdayStatus_passedReservedV2___9RWtFiSdsA {
   color: var(--token-8R7jjC_-F9FF);
   font-weight: 400;
   text-align: center;
@@ -1044,7 +1115,7 @@
   display: block;
 }
 @media (max-width: 350px) {
-  .textdayStatus_passedReservedV2__ieD1XrqoWb {
+  .textdayStatus_passedReservedV2___9RWtFiSdsA {
     display: block;
     padding: 0px;
   }
