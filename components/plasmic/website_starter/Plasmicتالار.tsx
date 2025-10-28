@@ -1556,31 +1556,7 @@ function Plasmicتالار__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["invokeGlobalAction2"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          args: [
-                            "error",
-                            "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc...",
-                            "top-center"
-                          ]
-                        };
-                        return $globalActions["Fragment.showToast"]?.apply(
-                          null,
-                          [...actionArgs.args]
-                        );
-                      })()
-                    : undefined;
-                  if (
-                    $steps["invokeGlobalAction2"] != null &&
-                    typeof $steps["invokeGlobalAction2"] === "object" &&
-                    typeof $steps["invokeGlobalAction2"].then === "function"
-                  ) {
-                    $steps["invokeGlobalAction2"] =
-                      await $steps["invokeGlobalAction2"];
-                  }
-
-                  $steps["goToInstantReserveSahami"] = false
+                  $steps["goToInstantReserveSahami"] = true
                     ? (() => {
                         const actionArgs = { destination: `/instant` };
                         return (({ destination }) => {

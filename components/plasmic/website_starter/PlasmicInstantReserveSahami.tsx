@@ -626,7 +626,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               })()
             : hasVariant(globalVariants, "screen", "tablet")
               ? false
-              : true
+              : false
       },
       {
         path: "showNewFeatureBadge",
