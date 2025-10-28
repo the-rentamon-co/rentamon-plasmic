@@ -11697,17 +11697,7 @@ function PlasmicCalendar2__RenderFunc(props: {
         data-plasmic-name={"reserveData"}
         data-plasmic-override={overrides.reserveData}
         className={classNames("__wab_instance", sty.reserveData)}
-        errorDisplay={
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__dXKcM
-            )}
-          >
-            {"Error fetching data"}
-          </div>
-        }
+        errorDisplay={null}
         loadingDisplay={null}
         method={"GET"}
         onError={async (...eventArgs: any) => {
