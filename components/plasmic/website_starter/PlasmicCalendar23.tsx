@@ -167,7 +167,6 @@ export type PlasmicCalendar23__OverridesType = {
   color3?: Flex__<"div">;
   text3?: Flex__<"div">;
   reserve4?: Flex__<"div">;
-  color4?: Flex__<"div">;
   text4?: Flex__<"div">;
   submitChange?: Flex__<"div">;
   visitBookings?: Flex__<typeof Button>;
@@ -9998,7 +9997,9 @@ function PlasmicCalendar23__RenderFunc(props: {
                   sty.text__tmsAx
                 )}
               >
-                {"\u0631\u0632\u0631\u0648"}
+                {
+                  "\u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0633\u062a\u0647"
+                }
               </div>
             </div>
           </div>
@@ -10025,7 +10026,9 @@ function PlasmicCalendar23__RenderFunc(props: {
                   sty.text__hAkWo
                 )}
               >
-                {"\u0628\u0633\u062a\u0647"}
+                {
+                  "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                }
               </div>
             </div>
           </div>
@@ -10061,10 +10064,22 @@ function PlasmicCalendar23__RenderFunc(props: {
             data-plasmic-override={overrides.reserve4}
             className={classNames(projectcss.all, sty.reserve4)}
           >
-            <div
-              data-plasmic-name={"color4"}
-              data-plasmic-override={overrides.color4}
-              className={classNames(projectcss.all, sty.color4)}
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__erPp)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image187.svg",
+                fullWidth: 7,
+                fullHeight: 7,
+                aspectRatio: undefined
+              }}
             />
 
             <div
@@ -11815,7 +11830,6 @@ const PlasmicDescendants = {
     "color3",
     "text3",
     "reserve4",
-    "color4",
     "text4",
     "submitChange",
     "visitBookings",
@@ -11927,7 +11941,6 @@ const PlasmicDescendants = {
     "color3",
     "text3",
     "reserve4",
-    "color4",
     "text4"
   ],
   reserve1: ["reserve1", "color", "text"],
@@ -11939,8 +11952,7 @@ const PlasmicDescendants = {
   reserve3: ["reserve3", "color3", "text3"],
   color3: ["color3"],
   text3: ["text3"],
-  reserve4: ["reserve4", "color4", "text4"],
-  color4: ["color4"],
+  reserve4: ["reserve4", "text4"],
   text4: ["text4"],
   submitChange: ["submitChange", "visitBookings"],
   visitBookings: ["visitBookings"],
@@ -12050,7 +12062,6 @@ type NodeDefaultElementType = {
   color3: "div";
   text3: "div";
   reserve4: "div";
-  color4: "div";
   text4: "div";
   submitChange: "div";
   visitBookings: typeof Button;
@@ -12191,7 +12202,6 @@ export const PlasmicCalendar23 = Object.assign(
     color3: makeNodeComponent("color3"),
     text3: makeNodeComponent("text3"),
     reserve4: makeNodeComponent("reserve4"),
-    color4: makeNodeComponent("color4"),
     text4: makeNodeComponent("text4"),
     submitChange: makeNodeComponent("submitChange"),
     visitBookings: makeNodeComponent("visitBookings"),
