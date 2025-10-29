@@ -2075,10 +2075,10 @@ function PlasmicReservations__RenderFunc(props: {
                                   id: $state.reserveData2.data[currentIndex].id,
                                   check_in_per:
                                     $state.reserveData2.data[currentIndex]
-                                      .check_in_persian,
+                                      .check_in_per,
                                   check_out_per:
                                     $state.reserveData2.data[currentIndex]
-                                      .check_out_persian
+                                      .check_out_per
                                 }
                               ])
                             };
