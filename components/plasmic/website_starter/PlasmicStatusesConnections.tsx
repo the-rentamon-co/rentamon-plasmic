@@ -445,7 +445,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0627\u062a\u0635\u0627\u0644 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                    "\u0648\u0636\u0639\u06cc\u062a \u0627\u062a\u0635\u0627\u0644 \u062a\u0642\u0648\u06cc\u0645 \u0634\u0645\u0627 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
                   }
                 </div>
               </div>

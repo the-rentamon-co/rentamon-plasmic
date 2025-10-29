@@ -4269,64 +4269,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                 ) {
                   $steps["runCode2"] = await $steps["runCode2"];
                 }
-
-                $steps["invokeGlobalAction"] = (() => {
-                  const calendar = $state.selectedItem;
-                  const platforms = [
-                    "شب",
-                    "مهمانشو",
-                    "اتاقک",
-                    "جاباما",
-                    "جاجیگا",
-                    "هومسا",
-                    "میزبون"
-                  ];
-
-                  const result = calendar.some(item =>
-                    platforms.includes(item.website)
-                  );
-                  return !result;
-                })()
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://gateway.rentamon.com/webhook/reservations/cancelation",
-                          undefined,
-                          (() => {
-                            try {
-                              return (() => {
-                                const bookingIds = ($state.selectedItem ?? [])
-                                  .map(item => item.booking_id)
-                                  .filter(id => id != null);
-                                return { dates: [...new Set(bookingIds)] };
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] =
-                    await $steps["invokeGlobalAction"];
-                }
               }}
             >
               <div
@@ -8766,48 +8708,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   typeof $steps["runCode2"].then === "function"
                 ) {
                   $steps["runCode2"] = await $steps["runCode2"];
-                }
-
-                $steps["invokeGlobalAction"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "POST",
-                          "https://gateway.rentamon.com/webhook/reservations/cancelation",
-                          undefined,
-                          (() => {
-                            try {
-                              return (() => {
-                                const bookingIds = ($state.selectedItem ?? [])
-                                  .map(item => item.booking_id)
-                                  .filter(id => id != null);
-                                return { dates: [...new Set(bookingIds)] };
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        ]
-                      };
-                      return $globalActions["Fragment.apiRequest"]?.apply(
-                        null,
-                        [...actionArgs.args]
-                      );
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] =
-                    await $steps["invokeGlobalAction"];
                 }
               }}
             >

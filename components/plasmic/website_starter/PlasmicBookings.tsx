@@ -568,7 +568,7 @@ function PlasmicBookings__RenderFunc(props: {
         path: "actions.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "unblockFor",
