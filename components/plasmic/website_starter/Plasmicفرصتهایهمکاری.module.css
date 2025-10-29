@@ -233,7 +233,7 @@
 }
 .text__lqzPf {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-right: 0px;
   padding-top: 0px;
@@ -326,7 +326,7 @@
 }
 .text__ko0A4 {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-right: 0px;
   padding-top: 0px;
@@ -428,6 +428,179 @@
     border-radius: 30px;
   }
 }
+.introduction2TextPics2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 0;
+  padding: 22px 8px;
+}
+@media (max-width: 1200px) {
+  .introduction2TextPics2 {
+    padding-right: 8px;
+    padding-left: 8px;
+    max-width: 100%;
+    flex-direction: row-reverse;
+    row-gap: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .introduction2TextPics2 {
+    max-width: 100%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .introduction2TextPics2 {
+    padding-top: 6px;
+  }
+}
+.freeBox__poku9 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 60%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 1200px) {
+  .freeBox__poku9 {
+    width: 100%;
+    height: auto;
+    max-width: 30%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 8px;
+  }
+}
+@media (max-width: 500px) {
+  .freeBox__poku9 {
+    max-width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__poku9 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.img__cFfIl {
+  object-fit: cover;
+  width: 100%;
+  box-shadow: none;
+  min-width: 0;
+  border-radius: 30px;
+}
+.img__cFfIl > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .img__cFfIl {
+    min-height: auto;
+    max-height: none;
+    max-width: none;
+    min-width: auto;
+    width: 100%;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .img__cFfIl {
+    max-width: none;
+    min-height: auto;
+    max-height: none;
+    min-width: auto;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 30px;
+  }
+}
+@media (max-width: 350px) {
+  .img__cFfIl {
+    max-width: 100%;
+    min-width: auto;
+    min-height: auto;
+    max-height: none;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 30px;
+  }
+}
+.freeBox__rQv1L {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 14px;
+}
+@media (max-width: 1200px) {
+  .freeBox__rQv1L {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 8px;
+  }
+}
+@media (max-width: 500px) {
+  .freeBox__rQv1L {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__rQv1L {
+    padding-top: 0px;
+  }
+}
+.text___5UqG {
+  text-align: right;
+  font-size: 16px;
+  line-height: 1.8;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+@media (max-width: 1200px) {
+  .text___5UqG {
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .text___5UqG {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text___5UqG {
+    font-size: 15px;
+  }
+}
 .introduction3 {
   display: flex;
   flex-direction: column;
@@ -459,7 +632,7 @@
 }
 .text___7JiJy {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 0px;
 }
@@ -643,6 +816,7 @@
 .ul {
   display: flex;
   flex-direction: column;
+  font-size: 16px;
 }
 @media (max-width: 500px) {
   .ul {
@@ -793,7 +967,7 @@
 }
 .text__bTKrT {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 20px;
 }
@@ -1161,7 +1335,7 @@
 }
 .text__gf1SG {
   padding-top: 8px;
-  font-size: 17px;
+  font-size: 16px;
   text-align: right;
   line-height: 1.8;
 }
@@ -2027,7 +2201,7 @@
 }
 .text__lIzrz {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 2;
   padding-bottom: 0px;
 }
@@ -2086,7 +2260,7 @@
 }
 .text___3VFDa {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 2;
   padding-bottom: 0px;
 }
@@ -2228,7 +2402,7 @@
 }
 .text__ickip {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 2;
   padding-bottom: 0px;
   padding-top: 16px;

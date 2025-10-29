@@ -514,7 +514,7 @@ function PlasmicBookings__RenderFunc(props: {
         path: "cancelManualReserve.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "isTheFirstVisit",

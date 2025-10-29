@@ -94,6 +94,7 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   teamImage?: Flex__<"div">;
   introduction1Text?: Flex__<"div">;
   introduction2TextPics?: Flex__<"div">;
+  introduction2TextPics2?: Flex__<"div">;
   introduction3?: Flex__<"div">;
   principles?: Flex__<"div">;
   title7?: Flex__<"div">;
@@ -333,7 +334,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
                       ? "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.\n\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."
-                      : "\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."}
+                      : "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647."}
                   </div>
                 </div>
                 <div
@@ -370,52 +371,134 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "none"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "none"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                          ? "none"
-                          : "none"
+                            ? "none"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "none"
+                              : "none"
                       }
                       displayMaxWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "100%"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "none"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                          ? "none"
-                          : "none"
+                            ? "none"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "none"
+                              : "none"
                       }
                       displayMinHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "auto"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "auto"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                          ? "auto"
-                          : "0"
+                            ? "auto"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "auto"
+                              : "0"
                       }
                       displayMinWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "auto"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "auto"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                          ? "auto"
-                          : "0"
+                            ? "auto"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "auto"
+                              : "0"
                       }
                       displayWidth={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "100%"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "100%"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                          ? "100%"
-                          : "100%"
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "100%"
+                              : "100%"
                       }
                       loading={"lazy"}
                       src={
                         "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fhosts%2F%D9%85%D8%AD%D9%85%D8%AF%20%D8%A7%D9%85%DB%8C%D9%86%20%D8%AC%D8%B9%D9%81%D8%B1%DB%8C.jpg?versionId="
                       }
                     />
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"introduction2TextPics2"}
+                  data-plasmic-override={overrides.introduction2TextPics2}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introduction2TextPics2
+                  )}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__poku9)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__cFfIl)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "none"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? "none"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "none"
+                              : "none"
+                      }
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? "none"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "none"
+                              : "none"
+                      }
+                      displayMinHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "auto"
+                              : "0"
+                      }
+                      displayMinWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "auto"
+                              : "0"
+                      }
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "tablet")
+                              ? "100%"
+                              : "100%"
+                      }
+                      loading={"lazy"}
+                      src={
+                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fhosts%2Fhashemi.jpg?versionId="
+                      }
+                    />
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__rQv1L)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___5UqG
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.\n\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."
+                        : "\u0645\u0639\u0631\u0641\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0648 \u0622\u0645\u0648\u0632\u0634 \u0627\u0648\u0644\u06cc\u0647 \u0628\u0647 \u0622\u0642\u0627\u06cc \u0647\u0627\u0634\u0645\u06cc - \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f\u060c \u0631\u0648\u0633\u062a\u0627\u06cc \u067e\u0631\u0686\u0648\u0631"}
+                    </div>
                   </div>
                 </div>
                 <div
@@ -629,44 +712,44 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "none"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "none"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "none"
-                        : "none"
+                          ? "none"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "none"
+                            : "none"
                     }
                     displayMaxWidth={
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "none"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "none"
-                        : "none"
+                          ? "none"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "none"
+                            : "none"
                     }
                     displayMinHeight={
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "auto"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "auto"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "auto"
-                        : "0"
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "auto"
+                            : "0"
                     }
                     displayMinWidth={
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "auto"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "auto"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "auto"
-                        : "0"
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "auto"
+                            : "0"
                     }
                     displayWidth={
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "100%"
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? "100%"
-                        : "100%"
+                          ? "100%"
+                          : "100%"
                     }
                     loading={"lazy"}
                     src={
@@ -714,44 +797,44 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "none"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
                   }
                   displayMaxWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "100%"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
                   }
                   displayMinHeight={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "auto"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
                   }
                   displayMinWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "auto"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
                   }
                   displayWidth={
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "100%"
                       : hasVariant(globalVariants, "screen", "tablet")
-                      ? "100%"
-                      : "100%"
+                        ? "100%"
+                        : "100%"
                   }
                   loading={"lazy"}
                   src={{
@@ -771,46 +854,46 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "none"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
                   }
                   displayMaxWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "100%"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
                   }
                   displayMinHeight={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "auto"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
                   }
                   displayMinWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "auto"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
                   }
                   displayWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "100%"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "100%"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "100%"
-                      : "100%"
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "100%"
+                          : "100%"
                   }
                   loading={"lazy"}
                   src={{
@@ -830,46 +913,46 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "none"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
                   }
                   displayMaxWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "100%"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
                   }
                   displayMinHeight={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "auto"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
                   }
                   displayMinWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "auto"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
                   }
                   displayWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "100%"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "100%"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "100%"
-                      : "100%"
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "100%"
+                          : "100%"
                   }
                   loading={"lazy"}
                   src={{
@@ -889,46 +972,46 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "none"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
                   }
                   displayMaxWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "100%"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "none"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "none"
-                      : "none"
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
                   }
                   displayMinHeight={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "auto"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
                   }
                   displayMinWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "auto"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "auto"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "0"
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
                   }
                   displayWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "100%"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "100%"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "100%"
-                      : "100%"
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "100%"
+                          : "100%"
                   }
                   loading={"lazy"}
                   src={{
@@ -1536,46 +1619,46 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "none"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "none"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "100%"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "none"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "none"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "0"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "0"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "0"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "0"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "100%"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "100%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "100%"
-                            : "100%"
+                              ? "100%"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "100%"
+                                : "100%"
                         }
                         loading={"lazy"}
                         src={
@@ -1707,8 +1790,8 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "mobile")
                         ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
-                        : '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
+                          ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
+                          : '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
                     }
                   />
                 </div>
@@ -1816,6 +1899,7 @@ const PlasmicDescendants = {
     "teamImage",
     "introduction1Text",
     "introduction2TextPics",
+    "introduction2TextPics2",
     "introduction3",
     "principles",
     "title7",
@@ -1878,6 +1962,7 @@ const PlasmicDescendants = {
     "teamImage",
     "introduction1Text",
     "introduction2TextPics",
+    "introduction2TextPics2",
     "introduction3",
     "principles",
     "title7",
@@ -1932,6 +2017,7 @@ const PlasmicDescendants = {
     "teamImage",
     "introduction1Text",
     "introduction2TextPics",
+    "introduction2TextPics2",
     "introduction3"
   ],
   introTitle: [
@@ -1943,10 +2029,12 @@ const PlasmicDescendants = {
     "teamImage",
     "introduction1Text",
     "introduction2TextPics",
+    "introduction2TextPics2",
     "introduction3"
   ],
   introduction1Text: ["introduction1Text"],
   introduction2TextPics: ["introduction2TextPics"],
+  introduction2TextPics2: ["introduction2TextPics2"],
   introduction3: ["introduction3"],
   principles: ["principles", "title7", "uotlines", "ul", "pic", "pic2"],
   title7: ["title7"],
@@ -2045,6 +2133,7 @@ type NodeDefaultElementType = {
   teamImage: "div";
   introduction1Text: "div";
   introduction2TextPics: "div";
+  introduction2TextPics2: "div";
   introduction3: "div";
   principles: "div";
   title7: "div";
@@ -2110,7 +2199,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicفرصتهایهمکاری__VariantsArgs;
     args?: Plasmicفرصتهایهمکاری__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicفرصتهایهمکاری__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicفرصتهایهمکاری__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicفرصتهایهمکاری__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -2170,6 +2261,7 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     teamImage: makeNodeComponent("teamImage"),
     introduction1Text: makeNodeComponent("introduction1Text"),
     introduction2TextPics: makeNodeComponent("introduction2TextPics"),
+    introduction2TextPics2: makeNodeComponent("introduction2TextPics2"),
     introduction3: makeNodeComponent("introduction3"),
     principles: makeNodeComponent("principles"),
     title7: makeNodeComponent("title7"),
