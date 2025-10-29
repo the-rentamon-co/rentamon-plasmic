@@ -1318,8 +1318,12 @@ function PlasmicDayCell2__RenderFunc(props: {
                   ),
                   [sty.freeBoxdayStatus_passedFirstDayReserveV2___7HH4HpmmI]:
                     hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
+                  [sty.freeBoxdayStatus_passedFirstDayReserve___7HH4HR4Iw]:
+                    hasVariant($state, "dayStatus", "passedFirstDayReserve"),
                   [sty.freeBoxdayStatus_passedLastDayReserve___7HH4NJrzh]:
                     hasVariant($state, "dayStatus", "passedLastDayReserve"),
+                  [sty.freeBoxdayStatus_passedMidDayReserve___7HH4Ltd9T]:
+                    hasVariant($state, "dayStatus", "passedMidDayReserve"),
                   [sty.freeBoxdayStatus_passedReservedV2___7HH4ISdsA]:
                     hasVariant($state, "dayStatus", "passedReservedV2"),
                   [sty.freeBoxdayStatus_reservedV2___7HH475Ot]: hasVariant(

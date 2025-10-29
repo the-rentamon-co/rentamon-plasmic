@@ -304,7 +304,7 @@
 }
 @media (max-width: 500px) {
   .celldayStatus_firstDayReserveV2 {
-    padding-bottom: 2px;
+    padding-bottom: 1px;
   }
 }
 .celldayStatus_lastDayReserveV2 {
@@ -762,6 +762,8 @@
 }
 @media (max-width: 500px) {
   .freeBox__vb8Yk {
+    align-items: center;
+    justify-content: center;
     margin: 0px;
   }
 }
@@ -773,8 +775,7 @@
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDayReserveV2__vb8Yklxm0M {
-    padding-bottom: 0px;
-    padding-top: 2px;
+    padding: 2px 1px 0px;
   }
 }
 .freeBoxdayStatus_reservedV2__vb8Yk75Ot {
@@ -784,7 +785,9 @@
   .freeBoxdayStatus_reservedV2__vb8Yk75Ot {
     align-items: center;
     justify-content: flex-end;
-    padding-bottom: 2px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-left: 1px;
   }
 }
 .freeBoxdayStatus_passedFirstDayReserveV2__vb8YkhpmmI {
@@ -820,7 +823,7 @@
 .freeBoxdayStatus_firstDayReserveV2___7HH4Lxm0M {
   width: auto;
   height: auto;
-  background: #bfe3b4;
+  background: #abdcab;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -842,6 +845,7 @@
     align-items: flex-start;
     justify-content: center;
     min-height: 0;
+    border-radius: 10px;
   }
 }
 @media (max-width: 350px) {
@@ -851,7 +855,7 @@
   }
 }
 .freeBoxdayStatus_reservedV2___7HH475Ot {
-  background: #bfe3b4;
+  background: #abdcab;
   display: flex;
   border-radius: 30px;
   padding: 0px;
@@ -861,6 +865,10 @@
     position: relative;
     left: auto;
     top: auto;
+    align-items: center;
+    justify-content: center;
+    background: #abdcab;
+    border-radius: 10px;
   }
 }
 @media (max-width: 350px) {
@@ -927,6 +935,7 @@
     font-size: 14px;
     font-weight: 400;
     white-space: pre;
+    text-align: center;
     display: block;
   }
 }
@@ -982,7 +991,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     font-size: 13px;
-    padding: 0px 8px;
+    padding: 0px 2px;
   }
 }
 .textdayStatus_lastDayReserveV2__bIcAoHbxR {
@@ -1014,7 +1023,7 @@
     user-select: none;
     text-overflow: ellipsis;
     min-width: 0;
-    padding: 2px 3px;
+    padding: 2px 1px;
   }
 }
 @media (max-width: 350px) {

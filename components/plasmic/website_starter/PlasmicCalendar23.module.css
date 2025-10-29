@@ -2586,7 +2586,7 @@
     padding-bottom: 14px;
   }
 }
-.reserve1 {
+.block3 {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -2598,13 +2598,13 @@
   padding: 0px 8px 0px 14px;
 }
 @media (max-width: 1200px) {
-  .reserve1 {
+  .block3 {
     padding-top: 0px;
     padding-bottom: 0px;
   }
 }
 @media (max-width: 500px) {
-  .reserve1 {
+  .block3 {
     padding: 0px 4px;
   }
 }
@@ -2658,7 +2658,7 @@
   font-family: "Estedad";
   min-width: 0;
 }
-.reserve2 {
+.smartBookings {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -2670,7 +2670,7 @@
   padding: 0px 8px 0px 14px;
 }
 @media (max-width: 1200px) {
-  .reserve2 {
+  .smartBookings {
     width: auto;
     height: auto;
     max-width: 100%;
@@ -2682,7 +2682,7 @@
   }
 }
 @media (max-width: 500px) {
-  .reserve2 {
+  .smartBookings {
     width: auto;
     height: auto;
     max-width: 100%;
@@ -2743,7 +2743,7 @@
   font-family: "Estedad";
   min-width: 0;
 }
-.reserve3 {
+.discount {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -2755,7 +2755,7 @@
   padding: 0px 8px 0px 14px;
 }
 @media (max-width: 1200px) {
-  .reserve3 {
+  .discount {
     width: auto;
     height: auto;
     max-width: 100%;
@@ -2767,7 +2767,7 @@
   }
 }
 @media (max-width: 500px) {
-  .reserve3 {
+  .discount {
     width: auto;
     height: auto;
     max-width: 100%;
@@ -2833,7 +2833,7 @@
     font-family: "Estedad";
   }
 }
-.reserve4 {
+.note {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -2845,7 +2845,7 @@
   padding: 0px 8px 0px 14px;
 }
 @media (max-width: 1200px) {
-  .reserve4 {
+  .note {
     width: auto;
     height: auto;
     max-width: 100%;
@@ -2857,7 +2857,7 @@
   }
 }
 @media (max-width: 500px) {
-  .reserve4 {
+  .note {
     width: auto;
     height: auto;
     max-width: 100%;
@@ -2871,6 +2871,7 @@
 .img__erPp {
   object-fit: cover;
   max-width: 100%;
+  height: 9px;
 }
 .img__erPp > picture > img {
   object-fit: cover;

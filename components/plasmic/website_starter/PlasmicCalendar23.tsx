@@ -157,16 +157,16 @@ export type PlasmicCalendar23__OverridesType = {
   newDiscountModal?: Flex__<typeof AntdModal>;
   textInput4?: Flex__<typeof TextInput>;
   guide?: Flex__<"div">;
-  reserve1?: Flex__<"div">;
+  block3?: Flex__<"div">;
   color?: Flex__<"div">;
   text?: Flex__<"div">;
-  reserve2?: Flex__<"div">;
+  smartBookings?: Flex__<"div">;
   color2?: Flex__<"div">;
   text2?: Flex__<"div">;
-  reserve3?: Flex__<"div">;
+  discount?: Flex__<"div">;
   color3?: Flex__<"div">;
   text3?: Flex__<"div">;
-  reserve4?: Flex__<"div">;
+  note?: Flex__<"div">;
   text4?: Flex__<"div">;
   submitChange?: Flex__<"div">;
   visitBookings?: Flex__<typeof Button>;
@@ -9975,9 +9975,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           className={classNames(projectcss.all, sty.guide)}
         >
           <div
-            data-plasmic-name={"reserve1"}
-            data-plasmic-override={overrides.reserve1}
-            className={classNames(projectcss.all, sty.reserve1)}
+            data-plasmic-name={"block3"}
+            data-plasmic-override={overrides.block3}
+            className={classNames(projectcss.all, sty.block3)}
           >
             <div
               data-plasmic-name={"color"}
@@ -10004,9 +10004,9 @@ function PlasmicCalendar23__RenderFunc(props: {
             </div>
           </div>
           <div
-            data-plasmic-name={"reserve2"}
-            data-plasmic-override={overrides.reserve2}
-            className={classNames(projectcss.all, sty.reserve2)}
+            data-plasmic-name={"smartBookings"}
+            data-plasmic-override={overrides.smartBookings}
+            className={classNames(projectcss.all, sty.smartBookings)}
           >
             <div
               data-plasmic-name={"color2"}
@@ -10033,9 +10033,9 @@ function PlasmicCalendar23__RenderFunc(props: {
             </div>
           </div>
           <div
-            data-plasmic-name={"reserve3"}
-            data-plasmic-override={overrides.reserve3}
-            className={classNames(projectcss.all, sty.reserve3)}
+            data-plasmic-name={"discount"}
+            data-plasmic-override={overrides.discount}
+            className={classNames(projectcss.all, sty.discount)}
           >
             <div
               data-plasmic-name={"color3"}
@@ -10060,14 +10060,14 @@ function PlasmicCalendar23__RenderFunc(props: {
             </div>
           </div>
           <div
-            data-plasmic-name={"reserve4"}
-            data-plasmic-override={overrides.reserve4}
-            className={classNames(projectcss.all, sty.reserve4)}
+            data-plasmic-name={"note"}
+            data-plasmic-override={overrides.note}
+            className={classNames(projectcss.all, sty.note)}
           >
             <PlasmicImg__
               alt={""}
               className={classNames(sty.img__erPp)}
-              displayHeight={"auto"}
+              displayHeight={"9px"}
               displayMaxHeight={"none"}
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
@@ -11820,16 +11820,16 @@ const PlasmicDescendants = {
     "newDiscountModal",
     "textInput4",
     "guide",
-    "reserve1",
+    "block3",
     "color",
     "text",
-    "reserve2",
+    "smartBookings",
     "color2",
     "text2",
-    "reserve3",
+    "discount",
     "color3",
     "text3",
-    "reserve4",
+    "note",
     "text4",
     "submitChange",
     "visitBookings",
@@ -11931,28 +11931,28 @@ const PlasmicDescendants = {
   textInput4: ["textInput4"],
   guide: [
     "guide",
-    "reserve1",
+    "block3",
     "color",
     "text",
-    "reserve2",
+    "smartBookings",
     "color2",
     "text2",
-    "reserve3",
+    "discount",
     "color3",
     "text3",
-    "reserve4",
+    "note",
     "text4"
   ],
-  reserve1: ["reserve1", "color", "text"],
+  block3: ["block3", "color", "text"],
   color: ["color"],
   text: ["text"],
-  reserve2: ["reserve2", "color2", "text2"],
+  smartBookings: ["smartBookings", "color2", "text2"],
   color2: ["color2"],
   text2: ["text2"],
-  reserve3: ["reserve3", "color3", "text3"],
+  discount: ["discount", "color3", "text3"],
   color3: ["color3"],
   text3: ["text3"],
-  reserve4: ["reserve4", "text4"],
+  note: ["note", "text4"],
   text4: ["text4"],
   submitChange: ["submitChange", "visitBookings"],
   visitBookings: ["visitBookings"],
@@ -12052,16 +12052,16 @@ type NodeDefaultElementType = {
   newDiscountModal: typeof AntdModal;
   textInput4: typeof TextInput;
   guide: "div";
-  reserve1: "div";
+  block3: "div";
   color: "div";
   text: "div";
-  reserve2: "div";
+  smartBookings: "div";
   color2: "div";
   text2: "div";
-  reserve3: "div";
+  discount: "div";
   color3: "div";
   text3: "div";
-  reserve4: "div";
+  note: "div";
   text4: "div";
   submitChange: "div";
   visitBookings: typeof Button;
@@ -12192,16 +12192,16 @@ export const PlasmicCalendar23 = Object.assign(
     newDiscountModal: makeNodeComponent("newDiscountModal"),
     textInput4: makeNodeComponent("textInput4"),
     guide: makeNodeComponent("guide"),
-    reserve1: makeNodeComponent("reserve1"),
+    block3: makeNodeComponent("block3"),
     color: makeNodeComponent("color"),
     text: makeNodeComponent("text"),
-    reserve2: makeNodeComponent("reserve2"),
+    smartBookings: makeNodeComponent("smartBookings"),
     color2: makeNodeComponent("color2"),
     text2: makeNodeComponent("text2"),
-    reserve3: makeNodeComponent("reserve3"),
+    discount: makeNodeComponent("discount"),
     color3: makeNodeComponent("color3"),
     text3: makeNodeComponent("text3"),
-    reserve4: makeNodeComponent("reserve4"),
+    note: makeNodeComponent("note"),
     text4: makeNodeComponent("text4"),
     submitChange: makeNodeComponent("submitChange"),
     visitBookings: makeNodeComponent("visitBookings"),
