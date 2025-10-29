@@ -125,7 +125,7 @@ export type PlasmicInstantReserveSahami__OverridesType = {
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
-  jabamaModal?: Flex__<typeof AntdModal>;
+  jajigaModal?: Flex__<typeof AntdModal>;
   active4?: Flex__<"div">;
   notificationModal?: Flex__<typeof AntdModal>;
   active5?: Flex__<"div">;
@@ -432,7 +432,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
           })()
       },
       {
-        path: "jabamaModal.open",
+        path: "jajigaModal.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
@@ -962,7 +962,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               )}
             >
               {
-                "\u0628\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0622\u0646\u06cc \u0647\u0631 \u0633\u0627\u06cc\u062a\u060c \u062a\u0642\u0648\u06cc\u0645\u062a \u0622\u0646\u06cc \u0645\u06cc\u0645\u0648\u0646\u0647 \u062a\u0627 \u0648\u0642\u062a\u06cc \u062e\u0627\u0645\u0648\u0634\u0634 \u06a9\u0646\u06cc"
+                "\u0628\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0622\u0646\u06cc \u0647\u0631 \u0633\u0627\u06cc\u062a\u060c \u062a\u0642\u0648\u06cc\u0645\u062a \u0622\u0646\u06cc \u0645\u06cc\u200c\u0645\u0648\u0646\u0647 \u062a\u0627 \u0648\u0642\u062a\u06cc \u062e\u0627\u0645\u0648\u0634\u0634 \u06a9\u0646\u06cc"
               }
             </div>
           </section>
@@ -1630,7 +1630,9 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                             sty.text___9KcOi
                           )}
                         >
-                          {"\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
+                          {
+                            "\u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648"
+                          }
                         </div>
                       </div>
                       <Switch
@@ -2993,7 +2995,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                               const actionArgs = {
                                 variable: {
                                   objRoot: $state,
-                                  variablePath: ["jabamaModal", "open"]
+                                  variablePath: ["jajigaModal", "open"]
                                 },
                                 operation: 0,
                                 value: true
@@ -3475,7 +3477,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
               )}
             >
               {
-                "\u00ab\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u00bb \u0628\u0647 \u0645\u0647\u0645\u0627\u0646 \u0627\u062c\u0627\u0632\u0647 \u0645\u06cc\u200c\u062f\u0647 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u062a\u0627\u06cc\u06cc\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0644\u0627\u0641\u0627\u0635\u0644\u0647 \u0631\u0632\u0631\u0648 \u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u0628\u0627\u0639\u062b \u0628\u06cc\u0634\u062a\u0631 \u0634\u062f\u0646 \u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u060c \u06a9\u0627\u0647\u0634 \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0648 \u0628\u0627\u0644\u0627\u062a\u0631 \u0631\u0641\u062a\u0646 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u062c\u0633\u062a\u062c\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0645\u06cc\u200c\u0634\u0647."
+                "\u00ab\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u00bb \u0628\u0647 \u0645\u0647\u0645\u0627\u0646 \u0627\u062c\u0627\u0632\u0647 \u0645\u06cc\u200c\u062f\u0647 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u062a\u0627\u06cc\u06cc\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0644\u0627\u0641\u0627\u0635\u0644\u0647 \u0631\u0632\u0631\u0648 \u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u0628\u0627\u0639\u062b \u0628\u06cc\u0634\u200c\u062a\u0631 \u0634\u062f\u0646 \u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u060c \u06a9\u0627\u0647\u0634 \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0648 \u0628\u0627\u0644\u0627\u062a\u0631 \u0631\u0641\u062a\u0646 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u062c\u0633\u062a\u062c\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0645\u06cc\u200c\u0634\u0647."
               }
             </div>
           </div>
@@ -3716,9 +3718,9 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
             />
           </div>
           <AntdModal
-            data-plasmic-name={"jabamaModal"}
-            data-plasmic-override={overrides.jabamaModal}
-            className={classNames("__wab_instance", sty.jabamaModal)}
+            data-plasmic-name={"jajigaModal"}
+            data-plasmic-override={overrides.jajigaModal}
+            className={classNames("__wab_instance", sty.jajigaModal)}
             defaultStylesClassName={classNames(
               projectcss.root_reset,
               projectcss.plasmic_default_styles,
@@ -3730,14 +3732,14 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
             modalContentClassName={classNames({
               [sty["pcls_YxmowDRQ6nSx"]]: true
             })}
-            modalScopeClassName={sty["jabamaModal__modal"]}
+            modalScopeClassName={sty["jajigaModal__modal"]}
             onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["jabamaModal", "open"]).apply(
+              generateStateOnChangeProp($state, ["jajigaModal", "open"]).apply(
                 null,
                 eventArgs
               );
             }}
-            open={generateStateValueProp($state, ["jabamaModal", "open"])}
+            open={generateStateValueProp($state, ["jajigaModal", "open"])}
             title={
               <div
                 className={classNames(
@@ -3752,7 +3754,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                     style={{ fontWeight: 600 }}
                   >
                     {
-                      "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0646\u0645\u06cc\u062a\u0648\u0646\u0647 \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627 \u0622\u0646\u06cc \u0634\u0647!"
+                      "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0646\u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062f\u0631 \u062c\u0627\u062c\u06cc\u06af\u0627 \u0622\u0646\u06cc \u0634\u0647!"
                     }
                   </span>
                 </React.Fragment>
@@ -3772,7 +3774,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                 )}
               >
                 {
-                  "\ud83d\udcc5 \u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u2705 \u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\ud83d\udcac \u0648 \u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
+                  "\ud83d\udcc5\u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u2705\u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\ud83d\udcac\u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
                 }
               </div>
             </div>
@@ -3834,7 +3836,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
                           const actionArgs = {
                             variable: {
                               objRoot: $state,
-                              variablePath: ["jabamaModal", "open"]
+                              variablePath: ["jajigaModal", "open"]
                             },
                             operation: 0,
                             value: false
@@ -4058,7 +4060,7 @@ const PlasmicDescendants = {
     "navbarRntFooter",
     "clarityRntComponent",
     "faviconRntComponent",
-    "jabamaModal",
+    "jajigaModal",
     "active4",
     "notificationModal",
     "active5"
@@ -4133,7 +4135,7 @@ const PlasmicDescendants = {
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  jabamaModal: ["jabamaModal", "active4"],
+  jajigaModal: ["jajigaModal", "active4"],
   active4: ["active4"],
   notificationModal: ["notificationModal", "active5"],
   active5: ["active5"]
@@ -4176,7 +4178,7 @@ type NodeDefaultElementType = {
   navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
-  jabamaModal: typeof AntdModal;
+  jajigaModal: typeof AntdModal;
   active4: "div";
   notificationModal: typeof AntdModal;
   active5: "div";
@@ -4277,7 +4279,7 @@ export const PlasmicInstantReserveSahami = Object.assign(
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
-    jabamaModal: makeNodeComponent("jabamaModal"),
+    jajigaModal: makeNodeComponent("jajigaModal"),
     active4: makeNodeComponent("active4"),
     notificationModal: makeNodeComponent("notificationModal"),
     active5: makeNodeComponent("active5"),

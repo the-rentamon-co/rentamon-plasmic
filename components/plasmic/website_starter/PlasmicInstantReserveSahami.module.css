@@ -782,7 +782,6 @@
   max-width: auto;
   font-size: 18px;
   text-align: right;
-  padding-left: 0px;
   font-family: "Estedad";
   font-weight: 400;
   font-style: normal;
@@ -1205,10 +1204,12 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-bottom: 26px;
   line-height: 1.8;
   font-size: 16px;
   min-width: 0;
-  padding: 40px 40px 26px;
 }
 @media (max-width: 500px) {
   .desc {
@@ -1334,7 +1335,7 @@
   max-width: 100%;
   display: none;
 }
-.jabamaModal:global(.__wab_instance) {
+.jajigaModal:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -1370,7 +1371,7 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
-  padding: 16px 0px;
+  padding: 18px 0px 16px;
 }
 @media (max-width: 500px) {
   .text__sOhpd {
