@@ -610,23 +610,7 @@ function PlasmicInstantReserveSahami__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile")
-            ? (() => {
-                try {
-                  return $state.showNewFeatureBadge;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return false;
-                  }
-                  throw e;
-                }
-              })()
-            : hasVariant(globalVariants, "screen", "tablet")
-              ? false
-              : false
+          hasVariant(globalVariants, "screen", "tablet") ? false : false
       },
       {
         path: "showNewFeatureBadge",

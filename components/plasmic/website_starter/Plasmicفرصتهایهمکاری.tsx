@@ -135,6 +135,7 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   introAutoSyncTitle3?: Flex__<"div">;
   introAutoSyncCaption3?: Flex__<"div">;
   introAutoSyncCaption4?: Flex__<"div">;
+  introduction2TextPics3?: Flex__<"div">;
   address?: Flex__<"div">;
   content?: Flex__<"div">;
   addressText?: Flex__<"div">;
@@ -414,9 +415,21 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                       }
                       loading={"lazy"}
                       src={
-                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fhosts%2F%D9%85%D8%AD%D9%85%D8%AF%20%D8%A7%D9%85%DB%8C%D9%86%20%D8%AC%D8%B9%D9%81%D8%B1%DB%8C.jpg?versionId="
+                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fhosts%2Farash-tavana.jpg?versionId="
                       }
                     />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___4WcIn
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.\n\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."
+                        : "\u062f\u06cc\u062f\u0627\u0631 \u0628\u0627 \u0622\u0642\u0627\u06cc \u0622\u0631\u0634 \u062a\u0648\u0627\u0646\u0627 - \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u062a\u0646\u06a9\u0627\u0628\u0646\u060c \u0648 \u06cc\u06a9\u06cc \u0627\u0632 \u0627\u0648\u0644\u06cc\u0646 \u0627\u0641\u0631\u0627\u062f\u0631\u06cc \u06a9\u0647 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0639\u062a\u0645\u0627\u062f \u06a9\u0631\u062f"}
+                    </div>
                   </div>
                 </div>
                 <div
@@ -497,7 +510,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     >
                       {hasVariant(globalVariants, "screen", "mobile")
                         ? "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.\n\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."
-                        : "\u0645\u0639\u0631\u0641\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0648 \u0622\u0645\u0648\u0632\u0634 \u0627\u0648\u0644\u06cc\u0647 \u0628\u0647 \u0622\u0642\u0627\u06cc \u0647\u0627\u0634\u0645\u06cc - \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f\u060c \u0631\u0648\u0633\u062a\u0627\u06cc \u067e\u0631\u0686\u0648\u0631"}
+                        : "\u0645\u0639\u0631\u0641\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0648 \u0622\u0645\u0648\u0632\u0634 \u0627\u0648\u0644\u06cc\u0647 \u0628\u0647 \u0622\u0642\u0627\u06cc \u0633\u06cc\u062f \u0645\u062d\u0645\u062f\u062d\u0633\u0646 \u0647\u0627\u0634\u0645\u06cc - \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u067e\u0631\u0686\u0648\u0631\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"}
                     </div>
                   </div>
                 </div>
@@ -1720,6 +1733,84 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   )}
                 </div>
               </div>
+              <div
+                data-plasmic-name={"introduction2TextPics3"}
+                data-plasmic-override={overrides.introduction2TextPics3}
+                className={classNames(
+                  projectcss.all,
+                  sty.introduction2TextPics3
+                )}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__x2RmU)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__brlB0)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                          ? "none"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "none"
+                            : "none"
+                    }
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                          ? "none"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "none"
+                            : "none"
+                    }
+                    displayMinHeight={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "auto"
+                            : "0"
+                    }
+                    displayMinWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                          ? "auto"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "auto"
+                            : "0"
+                    }
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "100%"
+                            : "100%"
+                    }
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fhosts%2Fkermani.jpg?versionId="
+                    }
+                  />
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__aCyr0)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__apPl
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0645\u0633\u06cc\u0631 \u00ab\u062a\u0648\u0633\u0639\u0647 \u0627\u0642\u062a\u0635\u0627\u062f\u06cc \u06a9\u0634\u0648\u0631\u00bb \u0648 \u0628\u0647 \u062a\u0628\u0639 \u0627\u0648\u0646 \u00ab\u0631\u0633\u06cc\u062f\u0646 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u0647 \u06a9\u0631\u0627\u0645\u062a \u0627\u0646\u0633\u0627\u0646\u06cc\u00bb \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639\u0627\u062a\u06cc\u0647 \u06a9\u0647 \u0645\u0639\u0645\u0648\u0644\u0627 \u062a\u0648\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631\u0645\u0648\u0631\u062f\u0634 \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u0627\u0633\u062a\u060c \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0645\u0627 \u0631\u0648 \u062f\u0648\u0631 \u0647\u0645 \u062c\u0645\u0639 \u06a9\u0631\u062f\u0647.\n\u0628\u0631\u0627\u06cc \u062a\u062d\u0642\u0642 \u0627\u06cc\u0646 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a\u060c \u062f\u0633\u062a \u06af\u0630\u0627\u0634\u062a\u06cc\u0645 \u0631\u0648\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u0645\u0644\u0627\u06a9\u00bb. \u0645\u0648\u0636\u0648\u0639\u06cc \u06a9\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0632\u062d\u0645\u0627\u062a \u0632\u06cc\u0627\u062f \u0633\u0627\u06cc\u0631 \u0628\u0627\u0632\u06cc\u06af\u0631\u0627\u0646\u060c \u0647\u0646\u0648\u0632\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0628\u0627 \u0646\u0648\u0622\u0648\u0631\u06cc \u0632\u0646\u062c\u06cc\u0631\u0647\u200c\u06cc \u0627\u0631\u0632\u0634 \u0627\u0648\u0646 \u0631\u0648 \u062a\u0642\u0648\u06cc\u062a \u06a9\u0631\u062f. \u0627\u0632 \u0646\u0638\u0631 \u0645\u0627 \u0627\u06cc\u0646 \u0635\u0646\u0639\u062a \u0647\u0646\u0648\u0632 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u062c\u0627\u06cc \u0631\u0634\u062f \u062f\u0627\u0631\u0647 \u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062b\u0631\u0648\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u062e\u0644\u0642\u060c \u0648 \u0628\u06cc\u0646 \u0622\u062f\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062a\u0627 \u0627\u0644\u0627\u0646 \u0628\u06cc\u0631\u0648\u0646 \u0627\u06cc\u0646 \u0686\u0631\u062e\u0647 \u0628\u0648\u062f\u0646\u062f\u060c \u0628\u0647 \u06af\u0631\u062f\u0634 \u062f\u0631\u0628\u06cc\u0627\u0631\u0647."
+                      : "\u062f\u06cc\u062f\u0627\u0631 \u0628\u0627 \u0622\u0642\u0627\u06cc \u0639\u0644\u06cc \u0627\u0635\u063a\u0631 \u06a9\u0631\u0645\u0627\u0646\u06cc - \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0642\u0645"}
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               data-plasmic-name={"address"}
@@ -1940,6 +2031,7 @@ const PlasmicDescendants = {
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
     "introAutoSyncCaption4",
+    "introduction2TextPics3",
     "address",
     "content",
     "addressText",
@@ -2003,6 +2095,7 @@ const PlasmicDescendants = {
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
     "introAutoSyncCaption4",
+    "introduction2TextPics3",
     "address",
     "content",
     "addressText",
@@ -2102,11 +2195,13 @@ const PlasmicDescendants = {
     "teamup",
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
-    "introAutoSyncCaption4"
+    "introAutoSyncCaption4",
+    "introduction2TextPics3"
   ],
   introAutoSyncTitle3: ["introAutoSyncTitle3"],
   introAutoSyncCaption3: ["introAutoSyncCaption3"],
   introAutoSyncCaption4: ["introAutoSyncCaption4"],
+  introduction2TextPics3: ["introduction2TextPics3"],
   address: ["address", "content", "addressText", "link", "map", "embedHtml"],
   content: ["content", "addressText", "link", "map", "embedHtml"],
   addressText: ["addressText", "link"],
@@ -2174,6 +2269,7 @@ type NodeDefaultElementType = {
   introAutoSyncTitle3: "div";
   introAutoSyncCaption3: "div";
   introAutoSyncCaption4: "div";
+  introduction2TextPics3: "div";
   address: "div";
   content: "div";
   addressText: "div";
@@ -2302,6 +2398,7 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     introAutoSyncTitle3: makeNodeComponent("introAutoSyncTitle3"),
     introAutoSyncCaption3: makeNodeComponent("introAutoSyncCaption3"),
     introAutoSyncCaption4: makeNodeComponent("introAutoSyncCaption4"),
+    introduction2TextPics3: makeNodeComponent("introduction2TextPics3"),
     address: makeNodeComponent("address"),
     content: makeNodeComponent("content"),
     addressText: makeNodeComponent("addressText"),
