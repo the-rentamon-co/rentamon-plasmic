@@ -3718,7 +3718,7 @@ function PlasmicReservations__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0622\u06cc\u0627 \u0628\u0631\u0627\u06cc \u062a\u0627\u06cc\u06cc\u062f \u0627\u06cc\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u062f\u0627\u0631\u06cc\u061f"
+                    "\u0645\u0637\u0645\u0626\u0646\u06cc \u06a9\u0647 \u0645\u06cc\u062e\u0648\u0627\u06cc \u0631\u0632\u0631\u0648 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\u06cc\u061f"
                   }
                 </div>
               ) : null}
@@ -3754,23 +3754,249 @@ function PlasmicReservations__RenderFunc(props: {
                   sty.text__u66Pv
                 )}
               >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return (() => {
-                        return `از ${$state.modalData[0].enterDate} تا ${$state.modalData[0].laveDate}`;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "\u0622\u06cc\u0627 \u0628\u0631\u0627\u06cc \u062a\u0627\u06cc\u06cc\u062f \u0627\u06cc\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u062f\u0627\u0631\u06cc\u061f";
+                {hasVariant(globalVariants, "screen", "mobile") ? (
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          function gregorianToJalali(gy, gm, gd) {
+                            const g_d_m = [
+                              0,
+                              31,
+                              (gy % 4 === 0 && gy % 100 !== 0) || gy % 400 === 0
+                                ? 29
+                                : 28,
+                              31,
+                              30,
+                              31,
+                              30,
+                              31,
+                              31,
+                              30,
+                              31,
+                              30,
+                              31
+                            ];
+
+                            let jy = gy <= 1600 ? 0 : 979;
+                            gy -= gy <= 1600 ? 621 : 1600;
+                            let gy2 = gm > 2 ? gy + 1 : gy;
+                            let days =
+                              365 * gy +
+                              Math.floor((gy2 + 3) / 4) -
+                              Math.floor((gy2 + 99) / 100) +
+                              Math.floor((gy2 + 399) / 400);
+                            for (let i = 0; i < gm; ++i) days += g_d_m[i];
+                            days += gd - 1;
+                            let j_day_no = days - 79;
+                            let j_np = Math.floor(j_day_no / 12053);
+                            j_day_no %= 12053;
+                            jy += 33 * j_np + 4 * Math.floor(j_day_no / 1461);
+                            j_day_no %= 1461;
+                            if (j_day_no >= 366) {
+                              jy += Math.floor((j_day_no - 1) / 365);
+                              j_day_no = (j_day_no - 1) % 365;
+                            }
+                            const jm_list = [
+                              0, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                            ];
+
+                            let jm, jd;
+                            for (
+                              jm = 1;
+                              jm <= 12 && j_day_no >= jm_list[jm];
+                              ++jm
+                            ) {
+                              j_day_no -= jm_list[jm];
+                            }
+                            jd = j_day_no + 1;
+                            return [jy, jm, jd];
+                          }
+                          function formatPersianNumber(num) {
+                            return num
+                              .toString()
+                              .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+                          }
+                          function formatJalaliDateVerbose(isoDateStr) {
+                            const weekdays = [
+                              "یکشنبه",
+                              "دوشنبه",
+                              "سه شنبه",
+                              "چهارشنبه",
+                              "پنجشنبه",
+                              "جمعه",
+                              "شنبه"
+                            ];
+
+                            const jalaliMonths = [
+                              "",
+                              "فروردین",
+                              "اردیبهشت",
+                              "خرداد",
+                              "تیر",
+                              "مرداد",
+                              "شهریور",
+                              "مهر",
+                              "آبان",
+                              "آذر",
+                              "دی",
+                              "بهمن",
+                              "اسفند"
+                            ];
+
+                            const date = new Date(isoDateStr);
+                            const dayName = weekdays[date.getDay()];
+                            const [jy, jm, jd] = gregorianToJalali(
+                              date.getFullYear(),
+                              date.getMonth() + 1,
+                              date.getDate()
+                            );
+                            const monthName = jalaliMonths[jm];
+                            const dayNumber = formatPersianNumber(jd);
+                            return `${dayName} ${dayNumber} ${monthName}`;
+                          }
+                          const checkIn = $state.modalData[0].enterDate;
+                          const checkOut = $state.modalData[0].laveDate;
+                          const checkInJalali =
+                            formatJalaliDateVerbose(checkIn);
+                          const checkOutJalali =
+                            formatJalaliDateVerbose(checkOut);
+                          const message = ` ${checkInJalali} تا ${checkOutJalali}`;
+                          return message;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0622\u06cc\u0627 \u0628\u0631\u0627\u06cc \u062a\u0627\u06cc\u06cc\u062f \u0627\u06cc\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u062f\u0627\u0631\u06cc\u061f";
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
+                    })()}
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          function gregorianToJalali(gy, gm, gd) {
+                            const g_d_m = [
+                              0,
+                              31,
+                              (gy % 4 === 0 && gy % 100 !== 0) || gy % 400 === 0
+                                ? 29
+                                : 28,
+                              31,
+                              30,
+                              31,
+                              30,
+                              31,
+                              31,
+                              30,
+                              31,
+                              30,
+                              31
+                            ];
+
+                            let jy = gy <= 1600 ? 0 : 979;
+                            gy -= gy <= 1600 ? 621 : 1600;
+                            let gy2 = gm > 2 ? gy + 1 : gy;
+                            let days =
+                              365 * gy +
+                              Math.floor((gy2 + 3) / 4) -
+                              Math.floor((gy2 + 99) / 100) +
+                              Math.floor((gy2 + 399) / 400);
+                            for (let i = 0; i < gm; ++i) days += g_d_m[i];
+                            days += gd - 1;
+                            let j_day_no = days - 79;
+                            let j_np = Math.floor(j_day_no / 12053);
+                            j_day_no %= 12053;
+                            jy += 33 * j_np + 4 * Math.floor(j_day_no / 1461);
+                            j_day_no %= 1461;
+                            if (j_day_no >= 366) {
+                              jy += Math.floor((j_day_no - 1) / 365);
+                              j_day_no = (j_day_no - 1) % 365;
+                            }
+                            const jm_list = [
+                              0, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                            ];
+
+                            let jm, jd;
+                            for (
+                              jm = 1;
+                              jm <= 12 && j_day_no >= jm_list[jm];
+                              ++jm
+                            ) {
+                              j_day_no -= jm_list[jm];
+                            }
+                            jd = j_day_no + 1;
+                            return [jy, jm, jd];
+                          }
+                          function formatPersianNumber(num) {
+                            return num
+                              .toString()
+                              .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+                          }
+                          function formatJalaliDateVerbose(isoDateStr) {
+                            const weekdays = [
+                              "یکشنبه",
+                              "دوشنبه",
+                              "سه شنبه",
+                              "چهارشنبه",
+                              "پنجشنبه",
+                              "جمعه",
+                              "شنبه"
+                            ];
+
+                            const jalaliMonths = [
+                              "",
+                              "فروردین",
+                              "اردیبهشت",
+                              "خرداد",
+                              "تیر",
+                              "مرداد",
+                              "شهریور",
+                              "مهر",
+                              "آبان",
+                              "آذر",
+                              "دی",
+                              "بهمن",
+                              "اسفند"
+                            ];
+
+                            const date = new Date(isoDateStr);
+                            const dayName = weekdays[date.getDay()];
+                            const [jy, jm, jd] = gregorianToJalali(
+                              date.getFullYear(),
+                              date.getMonth() + 1,
+                              date.getDate()
+                            );
+                            const monthName = jalaliMonths[jm];
+                            const dayNumber = formatPersianNumber(jd);
+                            return `${dayName} ${dayNumber} ${monthName}`;
+                          }
+                          const checkIn = $state.modalData[0].enterDate;
+                          const checkOut = $state.modalData[0].laveDate;
+                          const checkInJalali =
+                            formatJalaliDateVerbose(checkIn);
+                          const checkOutJalali =
+                            formatJalaliDateVerbose(checkOut);
+                          const message = ` ${checkInJalali} تا ${checkOutJalali}`;
+                          return message;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0622\u06cc\u0627 \u0628\u0631\u0627\u06cc \u062a\u0627\u06cc\u06cc\u062f \u0627\u06cc\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u062f\u0627\u0631\u06cc\u061f";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                )}
               </div>
               <div
                 className={classNames(
