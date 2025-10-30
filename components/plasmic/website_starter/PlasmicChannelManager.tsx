@@ -107,7 +107,6 @@ export type PlasmicChannelManager__OverridesType = {
   mizboon?: Flex__<"div">;
   mihmansho?: Flex__<"div">;
   homsa?: Flex__<"div">;
-  button?: Flex__<typeof Button>;
   item?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   intro?: Flex__<"div">;
@@ -115,6 +114,7 @@ export type PlasmicChannelManager__OverridesType = {
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
+  modal?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultChannelManagerProps {}
@@ -246,6 +246,12 @@ function PlasmicChannelManager__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest2"
+      },
+      {
+        path: "modal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -566,19 +572,23 @@ function PlasmicChannelManager__RenderFunc(props: {
                                       ($state.modalData.source === "jabama"
                                         ? "جاباما"
                                         : $state.modalData.source === "otaghak"
-                                        ? "اتاقک"
-                                        : $state.modalData.source ===
-                                          "mihmansho"
-                                        ? "میهمان‌شو"
-                                        : $state.modalData.source === "homsa"
-                                        ? "هومسا"
-                                        : $state.modalData.source === "jajiga"
-                                        ? "جاجیگا"
-                                        : $state.modalData.source === "shab"
-                                        ? "شب"
-                                        : $state.modalData.source === "mizboon"
-                                        ? "میزبون"
-                                        : $state.modalData.source)
+                                          ? "اتاقک"
+                                          : $state.modalData.source ===
+                                              "mihmansho"
+                                            ? "میهمان‌شو"
+                                            : $state.modalData.source ===
+                                                "homsa"
+                                              ? "هومسا"
+                                              : $state.modalData.source ===
+                                                  "jajiga"
+                                                ? "جاجیگا"
+                                                : $state.modalData.source ===
+                                                    "shab"
+                                                  ? "شب"
+                                                  : $state.modalData.source ===
+                                                      "mizboon"
+                                                    ? "میزبون"
+                                                    : $state.modalData.source)
                                     );
                                   })();
                                 } catch (e) {
@@ -603,19 +613,23 @@ function PlasmicChannelManager__RenderFunc(props: {
                                       ($state.modalData.source === "jabama"
                                         ? "جاباما"
                                         : $state.modalData.source === "otaghak"
-                                        ? "اتاقک"
-                                        : $state.modalData.source ===
-                                          "mihmansho"
-                                        ? "میهمان‌شو"
-                                        : $state.modalData.source === "homsa"
-                                        ? "هومسا"
-                                        : $state.modalData.source === "jajiga"
-                                        ? "جاجیگا"
-                                        : $state.modalData.source === "shab"
-                                        ? "شب"
-                                        : $state.modalData.source === "mizboon"
-                                        ? "میزبون"
-                                        : $state.modalData.source)
+                                          ? "اتاقک"
+                                          : $state.modalData.source ===
+                                              "mihmansho"
+                                            ? "میهمان‌شو"
+                                            : $state.modalData.source ===
+                                                "homsa"
+                                              ? "هومسا"
+                                              : $state.modalData.source ===
+                                                  "jajiga"
+                                                ? "جاجیگا"
+                                                : $state.modalData.source ===
+                                                    "shab"
+                                                  ? "شب"
+                                                  : $state.modalData.source ===
+                                                      "mizboon"
+                                                    ? "میزبون"
+                                                    : $state.modalData.source)
                                     );
                                   })();
                                 } catch (e) {
@@ -667,19 +681,23 @@ function PlasmicChannelManager__RenderFunc(props: {
                                       ($state.modalData.source === "jabama"
                                         ? "جاباما"
                                         : $state.modalData.source === "otaghak"
-                                        ? "اتاقک"
-                                        : $state.modalData.source ===
-                                          "mihmansho"
-                                        ? "میهمان‌شو"
-                                        : $state.modalData.source === "homsa"
-                                        ? "هومسا"
-                                        : $state.modalData.source === "jajiga"
-                                        ? "جاجیگا"
-                                        : $state.modalData.source === "shab"
-                                        ? "شب"
-                                        : $state.modalData.source === "mizboon"
-                                        ? "میزبون"
-                                        : $state.modalData.source)
+                                          ? "اتاقک"
+                                          : $state.modalData.source ===
+                                              "mihmansho"
+                                            ? "میهمان‌شو"
+                                            : $state.modalData.source ===
+                                                "homsa"
+                                              ? "هومسا"
+                                              : $state.modalData.source ===
+                                                  "jajiga"
+                                                ? "جاجیگا"
+                                                : $state.modalData.source ===
+                                                    "shab"
+                                                  ? "شب"
+                                                  : $state.modalData.source ===
+                                                      "mizboon"
+                                                    ? "میزبون"
+                                                    : $state.modalData.source)
                                     );
                                   })();
                                 } catch (e) {
@@ -704,19 +722,23 @@ function PlasmicChannelManager__RenderFunc(props: {
                                       ($state.modalData.source === "jabama"
                                         ? "جاباما"
                                         : $state.modalData.source === "otaghak"
-                                        ? "اتاقک"
-                                        : $state.modalData.source ===
-                                          "mihmansho"
-                                        ? "میهمان‌شو"
-                                        : $state.modalData.source === "homsa"
-                                        ? "هومسا"
-                                        : $state.modalData.source === "jajiga"
-                                        ? "جاجیگا"
-                                        : $state.modalData.source === "shab"
-                                        ? "شب"
-                                        : $state.modalData.source === "mizboon"
-                                        ? "میزبون"
-                                        : $state.modalData.source)
+                                          ? "اتاقک"
+                                          : $state.modalData.source ===
+                                              "mihmansho"
+                                            ? "میهمان‌شو"
+                                            : $state.modalData.source ===
+                                                "homsa"
+                                              ? "هومسا"
+                                              : $state.modalData.source ===
+                                                  "jajiga"
+                                                ? "جاجیگا"
+                                                : $state.modalData.source ===
+                                                    "shab"
+                                                  ? "شب"
+                                                  : $state.modalData.source ===
+                                                      "mizboon"
+                                                    ? "میزبون"
+                                                    : $state.modalData.source)
                                     );
                                   })();
                                 } catch (e) {
@@ -2207,9 +2229,10 @@ function PlasmicChannelManager__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.freeBox___1IJ9K)}
                   >
                     <Button
-                      data-plasmic-name={"button"}
-                      data-plasmic-override={overrides.button}
-                      className={classNames("__wab_instance", sty.button)}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__jmmPh
+                      )}
                       onClick={async event => {
                         const $steps = {};
 
@@ -2244,9 +2267,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                           typeof $steps["updateStatusModalOpen"].then ===
                             "function"
                         ) {
-                          $steps["updateStatusModalOpen"] = await $steps[
-                            "updateStatusModalOpen"
-                          ];
+                          $steps["updateStatusModalOpen"] =
+                            await $steps["updateStatusModalOpen"];
                         }
                       }}
                     >
@@ -2400,9 +2422,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
 
                       $steps["updateStatusModalOpen"] = true
@@ -2437,9 +2458,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                         typeof $steps["updateStatusModalOpen"].then ===
                           "function"
                       ) {
-                        $steps["updateStatusModalOpen"] = await $steps[
-                          "updateStatusModalOpen"
-                        ];
+                        $steps["updateStatusModalOpen"] =
+                          await $steps["updateStatusModalOpen"];
                       }
                     }}
                   >
@@ -2864,6 +2884,131 @@ function PlasmicChannelManager__RenderFunc(props: {
               />
             </div>
           </div>
+          <AntdModal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              styleTokensClassNames
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["modal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["modal", "open"])}
+            title={null}
+            trigger={null}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__f2Wh4
+              )}
+            >
+              {
+                "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0627\u06cc\u0646\u200c\u062c\u0627 \u0631\u0648 \u0628\u0627 \u062c\u0632\u06cc\u06cc\u0627\u062a \u0628\u06cc\u0634\u200c\u062a\u0631 \u062f\u0631 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb \u0628\u0628\u06cc\u0646\u06cc"
+              }
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__fhtrm)}>
+              <Button
+                className={classNames("__wab_instance", sty.button__zvl70)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToReservations"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/reservations` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToReservations"] != null &&
+                    typeof $steps["goToReservations"] === "object" &&
+                    typeof $steps["goToReservations"].then === "function"
+                  ) {
+                    $steps["goToReservations"] =
+                      await $steps["goToReservations"];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cXtL1
+                  )}
+                >
+                  {
+                    "\u0645\u0634\u0627\u0647\u062f\u0647 \u062c\u0632\u06cc\u06cc\u0627\u062a \u0631\u0632\u0631\u0648"
+                  }
+                </div>
+              </Button>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___9JHvv
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modal", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalOpen"] != null &&
+                    typeof $steps["updateModalOpen"] === "object" &&
+                    typeof $steps["updateModalOpen"].then === "function"
+                  ) {
+                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                  }
+                }}
+              >
+                {"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
+              </div>
+            </div>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -2888,14 +3033,14 @@ const PlasmicDescendants = {
     "mizboon",
     "mihmansho",
     "homsa",
-    "button",
     "item",
     "sideEffect",
     "intro",
     "returnButton",
     "navbarRntFooter",
     "clarityRntComponent",
-    "faviconRntComponent"
+    "faviconRntComponent",
+    "modal"
   ],
   header: ["header", "sideBar2", "profile"],
   sideBar2: ["sideBar2"],
@@ -2913,7 +3058,6 @@ const PlasmicDescendants = {
     "mizboon",
     "mihmansho",
     "homsa",
-    "button",
     "item"
   ],
   tableHeader: [
@@ -2925,8 +3069,7 @@ const PlasmicDescendants = {
     "otaaghak",
     "mizboon",
     "mihmansho",
-    "homsa",
-    "button"
+    "homsa"
   ],
   statusModal: [
     "statusModal",
@@ -2936,8 +3079,7 @@ const PlasmicDescendants = {
     "otaaghak",
     "mizboon",
     "mihmansho",
-    "homsa",
-    "button"
+    "homsa"
   ],
   shab: ["shab"],
   jajiga: ["jajiga"],
@@ -2946,14 +3088,14 @@ const PlasmicDescendants = {
   mizboon: ["mizboon"],
   mihmansho: ["mihmansho"],
   homsa: ["homsa"],
-  button: ["button"],
   item: ["item"],
   sideEffect: ["sideEffect"],
   intro: ["intro"],
   returnButton: ["returnButton"],
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"]
+  faviconRntComponent: ["faviconRntComponent"],
+  modal: ["modal"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2975,7 +3117,6 @@ type NodeDefaultElementType = {
   mizboon: "div";
   mihmansho: "div";
   homsa: "div";
-  button: typeof Button;
   item: "div";
   sideEffect: typeof SideEffect;
   intro: "div";
@@ -2983,6 +3124,7 @@ type NodeDefaultElementType = {
   navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
+  modal: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2996,7 +3138,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicChannelManager__VariantsArgs;
     args?: PlasmicChannelManager__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicChannelManager__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicChannelManager__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicChannelManager__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -3060,7 +3204,6 @@ export const PlasmicChannelManager = Object.assign(
     mizboon: makeNodeComponent("mizboon"),
     mihmansho: makeNodeComponent("mihmansho"),
     homsa: makeNodeComponent("homsa"),
-    button: makeNodeComponent("button"),
     item: makeNodeComponent("item"),
     sideEffect: makeNodeComponent("sideEffect"),
     intro: makeNodeComponent("intro"),
@@ -3068,6 +3211,7 @@ export const PlasmicChannelManager = Object.assign(
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
+    modal: makeNodeComponent("modal"),
 
     // Metadata about props expected for PlasmicChannelManager
     internalVariantProps: PlasmicChannelManager__VariantProps,

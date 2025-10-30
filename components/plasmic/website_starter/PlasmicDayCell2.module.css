@@ -991,6 +991,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     font-size: 13px;
+    letter-spacing: -0.6px;
     padding: 0px 2px;
   }
 }
@@ -1022,6 +1023,7 @@
     white-space: pre;
     user-select: none;
     text-overflow: ellipsis;
+    letter-spacing: -0.6px;
     min-width: 0;
     padding: 2px 1px;
   }

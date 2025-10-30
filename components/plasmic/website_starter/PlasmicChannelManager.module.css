@@ -1451,11 +1451,11 @@
     padding-left: 0px;
   }
 }
-.button:global(.__wab_instance) {
+.button__jmmPh:global(.__wab_instance) {
   max-width: 80%;
 }
 @media (max-width: 350px) {
-  .button:global(.__wab_instance) {
+  .button__jmmPh:global(.__wab_instance) {
     width: 100%;
     min-width: 0;
   }
@@ -1974,4 +1974,64 @@
 .faviconRntComponent:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
   display: none;
+}
+.modal:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__f2Wh4 {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 0;
+}
+.freeBox__fhtrm {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 15px;
+  min-width: 0;
+  padding: 8px;
+}
+.button__zvl70:global(.__wab_instance) {
+  max-width: 100%;
+}
+.svg__uwRui {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.text__cXtL1 {
+  font-size: 15px;
+}
+.svg__xbKms {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.text___9JHvv {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  color: var(--token-8nedppYkGVaH);
+  background: none;
+  font-size: 15px;
+  padding-bottom: 9px;
+  padding-top: 9px;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 0;
+  border-radius: 30px;
+  border: 2px solid var(--token-8nedppYkGVaH);
 }

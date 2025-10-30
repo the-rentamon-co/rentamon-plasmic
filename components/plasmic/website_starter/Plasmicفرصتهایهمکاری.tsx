@@ -971,12 +971,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   src={
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Felecomp1404.jpg?versionId="
-                      : {
-                          src: "/plasmic/website_starter/images/joinUsRentamon5Jpg2.jpg",
-                          fullWidth: 700,
-                          fullHeight: 596,
-                          aspectRatio: undefined
-                        }
+                      : "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Felecomp1404.jpg?versionId="
                   }
                 />
               </div>
