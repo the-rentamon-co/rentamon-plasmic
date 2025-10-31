@@ -2008,6 +2008,12 @@
   flex-shrink: 0;
   border-radius: 30px;
 }
+@media (max-width: 500px) {
+  .htmlVideo:global(.__wab_instance) {
+    width: 250px;
+    flex-shrink: 0;
+  }
+}
 .freeBox__bRfdf {
   display: flex;
   flex-direction: row;
