@@ -68,6 +68,7 @@ import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -115,6 +116,7 @@ export type PlasmicChannelManager__OverridesType = {
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   modal?: Flex__<typeof AntdModal>;
+  htmlVideo?: Flex__<typeof Video>;
 };
 
 export interface DefaultChannelManagerProps {}
@@ -2918,8 +2920,21 @@ function PlasmicChannelManager__RenderFunc(props: {
               }
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__fhtrm)}>
+              <Video
+                data-plasmic-name={"htmlVideo"}
+                data-plasmic-override={overrides.htmlVideo}
+                autoPlay={true}
+                className={classNames("__wab_instance", sty.htmlVideo)}
+                controls={false}
+                muted={true}
+                src={
+                  "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Fdoc_2025-10-31_12-25-54.mp4?versionId="
+                }
+              />
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__bRfdf)}>
               <Button
-                className={classNames("__wab_instance", sty.button__zvl70)}
+                className={classNames("__wab_instance", sty.button__qLHuH)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -2954,7 +2969,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__cXtL1
+                    sty.text__dYoH9
                   )}
                 >
                   {
@@ -2966,7 +2981,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text___9JHvv
+                  sty.text__p5Qk
                 )}
                 onClick={async event => {
                   const $steps = {};
@@ -3040,7 +3055,8 @@ const PlasmicDescendants = {
     "navbarRntFooter",
     "clarityRntComponent",
     "faviconRntComponent",
-    "modal"
+    "modal",
+    "htmlVideo"
   ],
   header: ["header", "sideBar2", "profile"],
   sideBar2: ["sideBar2"],
@@ -3095,7 +3111,8 @@ const PlasmicDescendants = {
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  modal: ["modal"]
+  modal: ["modal", "htmlVideo"],
+  htmlVideo: ["htmlVideo"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -3125,6 +3142,7 @@ type NodeDefaultElementType = {
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   modal: typeof AntdModal;
+  htmlVideo: typeof Video;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -3212,6 +3230,7 @@ export const PlasmicChannelManager = Object.assign(
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     modal: makeNodeComponent("modal"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
 
     // Metadata about props expected for PlasmicChannelManager
     internalVariantProps: PlasmicChannelManager__VariantProps,

@@ -1994,31 +1994,52 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  min-width: 0;
+  padding: 8px;
+}
+.htmlVideo:global(.__wab_instance) {
+  width: 300px;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 30px;
+}
+.freeBox__bRfdf {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
   justify-content: flex-start;
   align-items: center;
   column-gap: 15px;
   min-width: 0;
   padding: 8px;
 }
-.button__zvl70:global(.__wab_instance) {
+.button__qLHuH:global(.__wab_instance) {
   max-width: 100%;
 }
-.svg__uwRui {
+.svg__i6Sa {
   position: relative;
   object-fit: cover;
   width: auto;
   height: 1em;
 }
-.text__cXtL1 {
+.text__dYoH9 {
   font-size: 15px;
 }
-.svg__xbKms {
+.svg__jpByI {
   position: relative;
   object-fit: cover;
   width: auto;
   height: 1em;
 }
-.text___9JHvv {
+.text__p5Qk {
   position: relative;
   width: 100%;
   height: auto;
