@@ -1293,7 +1293,20 @@ function PlasmicDayCell2__RenderFunc(props: {
                           ? true
                           : hasVariant($state, "dayStatus", "lastDayReserve")
                             ? true
-                            : true
+                            : (() => {
+                                try {
+                                  return $props.isSmartBooking;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return false;
+                                  }
+                                  throw e;
+                                }
+                              })()
             ) ? (
               <div
                 className={classNames(projectcss.all, sty.freeBox___7HH4, {
@@ -1806,8 +1819,36 @@ function PlasmicDayCell2__RenderFunc(props: {
                                                       "screen",
                                                       "mobile"
                                                     )
-                                                  ? true
-                                                  : false
+                                                  ? (() => {
+                                                      try {
+                                                        return !$props.isSmartBooking;
+                                                      } catch (e) {
+                                                        if (
+                                                          e instanceof
+                                                            TypeError ||
+                                                          e?.plasmicType ===
+                                                            "PlasmicUndefinedDataError"
+                                                        ) {
+                                                          return true;
+                                                        }
+                                                        throw e;
+                                                      }
+                                                    })()
+                                                  : (() => {
+                                                      try {
+                                                        return !$props.isSmartBooking;
+                                                      } catch (e) {
+                                                        if (
+                                                          e instanceof
+                                                            TypeError ||
+                                                          e?.plasmicType ===
+                                                            "PlasmicUndefinedDataError"
+                                                        ) {
+                                                          return true;
+                                                        }
+                                                        throw e;
+                                                      }
+                                                    })()
             ) ? (
               <div
                 className={classNames(

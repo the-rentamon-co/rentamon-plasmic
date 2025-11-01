@@ -115,6 +115,7 @@ export const PlasmicCalendar23__ArgProps = new Array<ArgPropType>(
 export type PlasmicCalendar23__OverridesType = {
   root?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
+  setReserveDataOnCalendar?: Flex__<typeof SideEffect>;
   guide1?: Flex__<"div">;
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   fragmentLongPress?: Flex__<typeof FragmentLongPress>;
@@ -1631,7 +1632,9 @@ function PlasmicCalendar23__RenderFunc(props: {
       />
 
       <SideEffect
-        className={classNames("__wab_instance", sty.sideEffect__dv0Sb)}
+        data-plasmic-name={"setReserveDataOnCalendar"}
+        data-plasmic-override={overrides.setReserveDataOnCalendar}
+        className={classNames("__wab_instance", sty.setReserveDataOnCalendar)}
         deps={(() => {
           try {
             return [$state.apiRequest.data, $state.reserveData.data];
@@ -1674,6 +1677,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                           const reserveItem = reserveMap[bookingId];
                           const amount = reserveItem.amount;
                           item.guest_name = reserveItem.guest_name;
+                          item.reservations_type =
+                            reserveItem.reservations_type;
                           if (amount == null || amount == 0) {
                             item.price = null;
                             return;
@@ -1684,7 +1689,6 @@ function PlasmicCalendar23__RenderFunc(props: {
                             : (amountNumber / 1000).toLocaleString();
                         }
                       });
-                      console.log(calendarData);
                       return calendarData;
                     })();
                   }
@@ -2271,7 +2275,53 @@ function PlasmicCalendar23__RenderFunc(props: {
                     throw e;
                   }
                 })()}
-                isSmartBooking={true}
+                isSmartBooking={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const dayData =
+                              $state.apiRequest.data[1].calendar[
+                                dateProps.date.day - 1
+                              ];
+                            return (
+                              dayData.status !== "canceled" &&
+                              dayData.reservations_type === "smart_booking"
+                            );
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : (() => {
+                        try {
+                          return (() => {
+                            const dayData =
+                              $state.apiRequest.data[1].calendar[
+                                dateProps.date.day - 1
+                              ];
+                            return (
+                              dayData.status !== "canceled" &&
+                              dayData.reservations_type === "smart_booking"
+                            );
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                }
                 note={(() => {
                   try {
                     return $state.apiRequest.data[1].calendar[
@@ -2302,40 +2352,89 @@ function PlasmicCalendar23__RenderFunc(props: {
                     throw e;
                   }
                 })()}
-                price={(() => {
-                  try {
-                    return (() => {
-                      if (
-                        $state.apiRequest.data[1].calendar[
-                          dateProps.date.day - 1
-                        ].status == "reserved"
-                      ) {
-                        return $state.apiRequest.data[1].calendar[
-                          dateProps.date.day - 1
-                        ].guest_name;
-                      }
-                      if (
-                        $state.apiRequest.data[1].calendar[
-                          dateProps.date.day - 1
-                        ].status == "blocked"
-                      ) {
-                        return "غیرفعال";
-                      } else {
-                        return $state.apiRequest.data[1].calendar[
-                          dateProps.date.day - 1
-                        ].price;
-                      }
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
+                price={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const dayData =
+                              $state.apiRequest.data[1].calendar[
+                                dateProps.date.day - 1
+                              ];
+                            const {
+                              status,
+                              reservations_type,
+                              guest_name,
+                              price
+                            } = dayData;
+                            switch (status) {
+                              case "reserved":
+                                return guest_name;
+                              case "blocked":
+                                return reservations_type != null
+                                  ? guest_name
+                                  : "غیرفعال";
+                              case "unblocked":
+                                return reservations_type != null
+                                  ? guest_name
+                                  : price;
+                              case "canceled":
+                                return price;
+                              default:
+                                return undefined;
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : (() => {
+                        try {
+                          return (() => {
+                            const dayData =
+                              $state.apiRequest.data[1].calendar[
+                                dateProps.date.day - 1
+                              ];
+                            const {
+                              status,
+                              reservations_type,
+                              guest_name,
+                              price
+                            } = dayData;
+                            switch (status) {
+                              case "reserved":
+                                return guest_name;
+                              case "blocked":
+                                return reservations_type != null
+                                  ? guest_name
+                                  : "غیرفعال";
+                              case "unblocked":
+                                return reservations_type != null
+                                  ? guest_name
+                                  : price;
+                              case "canceled":
+                                return price;
+                              default:
+                                return undefined;
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                }
                 selected={(() => {
                   try {
                     return $state.fragmentDatePicker.values.includes(
@@ -11852,6 +11951,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "apiRequest",
+    "setReserveDataOnCalendar",
     "guide1",
     "fragmentDatePicker",
     "fragmentLongPress",
@@ -11925,6 +12025,7 @@ const PlasmicDescendants = {
     "reserveData"
   ],
   apiRequest: ["apiRequest"],
+  setReserveDataOnCalendar: ["setReserveDataOnCalendar"],
   guide1: ["guide1"],
   fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell2"],
   fragmentLongPress: ["fragmentLongPress", "dayCell2"],
@@ -12084,6 +12185,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   apiRequest: typeof ApiRequest;
+  setReserveDataOnCalendar: typeof SideEffect;
   guide1: "div";
   fragmentDatePicker: typeof DatePicker;
   fragmentLongPress: typeof FragmentLongPress;
@@ -12220,6 +12322,7 @@ export const PlasmicCalendar23 = Object.assign(
   {
     // Helper components rendering sub-elements
     apiRequest: makeNodeComponent("apiRequest"),
+    setReserveDataOnCalendar: makeNodeComponent("setReserveDataOnCalendar"),
     guide1: makeNodeComponent("guide1"),
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     fragmentLongPress: makeNodeComponent("fragmentLongPress"),

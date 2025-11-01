@@ -329,7 +329,7 @@
 .celldayStatus_passedFirstDayReserveV2 {
   background: #40404066;
   overflow: visible;
-  border-radius: 0px;
+  border-radius: 0px 10px 10px 0px;
 }
 .celldayStatus_passedMidDayReserveV2 {
   background: #40404066;
@@ -811,8 +811,10 @@
   top: 10px;
   left: 0px;
   z-index: 1;
+  background: #abdcab;
   min-width: 0;
-  padding: 8px;
+  border-radius: 30px;
+  padding: 0px;
 }
 .freeBoxdayStatus_lastDayReserve___7HH4Zrpyu {
   display: none;
@@ -1082,7 +1084,7 @@
     font-size: 14px;
     font-weight: 400;
     white-space: pre;
-    display: none;
+    display: block;
   }
 }
 .textselected___9RWtFlSVo3 {
