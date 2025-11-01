@@ -1630,6 +1630,80 @@ function PlasmicCalendar23__RenderFunc(props: {
         }}
       />
 
+      <SideEffect
+        className={classNames("__wab_instance", sty.sideEffect__dv0Sb)}
+        deps={(() => {
+          try {
+            return [$state.apiRequest.data, $state.reserveData.data];
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
+        onMount={async () => {
+          const $steps = {};
+
+          $steps["runCode"] = true
+            ? (() => {
+                const actionArgs = {
+                  customFunction: async () => {
+                    return (() => {
+                      const calendarData =
+                        $state.apiRequest?.data?.[1]?.calendar;
+                      const reserveData = $state.reserveData?.data;
+                      if (
+                        !Array.isArray(calendarData) ||
+                        !Array.isArray(reserveData)
+                      ) {
+                        return calendarData;
+                      }
+                      const reserveMap = reserveData.reduce((acc, item) => {
+                        if (item && item.booking_id) {
+                          acc[item.booking_id] = item;
+                        }
+                        return acc;
+                      }, {});
+                      calendarData.forEach(item => {
+                        const bookingId = item.booking_id;
+                        if (bookingId in reserveMap) {
+                          const reserveItem = reserveMap[bookingId];
+                          const amount = reserveItem.amount;
+                          item.guest_name = reserveItem.guest_name;
+                          if (amount == null || amount == 0) {
+                            item.price = null;
+                            return;
+                          }
+                          const amountNumber = parseInt(amount, 10);
+                          item.price = isNaN(amountNumber)
+                            ? amount
+                            : (amountNumber / 1000).toLocaleString();
+                        }
+                      });
+                      console.log(calendarData);
+                      return calendarData;
+                    })();
+                  }
+                };
+                return (({ customFunction }) => {
+                  return customFunction();
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["runCode"] != null &&
+            typeof $steps["runCode"] === "object" &&
+            typeof $steps["runCode"].then === "function"
+          ) {
+            $steps["runCode"] = await $steps["runCode"];
+          }
+        }}
+      />
+
       <div
         className={classNames(
           projectcss.all,
@@ -11668,7 +11742,7 @@ function PlasmicCalendar23__RenderFunc(props: {
           (async data => {
             const $steps = {};
 
-            $steps["runCode"] = true
+            $steps["runCode"] = false
               ? (() => {
                   const actionArgs = {
                     customFunction: async () => {
