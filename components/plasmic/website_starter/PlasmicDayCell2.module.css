@@ -898,6 +898,22 @@
   border-radius: 30px;
   padding: 0px;
 }
+@media (max-width: 500px) {
+  .freeBoxdayStatus_passedFirstDayReserveV2___7HH4HpmmI {
+    width: auto;
+    height: 100%;
+    max-width: 100px;
+    background: #abdcab;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    min-height: 0;
+    border-radius: 10px;
+    padding: 0px;
+  }
+}
 @media (max-width: 350px) {
   .freeBoxdayStatus_passedFirstDayReserveV2___7HH4HpmmI {
     width: auto;
@@ -1037,8 +1053,9 @@
   }
 }
 .textdayStatus_disabledV2__bIcAo6ARxq {
-  color: var(--token-aAU8kfeqE6Ao);
+  color: #404040cc;
   font-weight: 300;
+  white-space: pre;
   display: block;
 }
 .textdayStatus_passedFirstDayReserveV2__bIcAOhpmmI {
@@ -1046,6 +1063,23 @@
   white-space: pre;
   color: #404040;
   padding: 1px 3px;
+}
+@media (max-width: 500px) {
+  .textdayStatus_passedFirstDayReserveV2__bIcAOhpmmI {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-size: 13px;
+    font-weight: 400;
+    color: #404040;
+    text-align: center;
+    letter-spacing: -0.6px;
+    white-space: pre;
+    user-select: none;
+    text-overflow: ellipsis;
+    min-width: 0;
+    padding: 0px 2px;
+  }
 }
 .textdayStatus_passedMidDayReserveV2__bIcAozPpWv {
   color: var(--token-8R7jjC_-F9FF);

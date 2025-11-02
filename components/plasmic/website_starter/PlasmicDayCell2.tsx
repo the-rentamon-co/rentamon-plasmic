@@ -1158,6 +1158,11 @@ function PlasmicDayCell2__RenderFunc(props: {
           </div>
           <div
             className={classNames(projectcss.all, sty.freeBox__vb8Yk, {
+              [sty.freeBoxdayStatus_disabledV2__vb8Yk6ARxq]: hasVariant(
+                $state,
+                "dayStatus",
+                "disabledV2"
+              ),
               [sty.freeBoxdayStatus_firstDayReserveV2__vb8Yklxm0M]: hasVariant(
                 $state,
                 "dayStatus",
@@ -1250,7 +1255,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                   : hasVariant($state, "dayStatus", "disabledV2")
                     ? (() => {
                         try {
-                          return $props.calendarV2;
+                          return $props.isSmartBooking;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -1314,6 +1319,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                     $state,
                     "dayStatus",
                     "disabledV2"
+                  ),
+                  [sty.freeBoxdayStatus_disabled___7HH49Zm4Q]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabled"
                   ),
                   [sty.freeBoxdayStatus_firstDayReserveV2___7HH4Lxm0M]:
                     hasVariant($state, "dayStatus", "firstDayReserveV2"),
@@ -1655,6 +1665,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                     $state,
                     "dayStatus",
                     "disabledV2"
+                  ),
+                  [sty.freeBoxdayStatus_disabled__xvaH59Zm4Q]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabled"
                   ),
                   [sty.freeBoxdayStatus_firstDayReserveV2__xvaH5Lxm0M]:
                     hasVariant($state, "dayStatus", "firstDayReserveV2"),
