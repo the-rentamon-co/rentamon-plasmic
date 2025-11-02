@@ -1689,6 +1689,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             : (amountNumber / 1000).toLocaleString();
                         }
                       });
+                      console.log("calendarData", calendarData);
                       return calendarData;
                     })();
                   }
@@ -2381,7 +2382,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                               case "canceled":
                                 return price;
                               default:
-                                return undefined;
+                                return price;
                             }
                           })();
                         } catch (e) {
