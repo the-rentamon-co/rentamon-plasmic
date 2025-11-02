@@ -11231,7 +11231,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   let a = {
                                     guest_name: $state.guestName.value,
                                     phone_number: $state.phoneNumber.value,
-                                    amount: $state.input2.value,
+                                    amount: $state.input2.value || null,
                                     referrer: $state.guestReferrer.value,
                                     b_id: $state.manualReserveBookingId,
                                     guest_count: $state.guestCount.value,
