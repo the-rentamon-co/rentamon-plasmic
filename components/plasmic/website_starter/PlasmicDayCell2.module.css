@@ -841,7 +841,7 @@
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDayReserveV2___7HH4Lxm0M {
-    max-width: 120px;
+    max-width: 100px;
     overflow: hidden;
     height: 100%;
     align-items: flex-start;
@@ -1069,6 +1069,58 @@
     padding: 0px;
   }
 }
+.freeBox__xvaH5 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 0px;
+}
+.freeBoxdayStatus_firstDayReserveV2__xvaH5Lxm0M {
+  z-index: 10;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_firstDayReserveV2__xvaH5Lxm0M {
+    width: auto;
+    height: 100%;
+    max-width: 100px;
+    background: none;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    min-height: 0;
+    display: flex;
+    border-radius: 10px;
+    padding: 0px;
+  }
+}
+.freeBoxdayStatus_reservedV2__xvaH575Ot {
+  padding: 0px;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_passedFirstDayReserveV2__xvaH5HpmmI {
+    z-index: 10;
+    width: auto;
+    height: 100%;
+    max-width: 100px;
+    background: none;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    min-height: 0;
+    border-radius: 10px;
+    padding: 0px;
+  }
+}
 .text___9RWtF {
   width: 100%;
   height: auto;
@@ -1133,6 +1185,23 @@
   color: var(--token-8R7jjC_-F9FF);
   display: block;
 }
+@media (max-width: 500px) {
+  .textdayStatus_firstDayReserveV2___9RWtFlxm0M {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--token-8R7jjC_-F9FF);
+    text-align: center;
+    letter-spacing: -0.6px;
+    white-space: pre;
+    user-select: none;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0px 2px;
+  }
+}
 .textdayStatus_lastDayReserveV2___9RWtFHbxR {
   display: none;
 }
@@ -1166,6 +1235,23 @@
   padding-right: 0px;
   color: var(--token-8R7jjC_-F9FF);
   display: block;
+}
+@media (max-width: 500px) {
+  .textdayStatus_passedFirstDayReserveV2___9RWtFhpmmI {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--token-8R7jjC_-F9FF);
+    text-align: center;
+    letter-spacing: -0.6px;
+    white-space: pre;
+    user-select: none;
+    text-overflow: ellipsis;
+    min-width: 0;
+    padding: 0px 2px;
+  }
 }
 .textdayStatus_passedMidDayReserveV2___9RWtFzPpWv {
   color: var(--token-8R7jjC_-F9FF);

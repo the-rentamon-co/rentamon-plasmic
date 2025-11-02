@@ -2422,7 +2422,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                               case "canceled":
                                 return price;
                               default:
-                                return undefined;
+                                return price;
                             }
                           })();
                         } catch (e) {
