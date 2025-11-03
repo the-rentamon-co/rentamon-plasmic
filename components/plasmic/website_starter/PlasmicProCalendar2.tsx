@@ -670,7 +670,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                 $steps["checkVtCookie"] = await $steps["checkVtCookie"];
               }
 
-              $steps["checkOldUser"] = false
+              $steps["checkOldUser"] = true
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -691,7 +691,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                 $steps["checkOldUser"] = await $steps["checkOldUser"];
               }
 
-              $steps["updateStateVariable3"] = false
+              $steps["updateStateVariable3"] = true
                 ? (() => {
                     const actionArgs = {
                       operation: 0,
