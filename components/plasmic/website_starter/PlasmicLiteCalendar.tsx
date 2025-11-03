@@ -1408,7 +1408,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__alq2
+                        sty.formField___6JISu
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1420,7 +1420,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__lNkkL
+                        sty.formField__nlX9M
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1438,7 +1438,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__yyGL
+                          sty.text__dt1TE
                         )}
                       >
                         {"Submit"}

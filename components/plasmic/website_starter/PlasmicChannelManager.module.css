@@ -2001,7 +2001,7 @@
   padding: 8px;
 }
 .htmlVideo:global(.__wab_instance) {
-  width: 300px;
+  width: 200px;
   height: auto;
   max-width: 100%;
   object-fit: cover;
