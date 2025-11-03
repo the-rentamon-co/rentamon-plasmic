@@ -804,7 +804,7 @@ function Plasmicتالار__RenderFunc(props: {
                   ? (() => {
                       try {
                         return (() => {
-                          if ($state.userType == 1) {
+                          if ($state.userType != 2) {
                             return "display_block";
                           } else {
                             return "hidden";
@@ -1072,7 +1072,7 @@ function Plasmicتالار__RenderFunc(props: {
                       ? (() => {
                           try {
                             return (() => {
-                              if ($state.userType == 1) {
+                              if ($state.userType != 2) {
                                 return "display_block clickable";
                               } else {
                                 return "hidden clickable";
@@ -1308,7 +1308,7 @@ function Plasmicتالار__RenderFunc(props: {
                     (() => {
                       try {
                         return (() => {
-                          if ($state.userType != 1) {
+                          if ($state.userType == 2) {
                             return "display_block clickable";
                           } else {
                             return "hidden clickable";
@@ -1547,7 +1547,25 @@ function Plasmicتالار__RenderFunc(props: {
                   projectcss.all,
                   sty.instantReserve,
                   hasVariant(globalVariants, "screen", "mobile")
-                    ? ``
+                    ? (() => {
+                        try {
+                          return (() => {
+                            if ($state.userType != 2) {
+                              return "display_block clickable";
+                            } else {
+                              return "hidden clickable";
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
                     : (() => {
                         try {
                           return (() => {})();
@@ -1745,7 +1763,7 @@ function Plasmicتالار__RenderFunc(props: {
                     (() => {
                       try {
                         return (() => {
-                          if ($state.userType == 1) {
+                          if ($state.userType != 2) {
                             return "display_block clickable";
                           } else {
                             return "hidden clickable";
@@ -1850,7 +1868,7 @@ function Plasmicتالار__RenderFunc(props: {
                     (() => {
                       try {
                         return (() => {
-                          if ($state.userType == 1) {
+                          if ($state.userType != 2) {
                             return "display_block clickable";
                           } else {
                             return "hidden clickable";
@@ -1955,7 +1973,7 @@ function Plasmicتالار__RenderFunc(props: {
                     (() => {
                       try {
                         return (() => {
-                          if ($state.userType == 1) {
+                          if ($state.userType != 2) {
                             return "display_block clickable";
                           } else {
                             return "hidden clickable";
