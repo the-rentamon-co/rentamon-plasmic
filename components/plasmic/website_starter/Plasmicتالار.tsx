@@ -653,7 +653,7 @@ function Plasmicتالار__RenderFunc(props: {
                               variablePath: ["isNotify"]
                             },
                             operation: 0,
-                            value: ($state.isNotify = true)
+                            value: ($state.isNotify = false)
                           };
                           return (({
                             variable,
