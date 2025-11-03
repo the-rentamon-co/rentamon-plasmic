@@ -669,125 +669,6 @@ function PlasmicProCalendar__RenderFunc(props: {
                   await $steps["addCalendarSegmentOnState"];
               }
 
-              $steps["checkVtCookie"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          function getCookieValue(cookieName) {
-                            const cookies = document.cookie
-                              .split(";")
-                              .map(cookie => cookie.trim());
-                            for (const cookie of cookies) {
-                              const [name, value] = cookie.split("=");
-                              if (name === cookieName) {
-                                return value;
-                              }
-                            }
-                            return null;
-                          }
-                          let vt = null;
-                          const vtRaw = getCookieValue("vt");
-                          if (vtRaw !== null) {
-                            vt = parseInt(vtRaw, 10);
-                            $state.vtStatus = vt;
-                            if (vt === 2) {
-                              return (window.location.href =
-                                "https://rentamon.com/calendar/");
-                            }
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["checkVtCookie"] != null &&
-                typeof $steps["checkVtCookie"] === "object" &&
-                typeof $steps["checkVtCookie"].then === "function"
-              ) {
-                $steps["checkVtCookie"] = await $steps["checkVtCookie"];
-              }
-
-              $steps["checkOldUser"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://gateway.rentamon.com/webhook/get_user_segment"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["checkOldUser"] != null &&
-                typeof $steps["checkOldUser"] === "object" &&
-                typeof $steps["checkOldUser"].then === "function"
-              ) {
-                $steps["checkOldUser"] = await $steps["checkOldUser"];
-              }
-
-              $steps["updateStateVariable3"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        function setCookie(name, value, hours) {
-                          let expires = "";
-                          if (hours) {
-                            const date = new Date();
-                            date.setTime(
-                              date.getTime() + hours * 60 * 60 * 1000
-                            );
-                            expires = "; expires=" + date.toUTCString();
-                          }
-                          document.cookie =
-                            name + "=" + (value || "") + expires + "; path=/";
-                        }
-                        const flag = $steps.checkOldUser.data.flag;
-                        console.log("flag", flag);
-                        const current = parseInt($state.vtStatus, 10);
-                        if (isNaN(current)) {
-                          setCookie("vt", flag.toString(), 0.3333);
-                          if (flag === 2) {
-                            return (window.location.href =
-                              "https://rentamon.com/calendar/");
-                          }
-                        } else if (flag !== current) {
-                          setCookie("vt", flag.toString(), 0.3333);
-                          if (flag === 2) {
-                            return (window.location.href =
-                              "https://rentamon.com/calendar/");
-                          }
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable3"] != null &&
-                typeof $steps["updateStateVariable3"] === "object" &&
-                typeof $steps["updateStateVariable3"].then === "function"
-              ) {
-                $steps["updateStateVariable3"] =
-                  await $steps["updateStateVariable3"];
-              }
-
               $steps["getFirstTimeCookie"] = true
                 ? (() => {
                     const actionArgs = {
@@ -862,6 +743,66 @@ function PlasmicProCalendar__RenderFunc(props: {
             className={classNames("__wab_instance", sty.sideEffect__rNtx8)}
             onMount={async () => {
               const $steps = {};
+
+              $steps["runSmartBooking"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/check_reserve"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["runSmartBooking"] != null &&
+                typeof $steps["runSmartBooking"] === "object" &&
+                typeof $steps["runSmartBooking"].then === "function"
+              ) {
+                $steps["runSmartBooking"] = await $steps["runSmartBooking"];
+              }
+
+              $steps["doCalendarFallowUp"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://gateway.rentamon.com/webhook/process_calendar_followUp",
+                        undefined,
+                        (() => {
+                          try {
+                            return (() => {
+                              let a = { prop_id: $state.propId };
+                              return a;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["doCalendarFallowUp"] != null &&
+                typeof $steps["doCalendarFallowUp"] === "object" &&
+                typeof $steps["doCalendarFallowUp"].then === "function"
+              ) {
+                $steps["doCalendarFallowUp"] =
+                  await $steps["doCalendarFallowUp"];
+              }
 
               $steps["redirectByCookie"] = true
                 ? (() => {
@@ -976,66 +917,6 @@ function PlasmicProCalendar__RenderFunc(props: {
               ) {
                 $steps["redirectByResponse"] =
                   await $steps["redirectByResponse"];
-              }
-
-              $steps["doCalendarFallowUp"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://gateway.rentamon.com/webhook/process_calendar_followUp",
-                        undefined,
-                        (() => {
-                          try {
-                            return (() => {
-                              let a = { prop_id: $state.propId };
-                              return a;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["doCalendarFallowUp"] != null &&
-                typeof $steps["doCalendarFallowUp"] === "object" &&
-                typeof $steps["doCalendarFallowUp"].then === "function"
-              ) {
-                $steps["doCalendarFallowUp"] =
-                  await $steps["doCalendarFallowUp"];
-              }
-
-              $steps["runSmartBooking"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://gateway.rentamon.com/webhook/check_reserve"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["runSmartBooking"] != null &&
-                typeof $steps["runSmartBooking"] === "object" &&
-                typeof $steps["runSmartBooking"].then === "function"
-              ) {
-                $steps["runSmartBooking"] = await $steps["runSmartBooking"];
               }
             }}
           />
