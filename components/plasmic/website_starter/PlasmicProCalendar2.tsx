@@ -646,8 +646,12 @@ function PlasmicProCalendar2__RenderFunc(props: {
                             vt = parseInt(vtRaw, 10);
                             $state.vtStatus = vt;
                             if (vt === 2) {
+                              window.location.href =
+                                "https://rentamon.com/calendar/";
+                            }
+                            if (vt === 1) {
                               return (window.location.href =
-                                "https://rentamon.com/calendar/");
+                                "https://rentamon.com/panel/");
                             }
                           }
                         })();
@@ -707,17 +711,14 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         const flag = $steps.checkOldUser.data.flag;
                         console.log("flag", flag);
                         const current = parseInt($state.vtStatus, 10);
-                        if (isNaN(current)) {
+                        if (isNaN(current) || flag !== current) {
                           setCookie("vt", flag.toString(), 0.3333);
                           if (flag === 2) {
                             return (window.location.href =
                               "https://rentamon.com/calendar/");
-                          }
-                        } else if (flag !== current) {
-                          setCookie("vt", flag.toString(), 0.3333);
-                          if (flag === 2) {
+                          } else if (flag === 1) {
                             return (window.location.href =
-                              "https://rentamon.com/calendar/");
+                              "https://rentamon.com/panel/");
                           }
                         }
                       })()
@@ -780,34 +781,6 @@ function PlasmicProCalendar2__RenderFunc(props: {
               ) {
                 $steps["getFirstTimeCookie"] =
                   await $steps["getFirstTimeCookie"];
-              }
-
-              $steps["runCode3"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (function redirectIfAppSubdomain() {
-                          const { protocol, hostname, pathname, search, hash } =
-                            window.location;
-                          if (hostname === "app.rentamon.com") {
-                            const targetHost = "rentamon.com";
-                            const newUrl = `${protocol}//${targetHost}${pathname}${search}${hash}`;
-                            window.location.replace(newUrl);
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode3"] != null &&
-                typeof $steps["runCode3"] === "object" &&
-                typeof $steps["runCode3"].then === "function"
-              ) {
-                $steps["runCode3"] = await $steps["runCode3"];
               }
             }}
           />
