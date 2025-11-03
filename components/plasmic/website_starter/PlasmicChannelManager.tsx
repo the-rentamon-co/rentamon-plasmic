@@ -2912,7 +2912,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                   className={classNames(sty.img__u4SVx)}
                   displayHeight={
                     hasVariant(globalVariants, "screen", "mobile")
-                      ? "20px"
+                      ? "18px"
                       : "25px"
                   }
                   displayMaxHeight={"none"}

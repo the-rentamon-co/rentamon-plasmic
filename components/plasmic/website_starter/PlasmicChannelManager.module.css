@@ -2059,7 +2059,7 @@
 }
 @media (max-width: 500px) {
   .freeBox__cXlW {
-    padding: 0px;
+    padding: 0px 0px 3px;
   }
 }
 .img__u4SVx {
@@ -2074,7 +2074,7 @@
 }
 @media (max-width: 500px) {
   .img__u4SVx {
-    height: 20px;
+    height: 18px;
     flex-shrink: 0;
   }
 }
