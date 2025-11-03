@@ -2905,7 +2905,68 @@ function PlasmicChannelManager__RenderFunc(props: {
               );
             }}
             open={generateStateValueProp($state, ["modal", "open"])}
-            title={null}
+            title={
+              <div className={classNames(projectcss.all, sty.freeBox__cXlW)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__u4SVx)}
+                  displayHeight={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "20px"
+                      : "25px"
+                  }
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["modal", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalOpen"] != null &&
+                      typeof $steps["updateModalOpen"] === "object" &&
+                      typeof $steps["updateModalOpen"].then === "function"
+                    ) {
+                      $steps["updateModalOpen"] =
+                        await $steps["updateModalOpen"];
+                    }
+                  }}
+                  src={{
+                    src: "/plasmic/website_starter/images/image48.svg",
+                    fullWidth: 18,
+                    fullHeight: 18,
+                    aspectRatio: 1
+                  }}
+                />
+              </div>
+            }
             trigger={null}
           >
             <div
@@ -2977,51 +3038,6 @@ function PlasmicChannelManager__RenderFunc(props: {
                   }
                 </div>
               </Button>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__p5Qk
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["modal", "open"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateModalOpen"] != null &&
-                    typeof $steps["updateModalOpen"] === "object" &&
-                    typeof $steps["updateModalOpen"].then === "function"
-                  ) {
-                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                  }
-                }}
-              >
-                {"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
-              </div>
             </div>
           </AntdModal>
         </div>
