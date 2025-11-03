@@ -863,7 +863,7 @@ function PlasmicProCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["runCode"] = true
+              $steps["redirectByCookie"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -886,8 +886,12 @@ function PlasmicProCalendar__RenderFunc(props: {
                             vt = parseInt(vtRaw, 10);
                             $state.vtStatus = vt;
                             if (vt === 2) {
+                              window.location.href =
+                                "https://rentamon.com/calendar/";
+                            }
+                            if (vt === 3) {
                               return (window.location.href =
-                                "https://rentamon.com/calendar/");
+                                "https://rentamon.com/panel-2/");
                             }
                           }
                         })();
@@ -899,14 +903,14 @@ function PlasmicProCalendar__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
+                $steps["redirectByCookie"] != null &&
+                typeof $steps["redirectByCookie"] === "object" &&
+                typeof $steps["redirectByCookie"].then === "function"
               ) {
-                $steps["runCode"] = await $steps["runCode"];
+                $steps["redirectByCookie"] = await $steps["redirectByCookie"];
               }
 
-              $steps["invokeGlobalAction3"] = true
+              $steps["getSegment"] = true
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -920,15 +924,14 @@ function PlasmicProCalendar__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["invokeGlobalAction3"] != null &&
-                typeof $steps["invokeGlobalAction3"] === "object" &&
-                typeof $steps["invokeGlobalAction3"].then === "function"
+                $steps["getSegment"] != null &&
+                typeof $steps["getSegment"] === "object" &&
+                typeof $steps["getSegment"].then === "function"
               ) {
-                $steps["invokeGlobalAction3"] =
-                  await $steps["invokeGlobalAction3"];
+                $steps["getSegment"] = await $steps["getSegment"];
               }
 
-              $steps["updateVariable2"] = true
+              $steps["redirectByResponse"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -948,17 +951,14 @@ function PlasmicProCalendar__RenderFunc(props: {
                           const flag = $steps.checkOldUser.data.flag;
                           console.log("flag", flag);
                           const current = parseInt($state.vtStatus, 10);
-                          if (isNaN(current)) {
+                          if (isNaN(current) || flag !== current) {
                             setCookie("vt", flag.toString(), 0.3333);
                             if (flag === 2) {
                               return (window.location.href =
                                 "https://rentamon.com/calendar/");
-                            }
-                          } else if (flag !== current) {
-                            setCookie("vt", flag.toString(), 0.3333);
-                            if (flag === 2) {
+                            } else if (flag === 3) {
                               return (window.location.href =
-                                "https://rentamon.com/calendar/");
+                                "https://rentamon.com/panel-2/");
                             }
                           }
                         })();
@@ -970,14 +970,15 @@ function PlasmicProCalendar__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["updateVariable2"] != null &&
-                typeof $steps["updateVariable2"] === "object" &&
-                typeof $steps["updateVariable2"].then === "function"
+                $steps["redirectByResponse"] != null &&
+                typeof $steps["redirectByResponse"] === "object" &&
+                typeof $steps["redirectByResponse"].then === "function"
               ) {
-                $steps["updateVariable2"] = await $steps["updateVariable2"];
+                $steps["redirectByResponse"] =
+                  await $steps["redirectByResponse"];
               }
 
-              $steps["invokeGlobalAction"] = true
+              $steps["doCalendarFallowUp"] = true
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -1008,15 +1009,15 @@ function PlasmicProCalendar__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
+                $steps["doCalendarFallowUp"] != null &&
+                typeof $steps["doCalendarFallowUp"] === "object" &&
+                typeof $steps["doCalendarFallowUp"].then === "function"
               ) {
-                $steps["invokeGlobalAction"] =
-                  await $steps["invokeGlobalAction"];
+                $steps["doCalendarFallowUp"] =
+                  await $steps["doCalendarFallowUp"];
               }
 
-              $steps["invokeGlobalAction2"] = true
+              $steps["runSmartBooking"] = true
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -1030,12 +1031,11 @@ function PlasmicProCalendar__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["invokeGlobalAction2"] != null &&
-                typeof $steps["invokeGlobalAction2"] === "object" &&
-                typeof $steps["invokeGlobalAction2"].then === "function"
+                $steps["runSmartBooking"] != null &&
+                typeof $steps["runSmartBooking"] === "object" &&
+                typeof $steps["runSmartBooking"].then === "function"
               ) {
-                $steps["invokeGlobalAction2"] =
-                  await $steps["invokeGlobalAction2"];
+                $steps["runSmartBooking"] = await $steps["runSmartBooking"];
               }
             }}
           />

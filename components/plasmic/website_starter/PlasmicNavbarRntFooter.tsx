@@ -504,96 +504,30 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 $steps["goToProCalendar"] = await $steps["goToProCalendar"];
               }
 
-              $steps["runCode"] = false
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return console.log("$props.userType", $props.userType);
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
+              $steps["goToProCalendar2"] =
+                $state.userType2 == "3"
+                  ? (() => {
+                      const actionArgs = { destination: `/panel-2` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
               if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
+                $steps["goToProCalendar2"] != null &&
+                typeof $steps["goToProCalendar2"] === "object" &&
+                typeof $steps["goToProCalendar2"].then === "function"
               ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-
-              $steps["invokeGlobalAction"] = false
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://api-v2.rentamon.com/api/is_user_old"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] =
-                  await $steps["invokeGlobalAction"];
-              }
-
-              $steps["goToPanelCalendar"] = false
-                ? (() => {
-                    const actionArgs = { destination: `/panel` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["goToPanelCalendar"] != null &&
-                typeof $steps["goToPanelCalendar"] === "object" &&
-                typeof $steps["goToPanelCalendar"].then === "function"
-              ) {
-                $steps["goToPanelCalendar"] = await $steps["goToPanelCalendar"];
-              }
-
-              $steps["goToLitePanel"] = false
-                ? (() => {
-                    const actionArgs = { destination: `/calendar` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["goToLitePanel"] != null &&
-                typeof $steps["goToLitePanel"] === "object" &&
-                typeof $steps["goToLitePanel"].then === "function"
-              ) {
-                $steps["goToLitePanel"] = await $steps["goToLitePanel"];
+                $steps["goToProCalendar2"] = await $steps["goToProCalendar2"];
               }
             }}
           >
