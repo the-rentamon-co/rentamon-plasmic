@@ -187,7 +187,11 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                return true;
+                if (!document.cookie.includes("channel_manager_eilimination")) {
+                  return true;
+                } else {
+                  return false;
+                }
               })();
             } catch (e) {
               if (
@@ -307,9 +311,8 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile")
                   ? (() => {
                       try {
-                        return (() => {
-                          return false;
-                        })();
+                        return $state.isNotify;
+                        // return false
                       } catch (e) {
                         if (
                           e instanceof TypeError ||

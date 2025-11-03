@@ -255,12 +255,7 @@ function Plasmicتالار__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                function isNotifyEnabled() {
-                  return (
-                    localStorage.getItem("reservations_update_notif") !== null
-                  );
-                }
-                if (isNotifyEnabled()) {
+                if (!document.cookie.includes("channel_manager_eilimination")) {
                   return true;
                 } else {
                   return false;
@@ -588,9 +583,9 @@ function Plasmicتالار__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               undefined,
-                              "\u062a\u0645\u0627\u0645\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u067e\u0631\u062f\u0627\u0632\u0634 \u06a9\u0631\u062f\u0647 \u0631\u0648 \u062f\u0631 \u0628\u062e\u0634 \u00ab\u0631\u0632\u0631\u0648\u200c\u0647\u0627\u06cc \u0645\u0646\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc.",
+                              "\u0628\u0647 \u0632\u0648\u062f\u06cc \u0635\u0641\u062d\u0647 \u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u062d\u0630\u0641 \u0645\u06cc\u200c\u0634\u0648\u062f \u0648 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0627\u0648\u0646 \u0628\u062e\u0634 \u0631\u0648 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0627\u0632 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb \u0628\u0628\u06cc\u0646\u06cc",
                               "top-center",
-                              6000
+                              8000
                             ]
                           };
                           return $globalActions["Fragment.showToast"]?.apply(
@@ -613,13 +608,27 @@ function Plasmicتالار__RenderFunc(props: {
                           const actionArgs = {
                             customFunction: async () => {
                               return (() => {
-                                function enableNotify() {
-                                  localStorage.setItem(
-                                    "reservations_update_notif",
-                                    "true"
-                                  );
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/";
                                 }
-                                return enableNotify();
+                                return setCookie(
+                                  "channel_manager_eilimination",
+                                  "true",
+                                  72
+                                );
                               })();
                             }
                           };
@@ -675,7 +684,7 @@ function Plasmicتالار__RenderFunc(props: {
                     hasVariant(globalVariants, "screen", "mobile")
                       ? (() => {
                           try {
-                            return !$state.isNotify;
+                            return $state.isNotify;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -736,7 +745,7 @@ function Plasmicتالار__RenderFunc(props: {
                     hasVariant(globalVariants, "screen", "mobile")
                       ? (() => {
                           try {
-                            return $state.isNotify;
+                            return !$state.isNotify;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||

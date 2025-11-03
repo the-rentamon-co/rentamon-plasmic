@@ -346,11 +346,6 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 500px) {
-  .leftIcon {
-    display: none;
-  }
-}
 @media (max-width: 350px) {
   .leftIcon {
     max-width: 14%;
