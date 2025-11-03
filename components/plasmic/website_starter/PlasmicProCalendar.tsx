@@ -863,6 +863,120 @@ function PlasmicProCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookieValue(cookieName) {
+                            const cookies = document.cookie
+                              .split(";")
+                              .map(cookie => cookie.trim());
+                            for (const cookie of cookies) {
+                              const [name, value] = cookie.split("=");
+                              if (name === cookieName) {
+                                return value;
+                              }
+                            }
+                            return null;
+                          }
+                          let vt = null;
+                          const vtRaw = getCookieValue("vt");
+                          if (vtRaw !== null) {
+                            vt = parseInt(vtRaw, 10);
+                            $state.vtStatus = vt;
+                            if (vt === 2) {
+                              return (window.location.href =
+                                "https://rentamon.com/calendar/");
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["invokeGlobalAction3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/get_user_segment"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction3"] != null &&
+                typeof $steps["invokeGlobalAction3"] === "object" &&
+                typeof $steps["invokeGlobalAction3"].then === "function"
+              ) {
+                $steps["invokeGlobalAction3"] =
+                  await $steps["invokeGlobalAction3"];
+              }
+
+              $steps["updateVariable2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function setCookie(name, value, hours) {
+                            let expires = "";
+                            if (hours) {
+                              const date = new Date();
+                              date.setTime(
+                                date.getTime() + hours * 60 * 60 * 1000
+                              );
+                              expires = "; expires=" + date.toUTCString();
+                            }
+                            document.cookie =
+                              name + "=" + (value || "") + expires + "; path=/";
+                          }
+                          const flag = $steps.checkOldUser.data.flag;
+                          console.log("flag", flag);
+                          const current = parseInt($state.vtStatus, 10);
+                          if (isNaN(current)) {
+                            setCookie("vt", flag.toString(), 0.3333);
+                            if (flag === 2) {
+                              return (window.location.href =
+                                "https://rentamon.com/calendar/");
+                            }
+                          } else if (flag !== current) {
+                            setCookie("vt", flag.toString(), 0.3333);
+                            if (flag === 2) {
+                              return (window.location.href =
+                                "https://rentamon.com/calendar/");
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateVariable2"] != null &&
+                typeof $steps["updateVariable2"] === "object" &&
+                typeof $steps["updateVariable2"].then === "function"
+              ) {
+                $steps["updateVariable2"] = await $steps["updateVariable2"];
+              }
+
               $steps["invokeGlobalAction"] = true
                 ? (() => {
                     const actionArgs = {
