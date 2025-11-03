@@ -744,66 +744,6 @@ function PlasmicProCalendar__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["runSmartBooking"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://gateway.rentamon.com/webhook/check_reserve"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["runSmartBooking"] != null &&
-                typeof $steps["runSmartBooking"] === "object" &&
-                typeof $steps["runSmartBooking"].then === "function"
-              ) {
-                $steps["runSmartBooking"] = await $steps["runSmartBooking"];
-              }
-
-              $steps["doCalendarFallowUp"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://gateway.rentamon.com/webhook/process_calendar_followUp",
-                        undefined,
-                        (() => {
-                          try {
-                            return (() => {
-                              let a = { prop_id: $state.propId };
-                              return a;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["doCalendarFallowUp"] != null &&
-                typeof $steps["doCalendarFallowUp"] === "object" &&
-                typeof $steps["doCalendarFallowUp"].then === "function"
-              ) {
-                $steps["doCalendarFallowUp"] =
-                  await $steps["doCalendarFallowUp"];
-              }
-
               $steps["redirectByCookie"] = true
                 ? (() => {
                     const actionArgs = {
@@ -917,6 +857,73 @@ function PlasmicProCalendar__RenderFunc(props: {
               ) {
                 $steps["redirectByResponse"] =
                   await $steps["redirectByResponse"];
+              }
+            }}
+          />
+
+          <SideEffect
+            className={classNames("__wab_instance", sty.sideEffect___0HEm)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runSmartBooking"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://gateway.rentamon.com/webhook/check_reserve"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["runSmartBooking"] != null &&
+                typeof $steps["runSmartBooking"] === "object" &&
+                typeof $steps["runSmartBooking"].then === "function"
+              ) {
+                $steps["runSmartBooking"] = await $steps["runSmartBooking"];
+              }
+
+              $steps["doCalendarFallowUp"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://gateway.rentamon.com/webhook/process_calendar_followUp",
+                        undefined,
+                        (() => {
+                          try {
+                            return (() => {
+                              let a = { prop_id: $state.propId };
+                              return a;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["doCalendarFallowUp"] != null &&
+                typeof $steps["doCalendarFallowUp"] === "object" &&
+                typeof $steps["doCalendarFallowUp"].then === "function"
+              ) {
+                $steps["doCalendarFallowUp"] =
+                  await $steps["doCalendarFallowUp"];
               }
             }}
           />
