@@ -714,9 +714,11 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         if (isNaN(current) || flag !== current) {
                           setCookie("vt", flag.toString(), 0.3333);
                           if (flag === 2) {
+                            console.log("redirect to calendar");
                             return (window.location.href =
                               "https://rentamon.com/calendar/");
                           } else if (flag === 1) {
+                            console.log("redirect to panel");
                             return (window.location.href =
                               "https://rentamon.com/panel/");
                           }

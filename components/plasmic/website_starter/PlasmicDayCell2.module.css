@@ -1262,6 +1262,11 @@
   overflow: hidden;
   display: block;
 }
+@media (max-width: 500px) {
+  .textdayStatus_reservedV2___9RWtF75Ot {
+    letter-spacing: -0.6px;
+  }
+}
 @media (max-width: 350px) {
   .textdayStatus_reservedV2___9RWtF75Ot {
     display: block;
