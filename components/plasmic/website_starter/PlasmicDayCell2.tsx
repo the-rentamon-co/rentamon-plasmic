@@ -581,6 +581,9 @@ function PlasmicDayCell2__RenderFunc(props: {
               "dayStatus",
               "selected"
             ),
+            [sty.celldayStatus_selected_selected]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "selected"),
             [sty.cellselected]: hasVariant($state, "selected", "selected")
           })}
         >
@@ -595,6 +598,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                 $state,
                 "dayStatus",
                 "disabled"
+              ),
+              [sty.freeBoxdayStatus_discount___20P4Y58PIn]: hasVariant(
+                $state,
+                "dayStatus",
+                "discount"
               ),
               [sty.freeBoxdayStatus_midDayReserveV2___20P4Yx8Qvw]: hasVariant(
                 $state,
@@ -623,6 +631,9 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "reserved"
               ),
+              [sty.freeBoxdayStatus_selected_selected___20P4YPzhv6LSVo3]:
+                hasVariant($state, "selected", "selected") &&
+                hasVariant($state, "dayStatus", "selected"),
               [sty.freeBoxselected___20P4YlSVo3]: hasVariant(
                 $state,
                 "selected",
@@ -1329,6 +1340,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                     hasVariant($state, "dayStatus", "firstDayReserveV2"),
                   [sty.freeBoxdayStatus_firstDayReserve___7HH4XcLe3]:
                     hasVariant($state, "dayStatus", "firstDayReserve"),
+                  [sty.freeBoxdayStatus_lastDayReserveV2___7HH4HbxR]:
+                    hasVariant($state, "dayStatus", "lastDayReserveV2"),
                   [sty.freeBoxdayStatus_lastDayReserve___7HH4Zrpyu]: hasVariant(
                     $state,
                     "dayStatus",
@@ -1345,6 +1358,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                     hasVariant($state, "dayStatus", "passedFirstDayReserve"),
                   [sty.freeBoxdayStatus_passedLastDayReserve___7HH4NJrzh]:
                     hasVariant($state, "dayStatus", "passedLastDayReserve"),
+                  [sty.freeBoxdayStatus_passedMidDayReserveV2___7HH4ZPpWv]:
+                    hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
                   [sty.freeBoxdayStatus_passedMidDayReserve___7HH4Ltd9T]:
                     hasVariant($state, "dayStatus", "passedMidDayReserve"),
                   [sty.freeBoxdayStatus_passedReservedV2___7HH4ISdsA]:
@@ -1670,6 +1685,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                     $state,
                     "dayStatus",
                     "disabled"
+                  ),
+                  [sty.freeBoxdayStatus_discount__xvaH558PIn]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "discount"
                   ),
                   [sty.freeBoxdayStatus_firstDayReserveV2__xvaH5Lxm0M]:
                     hasVariant($state, "dayStatus", "firstDayReserveV2"),
@@ -2054,6 +2074,64 @@ function PlasmicDayCell2__RenderFunc(props: {
                 ) : null}
               </div>
             ) : null}
+            {(
+              hasVariant($state, "dayStatus", "firstDayReserveV2") &&
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return !$props.isSmartBooking;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })()
+                : hasVariant($state, "dayStatus", "discount")
+                  ? true
+                  : false
+            ) ? (
+              <div
+                className={classNames(projectcss.all, sty.freeBox__vUKh, {
+                  [sty.freeBoxdayStatus_disabledV2__vUKh6ARxq]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabledV2"
+                  ),
+                  [sty.freeBoxdayStatus_disabled__vUKh9Zm4Q]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabled"
+                  ),
+                  [sty.freeBoxdayStatus_discount__vUKh58PIn]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "discount"
+                  ),
+                  [sty.freeBoxdayStatus_firstDayReserveV2__vUKhlxm0M]:
+                    hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                  [sty.freeBoxdayStatus_lastDayReserveV2__vUKhHbxR]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "lastDayReserveV2"
+                  ),
+                  [sty.freeBoxdayStatus_passedFirstDayReserveV2__vUKhhpmmI]:
+                    hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
+                  [sty.freeBoxdayStatus_passedLastDayReserveV2__vUKhsnHmp]:
+                    hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
+                  [sty.freeBoxdayStatus_passedMidDayReserveV2__vUKhZPpWv]:
+                    hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
+                  [sty.freeBoxdayStatus_reservedV2__vUKh75Ot]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "reservedV2"
+                  )
+                })}
+              />
+            ) : null}
           </div>
         </div>
       </div>
@@ -2188,9 +2266,9 @@ function PlasmicDayCell2__RenderFunc(props: {
           displayWidth={"auto"}
           loading={"lazy"}
           src={{
-            src: "/plasmic/website_starter/images/image187.svg",
-            fullWidth: 7,
-            fullHeight: 7,
+            src: "/plasmic/website_starter/images/image188.svg",
+            fullWidth: 8,
+            fullHeight: 8,
             aspectRatio: undefined
           }}
         />

@@ -10249,9 +10249,9 @@ function PlasmicCalendar23__RenderFunc(props: {
               displayWidth={"auto"}
               loading={"lazy"}
               src={{
-                src: "/plasmic/website_starter/images/image187.svg",
-                fullWidth: 7,
-                fullHeight: 7,
+                src: "/plasmic/website_starter/images/image188.svg",
+                fullWidth: 8,
+                fullHeight: 8,
                 aspectRatio: undefined
               }}
             />

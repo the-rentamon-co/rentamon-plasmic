@@ -6,7 +6,7 @@
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
-  background: var(--token-8nedppYkGVaH);
+  background: #0000ff;
   max-width: 164px;
   width: 100%;
   margin-top: 0px;
@@ -31,12 +31,7 @@
 }
 @media (max-width: 500px) {
   .root {
-    background: linear-gradient(
-        71deg,
-        var(--token-8nedppYkGVaH) 0%,
-        #997fe7 100%
-      )
-      0% 0% / 100% 100% repeat;
+    background: #0000ff;
     margin-top: 0px;
   }
 }
