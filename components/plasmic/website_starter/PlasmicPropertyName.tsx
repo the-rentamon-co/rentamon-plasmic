@@ -284,8 +284,8 @@ function PlasmicPropertyName__RenderFunc(props: {
                                 !_par
                                   ? []
                                   : Array.isArray(_par)
-                                  ? _par
-                                  : [_par])(
+                                    ? _par
+                                    : [_par])(
                                 (() => {
                                   try {
                                     return $ctx.fetchedData.list;
@@ -497,9 +497,8 @@ function PlasmicPropertyName__RenderFunc(props: {
                                     typeof $steps["updateCollapseOpen"].then ===
                                       "function"
                                   ) {
-                                    $steps["updateCollapseOpen"] = await $steps[
-                                      "updateCollapseOpen"
-                                    ];
+                                    $steps["updateCollapseOpen"] =
+                                      await $steps["updateCollapseOpen"];
                                   }
                                 }}
                               >
@@ -736,7 +735,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicPropertyName__VariantsArgs;
     args?: PlasmicPropertyName__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicPropertyName__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicPropertyName__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicPropertyName__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

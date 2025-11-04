@@ -397,9 +397,10 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                     ) {
                       $steps[
                         "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonV19AppApk"
-                      ] = await $steps[
-                        "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonV19AppApk"
-                      ];
+                      ] =
+                        await $steps[
+                          "goToHttpsRentamonFilesStorageIranLiaraSpaceApkRentamonV19AppApk"
+                        ];
                     }
                   }}
                 >
@@ -490,9 +491,8 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                       typeof $steps["goToPanelCalendar"] === "object" &&
                       typeof $steps["goToPanelCalendar"].then === "function"
                     ) {
-                      $steps["goToPanelCalendar"] = await $steps[
-                        "goToPanelCalendar"
-                      ];
+                      $steps["goToPanelCalendar"] =
+                        await $steps["goToPanelCalendar"];
                     }
                   }}
                 >
@@ -538,8 +538,8 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "mobile")
                           ? "32px"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "26px"
-                          : "100%"
+                            ? "26px"
+                            : "100%"
                       }
                       displayMinHeight={"0"}
                       displayMinWidth={
@@ -631,8 +631,8 @@ function Plasmicدانلوداپلیکیشن__RenderFunc(props: {
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "110px"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "114px"
-                          : "auto"
+                            ? "114px"
+                            : "auto"
                       }
                       loading={"lazy"}
                       src={{
@@ -1084,7 +1084,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicدانلوداپلیکیشن__VariantsArgs;
     args?: Plasmicدانلوداپلیکیشن__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicدانلوداپلیکیشن__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicدانلوداپلیکیشن__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicدانلوداپلیکیشن__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

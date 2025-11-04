@@ -184,10 +184,10 @@ function PlasmicReferral__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "tablet")
-            ? false
-            : false
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : false
       },
       {
         path: "textInput.value",
@@ -337,10 +337,10 @@ function PlasmicReferral__RenderFunc(props: {
                   {hasVariant(globalVariants, "screen", "smallMobile")
                     ? "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647 \u0648 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647 \u0648 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647\n\u0648 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
-                    : "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647\n\u0648 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81\r\n\r"}
+                      ? "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647 \u0648 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647\n\u0648 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
+                        : "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647\n\u0648 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81\r\n\r"}
                 </div>
               </div>
               <div
@@ -360,8 +360,8 @@ function PlasmicReferral__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "180px"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "200px"
-                        : "250px"
+                          ? "200px"
+                          : "250px"
                     }
                     displayMaxHeight={"none"}
                     displayMaxWidth={
@@ -664,9 +664,8 @@ function PlasmicReferral__RenderFunc(props: {
                         typeof $steps["updateCopyTextOpen"] === "object" &&
                         typeof $steps["updateCopyTextOpen"].then === "function"
                       ) {
-                        $steps["updateCopyTextOpen"] = await $steps[
-                          "updateCopyTextOpen"
-                        ];
+                        $steps["updateCopyTextOpen"] =
+                          await $steps["updateCopyTextOpen"];
                       }
 
                       $steps["runCode"] = true
@@ -890,10 +889,10 @@ ${$state.textInput.value}
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0634\u0645\u0627\u0633\u062a \u0648 \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\u060c \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u062d\u062a\u0645\u0627 \u0628\u0627\u06cc\u062f \u0631\u0648\u06cc \u0647\u0645\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0632\u0646\u0647."
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062a\u0648\u062c\u0647: \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0634\u0645\u0627\u0633\u062a \u0648 \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\u060c \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u062d\u062a\u0645\u0627 \u0628\u0627\u06cc\u062f \u0631\u0648\u06cc \u0647\u0645\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0632\u0646\u0647 \u0648 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0647."
-                      : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u062a\u0648\u062c\u0647: \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0634\u0645\u0627\u0633\u062a \u0648 \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\u060c \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u062d\u062a\u0645\u0627 \u0628\u0627\u06cc\u062f \u0631\u0648\u06cc \u0647\u0645\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0632\u0646\u0647 \u0648 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0647."
-                      : "\u062a\u0648\u062c\u0647: \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0634\u0645\u0627\u0633\u062a \u0648 \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\u060c \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u062d\u062a\u0645\u0627 \u0628\u0627\u06cc\u062f \u0631\u0648\u06cc \u0647\u0645\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0632\u0646\u0647 \u0648 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0647."}
+                        ? "\u062a\u0648\u062c\u0647: \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0634\u0645\u0627\u0633\u062a \u0648 \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\u060c \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u062d\u062a\u0645\u0627 \u0628\u0627\u06cc\u062f \u0631\u0648\u06cc \u0647\u0645\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0632\u0646\u0647 \u0648 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0647."
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "\u062a\u0648\u062c\u0647: \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0634\u0645\u0627\u0633\u062a \u0648 \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\u060c \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u062d\u062a\u0645\u0627 \u0628\u0627\u06cc\u062f \u0631\u0648\u06cc \u0647\u0645\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0632\u0646\u0647 \u0648 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0647."
+                          : "\u062a\u0648\u062c\u0647: \u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0634\u0645\u0627\u0633\u062a \u0648 \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\u060c \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u062d\u062a\u0645\u0627 \u0628\u0627\u06cc\u062f \u0631\u0648\u06cc \u0647\u0645\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0632\u0646\u0647 \u0648 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u0647."}
                   </div>
                 </div>
                 <AntdModal
@@ -1129,9 +1128,8 @@ ${$state.textInput.value}
                           typeof $steps["updateShareLinkOpen"].then ===
                             "function"
                         ) {
-                          $steps["updateShareLinkOpen"] = await $steps[
-                            "updateShareLinkOpen"
-                          ];
+                          $steps["updateShareLinkOpen"] =
+                            await $steps["updateShareLinkOpen"];
                         }
                       }}
                     >
@@ -1264,9 +1262,8 @@ rentamon.com`;
                             typeof $steps["updateCopyTextOpen"].then ===
                               "function"
                           ) {
-                            $steps["updateCopyTextOpen"] = await $steps[
-                              "updateCopyTextOpen"
-                            ];
+                            $steps["updateCopyTextOpen"] =
+                              await $steps["updateCopyTextOpen"];
                           }
 
                           $steps["invokeGlobalAction"] = false
@@ -1289,9 +1286,8 @@ rentamon.com`;
                             typeof $steps["invokeGlobalAction"].then ===
                               "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
+                            $steps["invokeGlobalAction"] =
+                              await $steps["invokeGlobalAction"];
                           }
 
                           $steps["runCode3"] = false
@@ -1348,8 +1344,8 @@ ${$state.textInput.value}
                         {hasVariant(globalVariants, "screen", "mobile")
                           ? "\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc"
-                          : "\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc"}
+                            ? "\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc"
+                            : "\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc"}
                       </div>
                       <Icon51Icon
                         data-plasmic-name={"svg"}
@@ -1983,8 +1979,8 @@ ${$state.textInput.value}
               {hasVariant(globalVariants, "screen", "smallMobile")
                 ? "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
                 : hasVariant(globalVariants, "screen", "tablet")
-                ? "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
-                : "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"}
+                  ? "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
+                  : "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"}
             </div>
             <div
               className={classNames(
@@ -2724,7 +2720,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicReferral__VariantsArgs;
     args?: PlasmicReferral__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicReferral__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicReferral__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicReferral__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

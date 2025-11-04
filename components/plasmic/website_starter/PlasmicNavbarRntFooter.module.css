@@ -41,18 +41,28 @@
   filter: none;
   backdrop-filter: none;
   transform: none;
+  transform-style: preserve-3d;
   min-width: 0;
   flex-shrink: 0;
   -webkit-backdrop-filter: none;
   padding: 0px 0px 4px;
+}
+.mainStack * {
+  transform-style: preserve-3d;
 }
 @media (max-width: 350px) {
   .mainStack {
     height: 60px;
     min-height: 60px;
     max-height: 60px;
+    transform-style: preserve-3d;
     flex-shrink: 0;
     padding: 0px 0px 2px;
+  }
+}
+@media (max-width: 350px) {
+  .mainStack * {
+    transform-style: preserve-3d;
   }
 }
 .menu {

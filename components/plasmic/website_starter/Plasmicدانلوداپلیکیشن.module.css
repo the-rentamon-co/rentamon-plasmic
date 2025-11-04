@@ -712,15 +712,19 @@
   transition-property: all;
   transition-duration: 1s;
   filter: blur(0px);
-  transform: skewX(0deg) skewY(0deg);
+  transform: skew(0deg, 0deg);
   opacity: 1;
   cursor: pointer;
   margin-right: 4px;
+  transform-style: preserve-3d;
   min-width: 0;
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;
   border-radius: 30px;
   padding: 0px 4px 2px;
+}
+.cafeBazar * {
+  transform-style: preserve-3d;
 }
 @media (max-width: 1200px) {
   .cafeBazar {
@@ -737,9 +741,15 @@
     justify-content: center;
     align-items: center;
     row-gap: 0px;
+    transform-style: preserve-3d;
     min-width: 0;
     border-radius: 30px;
     padding: 0px 4px;
+  }
+}
+@media (max-width: 1200px) {
+  .cafeBazar * {
+    transform-style: preserve-3d;
   }
 }
 @media (max-width: 500px) {
@@ -759,9 +769,25 @@
     cursor: pointer;
     row-gap: 0px;
     column-gap: 0px;
+    transform-style: preserve-3d;
     min-width: 0;
     border-radius: 30px;
     padding: 0px 4px 0px 8px;
+  }
+}
+@media (max-width: 500px) {
+  .cafeBazar * {
+    transform-style: preserve-3d;
+  }
+}
+@media (max-width: 350px) {
+  .cafeBazar {
+    transform-style: preserve-3d;
+  }
+}
+@media (max-width: 350px) {
+  .cafeBazar * {
+    transform-style: preserve-3d;
   }
 }
 .text4 {
