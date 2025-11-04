@@ -870,7 +870,7 @@
     top: auto;
     align-items: center;
     justify-content: center;
-    background: #abdcab;
+    background: #3d5afe;
     border-radius: 10px;
   }
 }
@@ -932,6 +932,7 @@
     position: relative;
     left: auto;
     top: auto;
+    background: #3d5afe80;
   }
 }
 @media (max-width: 350px) {
@@ -1037,7 +1038,7 @@
     max-width: 100%;
     font-size: 13px;
     font-weight: 400;
-    color: #404040;
+    color: var(--token-8R7jjC_-F9FF);
     text-align: center;
     white-space: pre;
     user-select: none;
@@ -1097,6 +1098,11 @@
   text-overflow: ellipsis;
   overflow: hidden;
   display: block;
+}
+@media (max-width: 500px) {
+  .textdayStatus_passedReservedV2__bIcAoiSdsA {
+    color: var(--token-8R7jjC_-F9FF);
+  }
 }
 @media (max-width: 350px) {
   .textdayStatus_passedReservedV2__bIcAoiSdsA {

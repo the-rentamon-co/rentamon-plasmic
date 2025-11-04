@@ -5,11 +5,11 @@
 import React from "react";
 import { classNames } from "@plasmicapp/react-web";
 
-export type Icon28IconProps = React.ComponentProps<"svg"> & {
+export type GithubIconProps = React.ComponentProps<"svg"> & {
   title?: string;
 };
 
-export function Icon28Icon(props: Icon28IconProps) {
+export function GithubIcon(props: GithubIconProps) {
   const { className, style, title, ...restProps } = props;
   return (
     <svg
@@ -18,7 +18,7 @@ export function Icon28Icon(props: Icon28IconProps) {
         width: "24px",
         height: '24px"',
 
-        ...(style || {}),
+        ...(style || {})
       }}
       viewBox={"0 0 24 24"}
       height={"1em"}
@@ -38,5 +38,5 @@ export function Icon28Icon(props: Icon28IconProps) {
   );
 }
 
-export default Icon28Icon;
+export default GithubIcon;
 /* prettier-ignore-end */

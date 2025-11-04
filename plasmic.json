@@ -3324,8 +3324,8 @@
         },
         {
           "id": "-TR7sx_chsOJ",
-          "name": "Icon28Icon",
-          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon28.tsx"
+          "name": "GithubIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Github.tsx"
         },
         {
           "id": "ofYsCYLxszGw",
