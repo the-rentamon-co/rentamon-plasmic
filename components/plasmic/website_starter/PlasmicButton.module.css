@@ -6,7 +6,7 @@
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
-  background: #0000ff;
+  background: var(--token-8nedppYkGVaH);
   max-width: 164px;
   width: 100%;
   margin-top: 0px;
@@ -31,7 +31,7 @@
 }
 @media (max-width: 500px) {
   .root {
-    background: #0000ff;
+    background: var(--token-8nedppYkGVaH);
     margin-top: 0px;
   }
 }

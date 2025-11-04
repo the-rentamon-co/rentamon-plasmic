@@ -6805,7 +6805,7 @@ function PlasmicBookings__RenderFunc(props: {
                               onClick={async event => {
                                 const $steps = {};
 
-                                $steps["updateFront"] = true
+                                $steps["updateFront"] = false
                                   ? (() => {
                                       const actionArgs = {
                                         customFunction: async () => {
