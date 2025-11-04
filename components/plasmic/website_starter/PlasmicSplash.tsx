@@ -513,19 +513,19 @@ function PlasmicSplash__RenderFunc(props: {
                           );
                           if ($steps.getUserSegment.data.flag == 2) {
                             window.location.href =
-                              "https://rentamon.com//calendar/";
+                              "https://rentamon.com/calendar/";
                           }
                           if ($steps.getUserSegment.data.flag == 1) {
                             window.location.href =
-                              "https://rentamon.com//panel/";
+                              "https://rentamon.com/panel/";
                           }
                           if ($steps.getUserSegment.data.flag == 0) {
                             window.location.href =
-                              "https://rentamon.com//calendar/";
+                              "https://rentamon.com/calendar/";
                           }
                           if ($steps.getUserSegment.data.flag == 3) {
                             return (window.location.href =
-                              "https://rentamon.com//panel-2/");
+                              "https://rentamon.com/panel-2/");
                           }
                         })();
                       }
