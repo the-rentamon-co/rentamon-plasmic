@@ -1105,8 +1105,11 @@ function PlasmicSettings__RenderFunc(props: {
                                 }
                                 const autoSync = data.auto_sync;
                                 if (autoSync?.used === autoSync?.total) {
+                                  if (!autoSync?.updated_at) {
+                                    return false;
+                                  }
                                   const updatedAt = new Date(
-                                    autoSync?.updated_at
+                                    autoSync.updated_at
                                   );
                                   const now = new Date();
                                   const daysPassed =
@@ -1122,7 +1125,7 @@ function PlasmicSettings__RenderFunc(props: {
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return true;
+                                return false;
                               }
                               throw e;
                             }

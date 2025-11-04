@@ -1855,7 +1855,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                           platform={"nextjs"}
                         >
                           {
-                            "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
+                            "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
                           }
                         </PlasmicLink__>
                       }

@@ -255,11 +255,7 @@ function Plasmicتالار__RenderFunc(props: {
           (() => {
             try {
               return (() => {
-                if (!document.cookie.includes("channel_manager_eilimination")) {
-                  return true;
-                } else {
-                  return false;
-                }
+                return false;
               })();
             } catch (e) {
               if (
@@ -583,7 +579,8 @@ function Plasmicتالار__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               undefined,
-                              "\u0628\u0647 \u0632\u0648\u062f\u06cc \u0635\u0641\u062d\u0647 \u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u062d\u0630\u0641 \u0645\u06cc\u200c\u0634\u0648\u062f \u0648 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0627\u0648\u0646 \u0628\u062e\u0634 \u0631\u0648 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0627\u0632 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb \u0628\u0628\u06cc\u0646\u06cc",
+                              `بزودی صفحه «بروز رسانی خودکار رزروها» حذف می‌شه. 
+اطلاعات این بخش، در «رزروهای من» هست.`,
                               "top-center",
                               8000
                             ]
@@ -1449,7 +1446,7 @@ function Plasmicتالار__RenderFunc(props: {
                     (() => {
                       try {
                         return (() => {
-                          if ($state.userType != 1) {
+                          if ($state.userType == 2) {
                             return "display_block clickable";
                           } else {
                             return "hidden clickable";

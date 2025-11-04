@@ -2340,9 +2340,16 @@ function PlasmicCalendar23__RenderFunc(props: {
                 })()}
                 platform={(() => {
                   try {
-                    return $state.apiRequest.data[1].calendar[
-                      dateProps.date.day - 1
-                    ].website;
+                    return (() => {
+                      const dayData =
+                        $state.apiRequest.data[1].calendar[
+                          dateProps.date.day - 1
+                        ];
+                      return dayData.status === "blocked" &&
+                        dayData.reservations_type == null
+                        ? "غیرفعال"
+                        : dayData.website;
+                    })();
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -2374,7 +2381,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                               case "blocked":
                                 return reservations_type != null
                                   ? guest_name
-                                  : "غیرفعال";
+                                  : null;
                               case "unblocked":
                                 return reservations_type != null
                                   ? guest_name
@@ -2414,7 +2421,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                               case "blocked":
                                 return reservations_type != null
                                   ? guest_name
-                                  : "غیرفعال";
+                                  : null;
                               case "unblocked":
                                 return reservations_type != null
                                   ? guest_name

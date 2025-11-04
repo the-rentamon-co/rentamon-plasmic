@@ -418,44 +418,44 @@ function Plasmicدربارهما__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "80%"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
                             ? "70%"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
+                              ? "80%"
+                              : "auto"
                         }
                         loading={"lazy"}
                         src={
@@ -508,9 +508,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                             typeof $steps["updatePropertyId"].then ===
                               "function"
                           ) {
-                            $steps["updatePropertyId"] = await $steps[
-                              "updatePropertyId"
-                            ];
+                            $steps["updatePropertyId"] =
+                              await $steps["updatePropertyId"];
                           }
                         }}
                       >
@@ -585,44 +584,44 @@ function Plasmicدربارهما__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "80%"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
                             ? "70%"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
+                              ? "80%"
+                              : "auto"
                         }
                         loading={"lazy"}
                         src={
@@ -715,44 +714,44 @@ function Plasmicدربارهما__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "80%"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
                             ? "70%"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
+                              ? "80%"
+                              : "auto"
                         }
                         loading={"lazy"}
                         src={
@@ -775,8 +774,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                         {hasVariant(globalVariants, "screen", "mobile")
                           ? "\u0645\u0627\u0647\u0627\u0646"
                           : hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0645\u0627\u0647\u0627\u0646"
-                          : "\u0645\u0627\u0647\u0627\u0646"}
+                            ? "\u0645\u0627\u0647\u0627\u0646"
+                            : "\u0645\u0627\u0647\u0627\u0646"}
                       </div>
                     </div>
                     <div
@@ -815,44 +814,44 @@ function Plasmicدربارهما__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "80%"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
                             ? "70%"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
+                              ? "80%"
+                              : "auto"
                         }
                         loading={"lazy"}
                         src={
@@ -945,46 +944,46 @@ function Plasmicدربارهما__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "80%"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "70%"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
+                              ? "70%"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "80%"
+                                : "auto"
                         }
                         loading={"lazy"}
                         src={
@@ -1075,44 +1074,44 @@ function Plasmicدربارهما__RenderFunc(props: {
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "none"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "80%"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "none"
-                            : "120px"
+                              ? "none"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "none"
+                                : "120px"
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayMinWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
                             ? "auto"
                             : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                            ? "auto"
-                            : "120px"
+                              ? "auto"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "auto"
+                                : "120px"
                         }
                         displayWidth={
                           hasVariant(globalVariants, "screen", "mobile")
                             ? "70%"
                             : hasVariant(globalVariants, "screen", "tablet")
-                            ? "80%"
-                            : "auto"
+                              ? "80%"
+                              : "auto"
                         }
                         loading={"lazy"}
                         src={
@@ -1477,7 +1476,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                           platform={"nextjs"}
                         >
                           {
-                            "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
+                            "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
                           }
                         </PlasmicLink__>
                       }
@@ -1502,8 +1501,8 @@ function Plasmicدربارهما__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "mobile")
                         ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
-                        : '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
+                          ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
+                          : '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
                     }
                   />
                 </div>
@@ -1876,7 +1875,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicدربارهما__VariantsArgs;
     args?: Plasmicدربارهما__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicدربارهما__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicدربارهما__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicدربارهما__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
