@@ -336,7 +336,7 @@
   border-radius: 0px;
 }
 .celldayStatus_passedLastDayReserveV2 {
-  background: #181c4966;
+  background: #181c4999;
   border-radius: 20px 0px 0px 20px;
 }
 .celldayStatus_passedReservedV2 {
@@ -904,7 +904,7 @@
     width: auto;
     height: 100%;
     max-width: 100px;
-    background: #abdcab;
+    background: #3d5afe;
     column-gap: 0px;
     flex-direction: column;
     justify-content: center;
@@ -1073,7 +1073,7 @@
     max-width: 100%;
     font-size: 13px;
     font-weight: 400;
-    color: #404040;
+    color: var(--token-8R7jjC_-F9FF);
     text-align: center;
     letter-spacing: -0.6px;
     white-space: pre;
