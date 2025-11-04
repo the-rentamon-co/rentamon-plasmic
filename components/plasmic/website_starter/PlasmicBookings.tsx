@@ -6533,9 +6533,42 @@ function PlasmicBookings__RenderFunc(props: {
                                 sty.text__qdcTw
                               )}
                             >
-                              {
-                                "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0644\u063a\u0648 \u06a9\u0646\u06cc\u061f"
-                              }
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (() => {
+                                      const websiteMap = {
+                                        jabama: "جاباما",
+                                        jajiga: "جاجیگا",
+                                        shab: "شب",
+                                        otaghak: "اتاقک",
+                                        mihmansho: "میهمانشو",
+                                        homsa: "هومسا",
+                                        mizboon: "میزبون",
+                                        divar: "دیوار",
+                                        "Broker or Colleague": "واسطه یا همکار",
+                                        Returning_Guest: "قبلی",
+                                        social: "پیام‌رسان و شبکه‌اجتماعی",
+                                        others: "سایر",
+                                        offline: "حضوری",
+                                        host: "میزبان"
+                                      };
+                                      websiteMap[$state.booking.data.website] ||
+                                        $state.booking.data.website;
+                                      return `⚠️ روزهای زیر در سایت ${websiteMap[$state.booking.data.website]} رزرو هستن:`;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "\u26a0\ufe0f \u0631\u0648\u0632\u0647\u0627\u06cc \u0632\u06cc\u0631 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0627\u062a\u0627\u0642\u06a9 \u0631\u0632\u0631\u0648 \u0647\u0633\u062a\u0646:";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
                             </div>
                           </div>
                           <div
@@ -6697,7 +6730,7 @@ function PlasmicBookings__RenderFunc(props: {
                                           );
                                         const checkOutJalali =
                                           formatJalaliDateVerbose(checkOutStr);
-                                        const message = ` ${checkInJalali} تا ${checkOutJalali}`;
+                                        const message = `- ${checkInJalali} تا ${checkOutJalali}`;
                                         return message;
                                       })();
                                     } catch (e) {
@@ -6706,30 +6739,13 @@ function PlasmicBookings__RenderFunc(props: {
                                         e?.plasmicType ===
                                           "PlasmicUndefinedDataError"
                                       ) {
-                                        return "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0628\u0631\u0627\u06cc \u0648\u0627\u062d\u062f \u00ab\u0648\u06cc\u0644\u0627\u06cc\u06cc \u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0628\u0647\u0627\u0631\u0627\u0646\u00bb \u062e\u0627\u0644\u06cc \u0645\u06cc\u200c\u0634\u0646.";
+                                        return " ";
                                       }
                                       throw e;
                                     }
                                   })()}
                                 </React.Fragment>
                               </div>
-                              <PlasmicImg__
-                                alt={""}
-                                className={classNames(sty.img__dmGv)}
-                                displayHeight={"25px"}
-                                displayMaxHeight={"none"}
-                                displayMaxWidth={"100%"}
-                                displayMinHeight={"0"}
-                                displayMinWidth={"0"}
-                                displayWidth={"auto"}
-                                loading={"lazy"}
-                                src={{
-                                  src: "/plasmic/website_starter/images/image183.svg",
-                                  fullWidth: 24,
-                                  fullHeight: 24,
-                                  aspectRatio: 1
-                                }}
-                              />
                             </div>
                             <div
                               className={classNames(
@@ -6737,24 +6753,6 @@ function PlasmicBookings__RenderFunc(props: {
                                 sty.freeBox__pNIx
                               )}
                             >
-                              <PlasmicImg__
-                                alt={""}
-                                className={classNames(sty.img__p2Q0N)}
-                                displayHeight={"27px"}
-                                displayMaxHeight={"none"}
-                                displayMaxWidth={"100%"}
-                                displayMinHeight={"0"}
-                                displayMinWidth={"0"}
-                                displayWidth={"auto"}
-                                loading={"lazy"}
-                                src={{
-                                  src: "/plasmic/website_starter/images/image184.svg",
-                                  fullWidth: 24,
-                                  fullHeight: 24,
-                                  aspectRatio: 1
-                                }}
-                              />
-
                               <div
                                 className={classNames(
                                   projectcss.all,
@@ -6765,7 +6763,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 <React.Fragment>
                                   {(() => {
                                     try {
-                                      return `اقامتگاه ${$state.booking.data.property_name}`;
+                                      return `- ${$state.booking.data.property_name}`;
                                     } catch (e) {
                                       if (
                                         e instanceof TypeError ||
@@ -6780,6 +6778,17 @@ function PlasmicBookings__RenderFunc(props: {
                                 </React.Fragment>
                               </div>
                             </div>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__pBje4
+                            )}
+                          >
+                            {
+                              "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0627\u06cc\u0646 \u062a\u0627\u0631\u06cc\u062e \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u00ab\u062e\u0627\u0644\u06cc\u00bb \u0628\u0634\u0647\u061f"
+                            }
                           </div>
                           <div
                             className={classNames(
