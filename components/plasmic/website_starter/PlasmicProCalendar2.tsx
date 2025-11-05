@@ -728,7 +728,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                           "(نوع: " + typeof current + ")"
                         );
                         const isCurrentNaN = isNaN(current);
-                        const isFlagDifferent = flag !== current;
+                        const isFlagDifferent = flag != current;
                         console.log(
                           "4. آیا 'current' برابر NaN است\u061F",
                           isCurrentNaN
