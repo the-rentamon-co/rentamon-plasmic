@@ -1086,13 +1086,14 @@
   text-align: center;
   white-space: pre;
   color: var(--token-8R7jjC_-F9FF);
+  font-size: 13px;
   padding: 1px 3px;
 }
 @media (max-width: 500px) {
   .textdayStatus_firstDayReserveV2__bIcAOlxm0M {
     text-overflow: clip;
     overflow: hidden;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: -0.6px;
     padding: 0px 2px;
   }
@@ -1118,7 +1119,7 @@
     width: 100%;
     height: auto;
     max-width: 100%;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 400;
     color: var(--token-8R7jjC_-F9FF);
     text-align: center;

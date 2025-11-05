@@ -708,33 +708,46 @@ function PlasmicProCalendar2__RenderFunc(props: {
                           document.cookie =
                             name + "=" + (value || "") + expires + "; path=/";
                         }
-                        console.log("--- \uD83C\uDFC1 شروع اسکریپت دیباگ ---");
-                        const flag = $steps.checkOldUser.data.flag;
                         console.log(
-                          "1. مقدار 'flag' دریافت شده:",
-                          flag,
-                          "(نوع: " + typeof flag + ")"
+                          "--- \uD83C\uDFC1 شروع اسکریپت دیباگ (نسخه نهایی) ---"
                         );
+                        const rawFlag = $steps.checkOldUser.data.flag;
                         const rawVtStatus = $state.vtStatus;
+                        console.log(
+                          "1. مقدار خام 'flag' دریافت شده:",
+                          rawFlag,
+                          "(نوع: " + typeof rawFlag + ")"
+                        );
                         console.log(
                           "2. مقدار خام 'vtStatus' از state:",
                           rawVtStatus,
                           "(نوع: " + typeof rawVtStatus + ")"
                         );
+                        const flag = parseInt(rawFlag, 10);
                         const current = parseInt(rawVtStatus, 10);
                         console.log(
-                          "3. مقدار 'current' (بعد از parseInt):",
+                          "3. مقدار 'flag' (بعد از parseInt):",
+                          flag,
+                          "(نوع: " + typeof flag + ")"
+                        );
+                        console.log(
+                          "4. مقدار 'current' (بعد از parseInt):",
                           current,
                           "(نوع: " + typeof current + ")"
                         );
                         const isCurrentNaN = isNaN(current);
-                        const isFlagDifferent = flag != current;
+                        const isFlagDifferent = flag !== current;
+                        const isFlagNaN = isNaN(flag);
                         console.log(
-                          "4. آیا 'current' برابر NaN است\u061F",
+                          "5. آیا 'current' برابر NaN است\u061F",
                           isCurrentNaN
                         );
                         console.log(
-                          "5. آیا 'flag' با 'current' نابرابر است\u061F (",
+                          "6. آیا 'flag' برابر NaN است\u061F",
+                          isFlagNaN
+                        );
+                        console.log(
+                          "7. آیا 'flag' با 'current' نابرابر است\u061F (",
                           flag,
                           "!==",
                           current,
@@ -743,40 +756,39 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         );
                         if (isCurrentNaN || isFlagDifferent) {
                           console.log(
-                            "6. \u2705 شرط اصلی برقرار است (NaN یا عدم تطابق). در حال ورود به بلاک if..."
+                            "8. \u2705 شرط اصلی برقرار است (NaN یا عدم تطابق). در حال ورود به بلاک if..."
                           );
-                          const flagString = flag.toString();
                           console.log(
-                            "7. در حال تنظیم کوکی 'vt' با مقدار:",
-                            flagString,
+                            "9. در حال تنظیم کوکی 'vt' با مقدار:",
+                            flag.toString(),
                             "و زمان انقضا:",
                             0.3333,
                             "ساعت"
                           );
-                          setCookie("vt", flagString, 0.3333);
-                          console.log("8. کوکی تنظیم شد.");
+                          setCookie("vt", flag.toString(), 0.3333);
+                          console.log("10. کوکی تنظیم شد.");
                           if (flag === 2) {
                             console.log(
-                              "9. \u27A1️ Flag برابر 2 است. در حال ریدایرکت به /calendar/ ..."
+                              "11. \u27A1️ Flag برابر 2 است. در حال ریدایرکت به /calendar/ ..."
                             );
                             window.location.href =
                               "https://rentamon.com/calendar/";
                           } else if (flag === 1) {
                             console.log(
-                              "10. \u27A1️ Flag برابر 1 است. در حال ریدایرکت به /panel/ ..."
+                              "12. \u27A1️ Flag برابر 1 است. در حال ریدایرکت به /panel/ ..."
                             );
                             window.location.href =
                               "https://rentamon.com/panel/";
                           } else {
                             console.log(
-                              "11. \u26A0️ Flag نه 1 است و نه 2. (مقدار: " +
+                              "13. \u26A0️ Flag نه 1 است و نه 2. (مقدار: " +
                                 flag +
                                 ") ریدایرکت انجام نمی‌شود."
                             );
                           }
                         } else {
                           console.log(
-                            "12. \u274C شرط اصلی برقرار نیست. (current و flag برابر هستند). هیچ اقدامی (تنظیم کوکی/ریدارکت) انجام نمی‌شود."
+                            "14. \u274C شرط اصلی برقرار نیست. (current و flag برابر هستند). هیچ اقدامی (تنظیم کوکی/ریدارکت) انجام نمی‌شود."
                           );
                         }
                         return console.log(
