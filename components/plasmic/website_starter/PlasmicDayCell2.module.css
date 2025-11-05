@@ -361,6 +361,11 @@
   background: #181c4999;
   border-radius: 20px 0px 0px 20px;
 }
+@media (max-width: 500px) {
+  .celldayStatus_passedLastDayReserveV2 {
+    border-radius: 10px 0px 0px 10px;
+  }
+}
 .celldayStatus_passedReservedV2 {
   background: #181c4999;
   overflow: hidden;
