@@ -829,8 +829,10 @@ function PlasmicProCalendar__RenderFunc(props: {
                             document.cookie =
                               name + "=" + (value || "") + expires + "; path=/";
                           }
-                          const flag = $steps.checkOldUser.data.flag;
-                          console.log("flag", flag);
+                          const flag = parseInt(
+                            $steps.checkOldUser.data.flag,
+                            10
+                          );
                           const current = parseInt($state.vtStatus, 10);
                           if (isNaN(current) || flag !== current) {
                             setCookie("vt", flag.toString(), 0.3333);

@@ -603,8 +603,10 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                           document.cookie =
                             name + "=" + (value || "") + expires + "; path=/";
                         }
-                        const flag = $steps.checkOldUser.data.flag;
-                        console.log("flag", flag);
+                        const flag = parseInt(
+                          $steps.checkOldUser.data.flag,
+                          10
+                        );
                         const current = parseInt($state.vtStatus, 10);
                         if (isNaN(current) || flag !== current) {
                           setCookie("vt", flag.toString(), 0.3333);
@@ -1410,7 +1412,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___64098
+                        sty.formField__gKEpF
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1422,7 +1424,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___1XVh9
+                        sty.formField__lVyyw
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1440,7 +1442,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__sfcc4
+                          sty.text__sdyVh
                         )}
                       >
                         {"Submit"}
