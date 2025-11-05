@@ -832,7 +832,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                           console.log(
                             "--- \uD83C\uDFC1 شروع اسکریپت دیباگ ---"
                           );
-                          const rawFlag = $steps.checkOldUser.data.flag;
+                          const rawFlag = $steps.getSegment.data.flag;
                           const rawVtStatus = $state.vtStatus;
                           console.log(
                             "1. مقدار خام 'flag' دریافت شده:",
