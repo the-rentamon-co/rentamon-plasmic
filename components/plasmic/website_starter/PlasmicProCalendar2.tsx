@@ -708,21 +708,80 @@ function PlasmicProCalendar2__RenderFunc(props: {
                           document.cookie =
                             name + "=" + (value || "") + expires + "; path=/";
                         }
+                        console.log("--- \uD83C\uDFC1 شروع اسکریپت دیباگ ---");
                         const flag = $steps.checkOldUser.data.flag;
-                        console.log("flag", flag);
-                        const current = parseInt($state.vtStatus, 10);
-                        if (isNaN(current) || flag !== current) {
-                          setCookie("vt", flag.toString(), 0.3333);
+                        console.log(
+                          "1. مقدار 'flag' دریافت شده:",
+                          flag,
+                          "(نوع: " + typeof flag + ")"
+                        );
+                        const rawVtStatus = $state.vtStatus;
+                        console.log(
+                          "2. مقدار خام 'vtStatus' از state:",
+                          rawVtStatus,
+                          "(نوع: " + typeof rawVtStatus + ")"
+                        );
+                        const current = parseInt(rawVtStatus, 10);
+                        console.log(
+                          "3. مقدار 'current' (بعد از parseInt):",
+                          current,
+                          "(نوع: " + typeof current + ")"
+                        );
+                        const isCurrentNaN = isNaN(current);
+                        const isFlagDifferent = flag !== current;
+                        console.log(
+                          "4. آیا 'current' برابر NaN است\u061F",
+                          isCurrentNaN
+                        );
+                        console.log(
+                          "5. آیا 'flag' با 'current' نابرابر است\u061F (",
+                          flag,
+                          "!==",
+                          current,
+                          ")",
+                          isFlagDifferent
+                        );
+                        if (isCurrentNaN || isFlagDifferent) {
+                          console.log(
+                            "6. \u2705 شرط اصلی برقرار است (NaN یا عدم تطابق). در حال ورود به بلاک if..."
+                          );
+                          const flagString = flag.toString();
+                          console.log(
+                            "7. در حال تنظیم کوکی 'vt' با مقدار:",
+                            flagString,
+                            "و زمان انقضا:",
+                            0.3333,
+                            "ساعت"
+                          );
+                          setCookie("vt", flagString, 0.3333);
+                          console.log("8. کوکی تنظیم شد.");
                           if (flag === 2) {
-                            console.log("redirect to calendar");
-                            return (window.location.href =
-                              "https://rentamon.com/calendar/");
+                            console.log(
+                              "9. \u27A1️ Flag برابر 2 است. در حال ریدایرکت به /calendar/ ..."
+                            );
+                            window.location.href =
+                              "https://rentamon.com/calendar/";
                           } else if (flag === 1) {
-                            console.log("redirect to panel");
-                            return (window.location.href =
-                              "https://rentamon.com/panel/");
+                            console.log(
+                              "10. \u27A1️ Flag برابر 1 است. در حال ریدایرکت به /panel/ ..."
+                            );
+                            window.location.href =
+                              "https://rentamon.com/panel/";
+                          } else {
+                            console.log(
+                              "11. \u26A0️ Flag نه 1 است و نه 2. (مقدار: " +
+                                flag +
+                                ") ریدایرکت انجام نمی‌شود."
+                            );
                           }
+                        } else {
+                          console.log(
+                            "12. \u274C شرط اصلی برقرار نیست. (current و flag برابر هستند). هیچ اقدامی (تنظیم کوکی/ریدارکت) انجام نمی‌شود."
+                          );
                         }
+                        return console.log(
+                          "--- \uD83D\uDED1 پایان اسکریپت دیباگ ---"
+                        );
                       })()
                     };
                     return (({ variable, value, startIndex, deleteCount }) => {

@@ -3129,11 +3129,16 @@
   font-size: 17px;
   font-weight: 600;
   color: var(--token-8R7jjC_-F9FF);
-  background: #1414c8;
+  background: linear-gradient(228.56463897211574deg, #0000ff 0%, #1414c8 100%);
   text-align: center;
   min-width: 0;
   border-radius: 30px;
   padding: 20px;
+}
+@media (max-width: 500px) {
+  .text__m5OnU {
+    border-radius: 100px;
+  }
 }
 .text__vTlif {
   position: relative;
