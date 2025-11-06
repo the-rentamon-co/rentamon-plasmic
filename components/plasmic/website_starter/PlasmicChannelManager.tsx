@@ -162,6 +162,8 @@ function PlasmicChannelManager__RenderFunc(props: {
 
   const globalVariants = _useGlobalVariants();
 
+  const $globalActions = useGlobalActions?.();
+
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -2776,6 +2778,48 @@ function PlasmicChannelManager__RenderFunc(props: {
               ) {
                 $steps["runCode"] = await $steps["runCode"];
               }
+
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = { args: [3000] };
+                    return $globalActions["Fragment.wait"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] =
+                  await $steps["invokeGlobalAction"];
+              }
+
+              $steps["goToReservations"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/reservations` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToReservations"] != null &&
+                typeof $steps["goToReservations"] === "object" &&
+                typeof $steps["goToReservations"].then === "function"
+              ) {
+                $steps["goToReservations"] = await $steps["goToReservations"];
+              }
             }}
           />
 
@@ -2897,6 +2941,7 @@ function PlasmicChannelManager__RenderFunc(props: {
               styleTokensClassNames
             )}
             hideFooter={true}
+            maskClosable={false}
             modalScopeClassName={sty["modal__modal"]}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["modal", "open"]).apply(
@@ -2968,6 +3013,9 @@ function PlasmicChannelManager__RenderFunc(props: {
               </div>
             }
             trigger={null}
+            width={
+              hasVariant(globalVariants, "screen", "mobile") ? "320" : undefined
+            }
           >
             <div
               className={classNames(
@@ -2977,7 +3025,7 @@ function PlasmicChannelManager__RenderFunc(props: {
               )}
             >
               {
-                "\u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0627\u06cc\u0646\u200c\u062c\u0627 \u0631\u0648 \u0628\u0627 \u062c\u0632\u06cc\u06cc\u0627\u062a \u0628\u06cc\u0634\u200c\u062a\u0631 \u062f\u0631 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb \u0628\u0628\u06cc\u0646\u06cc"
+                "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647\n \u0635\u0641\u062d\u0647 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb"
               }
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__fhtrm)}>
