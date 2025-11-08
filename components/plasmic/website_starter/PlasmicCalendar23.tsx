@@ -170,7 +170,6 @@ export type PlasmicCalendar23__OverridesType = {
   note?: Flex__<"div">;
   text4?: Flex__<"div">;
   submitChange?: Flex__<"div">;
-  visitBookings?: Flex__<typeof Button>;
   addingGuestInfo?: Flex__<typeof AntdModal>;
   form?: Flex__<"div">;
   p4?: Flex__<"div">;
@@ -1676,9 +1675,21 @@ function PlasmicCalendar23__RenderFunc(props: {
                         if (bookingId in reserveMap) {
                           const reserveItem = reserveMap[bookingId];
                           const amount = reserveItem.amount;
-                          item.guest_name = reserveItem.guest_name;
                           item.reservations_type =
                             reserveItem.reservations_type;
+                          const fullGuestName = reserveItem.guest_name;
+                          let lastName = null;
+                          if (
+                            typeof fullGuestName === "string" &&
+                            fullGuestName.trim() !== ""
+                          ) {
+                            const nameParts = fullGuestName.split(" ");
+                            if (nameParts.length > 1) {
+                              nameParts.shift();
+                              lastName = nameParts.join(" ");
+                            }
+                          }
+                          item.guest_name = lastName;
                           if (amount == null || amount == 0) {
                             item.price = null;
                             return;
@@ -1689,7 +1700,6 @@ function PlasmicCalendar23__RenderFunc(props: {
                             : (amountNumber / 1000).toLocaleString();
                         }
                       });
-                      console.log("calendarData", calendarData);
                       return calendarData;
                     })();
                   }
@@ -10307,360 +10317,6 @@ function PlasmicCalendar23__RenderFunc(props: {
             })()
           )}
         >
-          {(hasVariant(globalVariants, "screen", "mobile") ? false : true) ? (
-            <Button
-              className={classNames("__wab_instance", sty.button__i6Nfz)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateStateVariable"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          const startOfToday = new Date();
-                          startOfToday.setHours(0, 0, 0, 0);
-                          const startOfTodayTimestamp = Math.floor(
-                            startOfToday.getTime() / 1000
-                          );
-                          return ($state.fragmentDatePicker.values =
-                            $state.fragmentDatePicker.values.filter(
-                              timestamp => {
-                                return timestamp >= startOfTodayTimestamp;
-                              }
-                            ));
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
-                ) {
-                  $steps["updateStateVariable"] =
-                    await $steps["updateStateVariable"];
-                }
-
-                $steps["updateModalOpen"] = (() => {
-                  if ($state.fragmentDatePicker.values == 0) {
-                    return false;
-                  } else {
-                    return true;
-                  }
-                })()
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["modal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateModalOpen"] != null &&
-                  typeof $steps["updateModalOpen"] === "object" &&
-                  typeof $steps["updateModalOpen"].then === "function"
-                ) {
-                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                }
-
-                $steps["invokeGlobalAction"] = (() => {
-                  if ($state.fragmentDatePicker.values == 0) {
-                    return true;
-                  } else {
-                    return false;
-                  }
-                })()
-                  ? (() => {
-                      const actionArgs = {
-                        args: [
-                          "error",
-                          "\u0627\u0628\u062a\u062f\u0627 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u060c \u0628\u0639\u062f \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647\u200c\u06cc \u0648\u06cc\u0631\u0627\u06cc\u0634 \u0628\u0632\u0646",
-                          "top-center",
-                          3000
-                        ]
-                      };
-                      return $globalActions["Fragment.showToast"]?.apply(null, [
-                        ...actionArgs.args
-                      ]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["invokeGlobalAction"] != null &&
-                  typeof $steps["invokeGlobalAction"] === "object" &&
-                  typeof $steps["invokeGlobalAction"].then === "function"
-                ) {
-                  $steps["invokeGlobalAction"] =
-                    await $steps["invokeGlobalAction"];
-                }
-
-                $steps["updateStateVariable2"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          $state.textInput4.value = "0";
-                          $state.guestName.value = "";
-                          $state.guestCount.value = null;
-                          $state.guestReferrer.value = "";
-                          $state.phoneNumber.value = "";
-                          $state.input2.value = "";
-                          return ($state.input.value = "");
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable2"] != null &&
-                  typeof $steps["updateStateVariable2"] === "object" &&
-                  typeof $steps["updateStateVariable2"].then === "function"
-                ) {
-                  $steps["updateStateVariable2"] =
-                    await $steps["updateStateVariable2"];
-                }
-
-                $steps["updateTourSteps"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["tourSteps"]
-                        },
-                        operation: 0,
-                        value:
-                          $state.tourSteps == 1
-                            ? ($state.tourSteps = 2)
-                            : ($state.tourSteps = 0)
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateTourSteps"] != null &&
-                  typeof $steps["updateTourSteps"] === "object" &&
-                  typeof $steps["updateTourSteps"].then === "function"
-                ) {
-                  $steps["updateTourSteps"] = await $steps["updateTourSteps"];
-                }
-              }}
-              startIcon={null}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__gfJ2G)}>
-                {(() => {
-                  try {
-                    return (() => {
-                      if ($state.apiRequest.loading == true) {
-                        return true;
-                      } else {
-                        return false;
-                      }
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__y6XZv)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "40px"
-                        : "30px"
-                    }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image140.gif",
-                      fullWidth: 500,
-                      fullHeight: 500,
-                      aspectRatio: undefined
-                    }}
-                  />
-                ) : null}
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__smHiJ
-                  )}
-                >
-                  {"\u0648\u06cc\u0631\u0627\u06cc\u0634"}
-                </div>
-              </div>
-            </Button>
-          ) : null}
-          <Button
-            data-plasmic-name={"visitBookings"}
-            data-plasmic-override={overrides.visitBookings}
-            className={classNames("__wab_instance", sty.visitBookings)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["goToBookings"] = true
-                ? (() => {
-                    const actionArgs = {
-                      destination: `/bookings/${(() => {
-                        try {
-                          return $state.selectedItem[0].booking_id;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()}`
-                    };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["goToBookings"] != null &&
-                typeof $steps["goToBookings"] === "object" &&
-                typeof $steps["goToBookings"].then === "function"
-              ) {
-                $steps["goToBookings"] = await $steps["goToBookings"];
-              }
-            }}
-            startIcon={null}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__oDyn)}>
-              {(() => {
-                try {
-                  return (() => {
-                    if ($state.apiRequest.loading == true) {
-                      return true;
-                    } else {
-                      return false;
-                    }
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__x1JtJ)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "40px"
-                      : "30px"
-                  }
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/image140.gif",
-                    fullWidth: 500,
-                    fullHeight: 500,
-                    aspectRatio: undefined
-                  }}
-                />
-              ) : null}
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__or8Ep
-                )}
-              >
-                {
-                  "\u062c\u0632\u06cc\u06cc\u0627\u062a \u0631\u0632\u0631\u0648"
-                }
-              </div>
-            </div>
-          </Button>
           {(() => {
             try {
               return (() => {
@@ -10866,6 +10522,23 @@ function PlasmicCalendar23__RenderFunc(props: {
                   $steps["updateTourSteps"] = await $steps["updateTourSteps"];
                 }
               }}
+              style={(() => {
+                try {
+                  return (() => {
+                    if (!$state.fragmentDatePicker.values.length > 0) {
+                      return { opacity: "10%" };
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
             >
               {"\u0648\u06cc\u0631\u0627\u06cc\u0634"}
             </div>
@@ -12179,7 +11852,6 @@ const PlasmicDescendants = {
     "note",
     "text4",
     "submitChange",
-    "visitBookings",
     "addingGuestInfo",
     "form",
     "p4",
@@ -12302,8 +11974,7 @@ const PlasmicDescendants = {
   text3: ["text3"],
   note: ["note", "text4"],
   text4: ["text4"],
-  submitChange: ["submitChange", "visitBookings"],
-  visitBookings: ["visitBookings"],
+  submitChange: ["submitChange"],
   addingGuestInfo: [
     "addingGuestInfo",
     "form",
@@ -12413,7 +12084,6 @@ type NodeDefaultElementType = {
   note: "div";
   text4: "div";
   submitChange: "div";
-  visitBookings: typeof Button;
   addingGuestInfo: typeof AntdModal;
   form: "div";
   p4: "div";
@@ -12554,7 +12224,6 @@ export const PlasmicCalendar23 = Object.assign(
     note: makeNodeComponent("note"),
     text4: makeNodeComponent("text4"),
     submitChange: makeNodeComponent("submitChange"),
-    visitBookings: makeNodeComponent("visitBookings"),
     addingGuestInfo: makeNodeComponent("addingGuestInfo"),
     form: makeNodeComponent("form"),
     p4: makeNodeComponent("p4"),

@@ -62,6 +62,14 @@ import {
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import Modal from "../../Modal"; // plasmic-import: seS3S1gMwM5R/component
+import Button3 from "../../Button3"; // plasmic-import: 5VoVqiGmU3In/component
+import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
+import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
+import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
+import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import TestimonialsScrolling from "../../TestimonialsScrolling"; // plasmic-import: lrlVKcMJCRk_/component
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
@@ -77,6 +85,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JDKbvzOHcQCj/css
 
+import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: ElHWritzoqrj/icon
+import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: BTVUACcl_W-Y/icon
 import Icon36Icon from "./icons/PlasmicIcon__Icon36"; // plasmic-import: yp-BEibF8Gyh/icon
 import Icon35Icon from "./icons/PlasmicIcon__Icon35"; // plasmic-import: OcX2ER-sALSD/icon
 import Icon33Icon from "./icons/PlasmicIcon__Icon33"; // plasmic-import: 7SATgDgNnB07/icon
@@ -113,6 +123,13 @@ export type PlasmicHomepage__OverridesType = {
   introAutoSyncDesc?: Flex__<"div">;
   introAutoSyncBenefits?: Flex__<"div">;
   introAutoSyncGif?: Flex__<"div">;
+  introCalendarRight6?: Flex__<"div">;
+  consultModal?: Flex__<typeof Modal>;
+  regForm?: Flex__<"div">;
+  form?: Flex__<typeof FormWrapper>;
+  input?: Flex__<typeof AntdInput>;
+  input2?: Flex__<typeof AntdInput>;
+  button?: Flex__<typeof AntdButton>;
   _3Benefits?: Flex__<"div">;
   _3Benefits1st?: Flex__<"div">;
   icon?: Flex__<"div">;
@@ -200,6 +217,8 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const globalVariants = _useGlobalVariants();
 
+  const $globalActions = useGlobalActions?.();
+
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -218,6 +237,46 @@ function PlasmicHomepage__RenderFunc(props: {
           "activePanelId",
           AntdAccordion_Helpers
         )
+      },
+      {
+        path: "consultModal.isOpen",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "form.value",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "form",
+        onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
+      },
+      {
+        path: "form.isSubmitting",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+
+        refName: "form",
+        onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
+      },
+      {
+        path: "input.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "input2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -462,9 +521,8 @@ function PlasmicHomepage__RenderFunc(props: {
                       typeof $steps["goToHttpsRentamonComSplashSrcWeb"].then ===
                         "function"
                     ) {
-                      $steps["goToHttpsRentamonComSplashSrcWeb"] = await $steps[
-                        "goToHttpsRentamonComSplashSrcWeb"
-                      ];
+                      $steps["goToHttpsRentamonComSplashSrcWeb"] =
+                        await $steps["goToHttpsRentamonComSplashSrcWeb"];
                     }
                   }}
                 >
@@ -482,10 +540,10 @@ function PlasmicHomepage__RenderFunc(props: {
                   {hasVariant(globalVariants, "screen", "smallMobile")
                     ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                    : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
+                      ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                        : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
                 </div>
               </div>
             </div>
@@ -570,10 +628,10 @@ function PlasmicHomepage__RenderFunc(props: {
                       {hasVariant(globalVariants, "screen", "smallMobile")
                         ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                        : "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"}
+                          ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                            : "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"}
                     </div>
                   </div>
                   <div
@@ -596,6 +654,493 @@ function PlasmicHomepage__RenderFunc(props: {
                     />
                   </div>
                 </div>
+              </div>
+              <div
+                data-plasmic-name={"introCalendarRight6"}
+                data-plasmic-override={overrides.introCalendarRight6}
+                className={classNames(projectcss.all, sty.introCalendarRight6)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___1INox,
+                    "clickable"
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateConsultModalIsOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["consultModal", "isOpen"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateConsultModalIsOpen"] != null &&
+                      typeof $steps["updateConsultModalIsOpen"] === "object" &&
+                      typeof $steps["updateConsultModalIsOpen"].then ===
+                        "function"
+                    ) {
+                      $steps["updateConsultModalIsOpen"] =
+                        await $steps["updateConsultModalIsOpen"];
+                    }
+                  }}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0645\u0634\u0627\u0648\u0631\u0647 "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 300 }}
+                    >
+                      {"(\u0631\u0627\u06cc\u06af\u0627\u0646)"}
+                    </span>
+                  </React.Fragment>
+                </div>
+                <Modal
+                  data-plasmic-name={"consultModal"}
+                  data-plasmic-override={overrides.consultModal}
+                  className={classNames("__wab_instance", sty.consultModal)}
+                  content={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___3Tn0S
+                      )}
+                    >
+                      <div
+                        data-plasmic-name={"regForm"}
+                        data-plasmic-override={overrides.regForm}
+                        className={classNames(projectcss.all, sty.regForm)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__wSffr
+                          )}
+                        >
+                          {
+                            "\u0634\u0645\u0627\u0631\u0647\u200c\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646\u060c \u062a\u0627 \u0628\u0627 \u0647\u0645 \u0631\u0627\u0647\u200c\u0647\u0627\u06cc\n\u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u0645"
+                          }
+                        </div>
+                        {(() => {
+                          const child$Props = {
+                            className: classNames("__wab_instance", sty.form),
+                            extendedOnValuesChange: async (
+                              ...eventArgs: any
+                            ) => {
+                              generateStateOnChangePropForCodeComponents(
+                                $state,
+                                "value",
+                                ["form", "value"],
+                                FormWrapper_Helpers
+                              ).apply(null, eventArgs);
+                            },
+                            formItems: [
+                              {
+                                label: "Name",
+                                name: "name",
+                                inputType: "Text"
+                              },
+                              {
+                                label: "Message",
+                                name: "message",
+                                inputType: "Text Area"
+                              }
+                            ],
+                            labelCol: { span: 8, horizontalOnly: true },
+                            layout: "vertical",
+                            mode: "advanced",
+                            onIsSubmittingChange: async (...eventArgs: any) => {
+                              generateStateOnChangePropForCodeComponents(
+                                $state,
+                                "isSubmitting",
+                                ["form", "isSubmitting"],
+                                FormWrapper_Helpers
+                              ).apply(null, eventArgs);
+                            },
+                            ref: ref => {
+                              $refs["form"] = ref;
+                            },
+                            submitSlot: null,
+                            wrapperCol: { span: 16, horizontalOnly: true }
+                          };
+                          initializeCodeComponentStates(
+                            $state,
+                            [
+                              {
+                                name: "value",
+                                plasmicStateName: "form.value"
+                              },
+                              {
+                                name: "isSubmitting",
+                                plasmicStateName: "form.isSubmitting"
+                              }
+                            ],
+                            [],
+                            FormWrapper_Helpers ?? {},
+                            child$Props
+                          );
+
+                          return (
+                            <FormWrapper
+                              data-plasmic-name={"form"}
+                              data-plasmic-override={overrides.form}
+                              {...child$Props}
+                            >
+                              <FormItemWrapper
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.formField___5BfE7
+                                )}
+                                initialValue={``}
+                                label={
+                                  "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
+                                }
+                                name={"name"}
+                                noLabel={true}
+                              >
+                                {(() => {
+                                  const child$Props = {
+                                    className: classNames(
+                                      "__wab_instance",
+                                      sty.input
+                                    ),
+                                    onChange: async (...eventArgs: any) => {
+                                      generateStateOnChangePropForCodeComponents(
+                                        $state,
+                                        "value",
+                                        ["input", "value"],
+                                        AntdInput_Helpers
+                                      ).apply(null, eventArgs);
+                                    },
+                                    placeholder:
+                                      "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
+                                    size: "large",
+                                    value: generateStateValueProp($state, [
+                                      "input",
+                                      "value"
+                                    ])
+                                  };
+                                  initializeCodeComponentStates(
+                                    $state,
+                                    [
+                                      {
+                                        name: "value",
+                                        plasmicStateName: "input.value"
+                                      }
+                                    ],
+                                    [],
+                                    AntdInput_Helpers ?? {},
+                                    child$Props
+                                  );
+
+                                  return (
+                                    <AntdInput
+                                      data-plasmic-name={"input"}
+                                      data-plasmic-override={overrides.input}
+                                      {...child$Props}
+                                    />
+                                  );
+                                })()}
+                              </FormItemWrapper>
+                              <FormItemWrapper
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.formField__vYsJt
+                                )}
+                                initialValue={``}
+                                label={"\u0645\u0648\u0628\u0627\u06cc\u0644"}
+                                name={"mobile"}
+                                noLabel={true}
+                                rules={[
+                                  {
+                                    ruleType: "required",
+                                    message:
+                                      "\u0628\u062f\u0648\u0646 \u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u060c \u0686\u0637\u0648\u0631 \u0628\u0627 \u0634\u0645\u0627 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u06af\u06cc\u0631\u06cc\u0645\u061f"
+                                  },
+
+                                  {
+                                    ruleType: "max",
+                                    length: 11,
+                                    message:
+                                      "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
+                                  },
+
+                                  {
+                                    ruleType: "min",
+                                    length: 11,
+                                    message:
+                                      "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
+                                  }
+                                ]}
+                              >
+                                {(() => {
+                                  const child$Props = {
+                                    className: classNames(
+                                      "__wab_instance",
+                                      sty.input2
+                                    ),
+                                    onChange: async (...eventArgs: any) => {
+                                      generateStateOnChangePropForCodeComponents(
+                                        $state,
+                                        "value",
+                                        ["input2", "value"],
+                                        AntdInput_Helpers
+                                      ).apply(null, eventArgs);
+                                    },
+                                    placeholder:
+                                      "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644",
+                                    size: "large",
+                                    type: "number",
+                                    value: generateStateValueProp($state, [
+                                      "input2",
+                                      "value"
+                                    ])
+                                  };
+                                  initializeCodeComponentStates(
+                                    $state,
+                                    [
+                                      {
+                                        name: "value",
+                                        plasmicStateName: "input2.value"
+                                      }
+                                    ],
+                                    [],
+                                    AntdInput_Helpers ?? {},
+                                    child$Props
+                                  );
+
+                                  return (
+                                    <AntdInput
+                                      data-plasmic-name={"input2"}
+                                      data-plasmic-override={overrides.input2}
+                                      {...child$Props}
+                                    />
+                                  );
+                                })()}
+                              </FormItemWrapper>
+                              <AntdButton
+                                data-plasmic-name={"button"}
+                                data-plasmic-override={overrides.button}
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.button
+                                )}
+                                disabled={false}
+                                ghost={true}
+                                submitsForm={false}
+                                type={"default"}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__bNQs
+                                  )}
+                                >
+                                  {"Submit"}
+                                </div>
+                              </AntdButton>
+                            </FormWrapper>
+                          );
+                        })()}
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__vQpRb,
+                            "clickable"
+                          )}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["updateConsultModalIsOpen"] =
+                              $state.form.value.mobile != ""
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["consultModal", "isOpen"]
+                                      },
+                                      operation: 0,
+                                      value: false
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["updateConsultModalIsOpen"] != null &&
+                              typeof $steps["updateConsultModalIsOpen"] ===
+                                "object" &&
+                              typeof $steps["updateConsultModalIsOpen"].then ===
+                                "function"
+                            ) {
+                              $steps["updateConsultModalIsOpen"] =
+                                await $steps["updateConsultModalIsOpen"];
+                            }
+
+                            $steps["successToast"] =
+                              $state.form.value.mobile !== "" &&
+                              /^09\d{9}$/.test($state.form.value.mobile)
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        `${$state.form.value.name} جان اطلاعات ثبت شد، بزودی با شما ارتباط می‌گیریم :)`,
+                                        "top-center",
+                                        5000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["successToast"] != null &&
+                              typeof $steps["successToast"] === "object" &&
+                              typeof $steps["successToast"].then === "function"
+                            ) {
+                              $steps["successToast"] =
+                                await $steps["successToast"];
+                            }
+
+                            $steps["apiRequest"] =
+                              $state.form.value.mobile !== ""
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        "https://gateway.rentamon.com/webhook/consult-with-us",
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return $state.form.value;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["apiRequest"] != null &&
+                              typeof $steps["apiRequest"] === "object" &&
+                              typeof $steps["apiRequest"].then === "function"
+                            ) {
+                              $steps["apiRequest"] = await $steps["apiRequest"];
+                            }
+
+                            $steps["errorToast"] =
+                              !$state.form.value.mobile ||
+                              !$state.form.value.mobile.match(/^09\d{9}$/)
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u062a\u0648 \u06a9\u0647 \u0647\u0646\u0648\u0632 \u0648\u0627\u0631\u062f \u0646\u06a9\u0631\u062f\u06cc!",
+                                        "top-center",
+                                        5000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["errorToast"] != null &&
+                              typeof $steps["errorToast"] === "object" &&
+                              typeof $steps["errorToast"].then === "function"
+                            ) {
+                              $steps["errorToast"] = await $steps["errorToast"];
+                            }
+                          }}
+                        >
+                          {
+                            "\u0627\u0631\u0633\u0627\u0644 \u062f\u0631\u062e\u0648\u0627\u0633\u062a"
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  }
+                  footer={null}
+                  heading={null}
+                  isOpen={generateStateValueProp($state, [
+                    "consultModal",
+                    "isOpen"
+                  ])}
+                  noTrigger={true}
+                  onOpenChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "consultModal",
+                      "isOpen"
+                    ]).apply(null, eventArgs);
+
+                    if (
+                      eventArgs.length > 1 &&
+                      eventArgs[1] &&
+                      eventArgs[1]._plasmic_state_init_
+                    ) {
+                      return;
+                    }
+
+                    (async val => {
+                      const $steps = {};
+                    }).apply(null, eventArgs);
+                  }}
+                />
               </div>
             </div>
             <div
@@ -700,8 +1245,8 @@ function PlasmicHomepage__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632\u0647 \u0645\u06cc\u200c\u0634\u0647"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632\u0647 \u0645\u06cc\u200c\u0634\u0647"
-                      : "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632 \u0645\u06cc\u200c\u0634\u0647"}
+                        ? "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632\u0647 \u0645\u06cc\u200c\u0634\u0647"
+                        : "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632 \u0645\u06cc\u200c\u0634\u0647"}
                   </div>
                 </div>
               </div>
@@ -843,6 +1388,8 @@ function PlasmicHomepage__RenderFunc(props: {
               data-plasmic-override={overrides.testimonials}
               className={classNames(projectcss.all, sty.testimonials)}
             >
+              <div className={classNames(projectcss.all, sty.freeBox__xz7A)} />
+
               <div
                 data-plasmic-name={"titlePart"}
                 data-plasmic-override={overrides.titlePart}
@@ -922,10 +1469,10 @@ function PlasmicHomepage__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
-                    : "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
+                      ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
+                        : "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
                 }
               />
             </div>
@@ -1017,9 +1564,8 @@ function PlasmicHomepage__RenderFunc(props: {
                     typeof $steps["goToHttpsRentamonComSplashSrcWeb"].then ===
                       "function"
                   ) {
-                    $steps["goToHttpsRentamonComSplashSrcWeb"] = await $steps[
-                      "goToHttpsRentamonComSplashSrcWeb"
-                    ];
+                    $steps["goToHttpsRentamonComSplashSrcWeb"] =
+                      await $steps["goToHttpsRentamonComSplashSrcWeb"];
                   }
                 }}
               >
@@ -1038,10 +1584,10 @@ function PlasmicHomepage__RenderFunc(props: {
               {hasVariant(globalVariants, "screen", "smallMobile")
                 ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                : hasVariant(globalVariants, "screen", "tablet")
-                ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                    : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
             </div>
           </div>
           <div
@@ -1548,6 +2094,13 @@ const PlasmicDescendants = {
     "introAutoSyncDesc",
     "introAutoSyncBenefits",
     "introAutoSyncGif",
+    "introCalendarRight6",
+    "consultModal",
+    "regForm",
+    "form",
+    "input",
+    "input2",
+    "button",
     "_3Benefits",
     "_3Benefits1st",
     "icon",
@@ -1611,6 +2164,13 @@ const PlasmicDescendants = {
     "introAutoSyncDesc",
     "introAutoSyncBenefits",
     "introAutoSyncGif",
+    "introCalendarRight6",
+    "consultModal",
+    "regForm",
+    "form",
+    "input",
+    "input2",
+    "button",
     "_3Benefits",
     "_3Benefits1st",
     "icon",
@@ -1675,7 +2235,14 @@ const PlasmicDescendants = {
     "introAutoSyncCaption",
     "introAutoSyncDesc",
     "introAutoSyncBenefits",
-    "introAutoSyncGif"
+    "introAutoSyncGif",
+    "introCalendarRight6",
+    "consultModal",
+    "regForm",
+    "form",
+    "input",
+    "input2",
+    "button"
   ],
   stack: [
     "stack",
@@ -1694,6 +2261,28 @@ const PlasmicDescendants = {
   ],
   introAutoSyncBenefits: ["introAutoSyncBenefits"],
   introAutoSyncGif: ["introAutoSyncGif"],
+  introCalendarRight6: [
+    "introCalendarRight6",
+    "consultModal",
+    "regForm",
+    "form",
+    "input",
+    "input2",
+    "button"
+  ],
+  consultModal: [
+    "consultModal",
+    "regForm",
+    "form",
+    "input",
+    "input2",
+    "button"
+  ],
+  regForm: ["regForm", "form", "input", "input2", "button"],
+  form: ["form", "input", "input2", "button"],
+  input: ["input"],
+  input2: ["input2"],
+  button: ["button"],
   _3Benefits: [
     "_3Benefits",
     "_3Benefits1st",
@@ -1805,6 +2394,13 @@ type NodeDefaultElementType = {
   introAutoSyncDesc: "div";
   introAutoSyncBenefits: "div";
   introAutoSyncGif: "div";
+  introCalendarRight6: "div";
+  consultModal: typeof Modal;
+  regForm: "div";
+  form: typeof FormWrapper;
+  input: typeof AntdInput;
+  input2: typeof AntdInput;
+  button: typeof AntdButton;
   _3Benefits: "div";
   _3Benefits1st: "div";
   icon: "div";
@@ -1860,7 +2456,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicHomepage__VariantsArgs;
     args?: PlasmicHomepage__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicHomepage__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicHomepage__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicHomepage__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -1928,6 +2526,13 @@ export const PlasmicHomepage = Object.assign(
     introAutoSyncDesc: makeNodeComponent("introAutoSyncDesc"),
     introAutoSyncBenefits: makeNodeComponent("introAutoSyncBenefits"),
     introAutoSyncGif: makeNodeComponent("introAutoSyncGif"),
+    introCalendarRight6: makeNodeComponent("introCalendarRight6"),
+    consultModal: makeNodeComponent("consultModal"),
+    regForm: makeNodeComponent("regForm"),
+    form: makeNodeComponent("form"),
+    input: makeNodeComponent("input"),
+    input2: makeNodeComponent("input2"),
+    button: makeNodeComponent("button"),
     _3Benefits: makeNodeComponent("_3Benefits"),
     _3Benefits1st: makeNodeComponent("_3Benefits1st"),
     icon: makeNodeComponent("icon"),

@@ -76,6 +76,7 @@
 }
 .rootdayStatus_passedFirstDayReserveV2 {
   flex-grow: 0;
+  padding-right: 1px;
 }
 .rootdayStatus_passedMidDayReserveV2 {
   max-width: 100%;
@@ -160,6 +161,11 @@
   .freeBoxdayStatus_reservedV2___9Ndlb75Ot {
     padding-right: 1px;
     padding-left: 1px;
+  }
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_passedFirstDayReserveV2___9NdlBhpmmI {
+    padding-right: 1px;
   }
 }
 .freeBoxdayStatus_passedLastDayReserveV2___9NdlBsnHmp {
@@ -302,7 +308,7 @@
   background: #4fdfb10d;
 }
 .celldayStatus_firstDayReserveV2 {
-  background: #181c49;
+  background: #141734;
   overflow: visible;
   border-radius: 0px 10px 10px 0px;
 }
@@ -312,7 +318,6 @@
     width: 100%;
     height: 74px;
     max-width: 100%;
-    background: #181c49;
     column-gap: 0px;
     row-gap: 1px;
     flex-direction: column;
@@ -323,7 +328,7 @@
   }
 }
 .celldayStatus_lastDayReserveV2 {
-  background: #181c49;
+  background: #141734;
   border-radius: 10px 0px 0px 10px;
 }
 @media (max-width: 500px) {
@@ -332,13 +337,13 @@
   }
 }
 .celldayStatus_midDayReserveV2 {
-  background: #181c49;
+  background: #141734;
   min-width: 100%;
   max-width: 100%;
   border-radius: 0px;
 }
 .celldayStatus_reservedV2 {
-  background: #181c49;
+  background: #141734;
   overflow: hidden;
   border-radius: 10px;
 }
@@ -347,18 +352,18 @@
   border-radius: 0px;
 }
 .celldayStatus_passedFirstDayReserveV2 {
-  background: #181c4999;
+  background: #14173433;
   overflow: visible;
   border-radius: 0px 10px 10px 0px;
 }
 .celldayStatus_passedMidDayReserveV2 {
-  background: #181c4999;
+  background: #14173433;
   min-width: 100%;
   max-width: 100%;
   border-radius: 0px;
 }
 .celldayStatus_passedLastDayReserveV2 {
-  background: #181c4999;
+  background: #14173433;
   border-radius: 20px 0px 0px 20px;
 }
 @media (max-width: 500px) {
@@ -367,7 +372,7 @@
   }
 }
 .celldayStatus_passedReservedV2 {
-  background: #181c4999;
+  background: #14173433;
   overflow: hidden;
   border-radius: 10px;
 }
@@ -848,7 +853,7 @@
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDayReserveV2__vb8Yklxm0M {
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 100%;
     height: 40%;
@@ -880,12 +885,27 @@
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_passedFirstDayReserveV2__vb8YkhpmmI {
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding: 0px;
   }
 }
 .freeBoxdayStatus_passedReservedV2__vb8YkISdsA {
   padding: 0px 4px;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_passedReservedV2__vb8YkISdsA {
+    width: 100%;
+    height: 40%;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 0px;
+    margin: 0px;
+  }
 }
 .freeBox___7HH4 {
   display: flex;
@@ -972,7 +992,7 @@
 .freeBoxdayStatus_passedFirstDayReserveV2___7HH4HpmmI {
   width: auto;
   height: auto;
-  background: #3d5afe;
+  background: #3d5afe80;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -991,7 +1011,7 @@
     width: auto;
     height: 100%;
     max-width: 100px;
-    background: #3d5afe;
+    background: #3d5afe80;
     column-gap: 0px;
     flex-direction: column;
     justify-content: center;
@@ -1009,7 +1029,7 @@
   }
 }
 .freeBoxdayStatus_passedReservedV2___7HH4ISdsA {
-  background: #bfe3b480;
+  background: #3d5afe80;
   display: flex;
   border-radius: 30px;
   padding: 0px;
@@ -1181,7 +1201,7 @@
   display: none;
 }
 .textdayStatus_passedReservedV2__bIcAoiSdsA {
-  color: #40404066;
+  color: var(--token-8R7jjC_-F9FF);
   font-weight: 400;
   text-align: center;
   white-space: pre;
@@ -1194,6 +1214,17 @@
     color: var(--token-8R7jjC_-F9FF);
     text-overflow: clip;
     overflow: hidden;
+    letter-spacing: -0.6px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    white-space: pre;
+    user-select: none;
+    min-width: 0;
+    padding: 0px 2px;
   }
 }
 @media (max-width: 350px) {
@@ -1239,7 +1270,7 @@
     background: none;
     column-gap: 0px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-start;
     overflow: hidden;
     min-height: 0;
@@ -1260,8 +1291,8 @@
     background: none;
     column-gap: 0px;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: center;
     overflow: hidden;
     min-height: 0;
     border-radius: 10px;
@@ -1435,6 +1466,17 @@
   .textdayStatus_passedReservedV2___9RWtFiSdsA {
     text-overflow: clip;
     overflow: hidden;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--token-8R7jjC_-F9FF);
+    text-align: center;
+    letter-spacing: -0.6px;
+    white-space: pre;
+    user-select: none;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
@@ -1567,7 +1609,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  height: 8px;
+  height: 10px;
   flex-shrink: 0;
 }
 .img > picture > img {

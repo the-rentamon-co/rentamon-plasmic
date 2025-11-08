@@ -430,6 +430,8 @@ function PlasmicDayCell2__RenderFunc(props: {
             "dayStatus",
             "lastDayReserve"
           ),
+          [sty.freeBoxdayStatus_passedFirstDayReserveV2___9NdlBhpmmI]:
+            hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
           [sty.freeBoxdayStatus_passedFirstDayReserve___9NdlBhR4Iw]: hasVariant(
             $state,
             "dayStatus",
@@ -1742,6 +1744,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                     hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
                   [sty.freeBoxdayStatus_passedMidDayReserveV2__xvaH5ZPpWv]:
                     hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
+                  [sty.freeBoxdayStatus_passedReservedV2__xvaH5ISdsA]:
+                    hasVariant($state, "dayStatus", "passedReservedV2"),
                   [sty.freeBoxdayStatus_reservedV2__xvaH575Ot]: hasVariant(
                     $state,
                     "dayStatus",
@@ -2307,7 +2311,7 @@ function PlasmicDayCell2__RenderFunc(props: {
           data-plasmic-override={overrides.img}
           alt={""}
           className={classNames(sty.img)}
-          displayHeight={"8px"}
+          displayHeight={"10px"}
           displayMaxHeight={"none"}
           displayMaxWidth={"100%"}
           displayMinHeight={"0"}
