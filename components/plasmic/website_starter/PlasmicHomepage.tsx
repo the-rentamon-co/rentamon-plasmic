@@ -745,7 +745,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u0634\u0645\u0627\u0631\u0647\u200c\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646\u060c \u062a\u0627 \u0628\u0627 \u0647\u0645 \u0631\u0627\u0647\u200c\u0647\u0627\u06cc\n\u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u0645"
+                            "\u0634\u0645\u0627\u0631\u0647\u200c\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646\u060c \u062a\u0627 \u0628\u0627 \u0647\u0645 \u0631\u0627\u0647\u200c\u0647\u0627\u06cc\n\u0631\u0634\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u0645:"
                           }
                         </div>
                         {(() => {
@@ -1140,6 +1140,11 @@ function PlasmicHomepage__RenderFunc(props: {
                       const $steps = {};
                     }).apply(null, eventArgs);
                   }}
+                  showHeader={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? false
+                      : undefined
+                  }
                 />
               </div>
             </div>

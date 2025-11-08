@@ -170,12 +170,20 @@
 }
 .freeBoxdayStatus_passedLastDayReserveV2___9NdlBsnHmp {
   max-width: 100%;
+  padding-left: 1px;
+}
+.freeBoxdayStatus_passedReservedV2___9NdlbiSdsA {
+  padding-right: 1px;
+  padding-left: 1px;
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_passedReservedV2___9NdlbiSdsA {
     padding-right: 1px;
     padding-left: 1px;
   }
+}
+.freeBoxdayStatus_selected_selected___9NdlbPzhv6LSVo3 {
+  padding: 0px 1px;
 }
 .cell {
   height: 80px;
@@ -364,7 +372,7 @@
 }
 .celldayStatus_passedLastDayReserveV2 {
   background: #14173433;
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 10px 0px 0px 10px;
 }
 @media (max-width: 500px) {
   .celldayStatus_passedLastDayReserveV2 {

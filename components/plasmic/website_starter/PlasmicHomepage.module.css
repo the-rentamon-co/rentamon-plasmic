@@ -723,8 +723,8 @@
 }
 @media (max-width: 350px) {
   .text___1INox {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     font-size: 17px;
   }
 }
@@ -830,6 +830,11 @@
   margin-bottom: 24px;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .formField___5BfE7:global(.__wab_instance) {
+    font-size: 17px;
+  }
+}
 .text__byWhd {
   animation: none;
 }
@@ -843,6 +848,11 @@
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .formField__vYsJt:global(.__wab_instance) {
+    font-size: 17px;
+  }
 }
 .text__lTbDv {
   animation: none;
