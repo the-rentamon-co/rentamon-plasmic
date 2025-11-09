@@ -185,6 +185,22 @@
 .freeBoxdayStatus_selected_selected___9NdlbPzhv6LSVo3 {
   padding: 0px 1px;
 }
+@media (max-width: 500px) {
+  .freeBoxselected_dayStatus_firstDayReserveV2___9NdlBlSVo3Lxm0M {
+    padding-left: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_lastDayReserveV2_selected___9NdlbHbxRLSVo3 {
+    padding-right: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .freeBoxselected_dayStatus_midDayReserveV2___9NdlBlSVo3X8Qvw {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
 .cell {
   height: 80px;
   align-items: center;
@@ -385,6 +401,18 @@
   border-radius: 10px;
 }
 .celldayStatus_selected_selected {
+  background: #0000ff;
+}
+.cellselected_dayStatus_firstDayReserveV2 {
+  background: #0000ff;
+}
+.celldayStatus_lastDayReserveV2_selected {
+  background: #0000ff;
+}
+.cellselected_dayStatus_midDayReserveV2 {
+  background: #0000ff;
+}
+.celldayStatus_reservedV2_selected {
   background: #0000ff;
 }
 .freeBox___20P4Y {

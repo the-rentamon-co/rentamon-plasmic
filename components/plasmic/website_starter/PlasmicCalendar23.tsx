@@ -2141,7 +2141,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                               if (
                                 $state.fragmentDatePicker.values.includes(
                                   dateProps.unix
-                                )
+                                ) &&
+                                calendarItem.status !== "reserved"
                               ) {
                                 return "selected";
                               }
@@ -2348,28 +2349,74 @@ function PlasmicCalendar23__RenderFunc(props: {
                     throw e;
                   }
                 })()}
-                platform={(() => {
-                  try {
-                    return (() => {
-                      const dayData =
-                        $state.apiRequest.data[1].calendar[
-                          dateProps.date.day - 1
-                        ];
-                      return dayData.status === "blocked" &&
-                        dayData.reservations_type == null
-                        ? "غیرفعال"
-                        : dayData.website;
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
+                platform={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const dayData =
+                              $state.apiRequest.data[1].calendar[
+                                dateProps.date.day - 1
+                              ];
+                            return dayData.status === "blocked" &&
+                              dayData.reservations_type == null
+                              ? "غیرفعال"
+                              : dayData.website;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : (() => {
+                        try {
+                          return (() => {
+                            const dayIndex = dateProps.date.day - 1;
+                            const dayData =
+                              $state.apiRequest.data[1].calendar[dayIndex];
+
+                            if (
+                              dayData.status === "blocked" &&
+                              dayData.reservations_type == null
+                            ) {
+                              return "غیرفعال";
+                            }
+
+                            const prevDayData =
+                              dayIndex > 0
+                                ? $state.apiRequest.data[1].calendar[
+                                    dayIndex - 1
+                                  ]
+                                : null;
+
+                            const isReserved = dayData.status === "reserved";
+                            const hasBookingId = dayData.booking_id != null;
+                            const isNewBooking =
+                              !prevDayData ||
+                              prevDayData.booking_id !== dayData.booking_id;
+
+                            if (isReserved && hasBookingId && isNewBooking) {
+                              return dayData.website;
+                            }
+
+                            return "";
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                }
                 price={
                   hasVariant(globalVariants, "screen", "mobile")
                     ? (() => {
@@ -2415,31 +2462,51 @@ function PlasmicCalendar23__RenderFunc(props: {
                     : (() => {
                         try {
                           return (() => {
+                            const dayIndex = dateProps.date.day - 1;
                             const dayData =
-                              $state.apiRequest.data[1].calendar[
-                                dateProps.date.day - 1
-                              ];
+                              $state.apiRequest.data[1].calendar[dayIndex];
+                            const prevDayData =
+                              dayIndex > 0
+                                ? $state.apiRequest.data[1].calendar[
+                                    dayIndex - 1
+                                  ]
+                                : null;
+
                             const {
                               status,
                               reservations_type,
                               guest_name,
-                              price
+                              booking_id
                             } = dayData;
+
+                            const hasBookingId = booking_id != null;
+                            const isNewBooking =
+                              !prevDayData ||
+                              prevDayData.booking_id !== booking_id;
+                            const canShowGuestName =
+                              hasBookingId && isNewBooking;
+
                             switch (status) {
                               case "reserved":
-                                return guest_name;
+                                return canShowGuestName ? guest_name : null;
+
                               case "blocked":
-                                return reservations_type != null
+                                return reservations_type != null &&
+                                  canShowGuestName
                                   ? guest_name
                                   : null;
+
                               case "unblocked":
-                                return reservations_type != null
+                                return reservations_type != null &&
+                                  canShowGuestName
                                   ? guest_name
-                                  : price;
+                                  : null;
+
                               case "canceled":
-                                return price;
+                                return null;
+
                               default:
-                                return price;
+                                return null;
                             }
                           })();
                         } catch (e) {
@@ -2453,21 +2520,47 @@ function PlasmicCalendar23__RenderFunc(props: {
                         }
                       })()
                 }
-                selected={(() => {
-                  try {
-                    return $state.fragmentDatePicker.values.includes(
-                      dateProps.unix
-                    );
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
-                  }
-                })()}
+                selected={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            if (
+                              $state.fragmentDatePicker.values.includes(
+                                dateProps.unix
+                              )
+                            ) {
+                              return "selected";
+                            } else {
+                              return false;
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return [];
+                          }
+                          throw e;
+                        }
+                      })()
+                    : (() => {
+                        try {
+                          return $state.fragmentDatePicker.values.includes(
+                            dateProps.unix
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return [];
+                          }
+                          throw e;
+                        }
+                      })()
+                }
               />
             </FragmentLongPress>
           )}

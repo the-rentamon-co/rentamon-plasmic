@@ -321,6 +321,9 @@ function PlasmicDayCell2__RenderFunc(props: {
             "dayStatus",
             "lastDayReserveV2"
           ),
+          [sty.rootdayStatus_lastDayReserveV2_selected]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "lastDayReserveV2"),
           [sty.rootdayStatus_lastDayReserve]: hasVariant(
             $state,
             "dayStatus",
@@ -341,6 +344,9 @@ function PlasmicDayCell2__RenderFunc(props: {
             "dayStatus",
             "passedFirstDayReserveV2"
           ),
+          [sty.rootdayStatus_passedFirstDayReserveV2_selected]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
           [sty.rootdayStatus_passedFirstDayReserve]: hasVariant(
             $state,
             "dayStatus",
@@ -384,6 +390,9 @@ function PlasmicDayCell2__RenderFunc(props: {
             "dayStatus",
             "reservedV2"
           ),
+          [sty.rootdayStatus_reservedV2_selected]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "reservedV2"),
           [sty.rootdayStatus_reserved]: hasVariant(
             $state,
             "dayStatus",
@@ -397,7 +406,13 @@ function PlasmicDayCell2__RenderFunc(props: {
           [sty.rootdayStatus_selected_selected]:
             hasVariant($state, "selected", "selected") &&
             hasVariant($state, "dayStatus", "selected"),
-          [sty.rootselected]: hasVariant($state, "selected", "selected")
+          [sty.rootselected]: hasVariant($state, "selected", "selected"),
+          [sty.rootselected_dayStatus_firstDayReserveV2]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "firstDayReserveV2"),
+          [sty.rootselected_dayStatus_midDayReserveV2]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "midDayReserveV2")
         }
       )}
     >
@@ -428,6 +443,9 @@ function PlasmicDayCell2__RenderFunc(props: {
             "dayStatus",
             "lastDayReserveV2"
           ),
+          [sty.freeBoxdayStatus_lastDayReserveV2_selected___9NdlbHbxRLSVo3]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "lastDayReserveV2"),
           [sty.freeBoxdayStatus_lastDayReserve___9Ndlbzrpyu]: hasVariant(
             $state,
             "dayStatus",
@@ -474,7 +492,13 @@ function PlasmicDayCell2__RenderFunc(props: {
             $state,
             "selected",
             "selected"
-          )
+          ),
+          [sty.freeBoxselected_dayStatus_firstDayReserveV2___9NdlBlSVo3Lxm0M]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "firstDayReserveV2"),
+          [sty.freeBoxselected_dayStatus_midDayReserveV2___9NdlBlSVo3X8Qvw]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "midDayReserveV2")
         })}
       >
         <div
@@ -516,6 +540,9 @@ function PlasmicDayCell2__RenderFunc(props: {
               "dayStatus",
               "lastDayReserveV2"
             ),
+            [sty.celldayStatus_lastDayReserveV2_selected]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "lastDayReserveV2"),
             [sty.celldayStatus_lastDayReserve]: hasVariant(
               $state,
               "dayStatus",
@@ -592,7 +619,13 @@ function PlasmicDayCell2__RenderFunc(props: {
             [sty.celldayStatus_selected_selected]:
               hasVariant($state, "selected", "selected") &&
               hasVariant($state, "dayStatus", "selected"),
-            [sty.cellselected]: hasVariant($state, "selected", "selected")
+            [sty.cellselected]: hasVariant($state, "selected", "selected"),
+            [sty.cellselected_dayStatus_firstDayReserveV2]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "firstDayReserveV2"),
+            [sty.cellselected_dayStatus_midDayReserveV2]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "midDayReserveV2")
           })}
         >
           <div
@@ -721,6 +754,9 @@ function PlasmicDayCell2__RenderFunc(props: {
                       "dayStatus",
                       "lastDayReserveV2"
                     ),
+                    [sty.textdayStatus_lastDayReserveV2_selected__fgKpwHbxRLSVo3]:
+                      hasVariant($state, "selected", "selected") &&
+                      hasVariant($state, "dayStatus", "lastDayReserveV2"),
                     [sty.textdayStatus_lastDayReserve__fgKpwZrpyu]: hasVariant(
                       $state,
                       "dayStatus",
@@ -1254,6 +1290,9 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "reservedV2"
               ),
+              [sty.freeBoxdayStatus_reservedV2_selected__vb8Yk75OtLSVo3]:
+                hasVariant($state, "selected", "selected") &&
+                hasVariant($state, "dayStatus", "reservedV2"),
               [sty.freeBoxdayStatus_reserved__vb8YkVf0A8]: hasVariant(
                 $state,
                 "dayStatus",
@@ -2045,6 +2084,13 @@ function PlasmicDayCell2__RenderFunc(props: {
                         [sty.textdayStatus_midDayReserve___9RWtFzCt7G]:
                           hasVariant($state, "dayStatus", "midDayReserve"),
                         [sty.textdayStatus_passedFirstDayReserveV2___9RWtFhpmmI]:
+                          hasVariant(
+                            $state,
+                            "dayStatus",
+                            "passedFirstDayReserveV2"
+                          ),
+                        [sty.textdayStatus_passedFirstDayReserveV2_selected___9RWtFhpmmILSVo3]:
+                          hasVariant($state, "selected", "selected") &&
                           hasVariant(
                             $state,
                             "dayStatus",
