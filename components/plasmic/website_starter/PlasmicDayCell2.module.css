@@ -83,31 +83,12 @@
 .rootdayStatus_lastDaySmartBooking {
   padding-left: 1px;
 }
-.rootdayStatus_midDaySmartBooking {
-  max-width: 100%;
-  min-width: 100%;
-}
-@media (max-width: 500px) {
-  .rootdayStatus_midDaySmartBooking {
-    width: 100%;
-    height: 74px;
-    min-width: 100%;
-    margin-top: 4px;
-    margin-right: 0px;
-    margin-left: 0px;
-    background: none;
-    column-gap: 0px;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    grid-column-start: 1 !important;
-    grid-column-end: -1 !important;
-    padding: 0px 0px 0px 1px;
-  }
-}
 .rootdayStatus_reservedSmartBooking {
   background: none;
   min-width: 98%;
+}
+.rootdayStatus_midDaySmartBooking {
+  padding-left: 0px;
 }
 .freeBox___9Ndlb {
   display: flex;
@@ -204,19 +185,6 @@
     padding-left: 1px;
   }
 }
-@media (max-width: 500px) {
-  .freeBoxdayStatus_midDaySmartBooking___9NdlBtndF7 {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    column-gap: 0px;
-    min-width: 0;
-    padding: 0px;
-  }
-}
 .freeBoxdayStatus_reservedSmartBooking___9Ndlb3RSg2 {
   padding-right: 1px;
   padding-left: 1px;
@@ -225,6 +193,14 @@
   .freeBoxdayStatus_reservedSmartBooking___9Ndlb3RSg2 {
     padding-right: 1px;
     padding-left: 1px;
+  }
+}
+.freeBoxdayStatus_midDaySmartBooking___9NdlBtHrE {
+  max-width: 100%;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_midDaySmartBooking___9NdlBtHrE {
+    padding-left: 0px;
   }
 }
 .freeBoxdayStatus_selected_selected___9NdlbPzhv6LSVo3 {
@@ -257,9 +233,8 @@
   }
 }
 @media (max-width: 500px) {
-  .freeBoxselected_dayStatus_midDaySmartBooking___9NdlBlSVo3TndF7 {
+  .freeBoxselected_dayStatus_midDaySmartBooking___9NdlBlSVo3THrE {
     padding-right: 0px;
-    padding-left: 0px;
   }
 }
 .cell {
@@ -430,32 +405,20 @@
     justify-content: space-between;
   }
 }
-.celldayStatus_midDaySmartBooking {
-  background: none;
-  min-width: 100%;
-  max-width: 100%;
-  border-radius: 0px;
-}
-@media (max-width: 500px) {
-  .celldayStatus_midDaySmartBooking {
-    width: 100%;
-    height: 74px;
-    max-width: 100%;
-    background: none;
-    column-gap: 0px;
-    row-gap: 1px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 0;
-    flex-shrink: 0;
-    padding: 2px 0px 0px;
-  }
-}
 .celldayStatus_reservedSmartBooking {
   background: none;
   overflow: hidden;
   border-radius: 10px;
+}
+.celldayStatus_midDaySmartBooking {
+  background: none;
+  border-radius: 10px 0px 0px 10px;
+}
+@media (max-width: 500px) {
+  .celldayStatus_midDaySmartBooking {
+    justify-content: space-between;
+    border-radius: 0px;
+  }
 }
 .celldayStatus_selected_selected {
   background: #0000ff;
@@ -478,10 +441,10 @@
 .celldayStatus_lastDaySmartBooking_selected {
   background: #0000ff;
 }
-.cellselected_dayStatus_midDaySmartBooking {
+.celldayStatus_reservedSmartBooking_selected {
   background: #0000ff;
 }
-.celldayStatus_reservedSmartBooking_selected {
+.cellselected_dayStatus_midDaySmartBooking {
   background: #0000ff;
 }
 .freeBox___20P4Y {
@@ -521,9 +484,6 @@
     align-items: center;
     justify-content: center;
   }
-}
-.freeBoxdayStatus_midDaySmartBooking___20P4YtndF7 {
-  min-width: 100%;
 }
 .text__fgKpw {
   position: relative;
@@ -615,7 +575,7 @@
   user-select: none;
   min-width: 0;
 }
-.textdayStatus_midDaySmartBooking__fgKpwtndF7 {
+.textdayStatus_reservedSmartBooking__fgKpw3RSg2 {
   color: var(--token-C-5xNZALkGon);
   width: 100%;
   height: auto;
@@ -627,7 +587,7 @@
   user-select: none;
   min-width: 0;
 }
-.textdayStatus_reservedSmartBooking__fgKpw3RSg2 {
+.textdayStatus_midDaySmartBooking__fgKpwtHrE {
   color: var(--token-C-5xNZALkGon);
   width: 100%;
   height: auto;
@@ -876,9 +836,14 @@
     display: flex;
   }
 }
-.freeBoxdayStatus_midDaySmartBooking___6YvqVtndF7 {
-  padding-top: 0px;
+.freeBoxdayStatus_midDaySmartBooking___6YvqVtHrE {
   display: none;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_midDaySmartBooking___6YvqVtHrE {
+    opacity: 1;
+    display: flex;
+  }
 }
 .text__lXDgF {
   position: relative;
@@ -987,9 +952,6 @@
     display: none;
   }
 }
-.textdayStatus_midDaySmartBooking__lXDgFtndF7 {
-  color: var(--token-8R7jjC_-F9FF);
-}
 .textdayStatus_reservedSmartBooking__lXDgF3RSg2 {
   color: var(--token-7MRjbe724hDb);
   width: 100%;
@@ -1002,6 +964,14 @@
   user-select: none;
   min-width: 0;
   display: block;
+}
+.textdayStatus_midDaySmartBooking__lXDgFtHrE {
+  color: var(--token-8R7jjC_-F9FF);
+}
+@media (max-width: 500px) {
+  .textdayStatus_midDaySmartBooking__lXDgFtHrE {
+    display: none;
+  }
 }
 .freeBox__vb8Yk {
   display: flex;
@@ -1159,31 +1129,6 @@
     margin: 0px;
   }
 }
-.freeBoxdayStatus_midDaySmartBooking__vb8YktndF7 {
-  width: 100%;
-  height: 40%;
-  max-width: 100%;
-  column-gap: 0px;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  padding: 4px 0px;
-}
-@media (max-width: 500px) {
-  .freeBoxdayStatus_midDaySmartBooking__vb8YktndF7 {
-    width: 100%;
-    height: 39%;
-    max-width: 100%;
-    column-gap: 0px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    min-width: 0;
-    padding: 0px;
-    margin: 0px;
-  }
-}
 .freeBoxdayStatus_reservedSmartBooking__vb8Yk3RSg2 {
   padding: 0px 4px 0px 0px;
 }
@@ -1196,6 +1141,31 @@
     max-width: 100%;
     column-gap: 0px;
     flex-direction: column;
+    min-width: 0;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+.freeBoxdayStatus_midDaySmartBooking__vb8YktHrE {
+  width: 100%;
+  height: 40%;
+  max-width: 100%;
+  column-gap: 0px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 4px 0px;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_midDaySmartBooking__vb8YktHrE {
+    width: 100%;
+    height: 40%;
+    max-width: 100%;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     min-width: 0;
     padding: 0px;
     margin: 0px;
@@ -1385,12 +1355,15 @@
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDaySmartBooking___7HH4V8GTb {
-    overflow: hidden;
+    overflow: visible;
     height: 100%;
     align-items: flex-start;
     justify-content: center;
     width: 100%;
     background: #3d5afe;
+    left: 0px;
+    top: 0px;
+    position: sticky;
     min-width: 0;
     min-height: 0;
     border-radius: 0px 30px 30px 0px;
@@ -1400,6 +1373,7 @@
   .freeBoxdayStatus_firstDaySmartBooking___7HH4V8GTb {
     width: auto;
     max-width: none;
+    z-index: 1000;
   }
 }
 .freeBoxdayStatus_lastDaySmartBooking___7HH4IVi99 {
@@ -1422,34 +1396,16 @@
     padding: 0px;
   }
 }
-.freeBoxdayStatus_midDaySmartBooking___7HH4TndF7 {
-  height: auto;
-  min-height: 22px;
-  border-radius: 0px;
-}
-@media (max-width: 500px) {
-  .freeBoxdayStatus_midDaySmartBooking___7HH4TndF7 {
-    width: 100%;
-    height: 100%;
-    min-height: 21px;
-    max-width: none;
-    background: #3d5afe;
-    column-gap: 0px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-    left: auto;
-    top: auto;
-    min-width: 0;
-    padding: 0px;
-  }
-}
 .freeBoxdayStatus_reservedSmartBooking___7HH43RSg2 {
   background: #3d5afe;
   display: flex;
-  border-radius: 0px 30px 30px 0px;
+  border-radius: 30px;
   padding: 0px;
+}
+@media (max-width: 1200px) {
+  .freeBoxdayStatus_reservedSmartBooking___7HH43RSg2 {
+    border-radius: 30px;
+  }
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_reservedSmartBooking___7HH43RSg2 {
@@ -1472,6 +1428,25 @@
 }
 @media (max-width: 350px) {
   .freeBoxdayStatus_reservedSmartBooking___7HH43RSg2 {
+    padding: 0px;
+  }
+}
+.freeBoxdayStatus_midDaySmartBooking___7HH4THrE {
+  min-height: 22px;
+  border-radius: 0px;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_midDaySmartBooking___7HH4THrE {
+    width: 100%;
+    height: 100%;
+    min-height: 22px;
+    max-width: none;
+    background: #3d5afe;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
     padding: 0px;
   }
 }
@@ -1653,8 +1628,6 @@
 }
 @media (max-width: 500px) {
   .textdayStatus_firstDaySmartBooking__bIcAOv8GTb {
-    text-overflow: clip;
-    overflow: hidden;
     font-size: 12px;
     letter-spacing: -0.6px;
     padding: 0px 2px;
@@ -1662,24 +1635,6 @@
 }
 .textdayStatus_lastDaySmartBooking__bIcAOiVi99 {
   display: none;
-}
-.textdayStatus_midDaySmartBooking__bIcAOtndF7 {
-  color: var(--token-8R7jjC_-F9FF);
-  display: none;
-}
-@media (max-width: 500px) {
-  .textdayStatus_midDaySmartBooking__bIcAOtndF7 {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--token-8R7jjC_-F9FF);
-    text-align: center;
-    white-space: pre;
-    user-select: none;
-    min-width: 0;
-  }
 }
 .textdayStatus_reservedSmartBooking__bIcAo3RSg2 {
   color: var(--token-8R7jjC_-F9FF);
@@ -1713,6 +1668,9 @@
     display: block;
     padding: 0px;
   }
+}
+.textdayStatus_midDaySmartBooking__bIcAOtHrE {
+  display: none;
 }
 .freeBox__xvaH5 {
   display: flex;
@@ -2063,10 +2021,6 @@
 .textdayStatus_lastDaySmartBooking___9RWtFiVi99 {
   display: none;
 }
-.textdayStatus_midDaySmartBooking___9RWtFtndF7 {
-  color: var(--token-8R7jjC_-F9FF);
-  display: none;
-}
 .textdayStatus_reservedSmartBooking___9RWtF3RSg2 {
   color: var(--token-8R7jjC_-F9FF);
   font-weight: 400;
@@ -2099,6 +2053,9 @@
     display: block;
     padding: 0px;
   }
+}
+.textdayStatus_midDaySmartBooking___9RWtFtHrE {
+  display: none;
 }
 .freeBox__vUKh {
   display: flex;
