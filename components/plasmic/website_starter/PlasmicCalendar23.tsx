@@ -1678,18 +1678,19 @@ function PlasmicCalendar23__RenderFunc(props: {
                           item.reservations_type =
                             reserveItem.reservations_type;
                           const fullGuestName = reserveItem.guest_name;
-                          let lastName = null;
+                          let familyName = null;
                           if (
                             typeof fullGuestName === "string" &&
                             fullGuestName.trim() !== ""
                           ) {
                             const nameParts = fullGuestName.split(" ");
-                            if (nameParts.length > 1) {
-                              nameParts.shift();
-                              lastName = nameParts.join(" ");
+                            if (nameParts.length > 2) {
+                              familyName = nameParts.slice(-2).join(" ");
+                            } else if (nameParts.length === 2) {
+                              familyName = nameParts[1];
                             }
                           }
-                          item.guest_name = lastName;
+                          item.guest_name = familyName;
                           if (amount == null || amount == 0) {
                             item.price = null;
                             return;
@@ -2228,7 +2229,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                               if (
                                 $state.fragmentDatePicker.values.includes(
                                   dateProps.unix
-                                )
+                                ) &&
+                                calendarItem.status !== "reserved"
                               ) {
                                 return "selected";
                               }
@@ -2462,51 +2464,31 @@ function PlasmicCalendar23__RenderFunc(props: {
                     : (() => {
                         try {
                           return (() => {
-                            const dayIndex = dateProps.date.day - 1;
                             const dayData =
-                              $state.apiRequest.data[1].calendar[dayIndex];
-                            const prevDayData =
-                              dayIndex > 0
-                                ? $state.apiRequest.data[1].calendar[
-                                    dayIndex - 1
-                                  ]
-                                : null;
-
+                              $state.apiRequest.data[1].calendar[
+                                dateProps.date.day - 1
+                              ];
                             const {
                               status,
                               reservations_type,
                               guest_name,
-                              booking_id
+                              price
                             } = dayData;
-
-                            const hasBookingId = booking_id != null;
-                            const isNewBooking =
-                              !prevDayData ||
-                              prevDayData.booking_id !== booking_id;
-                            const canShowGuestName =
-                              hasBookingId && isNewBooking;
-
                             switch (status) {
                               case "reserved":
-                                return canShowGuestName ? guest_name : null;
-
+                                return guest_name;
                               case "blocked":
-                                return reservations_type != null &&
-                                  canShowGuestName
+                                return reservations_type != null
                                   ? guest_name
                                   : null;
-
                               case "unblocked":
-                                return reservations_type != null &&
-                                  canShowGuestName
+                                return reservations_type != null
                                   ? guest_name
-                                  : null;
-
+                                  : price;
                               case "canceled":
-                                return null;
-
+                                return price;
                               default:
-                                return null;
+                                return price;
                             }
                           })();
                         } catch (e) {
@@ -2547,9 +2529,17 @@ function PlasmicCalendar23__RenderFunc(props: {
                       })()
                     : (() => {
                         try {
-                          return $state.fragmentDatePicker.values.includes(
-                            dateProps.unix
-                          );
+                          return (() => {
+                            if (
+                              $state.fragmentDatePicker.values.includes(
+                                dateProps.unix
+                              )
+                            ) {
+                              return "selected";
+                            } else {
+                              return false;
+                            }
+                          })();
                         } catch (e) {
                           if (
                             e instanceof TypeError ||

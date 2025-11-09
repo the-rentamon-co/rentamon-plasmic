@@ -49,16 +49,6 @@
   background: none;
   min-width: 98%;
 }
-.rootdayStatus_firstDayReserve {
-  flex-grow: 0;
-}
-.rootdayStatus_midDayReserve {
-  max-width: 100%;
-  min-width: 100%;
-}
-.rootdayStatus_passedFirstDayReserve {
-  background: none;
-}
 .rootdayStatus_firstDayReserveV2 {
   flex-grow: 0;
   padding-right: 1px;
@@ -85,6 +75,10 @@
 .rootdayStatus_passedReservedV2 {
   background: none;
   min-width: 98%;
+}
+.rootdayStatus_firstDaySmartBooking {
+  flex-grow: 0;
+  padding-right: 1px;
 }
 .freeBox___9Ndlb {
   display: flex;
@@ -125,20 +119,6 @@
     padding-right: 1px;
     padding-left: 1px;
   }
-}
-.freeBoxdayStatus_lastDayReserve___9Ndlbzrpyu {
-  max-width: 100%;
-}
-.freeBoxdayStatus_passedFirstDayReserve___9NdlBhR4Iw {
-  width: 100%;
-  height: auto;
-  max-width: 96%;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  column-gap: 0px;
-  min-width: 0;
-  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDayReserveV2___9NdlBlxm0M {
@@ -182,6 +162,11 @@
     padding-left: 1px;
   }
 }
+@media (max-width: 500px) {
+  .freeBoxdayStatus_firstDaySmartBooking___9NdlBv8GTb {
+    padding-right: 1px;
+  }
+}
 .freeBoxdayStatus_selected_selected___9NdlbPzhv6LSVo3 {
   padding: 0px 1px;
 }
@@ -198,6 +183,11 @@
 @media (max-width: 500px) {
   .freeBoxselected_dayStatus_midDayReserveV2___9NdlBlSVo3X8Qvw {
     padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .freeBoxselected_dayStatus_firstDaySmartBooking___9NdlBlSVo3V8GTb {
     padding-left: 0px;
   }
 }
@@ -269,67 +259,8 @@
 .celldayStatus_disabled {
   background: #fcfcfc;
 }
-.celldayStatus_blocked {
-  background: #fbb142;
-}
 .celldayStatus_selected {
   background: var(--token-8nedppYkGVaH);
-}
-.celldayStatus_firstDayReserve {
-  background: #4fdfb1;
-  border-radius: 0px 20px 20px 0px;
-}
-.celldayStatus_lastDayReserve {
-  background: #4fdfb1;
-  border-radius: 20px 0px 0px 20px;
-}
-.celldayStatus_midDayReserve {
-  background: #4fdfb1;
-  min-width: 100%;
-  max-width: 100%;
-  border-radius: 0px;
-}
-.celldayStatus_passedFirstDayReserve {
-  background: #4fdfb10d;
-  width: 100%;
-  height: 80px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  column-gap: 0px;
-  min-width: 0;
-  flex-shrink: 0;
-  border-radius: 0px 20px 20px 0px;
-  padding: 10px 0px;
-}
-.celldayStatus_passedMidDayReserve {
-  width: 100%;
-  height: 80px;
-  background: #4fdfb10d;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  column-gap: 0px;
-  min-width: 0;
-  flex-shrink: 0;
-  border-radius: 0px;
-  padding: 10px 0px;
-}
-.celldayStatus_passedLastDayReserve {
-  width: 100%;
-  height: 80px;
-  background: #4fdfb10d;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  column-gap: 0px;
-  min-width: 0;
-  flex-shrink: 0;
-  border-radius: 20px 0px 0px 20px;
-  padding: 10px 0px;
-}
-.celldayStatus_passedSingleReserve {
-  background: #4fdfb10d;
 }
 .celldayStatus_firstDayReserveV2 {
   background: #141734;
@@ -400,6 +331,26 @@
   overflow: hidden;
   border-radius: 10px;
 }
+.celldayStatus_firstDaySmartBooking {
+  background: #141734;
+  overflow: visible;
+  border-radius: 0px 10px 10px 0px;
+}
+@media (max-width: 500px) {
+  .celldayStatus_firstDaySmartBooking {
+    justify-content: space-between;
+    width: 100%;
+    height: 74px;
+    max-width: 100%;
+    column-gap: 0px;
+    row-gap: 1px;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    flex-shrink: 0;
+    padding: 2px 0px 0px;
+  }
+}
 .celldayStatus_selected_selected {
   background: #0000ff;
 }
@@ -413,6 +364,9 @@
   background: #0000ff;
 }
 .celldayStatus_reservedV2_selected {
+  background: #0000ff;
+}
+.cellselected_dayStatus_firstDaySmartBooking {
   background: #0000ff;
 }
 .freeBox___20P4Y {
@@ -435,9 +389,6 @@
     margin: 0px;
   }
 }
-.freeBoxdayStatus_midDayReserve___20P4YzCt7G {
-  min-width: 100%;
-}
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDayReserveV2___20P4Ylxm0M {
     align-items: center;
@@ -449,6 +400,12 @@
 }
 .freeBoxdayStatus_passedMidDayReserveV2___20P4YzPpWv {
   min-width: 100%;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_firstDaySmartBooking___20P4Yv8GTb {
+    align-items: center;
+    justify-content: center;
+  }
 }
 .text__fgKpw {
   position: relative;
@@ -489,18 +446,6 @@
 .textdayStatus_selected__fgKpwPzhv6 {
   color: #ffffff;
 }
-.textdayStatus_passedFirstDayReserve__fgKpwhR4Iw {
-  color: #c5c5c5;
-}
-.textdayStatus_passedMidDayReserve__fgKpwLtd9T {
-  color: #c5c5c5;
-}
-.textdayStatus_passedLastDayReserve__fgKpwnJrzh {
-  color: #c5c5c5;
-}
-.textdayStatus_passedSingleReserve__fgKpwLp2Ep {
-  color: #c5c5c5;
-}
 .textdayStatus_firstDayReserveV2__fgKpwlxm0M {
   color: var(--token-8R7jjC_-F9FF);
 }
@@ -526,6 +471,9 @@
   color: var(--token-8R7jjC_-F9FF);
 }
 .textdayStatus_passedReservedV2__fgKpwISdsA {
+  color: var(--token-8R7jjC_-F9FF);
+}
+.textdayStatus_firstDaySmartBooking__fgKpwv8GTb {
   color: var(--token-8R7jjC_-F9FF);
 }
 .holidays2 {
@@ -634,18 +582,6 @@
     font-weight: 400;
   }
 }
-.holidays2dayStatus_passedFirstDayReserve {
-  color: #d9363e40;
-}
-.holidays2dayStatus_passedMidDayReserve {
-  color: #d9363e40;
-}
-.holidays2dayStatus_passedLastDayReserve {
-  color: #d9363e40;
-}
-.holidays2dayStatus_passedSingleReserve {
-  color: #d9363e40;
-}
 .holidays2dayStatus_reservedV2 {
   color: var(--token-Bo2_tT25lwh4);
   width: 100%;
@@ -720,12 +656,6 @@
     padding-top: 2px;
   }
 }
-.freeBoxdayStatus_blocked___6Yvqv3FCqw {
-  display: none;
-}
-.freeBoxdayStatus_midDayReserve___6YvqvzCt7G {
-  padding-top: 0px;
-}
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDayReserveV2___6YvqVlxm0M {
     max-height: 30%;
@@ -751,6 +681,12 @@
 }
 .freeBoxdayStatus_passedLastDayReserveV2___6YvqVsnHmp {
   display: none;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_firstDaySmartBooking___6YvqVv8GTb {
+    max-height: 30%;
+    display: flex;
+  }
 }
 .text__lXDgF {
   position: relative;
@@ -803,18 +739,6 @@
 .textdayStatus_selected__lXDgFPzhv6 {
   color: var(--token-8R7jjC_-F9FF);
 }
-.textdayStatus_passedFirstDayReserve__lXDgFhR4Iw {
-  color: #c5c5c5;
-}
-.textdayStatus_passedMidDayReserve__lXDgFltd9T {
-  color: #c5c5c5;
-}
-.textdayStatus_passedLastDayReserve__lXDgFnJrzh {
-  color: #c5c5c5;
-}
-.textdayStatus_passedSingleReserve__lXDgFlp2Ep {
-  color: #c5c5c5;
-}
 .textdayStatus_firstDayReserveV2__lXDgFlxm0M {
   color: var(--token-8R7jjC_-F9FF);
 }
@@ -850,6 +774,9 @@
 .textdayStatus_passedReservedV2__lXDgFiSdsA {
   color: var(--token-8R7jjC_-F9FF);
   display: block;
+}
+.textdayStatus_firstDaySmartBooking__lXDgFv8GTb {
+  color: var(--token-8R7jjC_-F9FF);
 }
 .freeBox__vb8Yk {
   display: flex;
@@ -956,6 +883,26 @@
     margin: 0px;
   }
 }
+.freeBoxdayStatus_firstDaySmartBooking__vb8Ykv8GTb {
+  overflow: visible;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 4px;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_firstDaySmartBooking__vb8Ykv8GTb {
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 40%;
+    max-width: 100%;
+    flex-direction: column;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 0px;
+    margin: 0px;
+  }
+}
 .freeBox___7HH4 {
   display: flex;
   flex-direction: column;
@@ -972,12 +919,6 @@
   min-width: 0;
   border-radius: 30px;
   padding: 0px;
-}
-.freeBoxdayStatus_lastDayReserve___7HH4Zrpyu {
-  display: none;
-}
-.freeBoxdayStatus_midDayReserve___7HH4ZCt7G {
-  display: none;
 }
 .freeBoxdayStatus_firstDayReserveV2___7HH4Lxm0M {
   width: auto;
@@ -1125,6 +1066,42 @@
     padding: 0px;
   }
 }
+.freeBoxdayStatus_firstDaySmartBooking___7HH4V8GTb {
+  width: auto;
+  height: auto;
+  background: #3d5afe;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: visible;
+  position: relative;
+  left: auto;
+  top: auto;
+  max-width: none;
+  column-gap: 0px;
+  display: flex;
+  border-radius: 30px;
+  padding: 0px;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_firstDaySmartBooking___7HH4V8GTb {
+    max-width: 100px;
+    overflow: hidden;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 350px) {
+  .freeBoxdayStatus_firstDaySmartBooking___7HH4V8GTb {
+    width: auto;
+    max-width: none;
+  }
+}
 .text__bIcAo {
   width: 100%;
   height: auto;
@@ -1158,32 +1135,9 @@
   font-weight: 300;
   display: block;
 }
-.textdayStatus_blocked__bIcAo3FCqw {
-  display: none;
-}
 .textdayStatus_selected__bIcAoPzhv6 {
   color: #ffffff;
   display: none;
-}
-.textdayStatus_lastDayReserve__bIcAozrpyu {
-  display: block;
-}
-.textdayStatus_midDayReserve__bIcAozCt7G {
-  display: block;
-}
-.textdayStatus_passedFirstDayReserve__bIcAOhR4Iw {
-  color: #c5c5c5;
-}
-.textdayStatus_passedMidDayReserve__bIcAoltd9T {
-  color: #c5c5c5;
-  display: block;
-}
-.textdayStatus_passedLastDayReserve__bIcAOnJrzh {
-  color: #c5c5c5;
-  display: block;
-}
-.textdayStatus_passedSingleReserve__bIcAolp2Ep {
-  color: #c5c5c5;
 }
 .textdayStatus_firstDayReserveV2__bIcAOlxm0M {
   text-align: center;
@@ -1311,6 +1265,22 @@
     padding: 0px;
   }
 }
+.textdayStatus_firstDaySmartBooking__bIcAOv8GTb {
+  text-align: center;
+  white-space: pre;
+  color: var(--token-8R7jjC_-F9FF);
+  font-size: 13px;
+  padding: 1px 3px;
+}
+@media (max-width: 500px) {
+  .textdayStatus_firstDaySmartBooking__bIcAOv8GTb {
+    text-overflow: clip;
+    overflow: hidden;
+    font-size: 12px;
+    letter-spacing: -0.6px;
+    padding: 0px 2px;
+  }
+}
 .freeBox__xvaH5 {
   display: flex;
   flex-direction: column;
@@ -1411,6 +1381,27 @@
     padding: 0px;
   }
 }
+.freeBoxdayStatus_firstDaySmartBooking__xvaH5V8GTb {
+  z-index: 10;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_firstDaySmartBooking__xvaH5V8GTb {
+    width: 100%;
+    height: 100%;
+    max-width: 100px;
+    background: none;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    border-radius: 10px;
+    padding: 0px;
+  }
+}
 .text___9RWtF {
   width: 100%;
   height: auto;
@@ -1448,31 +1439,8 @@
   font-weight: 300;
   display: block;
 }
-.textdayStatus_blocked___9RWtF3FCqw {
-  display: none;
-}
 .textdayStatus_selected___9RWtFPzhv6 {
   color: #ffffff;
-}
-.textdayStatus_lastDayReserve___9RWtFzrpyu {
-  display: block;
-}
-.textdayStatus_midDayReserve___9RWtFzCt7G {
-  display: block;
-}
-.textdayStatus_passedFirstDayReserve___9RWtFhR4Iw {
-  color: #c5c5c5;
-}
-.textdayStatus_passedMidDayReserve___9RWtFltd9T {
-  color: #c5c5c5;
-  display: block;
-}
-.textdayStatus_passedLastDayReserve___9RWtFnJrzh {
-  color: #c5c5c5;
-  display: block;
-}
-.textdayStatus_passedSingleReserve___9RWtFlp2Ep {
-  color: #c5c5c5;
 }
 .textdayStatus_firstDayReserveV2___9RWtFlxm0M {
   text-align: center;
@@ -1609,6 +1577,31 @@
     padding: 0px;
   }
 }
+.textdayStatus_firstDaySmartBooking___9RWtFv8GTb {
+  text-align: center;
+  white-space: pre;
+  padding-right: 0px;
+  color: var(--token-8R7jjC_-F9FF);
+  display: block;
+}
+@media (max-width: 500px) {
+  .textdayStatus_firstDaySmartBooking___9RWtFv8GTb {
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--token-8R7jjC_-F9FF);
+    text-align: center;
+    letter-spacing: -0.6px;
+    white-space: pre;
+    user-select: none;
+    text-overflow: clip;
+    max-width: 100%;
+    overflow: hidden;
+    min-width: 0;
+    padding: 0px 2px;
+  }
+}
 .freeBox__vUKh {
   display: flex;
   flex-direction: column;
@@ -1676,6 +1669,26 @@
     padding: 0px;
   }
 }
+.freeBoxdayStatus_firstDaySmartBooking__vUKhv8GTb {
+  z-index: 10;
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_firstDaySmartBooking__vUKhv8GTb {
+    width: auto;
+    height: 100%;
+    max-width: 100px;
+    background: none;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    min-height: 0;
+    display: none;
+    border-radius: 10px;
+    padding: 0px;
+  }
+}
 .p {
   display: flex;
   flex-direction: column;
@@ -1710,18 +1723,6 @@
 .pdayStatus_disabled {
   background: var(--token-8nedppYkGVaH);
   display: flex;
-}
-.pdayStatus_passedFirstDayReserve {
-  opacity: 0.5;
-}
-.pdayStatus_passedMidDayReserve {
-  opacity: 0.5;
-}
-.pdayStatus_passedLastDayReserve {
-  opacity: 0.5;
-}
-.pdayStatus_passedSingleReserve {
-  opacity: 0.5;
 }
 .pdayStatus_disabledV2 {
   background: var(--token-8nedppYkGVaH);

@@ -942,22 +942,20 @@ export const Plasmicمعرفیبرندجدید = Object.assign(
 
     // Key-value metadata
     metadata: {
-      description:
-        "\u062d\u062f\u0648\u062f \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0646\u0642\u0627\u0637 \u0645\u062e\u062a\u0644\u0641 \u06a9\u0634\u0648\u0631 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0648\u06cc\u0644\u0627\u0634\u0648\u0646 \u0631\u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u06cc\u200c\u06a9\u0646\u0646\u060c \u0648 \u0647\u0631 \u0631\u0648\u0632 \u0646\u06cc\u0627\u0632\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0631\u0648 \u0645\u0637\u0631\u062d \u0645\u06cc\u200c\u06a9\u0646\u0646. \u0628\u0647 \u06a9\u0645\u06a9\u062a \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u06cc\u0645 :)",
-      ogType: "website",
-      ogLocale: "fa_IR",
       twitterCard: "summary_large_image",
-      twitterTitle:
-        "\u0641\u0631\u0635\u062a \u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+      title:
+        "\u0645\u0639\u0631\u0641\u06cc \u0628\u0631\u0646\u062f \u062c\u062f\u06cc\u062f",
+      type: "website",
+      locale: "fa_IR"
     },
 
     // Page metadata
     pageMetadata: {
       title: "معرفی برند جدید میان",
       description:
-        "حدود ۱۰۰۰ میزبان از نقاط مختلف کشور با رنتامون ویلاشون رو مدیریت می‌کنن، و هر روز نیازهای بیشتری رو مطرح می‌کنن. به کمکت نیاز داریم :)",
+        "بعد از ۲ سال فعالیت با نام رنتامون، دیگه این نام گویای مسیر و فعالیت فعلی ما نیست. به همین دلیل «میان» متولد شد.",
       ogImageSrc:
-        "https://site-assets.plasmic.app/1d9c8ad9b54a38a21150e4728acbe949.jpg",
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fpeople.png?versionId=",
       canonical: ""
     }
   }
