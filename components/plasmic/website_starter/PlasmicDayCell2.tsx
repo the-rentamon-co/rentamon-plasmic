@@ -814,7 +814,10 @@ function PlasmicDayCell2__RenderFunc(props: {
                       $state,
                       "selected",
                       "selected"
-                    )
+                    ),
+                    [sty.textselected_dayStatus_firstDayReserveV2__fgKpwlSVo3Lxm0M]:
+                      hasVariant($state, "dayStatus", "firstDayReserveV2") &&
+                      hasVariant($state, "selected", "selected")
                   }
                 )}
               >

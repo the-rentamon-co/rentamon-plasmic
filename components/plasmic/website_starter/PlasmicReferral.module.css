@@ -669,30 +669,6 @@
   flex-grow: 0;
   flex-shrink: 1;
   transform: none;
-  transform-style: preserve-3d;
-}
-.textInput * {
-  transform-style: preserve-3d;
-}
-@media (max-width: 500px) {
-  .textInput:global(.__wab_instance) {
-    transform-style: preserve-3d;
-  }
-}
-@media (max-width: 500px) {
-  .textInput * {
-    transform-style: preserve-3d;
-  }
-}
-@media (max-width: 350px) {
-  .textInput:global(.__wab_instance) {
-    transform-style: preserve-3d;
-  }
-}
-@media (max-width: 350px) {
-  .textInput * {
-    transform-style: preserve-3d;
-  }
 }
 .svg___3Aj3 {
   position: relative;

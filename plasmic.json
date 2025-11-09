@@ -3087,14 +3087,14 @@
         },
         {
           "id": "vfdAdNB4GVjb",
-          "name": "فرصتهایهمکاری2",
+          "name": "معرفیبرندجدید",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicفرصتهایهمکاری2.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicمعرفیبرندجدید.tsx",
           "importSpec": {
             "modulePath": "../src/pages/new-brand.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/Plasmicفرصتهایهمکاری2.module.css",
+          "cssFilePath": "plasmic/website_starter/Plasmicمعرفیبرندجدید.module.css",
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/new-brand"

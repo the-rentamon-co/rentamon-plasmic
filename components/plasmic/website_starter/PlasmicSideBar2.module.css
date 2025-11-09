@@ -110,34 +110,10 @@
   cursor: pointer;
   transform: none;
   column-gap: 10px;
-  transform-style: preserve-3d;
   min-width: 0;
   border-radius: 30px;
   padding: 6px 8px 8px;
   border-width: 2px;
-}
-.freeBox__frdDg * {
-  transform-style: preserve-3d;
-}
-@media (max-width: 500px) {
-  .freeBox__frdDg {
-    transform-style: preserve-3d;
-  }
-}
-@media (max-width: 500px) {
-  .freeBox__frdDg * {
-    transform-style: preserve-3d;
-  }
-}
-@media (max-width: 350px) {
-  .freeBox__frdDg {
-    transform-style: preserve-3d;
-  }
-}
-@media (max-width: 350px) {
-  .freeBox__frdDg * {
-    transform-style: preserve-3d;
-  }
 }
 .freeBox__wOt3K {
   display: flex;
