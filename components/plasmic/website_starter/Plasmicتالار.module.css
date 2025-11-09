@@ -567,11 +567,6 @@
   display: none;
   padding: 8px;
 }
-@media (max-width: 500px) {
-  .channelManager {
-    display: flex;
-  }
-}
 @media (max-width: 350px) {
   .channelManager {
     justify-content: space-between;

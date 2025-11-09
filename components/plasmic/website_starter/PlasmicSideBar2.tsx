@@ -104,6 +104,9 @@ export type PlasmicSideBar2__OverridesType = {
   modalSidebar?: Flex__<typeof AntdModal>;
   profile?: Flex__<"div">;
   walletamount?: Flex__<"div">;
+  reservations?: Flex__<"div">;
+  channelManager?: Flex__<"div">;
+  calendar?: Flex__<"div">;
   favicon?: Flex__<typeof Embed>;
   apiRequest?: Flex__<typeof ApiRequest>;
   checkUserPendingReserve?: Flex__<typeof ApiRequest>;
@@ -682,9 +685,11 @@ function PlasmicSideBar2__RenderFunc(props: {
           </div>
         </div>
         <div
+          data-plasmic-name={"reservations"}
+          data-plasmic-override={overrides.reservations}
           className={classNames(
             projectcss.all,
-            sty.freeBox__hcaX9,
+            sty.reservations,
             (() => {
               try {
                 return $props.isFirstVisit == true
@@ -819,23 +824,13 @@ function PlasmicSideBar2__RenderFunc(props: {
             </div>
           ) : null}
         </div>
-        {(() => {
-          try {
-            return $state.profile2.data?.user_info?.websites?.length > 0;
-          } catch (e) {
-            if (
-              e instanceof TypeError ||
-              e?.plasmicType === "PlasmicUndefinedDataError"
-            ) {
-              return true;
-            }
-            throw e;
-          }
-        })() ? (
+        {false ? (
           <div
+            data-plasmic-name={"channelManager"}
+            data-plasmic-override={overrides.channelManager}
             className={classNames(
               projectcss.all,
-              sty.freeBox__otMgi,
+              sty.channelManager,
               "clickable"
             )}
             onClick={async event => {
@@ -916,11 +911,9 @@ function PlasmicSideBar2__RenderFunc(props: {
           </div>
         ) : null}
         <div
-          className={classNames(
-            projectcss.all,
-            sty.freeBox___5JuLu,
-            "clickable"
-          )}
+          data-plasmic-name={"calendar"}
+          data-plasmic-override={overrides.calendar}
+          className={classNames(projectcss.all, sty.calendar, "clickable")}
           onClick={async event => {
             const $steps = {};
 
@@ -1594,12 +1587,18 @@ const PlasmicDescendants = {
     "modalSidebar",
     "profile",
     "walletamount",
+    "reservations",
+    "channelManager",
+    "calendar",
     "favicon",
     "apiRequest",
     "checkUserPendingReserve"
   ],
   profile: ["profile"],
   walletamount: ["walletamount"],
+  reservations: ["reservations"],
+  channelManager: ["channelManager"],
+  calendar: ["calendar"],
   favicon: ["favicon"],
   apiRequest: ["apiRequest"],
   checkUserPendingReserve: ["checkUserPendingReserve"]
@@ -1611,6 +1610,9 @@ type NodeDefaultElementType = {
   modalSidebar: typeof AntdModal;
   profile: "div";
   walletamount: "div";
+  reservations: "div";
+  channelManager: "div";
+  calendar: "div";
   favicon: typeof Embed;
   apiRequest: typeof ApiRequest;
   checkUserPendingReserve: typeof ApiRequest;
@@ -1680,6 +1682,9 @@ export const PlasmicSideBar2 = Object.assign(
     // Helper components rendering sub-elements
     profile: makeNodeComponent("profile"),
     walletamount: makeNodeComponent("walletamount"),
+    reservations: makeNodeComponent("reservations"),
+    channelManager: makeNodeComponent("channelManager"),
+    calendar: makeNodeComponent("calendar"),
     favicon: makeNodeComponent("favicon"),
     apiRequest: makeNodeComponent("apiRequest"),
     checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),

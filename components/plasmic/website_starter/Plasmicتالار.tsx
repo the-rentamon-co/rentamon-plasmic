@@ -1043,21 +1043,7 @@ function Plasmicتالار__RenderFunc(props: {
               )}
             >
               {(
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? (() => {
-                      try {
-                        return $state.getUserWebsite.data.website.length != 0;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return false;
-                        }
-                        throw e;
-                      }
-                    })()
-                  : true
+                hasVariant(globalVariants, "screen", "mobile") ? false : true
               ) ? (
                 <div
                   data-plasmic-name={"channelManager"}

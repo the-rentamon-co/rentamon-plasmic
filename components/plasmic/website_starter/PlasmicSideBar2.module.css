@@ -168,7 +168,7 @@
 .img__kmaPz > picture > img {
   object-fit: cover;
 }
-.freeBox__hcaX9 {
+.reservations {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -247,7 +247,7 @@
   text-align: center;
   color: var(--token-8R7jjC_-F9FF);
 }
-.freeBox__otMgi {
+.channelManager {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -266,7 +266,7 @@
   padding: 14px 8px;
 }
 @media (max-width: 500px) {
-  .freeBox__otMgi {
+  .channelManager {
     width: 100%;
     height: auto;
     max-width: 100%;
@@ -313,7 +313,7 @@
     min-width: 0;
   }
 }
-.freeBox___5JuLu {
+.calendar {
   display: flex;
   flex-direction: row;
   position: relative;
