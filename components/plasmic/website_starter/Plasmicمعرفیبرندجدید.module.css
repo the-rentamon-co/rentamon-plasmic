@@ -316,11 +316,11 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 50%;
+  max-width: 44%;
   justify-content: flex-start;
   align-items: center;
   row-gap: 10px;
-  min-width: 50%;
+  min-width: 0;
   padding: 8px;
 }
 @media (max-width: 1200px) {
@@ -438,7 +438,7 @@
 }
 @media (max-width: 500px) {
   .introduction2TextPics2 {
-    max-width: 70%;
+    max-width: 50%;
     padding-top: 10px;
     display: flex;
     flex-direction: column;
@@ -456,7 +456,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 34%;
+  max-width: 30%;
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
@@ -633,7 +633,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 60%;
+  max-width: 50%;
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
@@ -733,11 +733,11 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 50%;
+  max-width: 44%;
   justify-content: flex-start;
   align-items: center;
   row-gap: 10px;
-  min-width: 50%;
+  min-width: 0;
   padding: 8px;
 }
 @media (max-width: 1200px) {

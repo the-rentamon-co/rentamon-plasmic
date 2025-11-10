@@ -646,7 +646,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fstar-blue.png?versionId="
               }
               width={
-                hasVariant(globalVariants, "screen", "mobile") ? "16%" : "8%"
+                hasVariant(globalVariants, "screen", "mobile") ? "16%" : "6%"
               }
             />
 
