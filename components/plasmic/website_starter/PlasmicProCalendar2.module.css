@@ -1131,6 +1131,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
   min-width: 0;
   padding: 8px;
 }
