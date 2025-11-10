@@ -1960,6 +1960,18 @@
     padding: 0px;
   }
 }
+.freeBoxselected_dayStatus_firstDaySmartBooking___7HH4LSVo3V8GTb {
+  background: var(--token-8R7jjC_-F9FF);
+}
+.freeBoxdayStatus_lastDaySmartBooking_selected___7HH4IVi99LSVo3 {
+  background: var(--token-8R7jjC_-F9FF);
+}
+.freeBoxdayStatus_reservedSmartBooking_selected___7HH43RSg2LSVo3 {
+  background: var(--token-8R7jjC_-F9FF);
+}
+.freeBoxselected_dayStatus_midDaySmartBooking___7HH4LSVo3THrE {
+  background: var(--token-8R7jjC_-F9FF);
+}
 .freeBoxdayStatus_firstDaySmartBookingPast_selected___7HH4YZlRLSVo3 {
   background: var(--token-8R7jjC_-F9FF);
 }
@@ -2267,6 +2279,13 @@
 }
 .textdayStatus_midDaySmartBookingPast__bIcAoFr1G1 {
   display: none;
+}
+.textselected_dayStatus_firstDaySmartBooking__bIcAOlSVo3V8GTb {
+  color: #0000ff;
+  display: block;
+}
+.textdayStatus_reservedSmartBooking_selected__bIcAo3RSg2LSVo3 {
+  color: #0000ff;
 }
 .textdayStatus_firstDaySmartBookingPast_selected__bIcAoYZlRLSVo3 {
   color: #0000ff;
