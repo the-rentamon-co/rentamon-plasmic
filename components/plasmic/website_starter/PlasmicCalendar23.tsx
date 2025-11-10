@@ -2165,7 +2165,11 @@ function PlasmicCalendar23__RenderFunc(props: {
                                 $state.fragmentDatePicker.values.includes(
                                   dateProps.unix
                                 ) &&
-                                calendarItem.status !== "reserved"
+                                calendarItem.status !== "reserved" &&
+                                !(
+                                  currentBookingId &&
+                                  calendarItem.status !== "blocked"
+                                )
                               ) {
                                 return "selected";
                               }
@@ -2296,7 +2300,11 @@ function PlasmicCalendar23__RenderFunc(props: {
                                 $state.fragmentDatePicker.values.includes(
                                   dateProps.unix
                                 ) &&
-                                calendarItem.status !== "reserved"
+                                calendarItem.status !== "reserved" &&
+                                !(
+                                  currentBookingId &&
+                                  calendarItem.status !== "blocked"
+                                )
                               ) {
                                 return "selected";
                               }

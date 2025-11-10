@@ -1960,6 +1960,33 @@
     padding: 0px;
   }
 }
+.freeBoxdayStatus_firstDaySmartBookingPast_selected___7HH4YZlRLSVo3 {
+  background: var(--token-8R7jjC_-F9FF);
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_firstDaySmartBookingPast_selected___7HH4YZlRLSVo3 {
+    background: var(--token-8R7jjC_-F9FF);
+  }
+}
+.freeBoxdayStatus_lastDaySmartBookingPast_selected___7HH4TgeofLSVo3 {
+  background: var(--token-8R7jjC_-F9FF);
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_lastDaySmartBookingPast_selected___7HH4TgeofLSVo3 {
+    background: var(--token-8R7jjC_-F9FF);
+  }
+}
+.freeBoxdayStatus_reservedSmartBookingPast_selected___7HH48HsPzLSVo3 {
+  background: var(--token-8R7jjC_-F9FF);
+}
+.freeBoxdayStatus_midDaySmartBookingPast_selected___7HH4Fr1G1LSVo3 {
+  background: var(--token-8R7jjC_-F9FF);
+}
+@media (max-width: 500px) {
+  .freeBoxdayStatus_midDaySmartBookingPast_selected___7HH4Fr1G1LSVo3 {
+    background: var(--token-8R7jjC_-F9FF);
+  }
+}
 .text__bIcAo {
   width: 100%;
   height: auto;
@@ -2240,6 +2267,23 @@
 }
 .textdayStatus_midDaySmartBookingPast__bIcAoFr1G1 {
   display: none;
+}
+.textdayStatus_firstDaySmartBookingPast_selected__bIcAoYZlRLSVo3 {
+  color: #0000ff;
+  display: block;
+}
+@media (max-width: 500px) {
+  .textdayStatus_firstDaySmartBookingPast_selected__bIcAoYZlRLSVo3 {
+    color: #0000ff;
+    display: block;
+  }
+}
+.textdayStatus_lastDaySmartBookingPast_selected__bIcAotgeofLSVo3 {
+  color: #0000ff;
+  display: none;
+}
+.textdayStatus_reservedSmartBookingPast_selected__bIcAo8HsPzLSVo3 {
+  color: #0000ff;
 }
 .freeBox__xvaH5 {
   display: flex;
