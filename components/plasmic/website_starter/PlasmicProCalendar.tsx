@@ -378,7 +378,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       },
       {
         path: "variable2",
@@ -2777,7 +2777,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u26a0\ufe0f\r\n\u0628\u0627 \u062a\u0648\u062c\u0647 \u0628\u0647 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u200c \u00ab\u0633\u0627\u06cc\u062a \u0647\u0648\u0645\u0633\u0627\u00bb \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631 \u0647\u0648\u0645\u0633\u0627 \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0627\u0631\u0647."
+                  "\u26a0\ufe0f\r\n\u0628\u0627 \u062a\u0648\u062c\u0647 \u0628\u0647 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u200c \u00ab\u0633\u0627\u06cc\u062a \u0627\u062a\u0627\u0642\u06a9\u00bb \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631 \u0627\u062a\u0627\u0642\u06a9 \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0627\u0631\u0647."
                 }
               </div>
             </div>
