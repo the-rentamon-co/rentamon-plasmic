@@ -633,16 +633,22 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 100%;
+  max-width: 60%;
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
   padding: 27px 16px;
 }
+@media (max-width: 1200px) {
+  .freeBox___7YKcY {
+    max-width: 60%;
+  }
+}
 @media (max-width: 500px) {
   .freeBox___7YKcY {
     padding-right: 8px;
     padding-left: 8px;
+    max-width: 100%;
   }
 }
 .img__hTcVa {

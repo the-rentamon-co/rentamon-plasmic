@@ -516,7 +516,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                   loading={"lazy"}
                   src={
                     hasVariant(globalVariants, "screen", "mobile")
-                      ? "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fpeople-mobile.png?versionId="
+                      ? "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fpeople.png?versionId="
                       : "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fpeople.png?versionId="
                   }
                 />
