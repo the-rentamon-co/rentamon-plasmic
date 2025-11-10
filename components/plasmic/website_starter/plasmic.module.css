@@ -1,4 +1,4 @@
-@import url("https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/fonts%2Festedad%2FEstedad-Medium%20%281%29.ttf?versionId=");
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inter%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Montserrat%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700&display=swap");
 
 .plasmic_tokens {
   --token-2CXdk7410BHW: var(--token-HBTFH2K_vw-c);
@@ -9,7 +9,7 @@
   --plasmic-token-unnamed-style-token: var(--token-PWaVbr2W6PfQ);
   --token-UNUM8uSD-733: 1px;
   --plasmic-token-unnamed-style-token-2: var(--token-UNUM8uSD-733);
-  --token-7MRjbe724hDb: #2f2f2f;
+  --token-7MRjbe724hDb: #c5c5c5;
   --plasmic-token-calendar-text-color: var(--token-7MRjbe724hDb);
   --token-5pBr4MZPegMc: #e5e5e5;
   --plasmic-token-basic-calendar-day-color: var(--token-5pBr4MZPegMc);
@@ -242,7 +242,7 @@
   --mixin-uQM-VRcFt-Zt_line-height: 1.1;
   --mixin-uQM-VRcFt-Zt_white-space: pre-wrap;
   --mixin-928ee_lKuGlU_color: var(--token-8nedppYkGVaH);
-  --mixin-928ee_lKuGlU_font-family: "Estedad", sans-serif;
+  --mixin-928ee_lKuGlU_font-family: "Vazirmatn", sans-serif;
   --mixin-928ee_lKuGlU_font-weight: 700;
   --mixin-928ee_lKuGlU_white-space: pre-wrap;
   --mixin-peMwqi_rY8F6_color: #000000;

@@ -2137,6 +2137,28 @@ function PlasmicCalendar23__RenderFunc(props: {
                                     return "passedLastDayReserveV2";
                                   return "passedMidDayReserveV2";
                                 }
+                                if (
+                                  currentBookingId &&
+                                  calendarItem.status !== "reserved" &&
+                                  calendarItem.status !== "blocked"
+                                ) {
+                                  const isFirstDaySmart =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDaySmart =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDaySmart && isLastDaySmart) {
+                                    return "reservedSmartBookingPast";
+                                  }
+                                  if (isFirstDaySmart && !isLastDaySmart) {
+                                    return "firstDaySmartBookingPast";
+                                  }
+                                  if (!isFirstDaySmart && isLastDaySmart) {
+                                    return "lastDaySmartBookingPast";
+                                  }
+                                  if (!isFirstDaySmart && !isLastDaySmart) {
+                                    return "midDaySmartBookingPast";
+                                  }
+                                }
                                 return "disabledV2";
                               }
                               if (
@@ -2245,6 +2267,28 @@ function PlasmicCalendar23__RenderFunc(props: {
                                   if (isLastDay)
                                     return "passedLastDayReserveV2";
                                   return "passedMidDayReserveV2";
+                                }
+                                if (
+                                  currentBookingId &&
+                                  calendarItem.status !== "reserved" &&
+                                  calendarItem.status !== "blocked"
+                                ) {
+                                  const isFirstDaySmart =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDaySmart =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDaySmart && isLastDaySmart) {
+                                    return "reservedSmartBookingPast";
+                                  }
+                                  if (isFirstDaySmart && !isLastDaySmart) {
+                                    return "firstDaySmartBookingPast";
+                                  }
+                                  if (!isFirstDaySmart && isLastDaySmart) {
+                                    return "lastDaySmartBookingPast";
+                                  }
+                                  if (!isFirstDaySmart && !isLastDaySmart) {
+                                    return "midDaySmartBookingPast";
+                                  }
                                 }
                                 return "disabledV2";
                               }

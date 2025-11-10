@@ -88,7 +88,11 @@ export type PlasmicDayCell2__VariantMembers = {
     | "firstDaySmartBooking"
     | "lastDaySmartBooking"
     | "reservedSmartBooking"
-    | "midDaySmartBooking";
+    | "midDaySmartBooking"
+    | "firstDaySmartBookingPast"
+    | "lastDaySmartBookingPast"
+    | "reservedSmartBookingPast"
+    | "midDaySmartBookingPast";
 };
 export type PlasmicDayCell2__VariantsArgs = {
   selected?: SingleBooleanChoiceArg<"selected">;
@@ -110,6 +114,10 @@ export type PlasmicDayCell2__VariantsArgs = {
     | "lastDaySmartBooking"
     | "reservedSmartBooking"
     | "midDaySmartBooking"
+    | "firstDaySmartBookingPast"
+    | "lastDaySmartBookingPast"
+    | "reservedSmartBookingPast"
+    | "midDaySmartBookingPast"
   >;
 };
 type VariantPropType = keyof PlasmicDayCell2__VariantsArgs;
@@ -173,6 +181,10 @@ export interface DefaultDayCell2Props {
     | "lastDaySmartBooking"
     | "reservedSmartBooking"
     | "midDaySmartBooking"
+    | "firstDaySmartBookingPast"
+    | "lastDaySmartBookingPast"
+    | "reservedSmartBookingPast"
+    | "midDaySmartBookingPast"
   >;
   className?: string;
 }
@@ -294,6 +306,14 @@ function PlasmicDayCell2__RenderFunc(props: {
             "dayStatus",
             "firstDayReserveV2"
           ),
+          [sty.rootdayStatus_firstDaySmartBookingPast]: hasVariant(
+            $state,
+            "dayStatus",
+            "firstDaySmartBookingPast"
+          ),
+          [sty.rootdayStatus_firstDaySmartBookingPast_selected]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
           [sty.rootdayStatus_firstDaySmartBooking]: hasVariant(
             $state,
             "dayStatus",
@@ -307,6 +327,14 @@ function PlasmicDayCell2__RenderFunc(props: {
           [sty.rootdayStatus_lastDayReserveV2_selected]:
             hasVariant($state, "selected", "selected") &&
             hasVariant($state, "dayStatus", "lastDayReserveV2"),
+          [sty.rootdayStatus_lastDaySmartBookingPast]: hasVariant(
+            $state,
+            "dayStatus",
+            "lastDaySmartBookingPast"
+          ),
+          [sty.rootdayStatus_lastDaySmartBookingPast_selected]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "lastDaySmartBookingPast"),
           [sty.rootdayStatus_lastDaySmartBooking]: hasVariant(
             $state,
             "dayStatus",
@@ -320,6 +348,14 @@ function PlasmicDayCell2__RenderFunc(props: {
             "dayStatus",
             "midDayReserveV2"
           ),
+          [sty.rootdayStatus_midDaySmartBookingPast]: hasVariant(
+            $state,
+            "dayStatus",
+            "midDaySmartBookingPast"
+          ),
+          [sty.rootdayStatus_midDaySmartBookingPast_selected]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
           [sty.rootdayStatus_midDaySmartBooking]: hasVariant(
             $state,
             "dayStatus",
@@ -351,6 +387,14 @@ function PlasmicDayCell2__RenderFunc(props: {
           [sty.rootdayStatus_passedReservedV2_selected]:
             hasVariant($state, "dayStatus", "passedReservedV2") &&
             hasVariant($state, "selected", "selected"),
+          [sty.rootdayStatus_reservedSmartBookingPast]: hasVariant(
+            $state,
+            "dayStatus",
+            "reservedSmartBookingPast"
+          ),
+          [sty.rootdayStatus_reservedSmartBookingPast_selected]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "reservedSmartBookingPast"),
           [sty.rootdayStatus_reservedSmartBooking]: hasVariant(
             $state,
             "dayStatus",
@@ -418,6 +462,11 @@ function PlasmicDayCell2__RenderFunc(props: {
             "dayStatus",
             "firstDayReserveV2"
           ),
+          [sty.freeBoxdayStatus_firstDaySmartBookingPast___9NdlbYZlR]:
+            hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
+          [sty.freeBoxdayStatus_firstDaySmartBookingPast_selected___9NdlbYZlRLSVo3]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
           [sty.freeBoxdayStatus_firstDaySmartBooking___9NdlBv8GTb]: hasVariant(
             $state,
             "dayStatus",
@@ -431,6 +480,11 @@ function PlasmicDayCell2__RenderFunc(props: {
           [sty.freeBoxdayStatus_lastDayReserveV2_selected___9NdlbHbxRLSVo3]:
             hasVariant($state, "selected", "selected") &&
             hasVariant($state, "dayStatus", "lastDayReserveV2"),
+          [sty.freeBoxdayStatus_lastDaySmartBookingPast___9Ndlbtgeof]:
+            hasVariant($state, "dayStatus", "lastDaySmartBookingPast"),
+          [sty.freeBoxdayStatus_lastDaySmartBookingPast_selected___9NdlbtgeofLSVo3]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "lastDaySmartBookingPast"),
           [sty.freeBoxdayStatus_lastDaySmartBooking___9NdlBiVi99]: hasVariant(
             $state,
             "dayStatus",
@@ -439,6 +493,11 @@ function PlasmicDayCell2__RenderFunc(props: {
           [sty.freeBoxdayStatus_lastDaySmartBooking_selected___9NdlBiVi99LSVo3]:
             hasVariant($state, "selected", "selected") &&
             hasVariant($state, "dayStatus", "lastDaySmartBooking"),
+          [sty.freeBoxdayStatus_midDaySmartBookingPast___9NdlbFr1G1]:
+            hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
+          [sty.freeBoxdayStatus_midDaySmartBookingPast_selected___9NdlbFr1G1LSVo3]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
           [sty.freeBoxdayStatus_midDaySmartBooking___9NdlBtHrE]: hasVariant(
             $state,
             "dayStatus",
@@ -453,6 +512,8 @@ function PlasmicDayCell2__RenderFunc(props: {
             "dayStatus",
             "passedReservedV2"
           ),
+          [sty.freeBoxdayStatus_reservedSmartBookingPast___9Ndlb8HsPz]:
+            hasVariant($state, "dayStatus", "reservedSmartBookingPast"),
           [sty.freeBoxdayStatus_reservedSmartBooking___9Ndlb3RSg2]: hasVariant(
             $state,
             "dayStatus",
@@ -509,6 +570,14 @@ function PlasmicDayCell2__RenderFunc(props: {
               "dayStatus",
               "firstDayReserveV2"
             ),
+            [sty.celldayStatus_firstDaySmartBookingPast]: hasVariant(
+              $state,
+              "dayStatus",
+              "firstDaySmartBookingPast"
+            ),
+            [sty.celldayStatus_firstDaySmartBookingPast_selected]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
             [sty.celldayStatus_firstDaySmartBooking]: hasVariant(
               $state,
               "dayStatus",
@@ -522,6 +591,14 @@ function PlasmicDayCell2__RenderFunc(props: {
             [sty.celldayStatus_lastDayReserveV2_selected]:
               hasVariant($state, "selected", "selected") &&
               hasVariant($state, "dayStatus", "lastDayReserveV2"),
+            [sty.celldayStatus_lastDaySmartBookingPast]: hasVariant(
+              $state,
+              "dayStatus",
+              "lastDaySmartBookingPast"
+            ),
+            [sty.celldayStatus_lastDaySmartBookingPast_selected]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "lastDaySmartBookingPast"),
             [sty.celldayStatus_lastDaySmartBooking]: hasVariant(
               $state,
               "dayStatus",
@@ -535,6 +612,14 @@ function PlasmicDayCell2__RenderFunc(props: {
               "dayStatus",
               "midDayReserveV2"
             ),
+            [sty.celldayStatus_midDaySmartBookingPast]: hasVariant(
+              $state,
+              "dayStatus",
+              "midDaySmartBookingPast"
+            ),
+            [sty.celldayStatus_midDaySmartBookingPast_selected]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
             [sty.celldayStatus_midDaySmartBooking]: hasVariant(
               $state,
               "dayStatus",
@@ -560,6 +645,14 @@ function PlasmicDayCell2__RenderFunc(props: {
               "dayStatus",
               "passedReservedV2"
             ),
+            [sty.celldayStatus_reservedSmartBookingPast]: hasVariant(
+              $state,
+              "dayStatus",
+              "reservedSmartBookingPast"
+            ),
+            [sty.celldayStatus_reservedSmartBookingPast_selected]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "reservedSmartBookingPast"),
             [sty.celldayStatus_reservedSmartBooking]: hasVariant(
               $state,
               "dayStatus",
@@ -626,6 +719,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "firstDayReserveV2"
               ),
+              [sty.freeBoxdayStatus_firstDaySmartBookingPast___20P4YYZlR]:
+                hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
+              [sty.freeBoxdayStatus_firstDaySmartBookingPast_selected___20P4YYZlRLSVo3]:
+                hasVariant($state, "selected", "selected") &&
+                hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
               [sty.freeBoxdayStatus_firstDaySmartBooking___20P4Yv8GTb]:
                 hasVariant($state, "dayStatus", "firstDaySmartBooking"),
               [sty.freeBoxdayStatus_lastDayReserveV2___20P4YHbxR]: hasVariant(
@@ -633,6 +731,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "lastDayReserveV2"
               ),
+              [sty.freeBoxdayStatus_lastDaySmartBookingPast___20P4Ytgeof]:
+                hasVariant($state, "dayStatus", "lastDaySmartBookingPast"),
               [sty.freeBoxdayStatus_lastDaySmartBooking___20P4YiVi99]:
                 hasVariant($state, "dayStatus", "lastDaySmartBooking"),
               [sty.freeBoxdayStatus_midDayReserveV2___20P4Yx8Qvw]: hasVariant(
@@ -640,6 +740,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "midDayReserveV2"
               ),
+              [sty.freeBoxdayStatus_midDaySmartBookingPast___20P4YFr1G1]:
+                hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
               [sty.freeBoxdayStatus_midDaySmartBooking___20P4YtHrE]: hasVariant(
                 $state,
                 "dayStatus",
@@ -654,6 +756,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "passedReservedV2"
               ),
+              [sty.freeBoxdayStatus_reservedSmartBookingPast___20P4Y8HsPz]:
+                hasVariant($state, "dayStatus", "reservedSmartBookingPast"),
               [sty.freeBoxdayStatus_reservedSmartBooking___20P4Y3RSg2]:
                 hasVariant($state, "dayStatus", "reservedSmartBooking"),
               [sty.freeBoxdayStatus_reservedV2___20P4Y75Ot]: hasVariant(
@@ -724,6 +828,18 @@ function PlasmicDayCell2__RenderFunc(props: {
                     ),
                     [sty.textdayStatus_firstDayReserveV2__fgKpwlxm0M]:
                       hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                    [sty.textdayStatus_firstDaySmartBookingPast__fgKpwYZlR]:
+                      hasVariant(
+                        $state,
+                        "dayStatus",
+                        "firstDaySmartBookingPast"
+                      ),
+                    [sty.textdayStatus_firstDaySmartBookingPast_selected__fgKpwYZlRLSVo3]:
+                      hasVariant(
+                        $state,
+                        "dayStatus",
+                        "firstDaySmartBookingPast"
+                      ) && hasVariant($state, "selected", "selected"),
                     [sty.textdayStatus_firstDaySmartBooking__fgKpwv8GTb]:
                       hasVariant($state, "dayStatus", "firstDaySmartBooking"),
                     [sty.textdayStatus_lastDayReserveV2__fgKpwHbxR]: hasVariant(
@@ -734,6 +850,19 @@ function PlasmicDayCell2__RenderFunc(props: {
                     [sty.textdayStatus_lastDayReserveV2_selected__fgKpwHbxRLSVo3]:
                       hasVariant($state, "selected", "selected") &&
                       hasVariant($state, "dayStatus", "lastDayReserveV2"),
+                    [sty.textdayStatus_lastDaySmartBookingPast__fgKpwTgeof]:
+                      hasVariant(
+                        $state,
+                        "dayStatus",
+                        "lastDaySmartBookingPast"
+                      ),
+                    [sty.textdayStatus_lastDaySmartBookingPast_selected__fgKpwTgeofLSVo3]:
+                      hasVariant($state, "selected", "selected") &&
+                      hasVariant(
+                        $state,
+                        "dayStatus",
+                        "lastDaySmartBookingPast"
+                      ),
                     [sty.textdayStatus_lastDaySmartBooking__fgKpwiVi99]:
                       hasVariant($state, "dayStatus", "lastDaySmartBooking"),
                     [sty.textdayStatus_lastDaySmartBooking_selected__fgKpwiVi99LSVo3]:
@@ -744,6 +873,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                       "dayStatus",
                       "midDayReserveV2"
                     ),
+                    [sty.textdayStatus_midDaySmartBookingPast__fgKpwFr1G1]:
+                      hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
+                    [sty.textdayStatus_midDaySmartBookingPast_selected__fgKpwFr1G1LSVo3]:
+                      hasVariant($state, "selected", "selected") &&
+                      hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
                     [sty.textdayStatus_midDaySmartBooking__fgKpwtHrE]:
                       hasVariant($state, "dayStatus", "midDaySmartBooking"),
                     [sty.textdayStatus_passedFirstDayReserveV2__fgKpwhpmmI]:
@@ -758,6 +892,12 @@ function PlasmicDayCell2__RenderFunc(props: {
                       hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
                     [sty.textdayStatus_passedReservedV2__fgKpwISdsA]:
                       hasVariant($state, "dayStatus", "passedReservedV2"),
+                    [sty.textdayStatus_reservedSmartBookingPast__fgKpw8HsPz]:
+                      hasVariant(
+                        $state,
+                        "dayStatus",
+                        "reservedSmartBookingPast"
+                      ),
                     [sty.textdayStatus_reservedSmartBooking__fgKpw3RSg2]:
                       hasVariant($state, "dayStatus", "reservedSmartBooking"),
                     [sty.textdayStatus_reservedV2__fgKpw75Ot]: hasVariant(
@@ -859,6 +999,12 @@ function PlasmicDayCell2__RenderFunc(props: {
                       "dayStatus",
                       "firstDayReserveV2"
                     ),
+                    [sty.holidays2dayStatus_firstDaySmartBookingPast]:
+                      hasVariant(
+                        $state,
+                        "dayStatus",
+                        "firstDaySmartBookingPast"
+                      ),
                     [sty.holidays2dayStatus_firstDaySmartBooking]: hasVariant(
                       $state,
                       "dayStatus",
@@ -869,6 +1015,12 @@ function PlasmicDayCell2__RenderFunc(props: {
                       "dayStatus",
                       "lastDayReserveV2"
                     ),
+                    [sty.holidays2dayStatus_lastDaySmartBookingPast]:
+                      hasVariant(
+                        $state,
+                        "dayStatus",
+                        "lastDaySmartBookingPast"
+                      ),
                     [sty.holidays2dayStatus_lastDaySmartBooking]: hasVariant(
                       $state,
                       "dayStatus",
@@ -878,6 +1030,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                       $state,
                       "dayStatus",
                       "midDayReserveV2"
+                    ),
+                    [sty.holidays2dayStatus_midDaySmartBookingPast]: hasVariant(
+                      $state,
+                      "dayStatus",
+                      "midDaySmartBookingPast"
                     ),
                     [sty.holidays2dayStatus_midDaySmartBooking]: hasVariant(
                       $state,
@@ -905,6 +1062,12 @@ function PlasmicDayCell2__RenderFunc(props: {
                       "dayStatus",
                       "passedReservedV2"
                     ),
+                    [sty.holidays2dayStatus_reservedSmartBookingPast]:
+                      hasVariant(
+                        $state,
+                        "dayStatus",
+                        "reservedSmartBookingPast"
+                      ),
                     [sty.holidays2dayStatus_reservedSmartBooking]: hasVariant(
                       $state,
                       "dayStatus",
@@ -968,6 +1131,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "firstDayReserveV2"
               ),
+              [sty.freeBoxdayStatus_firstDaySmartBookingPast___6YvqvYZlR]:
+                hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
+              [sty.freeBoxdayStatus_firstDaySmartBookingPast_selected___6YvqvYZlRLSVo3]:
+                hasVariant($state, "selected", "selected") &&
+                hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
               [sty.freeBoxdayStatus_firstDaySmartBooking___6YvqVv8GTb]:
                 hasVariant($state, "dayStatus", "firstDaySmartBooking"),
               [sty.freeBoxdayStatus_lastDayReserveV2___6YvqvHbxR]: hasVariant(
@@ -975,6 +1143,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "lastDayReserveV2"
               ),
+              [sty.freeBoxdayStatus_lastDaySmartBookingPast___6Yvqvtgeof]:
+                hasVariant($state, "dayStatus", "lastDaySmartBookingPast"),
               [sty.freeBoxdayStatus_lastDaySmartBooking___6YvqViVi99]:
                 hasVariant($state, "dayStatus", "lastDaySmartBooking"),
               [sty.freeBoxdayStatus_midDayReserveV2___6YvqVx8Qvw]: hasVariant(
@@ -982,6 +1152,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "midDayReserveV2"
               ),
+              [sty.freeBoxdayStatus_midDaySmartBookingPast___6YvqvFr1G1]:
+                hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
               [sty.freeBoxdayStatus_midDaySmartBooking___6YvqVtHrE]: hasVariant(
                 $state,
                 "dayStatus",
@@ -998,6 +1170,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "passedReservedV2"
               ),
+              [sty.freeBoxdayStatus_reservedSmartBookingPast___6Yvqv8HsPz]:
+                hasVariant($state, "dayStatus", "reservedSmartBookingPast"),
               [sty.freeBoxdayStatus_reservedSmartBooking___6Yvqv3RSg2]:
                 hasVariant($state, "dayStatus", "reservedSmartBooking"),
               [sty.freeBoxdayStatus_reservedV2___6Yvqv75Ot]: hasVariant(
@@ -1054,6 +1228,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                     "dayStatus",
                     "firstDayReserveV2"
                   ),
+                  [sty.textdayStatus_firstDaySmartBookingPast__lXDgFYZlR]:
+                    hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
                   [sty.textdayStatus_firstDaySmartBooking__lXDgFv8GTb]:
                     hasVariant($state, "dayStatus", "firstDaySmartBooking"),
                   [sty.textdayStatus_lastDayReserveV2__lXDgFHbxR]: hasVariant(
@@ -1061,6 +1237,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                     "dayStatus",
                     "lastDayReserveV2"
                   ),
+                  [sty.textdayStatus_lastDaySmartBookingPast__lXDgFtgeof]:
+                    hasVariant($state, "dayStatus", "lastDaySmartBookingPast"),
                   [sty.textdayStatus_lastDaySmartBooking__lXDgFiVi99]:
                     hasVariant($state, "dayStatus", "lastDaySmartBooking"),
                   [sty.textdayStatus_midDayReserveV2__lXDgFx8Qvw]: hasVariant(
@@ -1068,6 +1246,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                     "dayStatus",
                     "midDayReserveV2"
                   ),
+                  [sty.textdayStatus_midDaySmartBookingPast__lXDgFFr1G1]:
+                    hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
                   [sty.textdayStatus_midDaySmartBooking__lXDgFtHrE]: hasVariant(
                     $state,
                     "dayStatus",
@@ -1084,6 +1264,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                     "dayStatus",
                     "passedReservedV2"
                   ),
+                  [sty.textdayStatus_reservedSmartBookingPast__lXDgF8HsPz]:
+                    hasVariant($state, "dayStatus", "reservedSmartBookingPast"),
                   [sty.textdayStatus_reservedSmartBooking__lXDgF3RSg2]:
                     hasVariant($state, "dayStatus", "reservedSmartBooking"),
                   [sty.textdayStatus_reservedV2__lXDgF75Ot]: hasVariant(
@@ -1172,6 +1354,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "firstDayReserveV2"
               ),
+              [sty.freeBoxdayStatus_firstDaySmartBookingPast__vb8YkYZlR]:
+                hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
+              [sty.freeBoxdayStatus_firstDaySmartBookingPast_selected__vb8YkYZlRLSVo3]:
+                hasVariant($state, "dayStatus", "firstDaySmartBookingPast") &&
+                hasVariant($state, "selected", "selected"),
               [sty.freeBoxdayStatus_firstDaySmartBooking__vb8Ykv8GTb]:
                 hasVariant($state, "dayStatus", "firstDaySmartBooking"),
               [sty.freeBoxdayStatus_lastDayReserveV2__vb8YkHbxR]: hasVariant(
@@ -1179,6 +1366,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "lastDayReserveV2"
               ),
+              [sty.freeBoxdayStatus_lastDaySmartBookingPast__vb8YkTgeof]:
+                hasVariant($state, "dayStatus", "lastDaySmartBookingPast"),
               [sty.freeBoxdayStatus_lastDaySmartBooking__vb8YkiVi99]:
                 hasVariant($state, "dayStatus", "lastDaySmartBooking"),
               [sty.freeBoxdayStatus_midDayReserveV2__vb8Ykx8Qvw]: hasVariant(
@@ -1186,6 +1375,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "midDayReserveV2"
               ),
+              [sty.freeBoxdayStatus_midDaySmartBookingPast__vb8YkFr1G1]:
+                hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
               [sty.freeBoxdayStatus_midDaySmartBooking__vb8YktHrE]: hasVariant(
                 $state,
                 "dayStatus",
@@ -1205,6 +1396,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "passedReservedV2"
               ),
+              [sty.freeBoxdayStatus_reservedSmartBookingPast__vb8Yk8HsPz]:
+                hasVariant($state, "dayStatus", "reservedSmartBookingPast"),
+              [sty.freeBoxdayStatus_reservedSmartBookingPast_selected__vb8Yk8HsPzLSVo3]:
+                hasVariant($state, "selected", "selected") &&
+                hasVariant($state, "dayStatus", "reservedSmartBookingPast"),
               [sty.freeBoxdayStatus_reservedSmartBooking__vb8Yk3RSg2]:
                 hasVariant($state, "dayStatus", "reservedSmartBooking"),
               [sty.freeBoxdayStatus_reservedSmartBooking_selected__vb8Yk3RSg2LSVo3]:
@@ -1240,7 +1436,7 @@ function PlasmicDayCell2__RenderFunc(props: {
             })}
           >
             {(
-              hasVariant($state, "dayStatus", "reservedSmartBooking")
+              hasVariant($state, "dayStatus", "reservedSmartBookingPast")
                 ? (() => {
                     try {
                       return $props.isSmartBooking;
@@ -1254,7 +1450,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                       throw e;
                     }
                   })()
-                : hasVariant($state, "dayStatus", "firstDaySmartBooking")
+                : hasVariant($state, "dayStatus", "firstDaySmartBookingPast")
                   ? (() => {
                       try {
                         return $props.isSmartBooking;
@@ -1268,7 +1464,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                         throw e;
                       }
                     })()
-                  : hasVariant($state, "dayStatus", "passedReservedV2")
+                  : hasVariant($state, "dayStatus", "reservedSmartBooking")
                     ? (() => {
                         try {
                           return $props.isSmartBooking;
@@ -1282,7 +1478,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                           throw e;
                         }
                       })()
-                    : hasVariant($state, "dayStatus", "passedFirstDayReserveV2")
+                    : hasVariant($state, "dayStatus", "firstDaySmartBooking")
                       ? (() => {
                           try {
                             return $props.isSmartBooking;
@@ -1296,7 +1492,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                             throw e;
                           }
                         })()
-                      : hasVariant($state, "dayStatus", "disabledV2")
+                      : hasVariant($state, "dayStatus", "passedReservedV2")
                         ? (() => {
                             try {
                               return $props.isSmartBooking;
@@ -1310,7 +1506,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                               throw e;
                             }
                           })()
-                        : hasVariant($state, "dayStatus", "reservedV2")
+                        : hasVariant(
+                              $state,
+                              "dayStatus",
+                              "passedFirstDayReserveV2"
+                            )
                           ? (() => {
                               try {
                                 return $props.isSmartBooking;
@@ -1324,7 +1524,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                                 throw e;
                               }
                             })()
-                          : hasVariant($state, "dayStatus", "firstDayReserveV2")
+                          : hasVariant($state, "dayStatus", "disabledV2")
                             ? (() => {
                                 try {
                                   return $props.isSmartBooking;
@@ -1339,20 +1539,54 @@ function PlasmicDayCell2__RenderFunc(props: {
                                   throw e;
                                 }
                               })()
-                            : (() => {
-                                try {
-                                  return $props.isSmartBooking;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return false;
+                            : hasVariant($state, "dayStatus", "reservedV2")
+                              ? (() => {
+                                  try {
+                                    return $props.isSmartBooking;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
                                   }
-                                  throw e;
-                                }
-                              })()
+                                })()
+                              : hasVariant(
+                                    $state,
+                                    "dayStatus",
+                                    "firstDayReserveV2"
+                                  )
+                                ? (() => {
+                                    try {
+                                      return $props.isSmartBooking;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return true;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                : (() => {
+                                    try {
+                                      return $props.isSmartBooking;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return false;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
             ) ? (
               <div
                 className={classNames(projectcss.all, sty.freeBox___7HH4, {
@@ -1368,12 +1602,18 @@ function PlasmicDayCell2__RenderFunc(props: {
                   ),
                   [sty.freeBoxdayStatus_firstDayReserveV2___7HH4Lxm0M]:
                     hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                  [sty.freeBoxdayStatus_firstDaySmartBookingPast___7HH4YZlR]:
+                    hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
                   [sty.freeBoxdayStatus_firstDaySmartBooking___7HH4V8GTb]:
                     hasVariant($state, "dayStatus", "firstDaySmartBooking"),
                   [sty.freeBoxdayStatus_lastDayReserveV2___7HH4HbxR]:
                     hasVariant($state, "dayStatus", "lastDayReserveV2"),
+                  [sty.freeBoxdayStatus_lastDaySmartBookingPast___7HH4Tgeof]:
+                    hasVariant($state, "dayStatus", "lastDaySmartBookingPast"),
                   [sty.freeBoxdayStatus_lastDaySmartBooking___7HH4IVi99]:
                     hasVariant($state, "dayStatus", "lastDaySmartBooking"),
+                  [sty.freeBoxdayStatus_midDaySmartBookingPast___7HH4Fr1G1]:
+                    hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
                   [sty.freeBoxdayStatus_midDaySmartBooking___7HH4THrE]:
                     hasVariant($state, "dayStatus", "midDaySmartBooking"),
                   [sty.freeBoxdayStatus_passedFirstDayReserveV2___7HH4HpmmI]:
@@ -1382,6 +1622,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                     hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
                   [sty.freeBoxdayStatus_passedReservedV2___7HH4ISdsA]:
                     hasVariant($state, "dayStatus", "passedReservedV2"),
+                  [sty.freeBoxdayStatus_reservedSmartBookingPast___7HH48HsPz]:
+                    hasVariant($state, "dayStatus", "reservedSmartBookingPast"),
                   [sty.freeBoxdayStatus_reservedSmartBooking___7HH43RSg2]:
                     hasVariant($state, "dayStatus", "reservedSmartBooking"),
                   [sty.freeBoxdayStatus_reservedV2___7HH475Ot]: hasVariant(
@@ -1419,14 +1661,32 @@ function PlasmicDayCell2__RenderFunc(props: {
                       ),
                       [sty.textdayStatus_firstDayReserveV2__bIcAOlxm0M]:
                         hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                      [sty.textdayStatus_firstDaySmartBookingPast__bIcAoYZlR]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "firstDaySmartBookingPast"
+                        ),
                       [sty.textdayStatus_firstDaySmartBooking__bIcAOv8GTb]:
                         hasVariant($state, "dayStatus", "firstDaySmartBooking"),
                       [sty.textdayStatus_lastDayReserveV2__bIcAoHbxR]:
                         hasVariant($state, "dayStatus", "lastDayReserveV2"),
+                      [sty.textdayStatus_lastDaySmartBookingPast__bIcAotgeof]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "lastDaySmartBookingPast"
+                        ),
                       [sty.textdayStatus_lastDaySmartBooking__bIcAOiVi99]:
                         hasVariant($state, "dayStatus", "lastDaySmartBooking"),
                       [sty.textdayStatus_midDayReserveV2__bIcAOx8Qvw]:
                         hasVariant($state, "dayStatus", "midDayReserveV2"),
+                      [sty.textdayStatus_midDaySmartBookingPast__bIcAoFr1G1]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "midDaySmartBookingPast"
+                        ),
                       [sty.textdayStatus_midDaySmartBooking__bIcAOtHrE]:
                         hasVariant($state, "dayStatus", "midDaySmartBooking"),
                       [sty.textdayStatus_passedFirstDayReserveV2__bIcAOhpmmI]:
@@ -1449,6 +1709,12 @@ function PlasmicDayCell2__RenderFunc(props: {
                         ),
                       [sty.textdayStatus_passedReservedV2__bIcAoiSdsA]:
                         hasVariant($state, "dayStatus", "passedReservedV2"),
+                      [sty.textdayStatus_reservedSmartBookingPast__bIcAo8HsPz]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "reservedSmartBookingPast"
+                        ),
                       [sty.textdayStatus_reservedSmartBooking__bIcAo3RSg2]:
                         hasVariant($state, "dayStatus", "reservedSmartBooking"),
                       [sty.textdayStatus_reservedV2__bIcAo75Ot]: hasVariant(
@@ -1493,7 +1759,7 @@ function PlasmicDayCell2__RenderFunc(props: {
               </div>
             ) : null}
             {(
-              hasVariant($state, "dayStatus", "firstDaySmartBooking") &&
+              hasVariant($state, "dayStatus", "firstDaySmartBookingPast") &&
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
                     try {
@@ -1508,7 +1774,7 @@ function PlasmicDayCell2__RenderFunc(props: {
                       throw e;
                     }
                   })()
-                : hasVariant($state, "dayStatus", "firstDayReserveV2") &&
+                : hasVariant($state, "dayStatus", "firstDaySmartBooking") &&
                     hasVariant(globalVariants, "screen", "mobile")
                   ? (() => {
                       try {
@@ -1523,19 +1789,34 @@ function PlasmicDayCell2__RenderFunc(props: {
                         throw e;
                       }
                     })()
-                  : (() => {
-                      try {
-                        return !$props.isSmartBooking;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
+                  : hasVariant($state, "dayStatus", "firstDayReserveV2") &&
+                      hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return !$props.isSmartBooking;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return false;
+                          }
+                          throw e;
                         }
-                        throw e;
-                      }
-                    })()
+                      })()
+                    : (() => {
+                        try {
+                          return !$props.isSmartBooking;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
             ) ? (
               <div
                 className={classNames(projectcss.all, sty.freeBox__xvaH5, {
@@ -1556,12 +1837,21 @@ function PlasmicDayCell2__RenderFunc(props: {
                   ),
                   [sty.freeBoxdayStatus_firstDayReserveV2__xvaH5Lxm0M]:
                     hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                  [sty.freeBoxdayStatus_firstDaySmartBookingPast__xvaH5YZlR]:
+                    hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
+                  [sty.freeBoxdayStatus_firstDaySmartBookingPast_selected__xvaH5YZlRLSVo3]:
+                    hasVariant($state, "selected", "selected") &&
+                    hasVariant($state, "dayStatus", "firstDaySmartBookingPast"),
                   [sty.freeBoxdayStatus_firstDaySmartBooking__xvaH5V8GTb]:
                     hasVariant($state, "dayStatus", "firstDaySmartBooking"),
                   [sty.freeBoxdayStatus_lastDayReserveV2__xvaH5HbxR]:
                     hasVariant($state, "dayStatus", "lastDayReserveV2"),
+                  [sty.freeBoxdayStatus_lastDaySmartBookingPast__xvaH5Tgeof]:
+                    hasVariant($state, "dayStatus", "lastDaySmartBookingPast"),
                   [sty.freeBoxdayStatus_lastDaySmartBooking__xvaH5IVi99]:
                     hasVariant($state, "dayStatus", "lastDaySmartBooking"),
+                  [sty.freeBoxdayStatus_midDaySmartBookingPast__xvaH5Fr1G1]:
+                    hasVariant($state, "dayStatus", "midDaySmartBookingPast"),
                   [sty.freeBoxdayStatus_midDaySmartBooking__xvaH5THrE]:
                     hasVariant($state, "dayStatus", "midDaySmartBooking"),
                   [sty.freeBoxdayStatus_passedFirstDayReserveV2__xvaH5HpmmI]:
@@ -1572,6 +1862,8 @@ function PlasmicDayCell2__RenderFunc(props: {
                     hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
                   [sty.freeBoxdayStatus_passedReservedV2__xvaH5ISdsA]:
                     hasVariant($state, "dayStatus", "passedReservedV2"),
+                  [sty.freeBoxdayStatus_reservedSmartBookingPast__xvaH58HsPz]:
+                    hasVariant($state, "dayStatus", "reservedSmartBookingPast"),
                   [sty.freeBoxdayStatus_reservedSmartBooking__xvaH53RSg2]:
                     hasVariant($state, "dayStatus", "reservedSmartBooking"),
                   [sty.freeBoxdayStatus_reservedV2__xvaH575Ot]: hasVariant(
@@ -1593,12 +1885,19 @@ function PlasmicDayCell2__RenderFunc(props: {
                 })}
               >
                 {(
-                  hasVariant($state, "dayStatus", "midDaySmartBooking")
+                  hasVariant($state, "dayStatus", "midDaySmartBookingPast")
                     ? true
-                    : hasVariant($state, "dayStatus", "reservedSmartBooking") &&
-                        hasVariant(globalVariants, "screen", "smallMobile")
+                    : hasVariant(
+                          $state,
+                          "dayStatus",
+                          "reservedSmartBookingPast"
+                        ) && hasVariant(globalVariants, "screen", "smallMobile")
                       ? true
-                      : hasVariant($state, "dayStatus", "reservedSmartBooking")
+                      : hasVariant(
+                            $state,
+                            "dayStatus",
+                            "reservedSmartBookingPast"
+                          )
                         ? (() => {
                             try {
                               return !$props.isSmartBooking;
@@ -1612,12 +1911,16 @@ function PlasmicDayCell2__RenderFunc(props: {
                               throw e;
                             }
                           })()
-                        : hasVariant($state, "dayStatus", "lastDaySmartBooking")
+                        : hasVariant(
+                              $state,
+                              "dayStatus",
+                              "lastDaySmartBookingPast"
+                            )
                           ? true
                           : hasVariant(
                                 $state,
                                 "dayStatus",
-                                "firstDaySmartBooking"
+                                "firstDaySmartBookingPast"
                               )
                             ? (() => {
                                 try {
@@ -1636,49 +1939,49 @@ function PlasmicDayCell2__RenderFunc(props: {
                             : hasVariant(
                                   $state,
                                   "dayStatus",
-                                  "passedReservedV2"
-                                ) &&
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "smallMobile"
+                                  "midDaySmartBooking"
                                 )
                               ? true
                               : hasVariant(
                                     $state,
                                     "dayStatus",
-                                    "passedReservedV2"
+                                    "reservedSmartBooking"
+                                  ) &&
+                                  hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "smallMobile"
                                   )
-                                ? (() => {
-                                    try {
-                                      return !$props.isSmartBooking;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return true;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
+                                ? true
                                 : hasVariant(
                                       $state,
                                       "dayStatus",
-                                      "passedLastDayReserveV2"
+                                      "reservedSmartBooking"
                                     )
-                                  ? true
+                                  ? (() => {
+                                      try {
+                                        return !$props.isSmartBooking;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return true;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
                                   : hasVariant(
                                         $state,
                                         "dayStatus",
-                                        "passedMidDayReserveV2"
+                                        "lastDaySmartBooking"
                                       )
                                     ? true
                                     : hasVariant(
                                           $state,
                                           "dayStatus",
-                                          "passedFirstDayReserveV2"
+                                          "firstDaySmartBooking"
                                         )
                                       ? (() => {
                                           try {
@@ -1697,72 +2000,73 @@ function PlasmicDayCell2__RenderFunc(props: {
                                       : hasVariant(
                                             $state,
                                             "dayStatus",
-                                            "disabledV2"
+                                            "passedReservedV2"
+                                          ) &&
+                                          hasVariant(
+                                            globalVariants,
+                                            "screen",
+                                            "smallMobile"
                                           )
-                                        ? (() => {
-                                            try {
-                                              return !$props.calendarV2;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return true;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
+                                        ? true
                                         : hasVariant(
                                               $state,
                                               "dayStatus",
-                                              "reservedV2"
-                                            ) &&
-                                            hasVariant(
-                                              globalVariants,
-                                              "screen",
-                                              "smallMobile"
+                                              "passedReservedV2"
                                             )
-                                          ? true
+                                          ? (() => {
+                                              try {
+                                                return !$props.isSmartBooking;
+                                              } catch (e) {
+                                                if (
+                                                  e instanceof TypeError ||
+                                                  e?.plasmicType ===
+                                                    "PlasmicUndefinedDataError"
+                                                ) {
+                                                  return true;
+                                                }
+                                                throw e;
+                                              }
+                                            })()
                                           : hasVariant(
                                                 $state,
                                                 "dayStatus",
-                                                "reservedV2"
+                                                "passedLastDayReserveV2"
                                               )
-                                            ? (() => {
-                                                try {
-                                                  return !$props.isSmartBooking;
-                                                } catch (e) {
-                                                  if (
-                                                    e instanceof TypeError ||
-                                                    e?.plasmicType ===
-                                                      "PlasmicUndefinedDataError"
-                                                  ) {
-                                                    return true;
-                                                  }
-                                                  throw e;
-                                                }
-                                              })()
+                                            ? true
                                             : hasVariant(
                                                   $state,
                                                   "dayStatus",
-                                                  "midDayReserveV2"
+                                                  "passedMidDayReserveV2"
                                                 )
                                               ? true
                                               : hasVariant(
                                                     $state,
                                                     "dayStatus",
-                                                    "lastDayReserveV2"
+                                                    "passedFirstDayReserveV2"
                                                   )
-                                                ? true
+                                                ? (() => {
+                                                    try {
+                                                      return !$props.isSmartBooking;
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof
+                                                          TypeError ||
+                                                        e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                      ) {
+                                                        return true;
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()
                                                 : hasVariant(
                                                       $state,
                                                       "dayStatus",
-                                                      "firstDayReserveV2"
+                                                      "disabledV2"
                                                     )
                                                   ? (() => {
                                                       try {
-                                                        return !$props.isSmartBooking;
+                                                        return !$props.calendarV2;
                                                       } catch (e) {
                                                         if (
                                                           e instanceof
@@ -1778,13 +2082,18 @@ function PlasmicDayCell2__RenderFunc(props: {
                                                   : hasVariant(
                                                         $state,
                                                         "dayStatus",
-                                                        "disabled"
+                                                        "reservedV2"
+                                                      ) &&
+                                                      hasVariant(
+                                                        globalVariants,
+                                                        "screen",
+                                                        "smallMobile"
                                                       )
                                                     ? true
                                                     : hasVariant(
-                                                          globalVariants,
-                                                          "screen",
-                                                          "mobile"
+                                                          $state,
+                                                          "dayStatus",
+                                                          "reservedV2"
                                                         )
                                                       ? (() => {
                                                           try {
@@ -1801,21 +2110,79 @@ function PlasmicDayCell2__RenderFunc(props: {
                                                             throw e;
                                                           }
                                                         })()
-                                                      : (() => {
-                                                          try {
-                                                            return !$props.isSmartBooking;
-                                                          } catch (e) {
-                                                            if (
-                                                              e instanceof
-                                                                TypeError ||
-                                                              e?.plasmicType ===
-                                                                "PlasmicUndefinedDataError"
-                                                            ) {
-                                                              return true;
-                                                            }
-                                                            throw e;
-                                                          }
-                                                        })()
+                                                      : hasVariant(
+                                                            $state,
+                                                            "dayStatus",
+                                                            "midDayReserveV2"
+                                                          )
+                                                        ? true
+                                                        : hasVariant(
+                                                              $state,
+                                                              "dayStatus",
+                                                              "lastDayReserveV2"
+                                                            )
+                                                          ? true
+                                                          : hasVariant(
+                                                                $state,
+                                                                "dayStatus",
+                                                                "firstDayReserveV2"
+                                                              )
+                                                            ? (() => {
+                                                                try {
+                                                                  return !$props.isSmartBooking;
+                                                                } catch (e) {
+                                                                  if (
+                                                                    e instanceof
+                                                                      TypeError ||
+                                                                    e?.plasmicType ===
+                                                                      "PlasmicUndefinedDataError"
+                                                                  ) {
+                                                                    return true;
+                                                                  }
+                                                                  throw e;
+                                                                }
+                                                              })()
+                                                            : hasVariant(
+                                                                  $state,
+                                                                  "dayStatus",
+                                                                  "disabled"
+                                                                )
+                                                              ? true
+                                                              : hasVariant(
+                                                                    globalVariants,
+                                                                    "screen",
+                                                                    "mobile"
+                                                                  )
+                                                                ? (() => {
+                                                                    try {
+                                                                      return !$props.isSmartBooking;
+                                                                    } catch (e) {
+                                                                      if (
+                                                                        e instanceof
+                                                                          TypeError ||
+                                                                        e?.plasmicType ===
+                                                                          "PlasmicUndefinedDataError"
+                                                                      ) {
+                                                                        return true;
+                                                                      }
+                                                                      throw e;
+                                                                    }
+                                                                  })()
+                                                                : (() => {
+                                                                    try {
+                                                                      return !$props.isSmartBooking;
+                                                                    } catch (e) {
+                                                                      if (
+                                                                        e instanceof
+                                                                          TypeError ||
+                                                                        e?.plasmicType ===
+                                                                          "PlasmicUndefinedDataError"
+                                                                      ) {
+                                                                        return true;
+                                                                      }
+                                                                      throw e;
+                                                                    }
+                                                                  })()
                 ) ? (
                   <div
                     className={classNames(
@@ -1840,6 +2207,19 @@ function PlasmicDayCell2__RenderFunc(props: {
                         ),
                         [sty.textdayStatus_firstDayReserveV2___9RWtFlxm0M]:
                           hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                        [sty.textdayStatus_firstDaySmartBookingPast___9RWtFYZlR]:
+                          hasVariant(
+                            $state,
+                            "dayStatus",
+                            "firstDaySmartBookingPast"
+                          ),
+                        [sty.textdayStatus_firstDaySmartBookingPast_selected___9RWtFYZlRLSVo3]:
+                          hasVariant($state, "selected", "selected") &&
+                          hasVariant(
+                            $state,
+                            "dayStatus",
+                            "firstDaySmartBookingPast"
+                          ),
                         [sty.textdayStatus_firstDaySmartBooking___9RWtFv8GTb]:
                           hasVariant(
                             $state,
@@ -1848,6 +2228,12 @@ function PlasmicDayCell2__RenderFunc(props: {
                           ),
                         [sty.textdayStatus_lastDayReserveV2___9RWtFHbxR]:
                           hasVariant($state, "dayStatus", "lastDayReserveV2"),
+                        [sty.textdayStatus_lastDaySmartBookingPast___9RWtFtgeof]:
+                          hasVariant(
+                            $state,
+                            "dayStatus",
+                            "lastDaySmartBookingPast"
+                          ),
                         [sty.textdayStatus_lastDaySmartBooking___9RWtFiVi99]:
                           hasVariant(
                             $state,
@@ -1856,6 +2242,12 @@ function PlasmicDayCell2__RenderFunc(props: {
                           ),
                         [sty.textdayStatus_midDayReserveV2___9RWtFx8Qvw]:
                           hasVariant($state, "dayStatus", "midDayReserveV2"),
+                        [sty.textdayStatus_midDaySmartBookingPast___9RWtFFr1G1]:
+                          hasVariant(
+                            $state,
+                            "dayStatus",
+                            "midDaySmartBookingPast"
+                          ),
                         [sty.textdayStatus_midDaySmartBooking___9RWtFtHrE]:
                           hasVariant($state, "dayStatus", "midDaySmartBooking"),
                         [sty.textdayStatus_passedFirstDayReserveV2___9RWtFhpmmI]:
@@ -1885,6 +2277,12 @@ function PlasmicDayCell2__RenderFunc(props: {
                           ),
                         [sty.textdayStatus_passedReservedV2___9RWtFiSdsA]:
                           hasVariant($state, "dayStatus", "passedReservedV2"),
+                        [sty.textdayStatus_reservedSmartBookingPast___9RWtF8HsPz]:
+                          hasVariant(
+                            $state,
+                            "dayStatus",
+                            "reservedSmartBookingPast"
+                          ),
                         [sty.textdayStatus_reservedSmartBooking___9RWtF3RSg2]:
                           hasVariant(
                             $state,
@@ -1942,15 +2340,18 @@ function PlasmicDayCell2__RenderFunc(props: {
                   </div>
                 ) : null}
                 {(
-                  hasVariant($state, "dayStatus", "firstDaySmartBooking") &&
+                  hasVariant($state, "dayStatus", "firstDaySmartBookingPast") &&
                   hasVariant(globalVariants, "screen", "mobile")
                     ? true
-                    : hasVariant($state, "dayStatus", "firstDayReserveV2") &&
+                    : hasVariant($state, "dayStatus", "firstDaySmartBooking") &&
                         hasVariant(globalVariants, "screen", "mobile")
                       ? true
-                      : hasVariant($state, "dayStatus", "discount")
+                      : hasVariant($state, "dayStatus", "firstDayReserveV2") &&
+                          hasVariant(globalVariants, "screen", "mobile")
                         ? true
-                        : false
+                        : hasVariant($state, "dayStatus", "discount")
+                          ? true
+                          : false
                 ) ? (
                   <div
                     className={classNames(projectcss.all, sty.freeBox__vUKh, {
@@ -1971,12 +2372,30 @@ function PlasmicDayCell2__RenderFunc(props: {
                       ),
                       [sty.freeBoxdayStatus_firstDayReserveV2__vUKhlxm0M]:
                         hasVariant($state, "dayStatus", "firstDayReserveV2"),
+                      [sty.freeBoxdayStatus_firstDaySmartBookingPast__vUKhYZlR]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "firstDaySmartBookingPast"
+                        ),
                       [sty.freeBoxdayStatus_firstDaySmartBooking__vUKhv8GTb]:
                         hasVariant($state, "dayStatus", "firstDaySmartBooking"),
                       [sty.freeBoxdayStatus_lastDayReserveV2__vUKhHbxR]:
                         hasVariant($state, "dayStatus", "lastDayReserveV2"),
+                      [sty.freeBoxdayStatus_lastDaySmartBookingPast__vUKhTgeof]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "lastDaySmartBookingPast"
+                        ),
                       [sty.freeBoxdayStatus_lastDaySmartBooking__vUKhiVi99]:
                         hasVariant($state, "dayStatus", "lastDaySmartBooking"),
+                      [sty.freeBoxdayStatus_midDaySmartBookingPast__vUKhFr1G1]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "midDaySmartBookingPast"
+                        ),
                       [sty.freeBoxdayStatus_midDaySmartBooking__vUKhtHrE]:
                         hasVariant($state, "dayStatus", "midDaySmartBooking"),
                       [sty.freeBoxdayStatus_passedFirstDayReserveV2__vUKhhpmmI]:
@@ -1996,6 +2415,12 @@ function PlasmicDayCell2__RenderFunc(props: {
                           $state,
                           "dayStatus",
                           "passedMidDayReserveV2"
+                        ),
+                      [sty.freeBoxdayStatus_reservedSmartBookingPast__vUKh8HsPz]:
+                        hasVariant(
+                          $state,
+                          "dayStatus",
+                          "reservedSmartBookingPast"
                         ),
                       [sty.freeBoxdayStatus_reservedSmartBooking__vUKh3RSg2]:
                         hasVariant($state, "dayStatus", "reservedSmartBooking"),
@@ -2071,10 +2496,20 @@ function PlasmicDayCell2__RenderFunc(props: {
                 "dayStatus",
                 "lastDayReserveV2"
               ),
+              [sty.pdayStatus_lastDaySmartBookingPast]: hasVariant(
+                $state,
+                "dayStatus",
+                "lastDaySmartBookingPast"
+              ),
               [sty.pdayStatus_lastDaySmartBooking]: hasVariant(
                 $state,
                 "dayStatus",
                 "lastDaySmartBooking"
+              ),
+              [sty.pdayStatus_midDaySmartBookingPast]: hasVariant(
+                $state,
+                "dayStatus",
+                "midDaySmartBookingPast"
               ),
               [sty.pdayStatus_midDaySmartBooking]: hasVariant(
                 $state,
@@ -2090,6 +2525,11 @@ function PlasmicDayCell2__RenderFunc(props: {
                 $state,
                 "dayStatus",
                 "passedReservedV2"
+              ),
+              [sty.pdayStatus_reservedSmartBookingPast]: hasVariant(
+                $state,
+                "dayStatus",
+                "reservedSmartBookingPast"
               ),
               [sty.pdayStatus_reservedSmartBooking]: hasVariant(
                 $state,

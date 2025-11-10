@@ -191,7 +191,7 @@
 }
 @media (max-width: 500px) {
   .دربارهما2 {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -268,7 +268,7 @@
 }
 @media (max-width: 500px) {
   .text__bte4Q {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -466,7 +466,7 @@
   .freeBox__g7EOv {
     width: 100%;
     height: auto;
-    max-width: 50%;
+    max-width: 44%;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -564,6 +564,7 @@
   line-height: 1.8;
   padding-top: 0px;
   font-weight: 600;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__jbiLl {
@@ -586,6 +587,7 @@
   font-size: 16px;
   line-height: 1.8;
   padding-top: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__uXggy {
@@ -608,6 +610,7 @@
   font-size: 16px;
   line-height: 1.8;
   padding-top: 10px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__jN0MC {
@@ -708,6 +711,7 @@
   font-size: 16px;
   line-height: 1.8;
   padding-top: 10px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__v4EEe {
@@ -813,6 +817,7 @@
   padding-right: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__fNdf {
@@ -865,6 +870,7 @@
   font-size: 16px;
   line-height: 1.8;
   padding-top: 20px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__tMlwq {
