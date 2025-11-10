@@ -493,7 +493,6 @@
   width: 100%;
   box-shadow: none;
   min-width: 0;
-  border-radius: 30px;
 }
 .img__pnwAq > picture > img {
   object-fit: cover;
@@ -506,7 +505,6 @@
     min-width: auto;
     width: 100%;
     box-shadow: none;
-    border-radius: 20px;
   }
 }
 @media (max-width: 500px) {
@@ -517,7 +515,7 @@
     min-width: auto;
     width: 100%;
     box-shadow: none;
-    border-radius: 30px;
+    border-radius: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -528,7 +526,7 @@
     max-height: none;
     width: 100%;
     box-shadow: none;
-    border-radius: 30px;
+    border-radius: 0px;
   }
 }
 .introduction3 {
