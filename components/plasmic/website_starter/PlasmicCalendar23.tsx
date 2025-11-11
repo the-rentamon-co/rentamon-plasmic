@@ -10505,18 +10505,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                   return true;
                 }
                 const items = $state.selectedItem;
-                if (!items || items.length === 0) {
-                  return true;
-                }
-                const firstBookingId = items[0].booking_id;
-                if (!firstBookingId) {
-                  return true;
-                }
-                return !items.every(
-                  item =>
-                    item.status === "reserved" &&
-                    item.booking_id === firstBookingId
-                );
+                const allHaveSameValidId =
+                  items &&
+                  items.length > 0 &&
+                  items[0].booking_id &&
+                  items.every(item => item.booking_id === items[0].booking_id);
+                return !allHaveSameValidId;
               })();
             } catch (e) {
               if (
@@ -10735,11 +10729,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 if (!firstBookingId) {
                   return false;
                 }
-                return items.every(
-                  item =>
-                    item.status === "reserved" &&
-                    item.booking_id === firstBookingId
-                );
+                return items.every(item => item.booking_id === firstBookingId);
               })();
             } catch (e) {
               if (

@@ -976,8 +976,7 @@
 @media (max-width: 500px) {
   .text__oh97J {
     font-size: 17px;
-    padding-top: 30px;
-    padding-bottom: 36px;
+    padding: 30px 16px 36px;
   }
 }
 @media (max-width: 350px) {
