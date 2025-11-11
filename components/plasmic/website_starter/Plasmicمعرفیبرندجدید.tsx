@@ -101,6 +101,7 @@ export type Plasmicمعرفیبرندجدید__OverridesType = {
   introduction2TextPics2?: Flex__<"div">;
   introduction3?: Flex__<"div">;
   principles?: Flex__<"div">;
+  icon17?: Flex__<"div">;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
   _2?: Flex__<typeof AntdAccordionItem>;
@@ -722,10 +723,10 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0648\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."
+                      ? "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."
                       : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0648\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."
-                        : "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0648\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."}
+                        ? "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."
+                        : "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."}
                   </div>
                   <div
                     className={classNames(
@@ -969,11 +970,69 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u062d\u0636\u0648\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0647 \u0628\u0627\u0632\u0627\u0631 \u0627\u0631\u0632\u0634 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647.\n\u0645\u0627 \u0686\u06cc\u0632\u06cc \u0631\u0648 \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u0646\u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u061b \u0641\u0642\u0637 \u06a9\u0627\u0631\u0647\u0627 \u0631\u0627 \u0631\u0648\u0627\u0646\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c\r\n\u062a\u0627 \u00ab\u0632\u0645\u0627\u0646\u00bb \u06a9\u0647 \u0627\u0631\u0632\u0634\u0645\u0646\u062f\u062a\u0631\u06cc\u0646 \u062f\u0627\u0631\u0627\u06cc\u06cc \u0627\u0646\u0633\u0627\u0646\u0647\u060c \u0627\u0632 \u062f\u0633\u062a \u0646\u0631\u0647\u060c\r\n\u0648 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u062a\u0648\u0646\u0646 \u0631\u0648\u06cc \u06a9\u0627\u0631 \u0627\u0635\u0644\u06cc\u200c\u0634\u0627\u0646 \u062a\u0645\u0631\u06a9\u0632 \u06a9\u0646\u0646."
-                  : "\u062d\u0636\u0648\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0647 \u0628\u0627\u0632\u0627\u0631 \u0627\u0631\u0632\u0634 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647.\r\n\r\n\u0645\u0627 \u0686\u06cc\u0632\u06cc \u0631\u0648 \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u0646\u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u061b \u0641\u0642\u0637 \u06a9\u0627\u0631\u0647\u0627 \u0631\u0627 \u0631\u0648\u0627\u0646\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c\r\n\u062a\u0627 \u00ab\u0632\u0645\u0627\u0646\u00bb \u06a9\u0647 \u0627\u0631\u0632\u0634\u0645\u0646\u062f\u062a\u0631\u06cc\u0646 \u062f\u0627\u0631\u0627\u06cc\u06cc \u0627\u0646\u0633\u0627\u0646\u0647\u060c \u0627\u0632 \u062f\u0633\u062a \u0646\u0631\u0647\u060c\r\n\u0648 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u062a\u0648\u0646\u0646 \u0631\u0648\u06cc \u06a9\u0627\u0631 \u0627\u0635\u0644\u06cc\u200c\u0634\u0627\u0646 \u062a\u0645\u0631\u06a9\u0632 \u06a9\u0646\u0646."}
+                  ? "\u062d\u0636\u0648\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0647 \u0628\u0627\u0632\u0627\u0631 \u0627\u0631\u0632\u0634 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647.\n\u0645\u0627 \u0686\u06cc\u0632\u06cc \u0631\u0648 \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u0646\u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u061b \u0641\u0642\u0637 \u06a9\u0627\u0631\u0647\u0627 \u0631\u0648 \u0631\u0648\u0627\u0646\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c\r\n\u062a\u0627 \u00ab\u0632\u0645\u0627\u0646\u00bb \u06a9\u0647 \u0627\u0631\u0632\u0634\u0645\u0646\u062f\u062a\u0631\u06cc\u0646 \u062f\u0627\u0631\u0627\u06cc\u06cc \u0627\u0646\u0633\u0627\u0646\u0647\u060c \u0627\u0632 \u062f\u0633\u062a \u0646\u0631\u0647\u060c\r\n\u0648 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u062a\u0648\u0646\u0646 \u0631\u0648\u06cc \u06a9\u0627\u0631 \u0627\u0635\u0644\u06cc\u200c\u0634\u0648\u0646 \u062a\u0645\u0631\u06a9\u0632 \u06a9\u0646\u0646."
+                  : "\u062d\u0636\u0648\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0647 \u0628\u0627\u0632\u0627\u0631 \u0627\u0631\u0632\u0634 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647.\r\n\r\n\u0645\u0627 \u0686\u06cc\u0632\u06cc \u0631\u0648 \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u0646\u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u061b \u0641\u0642\u0637 \u06a9\u0627\u0631\u0647\u0627 \u0631\u0648 \u0631\u0648\u0627\u0646\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c\r\n\u062a\u0627 \u00ab\u0632\u0645\u0627\u0646\u00bb \u06a9\u0647 \u0627\u0631\u0632\u0634\u0645\u0646\u062f\u062a\u0631\u06cc\u0646 \u062f\u0627\u0631\u0627\u06cc\u06cc \u0627\u0646\u0633\u0627\u0646\u0647\u060c \u0627\u0632 \u062f\u0633\u062a \u0646\u0631\u0647\u060c\r\n\u0648 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u062a\u0648\u0646\u0646 \u0631\u0648\u06cc \u06a9\u0627\u0631 \u0627\u0635\u0644\u06cc\u200c\u0634\u0648\u0646 \u062a\u0645\u0631\u06a9\u0632 \u06a9\u0646\u0646."}
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___1LmYu)}>
+              <div
+                data-plasmic-name={"icon17"}
+                data-plasmic-override={overrides.icon17}
+                className={classNames(projectcss.all, sty.icon17)}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__kl22H)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "120px"
+                  }
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "none"
+                        : "120px"
+                  }
+                  displayMinHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "120px"
+                  }
+                  displayMinWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "120px"
+                  }
+                  displayWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "100%"
+                          : "auto"
+                  }
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fsmall-300x288.jpg?versionId="
+                  }
+                />
+              </div>
               <div
                 className={classNames(
                   projectcss.all,
@@ -982,9 +1041,9 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 )}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647\u060c \u0628\u0646\u06cc\u0627\u0646\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644\n\u0628\u0647 \u0646\u0645\u0627\u06cc\u0646\u062f\u06af\u06cc \u0627\u0632 \u062a\u06cc\u0645 \u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642)"
+                  ? "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647\u060c \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644\n\u0628\u0647 \u0646\u0645\u0627\u06cc\u0646\u062f\u06af\u06cc \u0627\u0632 \u062a\u06cc\u0645"
                   : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647\u060c \u0628\u0646\u06cc\u0627\u0646\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644\n\u0628\u0647 \u0646\u0645\u0627\u06cc\u0646\u062f\u06af\u06cc \u0627\u0632 \u062a\u06cc\u0645"
+                    ? "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647\u060c \u0628\u0646\u06cc\u0627\u0646\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644\n\u0628\u0647 \u0646\u0645\u0627\u06cc\u0646\u062f\u06af\u06cc \u0627\u0632 \u062a\u06cc\u0645 \u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642)"
                     : "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647\u060c \u0628\u0646\u06cc\u0627\u0646\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644\n\u0628\u0647 \u0646\u0645\u0627\u06cc\u0646\u062f\u06af\u06cc \u0627\u0632 \u062a\u06cc\u0645 \u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642)"}
               </div>
             </div>
@@ -1002,7 +1061,11 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fstar-blue.png?versionId="
               }
               width={
-                hasVariant(globalVariants, "screen", "mobile") ? "16%" : "6%"
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "16%"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                    ? "8%"
+                    : "6%"
               }
             />
 
@@ -1024,31 +1087,61 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 sty.text___13X2X
               )}
             >
-              <React.Fragment>
+              {hasVariant(globalVariants, "screen", "smallMobile") ? (
                 <React.Fragment>
-                  {
-                    "\u0628\u0632\u0648\u062f\u06cc \u0647\u0645\u0647\u200c\u062c\u0627 \u0646\u0627\u0645 \u0648 \u0646\u0634\u0627\u0646 \u00ab"
-                  }
+                  <React.Fragment>
+                    {
+                      "\u06a9\u0645 \u06a9\u0645 \u0647\u0645\u0647\u200c\u062c\u0627 \u0646\u0627\u0645 \u0648 \u0646\u0634\u0627\u0646 \u00ab"
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#0000F7" }}
+                  >
+                    {"\u0645\u06cc\u0627\u0646"}
+                  </span>
+                  <React.Fragment>
+                    {"\u00bb \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 "}
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-8nedppYkGVaH)" }}
+                  >
+                    {"\u0631\u0646\u062a\u0627\u0645\u0648\u0646 "}
+                  </span>
+                  <React.Fragment>
+                    {"\u0645\u06cc\u200c\u0634\u0647."}
+                  </React.Fragment>
                 </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ color: "#0000F7" }}
-                >
-                  {"\u0645\u06cc\u0627\u0646"}
-                </span>
+              ) : (
                 <React.Fragment>
-                  {"\u00bb \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 "}
+                  <React.Fragment>
+                    {
+                      "\u0628\u0647 \u0645\u0631\u0648\u0631 \u0646\u0627\u0645 \u0648 \u0646\u0634\u0627\u0646 \u00ab"
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#0000F7" }}
+                  >
+                    {"\u0645\u06cc\u0627\u0646"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      "\u00bb \u062f\u0631 \u062c\u0627\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-8nedppYkGVaH)" }}
+                  >
+                    {"\u0631\u0646\u062a\u0627\u0645\u0648\u0646 "}
+                  </span>
+                  <React.Fragment>
+                    {"\u0645\u06cc\u200c\u0634\u0647."}
+                  </React.Fragment>
                 </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ color: "var(--token-8nedppYkGVaH)" }}
-                >
-                  {"\u0631\u0646\u062a\u0627\u0645\u0648\u0646 "}
-                </span>
-                <React.Fragment>
-                  {"\u0645\u06cc\u200c\u0634\u0647."}
-                </React.Fragment>
-              </React.Fragment>
+              )}
             </div>
             <div
               data-plasmic-name={"qA"}
@@ -1478,6 +1571,7 @@ const PlasmicDescendants = {
     "introduction2TextPics2",
     "introduction3",
     "principles",
+    "icon17",
     "qA",
     "accordionMain",
     "_2",
@@ -1508,6 +1602,7 @@ const PlasmicDescendants = {
     "introduction2TextPics2",
     "introduction3",
     "principles",
+    "icon17",
     "qA",
     "accordionMain",
     "_2",
@@ -1551,6 +1646,7 @@ const PlasmicDescendants = {
   introduction2TextPics2: ["introduction2TextPics2"],
   introduction3: ["introduction3"],
   principles: ["principles"],
+  icon17: ["icon17"],
   qA: [
     "qA",
     "accordionMain",
@@ -1598,6 +1694,7 @@ type NodeDefaultElementType = {
   introduction2TextPics2: "div";
   introduction3: "div";
   principles: "div";
+  icon17: "div";
   qA: "div";
   accordionMain: typeof AntdAccordion;
   _2: typeof AntdAccordionItem;
@@ -1695,6 +1792,7 @@ export const Plasmicمعرفیبرندجدید = Object.assign(
     introduction2TextPics2: makeNodeComponent("introduction2TextPics2"),
     introduction3: makeNodeComponent("introduction3"),
     principles: makeNodeComponent("principles"),
+    icon17: makeNodeComponent("icon17"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),
     _2: makeNodeComponent("_2"),
