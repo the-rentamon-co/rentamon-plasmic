@@ -253,7 +253,14 @@ function PlasmicModal__RenderFunc(props: {
           isDismissable={args.closeOnBackdropClick}
           isKeyboardDismissDisabled={args.isKeyboardDismissDisabled}
           isOpen={generateStateValueProp($state, ["ariaModal", "isOpen"])}
-          modalOverlayClass={classNames({ [sty["pcls_u7LprNtCmrtW"]]: true })}
+          modalOverlayClass={classNames({
+            [sty["pcls_Cyi5TXr4yalr"]]: hasVariant(
+              globalVariants,
+              "screen",
+              "mobile"
+            ),
+            [sty["pcls_u7LprNtCmrtW"]]: true
+          })}
           onOpenChange={async (...eventArgs: any) => {
             generateStateOnChangeProp($state, ["ariaModal", "isOpen"]).apply(
               null,
@@ -464,7 +471,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicModal__VariantsArgs;
     args?: PlasmicModal__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicModal__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicModal__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicModal__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
