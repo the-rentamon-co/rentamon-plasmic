@@ -1688,6 +1688,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                               familyName = nameParts.slice(-2).join(" ");
                             } else if (nameParts.length === 2) {
                               familyName = nameParts[1];
+                            } else if (nameParts.length === 1) {
+                              familyName = nameParts[0];
                             }
                           }
                           item.guest_name = familyName;
