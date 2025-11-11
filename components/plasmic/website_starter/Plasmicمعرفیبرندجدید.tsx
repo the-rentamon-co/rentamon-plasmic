@@ -60,6 +60,9 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
+import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
+import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
@@ -98,10 +101,18 @@ export type Plasmicمعرفیبرندجدید__OverridesType = {
   introduction2TextPics2?: Flex__<"div">;
   introduction3?: Flex__<"div">;
   principles?: Flex__<"div">;
+  qA?: Flex__<"div">;
+  accordionMain?: Flex__<typeof AntdAccordion>;
+  _2?: Flex__<typeof AntdAccordionItem>;
+  _1?: Flex__<"div">;
+  _4?: Flex__<typeof AntdAccordionItem>;
+  _7?: Flex__<typeof AntdAccordionItem>;
+  _5?: Flex__<typeof AntdAccordionItem>;
+  _6?: Flex__<typeof AntdAccordionItem>;
+  html2?: Flex__<"div">;
+  goftino2?: Flex__<typeof Embed>;
   html?: Flex__<"div">;
   goftino?: Flex__<typeof Embed>;
-  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
-  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   sideEffect?: Flex__<typeof SideEffect>;
 };
@@ -156,6 +167,17 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "accordionMain.activePanelId",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec(
+          "activePanelId",
+          AntdAccordion_Helpers
+        )
       }
     ],
     [$props, $ctx, $refs]
@@ -425,7 +447,18 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                                   </span>
                                 </React.Fragment>
                               ) : (
-                                "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u067e\u0631\u0686\u0648\u0631\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                <React.Fragment>
+                                  <span
+                                    className={
+                                      "plasmic_default__all plasmic_default__span"
+                                    }
+                                    style={{ fontWeight: 400 }}
+                                  >
+                                    {
+                                      "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                    }
+                                  </span>
+                                </React.Fragment>
                               )}
                             </PlasmicLink__>
                           }
@@ -445,15 +478,43 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                                 projectcss.a,
                                 projectcss.__wab_text,
                                 projectcss.plasmic_default__inline,
-                                sty.link__gUxb
+                                sty.link__qhoZz
                               )}
                               component={Link}
                               href={"https://www.jajiga.com/room/3222562"}
                               platform={"nextjs"}
                             >
-                              {
-                                "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u067e\u0631\u0686\u0648\u0631\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
-                              }
+                              {hasVariant(
+                                globalVariants,
+                                "screen",
+                                "mobile"
+                              ) ? (
+                                <React.Fragment>
+                                  <span
+                                    className={
+                                      "plasmic_default__all plasmic_default__span"
+                                    }
+                                    style={{ fontWeight: 400 }}
+                                  >
+                                    {
+                                      "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u067e\u0631\u0686\u0648\u0631\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                    }
+                                  </span>
+                                </React.Fragment>
+                              ) : (
+                                <React.Fragment>
+                                  <span
+                                    className={
+                                      "plasmic_default__all plasmic_default__span"
+                                    }
+                                    style={{ fontWeight: 400 }}
+                                  >
+                                    {
+                                      "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                    }
+                                  </span>
+                                </React.Fragment>
+                              )}
                             </PlasmicLink__>
                           }
                           <React.Fragment>{"\r"}</React.Fragment>
@@ -552,9 +613,11 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                       sty.text__uXggy
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0648\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."
-                      : "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0648\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."}
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0648\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0648\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."
+                        : "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0648\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."}
                   </div>
                   <div
                     className={classNames(
@@ -802,6 +865,21 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                   : "\u062d\u0636\u0648\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0647 \u0628\u0627\u0632\u0627\u0631 \u0627\u0631\u0632\u0634 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647.\r\n\r\n\u0645\u0627 \u0686\u06cc\u0632\u06cc \u0631\u0648 \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u0646\u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u061b \u0641\u0642\u0637 \u06a9\u0627\u0631\u0647\u0627 \u0631\u0627 \u0631\u0648\u0627\u0646\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c\r\n\u062a\u0627 \u00ab\u0632\u0645\u0627\u0646\u00bb \u06a9\u0647 \u0627\u0631\u0632\u0634\u0645\u0646\u062f\u062a\u0631\u06cc\u0646 \u062f\u0627\u0631\u0627\u06cc\u06cc \u0627\u0646\u0633\u0627\u0646\u0647\u060c \u0627\u0632 \u062f\u0633\u062a \u0646\u0631\u0647\u060c\r\n\u0648 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u062a\u0648\u0646\u0646 \u0631\u0648\u06cc \u06a9\u0627\u0631 \u0627\u0635\u0644\u06cc\u200c\u0634\u0627\u0646 \u062a\u0645\u0631\u06a9\u0632 \u06a9\u0646\u0646."}
               </div>
             </div>
+            <div className={classNames(projectcss.all, sty.freeBox___1LmYu)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___6Ux8S
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647\u060c \u0628\u0646\u06cc\u0627\u0646\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644\n\u0628\u0647 \u0646\u0645\u0627\u06cc\u0646\u062f\u06af\u06cc \u0627\u0632 \u062a\u06cc\u0645 \u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642)"
+                  : hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647\u060c \u0628\u0646\u06cc\u0627\u0646\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644\n\u0628\u0647 \u0646\u0645\u0627\u06cc\u0646\u062f\u06af\u06cc \u0627\u0632 \u062a\u06cc\u0645"
+                    : "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647\u060c \u0628\u0646\u06cc\u0627\u0646\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644\n\u0628\u0647 \u0646\u0645\u0627\u06cc\u0646\u062f\u06af\u06cc \u0627\u0632 \u062a\u06cc\u0645 \u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642)"}
+              </div>
+            </div>
             <PlasmicImg__
               alt={""}
               className={classNames(sty.img__wPJn)}
@@ -853,6 +931,279 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 </React.Fragment>
               </React.Fragment>
             </div>
+            <div
+              data-plasmic-name={"qA"}
+              data-plasmic-override={overrides.qA}
+              className={classNames(projectcss.all, sty.qA)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__envrc)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__nuJ5U
+                  )}
+                >
+                  {
+                    "\u0633\u0648\u0627\u0644\u0627\u062a \u0627\u062d\u062a\u0645\u0627\u0644\u06cc:\r\n\r"
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__oDoPg)}>
+                {(() => {
+                  const child$Props = {
+                    activeKey: generateStateValueProp($state, [
+                      "accordionMain",
+                      "activePanelId"
+                    ]),
+                    bordered: true,
+                    className: classNames("__wab_instance", sty.accordionMain),
+                    ghost: true,
+                    items: (
+                      <React.Fragment>
+                        <AntdAccordionItem
+                          data-plasmic-name={"_2"}
+                          data-plasmic-override={overrides._2}
+                          className={classNames("__wab_instance", sty._2)}
+                          id={"11"}
+                          label2={
+                            <div
+                              data-plasmic-name={"_1"}
+                              data-plasmic-override={overrides._1}
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty._1
+                              )}
+                            >
+                              {
+                                "\u0622\u06cc\u0627 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0648\u06cc\u0644\u0627 \u0648 \u0631\u0632\u0631\u0648\u0647\u0627 \u062a\u063a\u06cc\u06cc\u0631\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__bea79
+                            )}
+                          >
+                            {
+                              "\u062e\u06cc\u0631. \u062a\u0645\u0627\u0645 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062b\u0628\u062a \u0634\u062f\u0647 \u0648 \u0633\u0648\u0627\u0628\u0642 \u0631\u0632\u0631\u0648\u0647\u0627 \u0645\u062b\u0644 \u0642\u0628\u0644 \u0628\u0627\u0642\u06cc \u0645\u06cc\u200c\u0645\u0648\u0646\u0647."
+                            }
+                          </div>
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
+                          data-plasmic-name={"_4"}
+                          data-plasmic-override={overrides._4}
+                          className={classNames("__wab_instance", sty._4)}
+                          id={"22"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__xNmRb
+                              )}
+                            >
+                              {
+                                "\u0622\u06cc\u0627 \u0644\u0627\u0632\u0645\u0647 \u06a9\u0627\u0631\u06cc \u0627\u0646\u062c\u0627\u0645 \u062f\u0647\u0645\u061f"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__n82G5
+                            )}
+                          >
+                            {
+                              "\u062e\u06cc\u0631. \u0628\u0647 \u0645\u0631\u0648\u0631 \u0646\u0648\u0634\u062a\u0647\u200c\u0647\u0627 \u0648 \u0631\u0646\u06af\u200c\u0647\u0627\u06cc \u0633\u0627\u06cc\u062a/\u0628\u0631\u0646\u0627\u0645\u0647 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0648 \u0631\u0646\u06af \u062c\u062f\u06cc\u062f (\u0622\u0628\u06cc) \u0631\u0648 \u0628\u0647 \u062e\u0648\u062f\u0634 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."
+                            }
+                          </div>
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
+                          data-plasmic-name={"_7"}
+                          data-plasmic-override={overrides._7}
+                          className={classNames("__wab_instance", sty._7)}
+                          id={"12"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__lhwKl
+                              )}
+                            >
+                              {
+                                "\u0622\u06cc\u0627 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u06cc\u06af\u0631\u06cc \u062f\u0631 \u0631\u0627\u0647 \u0647\u0633\u062a\u061f"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__hajBe
+                            )}
+                          >
+                            {
+                              "\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0645\u0631\u062a\u0628\u0637 \u0628\u0627 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645 \u0646\u0647. \u0627\u0645\u0627 \u0645\u062b\u0644 \u0647\u0645\u06cc\u0634\u0647 \u0646\u0638\u0631\u0627\u062a \u0634\u0645\u0627 \u0631\u0648 \u0645\u06cc\u200c\u0634\u0646\u0648\u06cc\u0645 \u0648 \u0633\u0639\u06cc \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0628\u0631\u0646\u0627\u0645\u0647 \u0631\u0648 \u0628\u0647\u062a\u0631 \u06a9\u0646\u06cc\u0645 :)"
+                            }
+                          </div>
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
+                          data-plasmic-name={"_5"}
+                          data-plasmic-override={overrides._5}
+                          className={classNames("__wab_instance", sty._5)}
+                          id={"33"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___0F6Gt
+                              )}
+                            >
+                              {
+                                "\u0622\u062f\u0631\u0633 \u0633\u0627\u06cc\u062a \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__n6DU
+                            )}
+                          >
+                            <React.Fragment>
+                              <React.Fragment>
+                                {
+                                  "\u0628\u0632\u0648\u062f\u06cc \u0622\u062f\u0631\u0633 \u0633\u0627\u06cc\u062a \u0628\u0647 "
+                                }
+                              </React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 500 }}
+                              >
+                                {"miaan.ir"}
+                              </span>
+                              <React.Fragment>
+                                {
+                                  " \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0627\u0644\u0628\u062a\u0647 \u0647\u0645\u0686\u0646\u0627\u0646 \u0628\u0627 \u0622\u062f\u0631\u0633 \u0642\u0628\u0644\u06cc (rentamon.com) \u0645\u06cc\u0634\u0647 \u0633\u0627\u06cc\u062a \u0631\u0648 \u0628\u0627\u0632 \u06a9\u0631\u062f."
+                                }
+                              </React.Fragment>
+                            </React.Fragment>
+                          </div>
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
+                          data-plasmic-name={"_6"}
+                          data-plasmic-override={overrides._6}
+                          className={classNames("__wab_instance", sty._6)}
+                          id={"44"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__nFvGw
+                              )}
+                            >
+                              {
+                                "\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062f\u0644\u06cc\u0644\u06cc \u063a\u06cc\u0631 \u0627\u0632 \u062a\u0648\u0636\u06cc\u062d\u0627\u062a \u0628\u0627\u0644\u0627 \u062f\u0627\u0634\u062a\u0647\u061f"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__qnsii
+                            )}
+                          >
+                            {
+                              "\u062a\u0646\u0647\u0627 \u062f\u0644\u06cc\u0644 \u0627\u06cc\u0646 \u0628\u0648\u062f \u06a9\u0647 \u0646\u0627\u0645 \u0642\u0628\u0644\u06cc\u060c \u0639\u0645\u0642 \u0648 \u0648\u0633\u0639\u062a \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645 \u0631\u0648 \u0646\u0634\u0648\u0646 \u0646\u0645\u06cc\u200c\u062f\u0627\u062f. \u0645\u0627 \u0647\u0645\u0648\u0646 \u06a9\u0627\u062f\u0631 \u0648 \u062a\u06cc\u0645 \u0642\u0628\u0644\u06cc \u0647\u0633\u062a\u06cc\u0645 \u0648 \u067e\u0631 \u0627\u0646\u0631\u0698\u06cc\u200c\u062a\u0631 \u0627\u0632 \u0642\u0628\u0644\u060c \u0645\u0634\u063a\u0644\u0648\u06cc\u0645."
+                            }
+                          </div>
+                        </AntdAccordionItem>
+                      </React.Fragment>
+                    ),
+                    onChange: async (...eventArgs: any) => {
+                      generateStateOnChangePropForCodeComponents(
+                        $state,
+                        "activePanelId",
+                        ["accordionMain", "activePanelId"],
+                        AntdAccordion_Helpers
+                      ).apply(null, eventArgs);
+                    }
+                  };
+                  initializeCodeComponentStates(
+                    $state,
+                    [
+                      {
+                        name: "activePanelId",
+                        plasmicStateName: "accordionMain.activePanelId"
+                      }
+                    ],
+                    [],
+                    AntdAccordion_Helpers ?? {},
+                    child$Props
+                  );
+
+                  return (
+                    <AntdAccordion
+                      data-plasmic-name={"accordionMain"}
+                      data-plasmic-override={overrides.accordionMain}
+                      {...child$Props}
+                    />
+                  );
+                })()}
+              </div>
+              <div
+                data-plasmic-name={"html2"}
+                data-plasmic-override={overrides.html2}
+                className={classNames(projectcss.all, sty.html2)}
+              >
+                <Embed
+                  data-plasmic-name={"goftino2"}
+                  data-plasmic-override={overrides.goftino2}
+                  className={classNames("__wab_instance", sty.goftino2)}
+                  code={
+                    '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+                  }
+                />
+
+                <div className={classNames(projectcss.all, sty.freeBox__qOxyp)}>
+                  <ClarityRntComponent
+                    className={classNames(
+                      "__wab_instance",
+                      sty.clarityRntComponent__gveki
+                    )}
+                  />
+
+                  <FaviconRntComponent
+                    className={classNames(
+                      "__wab_instance",
+                      sty.faviconRntComponent__aq5V5
+                    )}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div
             data-plasmic-name={"html"}
@@ -870,20 +1221,16 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
               />
 
               <ClarityRntComponent
-                data-plasmic-name={"clarityRntComponent"}
-                data-plasmic-override={overrides.clarityRntComponent}
                 className={classNames(
                   "__wab_instance",
-                  sty.clarityRntComponent
+                  sty.clarityRntComponent__pFhau
                 )}
               />
 
               <FaviconRntComponent
-                data-plasmic-name={"faviconRntComponent"}
-                data-plasmic-override={overrides.faviconRntComponent}
                 className={classNames(
                   "__wab_instance",
-                  sty.faviconRntComponent
+                  sty.faviconRntComponent__iuy0N
                 )}
               />
             </div>
@@ -959,10 +1306,18 @@ const PlasmicDescendants = {
     "introduction2TextPics2",
     "introduction3",
     "principles",
+    "qA",
+    "accordionMain",
+    "_2",
+    "_1",
+    "_4",
+    "_7",
+    "_5",
+    "_6",
+    "html2",
+    "goftino2",
     "html",
     "goftino",
-    "clarityRntComponent",
-    "faviconRntComponent",
     "rentamonFooter",
     "sideEffect"
   ],
@@ -978,7 +1333,17 @@ const PlasmicDescendants = {
     "introduction2TextPics",
     "introduction2TextPics2",
     "introduction3",
-    "principles"
+    "principles",
+    "qA",
+    "accordionMain",
+    "_2",
+    "_1",
+    "_4",
+    "_7",
+    "_5",
+    "_6",
+    "html2",
+    "goftino2"
   ],
   intro1st: [
     "intro1st",
@@ -1010,10 +1375,29 @@ const PlasmicDescendants = {
   introduction2TextPics2: ["introduction2TextPics2"],
   introduction3: ["introduction3"],
   principles: ["principles"],
-  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
+  qA: [
+    "qA",
+    "accordionMain",
+    "_2",
+    "_1",
+    "_4",
+    "_7",
+    "_5",
+    "_6",
+    "html2",
+    "goftino2"
+  ],
+  accordionMain: ["accordionMain", "_2", "_1", "_4", "_7", "_5", "_6"],
+  _2: ["_2", "_1"],
+  _1: ["_1"],
+  _4: ["_4"],
+  _7: ["_7"],
+  _5: ["_5"],
+  _6: ["_6"],
+  html2: ["html2", "goftino2"],
+  goftino2: ["goftino2"],
+  html: ["html", "goftino"],
   goftino: ["goftino"],
-  clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"],
   rentamonFooter: ["rentamonFooter"],
   sideEffect: ["sideEffect"]
 } as const;
@@ -1034,10 +1418,18 @@ type NodeDefaultElementType = {
   introduction2TextPics2: "div";
   introduction3: "div";
   principles: "div";
+  qA: "div";
+  accordionMain: typeof AntdAccordion;
+  _2: typeof AntdAccordionItem;
+  _1: "div";
+  _4: typeof AntdAccordionItem;
+  _7: typeof AntdAccordionItem;
+  _5: typeof AntdAccordionItem;
+  _6: typeof AntdAccordionItem;
+  html2: "div";
+  goftino2: typeof Embed;
   html: "div";
   goftino: typeof Embed;
-  clarityRntComponent: typeof ClarityRntComponent;
-  faviconRntComponent: typeof FaviconRntComponent;
   rentamonFooter: typeof RentamonFooter;
   sideEffect: typeof SideEffect;
 };
@@ -1121,10 +1513,18 @@ export const Plasmicمعرفیبرندجدید = Object.assign(
     introduction2TextPics2: makeNodeComponent("introduction2TextPics2"),
     introduction3: makeNodeComponent("introduction3"),
     principles: makeNodeComponent("principles"),
+    qA: makeNodeComponent("qA"),
+    accordionMain: makeNodeComponent("accordionMain"),
+    _2: makeNodeComponent("_2"),
+    _1: makeNodeComponent("_1"),
+    _4: makeNodeComponent("_4"),
+    _7: makeNodeComponent("_7"),
+    _5: makeNodeComponent("_5"),
+    _6: makeNodeComponent("_6"),
+    html2: makeNodeComponent("html2"),
+    goftino2: makeNodeComponent("goftino2"),
     html: makeNodeComponent("html"),
     goftino: makeNodeComponent("goftino"),
-    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
-    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     sideEffect: makeNodeComponent("sideEffect"),
 
