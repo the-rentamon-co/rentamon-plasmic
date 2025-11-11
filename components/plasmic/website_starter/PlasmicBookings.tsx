@@ -13425,12 +13425,12 @@ function PlasmicBookings__RenderFunc(props: {
                   $steps["updateUnblockFor"] = await $steps["updateUnblockFor"];
                 }
 
-                $steps["updateCancelManualReserveOpen"] = true
+                $steps["updateCancelSmartReserveOpen"] = true
                   ? (() => {
                       const actionArgs = {
                         variable: {
                           objRoot: $state,
-                          variablePath: ["cancelManualReserve", "open"]
+                          variablePath: ["cancelSmartReserve", "open"]
                         },
                         operation: 0,
                         value: true
@@ -13452,13 +13452,13 @@ function PlasmicBookings__RenderFunc(props: {
                     })()
                   : undefined;
                 if (
-                  $steps["updateCancelManualReserveOpen"] != null &&
-                  typeof $steps["updateCancelManualReserveOpen"] === "object" &&
-                  typeof $steps["updateCancelManualReserveOpen"].then ===
+                  $steps["updateCancelSmartReserveOpen"] != null &&
+                  typeof $steps["updateCancelSmartReserveOpen"] === "object" &&
+                  typeof $steps["updateCancelSmartReserveOpen"].then ===
                     "function"
                 ) {
-                  $steps["updateCancelManualReserveOpen"] =
-                    await $steps["updateCancelManualReserveOpen"];
+                  $steps["updateCancelSmartReserveOpen"] =
+                    await $steps["updateCancelSmartReserveOpen"];
                 }
               }}
             >
@@ -13483,12 +13483,12 @@ function PlasmicBookings__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["updateCancelManualReserveOpen"] = true
+                $steps["updateCancelSmartReserveOpen"] = true
                   ? (() => {
                       const actionArgs = {
                         variable: {
                           objRoot: $state,
-                          variablePath: ["cancelManualReserve", "open"]
+                          variablePath: ["cancelSmartReserve", "open"]
                         },
                         operation: 0,
                         value: true
@@ -13510,13 +13510,13 @@ function PlasmicBookings__RenderFunc(props: {
                     })()
                   : undefined;
                 if (
-                  $steps["updateCancelManualReserveOpen"] != null &&
-                  typeof $steps["updateCancelManualReserveOpen"] === "object" &&
-                  typeof $steps["updateCancelManualReserveOpen"].then ===
+                  $steps["updateCancelSmartReserveOpen"] != null &&
+                  typeof $steps["updateCancelSmartReserveOpen"] === "object" &&
+                  typeof $steps["updateCancelSmartReserveOpen"].then ===
                     "function"
                 ) {
-                  $steps["updateCancelManualReserveOpen"] =
-                    await $steps["updateCancelManualReserveOpen"];
+                  $steps["updateCancelSmartReserveOpen"] =
+                    await $steps["updateCancelSmartReserveOpen"];
                 }
 
                 $steps["updateModalOpen"] = true
