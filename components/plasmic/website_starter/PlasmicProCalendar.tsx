@@ -992,7 +992,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                   await $steps["doCalendarFallowUp"];
               }
 
-              $steps["runCode"] = true
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {

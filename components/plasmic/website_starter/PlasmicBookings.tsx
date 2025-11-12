@@ -142,6 +142,7 @@ export type PlasmicBookings__OverridesType = {
   cancelSmartReserve?: Flex__<typeof AntdModal>;
   cancelledBtn3?: Flex__<typeof AntdButton>;
   unblock2?: Flex__<"div">;
+  unblock3?: Flex__<"div">;
   updateManualReserve2?: Flex__<typeof AntdModal>;
   title5?: Flex__<"div">;
   checkInAndCheckOut3?: Flex__<"div">;
@@ -7415,6 +7416,300 @@ function PlasmicBookings__RenderFunc(props: {
                             ) : null}
                           </div>
                         ) : null}
+                        {(() => {
+                          try {
+                            return (() => {
+                              const checkInDate = new Date(
+                                $state.booking.data.check_out
+                              );
+                              const now = new Date();
+                              return checkInDate >= now;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <div
+                            data-plasmic-name={"unblock3"}
+                            data-plasmic-override={overrides.unblock3}
+                            className={classNames(projectcss.all, sty.unblock3)}
+                          >
+                            {(() => {
+                              try {
+                                return (() => {
+                                  const today = new Date();
+                                  today.setHours(0, 0, 0, 0);
+                                  const checkOut = new Date(
+                                    $state.booking.data.check_out
+                                  );
+                                  checkOut.setHours(0, 0, 0, 0);
+                                  const oneDayBefore = new Date(checkOut);
+                                  oneDayBefore.setDate(
+                                    oneDayBefore.getDate() - 1
+                                  );
+                                  const isOneDayBefore =
+                                    today.getTime() === oneDayBefore.getTime();
+                                  return !(
+                                    $state.booking.data.status == "reserve" &&
+                                    isOneDayBefore &&
+                                    $state.reservationsMode == true
+                                  );
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
+                              }
+                            })() ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__lxfrB,
+                                  "clickable"
+                                )}
+                                onClick={async event => {
+                                  const $steps = {};
+
+                                  $steps["updateCancelManualReserveOpen"] =
+                                    $state.booking.data.status != "cancelled"
+                                      ? (() => {
+                                          const actionArgs = {
+                                            variable: {
+                                              objRoot: $state,
+                                              variablePath: [
+                                                "cancelSmartReserve",
+                                                "open"
+                                              ]
+                                            },
+                                            operation: 0,
+                                            value: true
+                                          };
+                                          return (({
+                                            variable,
+                                            value,
+                                            startIndex,
+                                            deleteCount
+                                          }) => {
+                                            if (!variable) {
+                                              return;
+                                            }
+                                            const { objRoot, variablePath } =
+                                              variable;
+
+                                            $stateSet(
+                                              objRoot,
+                                              variablePath,
+                                              value
+                                            );
+                                            return value;
+                                          })?.apply(null, [actionArgs]);
+                                        })()
+                                      : undefined;
+                                  if (
+                                    $steps["updateCancelManualReserveOpen"] !=
+                                      null &&
+                                    typeof $steps[
+                                      "updateCancelManualReserveOpen"
+                                    ] === "object" &&
+                                    typeof $steps[
+                                      "updateCancelManualReserveOpen"
+                                    ].then === "function"
+                                  ) {
+                                    $steps["updateCancelManualReserveOpen"] =
+                                      await $steps[
+                                        "updateCancelManualReserveOpen"
+                                      ];
+                                  }
+
+                                  $steps["checkIfReserveBeCancelShowToast"] =
+                                    $state.booking.data.status == "cancelled"
+                                      ? (() => {
+                                          const actionArgs = {
+                                            args: [
+                                              "error",
+                                              "\u0631\u0632\u0631\u0648  \u0644\u063a\u0648 \u0634\u062f\u0647 \u0627\u0633\u062a",
+                                              "top-center"
+                                            ]
+                                          };
+                                          return $globalActions[
+                                            "Fragment.showToast"
+                                          ]?.apply(null, [...actionArgs.args]);
+                                        })()
+                                      : undefined;
+                                  if (
+                                    $steps["checkIfReserveBeCancelShowToast"] !=
+                                      null &&
+                                    typeof $steps[
+                                      "checkIfReserveBeCancelShowToast"
+                                    ] === "object" &&
+                                    typeof $steps[
+                                      "checkIfReserveBeCancelShowToast"
+                                    ].then === "function"
+                                  ) {
+                                    $steps["checkIfReserveBeCancelShowToast"] =
+                                      await $steps[
+                                        "checkIfReserveBeCancelShowToast"
+                                      ];
+                                  }
+                                }}
+                              >
+                                <PlasmicImg__
+                                  alt={""}
+                                  className={classNames(sty.img__fRveh)}
+                                  displayHeight={"auto"}
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"auto"}
+                                  loading={"lazy"}
+                                  src={{
+                                    src: "/plasmic/website_starter/images/image163.svg",
+                                    fullWidth: 18,
+                                    fullHeight: 18,
+                                    aspectRatio: undefined
+                                  }}
+                                />
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text___4WHfy
+                                  )}
+                                >
+                                  {
+                                    "\u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646"
+                                  }
+                                </div>
+                              </div>
+                            ) : null}
+                            {(() => {
+                              try {
+                                return (() => {
+                                  const today = new Date();
+                                  today.setHours(0, 0, 0, 0);
+                                  const checkOut = new Date(
+                                    $state.booking.data.check_out
+                                  );
+                                  checkOut.setHours(0, 0, 0, 0);
+                                  const oneDayBefore = new Date(checkOut);
+                                  oneDayBefore.setDate(
+                                    oneDayBefore.getDate() - 1
+                                  );
+                                  const isOneDayBefore =
+                                    today.getTime() === oneDayBefore.getTime();
+                                  return (
+                                    $state.booking.data.status == "reserve" &&
+                                    isOneDayBefore &&
+                                    $state.reservationsMode == true
+                                  );
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
+                              }
+                            })() ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox___9Oyvt,
+                                  "clickable"
+                                )}
+                                onClick={async event => {
+                                  const $steps = {};
+
+                                  $steps["updateModalOpen"] = true
+                                    ? (() => {
+                                        const actionArgs = {
+                                          variable: {
+                                            objRoot: $state,
+                                            variablePath: ["actions", "open"]
+                                          },
+                                          operation: 0,
+                                          value: true
+                                        };
+                                        return (({
+                                          variable,
+                                          value,
+                                          startIndex,
+                                          deleteCount
+                                        }) => {
+                                          if (!variable) {
+                                            return;
+                                          }
+                                          const { objRoot, variablePath } =
+                                            variable;
+
+                                          $stateSet(
+                                            objRoot,
+                                            variablePath,
+                                            value
+                                          );
+                                          return value;
+                                        })?.apply(null, [actionArgs]);
+                                      })()
+                                    : undefined;
+                                  if (
+                                    $steps["updateModalOpen"] != null &&
+                                    typeof $steps["updateModalOpen"] ===
+                                      "object" &&
+                                    typeof $steps["updateModalOpen"].then ===
+                                      "function"
+                                  ) {
+                                    $steps["updateModalOpen"] =
+                                      await $steps["updateModalOpen"];
+                                  }
+                                }}
+                              >
+                                <PlasmicImg__
+                                  alt={""}
+                                  className={classNames(sty.img__hEq42)}
+                                  displayHeight={"auto"}
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"auto"}
+                                  loading={"lazy"}
+                                  src={{
+                                    src: "/plasmic/website_starter/images/image163.svg",
+                                    fullWidth: 18,
+                                    fullHeight: 18,
+                                    aspectRatio: undefined
+                                  }}
+                                />
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__rdgaa
+                                  )}
+                                >
+                                  {
+                                    "\u0628\u0633\u062a\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                                  }
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        ) : null}
                         <AntdModal
                           data-plasmic-name={"updateManualReserve2"}
                           data-plasmic-override={overrides.updateManualReserve2}
@@ -14008,6 +14303,7 @@ const PlasmicDescendants = {
     "cancelSmartReserve",
     "cancelledBtn3",
     "unblock2",
+    "unblock3",
     "updateManualReserve2",
     "title5",
     "checkInAndCheckOut3",
@@ -14133,6 +14429,7 @@ const PlasmicDescendants = {
     "cancelSmartReserve",
     "cancelledBtn3",
     "unblock2",
+    "unblock3",
     "updateManualReserve2",
     "title5",
     "checkInAndCheckOut3",
@@ -14210,6 +14507,7 @@ const PlasmicDescendants = {
     "cancelSmartReserve",
     "cancelledBtn3",
     "unblock2",
+    "unblock3",
     "updateManualReserve2",
     "title5",
     "checkInAndCheckOut3",
@@ -14296,6 +14594,7 @@ const PlasmicDescendants = {
     "cancelSmartReserve",
     "cancelledBtn3",
     "unblock2",
+    "unblock3",
     "updateManualReserve2",
     "title5",
     "checkInAndCheckOut3",
@@ -14318,6 +14617,7 @@ const PlasmicDescendants = {
   cancelSmartReserve: ["cancelSmartReserve", "cancelledBtn3"],
   cancelledBtn3: ["cancelledBtn3"],
   unblock2: ["unblock2"],
+  unblock3: ["unblock3"],
   updateManualReserve2: [
     "updateManualReserve2",
     "title5",
@@ -14535,6 +14835,7 @@ type NodeDefaultElementType = {
   cancelSmartReserve: typeof AntdModal;
   cancelledBtn3: typeof AntdButton;
   unblock2: "div";
+  unblock3: "div";
   updateManualReserve2: typeof AntdModal;
   title5: "div";
   checkInAndCheckOut3: "div";
@@ -14708,6 +15009,7 @@ export const PlasmicBookings = Object.assign(
     cancelSmartReserve: makeNodeComponent("cancelSmartReserve"),
     cancelledBtn3: makeNodeComponent("cancelledBtn3"),
     unblock2: makeNodeComponent("unblock2"),
+    unblock3: makeNodeComponent("unblock3"),
     updateManualReserve2: makeNodeComponent("updateManualReserve2"),
     title5: makeNodeComponent("title5"),
     checkInAndCheckOut3: makeNodeComponent("checkInAndCheckOut3"),
