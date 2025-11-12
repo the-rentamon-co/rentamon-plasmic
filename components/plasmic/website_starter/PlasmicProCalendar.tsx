@@ -998,7 +998,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                       customFunction: async () => {
                         return (() => {
                           if (!document.cookie.includes("miaan")) {
-                            return ($state.alertModal = true);
+                            return ($state.alertModal.open = true);
                           }
                         })();
                       }
@@ -1157,47 +1157,47 @@ function PlasmicProCalendar__RenderFunc(props: {
             trigger={null}
             width={"400"}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__th0Xo)}>
-              <div
-                className={classNames(projectcss.all, sty.freeBox__osHy)}
-                onClick={async event => {
-                  const $steps = {};
+            <div
+              className={classNames(projectcss.all, sty.freeBox__th0Xo)}
+              onClick={async event => {
+                const $steps = {};
 
-                  $steps["updateAlertModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["alertModal", "open"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
+                $steps["updateAlertModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["alertModal", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
 
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateAlertModalOpen"] != null &&
-                    typeof $steps["updateAlertModalOpen"] === "object" &&
-                    typeof $steps["updateAlertModalOpen"].then === "function"
-                  ) {
-                    $steps["updateAlertModalOpen"] =
-                      await $steps["updateAlertModalOpen"];
-                  }
-                }}
-              >
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateAlertModalOpen"] != null &&
+                  typeof $steps["updateAlertModalOpen"] === "object" &&
+                  typeof $steps["updateAlertModalOpen"].then === "function"
+                ) {
+                  $steps["updateAlertModalOpen"] =
+                    await $steps["updateAlertModalOpen"];
+                }
+              }}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__osHy)}>
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__vxfFc)}

@@ -301,7 +301,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-              ? false
+              ? true
               : hasVariant(globalVariants, "screen", "tablet")
                 ? false
                 : false
@@ -853,6 +853,30 @@ function PlasmicProCalendar2__RenderFunc(props: {
                 $steps["invokeGlobalAction2"] =
                   await $steps["invokeGlobalAction2"];
               }
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          if (!document.cookie.includes("miaan")) {
+                            return ($state.alertModal.open = true);
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
             }}
           />
 
@@ -915,7 +939,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
             </div>
           </div>
           {(
-            hasVariant(globalVariants, "screen", "smallMobile") ? false : false
+            hasVariant(globalVariants, "screen", "smallMobile") ? false : true
           ) ? (
             <AntdModal
               data-plasmic-name={"alertModal"}
@@ -1001,22 +1025,93 @@ function PlasmicProCalendar2__RenderFunc(props: {
               trigger={null}
               width={"400"}
             >
+              <div className={classNames(projectcss.all, sty.freeBox__atQjk)}>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__flfxo)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateAlertModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["alertModal", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateAlertModalOpen"] != null &&
+                      typeof $steps["updateAlertModalOpen"] === "object" &&
+                      typeof $steps["updateAlertModalOpen"].then === "function"
+                    ) {
+                      $steps["updateAlertModalOpen"] =
+                        await $steps["updateAlertModalOpen"];
+                    }
+                  }}
+                >
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__sKueE)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"16px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image24.svg",
+                      fullWidth: 20,
+                      fullHeight: 18,
+                      aspectRatio: 1.111111
+                    }}
+                  />
+                </div>
+              </div>
               <div className={classNames(projectcss.all, sty.freeBox__uWtg0)}>
                 <div className={classNames(projectcss.all, sty.freeBox__uDdnc)}>
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__clKc3
+                      sty.text__snSUm
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
-                          : "\u0641\u0642\u0637 \u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u0627\u0645\u0634\u0628 \u0641\u0631\u0635\u062a \u062f\u0627\u0631\u06cc\n\u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"}
+                      ? "\u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0633\u0627\u0644\u0647 \u0645\u0634\u063a\u0648\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u0628\u0627 \u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0647\u0633\u062a\u06cc\u0645\u060c \u062a\u0627 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u062f\u0627\u0631\u06cc \u0631\u0648 \u062f\u0631 \u06a9\u0634\u0648\u0631 \u0627\u0631\u062a\u0642\u0627\u0621 \u0628\u062f\u06cc\u0645."
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0633\u0627\u0644\u0647 \u0645\u0634\u063a\u0648\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u0628\u0627 \u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0647\u0633\u062a\u06cc\u0645\u060c \u062a\u0627 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u062f\u0627\u0631\u06cc \u0631\u0648 \u062f\u0631 \u06a9\u0634\u0648\u0631 \u0627\u0631\u062a\u0642\u0627\u0621 \u0628\u062f\u06cc\u0645."
+                        : "\u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0633\u0627\u0644\u0647 \u0645\u0634\u063a\u0648\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u0628\u0627 \u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0647\u0633\u062a\u06cc\u0645\u060c \u062a\u0627 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u062f\u0627\u0631\u06cc \u0631\u0648 \u062f\u0631 \u06a9\u0634\u0648\u0631 \u0627\u0631\u062a\u0642\u0627\u0621 \u0628\u062f\u06cc\u0645."}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ueZ1
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u062d\u0627\u0644\u0627 \u062f\u0627\u0631\u06cc\u0645 \u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645!"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u062d\u0627\u0644\u0627 \u062f\u0627\u0631\u06cc\u0645 \u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645!"
+                        : "\u062d\u0627\u0644\u0627 \u062f\u0627\u0631\u06cc\u0645 \u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645!"}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__nNosa)}>
@@ -1053,11 +1148,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                                       expires +
                                       "; path=/";
                                   }
-                                  return setCookie(
-                                    "shab_disconnrct",
-                                    "true",
-                                    9
-                                  );
+                                  return setCookie("miaan", "true", 9);
                                 })();
                               }
                             };
@@ -1109,9 +1200,9 @@ function PlasmicProCalendar2__RenderFunc(props: {
                           await $steps["updateAlertModalOpen"];
                       }
 
-                      $steps["goToReferral"] = true
+                      $steps["goToمعرفیبرندجدید"] = true
                         ? (() => {
-                            const actionArgs = { destination: `/referral` };
+                            const actionArgs = { destination: `/new-brand` };
                             return (({ destination }) => {
                               if (
                                 typeof destination === "string" &&
@@ -1127,11 +1218,12 @@ function PlasmicProCalendar2__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["goToReferral"] != null &&
-                        typeof $steps["goToReferral"] === "object" &&
-                        typeof $steps["goToReferral"].then === "function"
+                        $steps["goToمعرفیبرندجدید"] != null &&
+                        typeof $steps["goToمعرفیبرندجدید"] === "object" &&
+                        typeof $steps["goToمعرفیبرندجدید"].then === "function"
                       ) {
-                        $steps["goToReferral"] = await $steps["goToReferral"];
+                        $steps["goToمعرفیبرندجدید"] =
+                          await $steps["goToمعرفیبرندجدید"];
                       }
                     }}
                   >
@@ -1143,108 +1235,8 @@ function PlasmicProCalendar2__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647"
+                        "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
                       }
-                    </div>
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      sty.freeBox__acMcc,
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "clickable"
-                        : undefined
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  function setCookie(name, value, hours) {
-                                    let expires = "";
-                                    if (hours) {
-                                      const date = new Date();
-                                      date.setTime(
-                                        date.getTime() + hours * 60 * 60 * 1000
-                                      );
-                                      expires =
-                                        "; expires=" + date.toUTCString();
-                                    }
-                                    document.cookie =
-                                      name +
-                                      "=" +
-                                      (value || "") +
-                                      expires +
-                                      "; path=/";
-                                  }
-                                  return setCookie(
-                                    "shab_disconnrct",
-                                    "true",
-                                    12
-                                  );
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
-
-                      $steps["updateAlertModalOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["alertModal", "open"]
-                              },
-                              operation: 0
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateAlertModalOpen"] != null &&
-                        typeof $steps["updateAlertModalOpen"] === "object" &&
-                        typeof $steps["updateAlertModalOpen"].then ===
-                          "function"
-                      ) {
-                        $steps["updateAlertModalOpen"] =
-                          await $steps["updateAlertModalOpen"];
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__tmKqo
-                      )}
-                    >
-                      {"\u0628\u0627\u0634\u0647 \u0628\u0639\u062f\u0627"}
                     </div>
                   </div>
                 </div>

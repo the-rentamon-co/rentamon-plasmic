@@ -188,8 +188,9 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 0px;
   min-width: 0;
-  padding: 0px 0px 11px;
+  padding: 0px;
 }
 .freeBox___0AZ0C {
   display: flex;
