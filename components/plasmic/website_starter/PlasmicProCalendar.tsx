@@ -1197,7 +1197,84 @@ function PlasmicProCalendar__RenderFunc(props: {
                 }
               }}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__osHy)}>
+              <div
+                className={classNames(projectcss.all, sty.freeBox__osHy)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateAlertModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["alertModal", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateAlertModalOpen"] != null &&
+                    typeof $steps["updateAlertModalOpen"] === "object" &&
+                    typeof $steps["updateAlertModalOpen"].then === "function"
+                  ) {
+                    $steps["updateAlertModalOpen"] =
+                      await $steps["updateAlertModalOpen"];
+                  }
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function setCookie(name, value, hours) {
+                                let expires = "";
+                                if (hours) {
+                                  const date = new Date();
+                                  date.setTime(
+                                    date.getTime() + hours * 60 * 60 * 1000
+                                  );
+                                  expires = "; expires=" + date.toUTCString();
+                                }
+                                document.cookie =
+                                  name +
+                                  "=" +
+                                  (value || "") +
+                                  expires +
+                                  "; path=/";
+                              }
+                              return setCookie("miaan", "true", 9);
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
+              >
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__vxfFc)}

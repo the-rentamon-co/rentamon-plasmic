@@ -1444,7 +1444,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__mFXkb
+                        sty.formField___9BwR
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1456,7 +1456,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__lnci5
+                        sty.formField__fboE
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1468,7 +1468,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <AntdButton
                       className={classNames(
                         "__wab_instance",
-                        sty.button___7SdG4
+                        sty.button__ss4Ec
                       )}
                       submitsForm={true}
                       type={"primary"}
@@ -1477,7 +1477,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___2TodY
+                          sty.text__p1Hmw
                         )}
                       >
                         {"Submit"}
@@ -1568,6 +1568,44 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                   ) {
                     $steps["updateAlertModalOpen"] =
                       await $steps["updateAlertModalOpen"];
+                  }
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function setCookie(name, value, hours) {
+                                let expires = "";
+                                if (hours) {
+                                  const date = new Date();
+                                  date.setTime(
+                                    date.getTime() + hours * 60 * 60 * 1000
+                                  );
+                                  expires = "; expires=" + date.toUTCString();
+                                }
+                                document.cookie =
+                                  name +
+                                  "=" +
+                                  (value || "") +
+                                  expires +
+                                  "; path=/";
+                              }
+                              return setCookie("miaan", "true", 9);
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
                   }
                 }}
               >
