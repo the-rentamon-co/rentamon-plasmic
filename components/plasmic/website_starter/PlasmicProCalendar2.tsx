@@ -301,7 +301,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-              ? true
+              ? false
               : hasVariant(globalVariants, "screen", "tablet")
                 ? false
                 : false
