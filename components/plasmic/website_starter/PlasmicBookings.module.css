@@ -3521,11 +3521,6 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 500px) {
-  .block {
-    display: none;
-  }
-}
 .freeBox___9Oyvt {
   display: flex;
   flex-direction: row;
@@ -5013,6 +5008,8 @@
 }
 @media (max-width: 500px) {
   .updateOrDeleteReserve {
+    justify-content: center;
+    align-items: center;
     padding: 5px;
   }
 }
@@ -5030,6 +5027,12 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .update {
+    max-width: 32%;
+    padding: 4px;
+  }
+}
 .img__ehuYu {
   object-fit: cover;
   max-width: 100%;
@@ -5045,6 +5048,11 @@
   font-size: 16px;
   font-weight: 600;
   color: #a5a5a5;
+}
+@media (max-width: 500px) {
+  .text__vEaFp {
+    font-size: 14px;
+  }
 }
 @media (max-width: 350px) {
   .text__vEaFp {
@@ -5063,6 +5071,15 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .unblock {
+    padding-right: 0px;
+    padding-left: 0px;
+    max-width: 26%;
+    border-right-width: 1px;
+    border-right-style: solid;
+  }
+}
 .freeBox__eTUd {
   display: flex;
   flex-direction: row;
@@ -5079,6 +5096,13 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .freeBox__eTUd {
+    padding-right: 0px;
+    padding-left: 0px;
+    border-right-width: 0px;
+  }
+}
 .img___2OEd7 {
   object-fit: cover;
   max-width: 100%;
@@ -5094,6 +5118,11 @@
   font-size: 16px;
   font-weight: 600;
   color: #a5a5a5;
+}
+@media (max-width: 500px) {
+  .text__nfqW0 {
+    font-size: 14px;
+  }
 }
 @media (max-width: 350px) {
   .text__nfqW0 {
@@ -5648,7 +5677,10 @@
 }
 @media (max-width: 500px) {
   .block2 {
-    display: none;
+    align-items: center;
+    justify-content: center;
+    border-right-width: 1px;
+    border-right-style: solid;
     padding: 4px;
   }
 }
@@ -5670,7 +5702,18 @@
 }
 @media (max-width: 500px) {
   .freeBox__cup7 {
-    padding: 0px 4px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    cursor: pointer;
+    column-gap: 10px;
+    flex-direction: row;
+    border-right-width: 0px;
+    row-gap: 0px;
+    min-width: 0;
+    padding: 8px 0px;
   }
 }
 .img__lfp1C {
@@ -5705,7 +5748,9 @@
 }
 @media (max-width: 500px) {
   .text___0XGDv {
-    font-size: 16px;
+    font-size: 14px;
+    width: 100%;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {

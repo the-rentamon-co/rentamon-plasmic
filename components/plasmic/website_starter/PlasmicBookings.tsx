@@ -7604,7 +7604,19 @@ function PlasmicBookings__RenderFunc(props: {
                               displayWidth={"20px"}
                               loading={"lazy"}
                               src={
-                                "https://media.rentamon.com/icon%2Freload-ui-svgrepo-com.svg"
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? {
+                                      src: "/plasmic/website_starter/images/image191.svg",
+                                      fullWidth: 24,
+                                      fullHeight: 24,
+                                      aspectRatio: 1
+                                    }
+                                  : {
+                                      src: "/plasmic/website_starter/images/image191.svg",
+                                      fullWidth: 24,
+                                      fullHeight: 24,
+                                      aspectRatio: 1
+                                    }
                               }
                             />
 
@@ -12827,9 +12839,12 @@ function PlasmicBookings__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={"20px"}
                         loading={"lazy"}
-                        src={
-                          "https://media.rentamon.com/icon%2Freload-ui-svgrepo-com.svg"
-                        }
+                        src={{
+                          src: "/plasmic/website_starter/images/image191.svg",
+                          fullWidth: 24,
+                          fullHeight: 24,
+                          aspectRatio: 1
+                        }}
                       />
 
                       <div
