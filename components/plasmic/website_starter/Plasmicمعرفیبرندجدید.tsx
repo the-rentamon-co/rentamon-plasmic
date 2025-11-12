@@ -102,7 +102,6 @@ export type Plasmicمعرفیبرندجدید__OverridesType = {
   introduction3?: Flex__<"div">;
   principles?: Flex__<"div">;
   icon17?: Flex__<"div">;
-  embedHtml?: Flex__<typeof Embed>;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
   _2?: Flex__<typeof AntdAccordionItem>;
@@ -644,58 +643,13 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__g7EOv)}
                   >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__pnwAq)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "none"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                              ? "none"
-                              : "none"
-                      }
-                      displayMaxWidth={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "100%"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                              ? "none"
-                              : "none"
-                      }
-                      displayMinHeight={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "auto"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                              ? "auto"
-                              : "0"
-                      }
-                      displayMinWidth={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "auto"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                              ? "auto"
-                              : "0"
-                      }
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "100%"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "100%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                              ? "100%"
-                              : "100%"
-                      }
-                      loading={"lazy"}
-                      src={
-                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fmiaan-logo-blue.png?versionId="
+                    <Embed
+                      className={classNames(
+                        "__wab_instance",
+                        sty.embedHtml___98RcR
+                      )}
+                      code={
+                        '<video \r\n  src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Flogo-change.mp4?versionId=" \r\n  autoplay \r\n  muted \r\n  loop \r\n  playsinline \r\n  style="width: 100%; height: auto; border-radius: 12px;">\r\n  \u0645\u0631\u0648\u0631\u06af\u0631 \u0634\u0645\u0627 \u0627\u0632 \u0648\u06cc\u062f\u06cc\u0648 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0646\u0645\u06cc\u200c\u06a9\u0646\u062f.\r\n</video>\r\n'
                       }
                     />
                   </div>
@@ -1121,9 +1075,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__vrx5N)}>
               <Embed
-                data-plasmic-name={"embedHtml"}
-                data-plasmic-override={overrides.embedHtml}
-                className={classNames("__wab_instance", sty.embedHtml)}
+                className={classNames("__wab_instance", sty.embedHtml__q59Zw)}
                 code={
                   '<img \r\n  src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Fmiaan-unified-calendar.svg?versionId=" \r\n  alt="miaan unified calendar" \r\n  style="width: 100%; height: auto;" \r\n/>\r\n'
                 }
@@ -1625,7 +1577,6 @@ const PlasmicDescendants = {
     "introduction3",
     "principles",
     "icon17",
-    "embedHtml",
     "qA",
     "accordionMain",
     "_2",
@@ -1657,7 +1608,6 @@ const PlasmicDescendants = {
     "introduction3",
     "principles",
     "icon17",
-    "embedHtml",
     "qA",
     "accordionMain",
     "_2",
@@ -1702,7 +1652,6 @@ const PlasmicDescendants = {
   introduction3: ["introduction3"],
   principles: ["principles"],
   icon17: ["icon17"],
-  embedHtml: ["embedHtml"],
   qA: [
     "qA",
     "accordionMain",
@@ -1751,7 +1700,6 @@ type NodeDefaultElementType = {
   introduction3: "div";
   principles: "div";
   icon17: "div";
-  embedHtml: typeof Embed;
   qA: "div";
   accordionMain: typeof AntdAccordion;
   _2: typeof AntdAccordionItem;
@@ -1850,7 +1798,6 @@ export const Plasmicمعرفیبرندجدید = Object.assign(
     introduction3: makeNodeComponent("introduction3"),
     principles: makeNodeComponent("principles"),
     icon17: makeNodeComponent("icon17"),
-    embedHtml: makeNodeComponent("embedHtml"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),
     _2: makeNodeComponent("_2"),
