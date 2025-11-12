@@ -6821,6 +6821,26 @@ function PlasmicBookings__RenderFunc(props: {
                               onClick={async event => {
                                 const $steps = {};
 
+                                $steps["runCode"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        customFunction: async () => {
+                                          return ($state.unblockStatus = {});
+                                        }
+                                      };
+                                      return (({ customFunction }) => {
+                                        return customFunction();
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["runCode"] != null &&
+                                  typeof $steps["runCode"] === "object" &&
+                                  typeof $steps["runCode"].then === "function"
+                                ) {
+                                  $steps["runCode"] = await $steps["runCode"];
+                                }
+
                                 $steps["updateFront"] = false
                                   ? (() => {
                                       const actionArgs = {
@@ -12401,6 +12421,26 @@ function PlasmicBookings__RenderFunc(props: {
                         color={"red"}
                         onClick={async event => {
                           const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return ($state.unblockStatus = {});
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
 
                           $steps["updateFront"] =
                             $state.unblockFor == "cancel"

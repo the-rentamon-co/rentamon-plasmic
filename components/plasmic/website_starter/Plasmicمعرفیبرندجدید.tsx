@@ -649,7 +649,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                         sty.embedHtml___98RcR
                       )}
                       code={
-                        '<video \r\n  src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Flogo-change.mp4?versionId=" \r\n  autoplay \r\n  muted \r\n  loop \r\n  playsinline \r\n  style="width: 100%; height: auto; border-radius: 12px;">\r\n  \u0645\u0631\u0648\u0631\u06af\u0631 \u0634\u0645\u0627 \u0627\u0632 \u0648\u06cc\u062f\u06cc\u0648 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0646\u0645\u06cc\u200c\u06a9\u0646\u062f.\r\n</video>\r\n'
+                        '<div style="\r\n  overflow: hidden;\r\n  border-radius: 16px;\r\n  width: 100%;\r\n  height: auto;\r\n  background: white;\r\n">\r\n  <video\r\n    src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Flogo-change.mp4?versionId="\r\n    autoplay\r\n    muted\r\n    loop\r\n    playsinline\r\n    style="\r\n      width: calc(100% + 2px);\r\n      height: calc(100% + 2px);\r\n      margin: -1px;\r\n      object-fit: cover;\r\n      display: block;\r\n    ">\r\n  </video>\r\n</div>\r\n'
                       }
                     />
                   </div>
