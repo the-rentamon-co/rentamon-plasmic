@@ -3507,7 +3507,6 @@
   }
 }
 .block {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -3519,7 +3518,13 @@
   border-right-width: 1px;
   border-right-style: solid;
   min-width: 0;
+  display: none;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .block {
+    display: flex;
+  }
 }
 .freeBox___9Oyvt {
   display: flex;
@@ -5663,7 +5668,6 @@
   text-overflow: clip !important;
 }
 .block2 {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -5673,6 +5677,7 @@
   align-items: center;
   order: 5;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 @media (max-width: 500px) {
@@ -5681,6 +5686,7 @@
     justify-content: center;
     border-right-width: 1px;
     border-right-style: solid;
+    display: flex;
     padding: 4px;
   }
 }
