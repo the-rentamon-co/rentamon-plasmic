@@ -207,6 +207,8 @@ export type PlasmicBookings__OverridesType = {
   loading2?: Flex__<typeof PlasmicImg__>;
   actions?: Flex__<typeof AntdModal>;
   ثبتتغییرات?: Flex__<"div">;
+  actionsManualBookings?: Flex__<typeof AntdModal>;
+  ثبتتغییرات2?: Flex__<"div">;
 };
 
 export interface DefaultBookingsProps {}
@@ -754,6 +756,12 @@ function PlasmicBookings__RenderFunc(props: {
       },
       {
         path: "cancelSmartReserve.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "actionsManualBookings.open",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
@@ -10853,7 +10861,10 @@ function PlasmicBookings__RenderFunc(props: {
                                   const actionArgs = {
                                     variable: {
                                       objRoot: $state,
-                                      variablePath: ["actions", "open"]
+                                      variablePath: [
+                                        "actionsManualBookings",
+                                        "open"
+                                      ]
                                     },
                                     operation: 0,
                                     value: true
@@ -13604,6 +13615,348 @@ function PlasmicBookings__RenderFunc(props: {
               />
             </div>
           </AntdModal>
+          <AntdModal
+            data-plasmic-name={"actionsManualBookings"}
+            data-plasmic-override={overrides.actionsManualBookings}
+            className={classNames("__wab_instance", sty.actionsManualBookings)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              styleTokensClassNames
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["actionsManualBookings__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "actionsManualBookings",
+                "open"
+              ]).apply(null, eventArgs);
+            }}
+            open={generateStateValueProp($state, [
+              "actionsManualBookings",
+              "open"
+            ])}
+            title={
+              <div className={classNames(projectcss.all, sty.freeBox__rhkph)}>
+                <Icon23Icon
+                  className={classNames(projectcss.all, sty.svg__z4ZQ)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateActionsOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["actionsManualBookings", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateActionsOpen"] != null &&
+                      typeof $steps["updateActionsOpen"] === "object" &&
+                      typeof $steps["updateActionsOpen"].then === "function"
+                    ) {
+                      $steps["updateActionsOpen"] =
+                        await $steps["updateActionsOpen"];
+                    }
+                  }}
+                  role={"img"}
+                />
+              </div>
+            }
+            trigger={null}
+            width={"320px"}
+          >
+            <div
+              data-plasmic-name={
+                "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a2"
+              }
+              data-plasmic-override={overrides.ثبتتغییرات2}
+              className={classNames(projectcss.all, sty.ثبتتغییرات2)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__oqrWs
+                )}
+              >
+                {
+                  "\u0686\u0631\u0627 \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u00ab\u062e\u0627\u0644\u06cc\u00bb \u06a9\u0646\u06cc\u061f"
+                }
+              </div>
+            </div>
+            <div
+              className={classNames(projectcss.all, sty.freeBox__f3Ei)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["actionsManualBookings", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateModalOpen"] != null &&
+                  typeof $steps["updateModalOpen"] === "object" &&
+                  typeof $steps["updateModalOpen"].then === "function"
+                ) {
+                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                }
+
+                $steps["updateUnblockFor"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["unblockFor"]
+                        },
+                        operation: 0,
+                        value: (() => {
+                          return "early_check_out";
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateUnblockFor"] != null &&
+                  typeof $steps["updateUnblockFor"] === "object" &&
+                  typeof $steps["updateUnblockFor"].then === "function"
+                ) {
+                  $steps["updateUnblockFor"] = await $steps["updateUnblockFor"];
+                }
+
+                $steps["updateCancelManualReserveOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["cancelManualReserve", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateCancelManualReserveOpen"] != null &&
+                  typeof $steps["updateCancelManualReserveOpen"] === "object" &&
+                  typeof $steps["updateCancelManualReserveOpen"].then ===
+                    "function"
+                ) {
+                  $steps["updateCancelManualReserveOpen"] =
+                    await $steps["updateCancelManualReserveOpen"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__wUiVk
+                )}
+              >
+                {
+                  "\u0645\u0633\u0627\u0641\u0631 \u0632\u0648\u062f\u062a\u0631 \u0645\u06cc\u200c\u0631\u0647"
+                }
+              </div>
+              <Icon25Icon
+                className={classNames(projectcss.all, sty.svg___1YsTn)}
+                role={"img"}
+              />
+            </div>
+            <div
+              className={classNames(projectcss.all, sty.freeBox__edmt)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateCancelManualReserveOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["cancelManualReserve", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateCancelManualReserveOpen"] != null &&
+                  typeof $steps["updateCancelManualReserveOpen"] === "object" &&
+                  typeof $steps["updateCancelManualReserveOpen"].then ===
+                    "function"
+                ) {
+                  $steps["updateCancelManualReserveOpen"] =
+                    await $steps["updateCancelManualReserveOpen"];
+                }
+
+                $steps["updateModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["actionsManualBookings", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateModalOpen"] != null &&
+                  typeof $steps["updateModalOpen"] === "object" &&
+                  typeof $steps["updateModalOpen"].then === "function"
+                ) {
+                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                }
+
+                $steps["updateUnblockFor"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["unblockFor"]
+                        },
+                        operation: 0,
+                        value: (() => {
+                          return "cancel";
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateUnblockFor"] != null &&
+                  typeof $steps["updateUnblockFor"] === "object" &&
+                  typeof $steps["updateUnblockFor"].then === "function"
+                ) {
+                  $steps["updateUnblockFor"] = await $steps["updateUnblockFor"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__yymRs
+                )}
+              >
+                {"\u0631\u0632\u0631\u0648 \u0644\u063a\u0648 \u0634\u062f"}
+              </div>
+              <Icon24Icon
+                className={classNames(projectcss.all, sty.svg__ewaFr)}
+                role={"img"}
+              />
+            </div>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -13719,7 +14072,9 @@ const PlasmicDescendants = {
     "loading",
     "loading2",
     "actions",
-    "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+    "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a",
+    "actionsManualBookings",
+    "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a2"
   ],
   detail2: [
     "detail2",
@@ -14126,7 +14481,12 @@ const PlasmicDescendants = {
     "actions",
     "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
   ],
-  ثبتتغییرات: ["\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"]
+  ثبتتغییرات: ["\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"],
+  actionsManualBookings: [
+    "actionsManualBookings",
+    "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a2"
+  ],
+  ثبتتغییرات2: ["\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -14240,6 +14600,8 @@ type NodeDefaultElementType = {
   loading2: typeof PlasmicImg__;
   actions: typeof AntdModal;
   ثبتتغییرات: "div";
+  actionsManualBookings: typeof AntdModal;
+  ثبتتغییرات2: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -14412,6 +14774,10 @@ export const PlasmicBookings = Object.assign(
     actions: makeNodeComponent("actions"),
     ثبتتغییرات: makeNodeComponent(
       "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+    ),
+    actionsManualBookings: makeNodeComponent("actionsManualBookings"),
+    ثبتتغییرات2: makeNodeComponent(
+      "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a2"
     ),
 
     // Metadata about props expected for PlasmicBookings
