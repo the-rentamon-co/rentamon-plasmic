@@ -1635,10 +1635,10 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "80%"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "50%"
-                        : "30%"
+                          ? "80%"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "50%"
+                            : "30%"
                     }
                     displayMinHeight={"0"}
                     displayMinWidth={"auto"}
@@ -1661,10 +1661,10 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "80%"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "44%"
-                        : "26%"
+                          ? "80%"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "44%"
+                            : "26%"
                     }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
@@ -1791,20 +1791,20 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "100%"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "410px"
-                        : "auto"
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "410px"
+                            : "auto"
                     }
                     displayMaxHeight={"none"}
                     displayMaxWidth={
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "100%"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                        ? "70%"
-                        : "40%"
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "70%"
+                            : "40%"
                     }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
@@ -1852,8 +1852,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0627\u06af\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0628\u0631\u0627\u06cc \u0631\u0634\u062f \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631 \u062c\u062f\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a \u06a9\u0646\u06cc\u060c \u0628\u0647 \u062c\u0645\u0639 \u0628\u0632\u0631\u06af \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc\u200c\u0647\u0627 \u0628\u067e\u06cc\u0648\u0646\u062f"
-                      : "\u0627\u06af\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0628\u0631\u0627\u06cc \u0631\u0634\u062f \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631 \u062c\u062f\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a \u06a9\u0646\u06cc\u060c \u0628\u0647 \u062c\u0645\u0639 \u0628\u0632\u0631\u06af \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u06cc\u200c\u0647\u0627 \u0628\u067e\u06cc\u0648\u0646\u062f"}
+                      ? "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 (\u062a\u0648\u0633\u0637 \u0645\u0627) \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647\u200c\u06cc \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0632\u0646"
+                      : "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 (\u062a\u0648\u0633\u0637 \u0645\u0627) \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647\u200c\u06cc \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0632\u0646"}
                   </div>
                 </div>
                 <div
@@ -1895,9 +1895,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                         typeof $steps["goToثبتآگهیاقامتگاه"] === "object" &&
                         typeof $steps["goToثبتآگهیاقامتگاه"].then === "function"
                       ) {
-                        $steps["goToثبتآگهیاقامتگاه"] = await $steps[
-                          "goToثبتآگهیاقامتگاه"
-                        ];
+                        $steps["goToثبتآگهیاقامتگاه"] =
+                          await $steps["goToثبتآگهیاقامتگاه"];
                       }
                     }}
                   >
@@ -2125,7 +2124,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicمقایسهبهترینسایتاجارهویلا__VariantsArgs;
     args?: Plasmicمقایسهبهترینسایتاجارهویلا__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicمقایسهبهترینسایتاجارهویلا__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicمقایسهبهترینسایتاجارهویلا__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicمقایسهبهترینسایتاجارهویلا__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

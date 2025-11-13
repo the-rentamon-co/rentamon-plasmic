@@ -6483,23 +6483,45 @@ function PlasmicBookings__RenderFunc(props: {
                         </div>
                       </div>
                     ) : null}
-                    {(() => {
-                      try {
-                        return (
-                          !$state.booking.data.feature_handled.manual_booking &&
-                          $state.reservationsMode &&
-                          $state.booking.data.website !== "mihmansho"
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            try {
+                              return (
+                                !$state.booking.data.feature_handled
+                                  .manual_booking &&
+                                $state.reservationsMode &&
+                                $state.booking.data.website !== "mihmansho"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return (
+                                !$state.booking.data.feature_handled
+                                  .manual_booking &&
+                                $state.reservationsMode &&
+                                $state.booking.data.website !== "mihmansho"
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
                       <div
                         data-plasmic-name={"updateOrDeleteReserve2"}
                         data-plasmic-override={overrides.updateOrDeleteReserve2}
@@ -7443,216 +7465,237 @@ function PlasmicBookings__RenderFunc(props: {
                             ) : null}
                           </div>
                         ) : null}
-                        <div
-                          data-plasmic-name={"block"}
-                          data-plasmic-override={overrides.block}
-                          className={classNames(projectcss.all, sty.block)}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["updateFetchModalOpen"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["fetchModal", "open"]
-                                    },
-                                    operation: 0,
-                                    value: true
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
+                        {(() => {
+                          try {
+                            return (
+                              $state.reservationsMode &&
+                              $state.booking.data.status == "reserve"
+                            );
+                          } catch (e) {
                             if (
-                              $steps["updateFetchModalOpen"] != null &&
-                              typeof $steps["updateFetchModalOpen"] ===
-                                "object" &&
-                              typeof $steps["updateFetchModalOpen"].then ===
-                                "function"
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              $steps["updateFetchModalOpen"] =
-                                await $steps["updateFetchModalOpen"];
+                              return true;
                             }
-
-                            $steps["invokeGlobalAction"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "POST",
-                                      "https://gateway.rentamon.com/webhook/reservations/calendar/block",
-                                      undefined,
-                                      (() => {
-                                        try {
-                                          return {
-                                            booking_id:
-                                              $state.booking.data.booking_id
-                                          };
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })()
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.apiRequest"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["invokeGlobalAction"] != null &&
-                              typeof $steps["invokeGlobalAction"] ===
-                                "object" &&
-                              typeof $steps["invokeGlobalAction"].then ===
-                                "function"
-                            ) {
-                              $steps["invokeGlobalAction"] =
-                                await $steps["invokeGlobalAction"];
-                            }
-
-                            $steps["runCode"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    customFunction: async () => {
-                                      return (() => {
-                                        console.log(
-                                          $steps.invokeGlobalAction.data.status
-                                        );
-                                        if (
-                                          $steps.invokeGlobalAction.data
-                                            .status == true
-                                        ) {
-                                          $state.unblockStatus =
-                                            $steps.invokeGlobalAction.data.data;
-                                          return console.log(
-                                            $steps.invokeGlobalAction.data.data
-                                          );
-                                        } else {
-                                          return ($state.unblockStatus =
-                                            $steps.invokeGlobalAction.data.status);
-                                        }
-                                      })();
-                                    }
-                                  };
-                                  return (({ customFunction }) => {
-                                    return customFunction();
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["runCode"] != null &&
-                              typeof $steps["runCode"] === "object" &&
-                              typeof $steps["runCode"].then === "function"
-                            ) {
-                              $steps["runCode"] = await $steps["runCode"];
-                            }
-
-                            $steps["updateActionFor"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["actionFor"]
-                                    },
-                                    operation: 0,
-                                    value: "block"
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updateActionFor"] != null &&
-                              typeof $steps["updateActionFor"] === "object" &&
-                              typeof $steps["updateActionFor"].then ===
-                                "function"
-                            ) {
-                              $steps["updateActionFor"] =
-                                await $steps["updateActionFor"];
-                            }
-                          }}
-                        >
+                            throw e;
+                          }
+                        })() ? (
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox___9Oyvt,
-                              "clickable"
-                            )}
+                            data-plasmic-name={"block"}
+                            data-plasmic-override={overrides.block}
+                            className={classNames(projectcss.all, sty.block)}
                             onClick={async event => {
                               const $steps = {};
+
+                              $steps["updateFetchModalOpen"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["fetchModal", "open"]
+                                      },
+                                      operation: 0,
+                                      value: true
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateFetchModalOpen"] != null &&
+                                typeof $steps["updateFetchModalOpen"] ===
+                                  "object" &&
+                                typeof $steps["updateFetchModalOpen"].then ===
+                                  "function"
+                              ) {
+                                $steps["updateFetchModalOpen"] =
+                                  await $steps["updateFetchModalOpen"];
+                              }
+
+                              $steps["invokeGlobalAction"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        "https://gateway.rentamon.com/webhook/reservations/calendar/block",
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return {
+                                              booking_id:
+                                                $state.booking.data.booking_id
+                                            };
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["invokeGlobalAction"] != null &&
+                                typeof $steps["invokeGlobalAction"] ===
+                                  "object" &&
+                                typeof $steps["invokeGlobalAction"].then ===
+                                  "function"
+                              ) {
+                                $steps["invokeGlobalAction"] =
+                                  await $steps["invokeGlobalAction"];
+                              }
+
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          console.log(
+                                            $steps.invokeGlobalAction.data
+                                              .status
+                                          );
+                                          if (
+                                            $steps.invokeGlobalAction.data
+                                              .status == true
+                                          ) {
+                                            $state.unblockStatus =
+                                              $steps.invokeGlobalAction.data.data;
+                                            return console.log(
+                                              $steps.invokeGlobalAction.data
+                                                .data
+                                            );
+                                          } else {
+                                            return ($state.unblockStatus =
+                                              $steps.invokeGlobalAction.data.status);
+                                          }
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
+                              $steps["updateActionFor"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["actionFor"]
+                                      },
+                                      operation: 0,
+                                      value: "block"
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateActionFor"] != null &&
+                                typeof $steps["updateActionFor"] === "object" &&
+                                typeof $steps["updateActionFor"].then ===
+                                  "function"
+                              ) {
+                                $steps["updateActionFor"] =
+                                  await $steps["updateActionFor"];
+                              }
                             }}
                           >
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img__yC6Xp)}
-                              displayHeight={"auto"}
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={"20px"}
-                              loading={"lazy"}
-                              src={
-                                hasVariant(globalVariants, "screen", "mobile")
-                                  ? {
-                                      src: "/plasmic/website_starter/images/image191.svg",
-                                      fullWidth: 24,
-                                      fullHeight: 24,
-                                      aspectRatio: 1
-                                    }
-                                  : {
-                                      src: "/plasmic/website_starter/images/image191.svg",
-                                      fullWidth: 24,
-                                      fullHeight: 24,
-                                      aspectRatio: 1
-                                    }
-                              }
-                            />
-
                             <div
                               className={classNames(
                                 projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__rdgaa
+                                sty.freeBox___9Oyvt,
+                                "clickable"
                               )}
+                              onClick={async event => {
+                                const $steps = {};
+                              }}
                             >
-                              {
-                                "\u0628\u0633\u062a\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                              }
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__yC6Xp)}
+                                displayHeight={"auto"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"100%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={"20px"}
+                                loading={"lazy"}
+                                src={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? {
+                                        src: "/plasmic/website_starter/images/image191.svg",
+                                        fullWidth: 24,
+                                        fullHeight: 24,
+                                        aspectRatio: 1
+                                      }
+                                    : {
+                                        src: "/plasmic/website_starter/images/image191.svg",
+                                        fullWidth: 24,
+                                        fullHeight: 24,
+                                        aspectRatio: 1
+                                      }
+                                }
+                              />
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__rdgaa
+                                )}
+                              >
+                                {
+                                  "\u0628\u0633\u062a\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                                }
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        ) : null}
                         <AntdModal
                           data-plasmic-name={"updateManualReserve2"}
                           data-plasmic-override={overrides.updateManualReserve2}
@@ -10855,25 +10898,47 @@ function PlasmicBookings__RenderFunc(props: {
                       }
                     </div>
                   </div>
-                  {(() => {
-                    try {
-                      return (() => {
-                        const checkInDate = new Date(
-                          $state.booking.data.check_out
-                        );
-                        const now = new Date();
-                        return checkInDate >= now;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return (() => {
+                              const checkInDate = new Date(
+                                $state.booking.data.check_out
+                              );
+                              const now = new Date();
+                              return checkInDate >= now;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : (() => {
+                          try {
+                            return (() => {
+                              const checkInDate = new Date(
+                                $state.booking.data.check_out
+                              );
+                              const now = new Date();
+                              return checkInDate >= now;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                  ) ? (
                     <div
                       data-plasmic-name={"unblock"}
                       data-plasmic-override={overrides.unblock}
@@ -12738,168 +12803,205 @@ function PlasmicBookings__RenderFunc(props: {
                       </AntdButton>
                     </div>
                   </AntdModal>
-                  <div
-                    data-plasmic-name={"block2"}
-                    data-plasmic-override={overrides.block2}
-                    className={classNames(projectcss.all, sty.block2)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateFetchModalOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["fetchModal", "open"]
-                              },
-                              operation: 0,
-                              value: true
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateFetchModalOpen"] != null &&
-                        typeof $steps["updateFetchModalOpen"] === "object" &&
-                        typeof $steps["updateFetchModalOpen"].then ===
-                          "function"
-                      ) {
-                        $steps["updateFetchModalOpen"] =
-                          await $steps["updateFetchModalOpen"];
-                      }
-
-                      $steps["invokeGlobalAction"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://gateway.rentamon.com/webhook/reservations/calendar/block",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return {
-                                      booking_id: $state.booking.data.booking_id
-                                    };
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return (
+                              $state.reservationsMode &&
+                              $state.booking.data.status == "reserve"
                             );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["invokeGlobalAction"] != null &&
-                        typeof $steps["invokeGlobalAction"] === "object" &&
-                        typeof $steps["invokeGlobalAction"].then === "function"
-                      ) {
-                        $steps["invokeGlobalAction"] =
-                          await $steps["invokeGlobalAction"];
-                      }
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  console.log(
-                                    $steps.invokeGlobalAction.data.status
-                                  );
-                                  if (
-                                    $steps.invokeGlobalAction.data.status ==
-                                    true
-                                  ) {
-                                    $state.unblockStatus =
-                                      $steps.invokeGlobalAction.data.data;
-                                    return console.log(
-                                      $steps.invokeGlobalAction.data.data
-                                    );
-                                  } else {
-                                    return ($state.unblockStatus =
-                                      $steps.invokeGlobalAction.data.status);
-                                  }
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
-                    }}
-                  >
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : (() => {
+                          try {
+                            return (
+                              $state.reservationsMode &&
+                              $state.booking.data.status == "reserve"
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                  ) ? (
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox__cup7,
-                        "clickable"
-                      )}
+                      data-plasmic-name={"block2"}
+                      data-plasmic-override={overrides.block2}
+                      className={classNames(projectcss.all, sty.block2)}
                       onClick={async event => {
                         const $steps = {};
+
+                        $steps["updateFetchModalOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["fetchModal", "open"]
+                                },
+                                operation: 0,
+                                value: true
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateFetchModalOpen"] != null &&
+                          typeof $steps["updateFetchModalOpen"] === "object" &&
+                          typeof $steps["updateFetchModalOpen"].then ===
+                            "function"
+                        ) {
+                          $steps["updateFetchModalOpen"] =
+                            await $steps["updateFetchModalOpen"];
+                        }
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://gateway.rentamon.com/webhook/reservations/calendar/block",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return {
+                                        booking_id:
+                                          $state.booking.data.booking_id
+                                      };
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] =
+                            await $steps["invokeGlobalAction"];
+                        }
+
+                        $steps["runCode"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    console.log(
+                                      $steps.invokeGlobalAction.data.status
+                                    );
+                                    if (
+                                      $steps.invokeGlobalAction.data.status ==
+                                      true
+                                    ) {
+                                      $state.unblockStatus =
+                                        $steps.invokeGlobalAction.data.data;
+                                      return console.log(
+                                        $steps.invokeGlobalAction.data.data
+                                      );
+                                    } else {
+                                      return ($state.unblockStatus =
+                                        $steps.invokeGlobalAction.data.status);
+                                    }
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["runCode"] != null &&
+                          typeof $steps["runCode"] === "object" &&
+                          typeof $steps["runCode"].then === "function"
+                        ) {
+                          $steps["runCode"] = await $steps["runCode"];
+                        }
                       }}
                     >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__lfp1C)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"20px"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image191.svg",
-                          fullWidth: 24,
-                          fullHeight: 24,
-                          aspectRatio: 1
-                        }}
-                      />
-
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___0XGDv
+                          sty.freeBox__cup7,
+                          "clickable"
                         )}
+                        onClick={async event => {
+                          const $steps = {};
+                        }}
                       >
-                        {
-                          "\u0628\u0633\u062a\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                        }
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__lfp1C)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"20px"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image191.svg",
+                            fullWidth: 24,
+                            fullHeight: 24,
+                            aspectRatio: 1
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___0XGDv
+                          )}
+                        >
+                          {
+                            "\u0628\u0633\u062a\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                          }
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  ) : null}
                 </div>
               ) : null}
               {(() => {

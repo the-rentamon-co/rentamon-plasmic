@@ -578,8 +578,8 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "mobile")
                     ? "90%"
                     : hasVariant(globalVariants, "screen", "tablet")
-                    ? "48%"
-                    : "34%"
+                      ? "48%"
+                      : "34%"
                 }
                 loading={"lazy"}
                 src={{
@@ -639,7 +639,7 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                   }
                   <React.Fragment>
                     {
-                      ") \u062b\u0628\u062a \u06a9\u0646\u06cc \u0648 \u0628\u0639\u062f \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0646\u0635\u0628 \u06a9\u0646\u06cc\u060c \u062f\u06cc\u06af\u0647 \u062e\u06cc\u0627\u0644\u062a \u0627\u0632 \u0628\u0627\u0628\u062a \u067e\u0631 \u0634\u062f\u0646 \u0648\u06cc\u0644\u0627 \u0648 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0631\u0627\u062d\u062a \u0645\u06cc\u200c\u0634\u0647. \u062a\u0646\u0647\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0645\u06cc\u200c\u0645\u0648\u0646\u0647 \u062a\u062d\u0648\u06cc\u0644 \u062e\u0648\u0646\u0647 \u0628\u0647 \u0645\u0633\u0627\u0641\u0631\u0647\u0627 \u0648 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0627\u0632 \u062e\u0648\u0646\u0647 \u0627\u0633\u062a."
+                      ") \u062b\u0628\u062a \u06a9\u0646\u06cc \u0648 \u0628\u0639\u062f \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642) \u0631\u0648 \u0646\u0635\u0628 \u06a9\u0646\u06cc\u060c \u062f\u06cc\u06af\u0647 \u062e\u06cc\u0627\u0644\u062a \u0627\u0632 \u0628\u0627\u0628\u062a \u067e\u0631 \u0634\u062f\u0646 \u0648\u06cc\u0644\u0627 \u0648 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0631\u0627\u062d\u062a \u0645\u06cc\u200c\u0634\u0647. \u062a\u0646\u0647\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0645\u06cc\u200c\u0645\u0648\u0646\u0647 \u062a\u062d\u0648\u06cc\u0644 \u062e\u0648\u0646\u0647 \u0628\u0647 \u0645\u0633\u0627\u0641\u0631\u0647\u0627 \u0648 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0627\u0632 \u062e\u0648\u0646\u0647 \u0627\u0633\u062a."
                     }
                   </React.Fragment>
                 </React.Fragment>
@@ -866,7 +866,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicچراجارهکوتاهمدت__VariantsArgs;
     args?: Plasmicچراجارهکوتاهمدت__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicچراجارهکوتاهمدت__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicچراجارهکوتاهمدت__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicچراجارهکوتاهمدت__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

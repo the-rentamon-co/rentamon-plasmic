@@ -529,8 +529,8 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u0628\u062c\u0627\u06cc \u0634\u0645\u0627 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u0647!"
-                      : "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0627\u0631\u0647\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u0628\u062c\u0627\u06cc \u0634\u0645\u0627 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u0647!"}
+                      ? "\u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642) \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u0628\u062c\u0627\u06cc \u0634\u0645\u0627 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u0647!"
+                      : "\u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642) \u06a9\u0627\u0631\u0647\u0627\u06cc \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0648 \u0628\u062c\u0627\u06cc \u0634\u0645\u0627 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u0647!"}
                   </div>
                   <div
                     data-plasmic-name={"button2"}
@@ -572,9 +572,8 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                           typeof $steps["goToثبتآگهیاقامتگاه"].then ===
                             "function"
                         ) {
-                          $steps["goToثبتآگهیاقامتگاه"] = await $steps[
-                            "goToثبتآگهیاقامتگاه"
-                          ];
+                          $steps["goToثبتآگهیاقامتگاه"] =
+                            await $steps["goToثبتآگهیاقامتگاه"];
                         }
                       }}
                     >
@@ -828,9 +827,8 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                         typeof $steps["goToبهترینسایتاجارهویلا"].then ===
                           "function"
                       ) {
-                        $steps["goToبهترینسایتاجارهویلا"] = await $steps[
-                          "goToبهترینسایتاجارهویلا"
-                        ];
+                        $steps["goToبهترینسایتاجارهویلا"] =
+                          await $steps["goToبهترینسایتاجارهویلا"];
                       }
                     }}
                   >
@@ -975,7 +973,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
               )}
             >
               {
-                "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u0628\u062c\u0627\u06cc \u0634\u0645\u0627\u060c \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0634\u0628 \u0648... \u062b\u0628\u062a \u06a9\u0646\u0647."
+                "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u0628\u062c\u0627\u06cc \u0634\u0645\u0627\u060c \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0634\u0628 \u0648... \u062b\u0628\u062a \u06a9\u0646\u0647."
               }
             </div>
             <div
@@ -1010,9 +1008,8 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                   typeof $steps["goToثبتآگهیاقامتگاه"] === "object" &&
                   typeof $steps["goToثبتآگهیاقامتگاه"].then === "function"
                 ) {
-                  $steps["goToثبتآگهیاقامتگاه"] = await $steps[
-                    "goToثبتآگهیاقامتگاه"
-                  ];
+                  $steps["goToثبتآگهیاقامتگاه"] =
+                    await $steps["goToثبتآگهیاقامتگاه"];
                 }
               }}
             >
@@ -1141,10 +1138,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicراهنمایجامعدرآمدازاجارهویلا__VariantsArgs;
     args?: Plasmicراهنمایجامعدرآمدازاجارهویلا__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit< // Specify variants directly as props
-    Plasmicراهنمایجامعدرآمدازاجارهویلا__VariantsArgs,
-    ReservedPropsType
-  > &
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicراهنمایجامعدرآمدازاجارهویلا__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicراهنمایجامعدرآمدازاجارهویلا__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

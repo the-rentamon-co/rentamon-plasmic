@@ -463,7 +463,7 @@
   border-radius: 10px;
 }
 .celldayStatus_firstDaySmartBooking {
-  background: none;
+  background: #fcfcfc;
   overflow: visible;
   border-radius: 0px 10px 10px 0px;
 }
@@ -483,7 +483,7 @@
   }
 }
 .celldayStatus_lastDaySmartBooking {
-  background: none;
+  background: #fcfcfc;
   border-radius: 10px 0px 0px 10px;
 }
 @media (max-width: 500px) {
@@ -492,12 +492,12 @@
   }
 }
 .celldayStatus_reservedSmartBooking {
-  background: none;
+  background: #fcfcfc;
   overflow: hidden;
   border-radius: 10px;
 }
 .celldayStatus_midDaySmartBooking {
-  background: none;
+  background: #fcfcfc;
   border-radius: 10px 0px 0px 10px;
 }
 @media (max-width: 500px) {
@@ -727,10 +727,15 @@
   max-width: 100%;
   margin-top: 2px;
   font-family: "Estedad";
-  font-weight: 500;
   text-align: center;
   user-select: none;
+  font-weight: 400;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .textdayStatus_firstDaySmartBooking__fgKpwv8GTb {
+    font-weight: 400;
+  }
 }
 .textdayStatus_lastDaySmartBooking__fgKpwiVi99 {
   color: var(--token-C-5xNZALkGon);
@@ -739,7 +744,7 @@
   max-width: 100%;
   margin-top: 2px;
   font-family: "Estedad";
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   user-select: none;
   min-width: 0;
@@ -751,7 +756,7 @@
   max-width: 100%;
   margin-top: 2px;
   font-family: "Estedad";
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   user-select: none;
   min-width: 0;
@@ -763,7 +768,7 @@
   max-width: 100%;
   margin-top: 2px;
   font-family: "Estedad";
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   user-select: none;
   min-width: 0;

@@ -2790,7 +2790,8 @@
     width: 100%;
     height: auto;
     max-width: 100%;
-    background: linear-gradient(
+    background:
+      linear-gradient(
         15.519236097659928deg,
         #ececec 0%,
         #ffffff 72%,
@@ -2808,7 +2809,8 @@
 }
 @media (max-width: 350px) {
   .more {
-    background: linear-gradient(
+    background:
+      linear-gradient(
         15.519236097659928deg,
         #ececec 0%,
         #ffffff 72%,
@@ -3349,7 +3351,7 @@
 @media (max-width: 350px) {
   .text__vzhiP {
     line-height: 1.7;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .button {

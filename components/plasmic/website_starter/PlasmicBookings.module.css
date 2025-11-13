@@ -3253,6 +3253,7 @@
 @media (max-width: 500px) {
   .updateOrDeleteReserve2 {
     order: 5;
+    display: flex;
   }
 }
 .cancelSmartReserve:global(.__wab_instance) {
@@ -3517,8 +3518,8 @@
   height: auto;
   width: 100%;
   flex-direction: column;
+  display: flex;
   min-width: 0;
-  display: none;
   padding: 8px;
 }
 .freeBox___9Oyvt {
@@ -5078,6 +5079,7 @@
     max-width: 26%;
     border-right-width: 1px;
     border-right-style: solid;
+    display: flex;
   }
 }
 .freeBox__eTUd {
@@ -5663,6 +5665,7 @@
   text-overflow: clip !important;
 }
 .block2 {
+  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -5672,7 +5675,6 @@
   align-items: center;
   order: 5;
   min-width: 0;
-  display: none;
   padding: 8px;
 }
 @media (max-width: 500px) {
@@ -5681,6 +5683,7 @@
     justify-content: center;
     border-right-width: 1px;
     border-right-style: solid;
+    display: flex;
     padding: 4px;
   }
 }
