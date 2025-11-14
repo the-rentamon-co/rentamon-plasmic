@@ -101,6 +101,7 @@ export type Plasmicثبتآگهیاقامتگاه__OverridesType = {
   mainContents?: Flex__<"div">;
   intro?: Flex__<"div">;
   introTitle?: Flex__<"div">;
+  h1?: Flex__<"h1">;
   introDesc?: Flex__<"div">;
   str?: Flex__<"div">;
   registration?: Flex__<"div">;
@@ -119,6 +120,7 @@ export type Plasmicثبتآگهیاقامتگاه__OverridesType = {
   bot?: Flex__<"div">;
   more?: Flex__<"div">;
   certificates?: Flex__<"div">;
+  h2?: Flex__<"h2">;
   neighbours?: Flex__<"div">;
   benefitsTitle2?: Flex__<"div">;
   benefitsCaption2?: Flex__<"div">;
@@ -327,21 +329,24 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                 data-plasmic-override={overrides.introTitle}
                 className={classNames(projectcss.all, sty.introTitle)}
               >
-                <div
+                <h1
+                  data-plasmic-name={"h1"}
+                  data-plasmic-override={overrides.h1}
                   className={classNames(
                     projectcss.all,
+                    projectcss.h1,
                     projectcss.__wab_text,
-                    sty.text__yoL2I
+                    sty.h1
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile")
                     ? "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                    : "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
-                </div>
+                      ? "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                        : "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u00ab\u0645\u06cc\u0627\u0646\u00bb"}
+                </h1>
               </div>
               <div
                 data-plasmic-name={"introDesc"}
@@ -1027,9 +1032,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         typeof $steps["updateModalOpen"] === "object" &&
                         typeof $steps["updateModalOpen"].then === "function"
                       ) {
-                        $steps["updateModalOpen"] = await $steps[
-                          "updateModalOpen"
-                        ];
+                        $steps["updateModalOpen"] =
+                          await $steps["updateModalOpen"];
                       }
                     }}
                   >
@@ -1176,9 +1180,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                               typeof $steps["invokeGlobalAction2"].then ===
                                 "function"
                             ) {
-                              $steps["invokeGlobalAction2"] = await $steps[
-                                "invokeGlobalAction2"
-                              ];
+                              $steps["invokeGlobalAction2"] =
+                                await $steps["invokeGlobalAction2"];
                             }
 
                             $steps["invokeGlobalAction"] = false
@@ -1216,9 +1219,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                               typeof $steps["invokeGlobalAction"].then ===
                                 "function"
                             ) {
-                              $steps["invokeGlobalAction"] = await $steps[
-                                "invokeGlobalAction"
-                              ];
+                              $steps["invokeGlobalAction"] =
+                                await $steps["invokeGlobalAction"];
                             }
 
                             $steps["invokeGlobalAction3"] = false
@@ -1237,9 +1239,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                               typeof $steps["invokeGlobalAction3"].then ===
                                 "function"
                             ) {
-                              $steps["invokeGlobalAction3"] = await $steps[
-                                "invokeGlobalAction3"
-                              ];
+                              $steps["invokeGlobalAction3"] =
+                                await $steps["invokeGlobalAction3"];
                             }
 
                             $steps["updateModalOpen"] = false
@@ -1274,9 +1275,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                               typeof $steps["updateModalOpen"].then ===
                                 "function"
                             ) {
-                              $steps["updateModalOpen"] = await $steps[
-                                "updateModalOpen"
-                              ];
+                              $steps["updateModalOpen"] =
+                                await $steps["updateModalOpen"];
                             }
                           }}
                         >
@@ -1744,8 +1744,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         {hasVariant(globalVariants, "screen", "smallMobile")
                           ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
-                          : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
+                            ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
+                            : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
                       </PlasmicLink__>
                     }
                     <React.Fragment>{"\n"}</React.Fragment>
@@ -1765,8 +1765,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         {hasVariant(globalVariants, "screen", "smallMobile")
                           ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                          : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                            ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                            : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                       </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
@@ -1798,8 +1798,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         {hasVariant(globalVariants, "screen", "smallMobile")
                           ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
-                          : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
+                            ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
+                            : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
                       </PlasmicLink__>
                     }
                     <React.Fragment>{"\n"}</React.Fragment>
@@ -1819,8 +1819,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         {hasVariant(globalVariants, "screen", "smallMobile")
                           ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                          : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                            ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                            : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                       </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
@@ -1852,8 +1852,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         {hasVariant(globalVariants, "screen", "smallMobile")
                           ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
-                          : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
+                            ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
+                            : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
                       </PlasmicLink__>
                     }
                     <React.Fragment>{"\n"}</React.Fragment>
@@ -1873,8 +1873,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         {hasVariant(globalVariants, "screen", "smallMobile")
                           ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                           : hasVariant(globalVariants, "screen", "mobile")
-                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                          : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
+                            ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                            : " - \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                       </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
@@ -1900,17 +1900,20 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__vHiXs)}
                   >
-                    <div
+                    <h2
+                      data-plasmic-name={"h2"}
+                      data-plasmic-override={overrides.h2}
                       className={classNames(
                         projectcss.all,
+                        projectcss.h2,
                         projectcss.__wab_text,
-                        sty.text__zFze3
+                        sty.h2
                       )}
                     >
                       {
                         "\u0686\u0631\u0627 \u0628\u0627\u06cc\u062f \u0648\u06cc\u0644\u0627 \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc\u06cc \u0645\u062b\u0644 \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u062c\u0627\u062c\u06cc\u06af\u0627 \u062b\u0628\u062a \u06a9\u0646\u06cc\u0645\u061f"
                       }
-                    </div>
+                    </h2>
                     <div
                       className={classNames(
                         projectcss.all,
@@ -2017,7 +2020,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0627\u06af\u0647 \u0641\u06a9\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc \u0631\u0633\u06cc\u062f\u06af\u06cc \u0628\u0647 \u0622\u06af\u0647\u06cc \u0648 \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627 \u062a\u0648\u06cc \u0686\u0646\u062f\u062a\u0627 \u0633\u0627\u06cc\u062a \u0633\u062e\u062a\u0647\u060c \u0645\u0639\u0644\u0648\u0645\u0647 \u0647\u0646\u0648\u0632 \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0622\u0634\u0646\u0627 \u0646\u06cc\u0633\u062a\u06cc! "
+                      "\u0627\u06af\u0647 \u0641\u06a9\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc \u0631\u0633\u06cc\u062f\u06af\u06cc \u0628\u0647 \u0622\u06af\u0647\u06cc \u0648 \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627 \u062a\u0648\u06cc \u0686\u0646\u062f\u062a\u0627 \u0633\u0627\u06cc\u062a \u0633\u062e\u062a\u0647\u060c \u0645\u0639\u0644\u0648\u0645\u0647 \u0647\u0646\u0648\u0632 \u0628\u0627 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0622\u0634\u0646\u0627 \u0646\u06cc\u0633\u062a\u06cc! "
                     }
                   </div>
                 </div>
@@ -2068,7 +2071,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       }}
                     >
                       {
-                        "\u0645\u0639\u0631\u0641\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                        "\u0645\u0639\u0631\u0641\u06cc \u00ab\u0645\u06cc\u0627\u0646\u00bb"
                       }
                     </div>
                   </div>
@@ -2141,6 +2144,7 @@ const PlasmicDescendants = {
     "mainContents",
     "intro",
     "introTitle",
+    "h1",
     "introDesc",
     "str",
     "registration",
@@ -2159,6 +2163,7 @@ const PlasmicDescendants = {
     "bot",
     "more",
     "certificates",
+    "h2",
     "neighbours",
     "benefitsTitle2",
     "benefitsCaption2",
@@ -2173,6 +2178,7 @@ const PlasmicDescendants = {
     "mainContents",
     "intro",
     "introTitle",
+    "h1",
     "introDesc",
     "str",
     "registration",
@@ -2191,13 +2197,15 @@ const PlasmicDescendants = {
     "bot",
     "more",
     "certificates",
+    "h2",
     "neighbours",
     "benefitsTitle2",
     "benefitsCaption2",
     "button2"
   ],
-  intro: ["intro", "introTitle", "introDesc", "str"],
-  introTitle: ["introTitle"],
+  intro: ["intro", "introTitle", "h1", "introDesc", "str"],
+  introTitle: ["introTitle", "h1"],
+  h1: ["h1"],
   introDesc: ["introDesc"],
   str: ["str"],
   registration: [
@@ -2234,13 +2242,15 @@ const PlasmicDescendants = {
     "bot",
     "more",
     "certificates",
+    "h2",
     "neighbours",
     "benefitsTitle2",
     "benefitsCaption2",
     "button2"
   ],
-  more: ["more", "certificates"],
-  certificates: ["certificates"],
+  more: ["more", "certificates", "h2"],
+  certificates: ["certificates", "h2"],
+  h2: ["h2"],
   neighbours: ["neighbours", "benefitsTitle2", "benefitsCaption2", "button2"],
   benefitsTitle2: ["benefitsTitle2"],
   benefitsCaption2: ["benefitsCaption2", "button2"],
@@ -2259,6 +2269,7 @@ type NodeDefaultElementType = {
   mainContents: "div";
   intro: "div";
   introTitle: "div";
+  h1: "h1";
   introDesc: "div";
   str: "div";
   registration: "div";
@@ -2277,6 +2288,7 @@ type NodeDefaultElementType = {
   bot: "div";
   more: "div";
   certificates: "div";
+  h2: "h2";
   neighbours: "div";
   benefitsTitle2: "div";
   benefitsCaption2: "div";
@@ -2298,7 +2310,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicثبتآگهیاقامتگاه__VariantsArgs;
     args?: Plasmicثبتآگهیاقامتگاه__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicثبتآگهیاقامتگاه__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicثبتآگهیاقامتگاه__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicثبتآگهیاقامتگاه__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -2352,6 +2366,7 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
     mainContents: makeNodeComponent("mainContents"),
     intro: makeNodeComponent("intro"),
     introTitle: makeNodeComponent("introTitle"),
+    h1: makeNodeComponent("h1"),
     introDesc: makeNodeComponent("introDesc"),
     str: makeNodeComponent("str"),
     registration: makeNodeComponent("registration"),
@@ -2370,6 +2385,7 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
     bot: makeNodeComponent("bot"),
     more: makeNodeComponent("more"),
     certificates: makeNodeComponent("certificates"),
+    h2: makeNodeComponent("h2"),
     neighbours: makeNodeComponent("neighbours"),
     benefitsTitle2: makeNodeComponent("benefitsTitle2"),
     benefitsCaption2: makeNodeComponent("benefitsCaption2"),

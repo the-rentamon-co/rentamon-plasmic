@@ -3098,6 +3098,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/new-brand"
+        },
+        {
+          "id": "EU8iN_NUYieL",
+          "name": "StatusesConnections2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicStatusesConnections2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/statuses-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicStatusesConnections2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/statuses-2"
         }
       ],
       "icons": [

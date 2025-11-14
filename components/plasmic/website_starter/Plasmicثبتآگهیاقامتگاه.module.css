@@ -128,7 +128,7 @@
     padding-left: 12px;
   }
 }
-.text__yoL2I {
+.h1 {
   position: relative;
   width: auto;
   height: auto;
@@ -136,21 +136,22 @@
   font-size: 22px;
   font-weight: 600;
   padding-right: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
-  .text__yoL2I {
+  .h1 {
     padding-right: 20px;
   }
 }
 @media (max-width: 500px) {
-  .text__yoL2I {
+  .h1 {
     padding-right: 12px;
     line-height: 1.8;
     font-size: 20px;
   }
 }
 @media (max-width: 350px) {
-  .text__yoL2I {
+  .h1 {
     padding-right: 0px;
     font-size: 17px;
   }
@@ -172,9 +173,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 8px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -714,6 +716,7 @@
   max-width: 100%;
   font-size: 18px;
   font-weight: 600;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -744,6 +747,7 @@
   line-height: 1.8;
   padding-top: 10px;
   padding-bottom: 0px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -776,6 +780,7 @@
   line-height: 1.8;
   padding-top: 14px;
   padding-bottom: 0px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1062,6 +1067,7 @@
   padding-top: 14px;
   padding-bottom: 42px;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2197,6 +2203,7 @@
   font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2226,6 +2233,7 @@
   line-height: 1.8;
   padding-top: 14px;
   padding-bottom: 0px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2356,7 +2364,8 @@
     width: 100%;
     height: auto;
     max-width: 100%;
-    background: linear-gradient(
+    background:
+      linear-gradient(
         15.519236097659928deg,
         #ececec 0%,
         #ffffff 72%,
@@ -2374,7 +2383,8 @@
 }
 @media (max-width: 350px) {
   .more {
-    background: linear-gradient(
+    background:
+      linear-gradient(
         15.519236097659928deg,
         #ececec 0%,
         #ffffff 72%,
@@ -2446,18 +2456,19 @@
     min-width: 0;
   }
 }
-.text__zFze3 {
+.h2 {
   text-align: right;
   font-size: 20px;
   font-weight: 600;
+  color: #444444;
 }
 @media (max-width: 1200px) {
-  .text__zFze3 {
+  .h2 {
     font-size: 18px;
   }
 }
 @media (max-width: 350px) {
-  .text__zFze3 {
+  .h2 {
     font-size: 17px;
     line-height: 1.8;
   }
@@ -2468,6 +2479,7 @@
   width: 100%;
   line-height: 1.8;
   padding-top: 18px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__rcwUb {
@@ -2549,6 +2561,7 @@
   font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__uVf3I {

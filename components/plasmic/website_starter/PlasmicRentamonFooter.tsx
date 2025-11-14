@@ -178,8 +178,8 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u0646\u0645\u0627\u062f \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u062c\u0627\u0631\u062a \u0627\u0644\u06a9\u062a\u0631\u0648\u0646\u06cc\u06a9 (\u0627\u06cc\u0646\u0645\u0627\u062f)\r\n\r"
                   : hasVariant(globalVariants, "screen", "tablet")
-                  ? "\u0646\u0645\u0627\u062f \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u062c\u0627\u0631\u062a \u0627\u0644\u06a9\u062a\u0631\u0648\u0646\u06cc\u06a9 (\u0627\u06cc\u0646\u0645\u0627\u062f)\r\n\r"
-                  : "\u0646\u0645\u0627\u062f \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u062c\u0627\u0631\u062a \u0627\u0644\u06a9\u062a\u0631\u0648\u0646\u06cc\u06a9 (\u0627\u06cc\u0646\u0645\u0627\u062f)\r\n\r"}
+                    ? "\u0646\u0645\u0627\u062f \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u062c\u0627\u0631\u062a \u0627\u0644\u06a9\u062a\u0631\u0648\u0646\u06cc\u06a9 (\u0627\u06cc\u0646\u0645\u0627\u062f)\r\n\r"
+                    : "\u0646\u0645\u0627\u062f \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u062c\u0627\u0631\u062a \u0627\u0644\u06a9\u062a\u0631\u0648\u0646\u06cc\u06a9 (\u0627\u06cc\u0646\u0645\u0627\u062f)\r\n\r"}
               </div>
             </div>
           </div>
@@ -192,8 +192,8 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "mobile")
                     ? "95px"
                     : hasVariant(globalVariants, "screen", "tablet")
-                    ? "112px"
-                    : "121px"
+                      ? "112px"
+                      : "121px"
                 }
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -232,8 +232,8 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "mobile")
                     ? "67px"
                     : hasVariant(globalVariants, "screen", "tablet")
-                    ? "91px"
-                    : "100px"
+                      ? "91px"
+                      : "100px"
                 }
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -279,7 +279,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
             )}
           >
             {
-              "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u0634\u0628\u06a9\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u062a\u0645\u0627\u0639\u06cc"
+              "\u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642) \u062f\u0631 \u0634\u0628\u06a9\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u062a\u0645\u0627\u0639\u06cc"
             }
           </div>
         </div>
@@ -437,9 +437,21 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               sty.text__cednT
             )}
           >
-            {
-              "\u062f\u0631\u062f\u0633\u0631\u0647\u0627\u06cc  \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0633\u067e\u0627\u0631 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0648 \u0648\u0642\u062a\u200c\u062a\u0648 \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0647\u0645\u200c\u062a\u0631 \u0622\u0632\u0627\u062f \u06a9\u0646 :)"
-            }
+            <React.Fragment>
+              <React.Fragment>
+                {
+                  "\u062f\u0631\u062f\u0633\u0631\u0647\u0627\u06cc  \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0633\u067e\u0627\u0631 \u0628\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0648 \u0648\u0642\u062a\u200c\u062a\u0648 \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0647\u0645\u200c\u062a\u0631 \u0622\u0632\u0627\u062f \u06a9\u0646.\n\n"
+                }
+              </React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 500 }}
+              >
+                {
+                  "\u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0628\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0631\u062f\u0647."
+                }
+              </span>
+            </React.Fragment>
           </div>
         </div>
         <div className={classNames(projectcss.all, sty.freeBox__js4R)}>
@@ -462,6 +474,12 @@ function PlasmicRentamonFooter__RenderFunc(props: {
             )}
           >
             <React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {""}
+              </span>
               <React.Fragment>{""}</React.Fragment>
               {
                 <PlasmicLink__
@@ -476,12 +494,33 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   href={"/features"}
                   platform={"nextjs"}
                 >
-                  {
-                    "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                  }
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 400 }}
+                    >
+                      {
+                        "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                      }
+                    </span>
+                  </React.Fragment>
                 </PlasmicLink__>
               }
-              <React.Fragment>{"\r\n"}</React.Fragment>
+              <React.Fragment>{""}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {"\r"}
+              </span>
+              <React.Fragment>{"\n"}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {""}
+              </span>
+              <React.Fragment>{""}</React.Fragment>
               {
                 <PlasmicLink__
                   className={classNames(
@@ -495,12 +534,33 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   href={"/pricing"}
                   platform={"nextjs"}
                 >
-                  {
-                    "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a"
-                  }
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 400 }}
+                    >
+                      {
+                        "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a"
+                      }
+                    </span>
+                  </React.Fragment>
                 </PlasmicLink__>
               }
-              <React.Fragment>{"\r\n"}</React.Fragment>
+              <React.Fragment>{""}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {"\r"}
+              </span>
+              <React.Fragment>{"\n"}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {""}
+              </span>
+              <React.Fragment>{""}</React.Fragment>
               {
                 <PlasmicLink__
                   className={classNames(
@@ -514,12 +574,33 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   href={`/rental-rules`}
                   platform={"nextjs"}
                 >
-                  {
-                    "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a\r"
-                  }
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 400 }}
+                    >
+                      {
+                        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a\r"
+                      }
+                    </span>
+                  </React.Fragment>
                 </PlasmicLink__>
               }
+              <React.Fragment>{""}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {""}
+              </span>
               <React.Fragment>{"\n"}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {""}
+              </span>
+              <React.Fragment>{""}</React.Fragment>
               {
                 <PlasmicLink__
                   className={classNames(
@@ -533,10 +614,31 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   href={`/about-us`}
                   platform={"nextjs"}
                 >
-                  {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 400 }}
+                    >
+                      {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}
+                    </span>
+                  </React.Fragment>
                 </PlasmicLink__>
               }
-              <React.Fragment>{"\r\n"}</React.Fragment>
+              <React.Fragment>{""}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {"\r"}
+              </span>
+              <React.Fragment>{"\n"}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {""}
+              </span>
+              <React.Fragment>{""}</React.Fragment>
               {
                 <PlasmicLink__
                   className={classNames(
@@ -550,12 +652,33 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   href={`/integrations`}
                   platform={"nextjs"}
                 >
-                  {
-                    "\u0635\u0627\u062d\u0628 \u067e\u0644\u062a\u0641\u0631\u0645 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0647\u0633\u062a\u06cc\u061f"
-                  }
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 400 }}
+                    >
+                      {
+                        "\u0635\u0627\u062d\u0628 \u067e\u0644\u062a\u0641\u0631\u0645 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0647\u0633\u062a\u06cc\u061f"
+                      }
+                    </span>
+                  </React.Fragment>
                 </PlasmicLink__>
               }
+              <React.Fragment>{""}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {""}
+              </span>
               <React.Fragment>{"\n"}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {""}
+              </span>
+              <React.Fragment>{""}</React.Fragment>
               {
                 <PlasmicLink__
                   className={classNames(
@@ -569,9 +692,16 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   href={"https://rentamon.com/terms-of-use/"}
                   platform={"nextjs"}
                 >
-                  {
-                    "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                  }
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 400 }}
+                    >
+                      {
+                        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                      }
+                    </span>
+                  </React.Fragment>
                 </PlasmicLink__>
               }
               <React.Fragment>{""}</React.Fragment>
@@ -586,13 +716,11 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               sty.text__zFLzn
             )}
           >
-            {hasVariant(globalVariants, "screen", "smallMobile")
-              ? "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
-              : hasVariant(globalVariants, "screen", "mobile")
+            {hasVariant(globalVariants, "screen", "mobile")
               ? "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc  \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
               : hasVariant(globalVariants, "screen", "tablet")
-              ? "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7"
-              : "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"}
+                ? "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7"
+                : "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"}
           </div>
           <div
             className={classNames(
@@ -601,13 +729,11 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               sty.text__cOA3
             )}
           >
-            {hasVariant(globalVariants, "screen", "smallMobile")
-              ? "info [@] rentamon.com\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\n\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641"
-              : hasVariant(globalVariants, "screen", "mobile")
+            {hasVariant(globalVariants, "screen", "mobile")
               ? "info [@] rentamon.com\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\n\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641"
               : hasVariant(globalVariants, "screen", "tablet")
-              ? "\r\ninfo [@] rentamon.com\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\n\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641"
-              : "info [@] rentamon.com\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\n\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641"}
+                ? "\r\ninfo [@] rentamon.com\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\n\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641"
+                : "info [@] rentamon.com\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\n\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641"}
           </div>
         </div>
       </div>
@@ -646,7 +772,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicRentamonFooter__VariantsArgs;
     args?: PlasmicRentamonFooter__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicRentamonFooter__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicRentamonFooter__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicRentamonFooter__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

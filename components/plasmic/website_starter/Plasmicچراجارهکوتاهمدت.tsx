@@ -92,12 +92,15 @@ export type Plasmicچراجارهکوتاهمدت__OverridesType = {
   top?: Flex__<"div">;
   right?: Flex__<"div">;
   introTitle?: Flex__<"div">;
+  h1?: Flex__<"h1">;
   introDesc?: Flex__<"div">;
   left?: Flex__<"div">;
   culture?: Flex__<"div">;
   strDefinition?: Flex__<"div">;
   investment?: Flex__<"div">;
+  h2?: Flex__<"h2">;
   incomeAnual?: Flex__<"div">;
+  h3?: Flex__<"h3">;
   efforts?: Flex__<"div">;
   handsOn?: Flex__<"div">;
   bot?: Flex__<"div">;
@@ -265,17 +268,20 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                     data-plasmic-override={overrides.introTitle}
                     className={classNames(projectcss.all, sty.introTitle)}
                   >
-                    <div
+                    <h1
+                      data-plasmic-name={"h1"}
+                      data-plasmic-override={overrides.h1}
                       className={classNames(
                         projectcss.all,
+                        projectcss.h1,
                         projectcss.__wab_text,
-                        sty.text__rzAd
+                        sty.h1
                       )}
                     >
                       {
                         "\u0627\u062c\u0627\u0631\u0647\u200c \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0686\u06cc\u0633\u062a \u0648 \u0686\u0631\u0627 \u0628\u0627\u06cc\u062f \u0645\u0648\u0631\u062f \u062a\u0648\u062c\u0647 \u0642\u0631\u0627\u0631 \u0628\u06af\u06cc\u0631\u0647\u061f"
                       }
-                    </div>
+                    </h1>
                   </div>
                   <div
                     data-plasmic-name={"introDesc"}
@@ -409,17 +415,20 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                 <div
                   className={classNames(projectcss.all, sty.freeBox___5OVfi)}
                 >
-                  <div
+                  <h2
+                    data-plasmic-name={"h2"}
+                    data-plasmic-override={overrides.h2}
                     className={classNames(
                       projectcss.all,
+                      projectcss.h2,
                       projectcss.__wab_text,
-                      sty.text__mlgvO
+                      sty.h2
                     )}
                   >
                     {
-                      "\u06cc\u0647 \u0633\u0631\u0645\u0627\u06cc\u0647\u200c\u06af\u0630\u0627\u0631\u06cc \u062c\u0630\u0627\u0628\r"
+                      "\u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647\u060c \u06cc\u0647 \u0633\u0631\u0645\u0627\u06cc\u0647\u200c\u06af\u0630\u0627\u0631\u06cc \u062c\u0630\u0627\u0628\r"
                     }
-                  </div>
+                  </h2>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -471,17 +480,20 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
               className={classNames(projectcss.all, sty.incomeAnual)}
             >
               <div className={classNames(projectcss.all, sty.freeBox__rOcLc)}>
-                <div
+                <h3
+                  data-plasmic-name={"h3"}
+                  data-plasmic-override={overrides.h3}
                   className={classNames(
                     projectcss.all,
+                    projectcss.h3,
                     projectcss.__wab_text,
-                    sty.text__apoLn
+                    sty.h3
                   )}
                 >
                   {
-                    "\u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0628\u0631\u0627\u0628\u0631\u06cc"
+                    "\u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0628\u0631\u0627\u0628\u0631\u06cc \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0646\u0633\u0628\u062a \u0628\u0647 \u0633\u0627\u0644\u0627\u0646\u0647"
                   }
-                </div>
+                </h3>
                 <div
                   className={classNames(
                     projectcss.all,
@@ -765,12 +777,15 @@ const PlasmicDescendants = {
     "top",
     "right",
     "introTitle",
+    "h1",
     "introDesc",
     "left",
     "culture",
     "strDefinition",
     "investment",
+    "h2",
     "incomeAnual",
+    "h3",
     "efforts",
     "handsOn",
     "bot",
@@ -787,12 +802,15 @@ const PlasmicDescendants = {
     "top",
     "right",
     "introTitle",
+    "h1",
     "introDesc",
     "left",
     "culture",
     "strDefinition",
     "investment",
+    "h2",
     "incomeAnual",
+    "h3",
     "efforts",
     "handsOn",
     "bot",
@@ -804,21 +822,26 @@ const PlasmicDescendants = {
     "top",
     "right",
     "introTitle",
+    "h1",
     "introDesc",
     "left",
     "culture",
     "strDefinition",
-    "investment"
+    "investment",
+    "h2"
   ],
-  top: ["top", "right", "introTitle", "introDesc", "left"],
-  right: ["right", "introTitle", "introDesc"],
-  introTitle: ["introTitle"],
+  top: ["top", "right", "introTitle", "h1", "introDesc", "left"],
+  right: ["right", "introTitle", "h1", "introDesc"],
+  introTitle: ["introTitle", "h1"],
+  h1: ["h1"],
   introDesc: ["introDesc"],
   left: ["left"],
   culture: ["culture", "strDefinition"],
   strDefinition: ["strDefinition"],
-  investment: ["investment"],
-  incomeAnual: ["incomeAnual"],
+  investment: ["investment", "h2"],
+  h2: ["h2"],
+  incomeAnual: ["incomeAnual", "h3"],
+  h3: ["h3"],
   efforts: ["efforts", "handsOn", "bot", "cta", "button"],
   handsOn: ["handsOn", "bot", "cta", "button"],
   bot: ["bot", "cta"],
@@ -839,12 +862,15 @@ type NodeDefaultElementType = {
   top: "div";
   right: "div";
   introTitle: "div";
+  h1: "h1";
   introDesc: "div";
   left: "div";
   culture: "div";
   strDefinition: "div";
   investment: "div";
+  h2: "h2";
   incomeAnual: "div";
+  h3: "h3";
   efforts: "div";
   handsOn: "div";
   bot: "div";
@@ -924,12 +950,15 @@ export const Plasmicچراجارهکوتاهمدت = Object.assign(
     top: makeNodeComponent("top"),
     right: makeNodeComponent("right"),
     introTitle: makeNodeComponent("introTitle"),
+    h1: makeNodeComponent("h1"),
     introDesc: makeNodeComponent("introDesc"),
     left: makeNodeComponent("left"),
     culture: makeNodeComponent("culture"),
     strDefinition: makeNodeComponent("strDefinition"),
     investment: makeNodeComponent("investment"),
+    h2: makeNodeComponent("h2"),
     incomeAnual: makeNodeComponent("incomeAnual"),
+    h3: makeNodeComponent("h3"),
     efforts: makeNodeComponent("efforts"),
     handsOn: makeNodeComponent("handsOn"),
     bot: makeNodeComponent("bot"),

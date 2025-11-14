@@ -105,6 +105,7 @@ export type PlasmicHomepage__OverridesType = {
   mainContents?: Flex__<"div">;
   introCalendar?: Flex__<"div">;
   introCalendarTitle?: Flex__<"div">;
+  h1?: Flex__<"h1">;
   introCalendarCaption?: Flex__<"div">;
   introCalendar4?: Flex__<"div">;
   introCalendarRight?: Flex__<"div">;
@@ -116,6 +117,7 @@ export type PlasmicHomepage__OverridesType = {
   introAutoSync?: Flex__<"div">;
   stack?: Flex__<"div">;
   introAutoSyncTitle?: Flex__<"div">;
+  h2?: Flex__<"h2">;
   introAutoSyncCaption?: Flex__<"div">;
   introAutoSyncDesc?: Flex__<"div">;
   introAutoSyncBenefits?: Flex__<"div">;
@@ -155,7 +157,7 @@ export type PlasmicHomepage__OverridesType = {
   screenshotsLeft?: Flex__<"div">;
   carousel?: Flex__<typeof Embed>;
   addingVillaIntoPltforms?: Flex__<"div">;
-  reg?: Flex__<"div">;
+  introCalendarRight7?: Flex__<"div">;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
   _2?: Flex__<typeof AntdAccordionItem>;
@@ -372,17 +374,20 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-override={overrides.introCalendarTitle}
                   className={classNames(projectcss.all, sty.introCalendarTitle)}
                 >
-                  <div
+                  <h1
+                    data-plasmic-name={"h1"}
+                    data-plasmic-override={overrides.h1}
                     className={classNames(
                       projectcss.all,
+                      projectcss.h1,
                       projectcss.__wab_text,
-                      sty.text__s3R23
+                      sty.h1
                     )}
                   >
                     {
-                      "\u062a\u0642\u0648\u06cc\u0645 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648... \u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0627\u0632 \u00ab\u06cc\u06a9\u200c\u062c\u0627\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u0647\r"
+                      "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627"
                     }
-                  </div>
+                  </h1>
                 </div>
                 <div
                   data-plasmic-name={"introCalendarCaption"}
@@ -400,7 +405,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0628\u0631\u0627\u06cc \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0627\u0633\u062a."
+                      "\u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642) \u062a\u0642\u0648\u06cc\u0645 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648... \u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0627\u0632 \u00ab\u06cc\u06a9\u200c\u062c\u0627\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u0647\r"
                     }
                   </div>
                 </div>
@@ -453,7 +458,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     >
                       {hasVariant(globalVariants, "screen", "smallMobile")
                         ? "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u0639\u0644\u06cc \u06a9\u0631\u0645\u0627\u0646\u06cc\u00bb \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                        : "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u0639\u0644\u06cc \u06a9\u0631\u0645\u0627\u0646\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"}
+                        : "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u0639\u0644\u06cc \u06a9\u0631\u0645\u0627\u0646\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u0645\u06cc\u0627\u0646\u00bb"}
                     </div>
                   </div>
                 </div>
@@ -483,12 +488,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.introCalendarRight4)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__lwviT,
-                    "clickable"
-                  )}
+                  className={classNames(projectcss.all, sty.freeBox__uOyUy)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -523,9 +523,16 @@ function PlasmicHomepage__RenderFunc(props: {
                     }
                   }}
                 >
-                  {
-                    "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                  }
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__lwviT,
+                      "clickable"
+                    )}
+                  >
+                    {"\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631"}
+                  </div>
                 </div>
                 <div
                   className={classNames(
@@ -534,13 +541,11 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.text__t3HG4
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                        : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                      ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                      : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
                 </div>
               </div>
             </div>
@@ -559,17 +564,20 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-override={overrides.introAutoSyncTitle}
                   className={classNames(projectcss.all, sty.introAutoSyncTitle)}
                 >
-                  <div
+                  <h2
+                    data-plasmic-name={"h2"}
+                    data-plasmic-override={overrides.h2}
                     className={classNames(
                       projectcss.all,
+                      projectcss.h2,
                       projectcss.__wab_text,
-                      sty.text__izNyD
+                      sty.h2
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631\u060c \u0628\u062f\u0648\u0646 \u0631\u06cc\u0633\u06a9 \u062c\u0631\u06cc\u0645\u0647"
-                      : "\u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631\u060c \u0628\u062f\u0648\u0646 \u0631\u06cc\u0633\u06a9 \u062c\u0631\u06cc\u0645\u0647"}
-                  </div>
+                    {hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u062f\u0648\u0646 \u0631\u06cc\u0633\u06a9 \u062c\u0631\u06cc\u0645\u0647"
+                      : "\u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u0642\u0648\u06cc\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u060c \u0628\u062f\u0648\u0646 \u0631\u06cc\u0633\u06a9 \u062c\u0631\u06cc\u0645\u0647"}
+                  </h2>
                 </div>
                 <div
                   data-plasmic-name={"introAutoSyncCaption"}
@@ -586,13 +594,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text__bNchH
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647\u060c \u0648 \u062c\u0644\u0648\u06cc \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627 \u0631\u0648 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."
-                      : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647\u060c \u0648 \u062c\u0644\u0648\u06cc \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627 \u0631\u0648 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647.\r\n\r"
-                        : hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647\u060c \u0648 \u062c\u0644\u0648\u06cc \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627 \u0631\u0648 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."
-                          : "\u200f\u200f\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647. \u0627\u06af\u0647 \u0628\u0627 \u0648\u062c\u0648\u062f \u0627\u06cc\u0646 \u0647\u0645\u0627\u0647\u0646\u06af\u06cc\u060c \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f \u0648 \u062c\u0631\u06cc\u0645\u0647 \u0628\u0634\u06cc\u060c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062a\u0627 \u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646 \u062e\u0633\u0627\u0631\u062a \u0631\u0648 \u062c\u0628\u0631\u0627\u0646 \u0645\u06cc\u200c\u06a9\u0646\u0647.\n\r\n\r"}
+                    {
+                      "\u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647\u060c \u0648 \u062c\u0644\u0648\u06cc \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627 \u0631\u0648 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647."
+                    }
                   </div>
                 </div>
                 <div
@@ -626,13 +630,9 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.text__jfko
                       )}
                     >
-                      {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u062d\u062a\u06cc \u0628\u062f\u0648\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                        : hasVariant(globalVariants, "screen", "mobile")
-                          ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u062d\u062a\u06cc \u0628\u062f\u0648\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                            ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u062d\u062a\u06cc \u0628\u062f\u0648\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
-                            : "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u062d\u062a\u06cc \u0628\u062f\u0648\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"}
+                      {hasVariant(globalVariants, "screen", "tablet")
+                        ? "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u062d\u062a\u06cc \u0628\u062f\u0648\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+                        : "\u2705 \u0628\u0631\u0648\u0632 \u0634\u062f\u0646 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u0635\u0641\u0631 \u0634\u062f\u0646 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648 \u0648 \u062c\u0631\u06cc\u0645\u0647\n\u2705 \u062d\u062a\u06cc \u0628\u062f\u0648\u0646 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"}
                     </div>
                   </div>
                   <div
@@ -656,506 +656,526 @@ function PlasmicHomepage__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div
-                data-plasmic-name={"introCalendarRight6"}
-                data-plasmic-override={overrides.introCalendarRight6}
-                className={classNames(projectcss.all, sty.introCalendarRight6)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__uwlBv)}>
                 <div
+                  data-plasmic-name={"introCalendarRight6"}
+                  data-plasmic-override={overrides.introCalendarRight6}
                   className={classNames(
                     projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___1INox,
-                    "clickable"
+                    sty.introCalendarRight6
                   )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateConsult2Open"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["consult2", "open"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateConsult2Open"] != null &&
-                      typeof $steps["updateConsult2Open"] === "object" &&
-                      typeof $steps["updateConsult2Open"].then === "function"
-                    ) {
-                      $steps["updateConsult2Open"] =
-                        await $steps["updateConsult2Open"];
-                    }
-                  }}
-                >
-                  <React.Fragment>
-                    <React.Fragment>
-                      {
-                        "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0645\u0634\u0627\u0648\u0631\u0647 "
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 300 }}
-                    >
-                      {"(\u0631\u0627\u06cc\u06af\u0627\u0646)"}
-                    </span>
-                  </React.Fragment>
-                </div>
-                <AntdModal
-                  data-plasmic-name={"consult2"}
-                  data-plasmic-override={overrides.consult2}
-                  className={classNames("__wab_instance", sty.consult2)}
-                  defaultStylesClassName={classNames(
-                    projectcss.root_reset,
-                    projectcss.plasmic_default_styles,
-                    projectcss.plasmic_mixins,
-                    styleTokensClassNames
-                  )}
-                  hideFooter={true}
-                  modalScopeClassName={sty["consult2__modal"]}
-                  onOpenChange={async (...eventArgs: any) => {
-                    generateStateOnChangeProp($state, [
-                      "consult2",
-                      "open"
-                    ]).apply(null, eventArgs);
-                  }}
-                  open={generateStateValueProp($state, ["consult2", "open"])}
-                  title={null}
-                  trigger={null}
-                  width={"450"}
                 >
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__t3ZjU)}
+                    className={classNames(projectcss.all, sty.freeBox___6Or6W)}
                   >
                     <div
-                      data-plasmic-name={"regForm2"}
-                      data-plasmic-override={overrides.regForm2}
-                      className={classNames(projectcss.all, sty.regForm2)}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uIg1S
+                      )}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__uWmN3
-                        )}
-                      >
-                        {
-                          "\u0634\u0645\u0627\u0631\u0647\u200c\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646\u060c \u062a\u0627 \u0628\u0627 \u0647\u0645 \u0631\u0627\u0647\u200c\u0647\u0627\u06cc \u0631\u0634\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u0645:"
-                        }
-                      </div>
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.form3),
-                          extendedOnValuesChange: async (...eventArgs: any) => {
-                            generateStateOnChangePropForCodeComponents(
-                              $state,
-                              "value",
-                              ["form3", "value"],
-                              FormWrapper_Helpers
-                            ).apply(null, eventArgs);
-                          },
-                          formItems: [
-                            { label: "Name", name: "name", inputType: "Text" },
-                            {
-                              label: "Message",
-                              name: "message",
-                              inputType: "Text Area"
-                            }
-                          ],
-                          labelCol: { span: 8, horizontalOnly: true },
-                          layout: "vertical",
-                          mode: "advanced",
-                          onIsSubmittingChange: async (...eventArgs: any) => {
-                            generateStateOnChangePropForCodeComponents(
-                              $state,
-                              "isSubmitting",
-                              ["form3", "isSubmitting"],
-                              FormWrapper_Helpers
-                            ).apply(null, eventArgs);
-                          },
-                          ref: ref => {
-                            $refs["form3"] = ref;
-                          },
-                          submitSlot: null,
-                          wrapperCol: { span: 16, horizontalOnly: true }
-                        };
-                        initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "form3.value"
-                            },
-                            {
-                              name: "isSubmitting",
-                              plasmicStateName: "form3.isSubmitting"
-                            }
-                          ],
-                          [],
-                          FormWrapper_Helpers ?? {},
-                          child$Props
-                        );
-
-                        return (
-                          <FormWrapper
-                            data-plasmic-name={"form3"}
-                            data-plasmic-override={overrides.form3}
-                            {...child$Props}
-                          >
-                            <FormItemWrapper
-                              className={classNames(
-                                "__wab_instance",
-                                sty.formField__kmse
-                              )}
-                              initialValue={``}
-                              label={
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__ttM2
-                                  )}
-                                >
-                                  {
-                                    "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
-                                  }
-                                </div>
-                              }
-                              name={"name"}
-                              noLabel={true}
-                            >
-                              {(() => {
-                                const child$Props = {
-                                  className: classNames(
-                                    "__wab_instance",
-                                    sty.input3
-                                  ),
-                                  onChange: async (...eventArgs: any) => {
-                                    generateStateOnChangePropForCodeComponents(
-                                      $state,
-                                      "value",
-                                      ["input3", "value"],
-                                      AntdInput_Helpers
-                                    ).apply(null, eventArgs);
-                                  },
-                                  placeholder:
-                                    "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
-                                  size: "large",
-                                  value: generateStateValueProp($state, [
-                                    "input3",
-                                    "value"
-                                  ])
-                                };
-                                initializeCodeComponentStates(
-                                  $state,
-                                  [
-                                    {
-                                      name: "value",
-                                      plasmicStateName: "input3.value"
-                                    }
-                                  ],
-                                  [],
-                                  AntdInput_Helpers ?? {},
-                                  child$Props
-                                );
-
-                                return (
-                                  <AntdInput
-                                    data-plasmic-name={"input3"}
-                                    data-plasmic-override={overrides.input3}
-                                    {...child$Props}
-                                  />
-                                );
-                              })()}
-                            </FormItemWrapper>
-                            <FormItemWrapper
-                              className={classNames(
-                                "__wab_instance",
-                                sty.formField__gEaUc
-                              )}
-                              initialValue={``}
-                              label={
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__bwc66
-                                  )}
-                                >
-                                  {"\u0645\u0648\u0628\u0627\u06cc\u0644"}
-                                </div>
-                              }
-                              name={"mobile"}
-                              noLabel={true}
-                              rules={[
-                                {
-                                  ruleType: "required",
-                                  message:
-                                    "\u0628\u062f\u0648\u0646 \u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u060c \u0686\u0637\u0648\u0631 \u0628\u0627 \u0634\u0645\u0627 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u06af\u06cc\u0631\u06cc\u0645\u061f"
-                                },
-
-                                {
-                                  ruleType: "max",
-                                  length: 11,
-                                  message:
-                                    "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
-                                },
-
-                                {
-                                  ruleType: "min",
-                                  length: 11,
-                                  message:
-                                    "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
-                                }
-                              ]}
-                            >
-                              {(() => {
-                                const child$Props = {
-                                  className: classNames(
-                                    "__wab_instance",
-                                    sty.input4
-                                  ),
-                                  onChange: async (...eventArgs: any) => {
-                                    generateStateOnChangePropForCodeComponents(
-                                      $state,
-                                      "value",
-                                      ["input4", "value"],
-                                      AntdInput_Helpers
-                                    ).apply(null, eventArgs);
-                                  },
-                                  placeholder:
-                                    "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644",
-                                  size: "large",
-                                  type: "number",
-                                  value: generateStateValueProp($state, [
-                                    "input4",
-                                    "value"
-                                  ])
-                                };
-                                initializeCodeComponentStates(
-                                  $state,
-                                  [
-                                    {
-                                      name: "value",
-                                      plasmicStateName: "input4.value"
-                                    }
-                                  ],
-                                  [],
-                                  AntdInput_Helpers ?? {},
-                                  child$Props
-                                );
-
-                                return (
-                                  <AntdInput
-                                    data-plasmic-name={"input4"}
-                                    data-plasmic-override={overrides.input4}
-                                    {...child$Props}
-                                  />
-                                );
-                              })()}
-                            </FormItemWrapper>
-                            <AntdButton
-                              data-plasmic-name={"button"}
-                              data-plasmic-override={overrides.button}
-                              className={classNames(
-                                "__wab_instance",
-                                sty.button
-                              )}
-                              disabled={false}
-                              ghost={true}
-                              submitsForm={false}
-                              type={"default"}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__ymWvM
-                                )}
-                              >
-                                {"Submit"}
-                              </div>
-                            </AntdButton>
-                          </FormWrapper>
-                        );
-                      })()}
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__rbXu,
-                          "clickable"
-                        )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["updateConsult2Open"] =
-                            $state.form3.value.mobile != ""
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["consult2", "open"]
-                                    },
-                                    operation: 0,
-                                    value: false
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                          if (
-                            $steps["updateConsult2Open"] != null &&
-                            typeof $steps["updateConsult2Open"] === "object" &&
-                            typeof $steps["updateConsult2Open"].then ===
-                              "function"
-                          ) {
-                            $steps["updateConsult2Open"] =
-                              await $steps["updateConsult2Open"];
-                          }
-
-                          $steps["successToast"] =
-                            $state.form3.value.mobile !== "" &&
-                            /^09\d{9}$/.test($state.form3.value.mobile)
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      undefined,
-                                      `${$state.form3.value.name} جان اطلاعات ثبت شد، بزودی با شما ارتباط می‌گیریم :)`,
-                                      "top-center",
-                                      5000
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.showToast"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                          if (
-                            $steps["successToast"] != null &&
-                            typeof $steps["successToast"] === "object" &&
-                            typeof $steps["successToast"].then === "function"
-                          ) {
-                            $steps["successToast"] =
-                              await $steps["successToast"];
-                          }
-
-                          $steps["apiRequest"] =
-                            $state.form3.value.mobile !== ""
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "POST",
-                                      "https://gateway.rentamon.com/webhook/consult-with-us",
-                                      undefined,
-                                      (() => {
-                                        try {
-                                          return $state.form3.value;
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })()
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.apiRequest"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                          if (
-                            $steps["apiRequest"] != null &&
-                            typeof $steps["apiRequest"] === "object" &&
-                            typeof $steps["apiRequest"].then === "function"
-                          ) {
-                            $steps["apiRequest"] = await $steps["apiRequest"];
-                          }
-
-                          $steps["errorToast"] =
-                            !$state.form3.value.mobile ||
-                            !$state.form3.value.mobile.match(/^09\d{9}$/)
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "error",
-                                      "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u062a\u0648 \u06a9\u0647 \u0647\u0646\u0648\u0632 \u0648\u0627\u0631\u062f \u0646\u06a9\u0631\u062f\u06cc!",
-                                      "top-center",
-                                      5000
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.showToast"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                          if (
-                            $steps["errorToast"] != null &&
-                            typeof $steps["errorToast"] === "object" &&
-                            typeof $steps["errorToast"].then === "function"
-                          ) {
-                            $steps["errorToast"] = await $steps["errorToast"];
-                          }
-                        }}
-                      >
-                        {
-                          "\u0627\u0631\u0633\u0627\u0644 \u062f\u0631\u062e\u0648\u0627\u0633\u062a"
-                        }
-                      </div>
+                      {
+                        "\u0628\u0631\u0627\u06cc \u0622\u0634\u0646\u0627\u06cc\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0628\u0627 \u062e\u062f\u0645\u0627\u062a \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0648 \u0646\u062d\u0648\u0647\u200c\u06cc \u0647\u0645\u06a9\u0627\u0631\u06cc\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647\u200c\u06cc \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0632\u0646"
+                      }
                     </div>
                   </div>
-                </AntdModal>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__uIg1S
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0628\u0627 \u0634\u0645\u0627 \u062a\u0645\u0627\u0633 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645 \u062a\u0627 \u0628\u0647 \u0633\u0648\u0627\u0644\u0627\u062a\u200c\u062a\u0648\u0646 \u067e\u0627\u0633\u062e \u0628\u062f\u06cc\u0645"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0628\u0627 \u0634\u0645\u0627 \u062a\u0645\u0627\u0633 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645 \u062a\u0627 \u0628\u0647 \u0633\u0648\u0627\u0644\u0627\u062a\u200c\u062a\u0648\u0646 \u067e\u0627\u0633\u062e \u0628\u062f\u06cc\u0645"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u0628\u0627 \u0634\u0645\u0627 \u062a\u0645\u0627\u0633 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645 \u062a\u0627 \u0628\u0647 \u0633\u0648\u0627\u0644\u0627\u062a\u200c\u062a\u0648\u0646 \u067e\u0627\u0633\u062e \u0628\u062f\u06cc\u0645"
-                        : "\u0628\u0627 \u0634\u0645\u0627 \u062a\u0645\u0627\u0633 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645 \u062a\u0627 \u0628\u0647 \u0633\u0648\u0627\u0644\u0627\u062a\u200c\u062a\u0648\u0646 \u067e\u0627\u0633\u062e \u0628\u062f\u06cc\u0645"}
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__kxLlW)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___9Mq6L,
+                        "clickable"
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateConsult2Open"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["consult2", "open"]
+                                },
+                                operation: 0,
+                                value: true
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateConsult2Open"] != null &&
+                          typeof $steps["updateConsult2Open"] === "object" &&
+                          typeof $steps["updateConsult2Open"].then ===
+                            "function"
+                        ) {
+                          $steps["updateConsult2Open"] =
+                            await $steps["updateConsult2Open"];
+                        }
+                      }}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>
+                          {
+                            "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0645\u0634\u0627\u0648\u0631\u0647 "
+                          }
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 300 }}
+                        >
+                          {"(\u0631\u0627\u06cc\u06af\u0627\u0646)"}
+                        </span>
+                      </React.Fragment>
+                    </div>
+                  </div>
+                  <AntdModal
+                    data-plasmic-name={"consult2"}
+                    data-plasmic-override={overrides.consult2}
+                    className={classNames("__wab_instance", sty.consult2)}
+                    defaultStylesClassName={classNames(
+                      projectcss.root_reset,
+                      projectcss.plasmic_default_styles,
+                      projectcss.plasmic_mixins,
+                      styleTokensClassNames
+                    )}
+                    hideFooter={true}
+                    modalScopeClassName={sty["consult2__modal"]}
+                    onOpenChange={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "consult2",
+                        "open"
+                      ]).apply(null, eventArgs);
+                    }}
+                    open={generateStateValueProp($state, ["consult2", "open"])}
+                    title={null}
+                    trigger={null}
+                    width={"450"}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__t3ZjU)}
+                    >
+                      <div
+                        data-plasmic-name={"regForm2"}
+                        data-plasmic-override={overrides.regForm2}
+                        className={classNames(projectcss.all, sty.regForm2)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__uWmN3
+                          )}
+                        >
+                          {
+                            "\u0634\u0645\u0627\u0631\u0647\u200c\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646\u060c \u062a\u0627 \u0628\u0627 \u0647\u0645 \u0631\u0627\u0647\u200c\u0647\u0627\u06cc \u0631\u0634\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u0645:"
+                          }
+                        </div>
+                        {(() => {
+                          const child$Props = {
+                            className: classNames("__wab_instance", sty.form3),
+                            extendedOnValuesChange: async (
+                              ...eventArgs: any
+                            ) => {
+                              generateStateOnChangePropForCodeComponents(
+                                $state,
+                                "value",
+                                ["form3", "value"],
+                                FormWrapper_Helpers
+                              ).apply(null, eventArgs);
+                            },
+                            formItems: [
+                              {
+                                label: "Name",
+                                name: "name",
+                                inputType: "Text"
+                              },
+                              {
+                                label: "Message",
+                                name: "message",
+                                inputType: "Text Area"
+                              }
+                            ],
+                            labelCol: { span: 8, horizontalOnly: true },
+                            layout: "vertical",
+                            mode: "advanced",
+                            onIsSubmittingChange: async (...eventArgs: any) => {
+                              generateStateOnChangePropForCodeComponents(
+                                $state,
+                                "isSubmitting",
+                                ["form3", "isSubmitting"],
+                                FormWrapper_Helpers
+                              ).apply(null, eventArgs);
+                            },
+                            ref: ref => {
+                              $refs["form3"] = ref;
+                            },
+                            submitSlot: null,
+                            wrapperCol: { span: 16, horizontalOnly: true }
+                          };
+                          initializeCodeComponentStates(
+                            $state,
+                            [
+                              {
+                                name: "value",
+                                plasmicStateName: "form3.value"
+                              },
+                              {
+                                name: "isSubmitting",
+                                plasmicStateName: "form3.isSubmitting"
+                              }
+                            ],
+                            [],
+                            FormWrapper_Helpers ?? {},
+                            child$Props
+                          );
+
+                          return (
+                            <FormWrapper
+                              data-plasmic-name={"form3"}
+                              data-plasmic-override={overrides.form3}
+                              {...child$Props}
+                            >
+                              <FormItemWrapper
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.formField__kmse
+                                )}
+                                initialValue={``}
+                                label={
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__ttM2
+                                    )}
+                                  >
+                                    {
+                                      "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
+                                    }
+                                  </div>
+                                }
+                                name={"name"}
+                                noLabel={true}
+                              >
+                                {(() => {
+                                  const child$Props = {
+                                    className: classNames(
+                                      "__wab_instance",
+                                      sty.input3
+                                    ),
+                                    onChange: async (...eventArgs: any) => {
+                                      generateStateOnChangePropForCodeComponents(
+                                        $state,
+                                        "value",
+                                        ["input3", "value"],
+                                        AntdInput_Helpers
+                                      ).apply(null, eventArgs);
+                                    },
+                                    placeholder:
+                                      "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
+                                    size: "large",
+                                    value: generateStateValueProp($state, [
+                                      "input3",
+                                      "value"
+                                    ])
+                                  };
+                                  initializeCodeComponentStates(
+                                    $state,
+                                    [
+                                      {
+                                        name: "value",
+                                        plasmicStateName: "input3.value"
+                                      }
+                                    ],
+                                    [],
+                                    AntdInput_Helpers ?? {},
+                                    child$Props
+                                  );
+
+                                  return (
+                                    <AntdInput
+                                      data-plasmic-name={"input3"}
+                                      data-plasmic-override={overrides.input3}
+                                      {...child$Props}
+                                    />
+                                  );
+                                })()}
+                              </FormItemWrapper>
+                              <FormItemWrapper
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.formField__gEaUc
+                                )}
+                                initialValue={``}
+                                label={
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__bwc66
+                                    )}
+                                  >
+                                    {"\u0645\u0648\u0628\u0627\u06cc\u0644"}
+                                  </div>
+                                }
+                                name={"mobile"}
+                                noLabel={true}
+                                rules={[
+                                  {
+                                    ruleType: "required",
+                                    message:
+                                      "\u0628\u062f\u0648\u0646 \u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u060c \u0686\u0637\u0648\u0631 \u0628\u0627 \u0634\u0645\u0627 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u06af\u06cc\u0631\u06cc\u0645\u061f"
+                                  },
+
+                                  {
+                                    ruleType: "max",
+                                    length: 11,
+                                    message:
+                                      "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
+                                  },
+
+                                  {
+                                    ruleType: "min",
+                                    length: 11,
+                                    message:
+                                      "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
+                                  }
+                                ]}
+                              >
+                                {(() => {
+                                  const child$Props = {
+                                    className: classNames(
+                                      "__wab_instance",
+                                      sty.input4
+                                    ),
+                                    onChange: async (...eventArgs: any) => {
+                                      generateStateOnChangePropForCodeComponents(
+                                        $state,
+                                        "value",
+                                        ["input4", "value"],
+                                        AntdInput_Helpers
+                                      ).apply(null, eventArgs);
+                                    },
+                                    placeholder:
+                                      "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644",
+                                    size: "large",
+                                    type: "number",
+                                    value: generateStateValueProp($state, [
+                                      "input4",
+                                      "value"
+                                    ])
+                                  };
+                                  initializeCodeComponentStates(
+                                    $state,
+                                    [
+                                      {
+                                        name: "value",
+                                        plasmicStateName: "input4.value"
+                                      }
+                                    ],
+                                    [],
+                                    AntdInput_Helpers ?? {},
+                                    child$Props
+                                  );
+
+                                  return (
+                                    <AntdInput
+                                      data-plasmic-name={"input4"}
+                                      data-plasmic-override={overrides.input4}
+                                      {...child$Props}
+                                    />
+                                  );
+                                })()}
+                              </FormItemWrapper>
+                              <AntdButton
+                                data-plasmic-name={"button"}
+                                data-plasmic-override={overrides.button}
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.button
+                                )}
+                                disabled={false}
+                                ghost={true}
+                                submitsForm={false}
+                                type={"default"}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__ymWvM
+                                  )}
+                                >
+                                  {"Submit"}
+                                </div>
+                              </AntdButton>
+                            </FormWrapper>
+                          );
+                        })()}
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__rbXu,
+                            "clickable"
+                          )}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["updateConsult2Open"] =
+                              $state.form3.value.mobile != ""
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["consult2", "open"]
+                                      },
+                                      operation: 0,
+                                      value: false
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["updateConsult2Open"] != null &&
+                              typeof $steps["updateConsult2Open"] ===
+                                "object" &&
+                              typeof $steps["updateConsult2Open"].then ===
+                                "function"
+                            ) {
+                              $steps["updateConsult2Open"] =
+                                await $steps["updateConsult2Open"];
+                            }
+
+                            $steps["successToast"] =
+                              $state.form3.value.mobile !== "" &&
+                              /^09\d{9}$/.test($state.form3.value.mobile)
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        `${$state.form3.value.name} جان اطلاعات ثبت شد، بزودی با شما ارتباط می‌گیریم :)`,
+                                        "top-center",
+                                        5000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["successToast"] != null &&
+                              typeof $steps["successToast"] === "object" &&
+                              typeof $steps["successToast"].then === "function"
+                            ) {
+                              $steps["successToast"] =
+                                await $steps["successToast"];
+                            }
+
+                            $steps["apiRequest"] =
+                              $state.form3.value.mobile !== ""
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        "https://gateway.rentamon.com/webhook/consult-with-us",
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return $state.form3.value;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["apiRequest"] != null &&
+                              typeof $steps["apiRequest"] === "object" &&
+                              typeof $steps["apiRequest"].then === "function"
+                            ) {
+                              $steps["apiRequest"] = await $steps["apiRequest"];
+                            }
+
+                            $steps["errorToast"] =
+                              !$state.form3.value.mobile ||
+                              !$state.form3.value.mobile.match(/^09\d{9}$/)
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u062a\u0648 \u06a9\u0647 \u0647\u0646\u0648\u0632 \u0648\u0627\u0631\u062f \u0646\u06a9\u0631\u062f\u06cc!",
+                                        "top-center",
+                                        5000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["errorToast"] != null &&
+                              typeof $steps["errorToast"] === "object" &&
+                              typeof $steps["errorToast"].then === "function"
+                            ) {
+                              $steps["errorToast"] = await $steps["errorToast"];
+                            }
+                          }}
+                        >
+                          {
+                            "\u0627\u0631\u0633\u0627\u0644 \u062f\u0631\u062e\u0648\u0627\u0633\u062a"
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  </AntdModal>
                 </div>
               </div>
             </div>
@@ -1327,17 +1347,18 @@ function PlasmicHomepage__RenderFunc(props: {
                 data-plasmic-override={overrides.introAutoSyncTitle2}
                 className={classNames(projectcss.all, sty.introAutoSyncTitle2)}
               >
-                <div
+                <h3
                   className={classNames(
                     projectcss.all,
+                    projectcss.h3,
                     projectcss.__wab_text,
-                    sty.text__aLhzu
+                    sty.h3__aLhzu
                   )}
                 >
                   {
-                    "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r\n\r"
+                    "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\n\r"
                   }
-                </div>
+                </h3>
               </div>
               <div
                 data-plasmic-name={"introAutoSyncCaption2"}
@@ -1355,7 +1376,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0628\u0647\u200c\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628\u060c \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648\u060c \u0647\u0648\u0645\u0633\u0627 \u0648 \u0645\u06cc\u0632\u0628\u0648\u0646 \u0631\u0648 \u0628\u0633\u067e\u0627\u0631 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0648 \u062e\u0648\u062f\u062a \u0628\u0631\u0648 \u0633\u0631\u0627\u063a \u0628\u0642\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0647\u0627 :\u200c)\r\n\r"
+                    "\u0628\u0647\u200c\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628\u060c \u0645\u06cc\u0647\u0645\u0627\u0646\u200c\u0634\u0648\u060c \u0647\u0648\u0645\u0633\u0627 \u0648 \u0645\u06cc\u0632\u0628\u0648\u0646 \u0631\u0648 \u0628\u0633\u067e\u0627\u0631 \u0628\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb\u060c \u0648 \u062e\u0648\u062f\u062a \u0628\u0631\u0648 \u0633\u0631\u0627\u063a \u0628\u0642\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0631\u0647\u0627 :\u200c)\r\n\r"
                   }
                 </div>
               </div>
@@ -1404,8 +1425,6 @@ function PlasmicHomepage__RenderFunc(props: {
               data-plasmic-override={overrides.testimonials}
               className={classNames(projectcss.all, sty.testimonials)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__xz7A)} />
-
               <div
                 data-plasmic-name={"titlePart"}
                 data-plasmic-override={overrides.titlePart}
@@ -1418,45 +1437,24 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.text__zdLdH
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobile") ? (
+                  <React.Fragment>
                     <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 "
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ textDecorationLine: "underline" }}
-                      >
-                        {"\u06f1\u06f0\u06f0\u06f0"}
-                      </span>
-                      <React.Fragment>
-                        {
-                          " \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
-                        }
-                      </React.Fragment>
+                      {
+                        "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 "
+                      }
                     </React.Fragment>
-                  ) : (
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ textDecorationLine: "underline" }}
+                    >
+                      {"\u06f1\u06f2\u06f0\u06f0"}
+                    </span>
                     <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 "
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ textDecorationLine: "underline" }}
-                      >
-                        {"\u06f1\u06f0\u06f0\u06f0"}
-                      </span>
-                      <React.Fragment>
-                        {
-                          " \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
-                        }
-                      </React.Fragment>
+                      {
+                        " \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
+                      }
                     </React.Fragment>
-                  )}
+                  </React.Fragment>
                 </div>
               </div>
               <div
@@ -1488,7 +1486,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
                       : hasVariant(globalVariants, "screen", "tablet")
                         ? "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
-                        : "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1400, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 15000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 150000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
+                        : "<div id=\"counterSection\" class=\"counter-container\">\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count1\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062a\u062d\u062a \u067e\u0648\u0634\u0634</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count2\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u067e\u0631\u062f\u0627\u0632\u0634 \u0631\u0632\u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631</div>\r\n  </div>\r\n  <div class=\"counter-wrapper\">\r\n    <div id=\"count3\" class=\"counter\">\u06f0 +</div>\r\n    <div class=\"counter-title\">\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  .counter-container {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 40px;\r\n  }\r\n\r\n  .counter-wrapper {\r\n    width: 33%;\r\n    text-align: center;\r\n  }\r\n\r\n  .counter-title {\r\n    font-size: 1.3rem;\r\n    margin-top: 10px;\r\n    direction: rtl;\r\n  }\r\n\r\n  .counter {\r\n    font-size: 1.8rem;\r\n    font-weight: bold;\r\n    direction: rtl;\r\n  }\r\n\r\n  @media screen and (max-width: 1024px) {\r\n    .counter-container {\r\n      flex-direction: column;\r\n      align-items: center;\r\n      padding: 40px;\r\n    }\r\n    .counter-wrapper {\r\n      width: 100%;\r\n      margin-bottom: 40px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toPersianNumber(num) {\r\n    var persianDigits = ['\u06f0', '\u06f1', '\u06f2', '\u06f3', '\u06f4', '\u06f5', '\u06f6', '\u06f7', '\u06f8', '\u06f9'];\r\n\r\n    // \u062c\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0633\u0647\u200c\u0631\u0642\u0645\u06cc \u0639\u062f\u062f \u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u06a9\u0627\u0645\u0627\r\n    var formattedNumber = num.toLocaleString('en-US');\r\n\r\n    // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646\u06cc \u0627\u0639\u062f\u0627\u062f \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0627 \u0641\u0627\u0631\u0633\u06cc\r\n    return formattedNumber.replace(/\\d/g, digit => persianDigits[digit]);\r\n  }\r\n\r\n  function startCounter(counterElement, startValue, endValue, duration) {\r\n    var startTime = null;\r\n    var step = (timestamp) => {\r\n      if (!startTime) startTime = timestamp;\r\n      var progress = (timestamp - startTime) / duration;\r\n      var currentValue = Math.min(startValue + (endValue - startValue) * progress, endValue);\r\n      counterElement.textContent = toPersianNumber(Math.round(currentValue)) + \" +\";\r\n      if (currentValue < endValue) {\r\n        requestAnimationFrame(step);\r\n      }\r\n    };\r\n    requestAnimationFrame(step);\r\n  }\r\n\r\n  var hasCounted = false;\r\n\r\n  function onScroll() {\r\n    var counterSection = document.getElementById('counterSection');\r\n    var rect = counterSection.getBoundingClientRect();\r\n\r\n    if (!hasCounted && rect.top <= window.innerHeight && rect.bottom >= 0) {\r\n      hasCounted = true;\r\n      startCounter(document.getElementById('count1'), 0, 1800, 3000);\r\n      startCounter(document.getElementById('count2'), 0, 20000, 4000);\r\n      startCounter(document.getElementById('count3'), 0, 200000, 5000);\r\n\r\n      window.removeEventListener('scroll', onScroll);\r\n    }\r\n  }\r\n\r\n  window.addEventListener('scroll', onScroll);\r\n</script>\r\n"
                 }
               />
             </div>
@@ -1510,9 +1508,11 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.text__lLqoZ
                 )}
               >
-                {hasVariant(globalVariants, "screen", "tablet")
-                  ? "\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627 \u062f\u0631 \u06cc\u06a9 \u062c\u0627"
-                  : "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627 \u062f\u0631 \u06cc\u06a9\u062c\u0627"}
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u0645\u0634\u0627\u0647\u062f\u0647\u200c \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u06cc\u06a9 \u062c\u0627"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                    ? "\u0645\u0634\u0627\u0647\u062f\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0631\u0632\u0631\u0648\u0647\u0627 \u062f\u0631 \u06cc\u06a9 \u062c\u0627"
+                    : "\u0645\u0634\u0627\u0647\u062f\u0647\u200c \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u062f\u0631 \u06cc\u06a9 \u062c\u0627"}
               </div>
             </div>
             <div
@@ -1540,17 +1540,12 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames(projectcss.all, sty.addingVillaIntoPltforms)}
           >
             <div
-              data-plasmic-name={"reg"}
-              data-plasmic-override={overrides.reg}
-              className={classNames(projectcss.all, sty.reg)}
+              data-plasmic-name={"introCalendarRight7"}
+              data-plasmic-override={overrides.introCalendarRight7}
+              className={classNames(projectcss.all, sty.introCalendarRight7)}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vepAb,
-                  "clickable"
-                )}
+                className={classNames(projectcss.all, sty.freeBox__oFaL)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1585,25 +1580,30 @@ function PlasmicHomepage__RenderFunc(props: {
                   }
                 }}
               >
-                {
-                  "\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                }
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___70Ylj,
+                    "clickable"
+                  )}
+                >
+                  {"\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631"}
+                </div>
               </div>
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__fqgQm
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                : hasVariant(globalVariants, "screen", "mobile")
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__sey39
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
                   : hasVariant(globalVariants, "screen", "tablet")
                     ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
                     : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
+              </div>
             </div>
           </div>
           <div
@@ -1612,17 +1612,18 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames(projectcss.all, sty.qA)}
           >
             <div className={classNames(projectcss.all, sty.freeBox__bkGrz)}>
-              <div
+              <h3
                 className={classNames(
                   projectcss.all,
+                  projectcss.h3,
                   projectcss.__wab_text,
-                  sty.text___1KfXk
+                  sty.h3___1KfXk
                 )}
               >
                 {
-                  "\u0633\u0648\u0627\u0644\u0627\u062a \u0645\u062a\u062f\u0627\u0648\u0644:\r\n\r"
+                  "\u0633\u0648\u0627\u0644\u0627\u062a \u0645\u062a\u062f\u0627\u0648\u0644 \u062f\u0631 \u0645\u0648\u0631\u062f \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb:\r\n\r"
                 }
-              </div>
+              </h3>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___3QJyk)}>
               {(() => {
@@ -1729,9 +1730,9 @@ function PlasmicHomepage__RenderFunc(props: {
                             sty.text__rv9
                           )}
                         >
-                          {
-                            "\u0628\u0644\u0647. \u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u0648 \u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0647 \u067e\u0646\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc\u060c \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0634\u0645\u0627 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u06cc\u200c\u0634\u0647.\r"
-                          }
+                          {hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "\u0628\u0644\u0647\u060c \u062a\u0639\u062f\u0627\u062f \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0634\u0645\u0627 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646 \u067e\u0631\u062f\u0627\u0632\u0634 \u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u06cc\u200c\u0634\u0647.\r"
+                            : "\u0628\u0644\u0647\u060c \u062a\u0639\u062f\u0627\u062f \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0634\u0645\u0627 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646 \u067e\u0631\u062f\u0627\u0632\u0634 \u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u06cc\u200c\u0634\u0647.\r\u200d"}
                         </div>
                       </AntdAccordionItem>
                       <AntdAccordionItem
@@ -1748,7 +1749,7 @@ function PlasmicHomepage__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0627\u0645\u06a9\u0627\u0646 \u0644\u063a\u0648 \u0639\u0636\u0648\u06cc\u062a \u062f\u0631 \u067e\u0646\u0644 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0647\u0633\u062a\u061f"
+                              "\u0627\u0645\u06a9\u0627\u0646 \u0644\u063a\u0648 \u0639\u0636\u0648\u06cc\u062a \u0627\u0632 \u0627\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647 \u0647\u0633\u062a\u061f"
                             }
                           </div>
                         }
@@ -1762,7 +1763,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u0628\u0644\u0647. \u0645\u0627 \u062a\u0645\u0627\u0645 \u062a\u0644\u0627\u0634\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u062a\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0631\u0627\u0636\u06cc \u0628\u0627\u0634\u06cc. \u0648\u0644\u06cc \u0647\u0631 \u0632\u0645\u0627\u0646 \u0648 \u0628\u0647 \u0647\u0631 \u062f\u0644\u06cc\u0644 \u062a\u0645\u0627\u06cc\u0644\u06cc \u0628\u0647 \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0646\u062f\u0627\u0634\u062a\u06cc\u060c \u0639\u0636\u0648\u06cc\u062a \u0644\u063a\u0648 \u0634\u062f\u0647 \u0648 \u06a9\u0644 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647.\n"
+                            "\u0628\u0644\u0647. \u0645\u0627 \u062a\u0645\u0627\u0645 \u062a\u0644\u0627\u0634\u0645\u0648\u0646 \u0631\u0648 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u062a\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0631\u0627\u0636\u06cc \u0628\u0627\u0634\u06cc. \u0648\u0644\u06cc \u0647\u0631 \u0632\u0645\u0627\u0646 \u0648 \u0628\u0647 \u0647\u0631 \u062f\u0644\u06cc\u0644 \u062a\u0645\u0627\u06cc\u0644\u06cc \u0628\u0647 \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0646\u062f\u0627\u0634\u062a\u06cc\u060c \u0639\u0636\u0648\u06cc\u062a \u0644\u063a\u0648 \u0634\u062f\u0647 \u0648 \u06a9\u0644 \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647.\n"
                           }
                         </div>
                       </AntdAccordionItem>
@@ -1780,7 +1781,7 @@ function PlasmicHomepage__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0627\u06cc\u062f \u062d\u062a\u0645\u0627 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u062b\u0628\u062a \u0628\u0627\u0634\u0647\u061f"
+                              "\u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f \u0627\u0632 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0627\u06cc\u062f \u062d\u062a\u0645\u0627 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u062b\u0628\u062a \u0628\u0627\u0634\u0647\u061f"
                             }
                           </div>
                         }
@@ -1794,7 +1795,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u062e\u06cc\u0631. \u062d\u062a\u06cc \u0628\u062f\u0648\u0646 \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc. \u0627\u0645\u0627 \u0647\u0631 \u0686\u0642\u062f\u0631  \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u06cc\u060c\u200c \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0631\u0627\u062a \u0645\u0641\u06cc\u062f\u062a\u0631 \u0645\u06cc\u200c\u0634\u0647."
+                            "\u062e\u06cc\u0631. \u062d\u062a\u06cc \u0628\u062f\u0648\u0646 \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u00ab\u0645\u06cc\u0627\u0646\u00bb\u200c \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062c\u0627\u06cc \u0633\u0631 \u0631\u0633\u06cc\u062f \u0631\u0648 \u0628\u06af\u06cc\u0631\u0647 \u0648 \u062d\u0633\u0627\u0628\u06cc \u0628\u0647 \u06a9\u0627\u0631\u0647\u0627\u062a \u0646\u0638\u0645 \u0628\u062f\u0647."
                           }
                         </div>
                       </AntdAccordionItem>
@@ -1846,7 +1847,7 @@ function PlasmicHomepage__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u0627\u0632 \u062e\u0648\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u0645\u061f"
+                              "\u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0622\u06cc\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u0627\u0632 \u062e\u0648\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u0645\u061f"
                             }
                           </div>
                         }
@@ -1860,7 +1861,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u0628\u0644\u0647\u060c \u0647\u0631 \u0632\u0645\u0627\u0646 \u0628\u062e\u0648\u0627\u06cc \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648\u0627\u0631\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0634\u06cc \u0648 \u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u062f\u0633\u062a\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc. \u0648\u0644\u06cc \u0645\u0627 \u062a\u0648\u0635\u06cc\u0647 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0647\u0645\u06cc\u0634\u0647 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0631\u0648 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0627\u0646\u062c\u0627\u0645 \u0628\u062f\u06cc \u062a\u0627 \u0648\u0636\u0639\u06cc\u062a \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u06cc\u06a9\u0633\u0627\u0646 \u0628\u0627\u0634\u0647. \u0627\u06cc\u0646\u062c\u0648\u0631\u06cc \u0628\u0627\u0632\u062f\u06cc\u062f\u06a9\u0646\u0646\u062f\u06af\u0627\u0646 \u0622\u06af\u0647\u06cc \u0634\u0645\u0627\u060c \u0645\u063a\u0627\u06cc\u0631\u062a\u06cc \u0646\u0645\u06cc\u200c\u0628\u06cc\u0646\u0646 \u0648 \u0628\u0647 \u0634\u0645\u0627 \u0627\u0639\u062a\u0645\u0627\u062f \u0645\u06cc\u200c\u06a9\u0646\u0646."
+                            "\u0628\u0644\u0647\u060c \u0647\u0631 \u0632\u0645\u0627\u0646 \u0628\u062e\u0648\u0627\u06cc \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648\u0627\u0631\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0634\u06cc \u0648 \u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u062f\u0633\u062a\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc. \u0648\u0644\u06cc \u0645\u0627 \u062a\u0648\u0635\u06cc\u0647 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0647\u0645\u06cc\u0634\u0647 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0631\u0648 \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0627\u0646\u062c\u0627\u0645 \u0628\u062f\u06cc \u062a\u0627 \u0648\u0636\u0639\u06cc\u062a \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u06cc\u06a9\u0633\u0627\u0646 \u0628\u0627\u0634\u0647. \u0627\u06cc\u0646\u062c\u0648\u0631\u06cc \u0628\u0627 \u0645\u0633\u0627\u0641\u0631\u0647\u0627 \u06cc\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0647 \u0686\u0627\u0644\u0634 \u0646\u0645\u06cc\u200c\u062e\u0648\u0631\u06cc."
                           }
                         </div>
                       </AntdAccordionItem>
@@ -1879,7 +1880,7 @@ function PlasmicHomepage__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0686\u0637\u0648\u0631 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0648 \u062a\u0633\u062a \u06a9\u0646\u0645\u061f"
+                              "\u0686\u0637\u0648\u0631 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0648 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646\u0645\u061f"
                             }
                           </div>
                         }
@@ -1893,7 +1894,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0628\u0631\u0627\u06cc \u06f2\u06f0 \u062a\u0627 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644\u06cc \u06a9\u0647 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646\u06cc\u060c \u0647\u06cc\u0686 \u0647\u0632\u06cc\u0646\u0647\u200c\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0646\u0645\u06cc\u0634\u0647 \u0648 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u067e\u0633 \u0628\u0627 \u062e\u06cc\u0627\u0644 \u0631\u0627\u062d\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646. \u0628\u0639\u062f \u0627\u06af\u0647 \u0639\u0644\u0627\u0642\u0645\u0646\u062f \u0634\u062f\u06cc\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0631\u0648 \u0634\u0627\u0631\u0698 \u06a9\u0646\u06cc."
+                            "\u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0631\u0627\u06cc \u06f2\u06f0 \u062a\u0627 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644\u06cc \u06a9\u0647 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646\u06cc\u060c \u0647\u06cc\u0686 \u0647\u0632\u06cc\u0646\u0647\u200c\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0646\u0645\u06cc\u0634\u0647 \u0648 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u067e\u0633 \u0628\u0627 \u062e\u06cc\u0627\u0644 \u0631\u0627\u062d\u062a \u0628\u0631\u0646\u0627\u0645 \u0631\u0648 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646. \u0628\u0639\u062f \u0627\u06af\u0647 \u0645\u0641\u06cc\u062f \u0628\u0648\u062f\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0631\u0648 \u0634\u0627\u0631\u0698 \u06a9\u0646\u06cc."
                           }
                         </div>
                       </AntdAccordionItem>
@@ -2095,6 +2096,7 @@ const PlasmicDescendants = {
     "mainContents",
     "introCalendar",
     "introCalendarTitle",
+    "h1",
     "introCalendarCaption",
     "introCalendar4",
     "introCalendarRight",
@@ -2106,6 +2108,7 @@ const PlasmicDescendants = {
     "introAutoSync",
     "stack",
     "introAutoSyncTitle",
+    "h2",
     "introAutoSyncCaption",
     "introAutoSyncDesc",
     "introAutoSyncBenefits",
@@ -2145,7 +2148,7 @@ const PlasmicDescendants = {
     "screenshotsLeft",
     "carousel",
     "addingVillaIntoPltforms",
-    "reg",
+    "introCalendarRight7",
     "qA",
     "accordionMain",
     "_2",
@@ -2165,6 +2168,7 @@ const PlasmicDescendants = {
     "mainContents",
     "introCalendar",
     "introCalendarTitle",
+    "h1",
     "introCalendarCaption",
     "introCalendar4",
     "introCalendarRight",
@@ -2176,6 +2180,7 @@ const PlasmicDescendants = {
     "introAutoSync",
     "stack",
     "introAutoSyncTitle",
+    "h2",
     "introAutoSyncCaption",
     "introAutoSyncDesc",
     "introAutoSyncBenefits",
@@ -2214,6 +2219,7 @@ const PlasmicDescendants = {
   introCalendar: [
     "introCalendar",
     "introCalendarTitle",
+    "h1",
     "introCalendarCaption",
     "introCalendar4",
     "introCalendarRight",
@@ -2223,7 +2229,8 @@ const PlasmicDescendants = {
     "introCalendarLeft",
     "introCalendarRight4"
   ],
-  introCalendarTitle: ["introCalendarTitle"],
+  introCalendarTitle: ["introCalendarTitle", "h1"],
+  h1: ["h1"],
   introCalendarCaption: ["introCalendarCaption"],
   introCalendar4: [
     "introCalendar4",
@@ -2248,6 +2255,7 @@ const PlasmicDescendants = {
     "introAutoSync",
     "stack",
     "introAutoSyncTitle",
+    "h2",
     "introAutoSyncCaption",
     "introAutoSyncDesc",
     "introAutoSyncBenefits",
@@ -2263,12 +2271,14 @@ const PlasmicDescendants = {
   stack: [
     "stack",
     "introAutoSyncTitle",
+    "h2",
     "introAutoSyncCaption",
     "introAutoSyncDesc",
     "introAutoSyncBenefits",
     "introAutoSyncGif"
   ],
-  introAutoSyncTitle: ["introAutoSyncTitle"],
+  introAutoSyncTitle: ["introAutoSyncTitle", "h2"],
+  h2: ["h2"],
   introAutoSyncCaption: ["introAutoSyncCaption"],
   introAutoSyncDesc: [
     "introAutoSyncDesc",
@@ -2350,8 +2360,8 @@ const PlasmicDescendants = {
   screenshotsRight: ["screenshotsRight"],
   screenshotsLeft: ["screenshotsLeft", "carousel"],
   carousel: ["carousel"],
-  addingVillaIntoPltforms: ["addingVillaIntoPltforms", "reg"],
-  reg: ["reg"],
+  addingVillaIntoPltforms: ["addingVillaIntoPltforms", "introCalendarRight7"],
+  introCalendarRight7: ["introCalendarRight7"],
   qA: [
     "qA",
     "accordionMain",
@@ -2388,6 +2398,7 @@ type NodeDefaultElementType = {
   mainContents: "div";
   introCalendar: "div";
   introCalendarTitle: "div";
+  h1: "h1";
   introCalendarCaption: "div";
   introCalendar4: "div";
   introCalendarRight: "div";
@@ -2399,6 +2410,7 @@ type NodeDefaultElementType = {
   introAutoSync: "div";
   stack: "div";
   introAutoSyncTitle: "div";
+  h2: "h2";
   introAutoSyncCaption: "div";
   introAutoSyncDesc: "div";
   introAutoSyncBenefits: "div";
@@ -2438,7 +2450,7 @@ type NodeDefaultElementType = {
   screenshotsLeft: "div";
   carousel: typeof Embed;
   addingVillaIntoPltforms: "div";
-  reg: "div";
+  introCalendarRight7: "div";
   qA: "div";
   accordionMain: typeof AntdAccordion;
   _2: typeof AntdAccordionItem;
@@ -2520,6 +2532,7 @@ export const PlasmicHomepage = Object.assign(
     mainContents: makeNodeComponent("mainContents"),
     introCalendar: makeNodeComponent("introCalendar"),
     introCalendarTitle: makeNodeComponent("introCalendarTitle"),
+    h1: makeNodeComponent("h1"),
     introCalendarCaption: makeNodeComponent("introCalendarCaption"),
     introCalendar4: makeNodeComponent("introCalendar4"),
     introCalendarRight: makeNodeComponent("introCalendarRight"),
@@ -2531,6 +2544,7 @@ export const PlasmicHomepage = Object.assign(
     introAutoSync: makeNodeComponent("introAutoSync"),
     stack: makeNodeComponent("stack"),
     introAutoSyncTitle: makeNodeComponent("introAutoSyncTitle"),
+    h2: makeNodeComponent("h2"),
     introAutoSyncCaption: makeNodeComponent("introAutoSyncCaption"),
     introAutoSyncDesc: makeNodeComponent("introAutoSyncDesc"),
     introAutoSyncBenefits: makeNodeComponent("introAutoSyncBenefits"),
@@ -2570,7 +2584,7 @@ export const PlasmicHomepage = Object.assign(
     screenshotsLeft: makeNodeComponent("screenshotsLeft"),
     carousel: makeNodeComponent("carousel"),
     addingVillaIntoPltforms: makeNodeComponent("addingVillaIntoPltforms"),
-    reg: makeNodeComponent("reg"),
+    introCalendarRight7: makeNodeComponent("introCalendarRight7"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),
     _2: makeNodeComponent("_2"),
