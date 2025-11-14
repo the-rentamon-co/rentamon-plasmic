@@ -770,6 +770,8 @@
 @media (max-width: 500px) {
   .introCalendarRight6 {
     max-width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -819,6 +821,11 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__kxLlW {
+    max-width: 96%;
+  }
 }
 @media (max-width: 350px) {
   .freeBox__kxLlW {
