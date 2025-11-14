@@ -6,6 +6,7 @@ import GlobalContextsProvider from "../../components/plasmic/website_starter/Pla
 
 import { PlasmicStatusesConnections2 } from "../../components/plasmic/website_starter/PlasmicStatusesConnections2";
 import { useRouter } from "next/router";
+import StatusesConnectionsRedesigned from "../../components/StatusesConnectionsRedesigned";
 
 function StatusesConnections2() {
   // Use PlasmicStatusesConnections2 to render this component as it was
@@ -32,7 +33,14 @@ function StatusesConnections2() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicStatusesConnections2 />
+        <PlasmicStatusesConnections2
+          overrides={{
+            // Override the platforms content with our new redesigned component
+            platforms: {
+              children: <StatusesConnectionsRedesigned />,
+            },
+          }}
+        />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
