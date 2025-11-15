@@ -7077,43 +7077,27 @@ function PlasmicBookings__RenderFunc(props: {
                         </div>
                       </div>
                     ) : null}
-                    {(
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? (() => {
-                            try {
-                              return (
-                                !$state.booking.data.feature_handled
-                                  .manual_booking &&
-                                $state.reservationsMode &&
-                                $state.booking.data.website !== "mihmansho"
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return true;
-                              }
-                              throw e;
-                            }
-                          })()
-                        : (() => {
-                            try {
-                              return (
-                                !$state.booking.data.feature_handled
-                                  .manual_booking && $state.reservationsMode
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return true;
-                              }
-                              throw e;
-                            }
-                          })()
-                    ) ? (
+                    {(() => {
+                      try {
+                        return (() => {
+                          return (
+                            !$state.booking.data.feature_handled
+                              .manual_booking &&
+                            $state.reservationsMode &&
+                            new Date($state.booking.data.check_out) >=
+                              new Date()
+                          );
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
                       <div
                         data-plasmic-name={"updateOrDeleteReserve2"}
                         data-plasmic-override={overrides.updateOrDeleteReserve2}
@@ -7765,13 +7749,7 @@ function PlasmicBookings__RenderFunc(props: {
                         </AntdModal>
                         {(() => {
                           try {
-                            return (() => {
-                              const checkInDate = new Date(
-                                $state.booking.data.check_out
-                              );
-                              const now = new Date();
-                              return checkInDate >= now;
-                            })();
+                            return $state.booking.data.website !== "mihmansho";
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -8072,7 +8050,7 @@ function PlasmicBookings__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return true;
+                              return false;
                             }
                             throw e;
                           }
