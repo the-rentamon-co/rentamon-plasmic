@@ -118,6 +118,8 @@ export type PlasmicBookings__OverridesType = {
   detail?: Flex__<"div">;
   booking?: Flex__<typeof ApiRequest>;
   generalData?: Flex__<"div">;
+  readyToBlock?: Flex__<typeof AntdModal>;
+  cancelledBtn4?: Flex__<typeof AntdButton>;
   feature?: Flex__<"div">;
   smartBooking?: Flex__<"div">;
   data?: Flex__<"div">;
@@ -773,6 +775,12 @@ function PlasmicBookings__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "readyToBlock.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -2978,6 +2986,573 @@ function PlasmicBookings__RenderFunc(props: {
                   </div>
                 </div>
               </div>
+              <AntdModal
+                data-plasmic-name={"readyToBlock"}
+                data-plasmic-override={overrides.readyToBlock}
+                className={classNames("__wab_instance", sty.readyToBlock)}
+                defaultStylesClassName={classNames(
+                  projectcss.root_reset,
+                  projectcss.plasmic_default_styles,
+                  projectcss.plasmic_mixins,
+                  styleTokensClassNames
+                )}
+                hideFooter={true}
+                modalScopeClassName={sty["readyToBlock__modal"]}
+                onOpenChange={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "readyToBlock",
+                    "open"
+                  ]).apply(null, eventArgs);
+                }}
+                open={generateStateValueProp($state, ["readyToBlock", "open"])}
+                title={null}
+                trigger={null}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__sDxk4)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___6Dccj
+                    )}
+                  >
+                    {
+                      "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0627\u06cc\u0646 \u0631\u0632\u0631\u0648 \u0631\u0648 \u062f\u0648\u0628\u0627\u0631\u0647 \u067e\u0631 \u06a9\u0646\u06cc\u061f"
+                    }
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__db3Kt)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__bhbQw)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uaS4Z
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              function gregorianToJalali(gy, gm, gd) {
+                                const g_d_m = [
+                                  0,
+                                  31,
+                                  (gy % 4 === 0 && gy % 100 !== 0) ||
+                                  gy % 400 === 0
+                                    ? 29
+                                    : 28,
+                                  31,
+                                  30,
+                                  31,
+                                  30,
+                                  31,
+                                  31,
+                                  30,
+                                  31,
+                                  30,
+                                  31
+                                ];
+
+                                let jy = gy <= 1600 ? 0 : 979;
+                                gy -= gy <= 1600 ? 621 : 1600;
+                                let gy2 = gm > 2 ? gy + 1 : gy;
+                                let days =
+                                  365 * gy +
+                                  Math.floor((gy2 + 3) / 4) -
+                                  Math.floor((gy2 + 99) / 100) +
+                                  Math.floor((gy2 + 399) / 400);
+                                for (let i = 0; i < gm; ++i) days += g_d_m[i];
+                                days += gd - 1;
+                                let j_day_no = days - 79;
+                                let j_np = Math.floor(j_day_no / 12053);
+                                j_day_no %= 12053;
+                                jy +=
+                                  33 * j_np + 4 * Math.floor(j_day_no / 1461);
+                                j_day_no %= 1461;
+                                if (j_day_no >= 366) {
+                                  jy += Math.floor((j_day_no - 1) / 365);
+                                  j_day_no = (j_day_no - 1) % 365;
+                                }
+                                const jm_list = [
+                                  0, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30,
+                                  29
+                                ];
+
+                                let jm, jd;
+                                for (
+                                  jm = 1;
+                                  jm <= 12 && j_day_no >= jm_list[jm];
+                                  ++jm
+                                ) {
+                                  j_day_no -= jm_list[jm];
+                                }
+                                jd = j_day_no + 1;
+                                return [jy, jm, jd];
+                              }
+                              function formatPersianNumber(num) {
+                                return num
+                                  .toString()
+                                  .replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+                              }
+                              function formatJalaliDateVerbose(isoDateStr) {
+                                const weekdays = [
+                                  "یکشنبه",
+                                  "دوشنبه",
+                                  "سه شنبه",
+                                  "چهارشنبه",
+                                  "پنجشنبه",
+                                  "جمعه",
+                                  "شنبه"
+                                ];
+
+                                const jalaliMonths = [
+                                  "",
+                                  "فروردین",
+                                  "اردیبهشت",
+                                  "خرداد",
+                                  "تیر",
+                                  "مرداد",
+                                  "شهریور",
+                                  "مهر",
+                                  "آبان",
+                                  "آذر",
+                                  "دی",
+                                  "بهمن",
+                                  "اسفند"
+                                ];
+
+                                const date = new Date(isoDateStr);
+                                const dayName = weekdays[date.getDay()];
+                                const [jy, jm, jd] = gregorianToJalali(
+                                  date.getFullYear(),
+                                  date.getMonth() + 1,
+                                  date.getDate()
+                                );
+                                const monthName = jalaliMonths[jm];
+                                const dayNumber = formatPersianNumber(jd);
+                                return `${dayName} ${dayNumber} ${monthName}`;
+                              }
+                              const checkIn = $state.booking.data.check_in;
+                              const checkOut = $state.booking.data.check_out;
+                              const checkInJalali =
+                                formatJalaliDateVerbose(checkIn);
+                              const checkOutJalali =
+                                formatJalaliDateVerbose(checkOut);
+                              const message = ` ${checkInJalali} تا ${checkOutJalali}`;
+                              return message;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0628\u0631\u0627\u06cc \u0648\u0627\u062d\u062f \u00ab\u0648\u06cc\u0644\u0627\u06cc\u06cc \u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0628\u0647\u0627\u0631\u0627\u0646\u00bb \u062e\u0627\u0644\u06cc \u0645\u06cc\u200c\u0634\u0646.";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__nYvCb)}
+                      displayHeight={"25px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image183.svg",
+                        fullWidth: 24,
+                        fullHeight: 24,
+                        aspectRatio: 1
+                      }}
+                    />
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___6K4S)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___2Af4H)}
+                      displayHeight={"27px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image184.svg",
+                        fullWidth: 24,
+                        fullHeight: 24,
+                        aspectRatio: 1
+                      }}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__dxHcB
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return `اقامتگاه ${$state.booking.data.property_name}`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "\u062f\u0631 \u0635\u0648\u0631\u062a \u0644\u063a\u0648\u060c \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0628\u0631\u0627\u06cc \u0648\u0627\u062d\u062f \u00ab\u0648\u06cc\u0644\u0627\u06cc\u06cc \u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0628\u0647\u0627\u0631\u0627\u0646\u00bb \u062e\u0627\u0644\u06cc \u0645\u06cc\u200c\u0634\u0646.";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__b9UUu)}>
+                  <Button
+                    className={classNames("__wab_instance", sty.button__bJBk)}
+                    color={"miaanColor"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateReadyToBlockOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["readyToBlock", "open"]
+                              },
+                              operation: 0
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateReadyToBlockOpen"] != null &&
+                        typeof $steps["updateReadyToBlockOpen"] === "object" &&
+                        typeof $steps["updateReadyToBlockOpen"].then ===
+                          "function"
+                      ) {
+                        $steps["updateReadyToBlockOpen"] =
+                          await $steps["updateReadyToBlockOpen"];
+                      }
+
+                      $steps["updateFetchModalOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["fetchModal", "open"]
+                              },
+                              operation: 0,
+                              value: true
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateFetchModalOpen"] != null &&
+                        typeof $steps["updateFetchModalOpen"] === "object" &&
+                        typeof $steps["updateFetchModalOpen"].then ===
+                          "function"
+                      ) {
+                        $steps["updateFetchModalOpen"] =
+                          await $steps["updateFetchModalOpen"];
+                      }
+
+                      $steps["invokeGlobalAction"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              args: [
+                                "POST",
+                                "https://gateway.rentamon.com/webhook/reservations/calendar/block",
+                                undefined,
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      {
+                                        let finalIsAutoSync = false;
+                                        const featureEnabled =
+                                          $state.booking.data.feature_handled
+                                            .auto_sync;
+                                        const statuses =
+                                          $state.booking.data.auto_sync;
+                                        const hasFailure =
+                                          statuses &&
+                                          Object.values(statuses).includes(
+                                            "failed"
+                                          );
+                                        if (featureEnabled && hasFailure) {
+                                          finalIsAutoSync = true;
+                                        }
+                                        return {
+                                          booking_id:
+                                            $state.booking.data.booking_id,
+                                          is_auto_sync: finalIsAutoSync
+                                        };
+                                      }
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ]
+                            };
+                            return $globalActions["Fragment.apiRequest"]?.apply(
+                              null,
+                              [...actionArgs.args]
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        $steps["invokeGlobalAction"] != null &&
+                        typeof $steps["invokeGlobalAction"] === "object" &&
+                        typeof $steps["invokeGlobalAction"].then === "function"
+                      ) {
+                        $steps["invokeGlobalAction"] =
+                          await $steps["invokeGlobalAction"];
+                      }
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  if (
+                                    $steps.invokeGlobalAction.data.status ==
+                                    true
+                                  ) {
+                                    return ($state.unblockStatus =
+                                      $steps.invokeGlobalAction.data.data);
+                                  } else {
+                                    return ($state.unblockStatus =
+                                      $steps.invokeGlobalAction.data.status);
+                                  }
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+
+                      $steps["updateActionFor"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["actionFor"]
+                              },
+                              operation: 0,
+                              value: "block"
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateActionFor"] != null &&
+                        typeof $steps["updateActionFor"] === "object" &&
+                        typeof $steps["updateActionFor"].then === "function"
+                      ) {
+                        $steps["updateActionFor"] =
+                          await $steps["updateActionFor"];
+                      }
+
+                      $steps["runCode2"] = (() => {
+                        let finalIsAutoSync = false;
+                        const featureEnabled =
+                          $state.booking.data.feature_handled.auto_sync;
+                        const statuses = $state.booking.data.auto_sync;
+                        const hasFailure =
+                          statuses &&
+                          Object.values(statuses).includes("failed");
+                        if (featureEnabled && hasFailure) {
+                          return (finalIsAutoSync = true);
+                        }
+                      })()
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  if (
+                                    $steps.invokeGlobalAction.data.status ==
+                                    true
+                                  ) {
+                                    const siteResults = $state.unblockStatus;
+                                    if (
+                                      typeof siteResults !== "object" ||
+                                      siteResults === null
+                                    ) {
+                                      return;
+                                    }
+                                    const finalResult = Object.fromEntries(
+                                      Object.entries(siteResults).map(
+                                        ([siteName, siteData]) => {
+                                          const newStatus =
+                                            siteData.final_status === true
+                                              ? "succeed"
+                                              : "failed";
+                                          return [siteName, newStatus];
+                                        }
+                                      )
+                                    );
+                                    $state.booking.data.auto_sync = finalResult;
+                                    return finalResult;
+                                  } else {
+                                    return undefined;
+                                  }
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode2"] != null &&
+                        typeof $steps["runCode2"] === "object" &&
+                        typeof $steps["runCode2"].then === "function"
+                      ) {
+                        $steps["runCode2"] = await $steps["runCode2"];
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__m6Csn
+                      )}
+                    >
+                      {"\u067e\u0631 \u06a9\u0646"}
+                    </div>
+                  </Button>
+                  <AntdButton
+                    data-plasmic-name={"cancelledBtn4"}
+                    data-plasmic-override={overrides.cancelledBtn4}
+                    className={classNames("__wab_instance", sty.cancelledBtn4)}
+                    danger={false}
+                    onClick={async () => {
+                      const $steps = {};
+
+                      $steps["updateCancelManualReserveOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["cancelManualReserve2", "open"]
+                              },
+                              operation: 0
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateCancelManualReserveOpen"] != null &&
+                        typeof $steps["updateCancelManualReserveOpen"] ===
+                          "object" &&
+                        typeof $steps["updateCancelManualReserveOpen"].then ===
+                          "function"
+                      ) {
+                        $steps["updateCancelManualReserveOpen"] =
+                          await $steps["updateCancelManualReserveOpen"];
+                      }
+                    }}
+                    submitsForm={false}
+                    type={"default"}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__u7AZb
+                      )}
+                    >
+                      {"\u0646\u0647!"}
+                    </div>
+                  </AntdButton>
+                </div>
+              </AntdModal>
               <div
                 data-plasmic-name={"feature"}
                 data-plasmic-override={overrides.feature}
@@ -7469,7 +8044,11 @@ function PlasmicBookings__RenderFunc(props: {
                           try {
                             return (
                               $state.reservationsMode &&
-                              $state.booking.data.status == "reserve"
+                              $state.booking.data.status == "reserve" &&
+                              (!$state.booking.data.auto_sync ||
+                                Object.values(
+                                  $state.booking.data.auto_sync
+                                ).includes("failed"))
                             );
                           } catch (e) {
                             if (
@@ -7488,12 +8067,12 @@ function PlasmicBookings__RenderFunc(props: {
                             onClick={async event => {
                               const $steps = {};
 
-                              $steps["updateFetchModalOpen"] = true
+                              $steps["updateReadyToBlockOpen"] = true
                                 ? (() => {
                                     const actionArgs = {
                                       variable: {
                                         objRoot: $state,
-                                        variablePath: ["fetchModal", "open"]
+                                        variablePath: ["readyToBlock", "open"]
                                       },
                                       operation: 0,
                                       value: true
@@ -7516,132 +8095,14 @@ function PlasmicBookings__RenderFunc(props: {
                                   })()
                                 : undefined;
                               if (
-                                $steps["updateFetchModalOpen"] != null &&
-                                typeof $steps["updateFetchModalOpen"] ===
+                                $steps["updateReadyToBlockOpen"] != null &&
+                                typeof $steps["updateReadyToBlockOpen"] ===
                                   "object" &&
-                                typeof $steps["updateFetchModalOpen"].then ===
+                                typeof $steps["updateReadyToBlockOpen"].then ===
                                   "function"
                               ) {
-                                $steps["updateFetchModalOpen"] =
-                                  await $steps["updateFetchModalOpen"];
-                              }
-
-                              $steps["invokeGlobalAction"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "POST",
-                                        "https://gateway.rentamon.com/webhook/reservations/calendar/block",
-                                        undefined,
-                                        (() => {
-                                          try {
-                                            return {
-                                              booking_id:
-                                                $state.booking.data.booking_id
-                                            };
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })()
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.apiRequest"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["invokeGlobalAction"] != null &&
-                                typeof $steps["invokeGlobalAction"] ===
-                                  "object" &&
-                                typeof $steps["invokeGlobalAction"].then ===
-                                  "function"
-                              ) {
-                                $steps["invokeGlobalAction"] =
-                                  await $steps["invokeGlobalAction"];
-                              }
-
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          console.log(
-                                            $steps.invokeGlobalAction.data
-                                              .status
-                                          );
-                                          if (
-                                            $steps.invokeGlobalAction.data
-                                              .status == true
-                                          ) {
-                                            $state.unblockStatus =
-                                              $steps.invokeGlobalAction.data.data;
-                                            return console.log(
-                                              $steps.invokeGlobalAction.data
-                                                .data
-                                            );
-                                          } else {
-                                            return ($state.unblockStatus =
-                                              $steps.invokeGlobalAction.data.status);
-                                          }
-                                        })();
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
-                              }
-
-                              $steps["updateActionFor"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["actionFor"]
-                                      },
-                                      operation: 0,
-                                      value: "block"
-                                    };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      $stateSet(objRoot, variablePath, value);
-                                      return value;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["updateActionFor"] != null &&
-                                typeof $steps["updateActionFor"] === "object" &&
-                                typeof $steps["updateActionFor"].then ===
-                                  "function"
-                              ) {
-                                $steps["updateActionFor"] =
-                                  await $steps["updateActionFor"];
+                                $steps["updateReadyToBlockOpen"] =
+                                  await $steps["updateReadyToBlockOpen"];
                               }
                             }}
                           >
@@ -12845,7 +13306,7 @@ function PlasmicBookings__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["updateFetchModalOpen"] = true
+                        $steps["updateFetchModalOpen"] = false
                           ? (() => {
                               const actionArgs = {
                                 variable: {
@@ -12881,7 +13342,7 @@ function PlasmicBookings__RenderFunc(props: {
                             await $steps["updateFetchModalOpen"];
                         }
 
-                        $steps["invokeGlobalAction"] = true
+                        $steps["invokeGlobalAction"] = false
                           ? (() => {
                               const actionArgs = {
                                 args: [
@@ -12922,7 +13383,7 @@ function PlasmicBookings__RenderFunc(props: {
                             await $steps["invokeGlobalAction"];
                         }
 
-                        $steps["runCode"] = true
+                        $steps["runCode"] = false
                           ? (() => {
                               const actionArgs = {
                                 customFunction: async () => {
@@ -12957,6 +13418,43 @@ function PlasmicBookings__RenderFunc(props: {
                           typeof $steps["runCode"].then === "function"
                         ) {
                           $steps["runCode"] = await $steps["runCode"];
+                        }
+
+                        $steps["updateReadyToBlockOpen"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["readyToBlock", "open"]
+                                },
+                                operation: 0,
+                                value: true
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateReadyToBlockOpen"] != null &&
+                          typeof $steps["updateReadyToBlockOpen"] ===
+                            "object" &&
+                          typeof $steps["updateReadyToBlockOpen"].then ===
+                            "function"
+                        ) {
+                          $steps["updateReadyToBlockOpen"] =
+                            await $steps["updateReadyToBlockOpen"];
                         }
                       }}
                     >
@@ -13487,9 +13985,27 @@ function PlasmicBookings__RenderFunc(props: {
                       sty.text__xkZg
                     )}
                   >
-                    {
-                      "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
-                    }
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (() => {
+                            if ($state.actionFor == "block") {
+                              return "نتیجه بستن سایت‌ها";
+                            } else {
+                              return "نتیجه باز کردن سایت‌ها";
+                            }
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "\u0646\u062a\u06cc\u062c\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0633\u0627\u06cc\u062a\u200c\u0647\u0627";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
                   </div>
                 </div>
               }
@@ -14526,6 +15042,8 @@ const PlasmicDescendants = {
     "detail",
     "booking",
     "generalData",
+    "readyToBlock",
+    "cancelledBtn4",
     "feature",
     "smartBooking",
     "data",
@@ -14653,6 +15171,8 @@ const PlasmicDescendants = {
   booking: [
     "booking",
     "generalData",
+    "readyToBlock",
+    "cancelledBtn4",
     "feature",
     "smartBooking",
     "data",
@@ -14731,6 +15251,8 @@ const PlasmicDescendants = {
     "tour"
   ],
   generalData: ["generalData"],
+  readyToBlock: ["readyToBlock", "cancelledBtn4"],
+  cancelledBtn4: ["cancelledBtn4"],
   feature: [
     "feature",
     "smartBooking",
@@ -15062,6 +15584,8 @@ type NodeDefaultElementType = {
   detail: "div";
   booking: typeof ApiRequest;
   generalData: "div";
+  readyToBlock: typeof AntdModal;
+  cancelledBtn4: typeof AntdButton;
   feature: "div";
   smartBooking: "div";
   data: "div";
@@ -15237,6 +15761,8 @@ export const PlasmicBookings = Object.assign(
     detail: makeNodeComponent("detail"),
     booking: makeNodeComponent("booking"),
     generalData: makeNodeComponent("generalData"),
+    readyToBlock: makeNodeComponent("readyToBlock"),
+    cancelledBtn4: makeNodeComponent("cancelledBtn4"),
     feature: makeNodeComponent("feature"),
     smartBooking: makeNodeComponent("smartBooking"),
     data: makeNodeComponent("data"),

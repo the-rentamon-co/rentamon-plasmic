@@ -439,7 +439,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 44%;
+  width: 320px;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
@@ -497,6 +497,7 @@
 @media (max-width: 500px) {
   .text__t3HG4 {
     font-size: 16px;
+    padding-top: 10px;
   }
 }
 @media (max-width: 350px) {
@@ -790,7 +791,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 8px 25px;
 }
 .text__uIg1S {
   text-align: center;
@@ -814,17 +815,17 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
+  width: 320px;
   height: auto;
-  max-width: 90%;
   justify-content: flex-start;
   align-items: center;
-  min-width: 0;
-  padding: 8px;
+  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBox__kxLlW {
     max-width: 96%;
+    width: 100%;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
@@ -837,7 +838,6 @@
 .text___9Mq6L {
   width: 100%;
   height: auto;
-  max-width: 94%;
   text-align: center;
   background: linear-gradient(
     31.91027212269853deg,
@@ -1908,7 +1908,6 @@
 }
 @media (max-width: 1200px) {
   .introCalendarRight7 {
-    max-width: 50%;
     width: 100%;
     min-width: 0;
   }
@@ -1929,7 +1928,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 44%;
+  width: 320px;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
@@ -1947,7 +1946,29 @@
 @media (max-width: 1200px) {
   .freeBox__oFaL {
     width: 100%;
+    max-width: 320px;
     min-width: 0;
+  }
+}
+@media (max-width: 500px) {
+  .freeBox__oFaL {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    background: linear-gradient(
+      194.38598434664198deg,
+      #0000f7 0%,
+      #0000f7 55%,
+      #4c3888 100%
+    );
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    border-radius: 100px;
+    padding: 18px 8px;
   }
 }
 .text___70Ylj {
@@ -1987,6 +2008,7 @@
 @media (max-width: 500px) {
   .text__sey39 {
     font-size: 16px;
+    padding-top: 10px;
   }
 }
 @media (max-width: 350px) {

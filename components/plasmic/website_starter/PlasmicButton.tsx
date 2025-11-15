@@ -93,7 +93,8 @@ export type PlasmicButton__VariantMembers = {
     | "softRed"
     | "softSand"
     | "clear"
-    | "link";
+    | "link"
+    | "miaanColor";
 };
 export type PlasmicButton__VariantsArgs = {
   showStartIcon?: SingleBooleanChoiceArg<"showStartIcon">;
@@ -115,6 +116,7 @@ export type PlasmicButton__VariantsArgs = {
     | "softSand"
     | "clear"
     | "link"
+    | "miaanColor"
   >;
 };
 type VariantPropType = keyof PlasmicButton__VariantsArgs;
@@ -171,6 +173,7 @@ export interface DefaultButtonProps extends pp.BaseButtonProps {
     | "softSand"
     | "clear"
     | "link"
+    | "miaanColor"
   >;
 }
 
@@ -291,6 +294,7 @@ function PlasmicButton__RenderFunc(props: {
           [sty.rootcolor_clear]: hasVariant($state, "color", "clear"),
           [sty.rootcolor_green]: hasVariant($state, "color", "green"),
           [sty.rootcolor_link]: hasVariant($state, "color", "link"),
+          [sty.rootcolor_miaanColor]: hasVariant($state, "color", "miaanColor"),
           [sty.rootcolor_red]: hasVariant($state, "color", "red"),
           [sty.rootcolor_sand]: hasVariant($state, "color", "sand"),
           [sty.rootcolor_softBlue]: hasVariant($state, "color", "softBlue"),

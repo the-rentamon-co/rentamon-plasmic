@@ -488,7 +488,11 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.introCalendarRight4)}
               >
                 <div
-                  className={classNames(projectcss.all, sty.freeBox__uOyUy)}
+                  className={classNames(
+                    projectcss.all,
+                    sty.freeBox__uOyUy,
+                    "clickable"
+                  )}
                   onClick={async event => {
                     const $steps = {};
 
@@ -528,7 +532,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       projectcss.all,
                       projectcss.__wab_text,
                       sty.text__lwviT,
-                      "clickable"
+                      ``
                     )}
                   >
                     {"\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631"}
@@ -1545,7 +1549,11 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames(projectcss.all, sty.introCalendarRight7)}
             >
               <div
-                className={classNames(projectcss.all, sty.freeBox__oFaL)}
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox__oFaL,
+                  "clickable"
+                )}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1585,7 +1593,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.all,
                     projectcss.__wab_text,
                     sty.text___70Ylj,
-                    "clickable"
+                    ``
                   )}
                 >
                   {"\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631"}

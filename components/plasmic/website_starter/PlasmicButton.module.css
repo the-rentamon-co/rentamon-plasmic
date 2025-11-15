@@ -6,7 +6,7 @@
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
-  background: var(--token-8nedppYkGVaH);
+  background: #0000ff;
   max-width: 164px;
   width: 100%;
   margin-top: 0px;
@@ -102,6 +102,11 @@
 }
 .rootcolor_link {
   background: #ffffff00;
+}
+@media (max-width: 500px) {
+  .rootcolor_miaanColor {
+    background: #0000ff;
+  }
 }
 .rootshowStartIcon_shape_rounded {
   padding-left: 16px;
