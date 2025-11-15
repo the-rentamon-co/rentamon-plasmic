@@ -511,8 +511,14 @@ function PlasmicDayCell2__RenderFunc(props: {
           ),
           [sty.freeBoxdayStatus_passedFirstDayReserveV2___9NdlBhpmmI]:
             hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
+          [sty.freeBoxdayStatus_passedFirstDayReserveV2_selected___9NdlBhpmmILSVo3]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
           [sty.freeBoxdayStatus_passedLastDayReserveV2___9NdlBsnHmp]:
             hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
+          [sty.freeBoxdayStatus_passedMidDayReserveV2_selected___9NdlbzPpWvLSVo3]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
           [sty.freeBoxdayStatus_passedReservedV2___9NdlbiSdsA]: hasVariant(
             $state,
             "dayStatus",
@@ -549,7 +555,10 @@ function PlasmicDayCell2__RenderFunc(props: {
             hasVariant($state, "dayStatus", "midDayReserveV2"),
           [sty.freeBoxselected_dayStatus_midDaySmartBooking___9NdlBlSVo3THrE]:
             hasVariant($state, "selected", "selected") &&
-            hasVariant($state, "dayStatus", "midDaySmartBooking")
+            hasVariant($state, "dayStatus", "midDaySmartBooking"),
+          [sty.freeBoxselected_dayStatus_passedLastDayReserveV2___9NdlBlSVo3SnHmp]:
+            hasVariant($state, "selected", "selected") &&
+            hasVariant($state, "dayStatus", "passedLastDayReserveV2")
         })}
       >
         <div
