@@ -630,6 +630,9 @@ function PlasmicDayCell2__RenderFunc(props: {
               "dayStatus",
               "passedFirstDayReserveV2"
             ),
+            [sty.celldayStatus_passedFirstDayReserveV2_selected]:
+              hasVariant($state, "selected", "selected") &&
+              hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
             [sty.celldayStatus_passedLastDayReserveV2]: hasVariant(
               $state,
               "dayStatus",

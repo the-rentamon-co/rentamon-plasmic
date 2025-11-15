@@ -586,6 +586,9 @@
 .celldayStatus_reservedV2_selected {
   background: #0000ff;
 }
+.celldayStatus_passedFirstDayReserveV2_selected {
+  border: 2px solid var(--token-pZV_D4O-0Dnd);
+}
 .cellselected_dayStatus_firstDaySmartBooking {
   background: #0000ff;
 }

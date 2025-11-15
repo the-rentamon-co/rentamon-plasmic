@@ -86,10 +86,18 @@ export type PlasmicTestimonialsScrolling__OverridesType = {
   text?: Flex__<"div">;
   frame?: Flex__<"div">;
   quotes?: Flex__<"div">;
-  userName4?: Flex__<"div">;
-  userPlatform?: Flex__<"div">;
-  userCity?: Flex__<"div">;
   userQuote2?: Flex__<"div">;
+  right?: Flex__<"div">;
+  rRight?: Flex__<"div">;
+  img?: Flex__<"div">;
+  lRight?: Flex__<"div">;
+  name?: Flex__<"div">;
+  userName4?: Flex__<"div">;
+  platform?: Flex__<"div">;
+  userPlatform?: Flex__<"div">;
+  left?: Flex__<"div">;
+  location?: Flex__<"div">;
+  userCity?: Flex__<"div">;
 };
 
 export interface DefaultTestimonialsScrollingProps {
@@ -264,7 +272,9 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
             sty.quotes,
             hasVariant(globalVariants, "screen", "smallMobile")
               ? "quotes"
-              : "quotes"
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? "quotes1"
+                : "quotes"
           )}
         >
           <div className={classNames(projectcss.all, sty.freeBox__ml3GW)}>
@@ -290,253 +300,6 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox__tyiks)}
                   key={currentIndex}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__yqxv0)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__eCmkO)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__g5Cp)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"none"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        height={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "44px"
-                            : "60px"
-                        }
-                        loading={"lazy"}
-                        src={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? (() => {
-                                try {
-                                  return $state.userTestimonial.data[
-                                    currentIndex
-                                  ].userPic;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return $state.userTestimonial.data[
-                                    currentIndex
-                                  ].userPic;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                        }
-                        width={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "44px"
-                            : "60px"
-                        }
-                      />
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__gBgy9)}
-                    >
-                      <div
-                        data-plasmic-name={"userName4"}
-                        data-plasmic-override={overrides.userName4}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.userName4
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return $state.userTestimonial.data[currentIndex]
-                                  .userName;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        ) : (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return $state.userTestimonial.data[currentIndex]
-                                  .userName;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        )}
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__iLqoV)}
-                    >
-                      <div
-                        data-plasmic-name={"userPlatform"}
-                        data-plasmic-override={overrides.userPlatform}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.userPlatform
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "میزبان " +
-                                  $state.userTestimonial.data[currentIndex]
-                                    .userPlatform
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        ) : (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "میزبان " +
-                                  $state.userTestimonial.data[currentIndex]
-                                    .userPlatform
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        )}
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__dirV)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__l4Sj7)}
-                        displayHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "17px"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "100%"
-                            : "25px"
-                        }
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "10px"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                            ? "15px"
-                            : "17px"
-                        }
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/pinPng.png",
-                          fullWidth: 50,
-                          fullHeight: 73,
-                          aspectRatio: undefined
-                        }}
-                      />
-
-                      <div
-                        data-plasmic-name={"userCity"}
-                        data-plasmic-override={overrides.userCity}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.userCity
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return $state.userTestimonial.data[currentIndex]
-                                  .userCity;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        ) : (
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return $state.userTestimonial.data[currentIndex]
-                                  .userCity;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        )}
-                      </div>
-                    </div>
-                  </div>
                   <div
                     className={classNames(projectcss.all, sty.freeBox__vGlv7)}
                   >
@@ -567,6 +330,335 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__yqxv0)}
+                  >
+                    <div
+                      data-plasmic-name={"right"}
+                      data-plasmic-override={overrides.right}
+                      className={classNames(projectcss.all, sty.right)}
+                    >
+                      <div
+                        data-plasmic-name={"rRight"}
+                        data-plasmic-override={overrides.rRight}
+                        className={classNames(projectcss.all, sty.rRight)}
+                      >
+                        <div
+                          data-plasmic-name={"img"}
+                          data-plasmic-override={overrides.img}
+                          className={classNames(projectcss.all, sty.img)}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__g5Cp)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"none"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            height={
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "50"
+                                : hasVariant(globalVariants, "screen", "mobile")
+                                  ? "70"
+                                  : hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "tablet"
+                                      )
+                                    ? "70"
+                                    : "80"
+                            }
+                            loading={"lazy"}
+                            src={
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? (() => {
+                                    try {
+                                      return $state.userTestimonial.data[
+                                        currentIndex
+                                      ].userPic;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                : (() => {
+                                    try {
+                                      return $state.userTestimonial.data[
+                                        currentIndex
+                                      ].userPic;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                            }
+                            width={
+                              hasVariant(
+                                globalVariants,
+                                "screen",
+                                "smallMobile"
+                              )
+                                ? "50"
+                                : hasVariant(globalVariants, "screen", "mobile")
+                                  ? "70"
+                                  : hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "tablet"
+                                      )
+                                    ? "70"
+                                    : "80"
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-plasmic-name={"lRight"}
+                        data-plasmic-override={overrides.lRight}
+                        className={classNames(projectcss.all, sty.lRight)}
+                      >
+                        <div
+                          data-plasmic-name={"name"}
+                          data-plasmic-override={overrides.name}
+                          className={classNames(projectcss.all, sty.name)}
+                        >
+                          <div
+                            data-plasmic-name={"userName4"}
+                            data-plasmic-override={overrides.userName4}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.userName4
+                            )}
+                          >
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return $state.userTestimonial.data[
+                                      currentIndex
+                                    ].userName;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return $state.userTestimonial.data[
+                                      currentIndex
+                                    ].userName;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            )}
+                          </div>
+                        </div>
+                        <div
+                          data-plasmic-name={"platform"}
+                          data-plasmic-override={overrides.platform}
+                          className={classNames(projectcss.all, sty.platform)}
+                        >
+                          <div
+                            data-plasmic-name={"userPlatform"}
+                            data-plasmic-override={overrides.userPlatform}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.userPlatform
+                            )}
+                          >
+                            {hasVariant(
+                              globalVariants,
+                              "screen",
+                              "smallMobile"
+                            ) ? (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      "میزبان " +
+                                      $state.userTestimonial.data[currentIndex]
+                                        .userPlatform
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      "میزبان " +
+                                      $state.userTestimonial.data[currentIndex]
+                                        .userPlatform
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-plasmic-name={"left"}
+                      data-plasmic-override={overrides.left}
+                      className={classNames(projectcss.all, sty.left)}
+                    >
+                      <div
+                        data-plasmic-name={"location"}
+                        data-plasmic-override={overrides.location}
+                        className={classNames(projectcss.all, sty.location)}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__l4Sj7)}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "100%"
+                              : hasVariant(globalVariants, "screen", "mobile")
+                                ? "100%"
+                                : "25px"
+                          }
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "14px"
+                              : hasVariant(globalVariants, "screen", "mobile")
+                                ? "16px"
+                                : "17px"
+                          }
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/pinPng.png",
+                            fullWidth: 50,
+                            fullHeight: 73,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          data-plasmic-name={"userCity"}
+                          data-plasmic-override={overrides.userCity}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.userCity
+                          )}
+                        >
+                          {hasVariant(
+                            globalVariants,
+                            "screen",
+                            "smallMobile"
+                          ) ? (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $state.userTestimonial.data[
+                                    currentIndex
+                                  ].userCity;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $state.userTestimonial.data[
+                                    currentIndex
+                                  ].userCity;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0639\u0628\u062f\u0627\u0644\u0644\u0647 \u0641\u062a\u0627\u062d\u06cc";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               );
             })}
@@ -584,26 +676,73 @@ const PlasmicDescendants = {
     "text",
     "frame",
     "quotes",
+    "userQuote2",
+    "right",
+    "rRight",
+    "img",
+    "lRight",
+    "name",
     "userName4",
+    "platform",
     "userPlatform",
-    "userCity",
-    "userQuote2"
+    "left",
+    "location",
+    "userCity"
   ],
   userTestimonial: ["userTestimonial", "text"],
   text: ["text"],
   frame: [
     "frame",
     "quotes",
+    "userQuote2",
+    "right",
+    "rRight",
+    "img",
+    "lRight",
+    "name",
     "userName4",
+    "platform",
     "userPlatform",
-    "userCity",
-    "userQuote2"
+    "left",
+    "location",
+    "userCity"
   ],
-  quotes: ["quotes", "userName4", "userPlatform", "userCity", "userQuote2"],
+  quotes: [
+    "quotes",
+    "userQuote2",
+    "right",
+    "rRight",
+    "img",
+    "lRight",
+    "name",
+    "userName4",
+    "platform",
+    "userPlatform",
+    "left",
+    "location",
+    "userCity"
+  ],
+  userQuote2: ["userQuote2"],
+  right: [
+    "right",
+    "rRight",
+    "img",
+    "lRight",
+    "name",
+    "userName4",
+    "platform",
+    "userPlatform"
+  ],
+  rRight: ["rRight", "img"],
+  img: ["img"],
+  lRight: ["lRight", "name", "userName4", "platform", "userPlatform"],
+  name: ["name", "userName4"],
   userName4: ["userName4"],
+  platform: ["platform", "userPlatform"],
   userPlatform: ["userPlatform"],
-  userCity: ["userCity"],
-  userQuote2: ["userQuote2"]
+  left: ["left", "location", "userCity"],
+  location: ["location", "userCity"],
+  userCity: ["userCity"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -614,10 +753,18 @@ type NodeDefaultElementType = {
   text: "div";
   frame: "div";
   quotes: "div";
-  userName4: "div";
-  userPlatform: "div";
-  userCity: "div";
   userQuote2: "div";
+  right: "div";
+  rRight: "div";
+  img: "div";
+  lRight: "div";
+  name: "div";
+  userName4: "div";
+  platform: "div";
+  userPlatform: "div";
+  left: "div";
+  location: "div";
+  userCity: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -631,7 +778,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicTestimonialsScrolling__VariantsArgs;
     args?: PlasmicTestimonialsScrolling__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicTestimonialsScrolling__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicTestimonialsScrolling__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicTestimonialsScrolling__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -684,10 +833,18 @@ export const PlasmicTestimonialsScrolling = Object.assign(
     text: makeNodeComponent("text"),
     frame: makeNodeComponent("frame"),
     quotes: makeNodeComponent("quotes"),
-    userName4: makeNodeComponent("userName4"),
-    userPlatform: makeNodeComponent("userPlatform"),
-    userCity: makeNodeComponent("userCity"),
     userQuote2: makeNodeComponent("userQuote2"),
+    right: makeNodeComponent("right"),
+    rRight: makeNodeComponent("rRight"),
+    img: makeNodeComponent("img"),
+    lRight: makeNodeComponent("lRight"),
+    _name: makeNodeComponent("name"),
+    userName4: makeNodeComponent("userName4"),
+    platform: makeNodeComponent("platform"),
+    userPlatform: makeNodeComponent("userPlatform"),
+    left: makeNodeComponent("left"),
+    location: makeNodeComponent("location"),
+    userCity: makeNodeComponent("userCity"),
 
     // Metadata about props expected for PlasmicTestimonialsScrolling
     internalVariantProps: PlasmicTestimonialsScrolling__VariantProps,
