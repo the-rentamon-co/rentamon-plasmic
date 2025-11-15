@@ -76,6 +76,7 @@ import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -122,6 +123,7 @@ export type PlasmicLiteCalendar__OverridesType = {
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   alertModal?: Flex__<typeof AntdModal>;
+  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultLiteCalendarProps {}
@@ -321,7 +323,14 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         path: "alertModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "smallMobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "mobile")
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : false
       }
     ],
     [$props, $ctx, $refs]
@@ -1444,7 +1453,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__pzrVq
+                        sty.formField__nMkAb
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1456,7 +1465,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___8SMU
+                        sty.formField__eEfLu
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1468,7 +1477,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <AntdButton
                       className={classNames(
                         "__wab_instance",
-                        sty.button__r2Lvp
+                        sty.button__gUpri
                       )}
                       submitsForm={true}
                       type={"primary"}
@@ -1477,7 +1486,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__wmv8V
+                          sty.text__aVq7B
                         )}
                       >
                         {"Submit"}
@@ -1612,7 +1621,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__gDc0O)}
-                  displayHeight={"auto"}
+                  displayHeight={"16px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
@@ -1631,30 +1640,46 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             <div className={classNames(projectcss.all, sty.freeBox__t1XpP)}>
               <div className={classNames(projectcss.all, sty.freeBox___5Bh7Y)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__gk8YC
-                  )}
+                  className={classNames(projectcss.all, sty.freeBox___1F4F2)}
                 >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0633\u0627\u0644\u0647 \u0645\u0634\u063a\u0648\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u0628\u0627 \u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0647\u0633\u062a\u06cc\u0645\u060c \u062a\u0627 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u062f\u0627\u0631\u06cc \u0631\u0648 \u062f\u0631 \u06a9\u0634\u0648\u0631 \u0627\u0631\u062a\u0642\u0627\u0621 \u0628\u062f\u06cc\u0645."
-                    : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0633\u0627\u0644\u0647 \u0645\u0634\u063a\u0648\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u0628\u0627 \u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0647\u0633\u062a\u06cc\u0645\u060c \u062a\u0627 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u062f\u0627\u0631\u06cc \u0631\u0648 \u062f\u0631 \u06a9\u0634\u0648\u0631 \u0627\u0631\u062a\u0642\u0627\u0621 \u0628\u062f\u06cc\u0645."
-                      : "\u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0633\u0627\u0644\u0647 \u0645\u0634\u063a\u0648\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u0628\u0627 \u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0647\u0633\u062a\u06cc\u0645\u060c \u062a\u0627 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u062f\u0627\u0631\u06cc \u0631\u0648 \u062f\u0631 \u06a9\u0634\u0648\u0631 \u0627\u0631\u062a\u0642\u0627\u0621 \u0628\u062f\u06cc\u0645."}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jKdZ0
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u062d\u0627\u0644\u0627 \u062f\u0627\u0631\u06cc\u0645 \u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645!"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u062d\u0627\u0644\u0627 \u062f\u0627\u0631\u06cc\u0645 \u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645!"
-                      : "\u062d\u0627\u0644\u0627 \u062f\u0627\u0631\u06cc\u0645 \u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645!"}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__sQeQ0
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u00ab"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#0000F7" }}
+                      >
+                        {"\u0645\u06cc\u0627\u0646"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0631\u062f!"
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__mHtC3)}
+                  >
+                    <Embed
+                      data-plasmic-name={"embedHtml"}
+                      data-plasmic-override={overrides.embedHtml}
+                      className={classNames("__wab_instance", sty.embedHtml)}
+                      code={
+                        '<div style="\r\n  overflow: hidden;\r\n  border-radius: 16px;\r\n  width: 100%;\r\n  height: auto;\r\n  background: white;\r\n">\r\n  <video\r\n    src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Flogo-change.mp4?versionId="\r\n    autoplay\r\n    muted\r\n    loop\r\n    playsinline\r\n    style="\r\n      width: calc(100% + 2px);\r\n      height: calc(100% + 2px);\r\n      margin: -1px;\r\n      object-fit: cover;\r\n      display: block;\r\n    ">\r\n  </video>\r\n</div>\r\n'
+                      }
+                    />
+                  </div>
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__ei20N)}>
@@ -1664,7 +1689,9 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     sty.freeBox__xUmHe,
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "clickable"
-                      : undefined
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "clickable"
+                        : undefined
                   )}
                   onClick={async event => {
                     const $steps = {};
@@ -1894,7 +1921,8 @@ const PlasmicDescendants = {
     "navbarRntFooter",
     "clarityRntComponent",
     "faviconRntComponent",
-    "alertModal"
+    "alertModal",
+    "embedHtml"
   ],
   sideEffect: ["sideEffect"],
   headerMain: [
@@ -1926,7 +1954,8 @@ const PlasmicDescendants = {
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  alertModal: ["alertModal"]
+  alertModal: ["alertModal", "embedHtml"],
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1954,6 +1983,7 @@ type NodeDefaultElementType = {
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   alertModal: typeof AntdModal;
+  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2039,6 +2069,7 @@ export const PlasmicLiteCalendar = Object.assign(
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     alertModal: makeNodeComponent("alertModal"),
+    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicLiteCalendar
     internalVariantProps: PlasmicLiteCalendar__VariantProps,

@@ -63,6 +63,7 @@ import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import Calendar2 from "../../Calendar2"; // plasmic-import: RNhZtlNmydsH/component
@@ -98,6 +99,7 @@ export type PlasmicProCalendar__OverridesType = {
   sideBar2?: Flex__<typeof SideBar2>;
   profile2?: Flex__<typeof ApiRequest>;
   alertModal?: Flex__<typeof AntdModal>;
+  embedHtml?: Flex__<typeof Embed>;
   button?: Flex__<typeof Button>;
   headerMobileNew?: Flex__<"div">;
   header?: Flex__<"div">;
@@ -1278,7 +1280,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__vxfFc)}
-                  displayHeight={"auto"}
+                  displayHeight={"16px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
@@ -1303,24 +1305,34 @@ function PlasmicProCalendar__RenderFunc(props: {
                     sty.text__bvehK
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0633\u0627\u0644\u0647 \u0645\u0634\u063a\u0648\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u0628\u0627 \u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0647\u0633\u062a\u06cc\u0645\u060c \u062a\u0627 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u062f\u0627\u0631\u06cc \u0631\u0648 \u062f\u0631 \u06a9\u0634\u0648\u0631 \u0627\u0631\u062a\u0642\u0627\u0621 \u0628\u062f\u06cc\u0645."
-                    : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0633\u0627\u0644\u0647 \u0645\u0634\u063a\u0648\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u0628\u0627 \u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0647\u0633\u062a\u06cc\u0645\u060c \u062a\u0627 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u062f\u0627\u0631\u06cc \u0631\u0648 \u062f\u0631 \u06a9\u0634\u0648\u0631 \u0627\u0631\u062a\u0642\u0627\u0621 \u0628\u062f\u06cc\u0645."
-                      : "\u0628\u06cc\u0634 \u0627\u0632 \u06f2 \u0633\u0627\u0644\u0647 \u0645\u0634\u063a\u0648\u0644 \u0641\u0639\u0627\u0644\u06cc\u062a \u0628\u0627 \u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0647\u0633\u062a\u06cc\u0645\u060c \u062a\u0627 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u062f\u0627\u0631\u06cc \u0631\u0648 \u062f\u0631 \u06a9\u0634\u0648\u0631 \u0627\u0631\u062a\u0642\u0627\u0621 \u0628\u062f\u06cc\u0645."}
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u00ab"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#0000F7" }}
+                    >
+                      {"\u0645\u06cc\u0627\u0646"}
+                    </span>
+                    <React.Fragment>
+                      {
+                        "\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0631\u062f!"
+                      }
+                    </React.Fragment>
+                  </React.Fragment>
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__n07Kg
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u062d\u0627\u0644\u0627 \u062f\u0627\u0631\u06cc\u0645 \u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645!"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u062d\u0627\u0644\u0627 \u062f\u0627\u0631\u06cc\u0645 \u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645!"
-                      : "\u062d\u0627\u0644\u0627 \u062f\u0627\u0631\u06cc\u0645 \u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0631\u0648 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u06cc\u200c\u062f\u06cc\u0645!"}
+                <div className={classNames(projectcss.all, sty.freeBox__ylK8S)}>
+                  <Embed
+                    data-plasmic-name={"embedHtml"}
+                    data-plasmic-override={overrides.embedHtml}
+                    className={classNames("__wab_instance", sty.embedHtml)}
+                    code={
+                      '<div style="\r\n  overflow: hidden;\r\n  border-radius: 16px;\r\n  width: 100%;\r\n  height: auto;\r\n  background: white;\r\n">\r\n  <video\r\n    src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Flogo-change.mp4?versionId="\r\n    autoplay\r\n    muted\r\n    loop\r\n    playsinline\r\n    style="\r\n      width: calc(100% + 2px);\r\n      height: calc(100% + 2px);\r\n      margin: -1px;\r\n      object-fit: cover;\r\n      display: block;\r\n    ">\r\n  </video>\r\n</div>\r\n'
+                    }
+                  />
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__fnmGc)}>
@@ -2811,6 +2823,7 @@ const PlasmicDescendants = {
     "sideBar2",
     "profile2",
     "alertModal",
+    "embedHtml",
     "button",
     "headerMobileNew",
     "header",
@@ -2834,7 +2847,8 @@ const PlasmicDescendants = {
   header2: ["header2", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
   profile2: ["profile2"],
-  alertModal: ["alertModal", "button"],
+  alertModal: ["alertModal", "embedHtml", "button"],
+  embedHtml: ["embedHtml"],
   button: ["button"],
   headerMobileNew: [
     "headerMobileNew",
@@ -2889,6 +2903,7 @@ type NodeDefaultElementType = {
   sideBar2: typeof SideBar2;
   profile2: typeof ApiRequest;
   alertModal: typeof AntdModal;
+  embedHtml: typeof Embed;
   button: typeof Button;
   headerMobileNew: "div";
   header: "div";
@@ -2976,6 +2991,7 @@ export const PlasmicProCalendar = Object.assign(
     sideBar2: makeNodeComponent("sideBar2"),
     profile2: makeNodeComponent("profile2"),
     alertModal: makeNodeComponent("alertModal"),
+    embedHtml: makeNodeComponent("embedHtml"),
     button: makeNodeComponent("button"),
     headerMobileNew: makeNodeComponent("headerMobileNew"),
     header: makeNodeComponent("header"),

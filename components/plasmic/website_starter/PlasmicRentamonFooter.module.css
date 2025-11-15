@@ -165,6 +165,11 @@
     font-size: 16px;
   }
 }
+@media (max-width: 350px) {
+  .text__musna {
+    font-size: 15px;
+  }
+}
 .freeBox___6NgD {
   display: flex;
   flex-direction: column;
@@ -280,6 +285,11 @@
 @media (max-width: 500px) {
   .text__xral5 {
     font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__xral5 {
+    font-size: 15px;
   }
 }
 .freeBox__wrGuV {
@@ -398,6 +408,11 @@
 @media (max-width: 500px) {
   .text___45Xuh {
     font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text___45Xuh {
+    font-size: 15px;
   }
 }
 ._1st {

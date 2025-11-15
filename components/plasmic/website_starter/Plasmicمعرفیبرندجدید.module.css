@@ -152,6 +152,7 @@
   max-width: 100%;
   font-size: 22px;
   font-weight: 600;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .دربارهما {
@@ -175,6 +176,7 @@
   max-width: 100%;
   font-size: 17px;
   font-weight: 400;
+  color: #444444;
   padding: 10px 0px 0px;
 }
 @media (max-width: 1200px) {
@@ -253,6 +255,7 @@
   padding-right: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__bte4Q {
@@ -392,6 +395,7 @@
   padding-right: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___7EPgn {
@@ -487,6 +491,7 @@
   max-width: 100%;
   object-fit: cover;
   width: 100%;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1118,6 +1123,7 @@
   padding-top: 66px;
   font-weight: 500;
   padding-bottom: 31px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___13X2X {

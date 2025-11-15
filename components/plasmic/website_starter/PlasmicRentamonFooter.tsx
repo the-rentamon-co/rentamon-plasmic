@@ -278,9 +278,22 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               sty.text__xugAr
             )}
           >
-            {
-              "\u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642) \u062f\u0631 \u0634\u0628\u06a9\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u062a\u0645\u0627\u0639\u06cc"
-            }
+            <React.Fragment>
+              <React.Fragment>{"\u0645\u06cc\u0627\u0646 "}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 400 }}
+              >
+                {
+                  "(\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642)"
+                }
+              </span>
+              <React.Fragment>
+                {
+                  " \u062f\u0631 \u0634\u0628\u06a9\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u062a\u0645\u0627\u0639\u06cc"
+                }
+              </React.Fragment>
+            </React.Fragment>
           </div>
         </div>
       </div>
@@ -474,12 +487,6 @@ function PlasmicRentamonFooter__RenderFunc(props: {
             )}
           >
             <React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ fontWeight: 400 }}
-              >
-                {""}
-              </span>
               <React.Fragment>{""}</React.Fragment>
               {
                 <PlasmicLink__
@@ -500,7 +507,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                       style={{ fontWeight: 400 }}
                     >
                       {
-                        "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                        "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u06cc\u0627\u0646"
                       }
                     </span>
                   </React.Fragment>
@@ -672,13 +679,6 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                 {""}
               </span>
               <React.Fragment>{"\n"}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ fontWeight: 400 }}
-              >
-                {""}
-              </span>
-              <React.Fragment>{""}</React.Fragment>
               {
                 <PlasmicLink__
                   className={classNames(
@@ -698,7 +698,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                       style={{ fontWeight: 400 }}
                     >
                       {
-                        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a \u0645\u06cc\u0627\u0646"
                       }
                     </span>
                   </React.Fragment>
