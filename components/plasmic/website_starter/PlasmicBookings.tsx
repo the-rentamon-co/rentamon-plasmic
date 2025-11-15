@@ -3298,6 +3298,41 @@ function PlasmicBookings__RenderFunc(props: {
                           await $steps["updateFetchModalOpen"];
                       }
 
+                      $steps["updateActionFor"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["actionFor"]
+                              },
+                              operation: 0,
+                              value: "block"
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateActionFor"] != null &&
+                        typeof $steps["updateActionFor"] === "object" &&
+                        typeof $steps["updateActionFor"].then === "function"
+                      ) {
+                        $steps["updateActionFor"] =
+                          await $steps["updateActionFor"];
+                      }
+
                       $steps["invokeGlobalAction"] = true
                         ? (() => {
                             const actionArgs = {
@@ -3387,41 +3422,6 @@ function PlasmicBookings__RenderFunc(props: {
                         typeof $steps["runCode"].then === "function"
                       ) {
                         $steps["runCode"] = await $steps["runCode"];
-                      }
-
-                      $steps["updateActionFor"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["actionFor"]
-                              },
-                              operation: 0,
-                              value: "block"
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateActionFor"] != null &&
-                        typeof $steps["updateActionFor"] === "object" &&
-                        typeof $steps["updateActionFor"].then === "function"
-                      ) {
-                        $steps["updateActionFor"] =
-                          await $steps["updateActionFor"];
                       }
 
                       $steps["updateAutoSyncSummary"] = (() => {
@@ -3526,7 +3526,7 @@ function PlasmicBookings__RenderFunc(props: {
                             const actionArgs = {
                               variable: {
                                 objRoot: $state,
-                                variablePath: ["cancelManualReserve2", "open"]
+                                variablePath: ["readyToBlock", "open"]
                               },
                               operation: 0
                             };
@@ -14060,11 +14060,10 @@ function PlasmicBookings__RenderFunc(props: {
                   >
                     {(() => {
                       try {
-                        return (() => {
-                          const platformStatusInfo =
-                            $state.unblockStatus[currentItem.original] != null;
-                          return platformStatusInfo;
-                        })();
+                        return $state.actionFor == "block" &&
+                          currentItem.original == $state.booking.data.website
+                          ? false
+                          : true;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -14254,6 +14253,7 @@ function PlasmicBookings__RenderFunc(props: {
                 >
                   <Button
                     className={classNames("__wab_instance", sty.button___5El8G)}
+                    color={"miaanColor"}
                     onClick={async event => {
                       const $steps = {};
 
