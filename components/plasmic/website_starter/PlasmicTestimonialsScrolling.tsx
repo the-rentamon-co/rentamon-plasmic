@@ -272,9 +272,11 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
             sty.quotes,
             hasVariant(globalVariants, "screen", "smallMobile")
               ? "quotes"
-              : hasVariant(globalVariants, "screen", "tablet")
-                ? "quotes1"
-                : "quotes"
+              : hasVariant(globalVariants, "screen", "mobile")
+                ? "quotes"
+                : hasVariant(globalVariants, "screen", "tablet")
+                  ? "quotes"
+                  : "quotes"
           )}
         >
           <div className={classNames(projectcss.all, sty.freeBox__ml3GW)}>
