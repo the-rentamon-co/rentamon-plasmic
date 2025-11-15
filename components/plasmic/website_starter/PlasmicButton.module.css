@@ -103,6 +103,9 @@
 .rootcolor_link {
   background: #ffffff00;
 }
+.rootcolor_miaanColor {
+  background: #8165d6;
+}
 @media (max-width: 500px) {
   .rootcolor_miaanColor {
     background: #0000ff;

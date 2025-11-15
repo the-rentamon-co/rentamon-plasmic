@@ -488,6 +488,11 @@ function PlasmicButton__RenderFunc(props: {
               "color",
               "link"
             ),
+            [sty.slotTargetChildrencolor_miaanColor]: hasVariant(
+              $state,
+              "color",
+              "miaanColor"
+            ),
             [sty.slotTargetChildrencolor_red]: hasVariant(
               $state,
               "color",
