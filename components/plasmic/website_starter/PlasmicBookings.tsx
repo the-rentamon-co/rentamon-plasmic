@@ -3424,7 +3424,7 @@ function PlasmicBookings__RenderFunc(props: {
                           await $steps["updateActionFor"];
                       }
 
-                      $steps["runCode2"] = (() => {
+                      $steps["updateAutoSyncSummary"] = (() => {
                         let finalIsAutoSync = false;
                         const featureEnabled =
                           $state.booking.data.feature_handled.auto_sync;
@@ -3444,26 +3444,43 @@ function PlasmicBookings__RenderFunc(props: {
                                     $steps.invokeGlobalAction.data.status ==
                                     true
                                   ) {
-                                    const siteResults = $state.unblockStatus;
+                                    const newSiteResults = $state.unblockStatus;
+                                    const currentAutoSync =
+                                      $state.booking.data.auto_sync;
                                     if (
-                                      typeof siteResults !== "object" ||
-                                      siteResults === null
+                                      typeof newSiteResults !== "object" ||
+                                      newSiteResults === null
                                     ) {
                                       return;
                                     }
-                                    const finalResult = Object.fromEntries(
-                                      Object.entries(siteResults).map(
-                                        ([siteName, siteData]) => {
-                                          const newStatus =
-                                            siteData.final_status === true
-                                              ? "succeed"
-                                              : "failed";
-                                          return [siteName, newStatus];
+                                    if (
+                                      typeof currentAutoSync !== "object" ||
+                                      currentAutoSync === null
+                                    ) {
+                                      return;
+                                    }
+                                    const updatedAutoSync = {
+                                      ...currentAutoSync
+                                    };
+                                    Object.entries(newSiteResults).forEach(
+                                      ([siteName, siteData]) => {
+                                        const newStatus =
+                                          siteData.final_status === true
+                                            ? "succeed"
+                                            : "failed";
+                                        const currentStatus =
+                                          updatedAutoSync[siteName];
+                                        if (
+                                          currentStatus === "failed" &&
+                                          newStatus === "succeed"
+                                        ) {
+                                          updatedAutoSync[siteName] = "succeed";
                                         }
-                                      )
+                                      }
                                     );
-                                    $state.booking.data.auto_sync = finalResult;
-                                    return finalResult;
+                                    $state.booking.data.auto_sync =
+                                      updatedAutoSync;
+                                    return updatedAutoSync;
                                   } else {
                                     return undefined;
                                   }
@@ -3476,11 +3493,13 @@ function PlasmicBookings__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["runCode2"] != null &&
-                        typeof $steps["runCode2"] === "object" &&
-                        typeof $steps["runCode2"].then === "function"
+                        $steps["updateAutoSyncSummary"] != null &&
+                        typeof $steps["updateAutoSyncSummary"] === "object" &&
+                        typeof $steps["updateAutoSyncSummary"].then ===
+                          "function"
                       ) {
-                        $steps["runCode2"] = await $steps["runCode2"];
+                        $steps["updateAutoSyncSummary"] =
+                          await $steps["updateAutoSyncSummary"];
                       }
                     }}
                   >
