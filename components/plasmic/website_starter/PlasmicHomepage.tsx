@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
@@ -75,6 +76,7 @@ import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/sk
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -87,6 +89,8 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JDKbvzOHcQCj/
 import Icon36Icon from "./icons/PlasmicIcon__Icon36"; // plasmic-import: yp-BEibF8Gyh/icon
 import Icon35Icon from "./icons/PlasmicIcon__Icon35"; // plasmic-import: OcX2ER-sALSD/icon
 import Icon33Icon from "./icons/PlasmicIcon__Icon33"; // plasmic-import: 7SATgDgNnB07/icon
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -101,6 +105,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   home?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
   navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   mainContents?: Flex__<"div">;
   introCalendar?: Flex__<"div">;
@@ -128,7 +133,6 @@ export type PlasmicHomepage__OverridesType = {
   form3?: Flex__<typeof FormWrapper>;
   input3?: Flex__<typeof AntdInput>;
   input4?: Flex__<typeof AntdInput>;
-  button?: Flex__<typeof AntdButton>;
   _3Benefits?: Flex__<"div">;
   _3Benefits1st?: Flex__<"div">;
   icon?: Flex__<"div">;
@@ -147,7 +151,6 @@ export type PlasmicHomepage__OverridesType = {
   introAutoSyncCaption2?: Flex__<"div">;
   introAutoSyncDesc2?: Flex__<"div">;
   introAutoSyncGif2?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   testimonials?: Flex__<"div">;
   titlePart?: Flex__<"div">;
   commentsScrolling?: Flex__<"div">;
@@ -170,6 +173,7 @@ export type PlasmicHomepage__OverridesType = {
   goftino?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
+  modalMiaan?: Flex__<typeof AntdModal>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
 };
 
@@ -276,6 +280,12 @@ function PlasmicHomepage__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "modalMiaan.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -352,6 +362,39 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.home
           )}
         >
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          if (!document.cookie.includes("miaan")) {
+                            return ($state.alertModal.open = true);
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
+
           <NavbarRntHeader
             data-plasmic-name={"navbarRntHeader"}
             data-plasmic-override={overrides.navbarRntHeader}
@@ -1011,11 +1054,9 @@ function PlasmicHomepage__RenderFunc(props: {
                                 })()}
                               </FormItemWrapper>
                               <AntdButton
-                                data-plasmic-name={"button"}
-                                data-plasmic-override={overrides.button}
                                 className={classNames(
                                   "__wab_instance",
-                                  sty.button
+                                  sty.button___1NkiR
                                 )}
                                 disabled={false}
                                 ghost={true}
@@ -1395,10 +1436,8 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.introAutoSyncGif2)}
                 >
                   <PlasmicImg__
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img, "fadein")}
+                    className={classNames(sty.img__k2Bq6, "fadein")}
                     displayHeight={
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "100%"
@@ -2083,6 +2122,414 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
               </div>
             </div>
+            <AntdModal
+              data-plasmic-name={"modalMiaan"}
+              data-plasmic-override={overrides.modalMiaan}
+              className={classNames("__wab_instance", sty.modalMiaan)}
+              defaultStylesClassName={classNames(
+                projectcss.root_reset,
+                projectcss.plasmic_default_styles,
+                projectcss.plasmic_mixins,
+                styleTokensClassNames
+              )}
+              hideFooter={true}
+              maskClosable={
+                hasVariant(globalVariants, "screen", "tablet")
+                  ? false
+                  : undefined
+              }
+              modalScopeClassName={sty["modalMiaan__modal"]}
+              onOpenChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["modalMiaan", "open"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              open={generateStateValueProp($state, ["modalMiaan", "open"])}
+              title={null}
+              trigger={
+                <AntdButton
+                  className={classNames("__wab_instance", sty.button__o8V4U)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___2PNzL
+                    )}
+                  >
+                    {"Show modal"}
+                  </div>
+                </AntdButton>
+              }
+              width={
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "340"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                    ? "350"
+                    : "350"
+              }
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__bqdlx)}>
+                <div className={classNames(projectcss.all, sty.freeBox__lIzqt)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      sty.freeBox__r5Rt3,
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? "clickable"
+                        : undefined
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  function setCookie(name, value, hours) {
+                                    let expires = "";
+                                    if (hours) {
+                                      const date = new Date();
+                                      date.setTime(
+                                        date.getTime() + hours * 60 * 60 * 1000
+                                      );
+                                      expires =
+                                        "; expires=" + date.toUTCString();
+                                    }
+                                    document.cookie =
+                                      name +
+                                      "=" +
+                                      (value || "") +
+                                      expires +
+                                      "; path=/";
+                                  }
+                                  return setCookie("miaan", "true", 24);
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+
+                      $steps["updateModalMiaanOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["modalMiaan", "open"]
+                              },
+                              operation: 0
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateModalMiaanOpen"] != null &&
+                        typeof $steps["updateModalMiaanOpen"] === "object" &&
+                        typeof $steps["updateModalMiaanOpen"].then ===
+                          "function"
+                      ) {
+                        $steps["updateModalMiaanOpen"] =
+                          await $steps["updateModalMiaanOpen"];
+                      }
+                    }}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__vaqhb)}
+                      displayHeight={"16px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"16px"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image24.svg",
+                        fullWidth: 20,
+                        fullHeight: 18,
+                        aspectRatio: 1.111111
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__kdo9H)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gkFl
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u00ab"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ color: "#0000F7" }}
+                      >
+                        {"\u0645\u06cc\u0627\u0646"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0631\u062f!"
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__oXdOl)}
+                  >
+                    <Embed
+                      className={classNames(
+                        "__wab_instance",
+                        sty.embedHtml__xkDwk
+                      )}
+                      code={
+                        '<div style="\r\n  overflow: hidden;\r\n  border-radius: 16px;\r\n  width: 100%;\r\n  height: auto;\r\n  background: white;\r\n">\r\n  <video\r\n    src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Flogo-change.mp4?versionId="\r\n    autoplay\r\n    muted\r\n    loop\r\n    playsinline\r\n    style="\r\n      width: calc(100% + 2px);\r\n      height: calc(100% + 2px);\r\n      margin: -1px;\r\n      object-fit: cover;\r\n      display: block;\r\n    ">\r\n  </video>\r\n</div>\r\n'
+                      }
+                    />
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__ocks8)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      sty.freeBox__zvzJk,
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "clickable"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "clickable"
+                          : undefined
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateModalMiaanOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["modalMiaan", "open"]
+                              },
+                              operation: 0
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateModalMiaanOpen"] != null &&
+                        typeof $steps["updateModalMiaanOpen"] === "object" &&
+                        typeof $steps["updateModalMiaanOpen"].then ===
+                          "function"
+                      ) {
+                        $steps["updateModalMiaanOpen"] =
+                          await $steps["updateModalMiaanOpen"];
+                      }
+
+                      $steps["goToمعرفیبرندجدید"] = true
+                        ? (() => {
+                            const actionArgs = { destination: `/new-brand` };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToمعرفیبرندجدید"] != null &&
+                        typeof $steps["goToمعرفیبرندجدید"] === "object" &&
+                        typeof $steps["goToمعرفیبرندجدید"].then === "function"
+                      ) {
+                        $steps["goToمعرفیبرندجدید"] =
+                          await $steps["goToمعرفیبرندجدید"];
+                      }
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  function setCookie(name, value, hours) {
+                                    let expires = "";
+                                    if (hours) {
+                                      const date = new Date();
+                                      date.setTime(
+                                        date.getTime() + hours * 60 * 60 * 1000
+                                      );
+                                      expires =
+                                        "; expires=" + date.toUTCString();
+                                    }
+                                    document.cookie =
+                                      name +
+                                      "=" +
+                                      (value || "") +
+                                      expires +
+                                      "; path=/";
+                                  }
+                                  return setCookie("miaan", "true", 24);
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__cF0Tf
+                      )}
+                    >
+                      {
+                        "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
+                      }
+                    </div>
+                  </div>
+                </div>
+                <Button
+                  className={classNames("__wab_instance", sty.button__zpVxz)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/";
+                                }
+                                return setCookie("alertModal", "true", 24);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__eNpzw
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  return window.open(
+                                    "https://app.rentamon.com/ai-assistant/",
+                                    "_blank"
+                                  );
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
+                    }}
+                  >
+                    {"\u0628\u0627\u0634\u0647"}
+                  </div>
+                </Button>
+              </div>
+            </AntdModal>
           </div>
           <RentamonFooter
             data-plasmic-name={"rentamonFooter"}
@@ -2098,6 +2545,7 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   home: [
     "home",
+    "sideEffect",
     "navbarRntHeader",
     "mainContents",
     "introCalendar",
@@ -2125,7 +2573,6 @@ const PlasmicDescendants = {
     "form3",
     "input3",
     "input4",
-    "button",
     "_3Benefits",
     "_3Benefits1st",
     "icon",
@@ -2144,7 +2591,6 @@ const PlasmicDescendants = {
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
     "introAutoSyncGif2",
-    "img",
     "testimonials",
     "titlePart",
     "commentsScrolling",
@@ -2167,8 +2613,10 @@ const PlasmicDescendants = {
     "goftino",
     "clarityRntComponent",
     "faviconRntComponent",
+    "modalMiaan",
     "rentamonFooter"
   ],
+  sideEffect: ["sideEffect"],
   navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
     "mainContents",
@@ -2197,7 +2645,6 @@ const PlasmicDescendants = {
     "form3",
     "input3",
     "input4",
-    "button",
     "_3Benefits",
     "_3Benefits1st",
     "icon",
@@ -2216,7 +2663,6 @@ const PlasmicDescendants = {
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
     "introAutoSyncGif2",
-    "img",
     "testimonials",
     "titlePart",
     "commentsScrolling",
@@ -2271,8 +2717,7 @@ const PlasmicDescendants = {
     "regForm2",
     "form3",
     "input3",
-    "input4",
-    "button"
+    "input4"
   ],
   stack: [
     "stack",
@@ -2299,15 +2744,13 @@ const PlasmicDescendants = {
     "regForm2",
     "form3",
     "input3",
-    "input4",
-    "button"
+    "input4"
   ],
-  consult2: ["consult2", "regForm2", "form3", "input3", "input4", "button"],
-  regForm2: ["regForm2", "form3", "input3", "input4", "button"],
-  form3: ["form3", "input3", "input4", "button"],
+  consult2: ["consult2", "regForm2", "form3", "input3", "input4"],
+  regForm2: ["regForm2", "form3", "input3", "input4"],
+  form3: ["form3", "input3", "input4"],
   input3: ["input3"],
   input4: ["input4"],
-  button: ["button"],
   _3Benefits: [
     "_3Benefits",
     "_3Benefits1st",
@@ -2340,14 +2783,12 @@ const PlasmicDescendants = {
     "introAutoSyncTitle2",
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
-    "introAutoSyncGif2",
-    "img"
+    "introAutoSyncGif2"
   ],
   introAutoSyncTitle2: ["introAutoSyncTitle2"],
   introAutoSyncCaption2: ["introAutoSyncCaption2"],
-  introAutoSyncDesc2: ["introAutoSyncDesc2", "introAutoSyncGif2", "img"],
-  introAutoSyncGif2: ["introAutoSyncGif2", "img"],
-  img: ["img"],
+  introAutoSyncDesc2: ["introAutoSyncDesc2", "introAutoSyncGif2"],
+  introAutoSyncGif2: ["introAutoSyncGif2"],
   testimonials: [
     "testimonials",
     "titlePart",
@@ -2380,7 +2821,8 @@ const PlasmicDescendants = {
     "html",
     "goftino",
     "clarityRntComponent",
-    "faviconRntComponent"
+    "faviconRntComponent",
+    "modalMiaan"
   ],
   accordionMain: ["accordionMain", "_2", "_1", "_4", "_7", "_5", "_6"],
   _2: ["_2", "_1"],
@@ -2393,6 +2835,7 @@ const PlasmicDescendants = {
   goftino: ["goftino"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
+  modalMiaan: ["modalMiaan"],
   rentamonFooter: ["rentamonFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -2400,6 +2843,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   home: "div";
+  sideEffect: typeof SideEffect;
   navbarRntHeader: typeof NavbarRntHeader;
   mainContents: "div";
   introCalendar: "div";
@@ -2427,7 +2871,6 @@ type NodeDefaultElementType = {
   form3: typeof FormWrapper;
   input3: typeof AntdInput;
   input4: typeof AntdInput;
-  button: typeof AntdButton;
   _3Benefits: "div";
   _3Benefits1st: "div";
   icon: "div";
@@ -2446,7 +2889,6 @@ type NodeDefaultElementType = {
   introAutoSyncCaption2: "div";
   introAutoSyncDesc2: "div";
   introAutoSyncGif2: "div";
-  img: typeof PlasmicImg__;
   testimonials: "div";
   titlePart: "div";
   commentsScrolling: "div";
@@ -2469,6 +2911,7 @@ type NodeDefaultElementType = {
   goftino: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
+  modalMiaan: typeof AntdModal;
   rentamonFooter: typeof RentamonFooter;
 };
 
@@ -2534,6 +2977,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("home"),
   {
     // Helper components rendering sub-elements
+    sideEffect: makeNodeComponent("sideEffect"),
     navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     mainContents: makeNodeComponent("mainContents"),
     introCalendar: makeNodeComponent("introCalendar"),
@@ -2561,7 +3005,6 @@ export const PlasmicHomepage = Object.assign(
     form3: makeNodeComponent("form3"),
     input3: makeNodeComponent("input3"),
     input4: makeNodeComponent("input4"),
-    button: makeNodeComponent("button"),
     _3Benefits: makeNodeComponent("_3Benefits"),
     _3Benefits1st: makeNodeComponent("_3Benefits1st"),
     icon: makeNodeComponent("icon"),
@@ -2580,7 +3023,6 @@ export const PlasmicHomepage = Object.assign(
     introAutoSyncCaption2: makeNodeComponent("introAutoSyncCaption2"),
     introAutoSyncDesc2: makeNodeComponent("introAutoSyncDesc2"),
     introAutoSyncGif2: makeNodeComponent("introAutoSyncGif2"),
-    img: makeNodeComponent("img"),
     testimonials: makeNodeComponent("testimonials"),
     titlePart: makeNodeComponent("titlePart"),
     commentsScrolling: makeNodeComponent("commentsScrolling"),
@@ -2603,6 +3045,7 @@ export const PlasmicHomepage = Object.assign(
     goftino: makeNodeComponent("goftino"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
+    modalMiaan: makeNodeComponent("modalMiaan"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
 
     // Metadata about props expected for PlasmicHomepage

@@ -1453,7 +1453,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__l8YDz
+                        sty.formField__nqc0N
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1465,7 +1465,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__tGSad
+                        sty.formField__djwqq
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1477,7 +1477,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <AntdButton
                       className={classNames(
                         "__wab_instance",
-                        sty.button__boXku
+                        sty.button__jso99
                       )}
                       submitsForm={true}
                       type={"primary"}
@@ -1486,7 +1486,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__vZquX
+                          sty.text__otofz
                         )}
                       >
                         {"Submit"}
@@ -1600,7 +1600,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                                   expires +
                                   "; path=/";
                               }
-                              return setCookie("miaan", "true", 9);
+                              return setCookie("miaan", "true", 24);
                             })();
                           }
                         };

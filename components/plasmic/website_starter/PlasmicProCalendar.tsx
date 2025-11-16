@@ -1259,7 +1259,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                                   expires +
                                   "; path=/";
                               }
-                              return setCookie("miaan", "true", 9);
+                              return setCookie("miaan", "true", 24);
                             })();
                           }
                         };
