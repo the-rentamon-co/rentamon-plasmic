@@ -141,6 +141,7 @@
 @media (max-width: 500px) {
   .freeBox__xtAhz {
     max-width: 100%;
+    padding-bottom: 14px;
   }
 }
 .introCalendarTitle {
@@ -176,6 +177,11 @@
   color: #444444;
   min-width: 0;
 }
+@media (max-width: 1200px) {
+  .h1 {
+    font-size: 20px;
+  }
+}
 @media (max-width: 500px) {
   .h1 {
     line-height: 1.9;
@@ -185,7 +191,7 @@
 @media (max-width: 350px) {
   .h1 {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 2;
   }
 }
 .introCalendarCaption {
@@ -297,6 +303,7 @@
   .introCalendarRight {
     padding-right: 0px;
     padding-left: 0px;
+    padding-top: 16px;
   }
 }
 .introCalendarRight3 {
@@ -395,11 +402,14 @@
     padding-top: 0px;
     padding-bottom: 0px;
     max-height: 70%;
+    padding-left: 0px;
   }
 }
 @media (max-width: 350px) {
   .introCalendarLeft {
     max-width: 90%;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 .embedHtml___2YmQ:global(.__wab_instance) {
@@ -437,6 +447,7 @@
     padding-right: 0px;
     padding-left: 0px;
     max-width: 100%;
+    padding-top: 20px;
   }
 }
 .freeBox__uOyUy {
@@ -551,7 +562,7 @@
   align-items: center;
   background: none;
   min-width: 0;
-  padding: 40px 8px 32px;
+  padding: 21px 8px 32px;
 }
 @media (max-width: 1200px) {
   .stack {
@@ -576,6 +587,12 @@
   align-items: flex-start;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 350px) {
+  .introAutoSyncTitle {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
 .h2 {
   text-align: right;
@@ -607,6 +624,12 @@
   align-items: flex-start;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 350px) {
+  .introAutoSyncCaption {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
 .text__bNchH {
   text-align: right;
@@ -668,6 +691,13 @@
   .introAutoSyncBenefits {
     padding-top: 30px;
     max-width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .introAutoSyncBenefits {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
   }
 }
 .text__csa9P {
@@ -792,7 +822,7 @@
 @media (max-width: 350px) {
   .introCalendarRight6 {
     max-width: 100%;
-    padding: 18px 0px;
+    padding: 4px 0px 18px;
   }
 }
 .freeBox___6Or6W {
@@ -1084,18 +1114,20 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: stretch;
   background: linear-gradient(
-    49.8103597548361deg,
-    #203647 0%,
-    #3c6180 54%,
-    #203647 83%,
-    #203647 97%
+    28.056194060690018deg,
+    #000073 0%,
+    #00009e 54%,
+    #2121b2 83%,
+    #000096 97%
   );
+  margin-top: 0px;
+  column-gap: 0px;
   min-width: 0;
   border-radius: 50px;
-  padding: 40px 8px;
+  padding: 40px 30px;
 }
 @media (max-width: 1200px) {
   ._3Benefits {
@@ -1115,6 +1147,13 @@
   ._3Benefits {
     display: flex;
     flex-direction: column;
+    background: linear-gradient(
+      49.8103597548361deg,
+      #000073 0%,
+      #00009e 54%,
+      #2121b2 83%,
+      #000096 97%
+    );
     column-gap: 0px;
     border-radius: 0px;
   }
@@ -1489,9 +1528,7 @@
 }
 @media (max-width: 350px) {
   .image {
-    padding-right: 4px;
-    padding-left: 4px;
-    padding-bottom: 0px;
+    padding: 8px;
   }
 }
 .introAutoSyncTitle2 {
@@ -1936,6 +1973,7 @@
     padding-right: 0px;
     padding-left: 0px;
     max-width: 96%;
+    padding-bottom: 28px;
   }
 }
 .freeBox__oFaL {
@@ -2036,7 +2074,7 @@
   height: 100%;
   max-width: 80%;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 0em;
   grid-column-start: 3 !important;
   grid-column-end: -3 !important;
@@ -2075,7 +2113,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  padding: 8px;
+  padding: 8px 20px 8px 8px;
 }
 @media (max-width: 500px) {
   .freeBox__bkGrz {
@@ -2918,17 +2956,6 @@
   object-fit: cover;
   width: auto;
   height: 1em;
-}
-.button__o8V4U:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.text___2PNzL {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
 }
 .rentamonFooter:global(.__wab_instance) {
   max-width: 100%;

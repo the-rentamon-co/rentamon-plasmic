@@ -1013,7 +1013,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
               displayWidth={"auto"}
               loading={"lazy"}
               src={
-                "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fstar-blue.png?versionId="
+                "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fsign-blue.png?versionId="
               }
               width={
                 hasVariant(globalVariants, "screen", "mobile")

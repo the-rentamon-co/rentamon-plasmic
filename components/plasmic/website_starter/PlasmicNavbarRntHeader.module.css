@@ -57,30 +57,53 @@
   .navigationBar:global(.__wab_instance) {
     height: 72px;
     z-index: 1000000;
+    align-items: center;
+    align-content: center;
     flex-shrink: 0;
+  }
+}
+.freeBox__pWLj {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  top: auto;
+  left: auto;
+  z-index: 1;
+  align-self: stretch;
+  overflow: hidden;
+  min-width: 0;
+  padding: 4px 4px 4px 12px;
+}
+@media (max-width: 350px) {
+  .freeBox__pWLj {
+    padding-left: 6px;
   }
 }
 .link__uJuXj {
   display: flex;
   flex-direction: row;
-  position: relative;
   align-items: stretch;
   justify-content: flex-start;
   width: 100%;
   height: auto;
   max-width: 100%;
-  left: auto;
-  top: auto;
-  z-index: 1;
-  align-self: stretch;
   min-width: 0;
   padding: 0px;
 }
 .img__iP1Vn {
   object-fit: contain;
   height: 36px;
-  margin-left: 20px;
+  margin-left: 0px;
   cursor: pointer;
+  max-width: 182px;
+  width: 100%;
+  margin-right: 0px;
+  min-width: 0;
 }
 .img__iP1Vn > picture > img {
   object-fit: contain;
@@ -393,7 +416,7 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   background: #8165d6;
   color: #fcfcfc;
   user-select: none;
@@ -444,7 +467,7 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   user-select: none;
   cursor: pointer;
@@ -468,7 +491,7 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   user-select: none;
   cursor: pointer;
@@ -492,7 +515,7 @@
   height: auto;
   max-width: 100%;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   user-select: none;
   cursor: pointer;
@@ -506,7 +529,7 @@
     height: auto;
     max-width: 100%;
     font-size: 17px;
-    font-weight: 600;
+    font-weight: 500;
     color: #444444;
     padding: 4px 0px 4px 30px;
     margin: 0px 20px 0px 0px;

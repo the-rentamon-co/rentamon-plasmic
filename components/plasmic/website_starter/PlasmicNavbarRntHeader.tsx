@@ -148,74 +148,73 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
         hasVariant(globalVariants, "screen", "smallMobile")
           ? ``
           : hasVariant(globalVariants, "screen", "mobile")
-          ? ``
-          : ``
+            ? ``
+            : ``
       )}
     >
       <NavigationBar
         data-plasmic-name={"navigationBar"}
         data-plasmic-override={overrides.navigationBar}
         brand={
-          <PlasmicLink__
-            className={classNames(
-              projectcss.all,
-              projectcss.a,
-              sty.link__uJuXj
-            )}
-            component={Link}
-            href={"#"}
-            platform={"nextjs"}
-          >
-            <PlasmicImg__
-              alt={""}
+          <div className={classNames(projectcss.all, sty.freeBox__pWLj)}>
+            <PlasmicLink__
               className={classNames(
-                sty.img__iP1Vn,
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? "clickable"
-                  : "clickable"
+                projectcss.all,
+                projectcss.a,
+                sty.link__uJuXj
               )}
-              displayHeight={"36px"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"none"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"auto"}
-              onClick={async event => {
-                const $steps = {};
+              component={Link}
+              href={"#"}
+              platform={"nextjs"}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(
+                  sty.img__iP1Vn,
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "clickable"
+                    : "clickable"
+                )}
+                displayHeight={"36px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"182px"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"100%"}
+                onClick={async event => {
+                  const $steps = {};
 
-                $steps["goToHomepage"] = true
-                  ? (() => {
-                      const actionArgs = { destination: `/` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToHomepage"] != null &&
-                  typeof $steps["goToHomepage"] === "object" &&
-                  typeof $steps["goToHomepage"].then === "function"
-                ) {
-                  $steps["goToHomepage"] = await $steps["goToHomepage"];
+                  $steps["goToHomepage"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToHomepage"] != null &&
+                    typeof $steps["goToHomepage"] === "object" &&
+                    typeof $steps["goToHomepage"].then === "function"
+                  ) {
+                    $steps["goToHomepage"] = await $steps["goToHomepage"];
+                  }
+                }}
+                src={
+                  "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Flogo-change.gif?versionId="
                 }
-              }}
-              src={{
-                src: "/plasmic/website_starter/images/rentamonFaLowPng.png",
-                fullWidth: 200,
-                fullHeight: 99,
-                aspectRatio: undefined
-              }}
-            />
-          </PlasmicLink__>
+              />
+            </PlasmicLink__>
+          </div>
         }
         className={classNames("__wab_instance", sty.navigationBar)}
         closeButton={
@@ -326,9 +325,8 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                     typeof $steps["goToHttpsRentamonComSplashSrcWeb"].then ===
                       "function"
                   ) {
-                    $steps["goToHttpsRentamonComSplashSrcWeb"] = await $steps[
-                      "goToHttpsRentamonComSplashSrcWeb"
-                    ];
+                    $steps["goToHttpsRentamonComSplashSrcWeb"] =
+                      await $steps["goToHttpsRentamonComSplashSrcWeb"];
                   }
                 }}
               >
@@ -485,9 +483,8 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                     typeof $steps["goToدانلوداپلیکیشن"] === "object" &&
                     typeof $steps["goToدانلوداپلیکیشن"].then === "function"
                   ) {
-                    $steps["goToدانلوداپلیکیشن"] = await $steps[
-                      "goToدانلوداپلیکیشن"
-                    ];
+                    $steps["goToدانلوداپلیکیشن"] =
+                      await $steps["goToدانلوداپلیکیشن"];
                   }
                 }}
               >
@@ -722,7 +719,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicNavbarRntHeader__VariantsArgs;
     args?: PlasmicNavbarRntHeader__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicNavbarRntHeader__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicNavbarRntHeader__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicNavbarRntHeader__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

@@ -428,7 +428,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627"
+                      "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627"
                     }
                   </h1>
                 </div>
@@ -1400,9 +1400,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.h3__aLhzu
                   )}
                 >
-                  {
-                    "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\n\r"
-                  }
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\n\r"
+                    : "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                 </h3>
               </div>
               <div
@@ -2147,21 +2147,7 @@ function PlasmicHomepage__RenderFunc(props: {
               }}
               open={generateStateValueProp($state, ["modalMiaan", "open"])}
               title={null}
-              trigger={
-                <AntdButton
-                  className={classNames("__wab_instance", sty.button__o8V4U)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___2PNzL
-                    )}
-                  >
-                    {"Show modal"}
-                  </div>
-                </AntdButton>
-              }
+              trigger={null}
               width={
                 hasVariant(globalVariants, "screen", "mobile")
                   ? "340"
@@ -3055,8 +3041,6 @@ export const PlasmicHomepage = Object.assign(
     // Key-value metadata
     metadata: {
       ogType: "website",
-      ogTitle:
-        "\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
       ogDescription:
         "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634\u0645\u0646\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u0633\u062a\u061b \u0631\u0627\u0647 \u062d\u0644 \u0639\u0627\u0644\u06cc \u0628\u0631\u0627\u06cc \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0648 \u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631\u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648\u2026 \u0627\u0632 \u06cc\u06a9\u062c\u0627.",
       ogUrl: "https://rentamon.com/",
@@ -3071,16 +3055,18 @@ export const PlasmicHomepage = Object.assign(
       twitterImage:
         "https://rentamon.com/plasmic/website_starter/images/rentamonFaLowPng.png",
       robots: "index, follow",
-      alternate: "https://rentamon.com/"
+      alternate: "https://rentamon.com/",
+      title:
+        "\u0645\u06cc\u0627\u0646\u060c \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627"
     },
 
     // Page metadata
     pageMetadata: {
-      title: "رنتامون، مدیریت یکپارچه اقامتگاه",
+      title: "میان، بروزرسانی خودکار موجودی اقامتگاه، در سایت‌های اجاره ویلا",
       description:
-        "رنتامون دستیار هوشمند میزبان‌هاست؛ راه حل عالی برای مدیریت تقویم اقامتگاه و اعمال تغییرات در سایت‌های جاباما، جاجیگا، اتاقک، شب و… از یکجا.",
+        "میان (رنتامون سابق) دستیار هوشمند میزبان‌هاست؛ راه حل عالی برای مدیریت تقویم اقامتگاه و اعمال تغییرات در سایت‌های جاباما، جاجیگا، اتاقک، شب و… از یکجا.",
       ogImageSrc:
-        "https://site-assets.plasmic.app/c7832bfe69a5a11cbf030c049fa35152.png",
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fmiaan-logo-blue-small.png?versionId=",
       canonical: ""
     }
   }
