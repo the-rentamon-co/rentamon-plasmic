@@ -267,17 +267,7 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
         <div
           data-plasmic-name={"quotes"}
           data-plasmic-override={overrides.quotes}
-          className={classNames(
-            projectcss.all,
-            sty.quotes,
-            hasVariant(globalVariants, "screen", "smallMobile")
-              ? "quotes"
-              : hasVariant(globalVariants, "screen", "mobile")
-                ? "quotes"
-                : hasVariant(globalVariants, "screen", "tablet")
-                  ? "quotes"
-                  : "quotes"
-          )}
+          className={classNames(projectcss.all, sty.quotes, "quotes")}
         >
           <div className={classNames(projectcss.all, sty.freeBox__ml3GW)}>
             {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
