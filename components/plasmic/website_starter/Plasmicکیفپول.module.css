@@ -1601,14 +1601,12 @@
     max-width: 100%;
     font-size: 17px;
     font-weight: 600;
-    color: #8165d6;
     text-align: center;
     cursor: pointer;
     min-width: 0;
     border-radius: 100px;
     padding: 18px 0px;
     margin: 0px;
-    border: 3px solid #8165d6;
   }
 }
 @media (max-width: 350px) {

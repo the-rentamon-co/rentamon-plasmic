@@ -1689,17 +1689,24 @@
 }
 @media (max-width: 1200px) {
   .button {
-    padding-top: 19px;
-    margin-bottom: 14px;
+    padding-top: 18px;
+    margin-bottom: 0px;
     max-width: 60%;
+    padding-bottom: 18px;
   }
 }
 @media (max-width: 500px) {
   .button {
-    padding-top: 0px;
-    max-width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
+    max-width: 96%;
+    margin-bottom: 0px;
+    width: 100%;
+    min-width: 0;
+    padding: 18px 0px;
+  }
+}
+@media (max-width: 350px) {
+  .button {
+    max-width: 96%;
   }
 }
 .text__irOta {
@@ -1730,11 +1737,13 @@
   .text__irOta {
     font-weight: 600;
     max-width: 96%;
+    font-size: 17px;
   }
 }
 @media (max-width: 350px) {
   .text__irOta {
     max-width: 100%;
+    font-size: 16px;
   }
 }
 .rentamonFooter:global(.__wab_instance) {

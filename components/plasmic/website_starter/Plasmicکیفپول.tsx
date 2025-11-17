@@ -1762,9 +1762,9 @@ function Plasmicکیفپول__RenderFunc(props: {
                 }
               }}
             >
-              {hasVariant(globalVariants, "screen", "mobile")
-                ? "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81"
-                : "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0631\u0627\u06cc\u06af\u0627\u0646 \ud83c\udf81"}
+              {
+                "\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0639\u062a\u0628\u0627\u0631 \u0647\u062f\u06cc\u0647 \ud83c\udf81"
+              }
             </div>
           </div>
           <div

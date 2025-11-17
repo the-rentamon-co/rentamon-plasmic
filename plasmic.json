@@ -5711,6 +5711,16 @@
           "id": "70E9KIm80x4J",
           "name": "image 192",
           "filePath": "../public/plasmic/website_starter/images/image192.svg"
+        },
+        {
+          "id": "E5tLc1i0cfjV",
+          "name": "nav-reservations-svg-blue.png",
+          "filePath": "../public/plasmic/website_starter/images/navReservationsSvgBluePng.png"
+        },
+        {
+          "id": "GvFDHcswoy9W",
+          "name": "nav-reservations-svg-blue.svg 2",
+          "filePath": "../public/plasmic/website_starter/images/navReservationsSvgBlueSvg2.svg"
         }
       ],
       "indirect": false,

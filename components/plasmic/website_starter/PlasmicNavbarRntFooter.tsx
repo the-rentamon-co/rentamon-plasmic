@@ -738,12 +738,21 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
                     loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/navReservationsSvgBlueSvg.svg",
-                      fullWidth: 23,
-                      fullHeight: 19,
-                      aspectRatio: undefined
-                    }}
+                    src={
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? {
+                            src: "/plasmic/website_starter/images/navReservationsSvgBlueSvg2.svg",
+                            fullWidth: 23,
+                            fullHeight: 19,
+                            aspectRatio: undefined
+                          }
+                        : {
+                            src: "/plasmic/website_starter/images/navReservationsSvgBlueSvg2.svg",
+                            fullWidth: 23,
+                            fullHeight: 19,
+                            aspectRatio: undefined
+                          }
+                    }
                   />
                 </div>
               </div>
