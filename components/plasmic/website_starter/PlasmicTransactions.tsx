@@ -1098,12 +1098,12 @@ function PlasmicTransactions__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__eb7Hm)}
-                displayHeight={"76px"}
+                displayHeight={"50px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
-                displayWidth={"auto"}
+                displayWidth={"50px"}
                 loading={"lazy"}
                 src={{
                   src: "/plasmic/website_starter/images/image140.gif",

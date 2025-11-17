@@ -175,9 +175,19 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                     ? "clickable"
                     : "clickable"
                 )}
-                displayHeight={"36px"}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "100%"
+                    : "52px"
+                }
                 displayMaxHeight={"none"}
-                displayMaxWidth={"182px"}
+                displayMaxWidth={
+                  hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "72px"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                      ? "80px"
+                      : "182px"
+                }
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={"100%"}

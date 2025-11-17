@@ -3729,6 +3729,36 @@
           "id": "A-ryV1haFhKU",
           "name": "InstantBookingSvgIcon",
           "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__InstantBookingSvg.tsx"
+        },
+        {
+          "id": "dlqWCplWnWq6",
+          "name": "NavMenuSvgBlueSvgIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__NavMenuSvgBlueSvg.tsx"
+        },
+        {
+          "id": "1TFgUQ9S1pXk",
+          "name": "NavCalendarSvgBlueSvgIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__NavCalendarSvgBlueSvg.tsx"
+        },
+        {
+          "id": "BkYDGkr821TO",
+          "name": "NavPropertiesSvgBlueSvgIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__NavPropertiesSvgBlueSvg.tsx"
+        },
+        {
+          "id": "keSZXIx0M0Or",
+          "name": "NavMenuSvgBlueSvg2Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__NavMenuSvgBlueSvg2.tsx"
+        },
+        {
+          "id": "1BYhcdmlcA0q",
+          "name": "Icon28Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon28.tsx"
+        },
+        {
+          "id": "6B_Ilcn7d77Z",
+          "name": "Icon99Icon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon99.tsx"
         }
       ],
       "images": [
@@ -5671,6 +5701,16 @@
           "id": "oJMDczNjuJYh",
           "name": "image 191",
           "filePath": "../public/plasmic/website_starter/images/image191.svg"
+        },
+        {
+          "id": "Bid9esLHt9hQ",
+          "name": "nav-reservations-svg-blue.svg",
+          "filePath": "../public/plasmic/website_starter/images/navReservationsSvgBlueSvg.svg"
+        },
+        {
+          "id": "70E9KIm80x4J",
+          "name": "image 192",
+          "filePath": "../public/plasmic/website_starter/images/image192.svg"
         }
       ],
       "indirect": false,

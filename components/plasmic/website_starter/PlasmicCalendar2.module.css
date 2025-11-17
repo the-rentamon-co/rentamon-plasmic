@@ -26,6 +26,10 @@
   max-width: 100%;
   object-fit: cover;
 }
+.sideEffect__d0YEa:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .sideEffect__zWwrV:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -149,6 +153,7 @@
   max-width: 100%;
   width: 100%;
   min-width: 100%;
+  display: none;
 }
 @media (max-width: 1200px) {
   .dayCell:global(.__wab_instance) {
@@ -166,6 +171,9 @@
   .dayCell:global(.__wab_instance) {
     max-width: 40px;
   }
+}
+.dayCell2:global(.__wab_instance) {
+  max-width: 100%;
 }
 .freeBox__s6CrH {
   display: flex;
@@ -1855,7 +1863,7 @@
   min-width: 0;
   padding: 8px;
 }
-.img__uyXHi {
+.img {
   object-fit: cover;
   max-width: 100%;
   width: 30px;
@@ -1867,7 +1875,7 @@
   margin-left: 1em;
   cursor: pointer;
 }
-.img__uyXHi > picture > img {
+.img > picture > img {
   object-fit: cover;
 }
 .freeBox__kpmHd {
@@ -3007,153 +3015,53 @@
     padding: 6px;
   }
 }
-.button__fNtwK:global(.__wab_instance) {
-  max-width: 100%;
-  width: 100%;
-  transition-property: all;
-  transition-duration: 1s;
-  max-height: 60px;
-  min-width: 0;
-  -webkit-transition-property: all;
-  -webkit-transition-duration: 1s;
-}
-@media (max-width: 500px) {
-  .button__fNtwK:global(.__wab_instance) {
-    height: 100%;
-    display: flex;
-  }
-}
-@media (max-width: 350px) {
-  .button__fNtwK:global(.__wab_instance) {
-    height: 60px;
-    flex-shrink: 0;
-  }
-}
-.freeBox__ary0S {
-  display: flex;
-  flex-direction: row;
+.text__llXe {
+  animation: none;
   position: relative;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: auto;
   max-width: 100%;
-  min-width: 0;
-  padding: 8px;
-}
-.img__rzHqA {
-  object-fit: cover;
-  max-width: 100%;
-  width: 30px;
-  flex-shrink: 0;
-}
-.img__rzHqA > picture > img {
-  object-fit: cover;
-}
-@media (max-width: 500px) {
-  .img__rzHqA {
-    width: 40px;
-    flex-shrink: 0;
-  }
-}
-.text__psStq {
-  margin-left: 0px;
-  margin-right: 10px;
-  font-weight: 600;
   font-size: 17px;
-  color: #fcfcfc;
-}
-@media (max-width: 500px) {
-  .text__psStq {
-    font-size: 17px;
-    color: #fcfcfc;
-  }
-}
-@media (max-width: 350px) {
-  .text__psStq {
-    font-size: 17px;
-    font-weight: 600;
-  }
-}
-.svg___0He {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
-.visitBookings:global(.__wab_instance) {
-  max-width: 100%;
-  width: 100%;
-  transition-property: all;
-  transition-duration: 1s;
-  max-height: 60px;
+  font-weight: 600;
+  color: var(--token-8R7jjC_-F9FF);
+  background: linear-gradient(228.56463897211574deg, #0000ff 0%, #1414c8 100%);
+  text-align: center;
+  font-family: "Estedad";
+  font-style: normal;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
   min-width: 0;
-  -webkit-transition-property: all;
-  -webkit-transition-duration: 1s;
+  border-radius: 30px;
+  padding: 20px;
 }
-@media (max-width: 500px) {
-  .visitBookings:global(.__wab_instance) {
-    height: 100%;
-    display: flex;
-  }
-}
-@media (max-width: 350px) {
-  .visitBookings:global(.__wab_instance) {
-    height: 60px;
-    flex-shrink: 0;
-  }
-}
-.freeBox__uuhK {
-  display: flex;
-  flex-direction: row;
+.text__o0JdA {
+  animation: none;
   position: relative;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: auto;
   max-width: 100%;
-  min-width: 0;
-  padding: 8px;
-}
-.img__tGkrY {
-  object-fit: cover;
-  max-width: 100%;
-  width: 30px;
-  flex-shrink: 0;
-}
-.img__tGkrY > picture > img {
-  object-fit: cover;
-}
-@media (max-width: 500px) {
-  .img__tGkrY {
-    width: 40px;
-    flex-shrink: 0;
-  }
-}
-.text__dYewd {
-  margin-left: 0px;
-  margin-right: 10px;
-  font-weight: 600;
   font-size: 17px;
-  color: #fcfcfc;
-}
-@media (max-width: 500px) {
-  .text__dYewd {
-    font-size: 17px;
-    color: #fcfcfc;
-  }
-}
-@media (max-width: 350px) {
-  .text__dYewd {
-    font-size: 17px;
-    font-weight: 600;
-  }
-}
-.svg__jkqPw {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
+  font-weight: 600;
+  color: var(--token-8R7jjC_-F9FF);
+  background: #1414c8;
+  text-align: center;
+  font-family: "Estedad";
+  font-style: normal;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
+  min-width: 0;
+  border-radius: 30px;
+  padding: 20px;
 }
 .addingGuestInfo:global(.__wab_instance) {
   max-width: 100%;

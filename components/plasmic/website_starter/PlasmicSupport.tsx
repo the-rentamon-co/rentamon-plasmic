@@ -74,9 +74,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSupport.module.css"; // plasmic-import: _jWDmDgs08t7/css
 
-import Icon39Icon from "./icons/PlasmicIcon__Icon39"; // plasmic-import: inxaF87iP7F9/icon
+import Icon99Icon from "./icons/PlasmicIcon__Icon99"; // plasmic-import: 6B_Ilcn7d77Z/icon
 import Icon49Icon from "./icons/PlasmicIcon__Icon49"; // plasmic-import: Sg0oqZa4zTiY/icon
-import Icon40Icon from "./icons/PlasmicIcon__Icon40"; // plasmic-import: 9Cw4HWV6MTy2/icon
+import Icon28Icon from "./icons/PlasmicIcon__Icon28"; // plasmic-import: 1BYhcdmlcA0q/icon
 
 createPlasmicElementProxy;
 
@@ -384,7 +384,7 @@ function PlasmicSupport__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0645\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0647\u0633\u062a\u06cc\u0645 \u062a\u0627 \u0628\u0647 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0639\u0632\u06cc\u0632 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u062a\u062c\u0631\u0628\u0647\u200c\u0627\u06cc \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631 \u062f\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc \u0648 \u0628\u0647\u200c\u0631\u0627\u062d\u062a\u06cc \u0628\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062a\u0639\u0627\u0645\u0644 \u06a9\u0646\u06cc. \u0645\u0648\u0642\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0647\u0631 \u062c\u0627 \u0633\u0648\u0627\u0644 \u0648 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u06cc \u062f\u0627\u0634\u062a\u06cc\u060c \u06a9\u0627\u0641\u06cc\u0647 \u0628\u0647 \u0645\u0627 \u067e\u06cc\u0627\u0645 \u0628\u062f\u06cc :)"
+                  "\u0645\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0647\u0633\u062a\u06cc\u0645 \u062a\u0627 \u0628\u0647 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0639\u0632\u06cc\u0632 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u062a\u062c\u0631\u0628\u0647\u200c\u0627\u06cc \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631 \u062f\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc \u0648 \u0628\u0647\u200c\u0631\u0627\u062d\u062a\u06cc \u0628\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062a\u0639\u0627\u0645\u0644 \u06a9\u0646\u06cc. \u0645\u0648\u0642\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0645\u06cc\u0627\u0646\u060c \u0647\u0631 \u062c\u0627 \u0633\u0648\u0627\u0644 \u0648 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u06cc \u062f\u0627\u0634\u062a\u06cc\u060c \u06a9\u0627\u0641\u06cc\u0647 \u0628\u0647 \u0645\u0627 \u067e\u06cc\u0627\u0645 \u0628\u062f\u06cc :)"
                 }
               </div>
             </div>
@@ -413,7 +413,7 @@ function PlasmicSupport__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0631\u0627\u0647\u200c\u0647\u0627\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                      "\u0631\u0627\u0647\u200c\u0647\u0627\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u00ab\u0645\u06cc\u0627\u0646\u00bb"
                     }
                   </div>
                 </div>
@@ -468,17 +468,17 @@ function PlasmicSupport__RenderFunc(props: {
                           <PlasmicImg__
                             alt={""}
                             className={classNames(sty.img__bmxP)}
-                            displayHeight={"auto"}
+                            displayHeight={"40px"}
                             displayMaxHeight={"none"}
                             displayMaxWidth={"30%"}
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
-                            displayWidth={"auto"}
+                            displayWidth={"46px"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/image79.svg",
-                              fullWidth: 24,
-                              fullHeight: 24,
+                              src: "/plasmic/website_starter/images/image192.svg",
+                              fullWidth: 25,
+                              fullHeight: 25,
                               aspectRatio: 1
                             }}
                           />
@@ -606,7 +606,7 @@ function PlasmicSupport__RenderFunc(props: {
                           data-plasmic-override={overrides.icon10}
                           className={classNames(projectcss.all, sty.icon10)}
                         >
-                          <Icon39Icon
+                          <Icon99Icon
                             className={classNames(
                               projectcss.all,
                               sty.svg__m8Afc
@@ -1142,7 +1142,7 @@ function PlasmicSupport__RenderFunc(props: {
                           data-plasmic-override={overrides.icon11}
                           className={classNames(projectcss.all, sty.icon11)}
                         >
-                          <Icon40Icon
+                          <Icon28Icon
                             className={classNames(
                               projectcss.all,
                               sty.svg__eXlOd

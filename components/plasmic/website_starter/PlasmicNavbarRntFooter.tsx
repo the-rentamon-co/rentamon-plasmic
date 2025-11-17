@@ -69,11 +69,11 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNavbarRntFooter.module.css"; // plasmic-import: y37kcAs9RXYg/css
 
-import Icon65Icon from "./icons/PlasmicIcon__Icon65"; // plasmic-import: C7Sh85EuwDPm/icon
+import NavMenuSvgBlueSvg2Icon from "./icons/PlasmicIcon__NavMenuSvgBlueSvg2"; // plasmic-import: keSZXIx0M0Or/icon
 import Icon64Icon from "./icons/PlasmicIcon__Icon64"; // plasmic-import: tMkEMYJMQb4Q/icon
-import Icon59Icon from "./icons/PlasmicIcon__Icon59"; // plasmic-import: zKz1KhV3axdj/icon
+import NavCalendarSvgBlueSvgIcon from "./icons/PlasmicIcon__NavCalendarSvgBlueSvg"; // plasmic-import: 1TFgUQ9S1pXk/icon
 import Icon52Icon from "./icons/PlasmicIcon__Icon52"; // plasmic-import: P-t6G5Dmr-Fr/icon
-import Icon58Icon from "./icons/PlasmicIcon__Icon58"; // plasmic-import: AjM0LMNvB3b9/icon
+import NavPropertiesSvgBlueSvgIcon from "./icons/PlasmicIcon__NavPropertiesSvgBlueSvg"; // plasmic-import: BkYDGkr821TO/icon
 import Icon57Icon from "./icons/PlasmicIcon__Icon57"; // plasmic-import: bkD7B2qxVCwE/icon
 
 createPlasmicElementProxy;
@@ -374,7 +374,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   data-plasmic-override={overrides.backMenu}
                   className={classNames(projectcss.all, sty.backMenu)}
                 >
-                  <Icon65Icon
+                  <NavMenuSvgBlueSvg2Icon
                     className={classNames(
                       projectcss.all,
                       sty.svg___6PDfU,
@@ -554,7 +554,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   data-plasmic-override={overrides.backCal}
                   className={classNames(projectcss.all, sty.backCal)}
                 >
-                  <Icon59Icon
+                  <NavCalendarSvgBlueSvgIcon
                     className={classNames(
                       projectcss.all,
                       sty.svg___5FnM,
@@ -739,10 +739,10 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                     displayWidth={"auto"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/image117.svg",
+                      src: "/plasmic/website_starter/images/navReservationsSvgBlueSvg.svg",
                       fullWidth: 23,
                       fullHeight: 19,
-                      aspectRatio: 1.210526
+                      aspectRatio: undefined
                     }}
                   />
                 </div>
@@ -866,7 +866,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                   data-plasmic-override={overrides.backProps}
                   className={classNames(projectcss.all, sty.backProps, ``)}
                 >
-                  <Icon58Icon
+                  <NavPropertiesSvgBlueSvgIcon
                     className={classNames(
                       projectcss.all,
                       sty.svg__cpVuT,

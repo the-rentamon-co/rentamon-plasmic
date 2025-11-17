@@ -7,11 +7,11 @@
   align-items: center;
   background: linear-gradient(
     52.14429998535525deg,
-    #11119b 0%,
+    #00006b 0%,
     #09092f 18%,
-    #222263 50%,
+    #191961 50%,
     #04042b 79%,
-    #11119b 93%
+    #000078 93%
   );
   position: relative;
   width: 100%;
@@ -616,6 +616,17 @@
   .text__cednT {
     font-size: 15px;
     font-weight: 500;
+  }
+}
+.link__dLt1I {
+  padding-left: 0px;
+  font-family: "Estedad";
+  font-weight: 500;
+}
+@media (max-width: 350px) {
+  .link__dLt1I {
+    font-family: "Estedad";
+    font-weight: 600;
   }
 }
 .freeBox__js4R {

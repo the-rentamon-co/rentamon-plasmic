@@ -64,6 +64,7 @@ import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
 import FragmentLongPress from "../../FragmentLongPress"; // plasmic-import: F6FdGjFt2-9F/component
 import DayCell from "../../DayCell"; // plasmic-import: cU6Nt4MA6DXT/component
+import DayCell2 from "../../DayCell2"; // plasmic-import: KYzeJuIix3i-/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
@@ -119,6 +120,7 @@ export type PlasmicCalendar2__OverridesType = {
   fragmentDatePicker?: Flex__<typeof DatePicker>;
   fragmentLongPress?: Flex__<typeof FragmentLongPress>;
   dayCell?: Flex__<typeof DayCell>;
+  dayCell2?: Flex__<typeof DayCell2>;
   modalDiscount?: Flex__<typeof AntdModal>;
   main?: Flex__<"div">;
   textInput2?: Flex__<typeof TextInput>;
@@ -148,6 +150,7 @@ export type PlasmicCalendar2__OverridesType = {
   blockParent?: Flex__<"div">;
   block2?: Flex__<"div">;
   noteModal?: Flex__<typeof AntdModal>;
+  img?: Flex__<typeof PlasmicImg__>;
   writeNoteModal?: Flex__<typeof AntdModal>;
   textarea?: Flex__<typeof Textarea>;
   updateNoteModal?: Flex__<typeof AntdModal>;
@@ -170,7 +173,6 @@ export type PlasmicCalendar2__OverridesType = {
   color4?: Flex__<"div">;
   text4?: Flex__<"div">;
   submitChange?: Flex__<"div">;
-  visitBookings?: Flex__<typeof Button>;
   addingGuestInfo?: Flex__<typeof AntdModal>;
   form?: Flex__<"div">;
   p4?: Flex__<"div">;
@@ -1158,6 +1160,96 @@ function PlasmicCalendar2__RenderFunc(props: {
           ) {
             $steps["updateFragmentDatePickerValue"] =
               await $steps["updateFragmentDatePickerValue"];
+          }
+        }}
+      />
+
+      <SideEffect
+        className={classNames("__wab_instance", sty.sideEffect__d0YEa)}
+        deps={(() => {
+          try {
+            return [$state.apiRequest.data, $state.reserveData.data];
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
+        onMount={async () => {
+          const $steps = {};
+
+          $steps["runCode"] = true
+            ? (() => {
+                const actionArgs = {
+                  customFunction: async () => {
+                    return (() => {
+                      const calendarData =
+                        $state.apiRequest?.data?.[1]?.calendar;
+                      const reserveData = $state.reserveData?.data;
+                      if (
+                        !Array.isArray(calendarData) ||
+                        !Array.isArray(reserveData)
+                      ) {
+                        return calendarData;
+                      }
+                      const reserveMap = reserveData.reduce((acc, item) => {
+                        if (item && item.booking_id) {
+                          acc[item.booking_id] = item;
+                        }
+                        return acc;
+                      }, {});
+                      calendarData.forEach(item => {
+                        const bookingId = item.booking_id;
+                        if (bookingId in reserveMap) {
+                          const reserveItem = reserveMap[bookingId];
+                          const amount = reserveItem.amount;
+                          item.reservations_type =
+                            reserveItem.reservations_type;
+                          const fullGuestName = reserveItem.guest_name;
+                          let familyName = null;
+                          if (
+                            typeof fullGuestName === "string" &&
+                            fullGuestName.trim() !== ""
+                          ) {
+                            const nameParts = fullGuestName.split(" ");
+                            if (nameParts.length > 2) {
+                              familyName = nameParts.slice(-2).join(" ");
+                            } else if (nameParts.length === 2) {
+                              familyName = nameParts[1];
+                            } else if (nameParts.length === 1) {
+                              familyName = nameParts[0];
+                            }
+                          }
+                          item.guest_name = familyName;
+                          if (amount == null || amount == 0) {
+                            item.price = null;
+                            return;
+                          }
+                          const amountNumber = parseInt(amount, 10);
+                          item.price = isNaN(amountNumber)
+                            ? amount
+                            : (amountNumber / 1000).toLocaleString();
+                        }
+                      });
+                      return calendarData;
+                    })();
+                  }
+                };
+                return (({ customFunction }) => {
+                  return customFunction();
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["runCode"] != null &&
+            typeof $steps["runCode"] === "object" &&
+            typeof $steps["runCode"].then === "function"
+          ) {
+            $steps["runCode"] = await $steps["runCode"];
           }
         }}
       />
@@ -2350,6 +2442,348 @@ function PlasmicCalendar2__RenderFunc(props: {
                 })()}
               />
 
+              <DayCell2
+                data-plasmic-name={"dayCell2"}
+                data-plasmic-override={overrides.dayCell2}
+                className={classNames("__wab_instance", sty.dayCell2)}
+                dayNumber={(() => {
+                  try {
+                    return (() => {
+                      function convertEnglishNumbersToPersian(str) {
+                        const englishNumbers = [
+                          "0",
+                          "1",
+                          "2",
+                          "3",
+                          "4",
+                          "5",
+                          "6",
+                          "7",
+                          "8",
+                          "9"
+                        ];
+
+                        const persianNumbers = [
+                          "۰",
+                          "۱",
+                          "۲",
+                          "۳",
+                          "۴",
+                          "۵",
+                          "۶",
+                          "۷",
+                          "۸",
+                          "۹"
+                        ];
+
+                        return str
+                          .toString()
+                          .replace(
+                            /[0-9]/g,
+                            char =>
+                              persianNumbers[englishNumbers.indexOf(char)] ||
+                              char
+                          );
+                      }
+                      const englishNumber = dateProps.date.day;
+                      const persianNumber =
+                        convertEnglishNumbersToPersian(englishNumber);
+                      return persianNumber;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+                dayStatus={(() => {
+                  try {
+                    return (() => {
+                      const currentDate = new Date();
+                      const yesterdayDate = new Date(
+                        currentDate.getTime() - 24 * 60 * 60 * 1000
+                      );
+                      const yesterdayTimestamp = Math.floor(
+                        yesterdayDate.getTime() / 1000
+                      );
+                      const minTimestamp = yesterdayTimestamp;
+                      const maxTimestamp = 1768988921;
+                      function getDayClass(dateProps, calendarData) {
+                        const dayIndex = dateProps.date.day - 1;
+                        const calendarItem = calendarData[dayIndex] || {};
+                        const currentBookingId = calendarItem.booking_id;
+                        const prevItem = calendarData[dayIndex - 1] || {};
+                        const nextItem = calendarData[dayIndex + 1] || {};
+                        const prevBookingId = prevItem.booking_id;
+                        const nextBookingId = nextItem.booking_id;
+                        if (
+                          dateProps.unix < minTimestamp ||
+                          dateProps.unix > maxTimestamp
+                        ) {
+                          if (
+                            calendarItem.status === "reserved" &&
+                            currentBookingId
+                          ) {
+                            const isFirstDay =
+                              currentBookingId !== prevBookingId;
+                            const isLastDay =
+                              currentBookingId !== nextBookingId;
+                            if (isFirstDay && isLastDay)
+                              return "passedReservedV2";
+                            if (isFirstDay) return "passedFirstDayReserveV2";
+                            if (isLastDay) return "passedLastDayReserveV2";
+                            return "passedMidDayReserveV2";
+                          }
+                          if (
+                            currentBookingId &&
+                            calendarItem.status !== "reserved" &&
+                            calendarItem.status !== "blocked"
+                          ) {
+                            const isFirstDaySmart =
+                              currentBookingId !== prevBookingId;
+                            const isLastDaySmart =
+                              currentBookingId !== nextBookingId;
+                            if (isFirstDaySmart && isLastDaySmart) {
+                              return "reservedSmartBookingPast";
+                            }
+                            if (isFirstDaySmart && !isLastDaySmart) {
+                              return "firstDaySmartBookingPast";
+                            }
+                            if (!isFirstDaySmart && isLastDaySmart) {
+                              return "lastDaySmartBookingPast";
+                            }
+                            if (!isFirstDaySmart && !isLastDaySmart) {
+                              return "midDaySmartBookingPast";
+                            }
+                          }
+                          return "disabledV2";
+                        }
+                        if (
+                          $state.fragmentDatePicker.values.includes(
+                            dateProps.unix
+                          ) &&
+                          calendarItem.status !== "reserved" &&
+                          !(
+                            currentBookingId &&
+                            calendarItem.status !== "blocked"
+                          )
+                        ) {
+                          return "selected";
+                        }
+                        if (
+                          currentBookingId &&
+                          calendarItem.status !== "reserved" &&
+                          calendarItem.status !== "blocked"
+                        ) {
+                          const isFirstDaySmart =
+                            currentBookingId !== prevBookingId;
+                          const isLastDaySmart =
+                            currentBookingId !== nextBookingId;
+                          if (isFirstDaySmart && isLastDaySmart) {
+                            return "reservedSmartBooking";
+                          }
+                          if (isFirstDaySmart && !isLastDaySmart) {
+                            return "firstDaySmartBooking";
+                          }
+                          if (!isFirstDaySmart && isLastDaySmart) {
+                            return "lastDaySmartBooking";
+                          }
+                          if (!isFirstDaySmart && !isLastDaySmart) {
+                            return "midDaySmartBooking";
+                          }
+                        }
+                        if (calendarItem.status === "reserved") {
+                          if (currentBookingId) {
+                            const isFirstDay =
+                              currentBookingId !== prevBookingId;
+                            const isLastDay =
+                              currentBookingId !== nextBookingId;
+                            if (isFirstDay && isLastDay) return "reservedV2";
+                            if (isFirstDay) return "firstDayReserveV2";
+                            if (isLastDay) return "lastDayReserveV2";
+                            return "midDayReserveV2";
+                          }
+                          return "reservedV2";
+                        }
+                        if (calendarItem.status === "blocked") {
+                          return "reservedV2";
+                        }
+                        if (calendarItem.discount_percentage > 0) {
+                          return "discount";
+                        }
+                        return calendarItem.status || "";
+                      }
+                      return getDayClass(
+                        dateProps,
+                        $state.apiRequest.data[1].calendar
+                      );
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
+                holidays={(() => {
+                  try {
+                    return (() => {
+                      return $state.apiRequest.data[1].calendar[
+                        dateProps.date.day - 1
+                      ].isholiday;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+                isSmartBooking={(() => {
+                  try {
+                    return (() => {
+                      const dayData =
+                        $state.apiRequest.data[1].calendar[
+                          dateProps.date.day - 1
+                        ];
+                      return (
+                        dayData.status !== "canceled" &&
+                        dayData.reservations_type === "smart_booking"
+                      );
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })()}
+                note={(() => {
+                  try {
+                    return $state.apiRequest.data[1].calendar[
+                      dateProps.date.day - 1
+                    ].isnoted;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })()}
+                platform={(() => {
+                  try {
+                    return (() => {
+                      const dayIndex = dateProps.date.day - 1;
+                      const dayData =
+                        $state.apiRequest.data[1].calendar[dayIndex];
+
+                      if (
+                        dayData.status === "blocked" &&
+                        dayData.reservations_type == null
+                      ) {
+                        return "غیرفعال";
+                      }
+
+                      const prevDayData =
+                        dayIndex > 0
+                          ? $state.apiRequest.data[1].calendar[dayIndex - 1]
+                          : null;
+
+                      const isReserved = dayData.status === "reserved";
+                      const hasBookingId = dayData.booking_id != null;
+                      const isNewBooking =
+                        !prevDayData ||
+                        prevDayData.booking_id !== dayData.booking_id;
+
+                      if (isReserved && hasBookingId && isNewBooking) {
+                        return dayData.website;
+                      }
+
+                      return "";
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+                price={(() => {
+                  try {
+                    return (() => {
+                      const dayData =
+                        $state.apiRequest.data[1].calendar[
+                          dateProps.date.day - 1
+                        ];
+                      const { status, reservations_type, guest_name, price } =
+                        dayData;
+                      switch (status) {
+                        case "reserved":
+                          return guest_name;
+                        case "blocked":
+                          return reservations_type != null ? guest_name : null;
+                        case "unblocked":
+                          return reservations_type != null ? guest_name : price;
+                        case "canceled":
+                          return price;
+                        default:
+                          return price;
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+                selected={(() => {
+                  try {
+                    return (() => {
+                      if (
+                        $state.fragmentDatePicker.values.includes(
+                          dateProps.unix
+                        )
+                      ) {
+                        return "selected";
+                      } else {
+                        return false;
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+
               <div
                 className={classNames(projectcss.all, sty.freeBox__s6CrH)}
                 id={``}
@@ -2371,7 +2805,7 @@ function PlasmicCalendar2__RenderFunc(props: {
             (async date => {
               const $steps = {};
 
-              $steps["runCode"] = $props.reservationsMode
+              $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -7504,8 +7938,10 @@ function PlasmicCalendar2__RenderFunc(props: {
                 </React.Fragment>
               </div>
               <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img__uyXHi)}
+                className={classNames(sty.img)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -10087,115 +10523,66 @@ function PlasmicCalendar2__RenderFunc(props: {
             })()
           )}
         >
-          {(
-            hasVariant(globalVariants, "screen", "mobile")
-              ? (() => {
-                  try {
-                    return (() => {
-                      if ($props.reservationsMode == false) {
-                        return true;
-                      }
-                      const items = $state.selectedItem;
-                      if (!items || items.length === 0) {
-                        return true;
-                      }
-                      const firstBookingId = items[0].booking_id;
-                      if (!firstBookingId) {
-                        return true;
-                      }
-                      return !items.every(
-                        item =>
-                          item.status === "reserved" &&
-                          item.booking_id === firstBookingId
-                      );
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })()
-              : (() => {
-                  try {
-                    return (() => {
-                      if ($props.reservationsMode == false) {
-                        return true;
-                      }
-                      const items = $state.selectedItem;
-                      if (!items || items.length === 0) {
-                        return true;
-                      }
-                      const firstBookingId = items[0].booking_id;
-                      if (!firstBookingId) {
-                        return true;
-                      }
-                      return !items.every(
-                        item =>
-                          item.status === "reserved" &&
-                          item.booking_id === firstBookingId
-                      );
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })()
-          ) ? (
-            <Button
-              className={classNames("__wab_instance", sty.button__fNtwK)}
+          {(() => {
+            try {
+              return (() => {
+                const items = $state.selectedItem;
+                const allHaveSameValidId =
+                  items &&
+                  items.length > 0 &&
+                  items[0].booking_id &&
+                  items.every(item => item.booking_id === items[0].booking_id);
+                return !allHaveSameValidId;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__llXe
+              )}
               onClick={async event => {
                 const $steps = {};
 
-                $steps["updateStateVariable"] = true
+                $steps["runCode"] = true
                   ? (() => {
                       const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          const startOfToday = new Date();
-                          startOfToday.setHours(0, 0, 0, 0);
-                          const startOfTodayTimestamp = Math.floor(
-                            startOfToday.getTime() / 1000
-                          );
-                          return ($state.fragmentDatePicker.values =
-                            $state.fragmentDatePicker.values.filter(
-                              timestamp => {
-                                return timestamp >= startOfTodayTimestamp;
-                              }
-                            ));
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
+                        customFunction: async () => {
+                          return (() => {
+                            const startOfToday = new Date();
+                            startOfToday.setHours(0, 0, 0, 0);
+                            const startOfTodayTimestamp = Math.floor(
+                              startOfToday.getTime() / 1000
+                            );
+                            return ($state.fragmentDatePicker.values =
+                              $state.fragmentDatePicker.values.filter(
+                                timestamp => {
+                                  return timestamp >= startOfTodayTimestamp;
+                                }
+                              ));
+                          })();
                         }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
                       })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
                 if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
                 ) {
-                  $steps["updateStateVariable"] =
-                    await $steps["updateStateVariable"];
+                  $steps["runCode"] = await $steps["runCode"];
                 }
 
                 $steps["updateModalOpen"] = (() => {
@@ -10250,8 +10637,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         args: [
                           "error",
                           "\u0627\u0628\u062a\u062f\u0627 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u060c \u0628\u0639\u062f \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647\u200c\u06cc \u0648\u06cc\u0631\u0627\u06cc\u0634 \u0628\u0632\u0646",
-                          "top-center",
-                          3000
+                          "top-center"
                         ]
                       };
                       return $globalActions["Fragment.showToast"]?.apply(null, [
@@ -10268,43 +10654,32 @@ function PlasmicCalendar2__RenderFunc(props: {
                     await $steps["invokeGlobalAction"];
                 }
 
-                $steps["updateStateVariable2"] = true
+                $steps["runCode2"] = true
                   ? (() => {
                       const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          $state.textInput4.value = "0";
-                          $state.guestName.value = "";
-                          $state.guestCount.value = null;
-                          $state.guestReferrer.value = "";
-                          $state.phoneNumber.value = "";
-                          $state.input2.value = "";
-                          return ($state.input.value = "");
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
+                        customFunction: async () => {
+                          return (() => {
+                            $state.textInput4.value = "0";
+                            $state.guestName.value = "";
+                            $state.guestCount.value = null;
+                            $state.guestReferrer.value = "";
+                            $state.phoneNumber.value = "";
+                            $state.input2.value = "";
+                            return ($state.input.value = "");
+                          })();
                         }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
                       })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
                 if (
-                  $steps["updateStateVariable2"] != null &&
-                  typeof $steps["updateStateVariable2"] === "object" &&
-                  typeof $steps["updateStateVariable2"].then === "function"
+                  $steps["runCode2"] != null &&
+                  typeof $steps["runCode2"] === "object" &&
+                  typeof $steps["runCode2"].then === "function"
                 ) {
-                  $steps["updateStateVariable2"] =
-                    await $steps["updateStateVariable2"];
+                  $steps["runCode2"] = await $steps["runCode2"];
                 }
 
                 $steps["updateTourSteps"] = true
@@ -10344,129 +10719,56 @@ function PlasmicCalendar2__RenderFunc(props: {
                   $steps["updateTourSteps"] = await $steps["updateTourSteps"];
                 }
               }}
-              startIcon={null}
+              style={(() => {
+                try {
+                  return (() => {
+                    if (!$state.fragmentDatePicker.values.length > 0) {
+                      return { opacity: "10%" };
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__ary0S)}>
-                {(() => {
-                  try {
-                    return (() => {
-                      if ($state.apiRequest.loading == true) {
-                        return true;
-                      } else {
-                        return false;
-                      }
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__rzHqA)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "40px"
-                        : "30px"
-                    }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image140.gif",
-                      fullWidth: 500,
-                      fullHeight: 500,
-                      aspectRatio: undefined
-                    }}
-                  />
-                ) : null}
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__psStq
-                  )}
-                >
-                  {"\u0648\u06cc\u0631\u0627\u06cc\u0634"}
-                </div>
-              </div>
-            </Button>
+              {"\u0648\u06cc\u0631\u0627\u06cc\u0634"}
+            </div>
           ) : null}
-          {(
-            hasVariant(globalVariants, "screen", "mobile")
-              ? (() => {
-                  try {
-                    return (() => {
-                      if ($props.reservationsMode == false) {
-                        return false;
-                      }
-                      const items = $state.selectedItem;
-                      if (!items || items.length === 0) {
-                        return false;
-                      }
-                      const firstBookingId = items[0].booking_id;
-                      if (!firstBookingId) {
-                        return false;
-                      }
-                      return items.every(
-                        item =>
-                          item.status === "reserved" &&
-                          item.booking_id === firstBookingId
-                      );
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return false;
-                    }
-                    throw e;
-                  }
-                })()
-              : (() => {
-                  try {
-                    return (() => {
-                      if ($props.reservationsMode == false) {
-                        return false;
-                      }
-                      const items = $state.selectedItem;
-                      if (!items || items.length === 0) {
-                        return false;
-                      }
-                      const firstBookingId = items[0].booking_id;
-                      if (!firstBookingId) {
-                        return false;
-                      }
-                      return items.every(
-                        item =>
-                          item.status === "reserved" &&
-                          item.booking_id === firstBookingId
-                      );
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return false;
-                    }
-                    throw e;
-                  }
-                })()
-          ) ? (
-            <Button
-              data-plasmic-name={"visitBookings"}
-              data-plasmic-override={overrides.visitBookings}
-              className={classNames("__wab_instance", sty.visitBookings)}
+          {(() => {
+            try {
+              return (() => {
+                const items = $state.selectedItem;
+                if (!items || items.length === 0) {
+                  return false;
+                }
+                const firstBookingId = items[0].booking_id;
+                if (!firstBookingId) {
+                  return false;
+                }
+                return items.every(item => item.booking_id === firstBookingId);
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })() ? (
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__o0JdA
+              )}
               onClick={async event => {
                 const $steps = {};
 
@@ -10509,63 +10811,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                   $steps["goToBookings"] = await $steps["goToBookings"];
                 }
               }}
-              startIcon={null}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__uuhK)}>
-                {(() => {
-                  try {
-                    return (() => {
-                      if ($state.apiRequest.loading == true) {
-                        return true;
-                      } else {
-                        return false;
-                      }
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__tGkrY)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "40px"
-                        : "30px"
-                    }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image140.gif",
-                      fullWidth: 500,
-                      fullHeight: 500,
-                      aspectRatio: undefined
-                    }}
-                  />
-                ) : null}
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dYewd
-                  )}
-                >
-                  {
-                    "\u062c\u0632\u06cc\u06cc\u0627\u062a \u0631\u0632\u0631\u0648"
-                  }
-                </div>
-              </div>
-            </Button>
+              {"\u062c\u0632\u06cc\u06cc\u0627\u062a \u0631\u0632\u0631\u0648"}
+            </div>
           ) : null}
         </div>
       </div>
@@ -11621,7 +11869,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           (async data => {
             const $steps = {};
 
-            $steps["runCode"] = true
+            $steps["runCode"] = false
               ? (() => {
                   const actionArgs = {
                     customFunction: async () => {
@@ -11732,6 +11980,7 @@ const PlasmicDescendants = {
     "fragmentDatePicker",
     "fragmentLongPress",
     "dayCell",
+    "dayCell2",
     "modalDiscount",
     "main",
     "textInput2",
@@ -11761,6 +12010,7 @@ const PlasmicDescendants = {
     "blockParent",
     "block2",
     "noteModal",
+    "img",
     "writeNoteModal",
     "textarea",
     "updateNoteModal",
@@ -11783,7 +12033,6 @@ const PlasmicDescendants = {
     "color4",
     "text4",
     "submitChange",
-    "visitBookings",
     "addingGuestInfo",
     "form",
     "p4",
@@ -11803,9 +12052,15 @@ const PlasmicDescendants = {
   ],
   apiRequest: ["apiRequest"],
   guide1: ["guide1"],
-  fragmentDatePicker: ["fragmentDatePicker", "fragmentLongPress", "dayCell"],
-  fragmentLongPress: ["fragmentLongPress", "dayCell"],
+  fragmentDatePicker: [
+    "fragmentDatePicker",
+    "fragmentLongPress",
+    "dayCell",
+    "dayCell2"
+  ],
+  fragmentLongPress: ["fragmentLongPress", "dayCell", "dayCell2"],
   dayCell: ["dayCell"],
+  dayCell2: ["dayCell2"],
   modalDiscount: ["modalDiscount", "main", "textInput2"],
   main: ["main", "textInput2"],
   textInput2: ["textInput2"],
@@ -11871,7 +12126,8 @@ const PlasmicDescendants = {
   reserve: ["reserve"],
   blockParent: ["blockParent", "block2"],
   block2: ["block2"],
-  noteModal: ["noteModal"],
+  noteModal: ["noteModal", "img"],
+  img: ["img"],
   writeNoteModal: ["writeNoteModal", "textarea"],
   textarea: ["textarea"],
   updateNoteModal: ["updateNoteModal", "textarea2"],
@@ -11907,8 +12163,7 @@ const PlasmicDescendants = {
   reserve4: ["reserve4", "color4", "text4"],
   color4: ["color4"],
   text4: ["text4"],
-  submitChange: ["submitChange", "visitBookings"],
-  visitBookings: ["visitBookings"],
+  submitChange: ["submitChange"],
   addingGuestInfo: [
     "addingGuestInfo",
     "form",
@@ -11967,6 +12222,7 @@ type NodeDefaultElementType = {
   fragmentDatePicker: typeof DatePicker;
   fragmentLongPress: typeof FragmentLongPress;
   dayCell: typeof DayCell;
+  dayCell2: typeof DayCell2;
   modalDiscount: typeof AntdModal;
   main: "div";
   textInput2: typeof TextInput;
@@ -11996,6 +12252,7 @@ type NodeDefaultElementType = {
   blockParent: "div";
   block2: "div";
   noteModal: typeof AntdModal;
+  img: typeof PlasmicImg__;
   writeNoteModal: typeof AntdModal;
   textarea: typeof Textarea;
   updateNoteModal: typeof AntdModal;
@@ -12018,7 +12275,6 @@ type NodeDefaultElementType = {
   color4: "div";
   text4: "div";
   submitChange: "div";
-  visitBookings: typeof Button;
   addingGuestInfo: typeof AntdModal;
   form: "div";
   p4: "div";
@@ -12104,6 +12360,7 @@ export const PlasmicCalendar2 = Object.assign(
     fragmentDatePicker: makeNodeComponent("fragmentDatePicker"),
     fragmentLongPress: makeNodeComponent("fragmentLongPress"),
     dayCell: makeNodeComponent("dayCell"),
+    dayCell2: makeNodeComponent("dayCell2"),
     modalDiscount: makeNodeComponent("modalDiscount"),
     main: makeNodeComponent("main"),
     textInput2: makeNodeComponent("textInput2"),
@@ -12137,6 +12394,7 @@ export const PlasmicCalendar2 = Object.assign(
     blockParent: makeNodeComponent("blockParent"),
     block2: makeNodeComponent("block2"),
     noteModal: makeNodeComponent("noteModal"),
+    img: makeNodeComponent("img"),
     writeNoteModal: makeNodeComponent("writeNoteModal"),
     textarea: makeNodeComponent("textarea"),
     updateNoteModal: makeNodeComponent("updateNoteModal"),
@@ -12159,7 +12417,6 @@ export const PlasmicCalendar2 = Object.assign(
     color4: makeNodeComponent("color4"),
     text4: makeNodeComponent("text4"),
     submitChange: makeNodeComponent("submitChange"),
-    visitBookings: makeNodeComponent("visitBookings"),
     addingGuestInfo: makeNodeComponent("addingGuestInfo"),
     form: makeNodeComponent("form"),
     p4: makeNodeComponent("p4"),

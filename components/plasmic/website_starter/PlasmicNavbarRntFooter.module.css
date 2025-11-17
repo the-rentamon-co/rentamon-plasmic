@@ -199,11 +199,11 @@
   }
 }
 .svg___6PDfU {
-  object-fit: cover;
-  max-width: 28px;
-  color: #acacac;
-  width: auto;
   height: 22px;
+  width: auto;
+  max-width: 28px;
+  object-fit: cover;
+  color: #0000f7;
   flex-shrink: 0;
 }
 @media (max-width: 350px) {
@@ -211,7 +211,6 @@
     width: auto;
     height: 24px;
     max-width: 30px;
-    color: #acacac;
     flex-shrink: 0;
   }
 }
@@ -258,9 +257,9 @@
 }
 @media (max-width: 350px) {
   .svg__y8AJf {
-    width: auto;
     height: 24px;
     max-width: 30px;
+    width: auto;
     color: #acacac;
     flex-shrink: 0;
   }
@@ -380,7 +379,7 @@
 .svg___5FnM {
   object-fit: cover;
   max-width: 100%;
-  color: #acacac;
+  color: #0000f7;
   width: 30px;
   height: 22px;
   flex-shrink: 0;
@@ -764,7 +763,7 @@
 .svg__cpVuT {
   object-fit: cover;
   max-width: 30px;
-  color: #acacac;
+  color: #0000f7;
   width: auto;
   height: 24px;
   flex-shrink: 0;

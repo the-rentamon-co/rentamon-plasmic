@@ -90,6 +90,7 @@ export type PlasmicIntegrations__OverridesType = {
   mainContents?: Flex__<"div">;
   introApi?: Flex__<"div">;
   introApiTitle?: Flex__<"div">;
+  h1?: Flex__<"h1">;
   introApiCaption?: Flex__<"div">;
   platformsTitle?: Flex__<"div">;
   platforms?: Flex__<"div">;
@@ -255,15 +256,29 @@ function PlasmicIntegrations__RenderFunc(props: {
                 data-plasmic-override={overrides.introApiTitle}
                 className={classNames(projectcss.all, sty.introApiTitle)}
               >
+                <h1
+                  data-plasmic-name={"h1"}
+                  data-plasmic-override={overrides.h1}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h1,
+                    projectcss.__wab_text,
+                    sty.h1
+                  )}
+                >
+                  {
+                    "API \u0645\u06cc\u0627\u0646 \u0648 \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                  }
+                </h1>
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___5OuvQ
+                    sty.text__aTsAr
                   )}
                 >
                   {
-                    "API \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0648 \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                    "\u0645\u06cc\u0627\u0646\u060c \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634"
                   }
                 </div>
               </div>
@@ -289,17 +304,18 @@ function PlasmicIntegrations__RenderFunc(props: {
                 data-plasmic-override={overrides.platformsTitle}
                 className={classNames(projectcss.all, sty.platformsTitle)}
               >
-                <div
+                <h2
                   className={classNames(
                     projectcss.all,
+                    projectcss.h2,
                     projectcss.__wab_text,
-                    sty.text__eWeM1
+                    sty.h2__eWeM1
                   )}
                 >
                   {
-                    "\u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0633\u0631\u0648\u06cc\u0633\u200c\u062f\u0647\u06cc \u062f\u0627\u0631\u0647:"
+                    "\u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0633\u0631\u0648\u06cc\u0633\u200c\u062f\u0647\u06cc \u062f\u0627\u0631\u0647:"
                   }
-                </div>
+                </h2>
               </div>
               <div
                 data-plasmic-name={"platforms"}
@@ -331,15 +347,19 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMaxHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "50px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
                         }
-                        displayMaxWidth={"100%"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : "100%"
+                        }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -347,7 +367,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -433,7 +453,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMaxHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "50px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -447,7 +467,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -455,7 +475,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -541,7 +561,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMaxHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "50px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -555,7 +575,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -563,7 +583,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -652,7 +672,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMaxHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "50px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -666,7 +686,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -674,7 +694,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -768,7 +788,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMaxHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "50px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -782,7 +802,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -790,7 +810,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -882,7 +902,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMaxHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "50px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -896,7 +916,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -904,7 +924,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -996,7 +1016,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMaxHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "50px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -1010,7 +1030,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -1018,7 +1038,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -1109,11 +1129,9 @@ function PlasmicIntegrations__RenderFunc(props: {
                               : "70px"
                         }
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "50px"
-                              : "70px"
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "50px"
+                            : "70px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -1124,7 +1142,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         }
                         displayMinHeight={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : hasVariant(globalVariants, "screen", "mobile")
                               ? "50px"
                               : "70px"
@@ -1132,7 +1150,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "40px"
+                            ? "30px"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -1212,17 +1230,18 @@ function PlasmicIntegrations__RenderFunc(props: {
                 data-plasmic-override={overrides.benefitsTitle}
                 className={classNames(projectcss.all, sty.benefitsTitle)}
               >
-                <div
+                <h2
                   className={classNames(
                     projectcss.all,
+                    projectcss.h2,
                     projectcss.__wab_text,
-                    sty.text__oja5I
+                    sty.h2__oja5I
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0645\u0632\u0627\u06cc\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 API"
                     : "\u0645\u0632\u0627\u06cc\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 API"}
-                </div>
+                </h2>
               </div>
               <div
                 data-plasmic-name={"benefitsCaption"}
@@ -1379,7 +1398,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u0647\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0639\u062f \u0627AP \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0648\u0628\u200c\u0647\u0648\u06a9\u200c\u0647\u0627\u060c \u0634\u0645\u0627 \u0631\u0648 \u0627\u0632 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0645\u0637\u0644\u0639 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0628\u062a\u0648\u0646\u06cc\u062f \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0631\u0628\u0648\u0637\u0647 \u0631\u0648 \u062f\u0631 \u0633\u06cc\u0633\u062a\u0645 \u062e\u0648\u062f\u062a\u0648\u0646 \u0628\u0647\u200c\u0631\u0648\u0632 \u06a9\u0646\u06cc\u062f.\n\r"
+                      "\u0645\u06cc\u0627\u0646 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u0647\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0639\u062f \u0627AP \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0648\u0628\u200c\u0647\u0648\u06a9\u200c\u0647\u0627\u060c \u0634\u0645\u0627 \u0631\u0648 \u0627\u0632 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0645\u0637\u0644\u0639 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0628\u062a\u0648\u0646\u06cc\u062f \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0631\u0628\u0648\u0637\u0647 \u0631\u0648 \u062f\u0631 \u0633\u06cc\u0633\u062a\u0645 \u062e\u0648\u062f\u062a\u0648\u0646 \u0628\u0647\u200c\u0631\u0648\u0632 \u06a9\u0646\u06cc\u062f.\n\r"
                     }
                   </div>
                   <div
@@ -1399,17 +1418,18 @@ function PlasmicIntegrations__RenderFunc(props: {
                   data-plasmic-override={overrides.apidog}
                   className={classNames(projectcss.all, sty.apidog)}
                 >
-                  <div
+                  <h2
                     className={classNames(
                       projectcss.all,
+                      projectcss.h2,
                       projectcss.__wab_text,
-                      sty.text__t2Pgn
+                      sty.h2__t2Pgn
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
                       ? "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647 \u0645\u0633\u062a\u0646\u062f\u0627\u062a API \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 apidog.io \u0644\u0637\u0641\u0627\r\n\r\n"
-                      : "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647 \u0645\u0633\u062a\u0646\u062f\u0627\u062a API \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 \u0633\u0627\u06cc\u062a apidog.io \u0644\u0637\u0641\u0627\r\n\r\n"}
-                  </div>
+                      : "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647 \u0645\u0633\u062a\u0646\u062f\u0627\u062a API \u0645\u06cc\u0627\u0646 \u062f\u0631 \u0633\u0627\u06cc\u062a apidog.io \u0644\u0637\u0641\u0627\r\n\r\n"}
+                  </h2>
                 </div>
                 <div
                   data-plasmic-name={"requestDemo"}
@@ -1492,6 +1512,7 @@ const PlasmicDescendants = {
     "mainContents",
     "introApi",
     "introApiTitle",
+    "h1",
     "introApiCaption",
     "platformsTitle",
     "platforms",
@@ -1539,6 +1560,7 @@ const PlasmicDescendants = {
     "mainContents",
     "introApi",
     "introApiTitle",
+    "h1",
     "introApiCaption",
     "platformsTitle",
     "platforms",
@@ -1581,6 +1603,7 @@ const PlasmicDescendants = {
   introApi: [
     "introApi",
     "introApiTitle",
+    "h1",
     "introApiCaption",
     "platformsTitle",
     "platforms",
@@ -1609,7 +1632,8 @@ const PlasmicDescendants = {
     "platformNames23",
     "platformNames24"
   ],
-  introApiTitle: ["introApiTitle"],
+  introApiTitle: ["introApiTitle", "h1"],
+  h1: ["h1"],
   introApiCaption: ["introApiCaption"],
   platformsTitle: ["platformsTitle"],
   platforms: [
@@ -1694,6 +1718,7 @@ type NodeDefaultElementType = {
   mainContents: "div";
   introApi: "div";
   introApiTitle: "div";
+  h1: "h1";
   introApiCaption: "div";
   platformsTitle: "div";
   platforms: "div";
@@ -1803,6 +1828,7 @@ export const PlasmicIntegrations = Object.assign(
     mainContents: makeNodeComponent("mainContents"),
     introApi: makeNodeComponent("introApi"),
     introApiTitle: makeNodeComponent("introApiTitle"),
+    h1: makeNodeComponent("h1"),
     introApiCaption: makeNodeComponent("introApiCaption"),
     platformsTitle: makeNodeComponent("platformsTitle"),
     platforms: makeNodeComponent("platforms"),

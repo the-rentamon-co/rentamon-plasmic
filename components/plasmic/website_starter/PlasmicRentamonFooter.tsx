@@ -456,14 +456,32 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                   "\u062f\u0631\u062f\u0633\u0631\u0647\u0627\u06cc  \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0633\u067e\u0627\u0631 \u0628\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0648 \u0648\u0642\u062a\u200c\u062a\u0648 \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0647\u0645\u200c\u062a\u0631 \u0622\u0632\u0627\u062f \u06a9\u0646.\n\n"
                 }
               </React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ fontWeight: 500 }}
-              >
-                {
-                  "\u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0628\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0631\u062f\u0647."
-                }
-              </span>
+              {
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    projectcss.plasmic_default__inline,
+                    sty.link__dLt1I
+                  )}
+                  component={Link}
+                  href={"https://rentamon.com/new-brand/"}
+                  platform={"nextjs"}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 500, color: "#7979FF" }}
+                    >
+                      {
+                        "\u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0628\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0631\u062f\u0647."
+                      }
+                    </span>
+                  </React.Fragment>
+                </PlasmicLink__>
+              }
+              <React.Fragment>{""}</React.Fragment>
             </React.Fragment>
           </div>
         </div>

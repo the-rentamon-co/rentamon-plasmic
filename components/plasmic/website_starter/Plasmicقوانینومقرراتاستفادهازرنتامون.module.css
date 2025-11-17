@@ -267,10 +267,18 @@
   display: flex;
   flex-direction: column;
 }
+.li__eRDu {
+  padding-bottom: 0px;
+}
 @media (max-width: 350px) {
   .li__eRDu {
     padding-top: 0px;
     font-size: 14px;
+  }
+}
+@media (max-width: 350px) {
+  .li__jEfJi {
+    padding-bottom: 0px;
   }
 }
 .ul__eCqGt {
@@ -304,6 +312,11 @@
 .ul___95RfE {
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 1200px) {
+  .li___5DvK5 {
+    padding-top: 0px;
+  }
 }
 .ul__jWoRr {
   display: flex;

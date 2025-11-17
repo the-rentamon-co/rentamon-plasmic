@@ -208,7 +208,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 8px;
   min-width: 0;
@@ -218,6 +218,7 @@
     padding-right: 20px;
     padding-left: 20px;
     line-height: 1.8;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
@@ -239,7 +240,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
   min-width: 0;
@@ -249,6 +250,7 @@
     padding-right: 20px;
     padding-left: 20px;
     line-height: 1.8;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
@@ -372,7 +374,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
   min-width: 0;
@@ -382,13 +384,14 @@
     padding-right: 0px;
     padding-left: 0px;
     line-height: 1.8;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
   .text__k0LbF {
     padding-right: 0px;
     padding-left: 10px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -466,7 +469,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
   min-width: 0;
@@ -476,13 +479,14 @@
     padding-right: 0px;
     padding-left: 6px;
     line-height: 1.8;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
   .text__lWiIg {
     padding-right: 0px;
     padding-left: 0px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -538,6 +542,11 @@
   font-size: 17px;
   line-height: 1.8;
 }
+@media (max-width: 1200px) {
+  .text__z1WjL {
+    font-size: 16px;
+  }
+}
 @media (max-width: 500px) {
   .text__z1WjL {
     font-size: 16px;
@@ -551,6 +560,12 @@
 .ul__tutu {
   display: flex;
   flex-direction: column;
+  font-size: 16px;
+}
+@media (max-width: 500px) {
+  .ul__tutu {
+    font-size: 15px;
+  }
 }
 @media (max-width: 350px) {
   .ul__tutu {
@@ -565,7 +580,7 @@
 }
 .text___6EzdW {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   width: 100%;
   height: auto;
@@ -584,6 +599,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    font-size: 16px;
     column-gap: 0px;
     min-width: 0;
     padding: 8px 30px;
@@ -591,7 +607,7 @@
 }
 @media (max-width: 500px) {
   .text___6EzdW {
-    font-size: 16px;
+    font-size: 15px;
     padding-right: 8px;
     padding-left: 8px;
   }
@@ -760,13 +776,19 @@
 }
 .text___7Xqfi {
   text-align: right;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   padding-top: 12px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___7Xqfi {
-    font-size: 18px;
+    font-size: 17px;
+  }
+}
+@media (max-width: 500px) {
+  .text___7Xqfi {
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -776,15 +798,17 @@
 }
 .text__e8Leu {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   width: 100%;
   line-height: 1.8;
   padding-top: 10px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__e8Leu {
     width: 100%;
     padding-top: 20px;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
@@ -792,7 +816,7 @@
     width: 96%;
     text-align: right;
     padding-top: 13px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -807,15 +831,17 @@
 }
 .text___90K0C {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   width: 100%;
   line-height: 1.8;
   padding-top: 10px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___90K0C {
     width: 100%;
     padding-top: 20px;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
@@ -823,7 +849,7 @@
     width: 96%;
     text-align: right;
     padding-top: 25px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -832,17 +858,35 @@
     font-size: 15px;
   }
 }
+.link__tdFhq {
+  font-family: "Estedad";
+  font-weight: 500;
+}
+.link__aEltp {
+  font-family: "Estedad";
+  font-weight: 500;
+}
+.link__zbHSc {
+  font-family: "Estedad";
+  font-weight: 500;
+}
+.link__iEQlY {
+  font-family: "Estedad";
+  font-weight: 500;
+}
 .text__xPxPz {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   width: 100%;
   line-height: 1.8;
   padding-top: 10px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__xPxPz {
     width: 100%;
     padding-top: 20px;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
@@ -850,7 +894,7 @@
     width: 96%;
     text-align: right;
     padding-top: 14px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1033,6 +1077,7 @@
   font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__rUyqp {
@@ -1049,9 +1094,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1059,13 +1105,14 @@
     padding-right: 0px;
     padding-left: 20px;
     line-height: 1.8;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
   .text__bRvM {
     padding-right: 0px;
     padding-left: 0px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1110,9 +1157,14 @@
   font-size: 17px;
   line-height: 1.8;
 }
-@media (max-width: 500px) {
+@media (max-width: 1200px) {
   .text__ky08B {
     font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .text__ky08B {
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1123,6 +1175,8 @@
 .ul__laU1W {
   display: flex;
   flex-direction: column;
+  color: #444444;
+  font-size: 16px;
 }
 @media (max-width: 500px) {
   .ul__laU1W {
@@ -1135,16 +1189,38 @@
     padding-left: 0px;
   }
 }
+@media (max-width: 500px) {
+  .li__lVubt {
+    padding-top: 0px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 500px) {
+  .li__qz5L {
+    font-size: 15px;
+  }
+}
+@media (max-width: 500px) {
+  .li__aoAe {
+    font-size: 15px;
+  }
+}
+@media (max-width: 500px) {
+  .li__bvfCr {
+    font-size: 15px;
+  }
+}
 .text__ygY8 {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  color: #444444;
   min-width: 0;
   padding: 14px 8px 8px;
 }
@@ -1153,13 +1229,14 @@
     padding-right: 30px;
     padding-left: 30px;
     line-height: 1.8;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
   .text__ygY8 {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1255,6 +1332,7 @@
   text-align: right;
   font-size: 18px;
   font-weight: 600;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___8Vras {
@@ -1271,9 +1349,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1281,13 +1360,14 @@
     padding-right: 0px;
     padding-left: 20px;
     line-height: 1.8;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
   .text__iiIeP {
     padding-right: 0px;
     padding-left: 0px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1330,6 +1410,7 @@
   font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__rpAa {
@@ -1346,9 +1427,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1356,13 +1438,14 @@
     padding-right: 0px;
     padding-left: 20px;
     line-height: 1.8;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
   .text__gUo5U {
     padding-right: 0px;
     padding-left: 0px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1411,6 +1494,7 @@
   font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__yiPiI {
@@ -1427,9 +1511,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1437,13 +1522,14 @@
     padding-right: 0px;
     padding-left: 20px;
     line-height: 1.8;
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
   .text__jQCx5 {
     padding-right: 0px;
     padding-left: 0px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1499,11 +1585,12 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
-  font-weight: 600;
+  font-weight: 500;
   padding-bottom: 20px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1517,7 +1604,7 @@
   .text__vEAcI {
     padding-right: 0px;
     padding-left: 0px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
   }
 }
@@ -1562,15 +1649,17 @@
   }
 }
 .text__udetK {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
-  padding-bottom: 12px;
+  padding-bottom: 18px;
   padding-top: 12px;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .text__udetK {
     text-align: center;
     line-height: 1.8;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1583,13 +1672,20 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
+  width: 300px;
   height: auto;
-  max-width: 50%;
+  max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  min-width: 0;
-  padding: 24px 8px 8px;
+  background: linear-gradient(
+    194.38598434664198deg,
+    #0000f7 0%,
+    #0000f7 55%,
+    #4c3888 100%
+  );
+  cursor: pointer;
+  border-radius: 100px;
+  padding: 18px 8px;
 }
 @media (max-width: 1200px) {
   .button {
@@ -1612,11 +1708,11 @@
   height: auto;
   max-width: 80%;
   text-align: center;
-  background: #8165d6;
+  background: none;
   color: #fcfcfc;
-  padding-bottom: 18px;
+  padding-bottom: 0px;
   font-size: 20px;
-  padding-top: 18px;
+  padding-top: 0px;
   font-weight: 600;
   cursor: pointer;
   min-width: 0;
@@ -1626,8 +1722,8 @@
   .text__irOta {
     font-weight: 600;
     font-size: 20px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }
 @media (max-width: 500px) {
