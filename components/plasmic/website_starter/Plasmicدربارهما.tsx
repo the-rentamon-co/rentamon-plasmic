@@ -123,7 +123,6 @@ export type Plasmicدربارهما__OverridesType = {
   principles?: Flex__<"div">;
   gallery2?: Flex__<"div">;
   principles2?: Flex__<"div">;
-  h2?: Flex__<"h2">;
   uotlines?: Flex__<"div">;
   ul?: Flex__<"ul">;
   introAutoSyncGif3?: Flex__<"div">;
@@ -390,11 +389,12 @@ function Plasmicدربارهما__RenderFunc(props: {
                 data-plasmic-override={overrides.sectionTitle}
                 className={classNames(projectcss.all, sty.sectionTitle)}
               >
-                <div
+                <h2
                   className={classNames(
                     projectcss.all,
+                    projectcss.h2,
                     projectcss.__wab_text,
-                    sty.text__lJFb
+                    sty.h2__lJFb
                   )}
                 >
                   <React.Fragment>
@@ -412,7 +412,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                       }
                     </span>
                   </React.Fragment>
-                </div>
+                </h2>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__jYb4P)}>
                 <div className={classNames(projectcss.all, sty.freeBox__sw6Bz)}>
@@ -1217,13 +1217,11 @@ function Plasmicدربارهما__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.principles2)}
                 >
                   <h2
-                    data-plasmic-name={"h2"}
-                    data-plasmic-override={overrides.h2}
                     className={classNames(
                       projectcss.all,
                       projectcss.h2,
                       projectcss.__wab_text,
-                      sty.h2
+                      sty.h2__tywBr
                     )}
                   >
                     {
@@ -1689,7 +1687,6 @@ const PlasmicDescendants = {
     "principles",
     "gallery2",
     "principles2",
-    "h2",
     "uotlines",
     "ul",
     "introAutoSyncGif3",
@@ -1748,7 +1745,6 @@ const PlasmicDescendants = {
     "principles",
     "gallery2",
     "principles2",
-    "h2",
     "uotlines",
     "ul",
     "introAutoSyncGif3",
@@ -1835,23 +1831,14 @@ const PlasmicDescendants = {
     "principles",
     "gallery2",
     "principles2",
-    "h2",
     "uotlines",
     "ul",
     "introAutoSyncGif3",
     "gallery",
     "introAutoSyncGif2"
   ],
-  gallery2: [
-    "gallery2",
-    "principles2",
-    "h2",
-    "uotlines",
-    "ul",
-    "introAutoSyncGif3"
-  ],
-  principles2: ["principles2", "h2", "uotlines", "ul"],
-  h2: ["h2"],
+  gallery2: ["gallery2", "principles2", "uotlines", "ul", "introAutoSyncGif3"],
+  principles2: ["principles2", "uotlines", "ul"],
   uotlines: ["uotlines", "ul"],
   ul: ["ul"],
   introAutoSyncGif3: ["introAutoSyncGif3"],
@@ -1914,7 +1901,6 @@ type NodeDefaultElementType = {
   principles: "div";
   gallery2: "div";
   principles2: "div";
-  h2: "h2";
   uotlines: "div";
   ul: "ul";
   introAutoSyncGif3: "div";
@@ -2038,7 +2024,6 @@ export const Plasmicدربارهما = Object.assign(
     principles: makeNodeComponent("principles"),
     gallery2: makeNodeComponent("gallery2"),
     principles2: makeNodeComponent("principles2"),
-    h2: makeNodeComponent("h2"),
     uotlines: makeNodeComponent("uotlines"),
     ul: makeNodeComponent("ul"),
     introAutoSyncGif3: makeNodeComponent("introAutoSyncGif3"),

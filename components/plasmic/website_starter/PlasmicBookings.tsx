@@ -568,7 +568,7 @@ function PlasmicBookings__RenderFunc(props: {
         path: "reservationsMode",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       },
       {
         path: "actions.open",
@@ -13855,54 +13855,6 @@ function PlasmicBookings__RenderFunc(props: {
                 typeof $steps["runCode2"].then === "function"
               ) {
                 $steps["runCode2"] = await $steps["runCode2"];
-              }
-
-              $steps["invokeGlobalAction"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://gateway.rentamon.com/webhook/user/calendar/segment"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] =
-                  await $steps["invokeGlobalAction"];
-              }
-
-              $steps["runCode3"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          $steps.invokeGlobalAction.data.segment ==
-                          "calendar-v2"
-                            ? ($state.reservationsMode = true)
-                            : ($statet.reservationsMode = false);
-                          return console.log($state.reservationsMode);
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode3"] != null &&
-                typeof $steps["runCode3"] === "object" &&
-                typeof $steps["runCode3"].then === "function"
-              ) {
-                $steps["runCode3"] = await $steps["runCode3"];
               }
             }}
           />
