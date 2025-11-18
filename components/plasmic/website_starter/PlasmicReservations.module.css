@@ -1152,7 +1152,7 @@
   .reserveMainStack2 {
     max-width: 100%;
     padding-bottom: 0em;
-    row-gap: 8px;
+    row-gap: 16px;
     column-gap: 0px;
   }
 }
@@ -1177,7 +1177,7 @@
   min-width: 0;
 }
 .reservationsRecordList__j2Fns:global(.__wab_instance) {
-  height: 64px;
+  height: 70px;
   flex-shrink: 0;
 }
 @media (max-width: 1200px) {
@@ -1187,6 +1187,7 @@
 }
 @media (max-width: 500px) {
   .reservationsRecordList__j2Fns:global(.__wab_instance) {
+    height: 76px;
     flex-shrink: 0;
     display: flex;
   }

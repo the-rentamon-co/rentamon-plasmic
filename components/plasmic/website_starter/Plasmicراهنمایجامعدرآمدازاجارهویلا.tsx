@@ -888,7 +888,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                         sty.link__ipHuo
                       )}
                       component={Link}
-                      href={"https://rentamon.com/rental-rules/"}
+                      href={`/rental-rules`}
                       platform={"nextjs"}
                     >
                       {"\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646"}

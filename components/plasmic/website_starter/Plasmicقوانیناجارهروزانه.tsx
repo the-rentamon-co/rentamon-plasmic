@@ -1060,42 +1060,41 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   data-plasmic-name={"button"}
                   data-plasmic-override={overrides.button}
                   className={classNames(projectcss.all, sty.button)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToHomepage"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToHomepage"] != null &&
+                      typeof $steps["goToHomepage"] === "object" &&
+                      typeof $steps["goToHomepage"].then === "function"
+                    ) {
+                      $steps["goToHomepage"] = await $steps["goToHomepage"];
+                    }
+                  }}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__irOta,
-                      "clickable"
+                      sty.text__irOta
                     )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["goToHomepage"] = true
-                        ? (() => {
-                            const actionArgs = { destination: `/` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToHomepage"] != null &&
-                        typeof $steps["goToHomepage"] === "object" &&
-                        typeof $steps["goToHomepage"].then === "function"
-                      ) {
-                        $steps["goToHomepage"] = await $steps["goToHomepage"];
-                      }
-                    }}
                   >
                     {
                       "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u0686\u06cc\u0647\u061f"

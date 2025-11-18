@@ -466,7 +466,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     sty.link__dLt1I
                   )}
                   component={Link}
-                  href={"https://rentamon.com/new-brand/"}
+                  href={`/new-brand`}
                   platform={"nextjs"}
                 >
                   <React.Fragment>
@@ -707,7 +707,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     sty.link___2L0X0
                   )}
                   component={Link}
-                  href={"https://rentamon.com/terms-of-use/"}
+                  href={`/terms-of-use`}
                   platform={"nextjs"}
                 >
                   <React.Fragment>

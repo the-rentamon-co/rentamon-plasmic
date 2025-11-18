@@ -1461,12 +1461,21 @@ function PlasmicHomepage__RenderFunc(props: {
                         : "auto"
                     }
                     loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/handsOnApp4042LowPng.png",
-                      fullWidth: 600,
-                      fullHeight: 865,
-                      aspectRatio: undefined
-                    }}
+                    src={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? {
+                            src: "/plasmic/website_starter/images/mobileAppPng2.png",
+                            fullWidth: 500,
+                            fullHeight: 863,
+                            aspectRatio: undefined
+                          }
+                        : {
+                            src: "/plasmic/website_starter/images/mobileAppPng.png",
+                            fullWidth: 400,
+                            fullHeight: 691,
+                            aspectRatio: undefined
+                          }
+                    }
                   />
                 </div>
               </div>
@@ -3049,21 +3058,16 @@ export const PlasmicHomepage = Object.assign(
       ogType: "website",
       ogDescription:
         "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634\u0645\u0646\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u0633\u062a\u061b \u0631\u0627\u0647 \u062d\u0644 \u0639\u0627\u0644\u06cc \u0628\u0631\u0627\u06cc \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0648 \u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631\u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648\u2026 \u0627\u0632 \u06cc\u06a9\u062c\u0627.",
-      ogUrl: "https://rentamon.com/",
-      ogImage:
-        "https://rentamon.com/plasmic/website_starter/images/rentamonFaLowPng.png",
       ogLocale: "fa_IR",
       twitterCard: "summary_large_image",
       twitterTitle:
         "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 | \u0645\u062f\u06cc\u0631\u06cc\u062a \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647",
       twitterDescription:
         "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634\u0645\u0646\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u0633\u062a\u061b \u0631\u0627\u0647 \u062d\u0644 \u0639\u0627\u0644\u06cc \u0628\u0631\u0627\u06cc \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0648 \u0627\u0639\u0645\u0627\u0644 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631\u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648\u2026 \u0627\u0632 \u06cc\u06a9\u062c\u0627.",
-      twitterImage:
-        "https://rentamon.com/plasmic/website_starter/images/rentamonFaLowPng.png",
       robots: "index, follow",
-      alternate: "https://rentamon.com/",
       title:
-        "\u0645\u06cc\u0627\u0646\u060c \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627"
+        "\u0645\u06cc\u0627\u0646\u060c \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627",
+      url: "miaan.ir"
     },
 
     // Page metadata
@@ -3072,7 +3076,7 @@ export const PlasmicHomepage = Object.assign(
       description:
         "میان (رنتامون سابق) دستیار هوشمند میزبان‌هاست؛ راه حل عالی برای مدیریت تقویم اقامتگاه و اعمال تغییرات در سایت‌های جاباما، جاجیگا، اتاقک، شب و… از یکجا.",
       ogImageSrc:
-        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fmiaan-logo-blue-small.png?versionId=",
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fmiaan-logo-blue-sq-sm.png?versionId=",
       canonical: ""
     }
   }

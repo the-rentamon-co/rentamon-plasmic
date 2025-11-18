@@ -164,7 +164,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                 sty.link__uJuXj
               )}
               component={Link}
-              href={"#"}
+              href={`/`}
               platform={"nextjs"}
             >
               <PlasmicImg__

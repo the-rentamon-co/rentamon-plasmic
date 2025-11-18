@@ -546,7 +546,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                       sty.link__xrieE
                     )}
                     component={Link}
-                    href={"https://rentamon.com/features/"}
+                    href={`/features`}
                     platform={"nextjs"}
                   >
                     {
@@ -608,9 +608,9 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 }
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/website_starter/images/handsOnApp4042LowPng.png",
-                  fullWidth: 600,
-                  fullHeight: 865,
+                  src: "/plasmic/website_starter/images/mobileAppPng2.png",
+                  fullWidth: 500,
+                  fullHeight: 863,
                   aspectRatio: undefined
                 }}
               />

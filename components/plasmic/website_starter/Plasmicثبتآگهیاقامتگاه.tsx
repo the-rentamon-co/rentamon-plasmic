@@ -339,13 +339,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     sty.h1
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                      : hasVariant(globalVariants, "screen", "tablet")
-                        ? "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                        : "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u00ab\u0645\u06cc\u0627\u0646\u00bb"}
+                  {
+                    "\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0648\u0633\u0637 \u00ab\u0645\u06cc\u0627\u0646\u00bb"
+                  }
                 </h1>
               </div>
               <div
@@ -546,6 +542,35 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     )}
                   >
                     {"\u0634\u0628"}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__oEk8D)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__sljxA)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"60px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/snapptripPng.png",
+                      fullWidth: 132,
+                      fullHeight: 129,
+                      aspectRatio: undefined
+                    }}
+                  />
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__slcnL
+                    )}
+                  >
+                    {"\u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e"}
                   </div>
                 </div>
               </div>
@@ -2020,7 +2045,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0627\u06af\u0647 \u0641\u06a9\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc \u0631\u0633\u06cc\u062f\u06af\u06cc \u0628\u0647 \u0622\u06af\u0647\u06cc \u0648 \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627 \u062a\u0648\u06cc \u0686\u0646\u062f\u062a\u0627 \u0633\u0627\u06cc\u062a \u0633\u062e\u062a\u0647\u060c \u0645\u0639\u0644\u0648\u0645\u0647 \u0647\u0646\u0648\u0632 \u0628\u0627 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0622\u0634\u0646\u0627 \u0646\u06cc\u0633\u062a\u06cc! "
+                      "\u0627\u06af\u0647 \u0641\u06a9\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc \u0631\u0633\u06cc\u062f\u06af\u06cc \u0628\u0647 \u0622\u06af\u0647\u06cc \u0648 \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627 \u062a\u0648\u06cc \u0686\u0646\u062f\u062a\u0627 \u0633\u0627\u06cc\u062a \u0633\u062e\u062a\u0647\u060c \u0645\u0639\u0644\u0648\u0645\u0647 \u0647\u0646\u0648\u0632 \u0628\u0627 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0622\u0634\u0646\u0627 \u0646\u06cc\u0633\u062a\u06cc!\n\u0645\u06cc\u0627\u0646 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u200c\u0647\u0627\u06cc \u062a\u0641\u0648\u06cc\u0645 \u0631\u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u062c\u0627\u06cc \u0634\u0645\u0627 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u0647..."
                     }
                   </div>
                 </div>

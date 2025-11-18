@@ -5741,6 +5741,26 @@
           "id": "kRnn1mHIGzZk",
           "name": "miaan-loding_blue.gif",
           "filePath": "../public/plasmic/website_starter/images/miaanLodingBlueGif.gif"
+        },
+        {
+          "id": "FivdoLIVjoE8",
+          "name": "Frame.png",
+          "filePath": "../public/plasmic/website_starter/images/framePng.png"
+        },
+        {
+          "id": "OoLxkni7i3WW",
+          "name": "mobile-app.png",
+          "filePath": "../public/plasmic/website_starter/images/mobileAppPng.png"
+        },
+        {
+          "id": "FJfs3KjvwvFM",
+          "name": "mobile-app.png 2",
+          "filePath": "../public/plasmic/website_starter/images/mobileAppPng2.png"
+        },
+        {
+          "id": "MQaM2kDs4Kfw",
+          "name": "snapptrip.png",
+          "filePath": "../public/plasmic/website_starter/images/snapptripPng.png"
         }
       ],
       "indirect": false,
