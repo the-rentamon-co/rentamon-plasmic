@@ -107,6 +107,7 @@ export type PlasmicSideBar2__OverridesType = {
   reservations?: Flex__<"div">;
   channelManager?: Flex__<"div">;
   calendar?: Flex__<"div">;
+  mid11?: Flex__<"div">;
   favicon?: Flex__<typeof Embed>;
   apiRequest?: Flex__<typeof ApiRequest>;
   checkUserPendingReserve?: Flex__<typeof ApiRequest>;
@@ -1494,6 +1495,52 @@ function PlasmicSideBar2__RenderFunc(props: {
             {"\u062e\u0631\u0648\u062c"}
           </div>
         </div>
+        <div
+          data-plasmic-name={"mid11"}
+          data-plasmic-override={overrides.mid11}
+          className={classNames(projectcss.all, sty.mid11)}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox___4Fq9F)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__v6HeV
+              )}
+            >
+              {
+                "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+              }
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__qdtN)}>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__c4Fjz)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={
+                "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fsign-blue.png?versionId="
+              }
+              width={"40"}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__seY4R
+              )}
+            >
+              {"miaan.ir"}
+            </div>
+          </div>
+        </div>
         <div className={classNames(projectcss.all, sty.freeBox__giLd)}>
           <Icon15Icon
             className={classNames(projectcss.all, sty.svg__umjx5)}
@@ -1590,6 +1637,7 @@ const PlasmicDescendants = {
     "reservations",
     "channelManager",
     "calendar",
+    "mid11",
     "favicon",
     "apiRequest",
     "checkUserPendingReserve"
@@ -1599,6 +1647,7 @@ const PlasmicDescendants = {
   reservations: ["reservations"],
   channelManager: ["channelManager"],
   calendar: ["calendar"],
+  mid11: ["mid11"],
   favicon: ["favicon"],
   apiRequest: ["apiRequest"],
   checkUserPendingReserve: ["checkUserPendingReserve"]
@@ -1613,6 +1662,7 @@ type NodeDefaultElementType = {
   reservations: "div";
   channelManager: "div";
   calendar: "div";
+  mid11: "div";
   favicon: typeof Embed;
   apiRequest: typeof ApiRequest;
   checkUserPendingReserve: typeof ApiRequest;
@@ -1685,6 +1735,7 @@ export const PlasmicSideBar2 = Object.assign(
     reservations: makeNodeComponent("reservations"),
     channelManager: makeNodeComponent("channelManager"),
     calendar: makeNodeComponent("calendar"),
+    mid11: makeNodeComponent("mid11"),
     favicon: makeNodeComponent("favicon"),
     apiRequest: makeNodeComponent("apiRequest"),
     checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),

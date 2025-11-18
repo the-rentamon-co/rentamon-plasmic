@@ -93,6 +93,7 @@ export type Plasmicدانلوداپلیکیشنموبایلرنتامون__Overr
   introCalendar4?: Flex__<"div">;
   introCalendarRight?: Flex__<"div">;
   introCalendarRight2?: Flex__<"div">;
+  h1?: Flex__<"h1">;
   introCalendarRight3?: Flex__<"div">;
   introCalendarRight4?: Flex__<"div">;
   introCalendarRight6?: Flex__<"div">;
@@ -261,17 +262,20 @@ function Plasmicدانلوداپلیکیشنموبایلرنتامون__RenderFu
                       sty.introCalendarRight2
                     )}
                   >
-                    <div
+                    <h1
+                      data-plasmic-name={"h1"}
+                      data-plasmic-override={overrides.h1}
                       className={classNames(
                         projectcss.all,
+                        projectcss.h1,
                         projectcss.__wab_text,
-                        sty.text___86Oug
+                        sty.h1
                       )}
                     >
                       {
                         "\u062f\u0627\u0646\u0644\u0648\u062f \u0627\u067e\u0644\u06cc\u06a9\u06cc\u0634\u0646 \u0645\u06cc\u0627\u0646"
                       }
-                    </div>
+                    </h1>
                   </div>
                   <div
                     data-plasmic-name={"introCalendarRight3"}
@@ -338,17 +342,18 @@ function Plasmicدانلوداپلیکیشنموبایلرنتامون__RenderFu
                 data-plasmic-override={overrides.title}
                 className={classNames(projectcss.all, sty.title)}
               >
-                <div
+                <h2
                   className={classNames(
                     projectcss.all,
+                    projectcss.h2,
                     projectcss.__wab_text,
-                    sty.text__iRfac
+                    sty.h2__iRfac
                   )}
                 >
                   {
                     "\u0644\u06cc\u0646\u06a9\u200c\u0647\u0627\u06cc \u062f\u0627\u0646\u0644\u0648\u062f \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u06cc\u0627\u0646"
                   }
-                </div>
+                </h2>
               </div>
               <div
                 data-plasmic-name={"downloadLinks"}
@@ -810,17 +815,18 @@ function Plasmicدانلوداپلیکیشنموبایلرنتامون__RenderFu
                     sty.introCalendarRight7
                   )}
                 >
-                  <div
+                  <h2
                     className={classNames(
                       projectcss.all,
+                      projectcss.h2,
                       projectcss.__wab_text,
-                      sty.text__yo4O8
+                      sty.h2__yo4O8
                     )}
                   >
                     {
                       "\u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u00ab\u0645\u06cc\u0627\u0646\u00bb:"
                     }
-                  </div>
+                  </h2>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -877,6 +883,7 @@ const PlasmicDescendants = {
     "introCalendar4",
     "introCalendarRight",
     "introCalendarRight2",
+    "h1",
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarRight6",
@@ -914,6 +921,7 @@ const PlasmicDescendants = {
     "introCalendar4",
     "introCalendarRight",
     "introCalendarRight2",
+    "h1",
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarRight6",
@@ -946,6 +954,7 @@ const PlasmicDescendants = {
     "introCalendar4",
     "introCalendarRight",
     "introCalendarRight2",
+    "h1",
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarRight6",
@@ -955,6 +964,7 @@ const PlasmicDescendants = {
     "introCalendar4",
     "introCalendarRight",
     "introCalendarRight2",
+    "h1",
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarRight6",
@@ -963,9 +973,11 @@ const PlasmicDescendants = {
   introCalendarRight: [
     "introCalendarRight",
     "introCalendarRight2",
+    "h1",
     "introCalendarRight3"
   ],
-  introCalendarRight2: ["introCalendarRight2"],
+  introCalendarRight2: ["introCalendarRight2", "h1"],
+  h1: ["h1"],
   introCalendarRight3: ["introCalendarRight3"],
   introCalendarRight4: [
     "introCalendarRight4",
@@ -1046,6 +1058,7 @@ type NodeDefaultElementType = {
   introCalendar4: "div";
   introCalendarRight: "div";
   introCalendarRight2: "div";
+  h1: "h1";
   introCalendarRight3: "div";
   introCalendarRight4: "div";
   introCalendarRight6: "div";
@@ -1147,6 +1160,7 @@ export const Plasmicدانلوداپلیکیشنموبایلرنتامون = Obj
     introCalendar4: makeNodeComponent("introCalendar4"),
     introCalendarRight: makeNodeComponent("introCalendarRight"),
     introCalendarRight2: makeNodeComponent("introCalendarRight2"),
+    h1: makeNodeComponent("h1"),
     introCalendarRight3: makeNodeComponent("introCalendarRight3"),
     introCalendarRight4: makeNodeComponent("introCalendarRight4"),
     introCalendarRight6: makeNodeComponent("introCalendarRight6"),

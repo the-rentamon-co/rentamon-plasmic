@@ -1418,7 +1418,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                           case 8:
                                             return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
                                           case 17:
-                                            return "https://fs.snapptrip.com/js/assets/apps/core/website/website/web/_next/static/media/logo.1a28b22f.png";
+                                            return "https://media.rentamon.com/icon%2Fsnapptrip.png";
                                           default:
                                             return "";
                                         }

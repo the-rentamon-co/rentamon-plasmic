@@ -1772,6 +1772,7 @@
   transition-duration: 1s;
   transition-delay: 1s;
   order: 2;
+  cursor: pointer;
   min-width: 0;
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;
@@ -2539,14 +2540,14 @@
   max-width: 100%;
   justify-content: flex-end;
   align-items: center;
-  border-bottom-width: 2px;
+  border-bottom-width: 0px;
   border-bottom-style: dashed;
   min-width: 0;
   padding: 8px;
 }
 @media (max-width: 500px) {
   .bookPrice2 {
-    border-bottom-width: 1px;
+    border-bottom-width: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -2985,6 +2986,7 @@
   transition-duration: 1s;
   transition-delay: 1s;
   order: 3;
+  cursor: pointer;
   min-width: 0;
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;

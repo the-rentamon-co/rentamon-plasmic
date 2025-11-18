@@ -3622,6 +3622,49 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-name={"smartBooking"}
                         data-plasmic-override={overrides.smartBooking}
                         className={classNames(projectcss.all, sty.smartBooking)}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["updateAccordionOpenSmartBooking"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["accordionOpenSmartBooking"]
+                                  },
+                                  operation: 4
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  const oldValue = $stateGet(
+                                    objRoot,
+                                    variablePath
+                                  );
+                                  $stateSet(objRoot, variablePath, !oldValue);
+                                  return !oldValue;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateAccordionOpenSmartBooking"] != null &&
+                            typeof $steps["updateAccordionOpenSmartBooking"] ===
+                              "object" &&
+                            typeof $steps["updateAccordionOpenSmartBooking"]
+                              .then === "function"
+                          ) {
+                            $steps["updateAccordionOpenSmartBooking"] =
+                              await $steps["updateAccordionOpenSmartBooking"];
+                          }
+                        }}
                         style={(() => {
                           try {
                             return (() => {
@@ -6113,48 +6156,6 @@ function PlasmicBookings__RenderFunc(props: {
                           )}
                           onClick={async event => {
                             const $steps = {};
-
-                            $steps["updateAccordionOpen"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: [
-                                        "accordionOpenSmartBooking"
-                                      ]
-                                    },
-                                    operation: 4
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    const oldValue = $stateGet(
-                                      objRoot,
-                                      variablePath
-                                    );
-                                    $stateSet(objRoot, variablePath, !oldValue);
-                                    return !oldValue;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updateAccordionOpen"] != null &&
-                              typeof $steps["updateAccordionOpen"] ===
-                                "object" &&
-                              typeof $steps["updateAccordionOpen"].then ===
-                                "function"
-                            ) {
-                              $steps["updateAccordionOpen"] =
-                                await $steps["updateAccordionOpen"];
-                            }
                           }}
                         >
                           <PlasmicImg__
@@ -6238,6 +6239,49 @@ function PlasmicBookings__RenderFunc(props: {
                         data-plasmic-name={"autoSync"}
                         data-plasmic-override={overrides.autoSync}
                         className={classNames(projectcss.all, sty.autoSync)}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["updateAccordionOpenAutoSync"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["accordionOpenAutoSync"]
+                                  },
+                                  operation: 4
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  const oldValue = $stateGet(
+                                    objRoot,
+                                    variablePath
+                                  );
+                                  $stateSet(objRoot, variablePath, !oldValue);
+                                  return !oldValue;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateAccordionOpenAutoSync"] != null &&
+                            typeof $steps["updateAccordionOpenAutoSync"] ===
+                              "object" &&
+                            typeof $steps["updateAccordionOpenAutoSync"]
+                              .then === "function"
+                          ) {
+                            $steps["updateAccordionOpenAutoSync"] =
+                              await $steps["updateAccordionOpenAutoSync"];
+                          }
+                        }}
                         style={(() => {
                           try {
                             return (() => {
@@ -6980,46 +7024,6 @@ function PlasmicBookings__RenderFunc(props: {
                           )}
                           onClick={async event => {
                             const $steps = {};
-
-                            $steps["updateAccordionOpen"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["accordionOpenAutoSync"]
-                                    },
-                                    operation: 4
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    const oldValue = $stateGet(
-                                      objRoot,
-                                      variablePath
-                                    );
-                                    $stateSet(objRoot, variablePath, !oldValue);
-                                    return !oldValue;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updateAccordionOpen"] != null &&
-                              typeof $steps["updateAccordionOpen"] ===
-                                "object" &&
-                              typeof $steps["updateAccordionOpen"].then ===
-                                "function"
-                            ) {
-                              $steps["updateAccordionOpen"] =
-                                await $steps["updateAccordionOpen"];
-                            }
                           }}
                         >
                           <PlasmicImg__
