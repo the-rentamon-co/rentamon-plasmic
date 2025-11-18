@@ -6,7 +6,7 @@
   "description": "مدیریت آنلاین اقامتگاه",
   "display": "standalone",
   "display_override": ["window-controls-overlay"],
-  "start_url": "https://rentamon.com/splash?src=web",
+  "start_url": "https://miaan.ir/splash?src=web",
   "theme_color": "#fcfcfc",
   "background_color": "#0000f7",
   "orientation": "portrait-primary",
@@ -16,7 +16,7 @@
   "prefer_related_applications": false,
   "related_applications": [],
   "scope_extensions": [
-    { "origin": "https://rentamon.com/" }
+    { "origin": "https://miaan.ir/" }
   ],
   "launch_handler": {
     "client_mode": "focus-existing"
@@ -30,7 +30,6 @@
     },
     {
       "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2Fmiaan-icon-mask-512.png?versionId=",
-      
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -44,10 +43,10 @@
   ],
   "screenshots": [
     {
-      "src": "https://rentamon.com/plasmic/website_starter/images/handsOnAppPng2.png",
+      "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fmobile-app.png",
       "sizes": "1920x1080",
       "type": "image/png",
-      "label": "نمایی از برنامه میان",
+      "label": "مدیریت یکپارچه اقامتگاه",
       "form_factor": "wide"
     }
   ],
@@ -58,8 +57,10 @@
       "description": "میان، مدیریت آنلاین اقامتگاه",
       "icons": [
         {
-          "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fmiaan-logo-blue-small.png",
-          "sizes": "48x48"
+          "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2Fmiaan-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
         }
       ]
     }
