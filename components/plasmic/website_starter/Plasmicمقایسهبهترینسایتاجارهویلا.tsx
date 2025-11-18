@@ -336,7 +336,31 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     }
                   })()}
                   loadingDisplay={
-                    <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
+                    <DataCtxReader__>
+                      {$ctx => (
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__pfIp)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? "40px"
+                              : "50px"
+                          }
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/miaanLodingBlueGif.gif",
+                            fullWidth: 200,
+                            fullHeight: 200,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      )}
+                    </DataCtxReader__>
                   }
                   method={"GET"}
                   noLayout={false}

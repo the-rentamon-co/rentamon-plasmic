@@ -238,6 +238,19 @@
   object-fit: cover;
   min-width: 0;
 }
+.img__pfIp {
+  object-fit: cover;
+  max-width: 100%;
+  width: 50px;
+}
+.img__pfIp > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 500px) {
+  .img__pfIp {
+    width: 40px;
+  }
+}
 .strDefinition {
   display: flex;
   flex-direction: row;

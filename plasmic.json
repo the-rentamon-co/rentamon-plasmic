@@ -5736,6 +5736,11 @@
           "id": "rFQQfJ4w9lsv",
           "name": "loading-miaan.gif 2",
           "filePath": "../public/plasmic/website_starter/images/loadingMiaanGif2.gif"
+        },
+        {
+          "id": "kRnn1mHIGzZk",
+          "name": "miaan-loding_blue.gif",
+          "filePath": "../public/plasmic/website_starter/images/miaanLodingBlueGif.gif"
         }
       ],
       "indirect": false,

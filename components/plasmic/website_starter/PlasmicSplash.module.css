@@ -32,6 +32,11 @@
   .root {
     justify-items: center;
     align-content: flex-start;
+    background: linear-gradient(
+      31.265996288254428deg,
+      #0000b7 46%,
+      #0000f7 100%
+    );
   }
 }
 @media (max-width: 500px) {
