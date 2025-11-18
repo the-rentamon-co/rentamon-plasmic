@@ -8,7 +8,7 @@
   justify-items: center;
   justify-content: flex-start;
   align-items: center;
-  background: #8165d6;
+  background: linear-gradient(9.761579364335262deg, #0000b7 34%, #0000f7 100%);
   padding-top: 65px;
   min-width: 0;
   min-height: 0;
@@ -30,8 +30,6 @@
 }
 @media (max-width: 500px) {
   .root {
-    background: linear-gradient(40deg, #8165d6 38%, #9d83ea 100%) 0% 0% / 100%
-      100% repeat;
     justify-items: center;
     align-content: flex-start;
   }
@@ -74,7 +72,9 @@
 .img__fzVw8 {
   object-fit: cover;
   max-width: 100%;
-  width: 80px;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
 }
 .img__fzVw8 > picture > img {
   object-fit: cover;
@@ -100,6 +100,7 @@
   line-height: 2;
   padding-top: 42px;
   font-weight: 400;
+  padding-bottom: 0px;
   min-width: 0;
 }
 @media (max-width: 1200px) {

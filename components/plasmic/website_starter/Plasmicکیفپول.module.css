@@ -617,18 +617,23 @@
 }
 .button2 {
   display: flex;
-  flex-direction: row;
-  width: 340px;
+  flex-direction: column;
+  width: 300px;
   height: auto;
   max-width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   cursor: pointer;
   margin-right: 0px;
   margin-left: 0px;
-  background: linear-gradient(82.91484890504398deg, #8165d6 0%, #9c80f2 100%);
-  border-radius: 30px;
-  padding: 14px 0px;
+  background: linear-gradient(
+    194.38598434664198deg,
+    #0000f7 0%,
+    #0000f7 55%,
+    #4c3888 100%
+  );
+  border-radius: 100px;
+  padding: 18px 8px;
 }
 @media (max-width: 500px) {
   .button2 {
@@ -637,11 +642,18 @@
     width: 350px;
   }
 }
+@media (max-width: 350px) {
+  .button2 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
 .img___5NHpa {
   object-fit: cover;
   max-width: 100%;
   height: 34px;
   margin-left: 16px;
+  flex-shrink: 0;
 }
 .img___5NHpa > picture > img {
   object-fit: cover;
@@ -1616,14 +1628,12 @@
     max-width: 100%;
     font-size: 17px;
     font-weight: 600;
-    color: #8165d6;
     text-align: center;
     cursor: pointer;
     min-width: 0;
     border-radius: 100px;
     padding: 16px 0px;
     margin: 0px;
-    border: 3px solid #8165d6;
   }
 }
 .qA {

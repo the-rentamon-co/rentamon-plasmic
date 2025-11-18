@@ -133,6 +133,7 @@
   font-size: 22px;
   font-weight: 600;
   text-align: center;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__gX6Ao {
@@ -287,6 +288,7 @@
   font-size: 18px;
   font-weight: 600;
   text-align: right;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .text__dqFdj {
@@ -334,6 +336,7 @@
   max-width: 100%;
   font-size: 18px;
   font-weight: 600;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .text__e0KU {
@@ -394,6 +397,7 @@
   font-size: 18px;
   font-weight: 600;
   padding-right: 0px;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .text__yuf6G {
@@ -539,6 +543,7 @@
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .text__kv54W {
@@ -590,6 +595,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  color: #444444;
   padding: 0px;
 }
 @media (max-width: 500px) {
@@ -642,6 +648,7 @@
   font-size: 20px;
   font-weight: 400;
   padding-right: 0px;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .text__jQXc {
@@ -1714,6 +1721,11 @@
   font-size: 17px;
   font-weight: 600;
 }
+@media (max-width: 500px) {
+  .text__gzRXd {
+    color: #444444;
+  }
+}
 @media (max-width: 350px) {
   .text__gzRXd {
     font-size: 15px;
@@ -1786,6 +1798,7 @@
     max-width: 100%;
     font-size: 16px;
     font-weight: 400;
+    color: #444444;
     min-width: 0;
   }
 }
@@ -1836,6 +1849,7 @@
   .text__bvrN {
     text-align: left;
     font-size: 16px;
+    color: #444444;
   }
 }
 @media (max-width: 350px) {
@@ -1914,6 +1928,7 @@
     max-width: 100%;
     font-size: 16px;
     font-weight: 400;
+    color: #444444;
     min-width: 0;
   }
 }
@@ -1962,6 +1977,7 @@
     max-width: 100%;
     font-size: 16px;
     font-weight: 400;
+    color: #444444;
     min-width: 0;
   }
 }
@@ -2050,6 +2066,7 @@
     max-width: 100%;
     font-size: 14px;
     font-weight: 400;
+    color: #444444;
     min-width: 0;
   }
 }
@@ -2099,6 +2116,7 @@
     max-width: 100%;
     font-size: 16px;
     font-weight: 400;
+    color: #444444;
     min-width: 0;
   }
 }
@@ -2179,6 +2197,7 @@
     max-width: 100%;
     font-size: 16px;
     font-weight: 400;
+    color: var(--token-8nedppYkGVaH);
     min-width: 0;
   }
 }
@@ -2241,6 +2260,7 @@
     max-width: 100%;
     font-size: 16px;
     font-weight: 400;
+    color: var(--token-8nedppYkGVaH);
     min-width: 0;
   }
 }
@@ -2459,7 +2479,7 @@
   text-align: center;
   font-size: 17px;
   font-weight: 600;
-  color: #8165d6;
+  color: var(--token-8nedppYkGVaH);
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -2482,7 +2502,7 @@
   text-align: center;
   font-size: 17px;
   font-weight: 600;
-  color: #8165d6;
+  color: var(--token-8nedppYkGVaH);
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -2515,7 +2535,7 @@
   text-align: right;
   font-size: 17px;
   font-weight: 600;
-  color: #8165d6;
+  color: var(--token-8nedppYkGVaH);
   min-width: 0;
 }
 @media (max-width: 500px) {

@@ -90,7 +90,7 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   mainContents?: Flex__<"div">;
   intro1st?: Flex__<"div">;
   introTitle?: Flex__<"div">;
-  دربارهما?: Flex__<"div">;
+  دربارهما?: Flex__<"h1">;
   teamImage?: Flex__<"div">;
   introduction1Text?: Flex__<"div">;
   introduction2TextPics?: Flex__<"div">;
@@ -297,13 +297,14 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                 data-plasmic-override={overrides.introTitle}
                 className={classNames(projectcss.all, sty.introTitle)}
               >
-                <div
+                <h1
                   data-plasmic-name={
                     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"
                   }
                   data-plasmic-override={overrides.دربارهما}
                   className={classNames(
                     projectcss.all,
+                    projectcss.h1,
                     projectcss.__wab_text,
                     sty.دربارهما,
                     hasVariant(globalVariants, "screen", "mobile")
@@ -314,7 +315,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   {
                     "\u0645\u0646\u062a\u0638\u0631 \u0646\u0645\u06cc\u200c\u0645\u0648\u0646\u06cc\u0645\u060c \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0645\u06cc\u200c\u0633\u0627\u0632\u06cc\u0645"
                   }
-                </div>
+                </h1>
               </div>
               <div
                 data-plasmic-name={"teamImage"}
@@ -508,9 +509,9 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                         sty.text___5UqG
                       )}
                     >
-                      {hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0645\u0639\u0631\u0641\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0648 \u0622\u0645\u0648\u0632\u0634 \u0627\u0648\u0644\u06cc\u0647 \u0628\u0647 \u0622\u0642\u0627\u06cc \u0633\u06cc\u062f \u0645\u062d\u0645\u062f\u062d\u0633\u0646 \u0647\u0627\u0634\u0645\u06cc - \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u067e\u0631\u0686\u0648\u0631\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f\r"
-                        : "\u0645\u0639\u0631\u0641\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0648 \u0622\u0645\u0648\u0632\u0634 \u0627\u0648\u0644\u06cc\u0647 \u0628\u0647 \u0622\u0642\u0627\u06cc \u0633\u06cc\u062f \u0645\u062d\u0645\u062f\u062d\u0633\u0646 \u0647\u0627\u0634\u0645\u06cc - \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u067e\u0631\u0686\u0648\u0631\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"}
+                      {
+                        "\u0645\u0639\u0631\u0641\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0648 \u0622\u0645\u0648\u0632\u0634 \u0627\u0648\u0644\u06cc\u0647 \u0628\u0647 \u0622\u0642\u0627\u06cc \u0633\u06cc\u062f \u0645\u062d\u0645\u062f\u062d\u0633\u0646 \u0647\u0627\u0634\u0645\u06cc - \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u0631\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f\r"
+                      }
                     </div>
                   </div>
                 </div>
@@ -568,17 +569,18 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   data-plasmic-override={overrides.title7}
                   className={classNames(projectcss.all, sty.title7)}
                 >
-                  <div
+                  <h2
                     className={classNames(
                       projectcss.all,
+                      projectcss.h2,
                       projectcss.__wab_text,
-                      sty.text__dHope
+                      sty.h2__dHope
                     )}
                   >
                     {
-                      "\u0627\u0631\u0632\u0634\u200c\u0647\u0627 \u0648 \u0641\u0631\u0647\u0646\u06af \u062a\u06cc\u0645\u06cc"
+                      "\u0627\u0631\u0632\u0634\u200c\u0647\u0627 \u0648 \u0641\u0631\u0647\u0646\u06af \u062a\u06cc\u0645\u06cc \u0645\u06cc\u0627\u0646"
                     }
-                  </div>
+                  </h2>
                 </div>
                 <div
                   data-plasmic-name={"uotlines"}
@@ -1045,17 +1047,18 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                 data-plasmic-override={overrides.introAutoSyncTitle4}
                 className={classNames(projectcss.all, sty.introAutoSyncTitle4)}
               >
-                <div
+                <h2
                   className={classNames(
                     projectcss.all,
+                    projectcss.h2,
                     projectcss.__wab_text,
-                    sty.text__yJjRl
+                    sty.h2__yJjRl
                   )}
                 >
                   {
                     "\u0631\u0648\u0634 \u062a\u0648\u0633\u0639\u0647 \u0645\u062d\u0635\u0648\u0644 (\u062a\u0639\u062f\u0627\u062f \u06a9\u0645\u060c \u062a\u0627\u062b\u06cc\u0631 \u0632\u06cc\u0627\u062f)"
                   }
-                </div>
+                </h2>
               </div>
               <div
                 className={classNames(
@@ -1568,17 +1571,18 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                 data-plasmic-override={overrides.introAutoSyncTitle3}
                 className={classNames(projectcss.all, sty.introAutoSyncTitle3)}
               >
-                <div
+                <h2
                   className={classNames(
                     projectcss.all,
+                    projectcss.h2,
                     projectcss.__wab_text,
-                    sty.text__pdXwo
+                    sty.h2__pdXwo
                   )}
                 >
                   {
-                    "\u0641\u0631\u0635\u062a \u0647\u0645\u06a9\u0627\u0631\u06cc"
+                    "\u0641\u0631\u0635\u062a \u0647\u0645\u06a9\u0627\u0631\u06cc \u062f\u0631 \u0645\u0627\u0645\u0648\u0631\u06cc\u062a \u0645\u06cc\u0627\u0646"
                   }
-                </div>
+                </h2>
               </div>
               <div
                 data-plasmic-name={"introAutoSyncCaption3"}
@@ -2204,7 +2208,7 @@ type NodeDefaultElementType = {
   mainContents: "div";
   intro1st: "div";
   introTitle: "div";
-  دربارهما: "div";
+  دربارهما: "h1";
   teamImage: "div";
   introduction1Text: "div";
   introduction2TextPics: "div";

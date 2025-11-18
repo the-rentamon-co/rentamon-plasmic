@@ -453,146 +453,154 @@ function PlasmicHomepage__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div
-                data-plasmic-name={"introCalendar4"}
-                data-plasmic-override={overrides.introCalendar4}
-                className={classNames(projectcss.all, sty.introCalendar4)}
-              >
+              <div className={classNames(projectcss.all, sty.freeBox__xc9QE)}>
                 <div
-                  data-plasmic-name={"introCalendarRight"}
-                  data-plasmic-override={overrides.introCalendarRight}
-                  className={classNames(projectcss.all, sty.introCalendarRight)}
+                  data-plasmic-name={"introCalendar4"}
+                  data-plasmic-override={overrides.introCalendar4}
+                  className={classNames(projectcss.all, sty.introCalendar4)}
                 >
                   <div
-                    data-plasmic-name={"introCalendarRight3"}
-                    data-plasmic-override={overrides.introCalendarRight3}
+                    data-plasmic-name={"introCalendarRight"}
+                    data-plasmic-override={overrides.introCalendarRight}
                     className={classNames(
                       projectcss.all,
-                      sty.introCalendarRight3
+                      sty.introCalendarRight
                     )}
                   >
-                    <Video
-                      data-plasmic-name={"htmlVideo"}
-                      data-plasmic-override={overrides.htmlVideo}
-                      autoPlay={true}
-                      className={classNames("__wab_instance", sty.htmlVideo)}
-                      controls={true}
-                      loop={true}
-                      muted={true}
-                      src={
-                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Fali-kermani.mp4?versionId="
+                    <div
+                      data-plasmic-name={"introCalendarRight3"}
+                      data-plasmic-override={overrides.introCalendarRight3}
+                      className={classNames(
+                        projectcss.all,
+                        sty.introCalendarRight3
+                      )}
+                    >
+                      <Video
+                        data-plasmic-name={"htmlVideo"}
+                        data-plasmic-override={overrides.htmlVideo}
+                        autoPlay={true}
+                        className={classNames("__wab_instance", sty.htmlVideo)}
+                        controls={true}
+                        loop={true}
+                        muted={true}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Fali-kermani.mp4?versionId="
+                        }
+                      />
+                    </div>
+                    <div
+                      data-plasmic-name={"introCalendarRight5"}
+                      data-plasmic-override={overrides.introCalendarRight5}
+                      className={classNames(
+                        projectcss.all,
+                        sty.introCalendarRight5
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__oKzEl
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u0639\u0644\u06cc \u06a9\u0631\u0645\u0627\u0646\u06cc\u00bb \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
+                          : "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u0639\u0644\u06cc \u06a9\u0631\u0645\u0627\u0646\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u0645\u06cc\u0627\u0646\u00bb"}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"introCalendarLeft"}
+                    data-plasmic-override={overrides.introCalendarLeft}
+                    className={classNames(
+                      projectcss.all,
+                      sty.introCalendarLeft,
+                      "fadein"
+                    )}
+                  >
+                    <Embed
+                      className={classNames(
+                        "__wab_instance",
+                        sty.embedHtml___2YmQ
+                      )}
+                      code={
+                        '<video\r\n  src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Fmiaan-unified-calendar.mp4?versionId="\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
                       }
                     />
                   </div>
+                </div>
+                <div
+                  data-plasmic-name={"introCalendarRight4"}
+                  data-plasmic-override={overrides.introCalendarRight4}
+                  className={classNames(
+                    projectcss.all,
+                    sty.introCalendarRight4
+                  )}
+                >
                   <div
-                    data-plasmic-name={"introCalendarRight5"}
-                    data-plasmic-override={overrides.introCalendarRight5}
                     className={classNames(
                       projectcss.all,
-                      sty.introCalendarRight5
+                      sty.freeBox__uOyUy,
+                      "clickable"
                     )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToHttpsRentamonComSplashSrcWeb"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: "https://rentamon.com/splash?src=web"
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToHttpsRentamonComSplashSrcWeb"] != null &&
+                        typeof $steps["goToHttpsRentamonComSplashSrcWeb"] ===
+                          "object" &&
+                        typeof $steps["goToHttpsRentamonComSplashSrcWeb"]
+                          .then === "function"
+                      ) {
+                        $steps["goToHttpsRentamonComSplashSrcWeb"] =
+                          await $steps["goToHttpsRentamonComSplashSrcWeb"];
+                      }
+                    }}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__oKzEl
+                        sty.text__lwviT,
+                        ``
                       )}
                     >
-                      {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u0639\u0644\u06cc \u06a9\u0631\u0645\u0627\u0646\u06cc\u00bb \u0628\u0627 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
-                        : "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646 \u00ab\u0639\u0644\u06cc \u06a9\u0631\u0645\u0627\u0646\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u0645\u06cc\u0627\u0646\u00bb"}
+                      {
+                        "\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631"
+                      }
                     </div>
                   </div>
-                </div>
-                <div
-                  data-plasmic-name={"introCalendarLeft"}
-                  data-plasmic-override={overrides.introCalendarLeft}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introCalendarLeft,
-                    "fadein"
-                  )}
-                >
-                  <Embed
-                    className={classNames(
-                      "__wab_instance",
-                      sty.embedHtml___2YmQ
-                    )}
-                    code={
-                      '<video\r\n  src="https://media.rentamon.com/gif%2Funified-calendar.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
-                    }
-                  />
-                </div>
-              </div>
-              <div
-                data-plasmic-name={"introCalendarRight4"}
-                data-plasmic-override={overrides.introCalendarRight4}
-                className={classNames(projectcss.all, sty.introCalendarRight4)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    sty.freeBox__uOyUy,
-                    "clickable"
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["goToHttpsRentamonComSplashSrcWeb"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            destination: "https://rentamon.com/splash?src=web"
-                          };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToHttpsRentamonComSplashSrcWeb"] != null &&
-                      typeof $steps["goToHttpsRentamonComSplashSrcWeb"] ===
-                        "object" &&
-                      typeof $steps["goToHttpsRentamonComSplashSrcWeb"].then ===
-                        "function"
-                    ) {
-                      $steps["goToHttpsRentamonComSplashSrcWeb"] =
-                        await $steps["goToHttpsRentamonComSplashSrcWeb"];
-                    }
-                  }}
-                >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__lwviT,
-                      ``
+                      sty.text__t3HG4
                     )}
                   >
-                    {"\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631"}
+                    {
+                      "\u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                    }
                   </div>
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__t3HG4
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                      ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                      : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
                 </div>
               </div>
             </div>
@@ -1643,11 +1651,9 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.text__sey39
                 )}
               >
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                  : hasVariant(globalVariants, "screen", "tablet")
-                    ? "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f1\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
-                    : "\u062b\u0628\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"}
+                {
+                  "\u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                }
               </div>
             </div>
           </div>

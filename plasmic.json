@@ -2119,20 +2119,6 @@
           "path": "/terms-of-use"
         },
         {
-          "id": "4_Sank-PwTYC",
-          "name": "دانلوداپلیکیشن",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicدانلوداپلیکیشن.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/download.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicدانلوداپلیکیشن.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/download"
-        },
-        {
           "id": "7qT9iMfa9pib",
           "name": "Integrations",
           "type": "managed",
@@ -3112,6 +3098,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/statuses-2"
+        },
+        {
+          "id": "4_Sank-PwTYC",
+          "name": "دانلوداپلیکیشنموبایلرنتامون",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicدانلوداپلیکیشنموبایلرنتامون.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/download.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicدانلوداپلیکیشنموبایلرنتامون.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/download"
         }
       ],
       "icons": [
@@ -5721,6 +5721,11 @@
           "id": "GvFDHcswoy9W",
           "name": "nav-reservations-svg-blue.svg 2",
           "filePath": "../public/plasmic/website_starter/images/navReservationsSvgBlueSvg2.svg"
+        },
+        {
+          "id": "yTujISlwC9_3",
+          "name": "loading-miaan.gif",
+          "filePath": "../public/plasmic/website_starter/images/loadingMiaanGif.gif"
         }
       ],
       "indirect": false,

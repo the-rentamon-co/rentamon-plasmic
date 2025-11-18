@@ -210,7 +210,7 @@ function PlasmicSplash__RenderFunc(props: {
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__fzVw8)}
-                displayHeight={"auto"}
+                displayHeight={"60px"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
@@ -220,11 +220,11 @@ function PlasmicSplash__RenderFunc(props: {
                     ? "50px"
                     : hasVariant(globalVariants, "screen", "mobile")
                       ? "60px"
-                      : "80px"
+                      : "60px"
                 }
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/website_starter/images/image140.gif",
+                  src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
                   fullWidth: 500,
                   fullHeight: 500,
                   aspectRatio: undefined
@@ -251,11 +251,9 @@ function PlasmicSplash__RenderFunc(props: {
                   sty.text__cww71
                 )}
               >
-                {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u067e\u0646\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc..."
-                  : hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u067e\u0646\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc..."
-                    : "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u067e\u0646\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc..."}
+                {
+                  "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u0645\u06cc\u0627\u0646"
+                }
               </div>
             ) : null}
           </div>

@@ -98,9 +98,7 @@ export type Plasmicچراجارهکوتاهمدت__OverridesType = {
   culture?: Flex__<"div">;
   strDefinition?: Flex__<"div">;
   investment?: Flex__<"div">;
-  h2?: Flex__<"h2">;
   incomeAnual?: Flex__<"div">;
-  h3?: Flex__<"h3">;
   efforts?: Flex__<"div">;
   handsOn?: Flex__<"div">;
   bot?: Flex__<"div">;
@@ -299,17 +297,18 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                         "\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0647\u0645\u0648\u0646\u0637\u0648\u0631 \u06a9\u0647 \u0627\u0632 \u0627\u0633\u0645\u0634 \u067e\u06cc\u062f\u0627\u0633\u062a\u060c \u0628\u0647 \u0645\u0639\u0646\u06cc \u0627\u062c\u0627\u0631\u0647 \u062f\u0627\u062f\u0646 \u062e\u0648\u0646\u0647 \u062f\u0631 \u0628\u0627\u0632\u0647\u200c\u0647\u0627\u06cc \u0632\u0645\u0627\u0646\u06cc \u06a9\u0648\u062a\u0627\u0647 \u0645\u062b\u0644 \u0631\u0648\u0632\u0627\u0646\u0647\u060c \u0647\u0641\u062a\u06af\u06cc \u0648 \u06cc\u0627 \u0645\u0627\u0647\u0627\u0646\u0647 \u0627\u0633\u062a. \u0628\u0631\u062e\u0644\u0627\u0641 \u0627\u062c\u0627\u0631\u0647\u200c\u06cc \u0633\u0627\u0644\u0627\u0646\u0647 \u06a9\u0647 \u0645\u0633\u062a\u0627\u062c\u0631 \u0633\u0627\u06a9\u0646 \u0647\u0645\u0648\u0646 \u0634\u0647\u0631\u0647\u060c \u0627\u0641\u0631\u0627\u062f\u06cc \u06a9\u0647 \u062e\u0648\u0646\u0647\u200c\u0647\u0627 \u0631\u0648 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0627\u062c\u0627\u0631\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0646 \u0645\u0633\u0627\u0641\u0631\u0646 \u0648 \u0645\u062f\u062a \u06a9\u0648\u062a\u0627\u0647\u06cc \u0645\u0647\u0645\u0648\u0646 \u0634\u0647\u0631 \u0634\u0645\u0627 \u0647\u0633\u062a\u0646."
                       }
                     </div>
-                    <div
+                    <h2
                       className={classNames(
                         projectcss.all,
+                        projectcss.h2,
                         projectcss.__wab_text,
-                        sty.text___8BJ5C
+                        sty.h2___8BJ5C
                       )}
                     >
                       {
                         "\u0628\u0639\u0636\u06cc \u0627\u0632 \u0645\u0632\u0627\u06cc\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u062f\u0627\u062f\u0646 \u062e\u0648\u0646\u0647 \u0628\u0647 \u0635\u0648\u0631\u062a \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a:\r"
                       }
-                    </div>
+                    </h2>
                     <div
                       className={classNames(
                         projectcss.all,
@@ -416,13 +415,11 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox___5OVfi)}
                 >
                   <h2
-                    data-plasmic-name={"h2"}
-                    data-plasmic-override={overrides.h2}
                     className={classNames(
                       projectcss.all,
                       projectcss.h2,
                       projectcss.__wab_text,
-                      sty.h2
+                      sty.h2__mlgvO
                     )}
                   >
                     {
@@ -481,13 +478,11 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
             >
               <div className={classNames(projectcss.all, sty.freeBox__rOcLc)}>
                 <h3
-                  data-plasmic-name={"h3"}
-                  data-plasmic-override={overrides.h3}
                   className={classNames(
                     projectcss.all,
                     projectcss.h3,
                     projectcss.__wab_text,
-                    sty.h3
+                    sty.h3__apoLn
                   )}
                 >
                   {
@@ -607,17 +602,18 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
               data-plasmic-override={overrides.efforts}
               className={classNames(projectcss.all, sty.efforts)}
             >
-              <div
+              <h3
                 className={classNames(
                   projectcss.all,
+                  projectcss.h3,
                   projectcss.__wab_text,
-                  sty.text___7OsLb
+                  sty.h3___7OsLb
                 )}
               >
                 {
                   "\u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648\u0642\u062a \u0645\u06cc\u200c\u062e\u0648\u0627\u062f"
                 }
-              </div>
+              </h3>
               <div
                 className={classNames(
                   projectcss.all,
@@ -783,9 +779,7 @@ const PlasmicDescendants = {
     "culture",
     "strDefinition",
     "investment",
-    "h2",
     "incomeAnual",
-    "h3",
     "efforts",
     "handsOn",
     "bot",
@@ -808,9 +802,7 @@ const PlasmicDescendants = {
     "culture",
     "strDefinition",
     "investment",
-    "h2",
     "incomeAnual",
-    "h3",
     "efforts",
     "handsOn",
     "bot",
@@ -827,8 +819,7 @@ const PlasmicDescendants = {
     "left",
     "culture",
     "strDefinition",
-    "investment",
-    "h2"
+    "investment"
   ],
   top: ["top", "right", "introTitle", "h1", "introDesc", "left"],
   right: ["right", "introTitle", "h1", "introDesc"],
@@ -838,10 +829,8 @@ const PlasmicDescendants = {
   left: ["left"],
   culture: ["culture", "strDefinition"],
   strDefinition: ["strDefinition"],
-  investment: ["investment", "h2"],
-  h2: ["h2"],
-  incomeAnual: ["incomeAnual", "h3"],
-  h3: ["h3"],
+  investment: ["investment"],
+  incomeAnual: ["incomeAnual"],
   efforts: ["efforts", "handsOn", "bot", "cta", "button"],
   handsOn: ["handsOn", "bot", "cta", "button"],
   bot: ["bot", "cta"],
@@ -868,9 +857,7 @@ type NodeDefaultElementType = {
   culture: "div";
   strDefinition: "div";
   investment: "div";
-  h2: "h2";
   incomeAnual: "div";
-  h3: "h3";
   efforts: "div";
   handsOn: "div";
   bot: "div";
@@ -956,9 +943,7 @@ export const Plasmicچراجارهکوتاهمدت = Object.assign(
     culture: makeNodeComponent("culture"),
     strDefinition: makeNodeComponent("strDefinition"),
     investment: makeNodeComponent("investment"),
-    h2: makeNodeComponent("h2"),
     incomeAnual: makeNodeComponent("incomeAnual"),
-    h3: makeNodeComponent("h3"),
     efforts: makeNodeComponent("efforts"),
     handsOn: makeNodeComponent("handsOn"),
     bot: makeNodeComponent("bot"),

@@ -159,6 +159,7 @@
   max-width: 100%;
   font-size: 22px;
   font-weight: 600;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -238,6 +239,7 @@
   padding-right: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__lqzPf {
@@ -332,6 +334,7 @@
   padding-right: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__ko0A4 {
@@ -437,6 +440,7 @@
   padding-right: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___4WcIn {
@@ -610,6 +614,7 @@
   padding-right: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___5UqG {
@@ -661,6 +666,7 @@
   font-size: 16px;
   line-height: 1.8;
   padding-top: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___7JiJy {
@@ -774,25 +780,26 @@
   min-width: 0;
   padding: 8px;
 }
-.text__dHope {
+.h2__dHope {
   text-align: right;
   font-size: 20px;
   font-weight: 600;
   padding-top: 0px;
   padding-right: 15px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
-  .text__dHope {
+  .h2__dHope {
     font-size: 17px;
   }
 }
 @media (max-width: 500px) {
-  .text__dHope {
+  .h2__dHope {
     font-size: 17px;
   }
 }
 @media (max-width: 350px) {
-  .text__dHope {
+  .h2__dHope {
     font-size: 16px;
   }
 }
@@ -843,6 +850,7 @@
   display: flex;
   flex-direction: column;
   font-size: 16px;
+  color: #444444;
 }
 @media (max-width: 500px) {
   .ul {
@@ -982,6 +990,7 @@
   padding-top: 20px;
   font-weight: 600;
   padding-bottom: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__ylbMm {
@@ -1006,6 +1015,7 @@
   font-size: 16px;
   line-height: 1.8;
   padding-top: 20px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__bTKrT {
@@ -1350,24 +1360,25 @@
   min-width: 0;
   padding: 8px 0px;
 }
-.text__yJjRl {
+.h2__yJjRl {
   text-align: right;
   font-size: 20px;
   font-weight: 600;
   padding-top: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
-  .text__yJjRl {
+  .h2__yJjRl {
     font-size: 17px;
   }
 }
 @media (max-width: 500px) {
-  .text__yJjRl {
+  .h2__yJjRl {
     font-size: 17px;
   }
 }
 @media (max-width: 350px) {
-  .text__yJjRl {
+  .h2__yJjRl {
     font-size: 16px;
   }
 }
@@ -1376,6 +1387,7 @@
   font-size: 16px;
   text-align: right;
   line-height: 1.8;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__gf1SG {
@@ -1439,7 +1451,7 @@
   padding-right: 15px;
   font-family: "Estedad";
   font-style: normal;
-  color: #203647;
+  color: #444444;
   text-transform: none;
   line-height: 1.5;
   letter-spacing: normal;
@@ -1533,7 +1545,7 @@
 .text__bewaD {
   padding-right: 0px;
   max-width: 100%;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   font-size: 15px;
   text-align: center;
@@ -1562,7 +1574,7 @@
 .text___9RiYd {
   text-align: center;
   font-size: 14px;
-  color: #8165d6;
+  color: var(--token-8nedppYkGVaH);
   font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
@@ -1645,7 +1657,7 @@
 .text__hC4Tw {
   padding-right: 0px;
   max-width: 100%;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   font-size: 15px;
   text-align: center;
@@ -1674,7 +1686,7 @@
 .text___95SH {
   text-align: center;
   font-size: 14px;
-  color: #8165d6;
+  color: var(--token-8nedppYkGVaH);
   font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
@@ -1757,7 +1769,7 @@
 .text__gye8J {
   padding-right: 0px;
   max-width: 100%;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   font-size: 15px;
   text-align: center;
@@ -1786,7 +1798,7 @@
 .text___8D3Ph {
   text-align: center;
   font-size: 14px;
-  color: #8165d6;
+  color: var(--token-8nedppYkGVaH);
   font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
@@ -1869,7 +1881,7 @@
 .text__cwHGf {
   padding-right: 0px;
   max-width: 100%;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   font-size: 15px;
   text-align: center;
@@ -1898,7 +1910,7 @@
 .text__jJwmo {
   text-align: center;
   font-size: 14px;
-  color: #8165d6;
+  color: var(--token-8nedppYkGVaH);
   font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
@@ -1981,7 +1993,7 @@
 .text__oku8W {
   padding-right: 0px;
   max-width: 100%;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   font-size: 15px;
   text-align: center;
@@ -2010,7 +2022,7 @@
 .text__zg1CV {
   text-align: center;
   font-size: 14px;
-  color: #8165d6;
+  color: var(--token-8nedppYkGVaH);
   font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
@@ -2093,7 +2105,7 @@
 .text___52Gv {
   padding-right: 0px;
   max-width: 100%;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   font-size: 15px;
   text-align: center;
@@ -2122,7 +2134,7 @@
 .text__ceF6 {
   text-align: center;
   font-size: 14px;
-  color: #8165d6;
+  color: var(--token-8nedppYkGVaH);
   font-weight: 400;
   font-family: "Estedad";
   font-style: normal;
@@ -2175,24 +2187,25 @@
   min-width: 0;
   padding: 8px;
 }
-.text__pdXwo {
+.h2__pdXwo {
   text-align: right;
   font-size: 20px;
   font-weight: 600;
   padding-top: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
-  .text__pdXwo {
+  .h2__pdXwo {
     font-size: 17px;
   }
 }
 @media (max-width: 500px) {
-  .text__pdXwo {
+  .h2__pdXwo {
     font-size: 17px;
   }
 }
 @media (max-width: 350px) {
-  .text__pdXwo {
+  .h2__pdXwo {
     font-size: 16px;
   }
 }
@@ -2256,6 +2269,7 @@
   font-size: 16px;
   line-height: 2;
   padding-bottom: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__lIzrz {
@@ -2315,6 +2329,7 @@
   font-size: 16px;
   line-height: 2;
   padding-bottom: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___3VFDa {
@@ -2459,6 +2474,7 @@
   padding-bottom: 0px;
   padding-top: 16px;
   padding-right: 20px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__ickip {
@@ -2747,6 +2763,7 @@
   line-height: 2;
   padding-bottom: 0px;
   font-weight: 500;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___4Vz9V {

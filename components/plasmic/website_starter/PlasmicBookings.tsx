@@ -586,7 +586,7 @@ function PlasmicBookings__RenderFunc(props: {
         path: "updateManualReserve2.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "guestReferrer2.value",

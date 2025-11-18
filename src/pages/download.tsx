@@ -4,23 +4,23 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { Plasmicدانلوداپلیکیشن } from "../../components/plasmic/website_starter/Plasmic\u062F\u0627\u0646\u0644\u0648\u062F\u0627\u067E\u0644\u06CC\u06A9\u06CC\u0634\u0646";
+import { Plasmicدانلوداپلیکیشنموبایلرنتامون } from "../../components/plasmic/website_starter/Plasmic\u062F\u0627\u0646\u0644\u0648\u062F\u0627\u067E\u0644\u06CC\u06A9\u06CC\u0634\u0646\u0645\u0648\u0628\u0627\u06CC\u0644\u0631\u0646\u062A\u0627\u0645\u0648\u0646";
 import { useRouter } from "next/router";
 
-function دانلوداپلیکیشن() {
-  // Use Plasmicدانلوداپلیکیشن to render this component as it was
+function دانلوداپلیکیشنموبایلرنتامون() {
+  // Use Plasmicدانلوداپلیکیشنموبایلرنتامون to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into Plasmicدانلوداپلیکیشن are:
+  // Props you can pass into Plasmicدانلوداپلیکیشنموبایلرنتامون are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, Plasmicدانلوداپلیکیشن is wrapped by your project's global
+  // By default, Plasmicدانلوداپلیکیشنموبایلرنتامون is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -32,10 +32,10 @@ function دانلوداپلیکیشن() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <Plasmicدانلوداپلیکیشن />
+        <Plasmicدانلوداپلیکیشنموبایلرنتامون />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default دانلوداپلیکیشن;
+export default دانلوداپلیکیشنموبایلرنتامون;

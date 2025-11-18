@@ -141,6 +141,7 @@
   font-size: 22px;
   font-weight: 600;
   padding-right: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__ilLr {
@@ -177,9 +178,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 8px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -294,6 +296,7 @@
   max-width: 100%;
   font-size: 18px;
   font-weight: 600;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -323,6 +326,7 @@
   line-height: 1.8;
   padding-top: 14px;
   padding-bottom: 0px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -352,10 +356,11 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
   padding-bottom: 0px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -478,6 +483,7 @@
   font-size: 17px;
   font-weight: 600;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -547,6 +553,7 @@
   font-size: 17px;
   font-weight: 600;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -630,6 +637,7 @@
   font-size: 17px;
   font-weight: 600;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -706,6 +714,7 @@
   font-size: 17px;
   font-weight: 600;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -780,6 +789,7 @@
   font-size: 17px;
   font-weight: 600;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -964,6 +974,7 @@
   font-size: 17px;
   font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1042,6 +1053,7 @@
   font-size: 17px;
   font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1131,6 +1143,7 @@
   font-size: 17px;
   font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1207,6 +1220,7 @@
   font-size: 17px;
   font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1289,6 +1303,7 @@
   font-size: 17px;
   font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1363,6 +1378,7 @@
   font-size: 17px;
   font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1484,6 +1500,7 @@
   max-width: 100%;
   font-size: 18px;
   font-weight: 600;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1513,6 +1530,7 @@
   line-height: 1.8;
   padding-top: 4px;
   padding-bottom: 0px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1541,10 +1559,11 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
   padding-bottom: 0px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1574,6 +1593,8 @@
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
+  color: #444444;
+  font-size: 16px;
 }
 @media (max-width: 500px) {
   .ul {
@@ -1738,6 +1759,7 @@
   font-size: 18px;
   font-weight: 600;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1795,6 +1817,7 @@
   font-size: 18px;
   font-weight: 600;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1886,9 +1909,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -1943,9 +1967,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2071,6 +2096,7 @@
 @media (max-width: 1200px) {
   .text__utxly {
     font-size: 18px;
+    color: #444444;
   }
 }
 @media (max-width: 500px) {
@@ -2117,6 +2143,7 @@
     padding-right: 0px;
     padding-left: 0px;
     font-size: 15px;
+    color: #444444;
   }
 }
 .text___02QL1 {
@@ -2136,6 +2163,7 @@
     padding-left: 0px;
     line-height: 1.8;
     font-size: 16px;
+    color: #444444;
   }
 }
 @media (max-width: 500px) {
@@ -2304,6 +2332,7 @@
   font-size: 18px;
   font-weight: 600;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2361,6 +2390,7 @@
   font-size: 18px;
   font-weight: 600;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2453,9 +2483,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2510,9 +2541,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2548,11 +2580,12 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
   padding-bottom: 24px;
   text-align: center;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2652,6 +2685,7 @@
   font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__dYUtH {
@@ -2668,9 +2702,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -2737,8 +2772,9 @@
 }
 .text__f3Lou {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__f3Lou {
@@ -2886,6 +2922,7 @@
   text-align: right;
   font-size: 18px;
   font-weight: 600;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text__neWHx {
@@ -2899,10 +2936,11 @@
 }
 .text___3POvo {
   text-align: right;
-  font-size: 17px;
+  font-size: 16px;
   width: 100%;
   line-height: 1.8;
   padding-top: 10px;
+  color: #444444;
 }
 @media (max-width: 1200px) {
   .text___3POvo {
@@ -3169,6 +3207,11 @@
     font-size: 18px;
   }
 }
+@media (max-width: 500px) {
+  .text__sEu9Y {
+    color: #444444;
+  }
+}
 @media (max-width: 350px) {
   .text__sEu9Y {
     font-size: 17px;
@@ -3179,9 +3222,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -3272,7 +3316,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
   flex-direction: column;
   justify-content: flex-start;
@@ -3335,7 +3379,7 @@
   }
 }
 .text__vzhiP {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   padding-bottom: 12px;
   padding-top: 12px;
@@ -3346,6 +3390,7 @@
     line-height: 1.8;
     padding-bottom: 20px;
     font-size: 16px;
+    color: #444444;
   }
 }
 @media (max-width: 350px) {
@@ -3379,30 +3424,38 @@
     max-width: 100%;
     padding-right: 0px;
     padding-left: 0px;
+    margin: 0px;
   }
 }
 .text__vYRdE {
   position: relative;
-  width: 100%;
+  width: 300px;
   height: auto;
-  max-width: 80%;
+  max-width: 100%;
   text-align: center;
-  background: #8165d6;
+  background: linear-gradient(
+    194.38598434664198deg,
+    #0000f7 0%,
+    #0000f7 55%,
+    #4c3888 100%
+  );
   color: #fcfcfc;
-  padding-bottom: 18px;
   font-size: 17px;
-  padding-top: 18px;
   font-weight: 600;
   cursor: pointer;
-  min-width: 0;
-  border-radius: 50px;
+  user-select: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 100px;
+  padding: 18px 8px;
 }
 @media (max-width: 1200px) {
   .text__vYRdE {
     font-weight: 600;
-    font-size: 20px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    font-size: 17px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 }
 @media (max-width: 500px) {
@@ -3410,6 +3463,9 @@
     font-weight: 600;
     max-width: 96%;
     font-size: 18px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin: 0px;
   }
 }
 @media (max-width: 350px) {

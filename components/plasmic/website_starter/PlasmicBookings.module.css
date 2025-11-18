@@ -1649,7 +1649,7 @@
 .text__m6Csn {
   padding-top: 0px;
   font-family: "Estedad";
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   font-style: normal;
   color: var(--token-8R7jjC_-F9FF);
@@ -1661,6 +1661,7 @@
   user-select: text;
   text-decoration-line: none !important;
   text-overflow: clip !important;
+  padding-bottom: 0px;
 }
 .svg__aquUr {
   position: relative;
@@ -1669,14 +1670,17 @@
   height: 1em;
 }
 .cancelledBtn4:global(.__wab_instance) {
-  max-width: 80%;
   object-fit: cover;
   width: 100%;
   background: none;
-  height: 45px;
+  height: 100%;
   color: #203647;
+  font-size: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   min-width: 0;
-  border-radius: 30px;
+  min-height: 0;
+  border-radius: 100px;
   border: 3px solid #0000ff;
 }
 .text__u7AZb {
@@ -1686,7 +1690,7 @@
   padding-right: 0px;
   font-size: 15px;
   text-align: center;
-  color: #0000ff;
+  color: #0000f7;
   font-weight: 600;
   position: relative;
   font-family: "Estedad";

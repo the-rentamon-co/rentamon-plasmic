@@ -1417,6 +1417,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                             return "https://media.rentamon.com/icon%2Fmihmansho-wide.jpg";
                                           case 8:
                                             return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
+                                          case 17:
+                                            return "https://fs.snapptrip.com/js/assets/apps/core/website/website/web/_next/static/media/logo.1a28b22f.png";
                                           default:
                                             return "";
                                         }
@@ -1458,44 +1460,93 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                 sty.text__ky5Wm
                               )}
                             >
-                              <React.Fragment>
-                                {(() => {
-                                  try {
-                                    return (() => {
-                                      switch (
-                                        $state.apiRequest2.data[currentIndexs]
-                                          .website
+                              {hasVariant(
+                                globalVariants,
+                                "screen",
+                                "mobile"
+                              ) ? (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        switch (
+                                          $state.apiRequest2.data[currentIndexs]
+                                            .website
+                                        ) {
+                                          case 2:
+                                            return "جاباما";
+                                          case 3:
+                                            return "جاجیگا";
+                                          case 4:
+                                            return "شب";
+                                          case 5:
+                                            return "میزبون";
+                                          case 6:
+                                            return "اتاقک";
+                                          case 7:
+                                            return "میهمان‌شو";
+                                          case 8:
+                                            return "هومسا";
+                                          case 17:
+                                            return "اسنپ‌تریپ";
+                                          default:
+                                            return "";
+                                        }
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
                                       ) {
-                                        case 2:
-                                          return "جاباما";
-                                        case 3:
-                                          return "جاجیگا";
-                                        case 4:
-                                          return "شب";
-                                        case 5:
-                                          return "میزبون";
-                                        case 6:
-                                          return "اتاقک";
-                                        case 7:
-                                          return "مهمانشو";
-                                        case 8:
-                                          return "هومسا";
-                                        default:
-                                          return "";
+                                        return "\u062c\u0627\u062c\u06cc\u06af\u0627";
                                       }
-                                    })();
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return "\u062c\u0627\u062c\u06cc\u06af\u0627";
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()}
-                              </React.Fragment>
+                                  })()}
+                                </React.Fragment>
+                              ) : (
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return (() => {
+                                        switch (
+                                          $state.apiRequest2.data[currentIndexs]
+                                            .website
+                                        ) {
+                                          case 2:
+                                            return "جاباما";
+                                          case 3:
+                                            return "جاجیگا";
+                                          case 4:
+                                            return "شب";
+                                          case 5:
+                                            return "میزبون";
+                                          case 6:
+                                            return "اتاقک";
+                                          case 7:
+                                            return "مهمانشو";
+                                          case 8:
+                                            return "هومسا";
+                                          case 17:
+                                            return "اسنپ";
+                                          default:
+                                            return "";
+                                        }
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "\u062c\u0627\u062c\u06cc\u06af\u0627";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              )}
                             </div>
                           </div>
                         </div>

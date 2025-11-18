@@ -108,6 +108,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  background: none;
   min-width: 0;
   padding: 20px 8px 8px;
 }
@@ -175,6 +176,7 @@
   font-weight: 600;
   user-select: none;
   color: #444444;
+  line-height: 2;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -184,8 +186,9 @@
 }
 @media (max-width: 500px) {
   .h1 {
-    line-height: 1.9;
+    line-height: 2;
     font-size: 17px;
+    letter-spacing: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -239,15 +242,29 @@
     line-height: 1.8;
   }
 }
+.freeBox__xc9QE {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background: #ebfaff;
+  min-width: 0;
+  border-radius: 50px;
+  padding: 8px;
+}
 .introCalendar4 {
   display: flex;
   flex-direction: row;
-  position: relative;
   width: 100%;
   height: auto;
   max-width: 80%;
   justify-content: space-between;
   align-items: center;
+  background: none;
   min-width: 0;
   padding: 8px;
 }
@@ -263,6 +280,7 @@
     max-width: 100%;
     row-gap: 30px;
     column-gap: 0px;
+    padding: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -303,7 +321,7 @@
   .introCalendarRight {
     padding-right: 0px;
     padding-left: 0px;
-    padding-top: 16px;
+    padding-top: 0px;
   }
 }
 .introCalendarRight3 {
@@ -398,7 +416,7 @@
 }
 @media (max-width: 500px) {
   .introCalendarLeft {
-    max-width: 80%;
+    max-width: 100%;
     padding-top: 0px;
     padding-bottom: 0px;
     max-height: 70%;
@@ -407,9 +425,9 @@
 }
 @media (max-width: 350px) {
   .introCalendarLeft {
-    max-width: 90%;
     padding-right: 0px;
     padding-left: 0px;
+    max-height: none;
   }
 }
 .embedHtml___2YmQ:global(.__wab_instance) {
@@ -444,10 +462,8 @@
 }
 @media (max-width: 350px) {
   .introCalendarRight4 {
-    padding-right: 0px;
-    padding-left: 0px;
     max-width: 100%;
-    padding-top: 20px;
+    padding: 20px 0px 23px;
   }
 }
 .freeBox__uOyUy {
@@ -543,7 +559,7 @@
     )
     0% 0% / 100% 100% repeat;
   min-width: 0;
-  padding: 40px 8px 32px;
+  padding: 20px 8px 32px;
 }
 @media (max-width: 1200px) {
   .introAutoSync {
@@ -601,10 +617,12 @@
   padding-top: 0px;
   user-select: none;
   color: #444444;
+  line-height: 2;
 }
 @media (max-width: 500px) {
   .h2 {
     font-size: 16px;
+    letter-spacing: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -1520,10 +1538,8 @@
 }
 @media (max-width: 500px) {
   .image {
-    padding-bottom: 0px;
-    padding-right: 8px;
-    padding-left: 8px;
     max-width: 100%;
+    padding: 27px 8px 0px;
   }
 }
 @media (max-width: 350px) {
@@ -1554,11 +1570,12 @@
 @media (max-width: 500px) {
   .h3__aLhzu {
     font-size: 16px;
+    line-height: 2;
   }
 }
 @media (max-width: 350px) {
   .h3__aLhzu {
-    line-height: 1.8;
+    line-height: 2;
     font-size: 16px;
   }
 }
@@ -1723,6 +1740,11 @@
   user-select: none;
   color: #444444;
 }
+@media (max-width: 500px) {
+  .text__zdLdH {
+    line-height: 2;
+  }
+}
 @media (max-width: 350px) {
   .text__zdLdH {
     text-align: center;
@@ -1771,6 +1793,11 @@
 @media (max-width: 1200px) {
   .freeBox___8VXaH {
     max-width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox___8VXaH {
+    padding-top: 0px;
   }
 }
 .embedHtml__ixk23:global(.__wab_instance) {
@@ -2153,7 +2180,7 @@
     font-weight: 600;
     color: #444444;
     text-align: right;
-    line-height: 1.8;
+    line-height: 2;
     padding-left: 8px;
     min-width: 0;
   }
@@ -2162,6 +2189,7 @@
   .h3___1KfXk {
     padding-right: 20px;
     font-size: 16px;
+    line-height: 2;
   }
 }
 .freeBox___3QJyk {
