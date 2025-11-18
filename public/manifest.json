@@ -30,6 +30,7 @@
     },
     {
       "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2Fmiaan-icon-mask-512.png?versionId=",
+      
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
