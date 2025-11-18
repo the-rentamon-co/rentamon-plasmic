@@ -3,8 +3,8 @@
   "scope": "/",
   "name": "میان",
   "short_name": "میان",
-  "description": "مدیریت انلاین اقامتگاه",
-  "display": "fullscreen",
+  "description": "مدیریت آنلاین اقامتگاه",
+  "display": "standalone", 
   "display_override": ["window-controls-overlay"],
   "start_url": "https://rentamon.com/splash?src=web",
   "theme_color": "#fcfcfc",
@@ -12,8 +12,7 @@
   "orientation": "portrait-primary",
   "dir": "rtl",
   "lang": "fa",
-  "categories": ["گردشگری", "خدمات"],
-  "iarc_rating_id": "your_iarc_rating_id_here",
+  "categories": ["travel", "productivity"],
   "prefer_related_applications": false,
   "related_applications": [],
   "scope_extensions": [
@@ -27,6 +26,12 @@
       "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2Fmiaan-icon.png?versionId=",
       "sizes": "512x512",
       "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2Fmiaan-icon-192.png", 
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any"
     }
   ],
@@ -34,14 +39,10 @@
     {
       "src": "https://rentamon.com/plasmic/website_starter/images/handsOnAppPng2.png",
       "sizes": "1920x1080",
-      "type": "image/svg+xml",
-      "label": "نمایی از برنامه میان"
+      "type": "image/png",
+      "label": "نمایی از برنامه میان",
+      "form_factor": "wide"
     }
-  ],
-  "features": [
-    "مدیریت اقامتگاه",
-    "سریع",
-    "کاربرپسند"
   ],
   "widgets": [
     {
@@ -52,13 +53,6 @@
         {
           "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fmiaan-logo-blue-small.png",
           "sizes": "48x48"
-        }
-      ],
-      "screenshots": [
-        {
-          "src": "#",
-          "sizes": "500x500",
-          "label": "تصویر ویجت"
         }
       ]
     }
