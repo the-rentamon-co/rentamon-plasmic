@@ -2084,10 +2084,10 @@
   position: relative;
   width: 100%;
   height: auto;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 14px;
 }
 @media (max-width: 350px) {
   .mid11 {
@@ -2107,10 +2107,9 @@
   position: relative;
   align-items: flex-end;
   justify-content: flex-start;
-  width: 100%;
+  width: auto;
   height: auto;
   max-width: 100%;
-  min-width: 0;
   padding: 8px 0px 8px 8px;
 }
 .text__mB1Aa {
@@ -2147,7 +2146,7 @@
   width: 20%;
   height: auto;
   max-width: 100%;
-  padding: 8px 0px 8px 8px;
+  padding: 8px 0px;
 }
 @media (max-width: 350px) {
   .freeBox__zWzC2 {
