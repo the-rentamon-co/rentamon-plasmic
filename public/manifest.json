@@ -1,14 +1,14 @@
 {
   "id": "/",
   "scope": "/",
-  "name": "رنتامون",
-  "short_name": "رنتامون",
+  "name": "میان",
+  "short_name": "میان",
   "description": "مدیریت انلاین اقامتگاه",
   "display": "fullscreen",
   "display_override": ["window-controls-overlay"],
   "start_url": "https://rentamon.com/splash?src=web",
   "theme_color": "#fcfcfc",
-  "background_color": "#8165D6",
+  "background_color": "#0000f7",
   "orientation": "portrait-primary",
   "dir": "rtl",
   "lang": "fa",
@@ -24,7 +24,7 @@
   },
   "icons": [
     {
-      "src": "https://media.rentamon.com/icon%2Fapp-icon-1080.png",
+      "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fmiaan-logo-blue-small.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
@@ -35,7 +35,7 @@
       "src": "https://rentamon.com/plasmic/website_starter/images/handsOnAppPng2.png",
       "sizes": "1920x1080",
       "type": "image/svg+xml",
-      "label": "نمایی از برنامه رنتامون"
+      "label": "نمایی از برنامه میان"
     }
   ],
   "features": [
@@ -45,18 +45,18 @@
   ],
   "widgets": [
     {
-      "name": "ویجت رنتامون",
+      "name": "ویجت میان",
       "tag": "liomWidget",
-      "description": "رنتامون، مدیریت آنلاین اقامتگاه",
+      "description": "میان، مدیریت آنلاین اقامتگاه",
       "icons": [
         {
-          "src": "https://media.rentamon.com/icon%2Fapp-icon-1080.png",
+          "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fmiaan-logo-blue-small.png",
           "sizes": "48x48"
         }
       ],
       "screenshots": [
         {
-          "src": "https://media.rentamon.com/icon%2Fsplashscreen.svg",
+          "src": "#",
           "sizes": "500x500",
           "label": "تصویر ویجت"
         }
