@@ -5726,6 +5726,16 @@
           "id": "yTujISlwC9_3",
           "name": "loading-miaan.gif",
           "filePath": "../public/plasmic/website_starter/images/loadingMiaanGif.gif"
+        },
+        {
+          "id": "IKEl_AJ2I0m8",
+          "name": "miaan-loading.gif",
+          "filePath": "../public/plasmic/website_starter/images/miaanLoadingGif.gif"
+        },
+        {
+          "id": "rFQQfJ4w9lsv",
+          "name": "loading-miaan.gif 2",
+          "filePath": "../public/plasmic/website_starter/images/loadingMiaanGif2.gif"
         }
       ],
       "indirect": false,

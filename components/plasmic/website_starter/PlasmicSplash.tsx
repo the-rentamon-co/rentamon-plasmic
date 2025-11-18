@@ -194,43 +194,30 @@ function PlasmicSplash__RenderFunc(props: {
           )}
         >
           <div className={classNames(projectcss.all, sty.freeBox__v4W4T)}>
-            {(() => {
-              try {
-                return !$state.isErrorHappen;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__fzVw8)}
-                displayHeight={"60px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "smallMobile")
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__ytmI)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "44px"
+                  : hasVariant(globalVariants, "screen", "mobile")
                     ? "50px"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                      ? "60px"
-                      : "60px"
-                }
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/loadingPurpleGif.gif",
-                  fullWidth: 500,
-                  fullHeight: 500,
-                  aspectRatio: undefined
-                }}
-              />
-            ) : null}
+                    : "60px"
+              }
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/loadingMiaanGif2.gif",
+                fullWidth: 200,
+                fullHeight: 200,
+                aspectRatio: undefined
+              }}
+            />
+
             {(() => {
               try {
                 return !$state.isErrorHappen;
