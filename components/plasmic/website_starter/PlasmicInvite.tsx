@@ -307,43 +307,43 @@ function PlasmicInvite__RenderFunc(props: {
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "60px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "70px"
-                      : "100px"
+                        ? "70px"
+                        : "100px"
                   }
                   displayMaxHeight={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "60px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "70px"
-                      : "100px"
+                        ? "70px"
+                        : "100px"
                   }
                   displayMaxWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "60px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "70px"
-                      : "100px"
+                        ? "70px"
+                        : "100px"
                   }
                   displayMinHeight={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "60px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "70px"
-                      : "100px"
+                        ? "70px"
+                        : "100px"
                   }
                   displayMinWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "60px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "70px"
-                      : "100px"
+                        ? "70px"
+                        : "100px"
                   }
                   displayWidth={
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? "60px"
                       : hasVariant(globalVariants, "screen", "mobile")
-                      ? "70px"
-                      : "100px"
+                        ? "70px"
+                        : "100px"
                   }
                   loading={"lazy"}
                   src={(() => {
@@ -467,8 +467,8 @@ function PlasmicInvite__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "26px"
                         : hasVariant(globalVariants, "screen", "mobile")
-                        ? "30px"
-                        : "37px"
+                          ? "30px"
+                          : "37px"
                     }
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -498,11 +498,7 @@ function PlasmicInvite__RenderFunc(props: {
                   <React.Fragment>
                     {(() => {
                       try {
-                        return `${
-                          $state.apiRequest.data[0].first_name +
-                          " " +
-                          $state.apiRequest.data[0].last_name
-                        } به رنتامون دعوتت کرده.`;
+                        return `${$state.apiRequest.data[0].first_name + " " + $state.apiRequest.data[0].last_name} به رنتامون دعوتت کرده.`;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -595,8 +591,18 @@ function PlasmicInvite__RenderFunc(props: {
                             const actionArgs = {
                               customFunction: async () => {
                                 return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const ssoBase = isMiaan
+                                    ? "https://sso.miaan.ir"
+                                    : "https://sso.rentamon.com";
+                                  const callbackBase = isMiaan
+                                    ? "https://miaan.ir"
+                                    : "https://rentamon.com";
                                   return window.open(
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=referral"
+                                    `${ssoBase}/web/index.html?callback=${callbackBase}/splash?src=referral`
                                   );
                                 })();
                               }
@@ -1479,7 +1485,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicInvite__VariantsArgs;
     args?: PlasmicInvite__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicInvite__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicInvite__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicInvite__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

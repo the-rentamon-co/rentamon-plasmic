@@ -2763,8 +2763,13 @@ function PlasmicTransactions__RenderFunc(props: {
                               return (() => {
                                 let result = "";
                                 const bookingId = $state.modalData.booking_id;
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const baseUrl = isMiaan
+                                  ? "https://miaan.ir"
+                                  : "https://rentamon.com";
                                 return window.open(
-                                  `https://rentamon.com/bookings/${bookingId}`,
+                                  `${baseUrl}/bookings/${bookingId}`,
                                   "_blank"
                                 );
                               })();

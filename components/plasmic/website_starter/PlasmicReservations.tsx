@@ -2331,60 +2331,6 @@ function PlasmicReservations__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["updateStateVariable"] = false
-                        ? (() => {
-                            const actionArgs = {
-                              operation: 0,
-                              value: (() => {
-                                $state.bookingId = currentItem.reserve_id;
-                                return ($state.modalData = [
-                                  {
-                                    GuestName: currentItem.guest_name,
-                                    platfromName: currentItem.website,
-                                    enterDate: currentItem.check_in,
-                                    laveDate: currentItem.check_out,
-                                    propertyName: currentItem.property_name,
-                                    status: currentItem.status,
-                                    phone_number: currentItem.phone_number,
-                                    amount: currentItem.amount,
-                                    night: currentItem.nights,
-                                    guests_count: currentItem.guests_count,
-                                    reserve_id: currentItem.booking_id,
-                                    id: currentItem.id,
-                                    created_at: currentItem.created_at,
-                                    is_sattled: currentItem.is_settled,
-                                    booking_id: currentItem.booking_id,
-                                    alternative_booking_id:
-                                      currentItem.alternative_booking_id
-                                  }
-                                ]);
-                              })()
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateStateVariable"] != null &&
-                        typeof $steps["updateStateVariable"] === "object" &&
-                        typeof $steps["updateStateVariable"].then === "function"
-                      ) {
-                        $steps["updateStateVariable"] =
-                          await $steps["updateStateVariable"];
-                      }
-
                       $steps["updateModalOpen3"] = true
                         ? (() => {
                             const actionArgs = {
@@ -2430,8 +2376,15 @@ function PlasmicReservations__RenderFunc(props: {
                                 return (() => {
                                   let result = "";
                                   const bookingId = currentItem.booking_id;
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const baseUrl = isMiaan
+                                    ? "https://miaan.ir"
+                                    : "https://rentamon.com";
                                   return window.open(
-                                    `https://rentamon.com/bookings/${bookingId}`,
+                                    `${baseUrl}/bookings/${bookingId}`,
                                     "_blank"
                                   );
                                 })();

@@ -929,14 +929,18 @@ function PlasmicBookings__RenderFunc(props: {
                           customFunction: async () => {
                             return (() => {
                               console.log(document.referrer);
+                              const isMiaan =
+                                window.location.hostname.includes("miaan.ir");
+                              const baseUrl = isMiaan
+                                ? "https://miaan.ir"
+                                : "https://rentamon.com";
                               if (
-                                document.referrer ===
-                                "https://rentamon.com/reservations/"
+                                document.referrer === `${baseUrl}/reservations/`
                               ) {
                                 window.close();
                               }
                               return window.location.replace(
-                                "https://rentamon.com/panel/"
+                                `${baseUrl}/panel/`
                               );
                             })();
                           }
