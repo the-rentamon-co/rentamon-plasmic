@@ -402,7 +402,7 @@
   align-items: center;
   column-gap: 8px;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 8px 8px 0px;
 }
 @media (max-width: 500px) {
   .mid11 {
@@ -433,7 +433,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px 0px 8px 8px;
+  padding: 8px 0px;
 }
 @media (max-width: 500px) {
   .freeBox__qfBlY {
@@ -525,41 +525,6 @@
   .img__tSJgz {
     animation: none;
   }
-}
-.freeBox__ccSrh {
-  flex-direction: row;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 2px;
-  cursor: pointer;
-  margin-bottom: 2px;
-  column-gap: 10px;
-  min-width: 0;
-  display: none;
-  padding: 14px 8px 8px;
-}
-@media (max-width: 500px) {
-  .freeBox__ccSrh {
-    padding-bottom: 76px;
-  }
-}
-.svg__s4Q44 {
-  object-fit: cover;
-  max-width: 100%;
-  color: #8165d6;
-  height: 30px;
-}
-.text__hNZ {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  font-size: 13px;
-  font-weight: 500;
 }
 .favicon:global(.__wab_instance) {
   max-width: 100%;

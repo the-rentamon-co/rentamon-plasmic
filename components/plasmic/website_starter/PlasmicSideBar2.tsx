@@ -107,7 +107,11 @@ export type PlasmicSideBar2__OverridesType = {
   reservations?: Flex__<"div">;
   channelManager?: Flex__<"div">;
   calendar?: Flex__<"div">;
-  mid11?: Flex__<"div">;
+  logout3?: Flex__<"div">;
+  right11?: Flex__<"div">;
+  mid12?: Flex__<"div">;
+  logout4?: Flex__<"div">;
+  mid13?: Flex__<"div">;
   favicon?: Flex__<typeof Embed>;
   apiRequest?: Flex__<typeof ApiRequest>;
   checkUserPendingReserve?: Flex__<typeof ApiRequest>;
@@ -1496,45 +1500,64 @@ function PlasmicSideBar2__RenderFunc(props: {
           </div>
         </div>
         <div
-          data-plasmic-name={"mid11"}
-          data-plasmic-override={overrides.mid11}
-          className={classNames(projectcss.all, sty.mid11)}
+          data-plasmic-name={"logout3"}
+          data-plasmic-override={overrides.logout3}
+          className={classNames(projectcss.all, sty.logout3, ``)}
         >
-          <div className={classNames(projectcss.all, sty.freeBox___4Fq9F)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__v6HeV
-              )}
-            >
-              {
-                "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-              }
-            </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__qdtN)}>
+          <div
+            data-plasmic-name={"right11"}
+            data-plasmic-override={overrides.right11}
+            className={classNames(projectcss.all, sty.right11)}
+          >
             <PlasmicImg__
               alt={""}
-              className={classNames(sty.img__c4Fjz)}
-              displayHeight={"auto"}
+              className={classNames(sty.img__biOVl)}
+              displayHeight={"26px"}
               displayMaxHeight={"none"}
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
               displayMinWidth={"0"}
-              displayWidth={"auto"}
+              displayWidth={"26px"}
               loading={"lazy"}
               src={
                 "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fsign-blue.png?versionId="
               }
-              width={"40"}
+              width={``}
             />
-
+          </div>
+          <div
+            data-plasmic-name={"mid12"}
+            data-plasmic-override={overrides.mid12}
+            className={classNames(projectcss.all, sty.mid12)}
+          >
             <div
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__seY4R
+                sty.text__j6BhL
+              )}
+            >
+              {
+                "\u0645\u06cc\u0627\u0646\u060c \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+              }
+            </div>
+          </div>
+        </div>
+        <div
+          data-plasmic-name={"logout4"}
+          data-plasmic-override={overrides.logout4}
+          className={classNames(projectcss.all, sty.logout4, ``)}
+        >
+          <div
+            data-plasmic-name={"mid13"}
+            data-plasmic-override={overrides.mid13}
+            className={classNames(projectcss.all, sty.mid13)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__qKOd
               )}
             >
               {"miaan.ir"}
@@ -1637,7 +1660,11 @@ const PlasmicDescendants = {
     "reservations",
     "channelManager",
     "calendar",
-    "mid11",
+    "logout3",
+    "right11",
+    "mid12",
+    "logout4",
+    "mid13",
     "favicon",
     "apiRequest",
     "checkUserPendingReserve"
@@ -1647,7 +1674,11 @@ const PlasmicDescendants = {
   reservations: ["reservations"],
   channelManager: ["channelManager"],
   calendar: ["calendar"],
-  mid11: ["mid11"],
+  logout3: ["logout3", "right11", "mid12"],
+  right11: ["right11"],
+  mid12: ["mid12"],
+  logout4: ["logout4", "mid13"],
+  mid13: ["mid13"],
   favicon: ["favicon"],
   apiRequest: ["apiRequest"],
   checkUserPendingReserve: ["checkUserPendingReserve"]
@@ -1662,7 +1693,11 @@ type NodeDefaultElementType = {
   reservations: "div";
   channelManager: "div";
   calendar: "div";
-  mid11: "div";
+  logout3: "div";
+  right11: "div";
+  mid12: "div";
+  logout4: "div";
+  mid13: "div";
   favicon: typeof Embed;
   apiRequest: typeof ApiRequest;
   checkUserPendingReserve: typeof ApiRequest;
@@ -1735,7 +1770,11 @@ export const PlasmicSideBar2 = Object.assign(
     reservations: makeNodeComponent("reservations"),
     channelManager: makeNodeComponent("channelManager"),
     calendar: makeNodeComponent("calendar"),
-    mid11: makeNodeComponent("mid11"),
+    logout3: makeNodeComponent("logout3"),
+    right11: makeNodeComponent("right11"),
+    mid12: makeNodeComponent("mid12"),
+    logout4: makeNodeComponent("logout4"),
+    mid13: makeNodeComponent("mid13"),
     favicon: makeNodeComponent("favicon"),
     apiRequest: makeNodeComponent("apiRequest"),
     checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),

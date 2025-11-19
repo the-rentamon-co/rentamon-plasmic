@@ -149,6 +149,9 @@ export type Plasmicتالار__OverridesType = {
   right7?: Flex__<"div">;
   mid7?: Flex__<"div">;
   left6?: Flex__<"div">;
+  logout3?: Flex__<"div">;
+  right11?: Flex__<"div">;
+  mid12?: Flex__<"div">;
   logout2?: Flex__<"div">;
   mid11?: Flex__<"div">;
   getUserWebsite?: Flex__<typeof ApiRequest>;
@@ -2137,6 +2140,64 @@ function Plasmicتالار__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
                 <div
+                  data-plasmic-name={"logout3"}
+                  data-plasmic-override={overrides.logout3}
+                  className={classNames(projectcss.all, sty.logout3, ``)}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"right11"}
+                      data-plasmic-override={overrides.right11}
+                      className={classNames(projectcss.all, sty.right11)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__uHeb5)}
+                        displayHeight={"26px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"26px"}
+                        loading={"lazy"}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fsign-blue.png?versionId="
+                        }
+                        width={"50"}
+                      />
+                    </div>
+                  ) : null}
+                  <div
+                    data-plasmic-name={"mid12"}
+                    data-plasmic-override={overrides.mid12}
+                    className={classNames(projectcss.all, sty.mid12)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__e9Rvx)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__bfjHv
+                        )}
+                      >
+                        {
+                          "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "mobile") ? true : false
+              ) ? (
+                <div
                   data-plasmic-name={"logout2"}
                   data-plasmic-override={overrides.logout2}
                   className={classNames(projectcss.all, sty.logout2)}
@@ -2147,42 +2208,8 @@ function Plasmicتالار__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.mid11)}
                   >
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___3S8Ih
-                      )}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__mB1Aa
-                        )}
-                      >
-                        {
-                          "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                        }
-                      </div>
-                    </div>
-                    <div
                       className={classNames(projectcss.all, sty.freeBox__zWzC2)}
                     >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img___4RbLd)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={
-                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fsign-blue.png?versionId="
-                        }
-                        width={"50"}
-                      />
-
                       {(
                         hasVariant(globalVariants, "screen", "mobile")
                           ? (() => {
@@ -2924,6 +2951,9 @@ const PlasmicDescendants = {
     "right7",
     "mid7",
     "left6",
+    "logout3",
+    "right11",
+    "mid12",
     "logout2",
     "mid11",
     "getUserWebsite",
@@ -2990,6 +3020,9 @@ const PlasmicDescendants = {
     "right7",
     "mid7",
     "left6",
+    "logout3",
+    "right11",
+    "mid12",
     "logout2",
     "mid11",
     "getUserWebsite",
@@ -3057,6 +3090,9 @@ const PlasmicDescendants = {
     "right7",
     "mid7",
     "left6",
+    "logout3",
+    "right11",
+    "mid12",
     "logout2",
     "mid11"
   ],
@@ -3097,6 +3133,9 @@ const PlasmicDescendants = {
   right7: ["right7"],
   mid7: ["mid7"],
   left6: ["left6"],
+  logout3: ["logout3", "right11", "mid12"],
+  right11: ["right11"],
+  mid12: ["mid12"],
   logout2: ["logout2", "mid11"],
   mid11: ["mid11"],
   getUserWebsite: ["getUserWebsite"],
@@ -3167,6 +3206,9 @@ type NodeDefaultElementType = {
   right7: "div";
   mid7: "div";
   left6: "div";
+  logout3: "div";
+  right11: "div";
+  mid12: "div";
   logout2: "div";
   mid11: "div";
   getUserWebsite: typeof ApiRequest;
@@ -3295,6 +3337,9 @@ export const Plasmicتالار = Object.assign(
     right7: makeNodeComponent("right7"),
     mid7: makeNodeComponent("mid7"),
     left6: makeNodeComponent("left6"),
+    logout3: makeNodeComponent("logout3"),
+    right11: makeNodeComponent("right11"),
+    mid12: makeNodeComponent("mid12"),
     logout2: makeNodeComponent("logout2"),
     mid11: makeNodeComponent("mid11"),
     getUserWebsite: makeNodeComponent("getUserWebsite"),

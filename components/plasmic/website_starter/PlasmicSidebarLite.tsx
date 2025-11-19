@@ -76,7 +76,6 @@ import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7
 import Icon38Icon from "./icons/PlasmicIcon__Icon38"; // plasmic-import: k9GL3C4d3WqP/icon
 import Icon47Icon from "./icons/PlasmicIcon__Icon47"; // plasmic-import: 52h8XtG_2_Y1/icon
 import Icon11Icon from "./icons/PlasmicIcon__Icon11"; // plasmic-import: PfTCttn7BvdX/icon
-import Icon15Icon from "./icons/PlasmicIcon__Icon15"; // plasmic-import: mmPtFHknd4hG/icon
 
 createPlasmicElementProxy;
 
@@ -961,52 +960,8 @@ function PlasmicSidebarLite__RenderFunc(props: {
               src={
                 "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fsign-blue.png?versionId="
               }
-              width={"40"}
+              width={"34"}
             />
-          </div>
-        </div>
-        <div className={classNames(projectcss.all, sty.freeBox__ccSrh)}>
-          <Icon15Icon
-            className={classNames(projectcss.all, sty.svg__s4Q44)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          return (window.location.href =
-                            "https://rentamon.com/");
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-            }}
-            role={"img"}
-          />
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__hNZ
-            )}
-          >
-            {
-              "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\n\u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u062a\u0627 \u06f1\u06f7"
-            }
           </div>
         </div>
       </div>
