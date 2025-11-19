@@ -478,8 +478,10 @@ function PlasmicCalendar2__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-              ? true
-              : false
+              ? false
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? false
+                : false
       },
       {
         path: "dateProp",
@@ -8061,7 +8063,33 @@ function PlasmicCalendar2__RenderFunc(props: {
                 }}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__kpmHd)} />
+            <div className={classNames(projectcss.all, sty.freeBox__kpmHd)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__dYShc)}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "100%"
+                    : "100%"
+                }
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "auto"
+                    : "20px"
+                }
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image188.svg",
+                  fullWidth: 8,
+                  fullHeight: 8,
+                  aspectRatio: undefined
+                }}
+              />
+            </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox___7WlXr)}>
             <Button
