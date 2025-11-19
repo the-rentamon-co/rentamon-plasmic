@@ -642,8 +642,18 @@ function Plasmicدربارهما__RenderFunc(props: {
                         loading={"lazy"}
                         src={
                           hasVariant(globalVariants, "screen", "mobile")
-                            ? "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fabolhassani.jpg?versionId="
-                            : "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fabolhassani.jpg?versionId="
+                            ? {
+                                src: "/plasmic/website_starter/images/photo20251119083549Jpg2.jpg",
+                                fullWidth: 969,
+                                fullHeight: 935,
+                                aspectRatio: undefined
+                              }
+                            : {
+                                src: "/plasmic/website_starter/images/photo20251119083549Jpg2.jpg",
+                                fullWidth: 969,
+                                fullHeight: 935,
+                                aspectRatio: undefined
+                              }
                         }
                       />
                     </div>

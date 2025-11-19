@@ -5761,6 +5761,16 @@
           "id": "MQaM2kDs4Kfw",
           "name": "snapptrip.png",
           "filePath": "../public/plasmic/website_starter/images/snapptripPng.png"
+        },
+        {
+          "id": "Q4E4tvJ2ufmy",
+          "name": "photo_2025-11-19_08-35-49.jpg",
+          "filePath": "../public/plasmic/website_starter/images/photo20251119083549Jpg.jpg"
+        },
+        {
+          "id": "fhWPnbKm07nR",
+          "name": "photo_2025-11-19_08-35-49.jpg 2",
+          "filePath": "../public/plasmic/website_starter/images/photo20251119083549Jpg2.jpg"
         }
       ],
       "indirect": false,

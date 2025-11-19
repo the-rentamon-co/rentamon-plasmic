@@ -278,3 +278,13 @@
   max-width: 100%;
   display: none;
 }
+.text__gBrck {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: left;
+  color: var(--token-8R7jjC_-F9FF);
+  opacity: 0.2;
+  min-width: 0;
+}

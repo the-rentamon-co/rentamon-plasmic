@@ -536,6 +536,33 @@ function PlasmicSplash__RenderFunc(props: {
             data-plasmic-override={overrides.clarityRntComponent}
             className={classNames("__wab_instance", sty.clarityRntComponent)}
           />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__gBrck
+            )}
+          >
+            <React.Fragment>
+              {(() => {
+                try {
+                  return (() => {
+                    const fullUrl = window.location.href;
+                    return fullUrl;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          </div>
         </div>
       </div>
     </React.Fragment>
