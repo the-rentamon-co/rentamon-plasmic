@@ -2364,16 +2364,23 @@ function Plasmicتالار__RenderFunc(props: {
                             const isPlasmicStudio =
                               Object.values($ctx.Fragment.previewApiConfig)
                                 .length > 0;
+                            const isMiaan =
+                              window.location.hostname.includes("miaan.ir");
+                            const ssoBase = isMiaan
+                              ? "https://sso.miaan.ir"
+                              : "https://sso.rentamon.com";
+                            const callbackBase = isMiaan
+                              ? "https://miaan.ir"
+                              : "https://rentamon.com";
+                            const redirectUrl = `${ssoBase}/web/index.html?callback=${callbackBase}/panel/`;
+                            const refreshUrl = `${ssoBase}/auth/refresh`;
                             async function refreshToken() {
                               if (isPlasmicStudio) return;
                               try {
-                                const response = await fetch(
-                                  "https://sso.rentamon.com/auth/refresh",
-                                  {
-                                    method: "GET",
-                                    credentials: "include"
-                                  }
-                                );
+                                const response = await fetch(refreshUrl, {
+                                  method: "GET",
+                                  credentials: "include"
+                                });
                                 console.log("Refreshed Token in 10 minutes");
                                 if (response.ok) {
                                   const data = await response.json();
@@ -2414,17 +2421,13 @@ function Plasmicتالار__RenderFunc(props: {
                             if (!ussoAccessAvailable && !isPlasmicStudio) {
                               if (!ussoRefreshAvailable) {
                                 console.log("got here in redirect");
-                                return (window.location.href =
-                                  "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/menu/");
+                                return (window.location.href = redirectUrl);
                               } else {
                                 console.log("got here in refreshToken");
-                                return fetch(
-                                  "https://sso.rentamon.com/auth/refresh",
-                                  {
-                                    method: "GET",
-                                    credentials: "include"
-                                  }
-                                )
+                                return fetch(refreshUrl, {
+                                  method: "GET",
+                                  credentials: "include"
+                                })
                                   .then(response => {
                                     if (!response.ok) {
                                       throw new Error(
@@ -2439,8 +2442,7 @@ function Plasmicتالار__RenderFunc(props: {
                                   })
                                   .catch(error => {
                                     console.error("Error:", error);
-                                    window.location.href =
-                                      "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/menu/";
+                                    window.location.href = redirectUrl;
                                   });
                               }
                             }
