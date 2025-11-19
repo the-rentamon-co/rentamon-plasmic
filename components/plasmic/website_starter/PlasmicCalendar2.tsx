@@ -478,7 +478,7 @@ function PlasmicCalendar2__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-              ? false
+              ? true
               : false
       },
       {

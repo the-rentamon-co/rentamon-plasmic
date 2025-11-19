@@ -32,6 +32,14 @@
 @media (max-width: 500px) {
   .root {
     margin-top: 0px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    background: linear-gradient(
+        29.8096112087577deg,
+        var(--token-8nedppYkGVaH) 0%,
+        #967aea 100%
+      )
+      0% 0% / 100% 100% repeat;
   }
 }
 .rootshowStartIcon {

@@ -496,21 +496,22 @@ function PlasmicSplash__RenderFunc(props: {
                             $steps.getUserSegment.data.flag || 99,
                             0.3333
                           );
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const baseUrl = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
                           if ($steps.getUserSegment.data.flag == 2) {
-                            window.location.href =
-                              "https://rentamon.com/calendar/";
+                            window.location.href = `${baseUrl}/calendar/`;
                           }
                           if ($steps.getUserSegment.data.flag == 1) {
-                            window.location.href =
-                              "https://rentamon.com/panel/";
+                            window.location.href = `${baseUrl}/panel/`;
                           }
                           if ($steps.getUserSegment.data.flag == 0) {
-                            window.location.href =
-                              "https://rentamon.com/calendar/";
+                            window.location.href = `${baseUrl}/calendar/`;
                           }
                           if ($steps.getUserSegment.data.flag == 3) {
-                            return (window.location.href =
-                              "https://rentamon.com/panel-2/");
+                            return (window.location.href = `${baseUrl}/panel-2/`);
                           }
                         })();
                       }
