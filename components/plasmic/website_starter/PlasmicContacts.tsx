@@ -608,29 +608,89 @@ function PlasmicContacts__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (() => {
+                        return (async () => {
                           const isPlasmicStudio =
                             Object.values($ctx.Fragment.previewApiConfig)
                               .length > 0;
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const ssoBase = isMiaan
+                            ? "https://sso.miaan.ir"
+                            : "https://sso.rentamon.com";
+                          const callbackBase = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
+                          const redirectUrl = `${ssoBase}/web/index.html?callback=${callbackBase}/panel/`;
+                          const refreshUrl = `${ssoBase}/auth/refresh`;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              });
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
                           function getCookie(name) {
                             const value = `; ${globalThis.document.cookie}`;
                             const parts = value.split(`; ${name}=`);
-                            if (parts.length === 2) {
+                            if (parts.length === 2)
                               return parts.pop().split(";").shift();
-                            }
                           }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
                           const ussoAccessAvailable =
                             getCookie("usso_access_available") || false;
                           console.log(
-                            "وضعیت توکن دسترسی: ",
+                            "this is ussoAccessAvailable: ",
                             ussoAccessAvailable
                           );
                           if (!ussoAccessAvailable && !isPlasmicStudio) {
-                            console.log(
-                              "توکن دسترسی یافت نشد. در حال هدایت به صفحه ورود..."
-                            );
-                            return (window.location.href =
-                              "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/contacts/");
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href = redirectUrl);
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              })
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href = redirectUrl;
+                                });
+                            }
                           }
                         })();
                       }
@@ -666,9 +726,8 @@ function PlasmicContacts__RenderFunc(props: {
                 typeof $steps["updateStateVariable2"] === "object" &&
                 typeof $steps["updateStateVariable2"].then === "function"
               ) {
-                $steps["updateStateVariable2"] = await $steps[
-                  "updateStateVariable2"
-                ];
+                $steps["updateStateVariable2"] =
+                  await $steps["updateStateVariable2"];
               }
 
               $steps["updateStateVariable"] = true
@@ -696,9 +755,8 @@ function PlasmicContacts__RenderFunc(props: {
                 typeof $steps["updateStateVariable"] === "object" &&
                 typeof $steps["updateStateVariable"].then === "function"
               ) {
-                $steps["updateStateVariable"] = await $steps[
-                  "updateStateVariable"
-                ];
+                $steps["updateStateVariable"] =
+                  await $steps["updateStateVariable"];
               }
             }}
           />
@@ -817,7 +875,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicContacts__VariantsArgs;
     args?: PlasmicContacts__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicContacts__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicContacts__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicContacts__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

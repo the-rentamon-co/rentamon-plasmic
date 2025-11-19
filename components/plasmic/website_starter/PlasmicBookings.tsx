@@ -13832,29 +13832,89 @@ function PlasmicBookings__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (() => {
-                          function getCookieValue(cookieName) {
-                            const cookies = document.cookie
-                              .split(";")
-                              .map(cookie => cookie.trim());
-                            for (const cookie of cookies) {
-                              const [name, value] = cookie.split("=");
-                              if (name === cookieName) {
-                                return value;
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const ssoBase = isMiaan
+                            ? "https://sso.miaan.ir"
+                            : "https://sso.rentamon.com";
+                          const callbackBase = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
+                          const redirectUrl = `${ssoBase}/web/index.html?callback=${callbackBase}/panel/`;
+                          const refreshUrl = `${ssoBase}/auth/refresh`;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              });
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
                               }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
                             }
-                            return null;
                           }
-                          if (document.cookie.includes("first_visit")) {
-                            console.log("in the visit");
-                            const first_visit = getCookieValue("first_visit");
-                            if (first_visit != null) {
-                              $state.isTheFirstVisit = true;
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href = redirectUrl);
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              })
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href = redirectUrl;
+                                });
                             }
-                            return console.log(
-                              "first_visit:",
-                              $state.isTheFirstVisit
-                            );
                           }
                         })();
                       }

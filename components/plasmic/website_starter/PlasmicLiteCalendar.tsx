@@ -442,16 +442,23 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                           const isPlasmicStudio =
                             Object.values($ctx.Fragment.previewApiConfig)
                               .length > 0;
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const ssoBase = isMiaan
+                            ? "https://sso.miaan.ir"
+                            : "https://sso.rentamon.com";
+                          const callbackBase = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
+                          const redirectUrl = `${ssoBase}/web/index.html?callback=${callbackBase}/panel/`;
+                          const refreshUrl = `${ssoBase}/auth/refresh`;
                           async function refreshToken() {
                             if (isPlasmicStudio) return;
                             try {
-                              const response = await fetch(
-                                "https://sso.rentamon.com/auth/refresh",
-                                {
-                                  method: "GET",
-                                  credentials: "include"
-                                }
-                              );
+                              const response = await fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              });
                               console.log("Refreshed Token in 10 minutes");
                               if (response.ok) {
                                 const data = await response.json();
@@ -492,17 +499,13 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                           if (!ussoAccessAvailable && !isPlasmicStudio) {
                             if (!ussoRefreshAvailable) {
                               console.log("got here in redirect");
-                              return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/auth-redirect/");
+                              return (window.location.href = redirectUrl);
                             } else {
                               console.log("got here in refreshToken");
-                              return fetch(
-                                "https://sso.rentamon.com/auth/refresh",
-                                {
-                                  method: "GET",
-                                  credentials: "include"
-                                }
-                              )
+                              return fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              })
                                 .then(response => {
                                   if (!response.ok) {
                                     throw new Error("Failed to refresh token");
@@ -515,8 +518,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                                 })
                                 .catch(error => {
                                   console.error("Error:", error);
-                                  window.location.href =
-                                    "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/auth-redirect/";
+                                  window.location.href = redirectUrl;
                                 });
                             }
                           }
@@ -1453,7 +1455,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jf0QC
+                        sty.formField__lvdL6
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1465,7 +1467,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__msmdw
+                        sty.formField__kyRWu
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1477,7 +1479,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <AntdButton
                       className={classNames(
                         "__wab_instance",
-                        sty.button__gyJCi
+                        sty.button__yEeRy
                       )}
                       submitsForm={true}
                       type={"primary"}
@@ -1486,7 +1488,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__zvNza
+                          sty.text__oRt9K
                         )}
                       >
                         {"Submit"}
