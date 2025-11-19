@@ -241,7 +241,7 @@ function Plasmicتالار__RenderFunc(props: {
         path: "userType",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $ctx }) => ``
       },
       {
         path: "notifDisabled",
@@ -2183,15 +2183,33 @@ function Plasmicتالار__RenderFunc(props: {
                         width={"50"}
                       />
 
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__mmAkl
-                        )}
-                      >
-                        {"miaan.ir"}
-                      </div>
+                      {(
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? (() => {
+                              try {
+                                return $state.userType != "2";
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__mmAkl
+                          )}
+                        >
+                          {"miaan.ir"}
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 </div>

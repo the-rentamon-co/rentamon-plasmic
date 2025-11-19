@@ -100,6 +100,7 @@ export const PlasmicSidebarLite__ArgProps = new Array<ArgPropType>(
 export type PlasmicSidebarLite__OverridesType = {
   modalSidebar?: Flex__<typeof AntdModal>;
   profile?: Flex__<"div">;
+  mid11?: Flex__<"div">;
   favicon?: Flex__<typeof Embed>;
   checkUserPendingReserve?: Flex__<typeof ApiRequest>;
 };
@@ -330,10 +331,10 @@ function PlasmicSidebarLite__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "20px"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "27px"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "30px"
-                    : "30px"
+                      ? "27px"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "30px"
+                        : "30px"
                 }
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -436,10 +437,10 @@ function PlasmicSidebarLite__RenderFunc(props: {
         hasVariant(globalVariants, "screen", "smallMobile")
           ? "96%"
           : hasVariant(globalVariants, "screen", "mobile")
-          ? "90%"
-          : hasVariant(globalVariants, "screen", "tablet")
-          ? "60%"
-          : "30%"
+            ? "90%"
+            : hasVariant(globalVariants, "screen", "tablet")
+              ? "60%"
+              : "30%"
       }
       wrapClassName={classNames({ [sty["pcls_Z730rzLN63NE"]]: true })}
     >
@@ -560,9 +561,8 @@ function PlasmicSidebarLite__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["goToReservations"] = true
@@ -640,9 +640,8 @@ function PlasmicSidebarLite__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["goToLitePanel"] = true
@@ -722,9 +721,8 @@ function PlasmicSidebarLite__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["runCode"] = true
@@ -807,9 +805,8 @@ function PlasmicSidebarLite__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["runCode"] = true
@@ -889,9 +886,8 @@ function PlasmicSidebarLite__RenderFunc(props: {
               typeof $steps["updateModalSidebarOpen"] === "object" &&
               typeof $steps["updateModalSidebarOpen"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen"] = await $steps[
-                "updateModalSidebarOpen"
-              ];
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
             }
 
             $steps["runCode"] = true
@@ -931,6 +927,42 @@ function PlasmicSidebarLite__RenderFunc(props: {
             )}
           >
             {"\u062e\u0631\u0648\u062c"}
+          </div>
+        </div>
+        <div
+          data-plasmic-name={"mid11"}
+          data-plasmic-override={overrides.mid11}
+          className={classNames(projectcss.all, sty.mid11)}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox__qfBlY)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__dCne6
+              )}
+            >
+              {
+                "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+              }
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__j5JgV)}>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__tSJgz)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={
+                "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Flogo-miaan%2Fsign-blue.png?versionId="
+              }
+              width={"40"}
+            />
           </div>
         </div>
         <div className={classNames(projectcss.all, sty.freeBox__ccSrh)}>
@@ -994,10 +1026,12 @@ const PlasmicDescendants = {
   modalSidebar: [
     "modalSidebar",
     "profile",
+    "mid11",
     "favicon",
     "checkUserPendingReserve"
   ],
   profile: ["profile"],
+  mid11: ["mid11"],
   favicon: ["favicon"],
   checkUserPendingReserve: ["checkUserPendingReserve"]
 } as const;
@@ -1007,6 +1041,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   modalSidebar: typeof AntdModal;
   profile: "div";
+  mid11: "div";
   favicon: typeof Embed;
   checkUserPendingReserve: typeof ApiRequest;
 };
@@ -1022,7 +1057,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicSidebarLite__VariantsArgs;
     args?: PlasmicSidebarLite__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicSidebarLite__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicSidebarLite__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicSidebarLite__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -1072,6 +1109,7 @@ export const PlasmicSidebarLite = Object.assign(
   {
     // Helper components rendering sub-elements
     profile: makeNodeComponent("profile"),
+    mid11: makeNodeComponent("mid11"),
     favicon: makeNodeComponent("favicon"),
     checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),
 

@@ -391,6 +391,141 @@
     min-width: 0;
   }
 }
+.mid11 {
+  animation: none;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 500px) {
+  .mid11 {
+    animation: none;
+  }
+}
+@media (max-width: 350px) {
+  .mid11 {
+    animation: none;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 8px 0px;
+  }
+}
+.freeBox__qfBlY {
+  animation: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px 0px 8px 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__qfBlY {
+    animation: none;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__qfBlY {
+    animation: none;
+  }
+}
+.text__dCne6 {
+  animation: none;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  user-select: none;
+  white-space: pre-wrap;
+  color: #0000b7;
+  text-align: right;
+  line-height: 2;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__dCne6 {
+    animation: none;
+  }
+}
+@media (max-width: 350px) {
+  .text__dCne6 {
+    animation: none;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: pre;
+    user-select: none;
+    min-width: 0;
+  }
+}
+.freeBox__j5JgV {
+  animation: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  padding: 0px;
+}
+@media (max-width: 500px) {
+  .freeBox__j5JgV {
+    animation: none;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__j5JgV {
+    animation: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 0px;
+    min-width: 0;
+  }
+}
+.img__tSJgz {
+  animation: none;
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__tSJgz > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 500px) {
+  .img__tSJgz {
+    animation: none;
+  }
+}
+@media (max-width: 350px) {
+  .img__tSJgz {
+    animation: none;
+  }
+}
 .freeBox__ccSrh {
   flex-direction: row;
   position: relative;
