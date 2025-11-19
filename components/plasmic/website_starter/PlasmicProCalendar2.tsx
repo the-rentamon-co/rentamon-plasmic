@@ -2600,6 +2600,32 @@ function PlasmicProCalendar2__RenderFunc(props: {
               </div>
             </div>
           </AntdModal>
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__tdvOg
+            )}
+          >
+            <React.Fragment>
+              {(() => {
+                try {
+                  return (() => {
+                    const fullUrl = window.location.href;
+                    return fullUrl;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          </div>
         </div>
       </div>
     </React.Fragment>
