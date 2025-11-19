@@ -150,7 +150,6 @@ export type PlasmicCalendar2__OverridesType = {
   blockParent?: Flex__<"div">;
   block2?: Flex__<"div">;
   noteModal?: Flex__<typeof AntdModal>;
-  img?: Flex__<typeof PlasmicImg__>;
   writeNoteModal?: Flex__<typeof AntdModal>;
   textarea?: Flex__<typeof Textarea>;
   updateNoteModal?: Flex__<typeof AntdModal>;
@@ -163,14 +162,10 @@ export type PlasmicCalendar2__OverridesType = {
   reserve1?: Flex__<"div">;
   color?: Flex__<"div">;
   text?: Flex__<"div">;
-  reserve2?: Flex__<"div">;
-  color2?: Flex__<"div">;
-  text2?: Flex__<"div">;
   reserve3?: Flex__<"div">;
   color3?: Flex__<"div">;
   text3?: Flex__<"div">;
   reserve4?: Flex__<"div">;
-  color4?: Flex__<"div">;
   text4?: Flex__<"div">;
   submitChange?: Flex__<"div">;
   addingGuestInfo?: Flex__<typeof AntdModal>;
@@ -7938,10 +7933,8 @@ function PlasmicCalendar2__RenderFunc(props: {
                 </React.Fragment>
               </div>
               <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img)}
+                className={classNames(sty.img__uyXHi)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -10410,33 +10403,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   sty.text__oE5Mq
                 )}
               >
-                {"\u0631\u0632\u0631\u0648"}
-              </div>
-            </div>
-          </div>
-          <div
-            data-plasmic-name={"reserve2"}
-            data-plasmic-override={overrides.reserve2}
-            className={classNames(projectcss.all, sty.reserve2)}
-          >
-            <div
-              data-plasmic-name={"color2"}
-              data-plasmic-override={overrides.color2}
-              className={classNames(projectcss.all, sty.color2)}
-            />
-
-            <div
-              data-plasmic-name={"text2"}
-              data-plasmic-override={overrides.text2}
-              className={classNames(projectcss.all, sty.text2)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___3DCBm
-                )}
-              >
                 {"\u0628\u0633\u062a\u0647"}
               </div>
             </div>
@@ -10473,10 +10439,22 @@ function PlasmicCalendar2__RenderFunc(props: {
             data-plasmic-override={overrides.reserve4}
             className={classNames(projectcss.all, sty.reserve4)}
           >
-            <div
-              data-plasmic-name={"color4"}
-              data-plasmic-override={overrides.color4}
-              className={classNames(projectcss.all, sty.color4)}
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__irxiS)}
+              displayHeight={"9px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image188.svg",
+                fullWidth: 8,
+                fullHeight: 8,
+                aspectRatio: undefined
+              }}
             />
 
             <div
@@ -12010,7 +11988,6 @@ const PlasmicDescendants = {
     "blockParent",
     "block2",
     "noteModal",
-    "img",
     "writeNoteModal",
     "textarea",
     "updateNoteModal",
@@ -12023,14 +12000,10 @@ const PlasmicDescendants = {
     "reserve1",
     "color",
     "text",
-    "reserve2",
-    "color2",
-    "text2",
     "reserve3",
     "color3",
     "text3",
     "reserve4",
-    "color4",
     "text4",
     "submitChange",
     "addingGuestInfo",
@@ -12126,8 +12099,7 @@ const PlasmicDescendants = {
   reserve: ["reserve"],
   blockParent: ["blockParent", "block2"],
   block2: ["block2"],
-  noteModal: ["noteModal", "img"],
-  img: ["img"],
+  noteModal: ["noteModal"],
   writeNoteModal: ["writeNoteModal", "textarea"],
   textarea: ["textarea"],
   updateNoteModal: ["updateNoteModal", "textarea2"],
@@ -12141,27 +12113,19 @@ const PlasmicDescendants = {
     "reserve1",
     "color",
     "text",
-    "reserve2",
-    "color2",
-    "text2",
     "reserve3",
     "color3",
     "text3",
     "reserve4",
-    "color4",
     "text4"
   ],
   reserve1: ["reserve1", "color", "text"],
   color: ["color"],
   text: ["text"],
-  reserve2: ["reserve2", "color2", "text2"],
-  color2: ["color2"],
-  text2: ["text2"],
   reserve3: ["reserve3", "color3", "text3"],
   color3: ["color3"],
   text3: ["text3"],
-  reserve4: ["reserve4", "color4", "text4"],
-  color4: ["color4"],
+  reserve4: ["reserve4", "text4"],
   text4: ["text4"],
   submitChange: ["submitChange"],
   addingGuestInfo: [
@@ -12252,7 +12216,6 @@ type NodeDefaultElementType = {
   blockParent: "div";
   block2: "div";
   noteModal: typeof AntdModal;
-  img: typeof PlasmicImg__;
   writeNoteModal: typeof AntdModal;
   textarea: typeof Textarea;
   updateNoteModal: typeof AntdModal;
@@ -12265,14 +12228,10 @@ type NodeDefaultElementType = {
   reserve1: "div";
   color: "div";
   text: "div";
-  reserve2: "div";
-  color2: "div";
-  text2: "div";
   reserve3: "div";
   color3: "div";
   text3: "div";
   reserve4: "div";
-  color4: "div";
   text4: "div";
   submitChange: "div";
   addingGuestInfo: typeof AntdModal;
@@ -12394,7 +12353,6 @@ export const PlasmicCalendar2 = Object.assign(
     blockParent: makeNodeComponent("blockParent"),
     block2: makeNodeComponent("block2"),
     noteModal: makeNodeComponent("noteModal"),
-    img: makeNodeComponent("img"),
     writeNoteModal: makeNodeComponent("writeNoteModal"),
     textarea: makeNodeComponent("textarea"),
     updateNoteModal: makeNodeComponent("updateNoteModal"),
@@ -12407,14 +12365,10 @@ export const PlasmicCalendar2 = Object.assign(
     reserve1: makeNodeComponent("reserve1"),
     color: makeNodeComponent("color"),
     text: makeNodeComponent("text"),
-    reserve2: makeNodeComponent("reserve2"),
-    color2: makeNodeComponent("color2"),
-    text2: makeNodeComponent("text2"),
     reserve3: makeNodeComponent("reserve3"),
     color3: makeNodeComponent("color3"),
     text3: makeNodeComponent("text3"),
     reserve4: makeNodeComponent("reserve4"),
-    color4: makeNodeComponent("color4"),
     text4: makeNodeComponent("text4"),
     submitChange: makeNodeComponent("submitChange"),
     addingGuestInfo: makeNodeComponent("addingGuestInfo"),
