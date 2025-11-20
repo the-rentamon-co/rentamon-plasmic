@@ -2497,138 +2497,279 @@ function PlasmicCalendar2__RenderFunc(props: {
                     throw e;
                   }
                 })()}
-                dayStatus={(() => {
-                  try {
-                    return (() => {
-                      const currentDate = new Date();
-                      const yesterdayDate = new Date(
-                        currentDate.getTime() - 24 * 60 * 60 * 1000
-                      );
-                      const yesterdayTimestamp = Math.floor(
-                        yesterdayDate.getTime() / 1000
-                      );
-                      const minTimestamp = yesterdayTimestamp;
-                      const maxTimestamp = 1768988921;
-                      function getDayClass(dateProps, calendarData) {
-                        const dayIndex = dateProps.date.day - 1;
-                        const calendarItem = calendarData[dayIndex] || {};
-                        const currentBookingId = calendarItem.booking_id;
-                        const prevItem = calendarData[dayIndex - 1] || {};
-                        const nextItem = calendarData[dayIndex + 1] || {};
-                        const prevBookingId = prevItem.booking_id;
-                        const nextBookingId = nextItem.booking_id;
-                        if (
-                          dateProps.unix < minTimestamp ||
-                          dateProps.unix > maxTimestamp
-                        ) {
+                dayStatus={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const currentDate = new Date();
+                            const yesterdayDate = new Date(
+                              currentDate.getTime() - 24 * 60 * 60 * 1000
+                            );
+                            const yesterdayTimestamp = Math.floor(
+                              yesterdayDate.getTime() / 1000
+                            );
+                            const minTimestamp = yesterdayTimestamp;
+                            const maxTimestamp = 1766386895;
+                            function getDayClass(dateProps, calendarData) {
+                              const dayIndex = dateProps.date.day - 1;
+                              const calendarItem = calendarData[dayIndex] || {};
+                              const currentBookingId = calendarItem.booking_id;
+                              const prevItem = calendarData[dayIndex - 1] || {};
+                              const nextItem = calendarData[dayIndex + 1] || {};
+                              const prevBookingId = prevItem.booking_id;
+                              const nextBookingId = nextItem.booking_id;
+                              if (
+                                dateProps.unix < minTimestamp ||
+                                dateProps.unix > maxTimestamp
+                              ) {
+                                if (
+                                  calendarItem.status === "reserved" &&
+                                  currentBookingId
+                                ) {
+                                  const isFirstDay =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDay =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDay && isLastDay)
+                                    return "passedReservedV2";
+                                  if (isFirstDay)
+                                    return "passedFirstDayReserveV2";
+                                  if (isLastDay)
+                                    return "passedLastDayReserveV2";
+                                  return "passedMidDayReserveV2";
+                                }
+                                if (
+                                  currentBookingId &&
+                                  calendarItem.status !== "reserved" &&
+                                  calendarItem.status !== "blocked"
+                                ) {
+                                  const isFirstDaySmart =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDaySmart =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDaySmart && isLastDaySmart) {
+                                    return "reservedSmartBookingPast";
+                                  }
+                                  if (isFirstDaySmart && !isLastDaySmart) {
+                                    return "firstDaySmartBookingPast";
+                                  }
+                                  if (!isFirstDaySmart && isLastDaySmart) {
+                                    return "lastDaySmartBookingPast";
+                                  }
+                                  if (!isFirstDaySmart && !isLastDaySmart) {
+                                    return "midDaySmartBookingPast";
+                                  }
+                                }
+                                return "disabledV2";
+                              }
+                              if (
+                                $state.fragmentDatePicker.values.includes(
+                                  dateProps.unix
+                                ) &&
+                                calendarItem.status !== "reserved" &&
+                                !(
+                                  currentBookingId &&
+                                  calendarItem.status !== "blocked"
+                                )
+                              ) {
+                                return "selected";
+                              }
+                              if (
+                                currentBookingId &&
+                                calendarItem.status !== "reserved" &&
+                                calendarItem.status !== "blocked"
+                              ) {
+                                const isFirstDaySmart =
+                                  currentBookingId !== prevBookingId;
+                                const isLastDaySmart =
+                                  currentBookingId !== nextBookingId;
+                                if (isFirstDaySmart && isLastDaySmart) {
+                                  return "reservedSmartBooking";
+                                }
+                                if (isFirstDaySmart && !isLastDaySmart) {
+                                  return "firstDaySmartBooking";
+                                }
+                                if (!isFirstDaySmart && isLastDaySmart) {
+                                  return "lastDaySmartBooking";
+                                }
+                                if (!isFirstDaySmart && !isLastDaySmart) {
+                                  return "midDaySmartBooking";
+                                }
+                              }
+                              if (calendarItem.status === "reserved") {
+                                if (currentBookingId) {
+                                  const isFirstDay =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDay =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDay && isLastDay)
+                                    return "reservedV2";
+                                  if (isFirstDay) return "firstDayReserveV2";
+                                  if (isLastDay) return "lastDayReserveV2";
+                                  return "midDayReserveV2";
+                                }
+                                return "reservedV2";
+                              }
+                              if (calendarItem.status === "blocked") {
+                                return "reservedV2";
+                              }
+                              if (calendarItem.discount_percentage > 0) {
+                                return "discount";
+                              }
+                              return calendarItem.status || "";
+                            }
+                            return getDayClass(
+                              dateProps,
+                              $state.apiRequest.data[1].calendar
+                            );
+                          })();
+                        } catch (e) {
                           if (
-                            calendarItem.status === "reserved" &&
-                            currentBookingId
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
-                            const isFirstDay =
-                              currentBookingId !== prevBookingId;
-                            const isLastDay =
-                              currentBookingId !== nextBookingId;
-                            if (isFirstDay && isLastDay)
-                              return "passedReservedV2";
-                            if (isFirstDay) return "passedFirstDayReserveV2";
-                            if (isLastDay) return "passedLastDayReserveV2";
-                            return "passedMidDayReserveV2";
+                            return [];
                           }
+                          throw e;
+                        }
+                      })()
+                    : (() => {
+                        try {
+                          return (() => {
+                            const currentDate = new Date();
+                            const yesterdayDate = new Date(
+                              currentDate.getTime() - 24 * 60 * 60 * 1000
+                            );
+                            const yesterdayTimestamp = Math.floor(
+                              yesterdayDate.getTime() / 1000
+                            );
+                            const minTimestamp = yesterdayTimestamp;
+                            const maxTimestamp = 1766386895;
+                            function getDayClass(dateProps, calendarData) {
+                              const dayIndex = dateProps.date.day - 1;
+                              const calendarItem = calendarData[dayIndex] || {};
+                              const currentBookingId = calendarItem.booking_id;
+                              const prevItem = calendarData[dayIndex - 1] || {};
+                              const nextItem = calendarData[dayIndex + 1] || {};
+                              const prevBookingId = prevItem.booking_id;
+                              const nextBookingId = nextItem.booking_id;
+                              if (
+                                dateProps.unix < minTimestamp ||
+                                dateProps.unix > maxTimestamp
+                              ) {
+                                if (
+                                  calendarItem.status === "reserved" &&
+                                  currentBookingId
+                                ) {
+                                  const isFirstDay =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDay =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDay && isLastDay)
+                                    return "passedReservedV2";
+                                  if (isFirstDay)
+                                    return "passedFirstDayReserveV2";
+                                  if (isLastDay)
+                                    return "passedLastDayReserveV2";
+                                  return "passedMidDayReserveV2";
+                                }
+                                if (
+                                  currentBookingId &&
+                                  calendarItem.status !== "reserved" &&
+                                  calendarItem.status !== "blocked"
+                                ) {
+                                  const isFirstDaySmart =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDaySmart =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDaySmart && isLastDaySmart) {
+                                    return "reservedSmartBookingPast";
+                                  }
+                                  if (isFirstDaySmart && !isLastDaySmart) {
+                                    return "firstDaySmartBookingPast";
+                                  }
+                                  if (!isFirstDaySmart && isLastDaySmart) {
+                                    return "lastDaySmartBookingPast";
+                                  }
+                                  if (!isFirstDaySmart && !isLastDaySmart) {
+                                    return "midDaySmartBookingPast";
+                                  }
+                                }
+                                return "disabledV2";
+                              }
+                              if (
+                                $state.fragmentDatePicker.values.includes(
+                                  dateProps.unix
+                                ) &&
+                                calendarItem.status !== "reserved" &&
+                                !(
+                                  currentBookingId &&
+                                  calendarItem.status !== "blocked"
+                                )
+                              ) {
+                                return "selected";
+                              }
+                              if (
+                                currentBookingId &&
+                                calendarItem.status !== "reserved" &&
+                                calendarItem.status !== "blocked"
+                              ) {
+                                const isFirstDaySmart =
+                                  currentBookingId !== prevBookingId;
+                                const isLastDaySmart =
+                                  currentBookingId !== nextBookingId;
+                                if (isFirstDaySmart && isLastDaySmart) {
+                                  return "reservedSmartBooking";
+                                }
+                                if (isFirstDaySmart && !isLastDaySmart) {
+                                  return "firstDaySmartBooking";
+                                }
+                                if (!isFirstDaySmart && isLastDaySmart) {
+                                  return "lastDaySmartBooking";
+                                }
+                                if (!isFirstDaySmart && !isLastDaySmart) {
+                                  return "midDaySmartBooking";
+                                }
+                              }
+                              if (calendarItem.status === "reserved") {
+                                if (currentBookingId) {
+                                  const isFirstDay =
+                                    currentBookingId !== prevBookingId;
+                                  const isLastDay =
+                                    currentBookingId !== nextBookingId;
+                                  if (isFirstDay && isLastDay)
+                                    return "reservedV2";
+                                  if (isFirstDay) return "firstDayReserveV2";
+                                  if (isLastDay) return "lastDayReserveV2";
+                                  return "midDayReserveV2";
+                                }
+                                return "reservedV2";
+                              }
+                              if (calendarItem.status === "blocked") {
+                                return "reservedV2";
+                              }
+                              if (calendarItem.discount_percentage > 0) {
+                                return "discount";
+                              }
+                              return calendarItem.status || "";
+                            }
+                            return getDayClass(
+                              dateProps,
+                              $state.apiRequest.data[1].calendar
+                            );
+                          })();
+                        } catch (e) {
                           if (
-                            currentBookingId &&
-                            calendarItem.status !== "reserved" &&
-                            calendarItem.status !== "blocked"
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
                           ) {
-                            const isFirstDaySmart =
-                              currentBookingId !== prevBookingId;
-                            const isLastDaySmart =
-                              currentBookingId !== nextBookingId;
-                            if (isFirstDaySmart && isLastDaySmart) {
-                              return "reservedSmartBookingPast";
-                            }
-                            if (isFirstDaySmart && !isLastDaySmart) {
-                              return "firstDaySmartBookingPast";
-                            }
-                            if (!isFirstDaySmart && isLastDaySmart) {
-                              return "lastDaySmartBookingPast";
-                            }
-                            if (!isFirstDaySmart && !isLastDaySmart) {
-                              return "midDaySmartBookingPast";
-                            }
+                            return [];
                           }
-                          return "disabledV2";
+                          throw e;
                         }
-                        if (
-                          $state.fragmentDatePicker.values.includes(
-                            dateProps.unix
-                          ) &&
-                          calendarItem.status !== "reserved" &&
-                          !(
-                            currentBookingId &&
-                            calendarItem.status !== "blocked"
-                          )
-                        ) {
-                          return "selected";
-                        }
-                        if (
-                          currentBookingId &&
-                          calendarItem.status !== "reserved" &&
-                          calendarItem.status !== "blocked"
-                        ) {
-                          const isFirstDaySmart =
-                            currentBookingId !== prevBookingId;
-                          const isLastDaySmart =
-                            currentBookingId !== nextBookingId;
-                          if (isFirstDaySmart && isLastDaySmart) {
-                            return "reservedSmartBooking";
-                          }
-                          if (isFirstDaySmart && !isLastDaySmart) {
-                            return "firstDaySmartBooking";
-                          }
-                          if (!isFirstDaySmart && isLastDaySmart) {
-                            return "lastDaySmartBooking";
-                          }
-                          if (!isFirstDaySmart && !isLastDaySmart) {
-                            return "midDaySmartBooking";
-                          }
-                        }
-                        if (calendarItem.status === "reserved") {
-                          if (currentBookingId) {
-                            const isFirstDay =
-                              currentBookingId !== prevBookingId;
-                            const isLastDay =
-                              currentBookingId !== nextBookingId;
-                            if (isFirstDay && isLastDay) return "reservedV2";
-                            if (isFirstDay) return "firstDayReserveV2";
-                            if (isLastDay) return "lastDayReserveV2";
-                            return "midDayReserveV2";
-                          }
-                          return "reservedV2";
-                        }
-                        if (calendarItem.status === "blocked") {
-                          return "reservedV2";
-                        }
-                        if (calendarItem.discount_percentage > 0) {
-                          return "discount";
-                        }
-                        return calendarItem.status || "";
-                      }
-                      return getDayClass(
-                        dateProps,
-                        $state.apiRequest.data[1].calendar
-                      );
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
-                  }
-                })()}
+                      })()
+                }
                 holidays={(() => {
                   try {
                     return (() => {

@@ -1225,6 +1225,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                                   return "مهمانشو وصله!";
                                                 case 8:
                                                   return "هومسا وصله!";
+                                                case 17:
+                                                  return "اسنپ‌تریپ وصله!";
                                                 default:
                                                   return "";
                                               }
