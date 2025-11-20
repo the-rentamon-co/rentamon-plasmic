@@ -2318,8 +2318,14 @@ function PlasmicProCalendar__RenderFunc(props: {
                                     "No Profile matches the given query."
                                   ) {
                                     console.log("go to activation");
-                                    return (window.location.href =
-                                      "https://rentamon.com/activation/1/");
+                                    const isMiaan =
+                                      window.location.hostname.includes(
+                                        "miaan.ir"
+                                      );
+                                    const baseUrl = isMiaan
+                                      ? "https://miaan.ir"
+                                      : "https://rentamon.com";
+                                    return (window.location.href = `${baseUrl}/activation/1/`);
                                   }
                                 })();
                               }
