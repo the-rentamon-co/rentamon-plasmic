@@ -194,6 +194,35 @@ function PlasmicTestSearch__RenderFunc(props: {
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "token",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                var getCookie = name => {
+                  const cookies = document.cookie.split("; ");
+                  for (let cookie of cookies) {
+                    const [key, value] = cookie.split("=");
+                    if (key === name) return JSON.parse(value);
+                  }
+                  return "";
+                };
+                return ($state.token = getCookie("usso_access_token"));
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -250,7 +279,13 @@ function PlasmicTestSearch__RenderFunc(props: {
               className={classNames("__wab_instance", sty.apiRequest)}
               config={(() => {
                 try {
-                  return undefined;
+                  return {
+                    headers: {
+                      "Content-Type": "application/json",
+                      Accept: "application/json",
+                      Authorization: $state.token
+                    }
+                  };
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
