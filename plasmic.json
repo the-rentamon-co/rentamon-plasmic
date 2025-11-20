@@ -5734,6 +5734,11 @@
           "id": "GB6fGegIyXra",
           "name": "snapptrip.png 2",
           "filePath": "../public/plasmic/website_starter/images/snapptripPng2.png"
+        },
+        {
+          "id": "cPVYuWo0ZvlF",
+          "name": "miaan-logo-blue.png",
+          "filePath": "../public/plasmic/website_starter/images/miaanLogoBluePng.png"
         }
       ],
       "indirect": false,

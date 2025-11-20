@@ -321,6 +321,16 @@
       }
     },
     {
+      "name": "Main Miaan Blue",
+      "type": "color",
+      "value": "#0000F7",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "8nedppYkGVaH"
+      }
+    },
+    {
       "name": "Main light",
       "type": "color",
       "value": "#E4DEFE",
@@ -328,16 +338,6 @@
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",
         "id": "e1zhjZPlCA6d"
-      }
-    },
-    {
-      "name": "Main purple",
-      "type": "color",
-      "value": "#0000F7",
-      "category": "color",
-      "meta": {
-        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-        "id": "8nedppYkGVaH"
       }
     },
     {
