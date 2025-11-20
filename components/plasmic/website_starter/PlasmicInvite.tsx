@@ -595,18 +595,8 @@ function PlasmicInvite__RenderFunc(props: {
                             const actionArgs = {
                               customFunction: async () => {
                                 return (() => {
-                                  const isMiaan =
-                                    window.location.hostname.includes(
-                                      "miaan.ir"
-                                    );
-                                  const ssoBase = isMiaan
-                                    ? "https://sso.miaan.ir"
-                                    : "https://sso.rentamon.com";
-                                  const callbackBase = isMiaan
-                                    ? "https://miaan.ir"
-                                    : "https://rentamon.com";
                                   return window.open(
-                                    `${ssoBase}/web/index.html?callback=${callbackBase}/splash?src=referral`
+                                    `https://sso.miaan.ir/web/index.html?callback=https://miaan.ir/splash?src=referral`
                                   );
                                 })();
                               }

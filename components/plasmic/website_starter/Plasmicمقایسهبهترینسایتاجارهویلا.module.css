@@ -2077,7 +2077,7 @@
 @media (max-width: 1200px) {
   .text__wZlT {
     line-height: 1.8;
-    padding: 20px;
+    padding: 20px 40px;
   }
 }
 @media (max-width: 500px) {
@@ -2121,6 +2121,7 @@
     padding-left: 0px;
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
     column-gap: 0px;
   }
 }
