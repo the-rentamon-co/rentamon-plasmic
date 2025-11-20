@@ -94,28 +94,32 @@ export type PlasmicIntegrations__OverridesType = {
   introApiCaption?: Flex__<"div">;
   platformsTitle?: Flex__<"div">;
   platforms?: Flex__<"div">;
-  platformNames4?: Flex__<"div">;
+  names?: Flex__<"div">;
+  jajiga?: Flex__<"div">;
   platformNames5?: Flex__<"div">;
   platformNames6?: Flex__<"div">;
-  platformNames?: Flex__<"div">;
+  shab?: Flex__<"div">;
   platformNames2?: Flex__<"div">;
   platformNames3?: Flex__<"div">;
-  platformNames7?: Flex__<"div">;
+  jabama?: Flex__<"div">;
   platformNames8?: Flex__<"div">;
   platformNames9?: Flex__<"div">;
-  platformNames10?: Flex__<"div">;
+  snapptrip?: Flex__<"div">;
   platformNames11?: Flex__<"div">;
   platformNames12?: Flex__<"div">;
+  otaghak?: Flex__<"div">;
   platformNames13?: Flex__<"div">;
+  platformNames16?: Flex__<"div">;
+  homsa?: Flex__<"div">;
   platformNames14?: Flex__<"div">;
   platformNames15?: Flex__<"div">;
-  platformNames16?: Flex__<"div">;
+  mizboon?: Flex__<"div">;
   platformNames17?: Flex__<"div">;
   platformNames18?: Flex__<"div">;
-  platformNames19?: Flex__<"div">;
+  mihmansho?: Flex__<"div">;
   platformNames20?: Flex__<"div">;
   platformNames21?: Flex__<"div">;
-  platformNames22?: Flex__<"div">;
+  site?: Flex__<"div">;
   platformNames23?: Flex__<"div">;
   platformNames24?: Flex__<"div">;
   benefits?: Flex__<"div">;
@@ -211,6 +215,21 @@ function PlasmicIntegrations__RenderFunc(props: {
           key="twitter:title"
           name="twitter:title"
           content={PlasmicIntegrations.pageMetadata.title}
+        />
+        <meta
+          key="description"
+          name="description"
+          content={PlasmicIntegrations.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicIntegrations.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={PlasmicIntegrations.pageMetadata.description}
         />
       </Head>
 
@@ -323,12 +342,14 @@ function PlasmicIntegrations__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.platforms)}
               >
                 <div
-                  className={classNames(projectcss.all, sty.freeBox___9Inv7)}
+                  data-plasmic-name={"names"}
+                  data-plasmic-override={overrides.names}
+                  className={classNames(projectcss.all, sty.names)}
                 >
                   <div
-                    data-plasmic-name={"platformNames4"}
-                    data-plasmic-override={overrides.platformNames4}
-                    className={classNames(projectcss.all, sty.platformNames4)}
+                    data-plasmic-name={"jajiga"}
+                    data-plasmic-override={overrides.jajiga}
+                    className={classNames(projectcss.all, sty.jajiga)}
                   >
                     <div
                       data-plasmic-name={"platformNames5"}
@@ -367,7 +388,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "30px"
+                            ? "100%"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -432,9 +453,9 @@ function PlasmicIntegrations__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    data-plasmic-name={"platformNames"}
-                    data-plasmic-override={overrides.platformNames}
-                    className={classNames(projectcss.all, sty.platformNames)}
+                    data-plasmic-name={"shab"}
+                    data-plasmic-override={overrides.shab}
+                    className={classNames(projectcss.all, sty.shab)}
                   >
                     <div
                       data-plasmic-name={"platformNames2"}
@@ -475,7 +496,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "30px"
+                            ? "100%"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -540,9 +561,9 @@ function PlasmicIntegrations__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    data-plasmic-name={"platformNames7"}
-                    data-plasmic-override={overrides.platformNames7}
-                    className={classNames(projectcss.all, sty.platformNames7)}
+                    data-plasmic-name={"jabama"}
+                    data-plasmic-override={overrides.jabama}
+                    className={classNames(projectcss.all, sty.jabama)}
                   >
                     <div
                       data-plasmic-name={"platformNames8"}
@@ -583,7 +604,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "30px"
+                            ? "100%"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -648,9 +669,9 @@ function PlasmicIntegrations__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    data-plasmic-name={"platformNames10"}
-                    data-plasmic-override={overrides.platformNames10}
-                    className={classNames(projectcss.all, sty.platformNames10)}
+                    data-plasmic-name={"snapptrip"}
+                    data-plasmic-override={overrides.snapptrip}
+                    className={classNames(projectcss.all, sty.snapptrip)}
                   >
                     <div
                       data-plasmic-name={"platformNames11"}
@@ -694,14 +715,14 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "30px"
+                            ? "100%"
                             : "auto"
                         }
                         loading={"lazy"}
                         src={{
-                          src: "/plasmic/website_starter/images/image65.png",
-                          fullWidth: 512,
-                          fullHeight: 512,
+                          src: "/plasmic/website_starter/images/snapptripPng.png",
+                          fullWidth: 132,
+                          fullHeight: 129,
                           aspectRatio: undefined
                         }}
                       />
@@ -721,7 +742,9 @@ function PlasmicIntegrations__RenderFunc(props: {
                           sty.text__etbZz
                         )}
                       >
-                        {"\u0627\u062a\u0627\u0642\u06a9"}
+                        {
+                          "\u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e"
+                        }
                       </div>
                       <div
                         className={classNames(
@@ -739,7 +762,113 @@ function PlasmicIntegrations__RenderFunc(props: {
                                 projectcss.a,
                                 projectcss.__wab_text,
                                 projectcss.plasmic_default__inline,
-                                sty.link__meLct
+                                sty.link__cl6Cd
+                              )}
+                              component={Link}
+                              href={"https://www.snapptrip.com/"}
+                              platform={"nextjs"}
+                            >
+                              {"snapptrip.com"}
+                            </PlasmicLink__>
+                          }
+                          <React.Fragment>{""}</React.Fragment>
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-plasmic-name={"otaghak"}
+                    data-plasmic-override={overrides.otaghak}
+                    className={classNames(projectcss.all, sty.otaghak)}
+                  >
+                    <div
+                      data-plasmic-name={"platformNames13"}
+                      data-plasmic-override={overrides.platformNames13}
+                      className={classNames(
+                        projectcss.all,
+                        sty.platformNames13
+                      )}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__q4Dh7)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
+                        }
+                        displayMaxHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "50px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
+                        }
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "100%"
+                              : "100%"
+                        }
+                        displayMinHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "30px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
+                        }
+                        displayMinWidth={"0"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "100%"
+                            : "auto"
+                        }
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image65.png",
+                          fullWidth: 512,
+                          fullHeight: 512,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    </div>
+                    <div
+                      data-plasmic-name={"platformNames16"}
+                      data-plasmic-override={overrides.platformNames16}
+                      className={classNames(
+                        projectcss.all,
+                        sty.platformNames16
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__uzs9H
+                        )}
+                      >
+                        {"\u0627\u062a\u0627\u0642\u06a9"}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__aRhW1
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          {
+                            <PlasmicLink__
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.a,
+                                projectcss.__wab_text,
+                                projectcss.plasmic_default__inline,
+                                sty.link__mkyS9
                               )}
                               component={Link}
                               href={
@@ -761,12 +890,10 @@ function PlasmicIntegrations__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__aIcNf)}>
                   <div
-                    data-plasmic-name={"platformNames13"}
-                    data-plasmic-override={overrides.platformNames13}
-                    className={classNames(projectcss.all, sty.platformNames13)}
+                    data-plasmic-name={"homsa"}
+                    data-plasmic-override={overrides.homsa}
+                    className={classNames(projectcss.all, sty.homsa)}
                   >
                     <div
                       data-plasmic-name={"platformNames14"}
@@ -810,7 +937,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "30px"
+                            ? "100%"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -878,9 +1005,9 @@ function PlasmicIntegrations__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    data-plasmic-name={"platformNames16"}
-                    data-plasmic-override={overrides.platformNames16}
-                    className={classNames(projectcss.all, sty.platformNames16)}
+                    data-plasmic-name={"mizboon"}
+                    data-plasmic-override={overrides.mizboon}
+                    className={classNames(projectcss.all, sty.mizboon)}
                   >
                     <div
                       data-plasmic-name={"platformNames17"}
@@ -924,7 +1051,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "30px"
+                            ? "100%"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -992,9 +1119,9 @@ function PlasmicIntegrations__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    data-plasmic-name={"platformNames19"}
-                    data-plasmic-override={overrides.platformNames19}
-                    className={classNames(projectcss.all, sty.platformNames19)}
+                    data-plasmic-name={"mihmansho"}
+                    data-plasmic-override={overrides.mihmansho}
+                    className={classNames(projectcss.all, sty.mihmansho)}
                   >
                     <div
                       data-plasmic-name={"platformNames20"}
@@ -1038,7 +1165,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "30px"
+                            ? "100%"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -1106,9 +1233,9 @@ function PlasmicIntegrations__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    data-plasmic-name={"platformNames22"}
-                    data-plasmic-override={overrides.platformNames22}
-                    className={classNames(projectcss.all, sty.platformNames22)}
+                    data-plasmic-name={"site"}
+                    data-plasmic-override={overrides.site}
+                    className={classNames(projectcss.all, sty.site)}
                   >
                     <div
                       data-plasmic-name={"platformNames23"}
@@ -1129,9 +1256,11 @@ function PlasmicIntegrations__RenderFunc(props: {
                               : "70px"
                         }
                         displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "mobile")
+                          hasVariant(globalVariants, "screen", "smallMobile")
                             ? "50px"
-                            : "70px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "50px"
+                              : "70px"
                         }
                         displayMaxWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
@@ -1150,7 +1279,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={
                           hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "30px"
+                            ? "100%"
                             : "auto"
                         }
                         loading={"lazy"}
@@ -1426,9 +1555,11 @@ function PlasmicIntegrations__RenderFunc(props: {
                       sty.h2__t2Pgn
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647 \u0645\u0633\u062a\u0646\u062f\u0627\u062a API \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 apidog.io \u0644\u0637\u0641\u0627\r\n\r\n"
-                      : "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647 \u0645\u0633\u062a\u0646\u062f\u0627\u062a API \u0645\u06cc\u0627\u0646 \u062f\u0631 \u0633\u0627\u06cc\u062a apidog.io \u0644\u0637\u0641\u0627\r\n\r\n"}
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647 \u0645\u0633\u062a\u0646\u062f\u0627\u062a API \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 apidog.io \u0644\u0637\u0641\u0627\r\n\r"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647 \u0645\u0633\u062a\u0646\u062f\u0627\u062a API \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0631 apidog.io \u0644\u0637\u0641\u0627\r\n\r\n"
+                        : "\u0628\u0631\u0627\u06cc \u0645\u0634\u0627\u0647\u062f\u0647 \u0645\u0633\u062a\u0646\u062f\u0627\u062a API \u0645\u06cc\u0627\u0646 \u062f\u0631 \u0633\u0627\u06cc\u062a apidog.io \u0644\u0637\u0641\u0627\r\n\r\n"}
                   </h2>
                 </div>
                 <div
@@ -1446,29 +1577,34 @@ function PlasmicIntegrations__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["runCode"] = true
+                      $steps["goToHttpsRentamonApidogIo"] = true
                         ? (() => {
                             const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  return window.open(
-                                    "https://rentamon.apidog.io/",
-                                    "_blank"
-                                  );
-                                })();
-                              }
+                              destination: "https://rentamon.apidog.io/"
                             };
-                            return (({ customFunction }) => {
-                              return customFunction();
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;
                       if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
+                        $steps["goToHttpsRentamonApidogIo"] != null &&
+                        typeof $steps["goToHttpsRentamonApidogIo"] ===
+                          "object" &&
+                        typeof $steps["goToHttpsRentamonApidogIo"].then ===
+                          "function"
                       ) {
-                        $steps["runCode"] = await $steps["runCode"];
+                        $steps["goToHttpsRentamonApidogIo"] =
+                          await $steps["goToHttpsRentamonApidogIo"];
                       }
                     }}
                   >
@@ -1516,28 +1652,32 @@ const PlasmicDescendants = {
     "introApiCaption",
     "platformsTitle",
     "platforms",
-    "platformNames4",
+    "names",
+    "jajiga",
     "platformNames5",
     "platformNames6",
-    "platformNames",
+    "shab",
     "platformNames2",
     "platformNames3",
-    "platformNames7",
+    "jabama",
     "platformNames8",
     "platformNames9",
-    "platformNames10",
+    "snapptrip",
     "platformNames11",
     "platformNames12",
+    "otaghak",
     "platformNames13",
+    "platformNames16",
+    "homsa",
     "platformNames14",
     "platformNames15",
-    "platformNames16",
+    "mizboon",
     "platformNames17",
     "platformNames18",
-    "platformNames19",
+    "mihmansho",
     "platformNames20",
     "platformNames21",
-    "platformNames22",
+    "site",
     "platformNames23",
     "platformNames24",
     "benefits",
@@ -1564,28 +1704,32 @@ const PlasmicDescendants = {
     "introApiCaption",
     "platformsTitle",
     "platforms",
-    "platformNames4",
+    "names",
+    "jajiga",
     "platformNames5",
     "platformNames6",
-    "platformNames",
+    "shab",
     "platformNames2",
     "platformNames3",
-    "platformNames7",
+    "jabama",
     "platformNames8",
     "platformNames9",
-    "platformNames10",
+    "snapptrip",
     "platformNames11",
     "platformNames12",
+    "otaghak",
     "platformNames13",
+    "platformNames16",
+    "homsa",
     "platformNames14",
     "platformNames15",
-    "platformNames16",
+    "mizboon",
     "platformNames17",
     "platformNames18",
-    "platformNames19",
+    "mihmansho",
     "platformNames20",
     "platformNames21",
-    "platformNames22",
+    "site",
     "platformNames23",
     "platformNames24",
     "benefits",
@@ -1607,28 +1751,32 @@ const PlasmicDescendants = {
     "introApiCaption",
     "platformsTitle",
     "platforms",
-    "platformNames4",
+    "names",
+    "jajiga",
     "platformNames5",
     "platformNames6",
-    "platformNames",
+    "shab",
     "platformNames2",
     "platformNames3",
-    "platformNames7",
+    "jabama",
     "platformNames8",
     "platformNames9",
-    "platformNames10",
+    "snapptrip",
     "platformNames11",
     "platformNames12",
+    "otaghak",
     "platformNames13",
+    "platformNames16",
+    "homsa",
     "platformNames14",
     "platformNames15",
-    "platformNames16",
+    "mizboon",
     "platformNames17",
     "platformNames18",
-    "platformNames19",
+    "mihmansho",
     "platformNames20",
     "platformNames21",
-    "platformNames22",
+    "site",
     "platformNames23",
     "platformNames24"
   ],
@@ -1638,53 +1786,90 @@ const PlasmicDescendants = {
   platformsTitle: ["platformsTitle"],
   platforms: [
     "platforms",
-    "platformNames4",
+    "names",
+    "jajiga",
     "platformNames5",
     "platformNames6",
-    "platformNames",
+    "shab",
     "platformNames2",
     "platformNames3",
-    "platformNames7",
+    "jabama",
     "platformNames8",
     "platformNames9",
-    "platformNames10",
+    "snapptrip",
     "platformNames11",
     "platformNames12",
+    "otaghak",
     "platformNames13",
+    "platformNames16",
+    "homsa",
     "platformNames14",
     "platformNames15",
-    "platformNames16",
+    "mizboon",
     "platformNames17",
     "platformNames18",
-    "platformNames19",
+    "mihmansho",
     "platformNames20",
     "platformNames21",
-    "platformNames22",
+    "site",
     "platformNames23",
     "platformNames24"
   ],
-  platformNames4: ["platformNames4", "platformNames5", "platformNames6"],
+  names: [
+    "names",
+    "jajiga",
+    "platformNames5",
+    "platformNames6",
+    "shab",
+    "platformNames2",
+    "platformNames3",
+    "jabama",
+    "platformNames8",
+    "platformNames9",
+    "snapptrip",
+    "platformNames11",
+    "platformNames12",
+    "otaghak",
+    "platformNames13",
+    "platformNames16",
+    "homsa",
+    "platformNames14",
+    "platformNames15",
+    "mizboon",
+    "platformNames17",
+    "platformNames18",
+    "mihmansho",
+    "platformNames20",
+    "platformNames21",
+    "site",
+    "platformNames23",
+    "platformNames24"
+  ],
+  jajiga: ["jajiga", "platformNames5", "platformNames6"],
   platformNames5: ["platformNames5"],
   platformNames6: ["platformNames6"],
-  platformNames: ["platformNames", "platformNames2", "platformNames3"],
+  shab: ["shab", "platformNames2", "platformNames3"],
   platformNames2: ["platformNames2"],
   platformNames3: ["platformNames3"],
-  platformNames7: ["platformNames7", "platformNames8", "platformNames9"],
+  jabama: ["jabama", "platformNames8", "platformNames9"],
   platformNames8: ["platformNames8"],
   platformNames9: ["platformNames9"],
-  platformNames10: ["platformNames10", "platformNames11", "platformNames12"],
+  snapptrip: ["snapptrip", "platformNames11", "platformNames12"],
   platformNames11: ["platformNames11"],
   platformNames12: ["platformNames12"],
-  platformNames13: ["platformNames13", "platformNames14", "platformNames15"],
+  otaghak: ["otaghak", "platformNames13", "platformNames16"],
+  platformNames13: ["platformNames13"],
+  platformNames16: ["platformNames16"],
+  homsa: ["homsa", "platformNames14", "platformNames15"],
   platformNames14: ["platformNames14"],
   platformNames15: ["platformNames15"],
-  platformNames16: ["platformNames16", "platformNames17", "platformNames18"],
+  mizboon: ["mizboon", "platformNames17", "platformNames18"],
   platformNames17: ["platformNames17"],
   platformNames18: ["platformNames18"],
-  platformNames19: ["platformNames19", "platformNames20", "platformNames21"],
+  mihmansho: ["mihmansho", "platformNames20", "platformNames21"],
   platformNames20: ["platformNames20"],
   platformNames21: ["platformNames21"],
-  platformNames22: ["platformNames22", "platformNames23", "platformNames24"],
+  site: ["site", "platformNames23", "platformNames24"],
   platformNames23: ["platformNames23"],
   platformNames24: ["platformNames24"],
   benefits: [
@@ -1722,28 +1907,32 @@ type NodeDefaultElementType = {
   introApiCaption: "div";
   platformsTitle: "div";
   platforms: "div";
-  platformNames4: "div";
+  names: "div";
+  jajiga: "div";
   platformNames5: "div";
   platformNames6: "div";
-  platformNames: "div";
+  shab: "div";
   platformNames2: "div";
   platformNames3: "div";
-  platformNames7: "div";
+  jabama: "div";
   platformNames8: "div";
   platformNames9: "div";
-  platformNames10: "div";
+  snapptrip: "div";
   platformNames11: "div";
   platformNames12: "div";
+  otaghak: "div";
   platformNames13: "div";
+  platformNames16: "div";
+  homsa: "div";
   platformNames14: "div";
   platformNames15: "div";
-  platformNames16: "div";
+  mizboon: "div";
   platformNames17: "div";
   platformNames18: "div";
-  platformNames19: "div";
+  mihmansho: "div";
   platformNames20: "div";
   platformNames21: "div";
-  platformNames22: "div";
+  site: "div";
   platformNames23: "div";
   platformNames24: "div";
   benefits: "div";
@@ -1832,28 +2021,32 @@ export const PlasmicIntegrations = Object.assign(
     introApiCaption: makeNodeComponent("introApiCaption"),
     platformsTitle: makeNodeComponent("platformsTitle"),
     platforms: makeNodeComponent("platforms"),
-    platformNames4: makeNodeComponent("platformNames4"),
+    names: makeNodeComponent("names"),
+    jajiga: makeNodeComponent("jajiga"),
     platformNames5: makeNodeComponent("platformNames5"),
     platformNames6: makeNodeComponent("platformNames6"),
-    platformNames: makeNodeComponent("platformNames"),
+    shab: makeNodeComponent("shab"),
     platformNames2: makeNodeComponent("platformNames2"),
     platformNames3: makeNodeComponent("platformNames3"),
-    platformNames7: makeNodeComponent("platformNames7"),
+    jabama: makeNodeComponent("jabama"),
     platformNames8: makeNodeComponent("platformNames8"),
     platformNames9: makeNodeComponent("platformNames9"),
-    platformNames10: makeNodeComponent("platformNames10"),
+    snapptrip: makeNodeComponent("snapptrip"),
     platformNames11: makeNodeComponent("platformNames11"),
     platformNames12: makeNodeComponent("platformNames12"),
+    otaghak: makeNodeComponent("otaghak"),
     platformNames13: makeNodeComponent("platformNames13"),
+    platformNames16: makeNodeComponent("platformNames16"),
+    homsa: makeNodeComponent("homsa"),
     platformNames14: makeNodeComponent("platformNames14"),
     platformNames15: makeNodeComponent("platformNames15"),
-    platformNames16: makeNodeComponent("platformNames16"),
+    mizboon: makeNodeComponent("mizboon"),
     platformNames17: makeNodeComponent("platformNames17"),
     platformNames18: makeNodeComponent("platformNames18"),
-    platformNames19: makeNodeComponent("platformNames19"),
+    mihmansho: makeNodeComponent("mihmansho"),
     platformNames20: makeNodeComponent("platformNames20"),
     platformNames21: makeNodeComponent("platformNames21"),
-    platformNames22: makeNodeComponent("platformNames22"),
+    site: makeNodeComponent("site"),
     platformNames23: makeNodeComponent("platformNames23"),
     platformNames24: makeNodeComponent("platformNames24"),
     benefits: makeNodeComponent("benefits"),
@@ -1875,10 +2068,23 @@ export const PlasmicIntegrations = Object.assign(
     internalVariantProps: PlasmicIntegrations__VariantProps,
     internalArgProps: PlasmicIntegrations__ArgProps,
 
+    // Key-value metadata
+    metadata: {
+      title:
+        "API \u0645\u06cc\u0627\u0646 | \u0627\u062a\u0635\u0627\u0644 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0647 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0648 \u0634\u0628",
+      description:
+        "\u0628\u0627 Integrations \u0645\u06cc\u0627\u0646\u060c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062e\u0648\u062f \u0631\u0627 \u0628\u062f\u0648\u0646 \u062f\u0631\u062f\u0633\u0631 \u0628\u0647 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0648 \u0634\u0628 \u0648\u0635\u0644 \u06a9\u0646\u06cc\u062f. \u0642\u06cc\u0645\u062a\u060c \u0645\u0648\u062c\u0648\u062f\u06cc \u0648 \u062a\u0642\u0648\u06cc\u0645 \u0647\u0645\u06cc\u0634\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0648 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0645\u06cc\u200c\u0634\u0648\u062f \u062a\u0627 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0686\u0646\u062f\u067e\u0644\u062a\u0641\u0631\u0645\u06cc \u0633\u0627\u062f\u0647 \u0634\u0648\u062f \u0648 \u0627\u0632 \u0647\u0631\u06af\u0648\u0646\u0647 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0634\u0648\u062f.",
+      keywords:
+        "\u0645\u06cc\u0627\u0646, \u0631\u0646\u062a\u0627\u0645\u0648\u0646, \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0633\u0627\u0632\u06cc, channel manager, \u062c\u0627\u0628\u0627\u0645\u0627, \u062c\u0627\u062c\u06cc\u06af\u0627, \u0627\u0633\u0646\u067e \u062a\u0631\u06cc\u067e, \u0634\u0628, \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647, \u062a\u0642\u0648\u06cc\u0645 \u0631\u0632\u0631\u0648, \u0647\u0645\u06af\u0627\u0645 \u0633\u0627\u0632\u06cc \u062a\u0642\u0648\u06cc\u0645",
+      type: "website",
+      url: "https://miaan.ir/integrations"
+    },
+
     // Page metadata
     pageMetadata: {
       title: "دریافت API پلتفرم‌های اجاره ویلا",
-      description: "",
+      description:
+        "با Integrations میان، اقامتگاه خود را بدون دردسر به جاباما، جاجیگا، اسنپ‌تریپ و شب وصل کنید. قیمت، موجودی و تقویم همیشه خودکار و یکپارچه به‌روز می‌شود تا مدیریت چندپلفرمی ساده شود و از هرگونه تداخل رزرو جلوگیری شود.",
       ogImageSrc: "",
       canonical: ""
     }

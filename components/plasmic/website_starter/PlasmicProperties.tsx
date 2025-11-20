@@ -424,7 +424,26 @@ function PlasmicProperties__RenderFunc(props: {
                 ref={ref => {
                   $refs["profile2"] = ref;
                 }}
-                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+                url={(() => {
+                  try {
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const apiBase = isMiaan
+                        ? "https://api-v2.miaan.ir"
+                        : "https://api-v2.rentamon.com";
+                      return `${apiBase}/api/user_info?property_id=1`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               />
             </div>
           </div>
@@ -890,7 +909,26 @@ function PlasmicProperties__RenderFunc(props: {
                   ref={ref => {
                     $refs["apiRequest"] = ref;
                   }}
-                  url={"https://gateway.rentamon.com/webhook/properties"}
+                  url={(() => {
+                    try {
+                      return (() => {
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const gatewayBase = isMiaan
+                          ? "https://gateway.miaan.ir"
+                          : "https://gateway.rentamon.com";
+                        return `${gatewayBase}/webhook/properties`;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                 >
                   <div
                     className={classNames(projectcss.all, sty.freeBox__q1Cc)}
@@ -1470,7 +1508,26 @@ function PlasmicProperties__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://gateway.rentamon.com/webhook/get_user_segment"
+                        (() => {
+                          try {
+                            return (() => {
+                              const isMiaan =
+                                window.location.hostname.includes("miaan.ir");
+                              const gatewayBase = isMiaan
+                                ? "https://gateway.miaan.ir"
+                                : "https://gateway.rentamon.com";
+                              return `${gatewayBase}/webhook/get_user_segment`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [

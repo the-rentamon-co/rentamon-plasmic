@@ -63,8 +63,6 @@ import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
-import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -94,8 +92,6 @@ export type PlasmicPaymentSuccess__OverridesType = {
   img?: Flex__<typeof PlasmicImg__>;
   button?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
-  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
-  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultPaymentSuccessProps {}
@@ -336,9 +332,26 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
               ref={ref => {
                 $refs["apiRequest"] = ref;
               }}
-              url={
-                "https://gateway.rentamon.com/webhook/4aee429f-0a3e-4306-a4d7-eddbd49cfea5"
-              }
+              url={(() => {
+                try {
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const gatewayBase = isMiaan
+                      ? "https://gateway.miaan.ir"
+                      : "https://gateway.rentamon.com";
+                    return `${gatewayBase}/webhook/4aee429f-0a3e-4306-a4d7-eddbd49cfea5`;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
             >
               <div className={classNames(projectcss.all, sty.freeBox__qv6Bb)}>
                 <div
@@ -564,9 +577,13 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const baseUrl = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
                           return setTimeout(() => {
-                            window.location.href =
-                              "https://rentamon.com/settings/";
+                            window.location.href = `${baseUrl}/settings/`;
                           }, 10000);
                         })();
                       }
@@ -585,20 +602,6 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
               }
             }}
           />
-
-          <div className={classNames(projectcss.all, sty.freeBox___6N5Oc)}>
-            <ClarityRntComponent
-              data-plasmic-name={"clarityRntComponent"}
-              data-plasmic-override={overrides.clarityRntComponent}
-              className={classNames("__wab_instance", sty.clarityRntComponent)}
-            />
-
-            <FaviconRntComponent
-              data-plasmic-name={"faviconRntComponent"}
-              data-plasmic-override={overrides.faviconRntComponent}
-              className={classNames("__wab_instance", sty.faviconRntComponent)}
-            />
-          </div>
         </div>
       </div>
     </React.Fragment>
@@ -612,17 +615,13 @@ const PlasmicDescendants = {
     "apiRequest",
     "img",
     "button",
-    "sideEffect",
-    "clarityRntComponent",
-    "faviconRntComponent"
+    "sideEffect"
   ],
   successful: ["successful"],
   apiRequest: ["apiRequest", "img"],
   img: ["img"],
   button: ["button"],
-  sideEffect: ["sideEffect"],
-  clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"]
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -634,8 +633,6 @@ type NodeDefaultElementType = {
   img: typeof PlasmicImg__;
   button: "div";
   sideEffect: typeof SideEffect;
-  clarityRntComponent: typeof ClarityRntComponent;
-  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -649,7 +646,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicPaymentSuccess__VariantsArgs;
     args?: PlasmicPaymentSuccess__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicPaymentSuccess__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicPaymentSuccess__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicPaymentSuccess__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
@@ -703,8 +702,6 @@ export const PlasmicPaymentSuccess = Object.assign(
     img: makeNodeComponent("img"),
     button: makeNodeComponent("button"),
     sideEffect: makeNodeComponent("sideEffect"),
-    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
-    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicPaymentSuccess
     internalVariantProps: PlasmicPaymentSuccess__VariantProps,

@@ -146,6 +146,7 @@ export type PlasmicHomepage__OverridesType = {
   icon3?: Flex__<"div">;
   title3?: Flex__<"div">;
   caption3?: Flex__<"div">;
+  introduction2TextPics?: Flex__<"div">;
   image?: Flex__<"div">;
   introAutoSyncTitle2?: Flex__<"div">;
   introAutoSyncCaption2?: Flex__<"div">;
@@ -1388,6 +1389,282 @@ function PlasmicHomepage__RenderFunc(props: {
               </div>
             </div>
             <div
+              data-plasmic-name={"introduction2TextPics"}
+              data-plasmic-override={overrides.introduction2TextPics}
+              className={classNames(projectcss.all, sty.introduction2TextPics)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__ecERe)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__q7Fzg)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "none"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
+                  }
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "none"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "none"
+                          : "none"
+                  }
+                  displayMinHeight={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
+                  }
+                  displayMinWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "auto"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "auto"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "auto"
+                          : "0"
+                  }
+                  displayWidth={
+                    hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "100%"
+                      : hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "100%"
+                          : "100%"
+                  }
+                  loading={"lazy"}
+                  src={
+                    "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fhosts%2Fhashemi.jpg?versionId="
+                  }
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ykkCs
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0645\u0639\u0631\u0641\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0648 \u0622\u0645\u0648\u0632\u0634 \u0627\u0648\u0644\u06cc\u0647 \u0628\u0647 \u0622\u0642\u0627\u06cc \u0633\u06cc\u062f \u0645\u062d\u0645\u062f\u062d\u0633\u0646 \u0647\u0627\u0634\u0645\u06cc - "
+                        }
+                      </React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__ioyKx
+                          )}
+                          component={Link}
+                          href={"https://www.jajiga.com/room/3222562"}
+                          platform={"nextjs"}
+                        >
+                          {hasVariant(
+                            globalVariants,
+                            "screen",
+                            "smallMobile"
+                          ) ? (
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 400 }}
+                              >
+                                {
+                                  "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                }
+                              </span>
+                            </React.Fragment>
+                          ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 400 }}
+                              >
+                                {
+                                  "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                }
+                              </span>
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 400 }}
+                              >
+                                {
+                                  "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                }
+                              </span>
+                            </React.Fragment>
+                          )}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{"\r"}</React.Fragment>
+                    </React.Fragment>
+                  ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0645\u0639\u0631\u0641\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0648 \u0622\u0645\u0648\u0632\u0634 \u0627\u0648\u0644\u06cc\u0647 \u0628\u0647 \u0622\u0642\u0627\u06cc \u0633\u06cc\u062f \u0645\u062d\u0645\u062f\u062d\u0633\u0646 \u0647\u0627\u0634\u0645\u06cc\n"
+                        }
+                      </React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link___51Bl5
+                          )}
+                          component={Link}
+                          href={"https://www.jajiga.com/room/3222562"}
+                          platform={"nextjs"}
+                        >
+                          {hasVariant(
+                            globalVariants,
+                            "screen",
+                            "smallMobile"
+                          ) ? (
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 400 }}
+                              >
+                                {
+                                  "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                }
+                              </span>
+                            </React.Fragment>
+                          ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 400 }}
+                              >
+                                {
+                                  "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                }
+                              </span>
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 400 }}
+                              >
+                                {
+                                  "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                }
+                              </span>
+                            </React.Fragment>
+                          )}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{"\r"}</React.Fragment>
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0645\u0639\u0631\u0641\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0648 \u0622\u0645\u0648\u0632\u0634 \u0627\u0648\u0644\u06cc\u0647 \u0628\u0647 \u0622\u0642\u0627\u06cc \u0633\u06cc\u062f \u0645\u062d\u0645\u062f\u062d\u0633\u0646 \u0647\u0627\u0634\u0645\u06cc\n"
+                        }
+                      </React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__dzZ1Z
+                          )}
+                          component={Link}
+                          href={"https://www.jajiga.com/room/3222562"}
+                          platform={"nextjs"}
+                        >
+                          {hasVariant(
+                            globalVariants,
+                            "screen",
+                            "smallMobile"
+                          ) ? (
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 400 }}
+                              >
+                                {
+                                  "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                }
+                              </span>
+                            </React.Fragment>
+                          ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 400 }}
+                              >
+                                {
+                                  "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                }
+                              </span>
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 400 }}
+                              >
+                                {
+                                  "\u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0631\u0648\u0633\u062a\u0627\u06cc \u06a9\u0644\u0627\u06a9\u0631\u062f\u0647\u060c \u0639\u0628\u0627\u0633\u200c\u0622\u0628\u0627\u062f"
+                                }
+                              </span>
+                            </React.Fragment>
+                          )}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{"\r"}</React.Fragment>
+                    </React.Fragment>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div
               data-plasmic-name={"image"}
               data-plasmic-override={overrides.image}
               className={classNames(projectcss.all, sty.image)}
@@ -2584,6 +2861,7 @@ const PlasmicDescendants = {
     "icon3",
     "title3",
     "caption3",
+    "introduction2TextPics",
     "image",
     "introAutoSyncTitle2",
     "introAutoSyncCaption2",
@@ -2656,6 +2934,7 @@ const PlasmicDescendants = {
     "icon3",
     "title3",
     "caption3",
+    "introduction2TextPics",
     "image",
     "introAutoSyncTitle2",
     "introAutoSyncCaption2",
@@ -2776,6 +3055,7 @@ const PlasmicDescendants = {
   icon3: ["icon3"],
   title3: ["title3"],
   caption3: ["caption3"],
+  introduction2TextPics: ["introduction2TextPics"],
   image: [
     "image",
     "introAutoSyncTitle2",
@@ -2882,6 +3162,7 @@ type NodeDefaultElementType = {
   icon3: "div";
   title3: "div";
   caption3: "div";
+  introduction2TextPics: "div";
   image: "div";
   introAutoSyncTitle2: "div";
   introAutoSyncCaption2: "div";
@@ -3016,6 +3297,7 @@ export const PlasmicHomepage = Object.assign(
     icon3: makeNodeComponent("icon3"),
     title3: makeNodeComponent("title3"),
     caption3: makeNodeComponent("caption3"),
+    introduction2TextPics: makeNodeComponent("introduction2TextPics"),
     image: makeNodeComponent("image"),
     introAutoSyncTitle2: makeNodeComponent("introAutoSyncTitle2"),
     introAutoSyncCaption2: makeNodeComponent("introAutoSyncCaption2"),

@@ -243,10 +243,10 @@ function PlasmicPaymentError__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "100px"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "120px"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? "140px"
-                    : "180px"
+                      ? "120px"
+                      : hasVariant(globalVariants, "screen", "tablet")
+                        ? "140px"
+                        : "180px"
                 }
                 loading={"lazy"}
                 src={{
@@ -278,8 +278,8 @@ function PlasmicPaymentError__RenderFunc(props: {
               {hasVariant(globalVariants, "screen", "smallMobile")
                 ? "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."
                 : hasVariant(globalVariants, "screen", "mobile")
-                ? "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a \u0627\u0632 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."
-                : "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a \u0627\u0632 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."}
+                  ? "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a \u0627\u0632 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."
+                  : "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a \u0627\u0632 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."}
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___2Eyun)}>
               <ApiRequest
@@ -350,9 +350,26 @@ function PlasmicPaymentError__RenderFunc(props: {
                 ref={ref => {
                   $refs["apiRequest"] = ref;
                 }}
-                url={
-                  "https://gateway.rentamon.com/webhook/4aee429f-0a3e-4306-a4d7-eddbd49cfea5"
-                }
+                url={(() => {
+                  try {
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const gatewayBase = isMiaan
+                        ? "https://gateway.miaan.ir"
+                        : "https://gateway.rentamon.com";
+                      return `${gatewayBase}/webhook/4aee429f-0a3e-4306-a4d7-eddbd49cfea5`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__bjfW)}>
                   <div
@@ -414,7 +431,7 @@ function PlasmicPaymentError__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "\u06f9\u06f8\u06f2\u06f3\u06f2\u06f3\u06f4\u06f5\u06f3";
+                              return "0";
                             }
                             throw e;
                           }
@@ -555,7 +572,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicPaymentError__VariantsArgs;
     args?: PlasmicPaymentError__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicPaymentError__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicPaymentError__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicPaymentError__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

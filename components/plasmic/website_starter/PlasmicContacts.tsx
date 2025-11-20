@@ -145,8 +145,6 @@ function PlasmicContacts__RenderFunc(props: {
 
   const globalVariants = _useGlobalVariants();
 
-  const $globalActions = useGlobalActions?.();
-
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -326,7 +324,26 @@ function PlasmicContacts__RenderFunc(props: {
                 ref={ref => {
                   $refs["profile"] = ref;
                 }}
-                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+                url={(() => {
+                  try {
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const apiBase = isMiaan
+                        ? "https://api-v2.miaan.ir"
+                        : "https://api-v2.rentamon.com";
+                      return `${apiBase}/api/user_info?property_id=1`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               />
             </div>
           </div>
@@ -431,7 +448,25 @@ function PlasmicContacts__RenderFunc(props: {
             ref={ref => {
               $refs["apiRequest"] = ref;
             }}
-            url={"https://gateway.rentamon.com/webhook/get_guest"}
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/get_guest`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           >
             {(() => {
               try {
@@ -706,57 +741,6 @@ function PlasmicContacts__RenderFunc(props: {
                 typeof $steps["runCode"].then === "function"
               ) {
                 $steps["runCode"] = await $steps["runCode"];
-              }
-
-              $steps["updateStateVariable2"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        undefined,
-                        "https://api-v2.rentamon.com/api/is_user_old"
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable2"] != null &&
-                typeof $steps["updateStateVariable2"] === "object" &&
-                typeof $steps["updateStateVariable2"].then === "function"
-              ) {
-                $steps["updateStateVariable2"] =
-                  await $steps["updateStateVariable2"];
-              }
-
-              $steps["updateStateVariable"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        $state.userType = $steps.runCode.data.flag;
-                        return console.log($state.userType);
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable"] != null &&
-                typeof $steps["updateStateVariable"] === "object" &&
-                typeof $steps["updateStateVariable"].then === "function"
-              ) {
-                $steps["updateStateVariable"] =
-                  await $steps["updateStateVariable"];
               }
             }}
           />

@@ -714,16 +714,19 @@ function PlasmicProCalendar__RenderFunc(props: {
                           }
                           let vt = null;
                           const vtRaw = getCookieValue("vt");
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const baseUrl = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
                           if (vtRaw !== null) {
                             vt = parseInt(vtRaw, 10);
                             $state.vtStatus = vt;
                             if (vt === 2) {
-                              window.location.href =
-                                "https://rentamon.com/calendar/";
+                              window.location.href = `${baseUrl}/calendar/`;
                             }
                             if (vt === 3) {
-                              return (window.location.href =
-                                "https://rentamon.com/panel-2/");
+                              return (window.location.href = `${baseUrl}/panel-2/`);
                             }
                           }
                         })();
@@ -799,92 +802,23 @@ function PlasmicProCalendar__RenderFunc(props: {
                             document.cookie =
                               name + "=" + (value || "") + expires + "; path=/";
                           }
-                          console.log(
-                            "--- \uD83C\uDFC1 شروع اسکریپت دیباگ ---"
-                          );
                           const rawFlag = $steps.getSegment.data.flag;
                           const rawVtStatus = $state.vtStatus;
-                          console.log(
-                            "1. مقدار خام 'flag' دریافت شده:",
-                            rawFlag,
-                            "(نوع: " + typeof rawFlag + ")"
-                          );
-                          console.log(
-                            "2. مقدار خام 'vtStatus' از state:",
-                            rawVtStatus,
-                            "(نوع: " + typeof rawVtStatus + ")"
-                          );
                           const flag = parseInt(rawFlag, 10);
                           const current = parseInt(rawVtStatus, 10);
-                          console.log(
-                            "3. مقدار 'flag' (بعد از parseInt):",
-                            flag,
-                            "(نوع: " + typeof flag + ")"
-                          );
-                          console.log(
-                            "4. مقدار 'current' (بعد از parseInt):",
-                            current,
-                            "(نوع: " + typeof current + ")"
-                          );
-                          const isCurrentNaN = isNaN(current);
-                          const isFlagDifferent = flag !== current;
-                          const isFlagNaN = isNaN(flag);
-                          console.log(
-                            "5. آیا 'current' برابر NaN است\u061F",
-                            isCurrentNaN
-                          );
-                          console.log(
-                            "6. آیا 'flag' برابر NaN است\u061F",
-                            isFlagNaN
-                          );
-                          console.log(
-                            "7. آیا 'flag' با 'current' نابرابر است\u061F (",
-                            flag,
-                            "!==",
-                            current,
-                            ")",
-                            isFlagDifferent
-                          );
-                          if (isCurrentNaN || isFlagDifferent) {
-                            console.log(
-                              "8. \u2705 شرط اصلی برقرار است (NaN یا عدم تطابق). در حال ورود به بلاک if..."
-                            );
-                            console.log(
-                              "9. در حال تنظیم کوکی 'vt' با مقدار:",
-                              flag.toString(),
-                              "و زمان انقضا:",
-                              0.3333,
-                              "ساعت"
-                            );
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const baseUrl = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
+                          if (isNaN(current) || flag !== current) {
                             setCookie("vt", flag.toString(), 0.3333);
-                            console.log("10. کوکی تنظیم شد.");
                             if (flag === 2) {
-                              console.log(
-                                "11. \u27A1️ Flag برابر 2 است. در حال ریدایرکت به /calendar/ ..."
-                              );
-                              window.location.href =
-                                "https://rentamon.com/calendar/";
+                              return (window.location.href = `${baseUrl}/calendar/`);
                             } else if (flag === 3) {
-                              console.log(
-                                "12. \u27A1️ Flag برابر 3 است. در حال ریدایرکت به /panel-2/ ..."
-                              );
-                              window.location.href =
-                                "https://rentamon.com/panel-2/";
-                            } else {
-                              console.log(
-                                "13. \u26A0️ Flag نه 2 است و نه 3. (مقدار: " +
-                                  flag +
-                                  ") ریدایرکت انجام نمی‌شود."
-                              );
+                              return (window.location.href = `${baseUrl}/panel-2/`);
                             }
-                          } else {
-                            console.log(
-                              "14. \u274C شرط اصلی برقرار نیست. (current و flag برابر هستند). هیچ اقدامی (تنظیم کوکی/ریدارکت) انجام نمی‌شود."
-                            );
                           }
-                          return console.log(
-                            "--- \uD83D\uDED1 پایان اسکریپت دیباگ ---"
-                          );
                         })();
                       }
                     };

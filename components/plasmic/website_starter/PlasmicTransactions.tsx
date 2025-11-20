@@ -380,9 +380,26 @@ function PlasmicTransactions__RenderFunc(props: {
                   ref={ref => {
                     $refs["profile"] = ref;
                   }}
-                  url={
-                    "https://api-v2.rentamon.com/api/user_info?property_id=1"
-                  }
+                  url={(() => {
+                    try {
+                      return (() => {
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const apiBase = isMiaan
+                          ? "https://api-v2.miaan.ir"
+                          : "https://api-v2.rentamon.com";
+                        return `${apiBase}/api/user_info?property_id=1`;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                 />
               </div>
             </div>
@@ -526,476 +543,423 @@ function PlasmicTransactions__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              {(() => {
-                try {
-                  return (
-                    // $state.apiRequest.data[0].reason !=null
-                    true
-                  );
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                (() => {
+                  try {
+                    return $state.apiRequest.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()
-                ? (_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-                    (() => {
+                })()
+              ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
+                  <div
+                    data-plasmic-name={"item"}
+                    data-plasmic-override={overrides.item}
+                    className={classNames(
+                      projectcss.all,
+                      sty.item,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "clickable fadeinf"
+                        : "clickable fadein"
+                    )}
+                    key={currentIndex}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateStateVariable2"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              operation: 0,
+                              value: (() => {
+                                if (
+                                  $state.apiRequest.data[currentIndex]
+                                    .is_reserved == true
+                                ) {
+                                  return ($state.modalData = {
+                                    date: $state.apiRequest.data[currentIndex]
+                                      .transaction_created_at,
+                                    total_commition:
+                                      $state.apiRequest.data[
+                                        currentIndex
+                                      ].totalCommission.toLocaleString("fa"),
+                                    property_name:
+                                      $state.apiRequest.data[currentIndex]
+                                        .property_name,
+                                    reserved_amount:
+                                      $state.apiRequest.data[
+                                        currentIndex
+                                      ].total_amount.toLocaleString("fa"),
+                                    feature:
+                                      $state.apiRequest.data[currentIndex]
+                                        .features,
+                                    is_reserved:
+                                      $state.apiRequest.data[currentIndex]
+                                        .is_reserved,
+                                    comment:
+                                      $state.apiRequest.data[currentIndex]
+                                        .comment,
+                                    booking_id: currentItem.booking_id,
+                                    transaction_type:
+                                      currentItem.transaction_type
+                                  });
+                                } else {
+                                  return ($state.modalData = {
+                                    date: $state.apiRequest.data[currentIndex]
+                                      .transaction_created_at,
+                                    reserved_amount:
+                                      $state.apiRequest.data[
+                                        currentIndex
+                                      ].total_amount.toLocaleString("fa"),
+                                    transaction_cause:
+                                      $state.apiRequest.data[currentIndex]
+                                        .transaction_cause,
+                                    is_reserved:
+                                      $state.apiRequest.data[currentIndex]
+                                        .is_reserved,
+                                    comment:
+                                      $state.apiRequest.data[currentIndex]
+                                        .comment,
+                                    transaction_type:
+                                      currentItem.transaction_type
+                                  });
+                                }
+                              })()
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable2"] != null &&
+                        typeof $steps["updateStateVariable2"] === "object" &&
+                        typeof $steps["updateStateVariable2"].then ===
+                          "function"
+                      ) {
+                        $steps["updateStateVariable2"] =
+                          await $steps["updateStateVariable2"];
+                      }
+
+                      $steps["updateStateVariable"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              operation: 0,
+                              value: ($state.showDetails = true)
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable"] != null &&
+                        typeof $steps["updateStateVariable"] === "object" &&
+                        typeof $steps["updateStateVariable"].then === "function"
+                      ) {
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
+                      }
+                    }}
+                  >
+                    {(() => {
                       try {
-                        return $state.apiRequest.data;
+                        return (() => {
+                          if (currentItem.features == null) {
+                            return false;
+                          }
+                          return currentItem.features.some(
+                            feature => feature.is_free
+                          );
+                        })();
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return [];
+                          return true;
                         }
                         throw e;
                       }
-                    })()
-                  ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                    const currentItem = __plasmic_item_0;
-                    const currentIndex = __plasmic_idx_0;
-                    return (
+                    })() ? (
                       <div
-                        data-plasmic-name={"item"}
-                        data-plasmic-override={overrides.item}
                         className={classNames(
                           projectcss.all,
-                          sty.item,
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "clickable fadeinf"
-                            : "clickable fadein"
+                          sty.freeBox__xAaK7
                         )}
-                        key={currentIndex}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["updateStateVariable2"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  operation: 0,
-                                  value: (() => {
-                                    if (
-                                      $state.apiRequest.data[currentIndex]
-                                        .is_reserved == true
-                                    ) {
-                                      return ($state.modalData = {
-                                        date: $state.apiRequest.data[
-                                          currentIndex
-                                        ].transaction_created_at,
-                                        total_commition:
-                                          $state.apiRequest.data[
-                                            currentIndex
-                                          ].totalCommission.toLocaleString(
-                                            "fa"
-                                          ),
-                                        property_name:
-                                          $state.apiRequest.data[currentIndex]
-                                            .property_name,
-                                        reserved_amount:
-                                          $state.apiRequest.data[
-                                            currentIndex
-                                          ].total_amount.toLocaleString("fa"),
-                                        feature:
-                                          $state.apiRequest.data[currentIndex]
-                                            .features,
-                                        is_reserved:
-                                          $state.apiRequest.data[currentIndex]
-                                            .is_reserved,
-                                        comment:
-                                          $state.apiRequest.data[currentIndex]
-                                            .comment,
-                                        booking_id: currentItem.booking_id,
-                                        transaction_type:
-                                          currentItem.transaction_type
-                                      });
-                                    } else {
-                                      return ($state.modalData = {
-                                        date: $state.apiRequest.data[
-                                          currentIndex
-                                        ].transaction_created_at,
-                                        reserved_amount:
-                                          $state.apiRequest.data[
-                                            currentIndex
-                                          ].total_amount.toLocaleString("fa"),
-                                        transaction_cause:
-                                          $state.apiRequest.data[currentIndex]
-                                            .transaction_cause,
-                                        is_reserved:
-                                          $state.apiRequest.data[currentIndex]
-                                            .is_reserved,
-                                        comment:
-                                          $state.apiRequest.data[currentIndex]
-                                            .comment,
-                                        transaction_type:
-                                          currentItem.transaction_type
-                                      });
-                                    }
-                                  })()
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStateVariable2"] != null &&
-                            typeof $steps["updateStateVariable2"] ===
-                              "object" &&
-                            typeof $steps["updateStateVariable2"].then ===
-                              "function"
-                          ) {
-                            $steps["updateStateVariable2"] =
-                              await $steps["updateStateVariable2"];
-                          }
-
-                          $steps["updateStateVariable"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  operation: 0,
-                                  value:
-                                    // if ($state.apiRequest.data[currentIndex].transaction_type == "withdraw") {
-                                    //   return $state.withdraw.open = true
-                                    // } else {
-                                    //   return $state.showDetails = true
-                                    // }
-
-                                    ($state.showDetails = true)
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateStateVariable"] != null &&
-                            typeof $steps["updateStateVariable"] === "object" &&
-                            typeof $steps["updateStateVariable"].then ===
-                              "function"
-                          ) {
-                            $steps["updateStateVariable"] =
-                              await $steps["updateStateVariable"];
-                          }
-                        }}
                       >
-                        {(() => {
-                          try {
-                            return (() => {
-                              if (currentItem.features == null) {
-                                return false;
-                              }
-                              return currentItem.features.some(
-                                feature => feature.is_free
-                              );
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })() ? (
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__xAaK7
-                            )}
-                          >
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img___0GJUp)}
-                              displayHeight={"23px"}
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={"auto"}
-                              loading={"lazy"}
-                              src={{
-                                src: "/plasmic/website_starter/images/image147.svg",
-                                fullWidth: 18,
-                                fullHeight: 20,
-                                aspectRatio: undefined
-                              }}
-                            />
-                          </div>
-                        ) : null}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__l4Nm
-                          )}
-                        >
-                          {(() => {
-                            try {
-                              return (
-                                $state.apiRequest.data[currentIndex]
-                                  .transaction_type == "deposit"
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return true;
-                              }
-                              throw e;
-                            }
-                          })() ? (
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img__jklRg)}
-                              displayHeight={
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "smallMobile"
-                                )
-                                  ? "13px"
-                                  : "15px"
-                              }
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={"auto"}
-                              loading={"lazy"}
-                              src={{
-                                src: "/plasmic/website_starter/images/image38.svg",
-                                fullWidth: 14,
-                                fullHeight: 12,
-                                aspectRatio: 1.166667
-                              }}
-                            />
-                          ) : null}
-                          {(() => {
-                            try {
-                              return (
-                                $state.apiRequest.data[currentIndex]
-                                  .transaction_type == "withdraw"
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return true;
-                              }
-                              throw e;
-                            }
-                          })() ? (
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img__uxrTx)}
-                              displayHeight={
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "smallMobile"
-                                )
-                                  ? "13px"
-                                  : "15px"
-                              }
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={"auto"}
-                              loading={"lazy"}
-                              src={{
-                                src: "/plasmic/website_starter/images/image39.svg",
-                                fullWidth: 14,
-                                fullHeight: 12,
-                                aspectRatio: 1.166667
-                              }}
-                            />
-                          ) : null}
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__kv54W
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return $state.apiRequest.data[currentIndex]
-                                    .transaction_type == "withdraw"
-                                    ? "برداشت"
-                                    : $state.apiRequest.data[currentIndex]
-                                        .transaction_cause;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return " ";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__njSro
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__tYydp
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (() => {
-                                    function formatLondonTimeToTehranPersian(
-                                      dateString
-                                    ) {
-                                      const date = new Date(dateString);
-                                      const datePart = date.toLocaleDateString(
-                                        "fa-IR",
-                                        {
-                                          timeZone: "Asia/Tehran",
-                                          year: "numeric",
-                                          month: "2-digit",
-                                          day: "2-digit"
-                                        }
-                                      );
-                                      const timePart = date.toLocaleTimeString(
-                                        "fa-IR",
-                                        {
-                                          timeZone: "Asia/Tehran",
-                                          hour12: false,
-                                          hour: "2-digit",
-                                          minute: "2-digit"
-                                        }
-                                      );
-                                      return `${timePart} - ${datePart}`;
-                                    }
-                                    const inputTime =
-                                      $state.apiRequest.data[currentIndex]
-                                        .transaction_created_at;
-                                    const outputTime =
-                                      formatLondonTimeToTehranPersian(
-                                        inputTime
-                                      );
-                                    return outputTime;
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f9/\u06f2\u06f5";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__nyRbP
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__jQXc
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return (() => {
-                                    const currentItem =
-                                      $state.apiRequest.data[currentIndex];
-                                    if (currentItem.is_reserved) {
-                                      const sumOfCommissions =
-                                        currentItem.features.reduce(
-                                          (total, feature) => {
-                                            if (feature.is_free) {
-                                              return total;
-                                            }
-                                            const commission =
-                                              Number(
-                                                feature.commission_amount
-                                              ) || 0;
-                                            return total + commission;
-                                          },
-                                          0
-                                        );
-                                      currentItem.totalCommission = Math.floor(
-                                        sumOfCommissions / 10
-                                      );
-                                      return currentItem.totalCommission.toLocaleString(
-                                        "fa"
-                                      );
-                                    } else {
-                                      return Math.floor(
-                                        Number(currentItem.total_amount) || 0
-                                      ).toLocaleString("fa");
-                                    }
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "\u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </div>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img___0GJUp)}
+                          displayHeight={"23px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image147.svg",
+                            fullWidth: 18,
+                            fullHeight: 20,
+                            aspectRatio: undefined
+                          }}
+                        />
                       </div>
-                    );
-                  })
-                : null}
+                    ) : null}
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__l4Nm)}
+                    >
+                      {(() => {
+                        try {
+                          return (
+                            $state.apiRequest.data[currentIndex]
+                              .transaction_type == "deposit"
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__jklRg)}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "13px"
+                              : "15px"
+                          }
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image38.svg",
+                            fullWidth: 14,
+                            fullHeight: 12,
+                            aspectRatio: 1.166667
+                          }}
+                        />
+                      ) : null}
+                      {(() => {
+                        try {
+                          return (
+                            $state.apiRequest.data[currentIndex]
+                              .transaction_type == "withdraw"
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__uxrTx)}
+                          displayHeight={
+                            hasVariant(globalVariants, "screen", "smallMobile")
+                              ? "13px"
+                              : "15px"
+                          }
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image39.svg",
+                            fullWidth: 14,
+                            fullHeight: 12,
+                            aspectRatio: 1.166667
+                          }}
+                        />
+                      ) : null}
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__kv54W
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $state.apiRequest.data[currentIndex]
+                                .transaction_type == "withdraw"
+                                ? "برداشت"
+                                : $state.apiRequest.data[currentIndex]
+                                    .transaction_cause;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return " ";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__njSro)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__tYydp
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (() => {
+                                function formatLondonTimeToTehranPersian(
+                                  dateString
+                                ) {
+                                  const date = new Date(dateString);
+                                  const datePart = date.toLocaleDateString(
+                                    "fa-IR",
+                                    {
+                                      timeZone: "Asia/Tehran",
+                                      year: "numeric",
+                                      month: "2-digit",
+                                      day: "2-digit"
+                                    }
+                                  );
+                                  const timePart = date.toLocaleTimeString(
+                                    "fa-IR",
+                                    {
+                                      timeZone: "Asia/Tehran",
+                                      hour12: false,
+                                      hour: "2-digit",
+                                      minute: "2-digit"
+                                    }
+                                  );
+                                  return `${timePart} - ${datePart}`;
+                                }
+                                const inputTime =
+                                  $state.apiRequest.data[currentIndex]
+                                    .transaction_created_at;
+                                const outputTime =
+                                  formatLondonTimeToTehranPersian(inputTime);
+                                return outputTime;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u06f1\u06f4\u06f0\u06f3/\u06f0\u06f9/\u06f2\u06f5";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__nyRbP)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__jQXc
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return (() => {
+                                const currentItem =
+                                  $state.apiRequest.data[currentIndex];
+                                if (currentItem.is_reserved) {
+                                  const sumOfCommissions =
+                                    currentItem.features.reduce(
+                                      (total, feature) => {
+                                        if (feature.is_free) {
+                                          return total;
+                                        }
+                                        const commission =
+                                          Number(feature.commission_amount) ||
+                                          0;
+                                        return total + commission;
+                                      },
+                                      0
+                                    );
+                                  currentItem.totalCommission = Math.floor(
+                                    sumOfCommissions / 10
+                                  );
+                                  return currentItem.totalCommission.toLocaleString(
+                                    "fa"
+                                  );
+                                } else {
+                                  return Math.floor(
+                                    Number(currentItem.total_amount) || 0
+                                  ).toLocaleString("fa");
+                                }
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "\u06f2\u06f0\u06f0/\u06f0\u06f0\u06f0";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <SideEffect
@@ -1195,7 +1159,25 @@ function PlasmicTransactions__RenderFunc(props: {
             ref={ref => {
               $refs["apiRequest"] = ref;
             }}
-            url={"https://gateway.rentamon.com/webhook/get_transactions"}
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/get_transactions`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           >
             {(() => {
               try {

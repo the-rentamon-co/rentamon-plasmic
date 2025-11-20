@@ -721,7 +721,13 @@ function PlasmicInstantReserve__RenderFunc(props: {
             }}
             url={(() => {
               try {
-                return `https://gateway.rentamon.com/webhook/instant/property?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/instant/property?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
+                })();
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -793,9 +799,25 @@ function PlasmicInstantReserve__RenderFunc(props: {
             ref={ref => {
               $refs["jajigaPermission"] = ref;
             }}
-            url={
-              "https://gateway.rentamon.com/webhook/instant/jajiga/permission"
-            }
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/instant/jajiga/permission`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return ``;
+                }
+                throw e;
+              }
+            })()}
           />
 
           <ApiRequest
@@ -828,7 +850,13 @@ function PlasmicInstantReserve__RenderFunc(props: {
             }}
             url={(() => {
               try {
-                return `https://gateway.rentamon.com/webhook/instant/property/websites-status?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/instant/property/websites-status?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
+                })();
               } catch (e) {
                 if (
                   e instanceof TypeError ||

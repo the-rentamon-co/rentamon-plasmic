@@ -135,7 +135,6 @@ export type Plasmicکیفپول__OverridesType = {
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
-  profile?: Flex__<typeof ApiRequest>;
   sideEffect?: Flex__<typeof SideEffect>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   apiRequest?: Flex__<typeof ApiRequest>;
@@ -223,30 +222,6 @@ function Plasmicکیفپول__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
-      },
-      {
-        path: "profile.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile"
-      },
-      {
-        path: "profile.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile"
-      },
-      {
-        path: "profile.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile"
       },
       {
         path: "profile2.data",
@@ -444,7 +419,26 @@ function Plasmicکیفپول__RenderFunc(props: {
                 ref={ref => {
                   $refs["profile2"] = ref;
                 }}
-                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+                url={(() => {
+                  try {
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const apiBase = isMiaan
+                        ? "https://api-v2.miaan.ir"
+                        : "https://api-v2.rentamon.com";
+                      return `${apiBase}/api/user_info?property_id=1`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               />
             </div>
           </div>
@@ -1362,7 +1356,29 @@ function Plasmicکیفپول__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               "POST",
-                              "https://gateway.rentamon.com/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5",
+                              (() => {
+                                try {
+                                  return (() => {
+                                    const isMiaan =
+                                      window.location.hostname.includes(
+                                        "miaan.ir"
+                                      );
+                                    const gatewayBase = isMiaan
+                                      ? "https://gateway.miaan.ir"
+                                      : "https://gateway.rentamon.com";
+                                    return `${gatewayBase}/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5`;
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })(),
                               undefined,
                               (() => {
                                 try {
@@ -1407,8 +1423,8 @@ function Plasmicکیفپول__RenderFunc(props: {
                             value: (() => {
                               $state.tokenResponse.payInfo =
                                 $steps.invokeGlobalAction.data.payinfo;
-                              $state.tokenResponse.amount = $state.input2.value;
-                              return console.log($state.tokenResponse);
+                              return ($state.tokenResponse.amount =
+                                $state.input2.value);
                             })()
                           };
                           return (({
@@ -2067,47 +2083,6 @@ function Plasmicکیفپول__RenderFunc(props: {
             className={classNames("__wab_instance", sty.rentamonFooter)}
           />
 
-          {(hasVariant(globalVariants, "screen", "tablet") ? true : false) ? (
-            <ApiRequest
-              data-plasmic-name={"profile"}
-              data-plasmic-override={overrides.profile}
-              className={classNames("__wab_instance", sty.profile)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "error"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "loading"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["profile", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["profile"] = ref;
-              }}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___8Olf5
-                )}
-              >
-                {"Enter some text"}
-              </div>
-            </ApiRequest>
-          ) : null}
           <SideEffect
             data-plasmic-name={"sideEffect"}
             data-plasmic-override={overrides.sideEffect}
@@ -2274,7 +2249,25 @@ function Plasmicکیفپول__RenderFunc(props: {
             ref={ref => {
               $refs["apiRequest"] = ref;
             }}
-            url={"https://gateway.rentamon.com/webhook/wallet/balance"}
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/wallet/balance`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
         </div>
       </div>
@@ -2323,7 +2316,6 @@ const PlasmicDescendants = {
     "clarityRntComponent",
     "faviconRntComponent",
     "rentamonFooter",
-    "profile",
     "sideEffect",
     "navbarRntFooter",
     "apiRequest"
@@ -2389,7 +2381,6 @@ const PlasmicDescendants = {
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   rentamonFooter: ["rentamonFooter"],
-  profile: ["profile"],
   sideEffect: ["sideEffect"],
   navbarRntFooter: ["navbarRntFooter"],
   apiRequest: ["apiRequest"]
@@ -2437,7 +2428,6 @@ type NodeDefaultElementType = {
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   rentamonFooter: typeof RentamonFooter;
-  profile: typeof ApiRequest;
   sideEffect: typeof SideEffect;
   navbarRntFooter: typeof NavbarRntFooter;
   apiRequest: typeof ApiRequest;
@@ -2543,7 +2533,6 @@ export const Plasmicکیفپول = Object.assign(
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
-    profile: makeNodeComponent("profile"),
     sideEffect: makeNodeComponent("sideEffect"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     apiRequest: makeNodeComponent("apiRequest"),

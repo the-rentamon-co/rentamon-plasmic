@@ -66,8 +66,6 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
-import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -109,9 +107,6 @@ export type PlasmicStatusesConnections__OverridesType = {
   newPlatform2?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
-  onboardingModal?: Flex__<typeof AntdModal>;
-  h3?: Flex__<"h3">;
-  htmlVideo?: Flex__<typeof Video>;
 };
 
 export interface DefaultStatusesConnectionsProps {}
@@ -220,13 +215,6 @@ function PlasmicStatusesConnections__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      },
-      {
-        path: "onboardingModal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "onboarded",
@@ -409,9 +397,26 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                     ref={ref => {
                       $refs["profile2"] = ref;
                     }}
-                    url={
-                      "https://api-v2.rentamon.com/api/user_info?property_id=1"
-                    }
+                    url={(() => {
+                      try {
+                        return (() => {
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const apiBase = isMiaan
+                            ? "https://api-v2.miaan.ir"
+                            : "https://api-v2.rentamon.com";
+                          return `${apiBase}/api/user_info?property_id=1`;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
                   />
                 </div>
               ) : null}
@@ -1095,9 +1100,26 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                   ref={ref => {
                     $refs["apiRequest2"] = ref;
                   }}
-                  url={
-                    "https://gateway.rentamon.com/webhook/connection-statuses"
-                  }
+                  url={(() => {
+                    try {
+                      return (() => {
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const gatewayBase = isMiaan
+                          ? "https://gateway.miaan.ir"
+                          : "https://gateway.rentamon.com";
+                        return `${gatewayBase}/webhook/connection-statuses`;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                 >
                   <div
                     className={classNames(projectcss.all, sty.freeBox__yz6Xw)}
@@ -1847,172 +1869,6 @@ function PlasmicStatusesConnections__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
-          {(
-            hasVariant(globalVariants, "screen", "mobile")
-              ? (() => {
-                  try {
-                    return true;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })()
-              : (() => {
-                  try {
-                    return $state.onboarded !== true;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return false;
-                    }
-                    throw e;
-                  }
-                })()
-          ) ? (
-            <AntdModal
-              data-plasmic-name={"onboardingModal"}
-              data-plasmic-override={overrides.onboardingModal}
-              className={classNames("__wab_instance", sty.onboardingModal)}
-              closeButtonClassName={classNames({
-                [sty["pcls_jiR6byjXVOKE"]]: true
-              })}
-              defaultStylesClassName={classNames(
-                projectcss.root_reset,
-                projectcss.plasmic_default_styles,
-                projectcss.plasmic_mixins,
-                styleTokensClassNames
-              )}
-              hideFooter={true}
-              modalContentClassName={classNames({
-                [sty["pcls_wHWUigAkI-45"]]: true
-              })}
-              modalScopeClassName={sty["onboardingModal__modal"]}
-              onOpenChange={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "onboardingModal",
-                  "open"
-                ]).apply(null, eventArgs);
-              }}
-              open={generateStateValueProp($state, ["onboardingModal", "open"])}
-              title={null}
-              trigger={null}
-              width={
-                hasVariant(globalVariants, "screen", "mobile") ? "400" : "350"
-              }
-              wrapClassName={classNames({ [sty["pcls_lCSKfLn_D_22"]]: true })}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__mixvp)}>
-                <h3
-                  data-plasmic-name={"h3"}
-                  data-plasmic-override={overrides.h3}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h3,
-                    projectcss.__wab_text,
-                    sty.h3
-                  )}
-                >
-                  {
-                    "\u0648\u0636\u0639\u06cc\u062a \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0627\u06cc\u0646 \u062c\u0627 \u0628\u0628\u06cc\u0646\u06cc \u0648 \u0648\u0635\u0644\u0634\u0648\u0646 \u06a9\u0646\u06cc"
-                  }
-                </h3>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__lEfYv)}>
-                <div className={classNames(projectcss.all, sty.freeBox__tWIfG)}>
-                  <Video
-                    data-plasmic-name={"htmlVideo"}
-                    data-plasmic-override={overrides.htmlVideo}
-                    autoPlay={true}
-                    className={classNames("__wab_instance", sty.htmlVideo)}
-                    controls={false}
-                    loop={true}
-                    muted={true}
-                    src={
-                      "https://media.rentamon.com/gif%2Fstatus_onboarding_2025-09-24_12-59-03.mp4"
-                    }
-                  />
-                </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___4HHvC)}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return ($state.onboardingModal.open = false);
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-
-                    $steps["updateOnboarded"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["onboarded"]
-                            },
-                            operation: 4
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            const oldValue = $stateGet(objRoot, variablePath);
-                            $stateSet(objRoot, variablePath, !oldValue);
-                            return !oldValue;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateOnboarded"] != null &&
-                      typeof $steps["updateOnboarded"] === "object" &&
-                      typeof $steps["updateOnboarded"].then === "function"
-                    ) {
-                      $steps["updateOnboarded"] =
-                        await $steps["updateOnboarded"];
-                    }
-                  }}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xLsQt
-                    )}
-                  >
-                    {"\u0628\u0627\u0634\u0647"}
-                  </div>
-                </div>
-              </div>
-            </AntdModal>
-          ) : null}
           <SideEffect
             className={classNames("__wab_instance", sty.sideEffect__ozbtc)}
             onMount={async () => {
@@ -2068,10 +1924,7 @@ const PlasmicDescendants = {
     "trueStatus2",
     "newPlatform2",
     "clarityRntComponent",
-    "faviconRntComponent",
-    "onboardingModal",
-    "h3",
-    "htmlVideo"
+    "faviconRntComponent"
   ],
   navbarRntFooter: ["navbarRntFooter"],
   header: ["header", "sideBar2", "sidebarLite", "profile2"],
@@ -2133,10 +1986,7 @@ const PlasmicDescendants = {
   trueStatus2: ["trueStatus2"],
   newPlatform2: ["newPlatform2"],
   clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"],
-  onboardingModal: ["onboardingModal", "h3", "htmlVideo"],
-  h3: ["h3"],
-  htmlVideo: ["htmlVideo"]
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2162,9 +2012,6 @@ type NodeDefaultElementType = {
   newPlatform2: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
-  onboardingModal: typeof AntdModal;
-  h3: "h3";
-  htmlVideo: typeof Video;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2248,9 +2095,6 @@ export const PlasmicStatusesConnections = Object.assign(
     newPlatform2: makeNodeComponent("newPlatform2"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
-    onboardingModal: makeNodeComponent("onboardingModal"),
-    h3: makeNodeComponent("h3"),
-    htmlVideo: makeNodeComponent("htmlVideo"),
 
     // Metadata about props expected for PlasmicStatusesConnections
     internalVariantProps: PlasmicStatusesConnections__VariantProps,

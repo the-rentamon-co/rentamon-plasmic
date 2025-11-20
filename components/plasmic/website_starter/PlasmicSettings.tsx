@@ -595,7 +595,26 @@ function PlasmicSettings__RenderFunc(props: {
                 ref={ref => {
                   $refs["profile"] = ref;
                 }}
-                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+                url={(() => {
+                  try {
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const apiBase = isMiaan
+                        ? "https://api-v2.miaan.ir"
+                        : "https://api-v2.rentamon.com";
+                      return `${apiBase}/api/user_info?property_id=1`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               />
             </div>
           </div>
@@ -814,9 +833,26 @@ function PlasmicSettings__RenderFunc(props: {
                       ref={ref => {
                         $refs["apiRequest2"] = ref;
                       }}
-                      url={
-                        "https://gateway.rentamon.com/webhook/get_commition?feature_name=auto_sync"
-                      }
+                      url={(() => {
+                        try {
+                          return (() => {
+                            const isMiaan =
+                              window.location.hostname.includes("miaan.ir");
+                            const gatewayBase = isMiaan
+                              ? "https://gateway.miaan.ir"
+                              : "https://gateway.rentamon.com";
+                            return `${gatewayBase}/webhook/get_commition?feature_name=auto_sync`;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
                     >
                       <div
                         className={classNames(
@@ -1290,9 +1326,26 @@ function PlasmicSettings__RenderFunc(props: {
                       ref={ref => {
                         $refs["apiRequest"] = ref;
                       }}
-                      url={
-                        "https://gateway.rentamon.com/webhook/get_commition?feature_name=reservations"
-                      }
+                      url={(() => {
+                        try {
+                          return (() => {
+                            const isMiaan =
+                              window.location.hostname.includes("miaan.ir");
+                            const gatewayBase = isMiaan
+                              ? "https://gateway.miaan.ir"
+                              : "https://gateway.rentamon.com";
+                            return `${gatewayBase}/webhook/get_commition?feature_name=reservations`;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
                     >
                       <div
                         className={classNames(
@@ -1892,7 +1945,29 @@ function PlasmicSettings__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://gateway.rentamon.com/webhook/auto-sync-activate",
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      const isMiaan =
+                                        window.location.hostname.includes(
+                                          "miaan.ir"
+                                        );
+                                      const gatewayBase = isMiaan
+                                        ? "https://gateway.miaan.ir"
+                                        : "https://gateway.rentamon.com";
+                                      return `${gatewayBase}/webhook/auto-sync-activate`;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })(),
                                 undefined,
                                 (() => {
                                   try {
@@ -2426,7 +2501,29 @@ function PlasmicSettings__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://gateway.rentamon.com/webhook/auto-sync-activate",
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      const isMiaan =
+                                        window.location.hostname.includes(
+                                          "miaan.ir"
+                                        );
+                                      const gatewayBase = isMiaan
+                                        ? "https://gateway.miaan.ir"
+                                        : "https://gateway.rentamon.com";
+                                      return `${gatewayBase}/webhook/auto-sync-activate`;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })(),
                                 undefined,
                                 (() => {
                                   try {
@@ -2934,7 +3031,29 @@ function PlasmicSettings__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://gateway.rentamon.com/webhook/auto-sync-activate",
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      const isMiaan =
+                                        window.location.hostname.includes(
+                                          "miaan.ir"
+                                        );
+                                      const gatewayBase = isMiaan
+                                        ? "https://gateway.miaan.ir"
+                                        : "https://gateway.rentamon.com";
+                                      return `${gatewayBase}/webhook/auto-sync-activate`;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })(),
                                 undefined,
                                 (() => {
                                   try {
@@ -3366,7 +3485,29 @@ function PlasmicSettings__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://gateway.rentamon.com/webhook/auto-sync-activate",
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      const isMiaan =
+                                        window.location.hostname.includes(
+                                          "miaan.ir"
+                                        );
+                                      const gatewayBase = isMiaan
+                                        ? "https://gateway.miaan.ir"
+                                        : "https://gateway.rentamon.com";
+                                      return `${gatewayBase}/webhook/auto-sync-activate`;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })(),
                                 undefined,
                                 (() => {
                                   try {
@@ -3722,9 +3863,26 @@ function PlasmicSettings__RenderFunc(props: {
                 ref={ref => {
                   $refs["freeFeatureCredits"] = ref;
                 }}
-                url={
-                  "https://gateway.rentamon.com/webhook/free_feature_credits"
-                }
+                url={(() => {
+                  try {
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const gatewayBase = isMiaan
+                        ? "https://gateway.miaan.ir"
+                        : "https://gateway.rentamon.com";
+                      return `${gatewayBase}/webhook/free_feature_credits`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               />
             </div>
             <div
@@ -3847,7 +4005,26 @@ function PlasmicSettings__RenderFunc(props: {
               ref={ref => {
                 $refs["apiRequestSetting"] = ref;
               }}
-              url={"https://gateway.rentamon.com/webhook/fetch-setting-from-db"}
+              url={(() => {
+                try {
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const gatewayBase = isMiaan
+                      ? "https://gateway.miaan.ir"
+                      : "https://gateway.rentamon.com";
+                    return `${gatewayBase}/webhook/fetch-setting-from-db`;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
             />
 
             <div
