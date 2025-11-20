@@ -1154,7 +1154,26 @@ function PlasmicInstantReserve__RenderFunc(props: {
               ref={ref => {
                 $refs["properties"] = ref;
               }}
-              url={"https://gateway.rentamon.com/webhook/instant/property"}
+              url={(() => {
+                try {
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const gatewayBase = isMiaan
+                      ? "https://gateway.miaan.ir"
+                      : "https://gateway.rentamon.com";
+                    return `${gatewayBase}/webhook/instant/property`;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
             >
               <Select
                 data-plasmic-name={"selectProperty"}

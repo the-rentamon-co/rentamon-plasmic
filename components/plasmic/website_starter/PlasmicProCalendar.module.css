@@ -1208,12 +1208,3 @@
   max-width: 100%;
   display: none;
 }
-.text__anCli {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  opacity: 0.2;
-  text-align: left;
-  min-width: 0;
-}

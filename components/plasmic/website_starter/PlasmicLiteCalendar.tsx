@@ -568,7 +568,26 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://gateway.rentamon.com/webhook/get_user_segment"
+                        (() => {
+                          try {
+                            return (() => {
+                              const isMiaan =
+                                window.location.hostname.includes("miaan.ir");
+                              const gatewayBase = isMiaan
+                                ? "https://gateway.miaan.ir"
+                                : "https://gateway.rentamon.com";
+                              return `${gatewayBase}/webhook/get_user_segment`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [
@@ -607,14 +626,17 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         const current = parseInt(rawVtStatus, 10);
                         const isCurrentNaN = isNaN(current);
                         const isFlagDifferent = flag !== current;
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const baseUrl = isMiaan
+                          ? "https://miaan.ir"
+                          : "https://rentamon.com";
                         if (isCurrentNaN || isFlagDifferent) {
                           setCookie("vt", flag.toString(), 0.3333);
                           if (flag === 3) {
-                            return (window.location.href =
-                              "https://rentamon.com/panel-2/");
+                            return (window.location.href = `${baseUrl}/panel-2/`);
                           } else if (flag === 1) {
-                            return (window.location.href =
-                              "https://rentamon.com/panel/");
+                            return (window.location.href = `${baseUrl}/panel/`);
                           }
                         }
                       })()
@@ -1403,7 +1425,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__bJdM
+                        sty.formField__zUc7Q
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1415,7 +1437,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__qWby
+                        sty.formField__e4Rn
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1427,7 +1449,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <AntdButton
                       className={classNames(
                         "__wab_instance",
-                        sty.button__qDydo
+                        sty.button___2OYhJ
                       )}
                       submitsForm={true}
                       type={"primary"}
@@ -1436,7 +1458,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__n62F
+                          sty.text__h6Pdd
                         )}
                       >
                         {"Submit"}
