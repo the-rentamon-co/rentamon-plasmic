@@ -62,7 +62,6 @@ import {
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import VilaType from "../../VilaType"; // plasmic-import: Ovb_QdBC9YkI/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
-import { UploadWrapper } from "@plasmicpkgs/antd5/skinny/registerUpload";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
@@ -101,7 +100,6 @@ export type PlasmicPropertyEdit__OverridesType = {
   pic?: Flex__<"div">;
   title?: Flex__<"div">;
   imageFrame?: Flex__<"div">;
-  upload?: Flex__<typeof UploadWrapper>;
   embedHtml?: Flex__<typeof Embed>;
   previousPicture?: Flex__<typeof PlasmicImg__>;
   newButtons2?: Flex__<"div">;
@@ -171,12 +169,6 @@ function PlasmicPropertyEdit__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      },
-      {
-        path: "upload.files",
-        type: "private",
-        variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
       },
       {
         path: "step",
@@ -629,7 +621,28 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/property_type",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/property_type`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -845,7 +858,28 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/property_type",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/property_type`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -1503,165 +1537,6 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__aBGzQ)}>
-                  <UploadWrapper
-                    data-plasmic-name={"upload"}
-                    data-plasmic-override={overrides.upload}
-                    accept={"image/*"}
-                    className={classNames("__wab_instance", sty.upload)}
-                    dragAndDropFiles={false}
-                    files={generateStateValueProp($state, ["upload", "files"])}
-                    listType={"picture"}
-                    maxCount={500}
-                    onFilesChange={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "upload",
-                        "files"
-                      ]).apply(null, eventArgs);
-
-                      (async files => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    if ($state.upload.files.length > 1) {
-                                      const files = [...$state.upload.files];
-                                      files[0] = files[1];
-                                      files.splice(1, 1);
-                                      console.log(files);
-                                      return files;
-                                    } else {
-                                      return console.log("ok");
-                                    }
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }).apply(null, eventArgs);
-                    }}
-                    showUploadList={true}
-                  >
-                    {(() => {
-                      try {
-                        return $state.upload.files[0] != null;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__gkNbH,
-                          "clickable"
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__oaRbG)}
-                          displayHeight={"100%"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          height={"100%"}
-                          loading={"lazy"}
-                          src={(() => {
-                            try {
-                              return (
-                                "data:image/png;base64," +
-                                $state.upload.files[0].contents
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return {
-                                  src: "/plasmic/website_starter/images/group698Png.png",
-                                  fullWidth: 200,
-                                  fullHeight: 150,
-                                  aspectRatio: undefined
-                                };
-                              }
-                              throw e;
-                            }
-                          })()}
-                          width={"100%"}
-                        />
-                      </div>
-                    ) : null}
-                    {(() => {
-                      try {
-                        return $state.upload.files[0] == null;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })() ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__h3Gb1,
-                          "clickable"
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__msqL7)}
-                          displayHeight={"55px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image112.svg",
-                            fullWidth: 30,
-                            fullHeight: 30,
-                            aspectRatio: 1
-                          }}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___9C8V2
-                          )}
-                        >
-                          {
-                            "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062a\u0635\u0648\u06cc\u0631"
-                          }
-                        </div>
-                      </div>
-                    ) : null}
-                  </UploadWrapper>
                   <Embed
                     data-plasmic-name={"embedHtml"}
                     data-plasmic-override={overrides.embedHtml}
@@ -2321,7 +2196,6 @@ const PlasmicDescendants = {
     "pic",
     "title",
     "imageFrame",
-    "upload",
     "embedHtml",
     "previousPicture",
     "newButtons2",
@@ -2349,7 +2223,6 @@ const PlasmicDescendants = {
     "pic",
     "title",
     "imageFrame",
-    "upload",
     "embedHtml",
     "previousPicture",
     "newButtons2",
@@ -2359,14 +2232,12 @@ const PlasmicDescendants = {
   title: ["title"],
   imageFrame: [
     "imageFrame",
-    "upload",
     "embedHtml",
     "previousPicture",
     "newButtons2",
     "next2",
     "privious2"
   ],
-  upload: ["upload"],
   embedHtml: ["embedHtml"],
   previousPicture: ["previousPicture"],
   newButtons2: ["newButtons2", "next2", "privious2"],
@@ -2398,7 +2269,6 @@ type NodeDefaultElementType = {
   pic: "div";
   title: "div";
   imageFrame: "div";
-  upload: typeof UploadWrapper;
   embedHtml: typeof Embed;
   previousPicture: typeof PlasmicImg__;
   newButtons2: "div";
@@ -2493,7 +2363,6 @@ export const PlasmicPropertyEdit = Object.assign(
     pic: makeNodeComponent("pic"),
     title: makeNodeComponent("title"),
     imageFrame: makeNodeComponent("imageFrame"),
-    upload: makeNodeComponent("upload"),
     embedHtml: makeNodeComponent("embedHtml"),
     previousPicture: makeNodeComponent("previousPicture"),
     newButtons2: makeNodeComponent("newButtons2"),

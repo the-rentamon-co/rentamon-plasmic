@@ -356,7 +356,28 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/property_type",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/property_type`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -390,9 +411,8 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     typeof $steps["invokeGlobalAction"] === "object" &&
                     typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
                   }
 
                   $steps["wait"] = false
@@ -528,7 +548,28 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/property_type",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/property_type`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -562,9 +603,8 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     typeof $steps["invokeGlobalAction"] === "object" &&
                     typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
                   }
 
                   $steps["wait"] = false
@@ -700,7 +740,28 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/property_type",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/property_type`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -734,9 +795,8 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                     typeof $steps["invokeGlobalAction"] === "object" &&
                     typeof $steps["invokeGlobalAction"].then === "function"
                   ) {
-                    $steps["invokeGlobalAction"] = await $steps[
-                      "invokeGlobalAction"
-                    ];
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
                   }
 
                   $steps["wait"] = false
@@ -962,7 +1022,29 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://gateway.rentamon.com/webhook/property_create",
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      const isMiaan =
+                                        window.location.hostname.includes(
+                                          "miaan.ir"
+                                        );
+                                      const gatewayBase = isMiaan
+                                        ? "https://gateway.miaan.ir"
+                                        : "https://gateway.rentamon.com";
+                                      return `${gatewayBase}/webhook/property_create`;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })(),
                                 undefined,
                                 (() => {
                                   try {
@@ -997,9 +1079,8 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction"] === "object" &&
                         typeof $steps["invokeGlobalAction"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["invokeGlobalAction"] =
+                          await $steps["invokeGlobalAction"];
                       }
 
                       $steps["updateLoading2"] = true
@@ -1033,9 +1114,8 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         typeof $steps["updateLoading2"] === "object" &&
                         typeof $steps["updateLoading2"].then === "function"
                       ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
-                        ];
+                        $steps["updateLoading2"] =
+                          await $steps["updateLoading2"];
                       }
 
                       $steps["updateStep"] =
@@ -1470,9 +1550,8 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         typeof $steps["updateLoading2"] === "object" &&
                         typeof $steps["updateLoading2"].then === "function"
                       ) {
-                        $steps["updateLoading2"] = await $steps[
-                          "updateLoading2"
-                        ];
+                        $steps["updateLoading2"] =
+                          await $steps["updateLoading2"];
                       }
 
                       $steps["goToProperties"] = true
@@ -1497,9 +1576,8 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         typeof $steps["goToProperties"] === "object" &&
                         typeof $steps["goToProperties"].then === "function"
                       ) {
-                        $steps["goToProperties"] = await $steps[
-                          "goToProperties"
-                        ];
+                        $steps["goToProperties"] =
+                          await $steps["goToProperties"];
                       }
 
                       $steps["showSizeErrorToast"] = false
@@ -1523,9 +1601,8 @@ function PlasmicPropertyCreate__RenderFunc(props: {
                         typeof $steps["showSizeErrorToast"] === "object" &&
                         typeof $steps["showSizeErrorToast"].then === "function"
                       ) {
-                        $steps["showSizeErrorToast"] = await $steps[
-                          "showSizeErrorToast"
-                        ];
+                        $steps["showSizeErrorToast"] =
+                          await $steps["showSizeErrorToast"];
                       }
 
                       $steps["apiRequest"] = false
@@ -1865,7 +1942,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicPropertyCreate__VariantsArgs;
     args?: PlasmicPropertyCreate__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicPropertyCreate__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicPropertyCreate__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicPropertyCreate__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

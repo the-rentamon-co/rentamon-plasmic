@@ -331,7 +331,28 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/property_type",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/property_type`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -489,7 +510,28 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/property_type",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/property_type`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -660,7 +702,28 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/property_type",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/property_type`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -1028,7 +1091,29 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "POST",
-                                  "https://gateway.rentamon.com/webhook/change_property_name",
+                                  (() => {
+                                    try {
+                                      return (() => {
+                                        const isMiaan =
+                                          window.location.hostname.includes(
+                                            "miaan.ir"
+                                          );
+                                        const gatewayBase = isMiaan
+                                          ? "https://gateway.miaan.ir"
+                                          : "https://gateway.rentamon.com";
+                                        return `${gatewayBase}/webhook/change_property_name`;
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })(),
                                   undefined,
                                   (() => {
                                     try {
@@ -1583,7 +1668,29 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://gateway.rentamon.com/webhook/registration-steps-prop",
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      const isMiaan =
+                                        window.location.hostname.includes(
+                                          "miaan.ir"
+                                        );
+                                      const gatewayBase = isMiaan
+                                        ? "https://gateway.miaan.ir"
+                                        : "https://gateway.rentamon.com";
+                                      return `${gatewayBase}/webhook/registration-steps-prop`;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })(),
                                 undefined,
                                 (() => {
                                   try {

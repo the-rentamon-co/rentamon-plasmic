@@ -881,7 +881,14 @@ function PlasmicCalendar23__RenderFunc(props: {
                       undefined,
                       (() => {
                         try {
-                          return `https://gateway.rentamon.com/webhook/get_note?prop_id=${$props.propertyId}`;
+                          return (() => {
+                            const isMiaan =
+                              window.location.hostname.includes("miaan.ir");
+                            const gatewayBase = isMiaan
+                              ? "https://gateway.miaan.ir"
+                              : "https://gateway.rentamon.com";
+                            return `${gatewayBase}/webhook/get_note?prop_id=${$props.propertyId}`;
+                          })();
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -1019,7 +1026,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                       }
                       let mon = parseInt(monStr, 10);
                       let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                      return `https://api-v2.rentamon.com/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const apiBase = isMiaan
+                        ? "https://api-v2.miaan.ir"
+                        : "https://api-v2.rentamon.com";
+                      return `${apiBase}/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                     })();
                   } catch (e) {
                     if (
@@ -1096,7 +1108,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                         }
                         let mon = parseInt(monStr, 10);
                         let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                        return `https://api-v2.rentamon.com/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const apiBase = isMiaan
+                          ? "https://api-v2.miaan.ir"
+                          : "https://api-v2.rentamon.com";
+                        return `${apiBase}/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                       })();
                     } catch (e) {
                       if (
@@ -2901,33 +2918,6 @@ function PlasmicCalendar23__RenderFunc(props: {
 
             (async month => {
               const $steps = {};
-
-              $steps["runCode"] = false
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          const secondSpan = document.querySelector(
-                            ".rmdp-header-values span:nth-child(3)"
-                          );
-                          if (secondSpan) {
-                            return ($state.year = secondSpan.textContent);
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
             }).apply(null, eventArgs);
           }}
           onYearChange={async (...eventArgs: any) => {
@@ -4439,7 +4429,26 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/set-unblock",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/set-unblock`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -4587,7 +4596,26 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/reservations/cancelation",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/reservations/cancelation`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -5298,125 +5326,6 @@ function PlasmicCalendar23__RenderFunc(props: {
                       await $steps["updateFetchModalOpen"];
                   }
 
-                  $steps["runCode"] = false
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              function convertPersianNumbersToEnglish(str) {
-                                const persianNumbers = [
-                                  "۰",
-                                  "۱",
-                                  "۲",
-                                  "۳",
-                                  "۴",
-                                  "۵",
-                                  "۶",
-                                  "۷",
-                                  "۸",
-                                  "۹"
-                                ];
-
-                                const englishNumbers = [
-                                  "0",
-                                  "1",
-                                  "2",
-                                  "3",
-                                  "4",
-                                  "5",
-                                  "6",
-                                  "7",
-                                  "8",
-                                  "9"
-                                ];
-
-                                return str.replace(
-                                  /[۰-۹]/g,
-                                  char =>
-                                    englishNumbers[
-                                      persianNumbers.indexOf(char)
-                                    ] || char
-                                );
-                              }
-                              function padZero(num) {
-                                return num.length === 1 ? `0${num}` : num;
-                              }
-                              function convertTimestampToPersianDateWithEnglishNumbers(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                const [year, month, day] = date
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                                return formattedDate;
-                              }
-                              const data = {
-                                days: [$state.fragmentDatePicker.values],
-                                property_id: $props.propertyId,
-                                price: String($state.input.value)
-                              };
-                              $state.requestdata = data;
-                              data.days = data.days
-                                .map(timestampArray =>
-                                  timestampArray.map(timestamp =>
-                                    convertTimestampToPersianDateWithEnglishNumbers(
-                                      timestamp
-                                    )
-                                  )
-                                )
-                                .flat();
-                              fetch(
-                                "https://api-v2.rentamon.com/api/setprice",
-                                {
-                                  method: "POST",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                    Accept: "*/*"
-                                  },
-                                  credentials: "include",
-                                  body: JSON.stringify(data)
-                                }
-                              )
-                                .then(response => {
-                                  if (!response.ok) {
-                                    throw new Error(
-                                      `HTTP error! status: ${response.status}`
-                                    );
-                                  }
-                                  return response.json();
-                                })
-                                .then(result => {
-                                  $state.platformRequestStatus = result;
-                                  console.log(
-                                    "Response saved to state:",
-                                    result
-                                  );
-                                })
-                                .catch(error => {
-                                  console.error("Error:", error);
-                                  $state.platformRequestStatus = {
-                                    error: error.message
-                                  };
-                                });
-                              $state.numberInput2.value = "";
-                              return console.log(data, "done");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-
                   $steps["updateStateVariable2"] =
                     $props.calendarType == "lite"
                       ? (() => {
@@ -5454,7 +5363,28 @@ function PlasmicCalendar23__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/set-price",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/set-price`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -5732,7 +5662,14 @@ function PlasmicCalendar23__RenderFunc(props: {
               }}
               url={(() => {
                 try {
-                  return `https://gateway.rentamon.com/webhook/check-property-smart-pricing?prop_id=${$props.propertyId}`;
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const gatewayBase = isMiaan
+                      ? "https://gateway.miaan.ir"
+                      : "https://gateway.rentamon.com";
+                    return `${gatewayBase}/webhook/check-property-smart-pricing?prop_id=${$props.propertyId}`;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -5832,7 +5769,14 @@ function PlasmicCalendar23__RenderFunc(props: {
               }}
               url={(() => {
                 try {
-                  return `https://api-v2.rentamon.com/api/website_statuses/?property_id=${$props.propertyId}`;
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const apiBase = isMiaan
+                      ? "https://api-v2.miaan.ir"
+                      : "https://api-v2.rentamon.com";
+                    return `${apiBase}/api/website_statuses/?property_id=${$props.propertyId}`;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -7012,7 +6956,26 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/set-block",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/set-block`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -7178,7 +7141,26 @@ function PlasmicCalendar23__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         "POST",
-                        "https://gateway.rentamon.com/webhook/reserve/create",
+                        (() => {
+                          try {
+                            return (() => {
+                              const isMiaan =
+                                window.location.hostname.includes("miaan.ir");
+                              const gatewayBase = isMiaan
+                                ? "https://gateway.miaan.ir"
+                                : "https://gateway.rentamon.com";
+                              return `${gatewayBase}/webhook/reserve/create`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
                         undefined,
                         (() => {
                           try {
@@ -7437,134 +7419,6 @@ function PlasmicCalendar23__RenderFunc(props: {
                     await $steps["updateFetchModalOpen"];
                 }
 
-                $steps["blockRequest"] = false
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            function convertPersianNumbersToEnglish(str) {
-                              const persianNumbers = [
-                                "۰",
-                                "۱",
-                                "۲",
-                                "۳",
-                                "۴",
-                                "۵",
-                                "۶",
-                                "۷",
-                                "۸",
-                                "۹"
-                              ];
-
-                              const englishNumbers = [
-                                "0",
-                                "1",
-                                "2",
-                                "3",
-                                "4",
-                                "5",
-                                "6",
-                                "7",
-                                "8",
-                                "9"
-                              ];
-
-                              return str.replace(
-                                /[۰-۹]/g,
-                                char =>
-                                  englishNumbers[
-                                    persianNumbers.indexOf(char)
-                                  ] || char
-                              );
-                            }
-                            function padZero(num) {
-                              return num.length === 1 ? `0${num}` : num;
-                            }
-                            function convertTimestampToPersianDateWithEnglishNumbers(
-                              timestamp
-                            ) {
-                              const date = new Date(timestamp * 1000);
-                              const [year, month, day] = date
-                                .toLocaleDateString("fa")
-                                .split("/");
-                              const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                              return formattedDate;
-                            }
-                            function getTodayInPersian() {
-                              const today = new Date();
-                              const [year, month, day] = today
-                                .toLocaleDateString("fa")
-                                .split("/");
-                              const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                              return formattedDate;
-                            }
-                            const todayInPersian = getTodayInPersian();
-                            const data = {
-                              days: [$state.fragmentDatePicker.values],
-                              property_id: $props.propertyId,
-                              requested_by: "user",
-                              request_for: "block"
-                            };
-                            $state.requestdata = data;
-                            console.log($state.requestdata);
-                            console.log(data);
-                            data.days = data.days
-                              .map(timestampArray =>
-                                timestampArray
-                                  .map(timestamp =>
-                                    convertTimestampToPersianDateWithEnglishNumbers(
-                                      timestamp
-                                    )
-                                  )
-                                  .filter(day => day >= todayInPersian)
-                              )
-                              .flat();
-                            return fetch(
-                              "https://api-v2.rentamon.com/api/setblock",
-                              {
-                                method: "POST",
-                                headers: {
-                                  "Content-Type": "application/json",
-                                  Accept: "*/*"
-                                },
-                                credentials: "include",
-                                body: JSON.stringify(data)
-                              }
-                            )
-                              .then(response => {
-                                if (!response.ok) {
-                                  throw new Error(
-                                    `HTTP error! status: ${response.status}`
-                                  );
-                                }
-                                return response.json();
-                              })
-                              .then(result => {
-                                $state.platformRequestStatus = result;
-                                console.log("Response saved to state:", result);
-                              })
-                              .catch(error => {
-                                console.error("Error:", error);
-                                $state.platformRequestStatus = {
-                                  error: error.message
-                                };
-                              });
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["blockRequest"] != null &&
-                  typeof $steps["blockRequest"] === "object" &&
-                  typeof $steps["blockRequest"].then === "function"
-                ) {
-                  $steps["blockRequest"] = await $steps["blockRequest"];
-                }
-
                 $steps["updateStateVariable2"] =
                   $props.calendarType == "lite"
                     ? (() => {
@@ -7602,7 +7456,26 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/set-block",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/set-block`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -8136,7 +8009,28 @@ function PlasmicCalendar23__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/sendNote?prop_id=1",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/sendNote?prop_id=1`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -8572,7 +8466,26 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/updateNote",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/updateNote`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -8640,41 +8553,6 @@ function PlasmicCalendar23__RenderFunc(props: {
                 ) {
                   $steps["closeWriteNoteModal"] =
                     await $steps["closeWriteNoteModal"];
-                }
-
-                $steps["updateTextareaValue"] = false
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["textarea2", "value"]
-                        },
-                        operation: 0,
-                        value: ($state.textarea2.value = "")
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateTextareaValue"] != null &&
-                  typeof $steps["updateTextareaValue"] === "object" &&
-                  typeof $steps["updateTextareaValue"].then === "function"
-                ) {
-                  $steps["updateTextareaValue"] =
-                    await $steps["updateTextareaValue"];
                 }
               }}
             >
@@ -8804,137 +8682,31 @@ function PlasmicCalendar23__RenderFunc(props: {
                     await $steps["updateFetchModalOpen"];
                 }
 
-                $steps["runCode"] = false
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            function convertPersianNumbersToEnglish(str) {
-                              const persianNumbers = [
-                                "۰",
-                                "۱",
-                                "۲",
-                                "۳",
-                                "۴",
-                                "۵",
-                                "۶",
-                                "۷",
-                                "۸",
-                                "۹"
-                              ];
-
-                              const englishNumbers = [
-                                "0",
-                                "1",
-                                "2",
-                                "3",
-                                "4",
-                                "5",
-                                "6",
-                                "7",
-                                "8",
-                                "9"
-                              ];
-
-                              return str.replace(
-                                /[۰-۹]/g,
-                                char =>
-                                  englishNumbers[
-                                    persianNumbers.indexOf(char)
-                                  ] || char
-                              );
-                            }
-                            function padZero(num) {
-                              return num.length === 1 ? `0${num}` : num;
-                            }
-                            function convertTimestampToPersianDateWithEnglishNumbers(
-                              timestamp
-                            ) {
-                              const date = new Date(timestamp * 1000);
-                              const [year, month, day] = date
-                                .toLocaleDateString("fa")
-                                .split("/");
-                              const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                              return formattedDate;
-                            }
-                            function getTodayInPersian() {
-                              const today = new Date();
-                              const [year, month, day] = today
-                                .toLocaleDateString("fa")
-                                .split("/");
-                              const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                              return formattedDate;
-                            }
-                            const todayInPersian = getTodayInPersian();
-                            const data = {
-                              days: [$state.fragmentDatePicker.values],
-                              property_id: $props.propertyId
-                            };
-                            $state.requestdata = data;
-                            data.days = data.days
-                              .map(timestampArray =>
-                                timestampArray
-                                  .map(timestamp =>
-                                    convertTimestampToPersianDateWithEnglishNumbers(
-                                      timestamp
-                                    )
-                                  )
-                                  .filter(day => day >= todayInPersian)
-                              )
-                              .flat();
-                            fetch(
-                              "https://api-v2.rentamon.com/api/setunblock",
-                              {
-                                method: "POST",
-                                headers: {
-                                  "Content-Type": "application/json",
-                                  Accept: "*/*"
-                                },
-                                credentials: "include",
-                                body: JSON.stringify(data)
-                              }
-                            )
-                              .then(response => {
-                                if (!response.ok) {
-                                  throw new Error(
-                                    `HTTP error! status: ${response.status}`
-                                  );
-                                }
-                                return response.json();
-                              })
-                              .then(result => {
-                                $state.platformRequestStatus = result;
-                                console.log("Response saved to state:", result);
-                              })
-                              .catch(error => {
-                                console.error("Error:", error);
-                                $state.platformRequestStatus = {
-                                  error: error.message
-                                };
-                              });
-                            return console.log(data);
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-
                 $steps["setUnblock"] = true
                   ? (() => {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/set-unblock",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/set-unblock`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -9066,7 +8838,26 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/reservations/cancelation",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/reservations/cancelation`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -10066,129 +9857,33 @@ function PlasmicCalendar23__RenderFunc(props: {
                       await $steps["updateFetchModalOpen"];
                   }
 
-                  $steps["runCode"] = false
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              function convertPersianNumbersToEnglish(str) {
-                                const persianNumbers = [
-                                  "۰",
-                                  "۱",
-                                  "۲",
-                                  "۳",
-                                  "۴",
-                                  "۵",
-                                  "۶",
-                                  "۷",
-                                  "۸",
-                                  "۹"
-                                ];
-
-                                const englishNumbers = [
-                                  "0",
-                                  "1",
-                                  "2",
-                                  "3",
-                                  "4",
-                                  "5",
-                                  "6",
-                                  "7",
-                                  "8",
-                                  "9"
-                                ];
-
-                                return str.replace(
-                                  /[۰-۹]/g,
-                                  char =>
-                                    englishNumbers[
-                                      persianNumbers.indexOf(char)
-                                    ] || char
-                                );
-                              }
-                              function padZero(num) {
-                                return num.length === 1 ? `0${num}` : num;
-                              }
-                              function convertTimestampToPersianDateWithEnglishNumbers(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                const [year, month, day] = date
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                                return formattedDate;
-                              }
-                              const data = {
-                                days: [$state.fragmentDatePicker.values],
-                                property_id: $props.propertyId,
-                                discount: String($state.textInput4.value)
-                              };
-                              $state.requestdata = data;
-                              data.days = data.days
-                                .map(timestampArray =>
-                                  timestampArray.map(timestamp =>
-                                    convertTimestampToPersianDateWithEnglishNumbers(
-                                      timestamp
-                                    )
-                                  )
-                                )
-                                .flat();
-                              return fetch(
-                                "https://api-v2.rentamon.com/api/setdiscount",
-                                {
-                                  method: "POST",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                    Accept: "*/*"
-                                  },
-                                  credentials: "include",
-                                  body: JSON.stringify(data)
-                                }
-                              )
-                                .then(response => {
-                                  if (!response.ok) {
-                                    throw new Error(
-                                      `HTTP error! status: ${response.status}`
-                                    );
-                                  }
-                                  return response.json();
-                                })
-                                .then(result => {
-                                  $state.platformRequestStatus = result;
-                                  console.log(
-                                    "Response saved to state:",
-                                    result
-                                  );
-                                })
-                                .catch(error => {
-                                  console.error("Error:", error);
-                                  $state.platformRequestStatus = {
-                                    error: error.message
-                                  };
-                                });
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-
                   $steps["setDiscout"] = true
                     ? (() => {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/set-discount",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/set-discount`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -11449,7 +11144,28 @@ function PlasmicCalendar23__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/complete_manual_reserve_data",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/complete_manual_reserve_data`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -11857,60 +11573,6 @@ function PlasmicCalendar23__RenderFunc(props: {
 
           (async data => {
             const $steps = {};
-
-            $steps["runCode"] = false
-              ? (() => {
-                  const actionArgs = {
-                    customFunction: async () => {
-                      return (() => {
-                        const calendarData =
-                          $state.apiRequest?.data?.[1]?.calendar;
-                        const reserveData = $state.reserveData?.data;
-                        if (
-                          !Array.isArray(calendarData) ||
-                          !Array.isArray(reserveData)
-                        ) {
-                          return calendarData;
-                        }
-                        const reserveMap = reserveData.reduce((acc, item) => {
-                          if (item && item.booking_id) {
-                            acc[item.booking_id] = item;
-                          }
-                          return acc;
-                        }, {});
-                        calendarData.forEach(item => {
-                          const bookingId = item.booking_id;
-                          if (bookingId in reserveMap) {
-                            const reserveItem = reserveMap[bookingId];
-                            const amount = reserveItem.amount;
-                            item.guest_name = reserveItem.guest_name;
-                            if (amount == null || amount == 0) {
-                              item.price = null;
-                              return;
-                            }
-                            const amountNumber = parseInt(amount, 10);
-                            item.price = isNaN(amountNumber)
-                              ? amount
-                              : (amountNumber / 1000).toLocaleString();
-                          }
-                        });
-                        console.log(calendarData);
-                        return calendarData;
-                      })();
-                    }
-                  };
-                  return (({ customFunction }) => {
-                    return customFunction();
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["runCode"] != null &&
-              typeof $steps["runCode"] === "object" &&
-              typeof $steps["runCode"].then === "function"
-            ) {
-              $steps["runCode"] = await $steps["runCode"];
-            }
           }).apply(null, eventArgs);
         }}
         ref={ref => {
@@ -11946,7 +11608,11 @@ function PlasmicCalendar23__RenderFunc(props: {
               const monPadded = monStrEn.padStart(2, "0");
               let mon = parseInt(monStrEn, 10);
               let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-              const finalUrl = `https://gateway.rentamon.com/webhook/bookings/calendar?start_date=${yearEn}-${monPadded}-01&end_date=${yearEn}-${monPadded}-${daysInMonth}&property_id=${propIdEn}`;
+              const isMiaan = window.location.hostname.includes("miaan.ir");
+              const gatewayBase = isMiaan
+                ? "https://gateway.miaan.ir"
+                : "https://gateway.rentamon.com";
+              const finalUrl = `${gatewayBase}/webhook/bookings/calendar?start_date=${yearEn}-${monPadded}-01&end_date=${yearEn}-${monPadded}-${daysInMonth}&property_id=${propIdEn}`;
               return finalUrl;
             })();
           } catch (e) {

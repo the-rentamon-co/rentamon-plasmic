@@ -117,8 +117,6 @@ export type PlasmicInvite__OverridesType = {
   _5?: Flex__<typeof AntdAccordionItem>;
   _6?: Flex__<typeof AntdAccordionItem>;
   link?: Flex__<"a"> & Partial<LinkProps>;
-  html?: Flex__<"div">;
-  goftino?: Flex__<typeof Embed>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -284,7 +282,13 @@ function PlasmicInvite__RenderFunc(props: {
             }}
             url={(() => {
               try {
-                return `https://gateway.rentamon.com/webhook/get_referral_code_info?code=${$ctx.params.invite_code}`;
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/get_referral_code_info?code=${$ctx.params.invite_code}`;
+                })();
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -901,8 +905,16 @@ function PlasmicInvite__RenderFunc(props: {
                           const actionArgs = {
                             customFunction: async () => {
                               return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const ssoBase = isMiaan
+                                  ? "https://sso.miaan.ir"
+                                  : "https://sso.rentamon.com";
+                                const callbackBase = isMiaan
+                                  ? "https://miaan.ir"
+                                  : "https://rentamon.com";
                                 return window.open(
-                                  "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=referral"
+                                  `${ssoBase}/web/index.html?callback=${callbackBase}/splash?src=referral`
                                 );
                               })();
                             }
@@ -1306,20 +1318,6 @@ function PlasmicInvite__RenderFunc(props: {
                   );
                 })()}
               </div>
-              <div
-                data-plasmic-name={"html"}
-                data-plasmic-override={overrides.html}
-                className={classNames(projectcss.all, sty.html)}
-              >
-                <Embed
-                  data-plasmic-name={"goftino"}
-                  data-plasmic-override={overrides.goftino}
-                  className={classNames("__wab_instance", sty.goftino)}
-                  code={
-                    '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
-                  }
-                />
-              </div>
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__rh9Bm)}>
@@ -1374,8 +1372,6 @@ const PlasmicDescendants = {
     "_5",
     "_6",
     "link",
-    "html",
-    "goftino",
     "rentamonFooter",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -1414,18 +1410,7 @@ const PlasmicDescendants = {
   titlePart: ["titlePart"],
   testimonialsScrolling: ["testimonialsScrolling"],
   embedHtml: ["embedHtml"],
-  qA: [
-    "qA",
-    "accordionMain",
-    "_2",
-    "_1",
-    "_4",
-    "_5",
-    "_6",
-    "link",
-    "html",
-    "goftino"
-  ],
+  qA: ["qA", "accordionMain", "_2", "_1", "_4", "_5", "_6", "link"],
   accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6", "link"],
   _2: ["_2", "_1"],
   _1: ["_1"],
@@ -1433,8 +1418,6 @@ const PlasmicDescendants = {
   _5: ["_5"],
   _6: ["_6"],
   link: ["link"],
-  html: ["html", "goftino"],
-  goftino: ["goftino"],
   rentamonFooter: ["rentamonFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -1467,8 +1450,6 @@ type NodeDefaultElementType = {
   _5: typeof AntdAccordionItem;
   _6: typeof AntdAccordionItem;
   link: "a";
-  html: "div";
-  goftino: typeof Embed;
   rentamonFooter: typeof RentamonFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -1559,8 +1540,6 @@ export const PlasmicInvite = Object.assign(
     _5: makeNodeComponent("_5"),
     _6: makeNodeComponent("_6"),
     link: makeNodeComponent("link"),
-    html: makeNodeComponent("html"),
-    goftino: makeNodeComponent("goftino"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),

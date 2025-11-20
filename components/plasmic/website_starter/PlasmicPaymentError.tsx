@@ -246,7 +246,7 @@ function PlasmicPaymentError__RenderFunc(props: {
                       ? "120px"
                       : hasVariant(globalVariants, "screen", "tablet")
                         ? "140px"
-                        : "180px"
+                        : "140px"
                 }
                 loading={"lazy"}
                 src={{

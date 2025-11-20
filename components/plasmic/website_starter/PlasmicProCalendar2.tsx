@@ -115,7 +115,6 @@ export type PlasmicProCalendar2__OverridesType = {
   profile?: Flex__<typeof ApiRequest>;
   calendar23?: Flex__<typeof Calendar23>;
   aiAgentIframe?: Flex__<typeof Iframe>;
-  spacerDontTouch?: Flex__<"div">;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -646,16 +645,19 @@ function PlasmicProCalendar2__RenderFunc(props: {
                           }
                           let vt = null;
                           const vtRaw = getCookieValue("vt");
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const baseUrl = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
                           if (vtRaw !== null) {
                             vt = parseInt(vtRaw, 10);
                             $state.vtStatus = vt;
                             if (vt === 2) {
-                              window.location.href =
-                                "https://rentamon.com/calendar/";
+                              window.location.href = `${baseUrl}/calendar/`;
                             }
                             if (vt === 1) {
-                              return (window.location.href =
-                                "https://rentamon.com/panel/");
+                              return (window.location.href = `${baseUrl}/panel/`);
                             }
                           }
                         })();
@@ -679,7 +681,26 @@ function PlasmicProCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://gateway.rentamon.com/webhook/get_user_segment"
+                        (() => {
+                          try {
+                            return (() => {
+                              const isMiaan =
+                                window.location.hostname.includes("miaan.ir");
+                              const gatewayBase = isMiaan
+                                ? "https://gateway.miaan.ir"
+                                : "https://gateway.rentamon.com";
+                              return `${gatewayBase}/webhook/get_user_segment`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [
@@ -718,14 +739,17 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         const current = parseInt(rawVtStatus, 10);
                         const isCurrentNaN = isNaN(current);
                         const isFlagDifferent = flag !== current;
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const baseUrl = isMiaan
+                          ? "https://miaan.ir"
+                          : "https://rentamon.com";
                         if (isCurrentNaN || isFlagDifferent) {
                           setCookie("vt", flag.toString(), 0.3333);
                           if (flag === 2) {
-                            return (window.location.href =
-                              "https://rentamon.com/calendar/");
+                            return (window.location.href = `${baseUrl}/calendar/`);
                           } else if (flag === 1) {
-                            return (window.location.href =
-                              "https://rentamon.com/panel/");
+                            return (window.location.href = `${baseUrl}/panel/`);
                           }
                         }
                       })()
@@ -802,7 +826,26 @@ function PlasmicProCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         "POST",
-                        "https://gateway.rentamon.com/webhook/process_calendar_followUp",
+                        (() => {
+                          try {
+                            return (() => {
+                              const isMiaan =
+                                window.location.hostname.includes("miaan.ir");
+                              const gatewayBase = isMiaan
+                                ? "https://gateway.miaan.ir"
+                                : "https://gateway.rentamon.com";
+                              return `${gatewayBase}/webhook/process_calendar_followUp`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
                         undefined,
                         (() => {
                           try {
@@ -841,7 +884,26 @@ function PlasmicProCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://gateway.rentamon.com/webhook/check_reserve"
+                        (() => {
+                          try {
+                            return (() => {
+                              const isMiaan =
+                                window.location.hostname.includes("miaan.ir");
+                              const gatewayBase = isMiaan
+                                ? "https://gateway.miaan.ir"
+                                : "https://gateway.rentamon.com";
+                              return `${gatewayBase}/webhook/check_reserve`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [
@@ -1694,9 +1756,26 @@ function PlasmicProCalendar2__RenderFunc(props: {
                           ref={ref => {
                             $refs["apiRequest"] = ref;
                           }}
-                          url={
-                            "https://gateway.rentamon.com/webhook/calendar-statuses"
-                          }
+                          url={(() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/calendar-statuses`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
                         >
                           {(() => {
                             try {
@@ -2265,7 +2344,14 @@ function PlasmicProCalendar2__RenderFunc(props: {
                   }}
                   url={(() => {
                     try {
-                      return `https://api-v2.rentamon.com/api/user_info?property_id=${$state.propId}`;
+                      return (() => {
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const apiBase = isMiaan
+                          ? "https://api-v2.miaan.ir"
+                          : "https://api-v2.rentamon.com";
+                        return `${apiBase}/api/user_info?property_id=${$state.propId}`;
+                      })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -2288,25 +2374,6 @@ function PlasmicProCalendar2__RenderFunc(props: {
                   </div>
                 </ApiRequest>
               </div>
-            </div>
-          ) : null}
-          {(() => {
-            try {
-              return $state.isModalShow && !$state.isTheFirstVisit
-                ? true
-                : false;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return false;
-              }
-              throw e;
-            }
-          })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox__pnmzl)}>
-              <div className={classNames(projectcss.all, sty.freeBox__pWu9J)} />
             </div>
           ) : null}
           <Calendar23
@@ -2483,19 +2550,6 @@ function PlasmicProCalendar2__RenderFunc(props: {
               />
             </div>
           ) : null}
-          {(
-            hasVariant(globalVariants, "screen", "smallMobile")
-              ? true
-              : hasVariant(globalVariants, "screen", "mobile")
-                ? true
-                : false
-          ) ? (
-            <div
-              data-plasmic-name={"spacerDontTouch"}
-              data-plasmic-override={overrides.spacerDontTouch}
-              className={classNames(projectcss.all, sty.spacerDontTouch)}
-            />
-          ) : null}
           <NavbarRntFooter
             data-plasmic-name={"navbarRntFooter"}
             data-plasmic-override={overrides.navbarRntFooter}
@@ -2631,7 +2685,6 @@ const PlasmicDescendants = {
     "profile",
     "calendar23",
     "aiAgentIframe",
-    "spacerDontTouch",
     "navbarRntFooter",
     "clarityRntComponent",
     "faviconRntComponent",
@@ -2682,7 +2735,6 @@ const PlasmicDescendants = {
   profile: ["profile"],
   calendar23: ["calendar23"],
   aiAgentIframe: ["aiAgentIframe"],
-  spacerDontTouch: ["spacerDontTouch"],
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
@@ -2713,7 +2765,6 @@ type NodeDefaultElementType = {
   profile: typeof ApiRequest;
   calendar23: typeof Calendar23;
   aiAgentIframe: typeof Iframe;
-  spacerDontTouch: "div";
   navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -2802,7 +2853,6 @@ export const PlasmicProCalendar2 = Object.assign(
     profile: makeNodeComponent("profile"),
     calendar23: makeNodeComponent("calendar23"),
     aiAgentIframe: makeNodeComponent("aiAgentIframe"),
-    spacerDontTouch: makeNodeComponent("spacerDontTouch"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),

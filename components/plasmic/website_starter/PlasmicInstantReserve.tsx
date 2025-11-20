@@ -956,7 +956,26 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 ref={ref => {
                   $refs["profile2"] = ref;
                 }}
-                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+                url={(() => {
+                  try {
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const apiBase = isMiaan
+                        ? "https://api-v2.miaan.ir"
+                        : "https://api-v2.rentamon.com";
+                      return `${apiBase}/api/user_info?property_id=1`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               />
             </div>
           </div>
@@ -1361,7 +1380,29 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      "https://gateway.rentamon.com/webhook/instant/Initiator",
+                                      (() => {
+                                        try {
+                                          return (() => {
+                                            const isMiaan =
+                                              window.location.hostname.includes(
+                                                "miaan.ir"
+                                              );
+                                            const gatewayBase = isMiaan
+                                              ? "https://gateway.miaan.ir"
+                                              : "https://gateway.rentamon.com";
+                                            return `${gatewayBase}/webhook/instant/Initiator`;
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
                                       (() => {
                                         try {
                                           return $state.homsaSwitch.checked
@@ -1710,7 +1751,29 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      "https://gateway.rentamon.com/webhook/instant/Initiator",
+                                      (() => {
+                                        try {
+                                          return (() => {
+                                            const isMiaan =
+                                              window.location.hostname.includes(
+                                                "miaan.ir"
+                                              );
+                                            const gatewayBase = isMiaan
+                                              ? "https://gateway.miaan.ir"
+                                              : "https://gateway.rentamon.com";
+                                            return `${gatewayBase}/webhook/instant/Initiator`;
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
                                       (() => {
                                         try {
                                           return $state.mihmanshoSwitch.checked
@@ -2055,7 +2118,29 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      "https://gateway.rentamon.com/webhook/instant/Initiator",
+                                      (() => {
+                                        try {
+                                          return (() => {
+                                            const isMiaan =
+                                              window.location.hostname.includes(
+                                                "miaan.ir"
+                                              );
+                                            const gatewayBase = isMiaan
+                                              ? "https://gateway.miaan.ir"
+                                              : "https://gateway.rentamon.com";
+                                            return `${gatewayBase}/webhook/instant/Initiator`;
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
                                       (() => {
                                         try {
                                           return $state.shabSwitch.checked
@@ -2402,7 +2487,29 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      "https://gateway.rentamon.com/webhook/instant/Initiator",
+                                      (() => {
+                                        try {
+                                          return (() => {
+                                            const isMiaan =
+                                              window.location.hostname.includes(
+                                                "miaan.ir"
+                                              );
+                                            const gatewayBase = isMiaan
+                                              ? "https://gateway.miaan.ir"
+                                              : "https://gateway.rentamon.com";
+                                            return `${gatewayBase}/webhook/instant/Initiator`;
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
                                       (() => {
                                         try {
                                           return $state.shabSwitch2.checked
@@ -2749,7 +2856,29 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      "https://gateway.rentamon.com/webhook/instant/Initiator",
+                                      (() => {
+                                        try {
+                                          return (() => {
+                                            const isMiaan =
+                                              window.location.hostname.includes(
+                                                "miaan.ir"
+                                              );
+                                            const gatewayBase = isMiaan
+                                              ? "https://gateway.miaan.ir"
+                                              : "https://gateway.rentamon.com";
+                                            return `${gatewayBase}/webhook/instant/Initiator`;
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
+                                          }
+                                          throw e;
+                                        }
+                                      })(),
                                       (() => {
                                         try {
                                           return $state.jabamaSwitch.checked

@@ -579,41 +579,6 @@ function PlasmicReferral__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["updateCopyTextOpen"] = false
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["shareLink", "open"]
-                              },
-                              operation: 0,
-                              value: true
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateCopyTextOpen"] != null &&
-                        typeof $steps["updateCopyTextOpen"] === "object" &&
-                        typeof $steps["updateCopyTextOpen"].then === "function"
-                      ) {
-                        $steps["updateCopyTextOpen"] =
-                          await $steps["updateCopyTextOpen"];
-                      }
-
                       $steps["runCode"] = true
                         ? (() => {
                             const actionArgs = {
@@ -700,7 +665,29 @@ ${$state.textInput.value}
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://gateway.rentamon.com/webhook/refferal-logs",
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      const isMiaan =
+                                        window.location.hostname.includes(
+                                          "miaan.ir"
+                                        );
+                                      const gatewayBase = isMiaan
+                                        ? "https://gateway.miaan.ir"
+                                        : "https://gateway.rentamon.com";
+                                      return `${gatewayBase}/webhook/refferal-logs`;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })(),
                                 undefined,
                                 (() => {
                                   try {
@@ -815,9 +802,26 @@ ${$state.textInput.value}
                     ref={ref => {
                       $refs["apiRequest"] = ref;
                     }}
-                    url={
-                      "https://gateway.rentamon.com/webhook/generate_referral_code"
-                    }
+                    url={(() => {
+                      try {
+                        return (() => {
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const gatewayBase = isMiaan
+                            ? "https://gateway.miaan.ir"
+                            : "https://gateway.rentamon.com";
+                          return `${gatewayBase}/webhook/generate_referral_code`;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
                   />
                 </div>
                 <div
@@ -1087,204 +1091,6 @@ ${$state.textInput.value}
                         )}
                         onClick={async event => {
                           const $steps = {};
-
-                          $steps["runCode2"] = false
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return function share() {
-                                      const shareText = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری. ۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره. اینجا بزن 👇 rentamon.com`;
-                                      if (navigator.share) {
-                                        navigator
-                                          .share({
-                                            title: "رنتامون",
-                                            text: shareText,
-                                            url: "https://rentamon.com"
-                                          })
-                                          .then(() =>
-                                            console.log("Shared successfully")
-                                          )
-                                          .catch(error =>
-                                            console.error(
-                                              "Error sharing:",
-                                              error
-                                            )
-                                          );
-                                      } else {
-                                        navigator.clipboard
-                                          .writeText(shareText)
-                                          .then(() => {
-                                            alert(
-                                              "متن در حافظه کپی شد و آماده ارسال به دیگرانه"
-                                            );
-                                          })
-                                          .catch(() => {
-                                            alert(
-                                              "کپی کردن متن با خطا مواجه شد. لطفاً دستی کپی کن."
-                                            );
-                                          });
-                                      }
-                                    };
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode2"] != null &&
-                            typeof $steps["runCode2"] === "object" &&
-                            typeof $steps["runCode2"].then === "function"
-                          ) {
-                            $steps["runCode2"] = await $steps["runCode2"];
-                          }
-
-                          $steps["runCode"] = false
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      const text = `از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
-
-۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
-
-اینجا بزن 👇
-rentamon.com`;
-                                      return navigator.clipboard
-                                        .writeText(text)
-                                        .then(() =>
-                                          console.log(
-                                            "متن با موفقیت در کلیپ‌بورد کپی شد!"
-                                          )
-                                        )
-                                        .catch(err =>
-                                          console.error("خطا در کپی متن: ", err)
-                                        );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-
-                          $steps["updateCopyTextOpen"] = false
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["shareLink", "open"]
-                                  },
-                                  operation: 0
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updateCopyTextOpen"] != null &&
-                            typeof $steps["updateCopyTextOpen"] === "object" &&
-                            typeof $steps["updateCopyTextOpen"].then ===
-                              "function"
-                          ) {
-                            $steps["updateCopyTextOpen"] =
-                              await $steps["updateCopyTextOpen"];
-                          }
-
-                          $steps["invokeGlobalAction"] = false
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    undefined,
-                                    "\u0645\u062a\u0646 \u062f\u0631 \u062d\u0627\u0641\u0638\u0647 \u06a9\u067e\u06cc \u0634\u062f \u0648 \u0622\u0645\u0627\u062f\u0647 \u0627\u0631\u0633\u0627\u0644 \u0628\u0647 \u062f\u0648\u0633\u062a\u0627\u0646\u0647 :)",
-                                    "top-center"
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.showToast"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["invokeGlobalAction"] != null &&
-                            typeof $steps["invokeGlobalAction"] === "object" &&
-                            typeof $steps["invokeGlobalAction"].then ===
-                              "function"
-                          ) {
-                            $steps["invokeGlobalAction"] =
-                              await $steps["invokeGlobalAction"];
-                          }
-
-                          $steps["runCode3"] = false
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (async () => {
-                                      return (async () => {
-                                        const shareText = `
-از طریق برنامه‌ی رنتامون می‌تونی برای سایت‌های جاجیگا، اتاقک،‌ جاباما و... یکجا قیمت بذاری.
-
-۷ تا از معروف‌ترین سایت‌های اجاره ویلا رو یکجا تجمیع کرده و امکانات اون‌ها رو توی خودش داره.
-
-اینجا بزن 👇
-${$state.textInput.value}
-`;
-                                        if (navigator.share) {
-                                          try {
-                                            await navigator.share({
-                                              text: shareText
-                                            });
-                                            console.log(
-                                              "اشتراک‌گذاری با موفقیت انجام شد!"
-                                            );
-                                          } catch (err) {
-                                            console.error(
-                                              "خطا در اشتراک‌گذاری:",
-                                              err
-                                            );
-                                          }
-                                        } else {
-                                          console.log(
-                                            "مرورگر شما از Web Share API پشتیبانی نمی‌کند."
-                                          );
-                                        }
-                                      })();
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode3"] != null &&
-                            typeof $steps["runCode3"] === "object" &&
-                            typeof $steps["runCode3"].then === "function"
-                          ) {
-                            $steps["runCode3"] = await $steps["runCode3"];
-                          }
                         }}
                       >
                         {hasVariant(globalVariants, "screen", "mobile")
@@ -1613,7 +1419,26 @@ ${$state.textInput.value}
                   ref={ref => {
                     $refs["apiRequest2"] = ref;
                   }}
-                  url={"https://gateway.rentamon.com/webhook/get_referral_data"}
+                  url={(() => {
+                    try {
+                      return (() => {
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const gatewayBase = isMiaan
+                          ? "https://gateway.miaan.ir"
+                          : "https://gateway.rentamon.com";
+                        return `${gatewayBase}/webhook/get_referral_data`;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                 >
                   {(() => {
                     try {
@@ -2428,7 +2253,26 @@ ${$state.textInput.value}
                     const actionArgs = {
                       args: [
                         "POST",
-                        "https://gateway.rentamon.com/webhook/refferal-logs",
+                        (() => {
+                          try {
+                            return (() => {
+                              const isMiaan =
+                                window.location.hostname.includes("miaan.ir");
+                              const gatewayBase = isMiaan
+                                ? "https://gateway.miaan.ir"
+                                : "https://gateway.rentamon.com";
+                              return `${gatewayBase}/webhook/refferal-logs`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
                         undefined,
                         (() => {
                           try {

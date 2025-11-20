@@ -2878,20 +2878,6 @@
           "path": "/test-search"
         },
         {
-          "id": "dehhsrjP1Mnr",
-          "name": "PropertyEdit2",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicPropertyEdit2.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/property/edit-2/[id].tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicPropertyEdit2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/property/edit-2/[id]"
-        },
-        {
           "id": "cNCII08LGyXG",
           "name": "کلماترنتامون",
           "type": "managed",

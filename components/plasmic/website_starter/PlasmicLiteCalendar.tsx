@@ -113,7 +113,6 @@ export type PlasmicLiteCalendar__OverridesType = {
   deskTablet?: Flex__<"div">;
   sidebarLite?: Flex__<typeof SidebarLite>;
   calendar2?: Flex__<typeof Calendar2>;
-  userAvailableFeature?: Flex__<typeof ApiRequest>;
   spacerDontTouch?: Flex__<"div">;
   proPanelModal?: Flex__<typeof AntdModal>;
   form?: Flex__<typeof FormWrapper>;
@@ -258,30 +257,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
           reservation: false,
           auto_sync: false
         })
-      },
-      {
-        path: "userAvailableFeature.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "userAvailableFeature"
-      },
-      {
-        path: "userAvailableFeature.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "userAvailableFeature"
-      },
-      {
-        path: "userAvailableFeature.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "userAvailableFeature"
       },
       {
         path: "proPanelModal.open",
@@ -557,16 +532,19 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                           }
                           let vt = null;
                           const vtRaw = getCookieValue("vt");
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const baseUrl = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
                           if (vtRaw !== null) {
                             vt = parseInt(vtRaw, 10);
                             $state.vtStatus = vt;
                             if (vt === 3) {
-                              window.location.href =
-                                "https://rentamon.com/panel-2/";
+                              window.location.href = `${baseUrl}/panel-2/`;
                             }
                             if (vt === 1) {
-                              return (window.location.href =
-                                "https://rentamon.com/panel/");
+                              return (window.location.href = `${baseUrl}/panel/`);
                             }
                           }
                         })();
@@ -1162,8 +1140,14 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                                   $state.profile.error.detail ===
                                   "No Profile matches the given query."
                                 ) {
-                                  return (window.location.href =
-                                    "https://rentamon.com/activation/1/");
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const baseUrl = isMiaan
+                                    ? "https://miaan.ir"
+                                    : "https://rentamon.com";
+                                  return (window.location.href = `${baseUrl}/activation/1/`);
                                 }
                               })();
                             }
@@ -1234,7 +1218,14 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 }}
                 url={(() => {
                   try {
-                    return `https://api-v2.rentamon.com/api/user_info?property_id=${$state.propId}`;
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const apiBase = isMiaan
+                        ? "https://api-v2.miaan.ir"
+                        : "https://api-v2.rentamon.com";
+                      return `${apiBase}/api/user_info?property_id=${$state.propId}`;
+                    })();
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -1329,49 +1320,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             })()}
           />
 
-          <ApiRequest
-            data-plasmic-name={"userAvailableFeature"}
-            data-plasmic-override={overrides.userAvailableFeature}
-            className={classNames("__wab_instance", sty.userAvailableFeature)}
-            errorDisplay={null}
-            loadingDisplay={null}
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "userAvailableFeature",
-                "error"
-              ]).apply(null, eventArgs);
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "userAvailableFeature",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "userAvailableFeature",
-                "data"
-              ]).apply(null, eventArgs);
-            }}
-            ref={ref => {
-              $refs["userAvailableFeature"] = ref;
-            }}
-            url={(() => {
-              try {
-                return `https://gateway.rentamon.com/webhook/get_user_available_feature?prop_id=${$state.propId}`;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return "https://gateway.rentamon.com/webhook/get_user_available_feature";
-                }
-                throw e;
-              }
-            })()}
-          />
-
           <div
             data-plasmic-name={"spacerDontTouch"}
             data-plasmic-override={overrides.spacerDontTouch}
@@ -1455,7 +1403,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__pwsY5
+                        sty.formField__bJdM
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1467,7 +1415,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__kuSCx
+                        sty.formField__qWby
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1479,7 +1427,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <AntdButton
                       className={classNames(
                         "__wab_instance",
-                        sty.button__mFr0J
+                        sty.button__qDydo
                       )}
                       submitsForm={true}
                       type={"primary"}
@@ -1488,7 +1436,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___6A75
+                          sty.text__n62F
                         )}
                       >
                         {"Submit"}
@@ -1914,7 +1862,6 @@ const PlasmicDescendants = {
     "deskTablet",
     "sidebarLite",
     "calendar2",
-    "userAvailableFeature",
     "spacerDontTouch",
     "proPanelModal",
     "form",
@@ -1947,7 +1894,6 @@ const PlasmicDescendants = {
   deskTablet: ["deskTablet", "sidebarLite"],
   sidebarLite: ["sidebarLite"],
   calendar2: ["calendar2"],
-  userAvailableFeature: ["userAvailableFeature"],
   spacerDontTouch: ["spacerDontTouch"],
   proPanelModal: ["proPanelModal", "form", "input", "textArea"],
   form: ["form", "input", "textArea"],
@@ -1975,7 +1921,6 @@ type NodeDefaultElementType = {
   deskTablet: "div";
   sidebarLite: typeof SidebarLite;
   calendar2: typeof Calendar2;
-  userAvailableFeature: typeof ApiRequest;
   spacerDontTouch: "div";
   proPanelModal: typeof AntdModal;
   form: typeof FormWrapper;
@@ -2061,7 +2006,6 @@ export const PlasmicLiteCalendar = Object.assign(
     deskTablet: makeNodeComponent("deskTablet"),
     sidebarLite: makeNodeComponent("sidebarLite"),
     calendar2: makeNodeComponent("calendar2"),
-    userAvailableFeature: makeNodeComponent("userAvailableFeature"),
     spacerDontTouch: makeNodeComponent("spacerDontTouch"),
     proPanelModal: makeNodeComponent("proPanelModal"),
     form: makeNodeComponent("form"),

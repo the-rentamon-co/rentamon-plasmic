@@ -64,8 +64,6 @@ import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
-import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -106,8 +104,6 @@ export type PlasmicWebsitesConnections__OverridesType = {
   propGuide?: Flex__<"div">;
   allConnected?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
-  clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
-  faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
 
 export interface DefaultWebsitesConnectionsProps {}
@@ -396,9 +392,26 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                     ref={ref => {
                       $refs["profile2"] = ref;
                     }}
-                    url={
-                      "https://api-v2.rentamon.com/api/user_info?property_id=1"
-                    }
+                    url={(() => {
+                      try {
+                        return (() => {
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const apiBase = isMiaan
+                            ? "https://api-v2.miaan.ir"
+                            : "https://api-v2.rentamon.com";
+                          return `${apiBase}/api/user_info?property_id=1`;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
                   />
                 </div>
               ) : null}
@@ -1080,7 +1093,26 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                   ref={ref => {
                     $refs["apiRequest2"] = ref;
                   }}
-                  url={"https://gateway.rentamon.com/webhook/not-connected"}
+                  url={(() => {
+                    try {
+                      return (() => {
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const gatewayBase = isMiaan
+                          ? "https://gateway.miaan.ir"
+                          : "https://gateway.rentamon.com";
+                        return `${gatewayBase}/webhook/not-connected`;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                 >
                   <div
                     className={classNames(projectcss.all, sty.freeBox__wyHoo)}
@@ -1676,7 +1708,26 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://gateway.rentamon.com/webhook/get_user_segment"
+                        (() => {
+                          try {
+                            return (() => {
+                              const isMiaan =
+                                window.location.hostname.includes("miaan.ir");
+                              const gatewayBase = isMiaan
+                                ? "https://gateway.miaan.ir"
+                                : "https://gateway.rentamon.com";
+                              return `${gatewayBase}/webhook/get_user_segment`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [
@@ -1766,20 +1817,6 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
               }
             }}
           />
-
-          <div className={classNames(projectcss.all, sty.freeBox__rWxqi)}>
-            <ClarityRntComponent
-              data-plasmic-name={"clarityRntComponent"}
-              data-plasmic-override={overrides.clarityRntComponent}
-              className={classNames("__wab_instance", sty.clarityRntComponent)}
-            />
-
-            <FaviconRntComponent
-              data-plasmic-name={"faviconRntComponent"}
-              data-plasmic-override={overrides.faviconRntComponent}
-              className={classNames("__wab_instance", sty.faviconRntComponent)}
-            />
-          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1806,9 +1843,7 @@ const PlasmicDescendants = {
     "newPlatform2",
     "propGuide",
     "allConnected",
-    "sideEffect",
-    "clarityRntComponent",
-    "faviconRntComponent"
+    "sideEffect"
   ],
   navbarRntFooter: ["navbarRntFooter"],
   header: ["header", "sideBar2", "sidebarLite", "profile2"],
@@ -1869,9 +1904,7 @@ const PlasmicDescendants = {
   newPlatform2: ["newPlatform2"],
   propGuide: ["propGuide"],
   allConnected: ["allConnected"],
-  sideEffect: ["sideEffect"],
-  clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"]
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1896,8 +1929,6 @@ type NodeDefaultElementType = {
   propGuide: "div";
   allConnected: "div";
   sideEffect: typeof SideEffect;
-  clarityRntComponent: typeof ClarityRntComponent;
-  faviconRntComponent: typeof FaviconRntComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1980,8 +2011,6 @@ export const PlasmicWebsitesConnections = Object.assign(
     propGuide: makeNodeComponent("propGuide"),
     allConnected: makeNodeComponent("allConnected"),
     sideEffect: makeNodeComponent("sideEffect"),
-    clarityRntComponent: makeNodeComponent("clarityRntComponent"),
-    faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
     // Metadata about props expected for PlasmicWebsitesConnections
     internalVariantProps: PlasmicWebsitesConnections__VariantProps,
