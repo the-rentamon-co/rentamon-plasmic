@@ -1026,7 +1026,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                       }
                       let mon = parseInt(monStr, 10);
                       let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                      return `https://api-v2.rentamon.com/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const apiBase = isMiaan
+                        ? "https://api-v2.miaan.ir"
+                        : "https://api-v2.rentamon.com";
+                      return `${apiBase}/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                     })();
                   } catch (e) {
                     if (
@@ -5741,7 +5746,14 @@ function PlasmicCalendar2__RenderFunc(props: {
               }}
               url={(() => {
                 try {
-                  return `https://gateway.rentamon.com/webhook/check-property-smart-pricing?prop_id=${$props.propertyId}`;
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const gatewayBase = isMiaan
+                      ? "https://gateway.miaan.ir"
+                      : "https://gateway.rentamon.com";
+                    return `${gatewayBase}/webhook/check-property-smart-pricing?prop_id=${$props.propertyId}`;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -5841,7 +5853,14 @@ function PlasmicCalendar2__RenderFunc(props: {
               }}
               url={(() => {
                 try {
-                  return `https://api-v2.rentamon.com/api/website_statuses/?property_id=${$props.propertyId}`;
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const apiBase = isMiaan
+                      ? "https://api-v2.miaan.ir"
+                      : "https://api-v2.rentamon.com";
+                    return `${apiBase}/api/website_statuses/?property_id=${$props.propertyId}`;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||

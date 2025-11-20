@@ -2836,6 +2836,32 @@ function PlasmicProCalendar__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__anCli
+            )}
+          >
+            <React.Fragment>
+              {(() => {
+                try {
+                  return (() => {
+                    const currentUrl = window.location.href;
+                    return currentUrl;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          </div>
         </div>
       </div>
     </React.Fragment>
