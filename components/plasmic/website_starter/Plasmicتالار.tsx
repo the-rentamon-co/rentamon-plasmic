@@ -2075,8 +2075,15 @@ function Plasmicتالار__RenderFunc(props: {
                           const actionArgs = {
                             customFunction: async () => {
                               return (() => {
-                                return (window.location.href =
-                                  "https://sso.rentamon.com/auth/logout?callback=https://rentamon.com/panel");
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const ssoBase = isMiaan
+                                  ? "https://sso.miaan.ir"
+                                  : "https://sso.rentamon.com";
+                                const callbackBase = isMiaan
+                                  ? "https://miaan.ir"
+                                  : "https://rentamon.com";
+                                return (window.location.href = `${ssoBase}/auth/logout?callback=${callbackBase}/panel`);
                               })();
                             }
                           };
