@@ -340,7 +340,7 @@ function PlasmicTestSearch__RenderFunc(props: {
               ref={ref => {
                 $refs["apiRequest"] = ref;
               }}
-              url={"https://dev.rentamon.com/webhook/test-cors"}
+              url={"https://gateway.rentamon.com/webhook/test-cors"}
             />
 
             <DatePicker
