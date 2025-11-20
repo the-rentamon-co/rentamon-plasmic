@@ -1155,6 +1155,8 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                                 return 10;
                                               case 8:
                                                 return 9;
+                                              case 17:
+                                                return 11;
                                               default:
                                                 return null;
                                             }

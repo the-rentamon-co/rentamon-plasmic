@@ -3058,20 +3058,6 @@
           "path": "/new-brand"
         },
         {
-          "id": "EU8iN_NUYieL",
-          "name": "StatusesConnections2",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicStatusesConnections2.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/statuses-2.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicStatusesConnections2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/statuses-2"
-        },
-        {
           "id": "4_Sank-PwTYC",
           "name": "دانلوداپلیکیشنموبایلرنتامون",
           "type": "managed",
@@ -5771,6 +5757,11 @@
           "id": "fhWPnbKm07nR",
           "name": "photo_2025-11-19_08-35-49.jpg 2",
           "filePath": "../public/plasmic/website_starter/images/photo20251119083549Jpg2.jpg"
+        },
+        {
+          "id": "GB6fGegIyXra",
+          "name": "snapptrip.png 2",
+          "filePath": "../public/plasmic/website_starter/images/snapptripPng2.png"
         }
       ],
       "indirect": false,

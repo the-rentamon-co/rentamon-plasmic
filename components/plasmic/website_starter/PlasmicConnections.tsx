@@ -166,6 +166,14 @@ export type PlasmicConnections__OverridesType = {
   jajigaVerify?: Flex__<typeof FormItemWrapper>;
   input6?: Flex__<typeof AntdInput>;
   jajigaverify?: Flex__<typeof AntdButton>;
+  snapp?: Flex__<"div">;
+  snappSendForm?: Flex__<typeof FormItemWrapper>;
+  snappSend?: Flex__<typeof Input>;
+  snappsend?: Flex__<typeof AntdButton>;
+  snappsend10?: Flex__<typeof AntdButton>;
+  snappVerify2?: Flex__<typeof FormItemWrapper>;
+  input7?: Flex__<typeof AntdInput>;
+  snappverify?: Flex__<typeof AntdButton>;
   shab?: Flex__<"div">;
   shabSend?: Flex__<typeof FormItemWrapper>;
   shabOtpSend?: Flex__<typeof Input>;
@@ -594,6 +602,38 @@ function PlasmicConnections__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "snappSend.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return (() => {
+                const found = $state.getNumberOfDisconnectedPlatforms.data.find(
+                  item => item.website_id === 3
+                );
+                return found ? found.phone_number : null;
+              })();
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "input7.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       }
     ],
     [$props, $ctx, $refs]
@@ -5630,6 +5670,703 @@ function PlasmicConnections__RenderFunc(props: {
                     ) : null}
                   </div>
                   <div
+                    data-plasmic-name={"snapp"}
+                    data-plasmic-override={overrides.snapp}
+                    className={classNames(projectcss.all, sty.snapp)}
+                  >
+                    {(() => {
+                      try {
+                        return (
+                          $state.step == 3 &&
+                          $state.platformstatus.status.jajiga != true
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <FormItemWrapper
+                        data-plasmic-name={"snappSendForm"}
+                        data-plasmic-override={overrides.snappSendForm}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.snappSendForm
+                        )}
+                        label={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__yqXt7
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__y6G8J
+                              )}
+                            >
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__bra4H)}
+                                displayHeight={"auto"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"70%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "114px"
+                                    : "80px"
+                                }
+                                height={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "120"
+                                    : "120"
+                                }
+                                loading={"lazy"}
+                                src={{
+                                  src: "/plasmic/website_starter/images/snapptripPng2.png",
+                                  fullWidth: 136,
+                                  fullHeight: 136,
+                                  aspectRatio: undefined
+                                }}
+                                width={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "120"
+                                    : "120"
+                                }
+                              />
+                            </div>
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox___1RizT
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__dZ32L
+                                )}
+                              >
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return $ctx.fetchedData.list[0].url;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__bvtXs
+                                )}
+                              >
+                                {
+                                  "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u062b\u0628\u062a \u0634\u062f\u0647 \u062f\u0631 \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e:"
+                                }
+                              </div>
+                            </div>
+                          </div>
+                        }
+                        name={"snappphone"}
+                        rules={[
+                          { ruleType: "required", message: `` },
+
+                          {
+                            ruleType: "min",
+                            length: 11,
+                            message:
+                              "\u0634\u0645\u0627\u0631\u0647 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
+                          }
+                        ]}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__h90OY
+                          )}
+                        />
+
+                        <Input
+                          data-plasmic-name={"snappSend"}
+                          data-plasmic-override={overrides.snappSend}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.snappSend
+                          )}
+                          onChange={async (...eventArgs: any) => {
+                            generateStateOnChangeProp($state, [
+                              "snappSend",
+                              "value"
+                            ]).apply(null, eventArgs);
+                          }}
+                          type={"text"}
+                          value={generateStateValueProp($state, [
+                            "snappSend",
+                            "value"
+                          ])}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__rb6O
+                          )}
+                        >
+                          <AntdButton
+                            data-plasmic-name={"snappsend"}
+                            data-plasmic-override={overrides.snappsend}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.snappsend
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["goToActivationDuplicateConnection"] =
+                                $state.snappSend.value !== undefined &&
+                                $state.snappSend.value.length >= 11
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/connections?step=${"4"}`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["goToActivationDuplicateConnection"] !=
+                                  null &&
+                                typeof $steps[
+                                  "goToActivationDuplicateConnection"
+                                ] === "object" &&
+                                typeof $steps[
+                                  "goToActivationDuplicateConnection"
+                                ].then === "function"
+                              ) {
+                                $steps["goToActivationDuplicateConnection"] =
+                                  await $steps[
+                                    "goToActivationDuplicateConnection"
+                                  ];
+                              }
+
+                              $steps["jajigaSend"] =
+                                $state.snappSend.value !== undefined &&
+                                $state.snappSend.value.length >= 11
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "POST",
+                                          "https://gateway.rentamon.com/webhook/Auth_jajiga_Send",
+                                          undefined,
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                function faToEnDigits(str) {
+                                                  return str.replace(
+                                                    /[۰-۹]/g,
+                                                    d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                  );
+                                                }
+                                                return {
+                                                  phone: faToEnDigits(
+                                                    $state.snappSend.value
+                                                  )
+                                                };
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["jajigaSend"] != null &&
+                                typeof $steps["jajigaSend"] === "object" &&
+                                typeof $steps["jajigaSend"].then === "function"
+                              ) {
+                                $steps["jajigaSend"] =
+                                  await $steps["jajigaSend"];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__ync0B
+                              )}
+                            >
+                              {
+                                "\u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u062f \u0639\u0628\u0648\u0631"
+                              }
+                            </div>
+                          </AntdButton>
+                          <AntdButton
+                            data-plasmic-name={"snappsend10"}
+                            data-plasmic-override={overrides.snappsend10}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.snappsend10
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return window.history.back();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+
+                              $steps["update1"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["step"]
+                                      },
+                                      operation: 0,
+                                      value: ($state.step = 14)
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["update1"] != null &&
+                                typeof $steps["update1"] === "object" &&
+                                typeof $steps["update1"].then === "function"
+                              ) {
+                                $steps["update1"] = await $steps["update1"];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__gCh0T
+                              )}
+                            >
+                              {"\u0628\u0627\u0632\u06af\u0634\u062a"}
+                            </div>
+                          </AntdButton>
+                        </div>
+                      </FormItemWrapper>
+                    ) : null}
+                    {(() => {
+                      try {
+                        return $state.step == 4;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <FormItemWrapper
+                        data-plasmic-name={"snappVerify2"}
+                        data-plasmic-override={overrides.snappVerify2}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.snappVerify2
+                        )}
+                        label={
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__mrfr2
+                            )}
+                          >
+                            {
+                              "\u06a9\u062f \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e:"
+                            }
+                          </div>
+                        }
+                        name={"snappOTP"}
+                        rules={[
+                          {
+                            ruleType: "required",
+                            message:
+                              "\u0644\u0637\u0641\u0627 \u06a9\u062f \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                          }
+                        ]}
+                      >
+                        {(() => {
+                          const child$Props = {
+                            className: classNames("__wab_instance", sty.input7),
+                            onChange: async (...eventArgs: any) => {
+                              generateStateOnChangePropForCodeComponents(
+                                $state,
+                                "value",
+                                ["input7", "value"],
+                                AntdInput_Helpers
+                              ).apply(null, eventArgs);
+                            },
+                            placeholder: hasVariant(
+                              globalVariants,
+                              "screen",
+                              "mobile"
+                            )
+                              ? "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f (\u0628\u062e\u0634 \u0647\u0631\u0632\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u067e\u06cc\u0627\u0645\u06a9\u062a \u0631\u0648 \u0628\u0628\u06cc\u0646)"
+                              : "\u0628\u0631\u0627\u062a \u067e\u06cc\u0627\u0645\u06a9 \u0634\u062f",
+                            size: "large",
+                            value: generateStateValueProp($state, [
+                              "input7",
+                              "value"
+                            ])
+                          };
+                          initializeCodeComponentStates(
+                            $state,
+                            [
+                              {
+                                name: "value",
+                                plasmicStateName: "input7.value"
+                              }
+                            ],
+                            [],
+                            AntdInput_Helpers ?? {},
+                            child$Props
+                          );
+
+                          return (
+                            <AntdInput
+                              data-plasmic-name={"input7"}
+                              data-plasmic-override={overrides.input7}
+                              {...child$Props}
+                            />
+                          );
+                        })()}
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox___0Go4
+                          )}
+                        >
+                          <AntdButton
+                            data-plasmic-name={"snappverify"}
+                            data-plasmic-override={overrides.snappverify}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.snappverify
+                            )}
+                            onClick={async () => {
+                              const $steps = {};
+
+                              $steps["jajigaVerify"] =
+                                $state.form.value.jajigaOTP !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "POST",
+                                          "https://gateway.rentamon.com/webhook/Auth_jajiga_verify",
+                                          undefined,
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                function faToEnDigits(str) {
+                                                  return str.replace(
+                                                    /[۰-۹]/g,
+                                                    d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                  );
+                                                }
+                                                return {
+                                                  phone: faToEnDigits(
+                                                    $state.snappSend.value
+                                                  ),
+                                                  otp: faToEnDigits(
+                                                    $state.form.value.jajigaOTP
+                                                  )
+                                                };
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["jajigaVerify"] != null &&
+                                typeof $steps["jajigaVerify"] === "object" &&
+                                typeof $steps["jajigaVerify"].then ===
+                                  "function"
+                              ) {
+                                $steps["jajigaVerify"] =
+                                  await $steps["jajigaVerify"];
+                              }
+
+                              $steps["successToast"] =
+                                $steps.jajigaVerify.data.status === true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          undefined,
+                                          "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["successToast"] != null &&
+                                typeof $steps["successToast"] === "object" &&
+                                typeof $steps["successToast"].then ===
+                                  "function"
+                              ) {
+                                $steps["successToast"] =
+                                  await $steps["successToast"];
+                              }
+
+                              $steps["errorToast"] =
+                                !$steps.jajigaVerify?.data?.status ||
+                                $steps.jajigaVerify?.data?.status !== true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "error",
+                                          "\u0627\u062a\u0635\u0627\u0644 \u0628\u0627 \u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f!",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["errorToast"] != null &&
+                                typeof $steps["errorToast"] === "object" &&
+                                typeof $steps["errorToast"].then === "function"
+                              ) {
+                                $steps["errorToast"] =
+                                  await $steps["errorToast"];
+                              }
+
+                              $steps["jajigacontact"] =
+                                $state.form.value.jajigaOTP !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "POST",
+                                          "https://gateway.rentamon.com/webhook/jajigacontact",
+                                          undefined,
+                                          (() => {
+                                            try {
+                                              return $state.user_id;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["jajigacontact"] != null &&
+                                typeof $steps["jajigacontact"] === "object" &&
+                                typeof $steps["jajigacontact"].then ===
+                                  "function"
+                              ) {
+                                $steps["jajigacontact"] =
+                                  await $steps["jajigacontact"];
+                              }
+
+                              $steps["platformStatus"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      operation: 0,
+                                      value: (() => {
+                                        if ($steps.jajigaVerify.status == 200) {
+                                          return ($state.platformstatus.status.jajiga = true);
+                                        } else {
+                                          return ($state.platformstatus.status.jajiga = false);
+                                        }
+                                      })()
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["platformStatus"] != null &&
+                                typeof $steps["platformStatus"] === "object" &&
+                                typeof $steps["platformStatus"].then ===
+                                  "function"
+                              ) {
+                                $steps["platformStatus"] =
+                                  await $steps["platformStatus"];
+                              }
+
+                              $steps["goToStatusesConnections"] =
+                                $steps.jajigaVerify.data.status === true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/statuses`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["goToStatusesConnections"] != null &&
+                                typeof $steps["goToStatusesConnections"] ===
+                                  "object" &&
+                                typeof $steps["goToStatusesConnections"]
+                                  .then === "function"
+                              ) {
+                                $steps["goToStatusesConnections"] =
+                                  await $steps["goToStatusesConnections"];
+                              }
+                            }}
+                            submitsForm={true}
+                            type={"primary"}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__imyM
+                              )}
+                            >
+                              {"\u062a\u0627\u06cc\u06cc\u062f"}
+                            </div>
+                          </AntdButton>
+                        </div>
+                      </FormItemWrapper>
+                    ) : null}
+                  </div>
+                  <div
                     data-plasmic-name={"shab"}
                     data-plasmic-override={overrides.shab}
                     className={classNames(projectcss.all, sty.shab)}
@@ -9317,6 +10054,14 @@ const PlasmicDescendants = {
     "jajigaVerify",
     "input6",
     "jajigaverify",
+    "snapp",
+    "snappSendForm",
+    "snappSend",
+    "snappsend",
+    "snappsend10",
+    "snappVerify2",
+    "input7",
+    "snappverify",
     "shab",
     "shabSend",
     "shabOtpSend",
@@ -9499,6 +10244,14 @@ const PlasmicDescendants = {
     "jajigaVerify",
     "input6",
     "jajigaverify",
+    "snapp",
+    "snappSendForm",
+    "snappSend",
+    "snappsend",
+    "snappsend10",
+    "snappVerify2",
+    "input7",
+    "snappverify",
     "shab",
     "shabSend",
     "shabOtpSend",
@@ -9551,6 +10304,14 @@ const PlasmicDescendants = {
     "jajigaVerify",
     "input6",
     "jajigaverify",
+    "snapp",
+    "snappSendForm",
+    "snappSend",
+    "snappsend",
+    "snappsend10",
+    "snappVerify2",
+    "input7",
+    "snappverify",
     "shab",
     "shabSend",
     "shabOtpSend",
@@ -9619,6 +10380,23 @@ const PlasmicDescendants = {
   jajigaVerify: ["jajigaVerify", "input6", "jajigaverify"],
   input6: ["input6"],
   jajigaverify: ["jajigaverify"],
+  snapp: [
+    "snapp",
+    "snappSendForm",
+    "snappSend",
+    "snappsend",
+    "snappsend10",
+    "snappVerify2",
+    "input7",
+    "snappverify"
+  ],
+  snappSendForm: ["snappSendForm", "snappSend", "snappsend", "snappsend10"],
+  snappSend: ["snappSend"],
+  snappsend: ["snappsend"],
+  snappsend10: ["snappsend10"],
+  snappVerify2: ["snappVerify2", "input7", "snappverify"],
+  input7: ["input7"],
+  snappverify: ["snappverify"],
   shab: [
     "shab",
     "shabSend",
@@ -9774,6 +10552,14 @@ type NodeDefaultElementType = {
   jajigaVerify: typeof FormItemWrapper;
   input6: typeof AntdInput;
   jajigaverify: typeof AntdButton;
+  snapp: "div";
+  snappSendForm: typeof FormItemWrapper;
+  snappSend: typeof Input;
+  snappsend: typeof AntdButton;
+  snappsend10: typeof AntdButton;
+  snappVerify2: typeof FormItemWrapper;
+  input7: typeof AntdInput;
+  snappverify: typeof AntdButton;
   shab: "div";
   shabSend: typeof FormItemWrapper;
   shabOtpSend: typeof Input;
@@ -9941,6 +10727,14 @@ export const PlasmicConnections = Object.assign(
     jajigaVerify: makeNodeComponent("jajigaVerify"),
     input6: makeNodeComponent("input6"),
     jajigaverify: makeNodeComponent("jajigaverify"),
+    snapp: makeNodeComponent("snapp"),
+    snappSendForm: makeNodeComponent("snappSendForm"),
+    snappSend: makeNodeComponent("snappSend"),
+    snappsend: makeNodeComponent("snappsend"),
+    snappsend10: makeNodeComponent("snappsend10"),
+    snappVerify2: makeNodeComponent("snappVerify2"),
+    input7: makeNodeComponent("input7"),
+    snappverify: makeNodeComponent("snappverify"),
     shab: makeNodeComponent("shab"),
     shabSend: makeNodeComponent("shabSend"),
     shabOtpSend: makeNodeComponent("shabOtpSend"),
