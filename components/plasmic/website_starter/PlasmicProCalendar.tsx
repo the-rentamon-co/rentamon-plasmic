@@ -1854,9 +1854,26 @@ function PlasmicProCalendar__RenderFunc(props: {
                           ref={ref => {
                             $refs["apiRequest"] = ref;
                           }}
-                          url={
-                            "https://gateway.rentamon.com/webhook/calendar-statuses"
-                          }
+                          url={(() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/calendar-statuses`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
                         >
                           {(() => {
                             try {
@@ -2428,7 +2445,14 @@ function PlasmicProCalendar__RenderFunc(props: {
                   }}
                   url={(() => {
                     try {
-                      return `https://api-v2.rentamon.com/api/user_info?property_id=${$state.propId}`;
+                      return (() => {
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const apiBase = isMiaan
+                          ? "https://api-v2.miaan.ir"
+                          : "https://api-v2.rentamon.com";
+                        return `${apiBase}/api/user_info?property_id=${$state.propId}`;
+                      })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||

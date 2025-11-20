@@ -881,7 +881,14 @@ function PlasmicCalendar2__RenderFunc(props: {
                       undefined,
                       (() => {
                         try {
-                          return `https://gateway.rentamon.com/webhook/get_note?prop_id=${$props.propertyId}`;
+                          return (() => {
+                            const isMiaan =
+                              window.location.hostname.includes("miaan.ir");
+                            const gatewayBase = isMiaan
+                              ? "https://gateway.miaan.ir"
+                              : "https://gateway.rentamon.com";
+                            return `${gatewayBase}/webhook/get_note?prop_id=${$props.propertyId}`;
+                          })();
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -1096,7 +1103,12 @@ function PlasmicCalendar2__RenderFunc(props: {
                         }
                         let mon = parseInt(monStr, 10);
                         let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                        return `https://api-v2.rentamon.com/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const apiBase = isMiaan
+                          ? "https://api-v2.miaan.ir"
+                          : "https://api-v2.rentamon.com";
+                        return `${apiBase}/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                       })();
                     } catch (e) {
                       if (
@@ -3814,267 +3826,6 @@ function PlasmicCalendar2__RenderFunc(props: {
                   </div>
                 </div>
               ) : null}
-              <Button
-                className={classNames("__wab_instance", sty.button__jbEaL)}
-                isDisabled={(() => {
-                  try {
-                    return (() => {
-                      const timestamps = $state.fragmentDatePicker.values;
-                      const dates = timestamps.map(timestamp => {
-                        const date = new Date(timestamp * 1000);
-                        return date.toISOString().split("T")[0];
-                      });
-                      const calendar = $state.apiRequest.data[1].calendar;
-                      const result = dates.some(date => {
-                        const item = calendar.find(
-                          entry => entry.date === date
-                        );
-                        return item && item.price === null;
-                      });
-                      return result;
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
-                  }
-                })()}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateStateVariable"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          operation: 0,
-                          value: ($state.modalDiscount.open = false)
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateStateVariable"] != null &&
-                    typeof $steps["updateStateVariable"] === "object" &&
-                    typeof $steps["updateStateVariable"].then === "function"
-                  ) {
-                    $steps["updateStateVariable"] =
-                      await $steps["updateStateVariable"];
-                  }
-
-                  $steps["updateFetchModalOpen"] =
-                    $props.calendarType == "pro"
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["fetchModal", "open"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                  if (
-                    $steps["updateFetchModalOpen"] != null &&
-                    typeof $steps["updateFetchModalOpen"] === "object" &&
-                    typeof $steps["updateFetchModalOpen"].then === "function"
-                  ) {
-                    $steps["updateFetchModalOpen"] =
-                      await $steps["updateFetchModalOpen"];
-                  }
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              function convertPersianNumbersToEnglish(str) {
-                                const persianNumbers = [
-                                  "۰",
-                                  "۱",
-                                  "۲",
-                                  "۳",
-                                  "۴",
-                                  "۵",
-                                  "۶",
-                                  "۷",
-                                  "۸",
-                                  "۹"
-                                ];
-
-                                const englishNumbers = [
-                                  "0",
-                                  "1",
-                                  "2",
-                                  "3",
-                                  "4",
-                                  "5",
-                                  "6",
-                                  "7",
-                                  "8",
-                                  "9"
-                                ];
-
-                                return str.replace(
-                                  /[۰-۹]/g,
-                                  char =>
-                                    englishNumbers[
-                                      persianNumbers.indexOf(char)
-                                    ] || char
-                                );
-                              }
-                              function padZero(num) {
-                                return num.length === 1 ? `0${num}` : num;
-                              }
-                              function convertTimestampToPersianDateWithEnglishNumbers(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                const [year, month, day] = date
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                                return formattedDate;
-                              }
-                              const data = {
-                                days: [$state.fragmentDatePicker.values],
-                                property_id: $props.propertyId,
-                                discount: String($state.textInput2.value)
-                              };
-                              $state.requestdata = data;
-                              data.days = data.days
-                                .map(timestampArray =>
-                                  timestampArray.map(timestamp =>
-                                    convertTimestampToPersianDateWithEnglishNumbers(
-                                      timestamp
-                                    )
-                                  )
-                                )
-                                .flat();
-                              return fetch(
-                                "https://api-v2.rentamon.com/api/setdiscount",
-                                {
-                                  method: "POST",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                    Accept: "*/*"
-                                  },
-                                  credentials: "include",
-                                  body: JSON.stringify(data)
-                                }
-                              )
-                                .then(response => {
-                                  if (!response.ok) {
-                                    throw new Error(
-                                      `HTTP error! status: ${response.status}`
-                                    );
-                                  }
-                                  return response.json();
-                                })
-                                .then(result => {
-                                  $state.platformRequestStatus = result;
-                                  console.log(
-                                    "Response saved to state:",
-                                    result
-                                  );
-                                })
-                                .catch(error => {
-                                  console.error("Error:", error);
-                                  $state.platformRequestStatus = {
-                                    error: error.message
-                                  };
-                                });
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-
-                  $steps["updateStateVariable2"] =
-                    $props.calendarType == "lite"
-                      ? (() => {
-                          const actionArgs = {
-                            operation: 0,
-                            value: ($state.updateStyle = $state.updateStyle + 1)
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                  if (
-                    $steps["updateStateVariable2"] != null &&
-                    typeof $steps["updateStateVariable2"] === "object" &&
-                    typeof $steps["updateStateVariable2"].then === "function"
-                  ) {
-                    $steps["updateStateVariable2"] =
-                      await $steps["updateStateVariable2"];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___0TClQ
-                  )}
-                >
-                  {
-                    "\u0627\u0639\u0645\u0627\u0644 \u062a\u062e\u0641\u06cc\u0641"
-                  }
-                </div>
-              </Button>
             </div>
           </div>
         </AntdModal>
@@ -4715,7 +4466,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/set-unblock",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/set-unblock`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -5672,7 +5442,28 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/set-price",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/set-price`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -7233,7 +7024,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/set-block",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/set-block`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -7399,7 +7209,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         "POST",
-                        "https://gateway.rentamon.com/webhook/reserve/create",
+                        (() => {
+                          try {
+                            return (() => {
+                              const isMiaan =
+                                window.location.hostname.includes("miaan.ir");
+                              const gatewayBase = isMiaan
+                                ? "https://gateway.miaan.ir"
+                                : "https://gateway.rentamon.com";
+                              return `${gatewayBase}/webhook/reserve/create`;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
                         undefined,
                         (() => {
                           try {
@@ -7823,7 +7652,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/set-block",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/set-block`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -8233,49 +8081,6 @@ function PlasmicCalendar2__RenderFunc(props: {
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox___7WlXr)}>
-            <Button
-              className={classNames("__wab_instance", sty.button__nuSt2)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateNoteModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["noteModal", "open"]
-                        },
-                        operation: 0
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateNoteModalOpen"] != null &&
-                  typeof $steps["updateNoteModalOpen"] === "object" &&
-                  typeof $steps["updateNoteModalOpen"].then === "function"
-                ) {
-                  $steps["updateNoteModalOpen"] =
-                    await $steps["updateNoteModalOpen"];
-                }
-              }}
-              shape={"rounded"}
-            >
-              {"\u0628\u0627\u0632\u06af\u0634\u062a"}
-            </Button>
             <AntdButton
               className={classNames("__wab_instance", sty.button__w04Qy)}
               danger={false}
@@ -8383,7 +8188,28 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/sendNote?prop_id=1",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/sendNote?prop_id=1`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -8819,7 +8645,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/updateNote",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/updateNote`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -9181,7 +9026,26 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://gateway.rentamon.com/webhook/set-unblock",
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/set-unblock`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })(),
                           undefined,
                           (() => {
                             try {
@@ -10269,129 +10133,33 @@ function PlasmicCalendar2__RenderFunc(props: {
                       await $steps["updateFetchModalOpen"];
                   }
 
-                  $steps["runCode"] = false
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              function convertPersianNumbersToEnglish(str) {
-                                const persianNumbers = [
-                                  "۰",
-                                  "۱",
-                                  "۲",
-                                  "۳",
-                                  "۴",
-                                  "۵",
-                                  "۶",
-                                  "۷",
-                                  "۸",
-                                  "۹"
-                                ];
-
-                                const englishNumbers = [
-                                  "0",
-                                  "1",
-                                  "2",
-                                  "3",
-                                  "4",
-                                  "5",
-                                  "6",
-                                  "7",
-                                  "8",
-                                  "9"
-                                ];
-
-                                return str.replace(
-                                  /[۰-۹]/g,
-                                  char =>
-                                    englishNumbers[
-                                      persianNumbers.indexOf(char)
-                                    ] || char
-                                );
-                              }
-                              function padZero(num) {
-                                return num.length === 1 ? `0${num}` : num;
-                              }
-                              function convertTimestampToPersianDateWithEnglishNumbers(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                const [year, month, day] = date
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                                return formattedDate;
-                              }
-                              const data = {
-                                days: [$state.fragmentDatePicker.values],
-                                property_id: $props.propertyId,
-                                discount: String($state.textInput4.value)
-                              };
-                              $state.requestdata = data;
-                              data.days = data.days
-                                .map(timestampArray =>
-                                  timestampArray.map(timestamp =>
-                                    convertTimestampToPersianDateWithEnglishNumbers(
-                                      timestamp
-                                    )
-                                  )
-                                )
-                                .flat();
-                              return fetch(
-                                "https://api-v2.rentamon.com/api/setdiscount",
-                                {
-                                  method: "POST",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                    Accept: "*/*"
-                                  },
-                                  credentials: "include",
-                                  body: JSON.stringify(data)
-                                }
-                              )
-                                .then(response => {
-                                  if (!response.ok) {
-                                    throw new Error(
-                                      `HTTP error! status: ${response.status}`
-                                    );
-                                  }
-                                  return response.json();
-                                })
-                                .then(result => {
-                                  $state.platformRequestStatus = result;
-                                  console.log(
-                                    "Response saved to state:",
-                                    result
-                                  );
-                                })
-                                .catch(error => {
-                                  console.error("Error:", error);
-                                  $state.platformRequestStatus = {
-                                    error: error.message
-                                  };
-                                });
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-
                   $steps["setDiscout"] = true
                     ? (() => {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/set-discount",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/set-discount`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -11618,7 +11386,28 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/complete_manual_reserve_data",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/complete_manual_reserve_data`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
                             undefined,
                             (() => {
                               try {
@@ -12015,57 +11804,6 @@ function PlasmicCalendar2__RenderFunc(props: {
 
           (async data => {
             const $steps = {};
-
-            $steps["runCode"] = false
-              ? (() => {
-                  const actionArgs = {
-                    customFunction: async () => {
-                      return (() => {
-                        const calendarData =
-                          $state.apiRequest?.data?.[1]?.calendar;
-                        const reserveData = $state.reserveData?.data;
-                        if (
-                          !Array.isArray(calendarData) ||
-                          !Array.isArray(reserveData)
-                        ) {
-                          return calendarData;
-                        }
-                        const reserveMap = reserveData.reduce((acc, item) => {
-                          if (item && item.booking_id) {
-                            acc[item.booking_id] = item.amount;
-                          }
-                          return acc;
-                        }, {});
-                        calendarData.forEach(item => {
-                          const bookingId = item.booking_id;
-                          if (bookingId in reserveMap) {
-                            const amount = reserveMap[bookingId];
-                            if (amount == null || amount == 0) {
-                              item.price = null;
-                              return;
-                            }
-                            const amountNumber = parseInt(amount, 10);
-                            item.price = isNaN(amountNumber)
-                              ? amount
-                              : (amountNumber / 1000).toLocaleString();
-                          }
-                        });
-                        return calendarData;
-                      })();
-                    }
-                  };
-                  return (({ customFunction }) => {
-                    return customFunction();
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["runCode"] != null &&
-              typeof $steps["runCode"] === "object" &&
-              typeof $steps["runCode"].then === "function"
-            ) {
-              $steps["runCode"] = await $steps["runCode"];
-            }
           }).apply(null, eventArgs);
         }}
         ref={ref => {
@@ -12101,7 +11839,11 @@ function PlasmicCalendar2__RenderFunc(props: {
               const monPadded = monStrEn.padStart(2, "0");
               let mon = parseInt(monStrEn, 10);
               let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-              const finalUrl = `https://gateway.rentamon.com/webhook/bookings/calendar?start_date=${yearEn}-${monPadded}-01&end_date=${yearEn}-${monPadded}-${daysInMonth}&property_id=${propIdEn}`;
+              const isMiaan = window.location.hostname.includes("miaan.ir");
+              const gatewayBase = isMiaan
+                ? "https://gateway.miaan.ir"
+                : "https://gateway.rentamon.com";
+              const finalUrl = `${gatewayBase}/webhook/bookings/calendar?start_date=${yearEn}-${monPadded}-01&end_date=${yearEn}-${monPadded}-${daysInMonth}&property_id=${propIdEn}`;
               return finalUrl;
             })();
           } catch (e) {
