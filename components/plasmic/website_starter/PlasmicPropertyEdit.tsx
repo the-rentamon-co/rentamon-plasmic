@@ -297,7 +297,13 @@ function PlasmicPropertyEdit__RenderFunc(props: {
             }}
             url={(() => {
               try {
-                return `https://api-v2.rentamon.com/api/user_info?property_id=${$ctx.params.id}`;
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const apiBase = isMiaan
+                    ? "https://api-v2.miaan.ir"
+                    : "https://api-v2.rentamon.com";
+                  return `${apiBase}/api/user_info?property_id=${$ctx.params.id}`;
+                })();
               } catch (e) {
                 if (
                   e instanceof TypeError ||

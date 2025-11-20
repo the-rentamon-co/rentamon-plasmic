@@ -1107,6 +1107,39 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                   aspectRatio: undefined
                 }}
               />
+
+              <div className={classNames(projectcss.all, sty.freeBox__mooMn)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wZlT
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__s9Y8N
+                        )}
+                        component={Link}
+                        href={"https://rentamon.com/rental-guide/"}
+                        platform={"nextjs"}
+                      >
+                        {
+                          "\u0645\u0637\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: \u0645\u0634\u06a9\u0644\u0627\u062a \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646"
+                        }
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
             </div>
             <div
               data-plasmic-name={"strDefinition3"}
