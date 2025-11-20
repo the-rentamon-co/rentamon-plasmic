@@ -1382,7 +1382,10 @@ function Plasmicکیفپول__RenderFunc(props: {
                               undefined,
                               (() => {
                                 try {
-                                  return { amount: $state.input2.value * 10 };
+                                  return {
+                                    amount: $state.input2.value * 10,
+                                    request_for: window.location.href
+                                  };
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||

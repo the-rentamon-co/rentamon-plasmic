@@ -309,10 +309,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                     $steps["createCookie"] = await $steps["createCookie"];
                   }
 
-                  $steps["goToHttpsRentamonComSplashSrcWeb"] = true
+                  $steps["goToSplash"] = true
                     ? (() => {
                         const actionArgs = {
-                          destination: "https://rentamon.com/splash?src=web"
+                          destination: `/splash?src=${"web"}`
                         };
                         return (({ destination }) => {
                           if (
@@ -329,14 +329,11 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["goToHttpsRentamonComSplashSrcWeb"] != null &&
-                    typeof $steps["goToHttpsRentamonComSplashSrcWeb"] ===
-                      "object" &&
-                    typeof $steps["goToHttpsRentamonComSplashSrcWeb"].then ===
-                      "function"
+                    $steps["goToSplash"] != null &&
+                    typeof $steps["goToSplash"] === "object" &&
+                    typeof $steps["goToSplash"].then === "function"
                   ) {
-                    $steps["goToHttpsRentamonComSplashSrcWeb"] =
-                      await $steps["goToHttpsRentamonComSplashSrcWeb"];
+                    $steps["goToSplash"] = await $steps["goToSplash"];
                   }
                 }}
               >
@@ -570,7 +567,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                 sty.link__ryWoj
               )}
               component={Link}
-              href={"https://rentamon.com/splash?src=web"}
+              href={`/splash?src=${"web"}`}
               onClick={async event => {
                 const $steps = {};
 

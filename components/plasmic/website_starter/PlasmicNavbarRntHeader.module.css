@@ -55,11 +55,8 @@
 }
 @media (max-width: 350px) {
   .navigationBar:global(.__wab_instance) {
-    height: 72px;
     z-index: 1000000;
-    align-items: center;
-    align-content: center;
-    flex-shrink: 0;
+    display: flex;
   }
 }
 .freeBox__pWLj {
@@ -430,8 +427,8 @@
   user-select: none;
   cursor: pointer;
   font-family: "Estedad";
-  border-radius: 30px;
-  padding: 5px 30px;
+  border-radius: 100px;
+  padding: 5px 36px;
   margin: 10px 20px 10px 10px;
 }
 @media (max-width: 1200px) {
