@@ -1384,7 +1384,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                                 try {
                                   return {
                                     amount: $state.input2.value * 10,
-                                    request_for: window.location.href
+                                    request_for: window.location.hostname
                                   };
                                 } catch (e) {
                                   if (
