@@ -23,7 +23,7 @@
   },
   "icons": [
     {
-      "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2Fmiaan-icon.png?versionId=",
+      "src": "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2Fmiaan-icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
