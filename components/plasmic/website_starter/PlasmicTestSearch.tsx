@@ -279,13 +279,24 @@ function PlasmicTestSearch__RenderFunc(props: {
               className={classNames("__wab_instance", sty.apiRequest)}
               config={(() => {
                 try {
-                  return {
-                    headers: {
-                      "Content-Type": "application/json",
-                      Accept: "application/json",
-                      Authorization: $state.token
-                    }
-                  };
+                  return (() => {
+                    let getCookie = name => {
+                      const cookies = document.cookie.split("; ");
+                      for (let cookie of cookies) {
+                        const [key, value] = cookie.split("=");
+                        if (key === name) return value;
+                      }
+                      return "";
+                    };
+                    const token = getCookie("usso_access_token");
+                    return {
+                      headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                        Authorization: token ? `Bearer ${token}` : ""
+                      }
+                    };
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
