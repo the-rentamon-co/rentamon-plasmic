@@ -53,18 +53,18 @@
   min-width: 0;
   display: none;
 }
-.apiRequest:global(.__wab_instance) {
+.apiRequest2:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
-.text__fTkse {
+.text___9Xd7G {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
 }
-.text___2QmW1 {
+.text__i3Kxb {
   position: relative;
   width: 100%;
   height: auto;
@@ -245,4 +245,24 @@
   max-width: 100%;
   object-fit: cover;
   min-width: 0;
+}
+.profile2:global(.__wab_instance) {
+  animation: none;
+  max-width: 100%;
+  object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .profile2:global(.__wab_instance) {
+    animation: none;
+  }
+}
+@media (max-width: 500px) {
+  .profile2:global(.__wab_instance) {
+    animation: none;
+  }
+}
+@media (max-width: 350px) {
+  .profile2:global(.__wab_instance) {
+    animation: none;
+  }
 }

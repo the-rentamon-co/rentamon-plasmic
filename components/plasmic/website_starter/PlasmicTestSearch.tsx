@@ -88,12 +88,13 @@ export const PlasmicTestSearch__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTestSearch__OverridesType = {
   root?: Flex__<"div">;
-  apiRequest?: Flex__<typeof ApiRequest>;
+  apiRequest2?: Flex__<typeof ApiRequest>;
   datePicker?: Flex__<typeof DatePicker>;
   checkVpn?: Flex__<typeof SideEffect>;
   vpnModal?: Flex__<"div">;
   button?: Flex__<typeof Button>;
   httpRestApiFetcher?: Flex__<typeof DataFetcher>;
+  profile2?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultTestSearchProps {}
@@ -148,30 +149,6 @@ function PlasmicTestSearch__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
-        path: "apiRequest.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
         path: "datePicker.value",
         type: "private",
         variableType: "number",
@@ -194,6 +171,54 @@ function PlasmicTestSearch__RenderFunc(props: {
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "apiRequest2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "profile2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
       }
     ],
     [$props, $ctx, $refs]
@@ -245,29 +270,62 @@ function PlasmicTestSearch__RenderFunc(props: {
               }
             </div>
             <ApiRequest
-              data-plasmic-name={"apiRequest"}
-              data-plasmic-override={overrides.apiRequest}
-              className={classNames("__wab_instance", sty.apiRequest)}
-              config={(() => {
+              data-plasmic-name={"apiRequest2"}
+              data-plasmic-override={overrides.apiRequest2}
+              className={classNames("__wab_instance", sty.apiRequest2)}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__i3Kxb
+                  )}
+                >
+                  {"Error fetching data"}
+                </div>
+              }
+              loadingDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___9Xd7G
+                  )}
+                >
+                  {"Loading..."}
+                </div>
+              }
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest2",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest2",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest2",
+                  "data"
+                ]).apply(null, eventArgs);
+              }}
+              ref={ref => {
+                $refs["apiRequest2"] = ref;
+              }}
+              url={(() => {
                 try {
                   return (() => {
-                    let getCookie = name => {
-                      const cookies = document.cookie.split("; ");
-                      for (let cookie of cookies) {
-                        const [key, value] = cookie.split("=");
-                        if (key === name) return value;
-                      }
-                      return "";
-                    };
-                    const token = getCookie("usso_access_token");
-                    console.log("token:", token);
-                    return {
-                      headers: {
-                        "Content-Type": "application/json",
-                        Accept: "application/json",
-                        Authorization: token ? `Bearer ${token}` : ""
-                      }
-                    };
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const gatewayBase = isMiaan
+                      ? "https://gateway.miaan.ir"
+                      : "https://gateway.rentamon.com";
+                    return `${gatewayBase}/webhook/test-cors`;
                   })();
                 } catch (e) {
                   if (
@@ -279,51 +337,6 @@ function PlasmicTestSearch__RenderFunc(props: {
                   throw e;
                 }
               })()}
-              errorDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___2QmW1
-                  )}
-                >
-                  {"Error fetching data"}
-                </div>
-              }
-              loadingDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__fTkse
-                  )}
-                >
-                  {"Loading..."}
-                </div>
-              }
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequest",
-                  "error"
-                ]).apply(null, eventArgs);
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequest",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["apiRequest"] = ref;
-              }}
-              url={"https://gateway.rentamon.com/webhook/test-cors"}
             />
 
             <DatePicker
@@ -688,6 +701,55 @@ function PlasmicTestSearch__RenderFunc(props: {
             noLayout={false}
             url={"https://api.github.com/users/plasmicapp/repos"}
           />
+
+          <ApiRequest
+            data-plasmic-name={"profile2"}
+            data-plasmic-override={overrides.profile2}
+            className={classNames("__wab_instance", sty.profile2)}
+            errorDisplay={null}
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["profile2", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["profile2", "loading"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["profile2"] = ref;
+            }}
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const apiBase = isMiaan
+                    ? "https://api-v2.miaan.ir"
+                    : "https://api-v2.rentamon.com";
+                  return `${apiBase}/api/user_info?property_id=1`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -697,31 +759,34 @@ function PlasmicTestSearch__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "apiRequest",
+    "apiRequest2",
     "datePicker",
     "checkVpn",
     "vpnModal",
     "button",
-    "httpRestApiFetcher"
+    "httpRestApiFetcher",
+    "profile2"
   ],
-  apiRequest: ["apiRequest"],
+  apiRequest2: ["apiRequest2"],
   datePicker: ["datePicker"],
   checkVpn: ["checkVpn"],
   vpnModal: ["vpnModal", "button"],
   button: ["button"],
-  httpRestApiFetcher: ["httpRestApiFetcher"]
+  httpRestApiFetcher: ["httpRestApiFetcher"],
+  profile2: ["profile2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  apiRequest: typeof ApiRequest;
+  apiRequest2: typeof ApiRequest;
   datePicker: typeof DatePicker;
   checkVpn: typeof SideEffect;
   vpnModal: "div";
   button: typeof Button;
   httpRestApiFetcher: typeof DataFetcher;
+  profile2: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -786,12 +851,13 @@ export const PlasmicTestSearch = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    apiRequest: makeNodeComponent("apiRequest"),
+    apiRequest2: makeNodeComponent("apiRequest2"),
     datePicker: makeNodeComponent("datePicker"),
     checkVpn: makeNodeComponent("checkVpn"),
     vpnModal: makeNodeComponent("vpnModal"),
     button: makeNodeComponent("button"),
     httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
+    profile2: makeNodeComponent("profile2"),
 
     // Metadata about props expected for PlasmicTestSearch
     internalVariantProps: PlasmicTestSearch__VariantProps,
