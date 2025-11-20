@@ -1952,7 +1952,14 @@ function PlasmicBookings__RenderFunc(props: {
               }}
               url={(() => {
                 try {
-                  return `https://gateway.rentamon.com/webhook/booking-v2?booking_id=${$ctx.params.booking_id}`;
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const gatewayBase = isMiaan
+                      ? "https://gateway.miaan.ir"
+                      : "https://gateway.rentamon.com";
+                    return `${gatewayBase}/webhook/booking-v2?booking_id=${$ctx.params.booking_id}`;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -3342,7 +3349,29 @@ function PlasmicBookings__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://gateway.rentamon.com/webhook/reservations/calendar/block",
+                                (() => {
+                                  try {
+                                    return (() => {
+                                      const isMiaan =
+                                        window.location.hostname.includes(
+                                          "miaan.ir"
+                                        );
+                                      const gatewayBase = isMiaan
+                                        ? "https://gateway.miaan.ir"
+                                        : "https://gateway.rentamon.com";
+                                      return `${gatewayBase}/webhook/reservations/calendar/block`;
+                                    })();
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })(),
                                 undefined,
                                 (() => {
                                   try {
@@ -7447,29 +7476,6 @@ function PlasmicBookings__RenderFunc(props: {
                                   $steps["runCode"] = await $steps["runCode"];
                                 }
 
-                                $steps["updateFront"] = false
-                                  ? (() => {
-                                      const actionArgs = {
-                                        customFunction: async () => {
-                                          return ($state.booking.data.status =
-                                            "cancelled");
-                                        }
-                                      };
-                                      return (({ customFunction }) => {
-                                        return customFunction();
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                                if (
-                                  $steps["updateFront"] != null &&
-                                  typeof $steps["updateFront"] === "object" &&
-                                  typeof $steps["updateFront"].then ===
-                                    "function"
-                                ) {
-                                  $steps["updateFront"] =
-                                    await $steps["updateFront"];
-                                }
-
                                 $steps["closeCancelledModal"] = true
                                   ? (() => {
                                       const actionArgs = {
@@ -7588,7 +7594,14 @@ function PlasmicBookings__RenderFunc(props: {
                                           (() => {
                                             try {
                                               return (() => {
-                                                return "https://gateway.rentamon.com/webhook/bookings/status/cancelled/website";
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/bookings/status/cancelled/website`;
                                               })();
                                             } catch (e) {
                                               if (
@@ -9042,7 +9055,30 @@ function PlasmicBookings__RenderFunc(props: {
                                             const actionArgs = {
                                               args: [
                                                 "POST",
-                                                "https://gateway.rentamon.com/webhook/update_reservation_data",
+                                                (() => {
+                                                  try {
+                                                    return (() => {
+                                                      const isMiaan =
+                                                        window.location.hostname.includes(
+                                                          "miaan.ir"
+                                                        );
+                                                      const gatewayBase =
+                                                        isMiaan
+                                                          ? "https://gateway.miaan.ir"
+                                                          : "https://gateway.rentamon.com";
+                                                      return `${gatewayBase}/webhook/update_reservation_data`;
+                                                    })();
+                                                  } catch (e) {
+                                                    if (
+                                                      e instanceof TypeError ||
+                                                      e?.plasmicType ===
+                                                        "PlasmicUndefinedDataError"
+                                                    ) {
+                                                      return undefined;
+                                                    }
+                                                    throw e;
+                                                  }
+                                                })(),
                                                 undefined,
                                                 (() => {
                                                   try {
@@ -9653,12 +9689,19 @@ function PlasmicBookings__RenderFunc(props: {
                                           (() => {
                                             try {
                                               return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
                                                 if (
                                                   $state.unblockFor == "cancel"
                                                 ) {
-                                                  return "https://gateway.rentamon.com/webhook/bookings/status/cancelled";
+                                                  return `${gatewayBase}/webhook/bookings/status/cancelled`;
                                                 } else {
-                                                  return "https://gateway.rentamon.com/webhook/bookings/early-checkout";
+                                                  return `${gatewayBase}/webhook/bookings/early-checkout`;
                                                 }
                                               })();
                                             } catch (e) {
@@ -11726,120 +11769,6 @@ function PlasmicBookings__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["updateFetchModalOpen"] = false
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["fetchModal", "open"]
-                                },
-                                operation: 0,
-                                value: true
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
-
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["updateFetchModalOpen"] != null &&
-                          typeof $steps["updateFetchModalOpen"] === "object" &&
-                          typeof $steps["updateFetchModalOpen"].then ===
-                            "function"
-                        ) {
-                          $steps["updateFetchModalOpen"] =
-                            await $steps["updateFetchModalOpen"];
-                        }
-
-                        $steps["invokeGlobalAction"] = false
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  "POST",
-                                  "https://gateway.rentamon.com/webhook/reservations/calendar/block",
-                                  undefined,
-                                  (() => {
-                                    try {
-                                      return {
-                                        booking_id:
-                                          $state.booking.data.booking_id
-                                      };
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return undefined;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.apiRequest"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["invokeGlobalAction"] != null &&
-                          typeof $steps["invokeGlobalAction"] === "object" &&
-                          typeof $steps["invokeGlobalAction"].then ===
-                            "function"
-                        ) {
-                          $steps["invokeGlobalAction"] =
-                            await $steps["invokeGlobalAction"];
-                        }
-
-                        $steps["runCode"] = false
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    console.log(
-                                      $steps.invokeGlobalAction.data.status
-                                    );
-                                    if (
-                                      $steps.invokeGlobalAction.data.status ==
-                                      true
-                                    ) {
-                                      $state.unblockStatus =
-                                        $steps.invokeGlobalAction.data.data;
-                                      return console.log(
-                                        $steps.invokeGlobalAction.data.data
-                                      );
-                                    } else {
-                                      return ($state.unblockStatus =
-                                        $steps.invokeGlobalAction.data.status);
-                                    }
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-
                         $steps["updateReadyToBlockOpen"] = true
                           ? (() => {
                               const actionArgs = {
@@ -12743,7 +12672,29 @@ function PlasmicBookings__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/update_reservation_data",
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              const isMiaan =
+                                                window.location.hostname.includes(
+                                                  "miaan.ir"
+                                                );
+                                              const gatewayBase = isMiaan
+                                                ? "https://gateway.miaan.ir"
+                                                : "https://gateway.rentamon.com";
+                                              return `${gatewayBase}/webhook/update_reservation_data`;
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })(),
                                         undefined,
                                         (() => {
                                           try {
@@ -13331,10 +13282,17 @@ function PlasmicBookings__RenderFunc(props: {
                                     (() => {
                                       try {
                                         return (() => {
+                                          const isMiaan =
+                                            window.location.hostname.includes(
+                                              "miaan.ir"
+                                            );
+                                          const gatewayBase = isMiaan
+                                            ? "https://gateway.miaan.ir"
+                                            : "https://gateway.rentamon.com";
                                           if ($state.unblockFor == "cancel") {
-                                            return "https://gateway.rentamon.com/webhook/bookings/status/cancelled";
+                                            return `${gatewayBase}/webhook/bookings/status/cancelled`;
                                           } else {
-                                            return "https://gateway.rentamon.com/webhook/bookings/early-checkout";
+                                            return `${gatewayBase}/webhook/bookings/early-checkout`;
                                           }
                                         })();
                                       } catch (e) {
@@ -13676,7 +13634,25 @@ function PlasmicBookings__RenderFunc(props: {
             ref={ref => {
               $refs["profile"] = ref;
             }}
-            url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const apiBase = isMiaan
+                    ? "https://api-v2.miaan.ir"
+                    : "https://api-v2.rentamon.com";
+                  return `${apiBase}/api/user_info?property_id=1`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
 
           <div
@@ -13950,7 +13926,13 @@ function PlasmicBookings__RenderFunc(props: {
             }}
             url={(() => {
               try {
-                return `https://gateway.rentamon.com/webhook/proeprty/platform?booking_id=${$ctx.params.booking_id}`;
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/proeprty/platform?booking_id=${$ctx.params.booking_id}`;
+                })();
               } catch (e) {
                 if (
                   e instanceof TypeError ||

@@ -433,7 +433,30 @@ function Plasmicتالار__RenderFunc(props: {
                 ref={ref => {
                   $refs["profile2"] = ref;
                 }}
-                url={"https://gateway.rentamon.com/webhook/me"}
+                url={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            const isMiaan =
+                              window.location.hostname.includes("miaan.ir");
+                            const gatewayBase = isMiaan
+                              ? "https://gateway.miaan.ir"
+                              : "https://gateway.rentamon.com";
+                            return `${gatewayBase}/webhook/me`;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : "https://gateway.rentamon.com/webhook/me"
+                }
               />
             </div>
           </div>
@@ -1622,53 +1645,6 @@ function Plasmicتالار__RenderFunc(props: {
                     $steps["invokeGlobalAction"] =
                       await $steps["invokeGlobalAction"];
                   }
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return undefined;
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-
-                  $steps["runCode2"] = false
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (function () {
-                              const date = new Date();
-                              date.setTime(
-                                date.getTime() + 3 * 24 * 60 * 60 * 1000
-                              );
-                              document.cookie = `featureBadgeSeen=true; expires=${date.toUTCString()}; path=/`;
-                              $state.showNewFeatureBadge = false;
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode2"] != null &&
-                    typeof $steps["runCode2"] === "object" &&
-                    typeof $steps["runCode2"].then === "function"
-                  ) {
-                    $steps["runCode2"] = await $steps["runCode2"];
-                  }
                 }}
               >
                 {(
@@ -2287,7 +2263,26 @@ function Plasmicتالار__RenderFunc(props: {
               ref={ref => {
                 $refs["getUserWebsite"] = ref;
               }}
-              url={"https://gateway.rentamon.com/webhook/me/websites"}
+              url={(() => {
+                try {
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const gatewayBase = isMiaan
+                      ? "https://gateway.miaan.ir"
+                      : "https://gateway.rentamon.com";
+                    return `${gatewayBase}/webhook/me/websites`;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
             />
 
             {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
@@ -2329,7 +2324,26 @@ function Plasmicتالار__RenderFunc(props: {
                 ref={ref => {
                   $refs["getUserBalance"] = ref;
                 }}
-                url={"https://gateway.rentamon.com/webhook/wallet/balance"}
+                url={(() => {
+                  try {
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const gatewayBase = isMiaan
+                        ? "https://gateway.miaan.ir"
+                        : "https://gateway.rentamon.com";
+                      return `${gatewayBase}/webhook/wallet/balance`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               />
             ) : null}
           </div>
@@ -2515,7 +2529,26 @@ function Plasmicتالار__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           undefined,
-                          "https://gateway.rentamon.com/webhook/get_user_segment"
+                          (() => {
+                            try {
+                              return (() => {
+                                const isMiaan =
+                                  window.location.hostname.includes("miaan.ir");
+                                const gatewayBase = isMiaan
+                                  ? "https://gateway.miaan.ir"
+                                  : "https://gateway.rentamon.com";
+                                return `${gatewayBase}/webhook/get_user_segment`;
+                              })();
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
                         ]
                       };
                       return $globalActions["Fragment.apiRequest"]?.apply(
