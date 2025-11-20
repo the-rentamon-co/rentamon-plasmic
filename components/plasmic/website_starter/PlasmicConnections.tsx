@@ -612,7 +612,7 @@ function PlasmicConnections__RenderFunc(props: {
             try {
               return (() => {
                 const found = $state.getNumberOfDisconnectedPlatforms.data.find(
-                  item => item.website_id === 3
+                  item => item.website_id === 17
                 );
                 return found ? found.phone_number : null;
               })();
@@ -5677,8 +5677,8 @@ function PlasmicConnections__RenderFunc(props: {
                     {(() => {
                       try {
                         return (
-                          $state.step == 3 &&
-                          $state.platformstatus.status.jajiga != true
+                          $state.step == 11 &&
+                          $state.platformstatus.status.snapp != true
                         );
                       } catch (e) {
                         if (
@@ -5846,7 +5846,7 @@ function PlasmicConnections__RenderFunc(props: {
                                 $state.snappSend.value.length >= 11
                                   ? (() => {
                                       const actionArgs = {
-                                        destination: `/connections?step=${"4"}`
+                                        destination: `/connections?step=${"12"}`
                                       };
                                       return (({ destination }) => {
                                         if (
@@ -5882,14 +5882,14 @@ function PlasmicConnections__RenderFunc(props: {
                                   ];
                               }
 
-                              $steps["jajigaSend"] =
+                              $steps["snappSend"] =
                                 $state.snappSend.value !== undefined &&
                                 $state.snappSend.value.length >= 11
                                   ? (() => {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/Auth_jajiga_Send",
+                                          "https://gateway.rentamon.com/webhook/Auth_snapp_Send",
                                           undefined,
                                           (() => {
                                             try {
@@ -5925,12 +5925,11 @@ function PlasmicConnections__RenderFunc(props: {
                                     })()
                                   : undefined;
                               if (
-                                $steps["jajigaSend"] != null &&
-                                typeof $steps["jajigaSend"] === "object" &&
-                                typeof $steps["jajigaSend"].then === "function"
+                                $steps["snappSend"] != null &&
+                                typeof $steps["snappSend"] === "object" &&
+                                typeof $steps["snappSend"].then === "function"
                               ) {
-                                $steps["jajigaSend"] =
-                                  await $steps["jajigaSend"];
+                                $steps["snappSend"] = await $steps["snappSend"];
                               }
                             }}
                             submitsForm={true}
@@ -6031,7 +6030,7 @@ function PlasmicConnections__RenderFunc(props: {
                     ) : null}
                     {(() => {
                       try {
-                        return $state.step == 4;
+                        return $state.step == 12;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -6132,13 +6131,13 @@ function PlasmicConnections__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["jajigaVerify"] =
-                                $state.form.value.jajigaOTP !== undefined
+                              $steps["snappVerify"] =
+                                $state.form.value.snappOTP !== undefined
                                   ? (() => {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/Auth_jajiga_verify",
+                                          "https://gateway.rentamon.com/webhook/Auth_snapp_verify",
                                           undefined,
                                           (() => {
                                             try {
@@ -6154,7 +6153,7 @@ function PlasmicConnections__RenderFunc(props: {
                                                     $state.snappSend.value
                                                   ),
                                                   otp: faToEnDigits(
-                                                    $state.form.value.jajigaOTP
+                                                    $state.form.value.snappOTP
                                                   )
                                                 };
                                               })();
@@ -6177,30 +6176,28 @@ function PlasmicConnections__RenderFunc(props: {
                                     })()
                                   : undefined;
                               if (
-                                $steps["jajigaVerify"] != null &&
-                                typeof $steps["jajigaVerify"] === "object" &&
-                                typeof $steps["jajigaVerify"].then ===
-                                  "function"
+                                $steps["snappVerify"] != null &&
+                                typeof $steps["snappVerify"] === "object" &&
+                                typeof $steps["snappVerify"].then === "function"
                               ) {
-                                $steps["jajigaVerify"] =
-                                  await $steps["jajigaVerify"];
+                                $steps["snappVerify"] =
+                                  await $steps["snappVerify"];
                               }
 
-                              $steps["successToast"] =
-                                $steps.jajigaVerify.data.status === true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          undefined,
-                                          "\u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
-                                          "top-center"
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
+                              $steps["successToast"] = false
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
                               if (
                                 $steps["successToast"] != null &&
                                 typeof $steps["successToast"] === "object" &&
@@ -6211,22 +6208,20 @@ function PlasmicConnections__RenderFunc(props: {
                                   await $steps["successToast"];
                               }
 
-                              $steps["errorToast"] =
-                                !$steps.jajigaVerify?.data?.status ||
-                                $steps.jajigaVerify?.data?.status !== true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "error",
-                                          "\u0627\u062a\u0635\u0627\u0644 \u0628\u0627 \u062c\u0627\u062c\u06cc\u06af\u0627 \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f!",
-                                          "top-center"
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
+                              $steps["errorToast"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "error",
+                                        "\u0627\u062a\u0635\u0627\u0644 \u0628\u0627 \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f!",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
                               if (
                                 $steps["errorToast"] != null &&
                                 typeof $steps["errorToast"] === "object" &&
@@ -6236,54 +6231,15 @@ function PlasmicConnections__RenderFunc(props: {
                                   await $steps["errorToast"];
                               }
 
-                              $steps["jajigacontact"] =
-                                $state.form.value.jajigaOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          "https://gateway.rentamon.com/webhook/jajigacontact",
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return $state.user_id;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["jajigacontact"] != null &&
-                                typeof $steps["jajigacontact"] === "object" &&
-                                typeof $steps["jajigacontact"].then ===
-                                  "function"
-                              ) {
-                                $steps["jajigacontact"] =
-                                  await $steps["jajigacontact"];
-                              }
-
                               $steps["platformStatus"] = true
                                 ? (() => {
                                     const actionArgs = {
                                       operation: 0,
                                       value: (() => {
-                                        if ($steps.jajigaVerify.status == 200) {
-                                          return ($state.platformstatus.status.jajiga = true);
+                                        if ($steps.snappVerify.status == 200) {
+                                          return ($state.platformstatus.status.snapp = true);
                                         } else {
-                                          return ($state.platformstatus.status.jajiga = false);
+                                          return ($state.platformstatus.status.snapp = false);
                                         }
                                       })()
                                     };
@@ -6315,7 +6271,7 @@ function PlasmicConnections__RenderFunc(props: {
                               }
 
                               $steps["goToStatusesConnections"] =
-                                $steps.jajigaVerify.data.status === true
+                                $steps.snappVerify.data.status === true
                                   ? (() => {
                                       const actionArgs = {
                                         destination: `/statuses`
@@ -6347,6 +6303,45 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["goToStatusesConnections"] =
                                   await $steps["goToStatusesConnections"];
+                              }
+
+                              $steps["snappcontactX"] =
+                                $state.form.value.snappOTP !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "POST",
+                                          "https://gateway.rentamon.com/webhook/snappcontact",
+                                          undefined,
+                                          (() => {
+                                            try {
+                                              return $state.user_id;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["snappcontactX"] != null &&
+                                typeof $steps["snappcontactX"] === "object" &&
+                                typeof $steps["snappcontactX"].then ===
+                                  "function"
+                              ) {
+                                $steps["snappcontactX"] =
+                                  await $steps["snappcontactX"];
                               }
                             }}
                             submitsForm={true}

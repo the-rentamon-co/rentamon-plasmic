@@ -1683,7 +1683,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             typeof fullGuestName === "string" &&
                             fullGuestName.trim() !== ""
                           ) {
-                            const nameParts = fullGuestName.split(" ");
+                            const nameParts = fullGuestName.trim().split(/\s+/);
                             if (nameParts.length > 2) {
                               familyName = nameParts.slice(-2).join(" ");
                             } else if (nameParts.length === 2) {
