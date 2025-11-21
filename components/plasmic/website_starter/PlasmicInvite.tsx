@@ -590,15 +590,13 @@ function PlasmicInvite__RenderFunc(props: {
                         $steps["runCode"] = await $steps["runCode"];
                       }
 
-                      $steps["runCode2"] = true
+                      $steps["runCode2"] = false
                         ? (() => {
                             const actionArgs = {
                               customFunction: async () => {
-                                return (() => {
-                                  return window.open(
-                                    `https://sso.miaan.ir/web/index.html?callback=https://miaan.ir/splash?src=referral`
-                                  );
-                                })();
+                                return window.open(
+                                  `https://sso.miaan.ir/web/index.html?callback=https://miaan.ir/splash?src=referral`
+                                );
                               }
                             };
                             return (({ customFunction }) => {
@@ -612,6 +610,33 @@ function PlasmicInvite__RenderFunc(props: {
                         typeof $steps["runCode2"].then === "function"
                       ) {
                         $steps["runCode2"] = await $steps["runCode2"];
+                      }
+
+                      $steps["goToSplash"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: `/splash?src=${"referral"}`
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToSplash"] != null &&
+                        typeof $steps["goToSplash"] === "object" &&
+                        typeof $steps["goToSplash"].then === "function"
+                      ) {
+                        $steps["goToSplash"] = await $steps["goToSplash"];
                       }
                     }}
                   >

@@ -463,9 +463,25 @@ function PlasmicSideBar2__RenderFunc(props: {
             ref={ref => {
               $refs["checkUserPendingReserve"] = ref;
             }}
-            url={
-              "https://gateway.rentamon.com/webhook/check_user_pending_request"
-            }
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/check_user_pending_request`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
         </React.Fragment>
       }
