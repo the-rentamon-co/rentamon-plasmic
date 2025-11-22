@@ -525,7 +525,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.embedHtml___2YmQ
                       )}
                       code={
-                        '<video\r\n  src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Fmiaan-unified-calendar.mp4?versionId="\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
+                        '<video\r\n  src="https://media.rentamon.com/gif%2Fmiaan-unified-calendar.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
                       }
                     />
                   </div>
