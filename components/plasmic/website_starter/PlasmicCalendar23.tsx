@@ -5936,7 +5936,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                                     shab: "شب",
                                     homsa: "هومسا",
                                     jabama: "جاباما",
-                                    mihmansho: "میهمانشو"
+                                    mihmansho: "میهمانشو",
+                                    snapptrip: "اسنپ"
                                   };
                                   const translatedName =
                                     nameMapping[currentItem] || currentItem;
