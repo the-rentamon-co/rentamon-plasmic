@@ -475,8 +475,22 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                       style={{ fontWeight: 500, color: "#7979FF" }}
                     >
                       {
-                        "\u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0628\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0631\u062f\u0647."
+                        "\u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u0628\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb "
                       }
+                    </span>
+                    <React.Fragment>{""}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#7979FF" }}
+                    >
+                      {"\u062a\u063a\u06cc\u06cc\u0631 "}
+                    </span>
+                    <React.Fragment>{""}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 500, color: "#7979FF" }}
+                    >
+                      {"\u06a9\u0631\u062f\u0647."}
                     </span>
                   </React.Fragment>
                 </PlasmicLink__>
@@ -579,13 +593,6 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                 {"\r"}
               </span>
               <React.Fragment>{"\n"}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ fontWeight: 400 }}
-              >
-                {""}
-              </span>
-              <React.Fragment>{""}</React.Fragment>
               {
                 <PlasmicLink__
                   className={classNames(
@@ -596,7 +603,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     sty.link__xvVyt
                   )}
                   component={Link}
-                  href={`/rental-rules`}
+                  href={`/join-our-journey`}
                   platform={"nextjs"}
                 >
                   <React.Fragment>
@@ -605,7 +612,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                       style={{ fontWeight: 400 }}
                     >
                       {
-                        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a\r"
+                        "\u0641\u0631\u0635\u062a\u200c\u0647\u0627\u06cc \u0647\u0645\u06a9\u0627\u0631\u06cc\r"
                       }
                     </span>
                   </React.Fragment>

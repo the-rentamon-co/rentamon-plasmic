@@ -419,11 +419,7 @@ function PlasmicTestimonial__RenderFunc(props: {
                         <React.Fragment>
                           {(() => {
                             try {
-                              return (
-                                "میزبان " +
-                                $state.userTestimonial.data[currentIndex]
-                                  .userPlatform
-                              );
+                              return `میزبان در ${$state.userTestimonial.data[currentIndex].userPlatform} سایت اجاره ویلا`;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -595,7 +591,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicTestimonial__VariantsArgs;
     args?: PlasmicTestimonial__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicTestimonial__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicTestimonial__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicTestimonial__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

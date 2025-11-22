@@ -2589,7 +2589,7 @@
   background: #fcfcfc;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  padding: 8px;
+  padding: 0px;
 }
 .title3 {
   display: flex;
@@ -3025,9 +3025,10 @@
   align-items: center;
   column-gap: 20px;
   background: #acacac1a;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   min-width: 0;
-  border-radius: 15px;
-  padding: 8px;
+  padding: 14px 8px;
 }
 .text__aGe3G {
   position: relative;
@@ -3037,4 +3038,9 @@
   font-size: 15px;
   text-align: right;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__aGe3G {
+    line-height: 1.8;
+  }
 }

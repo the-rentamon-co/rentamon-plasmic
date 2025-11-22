@@ -577,16 +577,18 @@
 }
 @media (max-width: 500px) {
   .but {
-    max-width: 90%;
+    max-width: 100%;
     display: flex;
     flex-direction: column-reverse;
     row-gap: 20px;
+    padding-right: 12px;
+    padding-left: 12px;
     column-gap: 0px;
   }
 }
 @media (max-width: 350px) {
   .but {
-    max-width: 96%;
+    max-width: 100%;
   }
 }
 .freeBox__hVQnd {
@@ -669,7 +671,7 @@
   }
 }
 .text__tJKbf {
-  color: #fcfcfc;
+  color: #7979ff;
   width: 100%;
   height: auto;
   max-width: 100%;

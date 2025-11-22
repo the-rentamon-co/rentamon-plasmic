@@ -1425,7 +1425,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___7IG0B
+                        sty.formField___9KrRa
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1437,7 +1437,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__tBhAu
+                        sty.formField___5E6BW
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1447,10 +1447,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                       />
                     </FormItemWrapper>
                     <AntdButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__duu5B
-                      )}
+                      className={classNames("__wab_instance", sty.button__rHmO)}
                       submitsForm={true}
                       type={"primary"}
                     >
@@ -1458,7 +1455,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__aCGcU
+                          sty.text___3Iu5
                         )}
                       >
                         {"Submit"}
