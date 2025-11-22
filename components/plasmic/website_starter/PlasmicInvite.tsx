@@ -382,11 +382,15 @@ function PlasmicInvite__RenderFunc(props: {
                     <React.Fragment>
                       {(() => {
                         try {
-                          return (
-                            $state.apiRequest.data[0].first_name +
-                            " " +
-                            $state.apiRequest.data[0].last_name
-                          );
+                          return (() => {
+                            const fullName =
+                              $state.apiRequest.data[0].first_name +
+                              " " +
+                              $state.apiRequest.data[0].last_name;
+                            return fullName === "نام نام خانوادگی"
+                              ? "دوستت"
+                              : fullName;
+                          })();
                         } catch (e) {
                           if (
                             e instanceof TypeError ||

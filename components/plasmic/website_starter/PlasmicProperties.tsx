@@ -1112,47 +1112,50 @@ function PlasmicProperties__RenderFunc(props: {
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["goToPropertyEditFirstProperty"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                destination: (() => {
-                                  try {
-                                    return (() => {
-                                      const isMiaan =
-                                        window.location.hostname.includes(
-                                          "miaan.ir"
-                                        );
-                                      const gatewayBase = isMiaan
-                                        ? "https://miaan.ir/property/edit/first-property/"
-                                        : "https://rentamon.com/property/edit/first-property/";
-                                      return gatewayBase;
-                                    })();
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return `/property/edit/first-property`;
+                        $steps["goToPropertyEditFirstProperty"] =
+                          $state.apiRequest.data.filter(
+                            item => item.property_name !== "اقامتگاه ۱"
+                          ).length == 0
+                            ? (() => {
+                                const actionArgs = {
+                                  destination: (() => {
+                                    try {
+                                      return (() => {
+                                        const isMiaan =
+                                          window.location.hostname.includes(
+                                            "miaan.ir"
+                                          );
+                                        const gatewayBase = isMiaan
+                                          ? "https://miaan.ir/property/edit/first-property/"
+                                          : "https://rentamon.com/property/edit/first-property/";
+                                        return gatewayBase;
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return `/property/edit/first-property`;
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
+                                  })()
+                                };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
                                   }
-                                })()
-                              };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
                         if (
                           $steps["goToPropertyEditFirstProperty"] != null &&
                           typeof $steps["goToPropertyEditFirstProperty"] ===

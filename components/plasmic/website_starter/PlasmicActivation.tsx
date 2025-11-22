@@ -647,7 +647,14 @@ function PlasmicActivation__RenderFunc(props: {
                                         try {
                                           return (() => {
                                             if ($ctx.params.type == "1") {
-                                              return "https://gateway.rentamon.com/webhook/user-registration?param=1";
+                                              const isMiaan =
+                                                window.location.hostname.includes(
+                                                  "miaan.ir"
+                                                );
+                                              const gatewayBase = isMiaan
+                                                ? "https://gateway.miaan.ir"
+                                                : "https://gateway.rentamon.com";
+                                              return `${gatewayBase}/webhook/user-registration?param=1`;
                                             } else {
                                               return "";
                                             }
