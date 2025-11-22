@@ -2775,6 +2775,7 @@
   .job1 {
     animation: none;
     max-width: 100%;
+    border-radius: 30px;
   }
 }
 @media (max-width: 350px) {
@@ -3181,7 +3182,7 @@
     max-width: 100%;
   }
 }
-.job3 {
+.job2 {
   animation: none;
   display: flex;
   flex-direction: column;
@@ -3197,19 +3198,20 @@
   border: 3px solid #0000f7;
 }
 @media (max-width: 1200px) {
-  .job3 {
+  .job2 {
     animation: none;
     max-width: 70%;
   }
 }
 @media (max-width: 500px) {
-  .job3 {
+  .job2 {
     animation: none;
     max-width: 100%;
+    border-radius: 30px;
   }
 }
 @media (max-width: 350px) {
-  .job3 {
+  .job2 {
     animation: none;
     border-radius: 30px;
     border-width: 2px;

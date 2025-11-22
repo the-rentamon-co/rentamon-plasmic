@@ -150,7 +150,7 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   form3?: Flex__<typeof FormWrapper>;
   input3?: Flex__<typeof AntdInput>;
   input4?: Flex__<typeof AntdInput>;
-  job3?: Flex__<"div">;
+  job2?: Flex__<"div">;
   introCalendarRight8?: Flex__<"div">;
   consult4?: Flex__<typeof AntdModal>;
   regForm4?: Flex__<"div">;
@@ -416,7 +416,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0645\u0646\u062a\u0638\u0631 \u0646\u0645\u06cc\u200c\u0645\u0648\u0646\u06cc\u0645\u060c \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0645\u06cc\u200c\u0633\u0627\u0632\u06cc\u0645"
+                    "\u0645\u0646\u062a\u0638\u0631 \u0622\u06cc\u0646\u062f\u0647\u200c\u06cc \u0628\u0647\u062a\u0631 \u0646\u0645\u06cc\u200c\u0645\u0648\u0646\u06cc\u0645..."
                   }
                 </h1>
               </div>
@@ -2483,9 +2483,9 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   </div>
                 </div>
                 <div
-                  data-plasmic-name={"job3"}
-                  data-plasmic-override={overrides.job3}
-                  className={classNames(projectcss.all, sty.job3)}
+                  data-plasmic-name={"job2"}
+                  data-plasmic-override={overrides.job2}
+                  className={classNames(projectcss.all, sty.job2)}
                 >
                   <div
                     data-plasmic-name={"introCalendarRight8"}
@@ -3277,7 +3277,7 @@ const PlasmicDescendants = {
     "form3",
     "input3",
     "input4",
-    "job3",
+    "job2",
     "introCalendarRight8",
     "consult4",
     "regForm4",
@@ -3355,7 +3355,7 @@ const PlasmicDescendants = {
     "form3",
     "input3",
     "input4",
-    "job3",
+    "job2",
     "introCalendarRight8",
     "consult4",
     "regForm4",
@@ -3476,7 +3476,7 @@ const PlasmicDescendants = {
     "form3",
     "input3",
     "input4",
-    "job3",
+    "job2",
     "introCalendarRight8",
     "consult4",
     "regForm4",
@@ -3506,8 +3506,8 @@ const PlasmicDescendants = {
   form3: ["form3", "input3", "input4"],
   input3: ["input3"],
   input4: ["input4"],
-  job3: [
-    "job3",
+  job2: [
+    "job2",
     "introCalendarRight8",
     "consult4",
     "regForm4",
@@ -3603,7 +3603,7 @@ type NodeDefaultElementType = {
   form3: typeof FormWrapper;
   input3: typeof AntdInput;
   input4: typeof AntdInput;
-  job3: "div";
+  job2: "div";
   introCalendarRight8: "div";
   consult4: typeof AntdModal;
   regForm4: "div";
@@ -3746,7 +3746,7 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     form3: makeNodeComponent("form3"),
     input3: makeNodeComponent("input3"),
     input4: makeNodeComponent("input4"),
-    job3: makeNodeComponent("job3"),
+    job2: makeNodeComponent("job2"),
     introCalendarRight8: makeNodeComponent("introCalendarRight8"),
     consult4: makeNodeComponent("consult4"),
     regForm4: makeNodeComponent("regForm4"),
