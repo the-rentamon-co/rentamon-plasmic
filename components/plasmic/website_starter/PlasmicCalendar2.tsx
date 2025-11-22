@@ -988,8 +988,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                       monStr = toEnglishDigits(monStr);
                     }
                     let mon = parseInt(monStr, 10);
-                    let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-                    return `https://api-v2.rentamon.com/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
+                    let daysInMonth = mon <= 6 ? 31 : mon === 12 ? 29 : 30;
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const apiBase = isMiaan
+                      ? "https://api-v2.miaan.ir"
+                      : "https://api-v2.rentamon.com";
+                    return `${apiBase}/api/getcalendar?v=2&start_date=${$state.year}-${mon}-01&end_date=${$state.year}-${mon}-${daysInMonth}&property_id=${$props.propertyId}`;
                   })();
                 } catch (e) {
                   if (

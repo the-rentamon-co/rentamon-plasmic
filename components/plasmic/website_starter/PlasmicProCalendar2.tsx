@@ -2387,6 +2387,19 @@ function PlasmicProCalendar2__RenderFunc(props: {
             data-plasmic-override={overrides.calendar23}
             calendarType={"pro"}
             className={classNames("__wab_instance", sty.calendar23)}
+            isFirstVisit={(() => {
+              try {
+                return $state.isTheFirstVisit == true;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return false;
+                }
+                throw e;
+              }
+            })()}
             propertyId={(() => {
               try {
                 return $state.propId;
