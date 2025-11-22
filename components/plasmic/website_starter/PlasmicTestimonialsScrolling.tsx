@@ -533,11 +533,7 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                               <React.Fragment>
                                 {(() => {
                                   try {
-                                    return (
-                                      "میزبان " +
-                                      $state.userTestimonial.data[currentIndex]
-                                        .userPlatform
-                                    );
+                                    return `میزبان در ${$state.userTestimonial.data[currentIndex].userPlatform} سایت اجاره ویلا`;
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
