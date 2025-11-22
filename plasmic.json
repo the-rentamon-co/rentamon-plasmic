@@ -3030,20 +3030,6 @@
           "path": "/new-brand"
         },
         {
-          "id": "4_Sank-PwTYC",
-          "name": "دانلوداپلیکیشنموبایلرنتامون",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicدانلوداپلیکیشنموبایلرنتامون.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/download.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicدانلوداپلیکیشنموبایلرنتامون.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/download"
-        },
-        {
           "id": "7fzbbhtsyd1T",
           "name": "ProCalendar3",
           "type": "managed",
@@ -3070,6 +3056,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/instant"
+        },
+        {
+          "id": "4_Sank-PwTYC",
+          "name": "دانلوداپلیکیشنموبایلمیان",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicدانلوداپلیکیشنموبایلمیان.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/download.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicدانلوداپلیکیشنموبایلمیان.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/download"
         }
       ],
       "icons": [

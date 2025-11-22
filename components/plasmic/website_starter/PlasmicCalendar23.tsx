@@ -1025,7 +1025,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                         monStr = toEnglishDigits(monStr);
                       }
                       let mon = parseInt(monStr, 10);
-                      let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+                      let daysInMonth = mon <= 6 ? 31 : mon === 12 ? 29 : 30;
                       const isMiaan =
                         window.location.hostname.includes("miaan.ir");
                       const apiBase = isMiaan
@@ -1112,7 +1112,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                           monStr = toEnglishDigits(monStr);
                         }
                         let mon = parseInt(monStr, 10);
-                        let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+                        let daysInMonth = mon <= 6 ? 31 : mon === 12 ? 29 : 30;
                         const isMiaan =
                           window.location.hostname.includes("miaan.ir");
                         const apiBase = isMiaan
@@ -2132,7 +2132,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                               yesterdayDate.getTime() / 1000
                             );
                             const minTimestamp = yesterdayTimestamp;
-                            const maxTimestamp = 1771577926;
+                            const maxTimestamp = 1771571634;
                             function getDayClass(dateProps, calendarData) {
                               const dayIndex = dateProps.date.day - 1;
                               const calendarItem = calendarData[dayIndex] || {};
@@ -2267,7 +2267,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                               yesterdayDate.getTime() / 1000
                             );
                             const minTimestamp = yesterdayTimestamp;
-                            const maxTimestamp = 1771577926;
+                            const maxTimestamp = 1771572399;
                             function getDayClass(dateProps, calendarData) {
                               const dayIndex = dateProps.date.day - 1;
                               const calendarItem = calendarData[dayIndex] || {};
