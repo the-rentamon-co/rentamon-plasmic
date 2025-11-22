@@ -5948,7 +5948,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                                   e instanceof TypeError ||
                                   e?.plasmicType === "PlasmicUndefinedDataError"
                                 ) {
-                                  return "\u062c\u0627\u062c\u06cc\u06af\u0627";
+                                  return " ";
                                 }
                                 throw e;
                               }

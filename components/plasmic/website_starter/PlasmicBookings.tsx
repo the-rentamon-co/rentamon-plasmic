@@ -14022,7 +14022,8 @@ function PlasmicBookings__RenderFunc(props: {
                         Returning_Guest: "قبلی",
                         "Broker or Colleague": "واسطه یا همکار",
                         social: "پیام‌رسان و شبکه‌اجتماعی",
-                        garmeja: "گرمه‌جا"
+                        garmeja: "گرمه‌جا",
+                        snapptrip: "اسنپ"
                       };
                       const englishWebsites =
                         $state.propertyWebsite.data.website;

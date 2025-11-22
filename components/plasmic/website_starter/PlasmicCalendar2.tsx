@@ -6362,7 +6362,11 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 if (
                                   Object.keys(platformStatus).length > 0 &&
                                   !platformStatus[currentItem] &&
-                                  ["mihmansho", "mizboon"].includes(currentItem)
+                                  [
+                                    "mihmansho",
+                                    "mizboon",
+                                    "snapptrip"
+                                  ].includes(currentItem)
                                 ) {
                                   return true;
                                 } else {
