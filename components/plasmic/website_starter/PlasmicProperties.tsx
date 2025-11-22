@@ -1118,7 +1118,29 @@ function PlasmicProperties__RenderFunc(props: {
                           ).length == 0
                             ? (() => {
                                 const actionArgs = {
-                                  destination: `/property/edit/first-property`
+                                  destination: (() => {
+                                    try {
+                                      return (() => {
+                                        const isMiaan =
+                                          window.location.hostname.includes(
+                                            "miaan.ir"
+                                          );
+                                        const gatewayBase = isMiaan
+                                          ? "https://miaan.ir/property/edit/first-property/"
+                                          : "https://rentamon.com/property/edit/first-property/";
+                                        return gatewayBase;
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return `/property/edit/first-property`;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
                                 };
                                 return (({ destination }) => {
                                   if (
