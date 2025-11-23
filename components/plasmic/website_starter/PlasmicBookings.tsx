@@ -4133,9 +4133,25 @@ function PlasmicBookings__RenderFunc(props: {
                                     data-plasmic-override={overrides.check}
                                     alt={""}
                                     className={classNames(sty.check)}
-                                    displayHeight={"19px"}
+                                    displayHeight={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? "16px"
+                                        : "19px"
+                                    }
                                     displayMaxHeight={"none"}
-                                    displayMaxWidth={"100%"}
+                                    displayMaxWidth={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? "100%"
+                                        : "100%"
+                                    }
                                     displayMinHeight={"0"}
                                     displayMinWidth={"0"}
                                     displayWidth={
@@ -4150,7 +4166,7 @@ function PlasmicBookings__RenderFunc(props: {
                                               "screen",
                                               "mobile"
                                             )
-                                          ? "16px"
+                                          ? "18px"
                                           : "auto"
                                     }
                                     loading={"lazy"}
@@ -4276,7 +4292,7 @@ function PlasmicBookings__RenderFunc(props: {
 
                                 $steps["invokeGlobalAction"] = true
                                   ? (() => {
-                                      const actionArgs = { args: [1000] };
+                                      const actionArgs = { args: [3000] };
                                       return $globalActions[
                                         "Fragment.wait"
                                       ]?.apply(null, [...actionArgs.args]);

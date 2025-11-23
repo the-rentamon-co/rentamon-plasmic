@@ -3070,6 +3070,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/download"
+        },
+        {
+          "id": "PIuPeXS1JEWe",
+          "name": "AnalyticsAbolhasani",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicAnalyticsAbolhasani.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/analytics-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicAnalyticsAbolhasani.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/analytics-2"
         }
       ],
       "icons": [

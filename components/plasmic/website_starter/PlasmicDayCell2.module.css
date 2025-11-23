@@ -567,6 +567,12 @@
   border-radius: 0px 10px 10px 0px;
   padding: 10px 0px 0px;
 }
+@media (max-width: 500px) {
+  .celldayStatus_passedFirstDayReserveV2 {
+    height: 74px;
+    flex-shrink: 0;
+  }
+}
 @media (max-width: 350px) {
   .celldayStatus_passedFirstDayReserveV2 {
     height: 74px;
