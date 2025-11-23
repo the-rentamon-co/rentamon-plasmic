@@ -5774,6 +5774,21 @@
           "id": "M2pbwikEP_HW",
           "name": "mihmansho.png 2",
           "filePath": "../public/plasmic/website_starter/images/mihmanshoPng2.png"
+        },
+        {
+          "id": "AN6iFEtZvaAP",
+          "name": "copy-svgrepo-com.svg",
+          "filePath": "../public/plasmic/website_starter/images/copySvgrepoComSvg.svg"
+        },
+        {
+          "id": "ea9mF0vsBJo6",
+          "name": "copy-svgrepo-com (1).svg",
+          "filePath": "../public/plasmic/website_starter/images/copySvgrepoCom1Svg.svg"
+        },
+        {
+          "id": "g3cVKc7WB2_s",
+          "name": "check-mark-square-2-svgrepo-com.svg",
+          "filePath": "../public/plasmic/website_starter/images/checkMarkSquare2SvgrepoComSvg.svg"
         }
       ],
       "indirect": false,

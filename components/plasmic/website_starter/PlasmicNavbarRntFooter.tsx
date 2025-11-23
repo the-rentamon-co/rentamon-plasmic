@@ -169,8 +169,6 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
 
   const globalVariants = _useGlobalVariants();
 
-  const $globalActions = useGlobalActions?.();
-
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -975,91 +973,6 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               typeof $steps["runCode"].then === "function"
             ) {
               $steps["runCode"] = await $steps["runCode"];
-            }
-
-            $steps["invokeGlobalAction"] = false
-              ? (() => {
-                  const actionArgs = {
-                    args: [
-                      undefined,
-                      (() => {
-                        try {
-                          return (() => {
-                            const isMiaan =
-                              window.location.hostname.includes("miaan.ir");
-                            const gatewayBase = isMiaan
-                              ? "https://gateway.miaan.ir"
-                              : "https://gateway.rentamon.com";
-                            return `${gatewayBase}/webhook/get_user_segment`;
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()
-                    ]
-                  };
-                  return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                    ...actionArgs.args
-                  ]);
-                })()
-              : undefined;
-            if (
-              $steps["invokeGlobalAction"] != null &&
-              typeof $steps["invokeGlobalAction"] === "object" &&
-              typeof $steps["invokeGlobalAction"].then === "function"
-            ) {
-              $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
-            }
-
-            $steps["runCode2"] = false
-              ? (() => {
-                  const actionArgs = {
-                    customFunction: async () => {
-                      return (() => {
-                        function setCookie(name, value, hours) {
-                          let expires = "";
-                          if (hours) {
-                            const date = new Date();
-                            date.setTime(
-                              date.getTime() + hours * 60 * 60 * 1000
-                            );
-                            expires = "; expires=" + date.toUTCString();
-                          }
-                          document.cookie =
-                            name + "=" + (value || "") + expires + "; path=/";
-                        }
-                        const flag = $steps.invokeGlobalAction.data.flag;
-                        const existing = $state.userType2;
-                        if (
-                          typeof existing === "undefined" ||
-                          existing === null
-                        ) {
-                          $state.userType2 = flag;
-                          return setCookie("vt", flag.toString(), 0.3333);
-                        } else if (parseInt(existing, 10) !== flag) {
-                          $state.userType2 = flag;
-                          return setCookie("vt", flag.toString(), 0.3333);
-                        }
-                      })();
-                    }
-                  };
-                  return (({ customFunction }) => {
-                    return customFunction();
-                  })?.apply(null, [actionArgs]);
-                })()
-              : undefined;
-            if (
-              $steps["runCode2"] != null &&
-              typeof $steps["runCode2"] === "object" &&
-              typeof $steps["runCode2"].then === "function"
-            ) {
-              $steps["runCode2"] = await $steps["runCode2"];
             }
 
             $steps["runCode3"] = true

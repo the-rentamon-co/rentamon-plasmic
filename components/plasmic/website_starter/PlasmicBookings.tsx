@@ -63,6 +63,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
@@ -70,7 +71,6 @@ import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/compone
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -125,6 +125,8 @@ export type PlasmicBookings__OverridesType = {
   data?: Flex__<"div">;
   title?: Flex__<"div">;
   guestInfo?: Flex__<"div">;
+  copy?: Flex__<typeof PlasmicImg__>;
+  check?: Flex__<typeof PlasmicImg__>;
   bookInfo?: Flex__<"div">;
   bookPrice?: Flex__<"div">;
   commission?: Flex__<"div">;
@@ -201,7 +203,6 @@ export type PlasmicBookings__OverridesType = {
   html?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
-  sideEffect?: Flex__<typeof SideEffect>;
   propertyWebsite?: Flex__<typeof ApiRequest>;
   fetchModal?: Flex__<typeof AntdModal>;
   platformName?: Flex__<"div">;
@@ -778,6 +779,12 @@ function PlasmicBookings__RenderFunc(props: {
       },
       {
         path: "readyToBlock.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "isCopy",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
@@ -3933,6 +3940,229 @@ function PlasmicBookings__RenderFunc(props: {
                                   </React.Fragment>
                                 )}
                               </PlasmicLink__>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__p7Jmz
+                                )}
+                                onClick={async event => {
+                                  const $steps = {};
+
+                                  $steps["runCode"] = true
+                                    ? (() => {
+                                        const actionArgs = {
+                                          customFunction: async () => {
+                                            return (() => {
+                                              const text =
+                                                $state.booking.data.reservations
+                                                  .guest_phone_number;
+                                              console.log(text);
+                                              return navigator.clipboard
+                                                .writeText(text)
+                                                .then(() => {})
+                                                .catch(err => {
+                                                  console.error(
+                                                    "خطا در کپی کردن متن:",
+                                                    err
+                                                  );
+                                                });
+                                            })();
+                                          }
+                                        };
+                                        return (({ customFunction }) => {
+                                          return customFunction();
+                                        })?.apply(null, [actionArgs]);
+                                      })()
+                                    : undefined;
+                                  if (
+                                    $steps["runCode"] != null &&
+                                    typeof $steps["runCode"] === "object" &&
+                                    typeof $steps["runCode"].then === "function"
+                                  ) {
+                                    $steps["runCode"] = await $steps["runCode"];
+                                  }
+
+                                  $steps["updateIsCopy"] = true
+                                    ? (() => {
+                                        const actionArgs = {
+                                          variable: {
+                                            objRoot: $state,
+                                            variablePath: ["isCopy"]
+                                          },
+                                          operation: 0,
+                                          value: true
+                                        };
+                                        return (({
+                                          variable,
+                                          value,
+                                          startIndex,
+                                          deleteCount
+                                        }) => {
+                                          if (!variable) {
+                                            return;
+                                          }
+                                          const { objRoot, variablePath } =
+                                            variable;
+
+                                          $stateSet(
+                                            objRoot,
+                                            variablePath,
+                                            value
+                                          );
+                                          return value;
+                                        })?.apply(null, [actionArgs]);
+                                      })()
+                                    : undefined;
+                                  if (
+                                    $steps["updateIsCopy"] != null &&
+                                    typeof $steps["updateIsCopy"] ===
+                                      "object" &&
+                                    typeof $steps["updateIsCopy"].then ===
+                                      "function"
+                                  ) {
+                                    $steps["updateIsCopy"] =
+                                      await $steps["updateIsCopy"];
+                                  }
+
+                                  $steps["invokeGlobalAction"] = true
+                                    ? (() => {
+                                        const actionArgs = {
+                                          args: [
+                                            undefined,
+                                            "\u0634\u0645\u0627\u0631\u0647 \u0645\u0647\u0645\u0627\u0646 \u06a9\u067e\u06cc \u0634\u062f",
+                                            "top-center"
+                                          ]
+                                        };
+                                        return $globalActions[
+                                          "Fragment.showToast"
+                                        ]?.apply(null, [...actionArgs.args]);
+                                      })()
+                                    : undefined;
+                                  if (
+                                    $steps["invokeGlobalAction"] != null &&
+                                    typeof $steps["invokeGlobalAction"] ===
+                                      "object" &&
+                                    typeof $steps["invokeGlobalAction"].then ===
+                                      "function"
+                                  ) {
+                                    $steps["invokeGlobalAction"] =
+                                      await $steps["invokeGlobalAction"];
+                                  }
+                                }}
+                              >
+                                {(() => {
+                                  try {
+                                    return !$state.isCopy;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })() ? (
+                                  <PlasmicImg__
+                                    data-plasmic-name={"copy"}
+                                    data-plasmic-override={overrides.copy}
+                                    alt={""}
+                                    className={classNames(sty.copy)}
+                                    displayHeight={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? "16px"
+                                        : "23px"
+                                    }
+                                    displayMaxHeight={"none"}
+                                    displayMaxWidth={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "mobile"
+                                      )
+                                        ? "100%"
+                                        : "100%"
+                                    }
+                                    displayMinHeight={"0"}
+                                    displayMinWidth={"0"}
+                                    displayWidth={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      )
+                                        ? "14px"
+                                        : hasVariant(
+                                              globalVariants,
+                                              "screen",
+                                              "mobile"
+                                            )
+                                          ? "18px"
+                                          : "auto"
+                                    }
+                                    loading={"lazy"}
+                                    src={{
+                                      src: "/plasmic/website_starter/images/copySvgrepoCom1Svg.svg",
+                                      fullWidth: 800,
+                                      fullHeight: 800,
+                                      aspectRatio: undefined
+                                    }}
+                                  />
+                                ) : null}
+                                {(() => {
+                                  try {
+                                    return $state.isCopy;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })() ? (
+                                  <PlasmicImg__
+                                    data-plasmic-name={"check"}
+                                    data-plasmic-override={overrides.check}
+                                    alt={""}
+                                    className={classNames(sty.check)}
+                                    displayHeight={"19px"}
+                                    displayMaxHeight={"none"}
+                                    displayMaxWidth={"100%"}
+                                    displayMinHeight={"0"}
+                                    displayMinWidth={"0"}
+                                    displayWidth={
+                                      hasVariant(
+                                        globalVariants,
+                                        "screen",
+                                        "smallMobile"
+                                      )
+                                        ? "14px"
+                                        : hasVariant(
+                                              globalVariants,
+                                              "screen",
+                                              "mobile"
+                                            )
+                                          ? "16px"
+                                          : "auto"
+                                    }
+                                    loading={"lazy"}
+                                    src={{
+                                      src: "/plasmic/website_starter/images/checkMarkSquare2SvgrepoComSvg.svg",
+                                      fullWidth: 800,
+                                      fullHeight: 800,
+                                      aspectRatio: undefined
+                                    }}
+                                  />
+                                ) : null}
+                              </div>
                             </div>
                             <div
                               className={classNames(
@@ -4018,6 +4248,89 @@ function PlasmicBookings__RenderFunc(props: {
                                 )}
                               </div>
                             </div>
+                            <SideEffect
+                              className={classNames(
+                                "__wab_instance",
+                                sty.sideEffect__n4Az8
+                              )}
+                              deps={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? (() => {
+                                      try {
+                                        return [$state.isCopy];
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  : undefined
+                              }
+                              onMount={async () => {
+                                const $steps = {};
+
+                                $steps["invokeGlobalAction"] = true
+                                  ? (() => {
+                                      const actionArgs = { args: [1000] };
+                                      return $globalActions[
+                                        "Fragment.wait"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["invokeGlobalAction"] != null &&
+                                  typeof $steps["invokeGlobalAction"] ===
+                                    "object" &&
+                                  typeof $steps["invokeGlobalAction"].then ===
+                                    "function"
+                                ) {
+                                  $steps["invokeGlobalAction"] =
+                                    await $steps["invokeGlobalAction"];
+                                }
+
+                                $steps["updateIsCopy"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["isCopy"]
+                                        },
+                                        operation: 0,
+                                        value: false
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["updateIsCopy"] != null &&
+                                  typeof $steps["updateIsCopy"] === "object" &&
+                                  typeof $steps["updateIsCopy"].then ===
+                                    "function"
+                                ) {
+                                  $steps["updateIsCopy"] =
+                                    await $steps["updateIsCopy"];
+                                }
+                              }}
+                            />
                           </div>
                           <div
                             data-plasmic-name={"bookInfo"}
@@ -13681,9 +13994,7 @@ function PlasmicBookings__RenderFunc(props: {
             </div>
           </div>
           <SideEffect
-            data-plasmic-name={"sideEffect"}
-            data-plasmic-override={overrides.sideEffect}
-            className={classNames("__wab_instance", sty.sideEffect)}
+            className={classNames("__wab_instance", sty.sideEffect__nADqq)}
             onMount={async () => {
               const $steps = {};
 
@@ -15058,6 +15369,8 @@ const PlasmicDescendants = {
     "data",
     "title",
     "guestInfo",
+    "copy",
+    "check",
     "bookInfo",
     "bookPrice",
     "commission",
@@ -15134,7 +15447,6 @@ const PlasmicDescendants = {
     "html",
     "clarityRntComponent",
     "faviconRntComponent",
-    "sideEffect",
     "propertyWebsite",
     "fetchModal",
     "platformName",
@@ -15187,6 +15499,8 @@ const PlasmicDescendants = {
     "data",
     "title",
     "guestInfo",
+    "copy",
+    "check",
     "bookInfo",
     "bookPrice",
     "commission",
@@ -15268,6 +15582,8 @@ const PlasmicDescendants = {
     "data",
     "title",
     "guestInfo",
+    "copy",
+    "check",
     "bookInfo",
     "bookPrice",
     "commission",
@@ -15322,6 +15638,8 @@ const PlasmicDescendants = {
     "data",
     "title",
     "guestInfo",
+    "copy",
+    "check",
     "bookInfo",
     "bookPrice",
     "commission",
@@ -15336,6 +15654,8 @@ const PlasmicDescendants = {
     "data",
     "title",
     "guestInfo",
+    "copy",
+    "check",
     "bookInfo",
     "bookPrice",
     "commission",
@@ -15346,7 +15666,9 @@ const PlasmicDescendants = {
     "true2"
   ],
   title: ["title"],
-  guestInfo: ["guestInfo"],
+  guestInfo: ["guestInfo", "copy", "check"],
+  copy: ["copy"],
+  check: ["check"],
   bookInfo: ["bookInfo"],
   bookPrice: ["bookPrice"],
   commission: ["commission"],
@@ -15544,7 +15866,6 @@ const PlasmicDescendants = {
   html: ["html", "clarityRntComponent", "faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  sideEffect: ["sideEffect"],
   propertyWebsite: ["propertyWebsite"],
   fetchModal: [
     "fetchModal",
@@ -15600,6 +15921,8 @@ type NodeDefaultElementType = {
   data: "div";
   title: "div";
   guestInfo: "div";
+  copy: typeof PlasmicImg__;
+  check: typeof PlasmicImg__;
   bookInfo: "div";
   bookPrice: "div";
   commission: "div";
@@ -15676,7 +15999,6 @@ type NodeDefaultElementType = {
   html: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
-  sideEffect: typeof SideEffect;
   propertyWebsite: typeof ApiRequest;
   fetchModal: typeof AntdModal;
   platformName: "div";
@@ -15777,6 +16099,8 @@ export const PlasmicBookings = Object.assign(
     data: makeNodeComponent("data"),
     title: makeNodeComponent("title"),
     guestInfo: makeNodeComponent("guestInfo"),
+    copy: makeNodeComponent("copy"),
+    check: makeNodeComponent("check"),
     bookInfo: makeNodeComponent("bookInfo"),
     bookPrice: makeNodeComponent("bookPrice"),
     commission: makeNodeComponent("commission"),
@@ -15853,7 +16177,6 @@ export const PlasmicBookings = Object.assign(
     html: makeNodeComponent("html"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
-    sideEffect: makeNodeComponent("sideEffect"),
     propertyWebsite: makeNodeComponent("propertyWebsite"),
     fetchModal: makeNodeComponent("fetchModal"),
     platformName: makeNodeComponent("platformName"),
