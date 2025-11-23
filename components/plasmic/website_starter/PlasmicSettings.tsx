@@ -1141,6 +1141,9 @@ function PlasmicSettings__RenderFunc(props: {
                                 }
                                 const autoSync = data.auto_sync;
                                 if (autoSync?.used === autoSync?.total) {
+                                  if (!autoSync?.updated_at) {
+                                    return false;
+                                  }
                                   const updatedAt = new Date(
                                     autoSync?.updated_at
                                   );
@@ -1646,6 +1649,9 @@ function PlasmicSettings__RenderFunc(props: {
                                 if (
                                   smartbooking?.used === smartbooking?.total
                                 ) {
+                                  if (!smartbooking?.updated_at) {
+                                    return false;
+                                  }
                                   const updatedAt = new Date(
                                     smartbooking?.updated_at
                                   );

@@ -34,14 +34,18 @@
 @media (max-width: 350px) {
   .root {
     width: 100%;
-    height: 64px;
-    max-width: 40px;
+    height: 74px;
     background: none;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     column-gap: 0px;
-    min-width: 0;
+    min-width: 100%;
+    margin-top: 4px;
+    margin-right: 0px;
+    margin-left: 0px;
+    grid-column-start: 1 !important;
+    grid-column-end: -1 !important;
     padding: 0px;
   }
 }
@@ -52,6 +56,25 @@
 .rootdayStatus_firstDayReserveV2 {
   flex-grow: 0;
   padding-right: 1px;
+}
+@media (max-width: 350px) {
+  .rootdayStatus_firstDayReserveV2 {
+    width: 100%;
+    height: 74px;
+    min-width: 100%;
+    max-width: 40px;
+    margin-top: 4px;
+    margin-right: 0px;
+    margin-left: 0px;
+    background: none;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    grid-column-start: 1 !important;
+    grid-column-end: -1 !important;
+    padding: 0px;
+  }
 }
 .rootdayStatus_lastDayReserveV2 {
   padding-left: 1px;
@@ -75,6 +98,24 @@
 .rootdayStatus_passedReservedV2 {
   background: none;
   min-width: 98%;
+}
+@media (max-width: 350px) {
+  .rootdayStatus_passedReservedV2 {
+    min-width: 98%;
+    width: 100%;
+    height: 74px;
+    margin-top: 4px;
+    margin-right: 0px;
+    margin-left: 0px;
+    background: none;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    grid-column-start: 1 !important;
+    grid-column-end: -1 !important;
+    padding: 0px;
+  }
 }
 .rootdayStatus_firstDaySmartBooking {
   flex-grow: 0;
@@ -149,6 +190,15 @@
 }
 @media (max-width: 350px) {
   .freeBox___9Ndlb {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 0px;
     margin: 0px;
   }
 }
@@ -167,12 +217,31 @@
     padding-right: 1px;
   }
 }
+@media (max-width: 350px) {
+  .freeBoxdayStatus_firstDayReserveV2___9NdlBlxm0M {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 0px;
+    margin: 0px;
+  }
+}
 .freeBoxdayStatus_lastDayReserveV2___9NdlbHbxR {
   max-width: 100%;
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_lastDayReserveV2___9NdlbHbxR {
     padding-left: 1px;
+  }
+}
+@media (max-width: 350px) {
+  .freeBoxdayStatus_lastDayReserveV2___9NdlbHbxR {
+    padding-left: 0px;
   }
 }
 .freeBoxdayStatus_reservedV2___9Ndlb75Ot {
@@ -202,6 +271,20 @@
   .freeBoxdayStatus_passedReservedV2___9NdlbiSdsA {
     padding-right: 1px;
     padding-left: 1px;
+  }
+}
+@media (max-width: 350px) {
+  .freeBoxdayStatus_passedReservedV2___9NdlbiSdsA {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    padding: 0px 1px;
+    margin: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -372,13 +455,19 @@
 }
 @media (max-width: 350px) {
   .cell {
-    max-width: 40px;
-    height: 64px;
-    padding-top: 0px;
-    row-gap: 0px;
-    background: var(--token-O4qz_eXOc86K);
+    max-width: 100%;
+    height: 74px;
+    row-gap: 1px;
+    background: var(--token-8R7jjC_-F9FF);
+    width: 100%;
     column-gap: 0px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 0;
     flex-shrink: 0;
+    border-radius: 0px;
+    padding: 2px 0px 0px;
   }
 }
 .cellselected {
@@ -406,6 +495,7 @@
 .celldayStatus_firstDayReserveV2 {
   background: #444444;
   overflow: visible;
+  padding-bottom: 0px;
   border-radius: 0px 10px 10px 0px;
 }
 @media (max-width: 500px) {
@@ -421,6 +511,21 @@
     min-width: 0;
     flex-shrink: 0;
     padding: 2px 0px 0px;
+  }
+}
+@media (max-width: 350px) {
+  .celldayStatus_firstDayReserveV2 {
+    width: 100%;
+    height: 74px;
+    background: #444444;
+    column-gap: 0px;
+    row-gap: 0px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 0;
+    flex-shrink: 0;
+    padding: 0px;
   }
 }
 .celldayStatus_lastDayReserveV2 {
@@ -441,6 +546,7 @@
 .celldayStatus_reservedV2 {
   background: #444444;
   overflow: hidden;
+  padding-bottom: 0px;
   border-radius: 10px;
 }
 .celldayStatus_disabledV2 {
@@ -450,7 +556,22 @@
 .celldayStatus_passedFirstDayReserveV2 {
   background: #44444433;
   overflow: visible;
+  width: 100%;
+  height: 80px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 0px;
+  min-width: 0;
+  flex-shrink: 0;
   border-radius: 0px 10px 10px 0px;
+  padding: 10px 0px 0px;
+}
+@media (max-width: 350px) {
+  .celldayStatus_passedFirstDayReserveV2 {
+    height: 74px;
+    flex-shrink: 0;
+  }
 }
 .celldayStatus_passedMidDayReserveV2 {
   background: #44444433;
@@ -470,7 +591,33 @@
 .celldayStatus_passedReservedV2 {
   background: #44444433;
   overflow: hidden;
+  width: 100%;
+  height: 80px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 0px;
+  min-width: 0;
+  flex-shrink: 0;
   border-radius: 10px;
+  padding: 10px 0px 0px;
+}
+@media (max-width: 350px) {
+  .celldayStatus_passedReservedV2 {
+    width: 100%;
+    height: 74px;
+    max-width: 100%;
+    background: #44444433;
+    column-gap: 0px;
+    row-gap: 1px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 0;
+    flex-shrink: 0;
+    border-radius: 10px;
+    padding: 2px 0px 0px;
+  }
 }
 .celldayStatus_firstDaySmartBooking {
   background: #fcfcfc;
@@ -652,6 +799,20 @@
     margin: 0px;
   }
 }
+@media (max-width: 350px) {
+  .freeBox___20P4Y {
+    width: 100%;
+    height: 30%;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 0px;
+    margin: 0px;
+  }
+}
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDayReserveV2___20P4Ylxm0M {
     align-items: center;
@@ -663,6 +824,20 @@
 }
 .freeBoxdayStatus_passedMidDayReserveV2___20P4YzPpWv {
   min-width: 100%;
+}
+@media (max-width: 350px) {
+  .freeBoxdayStatus_passedReservedV2___20P4YiSdsA {
+    width: 100%;
+    height: 30%;
+    max-width: 100%;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    padding: 0px;
+    margin: 0px;
+  }
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDaySmartBooking___20P4Yv8GTb {
@@ -1052,7 +1227,15 @@
 }
 @media (max-width: 350px) {
   .freeBox___6Yvqv {
-    padding-top: 2px;
+    width: 100%;
+    height: 30%;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0px;
+    padding: 0px;
+    margin: 0px;
   }
 }
 @media (max-width: 500px) {
@@ -1080,6 +1263,19 @@
 }
 .freeBoxdayStatus_passedLastDayReserveV2___6YvqVsnHmp {
   display: none;
+}
+@media (max-width: 350px) {
+  .freeBoxdayStatus_passedReservedV2___6YvqviSdsA {
+    width: 100%;
+    height: 30%;
+    max-width: 100%;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+  }
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDaySmartBooking___6YvqVv8GTb {
@@ -1317,6 +1513,20 @@
     margin: 0px;
   }
 }
+@media (max-width: 350px) {
+  .freeBox__vb8Yk {
+    width: 100%;
+    height: 40%;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 0px;
+    margin: 0px;
+  }
+}
 .freeBoxselected__vb8YklSVo3 {
   width: 100%;
   height: 40%;
@@ -1330,9 +1540,15 @@
 }
 .freeBoxdayStatus_firstDayReserveV2__vb8Yklxm0M {
   overflow: visible;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 4px;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 40%;
+  max-width: 100%;
+  flex-direction: column;
+  column-gap: 0px;
+  min-width: 0;
+  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDayReserveV2__vb8Yklxm0M {
@@ -1349,7 +1565,9 @@
   }
 }
 .freeBoxdayStatus_reservedV2__vb8Yk75Ot {
-  padding: 0px 4px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_reservedV2__vb8Yk75Ot {
@@ -1367,9 +1585,15 @@
 }
 .freeBoxdayStatus_passedFirstDayReserveV2__vb8YkhpmmI {
   overflow: visible;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 4px;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 40%;
+  max-width: 100%;
+  column-gap: 0px;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_passedFirstDayReserveV2__vb8YkhpmmI {
@@ -1383,11 +1607,11 @@
   height: 40%;
   max-width: 100%;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: flex-end;
+  align-items: center;
   column-gap: 0px;
   min-width: 0;
-  padding: 4px;
+  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_passedReservedV2__vb8YkISdsA {
@@ -1398,6 +1622,20 @@
     justify-content: flex-end;
     align-items: center;
     column-gap: 0px;
+    min-width: 0;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .freeBoxdayStatus_passedReservedV2__vb8YkISdsA {
+    width: 100%;
+    height: 40%;
+    max-width: 100%;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     min-width: 0;
     padding: 0px;
     margin: 0px;
@@ -1607,18 +1845,19 @@
   padding: 0px;
 }
 .freeBoxdayStatus_firstDayReserveV2___7HH4Lxm0M {
-  width: auto;
+  width: 100%;
   height: auto;
   background: #3d5afe;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   overflow: visible;
   position: relative;
   left: auto;
   top: auto;
-  max-width: none;
+  max-width: 100%;
   column-gap: 0px;
+  min-width: 0;
   display: flex;
   border-radius: 30px;
   padding: 0px;
@@ -1676,18 +1915,19 @@
   display: flex;
 }
 .freeBoxdayStatus_passedFirstDayReserveV2___7HH4HpmmI {
-  width: auto;
+  width: 100%;
   height: auto;
-  background: #3d5afe80;
+  background: #3d5afe33;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   overflow: visible;
   position: relative;
   left: auto;
   top: auto;
-  max-width: none;
+  max-width: 100%;
   column-gap: 0px;
+  min-width: 0;
   display: flex;
   border-radius: 30px;
   padding: 0px;
@@ -1716,14 +1956,15 @@
   }
 }
 .freeBoxdayStatus_passedReservedV2___7HH4ISdsA {
-  background: #3d5afe80;
-  width: auto;
+  background: #3d5afe33;
+  width: 100%;
   height: auto;
-  max-width: none;
+  max-width: 100%;
   column-gap: 0px;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+  min-width: 0;
   display: flex;
   border-radius: 30px;
   padding: 0px;
@@ -1749,6 +1990,17 @@
 }
 @media (max-width: 350px) {
   .freeBoxdayStatus_passedReservedV2___7HH4ISdsA {
+    width: 100%;
+    height: 100%;
+    max-width: 100px;
+    background: #3d5afe33;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 10px;
     padding: 0px;
   }
 }
@@ -2093,6 +2345,8 @@
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding-bottom: 2px;
+  padding-top: 2px;
   display: block;
 }
 @media (max-width: 500px) {
@@ -2163,6 +2417,8 @@
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding-bottom: 2px;
+  padding-top: 2px;
   display: block;
 }
 @media (max-width: 500px) {
@@ -2346,6 +2602,19 @@
   min-width: 0;
   padding: 0px;
 }
+@media (max-width: 350px) {
+  .freeBox__xvaH5 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    padding: 0px;
+  }
+}
 .freeBoxselected__xvaH5LSVo3 {
   width: 100%;
   height: auto;
@@ -2362,6 +2631,16 @@
 }
 .freeBoxdayStatus_firstDayReserveV2__xvaH5Lxm0M {
   z-index: 10;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  column-gap: 0px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDayReserveV2__xvaH5Lxm0M {
@@ -2382,6 +2661,15 @@
   }
 }
 .freeBoxdayStatus_reservedV2__xvaH575Ot {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  column-gap: 0px;
+  min-width: 0;
+  min-height: 0;
   padding: 0px;
 }
 @media (max-width: 500px) {
@@ -2399,6 +2687,18 @@
     border-radius: 10px;
     padding: 0px;
   }
+}
+.freeBoxdayStatus_passedFirstDayReserveV2__xvaH5HpmmI {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  column-gap: 0px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_passedFirstDayReserveV2__xvaH5HpmmI {
@@ -2418,7 +2718,35 @@
     padding: 0px;
   }
 }
+.freeBoxdayStatus_passedReservedV2__xvaH5ISdsA {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  column-gap: 0px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  padding: 0px;
+}
 @media (max-width: 500px) {
+  .freeBoxdayStatus_passedReservedV2__xvaH5ISdsA {
+    width: 100%;
+    height: 100%;
+    max-width: 100px;
+    background: none;
+    column-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 10px;
+    padding: 0px;
+  }
+}
+@media (max-width: 350px) {
   .freeBoxdayStatus_passedReservedV2__xvaH5ISdsA {
     width: 100%;
     height: 100%;
@@ -2559,6 +2887,8 @@
   white-space: pre;
   padding-right: 0px;
   color: var(--token-8R7jjC_-F9FF);
+  padding-bottom: 4px;
+  padding-top: 4px;
   display: block;
 }
 @media (max-width: 500px) {
@@ -2593,6 +2923,8 @@
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding-bottom: 4px;
+  padding-top: 4px;
   display: block;
 }
 @media (max-width: 500px) {
@@ -2629,6 +2961,14 @@
   white-space: pre;
   padding-right: 0px;
   color: var(--token-8R7jjC_-F9FF);
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: 400;
+  user-select: none;
+  min-width: 0;
   display: block;
 }
 @media (max-width: 500px) {
@@ -2663,6 +3003,13 @@
   white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  user-select: none;
+  min-width: 0;
   display: block;
 }
 @media (max-width: 500px) {

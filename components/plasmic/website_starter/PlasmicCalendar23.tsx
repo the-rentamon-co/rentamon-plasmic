@@ -139,6 +139,11 @@ export type PlasmicCalendar23__OverridesType = {
   getJabamaSmartPriceStatus?: Flex__<typeof ApiRequest>;
   userPlatform?: Flex__<typeof ApiRequest>;
   loading2?: Flex__<typeof PlasmicImg__>;
+  oaghak?: Flex__<typeof PlasmicImg__>;
+  homsa?: Flex__<typeof PlasmicImg__>;
+  snapp?: Flex__<typeof PlasmicImg__>;
+  shab?: Flex__<typeof PlasmicImg__>;
+  jajiga?: Flex__<typeof PlasmicImg__>;
   ok?: Flex__<typeof PlasmicImg__>;
   ok3?: Flex__<typeof PlasmicImg__>;
   fail?: Flex__<typeof PlasmicImg__>;
@@ -329,14 +334,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "mobile")
-              ? false
-              : hasVariant(globalVariants, "screen", "tablet")
-                ? false
-                : false
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "variable3",
@@ -2503,35 +2501,14 @@ function PlasmicCalendar23__RenderFunc(props: {
                     : (() => {
                         try {
                           return (() => {
-                            const dayIndex = dateProps.date.day - 1;
                             const dayData =
-                              $state.apiRequest.data[1].calendar[dayIndex];
-
-                            if (
-                              dayData.status === "blocked" &&
+                              $state.apiRequest.data[1].calendar[
+                                dateProps.date.day - 1
+                              ];
+                            return dayData.status === "blocked" &&
                               dayData.reservations_type == null
-                            ) {
-                              return "غیرفعال";
-                            }
-
-                            const prevDayData =
-                              dayIndex > 0
-                                ? $state.apiRequest.data[1].calendar[
-                                    dayIndex - 1
-                                  ]
-                                : null;
-
-                            const isReserved = dayData.status === "reserved";
-                            const hasBookingId = dayData.booking_id != null;
-                            const isNewBooking =
-                              !prevDayData ||
-                              prevDayData.booking_id !== dayData.booking_id;
-
-                            if (isReserved && hasBookingId && isNewBooking) {
-                              return dayData.website;
-                            }
-
-                            return "";
+                              ? "غیرفعال"
+                              : dayData.website;
                           })();
                         } catch (e) {
                           if (
@@ -5918,6 +5895,233 @@ function PlasmicCalendar23__RenderFunc(props: {
                           sty.freeBox__kd5Ft
                         )}
                       >
+                        {(() => {
+                          try {
+                            return currentItem == "otaghak";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"oaghak"}
+                            data-plasmic-override={overrides.oaghak}
+                            alt={""}
+                            className={classNames(sty.oaghak)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"26px"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/otaghakPng2.png",
+                              fullWidth: 44,
+                              fullHeight: 44,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return currentItem == "homsa";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"homsa"}
+                            data-plasmic-override={overrides.homsa}
+                            alt={""}
+                            className={classNames(sty.homsa)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"26px"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/homsaPng.png",
+                              fullWidth: 44,
+                              fullHeight: 43,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return currentItem == "snapptrip";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"snapp"}
+                            data-plasmic-override={overrides.snapp}
+                            alt={""}
+                            className={classNames(sty.snapp)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"26px"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/snappPng.png",
+                              fullWidth: 44,
+                              fullHeight: 44,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return currentItem == "shab";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"shab"}
+                            data-plasmic-override={overrides.shab}
+                            alt={""}
+                            className={classNames(sty.shab)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"26px"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/shabPng.png",
+                              fullWidth: 44,
+                              fullHeight: 43,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return currentItem == "jajiga";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            data-plasmic-name={"jajiga"}
+                            data-plasmic-override={overrides.jajiga}
+                            alt={""}
+                            className={classNames(sty.jajiga)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"26px"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/jajigaPng.png",
+                              fullWidth: 44,
+                              fullHeight: 44,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return currentItem == "jabama";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__w4ZBa)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"26px"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/jabamaPng.png",
+                              fullWidth: 43,
+                              fullHeight: 44,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
+                        {(() => {
+                          try {
+                            return currentItem == "mihmansho";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img___4UX8)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"26px"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/mihmanshoPng2.png",
+                              fullWidth: 44,
+                              fullHeight: 43,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ) : null}
                         <div
                           className={classNames(
                             projectcss.all,
@@ -11669,6 +11873,11 @@ const PlasmicDescendants = {
     "getJabamaSmartPriceStatus",
     "userPlatform",
     "loading2",
+    "oaghak",
+    "homsa",
+    "snapp",
+    "shab",
+    "jajiga",
     "ok",
     "ok3",
     "fail",
@@ -11762,6 +11971,11 @@ const PlasmicDescendants = {
     "getJabamaSmartPriceStatus",
     "userPlatform",
     "loading2",
+    "oaghak",
+    "homsa",
+    "snapp",
+    "shab",
+    "jajiga",
     "ok",
     "ok3",
     "fail",
@@ -11772,6 +11986,11 @@ const PlasmicDescendants = {
   userPlatform: [
     "userPlatform",
     "loading2",
+    "oaghak",
+    "homsa",
+    "snapp",
+    "shab",
+    "jajiga",
     "ok",
     "ok3",
     "fail",
@@ -11779,6 +11998,11 @@ const PlasmicDescendants = {
     "ok2"
   ],
   loading2: ["loading2"],
+  oaghak: ["oaghak"],
+  homsa: ["homsa"],
+  snapp: ["snapp"],
+  shab: ["shab"],
+  jajiga: ["jajiga"],
   ok: ["ok"],
   ok3: ["ok3"],
   fail: ["fail"],
@@ -11901,6 +12125,11 @@ type NodeDefaultElementType = {
   getJabamaSmartPriceStatus: typeof ApiRequest;
   userPlatform: typeof ApiRequest;
   loading2: typeof PlasmicImg__;
+  oaghak: typeof PlasmicImg__;
+  homsa: typeof PlasmicImg__;
+  snapp: typeof PlasmicImg__;
+  shab: typeof PlasmicImg__;
+  jajiga: typeof PlasmicImg__;
   ok: typeof PlasmicImg__;
   ok3: typeof PlasmicImg__;
   fail: typeof PlasmicImg__;
@@ -12041,6 +12270,11 @@ export const PlasmicCalendar23 = Object.assign(
     getJabamaSmartPriceStatus: makeNodeComponent("getJabamaSmartPriceStatus"),
     userPlatform: makeNodeComponent("userPlatform"),
     loading2: makeNodeComponent("loading2"),
+    oaghak: makeNodeComponent("oaghak"),
+    homsa: makeNodeComponent("homsa"),
+    snapp: makeNodeComponent("snapp"),
+    shab: makeNodeComponent("shab"),
+    jajiga: makeNodeComponent("jajiga"),
     ok: makeNodeComponent("ok"),
     ok3: makeNodeComponent("ok3"),
     fail: makeNodeComponent("fail"),

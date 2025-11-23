@@ -5739,6 +5739,41 @@
           "id": "cPVYuWo0ZvlF",
           "name": "miaan-logo-blue.png",
           "filePath": "../public/plasmic/website_starter/images/miaanLogoBluePng.png"
+        },
+        {
+          "id": "s_icIwTdVbz6",
+          "name": "jabama.png",
+          "filePath": "../public/plasmic/website_starter/images/jabamaPng.png"
+        },
+        {
+          "id": "UK3olOxYvbwO",
+          "name": "jajiga.png",
+          "filePath": "../public/plasmic/website_starter/images/jajigaPng.png"
+        },
+        {
+          "id": "R1xs7BcZKttk",
+          "name": "shab.png",
+          "filePath": "../public/plasmic/website_starter/images/shabPng.png"
+        },
+        {
+          "id": "GeCHilneqccr",
+          "name": "snapp.png",
+          "filePath": "../public/plasmic/website_starter/images/snappPng.png"
+        },
+        {
+          "id": "wd1FLzlakUcF",
+          "name": "homsa.png",
+          "filePath": "../public/plasmic/website_starter/images/homsaPng.png"
+        },
+        {
+          "id": "b3BFfkS8237n",
+          "name": "otaghak.png 2",
+          "filePath": "../public/plasmic/website_starter/images/otaghakPng2.png"
+        },
+        {
+          "id": "M2pbwikEP_HW",
+          "name": "mihmansho.png 2",
+          "filePath": "../public/plasmic/website_starter/images/mihmanshoPng2.png"
         }
       ],
       "indirect": false,

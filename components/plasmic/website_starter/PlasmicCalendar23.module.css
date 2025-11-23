@@ -175,8 +175,30 @@
     padding: 0px;
   }
 }
+@media (max-width: 350px) {
+  .freeBox__wW1T {
+    width: 100%;
+    height: auto;
+    max-width: 98%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0px;
+    min-width: 0;
+    display: none;
+    padding: 0px;
+    margin: 3px 0px;
+  }
+}
 .dayCell2:global(.__wab_instance) {
   max-width: 100%;
+}
+@media (max-width: 350px) {
+  .dayCell2:global(.__wab_instance) {
+    width: 100%;
+    flex-shrink: 1;
+    min-width: 0;
+  }
 }
 .modalDiscount:global(.__wab_instance) {
   max-width: 100%;
@@ -1352,7 +1374,7 @@
   max-width: 100%;
   border-bottom-width: 1px;
   border-bottom-style: dotted;
-  column-gap: 3px;
+  column-gap: 5px;
   padding: 2px 8px;
 }
 @media (max-width: 500px) {
@@ -1364,6 +1386,83 @@
   .freeBox__kd5Ft {
     width: 94%;
   }
+}
+.oaghak {
+  object-fit: cover;
+  max-width: 100%;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  width: 26px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+.oaghak > picture > img {
+  object-fit: cover;
+}
+.homsa {
+  object-fit: cover;
+  max-width: 100%;
+  width: 26px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+.homsa > picture > img {
+  object-fit: cover;
+}
+.snapp {
+  object-fit: cover;
+  max-width: 100%;
+  width: 26px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+.snapp > picture > img {
+  object-fit: cover;
+}
+.shab {
+  object-fit: cover;
+  max-width: 100%;
+  width: 26px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+.shab > picture > img {
+  object-fit: cover;
+}
+.jajiga {
+  object-fit: cover;
+  max-width: 100%;
+  width: 26px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+.jajiga > picture > img {
+  object-fit: cover;
+}
+.img__w4ZBa {
+  object-fit: cover;
+  max-width: 100%;
+  width: 26px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+.img__w4ZBa > picture > img {
+  object-fit: cover;
+}
+.img___4UX8 {
+  object-fit: cover;
+  max-width: 100%;
+  width: 26px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+.img___4UX8 > picture > img {
+  object-fit: cover;
 }
 .text__pxdZx {
   position: relative;
