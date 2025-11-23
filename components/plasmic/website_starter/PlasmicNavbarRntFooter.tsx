@@ -977,7 +977,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               $steps["runCode"] = await $steps["runCode"];
             }
 
-            $steps["invokeGlobalAction"] = true
+            $steps["invokeGlobalAction"] = false
               ? (() => {
                   const actionArgs = {
                     args: [
@@ -1017,7 +1017,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               $steps["invokeGlobalAction"] = await $steps["invokeGlobalAction"];
             }
 
-            $steps["runCode2"] = true
+            $steps["runCode2"] = false
               ? (() => {
                   const actionArgs = {
                     customFunction: async () => {

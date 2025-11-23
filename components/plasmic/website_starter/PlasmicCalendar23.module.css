@@ -1390,7 +1390,7 @@
 .oaghak {
   object-fit: cover;
   max-width: 100%;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   width: 26px;
   flex-shrink: 0;
   border-radius: 8px;
@@ -1402,7 +1402,7 @@
   object-fit: cover;
   max-width: 100%;
   width: 26px;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   flex-shrink: 0;
   border-radius: 8px;
 }
@@ -1413,7 +1413,7 @@
   object-fit: cover;
   max-width: 100%;
   width: 26px;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   flex-shrink: 0;
   border-radius: 8px;
 }
@@ -1422,9 +1422,9 @@
 }
 .shab {
   object-fit: cover;
-  max-width: 100%;
+  max-width: 26px;
   width: 26px;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   flex-shrink: 0;
   border-radius: 8px;
 }
@@ -1433,9 +1433,9 @@
 }
 .jajiga {
   object-fit: cover;
-  max-width: 100%;
+  max-width: 26px;
   width: 26px;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   flex-shrink: 0;
   border-radius: 8px;
 }
@@ -1446,7 +1446,7 @@
   object-fit: cover;
   max-width: 100%;
   width: 26px;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   flex-shrink: 0;
   border-radius: 8px;
 }
@@ -1457,7 +1457,7 @@
   object-fit: cover;
   max-width: 100%;
   width: 26px;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   flex-shrink: 0;
   border-radius: 8px;
 }

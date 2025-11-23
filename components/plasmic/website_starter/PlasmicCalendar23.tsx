@@ -6014,7 +6014,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             className={classNames(sty.shab)}
                             displayHeight={"auto"}
                             displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
+                            displayMaxWidth={"26px"}
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"26px"}
@@ -6047,7 +6047,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             className={classNames(sty.jajiga)}
                             displayHeight={"auto"}
                             displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
+                            displayMaxWidth={"26px"}
                             displayMinHeight={"0"}
                             displayMinWidth={"0"}
                             displayWidth={"26px"}
