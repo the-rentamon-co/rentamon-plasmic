@@ -608,6 +608,12 @@
   border-radius: 10px;
   padding: 10px 0px 0px;
 }
+@media (max-width: 500px) {
+  .celldayStatus_passedReservedV2 {
+    height: 74px;
+    flex-shrink: 0;
+  }
+}
 @media (max-width: 350px) {
   .celldayStatus_passedReservedV2 {
     width: 100%;

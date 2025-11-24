@@ -121,6 +121,9 @@ export type PlasmicReservations__OverridesType = {
   sort?: Flex__<"div">;
   filter?: Flex__<"div">;
   filterMenu?: Flex__<typeof AntdModal>;
+  checkInAndChecklOut?: Flex__<"div">;
+  checkIn?: Flex__<"div">;
+  checkOut?: Flex__<"div">;
   container?: Flex__<"div">;
   titles?: Flex__<"div">;
   property?: Flex__<"div">;
@@ -548,6 +551,12 @@ function PlasmicReservations__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "reservationType",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -1964,6 +1973,342 @@ function PlasmicReservations__RenderFunc(props: {
             </div>
           </div>
           <div
+            data-plasmic-name={"checkInAndChecklOut"}
+            data-plasmic-override={overrides.checkInAndChecklOut}
+            className={classNames(projectcss.all, sty.checkInAndChecklOut)}
+          >
+            <div
+              data-plasmic-name={"checkIn"}
+              data-plasmic-override={overrides.checkIn}
+              className={classNames(projectcss.all, sty.checkIn)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateReservationType"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["reservationType"]
+                        },
+                        operation: 0,
+                        value: (() => {
+                          if ($state.reservationType == "check_in") {
+                            return ($state.reservationType = "");
+                          }
+                          if ($state.reservationType == "check_out") {
+                            $state.reservations =
+                              $state.reserveData.data.result.bookings;
+                            return ($state.reservationType = "check_in");
+                          } else {
+                            return ($state.reservationType = "check_in");
+                          }
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateReservationType"] != null &&
+                  typeof $steps["updateReservationType"] === "object" &&
+                  typeof $steps["updateReservationType"].then === "function"
+                ) {
+                  $steps["updateReservationType"] =
+                    await $steps["updateReservationType"];
+                }
+
+                $steps["runCode"] =
+                  $state.reservationType == "check_in"
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.reservations =
+                              $state.reservations.filter(item => {
+                                const now = new Date();
+                                const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+                                return item.check_in === today;
+                              }));
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+
+                $steps["runCode2"] =
+                  $state.reservationType != "check_in"
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              const reservations =
+                                $state.reserveData.data.result.bookings;
+                              if (
+                                Array.isArray(reservations) &&
+                                reservations.length > 0
+                              ) {
+                                localStorage.setItem(
+                                  "reservations",
+                                  JSON.stringify(reservations)
+                                );
+                              }
+                              return ($state.reservations = reservations);
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["runCode2"] != null &&
+                  typeof $steps["runCode2"] === "object" &&
+                  typeof $steps["runCode2"].then === "function"
+                ) {
+                  $steps["runCode2"] = await $steps["runCode2"];
+                }
+              }}
+              style={(() => {
+                try {
+                  return (() => {
+                    if ($state.reservationType == "check_in") {
+                      return {
+                        "background-color": "#0000F7",
+                        "border-radius": "100px",
+                        padding: "12px"
+                      };
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___8R10N
+                )}
+                style={(() => {
+                  try {
+                    return (() => {
+                      if ($state.reservationType == "check_in") {
+                        return {
+                          color: "#fcfcfc",
+                          "font-weight": "600"
+                        };
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              >
+                {"\u0648\u0631\u0648\u062f\u06cc"}
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"checkOut"}
+              data-plasmic-override={overrides.checkOut}
+              className={classNames(projectcss.all, sty.checkOut)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateReservationType"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["reservationType"]
+                        },
+                        operation: 0,
+                        value: (() => {
+                          if ($state.reservationType == "check_out") {
+                            return ($state.reservationType = "");
+                          }
+                          if ($state.reservationType == "check_in") {
+                            $state.reservations =
+                              $state.reserveData.data.result.bookings;
+                            return ($state.reservationType = "check_out");
+                          } else {
+                            return ($state.reservationType = "check_out");
+                          }
+                        })()
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateReservationType"] != null &&
+                  typeof $steps["updateReservationType"] === "object" &&
+                  typeof $steps["updateReservationType"].then === "function"
+                ) {
+                  $steps["updateReservationType"] =
+                    await $steps["updateReservationType"];
+                }
+
+                $steps["runCode"] =
+                  $state.reservationType != "check_out"
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              const reservations =
+                                $state.reserveData.data.result.bookings;
+                              if (
+                                Array.isArray(reservations) &&
+                                reservations.length > 0
+                              ) {
+                                localStorage.setItem(
+                                  "reservations",
+                                  JSON.stringify(reservations)
+                                );
+                              }
+                              return ($state.reservations = reservations);
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+
+                $steps["runCode2"] =
+                  $state.reservationType == "check_out"
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.reservations =
+                              $state.reservations.filter(item => {
+                                const now = new Date();
+                                const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+                                return item.check_out === today;
+                              }));
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["runCode2"] != null &&
+                  typeof $steps["runCode2"] === "object" &&
+                  typeof $steps["runCode2"].then === "function"
+                ) {
+                  $steps["runCode2"] = await $steps["runCode2"];
+                }
+              }}
+              style={(() => {
+                try {
+                  return (() => {
+                    if ($state.reservationType == "check_out") {
+                      return {
+                        "background-color": "#0000F7",
+                        "border-radius": "100px",
+                        padding: "12px"
+                      };
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dW7Xp
+                )}
+                style={(() => {
+                  try {
+                    return (() => {
+                      if ($state.reservationType == "check_out") {
+                        return {
+                          color: "#fcfcfc",
+                          "font-weight": "600"
+                        };
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              >
+                {"\u062e\u0631\u0648\u062c\u06cc"}
+              </div>
+            </div>
+          </div>
+          <div
             data-plasmic-name={"container"}
             data-plasmic-override={overrides.container}
             className={classNames(projectcss.all, sty.container)}
@@ -3365,21 +3710,26 @@ function PlasmicReservations__RenderFunc(props: {
                 );
               })()}
               {(
-                hasVariant(globalVariants, "screen", "mobile")
+                hasVariant(globalVariants, "screen", "smallMobile")
                   ? (() => {
                       try {
-                        return (
-                          $state.reservations.message == null &&
-                          ($state.searchInput.value == "" ||
-                            $state.searchInput.value == null) &&
-                          !(
-                            $state.cancelled3.checked ||
-                            $state.confierm2.checked ||
-                            $state.settlement2.checked
-                          ) &&
-                          $state.reservations.length !=
-                            $state.reserveData.data.result.meta.total_count
-                        );
+                        return (() => {
+                          if ($state.reservationType) {
+                            return false;
+                          }
+                          return (
+                            $state.reservations.message == null &&
+                            !$state.searchInput?.value &&
+                            !(
+                              $state.cancelled3.checked ||
+                              $state.confierm2.checked ||
+                              $state.settlement2.checked
+                            ) &&
+                            $state.reservations.length !==
+                              $state.reserveData?.data?.result?.meta
+                                ?.total_count
+                          );
+                        })();
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -3390,30 +3740,95 @@ function PlasmicReservations__RenderFunc(props: {
                         throw e;
                       }
                     })()
-                  : (() => {
-                      try {
-                        return (
-                          $state.reservations.message == null &&
-                          ($state.searchInput.value == "" ||
-                            $state.searchInput.value == null) &&
-                          !(
-                            $state.cancelled3.checked ||
-                            $state.confierm2.checked ||
-                            $state.settlement2.checked
-                          ) &&
-                          $state.reservations.length !=
-                            $state.reserveData.data.result.meta.total_count
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return false;
+                  : hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (() => {
+                            if ($state.reservationType) {
+                              return false;
+                            }
+                            return (
+                              $state.reservations.message == null &&
+                              !$state.searchInput?.value &&
+                              !(
+                                $state.cancelled3.checked ||
+                                $state.confierm2.checked ||
+                                $state.settlement2.checked
+                              ) &&
+                              $state.reservations.length !==
+                                $state.reserveData?.data?.result?.meta
+                                  ?.total_count
+                            );
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return false;
+                          }
+                          throw e;
                         }
-                        throw e;
-                      }
-                    })()
+                      })()
+                    : hasVariant(globalVariants, "screen", "tablet")
+                      ? (() => {
+                          try {
+                            return (() => {
+                              if ($state.reservationType) {
+                                return false;
+                              }
+                              return (
+                                $state.reservations.message == null &&
+                                !$state.searchInput?.value &&
+                                !(
+                                  $state.cancelled3.checked ||
+                                  $state.confierm2.checked ||
+                                  $state.settlement2.checked
+                                ) &&
+                                $state.reservations.length !==
+                                  $state.reserveData?.data?.result?.meta
+                                    ?.total_count
+                              );
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : (() => {
+                          try {
+                            return (() => {
+                              if ($state.reservationType) {
+                                return false;
+                              }
+                              return (
+                                $state.reservations.message == null &&
+                                !$state.searchInput?.value &&
+                                !(
+                                  $state.cancelled3.checked ||
+                                  $state.confierm2.checked ||
+                                  $state.settlement2.checked
+                                ) &&
+                                $state.reservations.length !==
+                                  $state.reserveData?.data?.result?.meta
+                                    ?.total_count
+                              );
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })()
               ) ? (
                 <div
                   className={classNames(projectcss.all, sty.freeBox__asROr)}
@@ -7161,6 +7576,9 @@ const PlasmicDescendants = {
     "sort",
     "filter",
     "filterMenu",
+    "checkInAndChecklOut",
+    "checkIn",
+    "checkOut",
     "container",
     "titles",
     "property",
@@ -7264,6 +7682,9 @@ const PlasmicDescendants = {
   sort: ["sort"],
   filter: ["filter", "filterMenu"],
   filterMenu: ["filterMenu"],
+  checkInAndChecklOut: ["checkInAndChecklOut", "checkIn", "checkOut"],
+  checkIn: ["checkIn"],
+  checkOut: ["checkOut"],
   container: [
     "container",
     "titles",
@@ -7402,6 +7823,9 @@ type NodeDefaultElementType = {
   sort: "div";
   filter: "div";
   filterMenu: typeof AntdModal;
+  checkInAndChecklOut: "div";
+  checkIn: "div";
+  checkOut: "div";
   container: "div";
   titles: "div";
   property: "div";
@@ -7538,6 +7962,9 @@ export const PlasmicReservations = Object.assign(
     sort: makeNodeComponent("sort"),
     filter: makeNodeComponent("filter"),
     filterMenu: makeNodeComponent("filterMenu"),
+    checkInAndChecklOut: makeNodeComponent("checkInAndChecklOut"),
+    checkIn: makeNodeComponent("checkIn"),
+    checkOut: makeNodeComponent("checkOut"),
     container: makeNodeComponent("container"),
     titles: makeNodeComponent("titles"),
     property: makeNodeComponent("property"),
