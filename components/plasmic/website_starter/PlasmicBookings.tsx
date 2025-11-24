@@ -4107,7 +4107,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     }
                                     loading={"lazy"}
                                     src={{
-                                      src: "/plasmic/website_starter/images/copySvgrepoCom1Svg.svg",
+                                      src: "/plasmic/website_starter/images/copy1SvgrepoComSvg.svg",
                                       fullWidth: 800,
                                       fullHeight: 800,
                                       aspectRatio: undefined
@@ -4171,7 +4171,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     }
                                     loading={"lazy"}
                                     src={{
-                                      src: "/plasmic/website_starter/images/checkMarkSquare2SvgrepoComSvg.svg",
+                                      src: "/plasmic/website_starter/images/checkMarkSvgrepoComSvg.svg",
                                       fullWidth: 800,
                                       fullHeight: 800,
                                       aspectRatio: undefined

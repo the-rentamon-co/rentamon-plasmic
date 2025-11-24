@@ -61,11 +61,11 @@ import {
 
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
-import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Calendar23 from "../../Calendar23"; // plasmic-import: 9y5OemMhUNlV/component
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
@@ -97,7 +97,6 @@ export type PlasmicProCalendar2__OverridesType = {
   root?: Flex__<"div">;
   header2?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
-  profile2?: Flex__<typeof ApiRequest>;
   alertModal?: Flex__<typeof AntdModal>;
   embedHtml?: Flex__<typeof Embed>;
   button?: Flex__<typeof Button>;
@@ -318,30 +317,6 @@ function PlasmicProCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
-      },
-      {
-        path: "profile2.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
-      },
-      {
-        path: "profile2.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
-      },
-      {
-        path: "profile2.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
       },
       {
         path: "isModalShow",
@@ -958,7 +933,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
               isOpen={false}
               userData={(() => {
                 try {
-                  return $state.profile2.data;
+                  return $state.profile.data;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -971,38 +946,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
               })()}
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__wmsyM)}>
-              <ApiRequest
-                data-plasmic-name={"profile2"}
-                data-plasmic-override={overrides.profile2}
-                className={classNames("__wab_instance", sty.profile2)}
-                errorDisplay={null}
-                loadingDisplay={null}
-                method={"GET"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "profile2",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "profile2",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, ["profile2", "data"]).apply(
-                    null,
-                    eventArgs
-                  );
-                }}
-                ref={ref => {
-                  $refs["profile2"] = ref;
-                }}
-                url={"https://api-v2.rentamon.com/api/user_info?property_id=1"}
-              />
-            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__wmsyM)} />
           </div>
           <AntdModal
             data-plasmic-name={"alertModal"}
@@ -2686,7 +2630,6 @@ const PlasmicDescendants = {
     "root",
     "header2",
     "sideBar2",
-    "profile2",
     "alertModal",
     "embedHtml",
     "button",
@@ -2709,9 +2652,8 @@ const PlasmicDescendants = {
     "faviconRntComponent",
     "modal"
   ],
-  header2: ["header2", "sideBar2", "profile2"],
+  header2: ["header2", "sideBar2"],
   sideBar2: ["sideBar2"],
-  profile2: ["profile2"],
   alertModal: ["alertModal", "embedHtml", "button"],
   embedHtml: ["embedHtml"],
   button: ["button"],
@@ -2766,7 +2708,6 @@ type NodeDefaultElementType = {
   root: "div";
   header2: "div";
   sideBar2: typeof SideBar2;
-  profile2: typeof ApiRequest;
   alertModal: typeof AntdModal;
   embedHtml: typeof Embed;
   button: typeof Button;
@@ -2854,7 +2795,6 @@ export const PlasmicProCalendar2 = Object.assign(
     // Helper components rendering sub-elements
     header2: makeNodeComponent("header2"),
     sideBar2: makeNodeComponent("sideBar2"),
-    profile2: makeNodeComponent("profile2"),
     alertModal: makeNodeComponent("alertModal"),
     embedHtml: makeNodeComponent("embedHtml"),
     button: makeNodeComponent("button"),

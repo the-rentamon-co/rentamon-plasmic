@@ -1476,13 +1476,45 @@ function PlasmicSideBar2__RenderFunc(props: {
                 await $steps["updateModalSidebarOpen"];
             }
 
+            $steps["updateModalSidebarOpen2"] = true
+              ? (() => {
+                  const actionArgs = {
+                    customFunction: async () => {
+                      return (() => {
+                        localStorage.removeItem("property_data");
+                        localStorage.removeItem("reservations");
+                        return localStorage.removeItem("user_info");
+                      })();
+                    }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen2"] != null &&
+              typeof $steps["updateModalSidebarOpen2"] === "object" &&
+              typeof $steps["updateModalSidebarOpen2"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen2"] =
+                await $steps["updateModalSidebarOpen2"];
+            }
+
             $steps["runCode"] = true
               ? (() => {
                   const actionArgs = {
                     customFunction: async () => {
                       return (() => {
-                        return (window.location.href =
-                          "https://sso.rentamon.com/auth/logout?callback=https://rentamon.com/panel");
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const ssoBase = isMiaan
+                          ? "https://sso.miaan.ir"
+                          : "https://sso.rentamon.com";
+                        const callbackBase = isMiaan
+                          ? "https://miaan.ir"
+                          : "https://rentamon.com";
+                        return (window.location.href = `${ssoBase}/auth/logout?callback=${callbackBase}/panel`);
                       })();
                     }
                   };

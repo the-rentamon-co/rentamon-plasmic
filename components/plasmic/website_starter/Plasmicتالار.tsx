@@ -2046,6 +2046,30 @@ function Plasmicتالار__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
+                    $steps["runCode2"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                localStorage.removeItem("property_data");
+                                localStorage.removeItem("reservations");
+                                return localStorage.removeItem("user_info");
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode2"] != null &&
+                      typeof $steps["runCode2"] === "object" &&
+                      typeof $steps["runCode2"].then === "function"
+                    ) {
+                      $steps["runCode2"] = await $steps["runCode2"];
+                    }
+
                     $steps["runCode"] = true
                       ? (() => {
                           const actionArgs = {

@@ -5803,6 +5803,16 @@
           "id": "g3cVKc7WB2_s",
           "name": "check-mark-square-2-svgrepo-com.svg",
           "filePath": "../public/plasmic/website_starter/images/checkMarkSquare2SvgrepoComSvg.svg"
+        },
+        {
+          "id": "qanaixz6BILf",
+          "name": "check-mark-svgrepo-com.svg",
+          "filePath": "../public/plasmic/website_starter/images/checkMarkSvgrepoComSvg.svg"
+        },
+        {
+          "id": "I-sWj9ogJhZW",
+          "name": "copy-1-svgrepo-com.svg",
+          "filePath": "../public/plasmic/website_starter/images/copy1SvgrepoComSvg.svg"
         }
       ],
       "indirect": false,
