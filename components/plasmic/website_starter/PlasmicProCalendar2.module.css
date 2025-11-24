@@ -1035,6 +1035,25 @@
     grid-column-end: -1 !important;
   }
 }
+.dontDeleteSpacer {
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 90px;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 90px;
+  max-height: 90px;
+  min-width: 0;
+  display: none;
+  padding: 8px;
+}
+@media (max-width: 500px) {
+  .dontDeleteSpacer {
+    display: flex;
+  }
+}
 .freeBox__dptdu {
   display: flex;
   flex-direction: column;

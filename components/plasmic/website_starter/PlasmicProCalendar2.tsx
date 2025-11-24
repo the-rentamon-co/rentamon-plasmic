@@ -113,6 +113,7 @@ export type PlasmicProCalendar2__OverridesType = {
   image?: Flex__<"div">;
   profile?: Flex__<typeof ApiRequest>;
   calendar23?: Flex__<typeof Calendar23>;
+  dontDeleteSpacer?: Flex__<"div">;
   aiAgentIframe?: Flex__<typeof Iframe>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -2360,6 +2361,12 @@ function PlasmicProCalendar2__RenderFunc(props: {
             reservationsMode={true}
           />
 
+          <div
+            data-plasmic-name={"dontDeleteSpacer"}
+            data-plasmic-override={overrides.dontDeleteSpacer}
+            className={classNames(projectcss.all, sty.dontDeleteSpacer)}
+          />
+
           {false ? (
             <div
               className={classNames(
@@ -2646,6 +2653,7 @@ const PlasmicDescendants = {
     "image",
     "profile",
     "calendar23",
+    "dontDeleteSpacer",
     "aiAgentIframe",
     "navbarRntFooter",
     "clarityRntComponent",
@@ -2695,6 +2703,7 @@ const PlasmicDescendants = {
   image: ["image"],
   profile: ["profile"],
   calendar23: ["calendar23"],
+  dontDeleteSpacer: ["dontDeleteSpacer"],
   aiAgentIframe: ["aiAgentIframe"],
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -2724,6 +2733,7 @@ type NodeDefaultElementType = {
   image: "div";
   profile: typeof ApiRequest;
   calendar23: typeof Calendar23;
+  dontDeleteSpacer: "div";
   aiAgentIframe: typeof Iframe;
   navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -2811,6 +2821,7 @@ export const PlasmicProCalendar2 = Object.assign(
     image: makeNodeComponent("image"),
     profile: makeNodeComponent("profile"),
     calendar23: makeNodeComponent("calendar23"),
+    dontDeleteSpacer: makeNodeComponent("dontDeleteSpacer"),
     aiAgentIframe: makeNodeComponent("aiAgentIframe"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

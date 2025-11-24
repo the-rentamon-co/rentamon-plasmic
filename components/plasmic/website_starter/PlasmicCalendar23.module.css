@@ -2687,6 +2687,10 @@
 @media (max-width: 350px) {
   .guide {
     padding-bottom: 14px;
+    padding-right: 4px;
+    padding-left: 4px;
+    column-gap: 8px;
+    row-gap: 0px;
   }
 }
 .block3 {
@@ -2709,6 +2713,14 @@
 @media (max-width: 500px) {
   .block3 {
     padding: 0px 4px;
+  }
+}
+@media (max-width: 350px) {
+  .block3 {
+    column-gap: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    row-gap: 0px;
   }
 }
 .color {
@@ -2759,6 +2771,12 @@
     padding-bottom: 0px;
   }
 }
+@media (max-width: 350px) {
+  .text {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .text__tmsAx {
   position: relative;
   width: 100%;
@@ -2766,6 +2784,12 @@
   max-width: 100%;
   font-family: "Estedad";
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__tmsAx {
+    font-size: 11px;
+    letter-spacing: -1px;
+  }
 }
 .smartBookings {
   display: flex;
@@ -2800,6 +2824,14 @@
     align-items: center;
     row-gap: 0px;
     padding: 0px 4px;
+  }
+}
+@media (max-width: 350px) {
+  .smartBookings {
+    column-gap: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    row-gap: 0px;
   }
 }
 .color2 {
@@ -2850,6 +2882,12 @@
     padding-bottom: 0px;
   }
 }
+@media (max-width: 350px) {
+  .text2 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .text__hAkWo {
   position: relative;
   width: 100%;
@@ -2857,6 +2895,12 @@
   max-width: 100%;
   font-family: "Estedad";
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__hAkWo {
+    font-size: 11px;
+    letter-spacing: -1px;
+  }
 }
 .discount {
   display: flex;
@@ -2891,6 +2935,14 @@
     align-items: center;
     row-gap: 0px;
     padding: 0px 4px;
+  }
+}
+@media (max-width: 350px) {
+  .discount {
+    padding-left: 0px;
+    padding-right: 0px;
+    column-gap: 2px;
+    row-gap: 0px;
   }
 }
 .color3 {
@@ -2941,6 +2993,12 @@
     padding-bottom: 0px;
   }
 }
+@media (max-width: 350px) {
+  .text3 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .text__jjN5U {
   position: relative;
   width: 100%;
@@ -2952,6 +3010,12 @@
 @media (max-width: 500px) {
   .text__jjN5U {
     font-family: "Estedad";
+  }
+}
+@media (max-width: 350px) {
+  .text__jjN5U {
+    font-size: 11px;
+    letter-spacing: -1px;
   }
 }
 .note {
@@ -2989,6 +3053,14 @@
     padding: 0px 4px;
   }
 }
+@media (max-width: 350px) {
+  .note {
+    padding-left: 0px;
+    padding-right: 0px;
+    column-gap: 2px;
+    row-gap: 0px;
+  }
+}
 .img__erPp {
   object-fit: cover;
   max-width: 100%;
@@ -3020,6 +3092,12 @@
     padding-bottom: 0px;
   }
 }
+@media (max-width: 350px) {
+  .text4 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .text__vLfvl {
   position: relative;
   width: 100%;
@@ -3027,6 +3105,12 @@
   max-width: 100%;
   font-family: "Estedad";
   min-width: 0;
+}
+@media (max-width: 350px) {
+  .text__vLfvl {
+    font-size: 11px;
+    letter-spacing: -1px;
+  }
 }
 .submitChange {
   display: flex;
