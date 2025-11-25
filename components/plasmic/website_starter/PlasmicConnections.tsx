@@ -4431,7 +4431,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/jabama-send-otp",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/jabama-send-otp`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -4739,7 +4761,29 @@ function PlasmicConnections__RenderFunc(props: {
                                         const actionArgs = {
                                           args: [
                                             "POST",
-                                            "https://gateway.rentamon.com/webhook/jabama-verify-otp",
+                                            (() => {
+                                              try {
+                                                return (() => {
+                                                  const isMiaan =
+                                                    window.location.hostname.includes(
+                                                      "miaan.ir"
+                                                    );
+                                                  const gatewayBase = isMiaan
+                                                    ? "https://gateway.miaan.ir"
+                                                    : "https://gateway.rentamon.com";
+                                                  return `${gatewayBase}/webhook/jabama-verify-otp`;
+                                                })();
+                                              } catch (e) {
+                                                if (
+                                                  e instanceof TypeError ||
+                                                  e?.plasmicType ===
+                                                    "PlasmicUndefinedDataError"
+                                                ) {
+                                                  return undefined;
+                                                }
+                                                throw e;
+                                              }
+                                            })(),
                                             undefined,
                                             (() => {
                                               try {
@@ -4845,7 +4889,29 @@ function PlasmicConnections__RenderFunc(props: {
                                         const actionArgs = {
                                           args: [
                                             "POST",
-                                            "https://gateway.rentamon.com/webhook/jabamacontact",
+                                            (() => {
+                                              try {
+                                                return (() => {
+                                                  const isMiaan =
+                                                    window.location.hostname.includes(
+                                                      "miaan.ir"
+                                                    );
+                                                  const gatewayBase = isMiaan
+                                                    ? "https://gateway.miaan.ir"
+                                                    : "https://gateway.rentamon.com";
+                                                  return `${gatewayBase}/webhook/jabamacontact`;
+                                                })();
+                                              } catch (e) {
+                                                if (
+                                                  e instanceof TypeError ||
+                                                  e?.plasmicType ===
+                                                    "PlasmicUndefinedDataError"
+                                                ) {
+                                                  return undefined;
+                                                }
+                                                throw e;
+                                              }
+                                            })(),
                                             undefined,
                                             undefined
                                           ]
@@ -5181,7 +5247,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/Auth_jajiga_Send",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/Auth_jajiga_Send`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -5430,7 +5518,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/Auth_jajiga_verify",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/Auth_jajiga_verify`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -5534,7 +5644,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/jajigacontact",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/jajigacontact`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -5878,7 +6010,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/Auth_snapp_Send",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/Auth_snapp_Send`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -6126,7 +6280,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/Auth_snapp_verify",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/Auth_snapp_verify`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -6300,7 +6476,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/snappcontact",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/snappcontact`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -6567,7 +6765,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/shab-otp",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/shab-otp`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -6636,7 +6856,29 @@ function PlasmicConnections__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/shabnewsend"
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              const isMiaan =
+                                                window.location.hostname.includes(
+                                                  "miaan.ir"
+                                                );
+                                              const gatewayBase = isMiaan
+                                                ? "https://gateway.miaan.ir"
+                                                : "https://gateway.rentamon.com";
+                                              return `${gatewayBase}/webhook/shabnewsend`;
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })()
                                       ]
                                     };
                                     return $globalActions[
@@ -6858,7 +7100,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/shab-verify?v=2",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/shab-verify?v=2`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -6960,7 +7224,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/shabcontact",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/shabcontact`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -7307,7 +7593,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/otaghak-send-otp",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/otaghak-send-otp`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -7560,7 +7868,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/otaghak-verify-otp",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/otaghak-verify-otp`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -7664,7 +7994,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/otaghakcontact",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/otaghakcontact`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -8303,7 +8655,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/mihmansho",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/mihmansho`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
@@ -8358,7 +8732,29 @@ function PlasmicConnections__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/connection",
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              const isMiaan =
+                                                window.location.hostname.includes(
+                                                  "miaan.ir"
+                                                );
+                                              const gatewayBase = isMiaan
+                                                ? "https://gateway.miaan.ir"
+                                                : "https://gateway.rentamon.com";
+                                              return `${gatewayBase}/webhook/connection`;
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
+                                            }
+                                            throw e;
+                                          }
+                                        })(),
                                         undefined,
                                         (() => {
                                           try {
@@ -8922,7 +9318,29 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/homsa-verify-otp",
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/homsa-verify-otp`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
                                           undefined,
                                           (() => {
                                             try {
