@@ -534,8 +534,7 @@ function PlasmicBookings__RenderFunc(props: {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : false
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "unblockStatus",
@@ -1101,7 +1100,19 @@ function PlasmicBookings__RenderFunc(props: {
                     ) : null}
                     {(
                       hasVariant(globalVariants, "screen", "mobile")
-                        ? $state.booking.data.website == "snapptrip"
+                        ? (() => {
+                            try {
+                              return $state.booking.data.website == "snapptrip";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
                         : hasVariant(globalVariants, "screen", "tablet")
                           ? (() => {
                               try {
@@ -5556,50 +5567,102 @@ function PlasmicBookings__RenderFunc(props: {
                                     sty.text__q1Tbt
                                   )}
                                 >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return (() => {
-                                          const websiteFarsiNames = {
-                                            host: "میزبان",
-                                            jabama: "جاباما",
-                                            jajiga: "جاجیگا",
-                                            shab: "شب",
-                                            mizboon: "میزبون",
-                                            otaghak: "اتاقک",
-                                            homsa: "هومسا",
-                                            mihmansho: "میهمانشو",
-                                            divar: "دیوار",
-                                            others: "سایر",
-                                            offline: "حضوری",
-                                            Returning_Guest: "قبلی",
-                                            "Broker or Colleague":
-                                              "واسطه یا همکار",
-                                            social: "پیام‌رسان و شبکه‌اجتماعی",
-                                            garmeja: "گرمه‌جا",
-                                            snapptrip: "اسنپ تریپ"
-                                          };
-                                          const englishWebsiteName =
-                                            $state.booking.data.website;
-                                          const farsiWebsiteName =
-                                            websiteFarsiNames[
-                                              englishWebsiteName
-                                            ] || englishWebsiteName;
-                                          const finalMessage = `مبلغ رزرو در ${farsiWebsiteName}:`;
-                                          return finalMessage;
-                                        })();
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return " ";
+                                  {hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "mobile"
+                                  ) ? (
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return (() => {
+                                            const websiteFarsiNames = {
+                                              host: "میزبان",
+                                              jabama: "جاباما",
+                                              jajiga: "جاجیگا",
+                                              shab: "شب",
+                                              mizboon: "میزبون",
+                                              otaghak: "اتاقک",
+                                              homsa: "هومسا",
+                                              mihmansho: "میهمانشو",
+                                              divar: "دیوار",
+                                              others: "سایر",
+                                              offline: "حضوری",
+                                              Returning_Guest: "قبلی",
+                                              "Broker or Colleague":
+                                                "واسطه یا همکار",
+                                              social:
+                                                "پیام‌رسان و شبکه‌اجتماعی",
+                                              garmeja: "گرمه‌جا",
+                                              snapptrip: "اسنپ تریپ"
+                                            };
+                                            const englishWebsiteName =
+                                              $state.booking.data.website;
+                                            const farsiWebsiteName =
+                                              websiteFarsiNames[
+                                                englishWebsiteName
+                                              ] || englishWebsiteName;
+                                            const finalMessage = `مبلغ رزرو در ${farsiWebsiteName}:`;
+                                            return finalMessage;
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return " ";
+                                          }
+                                          throw e;
                                         }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
+                                      })()}
+                                    </React.Fragment>
+                                  ) : (
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return (() => {
+                                            const websiteFarsiNames = {
+                                              host: "میزبان",
+                                              jabama: "جاباما",
+                                              jajiga: "جاجیگا",
+                                              shab: "شب",
+                                              mizboon: "میزبون",
+                                              otaghak: "اتاقک",
+                                              homsa: "هومسا",
+                                              mihmansho: "میهمانشو",
+                                              divar: "دیوار",
+                                              others: "سایر",
+                                              offline: "حضوری",
+                                              Returning_Guest: "قبلی",
+                                              "Broker or Colleague":
+                                                "واسطه یا همکار",
+                                              social:
+                                                "پیام‌رسان و شبکه‌اجتماعی",
+                                              garmeja: "گرمه‌جا"
+                                            };
+                                            const englishWebsiteName =
+                                              $state.booking.data.website;
+                                            const farsiWebsiteName =
+                                              websiteFarsiNames[
+                                                englishWebsiteName
+                                              ] || englishWebsiteName;
+                                            const finalMessage = `مبلغ رزرو در ${farsiWebsiteName}:`;
+                                            return finalMessage;
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return " ";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  )}
                                 </div>
                               </div>
                             </div>
@@ -5915,50 +5978,102 @@ function PlasmicBookings__RenderFunc(props: {
                                     sty.text__cvZwE
                                   )}
                                 >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return (() => {
-                                          const websiteFarsiNames = {
-                                            host: "میزبان",
-                                            jabama: "جاباما",
-                                            jajiga: "جاجیگا",
-                                            shab: "شب",
-                                            mizboon: "میزبون",
-                                            otaghak: "اتاقک",
-                                            homsa: "هومسا",
-                                            mihmansho: "میهمانشو",
-                                            divar: "دیوار",
-                                            others: "سایر",
-                                            offline: "حضوری",
-                                            Returning_Guest: "قبلی",
-                                            "Broker or Colleague":
-                                              "واسطه یا همکار",
-                                            social: "پیام‌رسان و شبکه‌اجتماعی",
-                                            garmeja: "گرمه‌جا",
-                                            snapptrip: "اسنپ تریپ"
-                                          };
-                                          const englishWebsiteName =
-                                            $state.booking.data.website;
-                                          const farsiWebsiteName =
-                                            websiteFarsiNames[
-                                              englishWebsiteName
-                                            ] || englishWebsiteName;
-                                          const finalMessage = `کارمزد (و مالیات) ${farsiWebsiteName}:`;
-                                          return finalMessage;
-                                        })();
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return " ";
+                                  {hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "mobile"
+                                  ) ? (
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return (() => {
+                                            const websiteFarsiNames = {
+                                              host: "میزبان",
+                                              jabama: "جاباما",
+                                              jajiga: "جاجیگا",
+                                              shab: "شب",
+                                              mizboon: "میزبون",
+                                              otaghak: "اتاقک",
+                                              homsa: "هومسا",
+                                              mihmansho: "میهمانشو",
+                                              divar: "دیوار",
+                                              others: "سایر",
+                                              offline: "حضوری",
+                                              Returning_Guest: "قبلی",
+                                              "Broker or Colleague":
+                                                "واسطه یا همکار",
+                                              social:
+                                                "پیام‌رسان و شبکه‌اجتماعی",
+                                              garmeja: "گرمه‌جا",
+                                              snapptrip: "اسنپ تریپ"
+                                            };
+                                            const englishWebsiteName =
+                                              $state.booking.data.website;
+                                            const farsiWebsiteName =
+                                              websiteFarsiNames[
+                                                englishWebsiteName
+                                              ] || englishWebsiteName;
+                                            const finalMessage = `کارمزد (و مالیات) ${farsiWebsiteName}:`;
+                                            return finalMessage;
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return " ";
+                                          }
+                                          throw e;
                                         }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
+                                      })()}
+                                    </React.Fragment>
+                                  ) : (
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return (() => {
+                                            const websiteFarsiNames = {
+                                              host: "میزبان",
+                                              jabama: "جاباما",
+                                              jajiga: "جاجیگا",
+                                              shab: "شب",
+                                              mizboon: "میزبون",
+                                              otaghak: "اتاقک",
+                                              homsa: "هومسا",
+                                              mihmansho: "میهمانشو",
+                                              divar: "دیوار",
+                                              others: "سایر",
+                                              offline: "حضوری",
+                                              Returning_Guest: "قبلی",
+                                              "Broker or Colleague":
+                                                "واسطه یا همکار",
+                                              social:
+                                                "پیام‌رسان و شبکه‌اجتماعی",
+                                              garmeja: "گرمه‌جا"
+                                            };
+                                            const englishWebsiteName =
+                                              $state.booking.data.website;
+                                            const farsiWebsiteName =
+                                              websiteFarsiNames[
+                                                englishWebsiteName
+                                              ] || englishWebsiteName;
+                                            const finalMessage = `کارمزد (و مالیات) ${farsiWebsiteName}:`;
+                                            return finalMessage;
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return " ";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  )}
                                 </div>
                               </div>
                             </div>
@@ -7193,38 +7308,77 @@ function PlasmicBookings__RenderFunc(props: {
                                       sty.text__o51MG
                                     )}
                                   >
-                                    <React.Fragment>
-                                      {(() => {
-                                        try {
-                                          return (() => {
-                                            const websiteMap = {
-                                              shab: "شب",
-                                              jabama: "جاباما",
-                                              homsa: "هومسا",
-                                              jajiga: "جاجیگا",
-                                              mizboon: "میزبون",
-                                              mihmansho: "مهمانشو",
-                                              otaghak: "اتاقک",
-                                              snapptrip: "اسنپ تریپ"
-                                            };
-                                            const faWebsiteName =
-                                              websiteMap[
-                                                currentItem.website_name
-                                              ] || currentItem.website_name;
-                                            return faWebsiteName;
-                                          })();
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return "\u0634\u0628";
+                                    {hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobile"
+                                    ) ? (
+                                      <React.Fragment>
+                                        {(() => {
+                                          try {
+                                            return (() => {
+                                              const websiteMap = {
+                                                shab: "شب",
+                                                jabama: "جاباما",
+                                                homsa: "هومسا",
+                                                jajiga: "جاجیگا",
+                                                mizboon: "میزبون",
+                                                mihmansho: "مهمانشو",
+                                                otaghak: "اتاقک",
+                                                snapptrip: "اسنپ تریپ"
+                                              };
+                                              const faWebsiteName =
+                                                websiteMap[
+                                                  currentItem.website_name
+                                                ] || currentItem.website_name;
+                                              return faWebsiteName;
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return "\u0634\u0628";
+                                            }
+                                            throw e;
                                           }
-                                          throw e;
-                                        }
-                                      })()}
-                                    </React.Fragment>
+                                        })()}
+                                      </React.Fragment>
+                                    ) : (
+                                      <React.Fragment>
+                                        {(() => {
+                                          try {
+                                            return (() => {
+                                              const websiteMap = {
+                                                shab: "شب",
+                                                jabama: "جاباما",
+                                                homsa: "هومسا",
+                                                jajiga: "جاجیگا",
+                                                mizboon: "میزبون",
+                                                mihmansho: "مهمانشو",
+                                                otaghak: "اتاقک",
+                                                snapptrip: "اسنپ تریپ"
+                                              };
+                                              const faWebsiteName =
+                                                websiteMap[
+                                                  currentItem.website_name
+                                                ] || currentItem.website_name;
+                                              return faWebsiteName;
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return "\u0634\u0628";
+                                            }
+                                            throw e;
+                                          }
+                                        })()}
+                                      </React.Fragment>
+                                    )}
                                   </div>
                                   {(() => {
                                     try {
