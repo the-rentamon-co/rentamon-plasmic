@@ -4,23 +4,23 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicTestGw } from "../../components/plasmic/website_starter/PlasmicTestGw";
+import { PlasmicGw } from "../../components/plasmic/website_starter/PlasmicGw";
 import { useRouter } from "next/router";
 
-function TestGw() {
-  // Use PlasmicTestGw to render this component as it was
+function Gw() {
+  // Use PlasmicGw to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicTestGw are:
+  // Props you can pass into PlasmicGw are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicTestGw is wrapped by your project's global
+  // By default, PlasmicGw is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -32,10 +32,10 @@ function TestGw() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicTestGw />
+        <PlasmicGw />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default TestGw;
+export default Gw;

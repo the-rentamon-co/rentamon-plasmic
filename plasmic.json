@@ -3073,17 +3073,17 @@
         },
         {
           "id": "j6VTnWC37glE",
-          "name": "TestGw",
+          "name": "Gw",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicTestGw.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicGw.tsx",
           "importSpec": {
             "modulePath": "../src/pages/gw.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicTestGw.module.css",
+          "cssFilePath": "plasmic/website_starter/PlasmicGw.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/test-gw"
+          "path": "/gw"
         }
       ],
       "icons": [

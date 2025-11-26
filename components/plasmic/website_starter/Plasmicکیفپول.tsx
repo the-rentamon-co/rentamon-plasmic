@@ -792,27 +792,43 @@ function Plasmicکیفپول__RenderFunc(props: {
                       await $steps["invokeGlobalAction"];
                   }
 
-                  $steps["runCode"] = true
+                  $steps["goToGw"] = true
                     ? (() => {
                         const actionArgs = {
-                          customFunction: async () => {
-                            return window.open(
-                              "https://payment.zarinpal.com/pg/StartPay/" +
-                                $state.tokenResponse.payInfo
-                            );
-                          }
+                          destination: `/gw?pay_id=${(() => {
+                            try {
+                              return $state.tokenResponse.payInfo;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}`
                         };
-                        return (({ customFunction }) => {
-                          return customFunction();
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
                         })?.apply(null, [actionArgs]);
                       })()
                     : undefined;
                   if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
+                    $steps["goToGw"] != null &&
+                    typeof $steps["goToGw"] === "object" &&
+                    typeof $steps["goToGw"].then === "function"
                   ) {
-                    $steps["runCode"] = await $steps["runCode"];
+                    $steps["goToGw"] = await $steps["goToGw"];
                   }
                 }}
               >
