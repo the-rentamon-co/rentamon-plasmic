@@ -626,6 +626,12 @@ function PlasmicConnections__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "snappOtpId",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ``
       }
     ],
     [$props, $ctx, $refs]
@@ -6074,6 +6080,30 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["snappSend"] = await $steps["snappSend"];
                               }
+
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          $state.snappOtpId =
+                                            $steps.snappSend.data.otpId;
+                                          return console.log($state.snappSend);
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
                             }}
                             submitsForm={true}
                             type={"primary"}
@@ -6319,7 +6349,8 @@ function PlasmicConnections__RenderFunc(props: {
                                                   ),
                                                   otp: faToEnDigits(
                                                     $state.form.value.snappOTP
-                                                  )
+                                                  ),
+                                                  otpId: $state.snappOtpId
                                                 };
                                               })();
                                             } catch (e) {
