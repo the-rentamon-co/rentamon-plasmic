@@ -2122,10 +2122,7 @@ function PlasmicReservations__RenderFunc(props: {
                   try {
                     return (() => {
                       if ($state.reservationType == "check_in") {
-                        return {
-                          color: "#fcfcfc",
-                          "font-weight": "600"
-                        };
+                        return { color: "#fcfcfc" };
                       }
                     })();
                   } catch (e) {
@@ -2143,24 +2140,22 @@ function PlasmicReservations__RenderFunc(props: {
                   {(() => {
                     try {
                       return (() => {
-                        if ($state.reservationType != "") {
-                          return "ورودی امروز";
-                        }
                         const now = new Date();
                         const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-                        const todayCheckInCount = $state.reservations.filter(
-                          item => {
-                            return item.check_in === today;
-                          }
-                        ).length;
-                        return `ورودی امروز (${todayCheckInCount})`;
+                        const todayCheckInCount =
+                          $state.reserveData.data.result.bookings.filter(
+                            item => {
+                              return item.check_in === today;
+                            }
+                          ).length;
+                        return `ورود امروز (${todayCheckInCount})`;
                       })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return "\u0648\u0631\u0648\u062f\u06cc \u0627\u0645\u0631\u0648\u0632";
+                        return "\u0648\u0631\u0648\u062f \u0627\u0645\u0631\u0648\u0632";
                       }
                       throw e;
                     }
@@ -2313,10 +2308,7 @@ function PlasmicReservations__RenderFunc(props: {
                   try {
                     return (() => {
                       if ($state.reservationType == "check_out") {
-                        return {
-                          color: "#fcfcfc",
-                          "font-weight": "600"
-                        };
+                        return { color: "#fcfcfc" };
                       }
                     })();
                   } catch (e) {
@@ -2334,24 +2326,22 @@ function PlasmicReservations__RenderFunc(props: {
                   {(() => {
                     try {
                       return (() => {
-                        if ($state.reservationType != "") {
-                          return "خروجی امروز";
-                        }
                         const now = new Date();
                         const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-                        const todayCheckOutCount = $state.reservations.filter(
-                          item => {
-                            return item.check_out === today;
-                          }
-                        ).length;
-                        return `خروجی امروز (${todayCheckOutCount})`;
+                        const todayCheckOutCount =
+                          $state.reserveData.data.result.bookings.filter(
+                            item => {
+                              return item.check_out === today;
+                            }
+                          ).length;
+                        return `خروج امروز (${todayCheckOutCount})`;
                       })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return " \u062e\u0631\u0648\u062c\u06cc \u0627\u0645\u0631\u0648\u0632";
+                        return "\u062e\u0631\u0648\u062c \u0627\u0645\u0631\u0648\u0632";
                       }
                       throw e;
                     }
