@@ -748,16 +748,37 @@ function Plasmicکیفپول__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
+                  $steps["invokeGlobalAction"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://gateway.rentamon.com/webhook/log/wallet"
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
+                  }
+
                   $steps["runCode"] = true
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
-                            return (() => {
-                              return window.open(
-                                "https://payment.zarinpal.com/pg/StartPay/" +
-                                  $state.tokenResponse.payInfo
-                              );
-                            })();
+                            return window.open(
+                              "https://payment.zarinpal.com/pg/StartPay/" +
+                                $state.tokenResponse.payInfo
+                            );
                           }
                         };
                         return (({ customFunction }) => {
