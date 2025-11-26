@@ -753,7 +753,28 @@ function Plasmicکیفپول__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://gateway.rentamon.com/webhook/log/wallet"
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/log/wallet`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
                           ]
                         };
                         return $globalActions["Fragment.apiRequest"]?.apply(
