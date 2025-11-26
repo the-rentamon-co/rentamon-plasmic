@@ -124,6 +124,7 @@ export type PlasmicReservations__OverridesType = {
   checkInAndChecklOut?: Flex__<"div">;
   checkIn?: Flex__<"div">;
   checkOut?: Flex__<"div">;
+  checkOut2?: Flex__<"div">;
   container?: Flex__<"div">;
   titles?: Flex__<"div">;
   property?: Flex__<"div">;
@@ -556,7 +557,7 @@ function PlasmicReservations__RenderFunc(props: {
         path: "reservationType",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $ctx }) => "all"
       }
     ],
     [$props, $ctx, $refs]
@@ -1997,6 +1998,7 @@ function PlasmicReservations__RenderFunc(props: {
                             return ($state.reservationType = "");
                           }
                           if ($state.reservationType == "check_out") {
+                            $state.reservationType = "all";
                             $state.reservations =
                               $state.reserveData.data.result.bookings;
                             return ($state.reservationType = "check_in");
@@ -2073,7 +2075,8 @@ function PlasmicReservations__RenderFunc(props: {
                                   JSON.stringify(reservations)
                                 );
                               }
-                              return ($state.reservations = reservations);
+                              $state.reservations = reservations;
+                              return ($state.reservationType = "all");
                             })();
                           }
                         };
@@ -2183,6 +2186,7 @@ function PlasmicReservations__RenderFunc(props: {
                             return ($state.reservationType = "");
                           }
                           if ($state.reservationType == "check_in") {
+                            $state.reservationType = "all";
                             $state.reservations =
                               $state.reserveData.data.result.bookings;
                             return ($state.reservationType = "check_out");
@@ -2233,7 +2237,8 @@ function PlasmicReservations__RenderFunc(props: {
                                   JSON.stringify(reservations)
                                 );
                               }
-                              return ($state.reservations = reservations);
+                              $state.reservations = reservations;
+                              return ($state.reservationType = "all");
                             })();
                           }
                         };
@@ -2347,6 +2352,133 @@ function PlasmicReservations__RenderFunc(props: {
                     }
                   })()}
                 </React.Fragment>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"checkOut2"}
+              data-plasmic-override={overrides.checkOut2}
+              className={classNames(projectcss.all, sty.checkOut2)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateReservationType"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["reservationType"]
+                        },
+                        operation: 0,
+                        value: ($state.reservations =
+                          $state.reserveData.data.result.bookings)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateReservationType"] != null &&
+                  typeof $steps["updateReservationType"] === "object" &&
+                  typeof $steps["updateReservationType"].then === "function"
+                ) {
+                  $steps["updateReservationType"] =
+                    await $steps["updateReservationType"];
+                }
+
+                $steps["updateReservationType2"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["reservationType"]
+                        },
+                        operation: 0,
+                        value: "all"
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateReservationType2"] != null &&
+                  typeof $steps["updateReservationType2"] === "object" &&
+                  typeof $steps["updateReservationType2"].then === "function"
+                ) {
+                  $steps["updateReservationType2"] =
+                    await $steps["updateReservationType2"];
+                }
+              }}
+              style={(() => {
+                try {
+                  return (() => {
+                    if ($state.reservationType == "all") {
+                      return {
+                        "background-color": "#0000F7",
+                        "border-radius": "100px",
+                        padding: "12px"
+                      };
+                    }
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__k2AmQ
+                )}
+                style={(() => {
+                  try {
+                    return (() => {
+                      if ($state.reservationType == "all") {
+                        return { color: "#fcfcfc" };
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              >
+                {"\u0647\u0645\u0647"}
               </div>
             </div>
           </div>
@@ -7625,6 +7757,7 @@ const PlasmicDescendants = {
     "checkInAndChecklOut",
     "checkIn",
     "checkOut",
+    "checkOut2",
     "container",
     "titles",
     "property",
@@ -7728,9 +7861,15 @@ const PlasmicDescendants = {
   sort: ["sort"],
   filter: ["filter", "filterMenu"],
   filterMenu: ["filterMenu"],
-  checkInAndChecklOut: ["checkInAndChecklOut", "checkIn", "checkOut"],
+  checkInAndChecklOut: [
+    "checkInAndChecklOut",
+    "checkIn",
+    "checkOut",
+    "checkOut2"
+  ],
   checkIn: ["checkIn"],
   checkOut: ["checkOut"],
+  checkOut2: ["checkOut2"],
   container: [
     "container",
     "titles",
@@ -7872,6 +8011,7 @@ type NodeDefaultElementType = {
   checkInAndChecklOut: "div";
   checkIn: "div";
   checkOut: "div";
+  checkOut2: "div";
   container: "div";
   titles: "div";
   property: "div";
@@ -8011,6 +8151,7 @@ export const PlasmicReservations = Object.assign(
     checkInAndChecklOut: makeNodeComponent("checkInAndChecklOut"),
     checkIn: makeNodeComponent("checkIn"),
     checkOut: makeNodeComponent("checkOut"),
+    checkOut2: makeNodeComponent("checkOut2"),
     container: makeNodeComponent("container"),
     titles: makeNodeComponent("titles"),
     property: makeNodeComponent("property"),

@@ -753,7 +753,6 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
-  margin-top: 1em;
   background: #ffffff;
   column-gap: 10px;
   padding-top: 1em;
@@ -769,9 +768,12 @@
     border-right-width: 0px;
     border-bottom-width: 1px;
     border-left-width: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
     border-radius: 0px;
+    margin: 0em 0px 0px;
   }
 }
 .checkIn {
@@ -816,6 +818,32 @@
   padding: 8px;
 }
 .text__dW7Xp {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 17px;
+  text-align: center;
+  min-width: 0;
+  padding: 0px;
+}
+.checkOut2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 48%;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  min-width: 0;
+  padding: 8px;
+}
+.text__k2AmQ {
   position: relative;
   width: 100%;
   height: auto;
