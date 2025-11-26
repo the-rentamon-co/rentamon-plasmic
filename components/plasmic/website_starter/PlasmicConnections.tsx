@@ -6020,7 +6020,7 @@ function PlasmicConnections__RenderFunc(props: {
                                                 const gatewayBase = isMiaan
                                                   ? "https://gateway.miaan.ir"
                                                   : "https://gateway.rentamon.com";
-                                                return `${gatewayBase}/webhook/Auth_snapp_Send`;
+                                                return `${gatewayBase}/webhook/snapp-send-otp`;
                                               })();
                                             } catch (e) {
                                               if (
@@ -6290,7 +6290,7 @@ function PlasmicConnections__RenderFunc(props: {
                                                 const gatewayBase = isMiaan
                                                   ? "https://gateway.miaan.ir"
                                                   : "https://gateway.rentamon.com";
-                                                return `${gatewayBase}/webhook/Auth_snapp_verify`;
+                                                return `${gatewayBase}/webhook/snapp-verify-otp`;
                                               })();
                                             } catch (e) {
                                               if (
@@ -6349,20 +6349,21 @@ function PlasmicConnections__RenderFunc(props: {
                                   await $steps["snappVerify"];
                               }
 
-                              $steps["successToast"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        undefined,
-                                        "\u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
-                                        "top-center"
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
+                              $steps["successToast"] =
+                                $steps.snappVerify.data.status === true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          undefined,
+                                          "\u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u062a\u0635\u0644 \u0634\u062f!",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
                               if (
                                 $steps["successToast"] != null &&
                                 typeof $steps["successToast"] === "object" &&

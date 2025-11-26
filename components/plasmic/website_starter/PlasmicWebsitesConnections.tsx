@@ -822,6 +822,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                                                 return "https://media.rentamon.com/icon%2Fmihmansho-wide.jpg";
                                               case 8:
                                                 return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
+                                              case 17:
+                                                return "https://media.rentamon.com/icon%2Fsnapptrip.png";
                                               default:
                                                 return "";
                                             }
@@ -885,6 +887,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                                                 return "مهمانشو";
                                               case 8:
                                                 return "هومسا";
+                                              case 17:
+                                                return "اسنپ";
                                               default:
                                                 return "";
                                             }
