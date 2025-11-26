@@ -409,20 +409,15 @@
 }
 @media (max-width: 500px) {
   .snapp {
-    height: 26px;
     position: relative;
     left: auto;
     top: auto;
     width: auto;
+    height: 26px;
     max-width: 100%;
-    object-fit: cover;
+    display: block;
     border-radius: 4px;
     margin: 0px;
-  }
-}
-@media (max-width: 500px) {
-  .snapp > picture > img {
-    object-fit: cover;
   }
 }
 @media (max-width: 350px) {
@@ -711,12 +706,12 @@
 }
 @media (max-width: 500px) {
   .text__xqoMq {
-    font-size: 15px;
-    font-weight: 500;
-    white-space: pre;
     padding-top: 2px;
-    text-overflow: ellipsis;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+    font-weight: 500;
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {

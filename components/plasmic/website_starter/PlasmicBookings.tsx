@@ -534,7 +534,8 @@ function PlasmicBookings__RenderFunc(props: {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "unblockStatus",
@@ -1099,33 +1100,37 @@ function PlasmicBookings__RenderFunc(props: {
                       />
                     ) : null}
                     {(
-                      hasVariant(globalVariants, "screen", "tablet")
-                        ? (() => {
-                            try {
-                              return $state.booking.data.website == "shab";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return false;
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? $state.booking.data.website == "snapptrip"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? (() => {
+                              try {
+                                return $state.booking.data.website == "shab";
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()
-                        : (() => {
-                            try {
-                              return $state.booking.data.website == "snapptrip";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return false;
+                            })()
+                          : (() => {
+                              try {
+                                return (
+                                  $state.booking.data.website == "snapptrip"
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return false;
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()
+                            })()
                     ) ? (
                       <PlasmicImg__
                         data-plasmic-name={"snapp"}
@@ -1759,82 +1764,43 @@ function PlasmicBookings__RenderFunc(props: {
                         sty.text__xqoMq
                       )}
                     >
-                      {hasVariant(globalVariants, "screen", "mobile") ? (
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return (() => {
-                                const websiteMap = {
-                                  jabama: "جاباما",
-                                  jajiga: "جاجیگا",
-                                  shab: "شب",
-                                  otaghak: "اتاقک",
-                                  mihmansho: "میهمانشو",
-                                  homsa: "هومسا",
-                                  mizboon: "میزبون",
-                                  divar: "دیوار",
-                                  "Broker or Colleague": "واسطه یا همکار",
-                                  Returning_Guest: "قبلی",
-                                  social: "پیام‌رسان و شبکه‌اجتماعی",
-                                  others: "سایر",
-                                  offline: "حضوری",
-                                  host: "میزبان"
-                                };
-                                return (
-                                  websiteMap[$state.booking.data.website] ||
-                                  $state.booking.data.website
-                                );
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return " ";
-                              }
-                              throw e;
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return (() => {
+                              const websiteMap = {
+                                jabama: "جاباما",
+                                jajiga: "جاجیگا",
+                                shab: "شب",
+                                otaghak: "اتاقک",
+                                mihmansho: "میهمانشو",
+                                homsa: "هومسا",
+                                mizboon: "میزبون",
+                                divar: "دیوار",
+                                "Broker or Colleague": "واسطه یا همکار",
+                                Returning_Guest: "قبلی",
+                                social: "پیام‌رسان و شبکه‌اجتماعی",
+                                others: "سایر",
+                                offline: "حضوری",
+                                host: "میزبان",
+                                snapptrip: "اسنپ تریپ"
+                              };
+                              return (
+                                websiteMap[$state.booking.data.website] ||
+                                $state.booking.data.website
+                              );
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return " ";
                             }
-                          })()}
-                        </React.Fragment>
-                      ) : (
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return (() => {
-                                const websiteMap = {
-                                  jabama: "جاباما",
-                                  jajiga: "جاجیگا",
-                                  shab: "شب",
-                                  otaghak: "اتاقک",
-                                  mihmansho: "میهمانشو",
-                                  homsa: "هومسا",
-                                  mizboon: "میزبون",
-                                  divar: "دیوار",
-                                  "Broker or Colleague": "واسطه یا همکار",
-                                  Returning_Guest: "قبلی",
-                                  social: "پیام‌رسان و شبکه‌اجتماعی",
-                                  others: "سایر",
-                                  offline: "حضوری",
-                                  host: "میزبان",
-                                  snapptrip: "اسنپ تریپ"
-                                };
-                                return (
-                                  websiteMap[$state.booking.data.website] ||
-                                  $state.booking.data.website
-                                );
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return " ";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      )}
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
                   </div>
                 </div>
@@ -5610,7 +5576,8 @@ function PlasmicBookings__RenderFunc(props: {
                                             "Broker or Colleague":
                                               "واسطه یا همکار",
                                             social: "پیام‌رسان و شبکه‌اجتماعی",
-                                            garmeja: "گرمه‌جا"
+                                            garmeja: "گرمه‌جا",
+                                            snapptrip: "اسنپ تریپ"
                                           };
                                           const englishWebsiteName =
                                             $state.booking.data.website;
@@ -5968,7 +5935,8 @@ function PlasmicBookings__RenderFunc(props: {
                                             "Broker or Colleague":
                                               "واسطه یا همکار",
                                             social: "پیام‌رسان و شبکه‌اجتماعی",
-                                            garmeja: "گرمه‌جا"
+                                            garmeja: "گرمه‌جا",
+                                            snapptrip: "اسنپ تریپ"
                                           };
                                           const englishWebsiteName =
                                             $state.booking.data.website;
@@ -7225,76 +7193,38 @@ function PlasmicBookings__RenderFunc(props: {
                                       sty.text__o51MG
                                     )}
                                   >
-                                    {hasVariant(
-                                      globalVariants,
-                                      "screen",
-                                      "mobile"
-                                    ) ? (
-                                      <React.Fragment>
-                                        {(() => {
-                                          try {
-                                            return (() => {
-                                              const websiteMap = {
-                                                shab: "شب",
-                                                jabama: "جاباما",
-                                                homsa: "هومسا",
-                                                jajiga: "جاجیگا",
-                                                mizboon: "میزبون",
-                                                mihmansho: "مهمانشو",
-                                                otaghak: "اتاقک"
-                                              };
-                                              const faWebsiteName =
-                                                websiteMap[
-                                                  currentItem.website_name
-                                                ] || currentItem.website_name;
-                                              return faWebsiteName;
-                                            })();
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return "\u0634\u0628";
-                                            }
-                                            throw e;
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return (() => {
+                                            const websiteMap = {
+                                              shab: "شب",
+                                              jabama: "جاباما",
+                                              homsa: "هومسا",
+                                              jajiga: "جاجیگا",
+                                              mizboon: "میزبون",
+                                              mihmansho: "مهمانشو",
+                                              otaghak: "اتاقک",
+                                              snapptrip: "اسنپ تریپ"
+                                            };
+                                            const faWebsiteName =
+                                              websiteMap[
+                                                currentItem.website_name
+                                              ] || currentItem.website_name;
+                                            return faWebsiteName;
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "\u0634\u0628";
                                           }
-                                        })()}
-                                      </React.Fragment>
-                                    ) : (
-                                      <React.Fragment>
-                                        {(() => {
-                                          try {
-                                            return (() => {
-                                              const websiteMap = {
-                                                shab: "شب",
-                                                jabama: "جاباما",
-                                                homsa: "هومسا",
-                                                jajiga: "جاجیگا",
-                                                mizboon: "میزبون",
-                                                mihmansho: "مهمانشو",
-                                                otaghak: "اتاقک",
-                                                snapptrip: "اسنپ تریپ"
-                                              };
-                                              const faWebsiteName =
-                                                websiteMap[
-                                                  currentItem.website_name
-                                                ] || currentItem.website_name;
-                                              return faWebsiteName;
-                                            })();
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return "\u0634\u0628";
-                                            }
-                                            throw e;
-                                          }
-                                        })()}
-                                      </React.Fragment>
-                                    )}
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
                                   </div>
                                   {(() => {
                                     try {
