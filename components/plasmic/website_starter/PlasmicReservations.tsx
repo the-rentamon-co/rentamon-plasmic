@@ -4031,7 +4031,9 @@ function PlasmicReservations__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile")
                   ? (() => {
                       try {
-                        return $state.textInput2.value == null;
+                        return $state.reservationType
+                          ? false
+                          : $state.textInput2.value == null;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -4044,7 +4046,9 @@ function PlasmicReservations__RenderFunc(props: {
                     })()
                   : (() => {
                       try {
-                        return $state.textInput2.value == null;
+                        return $state.reservationType
+                          ? false
+                          : $state.textInput2.value == null;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
