@@ -391,6 +391,47 @@
     height: 23px;
   }
 }
+.snapp {
+  object-fit: cover;
+  max-width: 100%;
+  height: 40px;
+  width: auto;
+  border-radius: 10px;
+}
+.snapp > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .snapp {
+    height: 46px;
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  .snapp {
+    height: 26px;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .snapp > picture > img {
+    object-fit: cover;
+  }
+}
+@media (max-width: 350px) {
+  .snapp {
+    height: 23px;
+    left: auto;
+    top: auto;
+  }
+}
 .jabama {
   object-fit: cover;
   max-width: 100%;

@@ -102,6 +102,7 @@ export type PlasmicBookings__OverridesType = {
   root?: Flex__<"div">;
   detail2?: Flex__<"div">;
   shab?: Flex__<typeof PlasmicImg__>;
+  snapp?: Flex__<typeof PlasmicImg__>;
   jabama?: Flex__<typeof PlasmicImg__>;
   jajiga?: Flex__<typeof PlasmicImg__>;
   homsa?: Flex__<typeof PlasmicImg__>;
@@ -1101,6 +1102,71 @@ function PlasmicBookings__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "tablet")
                         ? (() => {
                             try {
+                              return $state.booking.data.website == "shab";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return $state.booking.data.website == "snapptrip";
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
+                      <PlasmicImg__
+                        data-plasmic-name={"snapp"}
+                        data-plasmic-override={overrides.snapp}
+                        alt={""}
+                        className={classNames(sty.snapp)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "smallMobile")
+                            ? "23px"
+                            : hasVariant(globalVariants, "screen", "mobile")
+                              ? "26px"
+                              : hasVariant(globalVariants, "screen", "tablet")
+                                ? "46px"
+                                : "40px"
+                        }
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                        }
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "auto"
+                            : "auto"
+                        }
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/snappPng.png",
+                          fullWidth: 44,
+                          fullHeight: 44,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    ) : null}
+                    {(
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? (() => {
+                            try {
                               return $state.booking.data.website == "jabama";
                             } catch (e) {
                               if (
@@ -1749,7 +1815,8 @@ function PlasmicBookings__RenderFunc(props: {
                                   social: "پیام‌رسان و شبکه‌اجتماعی",
                                   others: "سایر",
                                   offline: "حضوری",
-                                  host: "میزبان"
+                                  host: "میزبان",
+                                  snapptrip: "اسنپ تریپ"
                                 };
                                 return (
                                   websiteMap[$state.booking.data.website] ||
@@ -7206,7 +7273,8 @@ function PlasmicBookings__RenderFunc(props: {
                                                 jajiga: "جاجیگا",
                                                 mizboon: "میزبون",
                                                 mihmansho: "مهمانشو",
-                                                otaghak: "اتاقک"
+                                                otaghak: "اتاقک",
+                                                snapptrip: "اسنپ تریپ"
                                               };
                                               const faWebsiteName =
                                                 websiteMap[
@@ -15362,6 +15430,7 @@ const PlasmicDescendants = {
     "root",
     "detail2",
     "shab",
+    "snapp",
     "jabama",
     "jajiga",
     "homsa",
@@ -15478,6 +15547,7 @@ const PlasmicDescendants = {
   detail2: [
     "detail2",
     "shab",
+    "snapp",
     "jabama",
     "jajiga",
     "homsa",
@@ -15491,6 +15561,7 @@ const PlasmicDescendants = {
     "social"
   ],
   shab: ["shab"],
+  snapp: ["snapp"],
   jabama: ["jabama"],
   jajiga: ["jajiga"],
   homsa: ["homsa"],
@@ -15914,6 +15985,7 @@ type NodeDefaultElementType = {
   root: "div";
   detail2: "div";
   shab: typeof PlasmicImg__;
+  snapp: typeof PlasmicImg__;
   jabama: typeof PlasmicImg__;
   jajiga: typeof PlasmicImg__;
   homsa: typeof PlasmicImg__;
@@ -16092,6 +16164,7 @@ export const PlasmicBookings = Object.assign(
     // Helper components rendering sub-elements
     detail2: makeNodeComponent("detail2"),
     shab: makeNodeComponent("shab"),
+    snapp: makeNodeComponent("snapp"),
     jabama: makeNodeComponent("jabama"),
     jajiga: makeNodeComponent("jajiga"),
     homsa: makeNodeComponent("homsa"),
