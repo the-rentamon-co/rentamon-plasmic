@@ -3070,6 +3070,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/analytics-2"
+        },
+        {
+          "id": "j6VTnWC37glE",
+          "name": "TestGw",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTestGw.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/test-gw.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTestGw.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/test-gw"
         }
       ],
       "icons": [
