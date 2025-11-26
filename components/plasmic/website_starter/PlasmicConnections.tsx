@@ -791,9 +791,9 @@ function PlasmicConnections__RenderFunc(props: {
                 displayMinWidth={"0"}
                 displayWidth={"100%"}
                 src={{
-                  src: "/plasmic/website_starter/images/rentamonFaLowPng.png",
-                  fullWidth: 200,
-                  fullHeight: 99,
+                  src: "/plasmic/website_starter/images/miaanLogoBluePng.png",
+                  fullWidth: 1468,
+                  fullHeight: 781,
                   aspectRatio: undefined
                 }}
               />
@@ -6405,20 +6405,22 @@ function PlasmicConnections__RenderFunc(props: {
                                   await $steps["successToast"];
                               }
 
-                              $steps["errorToast"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        "error",
-                                        "\u0627\u062a\u0635\u0627\u0644 \u0628\u0627 \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f!",
-                                        "top-center"
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
+                              $steps["errorToast"] =
+                                !$steps.snappVerify?.data?.status ||
+                                $steps.snappVerify?.data?.status !== true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "error",
+                                          "\u0627\u062a\u0635\u0627\u0644 \u0628\u0627 \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f!",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
                               if (
                                 $steps["errorToast"] != null &&
                                 typeof $steps["errorToast"] === "object" &&
@@ -6500,67 +6502,6 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["goToStatusesConnections"] =
                                   await $steps["goToStatusesConnections"];
-                              }
-
-                              $steps["snappcontactX"] =
-                                $state.form.value.snappOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          (() => {
-                                            try {
-                                              return (() => {
-                                                const isMiaan =
-                                                  window.location.hostname.includes(
-                                                    "miaan.ir"
-                                                  );
-                                                const gatewayBase = isMiaan
-                                                  ? "https://gateway.miaan.ir"
-                                                  : "https://gateway.rentamon.com";
-                                                return `${gatewayBase}/webhook/snappcontact`;
-                                              })();
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })(),
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return $state.user_id;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["snappcontactX"] != null &&
-                                typeof $steps["snappcontactX"] === "object" &&
-                                typeof $steps["snappcontactX"].then ===
-                                  "function"
-                              ) {
-                                $steps["snappcontactX"] =
-                                  await $steps["snappcontactX"];
                               }
                             }}
                             submitsForm={true}
