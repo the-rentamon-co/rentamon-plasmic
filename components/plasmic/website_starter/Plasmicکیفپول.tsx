@@ -792,12 +792,15 @@ function Plasmicکیفپول__RenderFunc(props: {
                       await $steps["invokeGlobalAction"];
                   }
 
-                  $steps["goToGw"] = false
+                  $steps["goToPage2"] = true
                     ? (() => {
                         const actionArgs = {
-                          destination: `/gw?pay_id=${(() => {
+                          destination: (() => {
                             try {
-                              return $state.tokenResponse.payInfo;
+                              return (
+                                "https://rentamon.com/gw/?pay_id=" +
+                                $state.tokenResponse.payInfo
+                              );
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -807,7 +810,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                               }
                               throw e;
                             }
-                          })()}`
+                          })()
                         };
                         return (({ destination }) => {
                           if (
@@ -824,14 +827,14 @@ function Plasmicکیفپول__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["goToGw"] != null &&
-                    typeof $steps["goToGw"] === "object" &&
-                    typeof $steps["goToGw"].then === "function"
+                    $steps["goToPage2"] != null &&
+                    typeof $steps["goToPage2"] === "object" &&
+                    typeof $steps["goToPage2"].then === "function"
                   ) {
-                    $steps["goToGw"] = await $steps["goToGw"];
+                    $steps["goToPage2"] = await $steps["goToPage2"];
                   }
 
-                  $steps["goToPage"] = true
+                  $steps["goToPage"] = false
                     ? (() => {
                         const actionArgs = {
                           destination: (() => {
