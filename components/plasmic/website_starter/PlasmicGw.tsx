@@ -82,6 +82,8 @@ export const PlasmicGw__ArgProps = new Array<ArgPropType>();
 export type PlasmicGw__OverridesType = {
   root?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
+  freeBox?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
 };
 
 export interface DefaultGwProps {}
@@ -152,6 +154,17 @@ function PlasmicGw__RenderFunc(props: {
             sty.root
           )}
         >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__ttAfX
+            )}
+          >
+            {
+              "\u0628\u0631\u0627\u06cc \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9\u060c \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647\u200c\u06cc \u0632\u06cc\u0631 \u0628\u0632\u0646"
+            }
+          </div>
           <SideEffect
             data-plasmic-name={"sideEffect"}
             data-plasmic-override={overrides.sideEffect}
@@ -227,8 +240,33 @@ function PlasmicGw__RenderFunc(props: {
             }}
           >
             {
-              "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062f\u0631\u06af\u0627\u0647 \u067e\u0631\u062f\u0627\u062e\u062a"
+              "\u067e\u0631\u062f\u0627\u062e\u062a \u0646\u0647\u0627\u06cc\u06cc"
             }
+          </div>
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <PlasmicImg__
+              data-plasmic-name={"img"}
+              data-plasmic-override={overrides.img}
+              alt={""}
+              className={classNames(sty.img)}
+              displayHeight={"60px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"60px"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/miaanLodingBlueGif.gif",
+                fullWidth: 200,
+                fullHeight: 200,
+                aspectRatio: undefined
+              }}
+            />
           </div>
         </div>
       </div>
@@ -237,8 +275,10 @@ function PlasmicGw__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "sideEffect"],
-  sideEffect: ["sideEffect"]
+  root: ["root", "sideEffect", "freeBox", "img"],
+  sideEffect: ["sideEffect"],
+  freeBox: ["freeBox", "img"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -246,6 +286,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   sideEffect: typeof SideEffect;
+  freeBox: "div";
+  img: typeof PlasmicImg__;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -311,6 +353,8 @@ export const PlasmicGw = Object.assign(
   {
     // Helper components rendering sub-elements
     sideEffect: makeNodeComponent("sideEffect"),
+    freeBox: makeNodeComponent("freeBox"),
+    img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicGw
     internalVariantProps: PlasmicGw__VariantProps,
