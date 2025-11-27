@@ -3084,6 +3084,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/gw"
+        },
+        {
+          "id": "afJpY9eJVUne",
+          "name": "اینماد",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicاینماد.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/enamad.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicاینماد.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/enamad"
         }
       ],
       "icons": [
