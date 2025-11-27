@@ -792,7 +792,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                       await $steps["invokeGlobalAction"];
                   }
 
-                  $steps["goToPage2"] = true
+                  $steps["goToPage2"] = false
                     ? (() => {
                         const actionArgs = {
                           destination: (() => {
@@ -834,7 +834,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                     $steps["goToPage2"] = await $steps["goToPage2"];
                   }
 
-                  $steps["goToPage"] = false
+                  $steps["goToPage"] = true
                     ? (() => {
                         const actionArgs = {
                           destination: (() => {
