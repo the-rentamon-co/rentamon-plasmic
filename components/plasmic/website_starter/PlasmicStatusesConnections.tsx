@@ -105,6 +105,7 @@ export type PlasmicStatusesConnections__OverridesType = {
   falseStatus2?: Flex__<typeof PlasmicImg__>;
   trueStatus2?: Flex__<typeof PlasmicImg__>;
   newPlatform2?: Flex__<"div">;
+  dontDeleteSpacer?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -1744,6 +1745,11 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                 </div>
               </div>
             </div>
+            <div
+              data-plasmic-name={"dontDeleteSpacer"}
+              data-plasmic-override={overrides.dontDeleteSpacer}
+              className={classNames(projectcss.all, sty.dontDeleteSpacer)}
+            />
           </div>
           <SideEffect
             className={classNames("__wab_instance", sty.sideEffect__gvqZt)}
@@ -1923,6 +1929,7 @@ const PlasmicDescendants = {
     "falseStatus2",
     "trueStatus2",
     "newPlatform2",
+    "dontDeleteSpacer",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -1943,7 +1950,8 @@ const PlasmicDescendants = {
     "connectedPlatforms2",
     "falseStatus2",
     "trueStatus2",
-    "newPlatform2"
+    "newPlatform2",
+    "dontDeleteSpacer"
   ],
   platforms: [
     "platforms",
@@ -1985,6 +1993,7 @@ const PlasmicDescendants = {
   falseStatus2: ["falseStatus2"],
   trueStatus2: ["trueStatus2"],
   newPlatform2: ["newPlatform2"],
+  dontDeleteSpacer: ["dontDeleteSpacer"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -2010,6 +2019,7 @@ type NodeDefaultElementType = {
   falseStatus2: typeof PlasmicImg__;
   trueStatus2: typeof PlasmicImg__;
   newPlatform2: "div";
+  dontDeleteSpacer: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -2093,6 +2103,7 @@ export const PlasmicStatusesConnections = Object.assign(
     falseStatus2: makeNodeComponent("falseStatus2"),
     trueStatus2: makeNodeComponent("trueStatus2"),
     newPlatform2: makeNodeComponent("newPlatform2"),
+    dontDeleteSpacer: makeNodeComponent("dontDeleteSpacer"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
