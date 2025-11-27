@@ -896,7 +896,10 @@ function PlasmicProCalendar2__RenderFunc(props: {
                   await $steps["invokeGlobalAction2"];
               }
 
-              $steps["runCode"] = true
+              $steps["runCode"] = (() => {
+                const isMiaan = window.location.hostname.includes("miaan.ir");
+                return !isMiaan;
+              })()
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -961,6 +964,9 @@ function PlasmicProCalendar2__RenderFunc(props: {
             )}
             hideFooter={true}
             maskClosable={false}
+            modalContentClassName={classNames({
+              [sty["pcls_VK_2FYBFKUfs"]]: true
+            })}
             modalScopeClassName={sty["alertModal__modal"]}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["alertModal", "open"]).apply(
@@ -1029,6 +1035,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
             }
             trigger={null}
             width={"400"}
+            wrapClassName={classNames({ [sty["pcls_f5hNP65Srox7"]]: true })}
           >
             <div
               className={classNames(projectcss.all, sty.freeBox__atQjk)}
@@ -1149,22 +1156,17 @@ function PlasmicProCalendar2__RenderFunc(props: {
                       )}
                     >
                       <React.Fragment>
-                        <React.Fragment>
-                          {
-                            "\u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u00ab"
-                          }
-                        </React.Fragment>
                         <span
                           className={
                             "plasmic_default__all plasmic_default__span"
                           }
-                          style={{ color: "#0000F7" }}
+                          style={{ fontWeight: 600 }}
                         >
-                          {"\u0645\u06cc\u0627\u0646"}
+                          {"\u062a\u0648\u062c\u0647"}
                         </span>
                         <React.Fragment>
                           {
-                            "\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0631\u062f!"
+                            "\n\u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u060c \u0644\u0648\u06af\u0648 \u0628\u0631\u0646\u0627\u0645\u0647 \u0622\u0628\u06cc \u0645\u06cc\u200c\u0634\u0647!"
                           }
                         </React.Fragment>
                       </React.Fragment>
@@ -1177,7 +1179,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         data-plasmic-override={overrides.embedHtml}
                         className={classNames("__wab_instance", sty.embedHtml)}
                         code={
-                          '<div style="\r\n  overflow: hidden;\r\n  border-radius: 16px;\r\n  width: 100%;\r\n  height: auto;\r\n  background: white;\r\n">\r\n  <video\r\n    src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Flogo-change.mp4?versionId="\r\n    autoplay\r\n    muted\r\n    loop\r\n    playsinline\r\n    style="\r\n      width: calc(100% + 2px);\r\n      height: calc(100% + 2px);\r\n      margin: -1px;\r\n      object-fit: cover;\r\n      display: block;\r\n    ">\r\n  </video>\r\n</div>\r\n'
+                          '<div style="\r\n  overflow: hidden;\r\n  border-radius: 16px;\r\n  width: 100%;\r\n  height: auto;\r\n  background: white;\r\n">\r\n  <video\r\n        src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Ftemp-announce%2Flogo-modal.mp4?versionId="\r\n\r\n    autoplay\r\n    muted\r\n    loop\r\n    playsinline\r\n    style="\r\n      width: calc(100% + 2px);\r\n      height: calc(100% + 2px);\r\n      margin: -1px;\r\n      object-fit: cover;\r\n      display: block;\r\n    ">\r\n  </video>\r\n</div>\r\n'
                         }
                       />
                     </div>
@@ -1268,9 +1270,9 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         await $steps["updateAlertModalOpen"];
                     }
 
-                    $steps["goToمعرفیبرندجدید"] = true
+                    $steps["goToدانلوداپلیکیشنموبایلمیان"] = true
                       ? (() => {
-                          const actionArgs = { destination: `/new-brand` };
+                          const actionArgs = { destination: `/download` };
                           return (({ destination }) => {
                             if (
                               typeof destination === "string" &&
@@ -1286,12 +1288,14 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["goToمعرفیبرندجدید"] != null &&
-                      typeof $steps["goToمعرفیبرندجدید"] === "object" &&
-                      typeof $steps["goToمعرفیبرندجدید"].then === "function"
+                      $steps["goToدانلوداپلیکیشنموبایلمیان"] != null &&
+                      typeof $steps["goToدانلوداپلیکیشنموبایلمیان"] ===
+                        "object" &&
+                      typeof $steps["goToدانلوداپلیکیشنموبایلمیان"].then ===
+                        "function"
                     ) {
-                      $steps["goToمعرفیبرندجدید"] =
-                        await $steps["goToمعرفیبرندجدید"];
+                      $steps["goToدانلوداپلیکیشنموبایلمیان"] =
+                        await $steps["goToدانلوداپلیکیشنموبایلمیان"];
                     }
                   }}
                 >
@@ -1303,7 +1307,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                     )}
                   >
                     {
-                      "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
+                      "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0628\u0647 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f"
                     }
                   </div>
                 </div>
