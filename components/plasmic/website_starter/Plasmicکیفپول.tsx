@@ -792,7 +792,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                       await $steps["invokeGlobalAction"];
                   }
 
-                  $steps["goToGw"] = true
+                  $steps["goToGw"] = false
                     ? (() => {
                         const actionArgs = {
                           destination: `/gw?pay_id=${(() => {
@@ -829,6 +829,48 @@ function Plasmicکیفپول__RenderFunc(props: {
                     typeof $steps["goToGw"].then === "function"
                   ) {
                     $steps["goToGw"] = await $steps["goToGw"];
+                  }
+
+                  $steps["goToPage"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination: (() => {
+                            try {
+                              return window.open(
+                                "https://payment.zarinpal.com/pg/StartPay/" +
+                                  $state.tokenResponse.payInfo
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToPage"] != null &&
+                    typeof $steps["goToPage"] === "object" &&
+                    typeof $steps["goToPage"].then === "function"
+                  ) {
+                    $steps["goToPage"] = await $steps["goToPage"];
                   }
                 }}
               >
