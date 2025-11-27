@@ -795,34 +795,15 @@ function Plasmicکیفپول__RenderFunc(props: {
                   $steps["goToPage2"] = false
                     ? (() => {
                         const actionArgs = {
-                          destination: (() => {
-                            try {
-                              return (
-                                "https://rentamon.com/gw/?pay_id=" +
+                          customFunction: async () => {
+                            return window.open(
+                              "https://rentamon.com/gw/" +
                                 $state.tokenResponse.payInfo
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
+                            );
                           }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
                         })?.apply(null, [actionArgs]);
                       })()
                     : undefined;
