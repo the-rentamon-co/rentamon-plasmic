@@ -45,5 +45,6 @@
   background: var(--token-8nedppYkGVaH);
   color: var(--token-8R7jjC_-F9FF);
   min-width: 0;
+  border-radius: 30px;
   padding: 2em;
 }

@@ -159,12 +159,15 @@ function PlasmicGw__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["goToPage"] = false
+              $steps["goToPage"] = true
                 ? (() => {
                     const actionArgs = {
                       destination: (() => {
                         try {
-                          return `https://payment.zarinpal.com/pg/checkout/${$ctx.query.pay_id}`;
+                          return window.open(
+                            "https://payment.zarinpal.com/pg/StartPay/" +
+                              $ctx.query.pay_id
+                          );
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -261,7 +264,9 @@ function PlasmicGw__RenderFunc(props: {
               }
             }}
           >
-            {"\u067e\u0631\u062f\u0627\u062e\u062a"}
+            {
+              "\u0631\u0641\u062a\u0646 \u0628\u0647 \u062f\u0631\u06af\u0627\u0647 \u067e\u0631\u062f\u0627\u062e\u062a"
+            }
           </div>
         </div>
       </div>
