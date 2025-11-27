@@ -107,7 +107,7 @@ export type PlasmicProCalendar2__OverridesType = {
   r1?: Flex__<"div">;
   select2?: Flex__<typeof Select>;
   r2?: Flex__<"div">;
-  apiRequest?: Flex__<typeof ApiRequest>;
+  connectionStatusApiRequest?: Flex__<typeof ApiRequest>;
   right2?: Flex__<"div">;
   left?: Flex__<"div">;
   image?: Flex__<"div">;
@@ -227,28 +227,28 @@ function PlasmicProCalendar2__RenderFunc(props: {
           })()
       },
       {
-        path: "apiRequest.data",
+        path: "connectionStatusApiRequest.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "connectionStatusApiRequest"
       },
       {
-        path: "apiRequest.error",
+        path: "connectionStatusApiRequest.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "connectionStatusApiRequest"
       },
       {
-        path: "apiRequest.loading",
+        path: "connectionStatusApiRequest.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "connectionStatusApiRequest"
       },
       {
         path: "select2.value",
@@ -1671,35 +1671,37 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         className={classNames(projectcss.all, sty.r2)}
                       >
                         <ApiRequest
-                          data-plasmic-name={"apiRequest"}
-                          data-plasmic-override={overrides.apiRequest}
+                          data-plasmic-name={"connectionStatusApiRequest"}
+                          data-plasmic-override={
+                            overrides.connectionStatusApiRequest
+                          }
                           className={classNames(
                             "__wab_instance",
-                            sty.apiRequest
+                            sty.connectionStatusApiRequest
                           )}
                           errorDisplay={null}
                           loadingDisplay={null}
                           method={"GET"}
                           onError={async (...eventArgs: any) => {
                             generateStateOnChangeProp($state, [
-                              "apiRequest",
+                              "connectionStatusApiRequest",
                               "error"
                             ]).apply(null, eventArgs);
                           }}
                           onLoading={async (...eventArgs: any) => {
                             generateStateOnChangeProp($state, [
-                              "apiRequest",
+                              "connectionStatusApiRequest",
                               "loading"
                             ]).apply(null, eventArgs);
                           }}
                           onSuccess={async (...eventArgs: any) => {
                             generateStateOnChangeProp($state, [
-                              "apiRequest",
+                              "connectionStatusApiRequest",
                               "data"
                             ]).apply(null, eventArgs);
                           }}
                           ref={ref => {
-                            $refs["apiRequest"] = ref;
+                            $refs["connectionStatusApiRequest"] = ref;
                           }}
                           url={(() => {
                             try {
@@ -1726,9 +1728,11 @@ function PlasmicProCalendar2__RenderFunc(props: {
                             try {
                               return (() => {
                                 return !!(
-                                  $state.apiRequest.data?.[0]?.status &&
+                                  $state.connectionStatusApiRequest.data?.[0]
+                                    ?.status &&
                                   Object.values(
-                                    $state.apiRequest.data[0].status
+                                    $state.connectionStatusApiRequest.data[0]
+                                      .status
                                   ).every(v => v === true)
                                 );
                               })();
@@ -1826,9 +1830,11 @@ function PlasmicProCalendar2__RenderFunc(props: {
                             try {
                               return (() => {
                                 return !!(
-                                  $state.apiRequest.data?.[0]?.status &&
+                                  $state.connectionStatusApiRequest.data?.[0]
+                                    ?.status &&
                                   Object.values(
-                                    $state.apiRequest.data[0].status
+                                    $state.connectionStatusApiRequest.data[0]
+                                      .status
                                   ).some(v => v === false)
                                 );
                               })();
@@ -1921,8 +1927,10 @@ function PlasmicProCalendar2__RenderFunc(props: {
                           {(() => {
                             try {
                               return (
-                                Object.keys($state.apiRequest.data[0].status)
-                                  .length === 0
+                                Object.keys(
+                                  $state.connectionStatusApiRequest.data[0]
+                                    .status
+                                ).length === 0
                               );
                             } catch (e) {
                               if (
@@ -2647,7 +2655,7 @@ const PlasmicDescendants = {
     "r1",
     "select2",
     "r2",
-    "apiRequest",
+    "connectionStatusApiRequest",
     "right2",
     "left",
     "image",
@@ -2673,7 +2681,7 @@ const PlasmicDescendants = {
     "r1",
     "select2",
     "r2",
-    "apiRequest",
+    "connectionStatusApiRequest",
     "right2",
     "left",
     "image",
@@ -2686,18 +2694,26 @@ const PlasmicDescendants = {
     "r1",
     "select2",
     "r2",
-    "apiRequest",
+    "connectionStatusApiRequest",
     "right2",
     "left",
     "image",
     "profile"
   ],
-  right: ["right", "newHeader", "r1", "select2", "r2", "apiRequest", "right2"],
-  newHeader: ["newHeader", "r1", "select2", "r2", "apiRequest"],
+  right: [
+    "right",
+    "newHeader",
+    "r1",
+    "select2",
+    "r2",
+    "connectionStatusApiRequest",
+    "right2"
+  ],
+  newHeader: ["newHeader", "r1", "select2", "r2", "connectionStatusApiRequest"],
   r1: ["r1", "select2"],
   select2: ["select2"],
-  r2: ["r2", "apiRequest"],
-  apiRequest: ["apiRequest"],
+  r2: ["r2", "connectionStatusApiRequest"],
+  connectionStatusApiRequest: ["connectionStatusApiRequest"],
   right2: ["right2"],
   left: ["left", "image"],
   image: ["image"],
@@ -2727,7 +2743,7 @@ type NodeDefaultElementType = {
   r1: "div";
   select2: typeof Select;
   r2: "div";
-  apiRequest: typeof ApiRequest;
+  connectionStatusApiRequest: typeof ApiRequest;
   right2: "div";
   left: "div";
   image: "div";
@@ -2815,7 +2831,7 @@ export const PlasmicProCalendar2 = Object.assign(
     r1: makeNodeComponent("r1"),
     select2: makeNodeComponent("select2"),
     r2: makeNodeComponent("r2"),
-    apiRequest: makeNodeComponent("apiRequest"),
+    connectionStatusApiRequest: makeNodeComponent("connectionStatusApiRequest"),
     right2: makeNodeComponent("right2"),
     left: makeNodeComponent("left"),
     image: makeNodeComponent("image"),
