@@ -2457,9 +2457,6 @@ function PlasmicPublicCalendar__RenderFunc(props: {
                               if (calendarItem.status === "blocked") {
                                 return "reservedV2";
                               }
-                              if (calendarItem.discount_percentage > 0) {
-                                return "discount";
-                              }
                               return calendarItem.status || "";
                             }
                             return getDayClass(
@@ -2592,9 +2589,6 @@ function PlasmicPublicCalendar__RenderFunc(props: {
                               if (calendarItem.status === "blocked") {
                                 return "reservedV2";
                               }
-                              if (calendarItem.discount_percentage > 0) {
-                                return "discount";
-                              }
                               return calendarItem.status || "";
                             }
                             return getDayClass(
@@ -2633,6 +2627,7 @@ function PlasmicPublicCalendar__RenderFunc(props: {
                 platform={(() => {
                   try {
                     return (() => {
+                      return null;
                       const dayIndex = dateProps.date.day - 1;
                       const dayData =
                         $state.apiRequest.data[1].calendar[dayIndex];
@@ -2682,6 +2677,8 @@ function PlasmicPublicCalendar__RenderFunc(props: {
                         dayData;
                       switch (status) {
                         case "reserved":
+                          return "رزرو";
+                        case "blocked":
                           return "رزرو";
                       }
                     })();
