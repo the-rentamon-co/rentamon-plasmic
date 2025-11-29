@@ -914,7 +914,7 @@
     max-width: 100%;
     padding-top: 0px;
     padding-bottom: 6px;
-    display: flex;
+    display: none;
   }
 }
 @media (max-width: 350px) {
