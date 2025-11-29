@@ -3098,6 +3098,46 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/enamad"
+        },
+        {
+          "id": "V9-w7OjDK6vb",
+          "name": "ReservationsRecordList2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicReservationsRecordList2.tsx",
+          "importSpec": {
+            "modulePath": "ReservationsRecordList2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicReservationsRecordList2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "ebTzsLIxpzlW",
+          "name": "NewPage",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/new-page.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page"
+        },
+        {
+          "id": "QzhG04jEbAaP",
+          "name": "PublicCalendar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPublicCalendar.tsx",
+          "importSpec": {
+            "modulePath": "PublicCalendar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPublicCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

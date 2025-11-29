@@ -68,6 +68,7 @@ import TextInput2 from "../../TextInput2"; // plasmic-import: MGm7xuldRCuA/compo
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import ReservationsRecordList from "../../ReservationsRecordList"; // plasmic-import: dDeToLEgGJS_/component
+import ReservationsRecordList2 from "../../ReservationsRecordList2"; // plasmic-import: V9-w7OjDK6vb/component
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { AntdPagination } from "@plasmicpkgs/antd5/skinny/registerPagination";
 import { paginationHelpers as AntdPagination_Helpers } from "@plasmicpkgs/antd5/skinny/registerPagination";
@@ -134,6 +135,7 @@ export type PlasmicReservations__OverridesType = {
   reserveMainStack2?: Flex__<"div">;
   reserveData2?: Flex__<typeof ApiRequest>;
   reserveMainStack?: Flex__<"div">;
+  reservationsRecordList2?: Flex__<typeof ReservationsRecordList2>;
   reserveData?: Flex__<typeof ApiRequest>;
   بیخیال?: Flex__<"div">;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
@@ -1981,7 +1983,7 @@ function PlasmicReservations__RenderFunc(props: {
             <div
               data-plasmic-name={"checkIn"}
               data-plasmic-override={overrides.checkIn}
-              className={classNames(projectcss.all, sty.checkIn)}
+              className={classNames(projectcss.all, sty.checkIn, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -2169,7 +2171,7 @@ function PlasmicReservations__RenderFunc(props: {
             <div
               data-plasmic-name={"checkOut"}
               data-plasmic-override={overrides.checkOut}
-              className={classNames(projectcss.all, sty.checkOut)}
+              className={classNames(projectcss.all, sty.checkOut, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -2357,7 +2359,7 @@ function PlasmicReservations__RenderFunc(props: {
             <div
               data-plasmic-name={"checkOut2"}
               data-plasmic-override={overrides.checkOut2}
-              className={classNames(projectcss.all, sty.checkOut2)}
+              className={classNames(projectcss.all, sty.checkOut2, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -3027,36 +3029,110 @@ function PlasmicReservations__RenderFunc(props: {
                         })()
                       )}
                     >
-                      {(
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
-                              try {
-                                return currentItem.booking_id != null;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : (() => {
-                              try {
-                                return currentItem.booking_id != null;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                      ) ? (
-                        <ReservationsRecordList
+                      <ReservationsRecordList
+                        cancelledBookings={(() => {
+                          try {
+                            return currentItem.status == "cancelled";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.reservationsRecordList__lPd
+                        )}
+                        confirmedBookings={(() => {
+                          try {
+                            return currentItem.status == "reserve";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()}
+                        currentIndex={currentIndex}
+                        data={(() => {
+                          try {
+                            return currentItem;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                        firstVisit={(() => {
+                          try {
+                            return $state.isTheFirstVisit;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })()}
+                        pastBookingsBox={(() => {
+                          try {
+                            return currentItem.status == "past";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()}
+                        pendingBookings={(() => {
+                          try {
+                            return currentItem.status == "Pending";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+
+                      {(() => {
+                        try {
+                          return currentItem.booking_id != null;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <ReservationsRecordList2
+                          data-plasmic-name={"reservationsRecordList2"}
+                          data-plasmic-override={
+                            overrides.reservationsRecordList2
+                          }
                           cancelledBookings={(() => {
                             try {
                               return currentItem.status == "cancelled";
@@ -3072,7 +3148,7 @@ function PlasmicReservations__RenderFunc(props: {
                           })()}
                           className={classNames(
                             "__wab_instance",
-                            sty.reservationsRecordList__lPd
+                            sty.reservationsRecordList2
                           )}
                           confirmedBookings={(() => {
                             try {
@@ -3087,10 +3163,9 @@ function PlasmicReservations__RenderFunc(props: {
                               throw e;
                             }
                           })()}
-                          currentIndex={currentIndex}
-                          data={(() => {
+                          currentIndex={(() => {
                             try {
-                              return currentItem;
+                              return currentIndex;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -3101,15 +3176,15 @@ function PlasmicReservations__RenderFunc(props: {
                               throw e;
                             }
                           })()}
-                          firstVisit={(() => {
+                          data={(() => {
                             try {
-                              return $state.isTheFirstVisit;
+                              return currentItem;
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
                                 e?.plasmicType === "PlasmicUndefinedDataError"
                               ) {
-                                return false;
+                                return undefined;
                               }
                               throw e;
                             }
@@ -7767,6 +7842,7 @@ const PlasmicDescendants = {
     "reserveMainStack2",
     "reserveData2",
     "reserveMainStack",
+    "reservationsRecordList2",
     "reserveData",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644",
     "navbarRntFooter",
@@ -7880,6 +7956,7 @@ const PlasmicDescendants = {
     "reserveMainStack2",
     "reserveData2",
     "reserveMainStack",
+    "reservationsRecordList2",
     "reserveData",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644"
   ],
@@ -7892,9 +7969,11 @@ const PlasmicDescendants = {
   reserveData2: ["reserveData2"],
   reserveMainStack: [
     "reserveMainStack",
+    "reservationsRecordList2",
     "reserveData",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644"
   ],
+  reservationsRecordList2: ["reservationsRecordList2"],
   reserveData: ["reserveData"],
   بیخیال: ["\u0628\u06cc\u062e\u06cc\u0627\u0644"],
   navbarRntFooter: ["navbarRntFooter"],
@@ -8021,6 +8100,7 @@ type NodeDefaultElementType = {
   reserveMainStack2: "div";
   reserveData2: typeof ApiRequest;
   reserveMainStack: "div";
+  reservationsRecordList2: typeof ReservationsRecordList2;
   reserveData: typeof ApiRequest;
   بیخیال: "div";
   navbarRntFooter: typeof NavbarRntFooter;
@@ -8161,6 +8241,7 @@ export const PlasmicReservations = Object.assign(
     reserveMainStack2: makeNodeComponent("reserveMainStack2"),
     reserveData2: makeNodeComponent("reserveData2"),
     reserveMainStack: makeNodeComponent("reserveMainStack"),
+    reservationsRecordList2: makeNodeComponent("reservationsRecordList2"),
     reserveData: makeNodeComponent("reserveData"),
     بیخیال: makeNodeComponent("\u0628\u06cc\u062e\u06cc\u0627\u0644"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
