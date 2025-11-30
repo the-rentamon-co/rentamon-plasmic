@@ -603,6 +603,41 @@ function PlasmicBookings2__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
+              $steps["updateModalData2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function scrollWhenReady() {
+                            const hash = window.location.hash?.replace("#", "");
+                            if (!hash) return;
+                            const el = document.getElementById(hash);
+                            if (el) {
+                              el.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                              });
+                            } else {
+                              requestAnimationFrame(scrollWhenReady);
+                            }
+                          }
+                          return scrollWhenReady();
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateModalData2"] != null &&
+                typeof $steps["updateModalData2"] === "object" &&
+                typeof $steps["updateModalData2"].then === "function"
+              ) {
+                $steps["updateModalData2"] = await $steps["updateModalData2"];
+              }
+
               $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {

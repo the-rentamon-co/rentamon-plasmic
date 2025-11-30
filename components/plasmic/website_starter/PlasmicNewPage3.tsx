@@ -321,23 +321,7 @@ function PlasmicNewPage3__RenderFunc(props: {
                       $steps["goToNewPage3"] = true
                         ? (() => {
                             const actionArgs = {
-                              destination: `/public-calendar/${(() => {
-                                try {
-                                  return $state.apiRequest.data.find(
-                                    item =>
-                                      item.name === $state.selectProperty.value
-                                  ).id;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()}`
+                              destination: `/public-calendar`
                             };
                             return (({ destination }) => {
                               if (
