@@ -128,8 +128,10 @@ export type PlasmicBookings2__OverridesType = {
   checkOut2?: Flex__<"div">;
   container?: Flex__<"div">;
   reserveMainStack2?: Flex__<"div">;
+  reservationsRecordList?: Flex__<typeof ReservationsRecordList>;
   reserveData2?: Flex__<typeof ApiRequest>;
   reserveMainStack?: Flex__<"div">;
+  dates?: Flex__<"div">;
   reservationsRecordList2?: Flex__<typeof ReservationsRecordList2>;
   reserveData?: Flex__<typeof ApiRequest>;
   بیخیال?: Flex__<"div">;
@@ -2664,6 +2666,8 @@ function PlasmicBookings2__RenderFunc(props: {
                           })()
                     ) ? (
                       <ReservationsRecordList
+                        data-plasmic-name={"reservationsRecordList"}
+                        data-plasmic-override={overrides.reservationsRecordList}
                         cancelledBookings={(() => {
                           try {
                             return (
@@ -2682,7 +2686,7 @@ function PlasmicBookings2__RenderFunc(props: {
                         })()}
                         className={classNames(
                           "__wab_instance",
-                          sty.reservationsRecordList__wnBpb
+                          sty.reservationsRecordList
                         )}
                         confirmedBookings={(() => {
                           try {
@@ -2906,267 +2910,313 @@ function PlasmicBookings2__RenderFunc(props: {
                     }}
                   >
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___2FUby,
+                      className={classNames(projectcss.all, sty.freeBox__upO1W)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__tCfZx
+                        )}
+                      >
+                        <div
+                          data-plasmic-name={"dates"}
+                          data-plasmic-override={overrides.dates}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.dates
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              const persianMonths = [
+                                "فروردین",
+                                "اردیبهشت",
+                                "خرداد",
+                                "تیر",
+                                "مرداد",
+                                "شهریور",
+                                "مهر",
+                                "آبان",
+                                "آذر",
+                                "دی",
+                                "بهمن",
+                                "اسفند"
+                              ];
+
+                              const persianWeekdays = [
+                                "یک‌شنبه",
+                                "دوشنبه",
+                                "سه‌شنبه",
+                                "چهارشنبه",
+                                "پنج‌شنبه",
+                                "جمعه",
+                                "شنبه"
+                              ];
+
+                              function toPersianDigits(input) {
+                                const persianDigits = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
+                                ];
+
+                                return input
+                                  .toString()
+                                  .replace(/\d/g, d => persianDigits[d]);
+                              }
+                              function toJalali(gYear, gMonth, gDay) {
+                                const gDaysInMonth = [
+                                  31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+                                ];
+
+                                const jDaysInMonth = [
+                                  31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
+                                ];
+
+                                let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                                let gm = gMonth - 1;
+                                let gd = gDay - 1;
+                                let gDayNo =
+                                  365 * gy +
+                                  Math.floor((gy + 3) / 4) -
+                                  Math.floor((gy + 99) / 100) +
+                                  Math.floor((gy + 399) / 400);
+                                for (let i = 0; i < gm; ++i)
+                                  gDayNo += gDaysInMonth[i];
+                                gDayNo += gd;
+                                let jDayNo = gDayNo - (gYear >= 1600 ? 79 : 0);
+                                let jNp = Math.floor(jDayNo / 12053);
+                                jDayNo %= 12053;
+                                let jYear =
+                                  979 +
+                                  33 * jNp +
+                                  4 * Math.floor(jDayNo / 1461);
+                                jDayNo %= 1461;
+                                if (jDayNo >= 366) {
+                                  jYear += Math.floor((jDayNo - 1) / 365);
+                                  jDayNo = (jDayNo - 1) % 365;
+                                }
+                                let jMonth;
+                                for (
+                                  jMonth = 0;
+                                  jMonth < 11 && jDayNo >= jDaysInMonth[jMonth];
+                                  ++jMonth
+                                )
+                                  jDayNo -= jDaysInMonth[jMonth];
+                                let jDay = jDayNo + 1;
+                                return {
+                                  jy: jYear + (gYear >= 1600 ? 1600 : 621),
+                                  jm: jMonth + 1,
+                                  jd: jDay
+                                };
+                              }
+                              function convertDateToJalaliFullString(
+                                dateString
+                              ) {
+                                const inputDate = new Date(dateString);
+                                const today = new Date();
+                                inputDate.setHours(0, 0, 0, 0);
+                                today.setHours(0, 0, 0, 0);
+                                const tomorrow = new Date(today);
+                                tomorrow.setDate(tomorrow.getDate() + 1);
+                                if (inputDate.getTime() === today.getTime()) {
+                                  return "امروز";
+                                }
+                                if (
+                                  inputDate.getTime() === tomorrow.getTime()
+                                ) {
+                                  return "فردا";
+                                }
+                                const gYear = inputDate.getFullYear();
+                                const gMonth = inputDate.getMonth() + 1;
+                                const gDay = inputDate.getDate();
+                                const weekdayIndex = inputDate.getDay();
+                                const { jy, jm, jd } = toJalali(
+                                  gYear,
+                                  gMonth,
+                                  gDay
+                                );
+                                const weekday = persianWeekdays[weekdayIndex];
+                                const monthName = persianMonths[jm - 1];
+                                return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
+                              }
+                              const checkIn = currentItem.date;
+                              const result =
+                                convertDateToJalaliFullString(checkIn);
+                              return result;
+                            })()}
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__pfFtu
+                          )}
+                        />
+                      </div>
+                      {(_par =>
+                        !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                         (() => {
                           try {
-                            return $state.isTheFirstVisit == true
-                              ? "blinkBorderTourGuide clickable"
-                              : "clickable";
+                            return currentItem.bookings;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return undefined;
+                              return [];
                             }
                             throw e;
                           }
                         })()
-                      )}
-                    >
-                      <ReservationsRecordList
-                        cancelledBookings={(() => {
-                          try {
-                            return currentItem.status == "cancelled";
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [];
-                            }
-                            throw e;
-                          }
-                        })()}
-                        className={classNames(
-                          "__wab_instance",
-                          sty.reservationsRecordList__xfhQn
-                        )}
-                        confirmedBookings={(() => {
-                          try {
-                            return currentItem.status == "reserve";
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [];
-                            }
-                            throw e;
-                          }
-                        })()}
-                        currentIndex={currentIndex}
-                        data={(() => {
-                          try {
-                            return currentItem;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()}
-                        firstVisit={(() => {
-                          try {
-                            return $state.isTheFirstVisit;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
-                          }
-                        })()}
-                        pastBookingsBox={(() => {
-                          try {
-                            return currentItem.status == "past";
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [];
-                            }
-                            throw e;
-                          }
-                        })()}
-                        pendingBookings={(() => {
-                          try {
-                            return currentItem.status == "Pending";
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [];
-                            }
-                            throw e;
-                          }
-                        })()}
-                      />
-
-                      {(() => {
-                        try {
-                          return currentItem.booking_id != null;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <ReservationsRecordList2
-                          data-plasmic-name={"reservationsRecordList2"}
-                          data-plasmic-override={
-                            overrides.reservationsRecordList2
-                          }
-                          cancelledBookings={(() => {
-                            try {
-                              return currentItem.status == "cancelled";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
+                      ).map((__plasmic_item_1, __plasmic_idx_1) => {
+                        const currentItem = __plasmic_item_1;
+                        const currentIndex = __plasmic_idx_1;
+                        return (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox___2FUby,
+                              (() => {
+                                try {
+                                  return $state.isTheFirstVisit == true
+                                    ? "blinkBorderTourGuide clickable"
+                                    : "clickable";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            )}
+                            key={currentIndex}
+                          >
+                            {(() => {
+                              try {
+                                return currentItem.booking_id != null;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return true;
+                                }
+                                throw e;
                               }
-                              throw e;
-                            }
-                          })()}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.reservationsRecordList2
-                          )}
-                          confirmedBookings={(() => {
-                            try {
-                              return currentItem.status == "reserve";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                          currentIndex={(() => {
-                            try {
-                              return currentIndex;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()}
-                          data={(() => {
-                            try {
-                              return currentItem;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()}
-                          pastBookingsBox={(() => {
-                            try {
-                              return currentItem.status == "past";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                          pendingBookings={(() => {
-                            try {
-                              return currentItem.status == "Pending";
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })()}
-                        />
-                      ) : null}
-                      {(() => {
-                        try {
-                          return (() => {
-                            if (
-                              currentItem.is_settled == false &&
-                              currentItem.status === "past"
-                            ) {
-                              return true;
-                            } else {
-                              return false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__aghHf)}
-                          displayHeight={"25px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image141.svg",
-                            fullWidth: 23,
-                            fullHeight: 23,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      ) : null}
-                      {(
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? (() => {
+                            })() ? (
+                              <ReservationsRecordList2
+                                data-plasmic-name={"reservationsRecordList2"}
+                                data-plasmic-override={
+                                  overrides.reservationsRecordList2
+                                }
+                                cancelledBookings={(() => {
+                                  try {
+                                    return currentItem.status == "cancelled";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return [];
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.reservationsRecordList2
+                                )}
+                                confirmedBookings={(() => {
+                                  try {
+                                    return currentItem.status == "reserve";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return [];
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                currentIndex={(() => {
+                                  try {
+                                    return currentIndex;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                data={(() => {
+                                  try {
+                                    return currentItem;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                pastBookingsBox={(() => {
+                                  try {
+                                    return currentItem.status == "past";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return [];
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                pendingBookings={(() => {
+                                  try {
+                                    return currentItem.status == "Pending";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return [];
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              />
+                            ) : null}
+                            {(() => {
                               try {
                                 return (() => {
                                   if (
-                                    currentItem.feature_handled.smart_booking ==
-                                    null
-                                  ) {
-                                    return false;
-                                  }
-                                  if (
-                                    currentItem.is_settled == null &&
+                                    currentItem.is_settled == false &&
                                     currentItem.status === "past"
                                   ) {
                                     return true;
@@ -3179,58 +3229,111 @@ function PlasmicBookings2__RenderFunc(props: {
                                   e instanceof TypeError ||
                                   e?.plasmicType === "PlasmicUndefinedDataError"
                                 ) {
-                                  return false;
+                                  return true;
                                 }
                                 throw e;
                               }
-                            })()
-                          : (() => {
-                              try {
-                                return (() => {
-                                  if (
-                                    currentItem.feature_handled.smart_booking ==
-                                    null
-                                  ) {
-                                    return false;
-                                  }
-                                  if (
-                                    currentItem.is_settled == null &&
-                                    currentItem.status === "past"
-                                  ) {
-                                    return true;
-                                  } else {
-                                    return false;
-                                  }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return false;
-                                }
-                                throw e;
-                              }
-                            })()
-                      ) ? (
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__wiw9S)}
-                          displayHeight={"25px"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image142.svg",
-                            fullWidth: 23,
-                            fullHeight: 23,
-                            aspectRatio: undefined
-                          }}
-                        />
-                      ) : null}
+                            })() ? (
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__aghHf)}
+                                displayHeight={"25px"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"100%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={"auto"}
+                                loading={"lazy"}
+                                src={{
+                                  src: "/plasmic/website_starter/images/image141.svg",
+                                  fullWidth: 23,
+                                  fullHeight: 23,
+                                  aspectRatio: undefined
+                                }}
+                              />
+                            ) : null}
+                            {(
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? (() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          currentItem.feature_handled
+                                            .smart_booking == null
+                                        ) {
+                                          return false;
+                                        }
+                                        if (
+                                          currentItem.is_settled == null &&
+                                          currentItem.status === "past"
+                                        ) {
+                                          return true;
+                                        } else {
+                                          return false;
+                                        }
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return false;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                : (() => {
+                                    try {
+                                      return (() => {
+                                        if (
+                                          currentItem.feature_handled
+                                            .smart_booking == null
+                                        ) {
+                                          return false;
+                                        }
+                                        if (
+                                          currentItem.is_settled == null &&
+                                          currentItem.status === "past"
+                                        ) {
+                                          return true;
+                                        } else {
+                                          return false;
+                                        }
+                                      })();
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return false;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                            ) ? (
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__wiw9S)}
+                                displayHeight={"25px"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"100%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={"auto"}
+                                loading={"lazy"}
+                                src={{
+                                  src: "/plasmic/website_starter/images/image142.svg",
+                                  fullWidth: 23,
+                                  fullHeight: 23,
+                                  aspectRatio: undefined
+                                }}
+                              />
+                            ) : null}
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 );
@@ -3306,8 +3409,7 @@ function PlasmicBookings2__RenderFunc(props: {
                           const actionArgs = {
                             customFunction: async () => {
                               return (() => {
-                                const reservations =
-                                  $state.reserveData.data.result.bookings;
+                                const reservations = $state.reserveData.data;
                                 if (
                                   Array.isArray(reservations) &&
                                   reservations.length > 0
@@ -3346,7 +3448,7 @@ function PlasmicBookings2__RenderFunc(props: {
                       const gatewayBase = isMiaan
                         ? "https://gateway.miaan.ir"
                         : "https://gateway.rentamon.com";
-                      return `${gatewayBase}/webhook/bookings?limit=1`;
+                      return `${gatewayBase}/webhook/bookings/date`;
                     })();
                   } catch (e) {
                     if (
@@ -7726,8 +7828,10 @@ const PlasmicDescendants = {
     "checkOut2",
     "container",
     "reserveMainStack2",
+    "reservationsRecordList",
     "reserveData2",
     "reserveMainStack",
+    "dates",
     "reservationsRecordList2",
     "reserveData",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644",
@@ -7835,20 +7939,29 @@ const PlasmicDescendants = {
   container: [
     "container",
     "reserveMainStack2",
+    "reservationsRecordList",
     "reserveData2",
     "reserveMainStack",
+    "dates",
     "reservationsRecordList2",
     "reserveData",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644"
   ],
-  reserveMainStack2: ["reserveMainStack2", "reserveData2"],
+  reserveMainStack2: [
+    "reserveMainStack2",
+    "reservationsRecordList",
+    "reserveData2"
+  ],
+  reservationsRecordList: ["reservationsRecordList"],
   reserveData2: ["reserveData2"],
   reserveMainStack: [
     "reserveMainStack",
+    "dates",
     "reservationsRecordList2",
     "reserveData",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644"
   ],
+  dates: ["dates"],
   reservationsRecordList2: ["reservationsRecordList2"],
   reserveData: ["reserveData"],
   بیخیال: ["\u0628\u06cc\u062e\u06cc\u0627\u0644"],
@@ -7969,8 +8082,10 @@ type NodeDefaultElementType = {
   checkOut2: "div";
   container: "div";
   reserveMainStack2: "div";
+  reservationsRecordList: typeof ReservationsRecordList;
   reserveData2: typeof ApiRequest;
   reserveMainStack: "div";
+  dates: "div";
   reservationsRecordList2: typeof ReservationsRecordList2;
   reserveData: typeof ApiRequest;
   بیخیال: "div";
@@ -8105,8 +8220,10 @@ export const PlasmicBookings2 = Object.assign(
     checkOut2: makeNodeComponent("checkOut2"),
     container: makeNodeComponent("container"),
     reserveMainStack2: makeNodeComponent("reserveMainStack2"),
+    reservationsRecordList: makeNodeComponent("reservationsRecordList"),
     reserveData2: makeNodeComponent("reserveData2"),
     reserveMainStack: makeNodeComponent("reserveMainStack"),
+    dates: makeNodeComponent("dates"),
     reservationsRecordList2: makeNodeComponent("reservationsRecordList2"),
     reserveData: makeNodeComponent("reserveData"),
     بیخیال: makeNodeComponent("\u0628\u06cc\u062e\u06cc\u0627\u0644"),

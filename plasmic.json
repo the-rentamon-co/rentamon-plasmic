@@ -3152,6 +3152,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/bookings"
+        },
+        {
+          "id": "d1R-Hq66izsr",
+          "name": "NewPage3",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage3.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/new-page-3.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewPage3.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page-3"
         }
       ],
       "icons": [
