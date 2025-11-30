@@ -1015,7 +1015,7 @@ function PlasmicReservations__RenderFunc(props: {
                 ? true
                 : (() => {
                     try {
-                      return $state.userType == "1";
+                      return $state.userType == "1" || $state.userType == "3";
                     } catch (e) {
                       if (
                         e instanceof TypeError ||

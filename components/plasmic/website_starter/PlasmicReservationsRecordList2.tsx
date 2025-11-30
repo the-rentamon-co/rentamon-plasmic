@@ -700,7 +700,8 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
                             return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                           }
                           const checkIn = $props.data.check_in;
-                          const result = convertDateToJalaliFullString(checkIn);
+                          const result =
+                            "ورود: " + convertDateToJalaliFullString(checkIn);
                           return result;
                         })();
                       } catch (e) {
@@ -944,7 +945,8 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
                             return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                           }
                           const checkIn = $props.data.check_in;
-                          const result = convertDateToJalaliFullString(checkIn);
+                          const result =
+                            "ورودی: " + convertDateToJalaliFullString(checkIn);
                           return result;
                         })();
                       } catch (e) {
@@ -1205,7 +1207,8 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
                             return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                           }
                           const checkIn = $props.data.check_out;
-                          const result = convertDateToJalaliFullString(checkIn);
+                          const result =
+                            "خروج: " + convertDateToJalaliFullString(checkIn);
                           return result;
                         })();
                       } catch (e) {
@@ -1448,8 +1451,9 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
                             const monthName = persianMonths[jm - 1];
                             return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                           }
-                          const checkIn = $props.data.check_in;
-                          const result = convertDateToJalaliFullString(checkIn);
+                          const checkIn = $props.data.check_out;
+                          const result =
+                            "خروج: " + convertDateToJalaliFullString(checkIn);
                           return result;
                         })();
                       } catch (e) {
