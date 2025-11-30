@@ -3140,55 +3140,23 @@ function PlasmicBookings2__RenderFunc(props: {
                                 projectcss.__wab_text,
                                 sty.dates
                               )}
-                              id={
-                                hasVariant(globalVariants, "screen", "mobile")
-                                  ? (() => {
-                                      try {
-                                        return undefined;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                                  : (() => {
-                                      try {
-                                        return (() => {
-                                          var prevItem =
-                                            $state.reserveData.data[
-                                              currentIndex - 1
-                                            ];
-                                          var currentItem =
-                                            $state.reservations[currentIndex];
-                                          if (
-                                            prevItem &&
-                                            prevItem.bookings[0].status ==
-                                              "past" &&
-                                            currentItem.bookings[0].status !=
-                                              "past"
-                                          ) {
-                                            return "today";
-                                          } else {
-                                            return null;
-                                          }
-                                        })();
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()
-                              }
+                              id={(() => {
+                                try {
+                                  return currentItem.date ===
+                                    new Date().toISOString().split("T")[0]
+                                    ? "today"
+                                    : null;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
                             >
                               <React.Fragment>
                                 {(() => {
