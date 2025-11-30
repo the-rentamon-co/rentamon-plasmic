@@ -852,6 +852,19 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
               }
             />
 
+            <div className={classNames(projectcss.all, sty.freeBox___1EmGf)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__deWAl
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u0627\u06cc\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0648\u0632\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627\u0633\u062a. \u0645\u06cc\u062a\u0648\u0646\u06cc \u0628\u0631\u0627\u06cc \u0645\u0634\u062a\u0631\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc.\n"
+                  : "\u0627\u06cc\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0648\u0632\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627\u0633\u062a. \u0645\u06cc\u062a\u0648\u0646\u06cc \u0628\u0631\u0627\u06cc \u0645\u0634\u062a\u0631\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc\n"}
+              </div>
+            </div>
             <ApiRequest
               data-plasmic-name={"fetchImage"}
               data-plasmic-override={overrides.fetchImage}
@@ -923,17 +936,6 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
                 }
               })()}
             />
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox___1EmGf)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__deWAl
-              )}
-            >
-              {"Enter some text"}
-            </div>
           </div>
         </div>
       </div>
