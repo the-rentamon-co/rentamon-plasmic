@@ -363,11 +363,19 @@ function PlasmicNewPage4__RenderFunc(props: {
                   "data"
                 ]).apply(null, eventArgs);
               }}
-              params={(() => {
+              ref={ref => {
+                $refs["apiRequest2"] = ref;
+              }}
+              url={(() => {
                 try {
-                  return $state.apiRequest.data.find(
-                    property => property.name === $state.selectProperty.value
-                  ).id;
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const gatewayBase = isMiaan
+                      ? "https://gateway.miaan.ir"
+                      : "https://gateway.rentamon.com";
+                    return `${gatewayBase}/webhook/public_calendar_api?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -378,19 +386,14 @@ function PlasmicNewPage4__RenderFunc(props: {
                   throw e;
                 }
               })()}
-              ref={ref => {
-                $refs["apiRequest2"] = ref;
-              }}
-              url={"https://gateway.rentamon.com/webhook/public_calendar_api"}
-            />
-          </ApiRequest>
-          <Embed
-            data-plasmic-name={"embedHtml"}
-            data-plasmic-override={overrides.embedHtml}
-            className={classNames("__wab_instance", sty.embedHtml)}
-            code={(() => {
-              try {
-                return `<!DOCTYPE html>
+            >
+              <Embed
+                data-plasmic-name={"embedHtml"}
+                data-plasmic-override={overrides.embedHtml}
+                className={classNames("__wab_instance", sty.embedHtml)}
+                code={(() => {
+                  try {
+                    return `<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -398,7 +401,6 @@ function PlasmicNewPage4__RenderFunc(props: {
 
 <style>
   #custom-calendar-container {
-    /* فونت پیش‌فرض سیستم */
     --bg-booked: #9e9e9e;
     --bg-free: #ffffff;
     --border-free: #ccc;
@@ -557,10 +559,9 @@ function PlasmicNewPage4__RenderFunc(props: {
 <div id="custom-calendar-container">
   
   <div class="header">
-    <button class="nav-btn" id="prev-btn" onclick="changeMonth(-1)">&#10094;</button> 
+    <button class="nav-btn" id="prev-btn">&#10094;</button> 
     <span id="month-year-label">...</span>
-    <button class="nav-btn" id="next-btn" onclick="changeMonth(1)">&#10095;</button>
-
+    <button class="nav-btn" id="next-btn">&#10095;</button>
   </div>
 
   <div class="weekdays">
@@ -573,7 +574,7 @@ function PlasmicNewPage4__RenderFunc(props: {
     <div>ج</div>
   </div>
 
-  <div id="loading-msg" class="loading">در حال دریافت تقویم...</div>
+  <div id="loading-msg" class="loading">در حال بارگذاری تقویم...</div>
   <div class="days-grid" id="calendar-grid"></div>
 
   <div class="legend" id="legend-section" style="display:none;">
@@ -590,16 +591,11 @@ function PlasmicNewPage4__RenderFunc(props: {
 </div>
 
 <script>
-  // ************ بخش تغییر یافته ************
-  
-  // دریافت شناسه ملک از پلازمیک
-  const PROPERTY_ID = "${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}";
-  
-  // ساخت آدرس API با شناسه داینامیک
-  const API_URL = "https://dev.rentamon.com/webhook/public_calendar_api?property_id=" + PROPERTY_ID;
-  
-  // ************ پایان بخش تغییر یافته ************
+{ 
+  // *** شروع بلاک اسکوپ ***
+  // این آکولاد باز باعث می‌شود متغیرها فقط در همین اجرا معتبر باشند و با اجرای بعدی تداخل نکنند.
 
+  const PRELOADED_DATES = ${JSON.stringify($state.apiRequest2.data.dates || [])};
   const MAX_MONTHS_AHEAD = 3;
 
   let bookedDates = new Set();
@@ -617,34 +613,28 @@ function PlasmicNewPage4__RenderFunc(props: {
 
   function toPersianNum(num) {
       const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-      // استفاده از دو بک‌اسلش برای اینکه در تمپلیت لیترال درست کار کند
       return num.toString().replace(/\\d/g, x => farsiDigits[x]);
   }
 
-  async function initCalendar() {
+  function initCalendar() {
     try {
-      // بررسی وجود شناسه ملک
-      if(!PROPERTY_ID || PROPERTY_ID === "undefined") {
-         console.warn("Property ID not found");
-         document.getElementById('loading-msg').innerText = "شناسه ملک یافت نشد";
-         return;
-      }
-
-      const response = await fetch(API_URL);
-      const data = await response.json();
-      
-      if (data && data.dates) {
-        bookedDates = new Set(data.dates);
+      if (PRELOADED_DATES && Array.isArray(PRELOADED_DATES)) {
+        bookedDates = new Set(PRELOADED_DATES);
       }
       
-      document.getElementById('loading-msg').style.display = 'none';
-      document.getElementById('legend-section').style.display = 'flex';
+      const loadMsg = document.getElementById('loading-msg');
+      if(loadMsg) loadMsg.style.display = 'none';
+      
+      const legSec = document.getElementById('legend-section');
+      if(legSec) legSec.style.display = 'flex';
+      
       renderCalendar();
       updateNavButtons();
       
     } catch (error) {
-      console.error("Error fetching calendar:", error);
-      document.getElementById('loading-msg').innerText = "خطا در بارگذاری";
+      console.error("Error initializing calendar:", error);
+      const loadMsg = document.getElementById('loading-msg');
+      if(loadMsg) loadMsg.innerText = "خطا در بارگذاری";
     }
   }
 
@@ -652,6 +642,8 @@ function PlasmicNewPage4__RenderFunc(props: {
     const grid = document.getElementById('calendar-grid');
     const label = document.getElementById('month-year-label');
     
+    if (!grid || !label) return; // اطمینان از وجود المنت‌ها
+
     grid.innerHTML = '';
     label.innerText = monthNames[currentMonth] + " " + toPersianNum(currentYear);
 
@@ -698,7 +690,6 @@ function PlasmicNewPage4__RenderFunc(props: {
       cell.innerText = toPersianNum(day);
 
       if (!isBooked && !isPast) {
-        // تغییر نحوه تعریف تابع کلیک برای جلوگیری از تداخل
         cell.onclick = function() { selectDate(dateString, cell); };
       }
 
@@ -742,6 +733,14 @@ function PlasmicNewPage4__RenderFunc(props: {
   function updateNavButtons() {
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
+    
+    if(!prevBtn || !nextBtn) return;
+
+    // حذف ایونت‌های قبلی با کلون کردن دکمه (چون در محیط ری‌رندر ممکن است ایونت‌ها دوبل شوند)
+    // ساده‌ترین راه در اینجا بازتعریف onclick است که در پایین انجام شده است
+
+    prevBtn.onclick = function() { changeMonth(-1); };
+    nextBtn.onclick = function() { changeMonth(1); };
 
     if (currentYear === startYear && currentMonth === startMonth) {
       prevBtn.disabled = true;
@@ -757,22 +756,26 @@ function PlasmicNewPage4__RenderFunc(props: {
     }
   }
 
-  setTimeout(initCalendar, 100);
+  // اجرا
+  setTimeout(initCalendar, 50);
 
+} // *** پایان بلاک اسکوپ ***
 </script>
 </body>
 </html>`;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return "";
-                }
-                throw e;
-              }
-            })()}
-          />
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+            </ApiRequest>
+          </ApiRequest>
         </div>
       </div>
     </React.Fragment>
@@ -781,9 +784,9 @@ function PlasmicNewPage4__RenderFunc(props: {
 
 const PlasmicDescendants = {
   root: ["root", "apiRequest", "selectProperty", "apiRequest2", "embedHtml"],
-  apiRequest: ["apiRequest", "selectProperty", "apiRequest2"],
+  apiRequest: ["apiRequest", "selectProperty", "apiRequest2", "embedHtml"],
   selectProperty: ["selectProperty"],
-  apiRequest2: ["apiRequest2"],
+  apiRequest2: ["apiRequest2", "embedHtml"],
   embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;

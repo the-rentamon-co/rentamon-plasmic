@@ -138,7 +138,6 @@ export type PlasmicBookings2__OverridesType = {
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   pagination2?: Flex__<"div">;
   pagination?: Flex__<typeof AntdPagination>;
-  link?: Flex__<"a"> & Partial<LinkProps>;
   intro?: Flex__<"div">;
   returnButton?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -608,17 +607,20 @@ function PlasmicBookings2__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          console.log("here in hash fsdjfkldsjalkfjdlas ");
-                          console.log(window.location.pathname);
-                          if (
-                            window.location.pathname === "/bookings" &&
-                            window.location.hash !== "#today"
-                          ) {
-                            console.log("here in the hash");
-                            return (window.location.hash = "today");
-                          } else {
-                            return "L:";
+                          function scrollWhenReady() {
+                            const hash = window.location.hash?.replace("#", "");
+                            if (!hash) return;
+                            const el = document.getElementById(hash);
+                            if (el) {
+                              el.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                              });
+                            } else {
+                              requestAnimationFrame(scrollWhenReady);
+                            }
                           }
+                          return scrollWhenReady();
                         })();
                       }
                     };
@@ -1298,19 +1300,906 @@ function PlasmicBookings2__RenderFunc(props: {
             ) : null}
           </ApiRequest>
           <div
-            data-plasmic-name={"filterSection"}
-            data-plasmic-override={overrides.filterSection}
             className={classNames(
               projectcss.all,
-              sty.filterSection,
+              sty.freeBox__z84W1,
               hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
+                ? "sticky-header"
+                : ``
+            )}
+          >
+            <div
+              data-plasmic-name={"filterSection"}
+              data-plasmic-override={overrides.filterSection}
+              className={classNames(
+                projectcss.all,
+                sty.filterSection,
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return (() => {
+                          if (window.scrollY > 10) {
+                            return "sticky-header scrolled";
+                          } else {
+                            return "sticky-header";
+                          }
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  : ``
+              )}
+              onScroll={async event => {
+                const $steps = {};
+              }}
+            >
+              <div
+                data-plasmic-name={"filterAndSearch"}
+                data-plasmic-override={overrides.filterAndSearch}
+                className={classNames(projectcss.all, sty.filterAndSearch)}
+              >
+                <div
+                  data-plasmic-name={"search"}
+                  data-plasmic-override={overrides.search}
+                  className={classNames(projectcss.all, sty.search)}
+                >
+                  <div
+                    data-plasmic-name={"searchBox"}
+                    data-plasmic-override={overrides.searchBox}
+                    className={classNames(projectcss.all, sty.searchBox)}
+                  >
+                    <TextInput2
+                      data-plasmic-name={"textInput2"}
+                      data-plasmic-override={overrides.textInput2}
+                      autoComplete={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? []
+                          : undefined
+                      }
+                      className={classNames("__wab_instance", sty.textInput2)}
+                      flat={[]}
+                      inputMode={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "search"
+                          : "search"
+                      }
+                      inputType={"text"}
+                      onChange={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "textInput2",
+                          "value"
+                        ]).apply(null, eventArgs);
+
+                        if (
+                          eventArgs.length > 1 &&
+                          eventArgs[1] &&
+                          eventArgs[1]._plasmic_state_init_
+                        ) {
+                          return;
+                        }
+
+                        (async val => {
+                          const $steps = {};
+
+                          $steps["search"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
+                                    (() => {
+                                      try {
+                                        return { q: $state.textInput2.value };
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["search"] != null &&
+                            typeof $steps["search"] === "object" &&
+                            typeof $steps["search"].then === "function"
+                          ) {
+                            $steps["search"] = await $steps["search"];
+                          }
+
+                          $steps["updateData"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return ($state.reservations =
+                                      $steps.search.data);
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateData"] != null &&
+                            typeof $steps["updateData"] === "object" &&
+                            typeof $steps["updateData"].then === "function"
+                          ) {
+                            $steps["updateData"] = await $steps["updateData"];
+                          }
+                        }).apply(null, eventArgs);
+                      }}
+                      padded={[]}
+                      placeholder={
+                        "\u062c\u0633\u062a\u062c\u0648 \u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646..."
+                      }
+                    />
+
+                    <TextInput
+                      data-plasmic-name={"searchInput"}
+                      data-plasmic-override={overrides.searchInput}
+                      className={classNames("__wab_instance", sty.searchInput)}
+                      endIcon={
+                        <React.Fragment>
+                          {(
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? (() => {
+                                  try {
+                                    return $state.searchInput.value != "";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return false;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              : (() => {
+                                  try {
+                                    return $state.searchInput.value != "";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          ) ? (
+                            <div
+                              data-plasmic-name={"remove"}
+                              data-plasmic-override={overrides.remove}
+                              className={classNames(projectcss.all, sty.remove)}
+                              onClick={async event => {
+                                const $steps = {};
+
+                                $steps["runCode"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        customFunction: async () => {
+                                          return ($state.searchInput.value =
+                                            "");
+                                        }
+                                      };
+                                      return (({ customFunction }) => {
+                                        return customFunction();
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["runCode"] != null &&
+                                  typeof $steps["runCode"] === "object" &&
+                                  typeof $steps["runCode"].then === "function"
+                                ) {
+                                  $steps["runCode"] = await $steps["runCode"];
+                                }
+
+                                $steps["search"] = false
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          undefined,
+                                          (() => {
+                                            try {
+                                              return (() => {
+                                                const isMiaan =
+                                                  window.location.hostname.includes(
+                                                    "miaan.ir"
+                                                  );
+                                                const gatewayBase = isMiaan
+                                                  ? "https://gateway.miaan.ir"
+                                                  : "https://gateway.rentamon.com";
+                                                return `${gatewayBase}/webhook/bookings/search`;
+                                              })();
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })(),
+                                          (() => {
+                                            try {
+                                              return {
+                                                q: $state.searchInput.value
+                                              };
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["search"] != null &&
+                                  typeof $steps["search"] === "object" &&
+                                  typeof $steps["search"].then === "function"
+                                ) {
+                                  $steps["search"] = await $steps["search"];
+                                }
+
+                                $steps["runCode2"] = false
+                                  ? (() => {
+                                      const actionArgs = {
+                                        customFunction: async () => {
+                                          return ($state.reservations =
+                                            $steps.search.data);
+                                        }
+                                      };
+                                      return (({ customFunction }) => {
+                                        return customFunction();
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["runCode2"] != null &&
+                                  typeof $steps["runCode2"] === "object" &&
+                                  typeof $steps["runCode2"].then === "function"
+                                ) {
+                                  $steps["runCode2"] = await $steps["runCode2"];
+                                }
+
+                                $steps["runCode3"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        customFunction: async () => {
+                                          return ($state.reservations =
+                                            $state.reserveData.data);
+                                        }
+                                      };
+                                      return (({ customFunction }) => {
+                                        return customFunction();
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["runCode3"] != null &&
+                                  typeof $steps["runCode3"] === "object" &&
+                                  typeof $steps["runCode3"].then === "function"
+                                ) {
+                                  $steps["runCode3"] = await $steps["runCode3"];
+                                }
+                              }}
+                            >
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__hMysJ)}
+                                displayHeight={"auto"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"100%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={"18px"}
+                                loading={"lazy"}
+                                src={{
+                                  src: "/plasmic/website_starter/images/image166.svg",
+                                  fullWidth: 18,
+                                  fullHeight: 18,
+                                  aspectRatio: undefined
+                                }}
+                              />
+                            </div>
+                          ) : null}
+                          {(
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? (() => {
+                                  try {
+                                    return $state.searchInput.value == "";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return false;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              : (() => {
+                                  try {
+                                    return $state.searchInput.value == "";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return true;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          ) ? (
+                            <div
+                              data-plasmic-name={"searchIcon"}
+                              data-plasmic-override={overrides.searchIcon}
+                              className={classNames(
+                                projectcss.all,
+                                sty.searchIcon
+                              )}
+                            >
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__y9P7F)}
+                                displayHeight={"auto"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "100%"
+                                    : "100%"
+                                }
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={
+                                  hasVariant(globalVariants, "screen", "mobile")
+                                    ? "27px"
+                                    : "22px"
+                                }
+                                loading={"lazy"}
+                                src={{
+                                  src: "/plasmic/website_starter/images/image168.svg",
+                                  fullWidth: 17,
+                                  fullHeight: 18,
+                                  aspectRatio: undefined
+                                }}
+                              />
+                            </div>
+                          ) : null}
+                        </React.Fragment>
+                      }
+                      onChange={async (...eventArgs: any) => {
+                        ((...eventArgs) => {
+                          generateStateOnChangeProp($state, [
+                            "searchInput",
+                            "value"
+                          ])((e => e.target?.value).apply(null, eventArgs));
+                        }).apply(null, eventArgs);
+
+                        if (
+                          eventArgs.length > 1 &&
+                          eventArgs[1] &&
+                          eventArgs[1]._plasmic_state_init_
+                        ) {
+                          return;
+                        }
+
+                        (async event => {
+                          const $steps = {};
+
+                          $steps["search"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  args: [
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return (() => {
+                                          const isMiaan =
+                                            window.location.hostname.includes(
+                                              "miaan.ir"
+                                            );
+                                          const gatewayBase = isMiaan
+                                            ? "https://gateway.miaan.ir"
+                                            : "https://gateway.rentamon.com";
+                                          return `${gatewayBase}/webhook/bookings/search`;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })(),
+                                    (() => {
+                                      try {
+                                        return { q: $state.searchInput.value };
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })(),
+                                    undefined
+                                  ]
+                                };
+                                return $globalActions[
+                                  "Fragment.apiRequest"
+                                ]?.apply(null, [...actionArgs.args]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["search"] != null &&
+                            typeof $steps["search"] === "object" &&
+                            typeof $steps["search"].then === "function"
+                          ) {
+                            $steps["search"] = await $steps["search"];
+                          }
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return ($state.reservations =
+                                      $steps.search.data);
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+                        }).apply(null, eventArgs);
+                      }}
+                      placeholder={
+                        "\u062c\u0633\u062a\u062c\u0648 \u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646..."
+                      }
+                      showEndIcon={true}
+                      type={"text"}
+                      value={
+                        generateStateValueProp($state, [
+                          "searchInput",
+                          "value"
+                        ]) ?? ""
+                      }
+                    />
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"sort"}
+                  data-plasmic-override={overrides.sort}
+                  className={classNames(projectcss.all, sty.sort)}
+                />
+
+                <div
+                  data-plasmic-name={"filter"}
+                  data-plasmic-override={overrides.filter}
+                  className={classNames(projectcss.all, sty.filter)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__nzUr0)}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateTest"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["showFilter"]
+                              },
+                              operation: 4,
+                              value: true
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateTest"] != null &&
+                        typeof $steps["updateTest"] === "object" &&
+                        typeof $steps["updateTest"].then === "function"
+                      ) {
+                        $steps["updateTest"] = await $steps["updateTest"];
+                      }
+                    }}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___5NzkS
+                      )}
+                    >
+                      {"\u0641\u06cc\u0644\u062a\u0631"}
+                    </div>
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__kfjJo)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image169.svg",
+                        fullWidth: 19,
+                        fullHeight: 16,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <AntdModal
+                      data-plasmic-name={"filterMenu"}
+                      data-plasmic-override={overrides.filterMenu}
+                      children={null}
+                      className={classNames("__wab_instance", sty.filterMenu)}
+                      defaultStylesClassName={classNames(
+                        projectcss.root_reset,
+                        projectcss.plasmic_default_styles,
+                        projectcss.plasmic_mixins,
+                        styleTokensClassNames
+                      )}
+                      hideFooter={true}
+                      modalScopeClassName={sty["filterMenu__modal"]}
+                      onOpenChange={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "filterMenu",
+                          "open"
+                        ]).apply(null, eventArgs);
+                      }}
+                      open={generateStateValueProp($state, [
+                        "filterMenu",
+                        "open"
+                      ])}
+                      title={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__uTuYo
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox___82Da8
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__eqpWw
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___5NEo
+                                )}
+                              >
+                                {"\u0641\u06cc\u0644\u062a\u0631\u0647\u0627"}
+                              </div>
+                            </div>
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__mITsO
+                              )}
+                            >
+                              <PlasmicImg__
+                                alt={""}
+                                className={classNames(sty.img__hs6He)}
+                                displayHeight={"auto"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"100%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={"auto"}
+                                loading={"lazy"}
+                                src={{
+                                  src: "/plasmic/website_starter/images/image169.svg",
+                                  fullWidth: 19,
+                                  fullHeight: 16,
+                                  aspectRatio: undefined
+                                }}
+                              />
+                            </div>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__irLfq
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__r4Btj)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              onClick={async event => {
+                                const $steps = {};
+
+                                $steps["updateFilterMenuOpen"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["filterMenu", "open"]
+                                        },
+                                        operation: 0,
+                                        value: false
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["updateFilterMenuOpen"] != null &&
+                                  typeof $steps["updateFilterMenuOpen"] ===
+                                    "object" &&
+                                  typeof $steps["updateFilterMenuOpen"].then ===
+                                    "function"
+                                ) {
+                                  $steps["updateFilterMenuOpen"] =
+                                    await $steps["updateFilterMenuOpen"];
+                                }
+                              }}
+                              src={{
+                                src: "/plasmic/website_starter/images/image170.svg",
+                                fullWidth: 18,
+                                fullHeight: 18,
+                                aspectRatio: undefined
+                              }}
+                            />
+                          </div>
+                        </div>
+                      }
+                      trigger={null}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"checkInAndChecklOut"}
+              data-plasmic-override={overrides.checkInAndChecklOut}
+              className={classNames(projectcss.all, sty.checkInAndChecklOut)}
+            >
+              <div
+                data-plasmic-name={"checkIn"}
+                data-plasmic-override={overrides.checkIn}
+                className={classNames(projectcss.all, sty.checkIn, "clickable")}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateReservationType"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["reservationType"]
+                          },
+                          operation: 0,
+                          value: (() => {
+                            if ($state.reservationType == "check_in") {
+                              return ($state.reservationType = "");
+                            }
+                            if ($state.reservationType == "check_out") {
+                              $state.reservationType = "all";
+                              $state.reservations = $state.reserveData.data;
+                              return ($state.reservationType = "check_in");
+                            } else {
+                              return ($state.reservationType = "check_in");
+                            }
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateReservationType"] != null &&
+                    typeof $steps["updateReservationType"] === "object" &&
+                    typeof $steps["updateReservationType"].then === "function"
+                  ) {
+                    $steps["updateReservationType"] =
+                      await $steps["updateReservationType"];
+                  }
+
+                  $steps["runCode"] =
+                    $state.reservationType == "check_in"
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                const now = new Date();
+                                const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+                                return ($state.reservations =
+                                  $state.reservations.filter(
+                                    item => item.date == today
+                                  ));
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+
+                  $steps["runCode2"] =
+                    $state.reservationType != "check_in"
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                const reservations = $state.reserveData.data;
+                                if (
+                                  Array.isArray(reservations) &&
+                                  reservations.length > 0
+                                ) {
+                                  localStorage.setItem(
+                                    "reservations",
+                                    JSON.stringify(reservations)
+                                  );
+                                }
+                                $state.reservations = reservations;
+                                return ($state.reservationType = "all");
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["runCode2"] != null &&
+                    typeof $steps["runCode2"] === "object" &&
+                    typeof $steps["runCode2"].then === "function"
+                  ) {
+                    $steps["runCode2"] = await $steps["runCode2"];
+                  }
+                }}
+                style={(() => {
+                  try {
+                    return (() => {
+                      if ($state.reservationType == "check_in") {
+                        return {
+                          "background-color": "#0000F7",
+                          "border-radius": "100px",
+                          padding: "12px"
+                        };
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__eiubh
+                  )}
+                  style={(() => {
                     try {
                       return (() => {
-                        if (window.scrollY > 10) {
-                          return "sticky-header scrolled";
-                        } else {
-                          return "sticky-header";
+                        if ($state.reservationType == "check_in") {
+                          return { color: "#fcfcfc" };
                         }
                       })();
                     } catch (e) {
@@ -1322,1084 +2211,189 @@ function PlasmicBookings2__RenderFunc(props: {
                       }
                       throw e;
                     }
-                  })()
-                : "sticky-header"
-            )}
-            onScroll={async event => {
-              const $steps = {};
-            }}
-          >
-            <div
-              data-plasmic-name={"filterAndSearch"}
-              data-plasmic-override={overrides.filterAndSearch}
-              className={classNames(projectcss.all, sty.filterAndSearch)}
-            >
-              <div
-                data-plasmic-name={"search"}
-                data-plasmic-override={overrides.search}
-                className={classNames(projectcss.all, sty.search)}
-              >
-                <div
-                  data-plasmic-name={"searchBox"}
-                  data-plasmic-override={overrides.searchBox}
-                  className={classNames(projectcss.all, sty.searchBox)}
+                  })()}
                 >
-                  <TextInput2
-                    data-plasmic-name={"textInput2"}
-                    data-plasmic-override={overrides.textInput2}
-                    autoComplete={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? []
-                        : undefined
-                    }
-                    className={classNames("__wab_instance", sty.textInput2)}
-                    flat={[]}
-                    inputMode={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "search"
-                        : "search"
-                    }
-                    inputType={"text"}
-                    onChange={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "textInput2",
-                        "value"
-                      ]).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          const now = new Date();
+                          const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+                          const todayCheckInCount =
+                            $state.reserveData.data.reduce((total, item) => {
+                              const bookings = item.bookings || [];
+                              const matches = bookings.filter(booking => {
+                                const checkInDate = booking.check_in
+                                  ? booking.check_in.split("T")[0]
+                                  : "";
+                                return checkInDate === today;
+                              });
+                              return total + matches.length;
+                            }, 0);
+                          return `ورود امروز (${todayCheckInCount})`;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u0648\u0631\u0648\u062f \u0627\u0645\u0631\u0648\u0632";
+                        }
+                        throw e;
                       }
-
-                      (async val => {
-                        const $steps = {};
-
-                        $steps["search"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  undefined,
-                                  "https://gateway.rentamon.com/webhook/0c5061e8-5706-4dbb-a2c7-0f029bb481ad",
-                                  (() => {
-                                    try {
-                                      return { q: $state.textInput2.value };
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return undefined;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.apiRequest"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["search"] != null &&
-                          typeof $steps["search"] === "object" &&
-                          typeof $steps["search"].then === "function"
-                        ) {
-                          $steps["search"] = await $steps["search"];
-                        }
-
-                        $steps["updateData"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return ($state.reservations =
-                                    $steps.search.data);
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["updateData"] != null &&
-                          typeof $steps["updateData"] === "object" &&
-                          typeof $steps["updateData"].then === "function"
-                        ) {
-                          $steps["updateData"] = await $steps["updateData"];
-                        }
-                      }).apply(null, eventArgs);
-                    }}
-                    padded={[]}
-                    placeholder={
-                      "\u062c\u0633\u062a\u062c\u0648 \u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646..."
-                    }
-                  />
-
-                  <TextInput
-                    data-plasmic-name={"searchInput"}
-                    data-plasmic-override={overrides.searchInput}
-                    className={classNames("__wab_instance", sty.searchInput)}
-                    endIcon={
-                      <React.Fragment>
-                        {(
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return $state.searchInput.value != "";
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return false;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return $state.searchInput.value != "";
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                        ) ? (
-                          <div
-                            data-plasmic-name={"remove"}
-                            data-plasmic-override={overrides.remove}
-                            className={classNames(projectcss.all, sty.remove)}
-                            onClick={async event => {
-                              const $steps = {};
-
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return ($state.searchInput.value = "");
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
-                              }
-
-                              $steps["search"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        undefined,
-                                        (() => {
-                                          try {
-                                            return (() => {
-                                              const isMiaan =
-                                                window.location.hostname.includes(
-                                                  "miaan.ir"
-                                                );
-                                              const gatewayBase = isMiaan
-                                                ? "https://gateway.miaan.ir"
-                                                : "https://gateway.rentamon.com";
-                                              return `${gatewayBase}/webhook/bookings/search`;
-                                            })();
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })(),
-                                        (() => {
-                                          try {
-                                            return {
-                                              q: $state.searchInput.value
-                                            };
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })()
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.apiRequest"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["search"] != null &&
-                                typeof $steps["search"] === "object" &&
-                                typeof $steps["search"].then === "function"
-                              ) {
-                                $steps["search"] = await $steps["search"];
-                              }
-
-                              $steps["runCode2"] = false
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return ($state.reservations =
-                                          $steps.search.data);
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode2"] != null &&
-                                typeof $steps["runCode2"] === "object" &&
-                                typeof $steps["runCode2"].then === "function"
-                              ) {
-                                $steps["runCode2"] = await $steps["runCode2"];
-                              }
-
-                              $steps["runCode3"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return ($state.reservations =
-                                          $state.reserveData.data);
-                                      }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode3"] != null &&
-                                typeof $steps["runCode3"] === "object" &&
-                                typeof $steps["runCode3"].then === "function"
-                              ) {
-                                $steps["runCode3"] = await $steps["runCode3"];
-                              }
-                            }}
-                          >
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img__hMysJ)}
-                              displayHeight={"auto"}
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={"18px"}
-                              loading={"lazy"}
-                              src={{
-                                src: "/plasmic/website_starter/images/image166.svg",
-                                fullWidth: 18,
-                                fullHeight: 18,
-                                aspectRatio: undefined
-                              }}
-                            />
-                          </div>
-                        ) : null}
-                        {(
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? (() => {
-                                try {
-                                  return $state.searchInput.value == "";
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return false;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                            : (() => {
-                                try {
-                                  return $state.searchInput.value == "";
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return true;
-                                  }
-                                  throw e;
-                                }
-                              })()
-                        ) ? (
-                          <div
-                            data-plasmic-name={"searchIcon"}
-                            data-plasmic-override={overrides.searchIcon}
-                            className={classNames(
-                              projectcss.all,
-                              sty.searchIcon
-                            )}
-                          >
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img__y9P7F)}
-                              displayHeight={"auto"}
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={
-                                hasVariant(globalVariants, "screen", "mobile")
-                                  ? "100%"
-                                  : "100%"
-                              }
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={
-                                hasVariant(globalVariants, "screen", "mobile")
-                                  ? "27px"
-                                  : "22px"
-                              }
-                              loading={"lazy"}
-                              src={{
-                                src: "/plasmic/website_starter/images/image168.svg",
-                                fullWidth: 17,
-                                fullHeight: 18,
-                                aspectRatio: undefined
-                              }}
-                            />
-                          </div>
-                        ) : null}
-                      </React.Fragment>
-                    }
-                    onChange={async (...eventArgs: any) => {
-                      ((...eventArgs) => {
-                        generateStateOnChangeProp($state, [
-                          "searchInput",
-                          "value"
-                        ])((e => e.target?.value).apply(null, eventArgs));
-                      }).apply(null, eventArgs);
-
-                      if (
-                        eventArgs.length > 1 &&
-                        eventArgs[1] &&
-                        eventArgs[1]._plasmic_state_init_
-                      ) {
-                        return;
-                      }
-
-                      (async event => {
-                        const $steps = {};
-
-                        $steps["search"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  undefined,
-                                  (() => {
-                                    try {
-                                      return (() => {
-                                        const isMiaan =
-                                          window.location.hostname.includes(
-                                            "miaan.ir"
-                                          );
-                                        const gatewayBase = isMiaan
-                                          ? "https://gateway.miaan.ir"
-                                          : "https://gateway.rentamon.com";
-                                        return `${gatewayBase}/webhook/bookings/search`;
-                                      })();
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return undefined;
-                                      }
-                                      throw e;
-                                    }
-                                  })(),
-                                  (() => {
-                                    try {
-                                      return { q: $state.searchInput.value };
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return undefined;
-                                      }
-                                      throw e;
-                                    }
-                                  })(),
-                                  undefined
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.apiRequest"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["search"] != null &&
-                          typeof $steps["search"] === "object" &&
-                          typeof $steps["search"].then === "function"
-                        ) {
-                          $steps["search"] = await $steps["search"];
-                        }
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return ($state.reservations =
-                                    $steps.search.data);
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }).apply(null, eventArgs);
-                    }}
-                    placeholder={
-                      "\u062c\u0633\u062a\u062c\u0648 \u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646..."
-                    }
-                    showEndIcon={true}
-                    type={"text"}
-                    value={
-                      generateStateValueProp($state, [
-                        "searchInput",
-                        "value"
-                      ]) ?? ""
-                    }
-                  />
+                    })()}
+                  </React.Fragment>
                 </div>
               </div>
               <div
-                data-plasmic-name={"sort"}
-                data-plasmic-override={overrides.sort}
-                className={classNames(projectcss.all, sty.sort)}
-              />
+                data-plasmic-name={"checkOut"}
+                data-plasmic-override={overrides.checkOut}
+                className={classNames(
+                  projectcss.all,
+                  sty.checkOut,
+                  "clickable"
+                )}
+                onClick={async event => {
+                  const $steps = {};
 
-              <div
-                data-plasmic-name={"filter"}
-                data-plasmic-override={overrides.filter}
-                className={classNames(projectcss.all, sty.filter)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__nzUr0)}
-                  onClick={async event => {
-                    const $steps = {};
+                  $steps["updateReservationType"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["reservationType"]
+                          },
+                          operation: 0,
+                          value: (() => {
+                            if ($state.reservationType == "check_out") {
+                              return ($state.reservationType = "");
+                            }
+                            if ($state.reservationType == "check_in") {
+                              $state.reservationType = "all";
+                              $state.reservations = $state.reserveData.data;
+                              return ($state.reservationType = "check_out");
+                            } else {
+                              return ($state.reservationType = "check_out");
+                            }
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                    $steps["updateTest"] = true
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateReservationType"] != null &&
+                    typeof $steps["updateReservationType"] === "object" &&
+                    typeof $steps["updateReservationType"].then === "function"
+                  ) {
+                    $steps["updateReservationType"] =
+                      await $steps["updateReservationType"];
+                  }
+
+                  $steps["runCode"] =
+                    $state.reservationType != "check_out"
                       ? (() => {
                           const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["showFilter"]
-                            },
-                            operation: 4,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
+                            customFunction: async () => {
+                              return (() => {
+                                const reservations = $state.reserveData.data;
+                                if (
+                                  Array.isArray(reservations) &&
+                                  reservations.length > 0
+                                ) {
+                                  localStorage.setItem(
+                                    "reservations",
+                                    JSON.stringify(reservations)
+                                  );
+                                }
+                                $state.reservations = reservations;
+                                return ($state.reservationType = "all");
+                              })();
                             }
-                            const { objRoot, variablePath } = variable;
-
-                            const oldValue = $stateGet(objRoot, variablePath);
-                            $stateSet(objRoot, variablePath, !oldValue);
-                            return !oldValue;
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
                           })?.apply(null, [actionArgs]);
                         })()
                       : undefined;
-                    if (
-                      $steps["updateTest"] != null &&
-                      typeof $steps["updateTest"] === "object" &&
-                      typeof $steps["updateTest"].then === "function"
-                    ) {
-                      $steps["updateTest"] = await $steps["updateTest"];
-                    }
-                  }}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___5NzkS
-                    )}
-                  >
-                    {"\u0641\u06cc\u0644\u062a\u0631"}
-                  </div>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__kfjJo)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image169.svg",
-                      fullWidth: 19,
-                      fullHeight: 16,
-                      aspectRatio: undefined
-                    }}
-                  />
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
 
-                  <AntdModal
-                    data-plasmic-name={"filterMenu"}
-                    data-plasmic-override={overrides.filterMenu}
-                    children={null}
-                    className={classNames("__wab_instance", sty.filterMenu)}
-                    defaultStylesClassName={classNames(
-                      projectcss.root_reset,
-                      projectcss.plasmic_default_styles,
-                      projectcss.plasmic_mixins,
-                      styleTokensClassNames
-                    )}
-                    hideFooter={true}
-                    modalScopeClassName={sty["filterMenu__modal"]}
-                    onOpenChange={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "filterMenu",
-                        "open"
-                      ]).apply(null, eventArgs);
-                    }}
-                    open={generateStateValueProp($state, [
-                      "filterMenu",
-                      "open"
-                    ])}
-                    title={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__uTuYo
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___82Da8
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__eqpWw
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text___5NEo
-                              )}
-                            >
-                              {"\u0641\u06cc\u0644\u062a\u0631\u0647\u0627"}
-                            </div>
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__mITsO
-                            )}
-                          >
-                            <PlasmicImg__
-                              alt={""}
-                              className={classNames(sty.img__hs6He)}
-                              displayHeight={"auto"}
-                              displayMaxHeight={"none"}
-                              displayMaxWidth={"100%"}
-                              displayMinHeight={"0"}
-                              displayMinWidth={"0"}
-                              displayWidth={"auto"}
-                              loading={"lazy"}
-                              src={{
-                                src: "/plasmic/website_starter/images/image169.svg",
-                                fullWidth: 19,
-                                fullHeight: 16,
-                                aspectRatio: undefined
-                              }}
-                            />
-                          </div>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__irLfq
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__r4Btj)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            onClick={async event => {
-                              const $steps = {};
-
-                              $steps["updateFilterMenuOpen"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      variable: {
-                                        objRoot: $state,
-                                        variablePath: ["filterMenu", "open"]
-                                      },
-                                      operation: 0,
-                                      value: false
+                  $steps["runCode2"] =
+                    $state.reservationType == "check_out"
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                const today = new Date();
+                                const checkoutsToday = $state.reservations
+                                  .map(dayItem => {
+                                    const filteredBookings =
+                                      dayItem.bookings.filter(booking => {
+                                        if (!booking.check_out) return false;
+                                        const checkoutDate = new Date(
+                                          booking.check_out
+                                        );
+                                        return (
+                                          checkoutDate.getFullYear() ===
+                                            today.getFullYear() &&
+                                          checkoutDate.getMonth() ===
+                                            today.getMonth() &&
+                                          checkoutDate.getDate() ===
+                                            today.getDate()
+                                        );
+                                      });
+                                    return {
+                                      ...dayItem,
+                                      bookings: filteredBookings
                                     };
-                                    return (({
-                                      variable,
-                                      value,
-                                      startIndex,
-                                      deleteCount
-                                    }) => {
-                                      if (!variable) {
-                                        return;
-                                      }
-                                      const { objRoot, variablePath } =
-                                        variable;
-
-                                      $stateSet(objRoot, variablePath, value);
-                                      return value;
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["updateFilterMenuOpen"] != null &&
-                                typeof $steps["updateFilterMenuOpen"] ===
-                                  "object" &&
-                                typeof $steps["updateFilterMenuOpen"].then ===
-                                  "function"
-                              ) {
-                                $steps["updateFilterMenuOpen"] =
-                                  await $steps["updateFilterMenuOpen"];
-                              }
-                            }}
-                            src={{
-                              src: "/plasmic/website_starter/images/image170.svg",
-                              fullWidth: 18,
-                              fullHeight: 18,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        </div>
-                      </div>
-                    }
-                    trigger={null}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            data-plasmic-name={"checkInAndChecklOut"}
-            data-plasmic-override={overrides.checkInAndChecklOut}
-            className={classNames(projectcss.all, sty.checkInAndChecklOut)}
-          >
-            <div
-              data-plasmic-name={"checkIn"}
-              data-plasmic-override={overrides.checkIn}
-              className={classNames(projectcss.all, sty.checkIn, "clickable")}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateReservationType"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["reservationType"]
-                        },
-                        operation: 0,
-                        value: (() => {
-                          if ($state.reservationType == "check_in") {
-                            return ($state.reservationType = "");
-                          }
-                          if ($state.reservationType == "check_out") {
-                            $state.reservationType = "all";
-                            $state.reservations = $state.reserveData.data;
-                            return ($state.reservationType = "check_in");
-                          } else {
-                            return ($state.reservationType = "check_in");
-                          }
+                                  })
+                                  .filter(
+                                    dayItem => dayItem.bookings.length > 0
+                                  );
+                                return ($state.reservations = checkoutsToday);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
                         })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateReservationType"] != null &&
-                  typeof $steps["updateReservationType"] === "object" &&
-                  typeof $steps["updateReservationType"].then === "function"
-                ) {
-                  $steps["updateReservationType"] =
-                    await $steps["updateReservationType"];
-                }
-
-                $steps["runCode"] =
-                  $state.reservationType == "check_in"
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              const now = new Date();
-                              const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-                              return ($state.reservations =
-                                $state.reservations.filter(
-                                  item => item.date == today
-                                ));
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-
-                $steps["runCode2"] =
-                  $state.reservationType != "check_in"
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              const reservations = $state.reserveData.data;
-                              if (
-                                Array.isArray(reservations) &&
-                                reservations.length > 0
-                              ) {
-                                localStorage.setItem(
-                                  "reservations",
-                                  JSON.stringify(reservations)
-                                );
-                              }
-                              $state.reservations = reservations;
-                              return ($state.reservationType = "all");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                if (
-                  $steps["runCode2"] != null &&
-                  typeof $steps["runCode2"] === "object" &&
-                  typeof $steps["runCode2"].then === "function"
-                ) {
-                  $steps["runCode2"] = await $steps["runCode2"];
-                }
-              }}
-              style={(() => {
-                try {
-                  return (() => {
-                    if ($state.reservationType == "check_in") {
-                      return {
-                        "background-color": "#0000F7",
-                        "border-radius": "100px",
-                        padding: "12px"
-                      };
-                    }
-                  })();
-                } catch (e) {
+                      : undefined;
                   if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
+                    $steps["runCode2"] != null &&
+                    typeof $steps["runCode2"] === "object" &&
+                    typeof $steps["runCode2"].then === "function"
                   ) {
-                    return undefined;
+                    $steps["runCode2"] = await $steps["runCode2"];
                   }
-                  throw e;
-                }
-              })()}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__eiubh
-                )}
-                style={(() => {
-                  try {
-                    return (() => {
-                      if ($state.reservationType == "check_in") {
-                        return { color: "#fcfcfc" };
-                      }
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return (() => {
-                        const now = new Date();
-                        const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-                        const todayCheckInCount =
-                          $state.reserveData.data.reduce((total, item) => {
-                            const bookings = item.bookings || [];
-                            const matches = bookings.filter(booking => {
-                              const checkInDate = booking.check_in
-                                ? booking.check_in.split("T")[0]
-                                : "";
-                              return checkInDate === today;
-                            });
-                            return total + matches.length;
-                          }, 0);
-                        return `ورود امروز (${todayCheckInCount})`;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "\u0648\u0631\u0648\u062f \u0627\u0645\u0631\u0648\u0632";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"checkOut"}
-              data-plasmic-override={overrides.checkOut}
-              className={classNames(projectcss.all, sty.checkOut, "clickable")}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateReservationType"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["reservationType"]
-                        },
-                        operation: 0,
-                        value: (() => {
-                          if ($state.reservationType == "check_out") {
-                            return ($state.reservationType = "");
-                          }
-                          if ($state.reservationType == "check_in") {
-                            $state.reservationType = "all";
-                            $state.reservations = $state.reserveData.data;
-                            return ($state.reservationType = "check_out");
-                          } else {
-                            return ($state.reservationType = "check_out");
-                          }
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateReservationType"] != null &&
-                  typeof $steps["updateReservationType"] === "object" &&
-                  typeof $steps["updateReservationType"].then === "function"
-                ) {
-                  $steps["updateReservationType"] =
-                    await $steps["updateReservationType"];
-                }
-
-                $steps["runCode"] =
-                  $state.reservationType != "check_out"
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              const reservations = $state.reserveData.data;
-                              if (
-                                Array.isArray(reservations) &&
-                                reservations.length > 0
-                              ) {
-                                localStorage.setItem(
-                                  "reservations",
-                                  JSON.stringify(reservations)
-                                );
-                              }
-                              $state.reservations = reservations;
-                              return ($state.reservationType = "all");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-
-                $steps["runCode2"] =
-                  $state.reservationType == "check_out"
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              const today = new Date("2025-11-30");
-                              const checkoutsToday = $state.reservations
-                                .map(dayItem => {
-                                  const filteredBookings =
-                                    dayItem.bookings.filter(booking => {
-                                      if (!booking.check_out) return false;
-                                      const checkoutDate = new Date(
-                                        booking.check_out
-                                      );
-                                      return (
-                                        checkoutDate.getFullYear() ===
-                                          today.getFullYear() &&
-                                        checkoutDate.getMonth() ===
-                                          today.getMonth() &&
-                                        checkoutDate.getDate() ===
-                                          today.getDate()
-                                      );
-                                    });
-                                  return {
-                                    ...dayItem,
-                                    bookings: filteredBookings
-                                  };
-                                })
-                                .filter(dayItem => dayItem.bookings.length > 0);
-                              return ($state.reservations = checkoutsToday);
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                if (
-                  $steps["runCode2"] != null &&
-                  typeof $steps["runCode2"] === "object" &&
-                  typeof $steps["runCode2"].then === "function"
-                ) {
-                  $steps["runCode2"] = await $steps["runCode2"];
-                }
-              }}
-              style={(() => {
-                try {
-                  return (() => {
-                    if ($state.reservationType == "check_out") {
-                      return {
-                        "background-color": "#0000F7",
-                        "border-radius": "100px",
-                        padding: "12px"
-                      };
-                    }
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__gEdMf
-                )}
+                }}
                 style={(() => {
                   try {
                     return (() => {
                       if ($state.reservationType == "check_out") {
-                        return { color: "#fcfcfc" };
+                        return {
+                          "background-color": "#0000F7",
+                          "border-radius": "100px",
+                          padding: "12px"
+                        };
                       }
                     })();
                   } catch (e) {
@@ -2413,145 +2407,149 @@ function PlasmicBookings2__RenderFunc(props: {
                   }
                 })()}
               >
-                <React.Fragment>
-                  {(() => {
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__gEdMf
+                  )}
+                  style={(() => {
                     try {
                       return (() => {
-                        const now = new Date();
-                        const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-                        const todayCheckOutCount = $state.reserveData.data
-                          .flatMap(item => item.bookings || [])
-                          .filter(booking => {
-                            return (
-                              booking.check_out &&
-                              booking.check_out.startsWith(today)
-                            );
-                          }).length;
-                        return `خروج امروز (${todayCheckOutCount})`;
+                        if ($state.reservationType == "check_out") {
+                          return { color: "#fcfcfc" };
+                        }
                       })();
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return "\u062e\u0631\u0648\u062c \u0627\u0645\u0631\u0648\u0632";
+                        return undefined;
                       }
                       throw e;
                     }
                   })()}
-                </React.Fragment>
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return (() => {
+                          const now = new Date();
+                          const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+                          const todayCheckOutCount = $state.reserveData.data
+                            .flatMap(item => item.bookings || [])
+                            .filter(booking => {
+                              return (
+                                booking.check_out &&
+                                booking.check_out.startsWith(today)
+                              );
+                            }).length;
+                          return `خروج امروز (${todayCheckOutCount})`;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "\u062e\u0631\u0648\u062c \u0627\u0645\u0631\u0648\u0632";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
               </div>
-            </div>
-            <div
-              data-plasmic-name={"checkOut2"}
-              data-plasmic-override={overrides.checkOut2}
-              className={classNames(projectcss.all, sty.checkOut2, "clickable")}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateReservationType"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["reservationType"]
-                        },
-                        operation: 0,
-                        value: ($state.reservations = $state.reserveData.data)
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateReservationType"] != null &&
-                  typeof $steps["updateReservationType"] === "object" &&
-                  typeof $steps["updateReservationType"].then === "function"
-                ) {
-                  $steps["updateReservationType"] =
-                    await $steps["updateReservationType"];
-                }
-
-                $steps["updateReservationType2"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["reservationType"]
-                        },
-                        operation: 0,
-                        value: "all"
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateReservationType2"] != null &&
-                  typeof $steps["updateReservationType2"] === "object" &&
-                  typeof $steps["updateReservationType2"].then === "function"
-                ) {
-                  $steps["updateReservationType2"] =
-                    await $steps["updateReservationType2"];
-                }
-              }}
-              style={(() => {
-                try {
-                  return (() => {
-                    if ($state.reservationType == "all") {
-                      return {
-                        "background-color": "#0000F7",
-                        "border-radius": "100px",
-                        padding: "12px"
-                      };
-                    }
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-            >
               <div
+                data-plasmic-name={"checkOut2"}
+                data-plasmic-override={overrides.checkOut2}
                 className={classNames(
                   projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___56UGl
+                  sty.checkOut2,
+                  "clickable"
                 )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateReservationType"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["reservationType"]
+                          },
+                          operation: 0,
+                          value: ($state.reservations = $state.reserveData.data)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateReservationType"] != null &&
+                    typeof $steps["updateReservationType"] === "object" &&
+                    typeof $steps["updateReservationType"].then === "function"
+                  ) {
+                    $steps["updateReservationType"] =
+                      await $steps["updateReservationType"];
+                  }
+
+                  $steps["updateReservationType2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["reservationType"]
+                          },
+                          operation: 0,
+                          value: "all"
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateReservationType2"] != null &&
+                    typeof $steps["updateReservationType2"] === "object" &&
+                    typeof $steps["updateReservationType2"].then === "function"
+                  ) {
+                    $steps["updateReservationType2"] =
+                      await $steps["updateReservationType2"];
+                  }
+                }}
                 style={(() => {
                   try {
                     return (() => {
                       if ($state.reservationType == "all") {
-                        return { color: "#fcfcfc" };
+                        return {
+                          "background-color": "#0000F7",
+                          "border-radius": "100px",
+                          padding: "12px"
+                        };
                       }
                     })();
                   } catch (e) {
@@ -2565,7 +2563,32 @@ function PlasmicBookings2__RenderFunc(props: {
                   }
                 })()}
               >
-                {"\u0647\u0645\u0647"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___56UGl
+                  )}
+                  style={(() => {
+                    try {
+                      return (() => {
+                        if ($state.reservationType == "all") {
+                          return { color: "#fcfcfc" };
+                        }
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                >
+                  {"\u0647\u0645\u0647"}
+                </div>
               </div>
             </div>
           </div>
@@ -4599,21 +4622,6 @@ function PlasmicBookings2__RenderFunc(props: {
                   </div>
                 </div>
               ) : null}
-              <PlasmicLink__
-                data-plasmic-name={"link"}
-                data-plasmic-override={overrides.link}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link
-                )}
-                component={Link}
-                href={"#today"}
-                platform={"nextjs"}
-              >
-                {"Enter some text"}
-              </PlasmicLink__>
             </div>
           ) : null}
           {(
@@ -8219,7 +8227,6 @@ const PlasmicDescendants = {
     "navbarRntFooter",
     "pagination2",
     "pagination",
-    "link",
     "intro",
     "returnButton",
     "clarityRntComponent",
@@ -8341,9 +8348,8 @@ const PlasmicDescendants = {
   بیخیال: ["\u0628\u06cc\u062e\u06cc\u0627\u0644"],
   reserveFilterStack2: ["reserveFilterStack2"],
   navbarRntFooter: ["navbarRntFooter"],
-  pagination2: ["pagination2", "pagination", "link"],
+  pagination2: ["pagination2", "pagination"],
   pagination: ["pagination"],
-  link: ["link"],
   intro: ["intro"],
   returnButton: ["returnButton"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -8468,7 +8474,6 @@ type NodeDefaultElementType = {
   navbarRntFooter: typeof NavbarRntFooter;
   pagination2: "div";
   pagination: typeof AntdPagination;
-  link: "a";
   intro: "div";
   returnButton: "div";
   clarityRntComponent: typeof ClarityRntComponent;
@@ -8607,7 +8612,6 @@ export const PlasmicBookings2 = Object.assign(
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     pagination2: makeNodeComponent("pagination2"),
     pagination: makeNodeComponent("pagination"),
-    link: makeNodeComponent("link"),
     intro: makeNodeComponent("intro"),
     returnButton: makeNodeComponent("returnButton"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
