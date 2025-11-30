@@ -138,6 +138,7 @@ export type Plasmicدربارهما__OverridesType = {
   embedHtml?: Flex__<typeof Embed>;
   html?: Flex__<"div">;
   goftino?: Flex__<typeof Embed>;
+  nimchat?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
@@ -1581,6 +1582,15 @@ function Plasmicدربارهما__RenderFunc(props: {
               }
             />
 
+            <Embed
+              data-plasmic-name={"nimchat"}
+              data-plasmic-override={overrides.nimchat}
+              className={classNames("__wab_instance", sty.nimchat)}
+              code={
+                '<script>\r\n  window.nimchatSettings = {"position":"right","launcherTitle":"\u0633\u0644\u0627\u0645. \u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u06a9\u0645\u06a9\u062a \u06a9\u0646\u0645\u061f ","type":"expanded_bubble","locale":"fa"};\r\n  (function(d,t) {\r\n    var BASE_URL="https://app.nim.chat";\r\n    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];\r\n    g.src=BASE_URL+"/packs/js/sdk.js";\r\n    g.defer = true;\r\n    g.async = true;\r\n    s.parentNode.insertBefore(g,s);\r\n    g.onload=function(){\r\n      window.nimchatSDK.run({\r\n        websiteToken: \'KHb1NR6R7zCqPb8r5uaU8JiN\',\r\n        baseUrl: BASE_URL\r\n      })\r\n    }\r\n  })(document,"script");\r\n</script>\r\n'
+              }
+            />
+
             <div className={classNames(projectcss.all, sty.freeBox__hcQq)}>
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
@@ -1712,6 +1722,7 @@ const PlasmicDescendants = {
     "embedHtml",
     "html",
     "goftino",
+    "nimchat",
     "clarityRntComponent",
     "faviconRntComponent",
     "rentamonFooter",
@@ -1862,8 +1873,15 @@ const PlasmicDescendants = {
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
-  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
+  html: [
+    "html",
+    "goftino",
+    "nimchat",
+    "clarityRntComponent",
+    "faviconRntComponent"
+  ],
   goftino: ["goftino"],
+  nimchat: ["nimchat"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   rentamonFooter: ["rentamonFooter"],
@@ -1926,6 +1944,7 @@ type NodeDefaultElementType = {
   embedHtml: typeof Embed;
   html: "div";
   goftino: typeof Embed;
+  nimchat: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   rentamonFooter: typeof RentamonFooter;
@@ -2049,6 +2068,7 @@ export const Plasmicدربارهما = Object.assign(
     embedHtml: makeNodeComponent("embedHtml"),
     html: makeNodeComponent("html"),
     goftino: makeNodeComponent("goftino"),
+    nimchat: makeNodeComponent("nimchat"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),

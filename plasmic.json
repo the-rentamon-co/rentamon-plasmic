@@ -3138,6 +3138,20 @@
           "cssFilePath": "plasmic/website_starter/PlasmicPublicCalendar.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "u3GQtj6pGCDB",
+          "name": "Bookings2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicBookings2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/bookings.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicBookings2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/bookings"
         }
       ],
       "icons": [
