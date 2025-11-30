@@ -2308,11 +2308,7 @@
     display: none;
   }
 }
-.goftino:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.nimchat:global(.__wab_instance) {
+.nimChat:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }

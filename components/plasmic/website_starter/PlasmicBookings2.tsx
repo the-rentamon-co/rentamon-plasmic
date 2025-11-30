@@ -126,15 +126,15 @@ export type PlasmicBookings2__OverridesType = {
   checkIn?: Flex__<"div">;
   checkOut?: Flex__<"div">;
   checkOut2?: Flex__<"div">;
+  reserveData?: Flex__<typeof ApiRequest>;
   container?: Flex__<"div">;
-  reserveMainStack2?: Flex__<"div">;
+  pendingReserve?: Flex__<"div">;
   reservationsRecordList?: Flex__<typeof ReservationsRecordList>;
   reserveData2?: Flex__<typeof ApiRequest>;
   reserveMainStack?: Flex__<"div">;
   dates?: Flex__<"div">;
-  reservationsRecordList2?: Flex__<typeof ReservationsRecordList2>;
-  reserveData?: Flex__<typeof ApiRequest>;
   بیخیال?: Flex__<"div">;
+  reserveFilterStack2?: Flex__<"div">;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   pagination2?: Flex__<"div">;
   pagination?: Flex__<typeof AntdPagination>;
@@ -984,29 +984,8 @@ function PlasmicBookings2__RenderFunc(props: {
               data-plasmic-name={"sidebar"}
               data-plasmic-override={overrides.sidebar}
               className={classNames(projectcss.all, sty.sidebar)}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__hgs3Y)}>
-                <SideBar2
-                  data-plasmic-name={"sideBar2"}
-                  data-plasmic-override={overrides.sideBar2}
-                  className={classNames("__wab_instance", sty.sideBar2)}
-                  isOpen={false}
-                  userData={(() => {
-                    try {
-                      return $state.profile.data;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
-                />
-              </div>
-            </div>
+            />
+
             {(
               hasVariant(globalVariants, "screen", "mobile")
                 ? true
@@ -1026,7 +1005,9 @@ function PlasmicBookings2__RenderFunc(props: {
             ) ? (
               <div className={classNames(projectcss.all, sty.freeBox__gLaWs)}>
                 <SideBar2
-                  className={classNames("__wab_instance", sty.sideBar2__vukZd)}
+                  data-plasmic-name={"sideBar2"}
+                  data-plasmic-override={overrides.sideBar2}
+                  className={classNames("__wab_instance", sty.sideBar2)}
                   isOpen={false}
                   userData={(() => {
                     try {
@@ -1462,7 +1443,7 @@ function PlasmicBookings2__RenderFunc(props: {
                                 $steps["runCode"] = await $steps["runCode"];
                               }
 
-                              $steps["search"] = true
+                              $steps["search"] = false
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
@@ -1521,7 +1502,7 @@ function PlasmicBookings2__RenderFunc(props: {
                                 $steps["search"] = await $steps["search"];
                               }
 
-                              $steps["runCode2"] = true
+                              $steps["runCode2"] = false
                                 ? (() => {
                                     const actionArgs = {
                                       customFunction: async () => {
@@ -1540,6 +1521,27 @@ function PlasmicBookings2__RenderFunc(props: {
                                 typeof $steps["runCode2"].then === "function"
                               ) {
                                 $steps["runCode2"] = await $steps["runCode2"];
+                              }
+
+                              $steps["runCode3"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return ($state.reservations =
+                                          $state.reserveData.data);
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode3"] != null &&
+                                typeof $steps["runCode3"] === "object" &&
+                                typeof $steps["runCode3"].then === "function"
+                              ) {
+                                $steps["runCode3"] = await $steps["runCode3"];
                               }
                             }}
                           >
@@ -2481,15 +2483,113 @@ function PlasmicBookings2__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <ApiRequest
+            data-plasmic-name={"reserveData"}
+            data-plasmic-override={overrides.reserveData}
+            children={null}
+            className={classNames("__wab_instance", sty.reserveData)}
+            errorDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__u9Pfs
+                )}
+              >
+                {
+                  "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
+                }
+              </div>
+            }
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["reserveData", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "reserveData",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["reserveData", "data"]).apply(
+                null,
+                eventArgs
+              );
+
+              (async data => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            const reservations = $state.reserveData.data;
+                            if (
+                              Array.isArray(reservations) &&
+                              reservations.length > 0
+                            ) {
+                              localStorage.setItem(
+                                "reservations",
+                                JSON.stringify(reservations)
+                              );
+                            }
+                            return ($state.reservations = reservations);
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["reserveData"] = ref;
+            }}
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/bookings/date`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
+          />
+
           <div
             data-plasmic-name={"container"}
             data-plasmic-override={overrides.container}
             className={classNames(projectcss.all, sty.container)}
           >
             <div
-              data-plasmic-name={"reserveMainStack2"}
-              data-plasmic-override={overrides.reserveMainStack2}
-              className={classNames(projectcss.all, sty.reserveMainStack2)}
+              data-plasmic-name={"pendingReserve"}
+              data-plasmic-override={overrides.pendingReserve}
+              className={classNames(projectcss.all, sty.pendingReserve)}
             >
               {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                 (() => {
@@ -2803,917 +2903,805 @@ function PlasmicBookings2__RenderFunc(props: {
                 })()}
               />
             </div>
-            <div
-              data-plasmic-name={"reserveMainStack"}
-              data-plasmic-override={overrides.reserveMainStack}
-              className={classNames(projectcss.all, sty.reserveMainStack)}
-              onScroll={async event => {
-                const $steps = {};
-              }}
-            >
-              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-                (() => {
-                  try {
-                    return $state.reservations;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
+            {(() => {
+              try {
+                return (() => {
+                  if (
+                    $state.searchInput.value == "" ||
+                    $state.cancelled3.checked == true ||
+                    $state.settlement2.checked == true
+                  ) {
+                    return true;
+                  } else {
+                    return false;
                   }
-                })()
-              ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                const currentItem = __plasmic_item_0;
-                const currentIndex = __plasmic_idx_0;
-                return (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__c9KOs)}
-                    key={currentIndex}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateModalOpen3"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["tourSteps"]
-                              },
-                              operation: 0,
-                              value:
-                                $state.tourSteps == 0
-                                  ? ($state.tourSteps = 1)
-                                  : ($state.tourSteps = 0)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                data-plasmic-name={"reserveMainStack"}
+                data-plasmic-override={overrides.reserveMainStack}
+                className={classNames(projectcss.all, sty.reserveMainStack)}
+                onScroll={async event => {
+                  const $steps = {};
+                }}
+              >
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return $state.reservations;
+                    } catch (e) {
                       if (
-                        $steps["updateModalOpen3"] != null &&
-                        typeof $steps["updateModalOpen3"] === "object" &&
-                        typeof $steps["updateModalOpen3"].then === "function"
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        $steps["updateModalOpen3"] =
-                          await $steps["updateModalOpen3"];
+                        return [];
                       }
-                    }}
-                  >
+                      throw e;
+                    }
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__upO1W)}
+                      className={classNames(projectcss.all, sty.freeBox__c9KOs)}
+                      key={currentIndex}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateModalOpen3"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["tourSteps"]
+                                },
+                                operation: 0,
+                                value:
+                                  $state.tourSteps == 0
+                                    ? ($state.tourSteps = 1)
+                                    : ($state.tourSteps = 0)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateModalOpen3"] != null &&
+                          typeof $steps["updateModalOpen3"] === "object" &&
+                          typeof $steps["updateModalOpen3"].then === "function"
+                        ) {
+                          $steps["updateModalOpen3"] =
+                            await $steps["updateModalOpen3"];
+                        }
+                      }}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__tCfZx
+                          sty.freeBox__upO1W
                         )}
                       >
                         <div
-                          data-plasmic-name={"dates"}
-                          data-plasmic-override={overrides.dates}
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.dates
+                            sty.freeBox__tCfZx
                           )}
                         >
-                          <React.Fragment>
-                            {(() => {
-                              const persianMonths = [
-                                "فروردین",
-                                "اردیبهشت",
-                                "خرداد",
-                                "تیر",
-                                "مرداد",
-                                "شهریور",
-                                "مهر",
-                                "آبان",
-                                "آذر",
-                                "دی",
-                                "بهمن",
-                                "اسفند"
-                              ];
-
-                              const persianWeekdays = [
-                                "یک‌شنبه",
-                                "دوشنبه",
-                                "سه‌شنبه",
-                                "چهارشنبه",
-                                "پنج‌شنبه",
-                                "جمعه",
-                                "شنبه"
-                              ];
-
-                              function toPersianDigits(input) {
-                                const persianDigits = [
-                                  "۰",
-                                  "۱",
-                                  "۲",
-                                  "۳",
-                                  "۴",
-                                  "۵",
-                                  "۶",
-                                  "۷",
-                                  "۸",
-                                  "۹"
+                          <div
+                            data-plasmic-name={"dates"}
+                            data-plasmic-override={overrides.dates}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.dates
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                const persianMonths = [
+                                  "فروردین",
+                                  "اردیبهشت",
+                                  "خرداد",
+                                  "تیر",
+                                  "مرداد",
+                                  "شهریور",
+                                  "مهر",
+                                  "آبان",
+                                  "آذر",
+                                  "دی",
+                                  "بهمن",
+                                  "اسفند"
                                 ];
 
-                                return input
-                                  .toString()
-                                  .replace(/\d/g, d => persianDigits[d]);
-                              }
-                              function toJalali(gYear, gMonth, gDay) {
-                                const gDaysInMonth = [
-                                  31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+                                const persianWeekdays = [
+                                  "یک‌شنبه",
+                                  "دوشنبه",
+                                  "سه‌شنبه",
+                                  "چهارشنبه",
+                                  "پنج‌شنبه",
+                                  "جمعه",
+                                  "شنبه"
                                 ];
 
-                                const jDaysInMonth = [
-                                  31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29
-                                ];
+                                function toPersianDigits(input) {
+                                  const persianDigits = [
+                                    "۰",
+                                    "۱",
+                                    "۲",
+                                    "۳",
+                                    "۴",
+                                    "۵",
+                                    "۶",
+                                    "۷",
+                                    "۸",
+                                    "۹"
+                                  ];
 
-                                let gy = gYear - (gYear >= 1600 ? 1600 : 621);
-                                let gm = gMonth - 1;
-                                let gd = gDay - 1;
-                                let gDayNo =
-                                  365 * gy +
-                                  Math.floor((gy + 3) / 4) -
-                                  Math.floor((gy + 99) / 100) +
-                                  Math.floor((gy + 399) / 400);
-                                for (let i = 0; i < gm; ++i)
-                                  gDayNo += gDaysInMonth[i];
-                                gDayNo += gd;
-                                let jDayNo = gDayNo - (gYear >= 1600 ? 79 : 0);
-                                let jNp = Math.floor(jDayNo / 12053);
-                                jDayNo %= 12053;
-                                let jYear =
-                                  979 +
-                                  33 * jNp +
-                                  4 * Math.floor(jDayNo / 1461);
-                                jDayNo %= 1461;
-                                if (jDayNo >= 366) {
-                                  jYear += Math.floor((jDayNo - 1) / 365);
-                                  jDayNo = (jDayNo - 1) % 365;
+                                  return input
+                                    .toString()
+                                    .replace(/\d/g, d => persianDigits[d]);
                                 }
-                                let jMonth;
-                                for (
-                                  jMonth = 0;
-                                  jMonth < 11 && jDayNo >= jDaysInMonth[jMonth];
-                                  ++jMonth
-                                )
-                                  jDayNo -= jDaysInMonth[jMonth];
-                                let jDay = jDayNo + 1;
-                                return {
-                                  jy: jYear + (gYear >= 1600 ? 1600 : 621),
-                                  jm: jMonth + 1,
-                                  jd: jDay
-                                };
-                              }
-                              function convertDateToJalaliFullString(
-                                dateString
-                              ) {
-                                const inputDate = new Date(dateString);
-                                const today = new Date();
-                                inputDate.setHours(0, 0, 0, 0);
-                                today.setHours(0, 0, 0, 0);
-                                const tomorrow = new Date(today);
-                                tomorrow.setDate(tomorrow.getDate() + 1);
-                                if (inputDate.getTime() === today.getTime()) {
-                                  return "امروز";
+                                function toJalali(gYear, gMonth, gDay) {
+                                  const gDaysInMonth = [
+                                    31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
+                                    31
+                                  ];
+
+                                  const jDaysInMonth = [
+                                    31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30,
+                                    29
+                                  ];
+
+                                  let gy = gYear - (gYear >= 1600 ? 1600 : 621);
+                                  let gm = gMonth - 1;
+                                  let gd = gDay - 1;
+                                  let gDayNo =
+                                    365 * gy +
+                                    Math.floor((gy + 3) / 4) -
+                                    Math.floor((gy + 99) / 100) +
+                                    Math.floor((gy + 399) / 400);
+                                  for (let i = 0; i < gm; ++i)
+                                    gDayNo += gDaysInMonth[i];
+                                  gDayNo += gd;
+                                  let jDayNo =
+                                    gDayNo - (gYear >= 1600 ? 79 : 0);
+                                  let jNp = Math.floor(jDayNo / 12053);
+                                  jDayNo %= 12053;
+                                  let jYear =
+                                    979 +
+                                    33 * jNp +
+                                    4 * Math.floor(jDayNo / 1461);
+                                  jDayNo %= 1461;
+                                  if (jDayNo >= 366) {
+                                    jYear += Math.floor((jDayNo - 1) / 365);
+                                    jDayNo = (jDayNo - 1) % 365;
+                                  }
+                                  let jMonth;
+                                  for (
+                                    jMonth = 0;
+                                    jMonth < 11 &&
+                                    jDayNo >= jDaysInMonth[jMonth];
+                                    ++jMonth
+                                  )
+                                    jDayNo -= jDaysInMonth[jMonth];
+                                  let jDay = jDayNo + 1;
+                                  return {
+                                    jy: jYear + (gYear >= 1600 ? 1600 : 621),
+                                    jm: jMonth + 1,
+                                    jd: jDay
+                                  };
                                 }
-                                if (
-                                  inputDate.getTime() === tomorrow.getTime()
+                                function convertDateToJalaliFullString(
+                                  dateString
                                 ) {
-                                  return "فردا";
+                                  const inputDate = new Date(dateString);
+                                  const today = new Date();
+                                  inputDate.setHours(0, 0, 0, 0);
+                                  today.setHours(0, 0, 0, 0);
+                                  const tomorrow = new Date(today);
+                                  tomorrow.setDate(tomorrow.getDate() + 1);
+                                  if (inputDate.getTime() === today.getTime()) {
+                                    return "امروز";
+                                  }
+                                  if (
+                                    inputDate.getTime() === tomorrow.getTime()
+                                  ) {
+                                    return "فردا";
+                                  }
+                                  const gYear = inputDate.getFullYear();
+                                  const gMonth = inputDate.getMonth() + 1;
+                                  const gDay = inputDate.getDate();
+                                  const weekdayIndex = inputDate.getDay();
+                                  const { jy, jm, jd } = toJalali(
+                                    gYear,
+                                    gMonth,
+                                    gDay
+                                  );
+                                  const weekday = persianWeekdays[weekdayIndex];
+                                  const monthName = persianMonths[jm - 1];
+                                  return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                 }
-                                const gYear = inputDate.getFullYear();
-                                const gMonth = inputDate.getMonth() + 1;
-                                const gDay = inputDate.getDate();
-                                const weekdayIndex = inputDate.getDay();
-                                const { jy, jm, jd } = toJalali(
-                                  gYear,
-                                  gMonth,
-                                  gDay
-                                );
-                                const weekday = persianWeekdays[weekdayIndex];
-                                const monthName = persianMonths[jm - 1];
-                                return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
-                              }
-                              const checkIn = currentItem.date;
-                              const result =
-                                convertDateToJalaliFullString(checkIn);
-                              return result;
-                            })()}
-                          </React.Fragment>
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__pfFtu
-                          )}
-                        />
-                      </div>
-                      {(_par =>
-                        !_par ? [] : Array.isArray(_par) ? _par : [_par])(
-                        (() => {
-                          try {
-                            return currentItem.bookings;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [];
-                            }
-                            throw e;
-                          }
-                        })()
-                      ).map((__plasmic_item_1, __plasmic_idx_1) => {
-                        const currentItem = __plasmic_item_1;
-                        const currentIndex = __plasmic_idx_1;
-                        return (
+                                const checkIn = currentItem.date;
+                                const result =
+                                  convertDateToJalaliFullString(checkIn);
+                                return result;
+                              })()}
+                            </React.Fragment>
+                          </div>
                           <div
                             className={classNames(
                               projectcss.all,
-                              sty.freeBox___2FUby,
-                              (() => {
+                              sty.freeBox__pfFtu
+                            )}
+                          />
+                        </div>
+                        {(_par =>
+                          !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                          (() => {
+                            try {
+                              return currentItem.bookings;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return [];
+                              }
+                              throw e;
+                            }
+                          })()
+                        ).map((__plasmic_item_1, __plasmic_idx_1) => {
+                          const currentItem = __plasmic_item_1;
+                          const currentIndex = __plasmic_idx_1;
+                          return (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox___2FUby,
+                                (() => {
+                                  try {
+                                    return $state.isTheFirstVisit == true
+                                      ? "blinkBorderTourGuide clickable"
+                                      : "clickable";
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              )}
+                              key={currentIndex}
+                              onClick={async event => {
+                                const $steps = {};
+
+                                $steps["runCode"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        customFunction: async () => {
+                                          return (() => {
+                                            let result = "";
+                                            const bookingId =
+                                              currentItem.booking_id;
+                                            const isMiaan =
+                                              window.location.hostname.includes(
+                                                "miaan.ir"
+                                              );
+                                            const baseUrl = isMiaan
+                                              ? "https://miaan.ir"
+                                              : "https://rentamon.com";
+                                            return window.open(
+                                              `${baseUrl}/bookings/${bookingId}`,
+                                              "_blank"
+                                            );
+                                          })();
+                                        }
+                                      };
+                                      return (({ customFunction }) => {
+                                        return customFunction();
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["runCode"] != null &&
+                                  typeof $steps["runCode"] === "object" &&
+                                  typeof $steps["runCode"].then === "function"
+                                ) {
+                                  $steps["runCode"] = await $steps["runCode"];
+                                }
+                              }}
+                            >
+                              {(() => {
                                 try {
-                                  return $state.isTheFirstVisit == true
-                                    ? "blinkBorderTourGuide clickable"
-                                    : "clickable";
+                                  return currentItem.booking_id != null;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return undefined;
+                                    return true;
                                   }
                                   throw e;
                                 }
-                              })()
-                            )}
-                            key={currentIndex}
-                            onClick={async event => {
-                              const $steps = {};
-
-                              $steps["runCode"] = true
-                                ? (() => {
-                                    const actionArgs = {
-                                      customFunction: async () => {
-                                        return (() => {
-                                          let result = "";
-                                          const bookingId =
-                                            currentItem.booking_id;
-                                          const isMiaan =
-                                            window.location.hostname.includes(
-                                              "miaan.ir"
-                                            );
-                                          const baseUrl = isMiaan
-                                            ? "https://miaan.ir"
-                                            : "https://rentamon.com";
-                                          return window.open(
-                                            `${baseUrl}/bookings/${bookingId}`,
-                                            "_blank"
-                                          );
-                                        })();
+                              })() ? (
+                                <ReservationsRecordList2
+                                  cancelledBookings={(() => {
+                                    try {
+                                      return currentItem.status == "cancelled";
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return [];
                                       }
-                                    };
-                                    return (({ customFunction }) => {
-                                      return customFunction();
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                              if (
-                                $steps["runCode"] != null &&
-                                typeof $steps["runCode"] === "object" &&
-                                typeof $steps["runCode"].then === "function"
-                              ) {
-                                $steps["runCode"] = await $steps["runCode"];
-                              }
-                            }}
-                          >
-                            {(() => {
-                              try {
-                                return currentItem.booking_id != null;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })() ? (
-                              <ReservationsRecordList2
-                                data-plasmic-name={"reservationsRecordList2"}
-                                data-plasmic-override={
-                                  overrides.reservationsRecordList2
-                                }
-                                cancelledBookings={(() => {
-                                  try {
-                                    return currentItem.status == "cancelled";
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return [];
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()}
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.reservationsRecordList2
-                                )}
-                                confirmedBookings={(() => {
-                                  try {
-                                    return currentItem.status == "reserve";
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return [];
+                                  })()}
+                                  className={classNames(
+                                    "__wab_instance",
+                                    sty.reservationsRecordList2__cjqlw
+                                  )}
+                                  confirmedBookings={(() => {
+                                    try {
+                                      return currentItem.status == "reserve";
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return [];
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()}
-                                currentIndex={(() => {
-                                  try {
-                                    return currentIndex;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
+                                  })()}
+                                  currentIndex={(() => {
+                                    try {
+                                      return currentIndex;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()}
-                                data={(() => {
-                                  try {
-                                    return currentItem;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
+                                  })()}
+                                  data={(() => {
+                                    try {
+                                      return currentItem;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()}
-                                pastBookingsBox={(() => {
-                                  try {
-                                    return currentItem.status == "past";
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return [];
+                                  })()}
+                                  pastBookingsBox={(() => {
+                                    try {
+                                      return currentItem.status == "past";
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return [];
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()}
-                                pendingBookings={(() => {
-                                  try {
-                                    return currentItem.status == "Pending";
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return [];
+                                  })()}
+                                  pendingBookings={(() => {
+                                    try {
+                                      return currentItem.status == "Pending";
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return [];
+                                      }
+                                      throw e;
                                     }
-                                    throw e;
-                                  }
-                                })()}
-                              />
-                            ) : null}
-                            {(() => {
-                              try {
-                                return (() => {
+                                  })()}
+                                />
+                              ) : null}
+                              {(() => {
+                                try {
+                                  return (() => {
+                                    if (
+                                      currentItem.is_settled == false &&
+                                      currentItem.status === "past"
+                                    ) {
+                                      return true;
+                                    } else {
+                                      return false;
+                                    }
+                                  })();
+                                } catch (e) {
                                   if (
-                                    currentItem.is_settled == false &&
-                                    currentItem.status === "past"
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
                                   ) {
                                     return true;
-                                  } else {
-                                    return false;
                                   }
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
+                                  throw e;
                                 }
-                                throw e;
-                              }
-                            })() ? (
-                              <PlasmicImg__
-                                alt={""}
-                                className={classNames(sty.img__aghHf)}
-                                displayHeight={"25px"}
-                                displayMaxHeight={"none"}
-                                displayMaxWidth={"100%"}
-                                displayMinHeight={"0"}
-                                displayMinWidth={"0"}
-                                displayWidth={"auto"}
-                                loading={"lazy"}
-                                src={{
-                                  src: "/plasmic/website_starter/images/image141.svg",
-                                  fullWidth: 23,
-                                  fullHeight: 23,
-                                  aspectRatio: undefined
-                                }}
-                              />
-                            ) : null}
-                            {(
-                              hasVariant(globalVariants, "screen", "mobile")
-                                ? (() => {
-                                    try {
-                                      return (() => {
+                              })() ? (
+                                <PlasmicImg__
+                                  alt={""}
+                                  className={classNames(sty.img__aghHf)}
+                                  displayHeight={"25px"}
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"auto"}
+                                  loading={"lazy"}
+                                  src={{
+                                    src: "/plasmic/website_starter/images/image141.svg",
+                                    fullWidth: 23,
+                                    fullHeight: 23,
+                                    aspectRatio: undefined
+                                  }}
+                                />
+                              ) : null}
+                              {(
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? (() => {
+                                      try {
+                                        return (() => {
+                                          if (
+                                            currentItem.feature_handled
+                                              .smart_booking == null
+                                          ) {
+                                            return false;
+                                          }
+                                          if (
+                                            currentItem.is_settled == null &&
+                                            currentItem.status === "past"
+                                          ) {
+                                            return true;
+                                          } else {
+                                            return false;
+                                          }
+                                        })();
+                                      } catch (e) {
                                         if (
-                                          currentItem.feature_handled
-                                            .smart_booking == null
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
                                         ) {
                                           return false;
                                         }
-                                        if (
-                                          currentItem.is_settled == null &&
-                                          currentItem.status === "past"
-                                        ) {
-                                          return true;
-                                        } else {
-                                          return false;
-                                        }
-                                      })();
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return false;
+                                        throw e;
                                       }
-                                      throw e;
-                                    }
-                                  })()
-                                : (() => {
-                                    try {
-                                      return (() => {
+                                    })()
+                                  : (() => {
+                                      try {
+                                        return (() => {
+                                          if (
+                                            currentItem.feature_handled
+                                              .smart_booking == null
+                                          ) {
+                                            return false;
+                                          }
+                                          if (
+                                            currentItem.is_settled == null &&
+                                            currentItem.status === "past"
+                                          ) {
+                                            return true;
+                                          } else {
+                                            return false;
+                                          }
+                                        })();
+                                      } catch (e) {
                                         if (
-                                          currentItem.feature_handled
-                                            .smart_booking == null
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
                                         ) {
                                           return false;
                                         }
-                                        if (
-                                          currentItem.is_settled == null &&
-                                          currentItem.status === "past"
-                                        ) {
-                                          return true;
-                                        } else {
-                                          return false;
-                                        }
-                                      })();
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return false;
+                                        throw e;
                                       }
-                                      throw e;
-                                    }
-                                  })()
-                            ) ? (
-                              <PlasmicImg__
-                                alt={""}
-                                className={classNames(sty.img__wiw9S)}
-                                displayHeight={"25px"}
-                                displayMaxHeight={"none"}
-                                displayMaxWidth={"100%"}
-                                displayMinHeight={"0"}
-                                displayMinWidth={"0"}
-                                displayWidth={"auto"}
-                                loading={"lazy"}
-                                src={{
-                                  src: "/plasmic/website_starter/images/image142.svg",
-                                  fullWidth: 23,
-                                  fullHeight: 23,
-                                  aspectRatio: undefined
-                                }}
-                              />
-                            ) : null}
-                          </div>
-                        );
-                      })}
+                                    })()
+                              ) ? (
+                                <PlasmicImg__
+                                  alt={""}
+                                  className={classNames(sty.img__wiw9S)}
+                                  displayHeight={"25px"}
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"auto"}
+                                  loading={"lazy"}
+                                  src={{
+                                    src: "/plasmic/website_starter/images/image142.svg",
+                                    fullWidth: 23,
+                                    fullHeight: 23,
+                                    aspectRatio: undefined
+                                  }}
+                                />
+                              ) : null}
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-              {(() => {
-                try {
-                  return Object.keys($state.reservations).length == 0;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return false;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ddkat
-                  )}
-                >
-                  {
-                    "\u0645\u0648\u0631\u062f\u06cc \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f"
-                  }
-                </div>
-              ) : null}
-              <ApiRequest
-                data-plasmic-name={"reserveData"}
-                data-plasmic-override={overrides.reserveData}
-                children={null}
-                className={classNames("__wab_instance", sty.reserveData)}
-                errorDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__u9Pfs
-                    )}
-                  >
-                    {
-                      "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
-                    }
-                  </div>
-                }
-                loadingDisplay={null}
-                method={"GET"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "reserveData",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "reserveData",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "reserveData",
-                    "data"
-                  ]).apply(null, eventArgs);
-
-                  (async data => {
-                    const $steps = {};
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                const reservations = $state.reserveData.data;
-                                if (
-                                  Array.isArray(reservations) &&
-                                  reservations.length > 0
-                                ) {
-                                  localStorage.setItem(
-                                    "reservations",
-                                    JSON.stringify(reservations)
-                                  );
-                                }
-                                return ($state.reservations = reservations);
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-                  }).apply(null, eventArgs);
-                }}
-                ref={ref => {
-                  $refs["reserveData"] = ref;
-                }}
-                url={(() => {
+                  );
+                })}
+                {(() => {
                   try {
-                    return (() => {
-                      const isMiaan =
-                        window.location.hostname.includes("miaan.ir");
-                      const gatewayBase = isMiaan
-                        ? "https://gateway.miaan.ir"
-                        : "https://gateway.rentamon.com";
-                      return `${gatewayBase}/webhook/bookings/date`;
-                    })();
+                    return Object.keys($state.reservations).length == 0;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return undefined;
+                      return false;
                     }
                     throw e;
                   }
-                })()}
-              />
-
-              {(() => {
-                try {
-                  return (
-                    $state.isTheFirstVisit &&
-                    $state.tourSteps == 0 &&
-                    Object.keys($state.reservations).length > 0
-                  );
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return false;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <div className={classNames(projectcss.all, sty.freeBox__sdroH)}>
-                  {(
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? (() => {
-                          try {
-                            return $state.reserveData.data[0].item == null;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })()
-                      : (() => {
-                          try {
-                            return (
-                              $state.isTheFirstVisit &&
-                              $state.tourSteps == 0 &&
-                              Object.keys($state.reservations).length > 0
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
-                          }
-                        })()
-                  ) ? (
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__hLat8
-                      )}
-                    >
-                      <React.Fragment>
-                        <React.Fragment>
-                          {
-                            "\u0627\u06cc\u0646\u062c\u0627 \u0644\u06cc\u0633\u062a \u0631\u0632\u0631\u0648 \u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062b\u0628\u062a \u06a9\u0631\u062f\u06cc \u0631\u0648 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc\n\n"
-                          }
-                        </React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ fontWeight: 600 }}
-                        >
-                          {
-                            "\u062d\u0627\u0644\u0627 \u0631\u0648\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u0628\u0632\u0646"
-                          }
-                        </span>
-                      </React.Fragment>
-                    </div>
-                  ) : null}
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? (() => {
-                      try {
-                        return (
-                          !(
-                            $state.reservations &&
-                            $state.reservations.length > 0
-                          ) && $state.isTheFirstVisit
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return true;
-                        }
-                        throw e;
-                      }
-                    })()
-                  : (() => {
-                      try {
-                        return (
-                          !(
-                            $state.reservations &&
-                            $state.reservations.length > 0
-                          ) && $state.isTheFirstVisit
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return false;
-                        }
-                        throw e;
-                      }
-                    })()
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__aDst9)}>
-                  {(
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? (() => {
-                          try {
-                            return $state.reserveData.data[0].item != null;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return true;
-                            }
-                            throw e;
-                          }
-                        })()
-                      : (() => {
-                          try {
-                            return !(
-                              $state.reservations &&
-                              $state.reservations.length > 0
-                            );
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
-                          }
-                        })()
-                  ) ? (
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__jgqq4
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "mobile") ? (
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 600 }}
-                          >
-                            {
-                              "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0631\u0632\u0631\u0648\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc!\r\u00a0\n\u0627\u0648\u0644 \u0627\u0632 \u0645\u0646\u0648\u06cc \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0631\u0648 \u0628\u0647 \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0648 \u00ab\u067e\u0631\u00bb \u06a9\u0646."
-                            }
-                          </span>
-                        </React.Fragment>
-                      ) : (
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 600 }}
-                          >
-                            {
-                              "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0631\u0632\u0631\u0648\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc!\r\n\u0627\u0648\u0644 \u0627\u0632 \u0645\u0646\u0648\u06cc \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0631\u0648 \u0628\u0647 \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0648 \u00ab\u067e\u0631\u00bb \u06a9\u0646."
-                            }
-                          </span>
-                        </React.Fragment>
-                      )}
-                    </div>
-                  ) : null}
-                </div>
-              ) : null}
-              {(() => {
-                try {
-                  return $state.isTheFirstVisit && $state.tourSteps == 0;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__qhySr)}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["deleteCookie"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function deleteCookie(name) {
-                                  document.cookie =
-                                    name +
-                                    "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                                }
-                                deleteCookie("isTheFirstVisit");
-                                console.log("delete cookie");
-                                $state.isTheFirstVisit = 0;
-                                return console.log(
-                                  "delete cookie",
-                                  $state.isTheFirstVisit
-                                );
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["deleteCookie"] != null &&
-                      typeof $steps["deleteCookie"] === "object" &&
-                      typeof $steps["deleteCookie"].then === "function"
-                    ) {
-                      $steps["deleteCookie"] = await $steps["deleteCookie"];
-                    }
-                  }}
-                >
+                })() ? (
                   <div
-                    data-plasmic-name={"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
-                    data-plasmic-override={overrides.بیخیال}
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.بیخیال
+                      sty.text__ddkat
                     )}
+                  >
+                    {
+                      "\u0645\u0648\u0631\u062f\u06cc \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f"
+                    }
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return (
+                      $state.isTheFirstVisit &&
+                      $state.tourSteps == 0 &&
+                      Object.keys($state.reservations).length > 0
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__sdroH)}
+                  >
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            try {
+                              return $state.reserveData.data[0].item == null;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return (
+                                $state.isTheFirstVisit &&
+                                $state.tourSteps == 0 &&
+                                Object.keys($state.reservations).length > 0
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__hLat8
+                        )}
+                      >
+                        <React.Fragment>
+                          <React.Fragment>
+                            {
+                              "\u0627\u06cc\u0646\u062c\u0627 \u0644\u06cc\u0633\u062a \u0631\u0632\u0631\u0648 \u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062b\u0628\u062a \u06a9\u0631\u062f\u06cc \u0631\u0648 \u0645\u06cc\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc\n\n"
+                            }
+                          </React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 600 }}
+                          >
+                            {
+                              "\u062d\u0627\u0644\u0627 \u0631\u0648\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u0628\u0632\u0646"
+                            }
+                          </span>
+                        </React.Fragment>
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+                {(
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return (
+                            !(
+                              $state.reservations &&
+                              $state.reservations.length > 0
+                            ) && $state.isTheFirstVisit
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : (() => {
+                        try {
+                          return (
+                            !(
+                              $state.reservations &&
+                              $state.reservations.length > 0
+                            ) && $state.isTheFirstVisit
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return false;
+                          }
+                          throw e;
+                        }
+                      })()
+                ) ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__aDst9)}
+                  >
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            try {
+                              return $state.reserveData.data[0].item != null;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : (() => {
+                            try {
+                              return !(
+                                $state.reservations &&
+                                $state.reservations.length > 0
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__jgqq4
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile") ? (
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 600 }}
+                            >
+                              {
+                                "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0631\u0632\u0631\u0648\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc!\r\u00a0\n\u0627\u0648\u0644 \u0627\u0632 \u0645\u0646\u0648\u06cc \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0631\u0648 \u0628\u0647 \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0648 \u00ab\u067e\u0631\u00bb \u06a9\u0646."
+                              }
+                            </span>
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 600 }}
+                            >
+                              {
+                                "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0631\u0632\u0631\u0648\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc!\r\n\u0627\u0648\u0644 \u0627\u0632 \u0645\u0646\u0648\u06cc \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0631\u0648 \u0628\u0647 \u00ab\u062a\u0642\u0648\u06cc\u0645\u00bb \u0648 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0648 \u00ab\u067e\u0631\u00bb \u06a9\u0646."
+                              }
+                            </span>
+                          </React.Fragment>
+                        )}
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+                {(() => {
+                  try {
+                    return $state.isTheFirstVisit && $state.tourSteps == 0;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__qhySr)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -3751,11 +3739,300 @@ function PlasmicBookings2__RenderFunc(props: {
                       }
                     }}
                   >
-                    {"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
+                    <div
+                      data-plasmic-name={"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
+                      data-plasmic-override={overrides.بیخیال}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.بیخیال
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["deleteCookie"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    function deleteCookie(name) {
+                                      document.cookie =
+                                        name +
+                                        "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                    }
+                                    deleteCookie("isTheFirstVisit");
+                                    console.log("delete cookie");
+                                    $state.isTheFirstVisit = 0;
+                                    return console.log(
+                                      "delete cookie",
+                                      $state.isTheFirstVisit
+                                    );
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["deleteCookie"] != null &&
+                          typeof $steps["deleteCookie"] === "object" &&
+                          typeof $steps["deleteCookie"].then === "function"
+                        ) {
+                          $steps["deleteCookie"] = await $steps["deleteCookie"];
+                        }
+                      }}
+                    >
+                      {"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
+                    </div>
                   </div>
-                </div>
-              ) : null}
-            </div>
+                ) : null}
+              </div>
+            ) : null}
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
+                      return (
+                        $state.searchInput.value != "" ||
+                        $state.cancelled3.checked == true ||
+                        $state.settlement2.checked == true
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+                : (() => {
+                    try {
+                      return (
+                        $state.searchInput.value != "" ||
+                        $state.cancelled3.checked == true ||
+                        $state.settlement2.checked == true
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })()
+            ) ? (
+              <div
+                data-plasmic-name={"reserveFilterStack2"}
+                data-plasmic-override={overrides.reserveFilterStack2}
+                className={classNames(projectcss.all, sty.reserveFilterStack2)}
+                onScroll={async event => {
+                  const $steps = {};
+                }}
+              >
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return $state.reservations;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__yaFvd)}
+                      key={currentIndex}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateModalOpen3"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["tourSteps"]
+                                },
+                                operation: 0,
+                                value:
+                                  $state.tourSteps == 0
+                                    ? ($state.tourSteps = 1)
+                                    : ($state.tourSteps = 0)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateModalOpen3"] != null &&
+                          typeof $steps["updateModalOpen3"] === "object" &&
+                          typeof $steps["updateModalOpen3"].then === "function"
+                        ) {
+                          $steps["updateModalOpen3"] =
+                            await $steps["updateModalOpen3"];
+                        }
+                      }}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__nDPn
+                        )}
+                      >
+                        {(() => {
+                          try {
+                            return currentItem.booking_id != null;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <ReservationsRecordList2
+                            cancelledBookings={(() => {
+                              try {
+                                return currentItem.status == "cancelled";
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return [];
+                                }
+                                throw e;
+                              }
+                            })()}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.reservationsRecordList2__wsqRl
+                            )}
+                            confirmedBookings={(() => {
+                              try {
+                                return currentItem.status == "reserve";
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return [];
+                                }
+                                throw e;
+                              }
+                            })()}
+                            currentIndex={(() => {
+                              try {
+                                return currentIndex;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+                            data={(() => {
+                              try {
+                                return currentItem;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+                            pastBookingsBox={(() => {
+                              try {
+                                return currentItem.status == "past";
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return [];
+                                }
+                                throw e;
+                              }
+                            })()}
+                            pendingBookings={(() => {
+                              try {
+                                return currentItem.status == "Pending";
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return [];
+                                }
+                                throw e;
+                              }
+                            })()}
+                          />
+                        ) : null}
+                      </div>
+                    </div>
+                  );
+                })}
+                {(() => {
+                  try {
+                    return Object.keys($state.reservations).length == 0;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___9RPr
+                    )}
+                  >
+                    {
+                      "\u0645\u0648\u0631\u062f\u06cc \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f"
+                    }
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
           </div>
           <NavbarRntFooter
             data-plasmic-name={"navbarRntFooter"}
@@ -6895,15 +7172,28 @@ function PlasmicBookings2__RenderFunc(props: {
                               await $steps["invokeGlobalAction"];
                           }
 
-                          $steps["removeSearch"] = true
+                          $steps["removeSearch"] = false
                             ? (() => {
                                 const actionArgs = {
-                                  customFunction: async () => {
-                                    return ($state.searchInput.value = "");
-                                  }
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["searchInput", "value"]
+                                  },
+                                  operation: 1
                                 };
-                                return (({ customFunction }) => {
-                                  return customFunction();
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, undefined);
+                                  return undefined;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
@@ -7319,15 +7609,28 @@ function PlasmicBookings2__RenderFunc(props: {
                             $steps["showToast"] = await $steps["showToast"];
                           }
 
-                          $steps["removeSearch"] = true
+                          $steps["removeSearch"] = false
                             ? (() => {
                                 const actionArgs = {
-                                  customFunction: async () => {
-                                    return ($state.searchInput.value = "");
-                                  }
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["searchInput", "value"]
+                                  },
+                                  operation: 1
                                 };
-                                return (({ customFunction }) => {
-                                  return customFunction();
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, undefined);
+                                  return undefined;
                                 })?.apply(null, [actionArgs]);
                               })()
                             : undefined;
@@ -7440,93 +7743,12 @@ function PlasmicBookings2__RenderFunc(props: {
                           await $steps["removeAllFilter"];
                       }
 
-                      $steps["generateUrl"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  const isMiaan =
-                                    window.location.hostname.includes(
-                                      "miaan.ir"
-                                    );
-                                  const gatewayBase = isMiaan
-                                    ? "https://gateway.miaan.ir"
-                                    : "https://gateway.rentamon.com";
-                                  const baseUrl = `${gatewayBase}/webhook/bookings`;
-                                  const queryParams = [];
-                                  queryParams.push(`v=2`);
-                                  queryParams.push(`limit=${$state.dataSize}`);
-                                  if ($state.settlement2.checked) {
-                                    queryParams.push(
-                                      `is_settled=${!$state.settlement2.checked}`
-                                    );
-                                  }
-                                  if ($state.confierm2.checked) {
-                                    queryParams.push(`status=Confirmed`);
-                                  } else if ($state.cancelled3.checked) {
-                                    queryParams.push(`status=Cancelled`);
-                                  }
-                                  $state.filterUrl = `${baseUrl}?${queryParams.join("&")}`;
-                                  return $state.filterUrl;
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["generateUrl"] != null &&
-                        typeof $steps["generateUrl"] === "object" &&
-                        typeof $steps["generateUrl"].then === "function"
-                      ) {
-                        $steps["generateUrl"] = await $steps["generateUrl"];
-                      }
-
-                      $steps["sendRequests"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                undefined,
-                                (() => {
-                                  try {
-                                    return $state.filterUrl;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["sendRequests"] != null &&
-                        typeof $steps["sendRequests"] === "object" &&
-                        typeof $steps["sendRequests"].then === "function"
-                      ) {
-                        $steps["sendRequests"] = await $steps["sendRequests"];
-                      }
-
                       $steps["updateReservations"] = true
                         ? (() => {
                             const actionArgs = {
                               customFunction: async () => {
-                                return (() => {
-                                  return ($state.reservations =
-                                    $steps.sendRequests.data.result.bookings);
-                                })();
+                                return ($state.reservations =
+                                  $state.reserveData.data);
                               }
                             };
                             return (({ customFunction }) => {
@@ -7829,15 +8051,15 @@ const PlasmicDescendants = {
     "checkIn",
     "checkOut",
     "checkOut2",
+    "reserveData",
     "container",
-    "reserveMainStack2",
+    "pendingReserve",
     "reservationsRecordList",
     "reserveData2",
     "reserveMainStack",
     "dates",
-    "reservationsRecordList2",
-    "reserveData",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644",
+    "reserveFilterStack2",
     "navbarRntFooter",
     "pagination2",
     "pagination",
@@ -7883,7 +8105,7 @@ const PlasmicDescendants = {
   ],
   sideEffect: ["sideEffect"],
   header: ["header", "sidebar", "sideBar2", "sidebarLite", "profile"],
-  sidebar: ["sidebar", "sideBar2"],
+  sidebar: ["sidebar"],
   sideBar2: ["sideBar2"],
   sidebarLite: ["sidebarLite"],
   profile: ["profile"],
@@ -7939,35 +8161,28 @@ const PlasmicDescendants = {
   checkIn: ["checkIn"],
   checkOut: ["checkOut"],
   checkOut2: ["checkOut2"],
+  reserveData: ["reserveData"],
   container: [
     "container",
-    "reserveMainStack2",
+    "pendingReserve",
     "reservationsRecordList",
     "reserveData2",
     "reserveMainStack",
     "dates",
-    "reservationsRecordList2",
-    "reserveData",
-    "\u0628\u06cc\u062e\u06cc\u0627\u0644"
+    "\u0628\u06cc\u062e\u06cc\u0627\u0644",
+    "reserveFilterStack2"
   ],
-  reserveMainStack2: [
-    "reserveMainStack2",
-    "reservationsRecordList",
-    "reserveData2"
-  ],
+  pendingReserve: ["pendingReserve", "reservationsRecordList", "reserveData2"],
   reservationsRecordList: ["reservationsRecordList"],
   reserveData2: ["reserveData2"],
   reserveMainStack: [
     "reserveMainStack",
     "dates",
-    "reservationsRecordList2",
-    "reserveData",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644"
   ],
   dates: ["dates"],
-  reservationsRecordList2: ["reservationsRecordList2"],
-  reserveData: ["reserveData"],
   بیخیال: ["\u0628\u06cc\u062e\u06cc\u0627\u0644"],
+  reserveFilterStack2: ["reserveFilterStack2"],
   navbarRntFooter: ["navbarRntFooter"],
   pagination2: ["pagination2", "pagination"],
   pagination: ["pagination"],
@@ -8083,15 +8298,15 @@ type NodeDefaultElementType = {
   checkIn: "div";
   checkOut: "div";
   checkOut2: "div";
+  reserveData: typeof ApiRequest;
   container: "div";
-  reserveMainStack2: "div";
+  pendingReserve: "div";
   reservationsRecordList: typeof ReservationsRecordList;
   reserveData2: typeof ApiRequest;
   reserveMainStack: "div";
   dates: "div";
-  reservationsRecordList2: typeof ReservationsRecordList2;
-  reserveData: typeof ApiRequest;
   بیخیال: "div";
+  reserveFilterStack2: "div";
   navbarRntFooter: typeof NavbarRntFooter;
   pagination2: "div";
   pagination: typeof AntdPagination;
@@ -8221,15 +8436,15 @@ export const PlasmicBookings2 = Object.assign(
     checkIn: makeNodeComponent("checkIn"),
     checkOut: makeNodeComponent("checkOut"),
     checkOut2: makeNodeComponent("checkOut2"),
+    reserveData: makeNodeComponent("reserveData"),
     container: makeNodeComponent("container"),
-    reserveMainStack2: makeNodeComponent("reserveMainStack2"),
+    pendingReserve: makeNodeComponent("pendingReserve"),
     reservationsRecordList: makeNodeComponent("reservationsRecordList"),
     reserveData2: makeNodeComponent("reserveData2"),
     reserveMainStack: makeNodeComponent("reserveMainStack"),
     dates: makeNodeComponent("dates"),
-    reservationsRecordList2: makeNodeComponent("reservationsRecordList2"),
-    reserveData: makeNodeComponent("reserveData"),
     بیخیال: makeNodeComponent("\u0628\u06cc\u062e\u06cc\u0627\u0644"),
+    reserveFilterStack2: makeNodeComponent("reserveFilterStack2"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     pagination2: makeNodeComponent("pagination2"),
     pagination: makeNodeComponent("pagination"),

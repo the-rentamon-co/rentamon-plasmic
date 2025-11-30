@@ -137,8 +137,7 @@ export type Plasmicدربارهما__OverridesType = {
   map?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   html?: Flex__<"div">;
-  goftino?: Flex__<typeof Embed>;
-  nimchat?: Flex__<typeof Embed>;
+  nimChat?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
@@ -1574,20 +1573,11 @@ function Plasmicدربارهما__RenderFunc(props: {
             className={classNames(projectcss.all, sty.html)}
           >
             <Embed
-              data-plasmic-name={"goftino"}
-              data-plasmic-override={overrides.goftino}
-              className={classNames("__wab_instance", sty.goftino)}
+              data-plasmic-name={"nimChat"}
+              data-plasmic-override={overrides.nimChat}
+              className={classNames("__wab_instance", sty.nimChat)}
               code={
-                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
-              }
-            />
-
-            <Embed
-              data-plasmic-name={"nimchat"}
-              data-plasmic-override={overrides.nimchat}
-              className={classNames("__wab_instance", sty.nimchat)}
-              code={
-                '<script>\r\n  window.nimchatSettings = {"position":"right","launcherTitle":"\u0633\u0644\u0627\u0645. \u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u06a9\u0645\u06a9\u062a \u06a9\u0646\u0645\u061f ","type":"expanded_bubble","locale":"fa"};\r\n  (function(d,t) {\r\n    var BASE_URL="https://app.nim.chat";\r\n    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];\r\n    g.src=BASE_URL+"/packs/js/sdk.js";\r\n    g.defer = true;\r\n    g.async = true;\r\n    s.parentNode.insertBefore(g,s);\r\n    g.onload=function(){\r\n      window.nimchatSDK.run({\r\n        websiteToken: \'KHb1NR6R7zCqPb8r5uaU8JiN\',\r\n        baseUrl: BASE_URL\r\n      })\r\n    }\r\n  })(document,"script");\r\n</script>\r\n'
+                '<script>\r\n  window.nimchatSettings = {"position":"right","launcherTitle":"\u0633\u0644\u0627\u0645. \u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u06a9\u0645\u06a9\u062a\u0648\u0646 \u06a9\u0646\u0645\u061f ","type":"standard","locale":"fa"};\r\n  (function(d,t) {\r\n    var BASE_URL="https://app.nim.chat";\r\n    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];\r\n    g.src=BASE_URL+"/packs/js/sdk.js";\r\n    g.defer = true;\r\n    g.async = true;\r\n    s.parentNode.insertBefore(g,s);\r\n    g.onload=function(){\r\n      window.nimchatSDK.run({\r\n        websiteToken: \'KHb1NR6R7zCqPb8r5uaU8JiN\',\r\n        baseUrl: BASE_URL\r\n      })\r\n    }\r\n  })(document,"script");\r\n</script>\r\n'
               }
             />
 
@@ -1721,8 +1711,7 @@ const PlasmicDescendants = {
     "map",
     "embedHtml",
     "html",
-    "goftino",
-    "nimchat",
+    "nimChat",
     "clarityRntComponent",
     "faviconRntComponent",
     "rentamonFooter",
@@ -1873,15 +1862,8 @@ const PlasmicDescendants = {
   addressText: ["addressText"],
   map: ["map", "embedHtml"],
   embedHtml: ["embedHtml"],
-  html: [
-    "html",
-    "goftino",
-    "nimchat",
-    "clarityRntComponent",
-    "faviconRntComponent"
-  ],
-  goftino: ["goftino"],
-  nimchat: ["nimchat"],
+  html: ["html", "nimChat", "clarityRntComponent", "faviconRntComponent"],
+  nimChat: ["nimChat"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   rentamonFooter: ["rentamonFooter"],
@@ -1943,8 +1925,7 @@ type NodeDefaultElementType = {
   map: "div";
   embedHtml: typeof Embed;
   html: "div";
-  goftino: typeof Embed;
-  nimchat: typeof Embed;
+  nimChat: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   rentamonFooter: typeof RentamonFooter;
@@ -2067,8 +2048,7 @@ export const Plasmicدربارهما = Object.assign(
     map: makeNodeComponent("map"),
     embedHtml: makeNodeComponent("embedHtml"),
     html: makeNodeComponent("html"),
-    goftino: makeNodeComponent("goftino"),
-    nimchat: makeNodeComponent("nimchat"),
+    nimChat: makeNodeComponent("nimChat"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),

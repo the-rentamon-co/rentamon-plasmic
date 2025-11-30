@@ -59,8 +59,9 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -82,9 +83,12 @@ export const PlasmicNewPage3__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNewPage3__OverridesType = {
   root?: Flex__<"div">;
-  embedHtml?: Flex__<typeof Embed>;
-  apiRequest?: Flex__<typeof ApiRequest>;
+  profile2?: Flex__<typeof ApiRequest>;
+  freeBox?: Flex__<"div">;
+  selectProperty?: Flex__<typeof Select>;
   text?: Flex__<"div">;
+  apiRequest?: Flex__<typeof ApiRequest>;
+  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultNewPage3Props {}
@@ -153,6 +157,49 @@ function PlasmicNewPage3__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest"
+      },
+      {
+        path: "profile2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "selectProperty.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.profile2.data.properties[0].property_name;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -191,15 +238,114 @@ function PlasmicNewPage3__RenderFunc(props: {
             sty.root
           )}
         >
-          <Embed
-            data-plasmic-name={"embedHtml"}
-            data-plasmic-override={overrides.embedHtml}
-            className={classNames("__wab_instance", sty.embedHtml)}
-            code={
-              '<!DOCTYPE html>\r\n<html lang="fa" dir="rtl">\r\n<head>\r\n<meta charset="UTF-8">\r\n<script src="https://cdn.jsdelivr.net/npm/jalaali-js/dist/jalaali.js"></script>\r\n\r\n<style>\r\n  /* \u0627\u0633\u062a\u0627\u06cc\u0644\u200c\u0647\u0627 */\r\n  #custom-calendar-container {\r\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;\r\n    --bg-booked: #9e9e9e;\r\n    --bg-free: #ffffff;\r\n    --border-free: #ccc;\r\n    --text-booked: #fff;\r\n    --text-free: #333;\r\n    --text-friday: #ff3b30;\r\n    --bg-selected: #333;\r\n    --radius: 10px;\r\n    \r\n    width: 100%;\r\n    max-width: 400px;\r\n    padding: 10px;\r\n    box-sizing: border-box;\r\n    direction: rtl;\r\n  }\r\n\r\n  #custom-calendar-container * {\r\n    box-sizing: border-box;\r\n  }\r\n\r\n  /* \u0647\u062f\u0631 */\r\n  #custom-calendar-container .header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    margin-bottom: 25px;\r\n    font-size: 1.2rem;\r\n    font-weight: bold;\r\n    color: #333;\r\n  }\r\n\r\n  /* \u062f\u06a9\u0645\u0647\u200c\u0647\u0627 */\r\n  #custom-calendar-container .nav-btn {\r\n    background: transparent !important;\r\n    border: none !important;\r\n    box-shadow: none !important;\r\n    cursor: pointer;\r\n    padding: 5px 15px;\r\n    font-size: 1.5rem !important;\r\n    color: #888 !important;\r\n    transition: color 0.2s;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    line-height: 1;\r\n  }\r\n\r\n  #custom-calendar-container .nav-btn:disabled {\r\n    color: #e0e0e0 !important;\r\n    cursor: not-allowed;\r\n  }\r\n\r\n  /* \u0631\u0648\u0632\u0647\u0627\u06cc \u0647\u0641\u062a\u0647 */\r\n  #custom-calendar-container .weekdays {\r\n    display: grid;\r\n    grid-template-columns: repeat(7, 1fr);\r\n    text-align: center;\r\n    margin-bottom: 15px;\r\n    font-size: 0.9rem;\r\n    color: #666;\r\n    font-weight: normal;\r\n  }\r\n\r\n  /* \u0634\u0628\u06a9\u0647 \u0631\u0648\u0632\u0647\u0627 */\r\n  #custom-calendar-container .days-grid {\r\n    display: grid;\r\n    grid-template-columns: repeat(7, 1fr);\r\n    gap: 8px;\r\n  }\r\n\r\n  #custom-calendar-container .day-cell {\r\n    aspect-ratio: 1/1.2;\r\n    border-radius: var(--radius);\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-size: 1.1rem;\r\n    cursor: pointer;\r\n    position: relative;\r\n    transition: all 0.2s;\r\n    padding: 0;\r\n    margin: 0;\r\n  }\r\n\r\n  #custom-calendar-container .free {\r\n    background-color: var(--bg-free);\r\n    border: 1px solid var(--border-free);\r\n    color: var(--text-free);\r\n  }\r\n\r\n  #custom-calendar-container .booked {\r\n    background-color: var(--bg-booked);\r\n    border: 1px solid var(--bg-booked);\r\n    color: var(--text-booked);\r\n    cursor: default;\r\n  }\r\n\r\n  #custom-calendar-container .selected {\r\n    background-color: var(--bg-selected) !important;\r\n    border-color: var(--bg-selected) !important;\r\n    color: #fff !important;\r\n  }\r\n\r\n  #custom-calendar-container .free.friday {\r\n    color: var(--text-friday);\r\n  }\r\n\r\n  #custom-calendar-container .past-day {\r\n    opacity: 0;\r\n    pointer-events: none;\r\n  }\r\n  \r\n  #custom-calendar-container .empty-slot {\r\n    pointer-events: none;\r\n  }\r\n\r\n  /* \u067e\u06cc\u0627\u0645 \u0648\u0636\u0639\u06cc\u062a */\r\n  #custom-calendar-container .loading {\r\n    text-align: center;\r\n    padding: 20px;\r\n    color: #666;\r\n    font-size: 0.9rem;\r\n  }\r\n\r\n  /* \u0631\u0627\u0647\u0646\u0645\u0627 */\r\n  #custom-calendar-container .legend {\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    margin-top: 20px;\r\n    gap: 15px;\r\n    font-size: 0.8rem;\r\n    color: #666;\r\n  }\r\n\r\n  #custom-calendar-container .legend-item {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n  }\r\n\r\n  #custom-calendar-container .legend-box {\r\n    width: 16px;\r\n    height: 16px;\r\n    border-radius: 4px;\r\n  }\r\n  \r\n  #custom-calendar-container .box-free {\r\n    background: #fff;\r\n    border: 1px solid #ccc;\r\n  }\r\n  \r\n  #custom-calendar-container .box-booked {\r\n    background: var(--bg-booked);\r\n  }\r\n\r\n</style>\r\n</head>\r\n<body>\r\n\r\n<div id="custom-calendar-container">\r\n  \r\n  <div class="header">\r\n    <button class="nav-btn" id="prev-btn" onclick="changeMonth(-1)">&#10095;</button> \r\n    \r\n    <span id="month-year-label">...</span>\r\n    \r\n    <button class="nav-btn" id="next-btn" onclick="changeMonth(1)">&#10094;</button>\r\n  </div>\r\n\r\n  <div class="weekdays">\r\n    <div>\u0634</div>\r\n    <div>\u06cc</div>\r\n    <div>\u062f</div>\r\n    <div>\u0633</div>\r\n    <div>\u0686</div>\r\n    <div>\u067e</div>\r\n    <div>\u062c</div>\r\n  </div>\r\n\r\n  <div id="loading-msg" class="loading">\u062f\u0631 \u0627\u0646\u062a\u0638\u0627\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a...</div>\r\n  <div class="days-grid" id="calendar-grid"></div>\r\n\r\n  <div class="legend" id="legend-section" style="display:none;">\r\n    <div class="legend-item">\r\n      <div class="legend-box box-free"></div>\r\n      <span>\u062e\u0627\u0644\u06cc</span>\r\n    </div>\r\n    <div class="legend-item">\r\n      <div class="legend-box box-booked"></div>\r\n      <span>\u067e\u0631</span>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n\r\n<script>\r\n  // \u062a\u0646\u0638\u06cc\u0645\u0627\u062a\r\n  const MAX_MONTHS_AHEAD = 3;\r\n\r\n  let bookedDates = new Set();\r\n  let selectedDate = null;\r\n  \r\n  const today = new Date();\r\n  const todayJ = jalaali.toJalaali(today);\r\n  \r\n  let currentYear = todayJ.jy;\r\n  let currentMonth = todayJ.jm;\r\n  const startYear = todayJ.jy;\r\n  const startMonth = todayJ.jm;\r\n\r\n  const monthNames = ["", "\u0641\u0631\u0648\u0631\u062f\u06cc\u0646", "\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a", "\u062e\u0631\u062f\u0627\u062f", "\u062a\u06cc\u0631", "\u0645\u0631\u062f\u0627\u062f", "\u0634\u0647\u0631\u06cc\u0648\u0631", "\u0645\u0647\u0631", "\u0622\u0628\u0627\u0646", "\u0622\u0630\u0631", "\u062f\u06cc", "\u0628\u0647\u0645\u0646", "\u0627\u0633\u0641\u0646\u062f"];\r\n\r\n  function toPersianNum(num) {\r\n      const farsiDigits = [\'\u06f0\', \'\u06f1\', \'\u06f2\', \'\u06f3\', \'\u06f4\', \'\u06f5\', \'\u06f6\', \'\u06f7\', \'\u06f8\', \'\u06f9\'];\r\n      return num.toString().replace(/\\d/g, x => farsiDigits[x]);\r\n  }\r\n\r\n  // --- \u062a\u063a\u06cc\u06cc\u0631 \u0627\u0635\u0644\u06cc: \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0627\u0632 \u0645\u062a\u063a\u06cc\u0631 ApiRequest ---\r\n  function initCalendar() {\r\n    try {\r\n      let data = null;\r\n\r\n      // \u0628\u0631\u0631\u0633\u06cc \u0648\u062c\u0648\u062f ApiRequest \u062f\u0631 \u0645\u062d\u06cc\u0637 (\u0645\u062b\u0644\u0627\u064b Plasmic)\r\n      if (typeof ApiRequest !== \'undefined\') {\r\n          // \u0627\u06af\u0631 ApiRequest \u062e\u0648\u062f\u0634 \u062f\u06cc\u062a\u0627 \u0628\u0648\u062f \u06cc\u0627 \u062f\u0627\u062e\u0644 \u067e\u0631\u0627\u067e\u0631\u062a\u06cc data \u0628\u0648\u062f\r\n          data = ApiRequest.data ? ApiRequest.data : ApiRequest;\r\n      } \r\n      // \u0627\u06af\u0631 \u062f\u0631 \u0645\u062d\u06cc\u0637 Window \u062a\u0639\u0631\u06cc\u0641 \u0634\u062f\u0647 \u0628\u0627\u0634\u062f\r\n      else if (window.ApiRequest) {\r\n          data = window.ApiRequest.data ? window.ApiRequest.data : window.ApiRequest;\r\n      }\r\n\r\n      if (data && data.dates) {\r\n        bookedDates = new Set(data.dates);\r\n        document.getElementById(\'loading-msg\').style.display = \'none\';\r\n        document.getElementById(\'legend-section\').style.display = \'flex\';\r\n      } else {\r\n        // \u0627\u06af\u0631 \u062f\u06cc\u062a\u0627 \u062e\u0627\u0644\u06cc \u0628\u0648\u062f \u06cc\u0627 \u0633\u0627\u062e\u062a\u0627\u0631 \u062f\u0631\u0633\u062a \u0646\u0628\u0648\u062f\r\n        document.getElementById(\'loading-msg\').innerText = "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u06cc\u0627\u0641\u062a \u0646\u0634\u062f";\r\n      }\r\n\r\n      // \u0631\u0646\u062f\u0631 \u06a9\u0631\u062f\u0646 \u062a\u0642\u0648\u06cc\u0645 (\u062d\u062a\u06cc \u0627\u06af\u0631 \u062f\u06cc\u062a\u0627 \u0646\u0628\u0627\u0634\u062f\u060c \u062a\u0642\u0648\u06cc\u0645 \u062e\u0627\u0644\u06cc \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f)\r\n      renderCalendar();\r\n      updateNavButtons();\r\n      \r\n    } catch (error) {\r\n      console.error("Calendar Error:", error);\r\n      document.getElementById(\'loading-msg\').innerText = "\u062e\u0637\u0627 \u062f\u0631 \u067e\u0631\u062f\u0627\u0632\u0634 \u0627\u0637\u0644\u0627\u0639\u0627\u062a";\r\n    }\r\n  }\r\n\r\n  function renderCalendar() {\r\n    const grid = document.getElementById(\'calendar-grid\');\r\n    const label = document.getElementById(\'month-year-label\');\r\n    \r\n    grid.innerHTML = \'\';\r\n    label.innerText = `${monthNames[currentMonth]} ${toPersianNum(currentYear)}`;\r\n\r\n    const daysInMonth = jalaali.jalaaliMonthLength(currentYear, currentMonth);\r\n    \r\n    const gDate = jalaali.toGregorian(currentYear, currentMonth, 1);\r\n    const dateObj = new Date(gDate.gy, gDate.gm - 1, gDate.gd);\r\n    let startDayOfWeek = dateObj.getDay(); \r\n    \r\n    const jsDayToJalaliDay = [1, 2, 3, 4, 5, 6, 0];\r\n    let startDayIndex = jsDayToJalaliDay[startDayOfWeek];\r\n\r\n    // \u0641\u0636\u0627\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc\r\n    for (let i = 0; i < startDayIndex; i++) {\r\n      const emptyCell = document.createElement(\'div\');\r\n      emptyCell.className = \'empty-slot\';\r\n      grid.appendChild(emptyCell);\r\n    }\r\n\r\n    // \u0631\u0648\u0632\u0647\u0627\r\n    for (let day = 1; day <= daysInMonth; day++) {\r\n      const cell = document.createElement(\'div\');\r\n      \r\n      const mStr = currentMonth < 10 ? \'0\' + currentMonth : currentMonth;\r\n      const dStr = day < 10 ? \'0\' + day : day;\r\n      const dateString = `${currentYear}-${mStr}-${dStr}`;\r\n      \r\n      const isBooked = bookedDates.has(dateString);\r\n      const isPast = isDateInPast(currentYear, currentMonth, day);\r\n      \r\n      const dayOfWeekIndex = (day - 1 + startDayIndex) % 7;\r\n      const isFriday = (dayOfWeekIndex === 6);\r\n\r\n      let classes = \'day-cell\';\r\n      if (isPast) {\r\n        classes += \' past-day\';\r\n      } else if (isBooked) {\r\n        classes += \' booked\';\r\n      } else {\r\n        classes += \' free\';\r\n        if (isFriday) classes += \' friday\';\r\n        if (selectedDate === dateString) classes += \' selected\';\r\n      }\r\n\r\n      cell.className = classes;\r\n      cell.innerText = toPersianNum(day);\r\n\r\n      if (!isBooked && !isPast) {\r\n        cell.onclick = () => selectDate(dateString, cell);\r\n      }\r\n\r\n      grid.appendChild(cell);\r\n    }\r\n  }\r\n\r\n  function isDateInPast(y, m, d) {\r\n    if (y < todayJ.jy) return true;\r\n    if (y > todayJ.jy) return false;\r\n    if (m < todayJ.jm) return true;\r\n    if (m > todayJ.jm) return false;\r\n    return d < todayJ.jd;\r\n  }\r\n\r\n  function selectDate(dateStr, cell) {\r\n    document.querySelectorAll(\'#custom-calendar-container .selected\').forEach(el => el.classList.remove(\'selected\'));\r\n    selectedDate = dateStr;\r\n    cell.classList.add(\'selected\');\r\n    console.log("Selected:", dateStr);\r\n  }\r\n\r\n  function changeMonth(offset) {\r\n    let nextM = currentMonth + offset;\r\n    let nextY = currentYear;\r\n\r\n    if (nextM > 12) { nextM = 1; nextY++; }\r\n    else if (nextM < 1) { nextM = 12; nextY--; }\r\n\r\n    currentMonth = nextM;\r\n    currentYear = nextY;\r\n    \r\n    renderCalendar();\r\n    updateNavButtons();\r\n  }\r\n\r\n  function updateNavButtons() {\r\n    const prevBtn = document.getElementById(\'prev-btn\');\r\n    const nextBtn = document.getElementById(\'next-btn\');\r\n\r\n    if (currentYear === startYear && currentMonth === startMonth) {\r\n      prevBtn.disabled = true;\r\n    } else {\r\n      prevBtn.disabled = false;\r\n    }\r\n\r\n    let diffMonths = (currentYear - startYear) * 12 + (currentMonth - startMonth);\r\n    if (diffMonths >= MAX_MONTHS_AHEAD) {\r\n      nextBtn.disabled = true;\r\n    } else {\r\n      nextBtn.disabled = false;\r\n    }\r\n  }\r\n\r\n  // \u0627\u062c\u0631\u0627\u06cc \u0627\u0648\u0644\u06cc\u0647\r\n  initCalendar();\r\n\r\n</script>\r\n</body>\r\n</html>'
-            }
-          />
+          <ApiRequest
+            data-plasmic-name={"profile2"}
+            data-plasmic-override={overrides.profile2}
+            className={classNames("__wab_instance", sty.profile2)}
+            errorDisplay={null}
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["profile2", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["profile2", "loading"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["profile2"] = ref;
+            }}
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const apiBase = isMiaan
+                    ? "https://api-v2.miaan.ir"
+                    : "https://api-v2.rentamon.com";
+                  return `${apiBase}/api/user_info?property_id=1`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
+          >
+            <div
+              data-plasmic-name={"freeBox"}
+              data-plasmic-override={overrides.freeBox}
+              className={classNames(projectcss.all, sty.freeBox)}
+            >
+              <Select
+                data-plasmic-name={"selectProperty"}
+                data-plasmic-override={overrides.selectProperty}
+                className={classNames("__wab_instance", sty.selectProperty)}
+                onChange={async (...eventArgs: any) => {
+                  ((...eventArgs) => {
+                    generateStateOnChangeProp($state, [
+                      "selectProperty",
+                      "value"
+                    ])(eventArgs[0]);
+                  }).apply(null, eventArgs);
 
+                  if (
+                    eventArgs.length > 1 &&
+                    eventArgs[1] &&
+                    eventArgs[1]._plasmic_state_init_
+                  ) {
+                    return;
+                  }
+                }}
+                options={(() => {
+                  try {
+                    return $state.profile2.data.properties.map(
+                      property => property.property_name
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
+                placeholder={
+                  <div
+                    data-plasmic-name={"text"}
+                    data-plasmic-override={overrides.text}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text
+                    )}
+                  >
+                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
+                  </div>
+                }
+                value={generateStateValueProp($state, [
+                  "selectProperty",
+                  "value"
+                ])}
+              />
+            </div>
+          </ApiRequest>
           <ApiRequest
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
@@ -228,20 +374,400 @@ function PlasmicNewPage3__RenderFunc(props: {
             ref={ref => {
               $refs["apiRequest"] = ref;
             }}
-            url={"https://gateway.rentamon.com/webhook/public_calendar_api"}
+            url={
+              "https://gateway.rentamon.com/webhook/public_calendar_get_property_id"
+            }
           />
 
-          <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text
-            )}
-          >
-            <React.Fragment>{$state.apiRequest.data.dates}</React.Fragment>
-          </div>
+          <Embed
+            data-plasmic-name={"embedHtml"}
+            data-plasmic-override={overrides.embedHtml}
+            className={classNames("__wab_instance", sty.embedHtml)}
+            code={(() => {
+              try {
+                return `<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/jalaali-js/dist/jalaali.js"></script>
+
+<style>
+  #custom-calendar-container {
+    /* فونت پیش‌فرض سیستم */
+    --bg-booked: #9e9e9e;
+    --bg-free: #ffffff;
+    --border-free: #ccc;
+    --text-booked: #fff;
+    --text-free: #333;
+    --text-friday: #ff3b30;
+    --bg-selected: #333;
+    --radius: 10px;
+    
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    box-sizing: border-box;
+    direction: rtl;
+  }
+
+  #custom-calendar-container * {
+    box-sizing: border-box;
+  }
+
+  #custom-calendar-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  #custom-calendar-container .nav-btn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    padding: 5px 15px;
+    font-size: 1.5rem !important;
+    color: #888 !important;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  #custom-calendar-container .nav-btn:disabled {
+    color: #e0e0e0 !important;
+    cursor: not-allowed;
+  }
+
+  #custom-calendar-container .weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: normal;
+  }
+
+  #custom-calendar-container .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+  }
+
+  #custom-calendar-container .day-cell {
+    aspect-ratio: 1/1.2;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+    padding: 0;
+    margin: 0;
+  }
+
+  #custom-calendar-container .free {
+    background-color: var(--bg-free);
+    border: 1px solid var(--border-free);
+    color: var(--text-free);
+  }
+
+  #custom-calendar-container .booked {
+    background-color: var(--bg-booked);
+    border: 1px solid var(--bg-booked);
+    color: var(--text-booked);
+    cursor: default;
+  }
+
+  #custom-calendar-container .selected {
+    background-color: var(--bg-selected) !important;
+    border-color: var(--bg-selected) !important;
+    color: #fff !important;
+  }
+
+  #custom-calendar-container .free.friday {
+    color: var(--text-friday);
+  }
+
+  #custom-calendar-container .past-day {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  #custom-calendar-container .empty-slot {
+    pointer-events: none;
+  }
+
+  #custom-calendar-container .loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+    font-family: inherit;
+  }
+
+  #custom-calendar-container .legend {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  #custom-calendar-container .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #custom-calendar-container .legend-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+  
+  #custom-calendar-container .box-free {
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+  
+  #custom-calendar-container .box-booked {
+    background: var(--bg-booked);
+  }
+
+</style>
+</head>
+<body>
+
+<div id="custom-calendar-container">
+  
+  <div class="header">
+    <button class="nav-btn" id="prev-btn" onclick="changeMonth(-1)">&#10094;</button> 
+    <span id="month-year-label">...</span>
+    <button class="nav-btn" id="next-btn" onclick="changeMonth(1)">&#10095;</button>
+
+  </div>
+
+  <div class="weekdays">
+    <div>ش</div>
+    <div>ی</div>
+    <div>د</div>
+    <div>س</div>
+    <div>چ</div>
+    <div>پ</div>
+    <div>ج</div>
+  </div>
+
+  <div id="loading-msg" class="loading">در حال دریافت تقویم...</div>
+  <div class="days-grid" id="calendar-grid"></div>
+
+  <div class="legend" id="legend-section" style="display:none;">
+    <div class="legend-item">
+      <div class="legend-box box-free"></div>
+      <span>خالی</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-box box-booked"></div>
+      <span>پر</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ************ بخش تغییر یافته ************
+  
+  // دریافت شناسه ملک از پلازمیک
+  const PROPERTY_ID = "${$state.apiRequest.data.id}";
+  
+  // ساخت آدرس API با شناسه داینامیک
+  const API_URL = "https://dev.rentamon.com/webhook/public_calendar_api?property_id=" + PROPERTY_ID;
+  
+  // ************ پایان بخش تغییر یافته ************
+
+  const MAX_MONTHS_AHEAD = 3;
+
+  let bookedDates = new Set();
+  let selectedDate = null;
+  
+  const today = new Date();
+  const todayJ = jalaali.toJalaali(today);
+  
+  let currentYear = todayJ.jy;
+  let currentMonth = todayJ.jm;
+  const startYear = todayJ.jy;
+  const startMonth = todayJ.jm;
+
+  const monthNames = ["", "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
+
+  function toPersianNum(num) {
+      const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+      // استفاده از دو بک‌اسلش برای اینکه در تمپلیت لیترال درست کار کند
+      return num.toString().replace(/\\d/g, x => farsiDigits[x]);
+  }
+
+  async function initCalendar() {
+    try {
+      // بررسی وجود شناسه ملک
+      if(!PROPERTY_ID || PROPERTY_ID === "undefined") {
+         console.warn("Property ID not found");
+         document.getElementById('loading-msg').innerText = "شناسه ملک یافت نشد";
+         return;
+      }
+
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      
+      if (data && data.dates) {
+        bookedDates = new Set(data.dates);
+      }
+      
+      document.getElementById('loading-msg').style.display = 'none';
+      document.getElementById('legend-section').style.display = 'flex';
+      renderCalendar();
+      updateNavButtons();
+      
+    } catch (error) {
+      console.error("Error fetching calendar:", error);
+      document.getElementById('loading-msg').innerText = "خطا در بارگذاری";
+    }
+  }
+
+  function renderCalendar() {
+    const grid = document.getElementById('calendar-grid');
+    const label = document.getElementById('month-year-label');
+    
+    grid.innerHTML = '';
+    label.innerText = monthNames[currentMonth] + " " + toPersianNum(currentYear);
+
+    const daysInMonth = jalaali.jalaaliMonthLength(currentYear, currentMonth);
+    
+    const gDate = jalaali.toGregorian(currentYear, currentMonth, 1);
+    const dateObj = new Date(gDate.gy, gDate.gm - 1, gDate.gd);
+    let startDayOfWeek = dateObj.getDay(); 
+    
+    const jsDayToJalaliDay = [1, 2, 3, 4, 5, 6, 0];
+    let startDayIndex = jsDayToJalaliDay[startDayOfWeek];
+
+    for (let i = 0; i < startDayIndex; i++) {
+      const emptyCell = document.createElement('div');
+      emptyCell.className = 'empty-slot';
+      grid.appendChild(emptyCell);
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const cell = document.createElement('div');
+      
+      const mStr = currentMonth < 10 ? '0' + currentMonth : currentMonth;
+      const dStr = day < 10 ? '0' + day : day;
+      const dateString = currentYear + "-" + mStr + "-" + dStr;
+      
+      const isBooked = bookedDates.has(dateString);
+      const isPast = isDateInPast(currentYear, currentMonth, day);
+      
+      const dayOfWeekIndex = (day - 1 + startDayIndex) % 7;
+      const isFriday = (dayOfWeekIndex === 6);
+
+      let classes = 'day-cell';
+      if (isPast) {
+        classes += ' past-day';
+      } else if (isBooked) {
+        classes += ' booked';
+      } else {
+        classes += ' free';
+        if (isFriday) classes += ' friday';
+        if (selectedDate === dateString) classes += ' selected';
+      }
+
+      cell.className = classes;
+      cell.innerText = toPersianNum(day);
+
+      if (!isBooked && !isPast) {
+        // تغییر نحوه تعریف تابع کلیک برای جلوگیری از تداخل
+        cell.onclick = function() { selectDate(dateString, cell); };
+      }
+
+      grid.appendChild(cell);
+    }
+  }
+
+  function isDateInPast(y, m, d) {
+    if (y < todayJ.jy) return true;
+    if (y > todayJ.jy) return false;
+    if (m < todayJ.jm) return true;
+    if (m > todayJ.jm) return false;
+    return d < todayJ.jd;
+  }
+
+  function selectDate(dateStr, cell) {
+    var allSelected = document.querySelectorAll('#custom-calendar-container .selected');
+    for(var i=0; i<allSelected.length; i++) {
+        allSelected[i].classList.remove('selected');
+    }
+    
+    selectedDate = dateStr;
+    cell.classList.add('selected');
+    console.log("Selected:", dateStr);
+  }
+
+  function changeMonth(offset) {
+    let nextM = currentMonth + offset;
+    let nextY = currentYear;
+
+    if (nextM > 12) { nextM = 1; nextY++; }
+    else if (nextM < 1) { nextM = 12; nextY--; }
+
+    currentMonth = nextM;
+    currentYear = nextY;
+    
+    renderCalendar();
+    updateNavButtons();
+  }
+
+  function updateNavButtons() {
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    if (currentYear === startYear && currentMonth === startMonth) {
+      prevBtn.disabled = true;
+    } else {
+      prevBtn.disabled = false;
+    }
+
+    let diffMonths = (currentYear - startYear) * 12 + (currentMonth - startMonth);
+    if (diffMonths >= MAX_MONTHS_AHEAD) {
+      nextBtn.disabled = true;
+    } else {
+      nextBtn.disabled = false;
+    }
+  }
+
+  setTimeout(initCalendar, 100);
+
+</script>
+</body>
+</html>`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "";
+                }
+                throw e;
+              }
+            })()}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -249,19 +775,33 @@ function PlasmicNewPage3__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "embedHtml", "apiRequest", "text"],
-  embedHtml: ["embedHtml"],
+  root: [
+    "root",
+    "profile2",
+    "freeBox",
+    "selectProperty",
+    "text",
+    "apiRequest",
+    "embedHtml"
+  ],
+  profile2: ["profile2", "freeBox", "selectProperty", "text"],
+  freeBox: ["freeBox", "selectProperty", "text"],
+  selectProperty: ["selectProperty", "text"],
+  text: ["text"],
   apiRequest: ["apiRequest"],
-  text: ["text"]
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  embedHtml: typeof Embed;
-  apiRequest: typeof ApiRequest;
+  profile2: typeof ApiRequest;
+  freeBox: "div";
+  selectProperty: typeof Select;
   text: "div";
+  apiRequest: typeof ApiRequest;
+  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -326,9 +866,12 @@ export const PlasmicNewPage3 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    embedHtml: makeNodeComponent("embedHtml"),
-    apiRequest: makeNodeComponent("apiRequest"),
+    profile2: makeNodeComponent("profile2"),
+    freeBox: makeNodeComponent("freeBox"),
+    selectProperty: makeNodeComponent("selectProperty"),
     text: makeNodeComponent("text"),
+    apiRequest: makeNodeComponent("apiRequest"),
+    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicNewPage3
     internalVariantProps: PlasmicNewPage3__VariantProps,
