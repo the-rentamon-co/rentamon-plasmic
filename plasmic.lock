@@ -846,12 +846,12 @@
         {
           "type": "renderModule",
           "assetId": "gvjKIi6-pXeG",
-          "checksum": "0619cdaea2fa36ad0a6976dc01255e1b"
+          "checksum": "598a03fb06c3430b8e516b84a75516f7"
         },
         {
           "type": "cssRules",
           "assetId": "gvjKIi6-pXeG",
-          "checksum": "0619cdaea2fa36ad0a6976dc01255e1b"
+          "checksum": "598a03fb06c3430b8e516b84a75516f7"
         },
         {
           "type": "renderModule",
@@ -1206,12 +1206,12 @@
         {
           "type": "renderModule",
           "assetId": "4_Sank-PwTYC",
-          "checksum": "d90255e9e140b9ad32f2a6353715bee1"
+          "checksum": "03c85977e7060fa730089b9ee11b295d"
         },
         {
           "type": "cssRules",
           "assetId": "4_Sank-PwTYC",
-          "checksum": "d90255e9e140b9ad32f2a6353715bee1"
+          "checksum": "03c85977e7060fa730089b9ee11b295d"
         },
         {
           "type": "renderModule",
@@ -1306,12 +1306,12 @@
         {
           "type": "renderModule",
           "assetId": "wDX6CsUVKNmL",
-          "checksum": "c288b036057d2ffe05c87686aec8c670"
+          "checksum": "5664d9541705e90840d48e1253c8255e"
         },
         {
           "type": "cssRules",
           "assetId": "wDX6CsUVKNmL",
-          "checksum": "c288b036057d2ffe05c87686aec8c670"
+          "checksum": "5664d9541705e90840d48e1253c8255e"
         },
         {
           "type": "renderModule",
@@ -4366,12 +4366,12 @@
         {
           "type": "renderModule",
           "assetId": "7xoX8eHI85Zt",
-          "checksum": "8f914aac3feab19a02d0e7135352c198"
+          "checksum": "05eb91b67a6b2d76eb97dc537214d0a2"
         },
         {
           "type": "cssRules",
           "assetId": "7xoX8eHI85Zt",
-          "checksum": "8f914aac3feab19a02d0e7135352c198"
+          "checksum": "05eb91b67a6b2d76eb97dc537214d0a2"
         },
         {
           "type": "renderModule",
@@ -4672,6 +4672,11 @@
           "assetId": "7SNMkB8UMukVgcWJYokeAQ",
           "type": "projectCss",
           "checksum": "b61fd65fd8eadb4c3c6c46e43eef7148"
+        },
+        {
+          "type": "image",
+          "assetId": "vjLJz3cgYQob",
+          "checksum": "6a8cab51513b1407ebde33c623064ea5"
         }
       ],
       "codegenVersion": "0.0.2"

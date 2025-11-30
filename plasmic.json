@@ -5867,6 +5867,11 @@
           "id": "I-sWj9ogJhZW",
           "name": "copy-1-svgrepo-com.svg",
           "filePath": "../public/plasmic/website_starter/images/copy1SvgrepoComSvg.svg"
+        },
+        {
+          "id": "vjLJz3cgYQob",
+          "name": "icon-social-sign.png",
+          "filePath": "../public/plasmic/website_starter/images/iconSocialSignPng.png"
         }
       ],
       "indirect": false,

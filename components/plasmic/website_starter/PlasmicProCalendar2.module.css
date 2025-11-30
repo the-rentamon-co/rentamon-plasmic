@@ -144,6 +144,22 @@
   background: none;
   outline: none;
 }
+@media (max-width: 500px) {
+  .alertModal:global(.__wab_instance) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding-top: 100px;
+  }
+}
+@media (max-width: 350px) {
+  .alertModal:global(.__wab_instance) {
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}
 .freeBox__atQjk {
   animation: none;
   display: flex;
@@ -331,7 +347,7 @@
 @media (max-width: 350px) {
   .text__ki9Gp {
     animation: none;
-    font-size: 17px;
+    font-size: 16px;
     padding-bottom: 0px;
   }
 }

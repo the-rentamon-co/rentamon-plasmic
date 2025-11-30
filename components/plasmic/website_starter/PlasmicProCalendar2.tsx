@@ -1166,7 +1166,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         </span>
                         <React.Fragment>
                           {
-                            "\n\u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u060c \u0644\u0648\u06af\u0648 \u0628\u0631\u0646\u0627\u0645\u0647 \u0622\u0628\u06cc \u0645\u06cc\u200c\u0634\u0647!"
+                            "\n\u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u060c \u0622\u06cc\u06a9\u0648\u0646 \u0628\u0631\u0646\u0627\u0645\u0647 \u0622\u0628\u06cc \u0645\u06cc\u200c\u0634\u0647!"
                           }
                         </React.Fragment>
                       </React.Fragment>

@@ -127,11 +127,6 @@ export type PlasmicReservations__OverridesType = {
   checkOut?: Flex__<"div">;
   checkOut2?: Flex__<"div">;
   container?: Flex__<"div">;
-  titles?: Flex__<"div">;
-  property?: Flex__<"div">;
-  guestName?: Flex__<"div">;
-  arriveDate?: Flex__<"div">;
-  source?: Flex__<"div">;
   reserveMainStack2?: Flex__<"div">;
   reserveData2?: Flex__<typeof ApiRequest>;
   reserveMainStack?: Flex__<"div">;
@@ -2489,104 +2484,6 @@ function PlasmicReservations__RenderFunc(props: {
             data-plasmic-override={overrides.container}
             className={classNames(projectcss.all, sty.container)}
           >
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? true
-                : hasVariant(globalVariants, "screen", "tablet")
-                  ? true
-                  : (() => {
-                      try {
-                        return $state.reserveData.data[0].item != "empty";
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return false;
-                        }
-                        throw e;
-                      }
-                    })()
-            ) ? (
-              <div
-                data-plasmic-name={"titles"}
-                data-plasmic-override={overrides.titles}
-                className={classNames(projectcss.all, sty.titles, "fadeinf")}
-              >
-                <div
-                  data-plasmic-name={"property"}
-                  data-plasmic-override={overrides.property}
-                  className={classNames(projectcss.all, sty.property)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dxAlP
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                        : "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"guestName"}
-                  data-plasmic-override={overrides.guestName}
-                  className={classNames(projectcss.all, sty.guestName)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yOpPu
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0645\u0647\u0645\u0627\u0646"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0645\u0647\u0645\u0627\u0646"
-                        : "\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646"}
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"arriveDate"}
-                  data-plasmic-override={overrides.arriveDate}
-                  className={classNames(projectcss.all, sty.arriveDate)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__m4Cx2
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u0648\u0631\u0648\u062f"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0648\u0631\u0648\u062f"
-                        : "\u062a\u0627\u0631\u06cc\u062e \u0648\u0631\u0648\u062f"}
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"source"}
-                  data-plasmic-override={overrides.source}
-                  className={classNames(projectcss.all, sty.source)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__o8Lk1
-                    )}
-                  >
-                    {"\u0645\u0639\u0631\u0641"}
-                  </div>
-                </div>
-              </div>
-            ) : null}
             <div
               data-plasmic-name={"reserveMainStack2"}
               data-plasmic-override={overrides.reserveMainStack2}
@@ -7834,11 +7731,6 @@ const PlasmicDescendants = {
     "checkOut",
     "checkOut2",
     "container",
-    "titles",
-    "property",
-    "guestName",
-    "arriveDate",
-    "source",
     "reserveMainStack2",
     "reserveData2",
     "reserveMainStack",
@@ -7948,11 +7840,6 @@ const PlasmicDescendants = {
   checkOut2: ["checkOut2"],
   container: [
     "container",
-    "titles",
-    "property",
-    "guestName",
-    "arriveDate",
-    "source",
     "reserveMainStack2",
     "reserveData2",
     "reserveMainStack",
@@ -7960,11 +7847,6 @@ const PlasmicDescendants = {
     "reserveData",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644"
   ],
-  titles: ["titles", "property", "guestName", "arriveDate", "source"],
-  property: ["property"],
-  guestName: ["guestName"],
-  arriveDate: ["arriveDate"],
-  source: ["source"],
   reserveMainStack2: ["reserveMainStack2", "reserveData2"],
   reserveData2: ["reserveData2"],
   reserveMainStack: [
@@ -8092,11 +7974,6 @@ type NodeDefaultElementType = {
   checkOut: "div";
   checkOut2: "div";
   container: "div";
-  titles: "div";
-  property: "div";
-  guestName: "div";
-  arriveDate: "div";
-  source: "div";
   reserveMainStack2: "div";
   reserveData2: typeof ApiRequest;
   reserveMainStack: "div";
@@ -8233,11 +8110,6 @@ export const PlasmicReservations = Object.assign(
     checkOut: makeNodeComponent("checkOut"),
     checkOut2: makeNodeComponent("checkOut2"),
     container: makeNodeComponent("container"),
-    titles: makeNodeComponent("titles"),
-    property: makeNodeComponent("property"),
-    guestName: makeNodeComponent("guestName"),
-    arriveDate: makeNodeComponent("arriveDate"),
-    source: makeNodeComponent("source"),
     reserveMainStack2: makeNodeComponent("reserveMainStack2"),
     reserveData2: makeNodeComponent("reserveData2"),
     reserveMainStack: makeNodeComponent("reserveMainStack"),
