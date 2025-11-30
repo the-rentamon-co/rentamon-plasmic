@@ -2872,41 +2872,6 @@ function PlasmicBookings2__RenderFunc(props: {
                         $steps["updateModalOpen3"] =
                           await $steps["updateModalOpen3"];
                       }
-
-                      $steps["updateModalOpen5"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  let result = "";
-                                  const bookingId = currentItem.booking_id;
-                                  const isMiaan =
-                                    window.location.hostname.includes(
-                                      "miaan.ir"
-                                    );
-                                  const baseUrl = isMiaan
-                                    ? "https://miaan.ir"
-                                    : "https://rentamon.com";
-                                  return window.open(
-                                    `${baseUrl}/bookings/${bookingId}`,
-                                    "_blank"
-                                  );
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateModalOpen5"] != null &&
-                        typeof $steps["updateModalOpen5"] === "object" &&
-                        typeof $steps["updateModalOpen5"].then === "function"
-                      ) {
-                        $steps["updateModalOpen5"] =
-                          await $steps["updateModalOpen5"];
-                      }
                     }}
                   >
                     <div
@@ -3103,6 +3068,44 @@ function PlasmicBookings2__RenderFunc(props: {
                               })()
                             )}
                             key={currentIndex}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["runCode"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      customFunction: async () => {
+                                        return (() => {
+                                          let result = "";
+                                          const bookingId =
+                                            currentItem.booking_id;
+                                          const isMiaan =
+                                            window.location.hostname.includes(
+                                              "miaan.ir"
+                                            );
+                                          const baseUrl = isMiaan
+                                            ? "https://miaan.ir"
+                                            : "https://rentamon.com";
+                                          return window.open(
+                                            `${baseUrl}/bookings/${bookingId}`,
+                                            "_blank"
+                                          );
+                                        })();
+                                      }
+                                    };
+                                    return (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["runCode"] != null &&
+                                typeof $steps["runCode"] === "object" &&
+                                typeof $steps["runCode"].then === "function"
+                              ) {
+                                $steps["runCode"] = await $steps["runCode"];
+                              }
+                            }}
                           >
                             {(() => {
                               try {
