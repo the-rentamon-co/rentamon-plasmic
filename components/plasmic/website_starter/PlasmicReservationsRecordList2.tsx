@@ -974,7 +974,14 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.date4
+                  sty.date4,
+                  {
+                    [sty.date4confirmedBookings]: hasVariant(
+                      $state,
+                      "confirmedBookings",
+                      "confirmedBookings"
+                    )
+                  }
                 )}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile") ? (
