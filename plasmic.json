@@ -3160,7 +3160,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage3.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/new-page-3.tsx"
+            "modulePath": "../src/pages/public-calendar/[prop_id].tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicNewPage3.module.css",
           "scheme": "blackbox",

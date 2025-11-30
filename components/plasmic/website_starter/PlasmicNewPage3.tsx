@@ -164,7 +164,9 @@ function PlasmicNewPage3__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return $state.apiRequest.data[0].name;
+              return $state.apiRequest.data.find(
+                item => item.id === $ctx.params.prop_id
+              ).name;
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -179,8 +181,21 @@ function PlasmicNewPage3__RenderFunc(props: {
       {
         path: "propertyId",
         type: "private",
-        variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $ctx.params.prop_id;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -281,136 +296,137 @@ function PlasmicNewPage3__RenderFunc(props: {
               data-plasmic-override={overrides.freeBox}
               className={classNames(projectcss.all, sty.freeBox)}
             >
-              <Select
-                data-plasmic-name={"selectProperty"}
-                data-plasmic-override={overrides.selectProperty}
-                className={classNames("__wab_instance", sty.selectProperty)}
-                onChange={async (...eventArgs: any) => {
-                  ((...eventArgs) => {
-                    generateStateOnChangeProp($state, [
-                      "selectProperty",
-                      "value"
-                    ])(eventArgs[0]);
-                  }).apply(null, eventArgs);
+              {(() => {
+                const child$Props = {
+                  className: classNames("__wab_instance", sty.selectProperty),
+                  onChange: async (...eventArgs: any) => {
+                    ((...eventArgs) => {
+                      generateStateOnChangeProp($state, [
+                        "selectProperty",
+                        "value"
+                      ])(eventArgs[0]);
+                    }).apply(null, eventArgs);
 
-                  if (
-                    eventArgs.length > 1 &&
-                    eventArgs[1] &&
-                    eventArgs[1]._plasmic_state_init_
-                  ) {
-                    return;
-                  }
+                    if (
+                      eventArgs.length > 1 &&
+                      eventArgs[1] &&
+                      eventArgs[1]._plasmic_state_init_
+                    ) {
+                      return;
+                    }
 
-                  (async value => {
-                    const $steps = {};
+                    (async value => {
+                      const $steps = {};
 
-                    $steps["updatePropertyId"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            operation: 0,
-                            value: $state.apiRequest.data.find(
-                              item => item.name === $state.selectProperty.value
-                            ).id,
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["propertyId"]
+                      $steps["goToNewPage3"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: `/public-calendar/${(() => {
+                                try {
+                                  return $state.apiRequest.data.find(
+                                    item =>
+                                      item.name === $state.selectProperty.value
+                                  ).id;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}`
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToNewPage3"] != null &&
+                        typeof $steps["goToNewPage3"] === "object" &&
+                        typeof $steps["goToNewPage3"].then === "function"
+                      ) {
+                        $steps["goToNewPage3"] = await $steps["goToNewPage3"];
+                      }
+                    }).apply(null, eventArgs);
+                  },
+                  options: (() => {
+                    try {
+                      return $state.apiRequest.data.map(item => item.name);
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })(),
+                  placeholder: (
+                    <div
+                      data-plasmic-name={"text"}
+                      data-plasmic-override={overrides.text}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text
+                      )}
+                    >
+                      {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
+                    </div>
+                  ),
+                  value: generateStateValueProp($state, [
+                    "selectProperty",
+                    "value"
+                  ])
+                };
+
+                initializePlasmicStates(
+                  $state,
+                  [
+                    {
+                      name: "selectProperty.value",
+                      initFunc: ({ $props, $state, $queries }) =>
+                        (() => {
+                          try {
+                            return $state.apiRequest.data.find(
+                              item => item.id === $ctx.params.prop_id
+                            ).name;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
                             }
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
+                            throw e;
+                          }
                         })()
-                      : undefined;
-                    if (
-                      $steps["updatePropertyId"] != null &&
-                      typeof $steps["updatePropertyId"] === "object" &&
-                      typeof $steps["updatePropertyId"].then === "function"
-                    ) {
-                      $steps["updatePropertyId"] =
-                        await $steps["updatePropertyId"];
                     }
-
-                    $steps["updateSelectPropertyValue"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["selectProperty", "value"]
-                            },
-                            operation: 0,
-                            value: (() => {
-                              return window.location.reload();
-                            })()
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateSelectPropertyValue"] != null &&
-                      typeof $steps["updateSelectPropertyValue"] === "object" &&
-                      typeof $steps["updateSelectPropertyValue"].then ===
-                        "function"
-                    ) {
-                      $steps["updateSelectPropertyValue"] =
-                        await $steps["updateSelectPropertyValue"];
-                    }
-                  }).apply(null, eventArgs);
-                }}
-                options={(() => {
-                  try {
-                    return $state.apiRequest.data.map(item => item.name);
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
-                  }
-                })()}
-                placeholder={
-                  <div
-                    data-plasmic-name={"text"}
-                    data-plasmic-override={overrides.text}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text
-                    )}
-                  >
-                    {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
-                  </div>
-                }
-                value={generateStateValueProp($state, [
-                  "selectProperty",
-                  "value"
-                ])}
-              />
+                  ],
+                  []
+                );
+                return (
+                  <Select
+                    data-plasmic-name={"selectProperty"}
+                    data-plasmic-override={overrides.selectProperty}
+                    {...child$Props}
+                  />
+                );
+              })()}
             </div>
             <Embed
               data-plasmic-name={"embedHtml"}
