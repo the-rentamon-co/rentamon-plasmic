@@ -328,7 +328,7 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
                 $refs["apiRequest"] = ref;
               }}
               url={
-                "https://gateway.rentamon.com/webhook/public_calendar_get_property_id"
+                "https://gateway.miaan.ir/webhook/public_calendar_get_property_id"
               }
             >
               <div className={classNames(projectcss.all, sty.freeBox__y47CQ)}>
@@ -519,7 +519,8 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
-    cursor: pointer;
+    /* تغییر: نشانگر موس دیگر به شکل دست در نمی‌آید */
+    cursor: default; 
     position: relative;
     transition: all 0.2s;
     padding: 0;
@@ -537,12 +538,6 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
     border: 1px solid var(--bg-booked);
     color: var(--text-booked);
     cursor: default;
-  }
-
-  #custom-calendar-container .selected {
-    background-color: var(--bg-selected) !important;
-    border-color: var(--bg-selected) !important;
-    color: #fff !important;
   }
 
   #custom-calendar-container .free.friday {
@@ -638,13 +633,11 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
 <script>
 { 
   // *** شروع بلاک اسکوپ ***
-  // این آکولاد باز باعث می‌شود متغیرها فقط در همین اجرا معتبر باشند و با اجرای بعدی تداخل نکنند.
-
   const PRELOADED_DATES = ${JSON.stringify($state.apiRequest2.data.dates || [])};
   const MAX_MONTHS_AHEAD = 3;
 
   let bookedDates = new Set();
-  let selectedDate = null;
+  // حذف متغیر selectedDate چون دیگر نیازی نیست
   
   const today = new Date();
   const todayJ = jalaali.toJalaali(today);
@@ -687,7 +680,7 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
     const grid = document.getElementById('calendar-grid');
     const label = document.getElementById('month-year-label');
     
-    if (!grid || !label) return; // اطمینان از وجود المنت‌ها
+    if (!grid || !label) return;
 
     grid.innerHTML = '';
     label.innerText = monthNames[currentMonth] + " " + toPersianNum(currentYear);
@@ -728,15 +721,12 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
       } else {
         classes += ' free';
         if (isFriday) classes += ' friday';
-        if (selectedDate === dateString) classes += ' selected';
       }
 
       cell.className = classes;
       cell.innerText = toPersianNum(day);
 
-      if (!isBooked && !isPast) {
-        cell.onclick = function() { selectDate(dateString, cell); };
-      }
+      // *** حذف بخش onclick که وظیفه انتخاب تاریخ را داشت ***
 
       grid.appendChild(cell);
     }
@@ -750,16 +740,7 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
     return d < todayJ.jd;
   }
 
-  function selectDate(dateStr, cell) {
-    var allSelected = document.querySelectorAll('#custom-calendar-container .selected');
-    for(var i=0; i<allSelected.length; i++) {
-        allSelected[i].classList.remove('selected');
-    }
-    
-    selectedDate = dateStr;
-    cell.classList.add('selected');
-    console.log("Selected:", dateStr);
-  }
+  // حذف تابع selectDate
 
   function changeMonth(offset) {
     let nextM = currentMonth + offset;
@@ -781,9 +762,6 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
     
     if(!prevBtn || !nextBtn) return;
 
-    // حذف ایونت‌های قبلی با کلون کردن دکمه (چون در محیط ری‌رندر ممکن است ایونت‌ها دوبل شوند)
-    // ساده‌ترین راه در اینجا بازتعریف onclick است که در پایین انجام شده است
-
     prevBtn.onclick = function() { changeMonth(-1); };
     nextBtn.onclick = function() { changeMonth(1); };
 
@@ -801,7 +779,6 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
     }
   }
 
-  // اجرا
   setTimeout(initCalendar, 50);
 
 } // *** پایان بلاک اسکوپ ***

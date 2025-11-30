@@ -3144,32 +3144,7 @@ function PlasmicBookings2__RenderFunc(props: {
                                 hasVariant(globalVariants, "screen", "mobile")
                                   ? (() => {
                                       try {
-                                        return (() => {
-                                          const reservations =
-                                            $state.reservations;
-                                          const now = new Date();
-                                          const year = now.getFullYear();
-                                          const month = String(
-                                            now.getMonth() + 1
-                                          ).padStart(2, "0");
-                                          const day = String(
-                                            now.getDate()
-                                          ).padStart(2, "0");
-                                          const todayStr = `${year}-${month}-${day}`;
-                                          const found = reservations.find(
-                                            item => {
-                                              if (
-                                                !item.bookings ||
-                                                !Array.isArray(item.bookings)
-                                              )
-                                                return false;
-                                              return item.bookings.some(
-                                                b => b.check_in >= todayStr
-                                              );
-                                            }
-                                          );
-                                          return found ? "today" : null;
-                                        })();
+                                        return undefined;
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
@@ -3183,10 +3158,25 @@ function PlasmicBookings2__RenderFunc(props: {
                                     })()
                                   : (() => {
                                       try {
-                                        return currentItem.date ===
-                                          new Date().toISOString().split("T")[0]
-                                          ? "today"
-                                          : null;
+                                        return (() => {
+                                          var prevItem =
+                                            $state.reserveData.data[
+                                              currentIndex - 1
+                                            ];
+                                          var currentItem =
+                                            $state.reservations[currentIndex];
+                                          if (
+                                            prevItem &&
+                                            prevItem.bookings[0].status ==
+                                              "past" &&
+                                            currentItem.bookings[0].status !=
+                                              "past"
+                                          ) {
+                                            return "today";
+                                          } else {
+                                            return null;
+                                          }
+                                        })();
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
