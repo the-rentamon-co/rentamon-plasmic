@@ -83,11 +83,10 @@ export const PlasmicNewPage3__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNewPage3__OverridesType = {
   root?: Flex__<"div">;
-  profile2?: Flex__<typeof ApiRequest>;
+  apiRequest?: Flex__<typeof ApiRequest>;
   freeBox?: Flex__<"div">;
   selectProperty?: Flex__<typeof Select>;
   text?: Flex__<"div">;
-  apiRequest?: Flex__<typeof ApiRequest>;
   embedHtml?: Flex__<typeof Embed>;
 };
 
@@ -159,37 +158,13 @@ function PlasmicNewPage3__RenderFunc(props: {
         refName: "apiRequest"
       },
       {
-        path: "profile2.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
-      },
-      {
-        path: "profile2.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
-      },
-      {
-        path: "profile2.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
-      },
-      {
         path: "selectProperty.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return $state.profile2.data.properties[0].property_name;
+              return $state.apiRequest.data[0].name;
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -200,6 +175,12 @@ function PlasmicNewPage3__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "propertyId",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -239,52 +220,61 @@ function PlasmicNewPage3__RenderFunc(props: {
           )}
         >
           <ApiRequest
-            data-plasmic-name={"profile2"}
-            data-plasmic-override={overrides.profile2}
-            className={classNames("__wab_instance", sty.profile2)}
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
             errorDisplay={null}
             loadingDisplay={null}
             method={"GET"}
             onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["profile2", "error"]).apply(
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
                 null,
                 eventArgs
               );
             }}
             onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["profile2", "loading"]).apply(
-                null,
-                eventArgs
-              );
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
             }}
             onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["profile2", "data"]).apply(
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
                 null,
                 eventArgs
               );
+
+              (async data => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return ($state.propertyId =
+                            $state.apiRequest.data[0].id);
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }).apply(null, eventArgs);
             }}
             ref={ref => {
-              $refs["profile2"] = ref;
+              $refs["apiRequest"] = ref;
             }}
-            url={(() => {
-              try {
-                return (() => {
-                  const isMiaan = window.location.hostname.includes("miaan.ir");
-                  const apiBase = isMiaan
-                    ? "https://api-v2.miaan.ir"
-                    : "https://api-v2.rentamon.com";
-                  return `${apiBase}/api/user_info?property_id=1`;
-                })();
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
-                }
-                throw e;
-              }
-            })()}
+            url={
+              "https://gateway.rentamon.com/webhook/public_calendar_get_property_id"
+            }
           >
             <div
               data-plasmic-name={"freeBox"}
@@ -310,12 +300,89 @@ function PlasmicNewPage3__RenderFunc(props: {
                   ) {
                     return;
                   }
+
+                  (async value => {
+                    const $steps = {};
+
+                    $steps["updatePropertyId"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            operation: 0,
+                            value: $state.apiRequest.data.find(
+                              item => item.name === $state.selectProperty.value
+                            ).id,
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["propertyId"]
+                            }
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updatePropertyId"] != null &&
+                      typeof $steps["updatePropertyId"] === "object" &&
+                      typeof $steps["updatePropertyId"].then === "function"
+                    ) {
+                      $steps["updatePropertyId"] =
+                        await $steps["updatePropertyId"];
+                    }
+
+                    $steps["updateSelectPropertyValue"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["selectProperty", "value"]
+                            },
+                            operation: 0,
+                            value: (() => {
+                              return window.location.reload();
+                            })()
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateSelectPropertyValue"] != null &&
+                      typeof $steps["updateSelectPropertyValue"] === "object" &&
+                      typeof $steps["updateSelectPropertyValue"].then ===
+                        "function"
+                    ) {
+                      $steps["updateSelectPropertyValue"] =
+                        await $steps["updateSelectPropertyValue"];
+                    }
+                  }).apply(null, eventArgs);
                 }}
                 options={(() => {
                   try {
-                    return $state.profile2.data.properties.map(
-                      property => property.property_name
-                    );
+                    return $state.apiRequest.data.map(item => item.name);
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -345,47 +412,13 @@ function PlasmicNewPage3__RenderFunc(props: {
                 ])}
               />
             </div>
-          </ApiRequest>
-          <ApiRequest
-            data-plasmic-name={"apiRequest"}
-            data-plasmic-override={overrides.apiRequest}
-            className={classNames("__wab_instance", sty.apiRequest)}
-            errorDisplay={null}
-            loadingDisplay={null}
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequest",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            ref={ref => {
-              $refs["apiRequest"] = ref;
-            }}
-            url={
-              "https://gateway.rentamon.com/webhook/public_calendar_get_property_id"
-            }
-          />
-
-          <Embed
-            data-plasmic-name={"embedHtml"}
-            data-plasmic-override={overrides.embedHtml}
-            className={classNames("__wab_instance", sty.embedHtml)}
-            code={(() => {
-              try {
-                return `<!DOCTYPE html>
+            <Embed
+              data-plasmic-name={"embedHtml"}
+              data-plasmic-override={overrides.embedHtml}
+              className={classNames("__wab_instance", sty.embedHtml)}
+              code={(() => {
+                try {
+                  return `<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -588,7 +621,7 @@ function PlasmicNewPage3__RenderFunc(props: {
   // ************ بخش تغییر یافته ************
   
   // دریافت شناسه ملک از پلازمیک
-  const PROPERTY_ID = "${$state.apiRequest.data.id}";
+  const PROPERTY_ID = "${$state.propertyId}";
   
   // ساخت آدرس API با شناسه داینامیک
   const API_URL = "https://dev.rentamon.com/webhook/public_calendar_api?property_id=" + PROPERTY_ID;
@@ -757,17 +790,18 @@ function PlasmicNewPage3__RenderFunc(props: {
 </script>
 </body>
 </html>`;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return "";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "";
+                  }
+                  throw e;
                 }
-                throw e;
-              }
-            })()}
-          />
+              })()}
+            />
+          </ApiRequest>
         </div>
       </div>
     </React.Fragment>
@@ -777,18 +811,16 @@ function PlasmicNewPage3__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "profile2",
+    "apiRequest",
     "freeBox",
     "selectProperty",
     "text",
-    "apiRequest",
     "embedHtml"
   ],
-  profile2: ["profile2", "freeBox", "selectProperty", "text"],
+  apiRequest: ["apiRequest", "freeBox", "selectProperty", "text", "embedHtml"],
   freeBox: ["freeBox", "selectProperty", "text"],
   selectProperty: ["selectProperty", "text"],
   text: ["text"],
-  apiRequest: ["apiRequest"],
   embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -796,11 +828,10 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  profile2: typeof ApiRequest;
+  apiRequest: typeof ApiRequest;
   freeBox: "div";
   selectProperty: typeof Select;
   text: "div";
-  apiRequest: typeof ApiRequest;
   embedHtml: typeof Embed;
 };
 
@@ -866,11 +897,10 @@ export const PlasmicNewPage3 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    profile2: makeNodeComponent("profile2"),
+    apiRequest: makeNodeComponent("apiRequest"),
     freeBox: makeNodeComponent("freeBox"),
     selectProperty: makeNodeComponent("selectProperty"),
     text: makeNodeComponent("text"),
-    apiRequest: makeNodeComponent("apiRequest"),
     embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicNewPage3

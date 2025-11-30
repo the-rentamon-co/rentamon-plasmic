@@ -2906,15 +2906,16 @@ function PlasmicBookings2__RenderFunc(props: {
             {(() => {
               try {
                 return (() => {
-                  if (
-                    $state.searchInput.value == "" ||
-                    $state.cancelled3.checked == true ||
-                    $state.settlement2.checked == true
-                  ) {
-                    return true;
-                  } else {
+                  if ($state.cancelled3.checked == true) {
                     return false;
                   }
+                  if ($state.settlement2.checked == true) {
+                    return false;
+                  }
+                  if ($state.searchInput.value != "") {
+                    return false;
+                  }
+                  return true;
                 })();
               } catch (e) {
                 if (

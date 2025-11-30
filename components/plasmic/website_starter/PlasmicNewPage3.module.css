@@ -21,25 +21,9 @@
 .root > * {
   grid-column: 4;
 }
-.profile2:global(.__wab_instance) {
-  animation: none;
+.apiRequest:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-}
-@media (max-width: 1200px) {
-  .profile2:global(.__wab_instance) {
-    animation: none;
-  }
-}
-@media (max-width: 500px) {
-  .profile2:global(.__wab_instance) {
-    animation: none;
-  }
-}
-@media (max-width: 350px) {
-  .profile2:global(.__wab_instance) {
-    animation: none;
-  }
 }
 .freeBox {
   display: flex;
@@ -83,10 +67,6 @@
   text-decoration-line: none !important;
   text-overflow: ellipsis !important;
   overflow: hidden;
-}
-.apiRequest:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
 }
 .embedHtml:global(.__wab_instance) {
   max-width: 100%;
