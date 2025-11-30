@@ -76,8 +76,6 @@ import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -85,9 +83,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicLiteCalendar.module.css"; // plasmic-import: wDX6CsUVKNmL/css
-
-import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -109,6 +104,7 @@ export type PlasmicLiteCalendar__OverridesType = {
   right2?: Flex__<"div">;
   select2?: Flex__<typeof Select>;
   left?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   profile?: Flex__<typeof ApiRequest>;
   deskTablet?: Flex__<"div">;
   sidebarLite?: Flex__<typeof SidebarLite>;
@@ -118,11 +114,10 @@ export type PlasmicLiteCalendar__OverridesType = {
   form?: Flex__<typeof FormWrapper>;
   input?: Flex__<typeof AntdInput>;
   textArea?: Flex__<typeof AntdTextArea>;
+  button?: Flex__<typeof AntdButton>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
-  alertModal?: Flex__<typeof AntdModal>;
-  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultLiteCalendarProps {}
@@ -293,19 +288,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      },
-      {
-        path: "alertModal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "smallMobile")
-            ? false
-            : hasVariant(globalVariants, "screen", "mobile")
-              ? false
-              : hasVariant(globalVariants, "screen", "tablet")
-                ? false
-                : false
       }
     ],
     [$props, $ctx, $refs]
@@ -409,7 +391,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                   await $steps["getLcalStorageData"];
               }
 
-              $steps["runCode"] = true
+              $steps["runCode2"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -506,11 +488,11 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
+                $steps["runCode2"] != null &&
+                typeof $steps["runCode2"] === "object" &&
+                typeof $steps["runCode2"].then === "function"
               ) {
-                $steps["runCode"] = await $steps["runCode"];
+                $steps["runCode2"] = await $steps["runCode2"];
               }
 
               $steps["checkVtCookie"] = true
@@ -606,49 +588,44 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               $steps["updateStateVariable3"] = true
                 ? (() => {
                     const actionArgs = {
-                      operation: 0,
-                      value: (() => {
-                        function setCookie(name, value, hours) {
-                          let expires = "";
-                          if (hours) {
-                            const date = new Date();
-                            date.setTime(
-                              date.getTime() + hours * 60 * 60 * 1000
-                            );
-                            expires = "; expires=" + date.toUTCString();
+                      customFunction: async () => {
+                        return (() => {
+                          function setCookie(name, value, hours) {
+                            let expires = "";
+                            if (hours) {
+                              const date = new Date();
+                              date.setTime(
+                                date.getTime() + hours * 60 * 60 * 1000
+                              );
+                              expires = "; expires=" + date.toUTCString();
+                            }
+                            document.cookie =
+                              name + "=" + (value || "") + expires + "; path=/";
                           }
-                          document.cookie =
-                            name + "=" + (value || "") + expires + "; path=/";
-                        }
-                        const rawFlag = $steps.checkOldUser.data.flag;
-                        const rawVtStatus = $state.vtStatus;
-                        const flag = parseInt(rawFlag, 10);
-                        const current = parseInt(rawVtStatus, 10);
-                        const isCurrentNaN = isNaN(current);
-                        const isFlagDifferent = flag !== current;
-                        const isMiaan =
-                          window.location.hostname.includes("miaan.ir");
-                        const baseUrl = isMiaan
-                          ? "https://miaan.ir"
-                          : "https://rentamon.com";
-                        if (isCurrentNaN || isFlagDifferent) {
-                          setCookie("vt", flag.toString(), 0.3333);
-                          if (flag === 3) {
-                            return (window.location.href = `${baseUrl}/panel-2/`);
-                          } else if (flag === 1) {
-                            return (window.location.href = `${baseUrl}/panel/`);
+                          const rawFlag = $steps.checkOldUser.data.flag;
+                          const rawVtStatus = $state.vtStatus;
+                          const flag = parseInt(rawFlag, 10);
+                          const current = parseInt(rawVtStatus, 10);
+                          const isCurrentNaN = isNaN(current);
+                          const isFlagDifferent = flag !== current;
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const baseUrl = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
+                          if (isCurrentNaN || isFlagDifferent) {
+                            setCookie("vt", flag.toString(), 0.3333);
+                            if (flag === 3) {
+                              return (window.location.href = `${baseUrl}/panel-2/`);
+                            } else if (flag === 1) {
+                              return (window.location.href = `${baseUrl}/panel/`);
+                            }
                           }
-                        }
-                      })()
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
+                        })();
                       }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
                     })?.apply(null, [actionArgs]);
                   })()
                 : undefined;
@@ -698,36 +675,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 typeof $steps["runCode3"].then === "function"
               ) {
                 $steps["runCode3"] = await $steps["runCode3"];
-              }
-
-              $steps["runCode2"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (function redirectIfAppSubdomain() {
-                          const { protocol, hostname, pathname, search, hash } =
-                            window.location;
-                          console.log("here");
-                          if (hostname === "app.rentamon.com") {
-                            const targetHost = "rentamon.com";
-                            const newUrl = `${protocol}//${targetHost}${pathname}${search}${hash}`;
-                            console.log("newUrl", newUrl);
-                            window.location.replace(newUrl);
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode2"] != null &&
-                typeof $steps["runCode2"] === "object" &&
-                typeof $steps["runCode2"].then === "function"
-              ) {
-                $steps["runCode2"] = await $steps["runCode2"];
               }
 
               $steps["invokeGlobalAction"] = true
@@ -1005,8 +952,10 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     )}
                   >
                     <PlasmicImg__
+                      data-plasmic-name={"img"}
+                      data-plasmic-override={overrides.img}
                       alt={""}
-                      className={classNames(sty.img__rEnj)}
+                      className={classNames(sty.img)}
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "80px"
@@ -1425,7 +1374,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__aRi7
+                        sty.formField__gScer
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1437,7 +1386,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__ggcSz
+                        sty.formField__jr3Cv
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1447,10 +1396,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                       />
                     </FormItemWrapper>
                     <AntdButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button___0G9Cf
-                      )}
+                      className={classNames("__wab_instance", sty.button)}
                       submitsForm={true}
                       type={"primary"}
                     >
@@ -1458,7 +1404,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__fzM
+                          sty.text___6NPKd
                         )}
                       >
                         {"Submit"}
@@ -1489,381 +1435,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
-          <AntdModal
-            data-plasmic-name={"alertModal"}
-            data-plasmic-override={overrides.alertModal}
-            className={classNames("__wab_instance", sty.alertModal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              styleTokensClassNames
-            )}
-            hideFooter={true}
-            modalScopeClassName={sty["alertModal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["alertModal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["alertModal", "open"])}
-            title={null}
-            trigger={null}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__edE8R)}>
-              <div
-                className={classNames(projectcss.all, sty.freeBox__dcmBh)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateAlertModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["alertModal", "open"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateAlertModalOpen"] != null &&
-                    typeof $steps["updateAlertModalOpen"] === "object" &&
-                    typeof $steps["updateAlertModalOpen"].then === "function"
-                  ) {
-                    $steps["updateAlertModalOpen"] =
-                      await $steps["updateAlertModalOpen"];
-                  }
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              function setCookie(name, value, hours) {
-                                let expires = "";
-                                if (hours) {
-                                  const date = new Date();
-                                  date.setTime(
-                                    date.getTime() + hours * 60 * 60 * 1000
-                                  );
-                                  expires = "; expires=" + date.toUTCString();
-                                }
-                                document.cookie =
-                                  name +
-                                  "=" +
-                                  (value || "") +
-                                  expires +
-                                  "; path=/";
-                              }
-                              return setCookie("miaan", "true", 24);
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__gDc0O)}
-                  displayHeight={"16px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"16px"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/image24.svg",
-                    fullWidth: 20,
-                    fullHeight: 18,
-                    aspectRatio: 1.111111
-                  }}
-                />
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__t1XpP)}>
-              <div className={classNames(projectcss.all, sty.freeBox___5Bh7Y)}>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___1F4F2)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sQeQ0
-                    )}
-                  >
-                    <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0646\u0627\u0645 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0628\u0647 \u00ab"
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ color: "#0000F7" }}
-                      >
-                        {"\u0645\u06cc\u0627\u0646"}
-                      </span>
-                      <React.Fragment>
-                        {
-                          "\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0631\u062f!"
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__mHtC3)}
-                  >
-                    <Embed
-                      data-plasmic-name={"embedHtml"}
-                      data-plasmic-override={overrides.embedHtml}
-                      className={classNames("__wab_instance", sty.embedHtml)}
-                      code={
-                        '<div style="\r\n  overflow: hidden;\r\n  border-radius: 16px;\r\n  width: 100%;\r\n  height: auto;\r\n  background: white;\r\n">\r\n  <video\r\n    src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Flogo-change.mp4?versionId="\r\n    autoplay\r\n    muted\r\n    loop\r\n    playsinline\r\n    style="\r\n      width: calc(100% + 2px);\r\n      height: calc(100% + 2px);\r\n      margin: -1px;\r\n      object-fit: cover;\r\n      display: block;\r\n    ">\r\n  </video>\r\n</div>\r\n'
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__ei20N)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    sty.freeBox__xUmHe,
-                    hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "clickable"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                        ? "clickable"
-                        : undefined
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateAlertModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["alertModal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateAlertModalOpen"] != null &&
-                      typeof $steps["updateAlertModalOpen"] === "object" &&
-                      typeof $steps["updateAlertModalOpen"].then === "function"
-                    ) {
-                      $steps["updateAlertModalOpen"] =
-                        await $steps["updateAlertModalOpen"];
-                    }
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function setCookie(name, value, hours) {
-                                  let expires = "";
-                                  if (hours) {
-                                    const date = new Date();
-                                    date.setTime(
-                                      date.getTime() + hours * 60 * 60 * 1000
-                                    );
-                                    expires = "; expires=" + date.toUTCString();
-                                  }
-                                  document.cookie =
-                                    name +
-                                    "=" +
-                                    (value || "") +
-                                    expires +
-                                    "; path=/";
-                                }
-                                return setCookie("miaan", "true", 9);
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-
-                    $steps["goToمعرفیبرندجدید"] = true
-                      ? (() => {
-                          const actionArgs = { destination: `/new-brand` };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToمعرفیبرندجدید"] != null &&
-                      typeof $steps["goToمعرفیبرندجدید"] === "object" &&
-                      typeof $steps["goToمعرفیبرندجدید"].then === "function"
-                    ) {
-                      $steps["goToمعرفیبرندجدید"] =
-                        await $steps["goToمعرفیبرندجدید"];
-                    }
-                  }}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kSrN
-                    )}
-                  >
-                    {
-                      "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631"
-                    }
-                  </div>
-                </div>
-              </div>
-              <Button
-                className={classNames("__wab_instance", sty.button__rSXn)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              function setCookie(name, value, hours) {
-                                let expires = "";
-                                if (hours) {
-                                  const date = new Date();
-                                  date.setTime(
-                                    date.getTime() + hours * 60 * 60 * 1000
-                                  );
-                                  expires = "; expires=" + date.toUTCString();
-                                }
-                                document.cookie =
-                                  name +
-                                  "=" +
-                                  (value || "") +
-                                  expires +
-                                  "; path=/";
-                              }
-                              return setCookie("alertModal", "true", 24);
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__d4NIf
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                return window.open(
-                                  "https://app.rentamon.com/ai-assistant/",
-                                  "_blank"
-                                );
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-                  }}
-                >
-                  {"\u0628\u0627\u0634\u0647"}
-                </div>
-              </Button>
-            </div>
-          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -1880,6 +1451,7 @@ const PlasmicDescendants = {
     "right2",
     "select2",
     "left",
+    "img",
     "profile",
     "deskTablet",
     "sidebarLite",
@@ -1889,11 +1461,10 @@ const PlasmicDescendants = {
     "form",
     "input",
     "textArea",
+    "button",
     "navbarRntFooter",
     "clarityRntComponent",
-    "faviconRntComponent",
-    "alertModal",
-    "embedHtml"
+    "faviconRntComponent"
   ],
   sideEffect: ["sideEffect"],
   headerMain: [
@@ -1903,29 +1474,30 @@ const PlasmicDescendants = {
     "right2",
     "select2",
     "left",
+    "img",
     "profile",
     "deskTablet",
     "sidebarLite"
   ],
-  header: ["header", "right", "right2", "select2", "left", "profile"],
+  header: ["header", "right", "right2", "select2", "left", "img", "profile"],
   right: ["right", "right2", "select2"],
   right2: ["right2", "select2"],
   select2: ["select2"],
-  left: ["left"],
+  left: ["left", "img"],
+  img: ["img"],
   profile: ["profile"],
   deskTablet: ["deskTablet", "sidebarLite"],
   sidebarLite: ["sidebarLite"],
   calendar2: ["calendar2"],
   spacerDontTouch: ["spacerDontTouch"],
-  proPanelModal: ["proPanelModal", "form", "input", "textArea"],
-  form: ["form", "input", "textArea"],
+  proPanelModal: ["proPanelModal", "form", "input", "textArea", "button"],
+  form: ["form", "input", "textArea", "button"],
   input: ["input"],
   textArea: ["textArea"],
+  button: ["button"],
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
-  faviconRntComponent: ["faviconRntComponent"],
-  alertModal: ["alertModal", "embedHtml"],
-  embedHtml: ["embedHtml"]
+  faviconRntComponent: ["faviconRntComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1939,6 +1511,7 @@ type NodeDefaultElementType = {
   right2: "div";
   select2: typeof Select;
   left: "div";
+  img: typeof PlasmicImg__;
   profile: typeof ApiRequest;
   deskTablet: "div";
   sidebarLite: typeof SidebarLite;
@@ -1948,11 +1521,10 @@ type NodeDefaultElementType = {
   form: typeof FormWrapper;
   input: typeof AntdInput;
   textArea: typeof AntdTextArea;
+  button: typeof AntdButton;
   navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
-  alertModal: typeof AntdModal;
-  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2024,6 +1596,7 @@ export const PlasmicLiteCalendar = Object.assign(
     right2: makeNodeComponent("right2"),
     select2: makeNodeComponent("select2"),
     left: makeNodeComponent("left"),
+    img: makeNodeComponent("img"),
     profile: makeNodeComponent("profile"),
     deskTablet: makeNodeComponent("deskTablet"),
     sidebarLite: makeNodeComponent("sidebarLite"),
@@ -2033,11 +1606,10 @@ export const PlasmicLiteCalendar = Object.assign(
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),
     textArea: makeNodeComponent("textArea"),
+    button: makeNodeComponent("button"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
-    alertModal: makeNodeComponent("alertModal"),
-    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicLiteCalendar
     internalVariantProps: PlasmicLiteCalendar__VariantProps,
