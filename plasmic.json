@@ -3169,17 +3169,17 @@
         },
         {
           "id": "UzzuDE7ANnFL",
-          "name": "NewPage4",
+          "name": "PublicCalendar3",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage4.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPublicCalendar3.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/new-page-3.tsx"
+            "modulePath": "../src/pages/public-calendar.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewPage4.module.css",
+          "cssFilePath": "plasmic/website_starter/PlasmicPublicCalendar3.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/new-page-3"
+          "path": "/public-calendar"
         }
       ],
       "icons": [

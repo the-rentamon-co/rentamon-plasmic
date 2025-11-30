@@ -3140,23 +3140,65 @@ function PlasmicBookings2__RenderFunc(props: {
                                 projectcss.__wab_text,
                                 sty.dates
                               )}
-                              id={(() => {
-                                try {
-                                  return currentItem.date ===
-                                    new Date().toISOString().split("T")[0]
-                                    ? "today"
-                                    : null;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()}
+                              id={
+                                hasVariant(globalVariants, "screen", "mobile")
+                                  ? (() => {
+                                      try {
+                                        return (() => {
+                                          const reservations =
+                                            $state.reservations;
+                                          const now = new Date();
+                                          const year = now.getFullYear();
+                                          const month = String(
+                                            now.getMonth() + 1
+                                          ).padStart(2, "0");
+                                          const day = String(
+                                            now.getDate()
+                                          ).padStart(2, "0");
+                                          const todayStr = `${year}-${month}-${day}`;
+                                          const found = reservations.find(
+                                            item => {
+                                              if (
+                                                !item.bookings ||
+                                                !Array.isArray(item.bookings)
+                                              )
+                                                return false;
+                                              return item.bookings.some(
+                                                b => b.check_in >= todayStr
+                                              );
+                                            }
+                                          );
+                                          return found ? "today" : null;
+                                        })();
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                                  : (() => {
+                                      try {
+                                        return currentItem.date ===
+                                          new Date().toISOString().split("T")[0]
+                                          ? "today"
+                                          : null;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
+                              }
                             >
                               <React.Fragment>
                                 {(() => {
