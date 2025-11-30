@@ -59,9 +59,9 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -83,9 +83,10 @@ export const PlasmicNewPage4__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNewPage4__OverridesType = {
   root?: Flex__<"div">;
-  selectProperty?: Flex__<typeof Select>;
-  embedHtml?: Flex__<typeof Embed>;
   apiRequest?: Flex__<typeof ApiRequest>;
+  selectProperty?: Flex__<typeof Select>;
+  apiRequest2?: Flex__<typeof ApiRequest>;
+  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultNewPage4Props {}
@@ -173,6 +174,30 @@ function PlasmicNewPage4__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest"
+      },
+      {
+        path: "apiRequest2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
       }
     ],
     [$props, $ctx, $refs]
@@ -211,52 +236,154 @@ function PlasmicNewPage4__RenderFunc(props: {
             sty.root
           )}
         >
-          <Select
-            data-plasmic-name={"selectProperty"}
-            data-plasmic-override={overrides.selectProperty}
-            className={classNames("__wab_instance", sty.selectProperty)}
-            onChange={async (...eventArgs: any) => {
-              ((...eventArgs) => {
-                generateStateOnChangeProp($state, ["selectProperty", "value"])(
-                  eventArgs[0]
-                );
-              }).apply(null, eventArgs);
-
-              if (
-                eventArgs.length > 1 &&
-                eventArgs[1] &&
-                eventArgs[1]._plasmic_state_init_
-              ) {
-                return;
-              }
-            }}
-            options={(() => {
-              try {
-                return $state.apiRequest.data.map(item => item.name);
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return [];
-                }
-                throw e;
-              }
-            })()}
-            placeholder={
+          <ApiRequest
+            data-plasmic-name={"apiRequest"}
+            data-plasmic-override={overrides.apiRequest}
+            className={classNames("__wab_instance", sty.apiRequest)}
+            errorDisplay={
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__tvaq6
+                  sty.text__aEAf
                 )}
               >
-                {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
+                {"Error fetching data"}
               </div>
             }
-            value={generateStateValueProp($state, ["selectProperty", "value"])}
-          />
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___5FCju
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "apiRequest",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["apiRequest"] = ref;
+            }}
+            url={
+              "https://gateway.rentamon.com/webhook/public_calendar_get_property_id"
+            }
+          >
+            <Select
+              data-plasmic-name={"selectProperty"}
+              data-plasmic-override={overrides.selectProperty}
+              className={classNames("__wab_instance", sty.selectProperty)}
+              onChange={async (...eventArgs: any) => {
+                ((...eventArgs) => {
+                  generateStateOnChangeProp($state, [
+                    "selectProperty",
+                    "value"
+                  ])(eventArgs[0]);
+                }).apply(null, eventArgs);
 
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              options={(() => {
+                try {
+                  return $state.apiRequest.data.map(item => item.name);
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return [];
+                  }
+                  throw e;
+                }
+              })()}
+              placeholder={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__tvaq6
+                  )}
+                >
+                  {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
+                </div>
+              }
+              value={generateStateValueProp($state, [
+                "selectProperty",
+                "value"
+              ])}
+            />
+
+            <ApiRequest
+              data-plasmic-name={"apiRequest2"}
+              data-plasmic-override={overrides.apiRequest2}
+              className={classNames("__wab_instance", sty.apiRequest2)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest2",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest2",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest2",
+                  "data"
+                ]).apply(null, eventArgs);
+              }}
+              params={(() => {
+                try {
+                  return $state.apiRequest.data.find(
+                    property => property.name === $state.selectProperty.value
+                  ).id;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+              ref={ref => {
+                $refs["apiRequest2"] = ref;
+              }}
+              url={"https://gateway.rentamon.com/webhook/public_calendar_api"}
+            />
+          </ApiRequest>
           <Embed
             data-plasmic-name={"embedHtml"}
             data-plasmic-override={overrides.embedHtml}
@@ -466,7 +593,7 @@ function PlasmicNewPage4__RenderFunc(props: {
   // ************ بخش تغییر یافته ************
   
   // دریافت شناسه ملک از پلازمیک
-  const PROPERTY_ID = "${$state.propertyId}";
+  const PROPERTY_ID = "${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}";
   
   // ساخت آدرس API با شناسه داینامیک
   const API_URL = "https://dev.rentamon.com/webhook/public_calendar_api?property_id=" + PROPERTY_ID;
@@ -646,69 +773,6 @@ function PlasmicNewPage4__RenderFunc(props: {
               }
             })()}
           />
-
-          <ApiRequest
-            data-plasmic-name={"apiRequest"}
-            data-plasmic-override={overrides.apiRequest}
-            className={classNames("__wab_instance", sty.apiRequest)}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__aEAf
-                )}
-              >
-                {"Error fetching data"}
-              </div>
-            }
-            loadingDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___5FCju
-                )}
-              >
-                {"Loading..."}
-              </div>
-            }
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "apiRequest",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            ref={ref => {
-              $refs["apiRequest"] = ref;
-            }}
-            url={
-              "https://gateway.rentamon.com/webhook/public_calendar_get_property_id"
-            }
-          />
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__iyVot
-            )}
-          >
-            <React.Fragment>{$state.selectProperty.value}</React.Fragment>
-          </div>
         </div>
       </div>
     </React.Fragment>
@@ -716,19 +780,21 @@ function PlasmicNewPage4__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "selectProperty", "embedHtml", "apiRequest"],
+  root: ["root", "apiRequest", "selectProperty", "apiRequest2", "embedHtml"],
+  apiRequest: ["apiRequest", "selectProperty", "apiRequest2"],
   selectProperty: ["selectProperty"],
-  embedHtml: ["embedHtml"],
-  apiRequest: ["apiRequest"]
+  apiRequest2: ["apiRequest2"],
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  selectProperty: typeof Select;
-  embedHtml: typeof Embed;
   apiRequest: typeof ApiRequest;
+  selectProperty: typeof Select;
+  apiRequest2: typeof ApiRequest;
+  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -793,9 +859,10 @@ export const PlasmicNewPage4 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    selectProperty: makeNodeComponent("selectProperty"),
-    embedHtml: makeNodeComponent("embedHtml"),
     apiRequest: makeNodeComponent("apiRequest"),
+    selectProperty: makeNodeComponent("selectProperty"),
+    apiRequest2: makeNodeComponent("apiRequest2"),
+    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicNewPage4
     internalVariantProps: PlasmicNewPage4__VariantProps,

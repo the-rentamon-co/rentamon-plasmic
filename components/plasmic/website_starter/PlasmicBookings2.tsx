@@ -608,20 +608,17 @@ function PlasmicBookings2__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          function scrollWhenReady() {
-                            const hash = window.location.hash?.replace("#", "");
-                            if (!hash) return;
-                            const el = document.getElementById(hash);
-                            if (el) {
-                              el.scrollIntoView({
-                                behavior: "smooth",
-                                block: "start"
-                              });
-                            } else {
-                              requestAnimationFrame(scrollWhenReady);
-                            }
+                          console.log("here in hash fsdjfkldsjalkfjdlas ");
+                          console.log(window.location.pathname);
+                          if (
+                            window.location.pathname === "/bookings" &&
+                            window.location.hash !== "#today"
+                          ) {
+                            console.log("here in the hash");
+                            return (window.location.hash = "today");
+                          } else {
+                            return "L:";
                           }
-                          return scrollWhenReady();
                         })();
                       }
                     };
