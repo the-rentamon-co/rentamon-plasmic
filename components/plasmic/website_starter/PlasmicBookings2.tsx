@@ -8206,11 +8206,7 @@ function PlasmicBookings2__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie(
-                                  "reservations_notify_final",
-                                  "true",
-                                  16
-                                );
+                                return setCookie("bookings_notify", "true", 16);
                               })();
                             }
                           };
