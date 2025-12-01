@@ -2114,9 +2114,18 @@ function PlasmicBookings2__RenderFunc(props: {
                                 const now = new Date();
                                 const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
                                 return ($state.reservations =
-                                  $state.reservations.filter(
-                                    item => item.date == today
-                                  ));
+                                  $state.reservations
+                                    .filter(item => item.date === today)
+                                    .map(item => {
+                                      return {
+                                        ...item,
+                                        bookings: (item.bookings || []).filter(
+                                          booking =>
+                                            booking.status === "reserve"
+                                        )
+                                      };
+                                    })
+                                    .filter(item => item.bookings.length > 0));
                               })();
                             }
                           };
@@ -2226,7 +2235,10 @@ function PlasmicBookings2__RenderFunc(props: {
                                 const checkInDate = booking.check_in
                                   ? booking.check_in.split("T")[0]
                                   : "";
-                                return checkInDate === today;
+                                return (
+                                  checkInDate === today &&
+                                  booking.status === "reserve"
+                                );
                               });
                               return total + matches.length;
                             }, 0);
@@ -2357,7 +2369,8 @@ function PlasmicBookings2__RenderFunc(props: {
                                           checkoutDate.getMonth() ===
                                             today.getMonth() &&
                                           checkoutDate.getDate() ===
-                                            today.getDate()
+                                            today.getDate() &&
+                                          booking.status === "reserve"
                                         );
                                       });
                                     return {
@@ -2442,7 +2455,8 @@ function PlasmicBookings2__RenderFunc(props: {
                             .filter(booking => {
                               return (
                                 booking.check_out &&
-                                booking.check_out.startsWith(today)
+                                booking.check_out.startsWith(today) &&
+                                booking.status === "reserve"
                               );
                             }).length;
                           return `خروج امروز (${todayCheckOutCount})`;

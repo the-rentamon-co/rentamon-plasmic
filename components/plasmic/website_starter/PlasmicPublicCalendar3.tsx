@@ -180,28 +180,8 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
               data-plasmic-name={"apiRequest"}
               data-plasmic-override={overrides.apiRequest}
               className={classNames("__wab_instance", sty.apiRequest)}
-              errorDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aEAf
-                  )}
-                >
-                  {"Error fetching data"}
-                </div>
-              }
-              loadingDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___5FCju
-                  )}
-                >
-                  {"Loading..."}
-                </div>
-              }
+              errorDisplay={null}
+              loadingDisplay={null}
               method={"GET"}
               ref={ref => {
                 $refs["apiRequest"] = ref;
@@ -286,13 +266,26 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
                 })()}
               >
                 <div className={classNames(projectcss.all, sty.freeBox__cdJmA)}>
-                  <Embed
-                    data-plasmic-name={"embedHtml"}
-                    data-plasmic-override={overrides.embedHtml}
-                    className={classNames("__wab_instance", sty.embedHtml)}
-                    code={(() => {
-                      try {
-                        return `<!DOCTYPE html>
+                  {(() => {
+                    try {
+                      return !!$state.apiRequest2?.data?.dates;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <Embed
+                      data-plasmic-name={"embedHtml"}
+                      data-plasmic-override={overrides.embedHtml}
+                      className={classNames("__wab_instance", sty.embedHtml)}
+                      code={(() => {
+                        try {
+                          return `<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -300,207 +293,61 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
 
 <style>
   #custom-calendar-container {
-    --bg-booked: #9e9e9e;
-    --bg-free: #ffffff;
-    --border-free: #ccc;
-    --text-booked: #fff;
-    --text-free: #333;
-    --text-friday: #ff3b30;
-    --bg-selected: #333;
-    --radius: 10px;
-    
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    box-sizing: border-box;
-    direction: rtl;
+    --bg-booked: #9e9e9e; --bg-free: #ffffff; --border-free: #ccc; --text-booked: #fff; --text-free: #333; --text-friday: #ff3b30; --bg-selected: #333; --radius: 10px;
+    width: 100%; max-width: 400px; padding: 10px; box-sizing: border-box; direction: rtl;
   }
-
-  #custom-calendar-container * {
-    box-sizing: border-box;
-  }
-
-  #custom-calendar-container .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-  }
-
-  #custom-calendar-container .nav-btn {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    cursor: pointer;
-    padding: 5px 15px;
-    font-size: 1.5rem !important;
-    color: #888 !important;
-    transition: color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-  }
-
-  #custom-calendar-container .nav-btn:disabled {
-    color: #e0e0e0 !important;
-    cursor: not-allowed;
-  }
-
-  #custom-calendar-container .weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-    color: #666;
-    font-weight: normal;
-  }
-
-  #custom-calendar-container .days-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
-  }
-
-  #custom-calendar-container .day-cell {
-    aspect-ratio: 1/1.2;
-    border-radius: var(--radius);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1rem;
-    /* تغییر: نشانگر موس دیگر به شکل دست در نمی‌آید */
-    cursor: default; 
-    position: relative;
-    transition: all 0.2s;
-    padding: 0;
-    margin: 0;
-  }
-
-  #custom-calendar-container .free {
-    background-color: var(--bg-free);
-    border: 1px solid var(--border-free);
-    color: var(--text-free);
-  }
-
-  #custom-calendar-container .booked {
-    background-color: var(--bg-booked);
-    border: 1px solid var(--bg-booked);
-    color: var(--text-booked);
-    cursor: default;
-  }
-
-  #custom-calendar-container .free.friday {
-    color: var(--text-friday);
-  }
-
-  #custom-calendar-container .past-day {
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  #custom-calendar-container .empty-slot {
-    pointer-events: none;
-  }
-
-  #custom-calendar-container .loading {
-    text-align: center;
-    padding: 20px;
-    color: #666;
-    font-size: 0.9rem;
-    font-family: inherit;
-  }
-
-  #custom-calendar-container .legend {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 20px;
-    gap: 15px;
-    font-size: 0.8rem;
-    color: #666;
-  }
-
-  #custom-calendar-container .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  #custom-calendar-container .legend-box {
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-  }
-  
-  #custom-calendar-container .box-free {
-    background: #fff;
-    border: 1px solid #ccc;
-  }
-  
-  #custom-calendar-container .box-booked {
-    background: var(--bg-booked);
-  }
-
+  #custom-calendar-container * { box-sizing: border-box; }
+  #custom-calendar-container .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; font-size: 1.2rem; font-weight: bold; color: #333; }
+  #custom-calendar-container .nav-btn { background: transparent !important; border: none !important; box-shadow: none !important; cursor: pointer; padding: 5px 15px; font-size: 1.5rem !important; color: #888 !important; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  #custom-calendar-container .nav-btn:disabled { color: #e0e0e0 !important; cursor: not-allowed; }
+  #custom-calendar-container .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; margin-bottom: 15px; font-size: 0.9rem; color: #666; font-weight: normal; }
+  #custom-calendar-container .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  #custom-calendar-container .day-cell { aspect-ratio: 1/1.2; border-radius: var(--radius); display: flex; justify-content: center; align-items: center; font-size: 1.1rem; cursor: default; position: relative; transition: all 0.2s; padding: 0; margin: 0; }
+  #custom-calendar-container .free { background-color: var(--bg-free); border: 1px solid var(--border-free); color: var(--text-free); }
+  #custom-calendar-container .booked { background-color: var(--bg-booked); border: 1px solid var(--bg-booked); color: var(--text-booked); cursor: default; }
+  #custom-calendar-container .free.friday { color: var(--text-friday); }
+  #custom-calendar-container .past-day { opacity: 0; pointer-events: none; }
+  #custom-calendar-container .empty-slot { pointer-events: none; }
+  #custom-calendar-container .loading { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; font-family: inherit; }
+  #custom-calendar-container .legend { display: flex; justify-content: flex-start; align-items: center; margin-top: 20px; gap: 15px; font-size: 0.8rem; color: #666; }
+  #custom-calendar-container .legend-item { display: flex; align-items: center; gap: 8px; }
+  #custom-calendar-container .legend-box { width: 16px; height: 16px; border-radius: 4px; }
+  #custom-calendar-container .box-free { background: #fff; border: 1px solid #ccc; }
+  #custom-calendar-container .box-booked { background: var(--bg-booked); }
 </style>
 </head>
 <body>
 
 <div id="custom-calendar-container">
-  
   <div class="header">
     <button class="nav-btn" id="prev-btn">&#10094;</button> 
     <span id="month-year-label">...</span>
     <button class="nav-btn" id="next-btn">&#10095;</button>
   </div>
-
-  <div class="weekdays">
-    <div>ش</div>
-    <div>ی</div>
-    <div>د</div>
-    <div>س</div>
-    <div>چ</div>
-    <div>پ</div>
-    <div>ج</div>
-  </div>
-
+  <div class="weekdays"><div>ش</div><div>ی</div><div>د</div><div>س</div><div>چ</div><div>پ</div><div>ج</div></div>
   <div id="loading-msg" class="loading">در حال بارگذاری تقویم...</div>
   <div class="days-grid" id="calendar-grid"></div>
-
   <div class="legend" id="legend-section" style="display:none;">
-    <div class="legend-item">
-      <div class="legend-box box-free"></div>
-      <span>خالی</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-box box-booked"></div>
-      <span>پر</span>
-    </div>
+    <div class="legend-item"><div class="legend-box box-free"></div><span>خالی</span></div>
+    <div class="legend-item"><div class="legend-box box-booked"></div><span>پر</span></div>
   </div>
-
 </div>
 
 <script>
 { 
-  // *** شروع بلاک اسکوپ ***
-  const PRELOADED_DATES = ${JSON.stringify($state.apiRequest2.data.dates || [])};
+  // *** تغییر نهایی: استفاده از نالیش کوالیسینگ (??) ***
+  // این کد می‌گوید: اگر dates وجود داشت آن را stringify کن، اگر هر کدام از بخش‌ها نبود، یک آرایه خالی [] بگذار.
+  const PRELOADED_DATES = ${JSON.stringify($state.apiRequest2?.data?.dates ?? [])};
+  
   const MAX_MONTHS_AHEAD = 3;
-
   let bookedDates = new Set();
-  // حذف متغیر selectedDate چون دیگر نیازی نیست
   
   const today = new Date();
   const todayJ = jalaali.toJalaali(today);
-  
   let currentYear = todayJ.jy;
   let currentMonth = todayJ.jm;
   const startYear = todayJ.jy;
   const startMonth = todayJ.jm;
-
   const monthNames = ["", "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
 
   function toPersianNum(num) {
@@ -516,35 +363,27 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
       
       const loadMsg = document.getElementById('loading-msg');
       if(loadMsg) loadMsg.style.display = 'none';
-      
       const legSec = document.getElementById('legend-section');
       if(legSec) legSec.style.display = 'flex';
       
       renderCalendar();
       updateNavButtons();
-      
     } catch (error) {
       console.error("Error initializing calendar:", error);
-      const loadMsg = document.getElementById('loading-msg');
-      if(loadMsg) loadMsg.innerText = "خطا در بارگذاری";
     }
   }
 
   function renderCalendar() {
     const grid = document.getElementById('calendar-grid');
     const label = document.getElementById('month-year-label');
-    
     if (!grid || !label) return;
-
+    
     grid.innerHTML = '';
     label.innerText = monthNames[currentMonth] + " " + toPersianNum(currentYear);
-
     const daysInMonth = jalaali.jalaaliMonthLength(currentYear, currentMonth);
-    
     const gDate = jalaali.toGregorian(currentYear, currentMonth, 1);
     const dateObj = new Date(gDate.gy, gDate.gm - 1, gDate.gd);
     let startDayOfWeek = dateObj.getDay(); 
-    
     const jsDayToJalaliDay = [1, 2, 3, 4, 5, 6, 0];
     let startDayIndex = jsDayToJalaliDay[startDayOfWeek];
 
@@ -556,7 +395,6 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
 
     for (let day = 1; day <= daysInMonth; day++) {
       const cell = document.createElement('div');
-      
       const mStr = currentMonth < 10 ? '0' + currentMonth : currentMonth;
       const dStr = day < 10 ? '0' + day : day;
       const dateString = currentYear + "-" + mStr + "-" + dStr;
@@ -564,24 +402,16 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
       const isBooked = bookedDates.has(dateString);
       const isPast = isDateInPast(currentYear, currentMonth, day);
       
-      const dayOfWeekIndex = (day - 1 + startDayIndex) % 7;
-      const isFriday = (dayOfWeekIndex === 6);
-
       let classes = 'day-cell';
-      if (isPast) {
-        classes += ' past-day';
-      } else if (isBooked) {
-        classes += ' booked';
-      } else {
+      if (isPast) classes += ' past-day';
+      else if (isBooked) classes += ' booked';
+      else {
         classes += ' free';
-        if (isFriday) classes += ' friday';
+        const dayOfWeekIndex = (day - 1 + startDayIndex) % 7;
+        if (dayOfWeekIndex === 6) classes += ' friday';
       }
-
       cell.className = classes;
       cell.innerText = toPersianNum(day);
-
-      // *** حذف بخش onclick که وظیفه انتخاب تاریخ را داشت ***
-
       grid.appendChild(cell);
     }
   }
@@ -594,18 +424,13 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
     return d < todayJ.jd;
   }
 
-  // حذف تابع selectDate
-
   function changeMonth(offset) {
     let nextM = currentMonth + offset;
     let nextY = currentYear;
-
     if (nextM > 12) { nextM = 1; nextY++; }
     else if (nextM < 1) { nextM = 12; nextY--; }
-
     currentMonth = nextM;
     currentYear = nextY;
-    
     renderCalendar();
     updateNavButtons();
   }
@@ -613,43 +438,33 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
   function updateNavButtons() {
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
-    
     if(!prevBtn || !nextBtn) return;
-
     prevBtn.onclick = function() { changeMonth(-1); };
     nextBtn.onclick = function() { changeMonth(1); };
-
-    if (currentYear === startYear && currentMonth === startMonth) {
-      prevBtn.disabled = true;
-    } else {
-      prevBtn.disabled = false;
-    }
-
+    if (currentYear === startYear && currentMonth === startMonth) prevBtn.disabled = true;
+    else prevBtn.disabled = false;
     let diffMonths = (currentYear - startYear) * 12 + (currentMonth - startMonth);
-    if (diffMonths >= MAX_MONTHS_AHEAD) {
-      nextBtn.disabled = true;
-    } else {
-      nextBtn.disabled = false;
-    }
+    if (diffMonths >= MAX_MONTHS_AHEAD) nextBtn.disabled = true;
+    else nextBtn.disabled = false;
   }
 
   setTimeout(initCalendar, 50);
-
-} // *** پایان بلاک اسکوپ ***
+}
 </script>
 </body>
 </html>`;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "";
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
                         }
-                        throw e;
-                      }
-                    })()}
-                  />
+                      })()}
+                    />
+                  ) : null}
                 </div>
               </ApiRequest>
             </ApiRequest>
