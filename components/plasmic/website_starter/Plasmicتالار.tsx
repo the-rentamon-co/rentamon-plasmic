@@ -1003,7 +1003,16 @@ function Plasmicتالار__RenderFunc(props: {
                             {(() => {
                               try {
                                 return (() => {
-                                  return "در حال بروز رسانی";
+                                  const balance_info =
+                                    $state.getUserBalance.data.balance;
+                                  const reducedBalance = Math.floor(
+                                    balance_info / 10
+                                  );
+                                  const formattedBalance =
+                                    new Intl.NumberFormat("fa-IR").format(
+                                      reducedBalance
+                                    );
+                                  return `کیف پول: ${formattedBalance} تومان`;
                                 })();
                               } catch (e) {
                                 if (
