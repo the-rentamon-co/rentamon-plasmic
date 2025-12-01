@@ -96,8 +96,8 @@ export type PlasmicSupport__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
   introduction?: Flex__<"div">;
-  teamImage?: Flex__<"div">;
-  introCalendarLeft?: Flex__<"div">;
+  teamImage2?: Flex__<"div">;
+  introCalendarLeft2?: Flex__<"div">;
   accessWays?: Flex__<"div">;
   sectionTitle?: Flex__<"div">;
   ways?: Flex__<"div">;
@@ -113,15 +113,12 @@ export type PlasmicSupport__OverridesType = {
   whatsapp?: Flex__<"div">;
   icon7?: Flex__<"div">;
   title7?: Flex__<"div">;
-  caption7?: Flex__<"div">;
   telegram?: Flex__<"div">;
   icon8?: Flex__<"div">;
   title8?: Flex__<"div">;
-  caption8?: Flex__<"div">;
   eitaa?: Flex__<"div">;
   icon9?: Flex__<"div">;
   title9?: Flex__<"div">;
-  caption9?: Flex__<"div">;
   infoEmail?: Flex__<"div">;
   icon11?: Flex__<"div">;
   title11?: Flex__<"div">;
@@ -301,9 +298,7 @@ function PlasmicSupport__RenderFunc(props: {
                   "fadeinf"
                 )}
               >
-                {
-                  "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627"
-                }
+                {"\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc"}
               </div>
             </div>
             <ApiRequest
@@ -348,18 +343,23 @@ function PlasmicSupport__RenderFunc(props: {
               className={classNames(projectcss.all, sty.introduction)}
             >
               <div
-                data-plasmic-name={"teamImage"}
-                data-plasmic-override={overrides.teamImage}
-                className={classNames(projectcss.all, sty.teamImage)}
+                data-plasmic-name={"teamImage2"}
+                data-plasmic-override={overrides.teamImage2}
+                className={classNames(projectcss.all, sty.teamImage2)}
               >
                 <div
-                  data-plasmic-name={"introCalendarLeft"}
-                  data-plasmic-override={overrides.introCalendarLeft}
-                  className={classNames(projectcss.all, sty.introCalendarLeft)}
+                  data-plasmic-name={"introCalendarLeft2"}
+                  data-plasmic-override={overrides.introCalendarLeft2}
+                  className={classNames(projectcss.all, sty.introCalendarLeft2)}
                 >
                   <PlasmicImg__
                     alt={""}
-                    className={classNames(sty.img__bnyHr, "fadeinf")}
+                    className={classNames(
+                      sty.img__nQz6E,
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "fadeinf"
+                        : undefined
+                    )}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={"100%"}
@@ -368,12 +368,28 @@ function PlasmicSupport__RenderFunc(props: {
                     displayWidth={"100%"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/teamJpg.jpg",
-                      fullWidth: 800,
-                      fullHeight: 222,
+                      src: "/plasmic/website_starter/images/team1404Jpg.jpg",
+                      fullWidth: 1000,
+                      fullHeight: 351,
                       aspectRatio: undefined
                     }}
                   />
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__rLgi9)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jmi7A
+                      )}
+                    >
+                      {
+                        "\u062f\u0648\u0631\u0647\u0645\u06cc \u0628\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0634\u0647\u0631 \u0642\u0645"
+                      }
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -810,23 +826,6 @@ function PlasmicSupport__RenderFunc(props: {
                             {"\u0648\u0627\u062a\u0633\u0627\u067e"}
                           </div>
                         </div>
-                        <div
-                          data-plasmic-name={"caption7"}
-                          data-plasmic-override={overrides.caption7}
-                          className={classNames(projectcss.all, sty.caption7)}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___5Nm2
-                            )}
-                          >
-                            {
-                              "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
-                            }
-                          </div>
-                        </div>
                       </div>
                     </div>
                     <div
@@ -951,23 +950,6 @@ function PlasmicSupport__RenderFunc(props: {
                             {"\u062a\u0644\u06af\u0631\u0627\u0645"}
                           </div>
                         </div>
-                        <div
-                          data-plasmic-name={"caption8"}
-                          data-plasmic-override={overrides.caption8}
-                          className={classNames(projectcss.all, sty.caption8)}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___2Sg7Z
-                            )}
-                          >
-                            {
-                              "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
-                            }
-                          </div>
-                        </div>
                       </div>
                     </div>
                     <div
@@ -1076,23 +1058,6 @@ function PlasmicSupport__RenderFunc(props: {
                             }}
                           >
                             {"\u0627\u06cc\u062a\u0627"}
-                          </div>
-                        </div>
-                        <div
-                          data-plasmic-name={"caption9"}
-                          data-plasmic-override={overrides.caption9}
-                          className={classNames(projectcss.all, sty.caption9)}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__pgFiv
-                            )}
-                          >
-                            {
-                              "\u06f0\u06f9\u06f0\u06f3\u06f8\u06f7\u06f7\u06f8\u06f6\u06f0\u06f6"
-                            }
                           </div>
                         </div>
                       </div>
@@ -1345,8 +1310,8 @@ const PlasmicDescendants = {
     "profile2",
     "mainContents",
     "introduction",
-    "teamImage",
-    "introCalendarLeft",
+    "teamImage2",
+    "introCalendarLeft2",
     "accessWays",
     "sectionTitle",
     "ways",
@@ -1362,15 +1327,12 @@ const PlasmicDescendants = {
     "whatsapp",
     "icon7",
     "title7",
-    "caption7",
     "telegram",
     "icon8",
     "title8",
-    "caption8",
     "eitaa",
     "icon9",
     "title9",
-    "caption9",
     "infoEmail",
     "icon11",
     "title11",
@@ -1393,8 +1355,8 @@ const PlasmicDescendants = {
   mainContents: [
     "mainContents",
     "introduction",
-    "teamImage",
-    "introCalendarLeft",
+    "teamImage2",
+    "introCalendarLeft2",
     "accessWays",
     "sectionTitle",
     "ways",
@@ -1410,15 +1372,12 @@ const PlasmicDescendants = {
     "whatsapp",
     "icon7",
     "title7",
-    "caption7",
     "telegram",
     "icon8",
     "title8",
-    "caption8",
     "eitaa",
     "icon9",
     "title9",
-    "caption9",
     "infoEmail",
     "icon11",
     "title11",
@@ -1430,9 +1389,9 @@ const PlasmicDescendants = {
     "map",
     "embedHtml"
   ],
-  introduction: ["introduction", "teamImage", "introCalendarLeft"],
-  teamImage: ["teamImage", "introCalendarLeft"],
-  introCalendarLeft: ["introCalendarLeft"],
+  introduction: ["introduction", "teamImage2", "introCalendarLeft2"],
+  teamImage2: ["teamImage2", "introCalendarLeft2"],
+  introCalendarLeft2: ["introCalendarLeft2"],
   accessWays: [
     "accessWays",
     "sectionTitle",
@@ -1449,15 +1408,12 @@ const PlasmicDescendants = {
     "whatsapp",
     "icon7",
     "title7",
-    "caption7",
     "telegram",
     "icon8",
     "title8",
-    "caption8",
     "eitaa",
     "icon9",
     "title9",
-    "caption9",
     "infoEmail",
     "icon11",
     "title11",
@@ -1479,15 +1435,12 @@ const PlasmicDescendants = {
     "whatsapp",
     "icon7",
     "title7",
-    "caption7",
     "telegram",
     "icon8",
     "title8",
-    "caption8",
     "eitaa",
     "icon9",
     "title9",
-    "caption9",
     "infoEmail",
     "icon11",
     "title11",
@@ -1502,18 +1455,15 @@ const PlasmicDescendants = {
   icon10: ["icon10"],
   title10: ["title10"],
   caption10: ["caption10"],
-  whatsapp: ["whatsapp", "icon7", "title7", "caption7"],
+  whatsapp: ["whatsapp", "icon7", "title7"],
   icon7: ["icon7"],
   title7: ["title7"],
-  caption7: ["caption7"],
-  telegram: ["telegram", "icon8", "title8", "caption8"],
+  telegram: ["telegram", "icon8", "title8"],
   icon8: ["icon8"],
   title8: ["title8"],
-  caption8: ["caption8"],
-  eitaa: ["eitaa", "icon9", "title9", "caption9"],
+  eitaa: ["eitaa", "icon9", "title9"],
   icon9: ["icon9"],
   title9: ["title9"],
-  caption9: ["caption9"],
   infoEmail: ["infoEmail", "icon11", "title11", "caption11"],
   icon11: ["icon11"],
   title11: ["title11"],
@@ -1540,8 +1490,8 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   mainContents: "div";
   introduction: "div";
-  teamImage: "div";
-  introCalendarLeft: "div";
+  teamImage2: "div";
+  introCalendarLeft2: "div";
   accessWays: "div";
   sectionTitle: "div";
   ways: "div";
@@ -1557,15 +1507,12 @@ type NodeDefaultElementType = {
   whatsapp: "div";
   icon7: "div";
   title7: "div";
-  caption7: "div";
   telegram: "div";
   icon8: "div";
   title8: "div";
-  caption8: "div";
   eitaa: "div";
   icon9: "div";
   title9: "div";
-  caption9: "div";
   infoEmail: "div";
   icon11: "div";
   title11: "div";
@@ -1650,8 +1597,8 @@ export const PlasmicSupport = Object.assign(
     profile2: makeNodeComponent("profile2"),
     mainContents: makeNodeComponent("mainContents"),
     introduction: makeNodeComponent("introduction"),
-    teamImage: makeNodeComponent("teamImage"),
-    introCalendarLeft: makeNodeComponent("introCalendarLeft"),
+    teamImage2: makeNodeComponent("teamImage2"),
+    introCalendarLeft2: makeNodeComponent("introCalendarLeft2"),
     accessWays: makeNodeComponent("accessWays"),
     sectionTitle: makeNodeComponent("sectionTitle"),
     ways: makeNodeComponent("ways"),
@@ -1667,15 +1614,12 @@ export const PlasmicSupport = Object.assign(
     whatsapp: makeNodeComponent("whatsapp"),
     icon7: makeNodeComponent("icon7"),
     title7: makeNodeComponent("title7"),
-    caption7: makeNodeComponent("caption7"),
     telegram: makeNodeComponent("telegram"),
     icon8: makeNodeComponent("icon8"),
     title8: makeNodeComponent("title8"),
-    caption8: makeNodeComponent("caption8"),
     eitaa: makeNodeComponent("eitaa"),
     icon9: makeNodeComponent("icon9"),
     title9: makeNodeComponent("title9"),
-    caption9: makeNodeComponent("caption9"),
     infoEmail: makeNodeComponent("infoEmail"),
     icon11: makeNodeComponent("icon11"),
     title11: makeNodeComponent("title11"),

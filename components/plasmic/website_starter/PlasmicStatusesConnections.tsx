@@ -1152,14 +1152,14 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                             sty.connectedPlatforms2,
                             hasVariant(globalVariants, "screen", "mobile")
                               ? `clickable fadeinf ${`${currentItems.status === "false" ? "disconnected" : currentItems.status === "true" ? "connected" : ""}`}`
-                              : `clickable fadeinf ${`${currentItems.status === "false" ? "disconnected" : currentItems.status === "true" ? "connected" : ""}`}`
+                              : `clickable fadeinf ${`${currentItems.status !== "true" ? "disconnected" : currentItems.status === "true" ? "connected" : ""}`}`
                           )}
                           key={currentIndexs}
                           onClick={async event => {
                             const $steps = {};
 
                             $steps["goToConnections"] =
-                              currentItems.status === "false"
+                              currentItems.status !== "true"
                                 ? (() => {
                                     const actionArgs = {
                                       destination: `/connections?step=${(() => {
@@ -1313,7 +1313,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                               >
                                 {(() => {
                                   try {
-                                    return currentItems.status === "false";
+                                    return currentItems.status !== "true";
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
@@ -1613,7 +1613,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
 
                           $steps["goToPlatformsConnections"] =
                             !$state.apiRequest2.data?.length ||
-                            [2, 3, 4, 6, 7, 8].some(
+                            [2, 3, 4, 6, 7, 8, 17].some(
                               required =>
                                 !$state.apiRequest2.data.some(
                                   item => item.website === required
