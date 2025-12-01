@@ -614,10 +614,24 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
             onClick={async event => {
               const $steps = {};
 
-              $steps["goToReservations"] =
+              $steps["goToPage"] =
                 $props.navPage != "reservations"
                   ? (() => {
-                      const actionArgs = { destination: `/reservations` };
+                      const actionArgs = {
+                        destination: (() => {
+                          try {
+                            return "/bookings/#today";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return `/bookings`;
+                            }
+                            throw e;
+                          }
+                        })()
+                      };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -633,11 +647,11 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                     })()
                   : undefined;
               if (
-                $steps["goToReservations"] != null &&
-                typeof $steps["goToReservations"] === "object" &&
-                typeof $steps["goToReservations"].then === "function"
+                $steps["goToPage"] != null &&
+                typeof $steps["goToPage"] === "object" &&
+                typeof $steps["goToPage"].then === "function"
               ) {
-                $steps["goToReservations"] = await $steps["goToReservations"];
+                $steps["goToPage"] = await $steps["goToPage"];
               }
             }}
           >

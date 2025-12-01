@@ -680,7 +680,7 @@ function PlasmicBookings2__RenderFunc(props: {
                           const callbackBase = isMiaan
                             ? "https://miaan.ir"
                             : "https://rentamon.com";
-                          const redirectUrl = `${ssoBase}/web/index.html?callback=${callbackBase}/panel/`;
+                          const redirectUrl = `${ssoBase}/web/index.html?callback=${callbackBase}/bookings/`;
                           const refreshUrl = `${ssoBase}/auth/refresh`;
                           async function refreshToken() {
                             if (isPlasmicStudio) return;

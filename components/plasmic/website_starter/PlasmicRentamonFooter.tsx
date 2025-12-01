@@ -366,7 +366,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                       customFunction: async () => {
                         return (() => {
                           return window.open(
-                            "https://www.instagram.com/rentamon.ir"
+                            "https://www.instagram.com/miaan.ir/#"
                           );
                         })();
                       }
@@ -411,7 +411,7 @@ function PlasmicRentamonFooter__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          return window.open("https://t.me/rentamon_ir");
+                          return window.open("https://t.me/miaan_ir");
                         })();
                       }
                     };
