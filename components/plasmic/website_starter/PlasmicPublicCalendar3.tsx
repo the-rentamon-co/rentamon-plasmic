@@ -135,109 +135,6 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
 
   const globalVariants = _useGlobalVariants();
 
-  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
-    () => [
-      {
-        path: "selectProperty.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return $state.apiRequest.data[0].name;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return undefined;
-              }
-              throw e;
-            }
-          })()
-      },
-      {
-        path: "apiRequest.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest2.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest2"
-      },
-      {
-        path: "apiRequest2.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest2"
-      },
-      {
-        path: "apiRequest2.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest2"
-      },
-      {
-        path: "fetchImage.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "fetchImage"
-      },
-      {
-        path: "fetchImage.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "fetchImage"
-      },
-      {
-        path: "fetchImage.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "fetchImage"
-      }
-    ],
-    [$props, $ctx, $refs]
-  );
-  const $state = useDollarState(stateSpecs, {
-    $props,
-    $ctx,
-    $queries: {},
-    $refs
-  });
-
   const styleTokensClassNames = _useStyleTokens();
 
   return (
@@ -306,24 +203,6 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
                 </div>
               }
               method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequest",
-                  "error"
-                ]).apply(null, eventArgs);
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequest",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
               ref={ref => {
                 $refs["apiRequest"] = ref;
               }}
@@ -336,22 +215,6 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
                   data-plasmic-name={"selectProperty"}
                   data-plasmic-override={overrides.selectProperty}
                   className={classNames("__wab_instance", sty.selectProperty)}
-                  onChange={async (...eventArgs: any) => {
-                    ((...eventArgs) => {
-                      generateStateOnChangeProp($state, [
-                        "selectProperty",
-                        "value"
-                      ])(eventArgs[0]);
-                    }).apply(null, eventArgs);
-
-                    if (
-                      eventArgs.length > 1 &&
-                      eventArgs[1] &&
-                      eventArgs[1]._plasmic_state_init_
-                    ) {
-                      return;
-                    }
-                  }}
                   options={(() => {
                     try {
                       return $state.apiRequest.data.map(item => item.name);
@@ -376,10 +239,19 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
                       {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
                     </div>
                   }
-                  value={generateStateValueProp($state, [
-                    "selectProperty",
-                    "value"
-                  ])}
+                  value={(() => {
+                    try {
+                      return $state.apiRequest.data[0].name;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                 />
               </div>
               <ApiRequest
@@ -389,24 +261,6 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
                 errorDisplay={null}
                 loadingDisplay={null}
                 method={"GET"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
                 ref={ref => {
                   $refs["apiRequest2"] = ref;
                 }}
@@ -847,47 +701,9 @@ function PlasmicPublicCalendar3__RenderFunc(props: {
               data-plasmic-override={overrides.fetchImage}
               children={null}
               className={classNames("__wab_instance", sty.fetchImage)}
-              errorDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ixXja
-                  )}
-                >
-                  {"Error fetching data"}
-                </div>
-              }
-              loadingDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__orq2E
-                  )}
-                >
-                  {"Loading..."}
-                </div>
-              }
+              errorDisplay={null}
+              loadingDisplay={null}
               method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "fetchImage",
-                  "error"
-                ]).apply(null, eventArgs);
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "fetchImage",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["fetchImage", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
               params={undefined}
               ref={ref => {
                 $refs["fetchImage"] = ref;

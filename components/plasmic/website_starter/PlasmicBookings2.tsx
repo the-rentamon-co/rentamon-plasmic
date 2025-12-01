@@ -2639,6 +2639,25 @@ function PlasmicBookings2__RenderFunc(props: {
                         customFunction: async () => {
                           return (() => {
                             const reservations = $state.reserveData.data;
+                            const today = new Date()
+                              .toISOString()
+                              .split("T")[0];
+                            let matched = false;
+                            if (Array.isArray(reservations)) {
+                              reservations.forEach(dayGroup => {
+                                if (
+                                  dayGroup.bookings &&
+                                  Array.isArray(dayGroup.bookings)
+                                ) {
+                                  dayGroup.bookings.forEach(booking => {
+                                    if (!matched && booking.check_in >= today) {
+                                      booking["start-here"] = true;
+                                      matched = true;
+                                    }
+                                  });
+                                }
+                              });
+                            }
                             if (
                               Array.isArray(reservations) &&
                               reservations.length > 0
@@ -2648,7 +2667,8 @@ function PlasmicBookings2__RenderFunc(props: {
                                 JSON.stringify(reservations)
                               );
                             }
-                            return ($state.reservations = reservations);
+                            $state.reservations = reservations;
+                            return reservations;
                           })();
                         }
                       };
@@ -3142,8 +3162,9 @@ function PlasmicBookings2__RenderFunc(props: {
                               )}
                               id={(() => {
                                 try {
-                                  return currentItem.date ===
-                                    new Date().toISOString().split("T")[0]
+                                  return currentItem.bookings[0][
+                                    "start-here"
+                                  ] === true
                                     ? "today"
                                     : null;
                                 } catch (e) {
