@@ -502,7 +502,676 @@ function PlasmicBookings2__RenderFunc(props: {
         path: "reservations",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $ctx }) => [
+          {
+            date: "2025-08-28",
+            bookings: [
+              {
+                check_in: "2025-08-28",
+                check_out: "2025-08-29",
+                status: "cancelled",
+                booking_id: "RNT68874544",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f3",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/6e2e6d6c-7c47-41ba-8fee-d139bdac3cd7.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              }
+            ]
+          },
+          {
+            date: "2025-08-29",
+            bookings: [
+              {
+                check_in: "2025-08-29",
+                check_out: "2025-08-31",
+                status: "past",
+                booking_id: "RNT91467824",
+                guest: {
+                  name: "\u0627\u0645\u06cc\u0631 \u0645\u06cc\u0631\u06cc"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f4",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/13ade1f6-a1bd-4436-9958-5370d07098b3.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              }
+            ]
+          },
+          {
+            date: "2025-08-31",
+            bookings: [
+              {
+                check_in: "2025-08-31",
+                check_out: "2025-09-01",
+                status: "past",
+                booking_id: "RNT28498029",
+                guest: {
+                  name: "\u0645\u0646\u0635\u0648\u0631 \u0627\u0645\u0627\u0646 \u0632\u0627\u062f\u0647"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f3",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/6e2e6d6c-7c47-41ba-8fee-d139bdac3cd7.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              },
+              {
+                check_in: "2025-08-31",
+                check_out: "2025-09-01",
+                status: "past",
+                booking_id: "RNT58260520",
+                guest: {
+                  name: "\u0645\u06cc\u0639\u0627\u062f \u0645\u06cc\u0631\u0632\u0627\u06cc\u06cc"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              },
+              {
+                check_in: "2025-08-31",
+                check_out: "2025-09-01",
+                status: "past",
+                booking_id: "RNT55836248",
+                guest: { name: "Saied Ganji" },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f5",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/48087c80-5f0b-4b3d-a539-2eefd5a18b2c.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              }
+            ]
+          },
+          {
+            date: "2025-09-03",
+            bookings: [
+              {
+                check_in: "2025-09-03",
+                check_out: "2025-09-04",
+                status: "past",
+                booking_id: "RNT29475326",
+                guest: { name: "\u06af\u0644\u0628\u0647\u0627\u0631" },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f3",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/6e2e6d6c-7c47-41ba-8fee-d139bdac3cd7.jpeg"
+                },
+                website_name: "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"
+              }
+            ]
+          },
+          {
+            date: "2025-09-06",
+            bookings: [
+              {
+                check_in: "2025-09-06",
+                check_out: "2025-09-07",
+                status: "past",
+                booking_id: "RNT82585142",
+                guest: { name: "\u0628\u0631\u062f\u06cc\u0627 " },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f4",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/13ade1f6-a1bd-4436-9958-5370d07098b3.jpeg"
+                },
+                website_name: "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"
+              }
+            ]
+          },
+          {
+            date: "2025-09-07",
+            bookings: [
+              {
+                check_in: "2025-09-07",
+                check_out: "2025-09-09",
+                status: "cancelled",
+                booking_id: "RNT74650026",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f5",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/48087c80-5f0b-4b3d-a539-2eefd5a18b2c.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              },
+              {
+                check_in: "2025-09-07",
+                check_out: "2025-09-08",
+                status: "past",
+                booking_id: "RNT55129782",
+                guest: {
+                  name: "\u0639\u0644\u06cc \u0627\u062d\u0645\u062f\u06cc"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              }
+            ]
+          },
+          {
+            date: "2025-09-08",
+            bookings: [
+              {
+                check_in: "2025-09-08",
+                check_out: "2025-09-09",
+                status: "cancelled",
+                booking_id: "RNT31056731",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              },
+              {
+                check_in: "2025-09-08",
+                check_out: "2025-09-09",
+                status: "past",
+                booking_id: "RNT36265280",
+                guest: {
+                  name: "\u0645\u0647\u06cc\u0627\u0631 \u0642\u0627\u0633\u0645\u06cc"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f5",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/48087c80-5f0b-4b3d-a539-2eefd5a18b2c.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              },
+              {
+                check_in: "2025-09-08",
+                check_out: "2025-09-10",
+                status: "past",
+                booking_id: "RNT45295142",
+                guest: { name: "Kimia Bahrami" },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              }
+            ]
+          },
+          {
+            date: "2025-09-09",
+            bookings: [
+              {
+                check_in: "2025-09-09",
+                check_out: "2025-09-10",
+                status: "past",
+                booking_id: "RNT39564644",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f3",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/6e2e6d6c-7c47-41ba-8fee-d139bdac3cd7.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              },
+              {
+                check_in: "2025-09-09",
+                check_out: "2025-09-10",
+                status: "past",
+                booking_id: "RNT45369738",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              }
+            ]
+          },
+          {
+            date: "2025-09-10",
+            bookings: [
+              {
+                check_in: "2025-09-10",
+                check_out: "2025-09-12",
+                status: "past",
+                booking_id: "RNT41014421",
+                guest: {
+                  name: "\u0641\u0631\u0634\u06cc\u062f \u062a\u0631\u06a9 \u0632\u0628\u0627\u0646"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              }
+            ]
+          },
+          {
+            date: "2025-09-11",
+            bookings: [
+              {
+                check_in: "2025-09-11",
+                check_out: "2025-09-12",
+                status: "past",
+                booking_id: "RNT73660120",
+                guest: {
+                  name: "\u0646\u06af\u06cc\u0646 \u0646\u0648\u0631\u06cc"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f3",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/6e2e6d6c-7c47-41ba-8fee-d139bdac3cd7.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              },
+              {
+                check_in: "2025-09-11",
+                check_out: "2025-09-12",
+                status: "past",
+                booking_id: "RNT16522641",
+                guest: {
+                  name: "\u062d\u0627\u0645\u062f \u0635\u0627\u062f\u0642\u06cc"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f5",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/48087c80-5f0b-4b3d-a539-2eefd5a18b2c.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              },
+              {
+                check_in: "2025-09-11",
+                check_out: "2025-09-12",
+                status: "past",
+                booking_id: "RNT73662653",
+                guest: {
+                  name: "\u0648\u062d\u06cc\u062f \u0627\u067e\u06cc\u06af\u0644\u0648"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f4",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/13ade1f6-a1bd-4436-9958-5370d07098b3.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              },
+              {
+                check_in: "2025-09-11",
+                check_out: "2025-09-13",
+                status: "cancelled",
+                booking_id: "RNT89700652",
+                guest: {
+                  name: "\u0641\u0631\u0632\u06cc\u0646 \u0632\u0645\u0627\u0646\u06cc"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f5",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/48087c80-5f0b-4b3d-a539-2eefd5a18b2c.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              }
+            ]
+          },
+          {
+            date: "2025-09-12",
+            bookings: [
+              {
+                check_in: "2025-09-12",
+                check_out: "2025-09-13",
+                status: "past",
+                booking_id: "RNT78621976",
+                guest: {
+                  name: "\u0639\u0633\u0644 \u067e\u06cc\u0644\u0647 \u0648\u0631"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              }
+            ]
+          },
+          {
+            date: "2025-09-13",
+            bookings: [
+              {
+                check_in: "2025-09-13",
+                check_out: "2025-09-14",
+                status: "past",
+                booking_id: "RNT47363731",
+                guest: {
+                  name: "\u0646\u06cc\u0644\u0648\u0641\u0631 \u0646\u0648\u0631\u06cc"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              },
+              {
+                check_in: "2025-09-13",
+                check_out: "2025-09-14",
+                status: "past",
+                booking_id: "RNT50533534",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f4",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/13ade1f6-a1bd-4436-9958-5370d07098b3.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              }
+            ]
+          },
+          {
+            date: "2025-09-14",
+            bookings: [
+              {
+                check_in: "2025-09-14",
+                check_out: "2025-09-15",
+                status: "past",
+                booking_id: "RNT70696520",
+                guest: {
+                  name: "\u062d\u0645\u06cc\u062f \u062e\u0631\u0651\u0645"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              }
+            ]
+          },
+          {
+            date: "2025-09-15",
+            bookings: [
+              {
+                check_in: "2025-09-15",
+                check_out: "2025-09-17",
+                status: "past",
+                booking_id: "RNT65772533",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f3",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/6e2e6d6c-7c47-41ba-8fee-d139bdac3cd7.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              },
+              {
+                check_in: "2025-09-15",
+                check_out: "2025-09-18",
+                status: "past",
+                booking_id: "RNT71188294",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f5",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/48087c80-5f0b-4b3d-a539-2eefd5a18b2c.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              }
+            ]
+          },
+          {
+            date: "2025-09-16",
+            bookings: [
+              {
+                check_in: "2025-09-16",
+                check_out: "2025-09-17",
+                status: "past",
+                booking_id: "RNT30199273",
+                guest: {
+                  name: "\u0627\u0645\u06cc\u0631 \u0637\u0647 \u0642\u0631\u0627\u0626\u06cc"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f5",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/48087c80-5f0b-4b3d-a539-2eefd5a18b2c.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              }
+            ]
+          },
+          {
+            date: "2025-11-27",
+            bookings: [
+              {
+                check_in: "2025-11-27",
+                check_out: "2025-11-28",
+                status: "past",
+                booking_id: "RNT27796400",
+                guest: {
+                  name: "\u06cc\u062d\u06cc\u06cc \u0635\u0631\u0627\u0641"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f5",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/48087c80-5f0b-4b3d-a539-2eefd5a18b2c.jpeg"
+                },
+                website_name: "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"
+              },
+              {
+                check_in: "2025-11-27",
+                check_out: "2025-11-30",
+                status: "cancelled",
+                booking_id: "RNT30927464",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              },
+              {
+                check_in: "2025-11-27",
+                check_out: "2025-11-28",
+                status: "past",
+                booking_id: "RNT36912654",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f4",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/13ade1f6-a1bd-4436-9958-5370d07098b3.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              }
+            ]
+          },
+          {
+            date: "2025-11-28",
+            bookings: [
+              {
+                check_in: "2025-11-28",
+                check_out: "2025-11-29",
+                status: "cancelled",
+                booking_id: "RNT77637129",
+                guest: { name: null },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f1",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1587983/ffce78e3-6899-4f77-aff5-966b6baa828c.jpg"
+                },
+                website_name: "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"
+              },
+              {
+                check_in: "2025-11-28",
+                check_out: "2025-11-29",
+                status: "past",
+                booking_id: "RNT63830884",
+                guest: { name: "\u062c\u0648\u062f\u06a9\u06cc" },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              },
+              {
+                check_in: "2025-11-28",
+                check_out: "2025-11-30",
+                status: "past",
+                booking_id: "RNT49786829",
+                guest: {
+                  name: "\u062f\u0631\u0633\u0627 \u0648\u0642\u0627\u0631"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f5",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/48087c80-5f0b-4b3d-a539-2eefd5a18b2c.jpeg"
+                },
+                website_name: "\u062c\u0627\u062c\u06cc\u06af\u0627"
+              },
+              {
+                check_in: "2025-11-28",
+                check_out: "2025-11-29",
+                status: "past",
+                booking_id: "RNT18976333",
+                guest: { name: "\u0645\u0637\u0644\u0628\u06cc " },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f4",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/13ade1f6-a1bd-4436-9958-5370d07098b3.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              }
+            ]
+          },
+          {
+            date: "2025-11-29",
+            bookings: [
+              {
+                check_in: "2025-11-29",
+                check_out: "2025-12-02",
+                status: "reserve",
+                booking_id: "RNT03153235",
+                guest: { name: "\u062e\u0644\u06cc\u0644 \u067e\u0648\u0631" },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f3",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/6e2e6d6c-7c47-41ba-8fee-d139bdac3cd7.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              }
+            ]
+          },
+          {
+            date: "2025-11-30",
+            bookings: [
+              {
+                check_in: "2025-11-30",
+                check_out: "2025-12-01",
+                status: "reserve",
+                booking_id: "RNT06844502",
+                guest: { name: "\u062f\u0627\u0631\u0627\u0628\u06cc" },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f1",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1587983/ffce78e3-6899-4f77-aff5-966b6baa828c.jpg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              },
+              {
+                check_in: "2025-11-30",
+                check_out: "2025-12-01",
+                status: "reserve",
+                booking_id: "RNT28473440",
+                guest: {
+                  name: "\u062c\u0648\u0627\u062f \u0633\u062a\u0648\u062f\u0647"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f4",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/13ade1f6-a1bd-4436-9958-5370d07098b3.jpeg"
+                },
+                website_name: "\u062c\u0627\u0628\u0627\u0645\u0627"
+              },
+              {
+                check_in: "2025-11-30",
+                check_out: "2025-12-01",
+                status: "reserve",
+                booking_id: "RNT96107144",
+                guest: { name: "\u0631\u0645\u0636\u0627\u0646\u06cc " },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f5",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/48087c80-5f0b-4b3d-a539-2eefd5a18b2c.jpeg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              }
+            ]
+          },
+          {
+            date: "2025-12-01",
+            bookings: [
+              {
+                check_in: "2025-12-01",
+                check_out: "2025-12-02",
+                status: "reserve",
+                booking_id: "RNT80043394",
+                guest: { name: "\u0641\u0631\u0647\u0627\u0646\u06cc" },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f1",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1587983/ffce78e3-6899-4f77-aff5-966b6baa828c.jpg"
+                },
+                website_name: "\u0646\u0627\u0645\u0634\u062e\u0635"
+              }
+            ]
+          },
+          {
+            date: "2025-12-02",
+            bookings: [
+              {
+                check_in: "2025-12-02",
+                check_out: "2025-12-05",
+                status: "reserve",
+                booking_id: "RNT80923270",
+                guest: {
+                  name: "\u0639\u0645\u0631\u0627\u0646 \u06a9\u0644\u0645\u062a\u06cc "
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f4",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/13ade1f6-a1bd-4436-9958-5370d07098b3.jpeg"
+                },
+                website_name: "\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"
+              }
+            ]
+          },
+          {
+            date: "2025-12-03",
+            bookings: [
+              {
+                check_in: "2025-12-03",
+                check_out: "2025-12-04",
+                status: "reserve",
+                booking_id: "RNT53977850",
+                guest: {
+                  name: "\u0639\u0631\u0641\u0627\u0646 \u062c\u0644\u06cc\u0644"
+                },
+                property: {
+                  name: "\u06a9\u06cc\u0627\u0646 \u06f2",
+                  property_pic:
+                    "https://cdn.jabama.com/image/jabama-images/1479506/99f30525-d0a3-4ef8-b9e4-afd5a17a58ec.jpeg"
+                },
+                website_name: "\u062c\u0627\u062c\u06cc\u06af\u0627"
+              }
+            ]
+          }
+        ]
       },
       {
         path: "filterMenu.open",

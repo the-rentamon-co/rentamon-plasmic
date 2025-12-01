@@ -5921,7 +5921,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             displayWidth={"26px"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/otaghakPng2.png",
+                              src: "/plasmic/website_starter/images/otaghak2Png.png",
                               fullWidth: 44,
                               fullHeight: 44,
                               aspectRatio: undefined
@@ -5954,7 +5954,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             displayWidth={"26px"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/homsaPng.png",
+                              src: "/plasmic/website_starter/images/homsa2Png.png",
                               fullWidth: 44,
                               fullHeight: 43,
                               aspectRatio: undefined
@@ -5987,9 +5987,9 @@ function PlasmicCalendar23__RenderFunc(props: {
                             displayWidth={"26px"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/snappPng.png",
+                              src: "/plasmic/website_starter/images/snapptripPng3.png",
                               fullWidth: 44,
-                              fullHeight: 44,
+                              fullHeight: 43,
                               aspectRatio: undefined
                             }}
                           />
@@ -6020,7 +6020,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             displayWidth={"26px"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/shabPng.png",
+                              src: "/plasmic/website_starter/images/shab2Png.png",
                               fullWidth: 44,
                               fullHeight: 43,
                               aspectRatio: undefined
@@ -6053,7 +6053,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             displayWidth={"26px"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/jajigaPng.png",
+                              src: "/plasmic/website_starter/images/jajiga2Png.png",
                               fullWidth: 44,
                               fullHeight: 44,
                               aspectRatio: undefined
@@ -6084,7 +6084,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             displayWidth={"26px"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/jabamaPng.png",
+                              src: "/plasmic/website_starter/images/jabama2Png.png",
                               fullWidth: 43,
                               fullHeight: 44,
                               aspectRatio: undefined
@@ -6115,7 +6115,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             displayWidth={"26px"}
                             loading={"lazy"}
                             src={{
-                              src: "/plasmic/website_starter/images/mihmanshoPng2.png",
+                              src: "/plasmic/website_starter/images/mihmansho2Png.png",
                               fullWidth: 44,
                               fullHeight: 43,
                               aspectRatio: undefined
