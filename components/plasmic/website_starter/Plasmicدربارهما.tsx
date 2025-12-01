@@ -336,12 +336,28 @@ function Plasmicدربارهما__RenderFunc(props: {
                     displayWidth={"100%"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/teamJpg.jpg",
-                      fullWidth: 800,
-                      fullHeight: 222,
+                      src: "/plasmic/website_starter/images/team1404Jpg.jpg",
+                      fullWidth: 1000,
+                      fullHeight: 351,
                       aspectRatio: undefined
                     }}
                   />
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__hcf8P)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___6Xkh3
+                      )}
+                    >
+                      {
+                        "\u062f\u0648\u0631\u0647\u0645\u06cc \u0628\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0634\u0647\u0631 \u0642\u0645"
+                      }
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

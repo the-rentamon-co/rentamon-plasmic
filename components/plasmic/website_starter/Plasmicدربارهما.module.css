@@ -232,6 +232,33 @@
     border-radius: 15px;
   }
 }
+.freeBox__hcf8P {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  z-index: 1;
+  min-width: 0;
+  padding: 8px;
+}
+.text___6Xkh3 {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  color: #ffffff;
+  font-size: 22px;
+  text-align: center;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}
 .introduction {
   display: flex;
   flex-direction: column;

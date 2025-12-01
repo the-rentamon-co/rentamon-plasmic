@@ -5919,6 +5919,11 @@
           "id": "_ouoLofTQ9BD",
           "name": "amir.jpg",
           "filePath": "../public/plasmic/website_starter/images/amirJpg.jpg"
+        },
+        {
+          "id": "7J6htfvmfygf",
+          "name": "team-1404.jpg",
+          "filePath": "../public/plasmic/website_starter/images/team1404Jpg.jpg"
         }
       ],
       "indirect": false,
