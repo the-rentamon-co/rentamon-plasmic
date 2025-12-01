@@ -980,16 +980,12 @@ function PlasmicBookings2__RenderFunc(props: {
                   await $steps["removeSmartBookingAlert"];
               }
 
-              $steps["runCode4"] = false
+              $steps["runCode4"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          if (
-                            !document.cookie.includes(
-                              "reservations_notify_final"
-                            )
-                          ) {
+                          if (!document.cookie.includes("bookings_notify")) {
                             return ($state.notify = true);
                           }
                         })();
@@ -1006,34 +1002,6 @@ function PlasmicBookings2__RenderFunc(props: {
                 typeof $steps["runCode4"].then === "function"
               ) {
                 $steps["runCode4"] = await $steps["runCode4"];
-              }
-
-              $steps["updateModalData"] = true
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["modalData"]
-                      },
-                      operation: 0
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateModalData"] != null &&
-                typeof $steps["updateModalData"] === "object" &&
-                typeof $steps["updateModalData"].then === "function"
-              ) {
-                $steps["updateModalData"] = await $steps["updateModalData"];
               }
             }}
           />
@@ -8084,24 +8052,71 @@ function PlasmicBookings2__RenderFunc(props: {
                           : "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u062c\u062f\u0627\u06af\u0627\u0646\u0647 \u0628\u0628\u06cc\u0646\u06cc:\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"}
                       </div>
                     ) : null}
-                    <Video
-                      data-plasmic-name={"htmlVideo"}
-                      data-plasmic-override={overrides.htmlVideo}
-                      autoPlay={false}
-                      className={classNames("__wab_instance", sty.htmlVideo)}
-                      controls={true}
-                      loop={false}
-                      muted={false}
-                      poster={
-                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fphoto_2025-10-07_18-03-27.jpg?versionId="
+                    {false ? (
+                      <Video
+                        data-plasmic-name={"htmlVideo"}
+                        data-plasmic-override={overrides.htmlVideo}
+                        autoPlay={false}
+                        className={classNames("__wab_instance", sty.htmlVideo)}
+                        controls={true}
+                        loop={false}
+                        muted={false}
+                        poster={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fphoto_2025-10-07_18-03-27.jpg?versionId="
+                        }
+                        ref={ref => {
+                          $refs["htmlVideo"] = ref;
+                        }}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Freservations-page.mp4?versionId="
+                        }
+                      />
+                    ) : null}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___368Mj
+                      )}
+                    >
+                      {
+                        "\u0635\u0641\u062d\u0647 \u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646 \u0628\u0647 \u0631\u0648\u0632 \u0634\u062f"
                       }
-                      ref={ref => {
-                        $refs["htmlVideo"] = ref;
-                      }}
-                      src={
-                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Freservations-page.mp4?versionId="
-                      }
-                    />
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__sTqR
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {
+                            "\u0644\u06cc\u0633\u062a \u0628\u0647\u0628\u0648\u062f\u200c\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647:"
+                          }
+                        </span>
+                        <React.Fragment>{"\n"}</React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {"\r"}
+                        </span>
+                        <React.Fragment>
+                          {
+                            "\n\ud83d\udca0\t\u0631\u0632\u0631\u0648 \u0647\u0627 \u0628\u0631\u0627\u0633\u0627\u0633 \u0631\u0648\u0632 \u0648\u0631\u0648\u062f\u0634\u0648\u0646 \u0627\u0632 \u0647\u0645 \u062c\u062f\u0627 \u0634\u062f\u0646.\r\n\ud83d\udca0\u062f\u0631 \u0628\u0627\u0644\u0627\u06cc \u0635\u0641\u062d\u0647\u060c \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0627\u0632 \u0648\u0631\u0648\u062f \u0648 \u062e\u0631\u0648\u062c \u0627\u0645\u0631\u0648\u0632 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc.\n\r"
+                          }
+                        </React.Fragment>
+                      </React.Fragment>
+                    </div>
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__twVku)}>

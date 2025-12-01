@@ -106,23 +106,23 @@ export type PlasmicSupport__OverridesType = {
   title6?: Flex__<"div">;
   caption6?: Flex__<"div">;
   goftino2?: Flex__<"div">;
-  contact10?: Flex__<"div">;
+  goftino?: Flex__<"div">;
   icon10?: Flex__<"div">;
   title10?: Flex__<"div">;
   caption10?: Flex__<"div">;
-  contact7?: Flex__<"div">;
+  whatsapp?: Flex__<"div">;
   icon7?: Flex__<"div">;
   title7?: Flex__<"div">;
   caption7?: Flex__<"div">;
-  contact8?: Flex__<"div">;
+  telegram?: Flex__<"div">;
   icon8?: Flex__<"div">;
   title8?: Flex__<"div">;
   caption8?: Flex__<"div">;
-  contact9?: Flex__<"div">;
+  eitaa?: Flex__<"div">;
   icon9?: Flex__<"div">;
   title9?: Flex__<"div">;
   caption9?: Flex__<"div">;
-  contact11?: Flex__<"div">;
+  infoEmail?: Flex__<"div">;
   icon11?: Flex__<"div">;
   title11?: Flex__<"div">;
   caption11?: Flex__<"div">;
@@ -565,11 +565,11 @@ function PlasmicSupport__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.goftino2)}
                     >
                       <div
-                        data-plasmic-name={"contact10"}
-                        data-plasmic-override={overrides.contact10}
+                        data-plasmic-name={"goftino"}
+                        data-plasmic-override={overrides.goftino}
                         className={classNames(
                           projectcss.all,
-                          sty.contact10,
+                          sty.goftino,
                           "clickable"
                         )}
                         onClick={async event => {
@@ -692,11 +692,11 @@ function PlasmicSupport__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__zZfjf)}
                     >
                       <div
-                        data-plasmic-name={"contact7"}
-                        data-plasmic-override={overrides.contact7}
+                        data-plasmic-name={"whatsapp"}
+                        data-plasmic-override={overrides.whatsapp}
                         className={classNames(
                           projectcss.all,
-                          sty.contact7,
+                          sty.whatsapp,
                           "clickable"
                         )}
                         onClick={async event => {
@@ -833,11 +833,11 @@ function PlasmicSupport__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__a5Scl)}
                     >
                       <div
-                        data-plasmic-name={"contact8"}
-                        data-plasmic-override={overrides.contact8}
+                        data-plasmic-name={"telegram"}
+                        data-plasmic-override={overrides.telegram}
                         className={classNames(
                           projectcss.all,
-                          sty.contact8,
+                          sty.telegram,
                           "clickable"
                         )}
                         onClick={async event => {
@@ -974,11 +974,11 @@ function PlasmicSupport__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__rcAYr)}
                     >
                       <div
-                        data-plasmic-name={"contact9"}
-                        data-plasmic-override={overrides.contact9}
+                        data-plasmic-name={"eitaa"}
+                        data-plasmic-override={overrides.eitaa}
                         className={classNames(
                           projectcss.all,
-                          sty.contact9,
+                          sty.eitaa,
                           "clickable"
                         )}
                         onClick={async event => {
@@ -990,7 +990,7 @@ function PlasmicSupport__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       return window.open(
-                                        "https://eitaa.org/rentamon_support",
+                                        "https://eitaa.org/miaan_support",
                                         "_blank"
                                       );
                                     })();
@@ -1101,11 +1101,11 @@ function PlasmicSupport__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__cdAo)}
                     >
                       <div
-                        data-plasmic-name={"contact11"}
-                        data-plasmic-override={overrides.contact11}
+                        data-plasmic-name={"infoEmail"}
+                        data-plasmic-override={overrides.infoEmail}
                         className={classNames(
                           projectcss.all,
-                          sty.contact11,
+                          sty.infoEmail,
                           "clickable"
                         )}
                         onClick={async event => {
@@ -1355,23 +1355,23 @@ const PlasmicDescendants = {
     "title6",
     "caption6",
     "goftino2",
-    "contact10",
+    "goftino",
     "icon10",
     "title10",
     "caption10",
-    "contact7",
+    "whatsapp",
     "icon7",
     "title7",
     "caption7",
-    "contact8",
+    "telegram",
     "icon8",
     "title8",
     "caption8",
-    "contact9",
+    "eitaa",
     "icon9",
     "title9",
     "caption9",
-    "contact11",
+    "infoEmail",
     "icon11",
     "title11",
     "caption11",
@@ -1403,23 +1403,23 @@ const PlasmicDescendants = {
     "title6",
     "caption6",
     "goftino2",
-    "contact10",
+    "goftino",
     "icon10",
     "title10",
     "caption10",
-    "contact7",
+    "whatsapp",
     "icon7",
     "title7",
     "caption7",
-    "contact8",
+    "telegram",
     "icon8",
     "title8",
     "caption8",
-    "contact9",
+    "eitaa",
     "icon9",
     "title9",
     "caption9",
-    "contact11",
+    "infoEmail",
     "icon11",
     "title11",
     "caption11",
@@ -1442,23 +1442,23 @@ const PlasmicDescendants = {
     "title6",
     "caption6",
     "goftino2",
-    "contact10",
+    "goftino",
     "icon10",
     "title10",
     "caption10",
-    "contact7",
+    "whatsapp",
     "icon7",
     "title7",
     "caption7",
-    "contact8",
+    "telegram",
     "icon8",
     "title8",
     "caption8",
-    "contact9",
+    "eitaa",
     "icon9",
     "title9",
     "caption9",
-    "contact11",
+    "infoEmail",
     "icon11",
     "title11",
     "caption11",
@@ -1472,23 +1472,23 @@ const PlasmicDescendants = {
     "title6",
     "caption6",
     "goftino2",
-    "contact10",
+    "goftino",
     "icon10",
     "title10",
     "caption10",
-    "contact7",
+    "whatsapp",
     "icon7",
     "title7",
     "caption7",
-    "contact8",
+    "telegram",
     "icon8",
     "title8",
     "caption8",
-    "contact9",
+    "eitaa",
     "icon9",
     "title9",
     "caption9",
-    "contact11",
+    "infoEmail",
     "icon11",
     "title11",
     "caption11"
@@ -1497,24 +1497,24 @@ const PlasmicDescendants = {
   icon6: ["icon6"],
   title6: ["title6"],
   caption6: ["caption6"],
-  goftino2: ["goftino2", "contact10", "icon10", "title10", "caption10"],
-  contact10: ["contact10", "icon10", "title10", "caption10"],
+  goftino2: ["goftino2", "goftino", "icon10", "title10", "caption10"],
+  goftino: ["goftino", "icon10", "title10", "caption10"],
   icon10: ["icon10"],
   title10: ["title10"],
   caption10: ["caption10"],
-  contact7: ["contact7", "icon7", "title7", "caption7"],
+  whatsapp: ["whatsapp", "icon7", "title7", "caption7"],
   icon7: ["icon7"],
   title7: ["title7"],
   caption7: ["caption7"],
-  contact8: ["contact8", "icon8", "title8", "caption8"],
+  telegram: ["telegram", "icon8", "title8", "caption8"],
   icon8: ["icon8"],
   title8: ["title8"],
   caption8: ["caption8"],
-  contact9: ["contact9", "icon9", "title9", "caption9"],
+  eitaa: ["eitaa", "icon9", "title9", "caption9"],
   icon9: ["icon9"],
   title9: ["title9"],
   caption9: ["caption9"],
-  contact11: ["contact11", "icon11", "title11", "caption11"],
+  infoEmail: ["infoEmail", "icon11", "title11", "caption11"],
   icon11: ["icon11"],
   title11: ["title11"],
   caption11: ["caption11"],
@@ -1550,23 +1550,23 @@ type NodeDefaultElementType = {
   title6: "div";
   caption6: "div";
   goftino2: "div";
-  contact10: "div";
+  goftino: "div";
   icon10: "div";
   title10: "div";
   caption10: "div";
-  contact7: "div";
+  whatsapp: "div";
   icon7: "div";
   title7: "div";
   caption7: "div";
-  contact8: "div";
+  telegram: "div";
   icon8: "div";
   title8: "div";
   caption8: "div";
-  contact9: "div";
+  eitaa: "div";
   icon9: "div";
   title9: "div";
   caption9: "div";
-  contact11: "div";
+  infoEmail: "div";
   icon11: "div";
   title11: "div";
   caption11: "div";
@@ -1660,23 +1660,23 @@ export const PlasmicSupport = Object.assign(
     title6: makeNodeComponent("title6"),
     caption6: makeNodeComponent("caption6"),
     goftino2: makeNodeComponent("goftino2"),
-    contact10: makeNodeComponent("contact10"),
+    goftino: makeNodeComponent("goftino"),
     icon10: makeNodeComponent("icon10"),
     title10: makeNodeComponent("title10"),
     caption10: makeNodeComponent("caption10"),
-    contact7: makeNodeComponent("contact7"),
+    whatsapp: makeNodeComponent("whatsapp"),
     icon7: makeNodeComponent("icon7"),
     title7: makeNodeComponent("title7"),
     caption7: makeNodeComponent("caption7"),
-    contact8: makeNodeComponent("contact8"),
+    telegram: makeNodeComponent("telegram"),
     icon8: makeNodeComponent("icon8"),
     title8: makeNodeComponent("title8"),
     caption8: makeNodeComponent("caption8"),
-    contact9: makeNodeComponent("contact9"),
+    eitaa: makeNodeComponent("eitaa"),
     icon9: makeNodeComponent("icon9"),
     title9: makeNodeComponent("title9"),
     caption9: makeNodeComponent("caption9"),
-    contact11: makeNodeComponent("contact11"),
+    infoEmail: makeNodeComponent("infoEmail"),
     icon11: makeNodeComponent("icon11"),
     title11: makeNodeComponent("title11"),
     caption11: makeNodeComponent("caption11"),

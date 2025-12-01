@@ -85,6 +85,9 @@ export type PlasmicRentamonFooter__OverridesType = {
   embedHtml?: Flex__<typeof Embed>;
   _1st?: Flex__<"div">;
   top?: Flex__<"div">;
+  eitaa?: Flex__<"div">;
+  instagram?: Flex__<"div">;
+  telegram?: Flex__<"div">;
   but?: Flex__<"div">;
 };
 
@@ -302,7 +305,36 @@ function PlasmicRentamonFooter__RenderFunc(props: {
         data-plasmic-override={overrides.top}
         className={classNames(projectcss.all, sty.top)}
       >
-        <div className={classNames(projectcss.all, sty.freeBox__mfJK)}>
+        <div
+          data-plasmic-name={"eitaa"}
+          data-plasmic-override={overrides.eitaa}
+          className={classNames(projectcss.all, sty.eitaa)}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["runCode"] = true
+              ? (() => {
+                  const actionArgs = {
+                    customFunction: async () => {
+                      return (() => {
+                        return window.open("https://eitaa.org/s/miaan_ir/#");
+                      })();
+                    }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["runCode"] != null &&
+              typeof $steps["runCode"] === "object" &&
+              typeof $steps["runCode"].then === "function"
+            ) {
+              $steps["runCode"] = await $steps["runCode"];
+            }
+          }}
+        >
           <PlasmicImg__
             alt={""}
             className={classNames(sty.img__n8G93, "clickable")}
@@ -313,31 +345,6 @@ function PlasmicRentamonFooter__RenderFunc(props: {
             displayMinWidth={"0"}
             displayWidth={"100%"}
             loading={"lazy"}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          return window.open("https://eitaa.com/rentamon_ir");
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-            }}
             src={{
               src: "/plasmic/website_starter/images/image52.png",
               fullWidth: 120,
@@ -346,7 +353,38 @@ function PlasmicRentamonFooter__RenderFunc(props: {
             }}
           />
         </div>
-        <div className={classNames(projectcss.all, sty.freeBox__ptz4H)}>
+        <div
+          data-plasmic-name={"instagram"}
+          data-plasmic-override={overrides.instagram}
+          className={classNames(projectcss.all, sty.instagram)}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["runCode"] = true
+              ? (() => {
+                  const actionArgs = {
+                    customFunction: async () => {
+                      return (() => {
+                        return window.open(
+                          "https://www.instagram.com/miaan.ir/#"
+                        );
+                      })();
+                    }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["runCode"] != null &&
+              typeof $steps["runCode"] === "object" &&
+              typeof $steps["runCode"].then === "function"
+            ) {
+              $steps["runCode"] = await $steps["runCode"];
+            }
+          }}
+        >
           <PlasmicImg__
             alt={""}
             className={classNames(sty.img__lRbQg, "clickable")}
@@ -357,33 +395,6 @@ function PlasmicRentamonFooter__RenderFunc(props: {
             displayMinWidth={"0"}
             displayWidth={"100%"}
             loading={"lazy"}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          return window.open(
-                            "https://www.instagram.com/miaan.ir/#"
-                          );
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-            }}
             src={{
               src: "/plasmic/website_starter/images/image53.png",
               fullWidth: 120,
@@ -392,7 +403,36 @@ function PlasmicRentamonFooter__RenderFunc(props: {
             }}
           />
         </div>
-        <div className={classNames(projectcss.all, sty.freeBox__pbryw)}>
+        <div
+          data-plasmic-name={"telegram"}
+          data-plasmic-override={overrides.telegram}
+          className={classNames(projectcss.all, sty.telegram)}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["runCode"] = true
+              ? (() => {
+                  const actionArgs = {
+                    customFunction: async () => {
+                      return (() => {
+                        return window.open("https://t.me/miaan_ir");
+                      })();
+                    }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["runCode"] != null &&
+              typeof $steps["runCode"] === "object" &&
+              typeof $steps["runCode"].then === "function"
+            ) {
+              $steps["runCode"] = await $steps["runCode"];
+            }
+          }}
+        >
           <PlasmicImg__
             alt={""}
             className={classNames(sty.img__lkNc, "clickable")}
@@ -403,31 +443,6 @@ function PlasmicRentamonFooter__RenderFunc(props: {
             displayMinWidth={"0"}
             displayWidth={"100%"}
             loading={"lazy"}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          return window.open("https://t.me/miaan_ir");
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-            }}
             src={{
               src: "/plasmic/website_starter/images/image51.png",
               fullWidth: 120,
@@ -767,11 +782,24 @@ function PlasmicRentamonFooter__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  footer: ["footer", "mid", "embedHtml", "_1st", "top", "but"],
+  footer: [
+    "footer",
+    "mid",
+    "embedHtml",
+    "_1st",
+    "top",
+    "eitaa",
+    "instagram",
+    "telegram",
+    "but"
+  ],
   mid: ["mid", "embedHtml"],
   embedHtml: ["embedHtml"],
   _1st: ["_1st"],
-  top: ["top"],
+  top: ["top", "eitaa", "instagram", "telegram"],
+  eitaa: ["eitaa"],
+  instagram: ["instagram"],
+  telegram: ["telegram"],
   but: ["but"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -783,6 +811,9 @@ type NodeDefaultElementType = {
   embedHtml: typeof Embed;
   _1st: "div";
   top: "div";
+  eitaa: "div";
+  instagram: "div";
+  telegram: "div";
   but: "div";
 };
 
@@ -852,6 +883,9 @@ export const PlasmicRentamonFooter = Object.assign(
     embedHtml: makeNodeComponent("embedHtml"),
     _1st: makeNodeComponent("_1st"),
     top: makeNodeComponent("top"),
+    eitaa: makeNodeComponent("eitaa"),
+    instagram: makeNodeComponent("instagram"),
+    telegram: makeNodeComponent("telegram"),
     but: makeNodeComponent("but"),
 
     // Metadata about props expected for PlasmicRentamonFooter

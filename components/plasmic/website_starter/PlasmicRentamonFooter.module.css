@@ -490,7 +490,7 @@
     max-width: 90%;
   }
 }
-.freeBox__mfJK {
+.eitaa {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -511,7 +511,7 @@
 .img__n8G93 > picture > img {
   object-fit: cover;
 }
-.freeBox__ptz4H {
+.instagram {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -532,7 +532,7 @@
 .img__lRbQg > picture > img {
   object-fit: cover;
 }
-.freeBox__pbryw {
+.telegram {
   display: flex;
   flex-direction: column;
   position: relative;

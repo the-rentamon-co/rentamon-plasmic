@@ -698,7 +698,7 @@
   min-width: 0;
   padding: 8px;
 }
-.contact10 {
+.goftino {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -720,7 +720,7 @@
   margin: 0px;
 }
 @media (max-width: 1200px) {
-  .contact10 {
+  .goftino {
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -740,7 +740,7 @@
   }
 }
 @media (max-width: 500px) {
-  .contact10 {
+  .goftino {
     width: 100%;
     height: 100%;
     max-width: none;
@@ -760,7 +760,7 @@
   }
 }
 @media (max-width: 350px) {
-  .contact10 {
+  .goftino {
     min-height: auto;
     max-height: 140px;
     width: 100%;
@@ -900,7 +900,7 @@
   min-width: 0;
   padding: 8px;
 }
-.contact7 {
+.whatsapp {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -922,7 +922,7 @@
   margin: 0px;
 }
 @media (max-width: 1200px) {
-  .contact7 {
+  .whatsapp {
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -942,7 +942,7 @@
   }
 }
 @media (max-width: 500px) {
-  .contact7 {
+  .whatsapp {
     width: 100%;
     height: 100%;
     max-width: none;
@@ -962,7 +962,7 @@
   }
 }
 @media (max-width: 350px) {
-  .contact7 {
+  .whatsapp {
     min-height: auto;
     max-height: 140px;
     width: 100%;
@@ -1107,7 +1107,7 @@
   min-width: 0;
   padding: 8px;
 }
-.contact8 {
+.telegram {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1129,7 +1129,7 @@
   margin: 0px;
 }
 @media (max-width: 1200px) {
-  .contact8 {
+  .telegram {
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -1149,7 +1149,7 @@
   }
 }
 @media (max-width: 500px) {
-  .contact8 {
+  .telegram {
     width: 100%;
     height: 100%;
     max-width: none;
@@ -1169,7 +1169,7 @@
   }
 }
 @media (max-width: 350px) {
-  .contact8 {
+  .telegram {
     min-height: auto;
     max-height: 140px;
     width: 100%;
@@ -1322,7 +1322,7 @@
   min-width: 0;
   padding: 8px;
 }
-.contact9 {
+.eitaa {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1344,7 +1344,7 @@
   margin: 0px;
 }
 @media (max-width: 1200px) {
-  .contact9 {
+  .eitaa {
     min-width: auto;
     max-width: none;
     height: 100%;
@@ -1364,7 +1364,7 @@
   }
 }
 @media (max-width: 500px) {
-  .contact9 {
+  .eitaa {
     width: 100%;
     height: 100%;
     max-width: none;
@@ -1384,7 +1384,7 @@
   }
 }
 @media (max-width: 350px) {
-  .contact9 {
+  .eitaa {
     max-height: 140px;
     width: 100%;
     height: 100%;
@@ -1533,7 +1533,7 @@
   min-width: 0;
   padding: 8px;
 }
-.contact11 {
+.infoEmail {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1555,7 +1555,7 @@
   margin: 0px;
 }
 @media (max-width: 1200px) {
-  .contact11 {
+  .infoEmail {
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -1575,7 +1575,7 @@
   }
 }
 @media (max-width: 500px) {
-  .contact11 {
+  .infoEmail {
     width: 100%;
     height: 100%;
     max-width: none;
@@ -1595,7 +1595,7 @@
   }
 }
 @media (max-width: 350px) {
-  .contact11 {
+  .infoEmail {
     min-height: auto;
     max-height: 140px;
     width: 100%;

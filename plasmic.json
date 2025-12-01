@@ -3154,20 +3154,6 @@
           "path": "/bookings"
         },
         {
-          "id": "d1R-Hq66izsr",
-          "name": "NewPage3",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage3.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/public-calendar.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewPage3.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page-3"
-        },
-        {
           "id": "8XPivWEDqRnJ",
           "name": "NewPage4",
           "type": "managed",
@@ -3180,6 +3166,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/new-page-3"
+        },
+        {
+          "id": "d1R-Hq66izsr",
+          "name": "NewPage3",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage3.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/public-calendar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewPage3.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/public-calendar"
         }
       ],
       "icons": [
@@ -5914,6 +5914,11 @@
           "id": "vjLJz3cgYQob",
           "name": "icon-social-sign.png",
           "filePath": "../public/plasmic/website_starter/images/iconSocialSignPng.png"
+        },
+        {
+          "id": "_ouoLofTQ9BD",
+          "name": "amir.jpg",
+          "filePath": "../public/plasmic/website_starter/images/amirJpg.jpg"
         }
       ],
       "indirect": false,

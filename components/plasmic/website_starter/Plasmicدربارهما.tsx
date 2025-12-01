@@ -490,44 +490,6 @@ function Plasmicدربارهما__RenderFunc(props: {
                           projectcss.__wab_text,
                           sty.text___5Juuk
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["updatePropertyId"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  variable: {
-                                    objRoot: $state,
-                                    variablePath: ["propertyId"]
-                                  },
-                                  operation: 0
-                                };
-                                return (({
-                                  variable,
-                                  value,
-                                  startIndex,
-                                  deleteCount
-                                }) => {
-                                  if (!variable) {
-                                    return;
-                                  }
-                                  const { objRoot, variablePath } = variable;
-
-                                  $stateSet(objRoot, variablePath, value);
-                                  return value;
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["updatePropertyId"] != null &&
-                            typeof $steps["updatePropertyId"] === "object" &&
-                            typeof $steps["updatePropertyId"].then ===
-                              "function"
-                          ) {
-                            $steps["updatePropertyId"] =
-                              await $steps["updatePropertyId"];
-                          }
-                        }}
                       >
                         {
                           "\u0646\u0627\u0632\u0646\u06cc\u0646 \u0628\u0648\u062c\u0627\u0631"
@@ -545,34 +507,6 @@ function Plasmicدربارهما__RenderFunc(props: {
                           projectcss.__wab_text,
                           sty.text__xc1NB
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/nazaninboojar/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
                         {
                           "\u0647\u0645\u200c\u0628\u0646\u06cc\u0627\u0646\u200c\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0645\u062d\u0635\u0648\u0644"
@@ -685,34 +619,6 @@ function Plasmicدربارهما__RenderFunc(props: {
                           projectcss.__wab_text,
                           sty.text__p31Yw
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/zahra-abolhasani-375125315/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
                         {
                           "\u0645\u0648\u0641\u0642\u06cc\u062a \u06a9\u0627\u0631\u0628\u0631\u0627\u0646"
@@ -915,34 +821,6 @@ function Plasmicدربارهما__RenderFunc(props: {
                           projectcss.__wab_text,
                           sty.text__ms3SB
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/parsa-khosravi-70432a244/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
                         {
                           "\u062a\u0648\u0633\u0639\u0647\u200c\u062f\u0647\u0646\u062f\u0647 \u0641\u0646\u06cc"
@@ -1045,34 +923,6 @@ function Plasmicدربارهما__RenderFunc(props: {
                           projectcss.__wab_text,
                           sty.text___3DnQx
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/mostafa-faghih/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
                         {
                           "\u0628\u0646\u06cc\u0627\u0646\u200c\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644"
@@ -1140,9 +990,12 @@ function Plasmicدربارهما__RenderFunc(props: {
                               : "auto"
                         }
                         loading={"lazy"}
-                        src={
-                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fhamidi3.jpg?versionId="
-                        }
+                        src={{
+                          src: "/plasmic/website_starter/images/amirJpg.jpg",
+                          fullWidth: 400,
+                          fullHeight: 400,
+                          aspectRatio: undefined
+                        }}
                       />
                     </div>
                     <div
@@ -1157,9 +1010,9 @@ function Plasmicدربارهما__RenderFunc(props: {
                           sty.text___75Pai
                         )}
                       >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0645\u062d\u0645\u062f \u062d\u0633\u06cc\u0646 \u062d\u0645\u06cc\u062f\u06cc"
-                          : "\u0645\u062d\u0645\u062f\u062d\u0633\u06cc\u0646 \u062d\u0645\u06cc\u062f\u06cc"}
+                        {
+                          "\u0627\u0645\u06cc\u0631\u0645\u0647\u062f\u06cc \u0633\u0647\u0627\u0645\u06cc"
+                        }
                       </div>
                     </div>
                     <div
@@ -1173,38 +1026,10 @@ function Plasmicدربارهما__RenderFunc(props: {
                           projectcss.__wab_text,
                           sty.text__jPxzh
                         )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://www.linkedin.com/in/s-m-hossein-hamidi/",
-                                        "_blank"
-                                      );
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-                        }}
                       >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0645\u0634\u0627\u0648\u0631 \u0648 \u0631\u0627\u0647\u0628\u0631"
-                          : "\u0645\u0634\u0627\u0648\u0631 \u0648 \u0631\u0627\u0647\u0628\u0631 \u0645\u062d\u0635\u0648\u0644"}
+                        {
+                          "\u062a\u0648\u0633\u0639\u0647\u200c\u062f\u0647\u0646\u062f\u0647 \u0641\u0646\u06cc"
+                        }
                       </div>
                     </div>
                   </div>
