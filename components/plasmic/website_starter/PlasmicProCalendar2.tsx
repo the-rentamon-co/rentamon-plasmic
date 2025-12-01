@@ -62,7 +62,6 @@ import {
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
@@ -98,7 +97,6 @@ export type PlasmicProCalendar2__OverridesType = {
   header2?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   alertModal?: Flex__<typeof AntdModal>;
-  embedHtml?: Flex__<typeof Embed>;
   button?: Flex__<typeof Button>;
   headerMobileNew?: Flex__<"div">;
   header?: Flex__<"div">;
@@ -1166,22 +1164,10 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         </span>
                         <React.Fragment>
                           {
-                            "\n\u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u060c \u0622\u06cc\u06a9\u0648\u0646 \u0628\u0631\u0646\u0627\u0645\u0647 \u0622\u0628\u06cc \u0645\u06cc\u200c\u0634\u0647!"
+                            "\n\u0644\u0637\u0641\u0627 \u0628\u0631\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0633\u0631\u0639\u062a \u0648 \u06a9\u0627\u0631\u0627\u06cc\u06cc\u060c \u0628\u0631\u0646\u0627\u0645\u0647 \u0631\u0648 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u06a9\u0646"
                           }
                         </React.Fragment>
                       </React.Fragment>
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__vNIgZ)}
-                    >
-                      <Embed
-                        data-plasmic-name={"embedHtml"}
-                        data-plasmic-override={overrides.embedHtml}
-                        className={classNames("__wab_instance", sty.embedHtml)}
-                        code={
-                          '<div style="\r\n  overflow: hidden;\r\n  border-radius: 16px;\r\n  width: 100%;\r\n  height: auto;\r\n  background: white;\r\n">\r\n  <video\r\n        src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Ftemp-announce%2Flogo-modal.mp4?versionId="\r\n\r\n    autoplay\r\n    muted\r\n    loop\r\n    playsinline\r\n    style="\r\n      width: calc(100% + 2px);\r\n      height: calc(100% + 2px);\r\n      margin: -1px;\r\n      object-fit: cover;\r\n      display: block;\r\n    ">\r\n  </video>\r\n</div>\r\n'
-                        }
-                      />
                     </div>
                   </div>
                 </div>
@@ -2650,7 +2636,6 @@ const PlasmicDescendants = {
     "header2",
     "sideBar2",
     "alertModal",
-    "embedHtml",
     "button",
     "headerMobileNew",
     "header",
@@ -2674,8 +2659,7 @@ const PlasmicDescendants = {
   ],
   header2: ["header2", "sideBar2"],
   sideBar2: ["sideBar2"],
-  alertModal: ["alertModal", "embedHtml", "button"],
-  embedHtml: ["embedHtml"],
+  alertModal: ["alertModal", "button"],
   button: ["button"],
   headerMobileNew: [
     "headerMobileNew",
@@ -2738,7 +2722,6 @@ type NodeDefaultElementType = {
   header2: "div";
   sideBar2: typeof SideBar2;
   alertModal: typeof AntdModal;
-  embedHtml: typeof Embed;
   button: typeof Button;
   headerMobileNew: "div";
   header: "div";
@@ -2826,7 +2809,6 @@ export const PlasmicProCalendar2 = Object.assign(
     header2: makeNodeComponent("header2"),
     sideBar2: makeNodeComponent("sideBar2"),
     alertModal: makeNodeComponent("alertModal"),
-    embedHtml: makeNodeComponent("embedHtml"),
     button: makeNodeComponent("button"),
     headerMobileNew: makeNodeComponent("headerMobileNew"),
     header: makeNodeComponent("header"),

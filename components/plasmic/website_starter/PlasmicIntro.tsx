@@ -260,8 +260,8 @@ function PlasmicIntro__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "40px"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "50px"
-                    : "76px"
+                      ? "50px"
+                      : "76px"
                 }
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -329,7 +329,7 @@ function PlasmicIntro__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return `/calendar`;
+                      return `/panel-lite`;
                     }
                     throw e;
                   }
@@ -440,8 +440,8 @@ function PlasmicIntro__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "/plasmic/website_starter/images/coverJpg2.jpg"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "/plasmic/website_starter/images/coverJpg2.jpg"
-                    : "/plasmic/website_starter/images/coverJpg2.jpg"
+                      ? "/plasmic/website_starter/images/coverJpg2.jpg"
+                      : "/plasmic/website_starter/images/coverJpg2.jpg"
                 }
                 src={"https://media.rentamon.com/video%2Fpro_onboarding.mp4"}
               />
@@ -505,8 +505,8 @@ function PlasmicIntro__RenderFunc(props: {
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "/plasmic/website_starter/images/coverJpg2.jpg"
                     : hasVariant(globalVariants, "screen", "mobile")
-                    ? "/plasmic/website_starter/images/coverJpg2.jpg"
-                    : "/plasmic/website_starter/images/coverJpg2.jpg"
+                      ? "/plasmic/website_starter/images/coverJpg2.jpg"
+                      : "/plasmic/website_starter/images/coverJpg2.jpg"
                 }
                 src={"https://media.rentamon.com/video%2Fintro%20to%20lite.mp4"}
               />
@@ -581,7 +581,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicIntro__VariantsArgs;
     args?: PlasmicIntro__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicIntro__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicIntro__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicIntro__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

@@ -1352,7 +1352,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
 
                       $steps["goToLiteCalendar"] = false
                         ? (() => {
-                            const actionArgs = { destination: `/calendar` };
+                            const actionArgs = { destination: `/panel-lite` };
                             return (({ destination }) => {
                               if (
                                 typeof destination === "string" &&

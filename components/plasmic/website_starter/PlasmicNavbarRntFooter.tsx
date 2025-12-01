@@ -449,7 +449,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               $steps["goToLiteCalendar"] =
                 $state.userType2 == "2"
                   ? (() => {
-                      const actionArgs = { destination: `/calendar` };
+                      const actionArgs = { destination: `/panel-lite` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&

@@ -326,7 +326,26 @@ function Plasmicتالار__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : undefined
+          hasVariant(globalVariants, "screen", "mobile")
+            ? (() => {
+                try {
+                  return (
+                    // اگر مقدار در لوکال استوریج نبود، مقدار true برگردان (یعنی مدال باز شود)
+                    // اگر مقدار بود، false برگردان (مدال باز نشود)
+                    typeof window !== "undefined" &&
+                    !localStorage.getItem("is_transactions_notify")
+                  );
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return false;
+                  }
+                  throw e;
+                }
+              })()
+            : undefined
       },
       {
         path: "showNewFeatureBadge",
@@ -2717,242 +2736,410 @@ function Plasmicتالار__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
-          <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              styleTokensClassNames
-            )}
-            hideFooter={true}
-            maskClosable={
-              hasVariant(globalVariants, "screen", "mobile") ? false : undefined
-            }
-            modalScopeClassName={sty["modal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["modal", "open"])}
-            title={null}
-            trigger={null}
-            width={
-              hasVariant(globalVariants, "screen", "mobile") ? "400" : undefined
-            }
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__umNL)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__tB8PM
-                )}
-              >
-                {
-                  "\u06af\u0632\u0627\u0631\u0634\u0627\u062a \u0645\u0627\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0634\u0641\u0627\u0641\u200c\u062a\u0631 \u0634\u062f!\r\n\u062f\u06cc\u06af\u0647 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062c\u0632\u06cc\u06cc\u0627\u062a \u0647\u0631 \u062a\u0631\u0627\u06a9\u0646\u0634 \u0648 \u0631\u0632\u0631\u0648 \u0631\u0648 \u06a9\u0627\u0645\u0644 \u0628\u06cc\u06cc\u0646\u06cc."
+          {(() => {
+            const child$Props = {
+              className: classNames("__wab_instance", sty.modal),
+              defaultStylesClassName: classNames(
+                projectcss.root_reset,
+                projectcss.plasmic_default_styles,
+                projectcss.plasmic_mixins,
+                styleTokensClassNames
+              ),
+              hideFooter: true,
+              maskClosable: hasVariant(globalVariants, "screen", "mobile")
+                ? true
+                : undefined,
+              modalScopeClassName: sty["modal__modal"],
+              onCancel: async () => {
+                const $steps = {};
+
+                $steps["updatePropertyId"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["propertyId"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updatePropertyId"] != null &&
+                  typeof $steps["updatePropertyId"] === "object" &&
+                  typeof $steps["updatePropertyId"].then === "function"
+                ) {
+                  $steps["updatePropertyId"] = await $steps["updatePropertyId"];
                 }
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img___2KpEj)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"255px"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/photo20250920141926Jpg.jpg",
-                  fullWidth: 1109,
-                  fullHeight: 1280,
-                  aspectRatio: undefined
-                }}
-              />
+              },
+              onOpenChange: async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                  null,
+                  eventArgs
+                );
 
-              <div className={classNames(projectcss.all, sty.freeBox___9JuU)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eusEt
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
+                (async open => {
+                  const $steps = {};
 
-                    $steps["runCode"] = true
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              return localStorage.setItem(
+                                "is_transactions_notify",
+                                "true"
+                              );
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }).apply(null, eventArgs);
+              },
+              open: generateStateValueProp($state, ["modal", "open"]),
+              title: null,
+              trigger: null,
+              width: hasVariant(globalVariants, "screen", "mobile")
+                ? "400"
+                : undefined
+            };
+            initializeCodeComponentStates(
+              $state,
+              [
+                {
+                  name: "open",
+                  plasmicStateName: "modal.open"
+                }
+              ],
+              [],
+              undefined ?? {},
+              child$Props
+            );
+            initializePlasmicStates(
+              $state,
+              [
+                {
+                  name: "modal.open",
+                  initFunc: ({ $props, $state, $queries }) =>
+                    hasVariant(globalVariants, "screen", "mobile")
                       ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function enableNotify() {
-                                  localStorage.setItem(
-                                    "is_transactions_notify",
-                                    "true"
-                                  );
-                                }
-                                return enableNotify();
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-
-                    $steps["updateModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["modal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateModalOpen"] != null &&
-                      typeof $steps["updateModalOpen"] === "object" &&
-                      typeof $steps["updateModalOpen"].then === "function"
-                    ) {
-                      $steps["updateModalOpen"] =
-                        await $steps["updateModalOpen"];
-                    }
-
-                    $steps["goToTransactions"] = true
-                      ? (() => {
-                          const actionArgs = { destination: `/transactions` };
-                          return (({ destination }) => {
+                          try {
+                            return (
+                              // اگر مقدار در لوکال استوریج نبود، مقدار true برگردان (یعنی مدال باز شود)
+                              // اگر مقدار بود، false برگردان (مدال باز نشود)
+                              typeof window !== "undefined" &&
+                              !localStorage.getItem("is_transactions_notify")
+                            );
+                          } catch (e) {
                             if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
+                              return false;
                             }
-                          })?.apply(null, [actionArgs]);
+                            throw e;
+                          }
                         })()
-                      : undefined;
-                    if (
-                      $steps["goToTransactions"] != null &&
-                      typeof $steps["goToTransactions"] === "object" &&
-                      typeof $steps["goToTransactions"].then === "function"
-                    ) {
-                      $steps["goToTransactions"] =
-                        await $steps["goToTransactions"];
+                      : undefined
+                }
+              ],
+              []
+            );
+            return (
+              <AntdModal
+                data-plasmic-name={"modal"}
+                data-plasmic-override={overrides.modal}
+                {...child$Props}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__kWLj)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__pdU5A)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "80%"
+                        : "auto"
                     }
-                  }}
-                >
-                  {"\u0645\u0634\u0627\u0647\u062f\u0647"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "30%"
+                        : "auto"
+                    }
+                    loading={"lazy"}
+                    src={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? {
+                            src: "/plasmic/website_starter/images/logo1A28B22F1Svg.svg",
+                            fullWidth: 41,
+                            fullHeight: 24,
+                            aspectRatio: undefined
+                          }
+                        : undefined
+                    }
+                  />
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kijrZ
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
+                <div className={classNames(projectcss.all, sty.freeBox__ryqSs)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__umNL)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__tB8PM
+                      )}
+                    >
+                      {
+                        "\u0627\u0633\u0646\u067e \u062a\u0631\u06cc\u067e \u0628\u0647 \u0633\u0627\u06cc\u062a \u0647\u0627\u06cc \u062a\u062d\u062a \u067e\u0648\u0634\u0634 \u0645\u06cc\u0627\u0646 \u0627\u0636\u0627\u0641\u0647 \u0634\u062f\ud83c\udf89"
+                      }
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox___9JuU)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__eusEt
+                        )}
+                        onClick={async event => {
+                          const $steps = {};
 
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function enableNotify() {
-                                  localStorage.setItem(
-                                    "is_transactions_notify",
-                                    "true"
-                                  );
-                                }
-                                return enableNotify();
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      function enableNotify() {
+                                        localStorage.setItem(
+                                          "is_transactions_notify",
+                                          "true"
+                                        );
+                                      }
+                                      return enableNotify();
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
 
-                    $steps["updateModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["modal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
+                          $steps["updateModalOpen"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["modal", "open"]
+                                  },
+                                  operation: 0
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
 
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateModalOpen"] != null &&
-                      typeof $steps["updateModalOpen"] === "object" &&
-                      typeof $steps["updateModalOpen"].then === "function"
-                    ) {
-                      $steps["updateModalOpen"] =
-                        await $steps["updateModalOpen"];
-                    }
-                  }}
-                >
-                  {"\u0628\u0627\u0634\u0647"}
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateModalOpen"] != null &&
+                            typeof $steps["updateModalOpen"] === "object" &&
+                            typeof $steps["updateModalOpen"].then === "function"
+                          ) {
+                            $steps["updateModalOpen"] =
+                              await $steps["updateModalOpen"];
+                          }
+
+                          $steps["goToConnections"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  destination: `/connections?step=${"11"}`
+                                };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["goToConnections"] != null &&
+                            typeof $steps["goToConnections"] === "object" &&
+                            typeof $steps["goToConnections"].then === "function"
+                          ) {
+                            $steps["goToConnections"] =
+                              await $steps["goToConnections"];
+                          }
+                        }}
+                      >
+                        {
+                          "\u0627\u0633\u0646\u067e \u062a\u0631\u06cc\u067e \u062f\u0627\u0631\u0645"
+                        }
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__kijrZ
+                        )}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      function enableNotify() {
+                                        localStorage.setItem(
+                                          "is_transactions_notify",
+                                          "true"
+                                        );
+                                      }
+                                      return enableNotify();
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+
+                          $steps["updateModalOpen"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  variable: {
+                                    objRoot: $state,
+                                    variablePath: ["modal", "open"]
+                                  },
+                                  operation: 0
+                                };
+                                return (({
+                                  variable,
+                                  value,
+                                  startIndex,
+                                  deleteCount
+                                }) => {
+                                  if (!variable) {
+                                    return;
+                                  }
+                                  const { objRoot, variablePath } = variable;
+
+                                  $stateSet(objRoot, variablePath, value);
+                                  return value;
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["updateModalOpen"] != null &&
+                            typeof $steps["updateModalOpen"] === "object" &&
+                            typeof $steps["updateModalOpen"].then === "function"
+                          ) {
+                            $steps["updateModalOpen"] =
+                              await $steps["updateModalOpen"];
+                          }
+
+                          $steps["goToثبتآگهیاقامتگاه"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  destination: `/list-your-property`
+                                };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["goToثبتآگهیاقامتگاه"] != null &&
+                            typeof $steps["goToثبتآگهیاقامتگاه"] === "object" &&
+                            typeof $steps["goToثبتآگهیاقامتگاه"].then ===
+                              "function"
+                          ) {
+                            $steps["goToثبتآگهیاقامتگاه"] =
+                              await $steps["goToثبتآگهیاقامتگاه"];
+                          }
+                        }}
+                      >
+                        {
+                          "\u0646\u062f\u0627\u0631\u0645\u060c \u062b\u0628\u062a \u06a9\u0646\u06cc\u062f"
+                        }
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </AntdModal>
+              </AntdModal>
+            );
+          })()}
         </div>
       </div>
     </React.Fragment>

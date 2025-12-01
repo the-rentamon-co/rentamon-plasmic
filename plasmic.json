@@ -2250,7 +2250,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicLiteCalendar.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/calendar.tsx"
+            "modulePath": "../src/pages/panel-lite.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicLiteCalendar.module.css",
           "scheme": "blackbox",
@@ -3154,20 +3154,6 @@
           "path": "/bookings"
         },
         {
-          "id": "8XPivWEDqRnJ",
-          "name": "NewPage4",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage4.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-page-3.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewPage4.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page-3"
-        },
-        {
           "id": "d1R-Hq66izsr",
           "name": "NewPage3",
           "type": "managed",
@@ -3180,6 +3166,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/public-calendar"
+        },
+        {
+          "id": "8XPivWEDqRnJ",
+          "name": "تقویممهمان",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicتقویممهمان.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/calendar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicتقویممهمان.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/calendar"
         }
       ],
       "icons": [
@@ -5924,6 +5924,21 @@
           "id": "7J6htfvmfygf",
           "name": "team-1404.jpg",
           "filePath": "../public/plasmic/website_starter/images/team1404Jpg.jpg"
+        },
+        {
+          "id": "VdOwf0AUkkwM",
+          "name": "logo-blue-small.svg",
+          "filePath": "../public/plasmic/website_starter/images/logoBlueSmallSvg.svg"
+        },
+        {
+          "id": "EAwig4qSUMch",
+          "name": "image 193",
+          "filePath": "../public/plasmic/website_starter/images/image193.png"
+        },
+        {
+          "id": "rh8Gd8FFaLSA",
+          "name": "logo.1a28b22f 1.svg",
+          "filePath": "../public/plasmic/website_starter/images/logo1A28B22F1Svg.svg"
         }
       ],
       "indirect": false,

@@ -97,6 +97,10 @@ export type Plasmicدانلوداپلیکیشنموبایلمیان__OverridesTy
   introCalendarRight3?: Flex__<"div">;
   introCalendarRight4?: Flex__<"div">;
   introCalendarRight6?: Flex__<"div">;
+  blueIcon?: Flex__<"div">;
+  introCalendarRight9?: Flex__<"div">;
+  htmlVideo?: Flex__<typeof Video>;
+  بعدازبروزرسانیآیکونبرنامهآبیمیشه?: Flex__<"div">;
   link?: Flex__<"div">;
   title?: Flex__<"div">;
   downloadLinks?: Flex__<"div">;
@@ -112,10 +116,6 @@ export type Plasmicدانلوداپلیکیشنموبایلمیان__OverridesTy
   myket?: Flex__<"div">;
   text5?: Flex__<"div">;
   icon5?: Flex__<"div">;
-  introCalendarRight8?: Flex__<"div">;
-  introCalendarRight9?: Flex__<"div">;
-  htmlVideo?: Flex__<typeof Video>;
-  بعدازبروزرسانیآیکونبرنامهآبیمیشه?: Flex__<"div">;
   image?: Flex__<"div">;
   introAutoSyncCaption2?: Flex__<"div">;
   introAutoSyncDesc2?: Flex__<"div">;
@@ -336,6 +336,64 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__qdVee)} />
 
+            <div
+              data-plasmic-name={"blueIcon"}
+              data-plasmic-override={overrides.blueIcon}
+              className={classNames(projectcss.all, sty.blueIcon)}
+            >
+              <div
+                data-plasmic-name={"introCalendarRight9"}
+                data-plasmic-override={overrides.introCalendarRight9}
+                className={classNames(projectcss.all, sty.introCalendarRight9)}
+              >
+                <Video
+                  data-plasmic-name={"htmlVideo"}
+                  data-plasmic-override={overrides.htmlVideo}
+                  autoPlay={true}
+                  className={classNames("__wab_instance", sty.htmlVideo)}
+                  controls={false}
+                  loop={true}
+                  muted={true}
+                  ref={ref => {
+                    $refs["htmlVideo"] = ref;
+                  }}
+                  src={
+                    "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Ftemp-announce%2Flogo-modal.mp4?versionId="
+                  }
+                />
+
+                <div
+                  data-plasmic-name={
+                    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
+                  }
+                  data-plasmic-override={
+                    overrides.بعدازبروزرسانیآیکونبرنامهآبیمیشه
+                  }
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.بعدازبروزرسانیآیکونبرنامهآبیمیشه
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u060c \u0622\u06cc\u06a9\u0648\u0646 \u0628\u0631\u0646\u0627\u0645\u0647 "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "var(--token-8nedppYkGVaH)" }}
+                    >
+                      {"\u0622\u0628\u06cc"}
+                    </span>
+                    <React.Fragment>
+                      {" \u0645\u06cc\u200c\u0634\u0647"}
+                    </React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+            </div>
             <div
               data-plasmic-name={"link"}
               data-plasmic-override={overrides.link}
@@ -736,53 +794,6 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                   </div>
                 </div>
               </div>
-              <div
-                data-plasmic-name={"introCalendarRight8"}
-                data-plasmic-override={overrides.introCalendarRight8}
-                className={classNames(projectcss.all, sty.introCalendarRight8)}
-              >
-                <div
-                  data-plasmic-name={"introCalendarRight9"}
-                  data-plasmic-override={overrides.introCalendarRight9}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introCalendarRight9
-                  )}
-                >
-                  <Video
-                    data-plasmic-name={"htmlVideo"}
-                    data-plasmic-override={overrides.htmlVideo}
-                    autoPlay={true}
-                    className={classNames("__wab_instance", sty.htmlVideo)}
-                    controls={false}
-                    loop={true}
-                    muted={true}
-                    ref={ref => {
-                      $refs["htmlVideo"] = ref;
-                    }}
-                    src={
-                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Ftemp-announce%2Flogo-modal.mp4?versionId="
-                    }
-                  />
-                </div>
-                <div
-                  data-plasmic-name={
-                    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
-                  }
-                  data-plasmic-override={
-                    overrides.بعدازبروزرسانیآیکونبرنامهآبیمیشه
-                  }
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.بعدازبروزرسانیآیکونبرنامهآبیمیشه
-                  )}
-                >
-                  {
-                    "\u0628\u0639\u062f \u0627\u0632 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u060c \u0622\u06cc\u06a9\u0648\u0646 \u0628\u0631\u0646\u0627\u0645\u0647 \u0622\u0628\u06cc \u0645\u06cc\u200c\u0634\u0647"
-                  }
-                </div>
-              </div>
             </div>
             <div
               data-plasmic-name={"image"}
@@ -940,6 +951,10 @@ const PlasmicDescendants = {
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarRight6",
+    "blueIcon",
+    "introCalendarRight9",
+    "htmlVideo",
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647",
     "link",
     "title",
     "downloadLinks",
@@ -955,10 +970,6 @@ const PlasmicDescendants = {
     "myket",
     "text5",
     "icon5",
-    "introCalendarRight8",
-    "introCalendarRight9",
-    "htmlVideo",
-    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647",
     "image",
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
@@ -981,6 +992,10 @@ const PlasmicDescendants = {
     "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarRight6",
+    "blueIcon",
+    "introCalendarRight9",
+    "htmlVideo",
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647",
     "link",
     "title",
     "downloadLinks",
@@ -996,10 +1011,6 @@ const PlasmicDescendants = {
     "myket",
     "text5",
     "icon5",
-    "introCalendarRight8",
-    "introCalendarRight9",
-    "htmlVideo",
-    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647",
     "image",
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
@@ -1038,6 +1049,21 @@ const PlasmicDescendants = {
   introCalendarRight3: ["introCalendarRight3"],
   introCalendarRight4: ["introCalendarRight4", "introCalendarRight6"],
   introCalendarRight6: ["introCalendarRight6"],
+  blueIcon: [
+    "blueIcon",
+    "introCalendarRight9",
+    "htmlVideo",
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
+  ],
+  introCalendarRight9: [
+    "introCalendarRight9",
+    "htmlVideo",
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
+  ],
+  htmlVideo: ["htmlVideo"],
+  بعدازبروزرسانیآیکونبرنامهآبیمیشه: [
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
+  ],
   link: [
     "link",
     "title",
@@ -1053,11 +1079,7 @@ const PlasmicDescendants = {
     "icon4",
     "myket",
     "text5",
-    "icon5",
-    "introCalendarRight8",
-    "introCalendarRight9",
-    "htmlVideo",
-    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
+    "icon5"
   ],
   title: ["title"],
   downloadLinks: [
@@ -1087,17 +1109,6 @@ const PlasmicDescendants = {
   myket: ["myket", "text5", "icon5"],
   text5: ["text5"],
   icon5: ["icon5"],
-  introCalendarRight8: [
-    "introCalendarRight8",
-    "introCalendarRight9",
-    "htmlVideo",
-    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
-  ],
-  introCalendarRight9: ["introCalendarRight9", "htmlVideo"],
-  htmlVideo: ["htmlVideo"],
-  بعدازبروزرسانیآیکونبرنامهآبیمیشه: [
-    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
-  ],
   image: [
     "image",
     "introAutoSyncCaption2",
@@ -1129,6 +1140,10 @@ type NodeDefaultElementType = {
   introCalendarRight3: "div";
   introCalendarRight4: "div";
   introCalendarRight6: "div";
+  blueIcon: "div";
+  introCalendarRight9: "div";
+  htmlVideo: typeof Video;
+  بعدازبروزرسانیآیکونبرنامهآبیمیشه: "div";
   link: "div";
   title: "div";
   downloadLinks: "div";
@@ -1144,10 +1159,6 @@ type NodeDefaultElementType = {
   myket: "div";
   text5: "div";
   icon5: "div";
-  introCalendarRight8: "div";
-  introCalendarRight9: "div";
-  htmlVideo: typeof Video;
-  بعدازبروزرسانیآیکونبرنامهآبیمیشه: "div";
   image: "div";
   introAutoSyncCaption2: "div";
   introAutoSyncDesc2: "div";
@@ -1234,6 +1245,12 @@ export const Plasmicدانلوداپلیکیشنموبایلمیان = Object.as
     introCalendarRight3: makeNodeComponent("introCalendarRight3"),
     introCalendarRight4: makeNodeComponent("introCalendarRight4"),
     introCalendarRight6: makeNodeComponent("introCalendarRight6"),
+    blueIcon: makeNodeComponent("blueIcon"),
+    introCalendarRight9: makeNodeComponent("introCalendarRight9"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
+    بعدازبروزرسانیآیکونبرنامهآبیمیشه: makeNodeComponent(
+      "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
+    ),
     link: makeNodeComponent("link"),
     title: makeNodeComponent("title"),
     downloadLinks: makeNodeComponent("downloadLinks"),
@@ -1249,12 +1266,6 @@ export const Plasmicدانلوداپلیکیشنموبایلمیان = Object.as
     myket: makeNodeComponent("myket"),
     text5: makeNodeComponent("text5"),
     icon5: makeNodeComponent("icon5"),
-    introCalendarRight8: makeNodeComponent("introCalendarRight8"),
-    introCalendarRight9: makeNodeComponent("introCalendarRight9"),
-    htmlVideo: makeNodeComponent("htmlVideo"),
-    بعدازبروزرسانیآیکونبرنامهآبیمیشه: makeNodeComponent(
-      "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
-    ),
     image: makeNodeComponent("image"),
     introAutoSyncCaption2: makeNodeComponent("introAutoSyncCaption2"),
     introAutoSyncDesc2: makeNodeComponent("introAutoSyncDesc2"),

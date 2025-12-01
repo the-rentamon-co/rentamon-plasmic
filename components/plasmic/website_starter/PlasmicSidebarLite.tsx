@@ -645,7 +645,7 @@ function PlasmicSidebarLite__RenderFunc(props: {
 
             $steps["goToLitePanel"] = true
               ? (() => {
-                  const actionArgs = { destination: `/calendar` };
+                  const actionArgs = { destination: `/panel-lite` };
                   return (({ destination }) => {
                     if (
                       typeof destination === "string" &&

@@ -521,13 +521,13 @@ function PlasmicSplash__RenderFunc(props: {
                             ? "https://miaan.ir"
                             : "https://rentamon.com";
                           if ($steps.getUserSegment.data.flag == 2) {
-                            window.location.href = `${baseUrl}/calendar/`;
+                            window.location.href = `${baseUrl}/panel-lite/`;
                           }
                           if ($steps.getUserSegment.data.flag == 1) {
                             window.location.href = `${baseUrl}/panel/`;
                           }
                           if ($steps.getUserSegment.data.flag == 0) {
-                            window.location.href = `${baseUrl}/calendar/`;
+                            window.location.href = `${baseUrl}/panel-lite/`;
                           }
                           if ($steps.getUserSegment.data.flag == 3) {
                             return (window.location.href = `${baseUrl}/panel-2/`);

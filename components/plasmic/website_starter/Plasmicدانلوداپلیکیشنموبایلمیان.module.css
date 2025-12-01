@@ -262,7 +262,6 @@
   }
 }
 .introCalendarRight6 {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -271,6 +270,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
+  display: none;
   padding: 0px 8px 0px 38px;
 }
 @media (max-width: 1200px) {
@@ -322,6 +322,107 @@
     display: none;
   }
 }
+.blueIcon {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  padding: 42px 8px 8px;
+}
+@media (max-width: 1200px) {
+  .blueIcon {
+    row-gap: 10px;
+    column-gap: 0px;
+    padding: 8px;
+  }
+}
+@media (max-width: 500px) {
+  .blueIcon {
+    padding-top: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .blueIcon {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.introCalendarRight9 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 1200px) {
+  .introCalendarRight9 {
+    padding: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .introCalendarRight9 {
+    padding: 15px 0px 8px;
+  }
+}
+@media (max-width: 350px) {
+  .introCalendarRight9 {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 11px;
+    background: #ffffff;
+  }
+}
+.htmlVideo:global(.__wab_instance) {
+  width: 300px;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+@media (max-width: 500px) {
+  .htmlVideo:global(.__wab_instance) {
+    width: 100%;
+    min-width: 0;
+    border-radius: 0px;
+  }
+}
+.بعدازبروزرسانیآیکونبرنامهآبیمیشه {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 500;
+  min-width: 0;
+  padding: 12px 12px 21px;
+}
+@media (max-width: 500px) {
+  .بعدازبروزرسانیآیکونبرنامهآبیمیشه {
+    padding-top: 14px;
+  }
+}
+@media (max-width: 350px) {
+  .بعدازبروزرسانیآیکونبرنامهآبیمیشه {
+    font-size: 16px;
+    padding-top: 18px;
+  }
+}
 .link {
   display: flex;
   flex-direction: column;
@@ -331,7 +432,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
-  background: #fcfcfc;
+  background: none;
   min-width: 0;
   border-radius: 50px;
   padding: 0px 0px 40px;
@@ -345,8 +446,13 @@
 }
 @media (max-width: 500px) {
   .link {
-    padding-top: 30px;
+    padding-top: 15px;
     border-radius: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .link {
+    padding-top: 3px;
   }
 }
 .title {
@@ -978,98 +1084,6 @@
 @media (max-width: 500px) {
   .img__neNsn {
     width: 114px;
-  }
-}
-.introCalendarRight8 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  padding: 42px 8px 8px;
-}
-@media (max-width: 1200px) {
-  .introCalendarRight8 {
-    row-gap: 10px;
-    column-gap: 0px;
-    padding: 8px;
-  }
-}
-@media (max-width: 500px) {
-  .introCalendarRight8 {
-    padding-top: 0px;
-    align-items: center;
-    justify-content: flex-start;
-    max-width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-}
-@media (max-width: 350px) {
-  .introCalendarRight8 {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-}
-.introCalendarRight9 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-@media (max-width: 1200px) {
-  .introCalendarRight9 {
-    padding: 0px;
-  }
-}
-@media (max-width: 500px) {
-  .introCalendarRight9 {
-    padding: 63px 30px 8px;
-  }
-}
-@media (max-width: 350px) {
-  .introCalendarRight9 {
-    padding-right: 18px;
-    padding-left: 18px;
-  }
-}
-.htmlVideo:global(.__wab_instance) {
-  width: 300px;
-  height: auto;
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 40px;
-}
-@media (max-width: 500px) {
-  .htmlVideo:global(.__wab_instance) {
-    width: 100%;
-    min-width: 0;
-    border-radius: 50px;
-  }
-}
-.بعدازبروزرسانیآیکونبرنامهآبیمیشه {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 17px;
-  text-align: center;
-  font-weight: 500;
-  min-width: 0;
-  padding: 12px 12px 21px;
-}
-@media (max-width: 350px) {
-  .بعدازبروزرسانیآیکونبرنامهآبیمیشه {
-    font-size: 16px;
   }
 }
 .image {

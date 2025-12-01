@@ -219,9 +219,12 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                     $steps["goToHomepage"] = await $steps["goToHomepage"];
                   }
                 }}
-                src={
-                  "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Flogo-change.gif?versionId="
-                }
+                src={{
+                  src: "/plasmic/website_starter/images/logoBlueSmallSvg.svg",
+                  fullWidth: 299,
+                  fullHeight: 159,
+                  aspectRatio: undefined
+                }}
               />
             </PlasmicLink__>
           </div>
