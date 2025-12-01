@@ -600,7 +600,7 @@ function PlasmicReservations__RenderFunc(props: {
             onMount={async () => {
               const $steps = {};
 
-              $steps["goToPage"] = true
+              $steps["goToPage"] = false
                 ? (() => {
                     const actionArgs = {
                       destination: (() => {

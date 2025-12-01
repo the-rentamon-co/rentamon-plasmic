@@ -2244,20 +2244,6 @@
           "path": "/api-terms-of-use"
         },
         {
-          "id": "wDX6CsUVKNmL",
-          "name": "LiteCalendar",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicLiteCalendar.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/panel-lite.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicLiteCalendar.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/calendar"
-        },
-        {
           "id": "NKEuaTqYxvdh",
           "name": "SidebarLite",
           "type": "managed",
@@ -3180,6 +3166,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/calendar"
+        },
+        {
+          "id": "wDX6CsUVKNmL",
+          "name": "LiteCalendar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicLiteCalendar.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/panel-lite.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicLiteCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/panel-lite"
         }
       ],
       "icons": [
