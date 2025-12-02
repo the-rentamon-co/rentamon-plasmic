@@ -1080,6 +1080,53 @@
     margin-bottom: 0px;
   }
 }
+.pagination2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 0px 8px 8px;
+}
+.freeBox__wrAbZ {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  min-width: 0;
+  padding: 8px;
+}
+@media (max-width: 350px) {
+  .freeBox__wrAbZ {
+    display: flex;
+  }
+}
+.text__z1O2U {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  color: var(--token-uKpIaVO1zd7X);
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__z1O2U {
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
 .freeBox__c9KOs {
   display: flex;
   flex-direction: column;
@@ -1384,69 +1431,6 @@
 @media (max-width: 500px) {
   .navbarRntFooter:global(.__wab_instance) {
     display: flex;
-  }
-}
-.pagination2 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 0px 8px 8px;
-}
-.pagination:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  width: auto;
-  display: none;
-}
-.freeBox__wrAbZ {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  cursor: pointer;
-  min-width: 0;
-  padding: 8px;
-}
-@media (max-width: 1200px) {
-  .freeBox__wrAbZ {
-    display: flex;
-  }
-}
-@media (max-width: 500px) {
-  .freeBox__wrAbZ {
-    display: flex;
-  }
-}
-@media (max-width: 350px) {
-  .freeBox__wrAbZ {
-    display: flex;
-  }
-}
-.text__z1O2U {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  color: var(--token-uKpIaVO1zd7X);
-  font-size: 16px;
-  font-weight: 500;
-  min-width: 0;
-}
-@media (max-width: 500px) {
-  .text__z1O2U {
-    font-size: 15px;
-    font-weight: 500;
   }
 }
 .intro {

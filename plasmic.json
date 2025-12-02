@@ -3154,20 +3154,6 @@
           "path": "/public-calendar"
         },
         {
-          "id": "8XPivWEDqRnJ",
-          "name": "تقویممهمان",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicتقویممهمان.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/calendar.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicتقویممهمان.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/calendar"
-        },
-        {
           "id": "wDX6CsUVKNmL",
           "name": "LiteCalendar",
           "type": "managed",
@@ -3214,7 +3200,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicGuestCalendar.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/guest-calendar/[property_id].tsx"
+            "modulePath": "../src/pages/calendar/[property_id].tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicGuestCalendar.module.css",
           "scheme": "blackbox",

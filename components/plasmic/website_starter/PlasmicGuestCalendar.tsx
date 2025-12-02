@@ -87,7 +87,6 @@ export type PlasmicGuestCalendar__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   selectProperty?: Flex__<typeof Select>;
   apiRequest2?: Flex__<typeof ApiRequest>;
-  embedHtml?: Flex__<typeof Embed>;
   img?: Flex__<typeof PlasmicImg__>;
   fetchImage?: Flex__<typeof ApiRequest>;
 };
@@ -434,9 +433,10 @@ function PlasmicGuestCalendar__RenderFunc(props: {
               >
                 <div className={classNames(projectcss.all, sty.freeBox__cEd)}>
                   <Embed
-                    data-plasmic-name={"embedHtml"}
-                    data-plasmic-override={overrides.embedHtml}
-                    className={classNames("__wab_instance", sty.embedHtml)}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.embedHtml__dgwRk
+                    )}
                     code={(() => {
                       try {
                         return `<!DOCTYPE html>
@@ -447,27 +447,61 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 
 <style>
   #custom-calendar-container {
-    --bg-booked: #9e9e9e; --bg-free: #ffffff; --border-free: #ccc; --text-booked: #fff; --text-free: #333; --text-friday: #ff3b30; --bg-selected: #333; --radius: 10px;
-    width: 100%; max-width: 400px; padding: 10px; box-sizing: border-box; direction: rtl;
+    /* --- تنظیم رنگ‌ها --- */
+    --bg-prebooked: #9e9e9e;   /* خاکستری برای رزروهای قبلی */
+    --bg-selected: #2727ea;    /* آبی برای انتخاب‌های کاربر */
+    --bg-free: #ffffff; 
+    --border-free: #ccc; 
+    --text-white: #fff; 
+    --text-dark: #333; 
+    --text-friday: #ff3b30; 
+    --radius: 10px;
+    
+    width: 100%; 
+    max-width: 400px; 
+    padding: 10px; 
+    box-sizing: border-box; 
+    direction: rtl;
   }
+  
   #custom-calendar-container * { box-sizing: border-box; }
+  
   #custom-calendar-container .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; font-size: 1.2rem; font-weight: bold; color: #333; }
+  
   #custom-calendar-container .nav-btn { background: transparent !important; border: none !important; box-shadow: none !important; cursor: pointer; padding: 5px 15px; font-size: 1.5rem !important; color: #888 !important; display: flex; align-items: center; justify-content: center; line-height: 1; }
   #custom-calendar-container .nav-btn:disabled { color: #e0e0e0 !important; cursor: not-allowed; }
+  
   #custom-calendar-container .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; margin-bottom: 15px; font-size: 0.9rem; color: #666; font-weight: normal; }
+  
   #custom-calendar-container .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
-  #custom-calendar-container .day-cell { aspect-ratio: 1/1.2; border-radius: var(--radius); display: flex; justify-content: center; align-items: center; font-size: 1.1rem; cursor: default; position: relative; transition: all 0.2s; padding: 0; margin: 0; }
-  #custom-calendar-container .free { background-color: var(--bg-free); border: 1px solid var(--border-free); color: var(--text-free); }
-  #custom-calendar-container .booked { background-color: var(--bg-booked); border: 1px solid var(--bg-booked); color: var(--text-booked); cursor: default; }
+  
+  /* استایل پایه سلول‌ها */
+  #custom-calendar-container .day-cell { aspect-ratio: 1/1.2; border-radius: var(--radius); display: flex; justify-content: center; align-items: center; font-size: 1.1rem; position: relative; transition: all 0.2s; padding: 0; margin: 0; user-select: none; }
+  
+  /* 1. استایل روزهای آزاد (قابل کلیک) */
+  #custom-calendar-container .free { background-color: var(--bg-free); border: 1px solid var(--border-free); color: var(--text-dark); cursor: pointer; }
   #custom-calendar-container .free.friday { color: var(--text-friday); }
+  
+  /* 2. استایل روزهای از قبل رزرو شده (خاکستری - غیرقابل کلیک) */
+  #custom-calendar-container .prebooked { background-color: var(--bg-prebooked); border: 1px solid var(--bg-prebooked); color: var(--text-white); cursor: default; opacity: 0.6; }
+  
+  /* 3. استایل روزهای انتخاب شده توسط کاربر (آبی) */
+  #custom-calendar-container .selected { background-color: var(--bg-selected); border: 1px solid var(--bg-selected); color: var(--text-white); cursor: pointer; transform: scale(1.05); z-index: 1; box-shadow: 0 2px 5px rgba(39, 39, 234, 0.3); }
+  
+  /* روزهای گذشته */
   #custom-calendar-container .past-day { opacity: 0; pointer-events: none; }
+  
   #custom-calendar-container .empty-slot { pointer-events: none; }
   #custom-calendar-container .loading { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; font-family: inherit; }
+  
   #custom-calendar-container .legend { display: flex; justify-content: flex-start; align-items: center; margin-top: 20px; gap: 15px; font-size: 0.8rem; color: #666; }
   #custom-calendar-container .legend-item { display: flex; align-items: center; gap: 8px; }
   #custom-calendar-container .legend-box { width: 16px; height: 16px; border-radius: 4px; }
+  
   #custom-calendar-container .box-free { background: #fff; border: 1px solid #ccc; }
-  #custom-calendar-container .box-booked { background: var(--bg-booked); }
+  #custom-calendar-container .box-prebooked { background: var(--bg-prebooked); }
+  #custom-calendar-container .box-selected { background: var(--bg-selected); }
+
 </style>
 </head>
 <body>
@@ -481,20 +515,24 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   <div class="weekdays"><div>ش</div><div>ی</div><div>د</div><div>س</div><div>چ</div><div>پ</div><div>ج</div></div>
   <div id="loading-msg" class="loading">در حال بارگذاری تقویم...</div>
   <div class="days-grid" id="calendar-grid"></div>
+  
   <div class="legend" id="legend-section" style="display:none;">
-    <div class="legend-item"><div class="legend-box box-free"></div><span>خالی</span></div>
-    <div class="legend-item"><div class="legend-box box-booked"></div><span>پر</span></div>
+    <div class="legend-item"><div class="legend-box box-free"></div><span>آزاد</span></div>
+    <div class="legend-item"><div class="legend-box box-selected"></div><span>انتخاب شما</span></div>
+    <div class="legend-item"><div class="legend-box box-prebooked"></div><span>رزرو شده</span></div>
   </div>
 </div>
 
 <script>
 { 
-  // *** تغییر نهایی: استفاده از نالیش کوالیسینگ (??) ***
-  // این کد می‌گوید: اگر dates وجود داشت آن را stringify کن، اگر هر کدام از بخش‌ها نبود، یک آرایه خالی [] بگذار.
-  const PRELOADED_DATES = ${JSON.stringify($state.apiRequest2?.data?.dates ?? [])};
+  // *** دریافت دیتای اولیه (روزهای پر شده از قبل) ***
+  const API_BOOKED_DATES = ${JSON.stringify($state.apiRequest2?.data?.dates ?? [])};
   
   const MAX_MONTHS_AHEAD = 3;
-  let bookedDates = new Set();
+  
+  // دو دسته بندی جداگانه:
+  let preBookedDates = new Set();    // روزهایی که از سمت سرور پر هستند (خاکستری)
+  let userSelectedDates = new Set(); // روزهایی که کاربر الان انتخاب می‌کند (آبی)
   
   const today = new Date();
   const todayJ = jalaali.toJalaali(today);
@@ -506,13 +544,14 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 
   function toPersianNum(num) {
       const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-      return num.toString().replace(/\\d/g, x => farsiDigits[x]);
+      return num.toString().replace(/\d/g, x => farsiDigits[x]);
   }
 
   function initCalendar() {
     try {
-      if (PRELOADED_DATES && Array.isArray(PRELOADED_DATES)) {
-        bookedDates = new Set(PRELOADED_DATES);
+      // پر کردن لیست روزهای از قبل رزرو شده
+      if (API_BOOKED_DATES && Array.isArray(API_BOOKED_DATES)) {
+        preBookedDates = new Set(API_BOOKED_DATES);
       }
       
       const loadMsg = document.getElementById('loading-msg');
@@ -522,9 +561,23 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       
       renderCalendar();
       updateNavButtons();
+      notifyPlasmic(); // مقدار اولیه (خالی) ارسال شود
+      
     } catch (error) {
       console.error("Error initializing calendar:", error);
     }
+  }
+
+  // ارسال فقط روزهای انتخابی کاربر به پلازمیک
+  function notifyPlasmic() {
+      const selectedArray = Array.from(userSelectedDates);
+      
+      window.selectedCalendarDates = selectedArray;
+      
+      const event = new CustomEvent('calendar-change', { detail: selectedArray });
+      window.dispatchEvent(event);
+      
+      console.log("User selected dates:", selectedArray);
   }
 
   function renderCalendar() {
@@ -553,19 +606,47 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       const dStr = day < 10 ? '0' + day : day;
       const dateString = currentYear + "-" + mStr + "-" + dStr;
       
-      const isBooked = bookedDates.has(dateString);
       const isPast = isDateInPast(currentYear, currentMonth, day);
+      const isPreBooked = preBookedDates.has(dateString);
+      const isUserSelected = userSelectedDates.has(dateString);
       
       let classes = 'day-cell';
-      if (isPast) classes += ' past-day';
-      else if (isBooked) classes += ' booked';
+      
+      if (isPast) {
+          classes += ' past-day';
+      } 
+      else if (isPreBooked) {
+          // اگر از قبل رزرو شده (خاکستری)
+          classes += ' prebooked';
+      } 
+      else if (isUserSelected) {
+          // اگر کاربر انتخاب کرده (آبی)
+          classes += ' selected';
+      } 
       else {
-        classes += ' free';
-        const dayOfWeekIndex = (day - 1 + startDayIndex) % 7;
-        if (dayOfWeekIndex === 6) classes += ' friday';
+          // روز آزاد (سفید)
+          classes += ' free';
+          const dayOfWeekIndex = (day - 1 + startDayIndex) % 7;
+          if (dayOfWeekIndex === 6) classes += ' friday';
       }
+      
       cell.className = classes;
       cell.innerText = toPersianNum(day);
+      
+      // *** لاجیک کلیک ***
+      // فقط اگر روز گذشته نیست و از قبل رزرو نشده، اجازه کلیک بده
+      if (!isPast && !isPreBooked) {
+          cell.onclick = function() {
+              if (userSelectedDates.has(dateString)) {
+                  userSelectedDates.delete(dateString); // دی‌سلکت کردن
+              } else {
+                  userSelectedDates.add(dateString); // سلکت کردن (آبی شدن)
+              }
+              renderCalendar();
+              notifyPlasmic();
+          };
+      }
+
       grid.appendChild(cell);
     }
   }
@@ -606,7 +687,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 }
 </script>
 </body>
-</html>`;
+</html>‍‍‍‍‍‍`;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -618,6 +699,37 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                       }
                     })()}
                   />
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___7Kz3Y)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__bsO0)}
+                    >
+                      <Embed
+                        className={classNames(
+                          "__wab_instance",
+                          sty.embedHtml___8Db1G
+                        )}
+                        code={
+                          '<div style="width: 100%; display: flex; justify-content: center;">\r\n  <style>\r\n    .divar-static-btn {\r\n      /* \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0635\u0644\u06cc \u0628\u0631\u0627\u06cc \u062d\u0627\u0644\u062a Secondary */\r\n      background-color: white; /* \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u0633\u0641\u06cc\u062f (\u062a\u0648 \u062e\u0627\u0644\u06cc) */\r\n      color: #a62626; /* \u0645\u062a\u0646 \u0642\u0631\u0645\u0632 */\r\n      border: 1px solid #a62626; /* \u0628\u0648\u0631\u062f\u0631 \u0642\u0631\u0645\u0632 */\r\n      \r\n      border-radius: 4px;\r\n      padding: 10px 10px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      cursor: pointer;\r\n      font-family: inherit;\r\n      /* \u0633\u0627\u06cc\u0647 \u0631\u0627 \u0628\u0631\u0627\u06cc \u062f\u06a9\u0645\u0647 \u062b\u0627\u0646\u0648\u06cc\u0647 \u062d\u0630\u0641 \u06a9\u0631\u062f\u0645 \u062a\u0627 \u0641\u0644\u062a\u200c\u062a\u0631 \u0628\u0627\u0634\u062f (\u0627\u062e\u062a\u06cc\u0627\u0631\u06cc) */\r\n      box-shadow: none; \r\n      transition: all 0.2s ease;\r\n    }\r\n    \r\n    .divar-static-btn:hover {\r\n      /* \u062d\u0627\u0644\u062a \u0647\u0627\u0648\u0631: \u06cc\u06a9 \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u062e\u06cc\u0644\u06cc \u0631\u0648\u0634\u0646 \u0642\u0631\u0645\u0632 \u0648 \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0628\u0648\u0631\u062f\u0631 */\r\n      background-color: #fcf2f2; \r\n      border-color: #851e1e;\r\n      color: #851e1e;\r\n    }\r\n    \r\n    .divar-static-btn:active {\r\n      transform: scale(0.98);\r\n      background-color: #fceceb; /* \u0631\u0646\u06af \u06a9\u0645\u06cc \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0645\u0648\u0642\u0639 \u06a9\u0644\u06cc\u06a9 */\r\n    }\r\n  </style>\r\n\r\n  <button onclick="window.location.href=\'https://open-platform-redirect.divar.ir/completion\'" class="divar-static-btn">\r\n    \u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631\r\n  </button>\r\n</div>'
+                        }
+                      />
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__bN7X)}
+                    >
+                      <Embed
+                        className={classNames(
+                          "__wab_instance",
+                          sty.embedHtml___2Qg2
+                        )}
+                        code={
+                          '<div style="width: 100%; display: flex; justify-content: center;">\r\n  <style>\r\n    .submit-dates-btn {\r\n      /* \u0647\u0645\u0627\u0646 \u0631\u0646\u06af \u0622\u0628\u06cc \u0631\u0648\u0632\u0647\u0627\u06cc \u0633\u0644\u06a9\u062a \u0634\u062f\u0647 */\r\n      background-color: #2727ea; \r\n      color: white;\r\n      \r\n      border: none;\r\n      border-radius: 8px; /* \u06af\u0631\u062f\u06cc \u0645\u0634\u0627\u0628\u0647 \u062a\u0642\u0648\u06cc\u0645 */\r\n      padding: 12px 24px;\r\n      font-size: 16px;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      cursor: pointer;\r\n      font-family: inherit;\r\n      box-shadow: 0 4px 6px rgba(39, 39, 234, 0.2); /* \u0633\u0627\u06cc\u0647 \u0645\u0644\u0627\u06cc\u0645 \u0622\u0628\u06cc */\r\n      transition: all 0.2s ease;\r\n      display: flex;\r\n      align-items: center;\r\n      justify-content: center;\r\n      gap: 10px;\r\n    }\r\n    \r\n    .submit-dates-btn:hover {\r\n      background-color: #1a1ab8; /* \u06a9\u0645\u06cc \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0645\u0648\u0642\u0639 \u0647\u0627\u0648\u0631 */\r\n      box-shadow: 0 6px 8px rgba(39, 39, 234, 0.3);\r\n    }\r\n    \r\n    .submit-dates-btn:active {\r\n      transform: scale(0.98);\r\n    }\r\n\r\n    /* \u0627\u0633\u062a\u0627\u06cc\u0644 \u062f\u06a9\u0645\u0647 \u062f\u0631 \u062d\u0627\u0644\u062a \u063a\u06cc\u0631\u0641\u0639\u0627\u0644/\u0644\u0648\u062f\u06cc\u0646\u06af */\r\n    .submit-dates-btn:disabled {\r\n      background-color: #ccc;\r\n      cursor: not-allowed;\r\n      box-shadow: none;\r\n    }\r\n  </style>\r\n\r\n  <button id="btn-submit-calendar" class="submit-dates-btn">\r\n    \u062b\u0628\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u062f\u0647\r\n  </button>\r\n</div>\r\n\r\n<script>\r\n  (function() {\r\n    const btn = document.getElementById(\'btn-submit-calendar\');\r\n    \r\n    // *** \u0622\u062f\u0631\u0633 \u0628\u06a9\u200c\u0646\u062f \u062e\u0648\u062f \u0631\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f ***\r\n    const BACKEND_URL = "https://automation.rentamon.com/webhook/YOUR_ENDPOINT";\r\n\r\n    btn.addEventListener(\'click\', function() {\r\n      // 1. \u062e\u0648\u0627\u0646\u062f\u0646 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u062f\u0647 \u0627\u0632 \u0645\u062a\u063a\u06cc\u0631 \u062c\u0647\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645\r\n      const selectedDates = window.selectedCalendarDates || [];\r\n      \r\n      // \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc: \u0627\u06af\u0631 \u0647\u06cc\u0686 \u0631\u0648\u0632\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u0646\u0634\u062f\u0647 \u0628\u0648\u062f\r\n      if (selectedDates.length === 0) {\r\n        alert("\u0644\u0637\u0641\u0627\u064b \u062d\u062f\u0627\u0642\u0644 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f.");\r\n        return;\r\n      }\r\n\r\n      // 2. \u06af\u0631\u0641\u062a\u0646 \u062a\u0648\u06a9\u0646 \u0622\u06af\u0647\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0628\u062f\u0627\u0646\u06cc\u062f \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0645\u0627\u0644 \u06a9\u062f\u0627\u0645 \u0622\u06af\u0647\u06cc \u0627\u0633\u062a\r\n      const urlParams = new URLSearchParams(window.location.search);\r\n      const postToken = urlParams.get(\'post_token\');\r\n\r\n      // 3. \u0622\u0645\u0627\u062f\u0647\u200c\u0633\u0627\u0632\u06cc \u062f\u06cc\u062a\u0627 \u0628\u0631\u0627\u06cc \u0627\u0631\u0633\u0627\u0644\r\n      const payload = {\r\n        post_token: postToken,\r\n        dates: selectedDates,\r\n        source: \'divar_app\'\r\n      };\r\n\r\n      // 4. \u062a\u063a\u06cc\u06cc\u0631 \u0638\u0627\u0647\u0631 \u062f\u06a9\u0645\u0647 \u0628\u0647 \u062d\u0627\u0644\u062a \u0644\u0648\u062f\u06cc\u0646\u06af\r\n      const originalText = btn.innerText;\r\n      btn.innerText = "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0631\u0633\u0627\u0644...";\r\n      btn.disabled = true;\r\n\r\n      // 5. \u0627\u0631\u0633\u0627\u0644 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0628\u0647 \u0633\u0631\u0648\u0631 (n8n \u06cc\u0627 Backend)\r\n      fetch(BACKEND_URL, {\r\n        method: \'POST\',\r\n        headers: {\r\n          \'Content-Type\': \'application/json\'\r\n        },\r\n        body: JSON.stringify(payload)\r\n      })\r\n      .then(response => {\r\n        if (response.ok) {\r\n          // \u0645\u0648\u0641\u0642\u06cc\u062a\r\n          btn.innerText = "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f \u2713";\r\n          btn.style.backgroundColor = "#4CAF50"; // \u0633\u0628\u0632 \u0634\u062f\u0646 \u062f\u06a9\u0645\u0647\r\n          \r\n          setTimeout(() => {\r\n            // \u0628\u0631\u06af\u0631\u062f\u0627\u0646\u062f\u0646 \u062f\u06a9\u0645\u0647 \u0628\u0647 \u062d\u0627\u0644\u062a \u0627\u0648\u0644 \u06cc\u0627 \u0631\u06cc\u062f\u0627\u06cc\u0631\u06a9\u062a \u06a9\u0631\u062f\u0646 \u06a9\u0627\u0631\u0628\u0631\r\n            btn.disabled = false;\r\n            btn.innerText = originalText;\r\n            btn.style.backgroundColor = "#2727ea"; // \u0628\u0631\u06af\u0634\u062a \u0628\u0647 \u0622\u0628\u06cc\r\n            \r\n            // \u0627\u06af\u0631 \u062e\u0648\u0627\u0633\u062a\u06cc\u062f \u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a \u0645\u0648\u0641\u0642\u060c \u0628\u0631\u06af\u0631\u062f\u062f \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631\u060c \u062e\u0637 \u0632\u06cc\u0631 \u0631\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0646\u06cc\u062f:\r\n            // window.location.href = \'https://open-platform-redirect.divar.ir/completion\';\r\n          }, 2000);\r\n        } else {\r\n          throw new Error(\'Server error\');\r\n        }\r\n      })\r\n      .catch(error => {\r\n        console.error(\'Error:\', error);\r\n        btn.innerText = "\u062e\u0637\u0627 \u062f\u0631 \u062b\u0628\u062a!";\r\n        btn.style.backgroundColor = "#d32f2f"; // \u0642\u0631\u0645\u0632 \u0634\u062f\u0646 \u062f\u06a9\u0645\u0647\r\n        \r\n        setTimeout(() => {\r\n          btn.disabled = false;\r\n          btn.innerText = originalText;\r\n          btn.style.backgroundColor = "#2727ea";\r\n        }, 3000);\r\n      });\r\n    });\r\n  })();\r\n</script>'
+                        }
+                      />
+                    </div>
+                  </div>
                 </div>
               </ApiRequest>
             </ApiRequest>
@@ -716,6 +828,11 @@ function PlasmicGuestCalendar__RenderFunc(props: {
               }
             })()}
           />
+
+          <Embed
+            className={classNames("__wab_instance", sty.embedHtml__tSMg1)}
+            code={"<div>Paste your embed code via the right sidebar</div>"}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -729,22 +846,13 @@ const PlasmicDescendants = {
     "apiRequest",
     "selectProperty",
     "apiRequest2",
-    "embedHtml",
     "img",
     "fetchImage"
   ],
-  main: [
-    "main",
-    "apiRequest",
-    "selectProperty",
-    "apiRequest2",
-    "embedHtml",
-    "img"
-  ],
-  apiRequest: ["apiRequest", "selectProperty", "apiRequest2", "embedHtml"],
+  main: ["main", "apiRequest", "selectProperty", "apiRequest2", "img"],
+  apiRequest: ["apiRequest", "selectProperty", "apiRequest2"],
   selectProperty: ["selectProperty"],
-  apiRequest2: ["apiRequest2", "embedHtml"],
-  embedHtml: ["embedHtml"],
+  apiRequest2: ["apiRequest2"],
   img: ["img"],
   fetchImage: ["fetchImage"]
 } as const;
@@ -757,7 +865,6 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   selectProperty: typeof Select;
   apiRequest2: typeof ApiRequest;
-  embedHtml: typeof Embed;
   img: typeof PlasmicImg__;
   fetchImage: typeof ApiRequest;
 };
@@ -828,7 +935,6 @@ export const PlasmicGuestCalendar = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     selectProperty: makeNodeComponent("selectProperty"),
     apiRequest2: makeNodeComponent("apiRequest2"),
-    embedHtml: makeNodeComponent("embedHtml"),
     img: makeNodeComponent("img"),
     fetchImage: makeNodeComponent("fetchImage"),
 
