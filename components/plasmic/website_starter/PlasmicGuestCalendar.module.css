@@ -228,23 +228,3 @@
     animation: none;
   }
 }
-.createBooking:global(.__wab_instance) {
-  animation: none;
-  max-width: 100%;
-  object-fit: cover;
-}
-@media (max-width: 1200px) {
-  .createBooking:global(.__wab_instance) {
-    animation: none;
-  }
-}
-@media (max-width: 500px) {
-  .createBooking:global(.__wab_instance) {
-    animation: none;
-  }
-}
-@media (max-width: 350px) {
-  .createBooking:global(.__wab_instance) {
-    animation: none;
-  }
-}
