@@ -90,7 +90,7 @@ export type PlasmicGuestCalendar__OverridesType = {
   apiRequest2?: Flex__<typeof ApiRequest>;
   img?: Flex__<typeof PlasmicImg__>;
   fetchImage?: Flex__<typeof ApiRequest>;
-  fetchImage2?: Flex__<typeof ApiRequest>;
+  createBooking?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultGuestCalendarProps {}
@@ -230,28 +230,28 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         refName: "fetchImage"
       },
       {
-        path: "fetchImage2.data",
+        path: "createBooking.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "fetchImage2"
+        refName: "createBooking"
       },
       {
-        path: "fetchImage2.error",
+        path: "createBooking.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "fetchImage2"
+        refName: "createBooking"
       },
       {
-        path: "fetchImage2.loading",
+        path: "createBooking.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "fetchImage2"
+        refName: "createBooking"
       }
     ],
     [$props, $ctx, $refs]
@@ -545,7 +545,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   <div class="days-grid" id="calendar-grid"></div>
   
   <div class="legend" id="legend-section" style="display:none;">
-    <div class="legend-item"><div class="legend-box box-free"></div><span>آزاد</span></div>
+    <div class="legend-item"><div class="legend-box box-free"></div><span>قابل رزرو</span></div>
     <div class="legend-item"><div class="legend-box box-selected"></div><span>انتخاب شما</span></div>
     <div class="legend-item"><div class="legend-box box-prebooked"></div><span>رزرو شده</span></div>
   </div>
@@ -843,34 +843,34 @@ function PlasmicGuestCalendar__RenderFunc(props: {
           />
 
           <ApiRequest
-            data-plasmic-name={"fetchImage2"}
-            data-plasmic-override={overrides.fetchImage2}
+            data-plasmic-name={"createBooking"}
+            data-plasmic-override={overrides.createBooking}
             children={null}
-            className={classNames("__wab_instance", sty.fetchImage2)}
+            className={classNames("__wab_instance", sty.createBooking)}
             errorDisplay={null}
             loadingDisplay={null}
-            method={"GET"}
+            method={"POST"}
             onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["fetchImage2", "error"]).apply(
-                null,
-                eventArgs
-              );
+              generateStateOnChangeProp($state, [
+                "createBooking",
+                "error"
+              ]).apply(null, eventArgs);
             }}
             onLoading={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, [
-                "fetchImage2",
+                "createBooking",
                 "loading"
               ]).apply(null, eventArgs);
             }}
             onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["fetchImage2", "data"]).apply(
-                null,
-                eventArgs
-              );
+              generateStateOnChangeProp($state, [
+                "createBooking",
+                "data"
+              ]).apply(null, eventArgs);
             }}
             params={undefined}
             ref={ref => {
-              $refs["fetchImage2"] = ref;
+              $refs["createBooking"] = ref;
             }}
             url={(() => {
               try {
@@ -879,7 +879,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                   const gatewayBase = isMiaan
                     ? "https://gateway.miaan.ir"
                     : "https://gateway.rentamon.com";
-                  return `${gatewayBase}/webhook/property_image_url?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                  return `${gatewayBase}/webhook/property_image_url`;
                 })();
               } catch (e) {
                 if (
@@ -908,7 +908,7 @@ const PlasmicDescendants = {
     "apiRequest2",
     "img",
     "fetchImage",
-    "fetchImage2"
+    "createBooking"
   ],
   main: ["main", "apiRequest", "selectProperty", "text", "apiRequest2", "img"],
   apiRequest: ["apiRequest", "selectProperty", "text", "apiRequest2"],
@@ -917,7 +917,7 @@ const PlasmicDescendants = {
   apiRequest2: ["apiRequest2"],
   img: ["img"],
   fetchImage: ["fetchImage"],
-  fetchImage2: ["fetchImage2"]
+  createBooking: ["createBooking"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -931,7 +931,7 @@ type NodeDefaultElementType = {
   apiRequest2: typeof ApiRequest;
   img: typeof PlasmicImg__;
   fetchImage: typeof ApiRequest;
-  fetchImage2: typeof ApiRequest;
+  createBooking: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1003,7 +1003,7 @@ export const PlasmicGuestCalendar = Object.assign(
     apiRequest2: makeNodeComponent("apiRequest2"),
     img: makeNodeComponent("img"),
     fetchImage: makeNodeComponent("fetchImage"),
-    fetchImage2: makeNodeComponent("fetchImage2"),
+    createBooking: makeNodeComponent("createBooking"),
 
     // Metadata about props expected for PlasmicGuestCalendar
     internalVariantProps: PlasmicGuestCalendar__VariantProps,

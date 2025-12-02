@@ -228,23 +228,23 @@
     animation: none;
   }
 }
-.fetchImage2:global(.__wab_instance) {
+.createBooking:global(.__wab_instance) {
   animation: none;
   max-width: 100%;
   object-fit: cover;
 }
 @media (max-width: 1200px) {
-  .fetchImage2:global(.__wab_instance) {
+  .createBooking:global(.__wab_instance) {
     animation: none;
   }
 }
 @media (max-width: 500px) {
-  .fetchImage2:global(.__wab_instance) {
+  .createBooking:global(.__wab_instance) {
     animation: none;
   }
 }
 @media (max-width: 350px) {
-  .fetchImage2:global(.__wab_instance) {
+  .createBooking:global(.__wab_instance) {
     animation: none;
   }
 }

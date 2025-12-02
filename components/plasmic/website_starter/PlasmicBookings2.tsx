@@ -2325,7 +2325,8 @@ function PlasmicBookings2__RenderFunc(props: {
                             variablePath: ["reservationType"]
                           },
                           operation: 0,
-                          value: ($state.reservations = $state.reserveData.data)
+                          value: ($state.reservations =
+                            $state.reserveData.data.bookings)
                         };
                         return (({
                           variable,
