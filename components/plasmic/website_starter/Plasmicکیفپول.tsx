@@ -792,11 +792,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                       await $steps["invokeGlobalAction"];
                   }
 
-                  $steps["goToPage2"] = (() => {
-                    const isMiaan =
-                      window.location.hostname.includes("miaan.ir");
-                    return isMiaan;
-                  })()
+                  $steps["goToPage2"] = false
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
@@ -819,11 +815,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                     $steps["goToPage2"] = await $steps["goToPage2"];
                   }
 
-                  $steps["goToPage"] = (() => {
-                    const isMiaan =
-                      window.location.hostname.includes("miaan.ir");
-                    return !isMiaan;
-                  })()
+                  $steps["goToPage"] = true
                     ? (() => {
                         const actionArgs = {
                           destination: (() => {

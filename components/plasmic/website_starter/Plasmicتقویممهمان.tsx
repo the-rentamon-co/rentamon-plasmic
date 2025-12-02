@@ -402,7 +402,7 @@ function Plasmicتقویممهمان__RenderFunc(props: {
                       const gatewayBase = isMiaan
                         ? "https://gateway.miaan.ir"
                         : "https://gateway.rentamon.com";
-                      return `${gatewayBase}/webhook/public_calendar_api?property_id=39`;
+                      return `${gatewayBase}/webhook/public_calendar_api?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                     })();
                   } catch (e) {
                     if (
