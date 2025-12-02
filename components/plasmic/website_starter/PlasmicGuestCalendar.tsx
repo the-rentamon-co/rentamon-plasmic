@@ -86,9 +86,11 @@ export type PlasmicGuestCalendar__OverridesType = {
   main?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   selectProperty?: Flex__<typeof Select>;
+  text?: Flex__<"div">;
   apiRequest2?: Flex__<typeof ApiRequest>;
   img?: Flex__<typeof PlasmicImg__>;
   fetchImage?: Flex__<typeof ApiRequest>;
+  fetchImage2?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultGuestCalendarProps {}
@@ -226,6 +228,30 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "fetchImage"
+      },
+      {
+        path: "fetchImage2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "fetchImage2"
+      },
+      {
+        path: "fetchImage2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "fetchImage2"
+      },
+      {
+        path: "fetchImage2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "fetchImage2"
       }
     ],
     [$props, $ctx, $refs]
@@ -367,10 +393,12 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                   })()}
                   placeholder={
                     <div
+                      data-plasmic-name={"text"}
+                      data-plasmic-override={overrides.text}
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__yw9Go
+                        sty.text
                       )}
                     >
                       {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
@@ -704,6 +732,19 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                     className={classNames(projectcss.all, sty.freeBox___7Kz3Y)}
                   >
                     <div
+                      className={classNames(projectcss.all, sty.freeBox__bN7X)}
+                    >
+                      <Embed
+                        className={classNames(
+                          "__wab_instance",
+                          sty.embedHtml___2Qg2
+                        )}
+                        code={
+                          '<div style="width: 100%; display: flex; justify-content: center;">\r\n  <style>\r\n    .submit-dates-btn {\r\n      /* \u0647\u0645\u0627\u0646 \u0631\u0646\u06af \u0622\u0628\u06cc \u0631\u0648\u0632\u0647\u0627\u06cc \u0633\u0644\u06a9\u062a \u0634\u062f\u0647 */\r\n      background-color: #2727ea; \r\n      color: white;\r\n      \r\n      border: none;\r\n      border-radius: 8px; /* \u06af\u0631\u062f\u06cc \u0645\u0634\u0627\u0628\u0647 \u062a\u0642\u0648\u06cc\u0645 */\r\n      padding: 12px 24px;\r\n      font-size: 16px;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      cursor: pointer;\r\n      font-family: inherit;\r\n      box-shadow: 0 4px 6px rgba(39, 39, 234, 0.2); /* \u0633\u0627\u06cc\u0647 \u0645\u0644\u0627\u06cc\u0645 \u0622\u0628\u06cc */\r\n      transition: all 0.2s ease;\r\n      display: flex;\r\n      align-items: center;\r\n      justify-content: center;\r\n      gap: 10px;\r\n    }\r\n    \r\n    .submit-dates-btn:hover {\r\n      background-color: #1a1ab8; /* \u06a9\u0645\u06cc \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0645\u0648\u0642\u0639 \u0647\u0627\u0648\u0631 */\r\n      box-shadow: 0 6px 8px rgba(39, 39, 234, 0.3);\r\n    }\r\n    \r\n    .submit-dates-btn:active {\r\n      transform: scale(0.98);\r\n    }\r\n\r\n    /* \u0627\u0633\u062a\u0627\u06cc\u0644 \u062f\u06a9\u0645\u0647 \u062f\u0631 \u062d\u0627\u0644\u062a \u063a\u06cc\u0631\u0641\u0639\u0627\u0644/\u0644\u0648\u062f\u06cc\u0646\u06af */\r\n    .submit-dates-btn:disabled {\r\n      background-color: #ccc;\r\n      cursor: not-allowed;\r\n      box-shadow: none;\r\n    }\r\n  </style>\r\n\r\n  <button id="btn-submit-calendar" class="submit-dates-btn">\r\n   \u062b\u0628\u062a \u0631\u0632\u0631\u0648\r\n  </button>\r\n</div>\r\n\r\n<script>\r\n  (function() {\r\n    const btn = document.getElementById(\'btn-submit-calendar\');\r\n    \r\n    // *** \u0622\u062f\u0631\u0633 \u0628\u06a9\u200c\u0646\u062f \u062e\u0648\u062f \u0631\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f ***\r\n    const BACKEND_URL = "https://automation.rentamon.com/webhook/YOUR_ENDPOINT";\r\n\r\n    btn.addEventListener(\'click\', function() {\r\n      // 1. \u062e\u0648\u0627\u0646\u062f\u0646 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u062f\u0647 \u0627\u0632 \u0645\u062a\u063a\u06cc\u0631 \u062c\u0647\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645\r\n      const selectedDates = window.selectedCalendarDates || [];\r\n      \r\n      // \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc: \u0627\u06af\u0631 \u0647\u06cc\u0686 \u0631\u0648\u0632\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u0646\u0634\u062f\u0647 \u0628\u0648\u062f\r\n      if (selectedDates.length === 0) {\r\n        alert("\u0644\u0637\u0641\u0627\u064b \u062d\u062f\u0627\u0642\u0644 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f.");\r\n        return;\r\n      }\r\n\r\n      // 2. \u06af\u0631\u0641\u062a\u0646 \u062a\u0648\u06a9\u0646 \u0622\u06af\u0647\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0628\u062f\u0627\u0646\u06cc\u062f \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0645\u0627\u0644 \u06a9\u062f\u0627\u0645 \u0622\u06af\u0647\u06cc \u0627\u0633\u062a\r\n      const urlParams = new URLSearchParams(window.location.search);\r\n      const postToken = urlParams.get(\'post_token\');\r\n\r\n      // 3. \u0622\u0645\u0627\u062f\u0647\u200c\u0633\u0627\u0632\u06cc \u062f\u06cc\u062a\u0627 \u0628\u0631\u0627\u06cc \u0627\u0631\u0633\u0627\u0644\r\n      const payload = {\r\n        post_token: postToken,\r\n        dates: selectedDates,\r\n        source: \'divar_app\'\r\n      };\r\n\r\n      // 4. \u062a\u063a\u06cc\u06cc\u0631 \u0638\u0627\u0647\u0631 \u062f\u06a9\u0645\u0647 \u0628\u0647 \u062d\u0627\u0644\u062a \u0644\u0648\u062f\u06cc\u0646\u06af\r\n      const originalText = btn.innerText;\r\n      btn.innerText = "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0631\u0633\u0627\u0644...";\r\n      btn.disabled = true;\r\n\r\n      // 5. \u0627\u0631\u0633\u0627\u0644 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0628\u0647 \u0633\u0631\u0648\u0631 (n8n \u06cc\u0627 Backend)\r\n      fetch(BACKEND_URL, {\r\n        method: \'POST\',\r\n        headers: {\r\n          \'Content-Type\': \'application/json\'\r\n        },\r\n        body: JSON.stringify(payload)\r\n      })\r\n      .then(response => {\r\n        if (response.ok) {\r\n          // \u0645\u0648\u0641\u0642\u06cc\u062a\r\n          btn.innerText = "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f \u2713";\r\n          btn.style.backgroundColor = "#4CAF50"; // \u0633\u0628\u0632 \u0634\u062f\u0646 \u062f\u06a9\u0645\u0647\r\n          \r\n          setTimeout(() => {\r\n            // \u0628\u0631\u06af\u0631\u062f\u0627\u0646\u062f\u0646 \u062f\u06a9\u0645\u0647 \u0628\u0647 \u062d\u0627\u0644\u062a \u0627\u0648\u0644 \u06cc\u0627 \u0631\u06cc\u062f\u0627\u06cc\u0631\u06a9\u062a \u06a9\u0631\u062f\u0646 \u06a9\u0627\u0631\u0628\u0631\r\n            btn.disabled = false;\r\n            btn.innerText = originalText;\r\n            btn.style.backgroundColor = "#2727ea"; // \u0628\u0631\u06af\u0634\u062a \u0628\u0647 \u0622\u0628\u06cc\r\n            \r\n            // \u0627\u06af\u0631 \u062e\u0648\u0627\u0633\u062a\u06cc\u062f \u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a \u0645\u0648\u0641\u0642\u060c \u0628\u0631\u06af\u0631\u062f\u062f \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631\u060c \u062e\u0637 \u0632\u06cc\u0631 \u0631\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0646\u06cc\u062f:\r\n            // window.location.href = \'https://open-platform-redirect.divar.ir/completion\';\r\n          }, 2000);\r\n        } else {\r\n          throw new Error(\'Server error\');\r\n        }\r\n      })\r\n      .catch(error => {\r\n        console.error(\'Error:\', error);\r\n        btn.innerText = "\u062e\u0637\u0627 \u062f\u0631 \u062b\u0628\u062a!";\r\n        btn.style.backgroundColor = "#d32f2f"; // \u0642\u0631\u0645\u0632 \u0634\u062f\u0646 \u062f\u06a9\u0645\u0647\r\n        \r\n        setTimeout(() => {\r\n          btn.disabled = false;\r\n          btn.innerText = originalText;\r\n          btn.style.backgroundColor = "#2727ea";\r\n        }, 3000);\r\n      });\r\n    });\r\n  })();\r\n</script>'
+                        }
+                      />
+                    </div>
+                    <div
                       className={classNames(projectcss.all, sty.freeBox__bsO0)}
                     >
                       <Embed
@@ -713,19 +754,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                         )}
                         code={
                           '<div style="width: 100%; display: flex; justify-content: center;">\r\n  <style>\r\n    .divar-static-btn {\r\n      /* \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0635\u0644\u06cc \u0628\u0631\u0627\u06cc \u062d\u0627\u0644\u062a Secondary */\r\n      background-color: white; /* \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u0633\u0641\u06cc\u062f (\u062a\u0648 \u062e\u0627\u0644\u06cc) */\r\n      color: #a62626; /* \u0645\u062a\u0646 \u0642\u0631\u0645\u0632 */\r\n      border: 1px solid #a62626; /* \u0628\u0648\u0631\u062f\u0631 \u0642\u0631\u0645\u0632 */\r\n      \r\n      border-radius: 4px;\r\n      padding: 10px 10px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      cursor: pointer;\r\n      font-family: inherit;\r\n      /* \u0633\u0627\u06cc\u0647 \u0631\u0627 \u0628\u0631\u0627\u06cc \u062f\u06a9\u0645\u0647 \u062b\u0627\u0646\u0648\u06cc\u0647 \u062d\u0630\u0641 \u06a9\u0631\u062f\u0645 \u062a\u0627 \u0641\u0644\u062a\u200c\u062a\u0631 \u0628\u0627\u0634\u062f (\u0627\u062e\u062a\u06cc\u0627\u0631\u06cc) */\r\n      box-shadow: none; \r\n      transition: all 0.2s ease;\r\n    }\r\n    \r\n    .divar-static-btn:hover {\r\n      /* \u062d\u0627\u0644\u062a \u0647\u0627\u0648\u0631: \u06cc\u06a9 \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u062e\u06cc\u0644\u06cc \u0631\u0648\u0634\u0646 \u0642\u0631\u0645\u0632 \u0648 \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0628\u0648\u0631\u062f\u0631 */\r\n      background-color: #fcf2f2; \r\n      border-color: #851e1e;\r\n      color: #851e1e;\r\n    }\r\n    \r\n    .divar-static-btn:active {\r\n      transform: scale(0.98);\r\n      background-color: #fceceb; /* \u0631\u0646\u06af \u06a9\u0645\u06cc \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0645\u0648\u0642\u0639 \u06a9\u0644\u06cc\u06a9 */\r\n    }\r\n  </style>\r\n\r\n  <button onclick="window.location.href=\'https://open-platform-redirect.divar.ir/completion\'" class="divar-static-btn">\r\n    \u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631\r\n  </button>\r\n</div>'
-                        }
-                      />
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__bN7X)}
-                    >
-                      <Embed
-                        className={classNames(
-                          "__wab_instance",
-                          sty.embedHtml___2Qg2
-                        )}
-                        code={
-                          '<div style="width: 100%; display: flex; justify-content: center;">\r\n  <style>\r\n    .submit-dates-btn {\r\n      /* \u0647\u0645\u0627\u0646 \u0631\u0646\u06af \u0622\u0628\u06cc \u0631\u0648\u0632\u0647\u0627\u06cc \u0633\u0644\u06a9\u062a \u0634\u062f\u0647 */\r\n      background-color: #2727ea; \r\n      color: white;\r\n      \r\n      border: none;\r\n      border-radius: 8px; /* \u06af\u0631\u062f\u06cc \u0645\u0634\u0627\u0628\u0647 \u062a\u0642\u0648\u06cc\u0645 */\r\n      padding: 12px 24px;\r\n      font-size: 16px;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      cursor: pointer;\r\n      font-family: inherit;\r\n      box-shadow: 0 4px 6px rgba(39, 39, 234, 0.2); /* \u0633\u0627\u06cc\u0647 \u0645\u0644\u0627\u06cc\u0645 \u0622\u0628\u06cc */\r\n      transition: all 0.2s ease;\r\n      display: flex;\r\n      align-items: center;\r\n      justify-content: center;\r\n      gap: 10px;\r\n    }\r\n    \r\n    .submit-dates-btn:hover {\r\n      background-color: #1a1ab8; /* \u06a9\u0645\u06cc \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0645\u0648\u0642\u0639 \u0647\u0627\u0648\u0631 */\r\n      box-shadow: 0 6px 8px rgba(39, 39, 234, 0.3);\r\n    }\r\n    \r\n    .submit-dates-btn:active {\r\n      transform: scale(0.98);\r\n    }\r\n\r\n    /* \u0627\u0633\u062a\u0627\u06cc\u0644 \u062f\u06a9\u0645\u0647 \u062f\u0631 \u062d\u0627\u0644\u062a \u063a\u06cc\u0631\u0641\u0639\u0627\u0644/\u0644\u0648\u062f\u06cc\u0646\u06af */\r\n    .submit-dates-btn:disabled {\r\n      background-color: #ccc;\r\n      cursor: not-allowed;\r\n      box-shadow: none;\r\n    }\r\n  </style>\r\n\r\n  <button id="btn-submit-calendar" class="submit-dates-btn">\r\n    \u062b\u0628\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u062f\u0647\r\n  </button>\r\n</div>\r\n\r\n<script>\r\n  (function() {\r\n    const btn = document.getElementById(\'btn-submit-calendar\');\r\n    \r\n    // *** \u0622\u062f\u0631\u0633 \u0628\u06a9\u200c\u0646\u062f \u062e\u0648\u062f \u0631\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f ***\r\n    const BACKEND_URL = "https://automation.rentamon.com/webhook/YOUR_ENDPOINT";\r\n\r\n    btn.addEventListener(\'click\', function() {\r\n      // 1. \u062e\u0648\u0627\u0646\u062f\u0646 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u062f\u0647 \u0627\u0632 \u0645\u062a\u063a\u06cc\u0631 \u062c\u0647\u0627\u0646\u06cc \u062a\u0642\u0648\u06cc\u0645\r\n      const selectedDates = window.selectedCalendarDates || [];\r\n      \r\n      // \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc: \u0627\u06af\u0631 \u0647\u06cc\u0686 \u0631\u0648\u0632\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u0646\u0634\u062f\u0647 \u0628\u0648\u062f\r\n      if (selectedDates.length === 0) {\r\n        alert("\u0644\u0637\u0641\u0627\u064b \u062d\u062f\u0627\u0642\u0644 \u06cc\u06a9 \u0631\u0648\u0632 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f.");\r\n        return;\r\n      }\r\n\r\n      // 2. \u06af\u0631\u0641\u062a\u0646 \u062a\u0648\u06a9\u0646 \u0622\u06af\u0647\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0628\u062f\u0627\u0646\u06cc\u062f \u0627\u06cc\u0646 \u0631\u0648\u0632\u0647\u0627 \u0645\u0627\u0644 \u06a9\u062f\u0627\u0645 \u0622\u06af\u0647\u06cc \u0627\u0633\u062a\r\n      const urlParams = new URLSearchParams(window.location.search);\r\n      const postToken = urlParams.get(\'post_token\');\r\n\r\n      // 3. \u0622\u0645\u0627\u062f\u0647\u200c\u0633\u0627\u0632\u06cc \u062f\u06cc\u062a\u0627 \u0628\u0631\u0627\u06cc \u0627\u0631\u0633\u0627\u0644\r\n      const payload = {\r\n        post_token: postToken,\r\n        dates: selectedDates,\r\n        source: \'divar_app\'\r\n      };\r\n\r\n      // 4. \u062a\u063a\u06cc\u06cc\u0631 \u0638\u0627\u0647\u0631 \u062f\u06a9\u0645\u0647 \u0628\u0647 \u062d\u0627\u0644\u062a \u0644\u0648\u062f\u06cc\u0646\u06af\r\n      const originalText = btn.innerText;\r\n      btn.innerText = "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0631\u0633\u0627\u0644...";\r\n      btn.disabled = true;\r\n\r\n      // 5. \u0627\u0631\u0633\u0627\u0644 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0628\u0647 \u0633\u0631\u0648\u0631 (n8n \u06cc\u0627 Backend)\r\n      fetch(BACKEND_URL, {\r\n        method: \'POST\',\r\n        headers: {\r\n          \'Content-Type\': \'application/json\'\r\n        },\r\n        body: JSON.stringify(payload)\r\n      })\r\n      .then(response => {\r\n        if (response.ok) {\r\n          // \u0645\u0648\u0641\u0642\u06cc\u062a\r\n          btn.innerText = "\u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f \u2713";\r\n          btn.style.backgroundColor = "#4CAF50"; // \u0633\u0628\u0632 \u0634\u062f\u0646 \u062f\u06a9\u0645\u0647\r\n          \r\n          setTimeout(() => {\r\n            // \u0628\u0631\u06af\u0631\u062f\u0627\u0646\u062f\u0646 \u062f\u06a9\u0645\u0647 \u0628\u0647 \u062d\u0627\u0644\u062a \u0627\u0648\u0644 \u06cc\u0627 \u0631\u06cc\u062f\u0627\u06cc\u0631\u06a9\u062a \u06a9\u0631\u062f\u0646 \u06a9\u0627\u0631\u0628\u0631\r\n            btn.disabled = false;\r\n            btn.innerText = originalText;\r\n            btn.style.backgroundColor = "#2727ea"; // \u0628\u0631\u06af\u0634\u062a \u0628\u0647 \u0622\u0628\u06cc\r\n            \r\n            // \u0627\u06af\u0631 \u062e\u0648\u0627\u0633\u062a\u06cc\u062f \u0628\u0639\u062f \u0627\u0632 \u062b\u0628\u062a \u0645\u0648\u0641\u0642\u060c \u0628\u0631\u06af\u0631\u062f\u062f \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631\u060c \u062e\u0637 \u0632\u06cc\u0631 \u0631\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0646\u06cc\u062f:\r\n            // window.location.href = \'https://open-platform-redirect.divar.ir/completion\';\r\n          }, 2000);\r\n        } else {\r\n          throw new Error(\'Server error\');\r\n        }\r\n      })\r\n      .catch(error => {\r\n        console.error(\'Error:\', error);\r\n        btn.innerText = "\u062e\u0637\u0627 \u062f\u0631 \u062b\u0628\u062a!";\r\n        btn.style.backgroundColor = "#d32f2f"; // \u0642\u0631\u0645\u0632 \u0634\u062f\u0646 \u062f\u06a9\u0645\u0647\r\n        \r\n        setTimeout(() => {\r\n          btn.disabled = false;\r\n          btn.innerText = originalText;\r\n          btn.style.backgroundColor = "#2727ea";\r\n        }, 3000);\r\n      });\r\n    });\r\n  })();\r\n</script>'
                         }
                       />
                     </div>
@@ -762,21 +790,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile") ? `` : "400"
               }
             />
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__meAa)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__zl6BZ
-              )}
-            >
-              {hasVariant(globalVariants, "screen", "smallMobile")
-                ? "\u0627\u06cc\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0648\u0632\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627\u0633\u062a. \u0645\u06cc\u062a\u0648\u0646\u06cc \u0628\u0631\u0627\u06cc \u0645\u0634\u062a\u0631\u06cc \u0628\u0641\u0631\u0633\u062a\u06cc.\n"
-                : hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u0627\u06cc\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0648\u0632\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627\u0633\u062a. \u0639\u06a9\u0633\u200c \u0628\u06af\u06cc\u0631 \u0648 \u0628\u0631\u0627\u06cc \u0645\u0634\u062a\u0631\u06cc \u0628\u0641\u0631\u0633\u062a"
-                  : "\u0627\u06cc\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0648\u0632\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627\u0633\u062a\u060c\n\u0639\u06a9\u0633 \u0628\u06af\u06cc\u0631 \u0648 \u0628\u0631\u0627\u06cc \u0645\u0634\u062a\u0631\u06cc \u0628\u0641\u0631\u0633\u062a"}
-            </div>
           </div>
           <ApiRequest
             data-plasmic-name={"fetchImage"}
@@ -829,9 +842,55 @@ function PlasmicGuestCalendar__RenderFunc(props: {
             })()}
           />
 
-          <Embed
-            className={classNames("__wab_instance", sty.embedHtml__tSMg1)}
-            code={"<div>Paste your embed code via the right sidebar</div>"}
+          <ApiRequest
+            data-plasmic-name={"fetchImage2"}
+            data-plasmic-override={overrides.fetchImage2}
+            children={null}
+            className={classNames("__wab_instance", sty.fetchImage2)}
+            errorDisplay={null}
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["fetchImage2", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "fetchImage2",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["fetchImage2", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            params={undefined}
+            ref={ref => {
+              $refs["fetchImage2"] = ref;
+            }}
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const gatewayBase = isMiaan
+                    ? "https://gateway.miaan.ir"
+                    : "https://gateway.rentamon.com";
+                  return `${gatewayBase}/webhook/property_image_url?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
         </div>
       </div>
@@ -845,16 +904,20 @@ const PlasmicDescendants = {
     "main",
     "apiRequest",
     "selectProperty",
+    "text",
     "apiRequest2",
     "img",
-    "fetchImage"
+    "fetchImage",
+    "fetchImage2"
   ],
-  main: ["main", "apiRequest", "selectProperty", "apiRequest2", "img"],
-  apiRequest: ["apiRequest", "selectProperty", "apiRequest2"],
-  selectProperty: ["selectProperty"],
+  main: ["main", "apiRequest", "selectProperty", "text", "apiRequest2", "img"],
+  apiRequest: ["apiRequest", "selectProperty", "text", "apiRequest2"],
+  selectProperty: ["selectProperty", "text"],
+  text: ["text"],
   apiRequest2: ["apiRequest2"],
   img: ["img"],
-  fetchImage: ["fetchImage"]
+  fetchImage: ["fetchImage"],
+  fetchImage2: ["fetchImage2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -864,9 +927,11 @@ type NodeDefaultElementType = {
   main: "div";
   apiRequest: typeof ApiRequest;
   selectProperty: typeof Select;
+  text: "div";
   apiRequest2: typeof ApiRequest;
   img: typeof PlasmicImg__;
   fetchImage: typeof ApiRequest;
+  fetchImage2: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -934,9 +999,11 @@ export const PlasmicGuestCalendar = Object.assign(
     main: makeNodeComponent("main"),
     apiRequest: makeNodeComponent("apiRequest"),
     selectProperty: makeNodeComponent("selectProperty"),
+    text: makeNodeComponent("text"),
     apiRequest2: makeNodeComponent("apiRequest2"),
     img: makeNodeComponent("img"),
     fetchImage: makeNodeComponent("fetchImage"),
+    fetchImage2: makeNodeComponent("fetchImage2"),
 
     // Metadata about props expected for PlasmicGuestCalendar
     internalVariantProps: PlasmicGuestCalendar__VariantProps,

@@ -533,6 +533,7 @@ function PlasmicBookings2__RenderFunc(props: {
             styleTokensClassNames,
             sty.root
           )}
+          id={``}
         >
           <SideEffect
             data-plasmic-name={"sideEffect"}
@@ -2906,6 +2907,7 @@ function PlasmicBookings2__RenderFunc(props: {
                 data-plasmic-name={"reserveMainStack"}
                 data-plasmic-override={overrides.reserveMainStack}
                 className={classNames(projectcss.all, sty.reserveMainStack)}
+                id={``}
                 onScroll={async event => {
                   const $steps = {};
                 }}
@@ -3086,23 +3088,17 @@ function PlasmicBookings2__RenderFunc(props: {
                                 const actionArgs = {
                                   customFunction: async () => {
                                     return (() => {
-                                      $state.reservations = [
+                                      let allReservations = [
                                         ...$state.reservations,
                                         ...$steps.sendrequest.data.bookings
                                       ];
 
-                                      console.log(
-                                        "requests",
-                                        $steps.sendrequest.data.data.bookings
+                                      allReservations.sort(
+                                        (a, b) =>
+                                          new Date(a.date) - new Date(b.date)
                                       );
-                                      console.log(
-                                        "requests",
-                                        $steps.sendrequest.data.bookings
-                                      );
-                                      return console.log(
-                                        "reservations",
-                                        $state.reservations
-                                      );
+                                      return ($state.reservations =
+                                        allReservations);
                                     })();
                                   }
                                 };
