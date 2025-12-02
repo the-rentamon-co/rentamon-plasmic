@@ -344,17 +344,7 @@ function PlasmicConnections__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return (
-                // // if($ctx.params.type==3){
-                // //   return 1
-                // // }
-                // // else
-                // {
-                //   return 1
-                // }
-
-                $ctx.query.step
-              );
+              return $ctx.query.step;
             } catch (e) {
               if (
                 e instanceof TypeError ||
@@ -632,6 +622,12 @@ function PlasmicConnections__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ``
+      },
+      {
+        path: "verifyBtn",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -4761,6 +4757,44 @@ function PlasmicConnections__RenderFunc(props: {
                               onClick={async () => {
                                 const $steps = {};
 
+                                $steps["updateVerifyBtn"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["verifyBtn"]
+                                        },
+                                        operation: 0,
+                                        value: true
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["updateVerifyBtn"] != null &&
+                                  typeof $steps["updateVerifyBtn"] ===
+                                    "object" &&
+                                  typeof $steps["updateVerifyBtn"].then ===
+                                    "function"
+                                ) {
+                                  $steps["updateVerifyBtn"] =
+                                    await $steps["updateVerifyBtn"];
+                                }
+
                                 $steps["jabamaVerify"] =
                                   $state.form.value.jabamaOTP !== undefined
                                     ? (() => {
@@ -5013,6 +5047,44 @@ function PlasmicConnections__RenderFunc(props: {
                                 ) {
                                   $steps["goToStatusesConnections"] =
                                     await $steps["goToStatusesConnections"];
+                                }
+
+                                $steps["updateVerifyBtn2"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["verifyBtn"]
+                                        },
+                                        operation: 0,
+                                        value: false
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["updateVerifyBtn2"] != null &&
+                                  typeof $steps["updateVerifyBtn2"] ===
+                                    "object" &&
+                                  typeof $steps["updateVerifyBtn2"].then ===
+                                    "function"
+                                ) {
+                                  $steps["updateVerifyBtn2"] =
+                                    await $steps["updateVerifyBtn2"];
                                 }
                               }}
                               submitsForm={true}
@@ -7063,75 +7135,124 @@ function PlasmicConnections__RenderFunc(props: {
                               "__wab_instance",
                               sty.shabverify
                             )}
+                            disabled={(() => {
+                              try {
+                                return $state.verifyBtn;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["shabVerify"] =
-                                $state.form.value.shabOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          (() => {
-                                            try {
-                                              return (() => {
-                                                const isMiaan =
-                                                  window.location.hostname.includes(
-                                                    "miaan.ir"
-                                                  );
-                                                const gatewayBase = isMiaan
-                                                  ? "https://gateway.miaan.ir"
-                                                  : "https://gateway.rentamon.com";
-                                                return `${gatewayBase}/webhook/shab-verify?v=2`;
-                                              })();
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
+                              $steps["updateVerifyBtn"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["verifyBtn"]
+                                      },
+                                      operation: 0,
+                                      value: true
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateVerifyBtn"] != null &&
+                                typeof $steps["updateVerifyBtn"] === "object" &&
+                                typeof $steps["updateVerifyBtn"].then ===
+                                  "function"
+                              ) {
+                                $steps["updateVerifyBtn"] =
+                                  await $steps["updateVerifyBtn"];
+                              }
+
+                              $steps["shabVerify"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        "POST",
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              const isMiaan =
+                                                window.location.hostname.includes(
+                                                  "miaan.ir"
+                                                );
+                                              const gatewayBase = isMiaan
+                                                ? "https://gateway.miaan.ir"
+                                                : "https://gateway.rentamon.com";
+                                              return `${gatewayBase}/webhook/shab-verify?v=2`;
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
                                             }
-                                          })(),
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return (() => {
-                                                function faToEnDigits(str) {
-                                                  return str.replace(
-                                                    /[۰-۹]/g,
-                                                    d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
-                                                  );
-                                                }
-                                                return {
-                                                  phone: faToEnDigits(
-                                                    $state.shabOtpSend.value
-                                                  ),
-                                                  otp: faToEnDigits(
-                                                    $state.form.value.shabOTP
-                                                  )
-                                                };
-                                              })();
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
+                                            throw e;
+                                          }
+                                        })(),
+                                        undefined,
+                                        (() => {
+                                          try {
+                                            return (() => {
+                                              function faToEnDigits(str) {
+                                                return str.replace(
+                                                  /[۰-۹]/g,
+                                                  d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+                                                );
                                               }
-                                              throw e;
+                                              return {
+                                                phone: faToEnDigits(
+                                                  $state.shabOtpSend.value
+                                                ),
+                                                otp: faToEnDigits(
+                                                  $state.form.value.shabOTP
+                                                )
+                                              };
+                                            })();
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return undefined;
                                             }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
+                                            throw e;
+                                          }
+                                        })()
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.apiRequest"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
                               if (
                                 $steps["shabVerify"] != null &&
                                 typeof $steps["shabVerify"] === "object" &&
@@ -7324,6 +7445,63 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["goToStatusesConnections"] =
                                   await $steps["goToStatusesConnections"];
+                              }
+
+                              $steps["invokeGlobalAction"] = true
+                                ? (() => {
+                                    const actionArgs = { args: [2000] };
+                                    return $globalActions[
+                                      "Fragment.wait"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["invokeGlobalAction"] != null &&
+                                typeof $steps["invokeGlobalAction"] ===
+                                  "object" &&
+                                typeof $steps["invokeGlobalAction"].then ===
+                                  "function"
+                              ) {
+                                $steps["invokeGlobalAction"] =
+                                  await $steps["invokeGlobalAction"];
+                              }
+
+                              $steps["updateVerifyBtn2"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["verifyBtn"]
+                                      },
+                                      operation: 0,
+                                      value: false
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      $stateSet(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["updateVerifyBtn2"] != null &&
+                                typeof $steps["updateVerifyBtn2"] ===
+                                  "object" &&
+                                typeof $steps["updateVerifyBtn2"].then ===
+                                  "function"
+                              ) {
+                                $steps["updateVerifyBtn2"] =
+                                  await $steps["updateVerifyBtn2"];
                               }
                             }}
                             submitsForm={true}

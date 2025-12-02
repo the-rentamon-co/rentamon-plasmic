@@ -3180,6 +3180,46 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/panel-lite"
+        },
+        {
+          "id": "rfGReeiHHCl-",
+          "name": "MiaanTeam",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicMiaanTeam.tsx",
+          "importSpec": {
+            "modulePath": "MiaanTeam.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicMiaanTeam.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "WMV6AnpBtswg",
+          "name": "MiaanAddress",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicMiaanAddress.tsx",
+          "importSpec": {
+            "modulePath": "MiaanAddress.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicMiaanAddress.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "lbsIEMOgeDFC",
+          "name": "GuestCalendar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicGuestCalendar.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/guest-calendar/[property_id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicGuestCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/guest-calendar/[property_id]"
         }
       ],
       "icons": [
@@ -5974,6 +6014,11 @@
           "id": "wmrMtAmr5ihw",
           "name": "mihmansho (2).png",
           "filePath": "../public/plasmic/website_starter/images/mihmansho2Png.png"
+        },
+        {
+          "id": "UKpcozlFjL4x",
+          "name": "Bale-Logo.png",
+          "filePath": "../public/plasmic/website_starter/images/baleLogoPng.png"
         }
       ],
       "indirect": false,

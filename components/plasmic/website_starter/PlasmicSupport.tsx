@@ -61,7 +61,7 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import MiaanAddress from "../../MiaanAddress"; // plasmic-import: WMV6AnpBtswg/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
@@ -75,7 +75,6 @@ import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgc
 import sty from "./PlasmicSupport.module.css"; // plasmic-import: _jWDmDgs08t7/css
 
 import Icon99Icon from "./icons/PlasmicIcon__Icon99"; // plasmic-import: 6B_Ilcn7d77Z/icon
-import Icon49Icon from "./icons/PlasmicIcon__Icon49"; // plasmic-import: Sg0oqZa4zTiY/icon
 import Icon28Icon from "./icons/PlasmicIcon__Icon28"; // plasmic-import: 1BYhcdmlcA0q/icon
 
 createPlasmicElementProxy;
@@ -105,7 +104,7 @@ export type PlasmicSupport__OverridesType = {
   icon6?: Flex__<"div">;
   title6?: Flex__<"div">;
   caption6?: Flex__<"div">;
-  goftino2?: Flex__<"div">;
+  chat?: Flex__<"div">;
   goftino?: Flex__<"div">;
   icon10?: Flex__<"div">;
   title10?: Flex__<"div">;
@@ -125,10 +124,7 @@ export type PlasmicSupport__OverridesType = {
   caption11?: Flex__<"div">;
   sectionTitle2?: Flex__<"div">;
   address?: Flex__<"div">;
-  content?: Flex__<"div">;
-  addressText?: Flex__<"div">;
-  map?: Flex__<"div">;
-  embedHtml?: Flex__<typeof Embed>;
+  miaanAddress?: Flex__<typeof MiaanAddress>;
   html?: Flex__<"div">;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -576,9 +572,9 @@ function PlasmicSupport__RenderFunc(props: {
                       </div>
                     </div>
                     <div
-                      data-plasmic-name={"goftino2"}
-                      data-plasmic-override={overrides.goftino2}
-                      className={classNames(projectcss.all, sty.goftino2)}
+                      data-plasmic-name={"chat"}
+                      data-plasmic-override={overrides.chat}
+                      className={classNames(projectcss.all, sty.chat)}
                     >
                       <div
                         data-plasmic-name={"goftino"}
@@ -972,7 +968,7 @@ function PlasmicSupport__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       return window.open(
-                                        "https://eitaa.org/miaan_support",
+                                        "https://ble.ir/miaan_support",
                                         "_blank"
                                       );
                                     })();
@@ -997,12 +993,22 @@ function PlasmicSupport__RenderFunc(props: {
                           data-plasmic-override={overrides.icon9}
                           className={classNames(projectcss.all, sty.icon9)}
                         >
-                          <Icon49Icon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__brztz
-                            )}
-                            role={"img"}
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img___36ROc)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"30%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={{
+                              src: "/plasmic/website_starter/images/baleLogoPng.png",
+                              fullWidth: 300,
+                              fullHeight: 300,
+                              aspectRatio: undefined
+                            }}
                           />
                         </div>
                         <div
@@ -1057,7 +1063,7 @@ function PlasmicSupport__RenderFunc(props: {
                               }
                             }}
                           >
-                            {"\u0627\u06cc\u062a\u0627"}
+                            {"\u0628\u0644\u0647"}
                           </div>
                         </div>
                       </div>
@@ -1182,7 +1188,7 @@ function PlasmicSupport__RenderFunc(props: {
                               sty.text__rxk2A
                             )}
                           >
-                            {"info@rentamon.com"}
+                            {"info [@] miaan.ir"}
                           </div>
                         </div>
                       </div>
@@ -1215,57 +1221,11 @@ function PlasmicSupport__RenderFunc(props: {
               data-plasmic-override={overrides.address}
               className={classNames(projectcss.all, sty.address)}
             >
-              <div
-                data-plasmic-name={"content"}
-                data-plasmic-override={overrides.content}
-                className={classNames(projectcss.all, sty.content)}
-              >
-                <div
-                  data-plasmic-name={"addressText"}
-                  data-plasmic-override={overrides.addressText}
-                  className={classNames(projectcss.all, sty.addressText)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___3Ye7H
-                    )}
-                  >
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {"\u0622\u062f\u0631\u0633 \u0634\u0631\u06a9\u062a:"}
-                      </span>
-                      <React.Fragment>
-                        {
-                          "\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c \u0637\u0628\u0642\u0647 \u06f3\u060c \u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641\r\n\n\u06a9\u062f \u067e\u0633\u062a\u06cc: \u06f3\u06f7\u06f4\u06f9\u06f1\u06f1\u06f3\u06f9\u06f1\u06f6\r"
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"map"}
-                  data-plasmic-override={overrides.map}
-                  className={classNames(projectcss.all, sty.map)}
-                >
-                  <Embed
-                    data-plasmic-name={"embedHtml"}
-                    data-plasmic-override={overrides.embedHtml}
-                    className={classNames("__wab_instance", sty.embedHtml)}
-                    code={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
-                        : hasVariant(globalVariants, "screen", "tablet")
-                          ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
-                          : '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
-                    }
-                  />
-                </div>
-              </div>
+              <MiaanAddress
+                data-plasmic-name={"miaanAddress"}
+                data-plasmic-override={overrides.miaanAddress}
+                className={classNames("__wab_instance", sty.miaanAddress)}
+              />
             </div>
           </div>
           <div
@@ -1319,7 +1279,7 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
-    "goftino2",
+    "chat",
     "goftino",
     "icon10",
     "title10",
@@ -1339,10 +1299,7 @@ const PlasmicDescendants = {
     "caption11",
     "sectionTitle2",
     "address",
-    "content",
-    "addressText",
-    "map",
-    "embedHtml",
+    "miaanAddress",
     "html",
     "faviconRntComponent",
     "clarityRntComponent",
@@ -1364,7 +1321,7 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
-    "goftino2",
+    "chat",
     "goftino",
     "icon10",
     "title10",
@@ -1384,10 +1341,7 @@ const PlasmicDescendants = {
     "caption11",
     "sectionTitle2",
     "address",
-    "content",
-    "addressText",
-    "map",
-    "embedHtml"
+    "miaanAddress"
   ],
   introduction: ["introduction", "teamImage2", "introCalendarLeft2"],
   teamImage2: ["teamImage2", "introCalendarLeft2"],
@@ -1400,7 +1354,7 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
-    "goftino2",
+    "chat",
     "goftino",
     "icon10",
     "title10",
@@ -1427,7 +1381,7 @@ const PlasmicDescendants = {
     "icon6",
     "title6",
     "caption6",
-    "goftino2",
+    "chat",
     "goftino",
     "icon10",
     "title10",
@@ -1450,7 +1404,7 @@ const PlasmicDescendants = {
   icon6: ["icon6"],
   title6: ["title6"],
   caption6: ["caption6"],
-  goftino2: ["goftino2", "goftino", "icon10", "title10", "caption10"],
+  chat: ["chat", "goftino", "icon10", "title10", "caption10"],
   goftino: ["goftino", "icon10", "title10", "caption10"],
   icon10: ["icon10"],
   title10: ["title10"],
@@ -1469,11 +1423,8 @@ const PlasmicDescendants = {
   title11: ["title11"],
   caption11: ["caption11"],
   sectionTitle2: ["sectionTitle2"],
-  address: ["address", "content", "addressText", "map", "embedHtml"],
-  content: ["content", "addressText", "map", "embedHtml"],
-  addressText: ["addressText"],
-  map: ["map", "embedHtml"],
-  embedHtml: ["embedHtml"],
+  address: ["address", "miaanAddress"],
+  miaanAddress: ["miaanAddress"],
   html: ["html", "faviconRntComponent", "clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -1499,7 +1450,7 @@ type NodeDefaultElementType = {
   icon6: "div";
   title6: "div";
   caption6: "div";
-  goftino2: "div";
+  chat: "div";
   goftino: "div";
   icon10: "div";
   title10: "div";
@@ -1519,10 +1470,7 @@ type NodeDefaultElementType = {
   caption11: "div";
   sectionTitle2: "div";
   address: "div";
-  content: "div";
-  addressText: "div";
-  map: "div";
-  embedHtml: typeof Embed;
+  miaanAddress: typeof MiaanAddress;
   html: "div";
   faviconRntComponent: typeof FaviconRntComponent;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -1606,7 +1554,7 @@ export const PlasmicSupport = Object.assign(
     icon6: makeNodeComponent("icon6"),
     title6: makeNodeComponent("title6"),
     caption6: makeNodeComponent("caption6"),
-    goftino2: makeNodeComponent("goftino2"),
+    chat: makeNodeComponent("chat"),
     goftino: makeNodeComponent("goftino"),
     icon10: makeNodeComponent("icon10"),
     title10: makeNodeComponent("title10"),
@@ -1626,10 +1574,7 @@ export const PlasmicSupport = Object.assign(
     caption11: makeNodeComponent("caption11"),
     sectionTitle2: makeNodeComponent("sectionTitle2"),
     address: makeNodeComponent("address"),
-    content: makeNodeComponent("content"),
-    addressText: makeNodeComponent("addressText"),
-    map: makeNodeComponent("map"),
-    embedHtml: makeNodeComponent("embedHtml"),
+    miaanAddress: makeNodeComponent("miaanAddress"),
     html: makeNodeComponent("html"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

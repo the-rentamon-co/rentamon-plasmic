@@ -60,6 +60,8 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
+import MiaanTeam from "../../MiaanTeam"; // plasmic-import: rfGReeiHHCl-/component
+import MiaanAddress from "../../MiaanAddress"; // plasmic-import: WMV6AnpBtswg/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
@@ -94,35 +96,11 @@ export type Plasmicدربارهما__OverridesType = {
   teamImage?: Flex__<"div">;
   introCalendarLeft?: Flex__<"div">;
   introduction?: Flex__<"div">;
-  team?: Flex__<"div">;
-  sectionTitle?: Flex__<"div">;
-  member13?: Flex__<"div">;
-  icon13?: Flex__<"div">;
-  title14?: Flex__<"div">;
-  caption13?: Flex__<"div">;
-  member14?: Flex__<"div">;
-  icon14?: Flex__<"div">;
-  title15?: Flex__<"div">;
-  caption14?: Flex__<"div">;
-  member15?: Flex__<"div">;
-  icon15?: Flex__<"div">;
-  title16?: Flex__<"div">;
-  caption15?: Flex__<"div">;
-  member16?: Flex__<"div">;
-  icon16?: Flex__<"div">;
-  title17?: Flex__<"div">;
-  caption16?: Flex__<"div">;
-  member17?: Flex__<"div">;
-  icon17?: Flex__<"div">;
-  title18?: Flex__<"div">;
-  caption17?: Flex__<"div">;
-  member18?: Flex__<"div">;
-  icon18?: Flex__<"div">;
-  title19?: Flex__<"div">;
-  caption18?: Flex__<"div">;
+  miaanTeam?: Flex__<typeof MiaanTeam>;
   principles?: Flex__<"div">;
   gallery2?: Flex__<"div">;
   principles2?: Flex__<"div">;
+  h2?: Flex__<"h2">;
   uotlines?: Flex__<"div">;
   ul?: Flex__<"ul">;
   introAutoSyncGif3?: Flex__<"div">;
@@ -131,11 +109,9 @@ export type Plasmicدربارهما__OverridesType = {
   teamup?: Flex__<"div">;
   introAutoSyncTitle3?: Flex__<"div">;
   introAutoSyncCaption3?: Flex__<"div">;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   address?: Flex__<"div">;
-  content?: Flex__<"div">;
-  addressText?: Flex__<"div">;
-  map?: Flex__<"div">;
-  embedHtml?: Flex__<typeof Embed>;
+  miaanAddress?: Flex__<typeof MiaanAddress>;
   html?: Flex__<"div">;
   nimChat?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -389,669 +365,12 @@ function Plasmicدربارهما__RenderFunc(props: {
                 }
               </div>
             </div>
-            <div
-              data-plasmic-name={"team"}
-              data-plasmic-override={overrides.team}
-              className={classNames(
-                projectcss.all,
-                sty.team,
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? "fadein"
-                  : "fadein"
-              )}
-            >
-              <div
-                data-plasmic-name={"sectionTitle"}
-                data-plasmic-override={overrides.sectionTitle}
-                className={classNames(projectcss.all, sty.sectionTitle)}
-              >
-                <h2
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.__wab_text,
-                    sty.h2__lJFb
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>
-                      {
-                        "\u0622\u0634\u0646\u0627\u06cc\u06cc \u0628\u0627 \u062a\u06cc\u0645 \u0645\u06cc\u0627\u0646 "
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 400 }}
-                    >
-                      {
-                        "(\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642)"
-                      }
-                    </span>
-                  </React.Fragment>
-                </h2>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__jYb4P)}>
-                <div className={classNames(projectcss.all, sty.freeBox__sw6Bz)}>
-                  <div
-                    data-plasmic-name={"member13"}
-                    data-plasmic-override={overrides.member13}
-                    className={classNames(projectcss.all, sty.member13)}
-                  >
-                    <div
-                      data-plasmic-name={"icon13"}
-                      data-plasmic-override={overrides.icon13}
-                      className={classNames(projectcss.all, sty.icon13)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__xwj8W)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                              ? "80%"
-                              : "auto"
-                        }
-                        loading={"lazy"}
-                        src={
-                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fboojar2.jpg?versionId="
-                        }
-                      />
-                    </div>
-                    <div
-                      data-plasmic-name={"title14"}
-                      data-plasmic-override={overrides.title14}
-                      className={classNames(projectcss.all, sty.title14)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___5Juuk
-                        )}
-                      >
-                        {
-                          "\u0646\u0627\u0632\u0646\u06cc\u0646 \u0628\u0648\u062c\u0627\u0631"
-                        }
-                      </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"caption13"}
-                      data-plasmic-override={overrides.caption13}
-                      className={classNames(projectcss.all, sty.caption13)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__xc1NB
-                        )}
-                      >
-                        {
-                          "\u0647\u0645\u200c\u0628\u0646\u06cc\u0627\u0646\u200c\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0645\u062d\u0635\u0648\u0644"
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__fpiMh)}>
-                  <div
-                    data-plasmic-name={"member14"}
-                    data-plasmic-override={overrides.member14}
-                    className={classNames(projectcss.all, sty.member14)}
-                  >
-                    <div
-                      data-plasmic-name={"icon14"}
-                      data-plasmic-override={overrides.icon14}
-                      className={classNames(projectcss.all, sty.icon14)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__joyhH)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                              ? "80%"
-                              : "auto"
-                        }
-                        loading={"lazy"}
-                        src={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? {
-                                src: "/plasmic/website_starter/images/photo20251119083549Jpg2.jpg",
-                                fullWidth: 969,
-                                fullHeight: 935,
-                                aspectRatio: undefined
-                              }
-                            : {
-                                src: "/plasmic/website_starter/images/photo20251119083549Jpg2.jpg",
-                                fullWidth: 969,
-                                fullHeight: 935,
-                                aspectRatio: undefined
-                              }
-                        }
-                      />
-                    </div>
-                    <div
-                      data-plasmic-name={"title15"}
-                      data-plasmic-override={overrides.title15}
-                      className={classNames(projectcss.all, sty.title15)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___6Yvin
-                        )}
-                      >
-                        {
-                          "\u0632\u0647\u0631\u0627 \u0627\u0628\u0648\u0627\u0644\u062d\u0633\u0646\u06cc"
-                        }
-                      </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"caption14"}
-                      data-plasmic-override={overrides.caption14}
-                      className={classNames(projectcss.all, sty.caption14)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__p31Yw
-                        )}
-                      >
-                        {
-                          "\u0645\u0648\u0641\u0642\u06cc\u062a \u06a9\u0627\u0631\u0628\u0631\u0627\u0646"
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__hwjvi)}>
-                  <div
-                    data-plasmic-name={"member15"}
-                    data-plasmic-override={overrides.member15}
-                    className={classNames(projectcss.all, sty.member15)}
-                  >
-                    <div
-                      data-plasmic-name={"icon15"}
-                      data-plasmic-override={overrides.icon15}
-                      className={classNames(projectcss.all, sty.icon15)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__twbaf)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                              ? "80%"
-                              : "auto"
-                        }
-                        loading={"lazy"}
-                        src={
-                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fmahan.jpg?versionId="
-                        }
-                      />
-                    </div>
-                    <div
-                      data-plasmic-name={"title16"}
-                      data-plasmic-override={overrides.title16}
-                      className={classNames(projectcss.all, sty.title16)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__mt7SY
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobile")
-                          ? "\u0645\u0627\u0647\u0627\u0646"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                            ? "\u0645\u0627\u0647\u0627\u0646"
-                            : "\u0645\u0627\u0647\u0627\u0646"}
-                      </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"caption15"}
-                      data-plasmic-override={overrides.caption15}
-                      className={classNames(projectcss.all, sty.caption15)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__at5Mx
-                        )}
-                      >
-                        {"\u0639\u0645\u0644\u06cc\u0627\u062a"}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox___30Av)}>
-                  <div
-                    data-plasmic-name={"member16"}
-                    data-plasmic-override={overrides.member16}
-                    className={classNames(projectcss.all, sty.member16)}
-                  >
-                    <div
-                      data-plasmic-name={"icon16"}
-                      data-plasmic-override={overrides.icon16}
-                      className={classNames(projectcss.all, sty.icon16)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__pwLhz)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                              ? "80%"
-                              : "auto"
-                        }
-                        loading={"lazy"}
-                        src={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fparsa.jpg?versionId="
-                            : "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fparsa.jpg?versionId="
-                        }
-                      />
-                    </div>
-                    <div
-                      data-plasmic-name={"title17"}
-                      data-plasmic-override={overrides.title17}
-                      className={classNames(projectcss.all, sty.title17)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__oUshg
-                        )}
-                      >
-                        {
-                          "\u067e\u0627\u0631\u0633\u0627 \u062e\u0633\u0631\u0648\u06cc"
-                        }
-                      </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"caption16"}
-                      data-plasmic-override={overrides.caption16}
-                      className={classNames(projectcss.all, sty.caption16)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__ms3SB
-                        )}
-                      >
-                        {
-                          "\u062a\u0648\u0633\u0639\u0647\u200c\u062f\u0647\u0646\u062f\u0647 \u0641\u0646\u06cc"
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__xvu5G)}>
-                  <div
-                    data-plasmic-name={"member17"}
-                    data-plasmic-override={overrides.member17}
-                    className={classNames(projectcss.all, sty.member17)}
-                  >
-                    <div
-                      data-plasmic-name={"icon17"}
-                      data-plasmic-override={overrides.icon17}
-                      className={classNames(projectcss.all, sty.icon17)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__pdcvq)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "70%"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "80%"
-                                : "auto"
-                        }
-                        loading={"lazy"}
-                        src={
-                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fteam%2Fsmall-300x288.jpg?versionId="
-                        }
-                      />
-                    </div>
-                    <div
-                      data-plasmic-name={"title18"}
-                      data-plasmic-override={overrides.title18}
-                      className={classNames(projectcss.all, sty.title18)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__fD02V
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "tablet")
-                          ? "\u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647"
-                          : "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647"}
-                      </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"caption17"}
-                      data-plasmic-override={overrides.caption17}
-                      className={classNames(projectcss.all, sty.caption17)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___3DnQx
-                        )}
-                      >
-                        {
-                          "\u0628\u0646\u06cc\u0627\u0646\u200c\u06af\u0630\u0627\u0631 \u0648 \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644"
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__qPe16)}>
-                  <div
-                    data-plasmic-name={"member18"}
-                    data-plasmic-override={overrides.member18}
-                    className={classNames(projectcss.all, sty.member18)}
-                  >
-                    <div
-                      data-plasmic-name={"icon18"}
-                      data-plasmic-override={overrides.icon18}
-                      className={classNames(projectcss.all, sty.icon18)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img___36Rv)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "none"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMaxWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "80%"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "none"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "none"
-                                : "120px"
-                        }
-                        displayMinHeight={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayMinWidth={
-                          hasVariant(globalVariants, "screen", "smallMobile")
-                            ? "auto"
-                            : hasVariant(globalVariants, "screen", "mobile")
-                              ? "auto"
-                              : hasVariant(globalVariants, "screen", "tablet")
-                                ? "auto"
-                                : "120px"
-                        }
-                        displayWidth={
-                          hasVariant(globalVariants, "screen", "mobile")
-                            ? "70%"
-                            : hasVariant(globalVariants, "screen", "tablet")
-                              ? "80%"
-                              : "auto"
-                        }
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/amirJpg.jpg",
-                          fullWidth: 400,
-                          fullHeight: 400,
-                          aspectRatio: undefined
-                        }}
-                      />
-                    </div>
-                    <div
-                      data-plasmic-name={"title19"}
-                      data-plasmic-override={overrides.title19}
-                      className={classNames(projectcss.all, sty.title19)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___75Pai
-                        )}
-                      >
-                        {
-                          "\u0627\u0645\u06cc\u0631\u0645\u0647\u062f\u06cc \u0633\u0647\u0627\u0645\u06cc"
-                        }
-                      </div>
-                    </div>
-                    <div
-                      data-plasmic-name={"caption18"}
-                      data-plasmic-override={overrides.caption18}
-                      className={classNames(projectcss.all, sty.caption18)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__jPxzh
-                        )}
-                      >
-                        {
-                          "\u062a\u0648\u0633\u0639\u0647\u200c\u062f\u0647\u0646\u062f\u0647 \u0641\u0646\u06cc"
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <MiaanTeam
+              data-plasmic-name={"miaanTeam"}
+              data-plasmic-override={overrides.miaanTeam}
+              className={classNames("__wab_instance", sty.miaanTeam)}
+            />
+
             <div
               data-plasmic-name={"principles"}
               data-plasmic-override={overrides.principles}
@@ -1068,11 +387,13 @@ function Plasmicدربارهما__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.principles2)}
                 >
                   <h2
+                    data-plasmic-name={"h2"}
+                    data-plasmic-override={overrides.h2}
                     className={classNames(
                       projectcss.all,
                       projectcss.h2,
                       projectcss.__wab_text,
-                      sty.h2__tywBr
+                      sty.h2
                     )}
                   >
                     {
@@ -1312,15 +633,49 @@ function Plasmicدربارهما__RenderFunc(props: {
                     </React.Fragment>
                     {
                       <PlasmicLink__
+                        data-plasmic-name={"link"}
+                        data-plasmic-override={overrides.link}
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
                           projectcss.__wab_text,
                           projectcss.plasmic_default__inline,
-                          sty.link___0WglN
+                          sty.link
                         )}
                         component={Link}
-                        href={"https://rentamon.com/join-our-journey/"}
+                        href={""}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["goToفرصتهایهمکاری"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  destination: `/join-our-journey`
+                                };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["goToفرصتهایهمکاری"] != null &&
+                            typeof $steps["goToفرصتهایهمکاری"] === "object" &&
+                            typeof $steps["goToفرصتهایهمکاری"].then ===
+                              "function"
+                          ) {
+                            $steps["goToفرصتهایهمکاری"] =
+                              await $steps["goToفرصتهایهمکاری"];
+                          }
+                        }}
                         platform={"nextjs"}
                       >
                         {"\u0627\u06cc\u0646\u062c\u0627"}
@@ -1338,74 +693,11 @@ function Plasmicدربارهما__RenderFunc(props: {
               data-plasmic-override={overrides.address}
               className={classNames(projectcss.all, sty.address)}
             >
-              <div
-                data-plasmic-name={"content"}
-                data-plasmic-override={overrides.content}
-                className={classNames(projectcss.all, sty.content)}
-              >
-                <div
-                  data-plasmic-name={"addressText"}
-                  data-plasmic-override={overrides.addressText}
-                  className={classNames(projectcss.all, sty.addressText)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__t7Oz
-                    )}
-                  >
-                    <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c \u0637\u0628\u0642\u0647 \u06f3\u060c \u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641\r\n\r\n\n\u062a\u0645\u0627\u0633: "
-                        }
-                      </React.Fragment>
-                      {
-                        <PlasmicLink__
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
-                            sty.link__cNvbN
-                          )}
-                          component={Link}
-                          href={"tel: 02191096227"}
-                          platform={"nextjs"}
-                        >
-                          {
-                            "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
-                          }
-                        </PlasmicLink__>
-                      }
-                      <React.Fragment>
-                        {
-                          "\r\n\u06a9\u062f \u067e\u0633\u062a\u06cc: \u06f3\u06f7\u06f4\u06f9\u06f1\u06f1\u06f3\u06f9\u06f1\u06f6\r\n\u0627\u06cc\u0645\u06cc\u0644: info [at] rentamon.com"
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"map"}
-                  data-plasmic-override={overrides.map}
-                  className={classNames(projectcss.all, sty.map)}
-                >
-                  <Embed
-                    data-plasmic-name={"embedHtml"}
-                    data-plasmic-override={overrides.embedHtml}
-                    className={classNames("__wab_instance", sty.embedHtml)}
-                    code={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
-                        : hasVariant(globalVariants, "screen", "tablet")
-                          ? '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
-                          : '<div style="width: 100%; height: 100%;">\r\n  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.336332222352!2d50.80808741151561!3d34.57035540330491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93a3007be0a67b%3A0x5974548a77f028da!2z2LTYsdqp2Kog2LHZhtiq2KfZhdmI2YYgfCBSZW50YW1vbg!5e0!3m2!1sen!2s!4v1739718249338!5m2!1sen!2s" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\r\n</div>\r\n'
-                    }
-                  />
-                </div>
-              </div>
+              <MiaanAddress
+                data-plasmic-name={"miaanAddress"}
+                data-plasmic-override={overrides.miaanAddress}
+                className={classNames("__wab_instance", sty.miaanAddress)}
+              />
             </div>
           </div>
           <div
@@ -1509,35 +801,11 @@ const PlasmicDescendants = {
     "teamImage",
     "introCalendarLeft",
     "introduction",
-    "team",
-    "sectionTitle",
-    "member13",
-    "icon13",
-    "title14",
-    "caption13",
-    "member14",
-    "icon14",
-    "title15",
-    "caption14",
-    "member15",
-    "icon15",
-    "title16",
-    "caption15",
-    "member16",
-    "icon16",
-    "title17",
-    "caption16",
-    "member17",
-    "icon17",
-    "title18",
-    "caption17",
-    "member18",
-    "icon18",
-    "title19",
-    "caption18",
+    "miaanTeam",
     "principles",
     "gallery2",
     "principles2",
+    "h2",
     "uotlines",
     "ul",
     "introAutoSyncGif3",
@@ -1546,11 +814,9 @@ const PlasmicDescendants = {
     "teamup",
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
+    "link",
     "address",
-    "content",
-    "addressText",
-    "map",
-    "embedHtml",
+    "miaanAddress",
     "html",
     "nimChat",
     "clarityRntComponent",
@@ -1567,35 +833,11 @@ const PlasmicDescendants = {
     "teamImage",
     "introCalendarLeft",
     "introduction",
-    "team",
-    "sectionTitle",
-    "member13",
-    "icon13",
-    "title14",
-    "caption13",
-    "member14",
-    "icon14",
-    "title15",
-    "caption14",
-    "member15",
-    "icon15",
-    "title16",
-    "caption15",
-    "member16",
-    "icon16",
-    "title17",
-    "caption16",
-    "member17",
-    "icon17",
-    "title18",
-    "caption17",
-    "member18",
-    "icon18",
-    "title19",
-    "caption18",
+    "miaanTeam",
     "principles",
     "gallery2",
     "principles2",
+    "h2",
     "uotlines",
     "ul",
     "introAutoSyncGif3",
@@ -1604,11 +846,9 @@ const PlasmicDescendants = {
     "teamup",
     "introAutoSyncTitle3",
     "introAutoSyncCaption3",
+    "link",
     "address",
-    "content",
-    "addressText",
-    "map",
-    "embedHtml"
+    "miaanAddress"
   ],
   intro1st: [
     "intro1st",
@@ -1625,84 +865,39 @@ const PlasmicDescendants = {
   teamImage: ["teamImage", "introCalendarLeft"],
   introCalendarLeft: ["introCalendarLeft"],
   introduction: ["introduction"],
-  team: [
-    "team",
-    "sectionTitle",
-    "member13",
-    "icon13",
-    "title14",
-    "caption13",
-    "member14",
-    "icon14",
-    "title15",
-    "caption14",
-    "member15",
-    "icon15",
-    "title16",
-    "caption15",
-    "member16",
-    "icon16",
-    "title17",
-    "caption16",
-    "member17",
-    "icon17",
-    "title18",
-    "caption17",
-    "member18",
-    "icon18",
-    "title19",
-    "caption18"
-  ],
-  sectionTitle: ["sectionTitle"],
-  member13: ["member13", "icon13", "title14", "caption13"],
-  icon13: ["icon13"],
-  title14: ["title14"],
-  caption13: ["caption13"],
-  member14: ["member14", "icon14", "title15", "caption14"],
-  icon14: ["icon14"],
-  title15: ["title15"],
-  caption14: ["caption14"],
-  member15: ["member15", "icon15", "title16", "caption15"],
-  icon15: ["icon15"],
-  title16: ["title16"],
-  caption15: ["caption15"],
-  member16: ["member16", "icon16", "title17", "caption16"],
-  icon16: ["icon16"],
-  title17: ["title17"],
-  caption16: ["caption16"],
-  member17: ["member17", "icon17", "title18", "caption17"],
-  icon17: ["icon17"],
-  title18: ["title18"],
-  caption17: ["caption17"],
-  member18: ["member18", "icon18", "title19", "caption18"],
-  icon18: ["icon18"],
-  title19: ["title19"],
-  caption18: ["caption18"],
+  miaanTeam: ["miaanTeam"],
   principles: [
     "principles",
     "gallery2",
     "principles2",
+    "h2",
     "uotlines",
     "ul",
     "introAutoSyncGif3",
     "gallery",
     "introAutoSyncGif2"
   ],
-  gallery2: ["gallery2", "principles2", "uotlines", "ul", "introAutoSyncGif3"],
-  principles2: ["principles2", "uotlines", "ul"],
+  gallery2: [
+    "gallery2",
+    "principles2",
+    "h2",
+    "uotlines",
+    "ul",
+    "introAutoSyncGif3"
+  ],
+  principles2: ["principles2", "h2", "uotlines", "ul"],
+  h2: ["h2"],
   uotlines: ["uotlines", "ul"],
   ul: ["ul"],
   introAutoSyncGif3: ["introAutoSyncGif3"],
   gallery: ["gallery", "introAutoSyncGif2"],
   introAutoSyncGif2: ["introAutoSyncGif2"],
-  teamup: ["teamup", "introAutoSyncTitle3", "introAutoSyncCaption3"],
+  teamup: ["teamup", "introAutoSyncTitle3", "introAutoSyncCaption3", "link"],
   introAutoSyncTitle3: ["introAutoSyncTitle3"],
-  introAutoSyncCaption3: ["introAutoSyncCaption3"],
-  address: ["address", "content", "addressText", "map", "embedHtml"],
-  content: ["content", "addressText", "map", "embedHtml"],
-  addressText: ["addressText"],
-  map: ["map", "embedHtml"],
-  embedHtml: ["embedHtml"],
+  introAutoSyncCaption3: ["introAutoSyncCaption3", "link"],
+  link: ["link"],
+  address: ["address", "miaanAddress"],
+  miaanAddress: ["miaanAddress"],
   html: ["html", "nimChat", "clarityRntComponent", "faviconRntComponent"],
   nimChat: ["nimChat"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -1723,35 +918,11 @@ type NodeDefaultElementType = {
   teamImage: "div";
   introCalendarLeft: "div";
   introduction: "div";
-  team: "div";
-  sectionTitle: "div";
-  member13: "div";
-  icon13: "div";
-  title14: "div";
-  caption13: "div";
-  member14: "div";
-  icon14: "div";
-  title15: "div";
-  caption14: "div";
-  member15: "div";
-  icon15: "div";
-  title16: "div";
-  caption15: "div";
-  member16: "div";
-  icon16: "div";
-  title17: "div";
-  caption16: "div";
-  member17: "div";
-  icon17: "div";
-  title18: "div";
-  caption17: "div";
-  member18: "div";
-  icon18: "div";
-  title19: "div";
-  caption18: "div";
+  miaanTeam: typeof MiaanTeam;
   principles: "div";
   gallery2: "div";
   principles2: "div";
+  h2: "h2";
   uotlines: "div";
   ul: "ul";
   introAutoSyncGif3: "div";
@@ -1760,11 +931,9 @@ type NodeDefaultElementType = {
   teamup: "div";
   introAutoSyncTitle3: "div";
   introAutoSyncCaption3: "div";
+  link: "a";
   address: "div";
-  content: "div";
-  addressText: "div";
-  map: "div";
-  embedHtml: typeof Embed;
+  miaanAddress: typeof MiaanAddress;
   html: "div";
   nimChat: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -1846,35 +1015,11 @@ export const Plasmicدربارهما = Object.assign(
     teamImage: makeNodeComponent("teamImage"),
     introCalendarLeft: makeNodeComponent("introCalendarLeft"),
     introduction: makeNodeComponent("introduction"),
-    team: makeNodeComponent("team"),
-    sectionTitle: makeNodeComponent("sectionTitle"),
-    member13: makeNodeComponent("member13"),
-    icon13: makeNodeComponent("icon13"),
-    title14: makeNodeComponent("title14"),
-    caption13: makeNodeComponent("caption13"),
-    member14: makeNodeComponent("member14"),
-    icon14: makeNodeComponent("icon14"),
-    title15: makeNodeComponent("title15"),
-    caption14: makeNodeComponent("caption14"),
-    member15: makeNodeComponent("member15"),
-    icon15: makeNodeComponent("icon15"),
-    title16: makeNodeComponent("title16"),
-    caption15: makeNodeComponent("caption15"),
-    member16: makeNodeComponent("member16"),
-    icon16: makeNodeComponent("icon16"),
-    title17: makeNodeComponent("title17"),
-    caption16: makeNodeComponent("caption16"),
-    member17: makeNodeComponent("member17"),
-    icon17: makeNodeComponent("icon17"),
-    title18: makeNodeComponent("title18"),
-    caption17: makeNodeComponent("caption17"),
-    member18: makeNodeComponent("member18"),
-    icon18: makeNodeComponent("icon18"),
-    title19: makeNodeComponent("title19"),
-    caption18: makeNodeComponent("caption18"),
+    miaanTeam: makeNodeComponent("miaanTeam"),
     principles: makeNodeComponent("principles"),
     gallery2: makeNodeComponent("gallery2"),
     principles2: makeNodeComponent("principles2"),
+    h2: makeNodeComponent("h2"),
     uotlines: makeNodeComponent("uotlines"),
     ul: makeNodeComponent("ul"),
     introAutoSyncGif3: makeNodeComponent("introAutoSyncGif3"),
@@ -1883,11 +1028,9 @@ export const Plasmicدربارهما = Object.assign(
     teamup: makeNodeComponent("teamup"),
     introAutoSyncTitle3: makeNodeComponent("introAutoSyncTitle3"),
     introAutoSyncCaption3: makeNodeComponent("introAutoSyncCaption3"),
+    link: makeNodeComponent("link"),
     address: makeNodeComponent("address"),
-    content: makeNodeComponent("content"),
-    addressText: makeNodeComponent("addressText"),
-    map: makeNodeComponent("map"),
-    embedHtml: makeNodeComponent("embedHtml"),
+    miaanAddress: makeNodeComponent("miaanAddress"),
     html: makeNodeComponent("html"),
     nimChat: makeNodeComponent("nimChat"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
