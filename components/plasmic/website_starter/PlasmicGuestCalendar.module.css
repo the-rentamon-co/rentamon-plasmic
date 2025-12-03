@@ -91,6 +91,7 @@
   height: 35px;
   width: 400px;
   flex-shrink: 0;
+  display: none;
 }
 @media (max-width: 500px) {
   .selectProperty:global(.__wab_instance) {
