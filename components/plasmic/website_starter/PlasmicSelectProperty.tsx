@@ -387,10 +387,9 @@ function PlasmicSelectProperty__RenderFunc(props: {
                                 return {
                                   post_token:
                                     typeof window !== "undefined"
-                                      ? window.location.pathname
-                                          .split("/")
-                                          .filter(Boolean)
-                                          .pop()
+                                      ? new URLSearchParams(
+                                          window.location.search
+                                        ).get("post_token")
                                       : null,
                                   property_id: $state.apiRequest.data.find(
                                     property =>
