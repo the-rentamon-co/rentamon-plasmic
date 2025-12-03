@@ -2892,6 +2892,9 @@ function PlasmicBookings2__RenderFunc(props: {
                   if ($state.searchInput.value != "") {
                     return false;
                   }
+                  if (!$state.reservations[0]) {
+                    return false;
+                  }
                   return true;
                 })();
               } catch (e) {
@@ -2921,7 +2924,7 @@ function PlasmicBookings2__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return true;
+                      return false;
                     }
                     throw e;
                   }

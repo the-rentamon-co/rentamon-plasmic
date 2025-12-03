@@ -62,6 +62,7 @@ import {
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -87,6 +88,7 @@ export type PlasmicSelectProperty__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   selectProperty?: Flex__<typeof Select>;
   embedHtml?: Flex__<typeof Embed>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultSelectPropertyProps {}
@@ -243,7 +245,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u0628\u0627\u0628\u062a\u0634 \u0622\u06af\u0647\u06cc \u062f\u06cc\u0648\u0627\u0631 \u06af\u0630\u0627\u0634\u062a\u06cc\u062f \u0631\u0648 \u0627\u0632 \u0644\u06cc\u0633\u062a \u0632\u06cc\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
+                  "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u06a9\u0647  \u0628\u0627\u0628\u062a\u0634 \u0622\u06af\u0647\u06cc \u062f\u06cc\u0648\u0627\u0631 \u06af\u0630\u0627\u0634\u062a\u06cc\u062f \u0631\u0648 \u0627\u0632 \u0644\u06cc\u0633\u062a \u0632\u06cc\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
                 }
               </div>
             </div>
@@ -436,6 +438,130 @@ function PlasmicSelectProperty__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            typeof $ctx !== "undefined" &&
+                            $ctx.Fragment &&
+                            $ctx.Fragment.previewApiConfig
+                              ? Object.values($ctx.Fragment.previewApiConfig)
+                                  .length > 0
+                              : false;
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const ssoBase = isMiaan
+                            ? "https://sso.miaan.ir"
+                            : "https://sso.rentamon.com";
+                          const currentUrl = window.location.href;
+                          const redirectUrl = `${ssoBase}/web/index.html?callback=${encodeURIComponent(currentUrl)}`;
+                          const refreshUrl = `${ssoBase}/auth/refresh`;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              });
+                              console.log("Refreshed Token check...");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          if (!isPlasmicStudio) {
+                            refreshToken();
+                            setInterval(refreshToken, 300000);
+                          }
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log(
+                                "No refresh token, redirecting to SSO..."
+                              );
+                              return (window.location.href = redirectUrl);
+                            } else {
+                              console.log("Attempting to refresh token...");
+                              return fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              })
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log(
+                                    "Token refreshed, reloading page:",
+                                    data
+                                  );
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error(
+                                    "Error refreshing token, redirecting:",
+                                    error
+                                  );
+                                  window.location.href = redirectUrl;
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -443,11 +569,19 @@ function PlasmicSelectProperty__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "main", "apiRequest", "selectProperty", "embedHtml"],
+  root: [
+    "root",
+    "main",
+    "apiRequest",
+    "selectProperty",
+    "embedHtml",
+    "sideEffect"
+  ],
   main: ["main", "apiRequest", "selectProperty", "embedHtml"],
   apiRequest: ["apiRequest", "selectProperty"],
   selectProperty: ["selectProperty"],
-  embedHtml: ["embedHtml"]
+  embedHtml: ["embedHtml"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -458,6 +592,7 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   selectProperty: typeof Select;
   embedHtml: typeof Embed;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -526,6 +661,7 @@ export const PlasmicSelectProperty = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     selectProperty: makeNodeComponent("selectProperty"),
     embedHtml: makeNodeComponent("embedHtml"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicSelectProperty
     internalVariantProps: PlasmicSelectProperty__VariantProps,

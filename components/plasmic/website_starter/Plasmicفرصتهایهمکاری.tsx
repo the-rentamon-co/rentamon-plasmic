@@ -127,6 +127,13 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   form3?: Flex__<typeof FormWrapper>;
   input3?: Flex__<typeof AntdInput>;
   input4?: Flex__<typeof AntdInput>;
+  job3?: Flex__<"div">;
+  introCalendarRight7?: Flex__<"div">;
+  consult3?: Flex__<typeof AntdModal>;
+  regForm3?: Flex__<"div">;
+  form4?: Flex__<typeof FormWrapper>;
+  input5?: Flex__<typeof AntdInput>;
+  input6?: Flex__<typeof AntdInput>;
   job2?: Flex__<"div">;
   introCalendarRight8?: Flex__<"div">;
   consult4?: Flex__<typeof AntdModal>;
@@ -271,6 +278,46 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
       },
       {
         path: "input8.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "consult3.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "form4.value",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "form4",
+        onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
+      },
+      {
+        path: "form4.isSubmitting",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+
+        refName: "form4",
+        onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
+      },
+      {
+        path: "input5.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
+      },
+      {
+        path: "input6.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
@@ -1463,7 +1510,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                           )}
                         >
                           {
-                            "\u06a9\u0627\u0631\u0622\u0645\u0648\u0632 \u062d\u0633\u0627\u0628\u062f\u0627\u0631\u06cc \u0648 \u0628\u06cc\u0645\u0647"
+                            "\u06a9\u0627\u0631\u0634\u0646\u0627\u0633 \u0645\u0648\u0641\u0642\u06cc\u062a \u0645\u06cc\u0632\u0628\u0627\u0646"
                           }
                         </div>
                         <div
@@ -1492,7 +1539,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                                   )}
                                 >
                                   {
-                                    "\u067e\u0627\u0631\u0647\u200c\u0648\u0642\u062a"
+                                    "\u062a\u0645\u0627\u0633 \u0628\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0648 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc\u06cc \u062f\u0631\u0645\u0648\u0631\u062f \u062e\u062f\u0645\u0627\u062a"
                                   }
                                 </li>
                                 <li
@@ -1500,69 +1547,27 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                                     projectcss.all,
                                     projectcss.li,
                                     projectcss.__wab_text,
-                                    sty.li__dcEsC
+                                    sty.li__rqJhk
                                   )}
                                 >
                                   {
-                                    "\u0647\u06cc\u0628\u0631\u06cc\u062f (\u062f\u0648\u0631\u06a9\u0627\u0631\u06cc \u0648 \u062d\u0636\u0648\u0631\u06cc)"
+                                    "\u06a9\u0645\u06a9 \u0628\u0647 \u0631\u0634\u062f \u0648 \u0627\u0631\u062a\u0642\u0627\u0621 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646"
                                   }
+                                </li>
+                                <li
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.li,
+                                    projectcss.__wab_text,
+                                    sty.li__oh2Wr
+                                  )}
+                                >
+                                  {"\u062d\u0636\u0648\u0631\u06cc"}
                                 </li>
                               </ul>
                             }
                             <React.Fragment>{""}</React.Fragment>
                           </React.Fragment>
-                        </div>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__vMeZe
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__y72Xu,
-                            "clickable"
-                          )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["goToHttpsGoftinoComCWgsGXv"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    destination: "https://goftino.com/c/WgsGXv"
-                                  };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["goToHttpsGoftinoComCWgsGXv"] != null &&
-                              typeof $steps["goToHttpsGoftinoComCWgsGXv"] ===
-                                "object" &&
-                              typeof $steps["goToHttpsGoftinoComCWgsGXv"]
-                                .then === "function"
-                            ) {
-                              $steps["goToHttpsGoftinoComCWgsGXv"] =
-                                await $steps["goToHttpsGoftinoComCWgsGXv"];
-                            }
-                          }}
-                        >
-                          {
-                            "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0647\u0645\u06a9\u0627\u0631\u06cc"
-                          }
                         </div>
                       </div>
                       <AntdModal
@@ -2019,6 +2024,548 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     </div>
                   </div>
                   <div
+                    data-plasmic-name={"job3"}
+                    data-plasmic-override={overrides.job3}
+                    className={classNames(projectcss.all, sty.job3)}
+                  >
+                    <div
+                      data-plasmic-name={"introCalendarRight7"}
+                      data-plasmic-override={overrides.introCalendarRight7}
+                      className={classNames(
+                        projectcss.all,
+                        sty.introCalendarRight7
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__dH9Um
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__ro03K
+                          )}
+                        >
+                          {
+                            "\u06a9\u0627\u0631\u0622\u0645\u0648\u0632 \u062d\u0633\u0627\u0628\u062f\u0627\u0631\u06cc \u0648 \u0628\u06cc\u0645\u0647"
+                          }
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__vtKJt
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>{""}</React.Fragment>
+                            {
+                              <ul
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.ul,
+                                  sty.ul__wk1OG
+                                )}
+                              >
+                                <li
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.li,
+                                    projectcss.__wab_text,
+                                    sty.li__jrpN5
+                                  )}
+                                >
+                                  {
+                                    "\u067e\u06cc\u06af\u06cc\u0631\u06cc \u0627\u0645\u0648\u0631 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0628\u06cc\u0645\u0647 \u0627\u0639\u0636\u0627\u0621"
+                                  }
+                                </li>
+                                <li
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.li,
+                                    projectcss.__wab_text,
+                                    sty.li__xIbl
+                                  )}
+                                >
+                                  {
+                                    "\u067e\u06cc\u06af\u06cc\u0631\u06cc \u0627\u0645\u0648\u0631 \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628\u200c\u062f\u0627\u0631\u06cc \u0648 \u0633\u0627\u0645\u0627\u0646\u0647 \u0645\u0648\u062f\u06cc\u0627\u0646"
+                                  }
+                                </li>
+                                <li
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.li,
+                                    projectcss.__wab_text,
+                                    sty.li__gA7N4
+                                  )}
+                                >
+                                  {
+                                    "\u067e\u0627\u0631\u0647\u200c\u0648\u0642\u062a (\u062f\u0648\u0631\u06a9\u0627\u0631\u06cc \u0648 \u062d\u0636\u0648\u0631\u06cc)"
+                                  }
+                                </li>
+                              </ul>
+                            }
+                            <React.Fragment>{""}</React.Fragment>
+                          </React.Fragment>
+                        </div>
+                      </div>
+                      <AntdModal
+                        data-plasmic-name={"consult3"}
+                        data-plasmic-override={overrides.consult3}
+                        className={classNames("__wab_instance", sty.consult3)}
+                        defaultStylesClassName={classNames(
+                          projectcss.root_reset,
+                          projectcss.plasmic_default_styles,
+                          projectcss.plasmic_mixins,
+                          styleTokensClassNames
+                        )}
+                        hideFooter={true}
+                        modalScopeClassName={sty["consult3__modal"]}
+                        onOpenChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "consult3",
+                            "open"
+                          ]).apply(null, eventArgs);
+                        }}
+                        open={generateStateValueProp($state, [
+                          "consult3",
+                          "open"
+                        ])}
+                        title={null}
+                        trigger={null}
+                        width={"450"}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__tEzB6
+                          )}
+                        >
+                          <div
+                            data-plasmic-name={"regForm3"}
+                            data-plasmic-override={overrides.regForm3}
+                            className={classNames(projectcss.all, sty.regForm3)}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__o4Wro
+                              )}
+                            >
+                              {
+                                "\u0634\u0645\u0627\u0631\u0647\u200c\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646\u060c \u062a\u0627 \u0628\u0627 \u0647\u0645 \u0631\u0627\u0647\u200c\u0647\u0627\u06cc \u0631\u0634\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u0645:"
+                              }
+                            </div>
+                            {(() => {
+                              const child$Props = {
+                                className: classNames(
+                                  "__wab_instance",
+                                  sty.form4
+                                ),
+                                extendedOnValuesChange: async (
+                                  ...eventArgs: any
+                                ) => {
+                                  generateStateOnChangePropForCodeComponents(
+                                    $state,
+                                    "value",
+                                    ["form4", "value"],
+                                    FormWrapper_Helpers
+                                  ).apply(null, eventArgs);
+                                },
+                                formItems: [
+                                  {
+                                    label: "Name",
+                                    name: "name",
+                                    inputType: "Text"
+                                  },
+                                  {
+                                    label: "Message",
+                                    name: "message",
+                                    inputType: "Text Area"
+                                  }
+                                ],
+                                labelCol: { span: 8, horizontalOnly: true },
+                                layout: "vertical",
+                                mode: "advanced",
+                                onIsSubmittingChange: async (
+                                  ...eventArgs: any
+                                ) => {
+                                  generateStateOnChangePropForCodeComponents(
+                                    $state,
+                                    "isSubmitting",
+                                    ["form4", "isSubmitting"],
+                                    FormWrapper_Helpers
+                                  ).apply(null, eventArgs);
+                                },
+                                ref: ref => {
+                                  $refs["form4"] = ref;
+                                },
+                                submitSlot: null,
+                                wrapperCol: { span: 16, horizontalOnly: true }
+                              };
+                              initializeCodeComponentStates(
+                                $state,
+                                [
+                                  {
+                                    name: "value",
+                                    plasmicStateName: "form4.value"
+                                  },
+                                  {
+                                    name: "isSubmitting",
+                                    plasmicStateName: "form4.isSubmitting"
+                                  }
+                                ],
+                                [],
+                                FormWrapper_Helpers ?? {},
+                                child$Props
+                              );
+
+                              return (
+                                <FormWrapper
+                                  data-plasmic-name={"form4"}
+                                  data-plasmic-override={overrides.form4}
+                                  {...child$Props}
+                                >
+                                  <FormItemWrapper
+                                    className={classNames(
+                                      "__wab_instance",
+                                      sty.formField__u6S2Q
+                                    )}
+                                    initialValue={``}
+                                    label={
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          projectcss.__wab_text,
+                                          sty.text__mYgy9
+                                        )}
+                                      >
+                                        {
+                                          "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
+                                        }
+                                      </div>
+                                    }
+                                    name={"name"}
+                                    noLabel={true}
+                                  >
+                                    {(() => {
+                                      const child$Props = {
+                                        className: classNames(
+                                          "__wab_instance",
+                                          sty.input5
+                                        ),
+                                        onChange: async (...eventArgs: any) => {
+                                          generateStateOnChangePropForCodeComponents(
+                                            $state,
+                                            "value",
+                                            ["input5", "value"],
+                                            AntdInput_Helpers
+                                          ).apply(null, eventArgs);
+                                        },
+                                        placeholder:
+                                          "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc",
+                                        size: "large",
+                                        value: generateStateValueProp($state, [
+                                          "input5",
+                                          "value"
+                                        ])
+                                      };
+                                      initializeCodeComponentStates(
+                                        $state,
+                                        [
+                                          {
+                                            name: "value",
+                                            plasmicStateName: "input5.value"
+                                          }
+                                        ],
+                                        [],
+                                        AntdInput_Helpers ?? {},
+                                        child$Props
+                                      );
+
+                                      return (
+                                        <AntdInput
+                                          data-plasmic-name={"input5"}
+                                          data-plasmic-override={
+                                            overrides.input5
+                                          }
+                                          {...child$Props}
+                                        />
+                                      );
+                                    })()}
+                                  </FormItemWrapper>
+                                  <FormItemWrapper
+                                    className={classNames(
+                                      "__wab_instance",
+                                      sty.formField__swcyF
+                                    )}
+                                    initialValue={``}
+                                    label={
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          projectcss.__wab_text,
+                                          sty.text__htoIa
+                                        )}
+                                      >
+                                        {"\u0645\u0648\u0628\u0627\u06cc\u0644"}
+                                      </div>
+                                    }
+                                    name={"mobile"}
+                                    noLabel={true}
+                                    rules={[
+                                      {
+                                        ruleType: "required",
+                                        message:
+                                          "\u0628\u062f\u0648\u0646 \u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u060c \u0686\u0637\u0648\u0631 \u0628\u0627 \u0634\u0645\u0627 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u06af\u06cc\u0631\u06cc\u0645\u061f"
+                                      },
+
+                                      {
+                                        ruleType: "max",
+                                        length: 11,
+                                        message:
+                                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
+                                      },
+
+                                      {
+                                        ruleType: "min",
+                                        length: 11,
+                                        message:
+                                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644 \u0628\u0627\u06cc\u062f \u06f1\u06f1 \u0631\u0642\u0645 \u0628\u0627\u0634\u0647"
+                                      }
+                                    ]}
+                                  >
+                                    {(() => {
+                                      const child$Props = {
+                                        className: classNames(
+                                          "__wab_instance",
+                                          sty.input6
+                                        ),
+                                        onChange: async (...eventArgs: any) => {
+                                          generateStateOnChangePropForCodeComponents(
+                                            $state,
+                                            "value",
+                                            ["input6", "value"],
+                                            AntdInput_Helpers
+                                          ).apply(null, eventArgs);
+                                        },
+                                        placeholder:
+                                          "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644",
+                                        size: "large",
+                                        type: "number",
+                                        value: generateStateValueProp($state, [
+                                          "input6",
+                                          "value"
+                                        ])
+                                      };
+                                      initializeCodeComponentStates(
+                                        $state,
+                                        [
+                                          {
+                                            name: "value",
+                                            plasmicStateName: "input6.value"
+                                          }
+                                        ],
+                                        [],
+                                        AntdInput_Helpers ?? {},
+                                        child$Props
+                                      );
+
+                                      return (
+                                        <AntdInput
+                                          data-plasmic-name={"input6"}
+                                          data-plasmic-override={
+                                            overrides.input6
+                                          }
+                                          {...child$Props}
+                                        />
+                                      );
+                                    })()}
+                                  </FormItemWrapper>
+                                  <AntdButton
+                                    className={classNames(
+                                      "__wab_instance",
+                                      sty.button__asFh
+                                    )}
+                                    disabled={false}
+                                    ghost={true}
+                                    submitsForm={false}
+                                    type={"default"}
+                                  >
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        projectcss.__wab_text,
+                                        sty.text___50Co8
+                                      )}
+                                    >
+                                      {"Submit"}
+                                    </div>
+                                  </AntdButton>
+                                </FormWrapper>
+                              );
+                            })()}
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__h00XI,
+                                "clickable"
+                              )}
+                              onClick={async event => {
+                                const $steps = {};
+
+                                $steps["updateConsult2Open"] =
+                                  $state.form4.value.mobile != ""
+                                    ? (() => {
+                                        const actionArgs = {
+                                          variable: {
+                                            objRoot: $state,
+                                            variablePath: ["consult3", "open"]
+                                          },
+                                          operation: 0,
+                                          value: false
+                                        };
+                                        return (({
+                                          variable,
+                                          value,
+                                          startIndex,
+                                          deleteCount
+                                        }) => {
+                                          if (!variable) {
+                                            return;
+                                          }
+                                          const { objRoot, variablePath } =
+                                            variable;
+
+                                          $stateSet(
+                                            objRoot,
+                                            variablePath,
+                                            value
+                                          );
+                                          return value;
+                                        })?.apply(null, [actionArgs]);
+                                      })()
+                                    : undefined;
+                                if (
+                                  $steps["updateConsult2Open"] != null &&
+                                  typeof $steps["updateConsult2Open"] ===
+                                    "object" &&
+                                  typeof $steps["updateConsult2Open"].then ===
+                                    "function"
+                                ) {
+                                  $steps["updateConsult2Open"] =
+                                    await $steps["updateConsult2Open"];
+                                }
+
+                                $steps["successToast"] =
+                                  $state.form4.value.mobile !== "" &&
+                                  /^09\d{9}$/.test($state.form4.value.mobile)
+                                    ? (() => {
+                                        const actionArgs = {
+                                          args: [
+                                            undefined,
+                                            `${$state.form4.value.name} جان اطلاعات ثبت شد، بزودی با شما ارتباط می‌گیریم :)`,
+                                            "top-center",
+                                            5000
+                                          ]
+                                        };
+                                        return $globalActions[
+                                          "Fragment.showToast"
+                                        ]?.apply(null, [...actionArgs.args]);
+                                      })()
+                                    : undefined;
+                                if (
+                                  $steps["successToast"] != null &&
+                                  typeof $steps["successToast"] === "object" &&
+                                  typeof $steps["successToast"].then ===
+                                    "function"
+                                ) {
+                                  $steps["successToast"] =
+                                    await $steps["successToast"];
+                                }
+
+                                $steps["apiRequest"] =
+                                  $state.form4.value.mobile !== ""
+                                    ? (() => {
+                                        const actionArgs = {
+                                          args: [
+                                            "POST",
+                                            "https://gateway.rentamon.com/webhook/consult-with-us",
+                                            undefined,
+                                            (() => {
+                                              try {
+                                                return $state.form4.value;
+                                              } catch (e) {
+                                                if (
+                                                  e instanceof TypeError ||
+                                                  e?.plasmicType ===
+                                                    "PlasmicUndefinedDataError"
+                                                ) {
+                                                  return undefined;
+                                                }
+                                                throw e;
+                                              }
+                                            })()
+                                          ]
+                                        };
+                                        return $globalActions[
+                                          "Fragment.apiRequest"
+                                        ]?.apply(null, [...actionArgs.args]);
+                                      })()
+                                    : undefined;
+                                if (
+                                  $steps["apiRequest"] != null &&
+                                  typeof $steps["apiRequest"] === "object" &&
+                                  typeof $steps["apiRequest"].then ===
+                                    "function"
+                                ) {
+                                  $steps["apiRequest"] =
+                                    await $steps["apiRequest"];
+                                }
+
+                                $steps["errorToast"] =
+                                  !$state.form4.value.mobile ||
+                                  !$state.form4.value.mobile.match(/^09\d{9}$/)
+                                    ? (() => {
+                                        const actionArgs = {
+                                          args: [
+                                            "error",
+                                            "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644\u062a\u0648 \u06a9\u0647 \u0647\u0646\u0648\u0632 \u0648\u0627\u0631\u062f \u0646\u06a9\u0631\u062f\u06cc!",
+                                            "top-center",
+                                            5000
+                                          ]
+                                        };
+                                        return $globalActions[
+                                          "Fragment.showToast"
+                                        ]?.apply(null, [...actionArgs.args]);
+                                      })()
+                                    : undefined;
+                                if (
+                                  $steps["errorToast"] != null &&
+                                  typeof $steps["errorToast"] === "object" &&
+                                  typeof $steps["errorToast"].then ===
+                                    "function"
+                                ) {
+                                  $steps["errorToast"] =
+                                    await $steps["errorToast"];
+                                }
+                              }}
+                            >
+                              {
+                                "\u0627\u0631\u0633\u0627\u0644 \u062f\u0631\u062e\u0648\u0627\u0633\u062a"
+                              }
+                            </div>
+                          </div>
+                        </div>
+                      </AntdModal>
+                    </div>
+                  </div>
+                  <div
                     data-plasmic-name={"job2"}
                     data-plasmic-override={overrides.job2}
                     className={classNames(projectcss.all, sty.job2)}
@@ -2074,7 +2621,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                                   )}
                                 >
                                   {
-                                    "\u062a\u0631\u062c\u06cc\u062d\u0627 \u062a\u0645\u0627\u0645\u200c\u0648\u0642\u062a"
+                                    "\u062a\u0648\u0644\u06cc\u062f \u0645\u062d\u062a\u0648\u0627 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645 \u0648 \u0633\u0627\u06cc\u0631 \u0634\u0628\u06a9\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u062a\u0645\u0627\u0639\u06cc"
                                   }
                                 </li>
                                 <li
@@ -2082,69 +2629,17 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                                     projectcss.all,
                                     projectcss.li,
                                     projectcss.__wab_text,
-                                    sty.li__tnUt
+                                    sty.li___7JoYp
                                   )}
                                 >
                                   {
-                                    "\u062a\u0648\u0644\u06cc\u062f \u0645\u062d\u062a\u0648\u0627 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u0633\u062a\u0627\u06af\u0631\u0627\u0645"
+                                    "\u062a\u0631\u062c\u06cc\u062d\u0627 \u062a\u0645\u0627\u0645\u200c\u0648\u0642\u062a"
                                   }
                                 </li>
                               </ul>
                             }
                             <React.Fragment>{""}</React.Fragment>
                           </React.Fragment>
-                        </div>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__u6D3E
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__n2IPa,
-                            "clickable"
-                          )}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["goToHttpsGoftinoComCWgsGXv"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    destination: "https://goftino.com/c/WgsGXv"
-                                  };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["goToHttpsGoftinoComCWgsGXv"] != null &&
-                              typeof $steps["goToHttpsGoftinoComCWgsGXv"] ===
-                                "object" &&
-                              typeof $steps["goToHttpsGoftinoComCWgsGXv"]
-                                .then === "function"
-                            ) {
-                              $steps["goToHttpsGoftinoComCWgsGXv"] =
-                                await $steps["goToHttpsGoftinoComCWgsGXv"];
-                            }
-                          }}
-                        >
-                          {
-                            "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0647\u0645\u06a9\u0627\u0631\u06cc"
-                          }
                         </div>
                       </div>
                       <AntdModal
@@ -2602,6 +3097,68 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                   </div>
                 </div>
               </div>
+              <div className={classNames(projectcss.all, sty.freeBox__mT7Za)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__c4Mb
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u0627\u0645\u06a9\u0627\u0646\u0634 \u0647\u0633\u062a \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0642\u0639\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0627\u0642\u062f\u0627\u0645 \u06a9\u0646\u06cc\u060c \u0648 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0628\u0647 \u0633\u0645\u062a builder \u0634\u062f\u0646 \u0628\u0631\u06cc. \u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u06cc\u0647 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646 \u0647\u0645\u0647\u200c\u0641\u0646 \u062d\u0631\u06cc\u0641 \u0628\u0634\u06cc"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u0627\u0645\u06a9\u0627\u0646\u0634 \u0647\u0633\u062a \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0642\u0639\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0627\u0642\u062f\u0627\u0645 \u06a9\u0646\u06cc\u060c \u0648 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0628\u0647 \u0633\u0645\u062a builder \u0634\u062f\u0646 \u0628\u0631\u06cc. \u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u06cc\u0647 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646 \u0647\u0645\u0647\u200c\u0641\u0646 \u062d\u0631\u06cc\u0641 \u0628\u0634\u06cc"
+                      : "\u0627\u0645\u06a9\u0627\u0646\u0634 \u0647\u0633\u062a \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0642\u0639\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0627\u0642\u062f\u0627\u0645 \u06a9\u0646\u06cc\u060c \u0648 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0628\u0647 \u0633\u0645\u062a builder \u0634\u062f\u0646 \u0628\u0631\u06cc\n\u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u06cc\u0647 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646 \u0647\u0645\u0647\u200c\u0641\u0646 \u062d\u0631\u06cc\u0641 \u0628\u0634\u06cc"}
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__zz6QQ)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__giAs,
+                      "clickable"
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToHttpsGoftinoComCWgsGXv"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: "https://goftino.com/c/WgsGXv"
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToHttpsGoftinoComCWgsGXv"] != null &&
+                        typeof $steps["goToHttpsGoftinoComCWgsGXv"] ===
+                          "object" &&
+                        typeof $steps["goToHttpsGoftinoComCWgsGXv"].then ===
+                          "function"
+                      ) {
+                        $steps["goToHttpsGoftinoComCWgsGXv"] =
+                          await $steps["goToHttpsGoftinoComCWgsGXv"];
+                      }
+                    }}
+                  >
+                    {
+                      "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0647\u0645\u06a9\u0627\u0631\u06cc"
+                    }
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               data-plasmic-name={"address"}
@@ -2740,6 +3297,13 @@ const PlasmicDescendants = {
     "form3",
     "input3",
     "input4",
+    "job3",
+    "introCalendarRight7",
+    "consult3",
+    "regForm3",
+    "form4",
+    "input5",
+    "input6",
     "job2",
     "introCalendarRight8",
     "consult4",
@@ -2789,6 +3353,13 @@ const PlasmicDescendants = {
     "form3",
     "input3",
     "input4",
+    "job3",
+    "introCalendarRight7",
+    "consult3",
+    "regForm3",
+    "form4",
+    "input5",
+    "input6",
     "job2",
     "introCalendarRight8",
     "consult4",
@@ -2854,6 +3425,13 @@ const PlasmicDescendants = {
     "form3",
     "input3",
     "input4",
+    "job3",
+    "introCalendarRight7",
+    "consult3",
+    "regForm3",
+    "form4",
+    "input5",
+    "input6",
     "job2",
     "introCalendarRight8",
     "consult4",
@@ -2884,6 +3462,28 @@ const PlasmicDescendants = {
   form3: ["form3", "input3", "input4"],
   input3: ["input3"],
   input4: ["input4"],
+  job3: [
+    "job3",
+    "introCalendarRight7",
+    "consult3",
+    "regForm3",
+    "form4",
+    "input5",
+    "input6"
+  ],
+  introCalendarRight7: [
+    "introCalendarRight7",
+    "consult3",
+    "regForm3",
+    "form4",
+    "input5",
+    "input6"
+  ],
+  consult3: ["consult3", "regForm3", "form4", "input5", "input6"],
+  regForm3: ["regForm3", "form4", "input5", "input6"],
+  form4: ["form4", "input5", "input6"],
+  input5: ["input5"],
+  input6: ["input6"],
   job2: [
     "job2",
     "introCalendarRight8",
@@ -2952,6 +3552,13 @@ type NodeDefaultElementType = {
   form3: typeof FormWrapper;
   input3: typeof AntdInput;
   input4: typeof AntdInput;
+  job3: "div";
+  introCalendarRight7: "div";
+  consult3: typeof AntdModal;
+  regForm3: "div";
+  form4: typeof FormWrapper;
+  input5: typeof AntdInput;
+  input6: typeof AntdInput;
   job2: "div";
   introCalendarRight8: "div";
   consult4: typeof AntdModal;
@@ -3066,6 +3673,13 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     form3: makeNodeComponent("form3"),
     input3: makeNodeComponent("input3"),
     input4: makeNodeComponent("input4"),
+    job3: makeNodeComponent("job3"),
+    introCalendarRight7: makeNodeComponent("introCalendarRight7"),
+    consult3: makeNodeComponent("consult3"),
+    regForm3: makeNodeComponent("regForm3"),
+    form4: makeNodeComponent("form4"),
+    input5: makeNodeComponent("input5"),
+    input6: makeNodeComponent("input6"),
     job2: makeNodeComponent("job2"),
     introCalendarRight8: makeNodeComponent("introCalendarRight8"),
     consult4: makeNodeComponent("consult4"),
