@@ -525,7 +525,9 @@ function PlasmicHomepage__RenderFunc(props: {
                           sty.embedHtml___2YmQ
                         )}
                         code={
-                          '<video\r\n    src="https://media.rentamon.com/video%2Fauto-sync.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>'
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? '<video\r\n    src="https://media.rentamon.com/gif%2FHomepage%20Paseban.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>'
+                            : '<video\r\n    src="https://media.rentamon.com/gif%2FHomepage%20Paseban.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>'
                         }
                       />
                     </div>

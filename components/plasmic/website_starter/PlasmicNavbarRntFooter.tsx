@@ -660,9 +660,8 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 ? (() => {
                     try {
                       return (
-                        $state.checkUserPendingReserve.loading == false &&
-                        $state.checkUserPendingReserve.data != null &&
-                        $state.checkUserPendingReserve.error == null
+                        // ($state.checkUserPendingReserve.loading == false && $state.checkUserPendingReserve.data != null && $state.checkUserPendingReserve.error == null)
+                        $state.checkUserPendingReserve.data[0].count_id != null
                       );
                     } catch (e) {
                       if (
