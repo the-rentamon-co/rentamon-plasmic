@@ -628,7 +628,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>
                       {
-                        "\u0641\u0631\u0635\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0645\u06cc\u0627\u0646 \u0631\u0648 "
+                        "\u0641\u0631\u0635\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0645\u06cc\u0627\u0646 \u0631\u0648\u00a0"
                       }
                     </React.Fragment>
                     {
@@ -643,39 +643,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                           sty.link
                         )}
                         component={Link}
-                        href={""}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["goToفرصتهایهمکاری"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  destination: `/join-our-journey`
-                                };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["goToفرصتهایهمکاری"] != null &&
-                            typeof $steps["goToفرصتهایهمکاری"] === "object" &&
-                            typeof $steps["goToفرصتهایهمکاری"].then ===
-                              "function"
-                          ) {
-                            $steps["goToفرصتهایهمکاری"] =
-                              await $steps["goToفرصتهایهمکاری"];
-                          }
-                        }}
+                        href={"https://miaan.ir/join-our-journey/"}
                         platform={"nextjs"}
                       >
                         {"\u0627\u06cc\u0646\u062c\u0627"}

@@ -761,7 +761,21 @@ function PlasmicSideBar2__RenderFunc(props: {
 
             $steps["updateModalSidebarOpen2"] = true
               ? (() => {
-                  const actionArgs = { destination: `/reservations` };
+                  const actionArgs = {
+                    destination: (() => {
+                      try {
+                        return "/bookings/#today";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  };
                   return (({ destination }) => {
                     if (
                       typeof destination === "string" &&

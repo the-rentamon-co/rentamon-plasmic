@@ -1477,6 +1477,11 @@
   user-select: none;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .textdayStatus_firstDaySmartBookingPast__lXDgFYZlR {
+    color: #c5c5c5;
+  }
+}
 .textdayStatus_lastDaySmartBookingPast__lXDgFtgeof {
   color: var(--token-8R7jjC_-F9FF);
 }
@@ -3067,7 +3072,6 @@
     height: auto;
     font-size: 12px;
     font-weight: 400;
-    color: var(--token-8R7jjC_-F9FF);
     text-align: center;
     letter-spacing: -0.6px;
     white-space: pre;
@@ -3137,7 +3141,6 @@
     height: auto;
     font-size: 12px;
     font-weight: 400;
-    color: var(--token-8R7jjC_-F9FF);
     text-align: center;
     letter-spacing: -0.6px;
     white-space: pre;
@@ -3145,6 +3148,7 @@
     text-overflow: clip;
     max-width: 100%;
     overflow: hidden;
+    color: #c5c5c5;
     min-width: 0;
     padding: 0px 2px;
   }

@@ -3206,6 +3206,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/guest-calendar/[property_id]"
+        },
+        {
+          "id": "3WANQH2QE7qG",
+          "name": "SelectProperty",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSelectProperty.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/direct-booking/select-property.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSelectProperty.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/direct-booking/select-property"
         }
       ],
       "icons": [
