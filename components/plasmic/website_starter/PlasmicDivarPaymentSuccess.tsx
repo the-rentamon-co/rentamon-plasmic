@@ -253,6 +253,7 @@ function PlasmicDivarPaymentSuccess__RenderFunc(props: {
                   throw e;
                 }
               })()}
+              children={null}
               className={classNames("__wab_instance", sty.apiRequest)}
               errorDisplay={
                 <div
@@ -325,184 +326,9 @@ function PlasmicDivarPaymentSuccess__RenderFunc(props: {
                   throw e;
                 }
               })()}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__mLaVf)}>
-                <div className={classNames(projectcss.all, sty.freeBox__aM4G6)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__xum3E)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__wWBde
-                      )}
-                    >
-                      {"\u06a9\u062f \u067e\u06cc\u06af\u06cc\u0631\u06cc:"}
-                    </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__xjpCf)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__nn2E4
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return (() => {
-                              function convertToPersianNumber(number) {
-                                const englishToPersianMap = {
-                                  "0": "۰",
-                                  "1": "۱",
-                                  "2": "۲",
-                                  "3": "۳",
-                                  "4": "۴",
-                                  "5": "۵",
-                                  "6": "۶",
-                                  "7": "۷",
-                                  "8": "۸",
-                                  "9": "۹"
-                                };
-                                return number
-                                  .toString()
-                                  .split("")
-                                  .map(
-                                    digit => englishToPersianMap[digit] || digit
-                                  )
-                                  .join("");
-                              }
-                              const englishNumber =
-                                $state.apiRequest.data.track_id;
-                              const persianNumber =
-                                convertToPersianNumber(englishNumber);
-                              return persianNumber;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u06f9\u06f8\u06f2\u06f3\u06f2\u06f3\u06f4\u06f5\u06f3";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__rHCzN)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__lV2Zy)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__hvdAu
-                      )}
-                    >
-                      {"\u0645\u0628\u0644\u063a:"}
-                    </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__dQteJ)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__k0ToJ
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return (() => {
-                              const amount = $state.apiRequest.data.amount / 10;
-                              const formattedAmount = parseInt(
-                                amount,
-                                10
-                              ).toLocaleString("fa-IR");
-                              return formattedAmount + "  تومان";
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u06f5\u06f0\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__n4AdA)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__jqQf)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__ntuUe
-                      )}
-                    >
-                      {"\u062a\u0627\u0631\u06cc\u062e"}
-                    </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__cbbQo)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___1PQ3W
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return (() => {
-                              return new Date().toLocaleDateString(
-                                "fa-IR-u-nu"
-                              );
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u06f4\u06f2\u06f5\u06f6\u06f5\u06f2\u06f1\u06f2\u06f4\u06f3\u06f2";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ApiRequest>
-            <div className={classNames(projectcss.all, sty.freeBox__aiXp)}>
-              <Embed
-                data-plasmic-name={"embedHtml"}
-                data-plasmic-override={overrides.embedHtml}
-                className={classNames("__wab_instance", sty.embedHtml)}
-                code={
-                  ' <div id="counter" style="font-size: 24px; font-weight: bold;"></div>\r\n\r\n  <script>\r\n    let count = 1;\r\n    const counterElement = document.getElementById(\'counter\');\r\n    counterElement.textContent = count;\r\n    \r\n    const interval = setInterval(() => {\r\n      count++;\r\n      counterElement.textContent = count;\r\n      if (count === 10) {\r\n        clearInterval(interval);\r\n      }\r\n    }, 1000); // \u0647\u0631 \u06f1 \u062b\u0627\u0646\u06cc\u0647 \u06cc\u06a9 \u0639\u062f\u062f\r\n  </script>'
-                }
-              />
+            />
 
+            <div className={classNames(projectcss.all, sty.freeBox__aiXp)}>
               <div
                 className={classNames(
                   projectcss.all,
@@ -510,9 +336,19 @@ function PlasmicDivarPaymentSuccess__RenderFunc(props: {
                   sty.text__uLfWy
                 )}
               >
-                {
-                  "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u0635\u0641\u062d\u0647 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a"
-                }
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631..."
+                  : "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631"}
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__vaKeo)}>
+                <Embed
+                  data-plasmic-name={"embedHtml"}
+                  data-plasmic-override={overrides.embedHtml}
+                  className={classNames("__wab_instance", sty.embedHtml)}
+                  code={
+                    '<div style="width: 100%; display: flex; justify-content: center;">\r\n  <style>\r\n    .divar-static-btn {\r\n      /* \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0635\u0644\u06cc \u0628\u0631\u0627\u06cc \u062d\u0627\u0644\u062a Secondary */\r\n      background-color: white; /* \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u0633\u0641\u06cc\u062f (\u062a\u0648 \u062e\u0627\u0644\u06cc) */\r\n      color: #a62626; /* \u0645\u062a\u0646 \u0642\u0631\u0645\u0632 */\r\n      border: 1px solid #a62626; /* \u0628\u0648\u0631\u062f\u0631 \u0642\u0631\u0645\u0632 */\r\n      \r\n      border-radius: 4px;\r\n      padding: 10px 10px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      cursor: pointer;\r\n      font-family: inherit;\r\n      /* \u0633\u0627\u06cc\u0647 \u0631\u0627 \u0628\u0631\u0627\u06cc \u062f\u06a9\u0645\u0647 \u062b\u0627\u0646\u0648\u06cc\u0647 \u062d\u0630\u0641 \u06a9\u0631\u062f\u0645 \u062a\u0627 \u0641\u0644\u062a\u200c\u062a\u0631 \u0628\u0627\u0634\u062f (\u0627\u062e\u062a\u06cc\u0627\u0631\u06cc) */\r\n      box-shadow: none; \r\n      transition: all 0.2s ease;\r\n    }\r\n    \r\n    .divar-static-btn:hover {\r\n      /* \u062d\u0627\u0644\u062a \u0647\u0627\u0648\u0631: \u06cc\u06a9 \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u062e\u06cc\u0644\u06cc \u0631\u0648\u0634\u0646 \u0642\u0631\u0645\u0632 \u0648 \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0628\u0648\u0631\u062f\u0631 */\r\n      background-color: #fcf2f2; \r\n      border-color: #851e1e;\r\n      color: #851e1e;\r\n    }\r\n    \r\n    .divar-static-btn:active {\r\n      transform: scale(0.98);\r\n      background-color: #fceceb; /* \u0631\u0646\u06af \u06a9\u0645\u06cc \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0645\u0648\u0642\u0639 \u06a9\u0644\u06cc\u06a9 */\r\n    }\r\n  </style>\r\n\r\n  <button onclick="window.location.href=\'https://open-platform-redirect.divar.ir/completion\'" class="divar-static-btn">\r\n    \u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631\r\n  </button>\r\n</div>'
+                  }
+                />
               </div>
             </div>
             <div

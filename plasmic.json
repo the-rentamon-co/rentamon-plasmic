@@ -3234,6 +3234,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/divar/payment/success"
+        },
+        {
+          "id": "HF_nnfWpImAL",
+          "name": "DivarPaymentError",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicDivarPaymentError.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/divar/payment/error.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicDivarPaymentError.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/divar/payment/error"
         }
       ],
       "icons": [
