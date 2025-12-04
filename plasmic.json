@@ -3220,6 +3220,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/direct-booking/select-property"
+        },
+        {
+          "id": "LS9_g588N4dw",
+          "name": "DivarPaymentSuccess",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicDivarPaymentSuccess.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/divar/payment/success.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicDivarPaymentSuccess.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/divar/payment/success"
         }
       ],
       "icons": [

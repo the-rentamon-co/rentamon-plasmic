@@ -74,6 +74,7 @@ import sty from "./PlasmicSideBar2.module.css"; // plasmic-import: 03ZPQfFyBXgI/
 import Icon26Icon from "./icons/PlasmicIcon__Icon26"; // plasmic-import: re7g4HwqLfNb/icon
 import Icon96Icon from "./icons/PlasmicIcon__Icon96"; // plasmic-import: KF8kMPq8z-hR/icon
 import Icon6Icon from "./icons/PlasmicIcon__Icon6"; // plasmic-import: 7-GvAf5G7Hmg/icon
+import NavPropertiesSvgBlueSvgIcon from "./icons/PlasmicIcon__NavPropertiesSvgBlueSvg"; // plasmic-import: BkYDGkr821TO/icon
 import InstantBookingSvgIcon from "./icons/PlasmicIcon__InstantBookingSvg"; // plasmic-import: A-ryV1haFhKU/icon
 import Icon48Icon from "./icons/PlasmicIcon__Icon48"; // plasmic-import: EUsJ3MtRCJEN/icon
 import Icon78Icon from "./icons/PlasmicIcon__Icon78"; // plasmic-import: z2I2p-YJGmt6/icon
@@ -107,6 +108,7 @@ export type PlasmicSideBar2__OverridesType = {
   reservations?: Flex__<"div">;
   channelManager?: Flex__<"div">;
   calendar?: Flex__<"div">;
+  calendar2?: Flex__<"div">;
   logout3?: Flex__<"div">;
   right11?: Flex__<"div">;
   mid12?: Flex__<"div">;
@@ -1025,6 +1027,85 @@ function PlasmicSideBar2__RenderFunc(props: {
           </div>
         </div>
         <div
+          data-plasmic-name={"calendar2"}
+          data-plasmic-override={overrides.calendar2}
+          className={classNames(projectcss.all, sty.calendar2, "clickable")}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["updateModalSidebarOpen"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["modalSidebar", "open"]
+                    },
+                    operation: 0
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateModalSidebarOpen"] != null &&
+              typeof $steps["updateModalSidebarOpen"] === "object" &&
+              typeof $steps["updateModalSidebarOpen"].then === "function"
+            ) {
+              $steps["updateModalSidebarOpen"] =
+                await $steps["updateModalSidebarOpen"];
+            }
+
+            $steps["goToProperties"] = true
+              ? (() => {
+                  const actionArgs = { destination: `/properties` };
+                  return (({ destination }) => {
+                    if (
+                      typeof destination === "string" &&
+                      destination.startsWith("#")
+                    ) {
+                      document
+                        .getElementById(destination.substr(1))
+                        .scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      __nextRouter?.push(destination);
+                    }
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["goToProperties"] != null &&
+              typeof $steps["goToProperties"] === "object" &&
+              typeof $steps["goToProperties"].then === "function"
+            ) {
+              $steps["goToProperties"] = await $steps["goToProperties"];
+            }
+          }}
+        >
+          <NavPropertiesSvgBlueSvgIcon
+            className={classNames(projectcss.all, sty.svg__hqReH)}
+            role={"img"}
+          />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__qb13S
+            )}
+          >
+            {
+              "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627"
+            }
+          </div>
+        </div>
+        <div
           className={classNames(
             projectcss.all,
             sty.freeBox___8UaoI,
@@ -1740,6 +1821,7 @@ const PlasmicDescendants = {
     "reservations",
     "channelManager",
     "calendar",
+    "calendar2",
     "logout3",
     "right11",
     "mid12",
@@ -1754,6 +1836,7 @@ const PlasmicDescendants = {
   reservations: ["reservations"],
   channelManager: ["channelManager"],
   calendar: ["calendar"],
+  calendar2: ["calendar2"],
   logout3: ["logout3", "right11", "mid12"],
   right11: ["right11"],
   mid12: ["mid12"],
@@ -1773,6 +1856,7 @@ type NodeDefaultElementType = {
   reservations: "div";
   channelManager: "div";
   calendar: "div";
+  calendar2: "div";
   logout3: "div";
   right11: "div";
   mid12: "div";
@@ -1850,6 +1934,7 @@ export const PlasmicSideBar2 = Object.assign(
     reservations: makeNodeComponent("reservations"),
     channelManager: makeNodeComponent("channelManager"),
     calendar: makeNodeComponent("calendar"),
+    calendar2: makeNodeComponent("calendar2"),
     logout3: makeNodeComponent("logout3"),
     right11: makeNodeComponent("right11"),
     mid12: makeNodeComponent("mid12"),
