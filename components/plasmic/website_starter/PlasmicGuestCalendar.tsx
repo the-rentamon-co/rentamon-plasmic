@@ -438,7 +438,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                     <ApiRequest
                       data-plasmic-name={"profile2"}
                       data-plasmic-override={overrides.profile2}
-                      children={null}
                       className={classNames("__wab_instance", sty.profile2)}
                       errorDisplay={null}
                       loadingDisplay={null}
@@ -511,75 +510,100 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                               }
                             })()
                       }
-                    />
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___3Lcva)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__xvMTf)}
-                    >
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__kGe4)}
-                        displayHeight={"auto"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={(() => {
-                          try {
-                            return $state.profile2.data.profile_pic;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()}
-                      />
-                    </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__eKUfW)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___7V5N
+                          sty.freeBox___3Lcva
                         )}
                       >
-                        <React.Fragment>
-                          {"نام میزبان: " +
-                            $state.profile2.data.first_name +
-                            " " +
-                            $state.profile2.data.last_name}
-                        </React.Fragment>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__xvMTf
+                          )}
+                        >
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__kGe4)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={(() => {
+                              try {
+                                return $state.profile2.data.profile_pic;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+                          />
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__eKUfW
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___7V5N
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    "نام میزبان: " +
+                                    $state.profile2.data.first_name +
+                                    " " +
+                                    $state.profile2.data.last_name
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox___4V9W6
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__fpEv5
+                            )}
+                          >
+                            <React.Fragment>
+                              {"نام اقامتگاه: " + $state.selectProperty.value}
+                            </React.Fragment>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___4V9W6
-                      )}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__fpEv5
-                        )}
-                      >
-                        <React.Fragment>
-                          {"نام اقامتگاه: " + $state.selectProperty.value}
-                        </React.Fragment>
-                      </div>
-                    </div>
+                    </ApiRequest>
                   </div>
                 </div>
               </div>
@@ -637,28 +661,8 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                     data-plasmic-name={"getPrice"}
                     data-plasmic-override={overrides.getPrice}
                     className={classNames("__wab_instance", sty.getPrice)}
-                    errorDisplay={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__pwfcX
-                        )}
-                      >
-                        {"Error fetching data"}
-                      </div>
-                    }
-                    loadingDisplay={
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__yukgb
-                        )}
-                      >
-                        {"Loading..."}
-                      </div>
-                    }
+                    errorDisplay={null}
+                    loadingDisplay={null}
                     method={"GET"}
                     onError={async (...eventArgs: any) => {
                       generateStateOnChangeProp($state, [
