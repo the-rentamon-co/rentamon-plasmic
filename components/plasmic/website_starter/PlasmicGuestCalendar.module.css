@@ -202,16 +202,17 @@
   flex-direction: row;
   position: relative;
   align-items: center;
-  justify-content: flex-start;
-  width: 100%;
+  justify-content: center;
+  width: auto;
   height: auto;
   max-width: 35%;
-  min-width: 0;
   padding: 8px;
 }
 .embedHtml___8Db1G:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+  height: 100%;
+  min-height: 0;
 }
 .img {
   animation: none;

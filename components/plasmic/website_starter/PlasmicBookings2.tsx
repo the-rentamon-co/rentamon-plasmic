@@ -920,7 +920,7 @@ function PlasmicBookings2__RenderFunc(props: {
                   await $steps["removeSmartBookingAlert"];
               }
 
-              $steps["runCode4"] = true
+              $steps["runCode4"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -3355,27 +3355,27 @@ function PlasmicBookings2__RenderFunc(props: {
                                     today.setHours(0, 0, 0, 0);
                                     const tomorrow = new Date(today);
                                     tomorrow.setDate(tomorrow.getDate() + 1);
+                                    const weekdayIndex = inputDate.getDay();
+                                    const weekday =
+                                      persianWeekdays[weekdayIndex];
                                     if (
                                       inputDate.getTime() === today.getTime()
                                     ) {
-                                      return "امروز";
+                                      return `امروز ${weekday}`;
                                     }
                                     if (
                                       inputDate.getTime() === tomorrow.getTime()
                                     ) {
-                                      return "فردا";
+                                      return `فردا ${weekday}`;
                                     }
                                     const gYear = inputDate.getFullYear();
                                     const gMonth = inputDate.getMonth() + 1;
                                     const gDay = inputDate.getDate();
-                                    const weekdayIndex = inputDate.getDay();
                                     const { jy, jm, jd } = toJalali(
                                       gYear,
                                       gMonth,
                                       gDay
                                     );
-                                    const weekday =
-                                      persianWeekdays[weekdayIndex];
                                     const monthName = persianMonths[jm - 1];
                                     return `${weekday} ${toPersianDigits(jd)} ${monthName}`;
                                   }

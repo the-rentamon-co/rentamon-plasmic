@@ -542,8 +542,9 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 
 <style>
   #custom-calendar-container {
-    --bg-prebooked: #f5f5f5;
+    --bg-prebooked: #e2e2e2;
     --bg-selected: #2727ea;
+    --bg-range: #e0e0ff;
     --bg-free: #ffffff; 
     --border-free: #ddd; 
     --text-white: #fff; 
@@ -555,10 +556,13 @@ function PlasmicGuestCalendar__RenderFunc(props: {
     
     width: 100%; 
     max-width: 400px; 
-    padding: 10px; 
+    padding: 10px; /* پدینگ کلی */
     box-sizing: border-box; 
     direction: rtl;
     font-family: inherit;
+    
+    /* تغییر ۱: این خط باعث می‌شود کل تقویم در وسط والد خود قرار بگیرد */
+    margin: 0 auto; 
   }
   
   #custom-calendar-container * { box-sizing: border-box; }
@@ -568,11 +572,28 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   #custom-calendar-container .nav-btn { background: transparent !important; border: none !important; box-shadow: none !important; cursor: pointer; padding: 5px 15px; font-size: 1.5rem !important; color: #888 !important; display: flex; align-items: center; justify-content: center; line-height: 1; }
   #custom-calendar-container .nav-btn:disabled { color: #e0e0e0 !important; cursor: not-allowed; }
   
-  #custom-calendar-container .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; margin-bottom: 10px; font-size: 0.85rem; color: #888; font-weight: normal; }
+  /* تغییر ۲: اضافه کردن gap و تراز وسط برای هماهنگی با پایین */
+  #custom-calendar-container .weekdays { 
+      display: grid; 
+      grid-template-columns: repeat(7, 1fr); 
+      text-align: center; 
+      margin-bottom: 10px; 
+      font-size: 0.85rem; 
+      color: #888; 
+      font-weight: normal;
+      gap: 6px; /* هماهنگ با روزهای ماه */
+      justify-content: center; /* تراز محتوا در وسط */
+  }
   
-  #custom-calendar-container .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  /* تغییر ۳: تراز وسط برای شبکه روزها */
+  #custom-calendar-container .days-grid { 
+      display: grid; 
+      grid-template-columns: repeat(7, 1fr); 
+      gap: 6px; 
+      justify-content: center; /* اگر عرض پر نشد، وسط‌چین شود */
+  }
   
-  /* استایل سلول‌های روز */
+  /* بقیه استایل‌ها بدون تغییر */
   #custom-calendar-container .day-cell { 
       aspect-ratio: 1/1.1; 
       border-radius: var(--radius); 
@@ -593,9 +614,9 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   }
   
   .day-price {
-      font-size: 0.6rem;
+      font-size: 0.8rem; 
       color: var(--text-price);
-      margin-top: 2px;
+      margin-top: 4px;
       font-weight: normal;
   }
 
@@ -618,6 +639,13 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   }
   #custom-calendar-container .selected .day-price { color: #e0e0e0; } 
   #custom-calendar-container .selected.friday { color: var(--text-white); }
+
+  #custom-calendar-container .in-range {
+      background-color: var(--bg-range); 
+      border-color: var(--bg-selected); 
+      color: var(--text-dark); 
+  }
+  #custom-calendar-container .in-range .day-price { color: var(--text-price); }
   
   #custom-calendar-container .past-day { opacity: 0; pointer-events: none; }
   #custom-calendar-container .empty-slot { pointer-events: none; }
@@ -630,7 +658,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   #custom-calendar-container .box-free { background: #fff; border: 1px solid #ccc; }
   #custom-calendar-container .box-blocked { background: var(--bg-prebooked); }
   #custom-calendar-container .box-selected { background: var(--bg-selected); }
-
 </style>
 </head>
 <body>
@@ -646,15 +673,12 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   <div class="days-grid" id="calendar-grid"></div>
   
   <div class="legend" id="legend-section" style="display:none;">
-    <div class="legend-item"><div class="legend-box box-free"></div><span>قابل رزرو</span></div>
-    <div class="legend-item"><div class="legend-box box-selected"></div><span>انتخاب شما</span></div>
+    <div class="legend-item"><div class="legend-box box-free"></div><span>خالی</span></div>
     <div class="legend-item"><div class="legend-box box-blocked"></div><span>غیرفعال / پر</span></div>
   </div>
 </div>
 
 <script>
-  // متغیرها را با استفاده از دلار و آکولاد از پلازمیک می‌گیریم
-  // از var استفاده می‌کنیم تا در رندرهای مجدد خطا ندهد
   var API_BOOKED_DATES = ${JSON.stringify($state.apiRequest2?.data?.dates ?? [])};
   var API_PRICES_DATA = ${JSON.stringify($state.getPrice?.data ?? [])};
 
@@ -711,7 +735,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
     } catch (error) {
       console.error("Error initializing calendar:", error);
     }
-    // در کد تقویم، داخل تابع initCalendar این خط را اضافه کنید:
     window.dailyPrices = dailyPrices;
   }
 
@@ -735,7 +758,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       return j.jy + "-" + mStr + "-" + dStr;
   }
 
-  function renderCalendar() {
+ function renderCalendar() {
     var grid = document.getElementById('calendar-grid');
     var label = document.getElementById('month-year-label');
     if (!grid || !label) return;
@@ -755,6 +778,10 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       grid.appendChild(emptyCell);
     }
 
+    var sortedDates = Array.from(userSelectedDates).sort();
+    var firstDate = sortedDates[0];
+    var lastDate = sortedDates[sortedDates.length - 1];
+
     for (var day = 1; day <= daysInMonth; day++) {
       var cell = document.createElement('div');
       
@@ -764,7 +791,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       
       var isPast = isDateInPast(currentYear, currentMonth, day);
       var isPreBooked = preBookedDates.has(dateString);
-      var isUserSelected = userSelectedDates.has(dateString);
       
       var price = dailyPrices.get(dateString);
       var hasPrice = (price !== undefined && price !== null && price > 0);
@@ -781,17 +807,21 @@ function PlasmicGuestCalendar__RenderFunc(props: {
           classes += ' blocked';
       }
       else {
-          if (isUserSelected) {
-              classes += ' selected';
+          if (userSelectedDates.has(dateString)) {
+              if (dateString === firstDate || dateString === lastDate) {
+                  classes += ' selected';
+              } else {
+                  classes += ' in-range';
+              }
           } else {
               classes += ' free';
           }
-          
           var dayOfWeekIndex = (day - 1 + startDayIndex) % 7;
           if (dayOfWeekIndex === 6) classes += ' friday';
       }
       
       var content = '<span>' + toPersianNum(day) + '</span>';
+      // قیمت را فقط اگر رزرو نیست نشان بده، یا اگر رزرو است ولی روز خروج ماست (که هندل کردنش سخته، پس ساده نگه میداریم)
       if (hasPrice && !isPreBooked && !isPast) {
           var displayPrice = formatPrice(price / 1000); 
           content += '<span class="day-price">' + displayPrice + '</span>';
@@ -800,19 +830,38 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       cell.className = classes;
       cell.innerHTML = content;
       
-      (function(dString) {
-          if (!isPast && !isPreBooked && hasPrice) {
+      (function(dString, isBlock, hasP) {
+          // تغییر مهم ۱: شرط کلیک را بازتر کردیم. حتی اگر بلاک است کلیک بگیرد (مگر اینکه گذشته باشد)
+          if (!isPast) { 
               cell.onclick = function() {
+                  // اگر هنوز شروعی انتخاب نشده و روی روز مسدود یا بدون قیمت کلیک شد -> جلوگیری کن
+                  if (!rangeStart && (isBlock || !hasP)) {
+                      return; 
+                  }
+
+                  // حالت ۱: شروع انتخاب جدید
                   if (!rangeStart) {
                       rangeStart = dString;
                       userSelectedDates.clear();
                       userSelectedDates.add(dString);
                   } 
+                  // حالت ۲: دی‌سلکت کردن
+                  else if (rangeStart === dString && userSelectedDates.size === 1) {
+                      rangeStart = null;
+                      userSelectedDates.clear();
+                  }
+                  // حالت ۳: تکمیل بازه
                   else {
                       var startD = parseJalaliToDate(rangeStart);
                       var endD = parseJalaliToDate(dString);
 
+                      // اگر تاریخ انتخابی قبل از شروع بود
                       if (endD < startD) {
+                          // اگر این تاریخ جدید خودش مسدود است، نباید بتواند شروع باشد
+                          if (isBlock || !hasP) {
+                              alert("تاریخ شروع نمی‌تواند مسدود باشد.");
+                              return;
+                          }
                           rangeStart = dString;
                           userSelectedDates.clear();
                           userSelectedDates.add(dString);
@@ -822,25 +871,43 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                           var loopDate = new Date(startD);
                           var hasConflict = false;
 
+                          // حلقه چک کردن بازه
                           while (loopDate <= endD) {
                               var jStr = formatDateToJalali(loopDate);
                               
+                              // آیا این روز، روزِ آخر (خروج) است؟
+                              // از مقایسه TimeStamp استفاده می‌کنیم برای دقت
+                              var isCheckoutDay = (loopDate.getTime() === endD.getTime());
+
+                              // قیمت روز
                               var loopPrice = dailyPrices.get(jStr);
                               var loopHasPrice = (loopPrice !== undefined && loopPrice > 0);
 
-                              if (preBookedDates.has(jStr) || !loopHasPrice) {
-                                  hasConflict = true;
-                                  break;
+                              // تغییر مهم ۲: لاجیک تداخل
+                              // اگر روزِ آخر نیست، باید هم خالی باشد و هم قیمت داشته باشد
+                              // اگر روزِ آخر است، مهم نیست پر است یا خالی (چون فقط تحویل می‌دهیم)
+                              if (!isCheckoutDay) {
+                                  if (preBookedDates.has(jStr) || !loopHasPrice) {
+                                      hasConflict = true;
+                                      break;
+                                  }
                               }
+
                               tempSet.add(jStr);
                               loopDate.setDate(loopDate.getDate() + 1);
                           }
 
                           if (hasConflict) {
-                              alert("برخی روزهای بازه انتخابی غیرقابل رزرو هستند.");
-                              rangeStart = dString;
-                              userSelectedDates.clear();
-                              userSelectedDates.add(dString);
+                              alert("بازه انتخابی شامل روزهای غیرفعال است (حداقل یک شب کامل باید رزرو شود).");
+                              // ریست به شروع جدید (اگر روز کلیک شده آزاد باشد)
+                              if(!isBlock && hasP) {
+                                rangeStart = dString;
+                                userSelectedDates.clear();
+                                userSelectedDates.add(dString);
+                              } else {
+                                rangeStart = null;
+                                userSelectedDates.clear();
+                              }
                           } else {
                               userSelectedDates = tempSet;
                               rangeStart = null; 
@@ -851,7 +918,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                   notifyPlasmic();
               };
           }
-      })(dateString);
+      })(dateString, isPreBooked, hasPrice);
 
       grid.appendChild(cell);
     }
@@ -918,7 +985,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                           sty.embedHtml___2Qg2
                         )}
                         code={
-                          '<div style="width: 100%; display: flex; justify-content: center;">\r\n  \r\n  <style>\r\n    /* \u0627\u0633\u062a\u0627\u06cc\u0644\u200c\u0647\u0627 (\u0628\u062f\u0648\u0646 \u062a\u063a\u06cc\u06cc\u0631) */\r\n    .submit-dates-btn {\r\n      background-color: #2727ea; color: white; border: none; border-radius: 8px;\r\n      padding: 12px 24px; font-size: 16px; font-weight: bold; width: 100%;\r\n      cursor: pointer; font-family: inherit; box-shadow: 0 4px 6px rgba(39, 39, 234, 0.2);\r\n      transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 10px;\r\n    }\r\n    .submit-dates-btn:hover { background-color: #1a1ab8; }\r\n    \r\n    .rentamon-modal-content {\r\n      background-color: white; padding: 25px; border-radius: 12px;\r\n      width: 90%; max-width: 400px; direction: rtl;\r\n      box-shadow: 0 20px 50px rgba(0,0,0,0.5); position: relative;\r\n      max-height: 90vh; overflow-y: auto; margin: 0 !important; \r\n    }\r\n    \r\n    .rentamon-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }\r\n    .form-group { margin-bottom: 20px; text-align: right; }\r\n    .form-group label { display: block; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem; color: #333; }\r\n    .form-input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box; transition: border 0.2s; font-family: inherit; }\r\n    .form-input:focus { outline: none; border-color: #2727ea; }\r\n    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }\r\n    input[type=number] { -moz-appearance: textfield; }\r\n\r\n    .modal-submit-btn { \r\n        width: 100%; background-color: #28a745; color: white; border: none; \r\n        padding: 12px; border-radius: 8px; font-size: 1rem; cursor: pointer; \r\n        margin-top: 15px; font-weight: bold; transition: all 0.2s ease;\r\n    }\r\n    .modal-submit-btn:hover { background-color: #218838; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }\r\n    .modal-submit-btn:active { background-color: #1e7e34; transform: translateY(1px); box-shadow: none; }\r\n    .modal-submit-btn:disabled { background-color: #ccc; cursor: not-allowed; transform: none; }\r\n  </style>\r\n\r\n  <button id="btn-trigger-modal" type="button" onclick="window.safeOpenModal()" class="submit-dates-btn">\r\n   \u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc \u0631\u0632\u0631\u0648\r\n  </button>\r\n\r\n  <div id="booking-modal" style="display:none;">\r\n    <div class="rentamon-modal-content">\r\n      <div class="rentamon-modal-header">\r\n        <h3 style="margin:0; font-size:1.1rem;">\u0646\u0647\u0627\u06cc\u06cc \u06a9\u0631\u062f\u0646 \u0631\u0632\u0631\u0648</h3>\r\n        <span onclick="window.safeCloseModal()" style="font-size:28px; cursor:pointer; line-height:1;">&times;</span>\r\n      </div>\r\n      \r\n      <div id="modal-body">\r\n        <div class="form-group"><label>\u0646\u0627\u0645 \u0645\u0647\u0645\u0627\u0646</label><input type="text" id="inp_guest_name" class="form-input"></div>\r\n        <div class="form-group"><label>\u0634\u0645\u0627\u0631\u0647 \u062a\u0645\u0627\u0633</label><input type="tel" id="inp_guest_phone" class="form-input"></div>\r\n        <div class="form-group"><label>\u062a\u0639\u062f\u0627\u062f \u0646\u0641\u0631\u0627\u062a</label><input type="number" id="inp_guest_count" class="form-input" value="1"></div>\r\n        \r\n        <div style="text-align:center; margin-bottom:10px; font-size:13px; color:#555;">\r\n             <span id="txt-nights-count" style="font-weight:bold;">0</span> \u0634\u0628 \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u062f\u0647\r\n             <br>\r\n             <span id="txt-total-price" style="font-weight:bold; color: #2727ea; display:none;"></span>\r\n        </div>\r\n\r\n        <button id="btn-final-submit" type="button" onclick="window.safeSubmitBooking()" class="modal-submit-btn">\u062a\u0627\u06cc\u06cc\u062f \u0648 \u067e\u0631\u062f\u0627\u062e\u062a</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n\r\n<script>\r\n  function getPropertyIdFromUrl() {\r\n      var segments = window.location.pathname.split(\'/\').filter(Boolean);\r\n      return segments.pop();\r\n  }\r\n\r\n  function getPostTokenFromUrl() {\r\n      var urlParams = new URLSearchParams(window.location.search);\r\n      return urlParams.get(\'post_token\');\r\n  }\r\n\r\n  function formatPriceNum(num) {\r\n      return num.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, ",");\r\n  }\r\n\r\n  function calculateTotalPrice(dates) {\r\n      var total = 0;\r\n      if (!window.dailyPrices) {\r\n          console.warn("\u0644\u06cc\u0633\u062a \u0642\u06cc\u0645\u062a\u200c\u0647\u0627 \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f.");\r\n          return 0;\r\n      }\r\n      for (var i = 0; i < dates.length - 1; i++) {\r\n          var dateKey = dates[i];\r\n          var price = window.dailyPrices.get(dateKey);\r\n          if (price) { total += parseInt(price); }\r\n      }\r\n      return total;\r\n  }\r\n\r\n  window.safeOpenModal = function() {\r\n    var dates = window.selectedCalendarDates || [];\r\n    dates.sort();\r\n\r\n    if (dates.length <= 1) {\r\n      alert("\u0644\u0637\u0641\u0627\u064b \u062d\u062f\u0627\u0642\u0644 \u06f2 \u0631\u0648\u0632 (\u06cc\u06a9 \u0634\u0628) \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f.");\r\n      return;\r\n    }\r\n    \r\n    var countEl = document.getElementById(\'txt-nights-count\');\r\n    if(countEl) countEl.innerText = dates.length - 1;\r\n\r\n    var totalPrice = calculateTotalPrice(dates);\r\n    var priceEl = document.getElementById(\'txt-total-price\');\r\n    if(priceEl && totalPrice > 0) {\r\n        priceEl.style.display = "inline-block";\r\n        priceEl.innerText = "\u0642\u06cc\u0645\u062a \u06a9\u0644: " + formatPriceNum(totalPrice) + " \u062a\u0648\u0645\u0627\u0646";\r\n    }\r\n    \r\n    var modal = document.getElementById(\'booking-modal\');\r\n    if (modal) {\r\n        if (modal.parentNode !== document.body) {\r\n            document.body.appendChild(modal);\r\n        }\r\n        modal.style.cssText = `\r\n            display: grid !important; place-items: center !important;\r\n            position: fixed !important; top: 0 !important; left: 0 !important;\r\n            width: 100vw !important; height: 100dvh !important;\r\n            background-color: rgba(0,0,0,0.6) !important;\r\n            z-index: 2147483647 !important; backdrop-filter: blur(4px) !important;\r\n            margin: 0 !important; padding: 0 !important; inset: 0 !important;\r\n        `;\r\n    }\r\n  };\r\n\r\n  window.safeCloseModal = function() {\r\n    var modal = document.getElementById(\'booking-modal\');\r\n    if(modal) modal.style.display = \'none\';\r\n  };\r\n\r\n  // *** \u062a\u0627\u0628\u0639 \u0627\u0635\u0644\u06cc \u0648 \u0627\u0635\u0644\u0627\u062d \u0634\u062f\u0647 \u0627\u0631\u0633\u0627\u0644 \u0628\u0647 \u062f\u0631\u06af\u0627\u0647 ***\r\n  window.safeSubmitBooking = function() {\r\n    var btn = document.getElementById(\'btn-final-submit\');\r\n    \r\n    var isMiaan = window.location.hostname.includes("miaan.ir");\r\n    var gatewayBase = isMiaan ? "https://gateway.miaan.ir" : "https://gateway.rentamon.com";\r\n    var API_URL = gatewayBase + "/webhook/direct-booking/payment/data";\r\n\r\n    var dates = window.selectedCalendarDates || [];\r\n    dates.sort(); \r\n\r\n    var urlPropertyId = getPropertyIdFromUrl();\r\n    var urlPostToken = getPostTokenFromUrl();\r\n    \r\n    var guestName = document.getElementById(\'inp_guest_name\').value;\r\n    var guestPhone = document.getElementById(\'inp_guest_phone\').value;\r\n    var guestCount = document.getElementById(\'inp_guest_count\').value;\r\n\r\n    if (!guestName || !guestPhone) {\r\n      alert("\u0644\u0637\u0641\u0627\u064b \u0646\u0627\u0645 \u0648 \u0634\u0645\u0627\u0631\u0647 \u062a\u0645\u0627\u0633 \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.");\r\n      return;\r\n    }\r\n\r\n    var finalPrice = calculateTotalPrice(dates);\r\n\r\n    var payload = {\r\n      guest_name: guestName,\r\n      guest_phone_number: guestPhone,\r\n      guest_count: guestCount,\r\n      \r\n      property_id: urlPropertyId, \r\n      post_token: urlPostToken, \r\n      \r\n      // \u0645\u0647\u0645: \u0648\u0636\u0639\u06cc\u062a \u0631\u0627 "\u062f\u0631 \u0627\u0646\u062a\u0638\u0627\u0631 \u067e\u0631\u062f\u0627\u062e\u062a" \u0645\u06cc\u200c\u06af\u0630\u0627\u0631\u06cc\u0645\r\n      status: "pending_payment", \r\n      \r\n      nights: (dates.length - 1).toString(),\r\n      price: finalPrice, \r\n      dates: dates,\r\n      source: \'divar_app\' \r\n    };\r\n\r\n    var originalText = btn.innerText;\r\n    btn.innerText = "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u062f\u0631\u06af\u0627\u0647...";\r\n    btn.disabled = true;\r\n\r\n    // \u0627\u0631\u0633\u0627\u0644 \u0628\u0647 n8n\r\n    fetch(API_URL, {\r\n      method: \'POST\',\r\n      headers: { \'Content-Type\': \'application/json\' },\r\n      body: JSON.stringify(payload)\r\n    })\r\n    .then(function(response) {\r\n      return response.json(); // \u062f\u0631\u06cc\u0627\u0641\u062a JSON \u0627\u0632 n8n\r\n    })\r\n    .then(function(data) {\r\n      // \u0686\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u0622\u06cc\u0627 n8n \u0644\u06cc\u0646\u06a9 \u067e\u0631\u062f\u0627\u062e\u062a \u0641\u0631\u0633\u062a\u0627\u062f\u0647 \u0627\u0633\u062a\u061f\r\n      if (data && data.payment_url) {\r\n          // \u0627\u0646\u062a\u0642\u0627\u0644 \u06a9\u0627\u0631\u0628\u0631 \u0628\u0647 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9\r\n          window.location.href = data.payment_url;\r\n      } else {\r\n          // \u0627\u06af\u0631 n8n \u067e\u0627\u0633\u062e \u062f\u0627\u062f \u0627\u0645\u0627 \u0644\u06cc\u0646\u06a9 \u062a\u0648\u0634 \u0646\u0628\u0648\u062f\r\n          throw new Error("\u062e\u0637\u0627: \u0644\u06cc\u0646\u06a9 \u067e\u0631\u062f\u0627\u062e\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0646\u0634\u062f.");\r\n      }\r\n    })\r\n    .catch(function(error) {\r\n      console.error(error);\r\n      alert("\u062e\u0637\u0627 \u062f\u0631 \u0627\u06cc\u062c\u0627\u062f \u062a\u0631\u0627\u06a9\u0646\u0634! \u0644\u0637\u0641\u0627\u064b \u0645\u062c\u062f\u062f \u062a\u0644\u0627\u0634 \u06a9\u0646\u06cc\u062f.");\r\n      // \u0628\u0627\u0632\u06af\u0631\u062f\u0627\u0646\u062f\u0646 \u062f\u06a9\u0645\u0647 \u0628\u0647 \u062d\u0627\u0644\u062a \u0627\u0648\u0644 \u062f\u0631 \u0635\u0648\u0631\u062a \u062e\u0637\u0627\r\n      btn.innerText = originalText;\r\n      btn.disabled = false;\r\n    });\r\n  };\r\n  \r\n  console.log("\u2705 \u0627\u0633\u06a9\u0631\u06cc\u067e\u062a \u0631\u0632\u0631\u0648 \u0646\u0647\u0627\u06cc\u06cc (\u062f\u0631\u06af\u0627\u0647 \u067e\u0631\u062f\u0627\u062e\u062a) \u0644\u0648\u062f \u0634\u062f.");\r\n</script>'
+                          "<div style=\"width: 100%; display: flex; justify-content: center;\">\r\n  \r\n  <style>\r\n    /* \u0627\u0633\u062a\u0627\u06cc\u0644\u200c\u0647\u0627 */\r\n    .submit-dates-btn {\r\n      background-color: #2727ea; color: white; border: none; border-radius: 8px;\r\n      padding: 12px 24px; font-size: 16px; font-weight: bold; width: 100%;\r\n      cursor: pointer; font-family: inherit; box-shadow: 0 4px 6px rgba(39, 39, 234, 0.2);\r\n      transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 10px;\r\n    }\r\n    .submit-dates-btn:hover { background-color: #1a1ab8; }\r\n    \r\n    .rentamon-modal-content {\r\n      background-color: white; padding: 25px; border-radius: 12px;\r\n      width: 90%; max-width: 400px; direction: rtl;\r\n      box-shadow: 0 20px 50px rgba(0,0,0,0.5); position: relative;\r\n      max-height: 90vh; overflow-y: auto; margin: 0 !important; \r\n    }\r\n    \r\n    .rentamon-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }\r\n    \r\n    .close-modal-btn {\r\n        font-size: 28px; cursor: pointer; line-height: 1; color: #666; \r\n        padding: 0 10px; transition: color 0.2s;\r\n    }\r\n    .close-modal-btn:hover { color: #000; }\r\n\r\n    .form-group { margin-bottom: 20px; text-align: right; }\r\n    .form-group label { display: block; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem; color: #333; }\r\n    .form-input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box; transition: border 0.2s; font-family: inherit; }\r\n    .form-input:focus { outline: none; border-color: #2727ea; }\r\n    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }\r\n    input[type=number] { -moz-appearance: textfield; }\r\n\r\n    .modal-submit-btn { \r\n        width: 100%; background-color: #28a745; color: white; border: none; \r\n        padding: 12px; border-radius: 8px; font-size: 1rem; cursor: pointer; \r\n        margin-top: 15px; font-weight: bold; transition: all 0.2s ease;\r\n    }\r\n    .modal-submit-btn:hover { background-color: #218838; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }\r\n    .modal-submit-btn:active { background-color: #1e7e34; transform: translateY(1px); box-shadow: none; }\r\n    .modal-submit-btn:disabled { background-color: #ccc; cursor: not-allowed; transform: none; }\r\n  </style>\r\n\r\n  <button id=\"btn-trigger-modal\" type=\"button\" onclick=\"window.safeOpenModal()\" class=\"submit-dates-btn\">\r\n   \u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc \u0631\u0632\u0631\u0648\r\n  </button>\r\n\r\n  <div id=\"booking-modal\" style=\"display:none;\" onclick=\"if(event.target === this) window.safeCloseModal()\">\r\n    <div class=\"rentamon-modal-content\">\r\n      <div class=\"rentamon-modal-header\">\r\n        <h3 style=\"margin:0; font-size:1.1rem;\">\u0646\u0647\u0627\u06cc\u06cc \u06a9\u0631\u062f\u0646 \u0631\u0632\u0631\u0648</h3>\r\n        <div class=\"close-modal-btn\" onclick=\"window.safeCloseModal()\">&times;</div>\r\n      </div>\r\n      \r\n      <div id=\"modal-body\">\r\n        <div class=\"form-group\"><label>\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc</label><input type=\"text\" id=\"inp_guest_name\" class=\"form-input\"></div>\r\n        <div class=\"form-group\"><label>\u0634\u0645\u0627\u0631\u0647 \u062a\u0645\u0627\u0633</label><input type=\"tel\" id=\"inp_guest_phone\" class=\"form-input\"></div>\r\n        <div class=\"form-group\"><label>\u062a\u0639\u062f\u0627\u062f \u0646\u0641\u0631\u0627\u062a</label><input type=\"number\" id=\"inp_guest_count\" class=\"form-input\" value=\"1\"></div>\r\n        \r\n        <div style=\"text-align:center; margin-bottom:10px; font-size:13px; color:#555;\">\r\n             <div id=\"txt-date-details\" style=\"font-weight:bold; margin-bottom: 8px; direction: rtl; line-height: 1.6;\"></div>\r\n             <span id=\"txt-total-price\" style=\"font-weight:bold; color: #2727ea; display:none;\"></span>\r\n        </div>\r\n\r\n        <button id=\"btn-final-submit\" type=\"button\" onclick=\"window.safeSubmitBooking()\" class=\"modal-submit-btn\">\u062a\u0627\u06cc\u06cc\u062f \u0648 \u067e\u0631\u062f\u0627\u062e\u062a</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n\r\n<script>\r\n  function getPersianMonthName(monthStr) {\r\n      var months = {\r\n          '01': '\u0641\u0631\u0648\u0631\u062f\u06cc\u0646', '1': '\u0641\u0631\u0648\u0631\u062f\u06cc\u0646',\r\n          '02': '\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a', '2': '\u0627\u0631\u062f\u06cc\u0628\u0647\u0634\u062a',\r\n          '03': '\u062e\u0631\u062f\u0627\u062f', '3': '\u062e\u0631\u062f\u0627\u062f',\r\n          '04': '\u062a\u06cc\u0631', '4': '\u062a\u06cc\u0631',\r\n          '05': '\u0645\u0631\u062f\u0627\u062f', '5': '\u0645\u0631\u062f\u0627\u062f',\r\n          '06': '\u0634\u0647\u0631\u06cc\u0648\u0631', '6': '\u0634\u0647\u0631\u06cc\u0648\u0631',\r\n          '07': '\u0645\u0647\u0631', '7': '\u0645\u0647\u0631',\r\n          '08': '\u0622\u0628\u0627\u0646', '8': '\u0622\u0628\u0627\u0646',\r\n          '09': '\u0622\u0630\u0631', '9': '\u0622\u0630\u0631',\r\n          '10': '\u062f\u06cc',\r\n          '11': '\u0628\u0647\u0645\u0646',\r\n          '12': '\u0627\u0633\u0641\u0646\u062f'\r\n      };\r\n      return months[monthStr] || monthStr;\r\n  }\r\n\r\n  function formatPersianDate(dateString) {\r\n      if (!dateString) return \"\";\r\n      var parts = dateString.split(/[-/]/); \r\n      if (parts.length < 3) return dateString;\r\n      \r\n      var day = parts[2];\r\n      var month = parts[1];\r\n      \r\n      if(day.startsWith('0') && day.length > 1) day = day.substring(1);\r\n      \r\n      return day + \" \" + getPersianMonthName(month);\r\n  }\r\n\r\n  function getPropertyIdFromUrl() {\r\n      var segments = window.location.pathname.split('/').filter(Boolean);\r\n      return segments.pop();\r\n  }\r\n\r\n  function getPostTokenFromUrl() {\r\n      var urlParams = new URLSearchParams(window.location.search);\r\n      return urlParams.get('post_token');\r\n  }\r\n\r\n  function formatPriceNum(num) {\r\n      return num.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\");\r\n  }\r\n\r\n  function calculateTotalPrice(dates) {\r\n      var total = 0;\r\n      if (!window.dailyPrices) {\r\n          console.warn(\"\u0644\u06cc\u0633\u062a \u0642\u06cc\u0645\u062a\u200c\u0647\u0627 \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f.\");\r\n          return 0;\r\n      }\r\n      for (var i = 0; i < dates.length - 1; i++) {\r\n          var dateKey = dates[i];\r\n          var price = window.dailyPrices.get(dateKey);\r\n          if (price) { total += parseInt(price); }\r\n      }\r\n      return total;\r\n  }\r\n\r\n  window.safeOpenModal = function() {\r\n    var dates = window.selectedCalendarDates || [];\r\n    dates.sort();\r\n\r\n    if (dates.length <= 1) {\r\n      alert(\"\u0644\u0637\u0641\u0627\u064b \u062d\u062f\u0627\u0642\u0644 \u06f2 \u0631\u0648\u0632 (\u06cc\u06a9 \u0634\u0628) \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f.\");\r\n      return;\r\n    }\r\n    \r\n    var startDateStr = dates[0];\r\n    var endDateStr = dates[dates.length - 1];\r\n    \r\n    var formattedStart = formatPersianDate(startDateStr);\r\n    var formattedEnd = formatPersianDate(endDateStr);\r\n    \r\n    var detailsEl = document.getElementById('txt-date-details');\r\n    if(detailsEl) {\r\n        detailsEl.innerHTML = `\u0631\u0648\u0632 \u0648\u0631\u0648\u062f: <span style=\"color:#333\">${formattedStart}</span><br>\u0631\u0648\u0632 \u062e\u0631\u0648\u062c: <span style=\"color:#333\">${formattedEnd}</span>`;\r\n    }\r\n\r\n    var totalPrice = calculateTotalPrice(dates);\r\n    var priceEl = document.getElementById('txt-total-price');\r\n    if(priceEl && totalPrice > 0) {\r\n        priceEl.style.display = \"inline-block\";\r\n        priceEl.innerText = \"\u0642\u06cc\u0645\u062a \u06a9\u0644: \" + formatPriceNum(totalPrice) + \" \u062a\u0648\u0645\u0627\u0646\";\r\n    }\r\n    \r\n    var modal = document.getElementById('booking-modal');\r\n    if (modal) {\r\n        if (modal.parentNode !== document.body) {\r\n            document.body.appendChild(modal);\r\n        }\r\n        modal.style.cssText = `\r\n            display: grid !important; place-items: center !important;\r\n            position: fixed !important; top: 0 !important; left: 0 !important;\r\n            width: 100vw !important; height: 100dvh !important;\r\n            background-color: rgba(0,0,0,0.6) !important;\r\n            z-index: 2147483647 !important; backdrop-filter: blur(4px) !important;\r\n            margin: 0 !important; padding: 0 !important; inset: 0 !important;\r\n        `;\r\n    }\r\n  };\r\n\r\n  window.safeCloseModal = function() {\r\n    var modal = document.getElementById('booking-modal');\r\n    if(modal) modal.style.display = 'none';\r\n  };\r\n\r\n  window.safeSubmitBooking = function() {\r\n    var btn = document.getElementById('btn-final-submit');\r\n    \r\n    var isMiaan = window.location.hostname.includes(\"miaan.ir\");\r\n    var gatewayBase = isMiaan ? \"https://gateway.miaan.ir\" : \"https://gateway.rentamon.com\";\r\n    var API_URL = gatewayBase + \"/webhook/direct-booking/payment/data\";\r\n\r\n    var dates = window.selectedCalendarDates || [];\r\n    dates.sort(); \r\n\r\n    var urlPropertyId = getPropertyIdFromUrl();\r\n    var urlPostToken = getPostTokenFromUrl();\r\n    \r\n    var guestName = document.getElementById('inp_guest_name').value;\r\n    var guestPhone = document.getElementById('inp_guest_phone').value;\r\n    var guestCount = document.getElementById('inp_guest_count').value;\r\n\r\n    if (!guestName || !guestPhone) {\r\n      alert(\"\u0644\u0637\u0641\u0627\u064b \u0646\u0627\u0645 \u0648 \u0634\u0645\u0627\u0631\u0647 \u062a\u0645\u0627\u0633 \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.\");\r\n      return;\r\n    }\r\n\r\n    var finalPrice = calculateTotalPrice(dates);\r\n\r\n    var payload = {\r\n      guest_name: guestName,\r\n      guest_phone_number: guestPhone,\r\n      guest_count: guestCount,\r\n      property_id: urlPropertyId, \r\n      post_token: urlPostToken, \r\n      status: \"pending_payment\", \r\n      nights: (dates.length - 1).toString(),\r\n      price: finalPrice, \r\n      dates: dates,\r\n      source: 'divar_app' \r\n    };\r\n\r\n    var originalText = btn.innerText;\r\n    btn.innerText = \"\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u062f\u0631\u06af\u0627\u0647...\";\r\n    btn.disabled = true;\r\n\r\n    fetch(API_URL, {\r\n      method: 'POST',\r\n      headers: { 'Content-Type': 'application/json' },\r\n      body: JSON.stringify(payload)\r\n    })\r\n    .then(function(response) {\r\n      return response.json(); \r\n    })\r\n    .then(function(data) {\r\n      if (data && data.payment_url) {\r\n          window.location.href = data.payment_url;\r\n      } else {\r\n          throw new Error(\"\u062e\u0637\u0627: \u0644\u06cc\u0646\u06a9 \u067e\u0631\u062f\u0627\u062e\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0646\u0634\u062f.\");\r\n      }\r\n    })\r\n    .catch(function(error) {\r\n      console.error(error);\r\n      alert(\"\u062e\u0637\u0627 \u062f\u0631 \u0627\u06cc\u062c\u0627\u062f \u062a\u0631\u0627\u06a9\u0646\u0634! \u0644\u0637\u0641\u0627\u064b \u0645\u062c\u062f\u062f \u062a\u0644\u0627\u0634 \u06a9\u0646\u06cc\u062f.\");\r\n      btn.innerText = originalText;\r\n      btn.disabled = false;\r\n    });\r\n  };\r\n  \r\n  console.log(\"\u2705 \u0627\u0633\u06a9\u0631\u06cc\u067e\u062a \u0631\u0632\u0631\u0648 \u0646\u0647\u0627\u06cc\u06cc (\u06a9\u0644\u06cc\u06a9 \u062e\u0627\u0631\u062c \u0645\u062f\u0627\u0644 \u0641\u0639\u0627\u0644 \u0634\u062f) \u0644\u0648\u062f \u0634\u062f.\");\r\n</script>"
                         }
                       />
                     </div>
@@ -931,7 +998,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                           sty.embedHtml___8Db1G
                         )}
                         code={
-                          '<div style="width: 100%; display: flex; justify-content: center;">\r\n  <style>\r\n    .divar-static-btn {\r\n      /* \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0635\u0644\u06cc \u0628\u0631\u0627\u06cc \u062d\u0627\u0644\u062a Secondary */\r\n      background-color: white; /* \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u0633\u0641\u06cc\u062f (\u062a\u0648 \u062e\u0627\u0644\u06cc) */\r\n      color: #a62626; /* \u0645\u062a\u0646 \u0642\u0631\u0645\u0632 */\r\n      border: 1px solid #a62626; /* \u0628\u0648\u0631\u062f\u0631 \u0642\u0631\u0645\u0632 */\r\n      \r\n      border-radius: 4px;\r\n      padding: 10px 10px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      cursor: pointer;\r\n      font-family: inherit;\r\n      /* \u0633\u0627\u06cc\u0647 \u0631\u0627 \u0628\u0631\u0627\u06cc \u062f\u06a9\u0645\u0647 \u062b\u0627\u0646\u0648\u06cc\u0647 \u062d\u0630\u0641 \u06a9\u0631\u062f\u0645 \u062a\u0627 \u0641\u0644\u062a\u200c\u062a\u0631 \u0628\u0627\u0634\u062f (\u0627\u062e\u062a\u06cc\u0627\u0631\u06cc) */\r\n      box-shadow: none; \r\n      transition: all 0.2s ease;\r\n    }\r\n    \r\n    .divar-static-btn:hover {\r\n      /* \u062d\u0627\u0644\u062a \u0647\u0627\u0648\u0631: \u06cc\u06a9 \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u062e\u06cc\u0644\u06cc \u0631\u0648\u0634\u0646 \u0642\u0631\u0645\u0632 \u0648 \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0628\u0648\u0631\u062f\u0631 */\r\n      background-color: #fcf2f2; \r\n      border-color: #851e1e;\r\n      color: #851e1e;\r\n    }\r\n    \r\n    .divar-static-btn:active {\r\n      transform: scale(0.98);\r\n      background-color: #fceceb; /* \u0631\u0646\u06af \u06a9\u0645\u06cc \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0645\u0648\u0642\u0639 \u06a9\u0644\u06cc\u06a9 */\r\n    }\r\n  </style>\r\n\r\n  <button onclick="window.location.href=\'https://open-platform-redirect.divar.ir/completion\'" class="divar-static-btn">\r\n    \u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631\r\n  </button>\r\n</div>'
+                          '<div style="width: 100%; display: flex; justify-content: center;">\r\n  <style>\r\n    .divar-static-btn {\r\n      /* \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0635\u0644\u06cc \u0628\u0631\u0627\u06cc \u062d\u0627\u0644\u062a Secondary */\r\n      background-color: white; /* \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u0633\u0641\u06cc\u062f (\u062a\u0648 \u062e\u0627\u0644\u06cc) */\r\n      color: #a62626; /* \u0645\u062a\u0646 \u0642\u0631\u0645\u0632 */\r\n      border: 1px solid #a62626; /* \u0628\u0648\u0631\u062f\u0631 \u0642\u0631\u0645\u0632 */\r\n      \r\n      border-radius: 4px;\r\n      padding: 10px 10px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      cursor: pointer;\r\n      font-family: inherit;\r\n      /* \u0633\u0627\u06cc\u0647 \u0631\u0627 \u0628\u0631\u0627\u06cc \u062f\u06a9\u0645\u0647 \u062b\u0627\u0646\u0648\u06cc\u0647 \u062d\u0630\u0641 \u06a9\u0631\u062f\u0645 \u062a\u0627 \u0641\u0644\u062a\u200c\u062a\u0631 \u0628\u0627\u0634\u062f (\u0627\u062e\u062a\u06cc\u0627\u0631\u06cc) */\r\n      box-shadow: none; \r\n      transition: all 0.2s ease;\r\n    }\r\n    \r\n    .divar-static-btn:hover {\r\n      /* \u062d\u0627\u0644\u062a \u0647\u0627\u0648\u0631: \u06cc\u06a9 \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u062e\u06cc\u0644\u06cc \u0631\u0648\u0634\u0646 \u0642\u0631\u0645\u0632 \u0648 \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0628\u0648\u0631\u062f\u0631 */\r\n      background-color: #fcf2f2; \r\n      border-color: #851e1e;\r\n      color: #851e1e;\r\n    }\r\n    \r\n    .divar-static-btn:active {\r\n      transform: scale(0.98);\r\n      background-color: #fceceb; /* \u0631\u0646\u06af \u06a9\u0645\u06cc \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0645\u0648\u0642\u0639 \u06a9\u0644\u06cc\u06a9 */\r\n    }\r\n  </style>\r\n\r\n  <button onclick="window.location.href=\'https://open-platform-redirect.divar.ir/completion\'" class="divar-static-btn">\r\n\u0628\u0627\u0632\u06af\u0634\u062a  </button>\r\n</div>'
                         }
                       />
                     </div>
