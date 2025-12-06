@@ -499,7 +499,9 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               }
 
               $steps["goToProCalendar2"] =
-                $state.userType2 == "3"
+                $state.userType2 == "3" ||
+                $state.userType2 == null ||
+                $state.userType2 == ""
                   ? (() => {
                       const actionArgs = { destination: `/panel-2` };
                       return (({ destination }) => {
