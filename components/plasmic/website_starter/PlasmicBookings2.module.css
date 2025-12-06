@@ -2815,7 +2815,7 @@
     align-items: center;
     row-gap: 0px;
     min-width: 0;
-    display: none;
+    display: flex;
     padding: 4px;
   }
 }
@@ -2920,6 +2920,7 @@
     align-items: center;
     row-gap: 0px;
     min-width: 0;
+    display: none;
     padding: 4px;
   }
 }

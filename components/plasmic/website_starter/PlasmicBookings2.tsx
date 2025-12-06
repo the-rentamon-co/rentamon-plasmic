@@ -465,7 +465,20 @@ function PlasmicBookings2__RenderFunc(props: {
         path: "confierm2.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return localStorage.getItem("only_final_bookings") === "true";
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "cancelled3.checked",
@@ -7028,177 +7041,146 @@ function PlasmicBookings2__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__bZJh1)}
                   >
-                    <Switch
-                      data-plasmic-name={"confierm2"}
-                      data-plasmic-override={overrides.confierm2}
-                      checked={generateStateValueProp($state, [
-                        "confierm2",
-                        "checked"
-                      ])}
-                      className={classNames("__wab_instance", sty.confierm2)}
-                      onCheckedChange={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
+                    {(() => {
+                      const child$Props = {
+                        checked: generateStateValueProp($state, [
                           "confierm2",
                           "checked"
-                        ]).apply(null, eventArgs);
+                        ]),
+                        className: classNames("__wab_instance", sty.confierm2),
+                        onCheckedChange: async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "confierm2",
+                            "checked"
+                          ]).apply(null, eventArgs);
 
-                        (async checked => {
-                          const $steps = {};
+                          (async checked => {
+                            const $steps = {};
 
-                          $steps["runCode"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      $state.cancelled3.checked = false;
-                                      return ($state.settlement2.checked = false);
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["runCode"] != null &&
-                            typeof $steps["runCode"] === "object" &&
-                            typeof $steps["runCode"].then === "function"
-                          ) {
-                            $steps["runCode"] = await $steps["runCode"];
-                          }
-
-                          $steps["generateUrl"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      const isMiaan =
-                                        window.location.hostname.includes(
-                                          "miaan.ir"
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return (() => {
+                                        console.log(
+                                          "STEP 1: Checking checkbox status...",
+                                          $state.confierm2.checked
                                         );
-                                      const gatewayBase = isMiaan
-                                        ? "https://gateway.miaan.ir"
-                                        : "https://gateway.rentamon.com";
-                                      const baseUrl = `${gatewayBase}/webhook/getReserve`;
-                                      const queryParams = [];
-                                      queryParams.push(`v=2`);
-                                      queryParams.push(
-                                        `limit=${$state.dataSize}`
-                                      );
-                                      if ($state.settlement2.checked) {
-                                        queryParams.push(
-                                          `is_settled=${!$state.settlement2.checked}`
-                                        );
-                                      }
-                                      if ($state.confierm2.checked) {
-                                        queryParams.push(`status=Confirmed`);
-                                      } else if ($state.cancelled3.checked) {
-                                        queryParams.push(`status=Cancelled`);
-                                      }
-                                      $state.filterUrl = `${baseUrl}?${queryParams.join("&")}`;
-                                      return $state.filterUrl;
-                                    })();
-                                  }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["generateUrl"] != null &&
-                            typeof $steps["generateUrl"] === "object" &&
-                            typeof $steps["generateUrl"].then === "function"
-                          ) {
-                            $steps["generateUrl"] = await $steps["generateUrl"];
-                          }
-
-                          $steps["sendRequests"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    undefined,
-                                    (() => {
-                                      try {
-                                        return $state.filterUrl;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
+                                        if ($state.confierm2.checked == true) {
+                                          console.log(
+                                            "STEP 2 (True Block): Checkbox is TRUE. Filtering cancelled bookings."
+                                          );
+                                          $state.reservations.forEach(day => {
+                                            day.bookings = day.bookings.filter(
+                                              b => b.status !== "cancelled"
+                                            );
+                                          });
+                                          console.log(
+                                            "STEP 3 (True Block): Filter complete. Setting localStorage 'only_final_bookings' to 'true'."
+                                          );
+                                          localStorage.setItem(
+                                            "only_final_bookings",
+                                            "true"
+                                          );
                                         }
-                                        throw e;
-                                      }
-                                    })()
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.apiRequest"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["sendRequests"] != null &&
-                            typeof $steps["sendRequests"] === "object" &&
-                            typeof $steps["sendRequests"].then === "function"
-                          ) {
-                            $steps["sendRequests"] =
-                              await $steps["sendRequests"];
+                                        if ($state.confierm2.checked == false) {
+                                          console.log(
+                                            "STEP 2 (False Block): Checkbox is FALSE. Resetting data from reserveData."
+                                          );
+                                          $state.reservations =
+                                            $state.reserveData.data.bookings;
+                                          console.log(
+                                            "STEP 3 (False Block): Reset complete. Setting localStorage 'only_final_bookings' to 'false'."
+                                          );
+                                          localStorage.setItem(
+                                            "only_final_bookings",
+                                            "false"
+                                          );
+                                        }
+                                        if (
+                                          Array.isArray(reservations) &&
+                                          reservations.length > 0
+                                        ) {
+                                          console.log(
+                                            "STEP 4: Saving 'reservations' to localStorage. Item count:",
+                                            reservations.length
+                                          );
+                                          return localStorage.setItem(
+                                            "reservations",
+                                            JSON.stringify(reservations)
+                                          );
+                                        } else {
+                                          return console.log(
+                                            "STEP 4: Skipped saving 'reservations' (Array is empty or invalid).",
+                                            reservations
+                                          );
+                                        }
+                                      })();
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
+                            ) {
+                              $steps["runCode"] = await $steps["runCode"];
+                            }
+                          }).apply(null, eventArgs);
+                        }
+                      };
+                      initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "checked",
+                            plasmicStateName: "confierm2.checked"
                           }
-
-                          $steps["updateReservations"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  customFunction: async () => {
-                                    return (() => {
-                                      $state.reservations =
-                                        $steps.sendRequests.data.result.data;
-                                      return console.log($state.reservations);
-                                    })();
+                        ],
+                        [],
+                        undefined ?? {},
+                        child$Props
+                      );
+                      initializePlasmicStates(
+                        $state,
+                        [
+                          {
+                            name: "confierm2.checked",
+                            initFunc: ({ $props, $state, $queries }) =>
+                              (() => {
+                                try {
+                                  return (
+                                    localStorage.getItem(
+                                      "only_final_bookings"
+                                    ) === "true"
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
                                   }
-                                };
-                                return (({ customFunction }) => {
-                                  return customFunction();
-                                })?.apply(null, [actionArgs]);
+                                  throw e;
+                                }
                               })()
-                            : undefined;
-                          if (
-                            $steps["updateReservations"] != null &&
-                            typeof $steps["updateReservations"] === "object" &&
-                            typeof $steps["updateReservations"].then ===
-                              "function"
-                          ) {
-                            $steps["updateReservations"] =
-                              await $steps["updateReservations"];
                           }
-
-                          $steps["showToast"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  args: [
-                                    undefined,
-                                    "\u0641\u06cc\u0644\u062a\u0631 \u0627\u0639\u0645\u0627\u0644 \u0634\u062f",
-                                    "top-center"
-                                  ]
-                                };
-                                return $globalActions[
-                                  "Fragment.showToast"
-                                ]?.apply(null, [...actionArgs.args]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["showToast"] != null &&
-                            typeof $steps["showToast"] === "object" &&
-                            typeof $steps["showToast"].then === "function"
-                          ) {
-                            $steps["showToast"] = await $steps["showToast"];
-                          }
-                        }).apply(null, eventArgs);
-                      }}
-                    />
+                        ],
+                        []
+                      );
+                      return (
+                        <Switch
+                          data-plasmic-name={"confierm2"}
+                          data-plasmic-override={overrides.confierm2}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
                   </div>
                 </div>
               ) : null}
