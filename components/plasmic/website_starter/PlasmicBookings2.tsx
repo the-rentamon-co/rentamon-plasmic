@@ -1441,8 +1441,32 @@ function PlasmicBookings2__RenderFunc(props: {
                                   ? (() => {
                                       const actionArgs = {
                                         customFunction: async () => {
-                                          return ($state.reservations =
-                                            $state.reserveData.data.bookings);
+                                          return (() => {
+                                            let bookings =
+                                              $state.reserveData.data.bookings;
+                                            if (
+                                              localStorage.getItem(
+                                                "only_final_bookings"
+                                              ) === "true"
+                                            ) {
+                                              bookings = bookings
+                                                .map(item => ({
+                                                  ...item,
+                                                  bookings:
+                                                    item.bookings.filter(
+                                                      booking =>
+                                                        booking.status !==
+                                                        "cancelled"
+                                                    )
+                                                }))
+                                                .filter(
+                                                  item =>
+                                                    item.bookings.length > 0
+                                                );
+                                            }
+                                            return ($state.reservations =
+                                              bookings);
+                                          })();
                                         }
                                       };
                                       return (({ customFunction }) => {
@@ -1914,7 +1938,8 @@ function PlasmicBookings2__RenderFunc(props: {
                             }
                             if ($state.reservationType == "check_out") {
                               $state.reservationType = "all";
-                              $state.reservations = $state.reserveData.data;
+                              $state.reservations =
+                                $state.reserveData.data.bookings;
                               return ($state.reservationType = "check_in");
                             } else {
                               return ($state.reservationType = "check_in");
@@ -1989,17 +2014,23 @@ function PlasmicBookings2__RenderFunc(props: {
                           const actionArgs = {
                             customFunction: async () => {
                               return (() => {
-                                const reservations = $state.reserveData.data;
+                                let bookings = $state.reserveData.data.bookings;
                                 if (
-                                  Array.isArray(reservations) &&
-                                  reservations.length > 0
+                                  localStorage.getItem(
+                                    "only_final_bookings"
+                                  ) === "true"
                                 ) {
-                                  localStorage.setItem(
-                                    "reservations",
-                                    JSON.stringify(reservations)
-                                  );
+                                  bookings = bookings
+                                    .map(item => ({
+                                      ...item,
+                                      bookings: item.bookings.filter(
+                                        booking =>
+                                          booking.status !== "cancelled"
+                                      )
+                                    }))
+                                    .filter(item => item.bookings.length > 0);
                                 }
-                                $state.reservations = reservations;
+                                $state.reservations = bookings;
                                 return ($state.reservationType = "all");
                               })();
                             }
@@ -2126,7 +2157,8 @@ function PlasmicBookings2__RenderFunc(props: {
                             }
                             if ($state.reservationType == "check_in") {
                               $state.reservationType = "all";
-                              $state.reservations = $state.reserveData.data;
+                              $state.reservations =
+                                $state.reserveData.data.bookings;
                               return ($state.reservationType = "check_out");
                             } else {
                               return ($state.reservationType = "check_out");
@@ -2164,17 +2196,23 @@ function PlasmicBookings2__RenderFunc(props: {
                           const actionArgs = {
                             customFunction: async () => {
                               return (() => {
-                                const reservations = $state.reserveData.data;
+                                let bookings = $state.reserveData.data.bookings;
                                 if (
-                                  Array.isArray(reservations) &&
-                                  reservations.length > 0
+                                  localStorage.getItem(
+                                    "only_final_bookings"
+                                  ) === "true"
                                 ) {
-                                  localStorage.setItem(
-                                    "reservations",
-                                    JSON.stringify(reservations)
-                                  );
+                                  bookings = bookings
+                                    .map(item => ({
+                                      ...item,
+                                      bookings: item.bookings.filter(
+                                        booking =>
+                                          booking.status !== "cancelled"
+                                      )
+                                    }))
+                                    .filter(item => item.bookings.length > 0);
                                 }
-                                $state.reservations = reservations;
+                                $state.reservations = bookings;
                                 return ($state.reservationType = "all");
                               })();
                             }
@@ -2338,8 +2376,23 @@ function PlasmicBookings2__RenderFunc(props: {
                             variablePath: ["reservationType"]
                           },
                           operation: 0,
-                          value: ($state.reservations =
-                            $state.reserveData.data.bookings)
+                          value: (() => {
+                            let bookings = $state.reserveData.data.bookings;
+                            if (
+                              localStorage.getItem("only_final_bookings") ===
+                              "true"
+                            ) {
+                              bookings = bookings
+                                .map(item => ({
+                                  ...item,
+                                  bookings: item.bookings.filter(
+                                    booking => booking.status !== "cancelled"
+                                  )
+                                }))
+                                .filter(item => item.bookings.length > 0);
+                            }
+                            return ($state.reservations = bookings);
+                          })()
                         };
                         return (({
                           variable,
@@ -6892,10 +6945,7 @@ function PlasmicBookings2__RenderFunc(props: {
                                       } else {
                                         baseUrl = `${gatewayBase}/webhook/bookings`;
                                       }
-                                      if (
-                                        $state.cancelled3.checked == false &&
-                                        $state.settlement2.checked == false
-                                      ) {
+                                      if ($state.settlement2.checked == false) {
                                         baseUrl = `${gatewayBase}/webhook/bookings/date`;
                                       }
                                       const finalUrl = `${baseUrl}?limit=${$state.dataSize}`;
@@ -6956,12 +7006,28 @@ function PlasmicBookings2__RenderFunc(props: {
                                 const actionArgs = {
                                   customFunction: async () => {
                                     return (() => {
-                                      if (
-                                        $state.cancelled3.checked == false &&
-                                        $state.settlement2.checked == false
-                                      ) {
-                                        return ($state.reservations =
-                                          $steps.sendRequest.data.bookings);
+                                      if ($state.settlement2.checked == false) {
+                                        let bookings =
+                                          $steps.sendRequest.data.bookings;
+                                        console.log(bookings);
+                                        if (
+                                          localStorage.getItem(
+                                            "only_final_bookings"
+                                          ) === "true"
+                                        ) {
+                                          bookings = bookings
+                                            .map(item => ({
+                                              ...item,
+                                              bookings: item.bookings.filter(
+                                                booking =>
+                                                  booking.status !== "cancelled"
+                                              )
+                                            }))
+                                            .filter(
+                                              item => item.bookings.length > 0
+                                            );
+                                        }
+                                        return ($state.reservations = bookings);
                                       }
                                       return ($state.reservations =
                                         $steps.sendRequest.data.result.bookings);
@@ -7056,6 +7122,26 @@ function PlasmicBookings2__RenderFunc(props: {
                           (async checked => {
                             const $steps = {};
 
+                            $steps["runCode2"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return ($state.settlement2.checked = false);
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["runCode2"] != null &&
+                              typeof $steps["runCode2"] === "object" &&
+                              typeof $steps["runCode2"].then === "function"
+                            ) {
+                              $steps["runCode2"] = await $steps["runCode2"];
+                            }
+
                             $steps["runCode"] = true
                               ? (() => {
                                   const actionArgs = {
@@ -7083,18 +7169,9 @@ function PlasmicBookings2__RenderFunc(props: {
                                         if ($state.final.checked == false) {
                                           $state.reservations =
                                             $state.reserveData.data.bookings;
-                                          localStorage.setItem(
+                                          return localStorage.setItem(
                                             "only_final_bookings",
                                             "false"
-                                          );
-                                        }
-                                        if (
-                                          Array.isArray($state.reservations) &&
-                                          $state.reservations.length > 0
-                                        ) {
-                                          return localStorage.setItem(
-                                            "reservations",
-                                            JSON.stringify($state.reservations)
                                           );
                                         }
                                       })();
@@ -7111,6 +7188,32 @@ function PlasmicBookings2__RenderFunc(props: {
                               typeof $steps["runCode"].then === "function"
                             ) {
                               $steps["runCode"] = await $steps["runCode"];
+                            }
+
+                            $steps["invokeGlobalAction"] =
+                              $state.final.checked == true
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0641\u06cc\u0644\u062a\u0631 \u0627\u0639\u0645\u0627\u0644 \u0634\u062f",
+                                        "top-center"
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["invokeGlobalAction"] != null &&
+                              typeof $steps["invokeGlobalAction"] ===
+                                "object" &&
+                              typeof $steps["invokeGlobalAction"].then ===
+                                "function"
+                            ) {
+                              $steps["invokeGlobalAction"] =
+                                await $steps["invokeGlobalAction"];
                             }
                           }).apply(null, eventArgs);
                         }
@@ -7484,7 +7587,11 @@ function PlasmicBookings2__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   $state.settlement2.checked = false;
-                                  return ($state.cancelled3.checked = false);
+                                  $state.final.checked = false;
+                                  return localStorage.setItem(
+                                    "only_final_bookings",
+                                    "false"
+                                  );
                                 })();
                               }
                             };
@@ -7506,8 +7613,10 @@ function PlasmicBookings2__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               customFunction: async () => {
-                                return ($state.reservations =
-                                  $state.reserveData.data.bookings);
+                                return (() => {
+                                  return ($state.reservations =
+                                    $state.reserveData.data.bookings);
+                                })();
                               }
                             };
                             return (({ customFunction }) => {

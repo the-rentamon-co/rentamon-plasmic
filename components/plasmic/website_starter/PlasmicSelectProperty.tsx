@@ -87,7 +87,13 @@ export type PlasmicSelectProperty__OverridesType = {
   main?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   selectProperty?: Flex__<typeof Select>;
-  embedHtml?: Flex__<typeof Embed>;
+  main2?: Flex__<"div">;
+  apiRequest3?: Flex__<typeof ApiRequest>;
+  selectProperty2?: Flex__<typeof Select>;
+  profile2?: Flex__<typeof ApiRequest>;
+  apiRequest2?: Flex__<typeof ApiRequest>;
+  getPrice?: Flex__<typeof ApiRequest>;
+  fetchImage?: Flex__<typeof ApiRequest>;
   sideEffect?: Flex__<typeof SideEffect>;
 };
 
@@ -180,6 +186,145 @@ function PlasmicSelectProperty__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "apiRequest3.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest3"
+      },
+      {
+        path: "apiRequest3.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest3"
+      },
+      {
+        path: "apiRequest3.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest3"
+      },
+      {
+        path: "selectProperty2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.apiRequest3.data[0].name;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "profile2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "apiRequest2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "getPrice.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getPrice"
+      },
+      {
+        path: "getPrice.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getPrice"
+      },
+      {
+        path: "getPrice.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "getPrice"
+      },
+      {
+        path: "fetchImage.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "fetchImage"
+      },
+      {
+        path: "fetchImage.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "fetchImage"
+      },
+      {
+        path: "fetchImage.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "fetchImage"
       }
     ],
     [$props, $ctx, $refs]
@@ -236,33 +381,6 @@ function PlasmicSelectProperty__RenderFunc(props: {
             data-plasmic-override={overrides.main}
             className={classNames(projectcss.all, sty.main)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__pw5Sa)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__cUsfY
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FF0000" }}
-                  >
-                    {"\u062a\u0648\u062c\u0647"}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#840000" }}
-                  >
-                    {
-                      "\u0642\u0628\u0644 \u0627\u0632 \u0627\u0646\u062a\u062e\u0627\u0628 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0644\u0637\u0641\u0627 \u062d\u0633\u0627\u0628 \u06a9\u0627\u0631\u0628\u0631\u06cc \u0645\u06cc\u0627\u0646\u062a\u0648\u0646 \u0631\u0648 \u062a\u06a9\u0645\u06cc\u0644 \u0648 \u062a\u0642\u0648\u06cc\u0645\u062a\u0648\u0646 \u0631\u0648 \u0628\u0631\u0648\u0632 \u06a9\u0646\u06cc\u062f."
-                    }
-                  </span>
-                </React.Fragment>
-              </div>
-            </div>
             <div className={classNames(projectcss.all, sty.freeBox__mbFo)}>
               <div className={classNames(projectcss.all, sty.freeBox__g4NWg)}>
                 <div
@@ -458,9 +576,10 @@ function PlasmicSelectProperty__RenderFunc(props: {
                   }}
                 >
                   <Embed
-                    data-plasmic-name={"embedHtml"}
-                    data-plasmic-override={overrides.embedHtml}
-                    className={classNames("__wab_instance", sty.embedHtml)}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.embedHtml__w7Fzj
+                    )}
                     code={
                       '<div style="width: 100%; display: flex; justify-content: center;">\r\n  \r\n  <style>\r\n    /* \u0627\u0633\u062a\u0627\u06cc\u0644 \u062f\u06a9\u0645\u0647 \u0622\u0628\u06cc */\r\n    .divar-blue-btn {\r\n      background-color: #2727ea; \r\n      color: white; \r\n      border: none; \r\n      border-radius: 8px;\r\n      padding: 12px 24px; \r\n      font-size: 16px; \r\n      font-weight: bold; \r\n      width: 100%;\r\n      cursor: pointer; \r\n      font-family: inherit; \r\n      box-shadow: 0 4px 6px rgba(39, 39, 234, 0.2);\r\n      transition: all 0.2s ease; \r\n      display: flex; \r\n      align-items: center; \r\n      justify-content: center;\r\n    }\r\n    .divar-blue-btn:hover { background-color: #1a1ab8; }\r\n    .divar-blue-btn:active { transform: scale(0.98); }\r\n  </style>\r\n\r\n  <button type="button" onclick="window.goBackToDivar()" class="divar-blue-btn">\r\n    \u0627\u0646\u062a\u062e\u0627\u0628 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\r\n  </button>\r\n\r\n</div>\r\n\r\n<script>\r\n  window.goBackToDivar = function() {\r\n    // 1. \u062e\u0648\u0627\u0646\u062f\u0646 return_url \u0627\u0632 \u0622\u062f\u0631\u0633 \u0645\u0631\u0648\u0631\u06af\u0631\r\n    var urlParams = new URLSearchParams(window.location.search);\r\n    var returnUrl = urlParams.get(\'return_url\');\r\n\r\n    // 2. \u0644\u06cc\u0646\u06a9 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f \u0641\u0627\u0644\u200c\u0628\u06a9 (\u0645\u062d\u0636 \u0627\u062d\u062a\u06cc\u0627\u0637)\r\n    var fallbackUrl = "https://open-platform-redirect.divar.ir/completion";\r\n\r\n    console.log("Redirecting to:", returnUrl || fallbackUrl);\r\n\r\n    if (returnUrl) {\r\n        // \u0627\u06af\u0631 \u062f\u06cc\u0648\u0627\u0631 \u0644\u06cc\u0646\u06a9 \u062f\u0627\u062f\u0647 \u0628\u0648\u062f\u060c \u0628\u0647 \u0647\u0645\u0627\u0646 \u0628\u0631\u06af\u0631\u062f\r\n        // decodeURIComponent \u0628\u0631\u0627\u06cc \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u0627\u0632 \u0627\u06cc\u0646\u06a9\u0647 \u0622\u062f\u0631\u0633 \u0627\u0646\u06a9\u062f \u0634\u062f\u0647 \u062f\u0631\u0633\u062a \u06a9\u0627\u0631 \u06a9\u0646\u062f\r\n        window.location.href = decodeURIComponent(returnUrl);\r\n    } else {\r\n        // \u0627\u06af\u0631 \u0646\u0628\u0648\u062f\u060c \u0628\u0647 \u0644\u06cc\u0646\u06a9 \u0639\u0645\u0648\u0645\u06cc \u062f\u06cc\u0648\u0627\u0631 \u0628\u0631\u0648\r\n        window.location.href = fallbackUrl;\r\n    }\r\n  };\r\n</script>'
                     }
@@ -477,9 +596,831 @@ function PlasmicSelectProperty__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0645\u0634\u062a\u0631\u06cc \u0647\u0627 \u0641\u0642\u0637 \u0645\u06cc\u062a\u0648\u0646\u0646 \u0642\u06cc\u0645\u062a \u0648 \u067e\u0631/\u062e\u0627\u0644\u06cc \u0628\u0648\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u0631\u0648 \u0628\u0628\u06cc\u0646. \u062a\u0642\u0648\u06cc\u0645\u06cc \u06a9\u0647 \u0645\u06cc\u0647\u0645\u0627\u0646 \u0642\u0631\u0627\u0631\u0647 \u0628\u0628\u06cc\u0646\u0647 \u0645\u062b\u0644 \u0627\u06cc\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0647\u0633\u062a\ud83d\udc47"
+                  "\u062a\u0642\u0648\u06cc\u0645\u06cc \u06a9\u0647 \u0645\u0634\u062a\u0631\u06cc \u0642\u0631\u0627\u0631\u0647 \u0628\u0628\u06cc\u0646\u0647\ud83d\udc47"
                 }
               </div>
+            </div>
+            <div
+              data-plasmic-name={"main2"}
+              data-plasmic-override={overrides.main2}
+              className={classNames(projectcss.all, sty.main2)}
+            >
+              <ApiRequest
+                data-plasmic-name={"apiRequest3"}
+                data-plasmic-override={overrides.apiRequest3}
+                className={classNames("__wab_instance", sty.apiRequest3)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest3",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest3",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest3",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequest3"] = ref;
+                }}
+                url={(() => {
+                  try {
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const gatewayBase = isMiaan
+                        ? "https://gateway.miaan.ir"
+                        : "https://gateway.rentamon.com";
+                      return `${gatewayBase}/webhook/get_properties?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__tUe1R)}>
+                  <Select
+                    data-plasmic-name={"selectProperty2"}
+                    data-plasmic-override={overrides.selectProperty2}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.selectProperty2
+                    )}
+                    onChange={async (...eventArgs: any) => {
+                      ((...eventArgs) => {
+                        generateStateOnChangeProp($state, [
+                          "selectProperty2",
+                          "value"
+                        ])(eventArgs[0]);
+                      }).apply(null, eventArgs);
+
+                      if (
+                        eventArgs.length > 1 &&
+                        eventArgs[1] &&
+                        eventArgs[1]._plasmic_state_init_
+                      ) {
+                        return;
+                      }
+                    }}
+                    options={(() => {
+                      try {
+                        return $state.apiRequest3.data.map(item => item.name);
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return [];
+                        }
+                        throw e;
+                      }
+                    })()}
+                    placeholder={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__xy53F
+                        )}
+                      >
+                        {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
+                      </div>
+                    }
+                    value={generateStateValueProp($state, [
+                      "selectProperty2",
+                      "value"
+                    ])}
+                  />
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__eEl1N)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__faNmc)}
+                    >
+                      <ApiRequest
+                        data-plasmic-name={"profile2"}
+                        data-plasmic-override={overrides.profile2}
+                        className={classNames("__wab_instance", sty.profile2)}
+                        errorDisplay={null}
+                        loadingDisplay={null}
+                        method={"GET"}
+                        onError={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "profile2",
+                            "error"
+                          ]).apply(null, eventArgs);
+                        }}
+                        onLoading={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "profile2",
+                            "loading"
+                          ]).apply(null, eventArgs);
+                        }}
+                        onSuccess={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "profile2",
+                            "data"
+                          ]).apply(null, eventArgs);
+                        }}
+                        ref={ref => {
+                          $refs["profile2"] = ref;
+                        }}
+                        url={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? (() => {
+                                try {
+                                  return (() => {
+                                    const isMiaan =
+                                      window.location.hostname.includes(
+                                        "miaan.ir"
+                                      );
+                                    const gatewayBase = isMiaan
+                                      ? "https://gateway.miaan.ir"
+                                      : "https://gateway.rentamon.com";
+                                    return `${gatewayBase}/webhook/me`;
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                            : (() => {
+                                try {
+                                  return (() => {
+                                    const isMiaan =
+                                      window.location.hostname.includes(
+                                        "miaan.ir"
+                                      );
+                                    const gatewayBase = isMiaan
+                                      ? "https://gateway.miaan.ir"
+                                      : "https://gateway.rentamon.com";
+                                    return `${gatewayBase}/webhook/me/propertybase?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
+                        }
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__hzXFx
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__xoOhG
+                            )}
+                          >
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__mcW2V)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"auto"}
+                              loading={"lazy"}
+                              src={(() => {
+                                try {
+                                  return $state.profile2.data.profile_pic;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            />
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__jCyU8
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__bJrlT
+                              )}
+                            >
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      "نام میزبان: " +
+                                      $state.profile2.data.first_name +
+                                      " " +
+                                      $state.profile2.data.last_name
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            </div>
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__c2Hh
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__pqnG
+                              )}
+                            >
+                              <React.Fragment>
+                                {"نام اقامتگاه: " + $state.selectProperty.value}
+                              </React.Fragment>
+                            </div>
+                          </div>
+                        </div>
+                      </ApiRequest>
+                    </div>
+                  </div>
+                </div>
+                <ApiRequest
+                  data-plasmic-name={"apiRequest2"}
+                  data-plasmic-override={overrides.apiRequest2}
+                  className={classNames("__wab_instance", sty.apiRequest2)}
+                  errorDisplay={null}
+                  loadingDisplay={null}
+                  method={"GET"}
+                  onError={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest2",
+                      "error"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onLoading={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest2",
+                      "loading"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onSuccess={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest2",
+                      "data"
+                    ]).apply(null, eventArgs);
+                  }}
+                  ref={ref => {
+                    $refs["apiRequest2"] = ref;
+                  }}
+                  url={(() => {
+                    try {
+                      return (() => {
+                        const isMiaan =
+                          window.location.hostname.includes("miaan.ir");
+                        const gatewayBase = isMiaan
+                          ? "https://gateway.miaan.ir"
+                          : "https://gateway.rentamon.com";
+                        return `${gatewayBase}/webhook/public_calendar_api?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ffGTg)}
+                  >
+                    <ApiRequest
+                      data-plasmic-name={"getPrice"}
+                      data-plasmic-override={overrides.getPrice}
+                      className={classNames("__wab_instance", sty.getPrice)}
+                      errorDisplay={null}
+                      loadingDisplay={null}
+                      method={"GET"}
+                      onError={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "getPrice",
+                          "error"
+                        ]).apply(null, eventArgs);
+                      }}
+                      onLoading={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "getPrice",
+                          "loading"
+                        ]).apply(null, eventArgs);
+                      }}
+                      onSuccess={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "getPrice",
+                          "data"
+                        ]).apply(null, eventArgs);
+                      }}
+                      ref={ref => {
+                        $refs["getPrice"] = ref;
+                      }}
+                      url={(() => {
+                        try {
+                          return (() => {
+                            const isMiaan =
+                              window.location.hostname.includes("miaan.ir");
+                            const gatewayBase = isMiaan
+                              ? "https://gateway.miaan.ir"
+                              : "https://gateway.rentamon.com";
+                            return `${gatewayBase}/webhook/public_calendar_api_price?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                          })();
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
+                    >
+                      <Embed
+                        className={classNames(
+                          "__wab_instance",
+                          sty.embedHtml__k7Fho
+                        )}
+                        code={(() => {
+                          try {
+                            return `<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/jalaali-js/dist/jalaali.js"></script>
+
+<style>
+  #custom-calendar-container {
+    --bg-prebooked: #e2e2e2;
+    --bg-selected: #2727ea; /* غیرفعال شد */
+    --bg-range: #e0e0ff; /* غیرفعال شد */
+    --bg-free: #ffffff; 
+    --border-free: #ddd; 
+    --text-white: #fff; 
+    --text-dark: #333; 
+    --text-friday: #ff3b30; 
+    --text-price: #666;
+    --text-disabled: #ccc;
+    --radius: 8px;
+    
+    width: 100%; 
+    max-width: 400px; 
+    padding: 10px; 
+    box-sizing: border-box; 
+    direction: rtl;
+    font-family: inherit;
+    margin: 0 auto; 
+  }
+  
+  #custom-calendar-container * { box-sizing: border-box; }
+  
+  #custom-calendar-container .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 1.1rem; font-weight: bold; color: #333; }
+  
+  #custom-calendar-container .nav-btn { background: transparent !important; border: none !important; box-shadow: none !important; cursor: pointer; padding: 5px 15px; font-size: 1.5rem !important; color: #888 !important; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  #custom-calendar-container .nav-btn:disabled { color: #e0e0e0 !important; cursor: not-allowed; }
+  
+  #custom-calendar-container .weekdays { 
+      display: grid; 
+      grid-template-columns: repeat(7, 1fr); 
+      text-align: center; 
+      margin-bottom: 10px; 
+      font-size: 0.85rem; 
+      color: #888; 
+      font-weight: normal;
+      gap: 6px; 
+      justify-content: center; 
+  }
+  
+  #custom-calendar-container .days-grid { 
+      display: grid; 
+      grid-template-columns: repeat(7, 1fr); 
+      gap: 6px; 
+      justify-content: center; 
+  }
+  
+  #custom-calendar-container .day-cell { 
+      aspect-ratio: 1/1.1; 
+      border-radius: var(--radius); 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      font-size: 1rem; 
+      position: relative; 
+      transition: all 0.2s; 
+      padding: 2px; 
+      margin: 0; 
+      user-select: none; 
+      /* cursor: pointer;  <-- تغییر: نشانگر موس دیگر تغییر نکند */
+      cursor: default;
+      background-color: var(--bg-free);
+      border: 1px solid var(--border-free);
+      color: var(--text-dark);
+  }
+  
+  .day-price {
+      font-size: 0.8rem; 
+      color: var(--text-price);
+      margin-top: 4px;
+      font-weight: normal;
+  }
+
+  #custom-calendar-container .friday { color: var(--text-friday); }
+  
+  #custom-calendar-container .blocked { 
+      background-color: var(--bg-prebooked); 
+      border-color: var(--bg-prebooked); 
+      color: var(--text-disabled); 
+      cursor: default; 
+  }
+  
+  /* استایل‌های مربوط به انتخاب (Selected/Range) نگه داشته شدند اما استفاده نمی‌شوند */
+  #custom-calendar-container .selected { 
+      background-color: var(--bg-selected); 
+      border-color: var(--bg-selected); 
+      color: var(--text-white); 
+      transform: scale(1.05); 
+      z-index: 1; 
+      box-shadow: 0 2px 5px rgba(39, 39, 234, 0.3); 
+  }
+  #custom-calendar-container .selected .day-price { color: #e0e0e0; } 
+  #custom-calendar-container .selected.friday { color: var(--text-white); }
+
+  #custom-calendar-container .in-range {
+      background-color: var(--bg-range); 
+      border-color: var(--bg-selected); 
+      color: var(--text-dark); 
+  }
+  #custom-calendar-container .in-range .day-price { color: var(--text-price); }
+  
+  #custom-calendar-container .past-day { opacity: 0; pointer-events: none; }
+  #custom-calendar-container .empty-slot { pointer-events: none; }
+  #custom-calendar-container .loading { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; }
+  
+  #custom-calendar-container .legend { display: flex; justify-content: flex-start; align-items: center; margin-top: 20px; gap: 15px; font-size: 0.8rem; color: #666; }
+  #custom-calendar-container .legend-item { display: flex; align-items: center; gap: 8px; }
+  #custom-calendar-container .legend-box { width: 16px; height: 16px; border-radius: 4px; }
+  
+  #custom-calendar-container .box-free { background: #fff; border: 1px solid #ccc; }
+  #custom-calendar-container .box-blocked { background: var(--bg-prebooked); }
+  /* #custom-calendar-container .box-selected { background: var(--bg-selected); } */
+</style>
+</head>
+<body>
+
+<div id="custom-calendar-container">
+  <div class="header">
+    <button class="nav-btn" id="prev-btn">&#10094;</button> 
+    <span id="month-year-label">...</span>
+    <button class="nav-btn" id="next-btn">&#10095;</button>
+  </div>
+  <div class="weekdays"><div>ش</div><div>ی</div><div>د</div><div>س</div><div>چ</div><div>پ</div><div>ج</div></div>
+  <div id="loading-msg" class="loading">در حال بارگذاری تقویم...</div>
+  <div class="days-grid" id="calendar-grid"></div>
+  
+  <div class="legend" id="legend-section" style="display:none;">
+    <div class="legend-item"><div class="legend-box box-free"></div><span>خالی</span></div>
+    <div class="legend-item"><div class="legend-box box-blocked"></div><span>غیرفعال / پر</span></div>
+  </div>
+</div>
+
+<script>
+  var API_BOOKED_DATES = ${JSON.stringify($state.apiRequest2?.data?.dates ?? [])};
+  var API_PRICES_DATA = ${JSON.stringify($state.getPrice?.data ?? [])};
+
+  var MAX_MONTHS_AHEAD = 3;
+  
+  var preBookedDates = new Set();    
+  // var userSelectedDates = new Set();  // <--- کامنت شد: دیگر نیازی به ذخیره انتخاب کاربر نیست
+  var dailyPrices = new Map();
+  // var rangeStart = null;              // <--- کامنت شد: منطق بازه زمانی حذف شد
+
+  var today = new Date();
+  var todayJ = jalaali.toJalaali(today);
+  var currentYear = todayJ.jy;
+  var currentMonth = todayJ.jm;
+  var startYear = todayJ.jy;
+  var startMonth = todayJ.jm;
+  var monthNames = ["", "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
+
+  function toPersianNum(num) {
+      if(num === undefined || num === null) return "";
+      var farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+      return num.toString().replace(/\d/g, function(x) { return farsiDigits[x]; });
+  }
+  
+  function formatPrice(price) {
+      if (!price) return "";
+      var pStr = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return toPersianNum(pStr);
+  }
+
+  function initCalendar() {
+    try {
+      if (API_BOOKED_DATES && Array.isArray(API_BOOKED_DATES)) {
+        preBookedDates = new Set(API_BOOKED_DATES);
+      }
+
+      if (API_PRICES_DATA && Array.isArray(API_PRICES_DATA)) {
+          API_PRICES_DATA.forEach(function(item) {
+              if(item.price && item.price_date) {
+                  dailyPrices.set(item.price_date, item.price);
+              }
+          });
+      }
+      
+      var loadMsg = document.getElementById('loading-msg');
+      if(loadMsg) loadMsg.style.display = 'none';
+      var legSec = document.getElementById('legend-section');
+      if(legSec) legSec.style.display = 'flex';
+      
+      renderCalendar();
+      updateNavButtons();
+      // notifyPlasmic(); // <--- کامنت شد: نیازی به ارسال دیتا نیست
+      
+    } catch (error) {
+      console.error("Error initializing calendar:", error);
+    }
+    window.dailyPrices = dailyPrices;
+  }
+
+  /* // <--- کامنت شد: تابع ارسال دیتا به پلاسمیک دیگر نیاز نیست
+  function notifyPlasmic() {
+      var selectedArray = Array.from(userSelectedDates);
+      window.selectedCalendarDates = selectedArray;
+      var event = new CustomEvent('calendar-change', { detail: selectedArray });
+      window.dispatchEvent(event);
+  }
+  */
+
+  function isDateInPast(y, m, d) {
+    if (y < todayJ.jy) return true;
+    if (y > todayJ.jy) return false;
+    if (m < todayJ.jm) return true;
+    if (m > todayJ.jm) return false;
+    return d < todayJ.jd;
+  }
+
+  function renderCalendar() {
+    var grid = document.getElementById('calendar-grid');
+    var label = document.getElementById('month-year-label');
+    if (!grid || !label) return;
+    
+    grid.innerHTML = '';
+    label.innerText = monthNames[currentMonth] + " " + toPersianNum(currentYear);
+    var daysInMonth = jalaali.jalaaliMonthLength(currentYear, currentMonth);
+    var gDate = jalaali.toGregorian(currentYear, currentMonth, 1);
+    var dateObj = new Date(gDate.gy, gDate.gm - 1, gDate.gd);
+    var startDayOfWeek = dateObj.getDay(); 
+    var jsDayToJalaliDay = [1, 2, 3, 4, 5, 6, 0];
+    var startDayIndex = jsDayToJalaliDay[startDayOfWeek];
+
+    for (var i = 0; i < startDayIndex; i++) {
+      var emptyCell = document.createElement('div');
+      emptyCell.className = 'empty-slot';
+      grid.appendChild(emptyCell);
+    }
+
+    // منطق سورت کردن تاریخ‌های انتخاب شده کامنت شد چون انتخابی نداریم
+    // var sortedDates = Array.from(userSelectedDates).sort(); ...
+
+    for (var day = 1; day <= daysInMonth; day++) {
+      var cell = document.createElement('div');
+      
+      var mStr = currentMonth < 10 ? '0' + currentMonth : currentMonth;
+      var dStr = day < 10 ? '0' + day : day;
+      var dateString = currentYear + "-" + mStr + "-" + dStr;
+      
+      var isPast = isDateInPast(currentYear, currentMonth, day);
+      var isPreBooked = preBookedDates.has(dateString);
+      
+      var price = dailyPrices.get(dateString);
+      var hasPrice = (price !== undefined && price !== null && price > 0);
+
+      var classes = 'day-cell';
+      
+      if (isPast) {
+          classes += ' past-day';
+      } 
+      else if (isPreBooked) {
+          classes += ' blocked'; 
+      }
+      else if (!hasPrice) {
+          classes += ' blocked';
+      }
+      else {
+          // <--- تغییر: منطق بررسی userSelectedDates حذف شد.
+          // همیشه کلاس free را اضافه می‌کنیم چون حالت Readonly است
+          classes += ' free';
+          
+          var dayOfWeekIndex = (day - 1 + startDayIndex) % 7;
+          if (dayOfWeekIndex === 6) classes += ' friday';
+      }
+      
+      var content = '<span>' + toPersianNum(day) + '</span>';
+      
+      if (hasPrice && !isPreBooked && !isPast) {
+          var displayPrice = formatPrice(price / 1000); 
+          content += '<span class="day-price">' + displayPrice + '</span>';
+      }
+      
+      cell.className = classes;
+      cell.innerHTML = content;
+      
+      /* // <--- بخش اصلی تغییر: تمام لاجیک کلیک کردن کامنت شد (Read-only)
+      
+      (function(dString, isBlock, hasP) {
+          if (!isPast) { 
+              cell.onclick = function() {
+                  if (!rangeStart && (isBlock || !hasP)) { return; }
+                  // ... (تمام کدهای انتخاب بازه) ...
+                  renderCalendar();
+                  notifyPlasmic();
+              };
+          }
+      })(dateString, isPreBooked, hasPrice);
+      */
+
+      grid.appendChild(cell);
+    }
+  }
+
+  function changeMonth(offset) {
+    var nextM = currentMonth + offset;
+    var nextY = currentYear;
+    if (nextM > 12) { nextM = 1; nextY++; }
+    else if (nextM < 1) { nextM = 12; nextY--; }
+    currentMonth = nextM;
+    currentYear = nextY;
+    renderCalendar();
+    updateNavButtons();
+  }
+
+  function updateNavButtons() {
+    var prevBtn = document.getElementById('prev-btn');
+    var nextBtn = document.getElementById('next-btn');
+    if(!prevBtn || !nextBtn) return;
+    prevBtn.onclick = function() { changeMonth(-1); };
+    nextBtn.onclick = function() { changeMonth(1); };
+    if (currentYear === startYear && currentMonth === startMonth) prevBtn.disabled = true;
+    else prevBtn.disabled = false;
+    var diffMonths = (currentYear - startYear) * 12 + (currentMonth - startMonth);
+    if (diffMonths >= MAX_MONTHS_AHEAD) nextBtn.disabled = true;
+    else nextBtn.disabled = false;
+  }
+
+  setTimeout(initCalendar, 50);
+</script>
+</body>
+</html>`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+                    </ApiRequest>
+                  </div>
+                </ApiRequest>
+              </ApiRequest>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__nxklz)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={(() => {
+                  try {
+                    return $state.fetchImage.data.property_pic_link;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+                width={
+                  hasVariant(globalVariants, "screen", "mobile") ? `` : "400"
+                }
+              />
+
+              <ApiRequest
+                data-plasmic-name={"fetchImage"}
+                data-plasmic-override={overrides.fetchImage}
+                children={null}
+                className={classNames("__wab_instance", sty.fetchImage)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "fetchImage",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "fetchImage",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "fetchImage",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                params={undefined}
+                ref={ref => {
+                  $refs["fetchImage"] = ref;
+                }}
+                url={(() => {
+                  try {
+                    return (() => {
+                      const isMiaan =
+                        window.location.hostname.includes("miaan.ir");
+                      const gatewayBase = isMiaan
+                        ? "https://gateway.miaan.ir"
+                        : "https://gateway.rentamon.com";
+                      return `${gatewayBase}/webhook/property_image_url?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
             </div>
           </div>
           <SideEffect
@@ -618,13 +1559,50 @@ const PlasmicDescendants = {
     "main",
     "apiRequest",
     "selectProperty",
-    "embedHtml",
+    "main2",
+    "apiRequest3",
+    "selectProperty2",
+    "profile2",
+    "apiRequest2",
+    "getPrice",
+    "fetchImage",
     "sideEffect"
   ],
-  main: ["main", "apiRequest", "selectProperty", "embedHtml"],
+  main: [
+    "main",
+    "apiRequest",
+    "selectProperty",
+    "main2",
+    "apiRequest3",
+    "selectProperty2",
+    "profile2",
+    "apiRequest2",
+    "getPrice",
+    "fetchImage"
+  ],
   apiRequest: ["apiRequest", "selectProperty"],
   selectProperty: ["selectProperty"],
-  embedHtml: ["embedHtml"],
+  main2: [
+    "main2",
+    "apiRequest3",
+    "selectProperty2",
+    "profile2",
+    "apiRequest2",
+    "getPrice",
+    "fetchImage"
+  ],
+  apiRequest3: [
+    "apiRequest3",
+    "selectProperty2",
+    "profile2",
+    "apiRequest2",
+    "getPrice"
+  ],
+  selectProperty2: ["selectProperty2"],
+  profile2: ["profile2"],
+  apiRequest2: ["apiRequest2", "getPrice"],
+  getPrice: ["getPrice"],
+  fetchImage: ["fetchImage"],
   sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -635,7 +1613,13 @@ type NodeDefaultElementType = {
   main: "div";
   apiRequest: typeof ApiRequest;
   selectProperty: typeof Select;
-  embedHtml: typeof Embed;
+  main2: "div";
+  apiRequest3: typeof ApiRequest;
+  selectProperty2: typeof Select;
+  profile2: typeof ApiRequest;
+  apiRequest2: typeof ApiRequest;
+  getPrice: typeof ApiRequest;
+  fetchImage: typeof ApiRequest;
   sideEffect: typeof SideEffect;
 };
 
@@ -704,7 +1688,13 @@ export const PlasmicSelectProperty = Object.assign(
     main: makeNodeComponent("main"),
     apiRequest: makeNodeComponent("apiRequest"),
     selectProperty: makeNodeComponent("selectProperty"),
-    embedHtml: makeNodeComponent("embedHtml"),
+    main2: makeNodeComponent("main2"),
+    apiRequest3: makeNodeComponent("apiRequest3"),
+    selectProperty2: makeNodeComponent("selectProperty2"),
+    profile2: makeNodeComponent("profile2"),
+    apiRequest2: makeNodeComponent("apiRequest2"),
+    getPrice: makeNodeComponent("getPrice"),
+    fetchImage: makeNodeComponent("fetchImage"),
     sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicSelectProperty

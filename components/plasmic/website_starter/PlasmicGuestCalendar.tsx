@@ -1115,57 +1115,59 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile") ? `` : "400"
               }
             />
-          </div>
-          <ApiRequest
-            data-plasmic-name={"fetchImage"}
-            data-plasmic-override={overrides.fetchImage}
-            children={null}
-            className={classNames("__wab_instance", sty.fetchImage)}
-            errorDisplay={null}
-            loadingDisplay={null}
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["fetchImage", "error"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "fetchImage",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["fetchImage", "data"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            params={undefined}
-            ref={ref => {
-              $refs["fetchImage"] = ref;
-            }}
-            url={(() => {
-              try {
-                return (() => {
-                  const isMiaan = window.location.hostname.includes("miaan.ir");
-                  const gatewayBase = isMiaan
-                    ? "https://gateway.miaan.ir"
-                    : "https://gateway.rentamon.com";
-                  return `${gatewayBase}/webhook/property_image_url?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
-                })();
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
+
+            <ApiRequest
+              data-plasmic-name={"fetchImage"}
+              data-plasmic-override={overrides.fetchImage}
+              children={null}
+              className={classNames("__wab_instance", sty.fetchImage)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "fetchImage",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "fetchImage",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["fetchImage", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              params={undefined}
+              ref={ref => {
+                $refs["fetchImage"] = ref;
+              }}
+              url={(() => {
+                try {
+                  return (() => {
+                    const isMiaan =
+                      window.location.hostname.includes("miaan.ir");
+                    const gatewayBase = isMiaan
+                      ? "https://gateway.miaan.ir"
+                      : "https://gateway.rentamon.com";
+                    return `${gatewayBase}/webhook/property_image_url?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
                 }
-                throw e;
-              }
-            })()}
-          />
+              })()}
+            />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -1189,7 +1191,8 @@ const PlasmicDescendants = {
     "selectProperty",
     "profile2",
     "apiRequest2",
-    "getPrice"
+    "getPrice",
+    "fetchImage"
   ],
   apiRequest: [
     "apiRequest",
