@@ -167,8 +167,8 @@ export type PlasmicBookings2__OverridesType = {
   property2?: Flex__<"div">;
   settlement?: Flex__<"div">;
   settlement2?: Flex__<typeof Switch>;
-  confierm?: Flex__<"div">;
-  confierm2?: Flex__<typeof Switch>;
+  settlement3?: Flex__<"div">;
+  final?: Flex__<typeof Switch>;
   cancelled?: Flex__<"div">;
   cancelled3?: Flex__<typeof Switch>;
   button?: Flex__<"div">;
@@ -462,25 +462,6 @@ function PlasmicBookings2__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
-        path: "confierm2.checked",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return localStorage.getItem("only_final_bookings") === "true";
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return undefined;
-              }
-              throw e;
-            }
-          })()
-      },
-      {
         path: "cancelled3.checked",
         type: "private",
         variableType: "text",
@@ -509,6 +490,25 @@ function PlasmicBookings2__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => "all"
+      },
+      {
+        path: "final.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return localStorage.getItem("only_final_bookings") === "true";
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -2498,8 +2498,23 @@ function PlasmicBookings2__RenderFunc(props: {
                       const actionArgs = {
                         customFunction: async () => {
                           return (() => {
-                            const reservations =
-                              $state.reserveData.data.bookings;
+                            let reservations = $state.reserveData.data.bookings;
+                            const onlyFinal = localStorage.getItem(
+                              "only_final_bookings"
+                            );
+                            if (
+                              onlyFinal === "true" &&
+                              Array.isArray(reservations)
+                            ) {
+                              reservations = reservations
+                                .map(item => ({
+                                  ...item,
+                                  bookings: item.bookings.filter(
+                                    booking => booking.status !== "cancelled"
+                                  )
+                                }))
+                                .filter(item => item.bookings.length > 0);
+                            }
                             const today = new Date()
                               .toISOString()
                               .split("T")[0];
@@ -2947,73 +2962,41 @@ function PlasmicBookings2__RenderFunc(props: {
                     data-plasmic-override={overrides.pagination2}
                     className={classNames(projectcss.all, sty.pagination2)}
                   >
-                    {(
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? (() => {
-                            try {
-                              return (() => {
-                                if ($state.reservationType) {
-                                  return false;
-                                }
-                                return (
-                                  $state.reservations.message == null &&
-                                  !$state.searchInput?.value &&
-                                  !(
-                                    $state.cancelled3.checked ||
-                                    $state.confierm2.checked ||
-                                    $state.settlement2.checked
-                                  ) &&
-                                  $state.reservations.length !==
-                                    $state.reserveData?.data?.result?.meta
-                                      ?.total_count
-                                );
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return false;
-                              }
-                              throw e;
-                            }
-                          })()
-                        : (() => {
-                            try {
-                              return (() => {
-                                const totalBookings =
-                                  $state.reservations.reduce((sum, day) => {
-                                    return (
-                                      sum +
-                                      (day.bookings ? day.bookings.length : 0)
-                                    );
-                                  }, 0);
-                                if ($state.reservationType != "all") {
-                                  return false;
-                                }
-                                return (
-                                  $state.reservations.message == null &&
-                                  !$state.searchInput?.value &&
-                                  !(
-                                    $state.cancelled3.checked ||
-                                    $state.confierm2.checked ||
-                                    $state.settlement2.checked
-                                  ) &&
-                                  totalBookings !==
-                                    $state.reserveData?.data?.meta?.total_count
-                                );
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return false;
-                              }
-                              throw e;
-                            }
-                          })()
-                    ) ? (
+                    {(() => {
+                      try {
+                        return (() => {
+                          const totalBookings = $state.reservations.reduce(
+                            (sum, day) => {
+                              return (
+                                sum + (day.bookings ? day.bookings.length : 0)
+                              );
+                            },
+                            0
+                          );
+                          if ($state.reservationType != "all") {
+                            return false;
+                          }
+                          return (
+                            $state.reservations.message == null &&
+                            !$state.searchInput?.value &&
+                            !(
+                              $state.cancelled3.checked ||
+                              $state.settlement2.checked
+                            ) &&
+                            totalBookings !==
+                              $state.reserveData?.data?.meta?.total_count
+                          );
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return false;
+                        }
+                        throw e;
+                      }
+                    })() ? (
                       <div
                         className={classNames(
                           projectcss.all,
@@ -3114,6 +3097,23 @@ function PlasmicBookings2__RenderFunc(props: {
                                         (a, b) =>
                                           new Date(a.date) - new Date(b.date)
                                       );
+                                      if (
+                                        localStorage.getItem(
+                                          "only_final_bookings"
+                                        ) === "true"
+                                      ) {
+                                        allReservations = allReservations
+                                          .map(item => ({
+                                            ...item,
+                                            bookings: item.bookings.filter(
+                                              booking =>
+                                                booking.status !== "cancelled"
+                                            )
+                                          }))
+                                          .filter(
+                                            item => item.bookings.length > 0
+                                          );
+                                      }
                                       return ($state.reservations =
                                         allReservations);
                                     })();
@@ -6857,8 +6857,7 @@ function PlasmicBookings2__RenderFunc(props: {
                                 const actionArgs = {
                                   customFunction: async () => {
                                     return (() => {
-                                      $state.cancelled3.checked = false;
-                                      return ($state.confierm2.checked = false);
+                                      return ($state.cancelled3.checked = false);
                                     })();
                                   }
                                 };
@@ -7017,21 +7016,21 @@ function PlasmicBookings2__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "mobile") ? true : false
               ) ? (
                 <div
-                  data-plasmic-name={"confierm"}
-                  data-plasmic-override={overrides.confierm}
-                  className={classNames(projectcss.all, sty.confierm)}
+                  data-plasmic-name={"settlement3"}
+                  data-plasmic-override={overrides.settlement3}
+                  className={classNames(projectcss.all, sty.settlement3)}
                 >
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__tFcVa)}
+                    className={classNames(projectcss.all, sty.freeBox__shm8C)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__fFs1D)}
+                      className={classNames(projectcss.all, sty.freeBox__aotqB)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__d2UH8
+                          sty.text___20Rb1
                         )}
                       >
                         {"\u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647"}
@@ -7039,18 +7038,18 @@ function PlasmicBookings2__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__bZJh1)}
+                    className={classNames(projectcss.all, sty.freeBox__eOd3)}
                   >
                     {(() => {
                       const child$Props = {
                         checked: generateStateValueProp($state, [
-                          "confierm2",
+                          "final",
                           "checked"
                         ]),
-                        className: classNames("__wab_instance", sty.confierm2),
+                        className: classNames("__wab_instance", sty.final),
                         onCheckedChange: async (...eventArgs: any) => {
                           generateStateOnChangeProp($state, [
-                            "confierm2",
+                            "final",
                             "checked"
                           ]).apply(null, eventArgs);
 
@@ -7062,57 +7061,40 @@ function PlasmicBookings2__RenderFunc(props: {
                                   const actionArgs = {
                                     customFunction: async () => {
                                       return (() => {
-                                        console.log(
-                                          "STEP 1: Checking checkbox status...",
-                                          $state.confierm2.checked
-                                        );
-                                        if ($state.confierm2.checked == true) {
-                                          console.log(
-                                            "STEP 2 (True Block): Checkbox is TRUE. Filtering cancelled bookings."
-                                          );
-                                          $state.reservations.forEach(day => {
-                                            day.bookings = day.bookings.filter(
-                                              b => b.status !== "cancelled"
-                                            );
-                                          });
-                                          console.log(
-                                            "STEP 3 (True Block): Filter complete. Setting localStorage 'only_final_bookings' to 'true'."
-                                          );
+                                        if ($state.final.checked == true) {
+                                          $state.reservations =
+                                            $state.reservations
+                                              .map(item => ({
+                                                ...item,
+                                                bookings: item.bookings.filter(
+                                                  booking =>
+                                                    booking.status !==
+                                                    "cancelled"
+                                                )
+                                              }))
+                                              .filter(
+                                                item => item.bookings.length > 0
+                                              );
                                           localStorage.setItem(
                                             "only_final_bookings",
                                             "true"
                                           );
                                         }
-                                        if ($state.confierm2.checked == false) {
-                                          console.log(
-                                            "STEP 2 (False Block): Checkbox is FALSE. Resetting data from reserveData."
-                                          );
+                                        if ($state.final.checked == false) {
                                           $state.reservations =
                                             $state.reserveData.data.bookings;
-                                          console.log(
-                                            "STEP 3 (False Block): Reset complete. Setting localStorage 'only_final_bookings' to 'false'."
-                                          );
                                           localStorage.setItem(
                                             "only_final_bookings",
                                             "false"
                                           );
                                         }
                                         if (
-                                          Array.isArray(reservations) &&
-                                          reservations.length > 0
+                                          Array.isArray($state.reservations) &&
+                                          $state.reservations.length > 0
                                         ) {
-                                          console.log(
-                                            "STEP 4: Saving 'reservations' to localStorage. Item count:",
-                                            reservations.length
-                                          );
                                           return localStorage.setItem(
                                             "reservations",
-                                            JSON.stringify(reservations)
-                                          );
-                                        } else {
-                                          return console.log(
-                                            "STEP 4: Skipped saving 'reservations' (Array is empty or invalid).",
-                                            reservations
+                                            JSON.stringify($state.reservations)
                                           );
                                         }
                                       })();
@@ -7138,7 +7120,7 @@ function PlasmicBookings2__RenderFunc(props: {
                         [
                           {
                             name: "checked",
-                            plasmicStateName: "confierm2.checked"
+                            plasmicStateName: "final.checked"
                           }
                         ],
                         [],
@@ -7149,7 +7131,7 @@ function PlasmicBookings2__RenderFunc(props: {
                         $state,
                         [
                           {
-                            name: "confierm2.checked",
+                            name: "final.checked",
                             initFunc: ({ $props, $state, $queries }) =>
                               (() => {
                                 try {
@@ -7175,8 +7157,8 @@ function PlasmicBookings2__RenderFunc(props: {
                       );
                       return (
                         <Switch
-                          data-plasmic-name={"confierm2"}
-                          data-plasmic-override={overrides.confierm2}
+                          data-plasmic-name={"final"}
+                          data-plasmic-override={overrides.final}
                           {...child$Props}
                         />
                       );
@@ -7233,10 +7215,7 @@ function PlasmicBookings2__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
-                                    return (() => {
-                                      $state.confierm2.checked = false;
-                                      return ($state.settlement2.checked = false);
-                                    })();
+                                    return ($state.settlement2.checked = false);
                                   }
                                 };
                                 return (({ customFunction }) => {
@@ -7274,9 +7253,6 @@ function PlasmicBookings2__RenderFunc(props: {
                                         queryParams.push(
                                           `is_settled=${!$state.settlement2.checked}`
                                         );
-                                      }
-                                      if ($state.confierm2.checked) {
-                                        queryParams.push(`status=Confirmed`);
                                       } else if ($state.cancelled3.checked) {
                                         queryParams.push(`status=cancelled`);
                                       }
@@ -7508,7 +7484,6 @@ function PlasmicBookings2__RenderFunc(props: {
                               customFunction: async () => {
                                 return (() => {
                                   $state.settlement2.checked = false;
-                                  $state.confierm2.checked = false;
                                   return ($state.cancelled3.checked = false);
                                 })();
                               }
@@ -7921,8 +7896,8 @@ const PlasmicDescendants = {
     "property2",
     "settlement",
     "settlement2",
-    "confierm",
-    "confierm2",
+    "settlement3",
+    "final",
     "cancelled",
     "cancelled3",
     "button",
@@ -8078,8 +8053,8 @@ const PlasmicDescendants = {
     "property2",
     "settlement",
     "settlement2",
-    "confierm",
-    "confierm2",
+    "settlement3",
+    "final",
     "cancelled",
     "cancelled3",
     "button"
@@ -8089,8 +8064,8 @@ const PlasmicDescendants = {
   property2: ["property2"],
   settlement: ["settlement", "settlement2"],
   settlement2: ["settlement2"],
-  confierm: ["confierm", "confierm2"],
-  confierm2: ["confierm2"],
+  settlement3: ["settlement3", "final"],
+  final: ["final"],
   cancelled: ["cancelled", "cancelled3"],
   cancelled3: ["cancelled3"],
   button: ["button"],
@@ -8168,8 +8143,8 @@ type NodeDefaultElementType = {
   property2: "div";
   settlement: "div";
   settlement2: typeof Switch;
-  confierm: "div";
-  confierm2: typeof Switch;
+  settlement3: "div";
+  final: typeof Switch;
   cancelled: "div";
   cancelled3: typeof Switch;
   button: "div";
@@ -8305,8 +8280,8 @@ export const PlasmicBookings2 = Object.assign(
     property2: makeNodeComponent("property2"),
     settlement: makeNodeComponent("settlement"),
     settlement2: makeNodeComponent("settlement2"),
-    confierm: makeNodeComponent("confierm"),
-    confierm2: makeNodeComponent("confierm2"),
+    settlement3: makeNodeComponent("settlement3"),
+    final: makeNodeComponent("final"),
     cancelled: makeNodeComponent("cancelled"),
     cancelled3: makeNodeComponent("cancelled3"),
     button: makeNodeComponent("button"),

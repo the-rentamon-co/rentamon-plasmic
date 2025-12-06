@@ -6476,31 +6476,6 @@ function PlasmicConnections__RenderFunc(props: {
                                   await $steps["successToast"];
                               }
 
-                              $steps["errorToast"] =
-                                !$steps.snappVerify?.data?.status ||
-                                $steps.snappVerify?.data?.status !== true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "error",
-                                          "\u0627\u062a\u0635\u0627\u0644 \u0628\u0627 \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f!",
-                                          "top-center"
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.showToast"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["errorToast"] != null &&
-                                typeof $steps["errorToast"] === "object" &&
-                                typeof $steps["errorToast"].then === "function"
-                              ) {
-                                $steps["errorToast"] =
-                                  await $steps["errorToast"];
-                              }
-
                               $steps["noPropertiesErrorToast"] =
                                 $steps.snappVerify.data.status === 403
                                   ? (() => {
@@ -6526,6 +6501,32 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["noPropertiesErrorToast"] =
                                   await $steps["noPropertiesErrorToast"];
+                              }
+
+                              $steps["errorToast"] =
+                                (!$steps.snappVerify?.data?.status ||
+                                  $steps.snappVerify?.data?.status !== true) &&
+                                $steps.snappVerify?.data?.status !== 403
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "error",
+                                          "\u0627\u062a\u0635\u0627\u0644 \u0628\u0627 \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0628\u0631\u0642\u0631\u0627\u0631 \u0646\u0634\u062f!",
+                                          "top-center"
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["errorToast"] != null &&
+                                typeof $steps["errorToast"] === "object" &&
+                                typeof $steps["errorToast"].then === "function"
+                              ) {
+                                $steps["errorToast"] =
+                                  await $steps["errorToast"];
                               }
 
                               $steps["platformStatus"] = true

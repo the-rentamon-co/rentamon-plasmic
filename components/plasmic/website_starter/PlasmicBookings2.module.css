@@ -1105,11 +1105,6 @@
   min-width: 0;
   padding: 8px;
 }
-@media (max-width: 350px) {
-  .freeBox__wrAbZ {
-    display: flex;
-  }
-}
 .text__z1O2U {
   position: relative;
   width: 100%;
@@ -2791,7 +2786,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.confierm {
+.settlement3 {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -2804,22 +2799,13 @@
   padding: 8px;
 }
 @media (max-width: 500px) {
-  .confierm {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
+  .settlement3 {
     border-bottom-style: dashed;
     border-bottom-width: 1px;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    row-gap: 0px;
-    min-width: 0;
-    display: flex;
     padding: 4px;
   }
 }
-.freeBox__tFcVa {
+.freeBox__shm8C {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -2831,14 +2817,14 @@
   min-width: 0;
 }
 @media (max-width: 500px) {
-  .freeBox__tFcVa {
+  .freeBox__shm8C {
     justify-content: center;
     align-items: center;
     column-gap: 10px;
     row-gap: 0px;
   }
 }
-.freeBox__fFs1D {
+.freeBox__aotqB {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -2851,7 +2837,7 @@
   padding: 8px;
 }
 @media (max-width: 500px) {
-  .freeBox__fFs1D {
+  .freeBox__aotqB {
     width: 100%;
     align-items: flex-start;
     justify-content: center;
@@ -2859,22 +2845,21 @@
     padding: 0px;
   }
 }
-.text__d2UH8 {
+.text___20Rb1 {
   position: relative;
   width: auto;
   height: auto;
   max-width: 100%;
   font-size: 17px;
   font-weight: 400;
-  padding-bottom: 0px;
   display: none;
 }
 @media (max-width: 500px) {
-  .text__d2UH8 {
+  .text___20Rb1 {
     display: block;
   }
 }
-.freeBox__bZJh1 {
+.freeBox__eOd3 {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -2887,12 +2872,12 @@
   padding: 8px;
 }
 @media (max-width: 500px) {
-  .freeBox__bZJh1 {
+  .freeBox__eOd3 {
     align-items: flex-end;
     justify-content: center;
   }
 }
-.confierm2:global(.__wab_instance) {
+.final:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
