@@ -3473,6 +3473,35 @@ function PlasmicBookings2__RenderFunc(props: {
                                   $steps["runCode"] = await $steps["runCode"];
                                 }
                               }}
+                              style={(() => {
+                                try {
+                                  return (() => {
+                                    const today = new Date();
+                                    today.setHours(0, 0, 0, 0);
+                                    const checkOutDate = new Date(
+                                      currentItem.check_out
+                                    );
+                                    checkOutDate.setHours(0, 0, 0, 0);
+                                    if (
+                                      currentItem.status == "cancelled" &&
+                                      checkOutDate >= today
+                                    ) {
+                                      return { opacity: "50%" };
+                                    } else {
+                                      return null;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
                             >
                               {(() => {
                                 try {
