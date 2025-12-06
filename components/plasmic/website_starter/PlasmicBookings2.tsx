@@ -6949,10 +6949,10 @@ function PlasmicBookings2__RenderFunc(props: {
                                         $state.settlement2.checked == false
                                       ) {
                                         return ($state.reservations =
-                                          $steps.sendRequests.data.bookings);
+                                          $steps.sendRequest.data.bookings);
                                       }
                                       return ($state.reservations =
-                                        $steps.sendRequests.data.result.bookings);
+                                        $steps.sendRequest.data.result.bookings);
                                     })();
                                   }
                                 };

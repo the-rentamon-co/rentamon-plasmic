@@ -1808,12 +1808,9 @@ function PlasmicProCalendar2__RenderFunc(props: {
                                     await $steps["goToStatusesConnections"];
                                 }
                               }}
-                              src={{
-                                src: "/plasmic/website_starter/images/image8.svg",
-                                fullWidth: 30,
-                                fullHeight: 30,
-                                aspectRatio: 1
-                              }}
+                              src={
+                                "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2FGroup%20574.svg?versionId="
+                              }
                             />
                           ) : null}
                           {(() => {

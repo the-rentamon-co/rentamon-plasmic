@@ -348,12 +348,7 @@ function PlasmicSideBar2__RenderFunc(props: {
                     fullHeight: 24,
                     aspectRatio: 0.875
                   }
-                : {
-                    src: "/plasmic/website_starter/images/image36.svg",
-                    fullWidth: 21,
-                    fullHeight: 24,
-                    aspectRatio: 0.875
-                  }
+                : "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2FGroup%20598%20%281%29.svg?versionId="
             }
           />
         </div>
@@ -380,12 +375,9 @@ function PlasmicSideBar2__RenderFunc(props: {
                 displayMinWidth={"0"}
                 displayWidth={"auto"}
                 loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image37.svg",
-                  fullWidth: 21,
-                  fullHeight: 24,
-                  aspectRatio: 0.875
-                }}
+                src={
+                  "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/icon%2FGroup%20598.svg?versionId="
+                }
               />
 
               {(() => {

@@ -341,20 +341,7 @@ function PlasmicConnections__RenderFunc(props: {
         path: "step",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return $ctx.query.step;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return 1;
-              }
-              throw e;
-            }
-          })()
+        initFunc: ({ $props, $state, $queries, $ctx }) => 12
       },
       {
         path: "apiRequest2.data",
@@ -6499,6 +6486,33 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["errorToast"] =
                                   await $steps["errorToast"];
+                              }
+
+                              $steps["noPropertiesErrorToast"] =
+                                $steps.snappVerify.data.status === 403
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "error",
+                                          "\u0647\u0646\u0648\u0632 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u062f\u0631 \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0646\u062f\u0627\u0631\u06cc!",
+                                          "top-center",
+                                          5000
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.showToast"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["noPropertiesErrorToast"] != null &&
+                                typeof $steps["noPropertiesErrorToast"] ===
+                                  "object" &&
+                                typeof $steps["noPropertiesErrorToast"].then ===
+                                  "function"
+                              ) {
+                                $steps["noPropertiesErrorToast"] =
+                                  await $steps["noPropertiesErrorToast"];
                               }
 
                               $steps["platformStatus"] = true
