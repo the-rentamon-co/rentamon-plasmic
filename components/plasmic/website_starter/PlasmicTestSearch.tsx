@@ -63,7 +63,6 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
-import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -93,7 +92,6 @@ export type PlasmicTestSearch__OverridesType = {
   checkVpn?: Flex__<typeof SideEffect>;
   vpnModal?: Flex__<"div">;
   button?: Flex__<typeof Button>;
-  httpRestApiFetcher?: Flex__<typeof DataFetcher>;
   profile2?: Flex__<typeof ApiRequest>;
 };
 
@@ -323,8 +321,8 @@ function PlasmicTestSearch__RenderFunc(props: {
                     const isMiaan =
                       window.location.hostname.includes("miaan.ir");
                     const gatewayBase = isMiaan
-                      ? "https://gateway.miaan.ir"
-                      : "https://gateway.rentamon.com";
+                      ? "https://dev.miaan.ir"
+                      : "https://dev.rentamon.com";
                     return `${gatewayBase}/webhook/test-cors`;
                   })();
                 } catch (e) {
@@ -685,23 +683,6 @@ function PlasmicTestSearch__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <DataFetcher
-            data-plasmic-name={"httpRestApiFetcher"}
-            data-plasmic-override={overrides.httpRestApiFetcher}
-            className={classNames("__wab_instance", sty.httpRestApiFetcher)}
-            dataName={"fetchedData"}
-            errorDisplay={
-              <DataCtxReader__>{$ctx => "Error fetching data"}</DataCtxReader__>
-            }
-            errorName={"fetchError"}
-            loadingDisplay={
-              <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
-            }
-            method={"GET"}
-            noLayout={false}
-            url={"https://api.github.com/users/plasmicapp/repos"}
-          />
-
           <ApiRequest
             data-plasmic-name={"profile2"}
             data-plasmic-override={overrides.profile2}
@@ -764,7 +745,6 @@ const PlasmicDescendants = {
     "checkVpn",
     "vpnModal",
     "button",
-    "httpRestApiFetcher",
     "profile2"
   ],
   apiRequest2: ["apiRequest2"],
@@ -772,7 +752,6 @@ const PlasmicDescendants = {
   checkVpn: ["checkVpn"],
   vpnModal: ["vpnModal", "button"],
   button: ["button"],
-  httpRestApiFetcher: ["httpRestApiFetcher"],
   profile2: ["profile2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -785,7 +764,6 @@ type NodeDefaultElementType = {
   checkVpn: typeof SideEffect;
   vpnModal: "div";
   button: typeof Button;
-  httpRestApiFetcher: typeof DataFetcher;
   profile2: typeof ApiRequest;
 };
 
@@ -856,7 +834,6 @@ export const PlasmicTestSearch = Object.assign(
     checkVpn: makeNodeComponent("checkVpn"),
     vpnModal: makeNodeComponent("vpnModal"),
     button: makeNodeComponent("button"),
-    httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
     profile2: makeNodeComponent("profile2"),
 
     // Metadata about props expected for PlasmicTestSearch
