@@ -73,6 +73,12 @@
   border-radius: 30%;
   border-width: 0px;
 }
+@media (max-width: 500px) {
+  .input {
+    font-size: 15px;
+    color: var(--token-x5j-1DOppODK);
+  }
+}
 .inputisDisabled {
   cursor: not-allowed;
 }

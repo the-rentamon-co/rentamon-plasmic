@@ -6047,6 +6047,16 @@
           "id": "UKpcozlFjL4x",
           "name": "Bale-Logo.png",
           "filePath": "../public/plasmic/website_starter/images/baleLogoPng.png"
+        },
+        {
+          "id": "8v-pCZz638u3",
+          "name": "image 194",
+          "filePath": "../public/plasmic/website_starter/images/image194.svg"
+        },
+        {
+          "id": "aiAOhI1SDwet",
+          "name": "image 195",
+          "filePath": "../public/plasmic/website_starter/images/image195.svg"
         }
       ],
       "indirect": false,

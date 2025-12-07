@@ -353,7 +353,7 @@ function PlasmicBookings2__RenderFunc(props: {
         path: "userType",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $ctx }) => "1"
       },
       {
         path: "isTheFirstVisit",
@@ -933,12 +933,12 @@ function PlasmicBookings2__RenderFunc(props: {
                   await $steps["removeSmartBookingAlert"];
               }
 
-              $steps["runCode4"] = false
+              $steps["runCode4"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          if (!document.cookie.includes("bookings_notify")) {
+                          if (!document.cookie.includes("bookings_filter")) {
                             return ($state.notify = true);
                           }
                         })();
@@ -1224,39 +1224,13 @@ function PlasmicBookings2__RenderFunc(props: {
             className={classNames(
               projectcss.all,
               sty.freeBox__z84W1,
-              hasVariant(globalVariants, "screen", "mobile")
-                ? "sticky-header"
-                : ``
+              "sticky-header"
             )}
           >
             <div
               data-plasmic-name={"filterSection"}
               data-plasmic-override={overrides.filterSection}
-              className={classNames(
-                projectcss.all,
-                sty.filterSection,
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? (() => {
-                      try {
-                        return (() => {
-                          if (window.scrollY > 10) {
-                            return "sticky-header scrolled";
-                          } else {
-                            return "sticky-header";
-                          }
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()
-                  : ``
-              )}
+              className={classNames(projectcss.all, sty.filterSection, ``)}
               onScroll={async event => {
                 const $steps = {};
               }}
@@ -1735,6 +1709,30 @@ function PlasmicBookings2__RenderFunc(props: {
                       }
                     }}
                   >
+                    {(() => {
+                      try {
+                        return (() => {
+                          if (!document.cookie.includes("bookings_filter")) {
+                            return ($state.notify = true);
+                          }
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox___4NPnj
+                        )}
+                      />
+                    ) : null}
                     <div
                       className={classNames(
                         projectcss.all,
@@ -3195,7 +3193,7 @@ function PlasmicBookings2__RenderFunc(props: {
                             sty.text__z1O2U
                           )}
                         >
-                          {"\u0642\u0628\u0644 \u062a\u0631"}
+                          {"\u0642\u062f\u06cc\u0645\u06cc\u200c\u062a\u0631"}
                         </div>
                       </div>
                     ) : null}
@@ -3539,6 +3537,26 @@ function PlasmicBookings2__RenderFunc(props: {
                                   $steps["runCode"] = await $steps["runCode"];
                                 }
                               }}
+                              style={(() => {
+                                try {
+                                  return (() => {
+                                    if (currentItem.status == "past") {
+                                      return { opacity: "60%" };
+                                    } else {
+                                      return null;
+                                    }
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
                             >
                               {(() => {
                                 try {
@@ -6637,230 +6655,247 @@ function PlasmicBookings2__RenderFunc(props: {
               const $steps = {};
             }}
           >
-            <div
-              data-plasmic-name={"filter2"}
-              data-plasmic-override={overrides.filter2}
-              className={classNames(
-                projectcss.all,
-                sty.filter2,
-                (() => {
-                  try {
-                    return $state.showFilter
-                      ? "modal-content open"
-                      : "modal-content";
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()
-              )}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__dmjRc)}>
               <div
-                data-plasmic-name={"title"}
-                data-plasmic-override={overrides.title}
-                className={classNames(projectcss.all, sty.title)}
+                data-plasmic-name={"filter2"}
+                data-plasmic-override={overrides.filter2}
+                className={classNames(
+                  projectcss.all,
+                  sty.filter2,
+                  (() => {
+                    try {
+                      return $state.showFilter
+                        ? "modal-content open"
+                        : "modal-content";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                )}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__dd2Af)}>
+                <div
+                  data-plasmic-name={"title"}
+                  data-plasmic-override={overrides.title}
+                  className={classNames(projectcss.all, sty.title)}
+                >
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__eXc97)}
+                    className={classNames(projectcss.all, sty.freeBox__dd2Af)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__eXc97)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__c4MnZ
+                        )}
+                      >
+                        {"\u0641\u06cc\u0644\u062a\u0631\u0647\u0627"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__zD8Pm)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__rJRjF)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image169.svg",
+                          fullWidth: 19,
+                          fullHeight: 16,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__qTKth)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___8PfCx)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateTest"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["showFilter"]
+                                },
+                                operation: 4
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                const oldValue = $stateGet(
+                                  objRoot,
+                                  variablePath
+                                );
+                                $stateSet(objRoot, variablePath, !oldValue);
+                                return !oldValue;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateTest"] != null &&
+                          typeof $steps["updateTest"] === "object" &&
+                          typeof $steps["updateTest"].then === "function"
+                        ) {
+                          $steps["updateTest"] = await $steps["updateTest"];
+                        }
+                      }}
+                      src={{
+                        src: "/plasmic/website_starter/images/image166.svg",
+                        fullWidth: 18,
+                        fullHeight: 18,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                </div>
+                {(
+                  hasVariant(globalVariants, "screen", "mobile") ? true : false
+                ) ? (
+                  <div
+                    data-plasmic-name={"source2"}
+                    data-plasmic-override={overrides.source2}
+                    className={classNames(projectcss.all, sty.source2)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__c4MnZ
+                        sty.freeBox___0Lnsz
                       )}
                     >
-                      {"\u0641\u06cc\u0644\u062a\u0631\u0647\u0627"}
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__njw40
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__gmzr
+                          )}
+                        >
+                          {
+                            "\u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0639\u0631\u0641"
+                          }
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__aQrCn)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__iVtl)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image171.svg",
+                          fullWidth: 11,
+                          fullHeight: 22,
+                          aspectRatio: undefined
+                        }}
+                      />
                     </div>
                   </div>
+                ) : null}
+                {(
+                  hasVariant(globalVariants, "screen", "mobile") ? true : false
+                ) ? (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__zD8Pm)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__rJRjF)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image169.svg",
-                        fullWidth: 19,
-                        fullHeight: 16,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__qTKth)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___8PfCx)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateTest"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["showFilter"]
-                              },
-                              operation: 4
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              const oldValue = $stateGet(objRoot, variablePath);
-                              $stateSet(objRoot, variablePath, !oldValue);
-                              return !oldValue;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateTest"] != null &&
-                        typeof $steps["updateTest"] === "object" &&
-                        typeof $steps["updateTest"].then === "function"
-                      ) {
-                        $steps["updateTest"] = await $steps["updateTest"];
-                      }
-                    }}
-                    src={{
-                      src: "/plasmic/website_starter/images/image166.svg",
-                      fullWidth: 18,
-                      fullHeight: 18,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </div>
-              </div>
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div
-                  data-plasmic-name={"source2"}
-                  data-plasmic-override={overrides.source2}
-                  className={classNames(projectcss.all, sty.source2)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___0Lnsz)}
+                    data-plasmic-name={"property2"}
+                    data-plasmic-override={overrides.property2}
+                    className={classNames(projectcss.all, sty.property2)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__njw40)}
+                      className={classNames(projectcss.all, sty.freeBox__pMilj)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__gmzr
+                          sty.freeBox__aUe49
                         )}
                       >
-                        {
-                          "\u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0639\u0631\u0641"
-                        }
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__zvlL
+                          )}
+                        >
+                          {
+                            "\u0627\u0646\u062a\u062e\u0627\u0628 \u0648\u06cc\u0644\u0627"
+                          }
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__aQrCn)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__iVtl)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image171.svg",
-                        fullWidth: 11,
-                        fullHeight: 22,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
-                <div
-                  data-plasmic-name={"property2"}
-                  data-plasmic-override={overrides.property2}
-                  className={classNames(projectcss.all, sty.property2)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__pMilj)}
-                  >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__aUe49)}
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___1ZFlB
+                      )}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__zvlL
-                        )}
-                      >
-                        {
-                          "\u0627\u0646\u062a\u062e\u0627\u0628 \u0648\u06cc\u0644\u0627"
-                        }
-                      </div>
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__kk9YG)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={{
+                          src: "/plasmic/website_starter/images/image171.svg",
+                          fullWidth: 11,
+                          fullHeight: 22,
+                          aspectRatio: undefined
+                        }}
+                      />
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___1ZFlB)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__kk9YG)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image171.svg",
-                        fullWidth: 11,
-                        fullHeight: 22,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
+                ) : null}
                 <div
                   data-plasmic-name={"settlement"}
                   data-plasmic-override={overrides.settlement}
@@ -7077,10 +7112,6 @@ function PlasmicBookings2__RenderFunc(props: {
                     />
                   </div>
                 </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
                 <div
                   data-plasmic-name={"settlement3"}
                   data-plasmic-override={overrides.settlement3}
@@ -7268,10 +7299,6 @@ function PlasmicBookings2__RenderFunc(props: {
                     })()}
                   </div>
                 </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
                 <div
                   data-plasmic-name={"cancelled"}
                   data-plasmic-override={overrides.cancelled}
@@ -7510,10 +7537,6 @@ function PlasmicBookings2__RenderFunc(props: {
                     />
                   </div>
                 </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
                 <div
                   data-plasmic-name={"button"}
                   data-plasmic-override={overrides.button}
@@ -7706,7 +7729,7 @@ function PlasmicBookings2__RenderFunc(props: {
                     </div>
                   </div>
                 </div>
-              ) : null}
+              </div>
             </div>
             <div
               data-plasmic-name={"newbookingpricingalert"}
@@ -7736,43 +7759,6 @@ function PlasmicBookings2__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox___4YA9K)}
                   >
-                    {(
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? true
-                        : false
-                    ) ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__mxoaG
-                        )}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobile")
-                          ? "\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"
-                          : "\u062d\u0627\u0644\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646\u200c\u0647\u0627 \u0631\u0648 \u062f\u0631 \u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f \u062c\u062f\u0627\u06af\u0627\u0646\u0647 \u0628\u0628\u06cc\u0646\u06cc:\r\n\r\n- \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u062a\u0648\u06cc \u0633\u0627\u06cc\u062a\r\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0633\u0627\u06cc\u062a\r\n- \u0633\u0647\u0645 \u0646\u0647\u0627\u06cc\u06cc \u062e\u0648\u062f\u062a"}
-                      </div>
-                    ) : null}
-                    {false ? (
-                      <Video
-                        data-plasmic-name={"htmlVideo"}
-                        data-plasmic-override={overrides.htmlVideo}
-                        autoPlay={false}
-                        className={classNames("__wab_instance", sty.htmlVideo)}
-                        controls={true}
-                        loop={false}
-                        muted={false}
-                        poster={
-                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fphoto_2025-10-07_18-03-27.jpg?versionId="
-                        }
-                        ref={ref => {
-                          $refs["htmlVideo"] = ref;
-                        }}
-                        src={
-                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Freservations-page.mp4?versionId="
-                        }
-                      />
-                    ) : null}
                     <div
                       className={classNames(
                         projectcss.all,
@@ -7781,7 +7767,7 @@ function PlasmicBookings2__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0635\u0641\u062d\u0647 \u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646 \u0628\u0647 \u0631\u0648\u0632 \u0634\u062f"
+                        "\u0628\u0647\u0628\u0648\u062f \u062c\u062f\u06cc\u062f \u062f\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
                       }
                     </div>
                     <div
@@ -7791,33 +7777,26 @@ function PlasmicBookings2__RenderFunc(props: {
                         sty.text__sTqR
                       )}
                     >
-                      <React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ fontWeight: 700 }}
-                        >
-                          {
-                            "\u0644\u06cc\u0633\u062a \u0628\u0647\u0628\u0648\u062f\u200c\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647:"
-                          }
-                        </span>
-                        <React.Fragment>{"\n"}</React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ fontWeight: 700 }}
-                        >
-                          {"\r"}
-                        </span>
-                        <React.Fragment>
-                          {
-                            "\n\ud83d\udca0\t\u0631\u0632\u0631\u0648 \u0647\u0627 \u0628\u0631\u0627\u0633\u0627\u0633 \u0631\u0648\u0632 \u0648\u0631\u0648\u062f\u0634\u0648\u0646 \u0627\u0632 \u0647\u0645 \u062c\u062f\u0627 \u0634\u062f\u0646.\r\n\ud83d\udca0\u062f\u0631 \u0628\u0627\u0644\u0627\u06cc \u0635\u0641\u062d\u0647\u060c \u0627\u0637\u0644\u0627\u0639\u0627\u062a\u06cc \u0627\u0632 \u0648\u0631\u0648\u062f \u0648 \u062e\u0631\u0648\u062c \u0627\u0645\u0631\u0648\u0632 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc.\n\r"
-                          }
-                        </React.Fragment>
-                      </React.Fragment>
+                      {
+                        "\ud83d\udca0\u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f \u0645\u06cc\u062a\u0648\u0646\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647 \u0631\u0648 \u0641\u06cc\u0644\u062a\u0631 \u06a9\u0646\u06cc."
+                      }
                     </div>
+                    <Video
+                      data-plasmic-name={"htmlVideo"}
+                      data-plasmic-override={overrides.htmlVideo}
+                      autoPlay={true}
+                      className={classNames("__wab_instance", sty.htmlVideo)}
+                      controls={true}
+                      loop={true}
+                      muted={true}
+                      poster={undefined}
+                      ref={ref => {
+                        $refs["htmlVideo"] = ref;
+                      }}
+                      src={
+                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Fdoc_2025-12-07_12-03-08.mp4?versionId="
+                      }
+                    />
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__twVku)}>
@@ -7856,7 +7835,8 @@ function PlasmicBookings2__RenderFunc(props: {
                               objRoot: $state,
                               variablePath: ["notify"]
                             },
-                            operation: 4
+                            operation: 4,
+                            value: false
                           };
                           return (({
                             variable,
@@ -7907,7 +7887,7 @@ function PlasmicBookings2__RenderFunc(props: {
                                     expires +
                                     "; path=/";
                                 }
-                                return setCookie("bookings_notify", "true", 30);
+                                return setCookie("bookings_filter", "true", 30);
                               })();
                             }
                           };

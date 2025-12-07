@@ -101,6 +101,7 @@ export type Plasmicدانلوداپلیکیشنموبایلمیان__OverridesTy
   introCalendarRight9?: Flex__<"div">;
   htmlVideo?: Flex__<typeof Video>;
   بعدازبروزرسانیآیکونبرنامهآبیمیشه?: Flex__<"div">;
+  بعدازبروزرسانیآیکونبرنامهآبیمیشه2?: Flex__<"div">;
   link?: Flex__<"div">;
   title?: Flex__<"div">;
   downloadLinks?: Flex__<"div">;
@@ -391,6 +392,23 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                       {" \u0645\u06cc\u200c\u0634\u0647"}
                     </React.Fragment>
                   </React.Fragment>
+                </div>
+                <div
+                  data-plasmic-name={
+                    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u06472"
+                  }
+                  data-plasmic-override={
+                    overrides.بعدازبروزرسانیآیکونبرنامهآبیمیشه2
+                  }
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.بعدازبروزرسانیآیکونبرنامهآبیمیشه2
+                  )}
+                >
+                  {
+                    "\u0627\u06af\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u0642\u0628\u0644\u06cc \u0628\u0627 \u0622\u06cc\u06a9\u0648\u0646 \u0628\u0646\u0641\u0634 \u0647\u0646\u0648\u0632 \u0631\u0648\u06cc \u06af\u0648\u0634\u06cc\u062a \u0647\u0633\u062a\u060c \u062d\u0630\u0641\u0634 \u06a9\u0646"
+                  }
                 </div>
               </div>
             </div>
@@ -851,12 +869,9 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
                     loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image61.png",
-                      fullWidth: 826,
-                      fullHeight: 551,
-                      aspectRatio: undefined
-                    }}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fimage61.jpg?versionId="
+                    }
                   />
                 </div>
               </div>
@@ -955,6 +970,7 @@ const PlasmicDescendants = {
     "introCalendarRight9",
     "htmlVideo",
     "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647",
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u06472",
     "link",
     "title",
     "downloadLinks",
@@ -996,6 +1012,7 @@ const PlasmicDescendants = {
     "introCalendarRight9",
     "htmlVideo",
     "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647",
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u06472",
     "link",
     "title",
     "downloadLinks",
@@ -1053,16 +1070,21 @@ const PlasmicDescendants = {
     "blueIcon",
     "introCalendarRight9",
     "htmlVideo",
-    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647",
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u06472"
   ],
   introCalendarRight9: [
     "introCalendarRight9",
     "htmlVideo",
-    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647",
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u06472"
   ],
   htmlVideo: ["htmlVideo"],
   بعدازبروزرسانیآیکونبرنامهآبیمیشه: [
     "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
+  ],
+  بعدازبروزرسانیآیکونبرنامهآبیمیشه2: [
+    "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u06472"
   ],
   link: [
     "link",
@@ -1144,6 +1166,7 @@ type NodeDefaultElementType = {
   introCalendarRight9: "div";
   htmlVideo: typeof Video;
   بعدازبروزرسانیآیکونبرنامهآبیمیشه: "div";
+  بعدازبروزرسانیآیکونبرنامهآبیمیشه2: "div";
   link: "div";
   title: "div";
   downloadLinks: "div";
@@ -1250,6 +1273,9 @@ export const Plasmicدانلوداپلیکیشنموبایلمیان = Object.as
     htmlVideo: makeNodeComponent("htmlVideo"),
     بعدازبروزرسانیآیکونبرنامهآبیمیشه: makeNodeComponent(
       "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u0647"
+    ),
+    بعدازبروزرسانیآیکونبرنامهآبیمیشه2: makeNodeComponent(
+      "\u0628\u0639\u062f\u0627\u0632\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u0622\u06cc\u06a9\u0648\u0646\u0628\u0631\u0646\u0627\u0645\u0647\u0622\u0628\u06cc\u0645\u06cc\u0634\u06472"
     ),
     link: makeNodeComponent("link"),
     title: makeNodeComponent("title"),

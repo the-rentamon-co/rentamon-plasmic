@@ -353,7 +353,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       },
       {
         path: "variable2",
@@ -1146,6 +1146,28 @@ function PlasmicProCalendar2__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__zfedk)}
                   >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__pvSt5)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "60px"
+                          : "80px"
+                      }
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image195.svg",
+                        fullWidth: 24,
+                        fullHeight: 24,
+                        aspectRatio: 1
+                      }}
+                    />
+
                     <div
                       className={classNames(
                         projectcss.all,
@@ -1153,21 +1175,9 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         sty.text__ki9Gp
                       )}
                     >
-                      <React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ fontWeight: 600 }}
-                        >
-                          {"\u062a\u0648\u062c\u0647"}
-                        </span>
-                        <React.Fragment>
-                          {
-                            "\n\u0644\u0637\u0641\u0627 \u0628\u0631\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0633\u0631\u0639\u062a \u0648 \u06a9\u0627\u0631\u0627\u06cc\u06cc\u060c \u0628\u0631\u0646\u0627\u0645\u0647 \u0631\u0648 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u06a9\u0646"
-                          }
-                        </React.Fragment>
-                      </React.Fragment>
+                      {
+                        "\u0628\u0631\u0627\u06cc \u0627\u062f\u0627\u0645\u0647 \u0627\u0633\u062a\u0641\u0627\u062f\u0647\u060c \u0644\u0627\u0632\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0628\u0634\u0647"
+                      }
                     </div>
                   </div>
                 </div>
@@ -1296,6 +1306,42 @@ function PlasmicProCalendar2__RenderFunc(props: {
                       "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0628\u0647 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f"
                     }
                   </div>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__k3F4V
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                return window.open(`tel:${2191096227}`);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  {
+                    "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
+                  }
                 </div>
               </div>
               <Button
@@ -2566,9 +2612,9 @@ function PlasmicProCalendar2__RenderFunc(props: {
                   sty.text__ltJJt
                 )}
               >
-                {
-                  "\u26a0\ufe0f\r\n\u0628\u0627 \u062a\u0648\u062c\u0647 \u0628\u0647 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u200c \u00ab\u0633\u0627\u06cc\u062a \u0627\u062a\u0627\u0642\u06a9\u00bb \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062f\u0631 \u0627\u062a\u0627\u0642\u06a9 \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0627\u0631\u0647."
-                }
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
+                  : "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\n\u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"}
               </div>
             </div>
             <div

@@ -29,7 +29,7 @@
   }
 }
 .tourGuideReservationspastBookingsBox {
-  border: 2px solid #ececec;
+  border: 1.5px solid #ececec;
 }
 .tourGuideReservationscancelledBookings {
   border: 2px solid #ff9794;
@@ -46,7 +46,7 @@
   row-gap: 0px;
   min-width: 0;
   border-radius: 18px;
-  border: 2px solid #2eb773;
+  border: 2px solid #2eb77380;
 }
 @media (max-width: 350px) {
   .tourGuideReservationsconfirmedBookings {
@@ -164,7 +164,10 @@
   font-size: 16px;
   user-select: none;
   text-align: right;
-  font-weight: 500;
+  font-weight: 400;
+  white-space: pre;
+  text-overflow: ellipsis;
+  color: var(--token-TKZohT0c2pb7);
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -177,6 +180,11 @@
     min-width: 0;
   }
 }
+@media (max-width: 500px) {
+  .geustName {
+    font-size: 15px;
+  }
+}
 @media (max-width: 350px) {
   .geustName {
     text-overflow: ellipsis;
@@ -185,6 +193,18 @@
     width: 100%;
     min-width: 0;
   }
+}
+.geustNamepastBookingsBox {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: right;
+  white-space: pre;
+  user-select: none;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 .source {
   display: flex;
@@ -228,7 +248,8 @@
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
-  font-weight: 500;
+  font-weight: 400;
+  color: var(--token-TKZohT0c2pb7);
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -242,6 +263,14 @@
     width: 100%;
     font-size: 15px;
     text-align: right;
+    height: auto;
+    max-width: 100%;
+    padding-left: 0px;
+    font-weight: 400;
+    color: var(--token-TKZohT0c2pb7);
+    white-space: pre;
+    user-select: none;
+    text-overflow: ellipsis;
     min-width: 0;
   }
 }
@@ -251,6 +280,9 @@
     font-size: 14px;
     min-width: 0;
   }
+}
+.websitepastBookingsBox {
+  font-weight: 400;
 }
 .freeBox__r60Tb {
   display: flex;
@@ -308,6 +340,7 @@
   font-size: 14px;
   text-align: right;
   user-select: none;
+  color: var(--token-TKZohT0c2pb7);
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -374,6 +407,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  color: var(--token-TKZohT0c2pb7);
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -476,7 +510,7 @@
 @media (max-width: 500px) {
   .property {
     width: 100%;
-    font-size: 15px;
+    font-size: 13px;
     text-align: center;
     min-width: 0;
   }

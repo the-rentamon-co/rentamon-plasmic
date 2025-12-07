@@ -410,7 +410,7 @@
   text-align: center;
   font-weight: 500;
   min-width: 0;
-  padding: 12px 12px 21px;
+  padding: 12px;
 }
 @media (max-width: 500px) {
   .بعدازبروزرسانیآیکونبرنامهآبیمیشه {
@@ -421,6 +421,32 @@
   .بعدازبروزرسانیآیکونبرنامهآبیمیشه {
     font-size: 16px;
     padding-top: 18px;
+  }
+}
+.بعدازبروزرسانیآیکونبرنامهآبیمیشه2 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+  min-width: 0;
+  padding: 0px 12px 21px;
+}
+@media (max-width: 500px) {
+  .بعدازبروزرسانیآیکونبرنامهآبیمیشه2 {
+    padding-top: 0px;
+    line-height: 1.8;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .بعدازبروزرسانیآیکونبرنامهآبیمیشه2 {
+    font-size: 16px;
+    padding-top: 0px;
+    line-height: 1.8;
   }
 }
 .link {

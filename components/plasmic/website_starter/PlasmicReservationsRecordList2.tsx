@@ -318,6 +318,11 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
                       "confirmedBookings",
                       "confirmedBookings"
                     ),
+                    [sty.geustNamepastBookingsBox]: hasVariant(
+                      $state,
+                      "pastBookingsBox",
+                      "pastBookingsBox"
+                    ),
                     [sty.geustNamependingBookings]: hasVariant(
                       $state,
                       "pendingBookings",
@@ -467,7 +472,14 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.date
+                  sty.date,
+                  {
+                    [sty.datepastBookingsBox]: hasVariant(
+                      $state,
+                      "pastBookingsBox",
+                      "pastBookingsBox"
+                    )
+                  }
                 )}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile") ? (

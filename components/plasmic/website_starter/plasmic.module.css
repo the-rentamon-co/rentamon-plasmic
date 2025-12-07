@@ -189,6 +189,10 @@
   --plasmic-token-unnamed-style-token-18: var(--token-xxlJy7f7b9Uc);
   --token-yVKhDsWBR9K7: #ffffff;
   --plasmic-token-unnamed-style-token-19: var(--token-yVKhDsWBR9K7);
+  --token-TKZohT0c2pb7: #444444;
+  --plasmic-token-miaan-black: var(--token-TKZohT0c2pb7);
+  --token-x5j-1DOppODK: #acacac;
+  --plasmic-token-miaan-ac: var(--token-x5j-1DOppODK);
 }
 
 @media (max-width: 500px) {

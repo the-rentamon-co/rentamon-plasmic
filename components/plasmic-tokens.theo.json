@@ -2941,6 +2941,26 @@
       }
     },
     {
+      "name": "miaan ac",
+      "type": "color",
+      "value": "#ACACAC",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "x5j-1DOppODK"
+      }
+    },
+    {
+      "name": "miaan black",
+      "type": "color",
+      "value": "#444444",
+      "category": "color",
+      "meta": {
+        "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+        "id": "TKZohT0c2pb7"
+      }
+    },
+    {
       "name": "pageWidth",
       "type": "spacing",
       "value": "1086px",
