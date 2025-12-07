@@ -1707,12 +1707,57 @@ function PlasmicBookings2__RenderFunc(props: {
                       ) {
                         $steps["updateTest"] = await $steps["updateTest"];
                       }
+
+                      $steps["runCode"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              customFunction: async () => {
+                                return (() => {
+                                  function setCookie(name, value, hours) {
+                                    let expires = "";
+                                    if (hours) {
+                                      const date = new Date();
+                                      date.setTime(
+                                        date.getTime() + hours * 60 * 60 * 1000
+                                      );
+                                      expires =
+                                        "; expires=" + date.toUTCString();
+                                    }
+                                    document.cookie =
+                                      name +
+                                      "=" +
+                                      (value || "") +
+                                      expires +
+                                      "; path=/";
+                                  }
+                                  return setCookie(
+                                    "bookings_filter_test",
+                                    "true",
+                                    400
+                                  );
+                                })();
+                              }
+                            };
+                            return (({ customFunction }) => {
+                              return customFunction();
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["runCode"] != null &&
+                        typeof $steps["runCode"] === "object" &&
+                        typeof $steps["runCode"].then === "function"
+                      ) {
+                        $steps["runCode"] = await $steps["runCode"];
+                      }
                     }}
                   >
                     {(() => {
                       try {
                         return (() => {
-                          if (!document.cookie.includes("bookings_filter")) {
+                          if (
+                            !document.cookie.includes("bookings_filter_test")
+                          ) {
                             return ($state.notify = true);
                           }
                         })();

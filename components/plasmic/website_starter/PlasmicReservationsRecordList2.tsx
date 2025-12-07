@@ -246,6 +246,9 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
             "cancelledBookings",
             "cancelledBookings"
           ),
+          [sty.tourGuideReservationscancelledBookings_confirmedBookings]:
+            hasVariant($state, "cancelledBookings", "cancelledBookings") &&
+            hasVariant($state, "confirmedBookings", "confirmedBookings"),
           [sty.tourGuideReservationsconfirmedBookings]: hasVariant(
             $state,
             "confirmedBookings",
@@ -277,6 +280,9 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
             "cancelledBookings",
             "cancelledBookings"
           ),
+          [sty.freeBoxcancelledBookings_confirmedBookings__taGf8UepccT96MN]:
+            hasVariant($state, "cancelledBookings", "cancelledBookings") &&
+            hasVariant($state, "confirmedBookings", "confirmedBookings"),
           [sty.freeBoxconfirmedBookings__taGf8T96MN]: hasVariant(
             $state,
             "confirmedBookings",
