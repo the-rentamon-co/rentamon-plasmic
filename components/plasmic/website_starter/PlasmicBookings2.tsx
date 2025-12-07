@@ -7880,7 +7880,7 @@ function PlasmicBookings2__RenderFunc(props: {
                               objRoot: $state,
                               variablePath: ["notify"]
                             },
-                            operation: 4,
+                            operation: 0,
                             value: false
                           };
                           return (({
@@ -7894,9 +7894,8 @@ function PlasmicBookings2__RenderFunc(props: {
                             }
                             const { objRoot, variablePath } = variable;
 
-                            const oldValue = $stateGet(objRoot, variablePath);
-                            $stateSet(objRoot, variablePath, !oldValue);
-                            return !oldValue;
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
                           })?.apply(null, [actionArgs]);
                         })()
                       : undefined;
@@ -7911,7 +7910,7 @@ function PlasmicBookings2__RenderFunc(props: {
                         await $steps["updateBookingPricingNotify"];
                     }
 
-                    $steps["runCode"] = true
+                    $steps["runCode"] = false
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
