@@ -1758,7 +1758,9 @@ function PlasmicBookings2__RenderFunc(props: {
                           if (
                             !document.cookie.includes("bookings_filter_test")
                           ) {
-                            return ($state.notify = true);
+                            return true;
+                          } else {
+                            return false;
                           }
                         })();
                       } catch (e) {
@@ -7910,7 +7912,7 @@ function PlasmicBookings2__RenderFunc(props: {
                         await $steps["updateBookingPricingNotify"];
                     }
 
-                    $steps["runCode"] = false
+                    $steps["runCode"] = true
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
