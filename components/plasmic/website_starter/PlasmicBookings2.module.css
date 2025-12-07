@@ -3219,6 +3219,11 @@
     border-radius: 20px;
   }
 }
+@media (max-width: 350px) {
+  .htmlVideo:global(.__wab_instance) {
+    width: 150px;
+  }
+}
 .freeBox__twVku {
   flex-direction: column;
   position: relative;
