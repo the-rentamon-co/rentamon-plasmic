@@ -201,11 +201,11 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding: 24px 8px 8px;
+  padding: 4px 8px 8px;
 }
 @media (max-width: 500px) {
   .introCalendarRight3 {
-    padding-top: 12px;
+    padding-top: 0px;
   }
 }
 .text__nIz0M {

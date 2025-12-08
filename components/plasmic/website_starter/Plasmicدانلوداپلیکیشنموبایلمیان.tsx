@@ -558,10 +558,10 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["goToPanelCalendar"] = true
+                    $steps["goToSplash"] = true
                       ? (() => {
                           const actionArgs = {
-                            destination: "https://rentamon.com/splash?src=web"
+                            destination: `/splash?src=${"web"}`
                           };
                           return (({ destination }) => {
                             if (
@@ -578,12 +578,11 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                         })()
                       : undefined;
                     if (
-                      $steps["goToPanelCalendar"] != null &&
-                      typeof $steps["goToPanelCalendar"] === "object" &&
-                      typeof $steps["goToPanelCalendar"].then === "function"
+                      $steps["goToSplash"] != null &&
+                      typeof $steps["goToSplash"] === "object" &&
+                      typeof $steps["goToSplash"].then === "function"
                     ) {
-                      $steps["goToPanelCalendar"] =
-                        await $steps["goToPanelCalendar"];
+                      $steps["goToSplash"] = await $steps["goToSplash"];
                     }
                   }}
                 >
