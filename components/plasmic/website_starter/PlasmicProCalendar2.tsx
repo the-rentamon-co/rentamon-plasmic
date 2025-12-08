@@ -1389,7 +1389,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         )}
                       >
                         {
-                          "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0628\u0647 \u0646\u0633\u062e\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f"
+                          "\u0628\u0631\u06cc\u0645 \u0635\u0641\u062d\u0647 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc"
                         }
                       </div>
                     </div>
