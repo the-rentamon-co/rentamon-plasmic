@@ -2796,7 +2796,6 @@
   }
 }
 .returnButton {
-  display: flex;
   flex-direction: row;
   position: relative;
   width: 100%;
@@ -2806,6 +2805,7 @@
   align-items: center;
   background: #8165d6;
   min-width: 0;
+  display: none;
   border-radius: 30px;
   padding: 8px;
 }

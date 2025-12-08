@@ -3248,6 +3248,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/divar/payment/error"
+        },
+        {
+          "id": "pfg_BRg-bix0",
+          "name": "نگهداریوسایلدراجارهروزانه",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicنگهداریوسایلدراجارهروزانه.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/furnished-rental-maintenance-guide.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicنگهداریوسایلدراجارهروزانه.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/furnished-rental-maintenance-guide"
         }
       ],
       "icons": [
