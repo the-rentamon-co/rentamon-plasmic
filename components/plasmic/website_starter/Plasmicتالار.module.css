@@ -431,7 +431,9 @@
 }
 @media (max-width: 500px) {
   .walletInfo {
+    box-shadow: 0px 2px 4px 0px #0000005c;
     display: flex;
+    border-width: 1px;
   }
 }
 @media (max-width: 350px) {

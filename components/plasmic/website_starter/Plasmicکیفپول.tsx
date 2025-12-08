@@ -127,7 +127,10 @@ export type Plasmicکیفپول__OverridesType = {
   accordionMain?: Flex__<typeof AntdAccordion>;
   _2?: Flex__<typeof AntdAccordionItem>;
   _1?: Flex__<"div">;
+  _3?: Flex__<typeof AntdAccordionItem>;
+  _7?: Flex__<"div">;
   _4?: Flex__<typeof AntdAccordionItem>;
+  _8?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
   _6?: Flex__<typeof AntdAccordionItem>;
   html?: Flex__<"div">;
@@ -1915,7 +1918,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                               )}
                             >
                               {
-                                "\u0627\u06cc\u0646 \u0645\u0628\u0644\u063a \u0628\u0627\u0628\u062a \u0686\u06cc\u0647\u061f\r"
+                                "\u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
                               }
                             </div>
                           }
@@ -1929,7 +1932,41 @@ function Plasmicکیفپول__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0641\u0642\u0637 \u062f\u0631\u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u00ab\u0631\u0632\u0631\u0648 \u0646\u0647\u0627\u06cc\u06cc\u00bb \u0627\u0632 \u06a9\u0644 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647.\r\n"
+                              "\u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0628\u0627\u06cc\u062f \u0628\u0647 \u0635\u0648\u0631\u062a \u0645\u0633\u062a\u0642\u06cc\u0645 \u062a\u0648\u0633\u0637 \u0634\u0645\u0627 \u0634\u0627\u0631\u0698 \u0628\u0634\u0647\u060c \u0648 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0648\u0646 \u0647\u06cc\u0686 \u0627\u0631\u062a\u0628\u0627\u0637\u06cc \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0634\u0645\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0646\u062f\u0627\u0631\u0647."
+                            }
+                          </div>
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
+                          data-plasmic-name={"_3"}
+                          data-plasmic-override={overrides._3}
+                          className={classNames("__wab_instance", sty._3)}
+                          id={"10"}
+                          label2={
+                            <div
+                              data-plasmic-name={"_7"}
+                              data-plasmic-override={overrides._7}
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty._7
+                              )}
+                            >
+                              {
+                                "\u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0628\u0627\u0628\u062a \u0686\u0647 \u0686\u06cc\u0632\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647\u061f\r"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__qfmpb
+                            )}
+                          >
+                            {
+                              "\u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u00ab\u0646\u0647\u0627\u06cc\u06cc\u00bb \u0628\u0634\u0647\u060c \u0628\u0627\u0628\u062a \u0627\u0648\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0633\u0631 \u0645\u06cc\u200c\u0634\u0647."
                             }
                           </div>
                         </AntdAccordionItem>
@@ -1961,8 +1998,63 @@ function Plasmicکیفپول__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0628\u0639\u0636\u06cc \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u0627\u0645\u0627 \u0645\u0648\u0627\u0631\u062f\u06cc \u06a9\u0647 \u06a9\u0627\u0631\u0645\u0632\u062f \u062f\u0627\u0631\u0646\u062f \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062f\u0631\u0635\u062f\u06cc \u0627\u0632 \u062c\u0645\u0639 \u0645\u0628\u0644\u063a \u0647\u0631 \u0631\u0632\u0631\u0648 \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0646.\n\n\u0645\u062b\u0627\u0644: \u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u0647\u060c \u0648 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646\u06cc \u0628\u06af\u06cc\u0631\u06cc\u060c \u0645\u06cc\u0632\u0627\u0646 \u06f1.\u06f5\u066a \u0627\u0632 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0647:\n\u06f3\u06f0,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 = \u06f1.\u06f5\u066a \u00d7 \u06f2,\u06f0\u06f0\u06f0,\u06f0\u06f0\u06f0\n\n\r\n\r"
+                              "\u0627\u063a\u0644\u0628 \u0627\u0645\u06a9\u0627\u0646\u0627\u0646\u062a \u0627\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647. \u0627\u0645\u0627 \u0628\u0627\u0628\u062a \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u06a9\u0627\u0631\u0645\u0632\u062f\u06cc \u0647\u0633\u062a\u0646\u062f\u060c \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062f\u0631\u0635\u062f\u06cc \u0631\u0648\u06cc \u00ab\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u00bb \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0646.\n\n\u0645\u062b\u0627\u0644: \u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u0647\u060c \u0648 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0646\u06cc \u0628\u06af\u06cc\u0631\u06cc\u060c \u0645\u06cc\u0632\u0627\u0646 \u06f1.\u06f5\u066a \u0627\u0632 \u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u06cc\u200c\u0634\u0647:\n\u06f3\u06f0,\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646 = \u06f1.\u06f5\u066a \u00d7 \u06f2,\u06f0\u06f0\u06f0,\u06f0\u06f0\u06f0\n\n\r\n\r"
                             }
+                          </div>
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
+                          data-plasmic-name={"_8"}
+                          data-plasmic-override={overrides._8}
+                          className={classNames("__wab_instance", sty._8)}
+                          id={"23"}
+                          label2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__fme5A
+                              )}
+                            >
+                              {
+                                "\u0622\u06cc\u0627 \u062b\u0628\u062a \u00ab\u0631\u0632\u0631\u0648 \u062f\u0633\u062a\u06cc\u00bb \u06cc\u0627 \u00ab\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u00bb \u0647\u0632\u06cc\u0646\u0647 \u062f\u0627\u0631\u0647\u061f"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__gRGpd
+                            )}
+                          >
+                            <React.Fragment>
+                              <React.Fragment>
+                                {
+                                  "\u062e\u06cc\u0631. \u062b\u0628\u062a \u0631\u0632\u0631\u0648 \u062f\u0633\u062a\u06cc\u060c \u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\u060c \u0627\u0639\u0645\u0627\u0644 \u062a\u062e\u0641\u06cc\u0641 \u0648 \u062d\u062a\u06cc \u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646 \u0647\u0633\u062a\u0646. \u062c\u0632\u0626\u064a\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 "
+                                }
+                              </React.Fragment>
+                              {
+                                <PlasmicLink__
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.a,
+                                    projectcss.__wab_text,
+                                    projectcss.plasmic_default__inline,
+                                    sty.link__cnqzA
+                                  )}
+                                  component={Link}
+                                  href={"https://miaan.ir/pricing"}
+                                  platform={"nextjs"}
+                                >
+                                  {"\u0627\u06cc\u0646\u062c\u0627"}
+                                </PlasmicLink__>
+                              }
+                              <React.Fragment>
+                                {" \u0647\u0633\u062a."}
+                              </React.Fragment>
+                            </React.Fragment>
                           </div>
                         </AntdAccordionItem>
                         <AntdAccordionItem
@@ -2091,7 +2183,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                             )}
                           >
                             {
-                              "\u0628\u0644\u0647. \u062f\u0631\u0635\u0648\u0631\u062a \u0644\u063a\u0648 \u0634\u062f\u0646 \u0631\u0632\u0631\u0648\u060c \u06a9\u0627\u0631\u0645\u0632\u062f \u067e\u0631\u062f\u0627\u062e\u062a\u06cc \u0628\u0631\u0627\u06cc \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u00bb \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644\u062a \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647. \u0627\u0645\u0627 \u0628\u0627 \u062a\u0648\u062c\u0647 \u0628\u0647 \u0630\u062e\u06cc\u0631\u0647 \u0634\u062f\u0646 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648 \u0648 \u0645\u0647\u0645\u0627\u0646\u060c \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0648\u06cc\u0698\u06af\u06cc \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u0628\u0631\u0646\u0645\u06cc\u200c\u06af\u0631\u062f\u0647.\n"
+                              "\u0628\u0644\u0647. \u062f\u0631\u0635\u0648\u0631\u062a \u00ab\u0644\u063a\u0648 \u0631\u0632\u0631\u0648\u00bb \u062a\u0645\u0627\u0645\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f\u0647\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0634\u062f\u0647 \u0645\u062c\u062f\u062f\u0627 \u0628\u0647 \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0646. \u062f\u0631\u0635\u0648\u0631\u062a \u0646\u06cc\u0627\u0632 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0645\u0648\u062c\u0648\u062f\u06cc \u0631\u0648 \u0628\u0631\u062f\u0627\u0634\u062a \u06a9\u0646\u06cc."
                             }
                           </div>
                         </AntdAccordionItem>
@@ -2395,7 +2487,10 @@ const PlasmicDescendants = {
     "accordionMain",
     "_2",
     "_1",
+    "_3",
+    "_7",
     "_4",
+    "_8",
     "_5",
     "_6",
     "html",
@@ -2449,7 +2544,10 @@ const PlasmicDescendants = {
     "accordionMain",
     "_2",
     "_1",
+    "_3",
+    "_7",
     "_4",
+    "_8",
     "_5",
     "_6",
     "html",
@@ -2457,10 +2555,23 @@ const PlasmicDescendants = {
     "clarityRntComponent",
     "faviconRntComponent"
   ],
-  accordionMain: ["accordionMain", "_2", "_1", "_4", "_5", "_6"],
+  accordionMain: [
+    "accordionMain",
+    "_2",
+    "_1",
+    "_3",
+    "_7",
+    "_4",
+    "_8",
+    "_5",
+    "_6"
+  ],
   _2: ["_2", "_1"],
   _1: ["_1"],
+  _3: ["_3", "_7"],
+  _7: ["_7"],
   _4: ["_4"],
+  _8: ["_8"],
   _5: ["_5"],
   _6: ["_6"],
   html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
@@ -2507,7 +2618,10 @@ type NodeDefaultElementType = {
   accordionMain: typeof AntdAccordion;
   _2: typeof AntdAccordionItem;
   _1: "div";
+  _3: typeof AntdAccordionItem;
+  _7: "div";
   _4: typeof AntdAccordionItem;
+  _8: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
   _6: typeof AntdAccordionItem;
   html: "div";
@@ -2612,7 +2726,10 @@ export const Plasmicکیفپول = Object.assign(
     accordionMain: makeNodeComponent("accordionMain"),
     _2: makeNodeComponent("_2"),
     _1: makeNodeComponent("_1"),
+    _3: makeNodeComponent("_3"),
+    _7: makeNodeComponent("_7"),
     _4: makeNodeComponent("_4"),
+    _8: makeNodeComponent("_8"),
     _5: makeNodeComponent("_5"),
     _6: makeNodeComponent("_6"),
     html: makeNodeComponent("html"),

@@ -71,6 +71,42 @@
   max-width: 100%;
   min-width: 0;
 }
+.apiRequest3:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__wP0NE {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__wz7Ci {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.apiRequest4:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__siKz {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text___5Jnwz {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
 .datePicker:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
