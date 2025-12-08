@@ -90,6 +90,7 @@ export type Plasmicقوانیناجارهروزانه__OverridesType = {
   mainContents?: Flex__<"div">;
   intro?: Flex__<"div">;
   introTitle?: Flex__<"div">;
+  h1?: Flex__<"h1">;
   introDesc?: Flex__<"div">;
   str?: Flex__<"div">;
   strDefinition?: Flex__<"div">;
@@ -263,22 +264,26 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                 data-plasmic-override={overrides.introTitle}
                 className={classNames(projectcss.all, sty.introTitle)}
               >
-                <div
+                <h1
+                  data-plasmic-name={"h1"}
+                  data-plasmic-override={overrides.h1}
                   className={classNames(
                     projectcss.all,
+                    projectcss.h1,
                     projectcss.__wab_text,
-                    sty.text__cNb5H
+                    sty.h1
                   )}
                 >
                   {
                     "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u0633\u0648\u0626\u06cc\u062a \u0645\u0628\u0644\u0647\r"
                   }
-                </div>
-                <div
+                </h1>
+                <h2
                   className={classNames(
                     projectcss.all,
+                    projectcss.h2,
                     projectcss.__wab_text,
-                    sty.text__xIh7Q
+                    sty.h2__xIh7Q
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile")
@@ -286,7 +291,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                     : hasVariant(globalVariants, "screen", "mobile")
                       ? "\u0648 \u0647\u0631 \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0642\u0628\u0644 \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0627\u06cc\u062f \u0628\u062f\u0648\u0646\u06cc\r"
                       : "\u0648 \u0647\u0631\u0686\u06cc\u0632\u06cc \u06a9\u0647 \u067e\u06cc\u0634 \u0627\u0632 \u0634\u0631\u0648\u0639 \u0628\u0627\u06cc\u062f \u0628\u062f\u0648\u0646\u06cc"}
-                </div>
+                </h2>
               </div>
               <div
                 data-plasmic-name={"introDesc"}
@@ -347,17 +352,18 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   data-plasmic-override={overrides.strDefinition}
                   className={classNames(projectcss.all, sty.strDefinition)}
                 >
-                  <div
+                  <h2
                     className={classNames(
                       projectcss.all,
+                      projectcss.h2,
                       projectcss.__wab_text,
-                      sty.text__e5LBm
+                      sty.h2__e5LBm
                     )}
                   >
                     {
                       "\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u06cc\u0639\u0646\u06cc \u0686\u06cc\u061f\r"
                     }
-                  </div>
+                  </h2>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -382,17 +388,18 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                 data-plasmic-override={overrides.ownershipDesc}
                 className={classNames(projectcss.all, sty.ownershipDesc)}
               >
-                <div
+                <h2
                   className={classNames(
                     projectcss.all,
+                    projectcss.h2,
                     projectcss.__wab_text,
-                    sty.text__pgOfD
+                    sty.h2__pgOfD
                   )}
                 >
                   {
-                    "\u0622\u0642\u0627 \u0641\u0642\u0637 \u0645\u0627\u0644\u06a9 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062e\u0648\u0646\u0647 \u0631\u0648 \u0627\u062c\u0627\u0631\u0647 \u0628\u062f\u0647\u061f"
+                    "\u0622\u06cc\u0627 \u0641\u0642\u0637 \u0645\u0627\u0644\u06a9 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062e\u0648\u0646\u0647 \u0631\u0648 \u0627\u062c\u0627\u0631\u0647 \u0628\u062f\u0647\u061f"
                   }
-                </div>
+                </h2>
                 <div
                   className={classNames(
                     projectcss.all,
@@ -795,17 +802,18 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   data-plasmic-override={overrides.benefitsTitle2}
                   className={classNames(projectcss.all, sty.benefitsTitle2)}
                 >
-                  <div
+                  <h2
                     className={classNames(
                       projectcss.all,
+                      projectcss.h2,
                       projectcss.__wab_text,
-                      sty.text__rUyqp
+                      sty.h2__rUyqp
                     )}
                   >
                     {
-                      "\u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648 \u062a\u0639\u0627\u0645\u0644 \u0628\u0627 \u0647\u0645\u0633\u0627\u06cc\u0647\u200c\u0647\u0627 "
+                      "\u0645\u0634\u06a9\u0644\u0627\u062a \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648 \u0634\u06a9\u0627\u06cc\u062a \u0647\u0645\u0633\u0627\u06cc\u0647\u200c\u0647\u0627 "
                     }
-                  </div>
+                  </h2>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -939,17 +947,18 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   data-plasmic-override={overrides.benefitsTitle3}
                   className={classNames(projectcss.all, sty.benefitsTitle3)}
                 >
-                  <div
+                  <h2
                     className={classNames(
                       projectcss.all,
+                      projectcss.h2,
                       projectcss.__wab_text,
-                      sty.text___8Vras
+                      sty.h2___8Vras
                     )}
                   >
                     {
                       "\u0622\u06cc\u0627 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0645\u0627\u0644\u06cc\u0627\u062a \u062f\u0627\u0631\u0647\u061f"
                     }
-                  </div>
+                  </h2>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -969,17 +978,18 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   data-plasmic-override={overrides.benefitsTitle4}
                   className={classNames(projectcss.all, sty.benefitsTitle4)}
                 >
-                  <div
+                  <h2
                     className={classNames(
                       projectcss.all,
+                      projectcss.h2,
                       projectcss.__wab_text,
-                      sty.text__rpAa
+                      sty.h2__rpAa
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0627\u062d\u0631\u0627\u0632 \u0647\u0648\u06cc\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0648 \u0645\u0633\u0627\u0641\u0631\u0647\u0627"
-                      : "\u0627\u062d\u0631\u0627\u0632 \u0647\u0648\u06cc\u062a \u0645\u0647\u0645\u0627\u0646 \u0648 \u0645\u0633\u0627\u0641\u0631\u0647\u0627"}
-                  </div>
+                      : "\u0627\u062d\u0631\u0627\u0632 \u0647\u0648\u06cc\u062a \u0645\u0647\u0645\u0627\u0646 \u0648 \u0645\u0633\u0627\u0641\u0631\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627"}
+                  </h2>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -997,17 +1007,18 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   data-plasmic-override={overrides.benefitsTitle5}
                   className={classNames(projectcss.all, sty.benefitsTitle5)}
                 >
-                  <div
+                  <h2
                     className={classNames(
                       projectcss.all,
+                      projectcss.h2,
                       projectcss.__wab_text,
-                      sty.text__yiPiI
+                      sty.h2__yiPiI
                     )}
                   >
                     {
-                      "\u0628\u06cc\u0645\u0647 \u0648 \u0645\u0633\u0627\u0626\u0644 \u062d\u0642\u0648\u0642\u06cc \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647"
+                      "\u0628\u06cc\u0645\u0647 \u062d\u0648\u0627\u062f\u062b \u0648 \u0645\u0633\u0627\u0626\u0644 \u062d\u0642\u0648\u0642\u06cc \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647"
                     }
-                  </div>
+                  </h2>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -1136,6 +1147,7 @@ const PlasmicDescendants = {
     "mainContents",
     "intro",
     "introTitle",
+    "h1",
     "introDesc",
     "str",
     "strDefinition",
@@ -1166,6 +1178,7 @@ const PlasmicDescendants = {
     "mainContents",
     "intro",
     "introTitle",
+    "h1",
     "introDesc",
     "str",
     "strDefinition",
@@ -1188,8 +1201,9 @@ const PlasmicDescendants = {
     "ctaText",
     "button"
   ],
-  intro: ["intro", "introTitle", "introDesc", "str", "strDefinition"],
-  introTitle: ["introTitle"],
+  intro: ["intro", "introTitle", "h1", "introDesc", "str", "strDefinition"],
+  introTitle: ["introTitle", "h1"],
+  h1: ["h1"],
   introDesc: ["introDesc"],
   str: ["str", "strDefinition"],
   strDefinition: ["strDefinition"],
@@ -1245,6 +1259,7 @@ type NodeDefaultElementType = {
   mainContents: "div";
   intro: "div";
   introTitle: "div";
+  h1: "h1";
   introDesc: "div";
   str: "div";
   strDefinition: "div";
@@ -1338,6 +1353,7 @@ export const Plasmicقوانیناجارهروزانه = Object.assign(
     mainContents: makeNodeComponent("mainContents"),
     intro: makeNodeComponent("intro"),
     introTitle: makeNodeComponent("introTitle"),
+    h1: makeNodeComponent("h1"),
     introDesc: makeNodeComponent("introDesc"),
     str: makeNodeComponent("str"),
     strDefinition: makeNodeComponent("strDefinition"),
