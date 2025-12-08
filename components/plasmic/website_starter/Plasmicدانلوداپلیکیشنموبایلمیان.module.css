@@ -83,6 +83,7 @@
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
+    padding-top: 0px;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;
   }
@@ -108,6 +109,12 @@
   border-radius: 50px;
   padding: 20px 8px 8px;
 }
+@media (max-width: 1200px) {
+  .introApp {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
 @media (max-width: 500px) {
   .introApp {
     flex-direction: column-reverse;
@@ -131,7 +138,7 @@
   justify-content: space-between;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 8px 0px;
 }
 @media (max-width: 500px) {
   .introCalendar4 {
@@ -153,12 +160,17 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  padding: 8px 42px 8px 0px;
+  padding: 8px 16px 8px 0px;
+}
+@media (max-width: 1200px) {
+  .introCalendarRight {
+    padding-right: 28px;
+  }
 }
 @media (max-width: 500px) {
   .introCalendarRight {
     max-width: 100%;
-    padding: 0px 8px 8px;
+    padding: 0px 8px;
   }
 }
 .introCalendarRight2 {
@@ -189,40 +201,6 @@
 @media (max-width: 350px) {
   .h1 {
     font-size: 20px;
-  }
-}
-.introCalendarRight3 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  padding: 4px 8px 8px;
-}
-@media (max-width: 500px) {
-  .introCalendarRight3 {
-    padding-top: 0px;
-  }
-}
-.text__nIz0M {
-  text-align: right;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #444444;
-}
-@media (max-width: 500px) {
-  .text__nIz0M {
-    font-size: 15px;
-    color: #444444;
-  }
-}
-@media (max-width: 350px) {
-  .text__nIz0M {
-    font-size: 15px;
   }
 }
 .introCalendarRight4 {
@@ -303,25 +281,6 @@
     border-radius: 50px;
   }
 }
-.freeBox__qdVee {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: 40px;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 40px;
-  min-width: 0;
-  flex-shrink: 0;
-  padding: 8px;
-}
-@media (max-width: 500px) {
-  .freeBox__qdVee {
-    display: none;
-  }
-}
 .blueIcon {
   display: flex;
   flex-direction: column;
@@ -331,7 +290,7 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  padding: 42px 8px 8px;
+  padding: 0px 8px 8px;
 }
 @media (max-width: 1200px) {
   .blueIcon {
@@ -376,7 +335,7 @@
 }
 @media (max-width: 500px) {
   .introCalendarRight9 {
-    padding: 15px 0px 8px;
+    padding: 0px 0px 8px;
   }
 }
 @media (max-width: 350px) {
@@ -436,10 +395,8 @@
 }
 @media (max-width: 500px) {
   .بعدازبروزرسانیآیکونبرنامهآبیمیشه2 {
-    padding-top: 0px;
     line-height: 1.8;
-    padding-right: 16px;
-    padding-left: 16px;
+    padding: 0px 16px 12px;
   }
 }
 @media (max-width: 350px) {
@@ -481,6 +438,50 @@
     padding-top: 3px;
   }
 }
+.freeBox__whTcg {
+  animation: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 8px 0px;
+}
+@media (max-width: 1200px) {
+  .freeBox__whTcg {
+    animation: none;
+  }
+}
+@media (max-width: 500px) {
+  .freeBox__whTcg {
+    animation: none;
+    padding-top: 7px;
+    padding-bottom: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .freeBox__whTcg {
+    animation: none;
+  }
+}
+.img__xvDJ {
+  animation: none;
+  object-fit: cover;
+  max-width: 10%;
+}
+.img__xvDJ > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 500px) {
+  .img__xvDJ {
+    animation: none;
+    max-width: 16%;
+  }
+}
 .title {
   display: flex;
   flex-direction: column;
@@ -491,7 +492,12 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  padding: 22px 8px 8px;
+  padding: 10px 8px;
+}
+@media (max-width: 500px) {
+  .title {
+    padding-top: 0px;
+  }
 }
 .freeBox__ja6Zn {
   display: flex;

@@ -94,7 +94,6 @@ export type Plasmicدانلوداپلیکیشنموبایلمیان__OverridesTy
   introCalendarRight?: Flex__<"div">;
   introCalendarRight2?: Flex__<"div">;
   h1?: Flex__<"h1">;
-  introCalendarRight3?: Flex__<"div">;
   introCalendarRight4?: Flex__<"div">;
   introCalendarRight6?: Flex__<"div">;
   blueIcon?: Flex__<"div">;
@@ -281,26 +280,6 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                       }
                     </h1>
                   </div>
-                  <div
-                    data-plasmic-name={"introCalendarRight3"}
-                    data-plasmic-override={overrides.introCalendarRight3}
-                    className={classNames(
-                      projectcss.all,
-                      sty.introCalendarRight3
-                    )}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__nIz0M
-                      )}
-                    >
-                      {
-                        "\u0628\u0627 \u0645\u06cc\u0627\u0646\u060c \u062f\u06cc\u06af\u0647 \u0646\u06cc\u0627\u0632\u06cc \u0628\u0647 \u0633\u0631 \u0631\u0633\u06cc\u062f \u0648 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a \u06a9\u0631\u062f\u0646 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0646\u06cc\u0633\u062a. \u0647\u0631\u0686\u06cc\u0632\u06cc \u06a9\u0647 \u062f\u0631 \u0637\u0648\u0644 \u0631\u0648\u0632 \u0646\u06cc\u0627\u0632 \u062f\u0627\u0631\u06cc\u060c \u062a\u0648\u06cc \u06af\u0648\u0634\u06cc \u0647\u0645\u0631\u0627\u0647\u062a\u0647."
-                      }
-                    </div>
-                  </div>
                 </div>
                 <div
                   data-plasmic-name={"introCalendarRight4"}
@@ -335,8 +314,6 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__qdVee)} />
-
             <div
               data-plasmic-name={"blueIcon"}
               data-plasmic-override={overrides.blueIcon}
@@ -417,6 +394,29 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
               data-plasmic-override={overrides.link}
               className={classNames(projectcss.all, sty.link)}
             >
+              <div className={classNames(projectcss.all, sty.freeBox__whTcg)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__xvDJ)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "16%"
+                      : "10%"
+                  }
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/website_starter/images/image89.gif",
+                    fullWidth: 480,
+                    fullHeight: 432,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
               <div
                 data-plasmic-name={"title"}
                 data-plasmic-override={overrides.title}
@@ -962,7 +962,6 @@ const PlasmicDescendants = {
     "introCalendarRight",
     "introCalendarRight2",
     "h1",
-    "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarRight6",
     "blueIcon",
@@ -1004,7 +1003,6 @@ const PlasmicDescendants = {
     "introCalendarRight",
     "introCalendarRight2",
     "h1",
-    "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarRight6",
     "blueIcon",
@@ -1041,7 +1039,6 @@ const PlasmicDescendants = {
     "introCalendarRight",
     "introCalendarRight2",
     "h1",
-    "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarRight6"
   ],
@@ -1050,19 +1047,12 @@ const PlasmicDescendants = {
     "introCalendarRight",
     "introCalendarRight2",
     "h1",
-    "introCalendarRight3",
     "introCalendarRight4",
     "introCalendarRight6"
   ],
-  introCalendarRight: [
-    "introCalendarRight",
-    "introCalendarRight2",
-    "h1",
-    "introCalendarRight3"
-  ],
+  introCalendarRight: ["introCalendarRight", "introCalendarRight2", "h1"],
   introCalendarRight2: ["introCalendarRight2", "h1"],
   h1: ["h1"],
-  introCalendarRight3: ["introCalendarRight3"],
   introCalendarRight4: ["introCalendarRight4", "introCalendarRight6"],
   introCalendarRight6: ["introCalendarRight6"],
   blueIcon: [
@@ -1158,7 +1148,6 @@ type NodeDefaultElementType = {
   introCalendarRight: "div";
   introCalendarRight2: "div";
   h1: "h1";
-  introCalendarRight3: "div";
   introCalendarRight4: "div";
   introCalendarRight6: "div";
   blueIcon: "div";
@@ -1264,7 +1253,6 @@ export const Plasmicدانلوداپلیکیشنموبایلمیان = Object.as
     introCalendarRight: makeNodeComponent("introCalendarRight"),
     introCalendarRight2: makeNodeComponent("introCalendarRight2"),
     h1: makeNodeComponent("h1"),
-    introCalendarRight3: makeNodeComponent("introCalendarRight3"),
     introCalendarRight4: makeNodeComponent("introCalendarRight4"),
     introCalendarRight6: makeNodeComponent("introCalendarRight6"),
     blueIcon: makeNodeComponent("blueIcon"),
