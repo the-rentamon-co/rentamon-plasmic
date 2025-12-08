@@ -6,6 +6,7 @@ import GlobalContextsProvider from "../../components/plasmic/website_starter/Pla
 
 import { PlasmicProCalendar2 } from "../../components/plasmic/website_starter/PlasmicProCalendar2";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 
 
