@@ -6,7 +6,7 @@
   "description": "مدیریت آنلاین اقامتگاه",
   "display": "standalone",
   "display_override": ["window-controls-overlay"],
-  "start_url": "https://miaan.ir/splash?src=web",
+  "start_url": "https://miaan.ir/splash",
   "theme_color": "#fcfcfc",
   "background_color": "#0000f7",
   "orientation": "portrait-primary",
