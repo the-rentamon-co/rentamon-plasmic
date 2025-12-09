@@ -150,7 +150,6 @@ export type PlasmicHomepage__OverridesType = {
   introAutoSyncCaption2?: Flex__<"div">;
   introAutoSyncDesc2?: Flex__<"div">;
   carusel?: Flex__<"div">;
-  carousel2?: Flex__<typeof Embed>;
   testimonials?: Flex__<"div">;
   titlePart?: Flex__<"div">;
   commentsScrolling?: Flex__<"div">;
@@ -1710,14 +1709,33 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-override={overrides.carusel}
                   className={classNames(projectcss.all, sty.carusel, "fadein")}
                 >
-                  <Embed
-                    data-plasmic-name={"carousel2"}
-                    data-plasmic-override={overrides.carousel2}
-                    className={classNames("__wab_instance", sty.carousel2)}
-                    code={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8" />\r\n  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\r\n  <title>Image Slider</title>\r\n\r\n  <style>\r\n    body {\r\n      margin: 0;\r\n      padding: 0;\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n      height: 100vh;\r\n      background: #fff;\r\n    }\r\n\r\n    .slider-container {\r\n      position: relative;\r\n      width: 100%;\r\n      max-width: 800px;\r\n      height: 400px;\r\n      overflow: hidden;\r\n    }\r\n\r\n    .slider-container img {\r\n      position: absolute;\r\n      inset: 0;\r\n      width: 100%;\r\n      height: 100%;\r\n      object-fit: contain;\r\n      opacity: 0;\r\n      transition: opacity 0.6s ease-in-out;\r\n    }\r\n\r\n    .slider-container img.active {\r\n      opacity: 1;\r\n      z-index: 1;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n\r\n  <div class="slider-container">\r\n    <img\r\n      src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2FmobileAppPng.png"\r\n      class="active"\r\n      alt="Slide 1"\r\n    />\r\n\r\n    <img\r\n      src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fimg_mobileAppPng2.png"\r\n      alt="Slide 2"\r\n    />\r\n  </div>\r\n\r\n  <script>\r\n    document.addEventListener("DOMContentLoaded", function () {\r\n      const images = document.querySelectorAll(".slider-container img");\r\n      let currentIndex = 0;\r\n\r\n      function changeSlide() {\r\n        images[currentIndex].classList.remove("active");\r\n        currentIndex = (currentIndex + 1) % images.length;\r\n        images[currentIndex].classList.add("active");\r\n      }\r\n\r\n      setInterval(changeSlide, 4000);\r\n    });\r\n  </script>\r\n\r\n</body>\r\n</html>\r\n'
-                        : '<!DOCTYPE html>\r\n<html lang="fa">\r\n<head>\r\n  <meta charset="UTF-8" />\r\n  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\r\n  <title>Image Slider</title>\r\n\r\n  <style>\r\n    body {\r\n      margin: 0;\r\n      padding: 0;\r\n      background: #fff;\r\n    }\r\n\r\n    .slider-container {\r\n      position: relative;\r\n      width: 100%;\r\n      max-width: 800px;\r\n      height: 400px;\r\n      margin: 0 auto;\r\n      overflow: hidden;\r\n    }\r\n\r\n    .slider-container img {\r\n      position: absolute;\r\n      inset: 0;\r\n      width: 100%;\r\n      height: 100%;\r\n      object-fit: contain;\r\n      opacity: 0;\r\n      transition: opacity 0.6s ease-in-out;\r\n    }\r\n\r\n    .slider-container img.active {\r\n      opacity: 1;\r\n      z-index: 1;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n\r\n  <div class="slider-container">\r\n    <img\r\n      src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2FmobileAppPng.png"\r\n      class="active"\r\n      alt="Slide 1"\r\n    />\r\n    <img\r\n      src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fimg_mobileAppPng2.png"\r\n      alt="Slide 2"\r\n    />\r\n  </div>\r\n\r\n  <script>\r\n    document.addEventListener("DOMContentLoaded", function () {\r\n      const images = document.querySelectorAll(".slider-container img");\r\n      let currentIndex = 0;\r\n\r\n      function changeSlide() {\r\n        images[currentIndex].classList.remove("active");\r\n        currentIndex = (currentIndex + 1) % images.length;\r\n        images[currentIndex].classList.add("active");\r\n      }\r\n\r\n      setInterval(changeSlide, 4000);\r\n    });\r\n  </script>\r\n\r\n</body>\r\n</html>\r\n'
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__q4Qq)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"100%"}
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2FmobileAppPng.png"
+                    }
+                  />
+
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__quyee)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"100%"}
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fimg_mobileAppPng2.png"
                     }
                   />
                 </div>
@@ -2793,7 +2811,6 @@ const PlasmicDescendants = {
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
     "carusel",
-    "carousel2",
     "testimonials",
     "titlePart",
     "commentsScrolling",
@@ -2861,7 +2878,6 @@ const PlasmicDescendants = {
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
     "carusel",
-    "carousel2",
     "testimonials",
     "titlePart",
     "commentsScrolling",
@@ -2973,14 +2989,12 @@ const PlasmicDescendants = {
     "introAutoSyncTitle2",
     "introAutoSyncCaption2",
     "introAutoSyncDesc2",
-    "carusel",
-    "carousel2"
+    "carusel"
   ],
   introAutoSyncTitle2: ["introAutoSyncTitle2"],
   introAutoSyncCaption2: ["introAutoSyncCaption2"],
-  introAutoSyncDesc2: ["introAutoSyncDesc2", "carusel", "carousel2"],
-  carusel: ["carusel", "carousel2"],
-  carousel2: ["carousel2"],
+  introAutoSyncDesc2: ["introAutoSyncDesc2", "carusel"],
+  carusel: ["carusel"],
   testimonials: [
     "testimonials",
     "titlePart",
@@ -3071,7 +3085,6 @@ type NodeDefaultElementType = {
   introAutoSyncCaption2: "div";
   introAutoSyncDesc2: "div";
   carusel: "div";
-  carousel2: typeof Embed;
   testimonials: "div";
   titlePart: "div";
   commentsScrolling: "div";
@@ -3201,7 +3214,6 @@ export const PlasmicHomepage = Object.assign(
     introAutoSyncCaption2: makeNodeComponent("introAutoSyncCaption2"),
     introAutoSyncDesc2: makeNodeComponent("introAutoSyncDesc2"),
     carusel: makeNodeComponent("carusel"),
-    carousel2: makeNodeComponent("carousel2"),
     testimonials: makeNodeComponent("testimonials"),
     titlePart: makeNodeComponent("titlePart"),
     commentsScrolling: makeNodeComponent("commentsScrolling"),
