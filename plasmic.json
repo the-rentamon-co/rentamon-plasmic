@@ -3276,6 +3276,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/home-3"
+        },
+        {
+          "id": "PYuUvaJRn38T",
+          "name": "چگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/reviews-and-revenue.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/reviews-and-revenue"
         }
       ],
       "icons": [

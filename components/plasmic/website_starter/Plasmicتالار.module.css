@@ -197,7 +197,7 @@
   align-items: center;
   position: relative;
   min-width: 0;
-  padding: 14px 40px;
+  padding: 14px 40px 0px;
 }
 @media (max-width: 500px) {
   .topProfile {
@@ -346,6 +346,11 @@
   min-width: 0;
   padding: 8px;
 }
+@media (max-width: 500px) {
+  .leftIcon {
+    display: none;
+  }
+}
 @media (max-width: 350px) {
   .leftIcon {
     max-width: 14%;
@@ -404,9 +409,8 @@
 }
 @media (max-width: 500px) {
   .wallet {
-    padding-right: 18px;
-    padding-left: 18px;
     display: none;
+    padding: 15px 18px;
   }
 }
 @media (max-width: 350px) {
@@ -432,6 +436,7 @@
 @media (max-width: 500px) {
   .walletInfo {
     box-shadow: 0px 2px 4px 0px #0000005c;
+    background: #ffffff;
     display: flex;
     border-width: 1px;
   }
@@ -552,6 +557,7 @@
 @media (max-width: 500px) {
   .items8 {
     filter: blur(0px);
+    background: #fcfcfc;
     padding: 0px;
   }
 }
@@ -703,6 +709,8 @@
   border-bottom-width: 2px;
   border-bottom-style: dotted;
   cursor: pointer;
+  border-top-style: dotted;
+  border-top-width: 1px;
   min-width: 0;
   padding: 8px;
 }
@@ -2185,8 +2193,6 @@
   max-width: 100%;
   justify-content: center;
   align-items: center;
-  border-bottom-width: 2px;
-  border-bottom-style: dotted;
   cursor: pointer;
   min-width: 0;
   padding: 8px;
@@ -2333,7 +2339,7 @@
 }
 @media (max-width: 500px) {
   .freeBox__sgL9C {
-    min-height: 80px;
+    min-height: 40px;
     max-height: 80px;
   }
 }
