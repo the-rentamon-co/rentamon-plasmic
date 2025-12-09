@@ -472,10 +472,10 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 $steps["goToLiteCalendar"] = await $steps["goToLiteCalendar"];
               }
 
-              $steps["goToProCalendar"] =
+              $steps["goToProCalendar3"] =
                 $state.userType2 == "1"
                   ? (() => {
-                      const actionArgs = { destination: `/panel-4` };
+                      const actionArgs = { destination: `/panel` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -491,11 +491,11 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                     })()
                   : undefined;
               if (
-                $steps["goToProCalendar"] != null &&
-                typeof $steps["goToProCalendar"] === "object" &&
-                typeof $steps["goToProCalendar"].then === "function"
+                $steps["goToProCalendar3"] != null &&
+                typeof $steps["goToProCalendar3"] === "object" &&
+                typeof $steps["goToProCalendar3"].then === "function"
               ) {
-                $steps["goToProCalendar"] = await $steps["goToProCalendar"];
+                $steps["goToProCalendar3"] = await $steps["goToProCalendar3"];
               }
 
               $steps["goToProCalendar2"] =
