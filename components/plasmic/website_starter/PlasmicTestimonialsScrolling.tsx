@@ -256,7 +256,7 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
         ref={ref => {
           $refs["userTestimonial"] = ref;
         }}
-        url={"https://gateway.rentamon.com/webhook/testimonial"}
+        url={"https://nb.miaan.ir/webhook/testimonial"}
       />
 
       <div

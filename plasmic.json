@@ -3262,6 +3262,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/furnished-rental-maintenance-guide"
+        },
+        {
+          "id": "mVuz8jH8NBcv",
+          "name": "Homepage2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicHomepage2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/home-3.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicHomepage2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/home-3"
         }
       ],
       "icons": [
