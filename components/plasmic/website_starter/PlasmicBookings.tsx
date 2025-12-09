@@ -2003,7 +2003,19 @@ function PlasmicBookings__RenderFunc(props: {
               ref={ref => {
                 $refs["booking"] = ref;
               }}
-              url={"https://api-v3.miaan.ir/webhook/booking-v2"}
+              url={(() => {
+                try {
+                  return `https://api-v3.miaan.ir/webhook/booking-v2?booking_id=${$ctx.params.booking_id}`;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
             >
               <div
                 data-plasmic-name={"generalData"}
