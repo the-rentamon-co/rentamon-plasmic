@@ -3394,7 +3394,7 @@ function PlasmicBookings__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               args: [
-                                "POST",
+                                "GET",
                                 "https://api-v3.miaan.ir/webhook/reservations/calendar/block",
                                 undefined,
                                 (() => {
@@ -8044,7 +8044,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   ? (() => {
                                       const actionArgs = {
                                         args: [
-                                          "PUT",
+                                          "GET",
                                           "https://api-v3.miaan.ir/webhook/bookings/status/cancelled/website",
                                           undefined,
                                           (() => {
@@ -9486,7 +9486,7 @@ function PlasmicBookings__RenderFunc(props: {
                                         ? (() => {
                                             const actionArgs = {
                                               args: [
-                                                "POST",
+                                                "GET",
                                                 (() => {
                                                   try {
                                                     return "https://api-v3.miaan.ir/webhook/update_reservation_data";
@@ -10107,7 +10107,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   ? (() => {
                                       const actionArgs = {
                                         args: [
-                                          "PUT",
+                                          "GET",
                                           (() => {
                                             try {
                                               return (() => {
@@ -13086,7 +13086,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
-                                        "POST",
+                                        "GET",
                                         (() => {
                                           try {
                                             return (() => {
@@ -13693,7 +13693,7 @@ function PlasmicBookings__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   args: [
-                                    "PUT",
+                                    "GET",
                                     (() => {
                                       try {
                                         return (() => {

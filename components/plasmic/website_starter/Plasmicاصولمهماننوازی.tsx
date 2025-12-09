@@ -105,6 +105,8 @@ export type Plasmicاصولمهماننوازی__OverridesType = {
   img3?: Flex__<"div">;
   benefits3?: Flex__<"div">;
   benefitsTitle6?: Flex__<"div">;
+  img4?: Flex__<"div">;
+  relatedContents2?: Flex__<"div">;
   benefitsTitle7?: Flex__<"div">;
   cta?: Flex__<"div">;
   ctaText?: Flex__<"div">;
@@ -284,7 +286,7 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0645\u0642\u062f\u0645\u0647:\u0641\u0631\u0648\u0634 \u062a\u062c\u0631\u0628\u0647\u060c \u0646\u0647 \u062c\u0627\u06cc\u200c\u062e\u0648\u0627\u0628"
+                    "\u0645\u0642\u062f\u0645\u0647: \u0641\u0631\u0648\u0634 \u062a\u062c\u0631\u0628\u0647\u060c \u0646\u0647 \u062c\u0627\u06cc\u200c\u062e\u0648\u0627\u0628"
                   }
                 </h2>
               </div>
@@ -313,7 +315,11 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                   className={classNames(sty.img__cWtf2)}
                   displayHeight={"auto"}
                   displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "100%"
+                      : "100%"
+                  }
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={
@@ -325,7 +331,7 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                   }
                   loading={"lazy"}
                   src={
-                    "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Freview-2.jpg?versionId="
+                    "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fhospitality-1.jpg?versionId="
                   }
                 />
               </div>
@@ -374,6 +380,34 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                     }
                   </div>
                 </div>
+                <div className={classNames(projectcss.all, sty.freeBox__qAn6K)}>
+                  <PlasmicImg__
+                    alt={
+                      "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647,\u0642\u0631\u0627\u0631\u062f\u0627\u062f \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627, \u0645\u062c\u0648\u0632 \u062e\u0627\u0646\u0647 \u0645\u0633\u0627\u0641\u0631"
+                    }
+                    className={classNames(sty.img__mIVaa)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "100%"
+                    }
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : hasVariant(globalVariants, "screen", "tablet")
+                          ? "80%"
+                          : "70%"
+                    }
+                    loading={"lazy"}
+                    src={
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fhospitality-4.jpg?versionId="
+                    }
+                  />
+                </div>
               </div>
             </div>
             <div
@@ -408,7 +442,7 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>
                       {
-                        '\u0628\u0631\u0627\u06cc\u0627\u0646 \u0686\u0633\u06a9\u06cc (\u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644 Airbnb)\u060c \u062f\u0631 \u0645\u0642\u0627\u0644\u0647 \u062e\u0648\u062f\u0634 \u062a\u062d\u062a \u0639\u0646\u0648\u0627\u0646 "11 \u0633\u062a\u0627\u0631\u0647 \u062a\u062c\u0631\u0628\u0647"\u060c \u0646\u06a9\u0627\u062a \u06a9\u0644\u06cc\u062f\u06cc \u0631\u0648 \u062f\u0631\u0628\u0627\u0631\u0647 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0639\u0646\u0648\u0627\u0646 \u06a9\u0631\u062f\u0647 \u06a9\u0647 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0686\u0646\u062f \u0645\u0648\u0631\u062f \u0627\u0632 \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648 \u0628\u0631\u0631\u0633\u06cc \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645:\n\n'
+                        "\u0628\u0631\u0627\u06cc\u0627\u0646 \u0686\u0633\u06a9\u06cc (\u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644 Airbnb)\u060c \u062f\u0631 \u0645\u0642\u0627\u0644\u0647 \u062e\u0648\u062f\u0634 \u062a\u062d\u062a \u0639\u0646\u0648\u0627\u0646 \u00ab\u062a\u062c\u0631\u0628\u0647 11 \u0633\u062a\u0627\u0631\u0647\u00bb\u060c \u0646\u06a9\u0627\u062a \u06a9\u0644\u06cc\u062f\u06cc \u0631\u0648 \u062f\u0631\u0628\u0627\u0631\u0647 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0639\u0646\u0648\u0627\u0646 \u06a9\u0631\u062f\u0647 \u06a9\u0647 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0686\u0646\u062f \u0645\u0648\u0631\u062f \u0627\u0632 \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648 \u0628\u0631\u0631\u0633\u06cc \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645:\n\n"
                       }
                     </React.Fragment>
                     <span
@@ -511,23 +545,29 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
                         : hasVariant(globalVariants, "screen", "mobile")
-                          ? "500px"
+                          ? "100%"
                           : hasVariant(globalVariants, "screen", "tablet")
                             ? "410px"
                             : "auto"
                     }
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "100%"
+                    }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? "100%"
-                        : "auto"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                          ? "100%"
+                          : "auto"
                     }
                     loading={"lazy"}
                     src={
-                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Freview-1.jpg?versionId="
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fhospitality-2.jpg?versionId="
                     }
                   />
                 </div>
@@ -564,11 +604,11 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                           sty.link__d6Ybq
                         )}
                         component={Link}
-                        href={`/short-term-rental`}
+                        href={`/rental-rules`}
                         platform={"nextjs"}
                       >
                         {
-                          "\u062a\u0627 \u06f2/\u06f5 \u0628\u0631\u0627\u0628\u0631 \u062f\u0631\u0622\u0645\u062f \u0628\u06cc\u0634\u062a\u0631 \u0646\u0633\u0628\u062a \u0628\u0647 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647"
+                          "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646"
                         }
                       </PlasmicLink__>
                     }
@@ -640,7 +680,11 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                     className={classNames(sty.img___5TTOe)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
+                    displayMaxWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "100%"
+                    }
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={
@@ -652,7 +696,7 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={
-                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Freview-3.jpg?versionId="
+                      "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fhospitality-5.jpg?versionId="
                     }
                   />
                 </div>
@@ -688,6 +732,89 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                     {
                       "\u0631\u0641\u062a\u0627\u0631 \u0645\u0648\u062f\u0628\u0627\u0646\u0647\u060c \u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u0633\u0631\u06cc\u0639 \u0648 \u0627\u062d\u062a\u0631\u0627\u0645 \u0628\u0647 \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u062a\u0648\u0633\u0637 \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u0636\u0639\u0641\u200c\u0647\u0627\u06cc \u0641\u06cc\u0632\u06cc\u06a9\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u062c\u0628\u0631\u0627\u0646 \u06a9\u0646\u0647\u061b \u0686\u0648\u0646 \u0631\u0641\u062a\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0628\u06cc\u0634\u062a\u0631 \u0627\u0632 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u062f\u0631 \u0630\u0647\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062b\u0628\u062a \u0645\u06cc\u0634\u0647 \u0648 \u0628\u0631\u0639\u06a9\u0633 \u0627\u06af\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u0647\u0645\u0647 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0631\u0648 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0647 \u0648\u0644\u06cc \u0631\u0641\u062a\u0627\u0631 \u0645\u0646\u0627\u0633\u0628\u06cc \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0646\u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u0647\u060c \u0646\u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062a\u062c\u0631\u0628\u0647 \u062e\u0648\u0628\u06cc \u0631\u0648 \u0628\u0631\u0627\u06cc \u0627\u0648\u0646\u200c\u0647\u0627 \u0627\u06cc\u062c\u0627\u062f \u06a9\u0646\u0647. \u0645\u062b\u0644\u0627 \u0627\u06af\u0647 \u0646\u0645\u0627\u06cc \u0633\u0627\u062e\u062a\u0645\u0627\u0646 \u06a9\u0627\u0645\u0644 \u0646\u0628\u0627\u0634\u0647\u060c \u06cc\u0627 \u0644\u0648\u0627\u0632\u0645 \u062e\u0648\u0646\u0647 \u0642\u062f\u06cc\u0645\u06cc \u0628\u0627\u0634\u0646\u062f\u060c \u0645\u0647\u0631\u0628\u0648\u0646\u06cc\u060c \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0628\u0648\u062f\u0646 \u0648 \u067e\u06cc\u06af\u06cc\u0631\u06cc \u0632\u06cc\u0627\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u0645\u0647\u0645\u0627\u0646 \u062e\u06cc\u0644\u06cc \u0628\u0647 \u0633\u0627\u06cc\u0631 \u0645\u0634\u06a9\u0644\u0627\u062a \u062a\u0648\u062c\u0647 \u0646\u06a9\u0646\u0647 \u0648 \u062f\u0631 \u0646\u0647\u0627\u06cc\u062a \u0627\u0645\u062a\u06cc\u0627\u0632 \u06a9\u0627\u0645\u0644 \u0628\u06af\u06cc\u0631\u06cc."
                     }
+                  </div>
+                  <div
+                    data-plasmic-name={"img4"}
+                    data-plasmic-override={overrides.img4}
+                    className={classNames(projectcss.all, sty.img4)}
+                  >
+                    <PlasmicImg__
+                      alt={
+                        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0645\u0646\u0632\u0644,\u0642\u0627\u0646\u0648\u0646 \u0627\u062c\u0627\u0631\u0647 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u0626\u06cc\u062a,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u06cc\u06cc\u062a"
+                      }
+                      className={classNames(sty.img___5AYed)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "tablet")
+                            ? "80%"
+                            : "70%"
+                      }
+                      loading={"lazy"}
+                      src={
+                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fhospitality-3.jpg?versionId="
+                      }
+                    />
+                  </div>
+                  <div
+                    data-plasmic-name={"relatedContents2"}
+                    data-plasmic-override={overrides.relatedContents2}
+                    className={classNames(projectcss.all, sty.relatedContents2)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jhVm3
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{" - "}</React.Fragment>
+                        {
+                          <PlasmicLink__
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link___9Ybjw
+                            )}
+                            component={Link}
+                            href={`/reviews-and-revenue`}
+                            platform={"nextjs"}
+                          >
+                            {
+                              "\u062a\u0627\u062b\u06cc\u0631 \u0646\u0638\u0631\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0648\u06cc\u0644\u0627"
+                            }
+                          </PlasmicLink__>
+                        }
+                        <React.Fragment>{"\n - "}</React.Fragment>
+                        {
+                          <PlasmicLink__
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link___233Is
+                            )}
+                            component={Link}
+                            href={`/furnished-rental-maintenance-guide`}
+                            platform={"nextjs"}
+                          >
+                            {
+                              "\u062f\u0631\u062f\u0633\u0631\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u062e\u0648\u0646\u0647 \u0645\u0628\u0644\u0647 \u0648 \u0631\u0648\u0634 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0648\u0633\u0627\u06cc\u0644"
+                            }
+                          </PlasmicLink__>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </div>
                   </div>
                 </div>
                 <div
@@ -834,6 +961,8 @@ const PlasmicDescendants = {
     "img3",
     "benefits3",
     "benefitsTitle6",
+    "img4",
+    "relatedContents2",
     "benefitsTitle7",
     "cta",
     "ctaText",
@@ -863,6 +992,8 @@ const PlasmicDescendants = {
     "img3",
     "benefits3",
     "benefitsTitle6",
+    "img4",
+    "relatedContents2",
     "benefitsTitle7",
     "cta",
     "ctaText",
@@ -887,6 +1018,8 @@ const PlasmicDescendants = {
     "img3",
     "benefits3",
     "benefitsTitle6",
+    "img4",
+    "relatedContents2",
     "benefitsTitle7",
     "cta",
     "ctaText",
@@ -899,8 +1032,16 @@ const PlasmicDescendants = {
   neighbours: ["neighbours", "benefitsTitle2", "img3"],
   benefitsTitle2: ["benefitsTitle2"],
   img3: ["img3"],
-  benefits3: ["benefits3", "benefitsTitle6", "benefitsTitle7"],
-  benefitsTitle6: ["benefitsTitle6"],
+  benefits3: [
+    "benefits3",
+    "benefitsTitle6",
+    "img4",
+    "relatedContents2",
+    "benefitsTitle7"
+  ],
+  benefitsTitle6: ["benefitsTitle6", "img4", "relatedContents2"],
+  img4: ["img4"],
+  relatedContents2: ["relatedContents2"],
   benefitsTitle7: ["benefitsTitle7"],
   cta: ["cta", "ctaText", "button"],
   ctaText: ["ctaText"],
@@ -934,6 +1075,8 @@ type NodeDefaultElementType = {
   img3: "div";
   benefits3: "div";
   benefitsTitle6: "div";
+  img4: "div";
+  relatedContents2: "div";
   benefitsTitle7: "div";
   cta: "div";
   ctaText: "div";
@@ -1026,6 +1169,8 @@ export const Plasmicاصولمهماننوازی = Object.assign(
     img3: makeNodeComponent("img3"),
     benefits3: makeNodeComponent("benefits3"),
     benefitsTitle6: makeNodeComponent("benefitsTitle6"),
+    img4: makeNodeComponent("img4"),
+    relatedContents2: makeNodeComponent("relatedContents2"),
     benefitsTitle7: makeNodeComponent("benefitsTitle7"),
     cta: makeNodeComponent("cta"),
     ctaText: makeNodeComponent("ctaText"),
@@ -1040,25 +1185,24 @@ export const Plasmicاصولمهماننوازی = Object.assign(
 
     // Key-value metadata
     metadata: {
-      keywords:
-        "\u0646\u0638\u0631\u0627\u062a \u0645\u0634\u062a\u0631\u06cc\u0627\u0646, \u0627\u0641\u0632\u0627\u06cc\u0634 \u0641\u0631\u0648\u0634, \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f, \u0645\u062f\u06cc\u0631\u06cc\u062a \u0628\u0627\u0632\u062e\u0648\u0631\u062f, \u0628\u0627\u0632\u0627\u0631\u06cc\u0627\u0628\u06cc \u062f\u0647\u0627\u0646 \u0628\u0647 \u062f\u0647\u0627\u0646, \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647, \u067e\u0627\u0633\u062e \u0628\u0647 \u0646\u0638\u0631\u0627\u062a \u0645\u0646\u0641\u06cc",
       ogType: "article",
       robots: "index, follow",
-      ogTitle:
-        "\u0686\u0631\u0627 \u0646\u0638\u0631\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \u0628\u0631\u0627\u06cc \u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0627\u062c\u0627\u0631\u0647 \u0627\u0647\u0645\u06cc\u062a \u062f\u0627\u0631\u062f",
+      keywords:
+        "\u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647, \u0627\u0635\u0648\u0644 \u0645\u0647\u0645\u0627\u0646\u200c\u0646\u0648\u0627\u0632\u06cc, \u062a\u062c\u0631\u0628\u0647 \u0645\u0634\u062a\u0631\u06cc, \u0628\u0631\u062e\u0648\u0631\u062f \u0628\u0627 \u0645\u0647\u0645\u0627\u0646 \u0633\u062e\u062a\u200c\u06af\u06cc\u0631, \u0645\u062f\u06cc\u0631\u06cc\u062a \u0648\u06cc\u0644\u0627, \u0646\u06a9\u0627\u062a \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u062a\u06a9\u0646\u06cc\u06a9\u200c\u0647\u0627\u06cc \u0645\u062f\u06cc\u0631\u06cc\u062a \u0648\u06cc\u0644\u0627",
       ogDescription:
-        "\u0646\u0638\u0631\u0627\u062a \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \u06a9\u0644\u06cc\u062f \u0627\u0641\u0632\u0627\u06cc\u0634 \u0631\u0632\u0631\u0648\u0647\u0627 \u0647\u0633\u062a\u0646\u062f. \u06cc\u0627\u062f \u0628\u06af\u06cc\u0631\u06cc\u062f \u0686\u06af\u0648\u0646\u0647 \u0627\u0645\u062a\u06cc\u0627\u0632\u0647\u0627\u06cc \u06f5 \u0633\u062a\u0627\u0631\u0647 \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u06cc\u062f\u060c \u0628\u0627\u0632\u062e\u0648\u0631\u062f\u0647\u0627\u06cc \u0645\u0646\u0641\u06cc \u0631\u0627 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06a9\u0646\u06cc\u062f \u0648 \u062f\u0631\u0622\u0645\u062f \u0627\u062c\u0627\u0631\u0647 \u062e\u0648\u062f \u0631\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0647\u06cc\u062f.",
-      ogImageAlt: "Impact of customer reviews on sales growth"
+        "\u0686\u06af\u0648\u0646\u0647 \u06cc\u06a9 \u0645\u06cc\u0632\u0628\u0627\u0646 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u0628\u0627\u0634\u06cc\u0645\u061f \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062e\u0644\u0642 \u062a\u062c\u0631\u0628\u0647 \u0628\u0631\u0627\u06cc \u0645\u0647\u0645\u0627\u0646 \u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0686\u0627\u0644\u0634\u200c\u0647\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u06cc \u0637\u0628\u0642 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f\u0647\u0627\u06cc \u062c\u0647\u0627\u0646\u06cc.",
+      ogLocale: "fa_IR",
+      ogTitle:
+        "\u0627\u0635\u0648\u0644 \u0645\u0647\u0645\u0627\u0646\u200c\u0646\u0648\u0627\u0632\u06cc \u0648 \u0646\u062d\u0648\u0647\u200c\u06cc \u062a\u0639\u0627\u0645\u0644 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \u0645\u0634\u06a9\u0644\u200c\u067e\u0633\u0646\u062f"
     },
 
     // Page metadata
     pageMetadata: {
-      title:
-        "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان، خصوصا مهمانان مشکل‌پسند",
+      title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند",
       description:
-        "نظرات مهمانان کلید افزایش رزروها هستند. یاد بگیرید چگونه امتیازهای ۵ ستاره بیشتری بگیرید، بازخوردهای منفی را مدیریت کنید و درآمد اجاره خود را افزایش دهید.",
+        "چطور مثل یک میزبان حرفه‌ای باشیم؟ راهنمای خلق تجربه فوق‌العاده برای مهمان و مدیریت چالش‌های میزبانی.",
       ogImageSrc:
-        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Freview-1.jpg?versionId=",
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fhospitality-3.jpg?versionId=",
       canonical: ""
     }
   }

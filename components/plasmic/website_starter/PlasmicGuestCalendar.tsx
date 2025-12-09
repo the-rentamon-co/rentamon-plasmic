@@ -638,12 +638,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                 url={(() => {
                   try {
                     return (() => {
-                      const isMiaan =
-                        window.location.hostname.includes("miaan.ir");
-                      const gatewayBase = isMiaan
-                        ? "https://gateway.miaan.ir"
-                        : "https://gateway.rentamon.com";
-                      return `${gatewayBase}/webhook/public_calendar_api?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                      return `https://automation.rentamon.com/webhook/calendar/blocked-dates?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                     })();
                   } catch (e) {
                     if (
