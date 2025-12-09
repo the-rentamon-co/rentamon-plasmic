@@ -683,12 +683,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                     url={(() => {
                       try {
                         return (() => {
-                          const isMiaan =
-                            window.location.hostname.includes("miaan.ir");
-                          const gatewayBase = isMiaan
-                            ? "https://gateway.miaan.ir"
-                            : "https://gateway.rentamon.com";
-                          return `${gatewayBase}/webhook/public_calendar_api_price?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                          return `https://automation.rentamon.com/webhook/calendar/price?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                         })();
                       } catch (e) {
                         if (
@@ -1143,14 +1138,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
               }}
               url={(() => {
                 try {
-                  return (() => {
-                    const isMiaan =
-                      window.location.hostname.includes("miaan.ir");
-                    const gatewayBase = isMiaan
-                      ? "https://gateway.miaan.ir"
-                      : "https://gateway.rentamon.com";
-                    return `${gatewayBase}/webhook/property_image_url?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
-                  })();
+                  return `https://automation.rentamon.com/webhook/property/image?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||

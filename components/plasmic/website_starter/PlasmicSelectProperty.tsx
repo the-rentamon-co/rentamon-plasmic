@@ -423,26 +423,9 @@ function PlasmicSelectProperty__RenderFunc(props: {
                 ref={ref => {
                   $refs["apiRequest"] = ref;
                 }}
-                url={(() => {
-                  try {
-                    return (() => {
-                      const isMiaan =
-                        window.location.hostname.includes("miaan.ir");
-                      const gatewayBase = isMiaan
-                        ? "https://gateway.miaan.ir"
-                        : "https://gateway.rentamon.com";
-                      return `${gatewayBase}/webhook/public_calendar_get_property_id`;
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
+                url={
+                  "https://automation.rentamon.com/webhook/get-property-id-from-token"
+                }
               >
                 <div className={classNames(projectcss.all, sty.freeBox__uOhxY)}>
                   <Select
@@ -769,16 +752,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                               })()
                             : (() => {
                                 try {
-                                  return (() => {
-                                    const isMiaan =
-                                      window.location.hostname.includes(
-                                        "miaan.ir"
-                                      );
-                                    const gatewayBase = isMiaan
-                                      ? "https://gateway.miaan.ir"
-                                      : "https://gateway.rentamon.com";
-                                    return `${gatewayBase}/webhook/me/propertybase?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
-                                  })();
+                                  return `https://automation.rentamon.com/webhook/profile?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
@@ -920,12 +894,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                   url={(() => {
                     try {
                       return (() => {
-                        const isMiaan =
-                          window.location.hostname.includes("miaan.ir");
-                        const gatewayBase = isMiaan
-                          ? "https://gateway.miaan.ir"
-                          : "https://gateway.rentamon.com";
-                        return `${gatewayBase}/webhook/public_calendar_api?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                        return `https://automation.rentamon.com/webhook/calendar/blocked-dates?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                       })();
                     } catch (e) {
                       if (
@@ -972,12 +941,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                       url={(() => {
                         try {
                           return (() => {
-                            const isMiaan =
-                              window.location.hostname.includes("miaan.ir");
-                            const gatewayBase = isMiaan
-                              ? "https://gateway.miaan.ir"
-                              : "https://gateway.rentamon.com";
-                            return `${gatewayBase}/webhook/public_calendar_api_price?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                            return `https://automation.rentamon.com/webhook/calendar/price?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                           })();
                         } catch (e) {
                           if (
@@ -1402,14 +1366,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                 }}
                 url={(() => {
                   try {
-                    return (() => {
-                      const isMiaan =
-                        window.location.hostname.includes("miaan.ir");
-                      const gatewayBase = isMiaan
-                        ? "https://gateway.miaan.ir"
-                        : "https://gateway.rentamon.com";
-                      return `${gatewayBase}/webhook/property_image_url?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
-                    })();
+                    return `https://automation.rentamon.com/webhook/property/image?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||

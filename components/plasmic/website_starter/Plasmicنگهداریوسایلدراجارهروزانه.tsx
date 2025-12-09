@@ -592,10 +592,10 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                           onClick={async event => {
                             const $steps = {};
 
-                            $steps["goToراهنمایجامعدرآمدازاجارهویلا"] = true
+                            $steps["goToمدیریتویلا"] = true
                               ? (() => {
                                   const actionArgs = {
-                                    destination: `/vacation-rental-income`
+                                    destination: `/villa-management`
                                   };
                                   return (({ destination }) => {
                                     if (
@@ -612,22 +612,19 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                                 })()
                               : undefined;
                             if (
-                              $steps["goToراهنمایجامعدرآمدازاجارهویلا"] !=
-                                null &&
-                              typeof $steps[
-                                "goToراهنمایجامعدرآمدازاجارهویلا"
-                              ] === "object" &&
-                              typeof $steps["goToراهنمایجامعدرآمدازاجارهویلا"]
-                                .then === "function"
+                              $steps["goToمدیریتویلا"] != null &&
+                              typeof $steps["goToمدیریتویلا"] === "object" &&
+                              typeof $steps["goToمدیریتویلا"].then ===
+                                "function"
                             ) {
-                              $steps["goToراهنمایجامعدرآمدازاجارهویلا"] =
-                                await $steps["goToراهنمایجامعدرآمدازاجارهویلا"];
+                              $steps["goToمدیریتویلا"] =
+                                await $steps["goToمدیریتویلا"];
                             }
                           }}
                           platform={"nextjs"}
                         >
                           {
-                            "\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                            "\u0686\u0637\u0648\u0631 \u0628\u0627 \u06a9\u0645\u062a\u0631\u06cc\u0646 \u0632\u062d\u0645\u062a\u060c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u06a9\u0646\u06cc\u0645\u061f"
                           }
                         </PlasmicLink__>
                       }
@@ -704,7 +701,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                           )}
                         >
                           {
-                            "\u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a"
+                            "\u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647"
                           }
                         </div>
                       </div>
@@ -758,7 +755,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                           )}
                         >
                           {
-                            "\u06f2 \u062a\u0627 \u06f3 \u0628\u0631\u0627\u0628\u0631 \u0628\u06cc\u0634\u062a\u0631 \r"
+                            "\u06f2.\u06f5 \u0628\u0631\u0627\u0628\u0631 \u0628\u06cc\u0634\u062a\u0631 \r"
                           }
                         </div>
                       </div>
@@ -844,7 +841,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                           )}
                         >
                           {
-                            "\u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0646\u06af\u0647\u062f\u0627\u0631\u06cc"
+                            "\u0647\u0632\u06cc\u0646\u0647 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc"
                           }
                         </div>
                       </div>
@@ -1178,16 +1175,40 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                         projectcss.__wab_text,
                         sty.text__hFDld
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["goToقوانیناجارهروزانه"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                destination: `/rental-rules`
+                              };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToقوانیناجارهروزانه"] != null &&
+                          typeof $steps["goToقوانیناجارهروزانه"] === "object" &&
+                          typeof $steps["goToقوانیناجارهروزانه"].then ===
+                            "function"
+                        ) {
+                          $steps["goToقوانیناجارهروزانه"] =
+                            await $steps["goToقوانیناجارهروزانه"];
+                        }
+                      }}
                     >
                       <React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ textDecorationLine: "underline" }}
-                        >
-                          {""}
-                        </span>
                         <React.Fragment>{""}</React.Fragment>
                         {
                           <PlasmicLink__
@@ -1199,7 +1220,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                               sty.link__ei42K
                             )}
                             component={Link}
-                            href={"https://rentamon.com/list-your-property/"}
+                            href={`/rental-rules`}
                             onClick={async event => {
                               const $steps = {};
 
@@ -1237,18 +1258,9 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                             }}
                             platform={"nextjs"}
                           >
-                            <React.Fragment>
-                              <span
-                                className={
-                                  "plasmic_default__all plasmic_default__span"
-                                }
-                                style={{ textDecorationLine: "underline" }}
-                              >
-                                {
-                                  "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627"
-                                }
-                              </span>
-                            </React.Fragment>
+                            {
+                              "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646"
+                            }
                           </PlasmicLink__>
                         }
                         <React.Fragment>{""}</React.Fragment>
@@ -1357,9 +1369,9 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                         sty.text__hkvlN
                       )}
                     >
-                      {
-                        "\u0627\u06af\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0648\u0627\u0631\u062f \u0627\u06cc\u0646 \u0628\u0627\u0632\u0627\u0631 \u0628\u0634\u06cc\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0631\u0648\u06cc \u0647\u0645\u0631\u0627\u0647\u06cc \u00ab\u0645\u06cc\u0627\u0646\u00bb \u062d\u0633\u0627\u0628 \u06a9\u0646\u06cc"
-                      }
+                      {hasVariant(globalVariants, "screen", "mobile")
+                        ? "\u0647\u0645\u06a9\u0627\u0631\u06cc \u0628\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u062e\u0634 \u0645\u0647\u06cc \u0627\u0632 \u06a9\u0627\u0631 \u0631\u0648 \u0633\u0627\u062f\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0686\u0648\u0646 \u0632\u062d\u0645\u062a \u0645\u0633\u0627\u0641\u0631 \u06af\u0631\u0641\u062a\u0646 \u0631\u0648 \u0627\u0632 \u0628\u06cc\u0646 \u0645\u06cc\u200c\u0628\u0631\u0647.\n\u0645\u0627 \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648.. \u062b\u0628\u062a \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645."
+                        : "\u0647\u0645\u06a9\u0627\u0631\u06cc \u0628\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u0628\u062e\u0634 \u0645\u0647\u06cc \u0627\u0632 \u06a9\u0627\u0631 \u0631\u0648 \u0633\u0627\u062f\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0686\u0648\u0646 \u0632\u062d\u0645\u062a \u0645\u0633\u0627\u0641\u0631 \u06af\u0631\u0641\u062a\u0646 \u0631\u0648 \u0627\u0632 \u0628\u06cc\u0646 \u0645\u06cc\u200c\u0628\u0631\u0647. \u0645\u0627 \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648.. \u062b\u0628\u062a \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645."}
                     </div>
                   </div>
                   <div
@@ -1377,9 +1389,11 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                       onClick={async event => {
                         const $steps = {};
 
-                        $steps["goToHomepage"] = true
+                        $steps["goToثبتآگهیاقامتگاه"] = true
                           ? (() => {
-                              const actionArgs = { destination: `/` };
+                              const actionArgs = {
+                                destination: `/list-your-property`
+                              };
                               return (({ destination }) => {
                                 if (
                                   typeof destination === "string" &&
@@ -1395,15 +1409,19 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                             })()
                           : undefined;
                         if (
-                          $steps["goToHomepage"] != null &&
-                          typeof $steps["goToHomepage"] === "object" &&
-                          typeof $steps["goToHomepage"].then === "function"
+                          $steps["goToثبتآگهیاقامتگاه"] != null &&
+                          typeof $steps["goToثبتآگهیاقامتگاه"] === "object" &&
+                          typeof $steps["goToثبتآگهیاقامتگاه"].then ===
+                            "function"
                         ) {
-                          $steps["goToHomepage"] = await $steps["goToHomepage"];
+                          $steps["goToثبتآگهیاقامتگاه"] =
+                            await $steps["goToثبتآگهیاقامتگاه"];
                         }
                       }}
                     >
-                      {"\u0645\u06cc\u0627\u0646 \u0686\u06cc\u0647\u061f"}
+                      {
+                        "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                      }
                     </div>
                   </div>
                 </div>

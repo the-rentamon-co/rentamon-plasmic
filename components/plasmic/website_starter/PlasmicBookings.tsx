@@ -3394,8 +3394,8 @@ function PlasmicBookings__RenderFunc(props: {
                         ? (() => {
                             const actionArgs = {
                               args: [
-                                "GET",
-                                "https://api-v3.miaan.ir/webhook/reservations/calendar/block",
+                                "POST",
+                                "https://gateway.miaan.ir/webhook/reservations/calendar/block",
                                 undefined,
                                 (() => {
                                   try {
@@ -8044,8 +8044,8 @@ function PlasmicBookings__RenderFunc(props: {
                                   ? (() => {
                                       const actionArgs = {
                                         args: [
-                                          "GET",
-                                          "https://api-v3.miaan.ir/webhook/bookings/status/cancelled/website",
+                                          "PUT",
+                                          "https://gateway.miaan.ir/webhook/bookings/status/cancelled/website",
                                           undefined,
                                           (() => {
                                             try {
@@ -9486,21 +9486,8 @@ function PlasmicBookings__RenderFunc(props: {
                                         ? (() => {
                                             const actionArgs = {
                                               args: [
-                                                "GET",
-                                                (() => {
-                                                  try {
-                                                    return "https://api-v3.miaan.ir/webhook/update_reservation_data";
-                                                  } catch (e) {
-                                                    if (
-                                                      e instanceof TypeError ||
-                                                      e?.plasmicType ===
-                                                        "PlasmicUndefinedDataError"
-                                                    ) {
-                                                      return undefined;
-                                                    }
-                                                    throw e;
-                                                  }
-                                                })(),
+                                                "POST",
+                                                "https://gateway.miaan.ir/webhook/update_reservation_data",
                                                 undefined,
                                                 (() => {
                                                   try {
@@ -10107,16 +10094,16 @@ function PlasmicBookings__RenderFunc(props: {
                                   ? (() => {
                                       const actionArgs = {
                                         args: [
-                                          "GET",
+                                          "PUT",
                                           (() => {
                                             try {
                                               return (() => {
                                                 if (
                                                   $state.unblockFor == "cancel"
                                                 ) {
-                                                  return `https://api-v3.miaan.ir/webhook/bookings/status/cancelled`;
+                                                  return `https://gateway.miaan.ir/webhook/bookings/status/cancelled`;
                                                 } else {
-                                                  return `https://api-v3.miaan.ir/webhook/bookings/early-checkout`;
+                                                  return `https://gateway.miaan.ir/webhook/bookings/early-checkout`;
                                                 }
                                               })();
                                             } catch (e) {
@@ -13086,7 +13073,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
-                                        "GET",
+                                        "POST",
                                         (() => {
                                           try {
                                             return (() => {
@@ -13693,14 +13680,14 @@ function PlasmicBookings__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   args: [
-                                    "GET",
+                                    "PUT",
                                     (() => {
                                       try {
                                         return (() => {
                                           if ($state.unblockFor == "cancel") {
-                                            return `https://api-v3.miaan.ir/webhook/bookings/status/cancelled`;
+                                            return `https://gateway.miaan.ir/webhook/bookings/status/cancelled`;
                                           } else {
-                                            return `https://api-v3.miaan.ir/webhook/bookings/early-checkout`;
+                                            return `https://gateway.miaan.ir/webhook/bookings/early-checkout`;
                                           }
                                         })();
                                       } catch (e) {

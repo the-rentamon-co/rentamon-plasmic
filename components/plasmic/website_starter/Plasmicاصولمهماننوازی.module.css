@@ -683,7 +683,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 100%;
+  max-width: 54%;
   justify-content: center;
   align-items: center;
   min-width: 0;
@@ -803,11 +803,12 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 70%;
+  width: 100%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  min-width: 0;
   padding: 8px;
 }
 @media (max-width: 1200px) {
@@ -874,7 +875,7 @@
   align-items: center;
   background: none;
   min-width: 0;
-  padding: 8px 30px 34px 8px;
+  padding: 8px 12px 34px;
 }
 @media (max-width: 500px) {
   .relatedContents {
@@ -896,8 +897,8 @@
   line-height: 2;
   color: var(--token-8nedppYkGVaH);
   min-width: 0;
-  padding: 10px 20px;
-  border: 2px solid var(--token-8nedppYkGVaH);
+  border-radius: 30px;
+  padding: 24px 30px 24px 20px;
 }
 @media (max-width: 1200px) {
   .text___7RoYn {
@@ -908,9 +909,9 @@
 }
 @media (max-width: 500px) {
   .text___7RoYn {
-    padding-right: 0px;
-    padding-left: 10px;
     font-size: 16px;
+    line-height: 2;
+    padding: 16px;
   }
 }
 @media (max-width: 350px) {
@@ -1246,13 +1247,11 @@
   align-items: center;
   background: none;
   min-width: 0;
-  padding: 8px 30px 34px 8px;
+  padding: 20px 30px 34px 8px;
 }
 @media (max-width: 500px) {
   .relatedContents2 {
-    padding-right: 16px;
-    padding-top: 30px;
-    padding-left: 16px;
+    padding: 30px 16px 23px;
   }
 }
 @media (max-width: 350px) {
@@ -1282,6 +1281,7 @@
     padding-right: 0px;
     padding-left: 10px;
     font-size: 16px;
+    line-height: 2;
   }
 }
 @media (max-width: 350px) {
@@ -1299,6 +1299,11 @@
   font-family: "Estedad";
   font-weight: 500;
   height: auto;
+}
+@media (max-width: 500px) {
+  .link___233Is {
+    padding-bottom: 0px;
+  }
 }
 .benefitsTitle7 {
   display: flex;

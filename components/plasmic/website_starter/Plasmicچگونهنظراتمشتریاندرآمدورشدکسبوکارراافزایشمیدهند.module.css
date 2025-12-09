@@ -737,6 +737,10 @@
     font-size: 15px;
   }
 }
+.link__jdi78 {
+  font-family: "Estedad";
+  font-weight: 500;
+}
 .iamges {
   display: flex;
   flex-direction: column;
@@ -841,7 +845,7 @@
 @media (max-width: 500px) {
   .text___9RyPe {
     padding-right: 0px;
-    padding-left: 10px;
+    padding-left: 0px;
     font-size: 16px;
   }
 }
@@ -856,9 +860,19 @@
   font-family: "Estedad";
   font-weight: 500;
 }
+@media (max-width: 500px) {
+  .link__dmdKy {
+    font-size: 15px;
+  }
+}
 .link__s9Ov2 {
   font-family: "Estedad";
   font-weight: 500;
+}
+@media (max-width: 500px) {
+  .link__s9Ov2 {
+    font-size: 15px;
+  }
 }
 .neighbours {
   display: flex;
