@@ -2002,26 +2002,7 @@ function PlasmicBookings__RenderFunc(props: {
               ref={ref => {
                 $refs["booking"] = ref;
               }}
-              url={(() => {
-                try {
-                  return (() => {
-                    const isMiaan =
-                      window.location.hostname.includes("miaan.ir");
-                    const gatewayBase = isMiaan
-                      ? "https://gateway.miaan.ir"
-                      : "https://gateway.rentamon.com";
-                    return `${gatewayBase}/webhook/booking-v2?booking_id=${$ctx.params.booking_id}`;
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
+              url={"https://api-v3.miaan.ir/webhook/booking-v2"}
             >
               <div
                 data-plasmic-name={"generalData"}
@@ -3401,29 +3382,7 @@ function PlasmicBookings__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                (() => {
-                                  try {
-                                    return (() => {
-                                      const isMiaan =
-                                        window.location.hostname.includes(
-                                          "miaan.ir"
-                                        );
-                                      const gatewayBase = isMiaan
-                                        ? "https://gateway.miaan.ir"
-                                        : "https://gateway.rentamon.com";
-                                      return `${gatewayBase}/webhook/reservations/calendar/block`;
-                                    })();
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })(),
+                                "https://api-v3.miaan.ir/webhook/reservations/calendar/block",
                                 undefined,
                                 (() => {
                                   try {
@@ -8073,29 +8032,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "PUT",
-                                          (() => {
-                                            try {
-                                              return (() => {
-                                                const isMiaan =
-                                                  window.location.hostname.includes(
-                                                    "miaan.ir"
-                                                  );
-                                                const gatewayBase = isMiaan
-                                                  ? "https://gateway.miaan.ir"
-                                                  : "https://gateway.rentamon.com";
-                                                return `${gatewayBase}/webhook/bookings/status/cancelled/website`;
-                                              })();
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })(),
+                                          "https://api-v3.miaan.ir/webhook/bookings/status/cancelled/website",
                                           undefined,
                                           (() => {
                                             try {
@@ -9539,17 +9476,7 @@ function PlasmicBookings__RenderFunc(props: {
                                                 "POST",
                                                 (() => {
                                                   try {
-                                                    return (() => {
-                                                      const isMiaan =
-                                                        window.location.hostname.includes(
-                                                          "miaan.ir"
-                                                        );
-                                                      const gatewayBase =
-                                                        isMiaan
-                                                          ? "https://gateway.miaan.ir"
-                                                          : "https://gateway.rentamon.com";
-                                                      return `${gatewayBase}/webhook/update_reservation_data`;
-                                                    })();
+                                                    return "https://api-v3.miaan.ir/webhook/update_reservation_data";
                                                   } catch (e) {
                                                     if (
                                                       e instanceof TypeError ||
@@ -10171,19 +10098,12 @@ function PlasmicBookings__RenderFunc(props: {
                                           (() => {
                                             try {
                                               return (() => {
-                                                const isMiaan =
-                                                  window.location.hostname.includes(
-                                                    "miaan.ir"
-                                                  );
-                                                const gatewayBase = isMiaan
-                                                  ? "https://gateway.miaan.ir"
-                                                  : "https://gateway.rentamon.com";
                                                 if (
                                                   $state.unblockFor == "cancel"
                                                 ) {
-                                                  return `${gatewayBase}/webhook/bookings/status/cancelled`;
+                                                  return `https://api-v3.miaan.ir/webhook/bookings/status/cancelled`;
                                                 } else {
-                                                  return `${gatewayBase}/webhook/bookings/early-checkout`;
+                                                  return `https://api-v3.miaan.ir/webhook/bookings/early-checkout`;
                                                 }
                                               })();
                                             } catch (e) {
@@ -13764,17 +13684,10 @@ function PlasmicBookings__RenderFunc(props: {
                                     (() => {
                                       try {
                                         return (() => {
-                                          const isMiaan =
-                                            window.location.hostname.includes(
-                                              "miaan.ir"
-                                            );
-                                          const gatewayBase = isMiaan
-                                            ? "https://gateway.miaan.ir"
-                                            : "https://gateway.rentamon.com";
                                           if ($state.unblockFor == "cancel") {
-                                            return `${gatewayBase}/webhook/bookings/status/cancelled`;
+                                            return `https://api-v3.miaan.ir/webhook/bookings/status/cancelled`;
                                           } else {
-                                            return `${gatewayBase}/webhook/bookings/early-checkout`;
+                                            return `https://api-v3.miaan.ir/webhook/bookings/early-checkout`;
                                           }
                                         })();
                                       } catch (e) {

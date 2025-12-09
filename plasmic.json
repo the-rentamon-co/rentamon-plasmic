@@ -3290,6 +3290,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/reviews-and-revenue"
+        },
+        {
+          "id": "GxY2Fc-mSw8s",
+          "name": "اصولمهماننوازی",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicاصولمهماننوازی.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/hospitality-principles.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicاصولمهماننوازی.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/hospitality-principles"
         }
       ],
       "icons": [
