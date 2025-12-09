@@ -14302,7 +14302,19 @@ function PlasmicBookings__RenderFunc(props: {
             ref={ref => {
               $refs["propertyWebsite"] = ref;
             }}
-            url={"https://api-v3.miaan.ir/webhook/proeprty/platform"}
+            url={(() => {
+              try {
+                return `https://api-v3.miaan.ir/webhook/proeprty/platform?booking_id=${$ctx.params.booking_id}`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__r6Zps)}>
