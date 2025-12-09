@@ -496,7 +496,7 @@
   position: relative;
   width: auto;
   height: auto;
-  max-width: 100%;
+  max-width: 25%;
   justify-content: flex-start;
   align-items: center;
   padding: 0px 8px 8px;
@@ -517,7 +517,7 @@
   position: relative;
   width: auto;
   height: auto;
-  max-width: 100%;
+  max-width: 25%;
   justify-content: flex-start;
   align-items: center;
   padding: 0px 8px 8px;
@@ -532,13 +532,34 @@
 .img__lRbQg > picture > img {
   object-fit: cover;
 }
+.twitter {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 25%;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 8px 8px;
+}
+.img__v4Mit {
+  object-fit: cover;
+  max-width: 40%;
+  width: 100%;
+  cursor: pointer;
+  min-width: 0;
+}
+.img__v4Mit > picture > img {
+  object-fit: cover;
+}
 .telegram {
   display: flex;
   flex-direction: column;
   position: relative;
   width: auto;
   height: auto;
-  max-width: 100%;
+  max-width: 25%;
   justify-content: flex-start;
   align-items: center;
   padding: 0px 8px 8px;

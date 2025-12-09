@@ -87,6 +87,7 @@ export type PlasmicRentamonFooter__OverridesType = {
   top?: Flex__<"div">;
   eitaa?: Flex__<"div">;
   instagram?: Flex__<"div">;
+  twitter?: Flex__<"div">;
   telegram?: Flex__<"div">;
   but?: Flex__<"div">;
 };
@@ -399,6 +400,54 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               src: "/plasmic/website_starter/images/image53.png",
               fullWidth: 120,
               fullHeight: 120,
+              aspectRatio: undefined
+            }}
+          />
+        </div>
+        <div
+          data-plasmic-name={"twitter"}
+          data-plasmic-override={overrides.twitter}
+          className={classNames(projectcss.all, sty.twitter)}
+          onClick={async event => {
+            const $steps = {};
+
+            $steps["runCode"] = true
+              ? (() => {
+                  const actionArgs = {
+                    customFunction: async () => {
+                      return (() => {
+                        return window.open("https://x.com/miaan_ir");
+                      })();
+                    }
+                  };
+                  return (({ customFunction }) => {
+                    return customFunction();
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["runCode"] != null &&
+              typeof $steps["runCode"] === "object" &&
+              typeof $steps["runCode"].then === "function"
+            ) {
+              $steps["runCode"] = await $steps["runCode"];
+            }
+          }}
+        >
+          <PlasmicImg__
+            alt={""}
+            className={classNames(sty.img__v4Mit, "clickable")}
+            displayHeight={"auto"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"40%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"100%"}
+            loading={"lazy"}
+            src={{
+              src: "/plasmic/website_starter/images/xNewTwitterLogoFreePngWebp.webp",
+              fullWidth: 980,
+              fullHeight: 980,
               aspectRatio: undefined
             }}
           />
@@ -756,11 +805,30 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               sty.text__zFLzn
             )}
           >
-            {hasVariant(globalVariants, "screen", "mobile")
-              ? "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc  \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
-              : hasVariant(globalVariants, "screen", "tablet")
-                ? "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7"
-                : "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"}
+            {hasVariant(globalVariants, "screen", "smallMobile") ? (
+              <React.Fragment>
+                <React.Fragment>
+                  {
+                    "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7  "
+                  }
+                </React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 400 }}
+                >
+                  {
+                    "\u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc  \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7"
+                  }
+                </span>
+                <React.Fragment>{"\r"}</React.Fragment>
+              </React.Fragment>
+            ) : hasVariant(globalVariants, "screen", "mobile") ? (
+              "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc  \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
+            ) : hasVariant(globalVariants, "screen", "tablet") ? (
+              "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7"
+            ) : (
+              "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
+            )}
           </div>
           <div
             className={classNames(
@@ -790,15 +858,17 @@ const PlasmicDescendants = {
     "top",
     "eitaa",
     "instagram",
+    "twitter",
     "telegram",
     "but"
   ],
   mid: ["mid", "embedHtml"],
   embedHtml: ["embedHtml"],
   _1st: ["_1st"],
-  top: ["top", "eitaa", "instagram", "telegram"],
+  top: ["top", "eitaa", "instagram", "twitter", "telegram"],
   eitaa: ["eitaa"],
   instagram: ["instagram"],
+  twitter: ["twitter"],
   telegram: ["telegram"],
   but: ["but"]
 } as const;
@@ -813,6 +883,7 @@ type NodeDefaultElementType = {
   top: "div";
   eitaa: "div";
   instagram: "div";
+  twitter: "div";
   telegram: "div";
   but: "div";
 };
@@ -885,6 +956,7 @@ export const PlasmicRentamonFooter = Object.assign(
     top: makeNodeComponent("top"),
     eitaa: makeNodeComponent("eitaa"),
     instagram: makeNodeComponent("instagram"),
+    twitter: makeNodeComponent("twitter"),
     telegram: makeNodeComponent("telegram"),
     but: makeNodeComponent("but"),
 

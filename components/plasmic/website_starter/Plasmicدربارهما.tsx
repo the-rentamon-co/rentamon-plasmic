@@ -1033,7 +1033,7 @@ export const Plasmicدربارهما = Object.assign(
       description:
         "شرکت توسعه فناوری و توانمدسازی شریف (رنتامون) به شماره ثبت ۲۲۵۷۷، با ارائه پنل مدیریت یکپارچه اقامتگاه، مدیریت وضعیت تقویم و نرخ‌گذاری رو برای صاحبین اقامتگاه خودکار و چندین برابر سریع می‌کنه. معتقدیم استفاده از این محصول توسط میزبانان، منجر به سهولت و بهبود کیفیت تعامل با پلتفرم‌ها و حتی مسافرها میشه، و نهایتا صنعت گردشگری کشور رونق پیدا می‌کنه. این هدفه که ما رو دور هم جمع کرده.",
       ogImageSrc:
-        "https://rentamon.com/plasmic/website_starter/images/teamJpg.jpg",
+        "https://rentamon.com/plasmic/website_starter/images/team1404Jpg.jpg",
       canonical: "https://rentamon.com/about-us/"
     }
   }
