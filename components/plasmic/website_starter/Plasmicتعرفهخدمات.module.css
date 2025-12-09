@@ -470,6 +470,8 @@
   width: 15%;
   height: auto;
   max-width: 100%;
+  font-size: 15px;
+  text-align: center;
   padding: 8px;
 }
 @media (max-width: 500px) {
@@ -664,6 +666,8 @@
     width: 12%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -676,6 +680,8 @@
     width: 14%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -879,6 +885,8 @@
     width: 12%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -891,6 +899,8 @@
     width: 14%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -1094,6 +1104,8 @@
     width: 12%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -1106,6 +1118,8 @@
     width: 14%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -1309,6 +1323,8 @@
     width: 12%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -1321,6 +1337,8 @@
     width: 14%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -1524,6 +1542,8 @@
     width: 12%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -1536,6 +1556,8 @@
     width: 14%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -1739,6 +1761,8 @@
     width: 12%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -1751,6 +1775,8 @@
     width: 14%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -1969,6 +1995,8 @@
     width: 12%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -1981,6 +2009,8 @@
     width: 14%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -2191,6 +2221,8 @@
     width: 12%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -2203,6 +2235,8 @@
     width: 14%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -2405,6 +2439,8 @@
     width: 12%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -2417,6 +2453,8 @@
     width: 14%;
     height: auto;
     max-width: 100%;
+    font-size: 15px;
+    text-align: center;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
@@ -3835,6 +3873,11 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fcfcfc;
+  text-align: center;
+  user-select: none;
   background: linear-gradient(
     194.38598434664198deg,
     #0000f7 0%,

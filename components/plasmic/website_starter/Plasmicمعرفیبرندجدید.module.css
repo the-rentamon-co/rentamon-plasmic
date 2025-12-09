@@ -1767,6 +1767,11 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fcfcfc;
+  text-align: center;
+  user-select: none;
   background: linear-gradient(
     194.38598434664198deg,
     #0000f7 0%,
@@ -1783,6 +1788,11 @@
     max-width: 100%;
     width: 40%;
     height: auto;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fcfcfc;
+    text-align: center;
+    user-select: none;
     background: linear-gradient(
       196.43575237765674deg,
       #0000f7 0%,
@@ -1803,6 +1813,11 @@
     max-width: 100%;
     width: 100%;
     height: auto;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fcfcfc;
+    text-align: center;
+    user-select: none;
     background: linear-gradient(
       196.43575237765674deg,
       #0000f7 0%,
@@ -1824,6 +1839,11 @@
     max-width: 100%;
     width: 96%;
     height: auto;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fcfcfc;
+    text-align: center;
+    user-select: none;
     background: linear-gradient(
       196.43575237765674deg,
       #0000f7 0%,

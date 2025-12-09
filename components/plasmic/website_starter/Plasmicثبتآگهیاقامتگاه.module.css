@@ -2552,6 +2552,8 @@
     padding-top: 14px;
     padding-right: 0px;
     padding-left: 0px;
+    font-size: 15px;
+    line-height: 1.8;
     min-width: 0;
   }
 }

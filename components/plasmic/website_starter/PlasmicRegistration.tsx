@@ -796,9 +796,8 @@ function PlasmicRegistration__RenderFunc(props: {
                                 typeof $steps["invokeGlobalAction"].then ===
                                   "function"
                               ) {
-                                $steps["invokeGlobalAction"] = await $steps[
-                                  "invokeGlobalAction"
-                                ];
+                                $steps["invokeGlobalAction"] =
+                                  await $steps["invokeGlobalAction"];
                               }
 
                               $steps["invokeGlobalAction2"] =
@@ -843,9 +842,8 @@ function PlasmicRegistration__RenderFunc(props: {
                                 typeof $steps["invokeGlobalAction2"].then ===
                                   "function"
                               ) {
-                                $steps["invokeGlobalAction2"] = await $steps[
-                                  "invokeGlobalAction2"
-                                ];
+                                $steps["invokeGlobalAction2"] =
+                                  await $steps["invokeGlobalAction2"];
                               }
 
                               $steps["invokeGlobalAction3"] =
@@ -870,9 +868,8 @@ function PlasmicRegistration__RenderFunc(props: {
                                 typeof $steps["invokeGlobalAction3"].then ===
                                   "function"
                               ) {
-                                $steps["invokeGlobalAction3"] = await $steps[
-                                  "invokeGlobalAction3"
-                                ];
+                                $steps["invokeGlobalAction3"] =
+                                  await $steps["invokeGlobalAction3"];
                               }
                             }).apply(null, eventArgs);
                           }}
@@ -1104,9 +1101,8 @@ function PlasmicRegistration__RenderFunc(props: {
                                 typeof $steps["updateLoading"].then ===
                                   "function"
                               ) {
-                                $steps["updateLoading"] = await $steps[
-                                  "updateLoading"
-                                ];
+                                $steps["updateLoading"] =
+                                  await $steps["updateLoading"];
                               }
 
                               $steps["invokeGlobalAction"] = true
@@ -1124,9 +1120,8 @@ function PlasmicRegistration__RenderFunc(props: {
                                 typeof $steps["invokeGlobalAction"].then ===
                                   "function"
                               ) {
-                                $steps["invokeGlobalAction"] = await $steps[
-                                  "invokeGlobalAction"
-                                ];
+                                $steps["invokeGlobalAction"] =
+                                  await $steps["invokeGlobalAction"];
                               }
 
                               $steps["updateInput6Value3"] = $state
@@ -1167,9 +1162,8 @@ function PlasmicRegistration__RenderFunc(props: {
                                 typeof $steps["updateInput6Value3"].then ===
                                   "function"
                               ) {
-                                $steps["updateInput6Value3"] = await $steps[
-                                  "updateInput6Value3"
-                                ];
+                                $steps["updateInput6Value3"] =
+                                  await $steps["updateInput6Value3"];
                               }
 
                               $steps["updateInput6Value2"] = $state
@@ -1199,9 +1193,8 @@ function PlasmicRegistration__RenderFunc(props: {
                                 typeof $steps["updateInput6Value2"].then ===
                                   "function"
                               ) {
-                                $steps["updateInput6Value2"] = await $steps[
-                                  "updateInput6Value2"
-                                ];
+                                $steps["updateInput6Value2"] =
+                                  await $steps["updateInput6Value2"];
                               }
 
                               $steps["updateLoading2"] = true
@@ -1244,9 +1237,8 @@ function PlasmicRegistration__RenderFunc(props: {
                                 typeof $steps["updateLoading2"].then ===
                                   "function"
                               ) {
-                                $steps["updateLoading2"] = await $steps[
-                                  "updateLoading2"
-                                ];
+                                $steps["updateLoading2"] =
+                                  await $steps["updateLoading2"];
                               }
                             }}
                             submitsForm={true}
@@ -1386,9 +1378,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -1415,8 +1406,8 @@ function PlasmicRegistration__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "250px"
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? "300px"
-                        : "300px"
+                          ? "300px"
+                          : "300px"
                     }
                     loading={"lazy"}
                     src={{
@@ -1490,9 +1481,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -1519,8 +1509,8 @@ function PlasmicRegistration__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "250px"
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? "300px"
-                        : "300px"
+                          ? "300px"
+                          : "300px"
                     }
                     loading={"lazy"}
                     src={{
@@ -1575,9 +1565,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -1651,9 +1640,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -1680,8 +1668,8 @@ function PlasmicRegistration__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "250px"
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? "300px"
-                        : "300px"
+                          ? "300px"
+                          : "300px"
                     }
                     loading={"lazy"}
                     src={{
@@ -1736,9 +1724,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -1832,9 +1819,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -1857,8 +1843,8 @@ function PlasmicRegistration__RenderFunc(props: {
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "250px"
                         : hasVariant(globalVariants, "screen", "tablet")
-                        ? "400px"
-                        : "500px"
+                          ? "400px"
+                          : "500px"
                     }
                     loading={"lazy"}
                     src={{
@@ -1932,9 +1918,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -2011,9 +1996,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -2062,7 +2046,7 @@ function PlasmicRegistration__RenderFunc(props: {
 
                       $steps["goToPanelCalendar"] = true
                         ? (() => {
-                            const actionArgs = { destination: `/panel` };
+                            const actionArgs = { destination: `/panel-4` };
                             return (({ destination }) => {
                               if (
                                 typeof destination === "string" &&
@@ -2082,9 +2066,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         typeof $steps["goToPanelCalendar"] === "object" &&
                         typeof $steps["goToPanelCalendar"].then === "function"
                       ) {
-                        $steps["goToPanelCalendar"] = await $steps[
-                          "goToPanelCalendar"
-                        ];
+                        $steps["goToPanelCalendar"] =
+                          await $steps["goToPanelCalendar"];
                       }
                     }}
                     src={{
@@ -2161,9 +2144,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         typeof $steps["updateStateVariable"] === "object" &&
                         typeof $steps["updateStateVariable"].then === "function"
                       ) {
-                        $steps["updateStateVariable"] = await $steps[
-                          "updateStateVariable"
-                        ];
+                        $steps["updateStateVariable"] =
+                          await $steps["updateStateVariable"];
                       }
                     }}
                     src={{
@@ -2344,7 +2326,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicRegistration__VariantsArgs;
     args?: PlasmicRegistration__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicRegistration__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicRegistration__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicRegistration__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

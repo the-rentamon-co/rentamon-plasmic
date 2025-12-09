@@ -528,6 +528,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+  font-size: 17px;
+  line-height: 1.8;
   min-width: 0;
   padding: 14px 30px 8px 8px;
 }
@@ -551,6 +553,8 @@
     height: auto;
     max-width: 100%;
     padding-top: 14px;
+    font-size: 15px;
+    line-height: 1.8;
     min-width: 0;
   }
 }
@@ -779,6 +783,8 @@
     padding-top: 14px;
     padding-right: 0px;
     padding-left: 0px;
+    font-size: 15px;
+    line-height: 1.8;
     min-width: 0;
   }
 }
@@ -1336,6 +1342,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+  font-size: 17px;
+  line-height: 1.8;
   min-width: 0;
   padding: 14px 8px 8px;
 }
@@ -1710,6 +1718,11 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fcfcfc;
+  text-align: center;
+  user-select: none;
   background: linear-gradient(
     194.38598434664198deg,
     #0000f7 0%,

@@ -1695,6 +1695,10 @@
   width: 100%;
   height: 100%;
   max-width: 94%;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--token-8nedppYkGVaH);
+  text-align: center;
   background: none;
   cursor: pointer;
   flex-direction: row;

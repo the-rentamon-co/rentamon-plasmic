@@ -177,7 +177,7 @@ function PlasmicRedirectFromPanelsToPanel__RenderFunc(props: {
 
               $steps["goToPanelCalendar"] = true
                 ? (() => {
-                    const actionArgs = { destination: `/panel` };
+                    const actionArgs = { destination: `/panel-4` };
                     return (({ destination }) => {
                       if (
                         typeof destination === "string" &&
@@ -232,7 +232,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicRedirectFromPanelsToPanel__VariantsArgs;
     args?: PlasmicRedirectFromPanelsToPanel__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicRedirectFromPanelsToPanel__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicRedirectFromPanelsToPanel__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicRedirectFromPanelsToPanel__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

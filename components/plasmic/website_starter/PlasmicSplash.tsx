@@ -530,7 +530,7 @@ function PlasmicSplash__RenderFunc(props: {
                             window.location.href = `${baseUrl}/panel-lite/`;
                           }
                           if ($steps.getUserSegment.data.flag == 3) {
-                            return (window.location.href = `${baseUrl}/panel-2/`);
+                            return (window.location.href = `${baseUrl}/panel/`);
                           }
                         })();
                       }

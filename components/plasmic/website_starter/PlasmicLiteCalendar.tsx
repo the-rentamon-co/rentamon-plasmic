@@ -522,9 +522,6 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                           if (vtRaw !== null) {
                             vt = parseInt(vtRaw, 10);
                             $state.vtStatus = vt;
-                            if (vt === 3) {
-                              window.location.href = `${baseUrl}/panel-2/`;
-                            }
                             if (vt === 1) {
                               return (window.location.href = `${baseUrl}/panel/`);
                             }
@@ -615,9 +612,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                             : "https://rentamon.com";
                           if (isCurrentNaN || isFlagDifferent) {
                             setCookie("vt", flag.toString(), 0.3333);
-                            if (flag === 3) {
-                              return (window.location.href = `${baseUrl}/panel-2/`);
-                            } else if (flag === 1) {
+                            if (flag === 1) {
                               return (window.location.href = `${baseUrl}/panel/`);
                             }
                           }
@@ -1374,7 +1369,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___3LpB8
+                        sty.formField__vghUg
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1386,7 +1381,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__uoZV
+                        sty.formField__p3LqV
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1404,7 +1399,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__jRv4
+                          sty.text__anUH
                         )}
                       >
                         {"Submit"}

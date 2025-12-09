@@ -1488,7 +1488,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicProCalendar.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/panel.tsx"
+            "modulePath": "../src/pages/panel-4.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicProCalendar.module.css",
           "scheme": "blackbox",
@@ -2954,7 +2954,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicProCalendar2.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/panel-2.tsx"
+            "modulePath": "../src/pages/panel.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicProCalendar2.module.css",
           "scheme": "blackbox",

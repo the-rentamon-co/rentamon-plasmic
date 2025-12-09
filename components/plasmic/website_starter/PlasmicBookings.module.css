@@ -4847,6 +4847,10 @@
     width: auto;
     height: auto;
     max-width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+    color: #acacac;
+    text-align: center;
     padding: 0px;
   }
 }

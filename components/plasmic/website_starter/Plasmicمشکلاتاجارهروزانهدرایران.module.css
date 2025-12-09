@@ -642,6 +642,8 @@
     padding-top: 14px;
     padding-right: 0px;
     padding-left: 0px;
+    font-size: 15px;
+    line-height: 1.8;
     min-width: 0;
   }
 }
@@ -1100,6 +1102,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+  font-size: 17px;
+  line-height: 1.8;
   min-width: 0;
   padding: 14px 8px 8px;
 }
@@ -1177,6 +1181,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+  font-size: 17px;
+  line-height: 1.8;
   min-width: 0;
   padding: 14px 8px 8px;
 }

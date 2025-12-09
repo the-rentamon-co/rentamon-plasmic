@@ -188,7 +188,7 @@ function PlasmicRntRedirect__RenderFunc(props: {
 
               $steps["goToProCalendar"] = true
                 ? (() => {
-                    const actionArgs = { destination: `/panel` };
+                    const actionArgs = { destination: `/panel-4` };
                     return (({ destination }) => {
                       if (
                         typeof destination === "string" &&
@@ -241,7 +241,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicRntRedirect__VariantsArgs;
     args?: PlasmicRntRedirect__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicRntRedirect__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicRntRedirect__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicRntRedirect__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

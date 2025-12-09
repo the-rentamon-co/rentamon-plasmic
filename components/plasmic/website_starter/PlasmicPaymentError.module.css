@@ -474,6 +474,11 @@
     #0000f7 55%,
     #4c3888 100%
   );
+  font-size: 17px;
+  font-weight: 600;
+  color: #fcfcfc;
+  text-align: center;
+  user-select: none;
   flex-shrink: 0;
   border-radius: 100px;
   padding: 18px 8px;

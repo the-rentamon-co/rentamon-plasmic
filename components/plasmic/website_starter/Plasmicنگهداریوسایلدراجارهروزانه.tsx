@@ -169,7 +169,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">
           {Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.title}
         </title>
@@ -197,6 +197,16 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
           key="twitter:description"
           name="twitter:description"
           content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -528,6 +538,39 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                             sty.link__qqgRc
                           )}
                           component={Link}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["goToچراجارهکوتاهمدت"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: `/short-term-rental`
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["goToچراجارهکوتاهمدت"] != null &&
+                              typeof $steps["goToچراجارهکوتاهمدت"] ===
+                                "object" &&
+                              typeof $steps["goToچراجارهکوتاهمدت"].then ===
+                                "function"
+                            ) {
+                              $steps["goToچراجارهکوتاهمدت"] =
+                                await $steps["goToچراجارهکوتاهمدت"];
+                            }
+                          }}
                           platform={"nextjs"}
                         >
                           {
@@ -546,6 +589,41 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                             sty.link___2DgEa
                           )}
                           component={Link}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["goToراهنمایجامعدرآمدازاجارهویلا"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: `/vacation-rental-income`
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["goToراهنمایجامعدرآمدازاجارهویلا"] !=
+                                null &&
+                              typeof $steps[
+                                "goToراهنمایجامعدرآمدازاجارهویلا"
+                              ] === "object" &&
+                              typeof $steps["goToراهنمایجامعدرآمدازاجارهویلا"]
+                                .then === "function"
+                            ) {
+                              $steps["goToراهنمایجامعدرآمدازاجارهویلا"] =
+                                await $steps["goToراهنمایجامعدرآمدازاجارهویلا"];
+                            }
+                          }}
                           platform={"nextjs"}
                         >
                           {
@@ -716,7 +794,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                           )}
                         >
                           {
-                            "\u0622\u0633\u06cc\u0628 \u062f\u06cc\u062f\u0646 \u0648\u0633\u0627\u06cc\u0644"
+                            "\u0622\u0633\u06cc\u0628 \u0648\u0633\u0627\u06cc\u0644"
                           }
                         </div>
                       </div>
@@ -922,7 +1000,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                       displayWidth={
                         hasVariant(globalVariants, "screen", "mobile")
                           ? "100%"
-                          : "40%"
+                          : "70%"
                       }
                       loading={"lazy"}
                       src={
@@ -1122,6 +1200,41 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                             )}
                             component={Link}
                             href={"https://rentamon.com/list-your-property/"}
+                            onClick={async event => {
+                              const $steps = {};
+
+                              $steps["goToثبتآگهیاقامتگاه"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: `/list-your-property`
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
+                                      }
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                $steps["goToثبتآگهیاقامتگاه"] != null &&
+                                typeof $steps["goToثبتآگهیاقامتگاه"] ===
+                                  "object" &&
+                                typeof $steps["goToثبتآگهیاقامتگاه"].then ===
+                                  "function"
+                              ) {
+                                $steps["goToثبتآگهیاقامتگاه"] =
+                                  await $steps["goToثبتآگهیاقامتگاه"];
+                              }
+                            }}
                             platform={"nextjs"}
                           >
                             <React.Fragment>
@@ -1261,6 +1374,34 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                         sty.text__s3C1G,
                         "clickable"
                       )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["goToHomepage"] = true
+                          ? (() => {
+                              const actionArgs = { destination: `/` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToHomepage"] != null &&
+                          typeof $steps["goToHomepage"] === "object" &&
+                          typeof $steps["goToHomepage"].then === "function"
+                        ) {
+                          $steps["goToHomepage"] = await $steps["goToHomepage"];
+                        }
+                      }}
                     >
                       {"\u0645\u06cc\u0627\u0646 \u0686\u06cc\u0647\u061f"}
                     </div>
@@ -1617,7 +1758,9 @@ export const Plasmicنگهداریوسایلدراجارهروزانه = Object.
       excerpt:
         "\u0627\u06af\u0647 \u06cc\u0647 \u062e\u0648\u0646\u0647 \u0645\u0628\u0644\u0647 \u062f\u0627\u0631\u06cc \u0648 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0648\u0627\u0633\u0647 \u0645\u062f\u062a \u06a9\u0648\u062a\u0627\u0647\u06cc \u0627\u062c\u0627\u0631\u0647\u200c\u0627\u0634 \u0628\u062f\u06cc\u060c \u0628\u0627\u06cc\u062f \u0628\u062f\u0648\u0646\u06cc \u0639\u0644\u0627\u0648\u0647 \u0628\u0631 \u0633\u0648\u062f\u0634\u060c \u0628\u0627 \u0686\u0627\u0644\u0634\u200c\u0647\u0627\u06cc\u06cc \u0645\u062b\u0644 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0648\u0633\u0627\u06cc\u0644 \u0631\u0648\u200c\u0628\u0647\u200c\u0631\u0648 \u0645\u06cc\u200c\u0634\u06cc. \u062a\u0648 \u0627\u06cc\u0646 \u0645\u0642\u0627\u0644\u0647 \u0631\u0627\u0647\u06a9\u0627\u0631\u0647\u0627\u06cc \u0639\u0645\u0644\u06cc \u0628\u0631\u0627\u06cc \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u06cc\u0646 \u0686\u0627\u0644\u0634\u200c\u0647\u0627 \u0631\u0648 \u0628\u0631\u0631\u0633\u06cc \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645.",
       imageAlt:
-        "\u0646\u0645\u0627\u06cc \u062f\u0627\u062e\u0644\u06cc \u06cc\u06a9 \u062e\u0627\u0646\u0647 \u0645\u0628\u0644\u0647 \u062a\u0645\u06cc\u0632 \u0648 \u0622\u0645\u0627\u062f\u0647 \u0628\u0631\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647 \u0645\u062f\u062a"
+        "\u0646\u0645\u0627\u06cc \u062f\u0627\u062e\u0644\u06cc \u06cc\u06a9 \u062e\u0627\u0646\u0647 \u0645\u0628\u0644\u0647 \u062a\u0645\u06cc\u0632 \u0648 \u0622\u0645\u0627\u062f\u0647 \u0628\u0631\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647 \u0645\u062f\u062a",
+      image:
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Ffurniture-hall-2.jpg"
     },
 
     // Page metadata
@@ -1626,7 +1769,8 @@ export const Plasmicنگهداریوسایلدراجارهروزانه = Object.
         "دردسرهای اجاره دادن خونه مبله و راه‌حل‌های نگهداری وسایل در اجاره روزانه",
       description:
         "اگه می‌خوای وارد اجاره روزانه بشی، باید بدونی علاوه بر سودش، با چالش‌هایی هم رو‌به‌رو می‌شی مثل نگهداری وسایل، آسیب‌های کوچیک و بزرگ و نهایتا هم دائما توی ذهنت با اجاره سالانه مقایسه‌اش می‌کنی و حتی ممکنه تو ذوقت بخوره وقتی ببینی مهمان‌ها اونقدرا هم مراقب وسایلت نیستن! اما...",
-      ogImageSrc: "",
+      ogImageSrc:
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Ffurniture-hall-2.jpg",
       canonical: ""
     }
   }

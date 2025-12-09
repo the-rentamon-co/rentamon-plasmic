@@ -475,7 +475,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               $steps["goToProCalendar"] =
                 $state.userType2 == "1"
                   ? (() => {
-                      const actionArgs = { destination: `/panel` };
+                      const actionArgs = { destination: `/panel-4` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -503,7 +503,7 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 $state.userType2 == null ||
                 $state.userType2 == ""
                   ? (() => {
-                      const actionArgs = { destination: `/panel-2` };
+                      const actionArgs = { destination: `/panel` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&

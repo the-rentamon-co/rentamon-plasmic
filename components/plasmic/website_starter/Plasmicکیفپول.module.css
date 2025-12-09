@@ -628,12 +628,17 @@
   cursor: pointer;
   margin-right: 0px;
   margin-left: 0px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fcfcfc;
+  text-align: center;
   background: linear-gradient(
     194.38598434664198deg,
     #0000f7 0%,
     #0000f7 55%,
     #4c3888 100%
   );
+  user-select: none;
   border-radius: 100px;
   padding: 18px 8px;
 }
@@ -1345,12 +1350,17 @@
   cursor: pointer;
   margin-right: 0px;
   margin-left: 0px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fcfcfc;
+  text-align: center;
   background: linear-gradient(
     194.38598434664198deg,
     #0000f7 0%,
     #0000f7 55%,
     #4c3888 100%
   );
+  user-select: none;
   border-radius: 100px;
   padding: 18px 8px;
 }

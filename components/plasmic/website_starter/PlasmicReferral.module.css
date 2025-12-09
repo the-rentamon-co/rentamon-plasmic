@@ -1096,6 +1096,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  font-size: 13px;
+  text-align: center;
 }
 @media (max-width: 500px) {
   .freeBox___9OyKc {
@@ -1304,6 +1306,8 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  font-size: 13px;
+  text-align: center;
   padding: 8px;
 }
 @media (max-width: 500px) {
@@ -1319,6 +1323,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    font-size: 13px;
+    text-align: center;
     column-gap: 0px;
     padding: 0px;
   }

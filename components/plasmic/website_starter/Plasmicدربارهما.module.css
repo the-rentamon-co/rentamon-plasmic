@@ -259,6 +259,9 @@
   left: 0;
   bottom: 0;
   right: auto;
+  font-size: 22px;
+  color: #ffffff;
+  text-align: center;
   background: #000000b5;
   border-bottom-left-radius: 50px;
   padding: 20px 30px 30px;
