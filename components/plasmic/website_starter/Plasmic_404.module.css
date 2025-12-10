@@ -427,6 +427,8 @@
 @media (max-width: 500px) {
   .freeBox__hESl {
     max-width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 }
 @media (max-width: 350px) {
@@ -510,7 +512,7 @@
     column-gap: 0px;
     min-width: 0;
     border-radius: 100px;
-    padding: 14px 8px;
+    padding: 12px 8px;
   }
 }
 @media (max-width: 350px) {
@@ -583,7 +585,7 @@
     column-gap: 0px;
     min-width: 0;
     border-radius: 100px;
-    padding: 14px 8px;
+    padding: 12px 8px;
   }
 }
 @media (max-width: 350px) {

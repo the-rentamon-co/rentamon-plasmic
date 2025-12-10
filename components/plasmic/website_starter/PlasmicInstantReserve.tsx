@@ -726,7 +726,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   const gatewayBase = isMiaan
                     ? "https://gateway.miaan.ir"
                     : "https://gateway.rentamon.com";
-                  return `${gatewayBase}/webhook/instant/property?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
+                  return `${gatewayBase}/webhook/instant/property/instant-status?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
                 })();
               } catch (e) {
                 if (
@@ -1132,7 +1132,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   {"Loading..."}
                 </div>
               }
-              method={"POST"}
+              method={"GET"}
               onError={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, [
                   "properties",

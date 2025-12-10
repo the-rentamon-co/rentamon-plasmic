@@ -509,9 +509,9 @@ function Plasmic_404__RenderFunc(props: {
                     "clickable"
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\ud83d\udd17 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647"
-                    : "\ud83d\udd17 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647"}
+                  {
+                    "\ud83d\udd17 \u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646"
+                  }
                 </div>
               </div>
             </div>

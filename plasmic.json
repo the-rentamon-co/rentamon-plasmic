@@ -3290,6 +3290,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/hospitality-principles"
+        },
+        {
+          "id": "f8iN0oLghxE4",
+          "name": "برنامهمدیریتویلا",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicبرنامهمدیریتویلا.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/villa-management-software.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicبرنامهمدیریتویلا.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/villa-management-software"
         }
       ],
       "icons": [
