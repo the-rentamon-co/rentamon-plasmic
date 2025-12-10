@@ -140,6 +140,8 @@ function PlasmicTestSearch__RenderFunc(props: {
 
   const globalVariants = _useGlobalVariants();
 
+  const $globalActions = useGlobalActions?.();
+
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -900,6 +902,61 @@ function PlasmicTestSearch__RenderFunc(props: {
               }
             })()}
           />
+
+          <div
+            className={classNames(projectcss.all, sty.freeBox__nuKAm)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://api-v3.miaan.ir/webhook/reservations/calendar/block",
+                        undefined,
+                        (() => {
+                          try {
+                            return {
+                              test: "cors"
+                            };
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] =
+                  await $steps["invokeGlobalAction"];
+              }
+            }}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__eF2
+              )}
+            >
+              {"Enter some text"}
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
