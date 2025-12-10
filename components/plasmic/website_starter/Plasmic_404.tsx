@@ -326,7 +326,7 @@ function Plasmic_404__RenderFunc(props: {
               <div
                 className={classNames(
                   projectcss.all,
-                  sty.freeBox__lLSpK,
+                  sty.freeBox__ylNq0,
                   "clickable"
                 )}
                 onClick={async event => {
@@ -362,12 +362,11 @@ function Plasmic_404__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__unMnq
+                    sty.text___8ACS,
+                    ``
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0646\u0645\u0627\u06cc\u0634 \u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"
-                    : "\u0646\u0645\u0627\u06cc\u0634 \u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"}
+                  {"\u0635\u0641\u062d\u0647 \u0627\u0635\u0644\u06cc"}
                 </div>
               </div>
             </div>
@@ -403,9 +402,8 @@ function Plasmic_404__RenderFunc(props: {
                     typeof $steps["goToمقایسهبهترینسایتاجارهویلا"].then ===
                       "function"
                   ) {
-                    $steps["goToمقایسهبهترینسایتاجارهویلا"] = await $steps[
-                      "goToمقایسهبهترینسایتاجارهویلا"
-                    ];
+                    $steps["goToمقایسهبهترینسایتاجارهویلا"] =
+                      await $steps["goToمقایسهبهترینسایتاجارهویلا"];
                   }
                 }}
               >
@@ -453,9 +451,8 @@ function Plasmic_404__RenderFunc(props: {
                     typeof $steps["goToراهنمایجامعدرآمدازاجارهویلا"].then ===
                       "function"
                   ) {
-                    $steps["goToراهنمایجامعدرآمدازاجارهویلا"] = await $steps[
-                      "goToراهنمایجامعدرآمدازاجارهویلا"
-                    ];
+                    $steps["goToراهنمایجامعدرآمدازاجارهویلا"] =
+                      await $steps["goToراهنمایجامعدرآمدازاجارهویلا"];
                   }
                 }}
               >
@@ -499,9 +496,8 @@ function Plasmic_404__RenderFunc(props: {
                     typeof $steps["goToقوانیناجارهروزانه"] === "object" &&
                     typeof $steps["goToقوانیناجارهروزانه"].then === "function"
                   ) {
-                    $steps["goToقوانیناجارهروزانه"] = await $steps[
-                      "goToقوانیناجارهروزانه"
-                    ];
+                    $steps["goToقوانیناجارهروزانه"] =
+                      await $steps["goToقوانیناجارهروزانه"];
                   }
                 }}
               >
@@ -601,7 +597,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmic_404__VariantsArgs;
     args?: Plasmic_404__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmic_404__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmic_404__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmic_404__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

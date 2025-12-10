@@ -1742,299 +1742,51 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   sty.text__bvakH
                 )}
               >
-                {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                <React.Fragment>
                   <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
+                    {
+                      "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637:\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__phujC
+                      )}
+                      component={Link}
+                      href={`/best-villa-rental-sites`}
+                      platform={"nextjs"}
                     >
                       {
-                        "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
+                        "- \u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u062f\u0627\u062f\u0646 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
                       }
-                    </span>
-                    <React.Fragment>{"\n- "}</React.Fragment>
-                    {
-                      <PlasmicLink__
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__hwbso
-                        )}
-                        component={Link}
-                        href={"/best-villa-rental-sites"}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["goToمقایسهبهترینسایتاجارهویلا"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  destination: `/best-villa-rental-sites`
-                                };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["goToمقایسهبهترینسایتاجارهویلا"] != null &&
-                            typeof $steps["goToمقایسهبهترینسایتاجارهویلا"] ===
-                              "object" &&
-                            typeof $steps["goToمقایسهبهترینسایتاجارهویلا"]
-                              .then === "function"
-                          ) {
-                            $steps["goToمقایسهبهترینسایتاجارهویلا"] =
-                              await $steps["goToمقایسهبهترینسایتاجارهویلا"];
-                          }
-                        }}
-                        platform={"nextjs"}
-                      >
-                        {hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
-                            : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u062f\u0627\u062f\u0646 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
-                      </PlasmicLink__>
-                    }
-                    <React.Fragment>{"\n"}</React.Fragment>
-                    {
-                      <PlasmicLink__
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__shuOg
-                        )}
-                        component={Link}
-                        href={"/vacation-rental-income"}
-                        platform={"nextjs"}
-                      >
-                        {hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                            : " - "}
-                      </PlasmicLink__>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                ) : hasVariant(globalVariants, "screen", "mobile") ? (
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__vAGf
+                      )}
+                      component={Link}
+                      href={`/rental-rules`}
+                      platform={"nextjs"}
                     >
                       {
-                        "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
+                        "- \u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646 "
                       }
-                    </span>
-                    <React.Fragment>{"\n- "}</React.Fragment>
-                    {
-                      <PlasmicLink__
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__hwbso
-                        )}
-                        component={Link}
-                        href={"/best-villa-rental-sites"}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["goToمقایسهبهترینسایتاجارهویلا"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  destination: `/best-villa-rental-sites`
-                                };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["goToمقایسهبهترینسایتاجارهویلا"] != null &&
-                            typeof $steps["goToمقایسهبهترینسایتاجارهویلا"] ===
-                              "object" &&
-                            typeof $steps["goToمقایسهبهترینسایتاجارهویلا"]
-                              .then === "function"
-                          ) {
-                            $steps["goToمقایسهبهترینسایتاجارهویلا"] =
-                              await $steps["goToمقایسهبهترینسایتاجارهویلا"];
-                          }
-                        }}
-                        platform={"nextjs"}
-                      >
-                        {hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
-                            : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u062f\u0627\u062f\u0646 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
-                      </PlasmicLink__>
-                    }
-                    <React.Fragment>{"\n"}</React.Fragment>
-                    {
-                      <PlasmicLink__
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__shuOg
-                        )}
-                        component={Link}
-                        href={"/vacation-rental-income"}
-                        platform={"nextjs"}
-                      >
-                        {hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "- \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u06a9\u0633\u0628 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                            : " - "}
-                      </PlasmicLink__>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                ) : (
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {
-                        "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637: "
-                      }
-                    </span>
-                    <React.Fragment>{"\n- "}</React.Fragment>
-                    {
-                      <PlasmicLink__
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__hwbso
-                        )}
-                        component={Link}
-                        href={"/best-villa-rental-sites"}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["goToمقایسهبهترینسایتاجارهویلا"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  destination: `/best-villa-rental-sites`
-                                };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["goToمقایسهبهترینسایتاجارهویلا"] != null &&
-                            typeof $steps["goToمقایسهبهترینسایتاجارهویلا"] ===
-                              "object" &&
-                            typeof $steps["goToمقایسهبهترینسایتاجارهویلا"]
-                              .then === "function"
-                          ) {
-                            $steps["goToمقایسهبهترینسایتاجارهویلا"] =
-                              await $steps["goToمقایسهبهترینسایتاجارهویلا"];
-                          }
-                        }}
-                        platform={"nextjs"}
-                      >
-                        {hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"
-                            : "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0628\u0631\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u062f\u0627\u062f\u0646 \u0648\u06cc\u0644\u0627 \u06a9\u062f\u0648\u0645\u0647\u061f"}
-                      </PlasmicLink__>
-                    }
-                    <React.Fragment>{"\n"}</React.Fragment>
-                    {
-                      <PlasmicLink__
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link___3RmTi
-                        )}
-                        component={Link}
-                        href={`/rental-rules`}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["goToقوانیناجارهروزانه"] = true
-                            ? (() => {
-                                const actionArgs = {
-                                  destination: `/rental-rules`
-                                };
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["goToقوانیناجارهروزانه"] != null &&
-                            typeof $steps["goToقوانیناجارهروزانه"] ===
-                              "object" &&
-                            typeof $steps["goToقوانیناجارهروزانه"].then ===
-                              "function"
-                          ) {
-                            $steps["goToقوانیناجارهروزانه"] =
-                              await $steps["goToقوانیناجارهروزانه"];
-                          }
-                        }}
-                        platform={"nextjs"}
-                      >
-                        {
-                          " - \u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646"
-                        }
-                      </PlasmicLink__>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                )}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
               </div>
             </div>
             <div

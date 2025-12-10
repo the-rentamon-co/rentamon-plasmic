@@ -98,6 +98,7 @@ export type Plasmicچراجارهکوتاهمدت__OverridesType = {
   culture?: Flex__<"div">;
   strDefinition?: Flex__<"div">;
   investment?: Flex__<"div">;
+  relatedContents2?: Flex__<"div">;
   incomeAnual?: Flex__<"div">;
   efforts?: Flex__<"div">;
   handsOn?: Flex__<"div">;
@@ -472,6 +473,65 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
               </div>
             </div>
             <div
+              data-plasmic-name={"relatedContents2"}
+              data-plasmic-override={overrides.relatedContents2}
+              className={classNames(projectcss.all, sty.relatedContents2)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__gTki
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "\u0645\u0637\u0627\u0644\u0628 \u0645\u0631\u062a\u0628\u0637:\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__zYgaN
+                      )}
+                      component={Link}
+                      href={`/furnished-rental-maintenance-guide`}
+                      platform={"nextjs"}
+                    >
+                      {
+                        "- \u062f\u0631\u062f\u0633\u0631\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0627\u0632 \u0648\u0633\u0627\u06cc\u0644"
+                      }
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__oqfNp
+                      )}
+                      component={Link}
+                      href={`/rental-rules`}
+                      platform={"nextjs"}
+                    >
+                      {
+                        "- \u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646 "
+                      }
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+            </div>
+            <div
               data-plasmic-name={"incomeAnual"}
               data-plasmic-override={overrides.incomeAnual}
               className={classNames(projectcss.all, sty.incomeAnual)}
@@ -779,6 +839,7 @@ const PlasmicDescendants = {
     "culture",
     "strDefinition",
     "investment",
+    "relatedContents2",
     "incomeAnual",
     "efforts",
     "handsOn",
@@ -802,6 +863,7 @@ const PlasmicDescendants = {
     "culture",
     "strDefinition",
     "investment",
+    "relatedContents2",
     "incomeAnual",
     "efforts",
     "handsOn",
@@ -830,6 +892,7 @@ const PlasmicDescendants = {
   culture: ["culture", "strDefinition"],
   strDefinition: ["strDefinition"],
   investment: ["investment"],
+  relatedContents2: ["relatedContents2"],
   incomeAnual: ["incomeAnual"],
   efforts: ["efforts", "handsOn", "bot", "cta", "button"],
   handsOn: ["handsOn", "bot", "cta", "button"],
@@ -857,6 +920,7 @@ type NodeDefaultElementType = {
   culture: "div";
   strDefinition: "div";
   investment: "div";
+  relatedContents2: "div";
   incomeAnual: "div";
   efforts: "div";
   handsOn: "div";
@@ -943,6 +1007,7 @@ export const Plasmicچراجارهکوتاهمدت = Object.assign(
     culture: makeNodeComponent("culture"),
     strDefinition: makeNodeComponent("strDefinition"),
     investment: makeNodeComponent("investment"),
+    relatedContents2: makeNodeComponent("relatedContents2"),
     incomeAnual: makeNodeComponent("incomeAnual"),
     efforts: makeNodeComponent("efforts"),
     handsOn: makeNodeComponent("handsOn"),

@@ -2409,23 +2409,13 @@
     font-size: 15px;
   }
 }
-.link__hwbso {
+.link__phujC {
   font-family: "Estedad";
   font-weight: 500;
 }
-.link___3RmTi {
-  font-family: "Estedad";
-  font-weight: 600;
-}
-.link__shuOg {
+.link__vAGf {
   font-family: "Estedad";
   font-weight: 500;
-  text-decoration-line: none;
-}
-@media (max-width: 500px) {
-  .link__shuOg {
-    padding-right: 0px;
-  }
 }
 .bot {
   display: flex;

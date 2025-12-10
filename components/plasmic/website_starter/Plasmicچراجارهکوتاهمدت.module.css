@@ -593,6 +593,7 @@
   .investment {
     padding-right: 0px;
     padding-left: 0px;
+    padding-bottom: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -755,6 +756,109 @@
     padding-right: 4px;
     padding-left: 4px;
     font-size: 14px;
+  }
+}
+.relatedContents2 {
+  animation: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background: none;
+  min-width: 0;
+  border-radius: 50px;
+  padding: 28px 30px 34px 8px;
+}
+@media (max-width: 500px) {
+  .relatedContents2 {
+    animation: none;
+    padding-right: 22px;
+    padding-top: 30px;
+    padding-bottom: 26px;
+    border-radius: 0px;
+  }
+}
+@media (max-width: 350px) {
+  .relatedContents2 {
+    animation: none;
+    padding-right: 14px;
+    padding-bottom: 24px;
+    padding-top: 0px;
+  }
+}
+.text__gTki {
+  animation: none;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 17px;
+  line-height: 2;
+  color: var(--token-8nedppYkGVaH);
+  font-weight: 500;
+  min-width: 0;
+  padding: 10px 20px;
+}
+@media (max-width: 1200px) {
+  .text__gTki {
+    animation: none;
+    padding-right: 10px;
+    padding-left: 20px;
+    line-height: 1.8;
+  }
+}
+@media (max-width: 500px) {
+  .text__gTki {
+    animation: none;
+    padding-right: 0px;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__gTki {
+    animation: none;
+    padding-right: 4px;
+    padding-left: 4px;
+    font-size: 15px;
+  }
+}
+.link__zYgaN {
+  animation: none;
+  font-family: "Estedad";
+  font-weight: 500;
+}
+@media (max-width: 1200px) {
+  .link__zYgaN {
+    animation: none;
+  }
+}
+@media (max-width: 500px) {
+  .link__zYgaN {
+    animation: none;
+  }
+}
+.link__oqfNp {
+  animation: none;
+  font-family: "Estedad";
+  font-weight: 500;
+}
+@media (max-width: 1200px) {
+  .link__oqfNp {
+    animation: none;
+  }
+}
+@media (max-width: 500px) {
+  .link__oqfNp {
+    animation: none;
+  }
+}
+@media (max-width: 350px) {
+  .link__oqfNp {
+    animation: none;
   }
 }
 .incomeAnual {
