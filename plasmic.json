@@ -3304,6 +3304,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/villa-management-software"
+        },
+        {
+          "id": "-xwDYMm6t6tf",
+          "name": "نرمافزارمدیریتاقامتگاه",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicنرمافزارمدیریتاقامتگاه.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/accommodation-management-software.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicنرمافزارمدیریتاقامتگاه.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/accommodation-management-software"
+        },
+        {
+          "id": "_Hey3_b_-tg2",
+          "name": "مدیریتاقامتگاه",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicمدیریتاقامتگاه.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/accommodation-management-guide.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicمدیریتاقامتگاه.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/accommodation-management-guide"
         }
       ],
       "icons": [

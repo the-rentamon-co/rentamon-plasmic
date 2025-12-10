@@ -288,7 +288,20 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{Plasmicتعرفهخدمات.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={Plasmicتعرفهخدمات.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={Plasmicتعرفهخدمات.pageMetadata.title}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -3353,7 +3366,7 @@ export const Plasmicتعرفهخدمات = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "تعرفه خدمات میان",
       description: "",
       ogImageSrc: "",
       canonical: ""
