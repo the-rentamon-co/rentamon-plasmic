@@ -11869,11 +11869,7 @@ function PlasmicCalendar2__RenderFunc(props: {
               const monPadded = monStrEn.padStart(2, "0");
               let mon = parseInt(monStrEn, 10);
               let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
-              const isMiaan = window.location.hostname.includes("miaan.ir");
-              const gatewayBase = isMiaan
-                ? "https://gateway.miaan.ir"
-                : "https://gateway.rentamon.com";
-              const finalUrl = `${gatewayBase}/webhook/bookings/calendar?start_date=${yearEn}-${monPadded}-01&end_date=${yearEn}-${monPadded}-${daysInMonth}&property_id=${propIdEn}`;
+              const finalUrl = `https://api-v3.miaan.ir/webhook/bookings/calendar?start_date=${yearEn}-${monPadded}-01&end_date=${yearEn}-${monPadded}-${daysInMonth}&property_id=${propIdEn}`;
               return finalUrl;
             })();
           } catch (e) {

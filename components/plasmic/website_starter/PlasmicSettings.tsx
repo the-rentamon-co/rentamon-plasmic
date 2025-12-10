@@ -773,9 +773,9 @@ function PlasmicSettings__RenderFunc(props: {
                         sty.text__q9AmZ
                       )}
                     >
-                      {hasVariant(globalVariants, "screen", "smallMobile")
-                        ? "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
-                        : "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"}
+                      {
+                        "\u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 (\u067e\u0627\u0633\u0628\u0627\u0646)"
+                      }
                     </div>
                   </div>
                   <div

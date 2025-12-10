@@ -1021,7 +1021,6 @@
   font-size: 16px;
   line-height: 1.8;
   padding-top: 14px;
-  padding-bottom: 0px;
   text-align: right;
   min-width: 0;
 }
@@ -1052,6 +1051,10 @@
     line-height: 1.8;
     min-width: 0;
   }
+}
+.link__nKaT2 {
+  font-family: "Estedad";
+  font-weight: 500;
 }
 .h2__m8Eco {
   width: 100%;
