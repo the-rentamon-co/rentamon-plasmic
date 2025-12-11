@@ -751,6 +751,48 @@ function Plasmicکیفپول__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
+                  $steps["goToPage"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination: (() => {
+                            try {
+                              return window.open(
+                                "https://payment.zarinpal.com/pg/StartPay/" +
+                                  $state.tokenResponse.payInfo
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToPage"] != null &&
+                    typeof $steps["goToPage"] === "object" &&
+                    typeof $steps["goToPage"].then === "function"
+                  ) {
+                    $steps["goToPage"] = await $steps["goToPage"];
+                  }
+
                   $steps["invokeGlobalAction"] = true
                     ? (() => {
                         const actionArgs = {
@@ -793,71 +835,6 @@ function Plasmicکیفپول__RenderFunc(props: {
                   ) {
                     $steps["invokeGlobalAction"] =
                       await $steps["invokeGlobalAction"];
-                  }
-
-                  $steps["goToPage2"] = false
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return window.open(
-                              "https://rentamon.com/gw/" +
-                                $state.tokenResponse.payInfo
-                            );
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToPage2"] != null &&
-                    typeof $steps["goToPage2"] === "object" &&
-                    typeof $steps["goToPage2"].then === "function"
-                  ) {
-                    $steps["goToPage2"] = await $steps["goToPage2"];
-                  }
-
-                  $steps["goToPage"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          destination: (() => {
-                            try {
-                              return window.open(
-                                "https://payment.zarinpal.com/pg/StartPay/" +
-                                  $state.tokenResponse.payInfo
-                              );
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToPage"] != null &&
-                    typeof $steps["goToPage"] === "object" &&
-                    typeof $steps["goToPage"].then === "function"
-                  ) {
-                    $steps["goToPage"] = await $steps["goToPage"];
                   }
                 }}
               >

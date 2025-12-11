@@ -201,6 +201,8 @@
   font-weight: 600;
   padding-right: 0px;
   color: #444444;
+  line-height: 2;
+  letter-spacing: 0px;
 }
 @media (max-width: 1200px) {
   .h1 {
@@ -265,7 +267,7 @@
   .text__lcemO {
     padding-right: 12px;
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
@@ -336,7 +338,7 @@
   .text__ySMxm {
     padding-right: 12px;
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
@@ -373,7 +375,7 @@
 .img__z6HuU {
   object-fit: cover;
   max-width: 100%;
-  border-radius: 50px;
+  border-radius: 30px;
 }
 .img__z6HuU > picture > img {
   object-fit: cover;
@@ -497,7 +499,7 @@
   .text__z6Ftw {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
@@ -564,7 +566,7 @@
   .text__rAsP {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 15px;
+    font-size: 16px;
     text-align: right;
   }
 }
@@ -586,14 +588,13 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 0px;
   min-width: 0;
-  padding: 36px 8px 40px;
+  padding: 36px 8px 15px;
 }
 @media (max-width: 500px) {
   .investment {
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-bottom: 0px;
+    padding: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -635,8 +636,9 @@
 @media (max-width: 500px) {
   .h2__mlgvO {
     padding-right: 12px;
-    line-height: 1.8;
+    line-height: 2;
     font-size: 20px;
+    letter-spacing: 0px;
   }
 }
 @media (max-width: 350px) {
@@ -668,7 +670,7 @@
   .text__ilbQ9 {
     padding-right: 12px;
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
@@ -942,6 +944,7 @@
     font-size: 17px;
     padding-left: 8px;
     padding-right: 8px;
+    line-height: 2;
   }
 }
 @media (max-width: 350px) {
@@ -975,7 +978,7 @@
   .text__u6HjA {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
@@ -1068,7 +1071,7 @@
   .text__cBukw {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
@@ -1129,6 +1132,7 @@
     padding-left: 8px;
     font-size: 16px;
     padding-bottom: 19px;
+    line-height: 2;
   }
 }
 @media (max-width: 350px) {
@@ -1200,6 +1204,7 @@
     font-size: 17px;
     padding-left: 8px;
     padding-right: 8px;
+    line-height: 2;
   }
 }
 @media (max-width: 350px) {
@@ -1232,7 +1237,7 @@
   .text__r4Dvt {
     padding-right: 8px;
     padding-left: 8px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media (max-width: 350px) {
@@ -1362,8 +1367,8 @@
   .text__bbS1O {
     font-weight: 600;
     font-size: 20px;
-    padding-top: 14px;
-    padding-bottom: 12px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     max-width: 70%;
   }
 }
@@ -1375,6 +1380,7 @@
     padding-top: 18px;
     padding-bottom: 18px;
     width: 100%;
+    line-height: 1.8;
     min-width: 0;
   }
 }
