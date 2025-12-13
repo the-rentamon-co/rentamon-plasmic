@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
@@ -87,6 +88,8 @@ export const PlasmicTestSearch__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTestSearch__OverridesType = {
   root?: Flex__<"div">;
+  progressbar?: Flex__<"div">;
+  progressbar2?: Flex__<"div">;
   apiRequest2?: Flex__<typeof ApiRequest>;
   apiRequest3?: Flex__<typeof ApiRequest>;
   apiRequest4?: Flex__<typeof ApiRequest>;
@@ -307,6 +310,32 @@ function PlasmicTestSearch__RenderFunc(props: {
             sty.root
           )}
         >
+          <div
+            data-plasmic-name={"progressbar"}
+            data-plasmic-override={overrides.progressbar}
+            className={classNames(projectcss.all, sty.progressbar)}
+          >
+            <Embed
+              className={classNames("__wab_instance", sty.embedHtml__qhlPx)}
+              code={
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? '<div class="miaan-wrapper">\r\n  <div class="miaan-header">\r\n    <h3>\u0633\u0641\u0631\u062a \u0631\u0648 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0634\u0631\u0648\u0639 \u06a9\u0646</h3>\r\n    <p>\u06f6 \u0642\u062f\u0645 \u0633\u0627\u062f\u0647 \u062a\u0627 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0627\u062d\u062a \u0648 \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631</p>\r\n  </div>\r\n\r\n  <div class="miaan-container">\r\n    \r\n    <div class="miaan-card active" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f1</div>\r\n        <span class="step-label">\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u062a\u0648\u06cc \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06cc\u0647 \u062f\u0642\u06cc\u0642\u0647 \u0627\u0633\u0645 \u0648 \u0639\u06a9\u0633 \u0648\u0627\u062d\u062f\u062a\u0648 \u0628\u0630\u0627\u0631 \u062a\u0627 \u0628\u0647 \u0628\u0631\u0646\u0627\u0645\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0627\u0636\u0627\u0641\u0647 \u0634\u0647.</p>\r\n          <a href="https://miaan.ir/properties/" target="_blank" class="miaan-btn">\u0628\u0632\u0646 \u0628\u0631\u06cc\u0645</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f2</div>\r\n        <span class="step-label">\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u06a9\u062f \u0648\u0631\u0648\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u0647\u0645\u0647 \u0686\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0647\u0645\u0647 \u062c\u0627 \u0634\u0628\u06cc\u0647 \u0647\u0645 \u0628\u0634\u0647.</p>\r\n          <a href="https://miaan.ir/websites/" target="_blank" class="miaan-btn">\u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f3</div>\r\n        <span class="step-label">\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u062e\u06cc\u0627\u0644\u062a \u0631\u0627\u062d\u062a! \u062a\u0627\u06cc\u06cc\u062f \u0631\u0648 \u0628\u0631\u062f\u0627\u0631 \u062a\u0627 \u0645\u0633\u0627\u0641\u0631 \u0622\u0646\u06cc \u0631\u0632\u0631\u0648 \u06a9\u0646\u0647\u060c \u0645\u06cc\u0627\u0646 \u0647\u0645 \u0646\u0645\u06cc\u200c\u0630\u0627\u0631\u0647 \u062a\u062f\u0627\u062e\u0644\u06cc \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f.</p>\r\n          <a href="https://miaan.ir/instant/" target="_blank" class="miaan-btn">\u0622\u0646\u06cc \u06a9\u0646</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f4</div>\r\n        <span class="step-label">\u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648\u0647\u0627</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p> \u0628\u0628\u06cc\u0646 \u06a9\u06cc \u0645\u06cc\u0627\u062f\u060c \u06a9\u06cc \u0645\u06cc\u200c\u0631\u0647\u060c \u067e\u0648\u0644\u0634 \u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647 \u06cc\u0627 \u0646\u0647. \u0647\u0645\u0647 \u0686\u06cc \u0632\u06cc\u0631 \u0646\u0638\u0631\u062a\u0647.</p>\r\n          <a href="https://miaan.ir/bookings/#today" target="_blank" class="miaan-btn">\u0628\u0631\u0631\u0633\u06cc \u0631\u0632\u0631\u0648\u0647\u0627</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f5</div>\r\n        <span class="step-label">\u0622\u067e\u062f\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u0642\u06cc\u0645\u062a \u06cc\u0627 \u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u0628\u0648\u062f\u0646 \u0631\u0648 \u0627\u06cc\u0646\u200c\u062c\u0627 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc\u060c \u062f\u0631 \u0647\u0645\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0639\u0645\u0627\u0644 \u0645\u06cc\u200c\u0634\u0647.</p>\r\n          <a href="https://miaan.ir/panel/" target="_blank" class="miaan-btn">\u062a\u0642\u0648\u06cc\u0645 \u0645\u0646</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f6</div>\r\n        <span class="step-label">\u06af\u0648\u0634\u200c\u0628\u0647\u200c\u0632\u0646\u06af \u0628\u0627\u0634</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u0631\u0628\u0627\u062a \u0631\u0648 \u0631\u0648\u0634\u0646 \u06a9\u0646 \u062a\u0627 \u062a\u0648\u06cc \u062a\u0644\u06af\u0631\u0627\u0645 \u06cc\u0627 \u0628\u0644\u0647\u060c \u0647\u0645\u0648\u0646 \u0644\u062d\u0638\u0647 \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u062a\u0633\u0648\u06cc\u0647\u200c\u0647\u0627 \u0628\u0627\u062e\u0628\u0631 \u0628\u0634\u06cc.</p>\r\n          <a href="https://t.me/rentamon_notification_bot" target="_blank" class="miaan-btn">\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0628\u0627\u062a</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  /* --- Global Reset & Fonts --- */\r\n  .miaan-wrapper * {\r\n    box-sizing: border-box;\r\n  }\r\n  .miaan-wrapper {\r\n    font-family: \'Vazirmatn\', \'Tahoma\', sans-serif;\r\n    direction: rtl;\r\n    width: 100%;\r\n    max-width: 1100px;\r\n    margin: 0 auto;\r\n    padding: 20px;\r\n  }\r\n\r\n  /* --- Header --- */\r\n  .miaan-header {\r\n    text-align: center;\r\n    margin-bottom: 30px;\r\n  }\r\n  .miaan-header h3 {\r\n    margin: 0 0 10px;\r\n    font-size: 1.5rem;\r\n    color: #333;\r\n    font-weight: 800;\r\n  }\r\n  .miaan-header p {\r\n    margin: 0;\r\n    color: #666;\r\n  }\r\n\r\n  /* --- Container Layout --- */\r\n  .miaan-container {\r\n    display: flex;\r\n    gap: 12px;\r\n  }\r\n\r\n  /* --- Card Styling (Desktop Default) --- */\r\n  .miaan-card {\r\n    background: #f4f6f8;\r\n    border: 1px solid #e1e4e8;\r\n    border-radius: 16px;\r\n    overflow: hidden;\r\n    cursor: pointer;\r\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\r\n    \r\n    /* Desktop Logic: Horizontal Flex */\r\n    flex: 1; \r\n    height: 350px; /* Fixed height for desktop horizontal bar */\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 20px;\r\n    position: relative;\r\n  }\r\n\r\n  /* Active State (Desktop) */\r\n  .miaan-card.active {\r\n    flex: 3.5; /* Grows wider */\r\n    background: #fff;\r\n    border-color: #0000F7;\r\n    box-shadow: 0 8px 24px rgba(0, 0, 247, 0.12);\r\n  }\r\n\r\n  /* --- Card Header (Badge + Title) --- */\r\n  .card-head {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    width: 100%;\r\n    margin-bottom: 15px;\r\n    transition: all 0.3s ease;\r\n  }\r\n  \r\n  .miaan-card.active .card-head {\r\n    flex-direction: row; /* Align horizontal when active */\r\n    border-bottom: 1px solid #f0f0f0;\r\n    padding-bottom: 15px;\r\n  }\r\n\r\n  .step-badge {\r\n    width: 32px;\r\n    height: 32px;\r\n    border-radius: 50%;\r\n    border: 2px solid #ccc;\r\n    color: #999;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-weight: bold;\r\n    margin-bottom: 8px;\r\n    transition: 0.3s;\r\n    background: transparent;\r\n  }\r\n\r\n  .miaan-card.active .step-badge {\r\n    background: #0000F7;\r\n    border-color: #0000F7;\r\n    color: white;\r\n    margin-bottom: 0;\r\n    margin-left: 10px;\r\n  }\r\n\r\n  .step-label {\r\n    font-size: 0.9rem;\r\n    font-weight: 700;\r\n    color: #555;\r\n    white-space: nowrap;\r\n    transition: 0.3s;\r\n  }\r\n\r\n  .miaan-card.active .step-label {\r\n    font-size: 1.1rem;\r\n    color: #0000F7;\r\n  }\r\n\r\n  /* --- Content (Hidden by default) --- */\r\n  .card-content {\r\n    flex: 1;\r\n    opacity: 0;\r\n    visibility: hidden;\r\n    transition: opacity 0.3s ease 0.1s; /* delay slightly */\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .miaan-card.active .card-content {\r\n    opacity: 1;\r\n    visibility: visible;\r\n  }\r\n\r\n  .content-inner {\r\n    width: 100%; /* Ensure text doesn\'t wrap weirdly during transition */\r\n    min-width: 250px; /* Prevents squishing on desktop */\r\n  }\r\n\r\n  .card-content p {\r\n    font-size: 0.95rem;\r\n    line-height: 1.7;\r\n    color: #555;\r\n    margin-bottom: 20px;\r\n  }\r\n\r\n  .miaan-btn {\r\n    display: inline-block;\r\n    background-color: #0000F7;\r\n    color: #fff;\r\n    text-decoration: none;\r\n    padding: 10px 24px;\r\n    border-radius: 8px;\r\n    font-size: 0.9rem;\r\n    font-weight: 500;\r\n    transition: background 0.3s;\r\n  }\r\n  .miaan-btn:hover {\r\n    background-color: #0000c4;\r\n  }\r\n\r\n  /* ========================================= */\r\n  /* MOBILE STYLES                 */\r\n  /* ========================================= */\r\n  @media (max-width: 768px) {\r\n    .miaan-container {\r\n      flex-direction: column; /* Vertical Stack */\r\n      height: auto;\r\n    }\r\n\r\n    .miaan-card {\r\n      width: 100%;\r\n      height: auto; /* Reset fixed height */\r\n      flex: none; /* Disable flex growing */\r\n      margin-bottom: 0;\r\n      padding: 15px;\r\n      flex-direction: column;\r\n      align-items: stretch;\r\n      max-height: 60px; /* Collapsed Height */\r\n    }\r\n\r\n    /* Mobile Header Layout */\r\n    .card-head {\r\n      flex-direction: row; /* Always row on mobile */\r\n      align-items: center;\r\n      justify-content: flex-start;\r\n      margin-bottom: 0;\r\n      width: 100%;\r\n    }\r\n\r\n    .step-badge {\r\n      margin-bottom: 0;\r\n      margin-left: 12px;\r\n    }\r\n    \r\n    .step-label {\r\n      font-size: 1rem;\r\n    }\r\n\r\n    /* Mobile Active State */\r\n    .miaan-card.active {\r\n      flex: none; /* Don\'t grow flex */\r\n      max-height: 300px; /* Enough height to show content */\r\n      background: #fff;\r\n      padding: 20px;\r\n    }\r\n\r\n    .miaan-card.active .card-head {\r\n      margin-bottom: 15px; /* Add space when open */\r\n    }\r\n\r\n    .content-inner {\r\n        min-width: auto;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toggleMiaanStep(element) {\r\n    // 1. Remove active class from all\r\n    const allCards = document.querySelectorAll(\'.miaan-card\');\r\n    allCards.forEach(card => {\r\n      // Don\'t close the clicked one if it\'s already open (optional logic)\r\n      if(card !== element) {\r\n        card.classList.remove(\'active\');\r\n      }\r\n    });\r\n\r\n    // 2. Toggle active on the clicked one\r\n    // We add \'active\' if it\'s not there.\r\n    // If you want it to always stay open, use .add. If you want toggle, use .toggle\r\n    element.classList.add(\'active\');\r\n  }\r\n</script>'
+                  : '<div class="miaan-wrapper">\r\n  <div class="miaan-header">\r\n    <h3>\u0633\u0641\u0631\u062a \u0631\u0648 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0634\u0631\u0648\u0639 \u06a9\u0646</h3>\r\n    <p>\u06f6 \u0642\u062f\u0645 \u0633\u0627\u062f\u0647 \u062a\u0627 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0627\u062d\u062a \u0648 \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631</p>\r\n  </div>\r\n\r\n  <div class="miaan-container">\r\n    \r\n    <div class="miaan-card active" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f1</div>\r\n        <span class="step-label">\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u062a\u0648\u06cc \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06cc\u0647 \u062f\u0642\u06cc\u0642\u0647 \u0627\u0633\u0645 \u0648 \u0639\u06a9\u0633 \u0648\u0627\u062d\u062f\u062a\u0648 \u0628\u0630\u0627\u0631 \u062a\u0627 \u0628\u0647 \u0628\u0631\u0646\u0627\u0645\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0627\u0636\u0627\u0641\u0647 \u0634\u0647.</p>\r\n          <a href="https://miaan.ir/properties/" target="_blank" class="miaan-btn">\u0628\u0632\u0646 \u0628\u0631\u06cc\u0645</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f2</div>\r\n        <span class="step-label">\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u06a9\u062f \u0648\u0631\u0648\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u0647\u0645\u0647 \u0686\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0647\u0645\u0647 \u062c\u0627 \u0634\u0628\u06cc\u0647 \u0647\u0645 \u0628\u0634\u0647.</p>\r\n          <a href="https://miaan.ir/websites/" target="_blank" class="miaan-btn">\u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f3</div>\r\n        <span class="step-label">\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u062e\u06cc\u0627\u0644\u062a \u0631\u0627\u062d\u062a! \u062a\u0627\u06cc\u06cc\u062f \u0631\u0648 \u0628\u0631\u062f\u0627\u0631 \u062a\u0627 \u0645\u0633\u0627\u0641\u0631 \u0622\u0646\u06cc \u0631\u0632\u0631\u0648 \u06a9\u0646\u0647\u060c \u0645\u06cc\u0627\u0646 \u0647\u0645 \u0646\u0645\u06cc\u200c\u0630\u0627\u0631\u0647 \u062a\u062f\u0627\u062e\u0644\u06cc \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f.</p>\r\n          <a href="https://miaan.ir/instant/" target="_blank" class="miaan-btn">\u0622\u0646\u06cc \u06a9\u0646</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f4</div>\r\n        <span class="step-label">\u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648\u0647\u0627</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p> \u0628\u0628\u06cc\u0646 \u06a9\u06cc \u0645\u06cc\u0627\u062f\u060c \u06a9\u06cc \u0645\u06cc\u200c\u0631\u0647\u060c \u067e\u0648\u0644\u0634 \u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647 \u06cc\u0627 \u0646\u0647. \u0647\u0645\u0647 \u0686\u06cc \u0632\u06cc\u0631 \u0646\u0638\u0631\u062a\u0647.</p>\r\n          <a href="https://miaan.ir/bookings/#today" target="_blank" class="miaan-btn">\u0628\u0631\u0631\u0633\u06cc \u0631\u0632\u0631\u0648\u0647\u0627</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f5</div>\r\n        <span class="step-label">\u0622\u067e\u062f\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u0642\u06cc\u0645\u062a \u06cc\u0627 \u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u0628\u0648\u062f\u0646 \u0631\u0648 \u0627\u06cc\u0646\u200c\u062c\u0627 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc\u060c \u062f\u0631 \u0647\u0645\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0639\u0645\u0627\u0644 \u0645\u06cc\u200c\u0634\u0647.</p>\r\n          <a href="https://miaan.ir/panel/" target="_blank" class="miaan-btn">\u062a\u0642\u0648\u06cc\u0645 \u0645\u0646</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f6</div>\r\n        <span class="step-label">\u06af\u0648\u0634\u200c\u0628\u0647\u200c\u0632\u0646\u06af \u0628\u0627\u0634</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u0631\u0628\u0627\u062a \u0631\u0648 \u0631\u0648\u0634\u0646 \u06a9\u0646 \u062a\u0627 \u062a\u0648\u06cc \u062a\u0644\u06af\u0631\u0627\u0645 \u06cc\u0627 \u0628\u0644\u0647\u060c \u0647\u0645\u0648\u0646 \u0644\u062d\u0638\u0647 \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u062a\u0633\u0648\u06cc\u0647\u200c\u0647\u0627 \u0628\u0627\u062e\u0628\u0631 \u0628\u0634\u06cc.</p>\r\n          <a href="https://t.me/rentamon_notification_bot" target="_blank" class="miaan-btn">\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0628\u0627\u062a</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  /* --- Global Reset & Fonts --- */\r\n  .miaan-wrapper * {\r\n    box-sizing: border-box;\r\n  }\r\n  .miaan-wrapper {\r\n    font-family: \'Vazirmatn\', \'Tahoma\', sans-serif;\r\n    direction: rtl;\r\n    width: 100%;\r\n    max-width: 1100px;\r\n    margin: 0 auto;\r\n    padding: 20px;\r\n  }\r\n\r\n  /* --- Header --- */\r\n  .miaan-header {\r\n    text-align: center;\r\n    margin-bottom: 30px;\r\n  }\r\n  .miaan-header h3 {\r\n    margin: 0 0 10px;\r\n    font-size: 1.5rem;\r\n    color: #333;\r\n    font-weight: 800;\r\n  }\r\n  .miaan-header p {\r\n    margin: 0;\r\n    color: #666;\r\n  }\r\n\r\n  /* --- Container Layout --- */\r\n  .miaan-container {\r\n    display: flex;\r\n    gap: 12px;\r\n  }\r\n\r\n  /* --- Card Styling (Desktop Default) --- */\r\n  .miaan-card {\r\n    background: #f4f6f8;\r\n    border: 1px solid #e1e4e8;\r\n    border-radius: 16px;\r\n    overflow: hidden;\r\n    cursor: pointer;\r\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\r\n    \r\n    /* Desktop Logic: Horizontal Flex */\r\n    flex: 1; \r\n    height: 350px; /* Fixed height for desktop horizontal bar */\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 20px;\r\n    position: relative;\r\n  }\r\n\r\n  /* Active State (Desktop) */\r\n  .miaan-card.active {\r\n    flex: 3.5; /* Grows wider */\r\n    background: #fff;\r\n    border-color: #0000F7;\r\n    box-shadow: 0 8px 24px rgba(0, 0, 247, 0.12);\r\n  }\r\n\r\n  /* --- Card Header (Badge + Title) --- */\r\n  .card-head {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    width: 100%;\r\n    margin-bottom: 15px;\r\n    transition: all 0.3s ease;\r\n  }\r\n  \r\n  .miaan-card.active .card-head {\r\n    flex-direction: row; /* Align horizontal when active */\r\n    border-bottom: 1px solid #f0f0f0;\r\n    padding-bottom: 15px;\r\n  }\r\n\r\n  .step-badge {\r\n    width: 32px;\r\n    height: 32px;\r\n    border-radius: 50%;\r\n    border: 2px solid #ccc;\r\n    color: #999;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-weight: bold;\r\n    margin-bottom: 8px;\r\n    transition: 0.3s;\r\n    background: transparent;\r\n  }\r\n\r\n  .miaan-card.active .step-badge {\r\n    background: #0000F7;\r\n    border-color: #0000F7;\r\n    color: white;\r\n    margin-bottom: 0;\r\n    margin-left: 10px;\r\n  }\r\n\r\n  .step-label {\r\n    font-size: 0.9rem;\r\n    font-weight: 700;\r\n    color: #555;\r\n    white-space: nowrap;\r\n    transition: 0.3s;\r\n  }\r\n\r\n  .miaan-card.active .step-label {\r\n    font-size: 1.1rem;\r\n    color: #0000F7;\r\n  }\r\n\r\n  /* --- Content (Hidden by default) --- */\r\n  .card-content {\r\n    flex: 1;\r\n    opacity: 0;\r\n    visibility: hidden;\r\n    transition: opacity 0.3s ease 0.1s; /* delay slightly */\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .miaan-card.active .card-content {\r\n    opacity: 1;\r\n    visibility: visible;\r\n  }\r\n\r\n  .content-inner {\r\n    width: 100%; /* Ensure text doesn\'t wrap weirdly during transition */\r\n    min-width: 250px; /* Prevents squishing on desktop */\r\n  }\r\n\r\n  .card-content p {\r\n    font-size: 0.95rem;\r\n    line-height: 1.7;\r\n    color: #555;\r\n    margin-bottom: 20px;\r\n  }\r\n\r\n  .miaan-btn {\r\n    display: inline-block;\r\n    background-color: #0000F7;\r\n    color: #fff;\r\n    text-decoration: none;\r\n    padding: 10px 24px;\r\n    border-radius: 8px;\r\n    font-size: 0.9rem;\r\n    font-weight: 500;\r\n    transition: background 0.3s;\r\n  }\r\n  .miaan-btn:hover {\r\n    background-color: #0000c4;\r\n  }\r\n\r\n  /* ========================================= */\r\n  /* MOBILE STYLES                 */\r\n  /* ========================================= */\r\n  @media (max-width: 768px) {\r\n    .miaan-container {\r\n      flex-direction: column; /* Vertical Stack */\r\n      height: auto;\r\n    }\r\n\r\n    .miaan-card {\r\n      width: 100%;\r\n      height: auto; /* Reset fixed height */\r\n      flex: none; /* Disable flex growing */\r\n      margin-bottom: 0;\r\n      padding: 15px;\r\n      flex-direction: column;\r\n      align-items: stretch;\r\n      max-height: 60px; /* Collapsed Height */\r\n    }\r\n\r\n    /* Mobile Header Layout */\r\n    .card-head {\r\n      flex-direction: row; /* Always row on mobile */\r\n      align-items: center;\r\n      justify-content: flex-start;\r\n      margin-bottom: 0;\r\n      width: 100%;\r\n    }\r\n\r\n    .step-badge {\r\n      margin-bottom: 0;\r\n      margin-left: 12px;\r\n    }\r\n    \r\n    .step-label {\r\n      font-size: 1rem;\r\n    }\r\n\r\n    /* Mobile Active State */\r\n    .miaan-card.active {\r\n      flex: none; /* Don\'t grow flex */\r\n      max-height: 300px; /* Enough height to show content */\r\n      background: #fff;\r\n      padding: 20px;\r\n    }\r\n\r\n    .miaan-card.active .card-head {\r\n      margin-bottom: 15px; /* Add space when open */\r\n    }\r\n\r\n    .content-inner {\r\n        min-width: auto;\r\n    }\r\n  }\r\n</style>\r\n\r\n<script>\r\n  function toggleMiaanStep(element) {\r\n    // 1. Remove active class from all\r\n    const allCards = document.querySelectorAll(\'.miaan-card\');\r\n    allCards.forEach(card => {\r\n      // Don\'t close the clicked one if it\'s already open (optional logic)\r\n      if(card !== element) {\r\n        card.classList.remove(\'active\');\r\n      }\r\n    });\r\n\r\n    // 2. Toggle active on the clicked one\r\n    // We add \'active\' if it\'s not there.\r\n    // If you want it to always stay open, use .add. If you want toggle, use .toggle\r\n    element.classList.add(\'active\');\r\n  }\r\n</script>'
+              }
+            />
+          </div>
+          <div
+            data-plasmic-name={"progressbar2"}
+            data-plasmic-override={overrides.progressbar2}
+            className={classNames(projectcss.all, sty.progressbar2)}
+          >
+            <Embed
+              className={classNames("__wab_instance", sty.embedHtml__bvUvq)}
+              code={
+                '<div class="miaan-progress-wrapper">\r\n  <div class="progress-header">\r\n    <h3>\u0686\u0646\u062f \u0642\u062f\u0645 \u0645\u0648\u0646\u062f\u0647 \u062a\u0627 \u067e\u0646\u0644\u062a \u06a9\u0627\u0645\u0644 \u0628\u0634\u0647 \ud83d\udc63</h3>\r\n    <p>\u0627\u06cc\u0646 \u06a9\u0627\u0631\u0647\u0627 \u0631\u0648 \u0627\u0646\u062c\u0627\u0645 \u0628\u062f\u06cc\u060c \u0645\u06cc\u0627\u0646 \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646 \u06a9\u0645\u06a9 \u0631\u0648 \u0628\u0647\u062a \u0645\u06cc\u200c\u06a9\u0646\u0647</p>\r\n\r\n    <div class="progress-bar">\r\n      <div class="progress-fill" id="progressFill"></div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class="steps">\r\n    <!-- STEP -->\r\n    <div class="step" data-step>\r\n      <div class="step-header">\r\n        <span class="step-dot"></span>\r\n        <span class="step-title">\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647</span>\r\n      </div>\r\n      <div class="step-content">\r\n        <p>\u062a\u0648\u06cc \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06cc\u0647 \u062f\u0642\u06cc\u0642\u0647 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0633\u0645 \u0648 \u0639\u06a9\u0633 \u0647\u0631 \u0648\u0627\u062d\u062f\u062a \u0631\u0648 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0646\u06cc.</p>\r\n        <a href="https://miaan.ir/properties/" target="_blank">\u0631\u0641\u062a\u0646 \u0628\u0647 \u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647</a>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="step" data-step>\r\n      <div class="step-header">\r\n        <span class="step-dot"></span>\r\n        <span class="step-title">\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647</span>\r\n      </div>\r\n      <div class="step-content">\r\n        <p>\u0628\u0627 \u0648\u0627\u0631\u062f \u06a9\u0631\u062f\u0646 \u06a9\u062f \u0648\u0631\u0648\u062f\u060c \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0648\u0635\u0644 \u0645\u06cc\u200c\u0634\u0646 \u0648 \u0648\u0636\u0639\u06cc\u062a \u0631\u0648\u0632\u0647\u0627 \u062f\u06cc\u06af\u0647 \u0647\u0645\u0647 \u062c\u0627 \u0628\u0631\u0648\u0632 \u0645\u06cc\u200c\u0634\u0647.</p>\r\n        <a href="https://miaan.ir/websites/" target="_blank">\u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627</a>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="step" data-step>\r\n      <div class="step-header">\r\n        <span class="step-dot"></span>\r\n        <span class="step-title">\u0622\u0646\u06cc \u06a9\u0631\u062f\u0646 \u0631\u0632\u0631\u0648\u0647\u0627</span>\r\n      </div>\r\n      <div class="step-content">\r\n        <p>\u0645\u0633\u0627\u0641\u0631 \u0622\u0646\u06cc \u0648 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u062a\u0627\u06cc\u06cc\u062f\u062a \u0631\u0632\u0631\u0648 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0648 \u0645\u06cc\u0627\u0646 \u0647\u0645 \u0646\u0645\u06cc\u200c\u0630\u0627\u0631\u0647 \u062a\u062f\u0627\u062e\u0644\u06cc \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f.</p>\r\n        <a href="https://miaan.ir/instant/" target="_blank">\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc</a>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="step" data-step>\r\n      <div class="step-header">\r\n        <span class="step-dot"></span>\r\n        <span class="step-title">\u062f\u06cc\u062f\u0646 \u062c\u0632\u0626\u06cc\u0627\u062a \u0631\u0632\u0631\u0648</span>\r\n      </div>\r\n      <div class="step-content">\r\n        <p>\u0647\u0645\u0647 \u062c\u0632\u06cc\u06cc\u0627\u062a \u0631\u0632\u0631\u0648 \u0631\u0648 \u0628\u0628\u06cc\u0646 \u0648 \u0631\u0627\u062d\u062a \u0628\u0627 \u0645\u0633\u0627\u0641\u0631 \u062f\u0631 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627\u0634.</p>\r\n        <a href="https://miaan.ir/bookings/#today" target="_blank">\u0645\u0634\u0627\u0647\u062f\u0647 \u0631\u0632\u0631\u0648\u0647\u0627</a>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="step" data-step>\r\n      <div class="step-header">\r\n        <span class="step-dot"></span>\r\n        <span class="step-title">\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u06cc\u06a9\u062c\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645</span>\r\n      </div>\r\n      <div class="step-content">\r\n        <p>\u0642\u06cc\u0645\u062a \u0648 \u0648\u0636\u0639\u06cc\u062a \u0631\u0648 \u06cc\u06a9\u200c\u0628\u0627\u0631 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u0647\u060c \u0647\u0645\u0647\u200c\u062c\u0627 \u0627\u0639\u0645\u0627\u0644 \u0645\u06cc\u200c\u0634\u0647.</p>\r\n        <a href="https://miaan.ir/panel/" target="_blank">\u0631\u0641\u062a\u0646 \u0628\u0647 \u062a\u0642\u0648\u06cc\u0645</a>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="step" data-step>\r\n      <div class="step-header">\r\n        <span class="step-dot"></span>\r\n        <span class="step-title">\u062f\u0631\u06cc\u0627\u0641\u062a \u06cc\u0627\u062f\u0622\u0648\u0631 \u0631\u0632\u0631\u0648</span>\r\n      </div>\r\n      <div class="step-content">\r\n        <p>\r\n          \u0627\u0632 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f\u060c \u0648\u0631\u0648\u062f \u0645\u0647\u0645\u0627\u0646\u060c \u0644\u063a\u0648\u060c \u0648 \u0648\u0636\u0639\u06cc\u062a \u062a\u0633\u0648\u06cc\u0647 \u0633\u0631\u06cc\u0639 \u0628\u0627\u062e\u0628\u0631 \u0634\u0648.\r\n        </p>\r\n        <p><strong>Bot:</strong> @rentamon_notification_bot</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n.miaan-progress-wrapper {\r\n  direction: rtl;\r\n  font-family: inherit;\r\n  max-width: 960px;\r\n  margin: auto;\r\n  padding: 8px;\r\n}\r\n\r\n/* Progress */\r\n.progress-header {\r\n  margin-bottom: 16px;\r\n}\r\n\r\n.progress-bar {\r\n  height: 6px;\r\n  background: #eee;\r\n  border-radius: 6px;\r\n  overflow: hidden;\r\n  margin-top: 10px;\r\n}\r\n\r\n.progress-fill {\r\n  height: 100%;\r\n  width: 0%;\r\n  background: #0000F7;\r\n  transition: width 0.3s ease;\r\n}\r\n\r\n/* Steps \u2013 Mobile First */\r\n.steps {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 12px;\r\n}\r\n\r\n.step {\r\n  border: 1px solid #e6e6e6;\r\n  border-radius: 14px;\r\n  padding: 14px;\r\n  background: #fff;\r\n}\r\n\r\n.step-header {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 10px;\r\n  cursor: pointer;\r\n}\r\n\r\n.step-dot {\r\n  width: 12px;\r\n  height: 12px;\r\n  border-radius: 50%;\r\n  background: #ccc;\r\n  flex-shrink: 0;\r\n  transition: background 0.3s;\r\n}\r\n\r\n.step.completed .step-dot {\r\n  background: #0000F7;\r\n}\r\n\r\n.step-title {\r\n  font-size: 15px;\r\n  font-weight: 500;\r\n}\r\n\r\n.step-content {\r\n  display: none;\r\n  margin-top: 12px;\r\n  font-size: 14px;\r\n  color: #444;\r\n}\r\n\r\n.step-content a {\r\n  display: inline-block;\r\n  margin-top: 8px;\r\n  color: #0000F7;\r\n  text-decoration: none;\r\n}\r\n\r\n/* Open */\r\n.step.open .step-content {\r\n  display: block;\r\n}\r\n\r\n/* Desktop */\r\n@media (min-width: 1024px) {\r\n  .steps {\r\n    flex-direction: row;\r\n  }\r\n\r\n  .step {\r\n    flex: 1;\r\n  }\r\n\r\n  .step-content {\r\n    font-size: 13px;\r\n  }\r\n}\r\n</style>\r\n\r\n<script>\r\nconst steps = document.querySelectorAll(\'[data-step]\');\r\nconst progressFill = document.getElementById(\'progressFill\');\r\n\r\nfunction updateProgress() {\r\n  const completed = document.querySelectorAll(\'.step.completed\').length;\r\n  progressFill.style.width = (completed / steps.length) * 100 + \'%\';\r\n}\r\n\r\nsteps.forEach(step => {\r\n  step.querySelector(\'.step-header\').addEventListener(\'click\', () => {\r\n    step.classList.toggle(\'open\');\r\n    step.classList.add(\'completed\');\r\n    updateProgress();\r\n  });\r\n});\r\n</script>\r\n'
+              }
+            />
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox___1WkQu)}>
             <div
               className={classNames(
@@ -621,38 +650,18 @@ function PlasmicTestSearch__RenderFunc(props: {
             }}
           />
 
-          <div
-            data-plasmic-name={"vpnModal"}
-            data-plasmic-override={overrides.vpnModal}
-            className={classNames(
-              projectcss.all,
-              sty.vpnModal,
-              (() => {
-                try {
-                  return $state.isVpnOn == true
-                    ? "modal-overlay open"
-                    : "modal-overlay";
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()
-            )}
-          >
+          {(hasVariant(globalVariants, "screen", "mobile") ? false : true) ? (
             <div
+              data-plasmic-name={"vpnModal"}
+              data-plasmic-override={overrides.vpnModal}
               className={classNames(
                 projectcss.all,
-                sty.freeBox___3MCwL,
+                sty.vpnModal,
                 (() => {
                   try {
                     return $state.isVpnOn == true
-                      ? "modal-content open"
-                      : "modal-content open";
+                      ? "modal-overlay open"
+                      : "modal-overlay";
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -665,74 +674,150 @@ function PlasmicTestSearch__RenderFunc(props: {
                 })()
               )}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__eZlvd)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  sty.freeBox___3MCwL,
+                  (() => {
+                    try {
+                      return $state.isVpnOn == true
+                        ? "modal-content open"
+                        : "modal-content open";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                )}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__eZlvd)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__rt61I)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateIsVpnOn"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["isVpnOn"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateIsVpnOn"] != null &&
+                        typeof $steps["updateIsVpnOn"] === "object" &&
+                        typeof $steps["updateIsVpnOn"].then === "function"
+                      ) {
+                        $steps["updateIsVpnOn"] = await $steps["updateIsVpnOn"];
+                      }
+                    }}
+                    src={{
+                      src: "/plasmic/website_starter/images/image166.svg",
+                      fullWidth: 18,
+                      fullHeight: 18,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+                {(
+                  hasVariant(globalVariants, "screen", "mobile") ? true : false
+                ) ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___9Sbos
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobile") ? (
+                      "\u0641\u06cc\u0644\u062a\u0631\u0634\u06a9\u0646 \u0631\u0648\u0634\u0646\u0647!"
+                    ) : (
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return "شواهد و قرائن نشون می‌ده شما با وی‌پی‌ان اومدی\nلطفا هر چه سریع‌تر خاموشش کن";
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    )}
+                  </div>
+                ) : null}
                 <PlasmicImg__
                   alt={""}
-                  className={classNames(sty.img__rt61I)}
-                  displayHeight={"auto"}
+                  className={classNames(sty.img__rpI9)}
+                  displayHeight={"191px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={"auto"}
                   loading={"lazy"}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateIsVpnOn"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["isVpnOn"]
-                            },
-                            operation: 4
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            const oldValue = $stateGet(objRoot, variablePath);
-                            $stateSet(objRoot, variablePath, !oldValue);
-                            return !oldValue;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateIsVpnOn"] != null &&
-                      typeof $steps["updateIsVpnOn"] === "object" &&
-                      typeof $steps["updateIsVpnOn"].then === "function"
-                    ) {
-                      $steps["updateIsVpnOn"] = await $steps["updateIsVpnOn"];
-                    }
-                  }}
-                  src={{
-                    src: "/plasmic/website_starter/images/image166.svg",
-                    fullWidth: 18,
-                    fullHeight: 18,
-                    aspectRatio: undefined
-                  }}
+                  src={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? {
+                          src: "/plasmic/website_starter/images/vpnIconSvg.svg",
+                          fullWidth: 800,
+                          fullHeight: 800,
+                          aspectRatio: undefined
+                        }
+                      : {
+                          src: "/plasmic/website_starter/images/vpnIconSvg.svg",
+                          fullWidth: 800,
+                          fullHeight: 800,
+                          aspectRatio: undefined
+                        }
+                  }
                 />
-              </div>
-              {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
-              ) ? (
+
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text___9Sbos
+                    sty.text__lEVw
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "mobile") ? (
-                    "\u0641\u06cc\u0644\u062a\u0631\u0634\u06a9\u0646 \u0631\u0648\u0634\u0646\u0647!"
+                    "\u0628\u0631\u0627\u06cc \u0633\u0631\u0639\u062a \u0628\u0627\u0644\u0627\u062a\u0631 \u0648 \u0639\u0645\u0644\u06a9\u0631\u062f \u0628\u0647\u062a\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\r\n\u0644\u0637\u0641\u0627 \u0641\u06cc\u0644\u062a\u0631\u0634\u06a9\u0646\u062a \u0631\u0648 \u062e\u0627\u0645\u0648\u0634 \u06a9\u0646."
                   ) : (
                     <React.Fragment>
                       {(() => {
@@ -751,109 +836,55 @@ function PlasmicTestSearch__RenderFunc(props: {
                     </React.Fragment>
                   )}
                 </div>
-              ) : null}
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__rpI9)}
-                displayHeight={"191px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? {
-                        src: "/plasmic/website_starter/images/vpnIconSvg.svg",
-                        fullWidth: 800,
-                        fullHeight: 800,
-                        aspectRatio: undefined
-                      }
-                    : {
-                        src: "/plasmic/website_starter/images/vpnIconSvg.svg",
-                        fullWidth: 800,
-                        fullHeight: 800,
-                        aspectRatio: undefined
-                      }
-                }
-              />
+                <div className={classNames(projectcss.all, sty.freeBox___76C3)}>
+                  <Button
+                    data-plasmic-name={"button"}
+                    data-plasmic-override={overrides.button}
+                    className={classNames("__wab_instance", sty.button)}
+                    onClick={async event => {
+                      const $steps = {};
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__lEVw
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "mobile") ? (
-                  "\u0628\u0631\u0627\u06cc \u0633\u0631\u0639\u062a \u0628\u0627\u0644\u0627\u062a\u0631 \u0648 \u0639\u0645\u0644\u06a9\u0631\u062f \u0628\u0647\u062a\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c\r\n\u0644\u0637\u0641\u0627 \u0641\u06cc\u0644\u062a\u0631\u0634\u06a9\u0646\u062a \u0631\u0648 \u062e\u0627\u0645\u0648\u0634 \u06a9\u0646."
-                ) : (
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return "شواهد و قرائن نشون می‌ده شما با وی‌پی‌ان اومدی\nلطفا هر چه سریع‌تر خاموشش کن";
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "";
-                        }
-                        throw e;
+                      $steps["updateIsVpnOn"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["isVpnOn"]
+                              },
+                              operation: 4
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = $stateGet(objRoot, variablePath);
+                              $stateSet(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateIsVpnOn"] != null &&
+                        typeof $steps["updateIsVpnOn"] === "object" &&
+                        typeof $steps["updateIsVpnOn"].then === "function"
+                      ) {
+                        $steps["updateIsVpnOn"] = await $steps["updateIsVpnOn"];
                       }
-                    })()}
-                  </React.Fragment>
-                )}
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox___76C3)}>
-                <Button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames("__wab_instance", sty.button)}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateIsVpnOn"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["isVpnOn"]
-                            },
-                            operation: 4
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            const oldValue = $stateGet(objRoot, variablePath);
-                            $stateSet(objRoot, variablePath, !oldValue);
-                            return !oldValue;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateIsVpnOn"] != null &&
-                      typeof $steps["updateIsVpnOn"] === "object" &&
-                      typeof $steps["updateIsVpnOn"].then === "function"
-                    ) {
-                      $steps["updateIsVpnOn"] = await $steps["updateIsVpnOn"];
-                    }
-                  }}
-                >
-                  {"\u0628\u0627\u0634\u0647"}
-                </Button>
+                    }}
+                  >
+                    {"\u0628\u0627\u0634\u0647"}
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
+          ) : null}
           <ApiRequest
             data-plasmic-name={"profile2"}
             data-plasmic-override={overrides.profile2}
@@ -966,6 +997,8 @@ function PlasmicTestSearch__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "progressbar",
+    "progressbar2",
     "apiRequest2",
     "apiRequest3",
     "apiRequest4",
@@ -975,6 +1008,8 @@ const PlasmicDescendants = {
     "button",
     "profile2"
   ],
+  progressbar: ["progressbar"],
+  progressbar2: ["progressbar2"],
   apiRequest2: ["apiRequest2"],
   apiRequest3: ["apiRequest3"],
   apiRequest4: ["apiRequest4"],
@@ -989,6 +1024,8 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  progressbar: "div";
+  progressbar2: "div";
   apiRequest2: typeof ApiRequest;
   apiRequest3: typeof ApiRequest;
   apiRequest4: typeof ApiRequest;
@@ -1061,6 +1098,8 @@ export const PlasmicTestSearch = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    progressbar: makeNodeComponent("progressbar"),
+    progressbar2: makeNodeComponent("progressbar2"),
     apiRequest2: makeNodeComponent("apiRequest2"),
     apiRequest3: makeNodeComponent("apiRequest3"),
     apiRequest4: makeNodeComponent("apiRequest4"),
