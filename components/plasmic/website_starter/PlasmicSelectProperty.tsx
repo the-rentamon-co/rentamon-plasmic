@@ -424,7 +424,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                   $refs["apiRequest"] = ref;
                 }}
                 url={
-                  "https://automation.rentamon.com/webhook/get-property-id-from-token"
+                  "https://automation.miaan.ir/webhook/get-property-id-from-token"
                 }
               >
                 <div className={classNames(projectcss.all, sty.freeBox__uOhxY)}>
@@ -894,7 +894,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                   url={(() => {
                     try {
                       return (() => {
-                        return `https://automation.rentamon.com/webhook/calendar/blocked-dates?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                        return `https://automation.miaan.ir/webhook/calendar/blocked-dates?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                       })();
                     } catch (e) {
                       if (
@@ -941,7 +941,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                       url={(() => {
                         try {
                           return (() => {
-                            return `https://automation.rentamon.com/webhook/calendar/price?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                            return `https://automation.miaan.ir/webhook/calendar/price?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                           })();
                         } catch (e) {
                           if (
@@ -1366,7 +1366,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                 }}
                 url={(() => {
                   try {
-                    return `https://automation.rentamon.com/webhook/property/image?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
+                    return `https://automation.miaan.ir/webhook/property/image?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||

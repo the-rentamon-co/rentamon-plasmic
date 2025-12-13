@@ -721,13 +721,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
             }}
             url={(() => {
               try {
-                return (() => {
-                  const isMiaan = window.location.hostname.includes("miaan.ir");
-                  const gatewayBase = isMiaan
-                    ? "https://gateway.miaan.ir"
-                    : "https://gateway.rentamon.com";
-                  return `${gatewayBase}/webhook/instant/property/instant-status?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
-                })();
+                return `https://automation.miaan.ir/webhook/instant/property/instant-status?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -799,25 +793,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
             ref={ref => {
               $refs["jajigaPermission"] = ref;
             }}
-            url={(() => {
-              try {
-                return (() => {
-                  const isMiaan = window.location.hostname.includes("miaan.ir");
-                  const gatewayBase = isMiaan
-                    ? "https://gateway.miaan.ir"
-                    : "https://gateway.rentamon.com";
-                  return `${gatewayBase}/webhook/instant/jajiga/permission`;
-                })();
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return ``;
-                }
-                throw e;
-              }
-            })()}
+            url={
+              "https://automation.miaan.ir/webhook/instant/jajiga/permission"
+            }
           />
 
           <ApiRequest
@@ -850,13 +828,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
             }}
             url={(() => {
               try {
-                return (() => {
-                  const isMiaan = window.location.hostname.includes("miaan.ir");
-                  const gatewayBase = isMiaan
-                    ? "https://gateway.miaan.ir"
-                    : "https://gateway.rentamon.com";
-                  return `${gatewayBase}/webhook/instant/property/websites-status?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
-                })();
+                return `https://automation.miaan.ir/webhook/instant/property/websites-status?property_id=${$state.properties.data.find(property => property.property_name === $state.selectProperty.value).id}`;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -1154,26 +1126,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
               ref={ref => {
                 $refs["properties"] = ref;
               }}
-              url={(() => {
-                try {
-                  return (() => {
-                    const isMiaan =
-                      window.location.hostname.includes("miaan.ir");
-                    const gatewayBase = isMiaan
-                      ? "https://gateway.miaan.ir"
-                      : "https://gateway.rentamon.com";
-                    return `${gatewayBase}/webhook/instant/property`;
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
+              url={"https://automation.miaan.ir/webhook/instant/property"}
             >
               <Select
                 data-plasmic-name={"selectProperty"}
@@ -1399,29 +1352,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      (() => {
-                                        try {
-                                          return (() => {
-                                            const isMiaan =
-                                              window.location.hostname.includes(
-                                                "miaan.ir"
-                                              );
-                                            const gatewayBase = isMiaan
-                                              ? "https://gateway.miaan.ir"
-                                              : "https://gateway.rentamon.com";
-                                            return `${gatewayBase}/webhook/instant/Initiator`;
-                                          })();
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })(),
+                                      "https://automation.miaan.ir/webhook/instant/Initiator",
                                       (() => {
                                         try {
                                           return $state.homsaSwitch.checked
@@ -1770,29 +1701,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      (() => {
-                                        try {
-                                          return (() => {
-                                            const isMiaan =
-                                              window.location.hostname.includes(
-                                                "miaan.ir"
-                                              );
-                                            const gatewayBase = isMiaan
-                                              ? "https://gateway.miaan.ir"
-                                              : "https://gateway.rentamon.com";
-                                            return `${gatewayBase}/webhook/instant/Initiator`;
-                                          })();
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })(),
+                                      "https://automation.miaan.ir/webhook/instant/Initiator",
                                       (() => {
                                         try {
                                           return $state.mihmanshoSwitch.checked
@@ -2137,29 +2046,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      (() => {
-                                        try {
-                                          return (() => {
-                                            const isMiaan =
-                                              window.location.hostname.includes(
-                                                "miaan.ir"
-                                              );
-                                            const gatewayBase = isMiaan
-                                              ? "https://gateway.miaan.ir"
-                                              : "https://gateway.rentamon.com";
-                                            return `${gatewayBase}/webhook/instant/Initiator`;
-                                          })();
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })(),
+                                      "https://automation.miaan.ir/webhook/instant/Initiator",
                                       (() => {
                                         try {
                                           return $state.shabSwitch.checked
@@ -2506,29 +2393,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      (() => {
-                                        try {
-                                          return (() => {
-                                            const isMiaan =
-                                              window.location.hostname.includes(
-                                                "miaan.ir"
-                                              );
-                                            const gatewayBase = isMiaan
-                                              ? "https://gateway.miaan.ir"
-                                              : "https://gateway.rentamon.com";
-                                            return `${gatewayBase}/webhook/instant/Initiator`;
-                                          })();
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })(),
+                                      "https://automation.miaan.ir/webhook/instant/Initiator",
                                       (() => {
                                         try {
                                           return $state.shabSwitch2.checked
@@ -2875,29 +2740,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      (() => {
-                                        try {
-                                          return (() => {
-                                            const isMiaan =
-                                              window.location.hostname.includes(
-                                                "miaan.ir"
-                                              );
-                                            const gatewayBase = isMiaan
-                                              ? "https://gateway.miaan.ir"
-                                              : "https://gateway.rentamon.com";
-                                            return `${gatewayBase}/webhook/instant/Initiator`;
-                                          })();
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })(),
+                                      "https://automation.miaan.ir/webhook/instant/Initiator",
                                       (() => {
                                         try {
                                           return $state.jabamaSwitch.checked
@@ -3341,7 +3184,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "GET",
-                                      "https://gateway.rentamon.com/webhook/instant/Initiator",
+                                      "https://automation.miaan.ir/webhook/instant/Initiator",
                                       (() => {
                                         try {
                                           return $state.jajigaSwitch.checked
