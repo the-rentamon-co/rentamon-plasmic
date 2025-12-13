@@ -762,9 +762,11 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["goToHomepage"] = true
+                      $steps["goToبرنامهمدیریتویلا"] = true
                         ? (() => {
-                            const actionArgs = { destination: `/` };
+                            const actionArgs = {
+                              destination: `/villa-management-software`
+                            };
                             return (({ destination }) => {
                               if (
                                 typeof destination === "string" &&
@@ -780,11 +782,13 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["goToHomepage"] != null &&
-                        typeof $steps["goToHomepage"] === "object" &&
-                        typeof $steps["goToHomepage"].then === "function"
+                        $steps["goToبرنامهمدیریتویلا"] != null &&
+                        typeof $steps["goToبرنامهمدیریتویلا"] === "object" &&
+                        typeof $steps["goToبرنامهمدیریتویلا"].then ===
+                          "function"
                       ) {
-                        $steps["goToHomepage"] = await $steps["goToHomepage"];
+                        $steps["goToبرنامهمدیریتویلا"] =
+                          await $steps["goToبرنامهمدیریتویلا"];
                       }
                     }}
                   >

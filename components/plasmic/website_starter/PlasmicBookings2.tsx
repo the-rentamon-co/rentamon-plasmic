@@ -3552,7 +3552,13 @@ function PlasmicBookings2__RenderFunc(props: {
                               style={(() => {
                                 try {
                                   return (() => {
-                                    if (currentItem.status == "past") {
+                                    var today = new Date();
+                                    today.setHours(0, 0, 0, 0);
+                                    var checkOutDate = new Date(
+                                      currentItem.check_out
+                                    );
+                                    checkOutDate.setHours(0, 0, 0, 0);
+                                    if (checkOutDate < today) {
                                       return { opacity: "60%" };
                                     } else {
                                       return null;
