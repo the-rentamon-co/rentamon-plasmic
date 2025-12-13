@@ -7765,22 +7765,28 @@ function PlasmicBookings2__RenderFunc(props: {
                         "\ud83d\udca0\u0627\u0632 \u0627\u06cc\u0646 \u0628\u0647 \u0628\u0639\u062f \u0645\u06cc\u062a\u0648\u0646\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647 \u0631\u0648 \u0641\u06cc\u0644\u062a\u0631 \u06a9\u0646\u06cc."
                       }
                     </div>
-                    <Video
-                      data-plasmic-name={"htmlVideo"}
-                      data-plasmic-override={overrides.htmlVideo}
-                      autoPlay={true}
-                      className={classNames("__wab_instance", sty.htmlVideo)}
-                      controls={true}
-                      loop={true}
-                      muted={true}
-                      poster={undefined}
-                      ref={ref => {
-                        $refs["htmlVideo"] = ref;
-                      }}
-                      src={
-                        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Fdoc_2025-12-07_12-03-08.mp4?versionId="
-                      }
-                    />
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? false
+                        : false
+                    ) ? (
+                      <Video
+                        data-plasmic-name={"htmlVideo"}
+                        data-plasmic-override={overrides.htmlVideo}
+                        autoPlay={true}
+                        className={classNames("__wab_instance", sty.htmlVideo)}
+                        controls={true}
+                        loop={true}
+                        muted={true}
+                        poster={undefined}
+                        ref={ref => {
+                          $refs["htmlVideo"] = ref;
+                        }}
+                        src={
+                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/gif%2Fdoc_2025-12-07_12-03-08.mp4?versionId="
+                        }
+                      />
+                    ) : null}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__twVku)}>
