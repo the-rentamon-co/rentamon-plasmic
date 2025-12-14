@@ -496,7 +496,7 @@ function PlasmicMiaanTeam__RenderFunc(props: {
                   ? "\u0645\u0627\u0647\u0627\u0646"
                   : hasVariant(globalVariants, "screen", "tablet")
                     ? "\u0645\u0627\u0647\u0627\u0646"
-                    : "\u0645\u0627\u0647\u0627\u0646"}
+                    : "\u0645\u0627\u0647\u0627\u0646 \u0645\u06cc\u0627\u0646\u062f\u0634\u062a\u06cc"}
               </div>
             </div>
             <div

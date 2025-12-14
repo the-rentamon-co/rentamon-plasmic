@@ -593,7 +593,7 @@ function PlasmicSupport__RenderFunc(props: {
                                   customFunction: async () => {
                                     return (() => {
                                       return window.open(
-                                        "https://goftino.com/c/WgsGXv",
+                                        "https://miaan.ir/?nimchat",
                                         "_blank"
                                       );
                                     })();
