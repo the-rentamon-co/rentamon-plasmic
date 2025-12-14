@@ -5628,9 +5628,19 @@ function PlasmicCalendar23__RenderFunc(props: {
               ref={ref => {
                 $refs["getJabamaSmartPriceStatus"] = ref;
               }}
-              url={
-                "https://api-v3.miaan.ir/webhook/check-property-smart-pricing"
-              }
+              url={(() => {
+                try {
+                  return `https://api-v3.miaan.ir/webhook/check-property-smart-pricing?prop_id=${$props.propertyId}`;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
             />
 
             <ApiRequest
