@@ -67,7 +67,6 @@ import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
@@ -134,7 +133,6 @@ export type Plasmicکیفپول__OverridesType = {
   _5?: Flex__<typeof AntdAccordionItem>;
   _6?: Flex__<typeof AntdAccordionItem>;
   html?: Flex__<"div">;
-  goftino?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
@@ -2203,15 +2201,6 @@ function Plasmicکیفپول__RenderFunc(props: {
               data-plasmic-override={overrides.html}
               className={classNames(projectcss.all, sty.html)}
             >
-              <Embed
-                data-plasmic-name={"goftino"}
-                data-plasmic-override={overrides.goftino}
-                className={classNames("__wab_instance", sty.goftino)}
-                code={
-                  '<script>\r\n  window.nimchatSettings = {"position":"right","launcherTitle":"\u0633\u0644\u0627\u0645. \u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u06a9\u0645\u06a9\u062a\u0648\u0646 \u06a9\u0646\u0645\u061f ","type":"standard","locale":"fa"};\r\n  (function(d,t) {\r\n    var BASE_URL="https://app.nim.chat";\r\n    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];\r\n    g.src=BASE_URL+"/packs/js/sdk.js";\r\n    g.defer = true;\r\n    g.async = true;\r\n    s.parentNode.insertBefore(g,s);\r\n    g.onload=function(){\r\n      window.nimchatSDK.run({\r\n        websiteToken: \'KHb1NR6R7zCqPb8r5uaU8JiN\',\r\n        baseUrl: BASE_URL\r\n      })\r\n    }\r\n  })(document,"script");\r\n</script>\r\n'
-                }
-              />
-
               <div className={classNames(projectcss.all, sty.freeBox__taXuI)}>
                 <ClarityRntComponent
                   data-plasmic-name={"clarityRntComponent"}
@@ -2453,7 +2442,6 @@ const PlasmicDescendants = {
     "_5",
     "_6",
     "html",
-    "goftino",
     "clarityRntComponent",
     "faviconRntComponent",
     "rentamonFooter",
@@ -2510,7 +2498,6 @@ const PlasmicDescendants = {
     "_5",
     "_6",
     "html",
-    "goftino",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -2533,8 +2520,7 @@ const PlasmicDescendants = {
   _8: ["_8"],
   _5: ["_5"],
   _6: ["_6"],
-  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
-  goftino: ["goftino"],
+  html: ["html", "clarityRntComponent", "faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   rentamonFooter: ["rentamonFooter"],
@@ -2584,7 +2570,6 @@ type NodeDefaultElementType = {
   _5: typeof AntdAccordionItem;
   _6: typeof AntdAccordionItem;
   html: "div";
-  goftino: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   rentamonFooter: typeof RentamonFooter;
@@ -2692,7 +2677,6 @@ export const Plasmicکیفپول = Object.assign(
     _5: makeNodeComponent("_5"),
     _6: makeNodeComponent("_6"),
     html: makeNodeComponent("html"),
-    goftino: makeNodeComponent("goftino"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),

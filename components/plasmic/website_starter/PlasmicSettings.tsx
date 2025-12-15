@@ -3841,26 +3841,7 @@ function PlasmicSettings__RenderFunc(props: {
                 ref={ref => {
                   $refs["freeFeatureCredits"] = ref;
                 }}
-                url={(() => {
-                  try {
-                    return (() => {
-                      const isMiaan =
-                        window.location.hostname.includes("miaan.ir");
-                      const gatewayBase = isMiaan
-                        ? "https://gateway.miaan.ir"
-                        : "https://gateway.rentamon.com";
-                      return `${gatewayBase}/webhook/free_feature_credits`;
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
+                url={"https://prod.miaan.ir/webhook/free_feature_credits"}
               />
             </div>
             <div
