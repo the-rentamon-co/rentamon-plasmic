@@ -2988,20 +2988,6 @@
           "path": "/new-brand"
         },
         {
-          "id": "7fzbbhtsyd1T",
-          "name": "ProCalendar3",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicProCalendar3.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/panel-3.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicProCalendar3.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/panel-3"
-        },
-        {
           "id": "qnoSvk5APDQU",
           "name": "InstantReserve",
           "type": "managed",

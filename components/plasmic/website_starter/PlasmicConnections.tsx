@@ -6484,7 +6484,7 @@ function PlasmicConnections__RenderFunc(props: {
                                           "error",
                                           "\u0647\u0646\u0648\u0632 \u062f\u0631 \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0641\u0639\u0627\u0644 \u0646\u06cc\u0633\u062a\u06cc! \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u062a \u062b\u0628\u062f \u0634\u062f \u0648 \u0628\u0627\u0647\u0627\u062a \u0627\u0631\u062a\u0628\u0627\u0637 \u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\u0645.",
                                           "top-center",
-                                          5000
+                                          10000
                                         ]
                                       };
                                       return $globalActions[

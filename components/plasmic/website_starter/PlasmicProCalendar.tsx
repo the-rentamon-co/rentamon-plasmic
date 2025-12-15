@@ -781,55 +781,6 @@ function PlasmicProCalendar__RenderFunc(props: {
               ) {
                 $steps["getSegment"] = await $steps["getSegment"];
               }
-
-              $steps["redirectByResponse"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          function setCookie(name, value, hours) {
-                            let expires = "";
-                            if (hours) {
-                              const date = new Date();
-                              date.setTime(
-                                date.getTime() + hours * 60 * 60 * 1000
-                              );
-                              expires = "; expires=" + date.toUTCString();
-                            }
-                            document.cookie =
-                              name + "=" + (value || "") + expires + "; path=/";
-                          }
-                          const rawFlag = $steps.getSegment.data.flag;
-                          const rawVtStatus = $state.vtStatus;
-                          const flag = parseInt(rawFlag, 10);
-                          const current = parseInt(rawVtStatus, 10);
-                          const isMiaan =
-                            window.location.hostname.includes("miaan.ir");
-                          const baseUrl = isMiaan
-                            ? "https://miaan.ir"
-                            : "https://rentamon.com";
-                          if (isNaN(current) || flag !== current) {
-                            setCookie("vt", flag.toString(), 0.3333);
-                            if (flag === 2) {
-                              return (window.location.href = `${baseUrl}/panel-lite/`);
-                            }
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["redirectByResponse"] != null &&
-                typeof $steps["redirectByResponse"] === "object" &&
-                typeof $steps["redirectByResponse"].then === "function"
-              ) {
-                $steps["redirectByResponse"] =
-                  await $steps["redirectByResponse"];
-              }
             }}
           />
 
@@ -2782,6 +2733,37 @@ function PlasmicProCalendar__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
+          <SideEffect
+            className={classNames("__wab_instance", sty.sideEffect__g5Cmo)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["goToProCalendar2"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/panel` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToProCalendar2"] != null &&
+                typeof $steps["goToProCalendar2"] === "object" &&
+                typeof $steps["goToProCalendar2"].then === "function"
+              ) {
+                $steps["goToProCalendar2"] = await $steps["goToProCalendar2"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
