@@ -6,17 +6,7 @@ import {
   GlobalActionsProvider,
   GlobalContextMeta,
 } from "@plasmicapp/host";
-import axios, {
-  InternalAxiosRequestConfig,
-  AxiosRequestHeaders,
-} from "axios";
-
-const getCookie = (name: string) => {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop()?.split(";").shift() ?? "";
-  return "";
-};
+import axios from "axios";
 
 type FragmentProps = React.PropsWithChildren<{
   previewApiConfig: Record<string, any>;
@@ -39,26 +29,6 @@ export const Fragment = ({
   const changeTheme = (color: string) => {
     document.documentElement.style.setProperty("--primary", color);
   };
-
-  // attach auth header from cookie to every axios request (client-side only)
-  useEffect(() => {
-    const id = axios.interceptors.request.use(
-      (config: InternalAxiosRequestConfig<any>) => {
-        const token = getCookie("usso_access_token");
-        if (token) {
-          const headers = (config.headers ||= {} as AxiosRequestHeaders);
-          // Axios v1 headers can be a plain object or AxiosHeaders instance
-          if (typeof (headers as any).set === "function") {
-            (headers as any).set("Authorization", `Bearer ${token}`);
-          } else {
-            (headers as any).Authorization = `Bearer ${token}`;
-          }
-        }
-        return config;
-      }
-    );
-    return () => axios.interceptors.request.eject(id);
-  }, []);
 
   const actions = useMemo(
     () => ({
@@ -101,7 +71,7 @@ export const Fragment = ({
             });
           }
           return result;
-        } catch (error: any) {
+        } catch (error) {
           if (axios.isAxiosError(error)) {
             return error.response;
           }
