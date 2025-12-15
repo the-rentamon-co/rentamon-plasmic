@@ -2540,6 +2540,25 @@ function PlasmicBookings2__RenderFunc(props: {
             data-plasmic-override={overrides.reserveData}
             children={null}
             className={classNames("__wab_instance", sty.reserveData)}
+            config={(() => {
+              try {
+                return {
+                  headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                  },
+                  withCredentials: false
+                };
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
             errorDisplay={
               <div
                 className={classNames(
