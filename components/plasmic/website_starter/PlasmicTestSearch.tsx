@@ -650,22 +650,13 @@ function PlasmicTestSearch__RenderFunc(props: {
             className={classNames("__wab_instance", sty.profile2)}
             config={(() => {
               try {
-                return (() => {
-                  const getCookie = name => {
-                    const value = `; ${document.cookie}`;
-                    const parts = value.split(`; ${name}=`);
-                    if (parts.length === 2) {
-                      return parts.pop().split(";").shift();
-                    }
-                    return "";
-                  };
-                  const requestConfig = {
-                    headers: {
-                      Authorization: `Bearer ${getCookie("usso_access_token")}`
-                    }
-                  };
-                  return requestConfig;
-                })();
+                return {
+                  headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                  },
+                  withCredentials: false
+                };
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -748,7 +739,25 @@ function PlasmicTestSearch__RenderFunc(props: {
                             throw e;
                           }
                         })(),
-                        undefined
+                        (() => {
+                          try {
+                            return {
+                              headers: {
+                                "Content-Type": "application/json",
+                                Accept: "application/json"
+                              },
+                              withCredentials: false
+                            };
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [

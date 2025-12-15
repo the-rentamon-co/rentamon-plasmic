@@ -1922,6 +1922,25 @@ function PlasmicBookings__RenderFunc(props: {
               data-plasmic-name={"booking"}
               data-plasmic-override={overrides.booking}
               className={classNames("__wab_instance", sty.booking)}
+              config={(() => {
+                try {
+                  return {
+                    headers: {
+                      "Content-Type": "application/json",
+                      Accept: "application/json"
+                    },
+                    withCredentials: false
+                  };
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
               errorDisplay={
                 (
                   hasVariant(globalVariants, "screen", "tablet")
@@ -14191,6 +14210,21 @@ function PlasmicBookings__RenderFunc(props: {
             data-plasmic-override={overrides.propertyWebsite}
             children={null}
             className={classNames("__wab_instance", sty.propertyWebsite)}
+            config={(() => {
+              try {
+                return {
+                  withCredentials: false
+                };
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
             errorDisplay={null}
             loadingDisplay={null}
             method={"GET"}

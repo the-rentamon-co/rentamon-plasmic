@@ -1590,7 +1590,27 @@ function PlasmicBookings2__RenderFunc(props: {
                                         throw e;
                                       }
                                     })(),
-                                    undefined
+                                    undefined,
+                                    (() => {
+                                      try {
+                                        return {
+                                          headers: {
+                                            "Content-Type": "application/json",
+                                            Accept: "application/json"
+                                          },
+                                          withCredentials: false
+                                        };
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
                                   ]
                                 };
                                 return $globalActions[
@@ -2543,10 +2563,6 @@ function PlasmicBookings2__RenderFunc(props: {
             config={(() => {
               try {
                 return {
-                  headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                  },
                   withCredentials: false
                 };
               } catch (e) {
@@ -2960,6 +2976,25 @@ function PlasmicBookings2__RenderFunc(props: {
                 data-plasmic-override={overrides.reserveData2}
                 children={null}
                 className={classNames("__wab_instance", sty.reserveData2)}
+                config={(() => {
+                  try {
+                    return {
+                      headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json"
+                      },
+                      withCredentials: false
+                    };
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
                 errorDisplay={null}
                 loadingDisplay={null}
                 method={"GET"}

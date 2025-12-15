@@ -877,7 +877,28 @@ function PlasmicCalendar23__RenderFunc(props: {
                   const actionArgs = {
                     args: [
                       undefined,
-                      "https://api-v3.miaan.ir/webhook/get_note"
+                      "https://api-v3.miaan.ir/webhook/get_note",
+                      undefined,
+                      undefined,
+                      (() => {
+                        try {
+                          return {
+                            headers: {
+                              "Content-Type": "application/json",
+                              Accept: "application/json"
+                            },
+                            withCredentials: false
+                          };
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
                     ]
                   };
                   return $globalActions["Fragment.apiRequest"]?.apply(null, [
@@ -11733,6 +11754,25 @@ function PlasmicCalendar23__RenderFunc(props: {
         data-plasmic-name={"reserveData"}
         data-plasmic-override={overrides.reserveData}
         className={classNames("__wab_instance", sty.reserveData)}
+        config={(() => {
+          try {
+            return {
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+              },
+              withCredentials: false
+            };
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
         errorDisplay={
           <div
             className={classNames(

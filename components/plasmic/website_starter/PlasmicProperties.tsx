@@ -464,6 +464,25 @@ function PlasmicProperties__RenderFunc(props: {
                   data-plasmic-name={"apiRequest"}
                   data-plasmic-override={overrides.apiRequest}
                   className={classNames("__wab_instance", sty.apiRequest)}
+                  config={(() => {
+                    try {
+                      return {
+                        headers: {
+                          "Content-Type": "application/json",
+                          Accept: "application/json"
+                        },
+                        withCredentials: false
+                      };
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                   errorDisplay={
                     <div
                       className={classNames(
@@ -1521,6 +1540,27 @@ function PlasmicProperties__RenderFunc(props: {
                                 : "https://gateway.rentamon.com";
                               return `${gatewayBase}/webhook/get_user_segment`;
                             })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
+                        undefined,
+                        undefined,
+                        (() => {
+                          try {
+                            return {
+                              headers: {
+                                "Content-Type": "application/json",
+                                Accept: "application/json"
+                              },
+                              withCredentials: false
+                            };
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
