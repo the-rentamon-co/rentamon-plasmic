@@ -748,35 +748,7 @@ function PlasmicTestSearch__RenderFunc(props: {
                             throw e;
                           }
                         })(),
-                        (() => {
-                          try {
-                            return (() => {
-                              const getCookie = name => {
-                                const value = `; ${document.cookie}`;
-                                const parts = value.split(`; ${name}=`);
-                                if (parts.length === 2) {
-                                  return parts.pop().split(";").shift();
-                                }
-                                return "";
-                              };
-                              const requestConfig = {
-                                headers: {
-                                  Authorization: `Bearer ${getCookie("usso_access_token")}`
-                                },
-                                withCredentials: false
-                              };
-                              return requestConfig;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
+                        undefined
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [
