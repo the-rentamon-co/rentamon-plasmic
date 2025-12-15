@@ -701,10 +701,6 @@ function PlasmicTst__RenderFunc(props: {
                         (() => {
                           try {
                             return {
-                              headers: {
-                                "Content-Type": "application/json",
-                                Accept: "application/json"
-                              },
                               withCredentials: false
                             };
                           } catch (e) {
