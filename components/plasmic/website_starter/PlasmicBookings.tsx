@@ -3395,7 +3395,7 @@ function PlasmicBookings__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 "POST",
-                                "https://api-v3.miaan.ir/webhook/reservations/calendar/block",
+                                "https://gateway.miaan.ir/webhook/reservations/calendar/block",
                                 undefined,
                                 (() => {
                                   try {
@@ -8046,7 +8046,7 @@ function PlasmicBookings__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "PUT",
-                                          "https://api-v3.miaan.ir/webhook/bookings/status/cancelled/website",
+                                          "https://gateway.miaan.ir/webhook/bookings/status/cancelled/website",
                                           undefined,
                                           (() => {
                                             try {
@@ -9489,7 +9489,7 @@ function PlasmicBookings__RenderFunc(props: {
                                             const actionArgs = {
                                               args: [
                                                 "POST",
-                                                "https://api-v3.miaan.ir/webhook/update_reservation_data",
+                                                "https://gateway.miaan.ir/webhook/update_reservation_data",
                                                 undefined,
                                                 (() => {
                                                   try {
@@ -10104,9 +10104,9 @@ function PlasmicBookings__RenderFunc(props: {
                                                 if (
                                                   $state.unblockFor == "cancel"
                                                 ) {
-                                                  return `https://api-v3.miaan.ir/webhook/bookings/status/cancelled`;
+                                                  return `https://gateway.miaan.ir/webhook/bookings/status/cancelled`;
                                                 } else {
-                                                  return `https://api-v3.miaan.ir/webhook/bookings/early-checkout`;
+                                                  return `https://gateway.miaan.ir/webhook/bookings/early-checkout`;
                                                 }
                                               })();
                                             } catch (e) {
@@ -13078,7 +13078,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://api-v3.miaan.ir/webhook/update_reservation_data",
+                                        "https://gateway.miaan.ir/webhook/update_reservation_data",
                                         undefined,
                                         (() => {
                                           try {
@@ -13668,9 +13668,9 @@ function PlasmicBookings__RenderFunc(props: {
                                       try {
                                         return (() => {
                                           if ($state.unblockFor == "cancel") {
-                                            return `https://api-v3.miaan.ir/webhook/bookings/status/cancelled`;
+                                            return `https://gateway.miaan.ir/webhook/bookings/status/cancelled`;
                                           } else {
-                                            return `https://api-v3.miaan.ir/webhook/bookings/early-checkout`;
+                                            return `https://gateway.miaan.ir/webhook/bookings/early-checkout`;
                                           }
                                         })();
                                       } catch (e) {
