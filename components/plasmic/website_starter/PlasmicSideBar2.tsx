@@ -1781,25 +1781,7 @@ function PlasmicSideBar2__RenderFunc(props: {
         ref={ref => {
           $refs["apiRequest"] = ref;
         }}
-        url={(() => {
-          try {
-            return (() => {
-              const isMiaan = window.location.hostname.includes("miaan.ir");
-              const gatewayBase = isMiaan
-                ? "https://gateway.miaan.ir"
-                : "https://gateway.rentamon.com";
-              return `${gatewayBase}/webhook/wallet/balance`;
-            })();
-          } catch (e) {
-            if (
-              e instanceof TypeError ||
-              e?.plasmicType === "PlasmicUndefinedDataError"
-            ) {
-              return undefined;
-            }
-            throw e;
-          }
-        })()}
+        url={"https://prod.miaan.ir/webhook/wallet/balance"}
       />
     </AntdModal>
   ) as React.ReactElement | null;
