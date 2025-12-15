@@ -14,6 +14,15 @@ import {
 import axios from "axios";
 import useSWR, { mutate } from "swr";
 
+// --- Helper Function ---
+const getCookie = (name: string) => {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  if (match) return match[2];
+  return null;
+};
+// ---------------------
+
 type ApiRequestType = {
   method: "GET" | "POST" | "DELETE" | "PUT" | "PATCH";
   url: string;
@@ -49,6 +58,13 @@ export const ApiRequest = forwardRef((props: ApiRequestType, ref) => {
   const fragmentConfig = useSelector("Fragment");
   const id = useId();
   const [isLoading, setIsLoading] = useState(false);
+
+  // محاسبه هدرهای احراز هویت
+  const authHeaders = useMemo(() => {
+    const token = getCookie("usso_access_token");
+    return token ? { Authorization: `Bearer ${token}` } : {};
+  }, []);
+
   const fetchProps = useMemo(
     () => ({
       method,
@@ -59,11 +75,19 @@ export const ApiRequest = forwardRef((props: ApiRequestType, ref) => {
         ...fragmentConfig?.apiConfig,
         ...fragmentConfig?.previewApiConfig,
         ...config,
+        // ترکیب کردن دقیق هدرها برای اطمینان از وجود Authorization
+        headers: {
+            ...fragmentConfig?.apiConfig?.headers,
+            ...fragmentConfig?.previewApiConfig?.headers,
+            ...config?.headers,
+            ...authHeaders
+        }
       },
       id: id,
     }),
-    [method, url, params, body, config, fragmentConfig, id]
+    [method, url, params, body, config, fragmentConfig, id, authHeaders]
   );
+
   const { error } = useSWR(
     JSON.stringify(fetchProps),
     () => reuqestFn(fetchProps),
@@ -105,6 +129,8 @@ export const ApiRequest = forwardRef((props: ApiRequestType, ref) => {
     onError?.(null);
     onSuccess?.(null);
     setIsLoading(true);
+    
+    // اطمینان از اعمال Config نهایی در درخواست
     if (method === "GET") {
       return await axios.get(url, {
         params,
@@ -129,7 +155,9 @@ export const ApiRequest = forwardRef((props: ApiRequestType, ref) => {
   return children;
 });
 
+// ... apiRequestMeta بدون تغییر باقی می‌ماند ...
 export const apiRequestMeta: CodeComponentMeta<ApiRequestType> = {
+    // همان کدهای قبلی شما
   name: "ApiRequest",
   displayName: "Fragment/ApiRequest",
   importPath: "@/fragment/components/api-request",
