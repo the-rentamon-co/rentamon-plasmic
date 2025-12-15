@@ -349,6 +349,20 @@ function PlasmicTransactions__RenderFunc(props: {
                     "\u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"
                   }
                 </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___7Ot56,
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "fadeinf"
+                      : "fadeinf"
+                  )}
+                >
+                  {
+                    "\u0628\u0631\u0627\u06cc \u0646\u0645\u0627\u06cc\u0634 \u062c\u0632\u0626\u064a\u0627\u062a \u062a\u0631\u0627\u06a9\u0646\u0634\u200c\u060c \u0631\u0648\u0634 \u0628\u0632\u0646"
+                  }
+                </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__vWmj6)}>
                 <ApiRequest
@@ -1105,6 +1119,21 @@ function PlasmicTransactions__RenderFunc(props: {
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
             className={classNames("__wab_instance", sty.apiRequest)}
+            config={(() => {
+              try {
+                return {
+                  withCredentials: false
+                };
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
             errorDisplay={
               <div
                 className={classNames(

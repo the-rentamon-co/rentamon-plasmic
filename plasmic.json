@@ -2850,20 +2850,6 @@
           "path": "/property/edit/[id]"
         },
         {
-          "id": "kZSAE7HA3zLq",
-          "name": "TestSearch",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicTestSearch.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/test-search.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicTestSearch.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/test-search"
-        },
-        {
           "id": "cNCII08LGyXG",
           "name": "کلماترنتامون",
           "type": "managed",
@@ -3332,6 +3318,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/accommodation-management-guide"
+        },
+        {
+          "id": "kZSAE7HA3zLq",
+          "name": "Tst",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTst.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/tst.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTst.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/tst"
         }
       ],
       "icons": [
