@@ -787,25 +787,6 @@ function PlasmicSettings__RenderFunc(props: {
                       data-plasmic-name={"apiRequest2"}
                       data-plasmic-override={overrides.apiRequest2}
                       className={classNames("__wab_instance", sty.apiRequest2)}
-                      config={(() => {
-                        try {
-                          return {
-                            headers: {
-                              "Content-Type": "application/json",
-                              Accept: "application/json"
-                            },
-                            withCredentials: false
-                          };
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()}
                       errorDisplay={
                         <div
                           className={classNames(
@@ -1288,25 +1269,6 @@ function PlasmicSettings__RenderFunc(props: {
                       data-plasmic-name={"apiRequest"}
                       data-plasmic-override={overrides.apiRequest}
                       className={classNames("__wab_instance", sty.apiRequest)}
-                      config={(() => {
-                        try {
-                          return {
-                            headers: {
-                              "Content-Type": "application/json",
-                              Accept: "application/json"
-                            },
-                            withCredentials: false
-                          };
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()}
                       errorDisplay={
                         <div
                           className={classNames(
@@ -3845,25 +3807,6 @@ function PlasmicSettings__RenderFunc(props: {
                 data-plasmic-name={"freeFeatureCredits"}
                 data-plasmic-override={overrides.freeFeatureCredits}
                 className={classNames("__wab_instance", sty.freeFeatureCredits)}
-                config={(() => {
-                  try {
-                    return {
-                      headers: {
-                        "Content-Type": "application/json",
-                        Accept: "application/json"
-                      },
-                      withCredentials: false
-                    };
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
                 errorDisplay={
                   <div
                     className={classNames(
@@ -3973,25 +3916,6 @@ function PlasmicSettings__RenderFunc(props: {
               data-plasmic-name={"apiRequestSetting"}
               data-plasmic-override={overrides.apiRequestSetting}
               className={classNames("__wab_instance", sty.apiRequestSetting)}
-              config={(() => {
-                try {
-                  return {
-                    headers: {
-                      "Content-Type": "application/json",
-                      Accept: "application/json"
-                    },
-                    withCredentials: false
-                  };
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
               errorDisplay={
                 <div
                   className={classNames(

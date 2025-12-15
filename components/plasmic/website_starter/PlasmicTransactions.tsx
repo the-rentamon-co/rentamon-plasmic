@@ -1119,21 +1119,6 @@ function PlasmicTransactions__RenderFunc(props: {
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
             className={classNames("__wab_instance", sty.apiRequest)}
-            config={(() => {
-              try {
-                return {
-                  withCredentials: false
-                };
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
-                }
-                throw e;
-              }
-            })()}
             errorDisplay={
               <div
                 className={classNames(
