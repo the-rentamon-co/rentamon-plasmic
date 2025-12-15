@@ -8,15 +8,6 @@ import {
 } from "@plasmicapp/host";
 import axios from "axios";
 
-// --- Helper Function to get Cookie ---
-const getCookie = (name: string) => {
-  if (typeof document === "undefined") return null;
-  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-  if (match) return match[2];
-  return null;
-};
-// -------------------------------------
-
 type FragmentProps = React.PropsWithChildren<{
   previewApiConfig: Record<string, any>;
   apiConfig: Record<string, any>;
@@ -39,21 +30,6 @@ export const Fragment = ({
     document.documentElement.style.setProperty("--primary", color);
   };
 
-  // دریافت توکن و ساخت هدر احراز هویت
-  const authHeaders = useMemo(() => {
-    const token = getCookie("usso_access_token");
-    return token ? { Authorization: `Bearer ${token}` } : {};
-  }, []);
-
-  // ترکیب کانفیگ ورودی با هدر احراز هویت برای استفاده در DataProvider
-  const computedApiConfig = useMemo(() => ({
-    ...apiConfig,
-    headers: {
-      ...apiConfig?.headers,
-      ...authHeaders,
-    },
-  }), [apiConfig, authHeaders]);
-
   const actions = useMemo(
     () => ({
       showToast: (
@@ -75,27 +51,24 @@ export const Fragment = ({
         config?: Record<string, any>
       ) => {
         try {
-          // ساخت کانفیگ نهایی با ترکیب هدرها
-          const finalConfig = {
-            ...apiConfig,
-            ...previewApiConfig,
-            ...config,
-            params,
-            headers: {
-              ...apiConfig?.headers,
-              ...previewApiConfig?.headers,
-              ...config?.headers,
-              ...authHeaders, // اضافه کردن توکن به هدر ریکوئست‌های دستی
-            },
-          };
-
           let result;
           if (method === "GET") {
-            result = await axios.get(url, finalConfig);
-          } else {
+            result = await axios.get(url, {
+              params,
+              ...apiConfig,
+              ...previewApiConfig,
+              ...config,
+            });
+          }
+          if (method !== "GET") {
             result = await axios[
               method.toLowerCase() as "post" | "delete" | "put" | "patch"
-            ](url, body, finalConfig);
+            ](url, body, {
+              params,
+              ...apiConfig,
+              ...previewApiConfig,
+              ...config,
+            });
           }
           return result;
         } catch (error) {
@@ -108,7 +81,7 @@ export const Fragment = ({
         return new Promise((resolve) => setTimeout(resolve, duration));
       },
     }),
-    [apiConfig, previewApiConfig, authHeaders]
+    []
   );
 
   return (
@@ -116,7 +89,7 @@ export const Fragment = ({
       <DataProvider
         name="Fragment"
         data={{
-          apiConfig: computedApiConfig ?? {}, // ارسال کانفیگ حاوی توکن به فرزندان
+          apiConfig: apiConfig ?? {},
           previewApiConfig: previewApiConfig ?? {},
           rtl,
           primaryColor,
@@ -130,9 +103,7 @@ export const Fragment = ({
   );
 };
 
-// ... بقیه کدهای fragmentMeta (بدون تغییر) ...
 export const fragmentMeta: GlobalContextMeta<FragmentProps> = {
-    // همان کدهای قبلی شما
   name: "Fragment",
   displayName: "Fragment",
   importPath: "@/fragment/fragment",
