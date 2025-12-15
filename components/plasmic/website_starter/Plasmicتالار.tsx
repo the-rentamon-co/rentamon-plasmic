@@ -2306,26 +2306,7 @@ function Plasmicتالار__RenderFunc(props: {
               ref={ref => {
                 $refs["getUserWebsite"] = ref;
               }}
-              url={(() => {
-                try {
-                  return (() => {
-                    const isMiaan =
-                      window.location.hostname.includes("miaan.ir");
-                    const gatewayBase = isMiaan
-                      ? "https://gateway.miaan.ir"
-                      : "https://gateway.rentamon.com";
-                    return `${gatewayBase}/webhook/me/websites`;
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
+              url={"https://prod.miaan.ir/webhook/me/websites"}
             />
 
             {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
@@ -2367,7 +2348,7 @@ function Plasmicتالار__RenderFunc(props: {
                 ref={ref => {
                   $refs["getUserBalance"] = ref;
                 }}
-                url={"https://prod.miaan.ir/webhook/wallet/balance"}
+                url={"https://prod.miaan.ir/webhook/me"}
               />
             ) : null}
           </div>
