@@ -6,7 +6,10 @@ import {
   GlobalActionsProvider,
   GlobalContextMeta,
 } from "@plasmicapp/host";
-import axios, { InternalAxiosRequestConfig } from "axios";
+import axios, {
+  InternalAxiosRequestConfig,
+  AxiosRequestHeaders,
+} from "axios";
 
 const getCookie = (name: string) => {
   const value = `; ${document.cookie}`;
@@ -41,14 +44,17 @@ export const Fragment = ({
   useEffect(() => {
     const id = axios.interceptors.request.use(
       (config: InternalAxiosRequestConfig<any>) => {
-      const token = getCookie("usso_access_token");
-      if (token) {
-        config.headers = {
-          ...(config.headers || {}),
-          Authorization: `Bearer ${token}`,
-        };
-      }
-      return config;
+        const token = getCookie("usso_access_token");
+        if (token) {
+          const headers = (config.headers ||= {} as AxiosRequestHeaders);
+          // Axios v1 headers can be a plain object or AxiosHeaders instance
+          if (typeof (headers as any).set === "function") {
+            (headers as any).set("Authorization", `Bearer ${token}`);
+          } else {
+            (headers as any).Authorization = `Bearer ${token}`;
+          }
+        }
+        return config;
       }
     );
     return () => axios.interceptors.request.eject(id);
