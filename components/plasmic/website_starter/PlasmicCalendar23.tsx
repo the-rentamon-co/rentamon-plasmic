@@ -12111,23 +12111,9 @@ function PlasmicCalendar23__RenderFunc(props: {
         className={classNames("__wab_instance", sty.reserveData)}
         config={(() => {
           try {
-            return (() => {
-              const getCookie = name => {
-                const value = `; ${document.cookie}`;
-                const parts = value.split(`; ${name}=`);
-                if (parts.length === 2) {
-                  return parts.pop().split(";").shift();
-                }
-                return "";
-              };
-              const requestConfig = {
-                headers: {
-                  Authorization: `Bearer ${getCookie("usso_access_token")}`
-                },
-                withCredentials: false
-              };
-              return requestConfig;
-            })();
+            return {
+              withCredentials: false
+            };
           } catch (e) {
             if (
               e instanceof TypeError ||

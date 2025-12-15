@@ -3164,6 +3164,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/tst"
+        },
+        {
+          "id": "Tw1Qu0j-Mbme",
+          "name": "NewPage",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/new-page.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page"
         }
       ],
       "icons": [
