@@ -1387,20 +1387,6 @@
           "componentType": "component"
         },
         {
-          "id": "DpoRYqi8MTy5",
-          "name": "SelfRegister",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicSelfRegister.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/register.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicSelfRegister.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/register"
-        },
-        {
           "id": "kNwK3iA1B39P",
           "name": "Checkbox",
           "type": "managed",
@@ -2313,20 +2299,6 @@
           "path": "/analytics"
         },
         {
-          "id": "zPDZCwtGoWsV",
-          "name": "Chat",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicChat.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/chat.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicChat.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/chat"
-        },
-        {
           "id": "RM37OKgPSvTt",
           "name": "SideBar22",
           "type": "managed",
@@ -2338,48 +2310,6 @@
           "cssFilePath": "plasmic/website_starter/PlasmicSideBar22.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "wLy6Qx2J0ci-",
-          "name": "Intro",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicIntro.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/intro/[type].tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicIntro.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/intro/[type]"
-        },
-        {
-          "id": "EiemSs0Lr6oN",
-          "name": "Tier",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicTier.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/tier.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicTier.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/tier"
-        },
-        {
-          "id": "fKx94rj2n5oZ",
-          "name": "RedirectFromPanelsToPanel",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicRedirectFromPanelsToPanel.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/panels.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicRedirectFromPanelsToPanel.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/panels"
         },
         {
           "id": "wqhmVdxkd2UU",
@@ -2697,20 +2627,6 @@
           "componentType": "component"
         },
         {
-          "id": "Ni5f_RHOTfHK",
-          "name": "NewPage2",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage2.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-page-2.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewPage2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page-2"
-        },
-        {
           "id": "683spdJ2aZLx",
           "name": "مبنایمحاسبات",
           "type": "managed",
@@ -2738,20 +2654,6 @@
           "componentType": "component"
         },
         {
-          "id": "kT-D_roF4qsx",
-          "name": "قاصدک",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicقاصدک.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/notifications.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicقاصدک.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/notifications"
-        },
-        {
           "id": "0cQD5g_IoH69",
           "name": "RntRedirect",
           "type": "managed",
@@ -2764,20 +2666,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/rnt-redirect"
-        },
-        {
-          "id": "A0isQqTexssa",
-          "name": "پایانفعالیتنسخهیقدیمی",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicپایانفعالیتنسخهیقدیمی.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/upgrade-to-pro.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicپایانفعالیتنسخهیقدیمی.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/upgrade-to-pro"
         },
         {
           "id": "hYrKe0Fs8H2I",
@@ -2850,20 +2738,6 @@
           "path": "/property/edit/[id]"
         },
         {
-          "id": "cNCII08LGyXG",
-          "name": "کلماترنتامون",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicکلماترنتامون.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/words.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicکلماترنتامون.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/words"
-        },
-        {
           "id": "_aFdYQil1-CA",
           "name": "مشکلاتاجارهروزانهدرایران",
           "type": "managed",
@@ -2918,20 +2792,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/websites"
-        },
-        {
-          "id": "RJaZxeFbz5F5",
-          "name": "SplashWithVpnModal",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicSplashWithVpnModal.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/splash-2.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicSplashWithVpnModal.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/splash-2"
         },
         {
           "id": "7xoX8eHI85Zt",
@@ -3069,20 +2929,6 @@
           "cssFilePath": "plasmic/website_starter/PlasmicReservationsRecordList2.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "ebTzsLIxpzlW",
-          "name": "NewPage",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-page.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNewPage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page"
         },
         {
           "id": "QzhG04jEbAaP",

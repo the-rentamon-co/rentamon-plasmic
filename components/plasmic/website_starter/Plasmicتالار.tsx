@@ -2295,6 +2295,21 @@ function Plasmicتالار__RenderFunc(props: {
                 data-plasmic-name={"getUserBalance"}
                 data-plasmic-override={overrides.getUserBalance}
                 className={classNames("__wab_instance", sty.getUserBalance)}
+                config={(() => {
+                  try {
+                    return {
+                      withCredentials: false
+                    };
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
                 errorDisplay={
                   <div
                     className={classNames(

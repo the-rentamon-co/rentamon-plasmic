@@ -1169,7 +1169,7 @@ function PlasmicRegistration__RenderFunc(props: {
                               $steps["updateInput6Value2"] = $state
                                 .policiesCheckbox.isChecked
                                 ? (() => {
-                                    const actionArgs = { destination: `/tier` };
+                                    const actionArgs = {};
                                     return (({ destination }) => {
                                       if (
                                         typeof destination === "string" &&
@@ -2044,7 +2044,7 @@ function PlasmicRegistration__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["goToPanelCalendar"] = true
+                      $steps["goToProCalendar"] = true
                         ? (() => {
                             const actionArgs = { destination: `/panel-4` };
                             return (({ destination }) => {
@@ -2062,12 +2062,12 @@ function PlasmicRegistration__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["goToPanelCalendar"] != null &&
-                        typeof $steps["goToPanelCalendar"] === "object" &&
-                        typeof $steps["goToPanelCalendar"].then === "function"
+                        $steps["goToProCalendar"] != null &&
+                        typeof $steps["goToProCalendar"] === "object" &&
+                        typeof $steps["goToProCalendar"].then === "function"
                       ) {
-                        $steps["goToPanelCalendar"] =
-                          await $steps["goToPanelCalendar"];
+                        $steps["goToProCalendar"] =
+                          await $steps["goToProCalendar"];
                       }
                     }}
                     src={{
