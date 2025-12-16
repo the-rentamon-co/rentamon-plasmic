@@ -332,26 +332,9 @@ function PlasmicPaymentSuccess__RenderFunc(props: {
               ref={ref => {
                 $refs["apiRequest"] = ref;
               }}
-              url={(() => {
-                try {
-                  return (() => {
-                    const isMiaan =
-                      window.location.hostname.includes("miaan.ir");
-                    const gatewayBase = isMiaan
-                      ? "https://gateway.miaan.ir"
-                      : "https://gateway.rentamon.com";
-                    return `${gatewayBase}/webhook/4aee429f-0a3e-4306-a4d7-eddbd49cfea5`;
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
+              url={
+                "https://prod.miaan.ir/webhook/4aee429f-0a3e-4306-a4d7-eddbd49cfea5"
+              }
             >
               <div className={classNames(projectcss.all, sty.freeBox__qv6Bb)}>
                 <div

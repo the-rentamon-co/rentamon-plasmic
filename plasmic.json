@@ -2396,20 +2396,6 @@
           "path": "/properties"
         },
         {
-          "id": "oEgwlD3XbRDL",
-          "name": "Property",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicProperty.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/property/[id].tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicProperty.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/property/[id]"
-        },
-        {
           "id": "KNLZ6uFxuV-7",
           "name": "FirstPropertyEdit",
           "type": "managed",
@@ -3178,6 +3164,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/new-page"
+        },
+        {
+          "id": "oEgwlD3XbRDL",
+          "name": "PropertyAnalytics",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPropertyAnalytics.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/property/[id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPropertyAnalytics.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/property/[id]"
         }
       ],
       "icons": [

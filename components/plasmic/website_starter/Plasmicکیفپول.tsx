@@ -796,28 +796,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            (() => {
-                              try {
-                                return (() => {
-                                  const isMiaan =
-                                    window.location.hostname.includes(
-                                      "miaan.ir"
-                                    );
-                                  const gatewayBase = isMiaan
-                                    ? "https://gateway.miaan.ir"
-                                    : "https://gateway.rentamon.com";
-                                  return `${gatewayBase}/webhook/log/wallet`;
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()
+                            "https://prod.miaan.ir/webhook/log/wallet"
                           ]
                         };
                         return $globalActions["Fragment.apiRequest"]?.apply(
@@ -1418,29 +1397,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               "POST",
-                              (() => {
-                                try {
-                                  return (() => {
-                                    const isMiaan =
-                                      window.location.hostname.includes(
-                                        "miaan.ir"
-                                      );
-                                    const gatewayBase = isMiaan
-                                      ? "https://gateway.miaan.ir"
-                                      : "https://gateway.rentamon.com";
-                                    return `${gatewayBase}/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5`;
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })(),
+                              "https://prod.miaan.ir/webhook/f0e9689b-e711-4212-8551-e138c23b4cf5",
                               undefined,
                               (() => {
                                 try {

@@ -640,7 +640,7 @@
   user-select: none;
   min-width: 0;
 }
-.name2 {
+.pic {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -656,7 +656,7 @@
   padding: 52px 8px;
 }
 @media (max-width: 500px) {
-  .name2 {
+  .pic {
     width: 100%;
     height: auto;
     max-width: 100%;
@@ -667,7 +667,7 @@
   }
 }
 @media (max-width: 350px) {
-  .name2 {
+  .pic {
     width: 100%;
     grid-column-start: 1 !important;
     grid-column-end: -1 !important;

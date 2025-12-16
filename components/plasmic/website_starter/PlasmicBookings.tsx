@@ -13908,7 +13908,7 @@ function PlasmicBookings__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "POST",
-                                  "https://gateway.rentamon.com/webhook/registration-steps-bookings",
+                                  "https://nb.miaan.ir/webhook/registration-steps-bookings",
                                   undefined,
                                   (() => {
                                     try {

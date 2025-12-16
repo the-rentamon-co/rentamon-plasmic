@@ -59,13 +59,14 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -90,8 +91,6 @@ export const PlasmicConnections__ArgProps = new Array<ArgPropType>();
 export type PlasmicConnections__OverridesType = {
   root?: Flex__<"div">;
   svg?: Flex__<"svg">;
-  allConnected?: Flex__<"div">;
-  jabamasend9?: Flex__<typeof AntdButton>;
   connect?: Flex__<"div">;
   form?: Flex__<typeof FormWrapper>;
   jabama?: Flex__<"div">;
@@ -152,6 +151,7 @@ export type PlasmicConnections__OverridesType = {
   jabamasend7?: Flex__<typeof AntdButton>;
   security?: Flex__<"div">;
   footer?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultConnectionsProps {}
@@ -580,129 +580,6 @@ function PlasmicConnections__RenderFunc(props: {
               />
             </div>
           </div>
-          {false ? (
-            <div
-              data-plasmic-name={"allConnected"}
-              data-plasmic-override={overrides.allConnected}
-              className={classNames(projectcss.all, sty.allConnected)}
-            >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__jlH7I)}
-                displayHeight={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? "72px"
-                    : "83px"
-                }
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image27.svg",
-                  fullWidth: 26,
-                  fullHeight: 26,
-                  aspectRatio: 1
-                }}
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__x0Zaw
-                )}
-              >
-                {
-                  "\u0647\u0645\u0647\u200c\u06cc  \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0645\u062a\u0635\u0644 \u0647\u0633\u062a\u0646"
-                }
-              </div>
-              <AntdButton
-                data-plasmic-name={"jabamasend9"}
-                data-plasmic-override={overrides.jabamasend9}
-                className={classNames("__wab_instance", sty.jabamasend9)}
-                onClick={async () => {
-                  const $steps = {};
-
-                  $steps["update1"] = false
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["step"]
-                          },
-                          operation: 0,
-                          value: ($state.step = 14)
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["update1"] != null &&
-                    typeof $steps["update1"] === "object" &&
-                    typeof $steps["update1"].then === "function"
-                  ) {
-                    $steps["update1"] = await $steps["update1"];
-                  }
-
-                  $steps["goToPanelCalendar"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/panel-4` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToPanelCalendar"] != null &&
-                    typeof $steps["goToPanelCalendar"] === "object" &&
-                    typeof $steps["goToPanelCalendar"].then === "function"
-                  ) {
-                    $steps["goToPanelCalendar"] =
-                      await $steps["goToPanelCalendar"];
-                  }
-                }}
-                submitsForm={true}
-                type={"primary"}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ptLyK
-                  )}
-                >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"
-                    : "\u0646\u0645\u0627\u06cc\u0634 \u062a\u0642\u0648\u06cc\u0645"}
-                </div>
-              </AntdButton>
-            </div>
-          ) : null}
           <div
             data-plasmic-name={"connect"}
             data-plasmic-override={overrides.connect}
@@ -6198,6 +6075,118 @@ function PlasmicConnections__RenderFunc(props: {
               </div>
             </div>
           ) : null}
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const ssoBase = isMiaan
+                            ? "https://sso.miaan.ir"
+                            : "https://sso.rentamon.com";
+                          const callbackBase = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
+                          const redirectUrl = `${ssoBase}/web/index.html?callback=${callbackBase}/bookings/`;
+                          const refreshUrl = `${ssoBase}/auth/refresh`;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              });
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href = redirectUrl);
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              })
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href = redirectUrl;
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -6208,8 +6197,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "svg",
-    "allConnected",
-    "jabamasend9",
     "connect",
     "form",
     "jabama",
@@ -6269,11 +6256,10 @@ const PlasmicDescendants = {
     "homsaVerify",
     "jabamasend7",
     "security",
-    "footer"
+    "footer",
+    "sideEffect"
   ],
   svg: ["svg"],
-  allConnected: ["allConnected", "jabamasend9"],
-  jabamasend9: ["jabamasend9"],
   connect: [
     "connect",
     "form",
@@ -6525,7 +6511,8 @@ const PlasmicDescendants = {
   homsaVerify: ["homsaVerify"],
   jabamasend7: ["jabamasend7"],
   security: ["security"],
-  footer: ["footer"]
+  footer: ["footer"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -6533,8 +6520,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   svg: "svg";
-  allConnected: "div";
-  jabamasend9: typeof AntdButton;
   connect: "div";
   form: typeof FormWrapper;
   jabama: "div";
@@ -6595,6 +6580,7 @@ type NodeDefaultElementType = {
   jabamasend7: typeof AntdButton;
   security: "div";
   footer: "div";
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -6660,8 +6646,6 @@ export const PlasmicConnections = Object.assign(
   {
     // Helper components rendering sub-elements
     svg: makeNodeComponent("svg"),
-    allConnected: makeNodeComponent("allConnected"),
-    jabamasend9: makeNodeComponent("jabamasend9"),
     connect: makeNodeComponent("connect"),
     form: makeNodeComponent("form"),
     jabama: makeNodeComponent("jabama"),
@@ -6722,6 +6706,7 @@ export const PlasmicConnections = Object.assign(
     jabamasend7: makeNodeComponent("jabamasend7"),
     security: makeNodeComponent("security"),
     footer: makeNodeComponent("footer"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicConnections
     internalVariantProps: PlasmicConnections__VariantProps,

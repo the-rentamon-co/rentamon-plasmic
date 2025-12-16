@@ -757,31 +757,12 @@ function PlasmicRegistration__RenderFunc(props: {
                                 $steps["runCode2"] = await $steps["runCode2"];
                               }
 
-                              $steps["invokeGlobalAction"] = true
+                              $steps["userRegistration"] = true
                                 ? (() => {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        (() => {
-                                          try {
-                                            return (() => {
-                                              if ($ctx.params.type == "1") {
-                                                return "https://gateway.rentamon.com/webhook/user-registration?param=1";
-                                              } else {
-                                                return "";
-                                              }
-                                            })();
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })()
+                                        "https://nb.miaan.ir/webhook/user-registration?param=1"
                                       ]
                                     };
                                     return $globalActions[
@@ -790,18 +771,18 @@ function PlasmicRegistration__RenderFunc(props: {
                                   })()
                                 : undefined;
                               if (
-                                $steps["invokeGlobalAction"] != null &&
-                                typeof $steps["invokeGlobalAction"] ===
+                                $steps["userRegistration"] != null &&
+                                typeof $steps["userRegistration"] ===
                                   "object" &&
-                                typeof $steps["invokeGlobalAction"].then ===
+                                typeof $steps["userRegistration"].then ===
                                   "function"
                               ) {
-                                $steps["invokeGlobalAction"] =
-                                  await $steps["invokeGlobalAction"];
+                                $steps["userRegistration"] =
+                                  await $steps["userRegistration"];
                               }
 
                               $steps["invokeGlobalAction2"] =
-                                $steps.invokeGlobalAction.data.message !=
+                                $steps.userRegistration.data.message !=
                                 "user is already registered"
                                   ? (() => {
                                       const actionArgs = {
