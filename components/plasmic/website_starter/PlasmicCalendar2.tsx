@@ -5468,28 +5468,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            (() => {
-                              try {
-                                return (() => {
-                                  const isMiaan =
-                                    window.location.hostname.includes(
-                                      "miaan.ir"
-                                    );
-                                  const gatewayBase = isMiaan
-                                    ? "https://gateway.miaan.ir"
-                                    : "https://gateway.rentamon.com";
-                                  return `${gatewayBase}/webhook/set-price`;
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })(),
+                            "https://api-v2.rentamon.com/api/setprice",
                             undefined,
                             (() => {
                               try {
@@ -7069,26 +7048,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          (() => {
-                            try {
-                              return (() => {
-                                const isMiaan =
-                                  window.location.hostname.includes("miaan.ir");
-                                const gatewayBase = isMiaan
-                                  ? "https://gateway.miaan.ir"
-                                  : "https://gateway.rentamon.com";
-                                return `${gatewayBase}/webhook/set-block`;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
+                          "https://api-v2.rentamon.com/api/setblock",
                           undefined,
                           (() => {
                             try {
@@ -7201,7 +7161,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return ($state.platformRequestStatus =
-                          $steps.setBlock.data[0]);
+                          $steps.setBlock.data);
                       }
                     };
                     return (({ customFunction }) => {
@@ -7254,26 +7214,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         "POST",
-                        (() => {
-                          try {
-                            return (() => {
-                              const isMiaan =
-                                window.location.hostname.includes("miaan.ir");
-                              const gatewayBase = isMiaan
-                                ? "https://gateway.miaan.ir"
-                                : "https://gateway.rentamon.com";
-                              return `${gatewayBase}/webhook/reserve/create`;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })(),
+                        "https://api-v3.miaan.ir/webhook/reserve/create",
                         undefined,
                         (() => {
                           try {
@@ -7697,26 +7638,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          (() => {
-                            try {
-                              return (() => {
-                                const isMiaan =
-                                  window.location.hostname.includes("miaan.ir");
-                                const gatewayBase = isMiaan
-                                  ? "https://gateway.miaan.ir"
-                                  : "https://gateway.rentamon.com";
-                                return `${gatewayBase}/webhook/set-block`;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
+                          "https://api-v2.rentamon.com/api/setblock",
                           undefined,
                           (() => {
                             try {
@@ -7829,7 +7751,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         customFunction: async () => {
                           return ($state.platformRequestStatus =
-                            $steps.setBlock.data[0]);
+                            $steps.setBlock.data);
                         }
                       };
                       return (({ customFunction }) => {
@@ -8233,28 +8155,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            (() => {
-                              try {
-                                return (() => {
-                                  const isMiaan =
-                                    window.location.hostname.includes(
-                                      "miaan.ir"
-                                    );
-                                  const gatewayBase = isMiaan
-                                    ? "https://gateway.miaan.ir"
-                                    : "https://gateway.rentamon.com";
-                                  return `${gatewayBase}/webhook/sendNote?prop_id=1`;
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })(),
+                            "https://api-v3.miaan.ir/webhook/sendNote",
                             undefined,
                             (() => {
                               try {
@@ -8690,26 +8591,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          (() => {
-                            try {
-                              return (() => {
-                                const isMiaan =
-                                  window.location.hostname.includes("miaan.ir");
-                                const gatewayBase = isMiaan
-                                  ? "https://gateway.miaan.ir"
-                                  : "https://gateway.rentamon.com";
-                                return `${gatewayBase}/webhook/updateNote`;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
+                          "https://api-v3.miaan.ir/webhook/updateNote",
                           undefined,
                           (() => {
                             try {
@@ -10183,28 +10065,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            (() => {
-                              try {
-                                return (() => {
-                                  const isMiaan =
-                                    window.location.hostname.includes(
-                                      "miaan.ir"
-                                    );
-                                  const gatewayBase = isMiaan
-                                    ? "https://gateway.miaan.ir"
-                                    : "https://gateway.rentamon.com";
-                                  return `${gatewayBase}/webhook/set-discount`;
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })(),
+                            "https://api-v2.rentamon.com/api/setdiscount",
                             undefined,
                             (() => {
                               try {
@@ -10305,7 +10166,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           customFunction: async () => {
                             return ($state.platformRequestStatus =
-                              $steps.setDiscout.data[0]);
+                              $steps.setDiscout.data);
                           }
                         };
                         return (({ customFunction }) => {
@@ -11781,28 +11642,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            (() => {
-                              try {
-                                return (() => {
-                                  const isMiaan =
-                                    window.location.hostname.includes(
-                                      "miaan.ir"
-                                    );
-                                  const gatewayBase = isMiaan
-                                    ? "https://gateway.miaan.ir"
-                                    : "https://gateway.rentamon.com";
-                                  return `${gatewayBase}/webhook/complete_manual_reserve_data`;
-                                })();
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })(),
+                            "https://api-v3.miaan.ir/webhook/complete_manual_reserve_data",
                             undefined,
                             (() => {
                               try {

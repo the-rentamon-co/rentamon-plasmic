@@ -4435,26 +4435,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          (() => {
-                            try {
-                              return (() => {
-                                const isMiaan =
-                                  window.location.hostname.includes("miaan.ir");
-                                const gatewayBase = isMiaan
-                                  ? "https://gateway.miaan.ir"
-                                  : "https://gateway.rentamon.com";
-                                return `${gatewayBase}/webhook/set-unblock`;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
+                          "https://dev.rentamon.com/webhook/set-unblock",
                           undefined,
                           (() => {
                             try {
@@ -4565,7 +4546,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         customFunction: async () => {
                           return ($state.platformRequestStatus =
-                            $steps.setUnblock.data[0]);
+                            $steps.setUnblock.data);
                         }
                       };
                       return (({ customFunction }) => {
