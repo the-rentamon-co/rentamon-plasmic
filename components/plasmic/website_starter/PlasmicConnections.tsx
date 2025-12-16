@@ -653,10 +653,7 @@ function PlasmicConnections__RenderFunc(props: {
                   >
                     {(() => {
                       try {
-                        return (
-                          $state.step == 1 &&
-                          $state.platformstatus.status.jabama !== true
-                        );
+                        return $state.step == 1;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
