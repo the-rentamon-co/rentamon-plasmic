@@ -7771,29 +7771,7 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          (() => {
-                                            try {
-                                              return (() => {
-                                                const isMiaan =
-                                                  window.location.hostname.includes(
-                                                    "miaan.ir"
-                                                  );
-                                                const gatewayBase = isMiaan
-                                                  ? "https://gateway.miaan.ir"
-                                                  : "https://gateway.rentamon.com";
-                                                return `${gatewayBase}/webhook/otaghak-send-otp`;
-                                              })();
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })(),
+                                          "https://nb.miaan.ir/webhook/otaghak-send-otp",
                                           undefined,
                                           (() => {
                                             try {
@@ -8046,29 +8024,7 @@ function PlasmicConnections__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          (() => {
-                                            try {
-                                              return (() => {
-                                                const isMiaan =
-                                                  window.location.hostname.includes(
-                                                    "miaan.ir"
-                                                  );
-                                                const gatewayBase = isMiaan
-                                                  ? "https://gateway.miaan.ir"
-                                                  : "https://gateway.rentamon.com";
-                                                return `${gatewayBase}/webhook/otaghak-verify-otp`;
-                                              })();
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })(),
+                                          "https://nb.miaan.ir/webhook/otaghak-verify-otp",
                                           undefined,
                                           (() => {
                                             try {

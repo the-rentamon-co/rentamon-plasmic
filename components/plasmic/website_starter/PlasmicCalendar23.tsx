@@ -900,7 +900,19 @@ function PlasmicCalendar23__RenderFunc(props: {
                   const actionArgs = {
                     args: [
                       undefined,
-                      "https://api-v3.miaan.ir/webhook/get_note",
+                      (() => {
+                        try {
+                          return `https://api-v3.miaan.ir/webhook/get_note?prop_id=${$props.propertyId}`;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })(),
                       undefined,
                       undefined,
                       undefined
@@ -7175,26 +7187,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          (() => {
-                            try {
-                              return (() => {
-                                const isMiaan =
-                                  window.location.hostname.includes("miaan.ir");
-                                const gatewayBase = isMiaan
-                                  ? "https://gateway.miaan.ir"
-                                  : "https://gateway.rentamon.com";
-                                return `${gatewayBase}/webhook/set-block`;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
+                          "https://api-v2.rentamon.com/api/setblock",
                           undefined,
                           (() => {
                             try {
@@ -7302,7 +7295,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 $steps["setBlock"] = await $steps["setBlock"];
               }
 
-              $steps["runCode"] = true
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -7675,26 +7668,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          (() => {
-                            try {
-                              return (() => {
-                                const isMiaan =
-                                  window.location.hostname.includes("miaan.ir");
-                                const gatewayBase = isMiaan
-                                  ? "https://gateway.miaan.ir"
-                                  : "https://gateway.rentamon.com";
-                                return `${gatewayBase}/webhook/set-block`;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })(),
+                          "https://api-v2.rentamon.com/api/setblock",
                           undefined,
                           (() => {
                             try {
@@ -7802,7 +7776,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   $steps["setBlock"] = await $steps["setBlock"];
                 }
 
-                $steps["runCode"] = true
+                $steps["runCode"] = false
                   ? (() => {
                       const actionArgs = {
                         customFunction: async () => {

@@ -902,7 +902,19 @@ function PlasmicCalendar2__RenderFunc(props: {
                   const actionArgs = {
                     args: [
                       undefined,
-                      "https://api-v3.miaan.ir/webhook/get_note"
+                      (() => {
+                        try {
+                          return `https://api-v3.miaan.ir/webhook/get_note?prop_id=${$props.propertyId}`;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()
                     ]
                   };
                   return $globalActions["Fragment.apiRequest"]?.apply(null, [
