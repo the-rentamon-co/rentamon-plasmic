@@ -100,8 +100,6 @@ export type PlasmicWebsitesConnections__OverridesType = {
   trueStatus?: Flex__<typeof PlasmicImg__>;
   newPlatform?: Flex__<"div">;
   connectedPlatforms2?: Flex__<"div">;
-  newPlatform2?: Flex__<"div">;
-  propGuide?: Flex__<"div">;
   allConnected?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
 };
@@ -1337,159 +1335,41 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                         </div>
                       );
                     })}
-                    {false ? (
-                      <div
-                        data-plasmic-name={"newPlatform2"}
-                        data-plasmic-override={overrides.newPlatform2}
-                        className={classNames(
-                          projectcss.all,
-                          sty.newPlatform2,
-                          "clickable fadein"
-                        )}
-                        onClick={async event => {
-                          const $steps = {};
-
-                          $steps["goToPlatformsConnections"] = [
-                            2, 3, 4, 6, 7, 8
-                          ].some(
-                            required =>
-                              !$state.apiRequest2.data.some(
-                                item => item.website === required
-                              )
-                          )
-                            ? (() => {
-                                const actionArgs = {};
-                                return (({ destination }) => {
-                                  if (
-                                    typeof destination === "string" &&
-                                    destination.startsWith("#")
-                                  ) {
-                                    document
-                                      .getElementById(destination.substr(1))
-                                      .scrollIntoView({ behavior: "smooth" });
-                                  } else {
-                                    __nextRouter?.push(destination);
-                                  }
-                                })?.apply(null, [actionArgs]);
-                              })()
-                            : undefined;
-                          if (
-                            $steps["goToPlatformsConnections"] != null &&
-                            typeof $steps["goToPlatformsConnections"] ===
-                              "object" &&
-                            typeof $steps["goToPlatformsConnections"].then ===
-                              "function"
-                          ) {
-                            $steps["goToPlatformsConnections"] =
-                              await $steps["goToPlatformsConnections"];
-                          }
-                        }}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__acKlh
-                          )}
-                        >
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__npKBw)}
-                            displayHeight={
-                              hasVariant(globalVariants, "screen", "mobile")
-                                ? "60px"
-                                : "52px"
-                            }
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"auto"}
-                            loading={"lazy"}
-                            src={{
-                              src: "/plasmic/website_starter/images/image110.svg",
-                              fullWidth: 51,
-                              fullHeight: 51,
-                              aspectRatio: 1
-                            }}
-                          />
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__lUfDw
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__o6N6X
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobile")
-                              ? "\u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
-                              : "\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a \u062c\u062f\u06cc\u062f"}
-                          </div>
-                        </div>
-                      </div>
-                    ) : null}
                   </div>
                   {(
                     hasVariant(globalVariants, "screen", "mobile")
-                      ? true
-                      : false
-                  ) ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__caXt6)}
-                    >
-                      {(
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? (() => {
-                              try {
-                                return $state.propTour === true;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return true;
-                                }
-                                throw e;
-                              }
-                            })()
-                          : false
-                      ) ? (
-                        <div
-                          data-plasmic-name={"propGuide"}
-                          data-plasmic-override={overrides.propGuide}
-                          className={classNames(projectcss.all, sty.propGuide)}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__yYuxW
-                            )}
-                          >
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__u4CP
-                              )}
-                            >
-                              {
-                                "\u0631\u0648\u06cc \u062f\u06a9\u0645\u0647  +  \u0628\u0627\u0644\u0627 \u0628\u0632\u0646 \u062a\u0627 \u0632\u06cc\u0631 \u06f1 \u062f\u0642\u06cc\u0642\u0647\n\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc"
-                              }
-                            </div>
-                          </div>
-                        </div>
-                      ) : null}
-                    </div>
-                  ) : null}
-                  {(
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? false
-                      : false
+                      ? (() => {
+                          try {
+                            return (
+                              !$state.apiRequest2.data ||
+                              $state.apiRequest2.data.length === 0
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
+                      : (() => {
+                          try {
+                            return (
+                              !$state.apiRequest2.data ||
+                              $state.apiRequest2.data.length === 0
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })()
                   ) ? (
                     <div
                       data-plasmic-name={"allConnected"}
@@ -1528,7 +1408,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                         )}
                       >
                         {
-                          " \u0647\u0645\u0647\u200c\u06cc  \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062a\u062d\u062a \u067e\u0648\u0634\u0634 \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0645\u062a\u0635\u0644 \u0634\u062f\u0646"
+                          " \u0647\u0645\u0647\u200c\u06cc  \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u062a\u062d\u062a \u067e\u0648\u0634\u0634 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0631\u0648 \u062f\u0627\u0631\u06cc"
                         }
                       </div>
                     </div>
@@ -1825,8 +1705,6 @@ const PlasmicDescendants = {
     "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
-    "newPlatform2",
-    "propGuide",
     "allConnected",
     "sideEffect"
   ],
@@ -1845,8 +1723,6 @@ const PlasmicDescendants = {
     "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
-    "newPlatform2",
-    "propGuide",
     "allConnected"
   ],
   platforms: [
@@ -1858,8 +1734,6 @@ const PlasmicDescendants = {
     "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
-    "newPlatform2",
-    "propGuide",
     "allConnected"
   ],
   apiRequest2: [
@@ -1870,8 +1744,6 @@ const PlasmicDescendants = {
     "trueStatus",
     "newPlatform",
     "connectedPlatforms2",
-    "newPlatform2",
-    "propGuide",
     "allConnected"
   ],
   localStorage: [
@@ -1886,8 +1758,6 @@ const PlasmicDescendants = {
   trueStatus: ["trueStatus"],
   newPlatform: ["newPlatform"],
   connectedPlatforms2: ["connectedPlatforms2"],
-  newPlatform2: ["newPlatform2"],
-  propGuide: ["propGuide"],
   allConnected: ["allConnected"],
   sideEffect: ["sideEffect"]
 } as const;
@@ -1910,8 +1780,6 @@ type NodeDefaultElementType = {
   trueStatus: typeof PlasmicImg__;
   newPlatform: "div";
   connectedPlatforms2: "div";
-  newPlatform2: "div";
-  propGuide: "div";
   allConnected: "div";
   sideEffect: typeof SideEffect;
 };
@@ -1992,8 +1860,6 @@ export const PlasmicWebsitesConnections = Object.assign(
     trueStatus: makeNodeComponent("trueStatus"),
     newPlatform: makeNodeComponent("newPlatform"),
     connectedPlatforms2: makeNodeComponent("connectedPlatforms2"),
-    newPlatform2: makeNodeComponent("newPlatform2"),
-    propGuide: makeNodeComponent("propGuide"),
     allConnected: makeNodeComponent("allConnected"),
     sideEffect: makeNodeComponent("sideEffect"),
 
