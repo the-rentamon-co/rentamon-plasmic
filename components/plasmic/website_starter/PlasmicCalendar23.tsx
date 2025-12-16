@@ -4435,7 +4435,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://dev.rentamon.com/webhook/set-unblock",
+                          "https://api-v2.rentamon.com/api/setunblock",
                           undefined,
                           (() => {
                             try {
