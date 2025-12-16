@@ -103,7 +103,7 @@ export type PlasmicActivation__OverridesType = {
   quotes?: Flex__<"div">;
   testimonialsScrolling?: Flex__<typeof TestimonialsScrolling>;
   html?: Flex__<"div">;
-  goftino?: Flex__<typeof Embed>;
+  nimchat?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -712,29 +712,7 @@ function PlasmicActivation__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        (() => {
-                                          try {
-                                            return (() => {
-                                              const isMiaan =
-                                                window.location.hostname.includes(
-                                                  "miaan.ir"
-                                                );
-                                              const gatewayBase = isMiaan
-                                                ? "https://gateway.miaan.ir"
-                                                : "https://gateway.rentamon.com";
-                                              return `${gatewayBase}/webhook/add_referal_code`;
-                                            })();
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return undefined;
-                                            }
-                                            throw e;
-                                          }
-                                        })(),
+                                        "https://prod.miaan.ir/webhook/add_referal_code",
                                         undefined,
                                         (() => {
                                           try {
@@ -1029,29 +1007,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "POST",
-                                      (() => {
-                                        try {
-                                          return (() => {
-                                            const isMiaan =
-                                              window.location.hostname.includes(
-                                                "miaan.ir"
-                                              );
-                                            const gatewayBase = isMiaan
-                                              ? "https://gateway.miaan.ir"
-                                              : "https://gateway.rentamon.com";
-                                            return `${gatewayBase}/webhook/set_user_source`;
-                                          })();
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })(),
+                                      "https://prod.miaan.ir/webhook/set_user_source",
                                       undefined,
                                       (() => {
                                         try {
@@ -1448,9 +1404,9 @@ function PlasmicActivation__RenderFunc(props: {
             className={classNames(projectcss.all, sty.html)}
           >
             <Embed
-              data-plasmic-name={"goftino"}
-              data-plasmic-override={overrides.goftino}
-              className={classNames("__wab_instance", sty.goftino)}
+              data-plasmic-name={"nimchat"}
+              data-plasmic-override={overrides.nimchat}
+              className={classNames("__wab_instance", sty.nimchat)}
               code={
                 '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
               }
@@ -1497,7 +1453,7 @@ const PlasmicDescendants = {
     "quotes",
     "testimonialsScrolling",
     "html",
-    "goftino",
+    "nimchat",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -1533,8 +1489,8 @@ const PlasmicDescendants = {
   loadingImg: ["loadingImg"],
   quotes: ["quotes", "testimonialsScrolling"],
   testimonialsScrolling: ["testimonialsScrolling"],
-  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
-  goftino: ["goftino"],
+  html: ["html", "nimchat", "clarityRntComponent", "faviconRntComponent"],
+  nimchat: ["nimchat"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -1555,7 +1511,7 @@ type NodeDefaultElementType = {
   quotes: "div";
   testimonialsScrolling: typeof TestimonialsScrolling;
   html: "div";
-  goftino: typeof Embed;
+  nimchat: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -1634,7 +1590,7 @@ export const PlasmicActivation = Object.assign(
     quotes: makeNodeComponent("quotes"),
     testimonialsScrolling: makeNodeComponent("testimonialsScrolling"),
     html: makeNodeComponent("html"),
-    goftino: makeNodeComponent("goftino"),
+    nimchat: makeNodeComponent("nimchat"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

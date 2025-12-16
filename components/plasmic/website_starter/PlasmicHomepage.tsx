@@ -165,7 +165,7 @@ export type PlasmicHomepage__OverridesType = {
   _5?: Flex__<typeof AntdAccordionItem>;
   _6?: Flex__<typeof AntdAccordionItem>;
   html?: Flex__<"div">;
-  goftino?: Flex__<typeof Embed>;
+  nimchat?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   modalMiaan?: Flex__<typeof AntdModal>;
@@ -2341,9 +2341,9 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames(projectcss.all, sty.html)}
             >
               <Embed
-                data-plasmic-name={"goftino"}
-                data-plasmic-override={overrides.goftino}
-                className={classNames("__wab_instance", sty.goftino)}
+                data-plasmic-name={"nimchat"}
+                data-plasmic-override={overrides.nimchat}
+                className={classNames("__wab_instance", sty.nimchat)}
                 code={
                   '<script>\r\n  window.nimchatSettings = {"position":"right","launcherTitle":"\u0633\u0644\u0627\u0645. \u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u06a9\u0645\u06a9\u062a\u0648\u0646 \u06a9\u0646\u0645\u061f ","type":"standard","locale":"fa"};\r\n  (function(d,t) {\r\n    var BASE_URL="https://app.nim.chat";\r\n    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];\r\n    g.src=BASE_URL+"/packs/js/sdk.js";\r\n    g.defer = true;\r\n    g.async = true;\r\n    s.parentNode.insertBefore(g,s);\r\n    g.onload=function(){\r\n      window.nimchatSDK.run({\r\n        websiteToken: \'KHb1NR6R7zCqPb8r5uaU8JiN\',\r\n        baseUrl: BASE_URL\r\n      })\r\n    }\r\n  })(document,"script");\r\n</script>\r\n'
                 }
@@ -2838,7 +2838,7 @@ const PlasmicDescendants = {
     "_5",
     "_6",
     "html",
-    "goftino",
+    "nimchat",
     "clarityRntComponent",
     "faviconRntComponent",
     "modalMiaan",
@@ -3028,7 +3028,7 @@ const PlasmicDescendants = {
     "_5",
     "_6",
     "html",
-    "goftino",
+    "nimchat",
     "clarityRntComponent",
     "faviconRntComponent",
     "modalMiaan"
@@ -3040,8 +3040,8 @@ const PlasmicDescendants = {
   _7: ["_7"],
   _5: ["_5"],
   _6: ["_6"],
-  html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
-  goftino: ["goftino"],
+  html: ["html", "nimchat", "clarityRntComponent", "faviconRntComponent"],
+  nimchat: ["nimchat"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   modalMiaan: ["modalMiaan"],
@@ -3112,7 +3112,7 @@ type NodeDefaultElementType = {
   _5: typeof AntdAccordionItem;
   _6: typeof AntdAccordionItem;
   html: "div";
-  goftino: typeof Embed;
+  nimchat: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   modalMiaan: typeof AntdModal;
@@ -3241,7 +3241,7 @@ export const PlasmicHomepage = Object.assign(
     _5: makeNodeComponent("_5"),
     _6: makeNodeComponent("_6"),
     html: makeNodeComponent("html"),
-    goftino: makeNodeComponent("goftino"),
+    nimchat: makeNodeComponent("nimchat"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     modalMiaan: makeNodeComponent("modalMiaan"),

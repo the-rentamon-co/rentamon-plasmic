@@ -788,7 +788,7 @@ function PlasmicRegistration__RenderFunc(props: {
                                       const actionArgs = {
                                         args: [
                                           "POST",
-                                          "https://gateway.rentamon.com/webhook/add_referal_code",
+                                          "https://prod.miaan.ir/webhook/add_referal_code",
                                           undefined,
                                           (() => {
                                             try {
@@ -1111,7 +1111,7 @@ function PlasmicRegistration__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/set_user_source",
+                                        "https://prod.miaan.ir/webhook/set_user_source",
                                         undefined,
                                         (() => {
                                           try {

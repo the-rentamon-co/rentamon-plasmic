@@ -802,26 +802,7 @@ ${$state.textInput.value}
                     ref={ref => {
                       $refs["apiRequest"] = ref;
                     }}
-                    url={(() => {
-                      try {
-                        return (() => {
-                          const isMiaan =
-                            window.location.hostname.includes("miaan.ir");
-                          const gatewayBase = isMiaan
-                            ? "https://gateway.miaan.ir"
-                            : "https://gateway.rentamon.com";
-                          return `${gatewayBase}/webhook/generate_referral_code`;
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
+                    url={"https://prod.miaan.ir/webhook/generate_referral_code"}
                   />
                 </div>
                 <div
@@ -1419,26 +1400,7 @@ ${$state.textInput.value}
                   ref={ref => {
                     $refs["apiRequest2"] = ref;
                   }}
-                  url={(() => {
-                    try {
-                      return (() => {
-                        const isMiaan =
-                          window.location.hostname.includes("miaan.ir");
-                        const gatewayBase = isMiaan
-                          ? "https://gateway.miaan.ir"
-                          : "https://gateway.rentamon.com";
-                        return `${gatewayBase}/webhook/get_referral_data`;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
+                  url={"https://prod.miaan.ir/webhook/get_referral_data"}
                 >
                   {(() => {
                     try {
@@ -2253,26 +2215,7 @@ ${$state.textInput.value}
                     const actionArgs = {
                       args: [
                         "POST",
-                        (() => {
-                          try {
-                            return (() => {
-                              const isMiaan =
-                                window.location.hostname.includes("miaan.ir");
-                              const gatewayBase = isMiaan
-                                ? "https://gateway.miaan.ir"
-                                : "https://gateway.rentamon.com";
-                              return `${gatewayBase}/webhook/refferal-logs`;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })(),
+                        "https://prod.miaan.ir/webhook/refferal-logs",
                         undefined,
                         (() => {
                           try {
