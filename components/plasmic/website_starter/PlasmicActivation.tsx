@@ -638,44 +638,16 @@ function PlasmicActivation__RenderFunc(props: {
                               $steps["runCode2"] = await $steps["runCode2"];
                             }
 
-                            $steps["invokeGlobalAction"] = true
+                            $steps["userRegistration"] = true
                               ? (() => {
                                   const actionArgs = {
                                     args: [
                                       "POST",
-                                      (() => {
-                                        try {
-                                          return (() => {
-                                            if ($ctx.params.type == "1") {
-                                              const isMiaan =
-                                                window.location.hostname.includes(
-                                                  "miaan.ir"
-                                                );
-                                              const gatewayBase = isMiaan
-                                                ? "https://gateway.miaan.ir"
-                                                : "https://gateway.rentamon.com";
-                                              return `${gatewayBase}/webhook/user-registration?param=1`;
-                                            } else {
-                                              return "";
-                                            }
-                                          })();
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })(),
+                                      "https://nb.miaan.ir/webhook/user-registration?param=1",
                                       undefined,
                                       (() => {
                                         try {
-                                          return {
-                                            source: $state.source
-                                          };
+                                          return { source: $state.source };
                                         } catch (e) {
                                           if (
                                             e instanceof TypeError ||
@@ -695,18 +667,17 @@ function PlasmicActivation__RenderFunc(props: {
                                 })()
                               : undefined;
                             if (
-                              $steps["invokeGlobalAction"] != null &&
-                              typeof $steps["invokeGlobalAction"] ===
-                                "object" &&
-                              typeof $steps["invokeGlobalAction"].then ===
+                              $steps["userRegistration"] != null &&
+                              typeof $steps["userRegistration"] === "object" &&
+                              typeof $steps["userRegistration"].then ===
                                 "function"
                             ) {
-                              $steps["invokeGlobalAction"] =
-                                await $steps["invokeGlobalAction"];
+                              $steps["userRegistration"] =
+                                await $steps["userRegistration"];
                             }
 
                             $steps["invokeGlobalAction2"] =
-                              $steps.invokeGlobalAction.data.message !=
+                              $steps.userRegistration.data.message !=
                               "user is already registered"
                                 ? (() => {
                                     const actionArgs = {
@@ -1408,7 +1379,7 @@ function PlasmicActivation__RenderFunc(props: {
               data-plasmic-override={overrides.nimchat}
               className={classNames("__wab_instance", sty.nimchat)}
               code={
-                '<script type="text/javascript">\r\n  !function(){var i="WgsGXv",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();\r\n</script>'
+                '<script>\r\n  window.nimchatSettings = {"position":"right","launcherTitle":"\u0633\u0644\u0627\u0645. \u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u06a9\u0645\u06a9\u062a\u0648\u0646 \u06a9\u0646\u0645\u061f ","type":"standard","locale":"fa"};\r\n  (function(d,t) {\r\n    var BASE_URL="https://app.nim.chat";\r\n    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];\r\n    g.src=BASE_URL+"/packs/js/sdk.js";\r\n    g.defer = true;\r\n    g.async = true;\r\n    s.parentNode.insertBefore(g,s);\r\n    g.onload=function(){\r\n      window.nimchatSDK.run({\r\n        websiteToken: \'KHb1NR6R7zCqPb8r5uaU8JiN\',\r\n        baseUrl: BASE_URL\r\n      })\r\n    }\r\n  })(document,"script");\r\n</script>\r\n'
               }
             />
 
