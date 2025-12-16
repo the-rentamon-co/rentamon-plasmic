@@ -7295,12 +7295,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                 $steps["setBlock"] = await $steps["setBlock"];
               }
 
-              $steps["runCode"] = false
+              $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return ($state.platformRequestStatus =
-                          $steps.setBlock.data[0]);
+                          $steps.setBlock.data);
                       }
                     };
                     return (({ customFunction }) => {
@@ -7776,12 +7776,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                   $steps["setBlock"] = await $steps["setBlock"];
                 }
 
-                $steps["runCode"] = false
+                $steps["runCode"] = true
                   ? (() => {
                       const actionArgs = {
                         customFunction: async () => {
                           return ($state.platformRequestStatus =
-                            $steps.setBlock.data[0]);
+                            $steps.setBlock.data);
                         }
                       };
                       return (({ customFunction }) => {
