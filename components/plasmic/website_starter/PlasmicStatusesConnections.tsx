@@ -1101,26 +1101,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                   ref={ref => {
                     $refs["apiRequest2"] = ref;
                   }}
-                  url={(() => {
-                    try {
-                      return (() => {
-                        const isMiaan =
-                          window.location.hostname.includes("miaan.ir");
-                        const gatewayBase = isMiaan
-                          ? "https://gateway.miaan.ir"
-                          : "https://gateway.rentamon.com";
-                        return `${gatewayBase}/webhook/connection-statuses`;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
+                  url={"https://nb.miaan.ir/webhook/connection-statuses"}
                 >
                   <div
                     className={classNames(projectcss.all, sty.freeBox__yz6Xw)}

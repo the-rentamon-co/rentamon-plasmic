@@ -1804,26 +1804,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                           ref={ref => {
                             $refs["connectionStatusApiRequest"] = ref;
                           }}
-                          url={(() => {
-                            try {
-                              return (() => {
-                                const isMiaan =
-                                  window.location.hostname.includes("miaan.ir");
-                                const gatewayBase = isMiaan
-                                  ? "https://gateway.miaan.ir"
-                                  : "https://gateway.rentamon.com";
-                                return `${gatewayBase}/webhook/calendar-statuses`;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()}
+                          url={"https://nb.miaan.ir/webhook/calendar-statuses"}
                         >
                           {(() => {
                             try {
