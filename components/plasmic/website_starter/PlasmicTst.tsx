@@ -698,21 +698,7 @@ function PlasmicTst__RenderFunc(props: {
                             throw e;
                           }
                         })(),
-                        (() => {
-                          try {
-                            return {
-                              withCredentials: false
-                            };
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
+                        undefined
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [
