@@ -3155,11 +3155,10 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["goToHttpsMiaanIrJoinOurJourneyNimchat"] = true
+                      $steps["goToHttpsMiaanIrNimchat"] = true
                         ? (() => {
                             const actionArgs = {
-                              destination:
-                                "https://miaan.ir/join-our-journey/?nimchat"
+                              destination: "https://miaan.ir/?nimchat"
                             };
                             return (({ destination }) => {
                               if (
@@ -3176,16 +3175,13 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["goToHttpsMiaanIrJoinOurJourneyNimchat"] !=
-                          null &&
-                        typeof $steps[
-                          "goToHttpsMiaanIrJoinOurJourneyNimchat"
-                        ] === "object" &&
-                        typeof $steps["goToHttpsMiaanIrJoinOurJourneyNimchat"]
-                          .then === "function"
+                        $steps["goToHttpsMiaanIrNimchat"] != null &&
+                        typeof $steps["goToHttpsMiaanIrNimchat"] === "object" &&
+                        typeof $steps["goToHttpsMiaanIrNimchat"].then ===
+                          "function"
                       ) {
-                        $steps["goToHttpsMiaanIrJoinOurJourneyNimchat"] =
-                          await $steps["goToHttpsMiaanIrJoinOurJourneyNimchat"];
+                        $steps["goToHttpsMiaanIrNimchat"] =
+                          await $steps["goToHttpsMiaanIrNimchat"];
                       }
                     }}
                   >

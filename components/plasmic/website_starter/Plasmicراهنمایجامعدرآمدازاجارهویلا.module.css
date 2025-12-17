@@ -833,6 +833,12 @@
     padding-bottom: 21px;
   }
 }
+@media (max-width: 350px) {
+  .cta2 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
 .text__inaDo {
   width: 100%;
   height: auto;
@@ -855,7 +861,7 @@
 @media (max-width: 500px) {
   .text__inaDo {
     font-size: 16px;
-    padding: 16px 12px 8px 10px;
+    padding: 16px 0px 8px;
   }
 }
 @media (max-width: 350px) {
