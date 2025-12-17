@@ -1549,33 +1549,6 @@
           "plumeType": "text-input"
         },
         {
-          "id": "MWmH78o8OGcS",
-          "name": "Testimonial",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicTestimonial.tsx",
-          "importSpec": {
-            "modulePath": "Testimonial.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicTestimonial.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "AFCQqK02hfZM",
-          "name": "Yalda",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicYalda.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/yalda.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicYalda.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/yalda"
-        },
-        {
           "id": "JS02cj_l1MoU",
           "name": "Calendar22",
           "type": "managed",

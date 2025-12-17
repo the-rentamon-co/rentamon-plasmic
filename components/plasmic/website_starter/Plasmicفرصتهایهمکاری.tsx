@@ -3138,57 +3138,41 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
                     sty.text__c4Mb
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u0627\u0645\u06a9\u0627\u0646\u0634 \u0647\u0633\u062a \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0642\u0639\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0627\u0642\u062f\u0627\u0645 \u06a9\u0646\u06cc\u060c \u0648 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0628\u0647 \u0633\u0645\u062a builder \u0634\u062f\u0646 \u0628\u0631\u06cc. \u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u06cc\u0647 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646 \u0647\u0645\u0647\u200c\u0641\u0646 \u062d\u0631\u06cc\u0641 \u0628\u0634\u06cc"
-                    : hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0627\u0645\u06a9\u0627\u0646\u0634 \u0647\u0633\u062a \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0642\u0639\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0627\u0642\u062f\u0627\u0645 \u06a9\u0646\u06cc\u060c \u0648 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0628\u0647 \u0633\u0645\u062a builder \u0634\u062f\u0646 \u0628\u0631\u06cc. \u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u06cc\u0647 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646 \u0647\u0645\u0647\u200c\u0641\u0646 \u062d\u0631\u06cc\u0641 \u0628\u0634\u06cc"
-                      : "\u0627\u0645\u06a9\u0627\u0646\u0634 \u0647\u0633\u062a \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0642\u0639\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0627\u0642\u062f\u0627\u0645 \u06a9\u0646\u06cc\u060c \u0648 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0628\u0647 \u0633\u0645\u062a builder \u0634\u062f\u0646 \u0628\u0631\u06cc\n\u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u06cc\u0647 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646 \u0647\u0645\u0647\u200c\u0641\u0646 \u062d\u0631\u06cc\u0641 \u0628\u0634\u06cc"}
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__zz6QQ)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__giAs,
-                      "clickable"
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["goToHttpsMiaanIrNimchat"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              destination: "https://miaan.ir/?nimchat"
-                            };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToHttpsMiaanIrNimchat"] != null &&
-                        typeof $steps["goToHttpsMiaanIrNimchat"] === "object" &&
-                        typeof $steps["goToHttpsMiaanIrNimchat"].then ===
-                          "function"
-                      ) {
-                        $steps["goToHttpsMiaanIrNimchat"] =
-                          await $steps["goToHttpsMiaanIrNimchat"];
-                      }
-                    }}
-                  >
-                    {
-                      "\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0647\u0645\u06a9\u0627\u0631\u06cc"
-                    }
-                  </div>
+                  {hasVariant(globalVariants, "screen", "smallMobile") ? (
+                    "\u0627\u0645\u06a9\u0627\u0646\u0634 \u0647\u0633\u062a \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0642\u0639\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0627\u0642\u062f\u0627\u0645 \u06a9\u0646\u06cc\u060c \u0648 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0628\u0647 \u0633\u0645\u062a builder \u0634\u062f\u0646 \u0628\u0631\u06cc. \u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u06cc\u0647 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646 \u0647\u0645\u0647\u200c\u0641\u0646 \u062d\u0631\u06cc\u0641 \u0628\u0634\u06cc"
+                  ) : hasVariant(globalVariants, "screen", "mobile") ? (
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0627\u0645\u06a9\u0627\u0646\u0634 \u0647\u0633\u062a \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0642\u0639\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0627\u0642\u062f\u0627\u0645 \u06a9\u0646\u06cc\u060c \u0648 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0628\u0647 \u0633\u0645\u062a builder \u0634\u062f\u0646 \u0628\u0631\u06cc. \u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u06cc\u0647 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646 \u0647\u0645\u0647\u200c\u0641\u0646 \u062d\u0631\u06cc\u0641 \u0628\u0634\u06cc\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 500 }}
+                      >
+                        {
+                          "\u0628\u0631\u0627\u06cc \u0622\u0634\u0646\u0627\u06cc\u06cc \u0648 \u06af\u0641\u062a\u06af\u0648\u060c \u0644\u0637\u0641\u0627 \u0631\u0632\u0648\u0645\u0647\u200c\u062a \u0631\u0648 \u0628\u0647 \u0627\u06cc\u0645\u06cc\u0644 \u067e\u0627\u06cc\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0628\u0641\u0631\u0633\u062a."
+                        }
+                      </span>
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <React.Fragment>
+                        {
+                          "\u0627\u0645\u06a9\u0627\u0646\u0634 \u0647\u0633\u062a \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0642\u0639\u06cc\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0627\u0642\u062f\u0627\u0645 \u06a9\u0646\u06cc\u060c \u0648 \u062f\u0631 \u0627\u062f\u0627\u0645\u0647 \u0628\u0647 \u0633\u0645\u062a builder \u0634\u062f\u0646 \u0628\u0631\u06cc\n\u0645\u0627 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645 \u06cc\u0647 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646 \u0647\u0645\u0647\u200c\u0641\u0646 \u062d\u0631\u06cc\u0641 \u0628\u0634\u06cc\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 500 }}
+                      >
+                        {
+                          "\u0628\u0631\u0627\u06cc \u0622\u0634\u0646\u0627\u06cc\u06cc \u0648 \u06af\u0641\u062a\u06af\u0648\u060c \u0644\u0637\u0641\u0627 \u0631\u0632\u0648\u0645\u0647\u200c\u062a \u0631\u0648 \u0628\u0647 \u0627\u06cc\u0645\u06cc\u0644 \u067e\u0627\u06cc\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0628\u0641\u0631\u0633\u062a."
+                        }
+                      </span>
+                    </React.Fragment>
+                  )}
                 </div>
               </div>
             </div>
