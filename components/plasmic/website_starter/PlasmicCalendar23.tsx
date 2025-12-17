@@ -4435,7 +4435,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setunblock",
+                          "https://replica-rentamon-n8n.darkube.app/api/setunblock",
                           undefined,
                           (() => {
                             try {
@@ -5273,7 +5273,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://api-v2.rentamon.com/api/setprice",
+                            "https://replica-rentamon-n8n.darkube.app/api/setprice",
                             undefined,
                             (() => {
                               try {
@@ -7070,7 +7070,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setblock",
+                          "https://replica-rentamon-n8n.darkube.app/api/setblock",
                           undefined,
                           (() => {
                             try {
@@ -7532,7 +7532,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setblock",
+                          "https://replica-rentamon-n8n.darkube.app/api/setblock",
                           undefined,
                           (() => {
                             try {
@@ -9799,7 +9799,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://api-v2.rentamon.com/api/setdiscount",
+                            "https://replica-rentamon-n8n.darkube.app/api/setdiscount",
                             undefined,
                             (() => {
                               try {
