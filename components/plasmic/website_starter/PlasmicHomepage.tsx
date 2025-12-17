@@ -240,7 +240,7 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "consult2.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "form3.value",
@@ -1167,7 +1167,7 @@ function PlasmicHomepage__RenderFunc(props: {
                                     const actionArgs = {
                                       args: [
                                         "POST",
-                                        "https://gateway.rentamon.com/webhook/consult-with-us",
+                                        "https://prod.miaan.ir/webhook/consult-with-us",
                                         undefined,
                                         (() => {
                                           try {

@@ -952,7 +952,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "POST",
-                                  "https://gateway.rentamon.com/webhook/cross-listing-smf",
+                                  "https://prod.miaan.ir/webhook/cross-listing-smf",
                                   undefined,
                                   (() => {
                                     try {
