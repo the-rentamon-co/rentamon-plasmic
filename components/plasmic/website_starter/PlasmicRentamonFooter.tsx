@@ -282,22 +282,9 @@ function PlasmicRentamonFooter__RenderFunc(props: {
               sty.text__xugAr
             )}
           >
-            <React.Fragment>
-              <React.Fragment>{"\u0645\u06cc\u0627\u0646 "}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ fontWeight: 400 }}
-              >
-                {
-                  "(\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642)"
-                }
-              </span>
-              <React.Fragment>
-                {
-                  " \u062f\u0631 \u0634\u0628\u06a9\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u062a\u0645\u0627\u0639\u06cc"
-                }
-              </React.Fragment>
-            </React.Fragment>
+            {
+              "\u0645\u06cc\u0627\u0646 \u062f\u0631 \u0634\u0628\u06a9\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u062a\u0645\u0627\u0639\u06cc"
+            }
           </div>
         </div>
       </div>

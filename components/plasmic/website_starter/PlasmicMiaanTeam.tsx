@@ -186,21 +186,9 @@ function PlasmicMiaanTeam__RenderFunc(props: {
             sty.h2
           )}
         >
-          <React.Fragment>
-            <React.Fragment>
-              {
-                "\u0622\u0634\u0646\u0627\u06cc\u06cc \u0628\u0627 \u062a\u06cc\u0645 \u0645\u06cc\u0627\u0646 "
-              }
-            </React.Fragment>
-            <span
-              className={"plasmic_default__all plasmic_default__span"}
-              style={{ fontWeight: 400 }}
-            >
-              {
-                "(\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642)"
-              }
-            </span>
-          </React.Fragment>
+          {
+            "\u0622\u0634\u0646\u0627\u06cc\u06cc \u0628\u0627 \u062a\u06cc\u0645 \u0645\u06cc\u0627\u0646"
+          }
         </h2>
       </div>
       <div className={classNames(projectcss.all, sty.freeBox___2EzmV)}>
