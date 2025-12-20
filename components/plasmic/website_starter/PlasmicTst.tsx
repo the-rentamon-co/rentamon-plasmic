@@ -62,6 +62,7 @@ import {
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -69,6 +70,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicTst.module.css"; // plasmic-import: kZSAE7HA3zLq/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -91,6 +95,8 @@ export type PlasmicTst__OverridesType = {
   apiRequest4?: Flex__<typeof ApiRequest>;
   datePicker?: Flex__<typeof DatePicker>;
   profile2?: Flex__<typeof ApiRequest>;
+  mahanTest?: Flex__<"div">;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultTstProps {}
@@ -723,8 +729,57 @@ function PlasmicTst__RenderFunc(props: {
                 sty.text__eF2
               )}
             >
-              {"Enter some text"}
+              {"\u0645\u0627\u0647\u0627\u0646"}
             </div>
+            <div className={classNames(projectcss.all, sty.freeBox__f4NMm)}>
+              <Embed
+                className={classNames("__wab_instance", sty.embedHtml__gpUeV)}
+                code={"<div>Paste your embed code via the right sidebar</div>"}
+              />
+            </div>
+          </div>
+          <div
+            data-plasmic-name={"mahanTest"}
+            data-plasmic-override={overrides.mahanTest}
+            className={classNames(projectcss.all, sty.mahanTest)}
+          >
+            <Embed
+              className={classNames("__wab_instance", sty.embedHtml__ruw5X)}
+              code={
+                '<script type="module">\r\n  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";\r\n  import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging.js";\r\n\r\n  // ----------------------------\r\n  // \u06f1. \u06a9\u0627\u0646\u0641\u06cc\u06af Firebase\r\n  // ----------------------------\r\n  const firebaseConfig = {\r\n    apiKey: "AIzaSyCwfbUiQNPQSyL48d0It3MgFOoTwF6AHN4",\r\n    authDomain: "miaan-notify-mn5436.firebaseapp.com",\r\n    projectId: "miaan-notify-mn5436",\r\n    storageBucket: "miaan-notify-mn5436.firebasestorage.app",\r\n    messagingSenderId: "553708011126",\r\n    appId: "1:553708011126:web:dcdff7eacd0ea7b3296957",\r\n    measurementId: "G-9TELS8G020"\r\n  };\r\n\r\n  const app = initializeApp(firebaseConfig);\r\n  const messaging = getMessaging(app);\r\n  const N8N_WEBHOOK_URL = "https://second-n8n.darkube.app/webhook/v1/devices/sync";\r\n  const COOKIE_NAME = "notification_token";\r\n\r\n  // ----------------------------\r\n  // \u062a\u0627\u0628\u0639 \u06a9\u0645\u06a9\u06cc \u0628\u0631\u0627\u06cc \u062e\u0648\u0627\u0646\u062f\u0646 \u06a9\u0648\u06a9\u06cc\r\n  // ----------------------------\r\n  function getCookie(name) {\r\n    const value = `; ${document.cookie}`;\r\n    const parts = value.split(`; ${name}=`);\r\n    if (parts.length === 2) return parts.pop().split(\';\').shift();\r\n    return null;\r\n  }\r\n\r\n  // \u062a\u0627\u0628\u0639 \u06a9\u0645\u06a9\u06cc \u0628\u0631\u0627\u06cc \u0633\u062a \u06a9\u0631\u062f\u0646 \u06a9\u0648\u06a9\u06cc\r\n  function setCookie(name, value, days = 365) {\r\n    const d = new Date();\r\n    d.setTime(d.getTime() + days*24*60*60*1000); // \u062a\u0627\u0631\u06cc\u062e \u0627\u0646\u0642\u0636\u0627\r\n    const expires = "expires="+ d.toUTCString();\r\n    document.cookie = `${name}=${value}; ${expires}; path=/; SameSite=Lax`;\r\n  }\r\n\r\n  // ----------------------------\r\n  // \u06f2. \u062a\u0627\u0628\u0639 \u0627\u0635\u0644\u06cc \u0628\u0631\u0627\u06cc sync \u062a\u0648\u06a9\u0646\r\n  // ----------------------------\r\n  async function syncFcmTokenIfNeeded() {\r\n    try {\r\n      // \u06f2.\u06f1 \u0628\u0631\u0631\u0633\u06cc \u0627\u062c\u0627\u0632\u0647 \u0646\u0648\u062a\u06cc\u0641\r\n      if (Notification.permission !== "granted") return;\r\n\r\n      // \u06f2.\u06f2 \u062b\u0628\u062a Service Worker \u062b\u0627\u0628\u062a\r\n      const swRegistration = await navigator.serviceWorker.register(\r\n        "/firebase-messaging-sw.js"\r\n      );\r\n\r\n      // \u06f2.\u06f3 \u06af\u0631\u0641\u062a\u0646 \u062a\u0648\u06a9\u0646 \u0641\u0639\u0644\u06cc\r\n      const currentToken = await getToken(messaging, {\r\n        vapidKey: "BPBCMzaOwuDnklPI_8EXu6x30lu0-eq0fcZ058u1fXWbHxicUr0fn8MdpyLFdP5QQIOgiIg9zZtVsyCrr7rV15k",\r\n        serviceWorkerRegistration: swRegistration\r\n      });\r\n\r\n      if (!currentToken) return;\r\n\r\n      // \u06f2.\u06f4 \u0645\u0642\u0627\u06cc\u0633\u0647 \u0628\u0627 \u062a\u0648\u06a9\u0646 \u0642\u0628\u0644\u06cc \u062f\u0631 \u06a9\u0648\u06a9\u06cc\r\n      const savedToken = getCookie(COOKIE_NAME);\r\n      if (savedToken === currentToken) return;\r\n\r\n      // \u06f2.\u06f5 \u0627\u0631\u0633\u0627\u0644 \u0628\u0647 \u0628\u06a9\u200c\u0627\u0646\u062f\r\n      await fetch(N8N_WEBHOOK_URL, {\r\n        method: "POST",\r\n        headers: { "Content-Type": "application/json" },\r\n        body: JSON.stringify({\r\n          token: currentToken,\r\n          device: navigator.userAgent\r\n        })\r\n      });\r\n\r\n      // \u06f2.\u06f6 \u0630\u062e\u06cc\u0631\u0647 \u062a\u0648\u06a9\u0646 \u062c\u062f\u06cc\u062f \u062f\u0631 \u06a9\u0648\u06a9\u06cc\r\n      setCookie(COOKIE_NAME, currentToken, 365); // \u06f1 \u0633\u0627\u0644 \u0639\u0645\u0631 \u06a9\u0648\u06a9\u06cc\r\n      console.log("\u2705 \u062a\u0648\u06a9\u0646 \u062c\u062f\u06cc\u062f \u062b\u0628\u062a \u0648 \u0627\u0631\u0633\u0627\u0644 \u0634\u062f (\u06a9\u0648\u06a9\u06cc)");\r\n\r\n    } catch (err) {\r\n      console.error("FCM sync error:", err);\r\n    }\r\n  }\r\n\r\n  // ----------------------------\r\n  // \u06f3. \u0627\u062c\u0631\u0627\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0647\u0646\u06af\u0627\u0645 \u0644\u0648\u062f \u0627\u067e\r\n  // ----------------------------\r\n  window.addEventListener("load", () => {\r\n    syncFcmTokenIfNeeded();\r\n  });\r\n\r\n  // ----------------------------\r\n  // \u06f4. \u062f\u06a9\u0645\u0647 \u0627\u062c\u0627\u0632\u0647 (\u0627\u062e\u062a\u06cc\u0627\u0631\u06cc)\r\n  // ----------------------------\r\n  window.askForNotificationPermission = async () => {\r\n    const permission = await Notification.requestPermission();\r\n    if (permission === "granted") {\r\n      await syncFcmTokenIfNeeded();\r\n    }\r\n  };\r\n</script>\r\n'
+              }
+            />
+
+            <Button
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames("__wab_instance", sty.button)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return window.askForNotificationPermission();
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            />
           </div>
         </div>
       </div>
@@ -742,7 +797,9 @@ const PlasmicDescendants = {
     "apiRequest3",
     "apiRequest4",
     "datePicker",
-    "profile2"
+    "profile2",
+    "mahanTest",
+    "button"
   ],
   progressbar: ["progressbar"],
   progressbar2: ["progressbar2"],
@@ -751,7 +808,9 @@ const PlasmicDescendants = {
   apiRequest3: ["apiRequest3"],
   apiRequest4: ["apiRequest4"],
   datePicker: ["datePicker"],
-  profile2: ["profile2"]
+  profile2: ["profile2"],
+  mahanTest: ["mahanTest", "button"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -766,6 +825,8 @@ type NodeDefaultElementType = {
   apiRequest4: typeof ApiRequest;
   datePicker: typeof DatePicker;
   profile2: typeof ApiRequest;
+  mahanTest: "div";
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -838,6 +899,8 @@ export const PlasmicTst = Object.assign(
     apiRequest4: makeNodeComponent("apiRequest4"),
     datePicker: makeNodeComponent("datePicker"),
     profile2: makeNodeComponent("profile2"),
+    mahanTest: makeNodeComponent("mahanTest"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicTst
     internalVariantProps: PlasmicTst__VariantProps,
