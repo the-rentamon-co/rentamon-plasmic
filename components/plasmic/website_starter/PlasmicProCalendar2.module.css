@@ -1215,10 +1215,12 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
-  padding: 8px;
 }
 @media (max-width: 350px) {
   .freeBox__cBdpD {
