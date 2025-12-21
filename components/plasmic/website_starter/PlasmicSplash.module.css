@@ -78,6 +78,7 @@
   object-fit: cover;
   max-width: 100%;
   width: 60px;
+  display: none;
 }
 .img__ytmI > picture > img {
   object-fit: cover;
