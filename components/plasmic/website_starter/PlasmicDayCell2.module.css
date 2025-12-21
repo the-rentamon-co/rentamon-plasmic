@@ -1313,6 +1313,18 @@
     display: flex;
   }
 }
+.freeBoxdayStatus_firstDaySmartBookingPast___6YvqvYZlR {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-top: 2px;
+  font-family: "Estedad";
+  font-weight: 500;
+  color: #c5c5c5;
+  text-align: center;
+  user-select: none;
+  min-width: 0;
+}
 @media (max-width: 500px) {
   .freeBoxdayStatus_firstDaySmartBookingPast___6YvqvYZlR {
     max-height: 30%;
@@ -1466,7 +1478,7 @@
   }
 }
 .textdayStatus_firstDaySmartBookingPast__lXDgFYZlR {
-  color: var(--token-7MRjbe724hDb);
+  color: #c5c5c5;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -3126,7 +3138,7 @@
   text-align: center;
   white-space: pre;
   padding-right: 0px;
-  color: #2f2f2f;
+  color: #c5c5c5;
   width: 100%;
   height: auto;
   max-width: 100%;
