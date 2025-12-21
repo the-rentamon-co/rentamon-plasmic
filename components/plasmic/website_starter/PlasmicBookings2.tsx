@@ -4243,6 +4243,43 @@ function PlasmicBookings2__RenderFunc(props: {
                           projectcss.all,
                           sty.freeBox__nDPn
                         )}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      let result = "";
+                                      const bookingId = currentItem.booking_id;
+                                      const isMiaan =
+                                        window.location.hostname.includes(
+                                          "miaan.ir"
+                                        );
+                                      const baseUrl = isMiaan
+                                        ? "https://miaan.ir"
+                                        : "https://rentamon.com";
+                                      return window.open(
+                                        `${baseUrl}/bookings/${bookingId}`,
+                                        "_blank"
+                                      );
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+                        }}
                       >
                         {(() => {
                           try {
