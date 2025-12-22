@@ -11,37 +11,42 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
 const messaging = firebase.messaging();
 
-/* دریافت نوتیفیکیشن در پس‌زمینه */
 messaging.onBackgroundMessage(function (payload) {
-  console.log('[firebase-messaging-sw.js] BG message:', payload);
+  console.log('[SW] Background message:', payload);
 
-  const title = payload?.data?.title  "پیام جدید از میان";
+  var data = payload && payload.data ? payload.data : {};
 
-  const options = {
-    body: payload?.data?.body  "",
-    icon: payload?.data?.icon  "https://media.rentamon.com/img%2Flogo-miaan%2Fsign-blue-small.png",
+  var title = data.title ? data.title : "پیام جدید از میان";
+
+  var options = {
+    body: data.body ? data.body : "",
+    icon: data.icon ? data.icon : "https://media.rentamon.com/img%2Flogo-miaan%2Fsign-blue-small.png",
     badge: "https://media.rentamon.com/img%2Flogo-miaan%2Fsign-blue-small.png",
     data: {
-      url: payload?.data?.url  "/"
+      url: data.url ? data.url : "/"
     }
   };
 
   self.registration.showNotification(title, options);
 });
 
-/* هندل کلیک نوتیفیکیشن (Deep Link) */
 self.addEventListener('notificationclick', function (event) {
   event.notification.close();
 
-  const targetUrl = event.notification?.data?.url || "/";
+  var targetUrl = "/";
+  if (event.notification &&
+      event.notification.data &&
+      event.notification.data.url) {
+    targetUrl = event.notification.data.url;
+  }
 
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true })
       .then(function (clientList) {
-        for (const client of clientList) {
+        for (var i = 0; i < clientList.length; i++) {
+          var client = clientList[i];
           if (client.url === targetUrl && 'focus' in client) {
             return client.focus();
           }
