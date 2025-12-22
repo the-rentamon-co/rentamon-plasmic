@@ -2780,6 +2780,41 @@ function PlasmicConnections__RenderFunc(props: {
                                   await $steps["errorToast"];
                               }
 
+                              $steps["goToStatusesConnections"] =
+                                $steps.snappVerify.data.status === true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        destination: `/statuses`
+                                      };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(
+                                              destination.substr(1)
+                                            )
+                                            .scrollIntoView({
+                                              behavior: "smooth"
+                                            });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["goToStatusesConnections"] != null &&
+                                typeof $steps["goToStatusesConnections"] ===
+                                  "object" &&
+                                typeof $steps["goToStatusesConnections"]
+                                  .then === "function"
+                              ) {
+                                $steps["goToStatusesConnections"] =
+                                  await $steps["goToStatusesConnections"];
+                              }
+
                               $steps["platformStatus"] = true
                                 ? (() => {
                                     const actionArgs = {
@@ -2817,41 +2852,6 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["platformStatus"] =
                                   await $steps["platformStatus"];
-                              }
-
-                              $steps["goToStatusesConnections"] =
-                                $steps.snappVerify.data.status === true
-                                  ? (() => {
-                                      const actionArgs = {
-                                        destination: `/statuses`
-                                      };
-                                      return (({ destination }) => {
-                                        if (
-                                          typeof destination === "string" &&
-                                          destination.startsWith("#")
-                                        ) {
-                                          document
-                                            .getElementById(
-                                              destination.substr(1)
-                                            )
-                                            .scrollIntoView({
-                                              behavior: "smooth"
-                                            });
-                                        } else {
-                                          __nextRouter?.push(destination);
-                                        }
-                                      })?.apply(null, [actionArgs]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["goToStatusesConnections"] != null &&
-                                typeof $steps["goToStatusesConnections"] ===
-                                  "object" &&
-                                typeof $steps["goToStatusesConnections"]
-                                  .then === "function"
-                              ) {
-                                $steps["goToStatusesConnections"] =
-                                  await $steps["goToStatusesConnections"];
                               }
                             }}
                             submitsForm={true}
