@@ -299,6 +299,7 @@
   animation: none;
   object-fit: cover;
   max-width: 100%;
+  display: none;
   border-radius: 0px 0px 30px 30px;
 }
 .img__nhEbb > picture > img {
