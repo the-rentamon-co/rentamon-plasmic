@@ -85,7 +85,6 @@ export type PlasmicGuestCalendar__OverridesType = {
   main?: Flex__<"div">;
   profile2?: Flex__<typeof ApiRequest>;
   apiRequest2?: Flex__<typeof ApiRequest>;
-  getPrice?: Flex__<typeof ApiRequest>;
   fetchImage?: Flex__<typeof ApiRequest>;
 };
 
@@ -181,30 +180,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "fetchImage"
-      },
-      {
-        path: "getPrice.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "getPrice"
-      },
-      {
-        path: "getPrice.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "getPrice"
-      },
-      {
-        path: "getPrice.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "getPrice"
       },
       {
         path: "profile2.data",
@@ -484,58 +459,12 @@ function PlasmicGuestCalendar__RenderFunc(props: {
               })()}
             >
               <div className={classNames(projectcss.all, sty.freeBox__cEd)}>
-                <ApiRequest
-                  data-plasmic-name={"getPrice"}
-                  data-plasmic-override={overrides.getPrice}
-                  className={classNames("__wab_instance", sty.getPrice)}
-                  errorDisplay={null}
-                  loadingDisplay={null}
-                  method={"GET"}
-                  onError={async (...eventArgs: any) => {
-                    generateStateOnChangeProp($state, [
-                      "getPrice",
-                      "error"
-                    ]).apply(null, eventArgs);
-                  }}
-                  onLoading={async (...eventArgs: any) => {
-                    generateStateOnChangeProp($state, [
-                      "getPrice",
-                      "loading"
-                    ]).apply(null, eventArgs);
-                  }}
-                  onSuccess={async (...eventArgs: any) => {
-                    generateStateOnChangeProp($state, [
-                      "getPrice",
-                      "data"
-                    ]).apply(null, eventArgs);
-                  }}
-                  ref={ref => {
-                    $refs["getPrice"] = ref;
-                  }}
-                  url={(() => {
+                <Embed
+                  className={classNames("__wab_instance", sty.embedHtml__dgwRk)}
+                  code={(() => {
                     try {
-                      return (() => {
-                        return `https://automation.miaan.ir/webhook/calendar/price?property_id=${$ctx.params.property_id}`;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
-                >
-                  <Embed
-                    className={classNames(
-                      "__wab_instance",
-                      sty.embedHtml__dgwRk
-                    )}
-                    code={(() => {
-                      try {
-                        return `<!DOCTYPE html>
+                      return `
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -544,14 +473,11 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 <style>
   #custom-calendar-container {
     --bg-prebooked: #e2e2e2;
-    --bg-selected: #2727ea; /* غیرفعال شد */
-    --bg-range: #e0e0ff; /* غیرفعال شد */
     --bg-free: #ffffff; 
     --border-free: #ddd; 
     --text-white: #fff; 
     --text-dark: #333; 
     --text-friday: #ff3b30; 
-    --text-price: #666;
     --text-disabled: #ccc;
     --radius: 8px;
     
@@ -591,7 +517,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   }
   
   #custom-calendar-container .day-cell { 
-      aspect-ratio: 1/1.1; 
+      aspect-ratio: 1/1; /* مربعی‌تر شد چون قیمت حذف شد */
       border-radius: var(--radius); 
       display: flex; 
       flex-direction: column; 
@@ -600,21 +526,13 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       font-size: 1rem; 
       position: relative; 
       transition: all 0.2s; 
-      padding: 2px; 
+      padding: 0; 
       margin: 0; 
       user-select: none; 
-      /* cursor: pointer;  <-- تغییر: نشانگر موس دیگر تغییر نکند */
-      cursor: default;
+      cursor: default; /* نشانگر موس معمولی */
       background-color: var(--bg-free);
       border: 1px solid var(--border-free);
       color: var(--text-dark);
-  }
-  
-  .day-price {
-      font-size: 0.8rem; 
-      color: var(--text-price);
-      margin-top: 4px;
-      font-weight: normal;
   }
 
   #custom-calendar-container .friday { color: var(--text-friday); }
@@ -626,25 +544,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       cursor: default; 
   }
   
-  /* استایل‌های مربوط به انتخاب (Selected/Range) نگه داشته شدند اما استفاده نمی‌شوند */
-  #custom-calendar-container .selected { 
-      background-color: var(--bg-selected); 
-      border-color: var(--bg-selected); 
-      color: var(--text-white); 
-      transform: scale(1.05); 
-      z-index: 1; 
-      box-shadow: 0 2px 5px rgba(39, 39, 234, 0.3); 
-  }
-  #custom-calendar-container .selected .day-price { color: #e0e0e0; } 
-  #custom-calendar-container .selected.friday { color: var(--text-white); }
-
-  #custom-calendar-container .in-range {
-      background-color: var(--bg-range); 
-      border-color: var(--bg-selected); 
-      color: var(--text-dark); 
-  }
-  #custom-calendar-container .in-range .day-price { color: var(--text-price); }
-  
   #custom-calendar-container .past-day { opacity: 0; pointer-events: none; }
   #custom-calendar-container .empty-slot { pointer-events: none; }
   #custom-calendar-container .loading { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; }
@@ -655,7 +554,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   
   #custom-calendar-container .box-free { background: #fff; border: 1px solid #ccc; }
   #custom-calendar-container .box-blocked { background: var(--bg-prebooked); }
-  /* #custom-calendar-container .box-selected { background: var(--bg-selected); } */
 </style>
 </head>
 <body>
@@ -678,14 +576,10 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 
 <script>
   var API_BOOKED_DATES = ${JSON.stringify($state.apiRequest2?.data?.dates ?? [])};
-  var API_PRICES_DATA = ${JSON.stringify($state.getPrice?.data ?? [])};
-
-  var MAX_MONTHS_AHEAD = 3;
   
+  // متغیرهای قیمت و انتخاب کاربر حذف شدند
+  var MAX_MONTHS_AHEAD = 3;
   var preBookedDates = new Set();    
-  // var userSelectedDates = new Set();  // <--- کامنت شد: دیگر نیازی به ذخیره انتخاب کاربر نیست
-  var dailyPrices = new Map();
-  // var rangeStart = null;              // <--- کامنت شد: منطق بازه زمانی حذف شد
 
   var today = new Date();
   var todayJ = jalaali.toJalaali(today);
@@ -698,27 +592,13 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   function toPersianNum(num) {
       if(num === undefined || num === null) return "";
       var farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-      return num.toString().replace(/\d/g, function(x) { return farsiDigits[x]; });
+      return num.toString().replace(/\\d/g, function(x) { return farsiDigits[x]; });
   }
   
-  function formatPrice(price) {
-      if (!price) return "";
-      var pStr = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      return toPersianNum(pStr);
-  }
-
   function initCalendar() {
     try {
       if (API_BOOKED_DATES && Array.isArray(API_BOOKED_DATES)) {
         preBookedDates = new Set(API_BOOKED_DATES);
-      }
-
-      if (API_PRICES_DATA && Array.isArray(API_PRICES_DATA)) {
-          API_PRICES_DATA.forEach(function(item) {
-              if(item.price && item.price_date) {
-                  dailyPrices.set(item.price_date, item.price);
-              }
-          });
       }
       
       var loadMsg = document.getElementById('loading-msg');
@@ -728,22 +608,11 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       
       renderCalendar();
       updateNavButtons();
-      // notifyPlasmic(); // <--- کامنت شد: نیازی به ارسال دیتا نیست
       
     } catch (error) {
       console.error("Error initializing calendar:", error);
     }
-    window.dailyPrices = dailyPrices;
   }
-
-  /* // <--- کامنت شد: تابع ارسال دیتا به پلاسمیک دیگر نیاز نیست
-  function notifyPlasmic() {
-      var selectedArray = Array.from(userSelectedDates);
-      window.selectedCalendarDates = selectedArray;
-      var event = new CustomEvent('calendar-change', { detail: selectedArray });
-      window.dispatchEvent(event);
-  }
-  */
 
   function isDateInPast(y, m, d) {
     if (y < todayJ.jy) return true;
@@ -773,9 +642,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       grid.appendChild(emptyCell);
     }
 
-    // منطق سورت کردن تاریخ‌های انتخاب شده کامنت شد چون انتخابی نداریم
-    // var sortedDates = Array.from(userSelectedDates).sort(); ...
-
     for (var day = 1; day <= daysInMonth; day++) {
       var cell = document.createElement('div');
       
@@ -786,9 +652,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       var isPast = isDateInPast(currentYear, currentMonth, day);
       var isPreBooked = preBookedDates.has(dateString);
       
-      var price = dailyPrices.get(dateString);
-      var hasPrice = (price !== undefined && price !== null && price > 0);
-
       var classes = 'day-cell';
       
       if (isPast) {
@@ -797,42 +660,19 @@ function PlasmicGuestCalendar__RenderFunc(props: {
       else if (isPreBooked) {
           classes += ' blocked'; 
       }
-      else if (!hasPrice) {
-          classes += ' blocked';
-      }
       else {
-          // <--- تغییر: منطق بررسی userSelectedDates حذف شد.
-          // همیشه کلاس free را اضافه می‌کنیم چون حالت Readonly است
           classes += ' free';
-          
           var dayOfWeekIndex = (day - 1 + startDayIndex) % 7;
           if (dayOfWeekIndex === 6) classes += ' friday';
       }
       
+      // فقط عدد روز نمایش داده می‌شود
       var content = '<span>' + toPersianNum(day) + '</span>';
-      
-      if (hasPrice && !isPreBooked && !isPast) {
-          var displayPrice = formatPrice(price / 1000); 
-          content += '<span class="day-price">' + displayPrice + '</span>';
-      }
       
       cell.className = classes;
       cell.innerHTML = content;
       
-      /* // <--- بخش اصلی تغییر: تمام لاجیک کلیک کردن کامنت شد (Read-only)
-      
-      (function(dString, isBlock, hasP) {
-          if (!isPast) { 
-              cell.onclick = function() {
-                  if (!rangeStart && (isBlock || !hasP)) { return; }
-                  // ... (تمام کدهای انتخاب بازه) ...
-                  renderCalendar();
-                  notifyPlasmic();
-              };
-          }
-      })(dateString, isPreBooked, hasPrice);
-      */
-
+      // کلیک‌ها کاملاً حذف شدند (Read-only)
       grid.appendChild(cell);
     }
   }
@@ -864,19 +704,20 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   setTimeout(initCalendar, 50);
 </script>
 </body>
-</html>`;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "";
-                        }
-                        throw e;
+</html>
+`;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
                       }
-                    })()}
-                  />
-                </ApiRequest>
+                      throw e;
+                    }
+                  })()}
+                />
+
                 <div
                   className={classNames(projectcss.all, sty.freeBox___7Kz3Y)}
                 >
@@ -989,11 +830,10 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "main", "profile2", "apiRequest2", "getPrice", "fetchImage"],
-  main: ["main", "profile2", "apiRequest2", "getPrice", "fetchImage"],
+  root: ["root", "main", "profile2", "apiRequest2", "fetchImage"],
+  main: ["main", "profile2", "apiRequest2", "fetchImage"],
   profile2: ["profile2"],
-  apiRequest2: ["apiRequest2", "getPrice"],
-  getPrice: ["getPrice"],
+  apiRequest2: ["apiRequest2"],
   fetchImage: ["fetchImage"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1004,7 +844,6 @@ type NodeDefaultElementType = {
   main: "div";
   profile2: typeof ApiRequest;
   apiRequest2: typeof ApiRequest;
-  getPrice: typeof ApiRequest;
   fetchImage: typeof ApiRequest;
 };
 
@@ -1073,7 +912,6 @@ export const PlasmicGuestCalendar = Object.assign(
     main: makeNodeComponent("main"),
     profile2: makeNodeComponent("profile2"),
     apiRequest2: makeNodeComponent("apiRequest2"),
-    getPrice: makeNodeComponent("getPrice"),
     fetchImage: makeNodeComponent("fetchImage"),
 
     // Metadata about props expected for PlasmicGuestCalendar

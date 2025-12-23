@@ -236,10 +236,6 @@
     min-width: 0;
   }
 }
-.getPrice:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .embedHtml__dgwRk:global(.__wab_instance) {
   animation: none;
   max-width: 100%;

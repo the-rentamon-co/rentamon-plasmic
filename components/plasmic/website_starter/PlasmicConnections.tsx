@@ -1306,32 +1306,6 @@ function PlasmicConnections__RenderFunc(props: {
                                     await $steps["errorToast"];
                                 }
 
-                                $steps["jabamaContact"] =
-                                  $state.form.value.jabamaOTP !== undefined
-                                    ? (() => {
-                                        const actionArgs = {
-                                          args: [
-                                            "POST",
-                                            "https://nb.miaan.ir/webhook/jabamacontact",
-                                            undefined,
-                                            undefined
-                                          ]
-                                        };
-                                        return $globalActions[
-                                          "Fragment.apiRequest"
-                                        ]?.apply(null, [...actionArgs.args]);
-                                      })()
-                                    : undefined;
-                                if (
-                                  $steps["jabamaContact"] != null &&
-                                  typeof $steps["jabamaContact"] === "object" &&
-                                  typeof $steps["jabamaContact"].then ===
-                                    "function"
-                                ) {
-                                  $steps["jabamaContact"] =
-                                    await $steps["jabamaContact"];
-                                }
-
                                 $steps["platformStatus"] = true
                                   ? (() => {
                                       const actionArgs = {
@@ -1408,6 +1382,32 @@ function PlasmicConnections__RenderFunc(props: {
                                 ) {
                                   $steps["goToStatusesConnections"] =
                                     await $steps["goToStatusesConnections"];
+                                }
+
+                                $steps["jabamaContact"] =
+                                  $state.form.value.jabamaOTP !== undefined
+                                    ? (() => {
+                                        const actionArgs = {
+                                          args: [
+                                            "POST",
+                                            "https://nb.miaan.ir/webhook/jabamacontact",
+                                            undefined,
+                                            undefined
+                                          ]
+                                        };
+                                        return $globalActions[
+                                          "Fragment.apiRequest"
+                                        ]?.apply(null, [...actionArgs.args]);
+                                      })()
+                                    : undefined;
+                                if (
+                                  $steps["jabamaContact"] != null &&
+                                  typeof $steps["jabamaContact"] === "object" &&
+                                  typeof $steps["jabamaContact"].then ===
+                                    "function"
+                                ) {
+                                  $steps["jabamaContact"] =
+                                    await $steps["jabamaContact"];
                                 }
 
                                 $steps["updateVerifyBtn2"] = true
@@ -2032,45 +2032,6 @@ function PlasmicConnections__RenderFunc(props: {
                                   await $steps["errorToast"];
                               }
 
-                              $steps["jajigacontact"] =
-                                $state.form.value.jajigaOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          "https://nb.miaan.ir/webhook/jajigacontact",
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return $state.user_id;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["jajigacontact"] != null &&
-                                typeof $steps["jajigacontact"] === "object" &&
-                                typeof $steps["jajigacontact"].then ===
-                                  "function"
-                              ) {
-                                $steps["jajigacontact"] =
-                                  await $steps["jajigacontact"];
-                              }
-
                               $steps["platformStatus"] = true
                                 ? (() => {
                                     const actionArgs = {
@@ -2143,6 +2104,45 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["goToStatusesConnections"] =
                                   await $steps["goToStatusesConnections"];
+                              }
+
+                              $steps["jajigacontact"] =
+                                $state.form.value.jajigaOTP !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "POST",
+                                          "https://nb.miaan.ir/webhook/jajigacontact",
+                                          undefined,
+                                          (() => {
+                                            try {
+                                              return $state.user_id;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["jajigacontact"] != null &&
+                                typeof $steps["jajigacontact"] === "object" &&
+                                typeof $steps["jajigacontact"].then ===
+                                  "function"
+                              ) {
+                                $steps["jajigacontact"] =
+                                  await $steps["jajigacontact"];
                               }
                             }}
                             submitsForm={true}
@@ -3546,44 +3546,6 @@ function PlasmicConnections__RenderFunc(props: {
                                   await $steps["errorToast"];
                               }
 
-                              $steps["shabContact"] =
-                                $state.form.value.shabOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          "https://nb.miaan.ir/webhook/shabcontact",
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return $state.user_id;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["shabContact"] != null &&
-                                typeof $steps["shabContact"] === "object" &&
-                                typeof $steps["shabContact"].then === "function"
-                              ) {
-                                $steps["shabContact"] =
-                                  await $steps["shabContact"];
-                              }
-
                               $steps["platformStatus"] = true
                                 ? (() => {
                                     const actionArgs = {
@@ -3658,6 +3620,44 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["goToStatusesConnections"] =
                                   await $steps["goToStatusesConnections"];
+                              }
+
+                              $steps["shabContact"] =
+                                $state.form.value.shabOTP !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "POST",
+                                          "https://nb.miaan.ir/webhook/shabcontact",
+                                          undefined,
+                                          (() => {
+                                            try {
+                                              return $state.user_id;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["shabContact"] != null &&
+                                typeof $steps["shabContact"] === "object" &&
+                                typeof $steps["shabContact"].then === "function"
+                              ) {
+                                $steps["shabContact"] =
+                                  await $steps["shabContact"];
                               }
 
                               $steps["invokeGlobalAction"] = true
@@ -4307,45 +4307,6 @@ function PlasmicConnections__RenderFunc(props: {
                                   await $steps["errorToast"];
                               }
 
-                              $steps["otaghakContact"] =
-                                $state.form.value.otaghakOTP !== undefined
-                                  ? (() => {
-                                      const actionArgs = {
-                                        args: [
-                                          "POST",
-                                          "https://nb.miaan.ir/webhook/otaghakcontact",
-                                          undefined,
-                                          (() => {
-                                            try {
-                                              return $state.user_id;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return undefined;
-                                              }
-                                              throw e;
-                                            }
-                                          })()
-                                        ]
-                                      };
-                                      return $globalActions[
-                                        "Fragment.apiRequest"
-                                      ]?.apply(null, [...actionArgs.args]);
-                                    })()
-                                  : undefined;
-                              if (
-                                $steps["otaghakContact"] != null &&
-                                typeof $steps["otaghakContact"] === "object" &&
-                                typeof $steps["otaghakContact"].then ===
-                                  "function"
-                              ) {
-                                $steps["otaghakContact"] =
-                                  await $steps["otaghakContact"];
-                              }
-
                               $steps["platformStatus"] = true
                                 ? (() => {
                                     const actionArgs = {
@@ -4421,6 +4382,45 @@ function PlasmicConnections__RenderFunc(props: {
                               ) {
                                 $steps["goToStatusesConnections"] =
                                   await $steps["goToStatusesConnections"];
+                              }
+
+                              $steps["otaghakContact"] =
+                                $state.form.value.otaghakOTP !== undefined
+                                  ? (() => {
+                                      const actionArgs = {
+                                        args: [
+                                          "POST",
+                                          "https://nb.miaan.ir/webhook/otaghakcontact",
+                                          undefined,
+                                          (() => {
+                                            try {
+                                              return $state.user_id;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return undefined;
+                                              }
+                                              throw e;
+                                            }
+                                          })()
+                                        ]
+                                      };
+                                      return $globalActions[
+                                        "Fragment.apiRequest"
+                                      ]?.apply(null, [...actionArgs.args]);
+                                    })()
+                                  : undefined;
+                              if (
+                                $steps["otaghakContact"] != null &&
+                                typeof $steps["otaghakContact"] === "object" &&
+                                typeof $steps["otaghakContact"].then ===
+                                  "function"
+                              ) {
+                                $steps["otaghakContact"] =
+                                  await $steps["otaghakContact"];
                               }
                             }}
                             submitsForm={true}

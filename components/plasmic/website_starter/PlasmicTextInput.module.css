@@ -69,6 +69,7 @@
   font-family: "Estedad";
   font-weight: 400;
   text-align: justify;
+  color: #000000;
   min-width: 0;
   border-radius: 30%;
   border-width: 0px;
@@ -92,10 +93,26 @@
   outline: none;
 }
 .root .input:focus {
+  color: #444444;
   outline: none;
 }
 .root .input::placeholder {
   color: #706f6c;
+}
+@media (max-width: 1200px) {
+  .root .input:focus {
+    outline: none;
+  }
+}
+@media (max-width: 500px) {
+  .root .input:focus {
+    outline: none;
+  }
+}
+@media (max-width: 350px) {
+  .root .input:focus {
+    outline: none;
+  }
 }
 .rootcolor_dark .inputcolor_dark::placeholder {
   color: #c8c7c1;
