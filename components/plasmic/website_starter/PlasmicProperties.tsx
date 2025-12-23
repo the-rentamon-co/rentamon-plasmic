@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
@@ -87,6 +88,7 @@ export const PlasmicProperties__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicProperties__OverridesType = {
   root?: Flex__<"div">;
+  embedHtml?: Flex__<typeof Embed>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
@@ -251,6 +253,15 @@ function PlasmicProperties__RenderFunc(props: {
             sty.root
           )}
         >
+          <Embed
+            data-plasmic-name={"embedHtml"}
+            data-plasmic-override={overrides.embedHtml}
+            className={classNames("__wab_instance", sty.embedHtml)}
+            code={
+              "<div id=\"auth-loader\" style=\"position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif;\">\r\n  <div style=\"width:40px; height:40px; border:4px solid #eee; border-top:4px solid #2727ea; border-radius:50%; animation:spin 1s linear infinite;\"></div>\r\n  <p style=\"margin-top:20px; color:#666;\" id=\"loader-text\">\u062f\u0631 \u062d\u0627\u0644 \u0628\u0631\u0631\u0633\u06cc \u0648\u0636\u0639\u06cc\u062a \u0648\u0631\u0648\u062f...</p>\r\n</div>\r\n\r\n<style>\r\n@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }\r\n</style>\r\n\r\n<script>\r\n(async function() {\r\n    const params = new URLSearchParams(window.location.search);\r\n    const code = params.get('code'); \r\n    const postToken = params.get('post_token');\r\n    const returnUrl = params.get('return_url');\r\n\r\n    // \u0633\u0646\u0627\u0631\u06cc\u0648 \u06f1: \u0628\u0627\u0632\u06af\u0634\u062a \u0627\u0632 \u062f\u06cc\u0648\u0627\u0631 \u0628\u0627 \u06a9\u062f \u062a\u0627\u06cc\u06cc\u062f\r\n    if (code) {\r\n        document.getElementById('loader-text').innerText = \"\u062f\u0631 \u062d\u0627\u0644 \u0648\u0631\u0648\u062f \u0628\u0647 \u062d\u0633\u0627\u0628...\";\r\n        // \u0627\u06cc\u0646\u062c\u0627 \u0628\u0627\u06cc\u062f \u06a9\u062f \u0631\u0627 \u0628\u0647 \u0628\u06a9\u200c\u0646\u062f \u0628\u0641\u0631\u0633\u062a\u06cc\u062f \u062a\u0627 \u0644\u0627\u06af\u06cc\u0646 \u0627\u0646\u062c\u0627\u0645 \u0634\u0648\u062f\r\n        // \u0641\u0639\u0644\u0627 \u0644\u0648\u062f\u0631 \u0631\u0627 \u0628\u0631\u0645\u06cc\u200c\u062f\u0627\u0631\u06cc\u0645 \u062a\u0627 \u0635\u0641\u062d\u0647 \u0644\u0648\u062f \u0634\u0648\u062f\r\n        console.log(\"User returned with Code:\", code);\r\n        \r\n        // TODO: \u0627\u0631\u0633\u0627\u0644 \u06a9\u062f \u0628\u0647 n8n \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0634\u0645\u0627\u0631\u0647 \u0648 \u0644\u0627\u06af\u06cc\u0646\r\n        \r\n        document.getElementById('auth-loader').style.display = 'none'; \r\n        return;\r\n    }\r\n\r\n    // \u0633\u0646\u0627\u0631\u06cc\u0648 \u06f2: \u0648\u0631\u0648\u062f \u0627\u0648\u0644\u06cc\u0647 \u0627\u0632 \u062f\u06a9\u0645\u0647 \u0627\u0641\u0632\u0648\u0646\u0647 \u062f\u06cc\u0648\u0627\u0631\r\n    if (postToken) {\r\n        document.getElementById('loader-text').innerText = \"\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u0635\u0641\u062d\u0647 \u0648\u0631\u0648\u062f \u062f\u06cc\u0648\u0627\u0631...\";\r\n        \r\n        // \u0622\u062f\u0631\u0633 \u0648\u0628\u200c\u0647\u0648\u06a9 \u062e\u0648\u062f\u062a\u0627\u0646 \u0631\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0628\u06af\u0630\u0627\u0631\u06cc\u062f\r\n        const N8N_AUTH_URL = \"https://automation.rentamon.com/webhook/api/divar/auth-init\"; \r\n\r\n        try {\r\n            const response = await fetch(N8N_AUTH_URL, {\r\n                method: 'POST',\r\n                headers: {'Content-Type': 'application/json'},\r\n                body: JSON.stringify({\r\n                    post_token: postToken,\r\n                    return_url: returnUrl\r\n                })\r\n            });\r\n\r\n            const data = await response.json();\r\n\r\n            if (data && data.auth_url) {\r\n                window.location.href = data.auth_url;\r\n            } else {\r\n                alert(\"\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0644\u06cc\u0646\u06a9 \u0648\u0631\u0648\u062f.\");\r\n                document.getElementById('auth-loader').style.display = 'none';\r\n            }\r\n        } catch (error) {\r\n            console.error(error);\r\n            alert(\"\u062e\u0637\u0627\u06cc \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0633\u0631\u0648\u0631.\");\r\n            document.getElementById('auth-loader').style.display = 'none';\r\n        }\r\n    } else {\r\n        // \u0633\u0646\u0627\u0631\u06cc\u0648 \u06f3: \u06a9\u0627\u0631\u0628\u0631 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648\u0627\u0631\u062f \u0634\u062f\u0647 (\u0646\u0647 \u0627\u0632 \u062f\u06cc\u0648\u0627\u0631\u060c \u0646\u0647 \u0627\u0632 \u0644\u0627\u06af\u06cc\u0646)\r\n        // \u0644\u0648\u062f\u0631 \u0631\u0627 \u0628\u0631\u0645\u06cc\u200c\u062f\u0627\u0631\u06cc\u0645 \u062a\u0627 \u0635\u0641\u062d\u0647 \u0631\u0627 \u0628\u0628\u06cc\u0646\u062f\r\n        document.getElementById('auth-loader').style.display = 'none';\r\n    }\r\n})();\r\n</script>"
+            }
+          />
+
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
             <NavbarRntFooter
               data-plasmic-name={"navbarRntFooter"}
@@ -1665,6 +1676,7 @@ function PlasmicProperties__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "embedHtml",
     "navbarRntFooter",
     "header",
     "sideBar2",
@@ -1678,6 +1690,7 @@ const PlasmicDescendants = {
     "clarityRntComponent",
     "faviconRntComponent"
   ],
+  embedHtml: ["embedHtml"],
   navbarRntFooter: ["navbarRntFooter"],
   header: ["header", "sideBar2", "sidebarLite", "profile2"],
   sideBar2: ["sideBar2"],
@@ -1696,6 +1709,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  embedHtml: typeof Embed;
   navbarRntFooter: typeof NavbarRntFooter;
   header: "div";
   sideBar2: typeof SideBar2;
@@ -1772,6 +1786,7 @@ export const PlasmicProperties = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    embedHtml: makeNodeComponent("embedHtml"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
