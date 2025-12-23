@@ -393,10 +393,10 @@ function PlasmicButton2__RenderFunc(props: {
         hasVariant($state, "iconOnly", "iconOnly")
           ? false
           : hasVariant($state, "showEndIcon", "showEndIcon")
-          ? true
-          : hasVariant($state, "showStartIcon", "showStartIcon")
-          ? false
-          : false
+            ? true
+            : hasVariant($state, "showStartIcon", "showStartIcon")
+              ? false
+              : false
       )
         ? renderPlasmicSlot({
             defaultContents: (
@@ -475,10 +475,10 @@ function PlasmicButton2__RenderFunc(props: {
         hasVariant($state, "iconOnly", "iconOnly")
           ? true
           : hasVariant($state, "color", "blue")
-          ? false
-          : hasVariant($state, "showStartIcon", "showStartIcon")
-          ? true
-          : false
+            ? false
+            : hasVariant($state, "showStartIcon", "showStartIcon")
+              ? true
+              : false
       )
         ? renderPlasmicSlot({
             defaultContents: (
@@ -609,7 +609,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicButton2__VariantsArgs;
     args?: PlasmicButton2__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicButton2__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicButton2__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicButton2__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

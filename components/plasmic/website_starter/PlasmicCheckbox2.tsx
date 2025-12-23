@@ -282,7 +282,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicCheckbox2__VariantsArgs;
     args?: PlasmicCheckbox2__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicCheckbox2__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicCheckbox2__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicCheckbox2__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

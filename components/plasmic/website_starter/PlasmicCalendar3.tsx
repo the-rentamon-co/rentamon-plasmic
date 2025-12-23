@@ -223,9 +223,8 @@ function PlasmicCalendar3__RenderFunc(props: {
                 typeof $steps["updateDatePickerValue"] === "object" &&
                 typeof $steps["updateDatePickerValue"].then === "function"
               ) {
-                $steps["updateDatePickerValue"] = await $steps[
-                  "updateDatePickerValue"
-                ];
+                $steps["updateDatePickerValue"] =
+                  await $steps["updateDatePickerValue"];
               }
             }}
           >
@@ -273,9 +272,8 @@ function PlasmicCalendar3__RenderFunc(props: {
               typeof $steps["updateDatePickerValue"] === "object" &&
               typeof $steps["updateDatePickerValue"].then === "function"
             ) {
-              $steps["updateDatePickerValue"] = await $steps[
-                "updateDatePickerValue"
-              ];
+              $steps["updateDatePickerValue"] =
+                await $steps["updateDatePickerValue"];
             }
           }).apply(null, eventArgs);
         }}
@@ -323,7 +321,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicCalendar3__VariantsArgs;
     args?: PlasmicCalendar3__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicCalendar3__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicCalendar3__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicCalendar3__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

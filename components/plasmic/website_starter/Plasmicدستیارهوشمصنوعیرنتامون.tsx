@@ -489,7 +489,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicدستیارهوشمصنوعیرنتامون__VariantsArgs;
     args?: Plasmicدستیارهوشمصنوعیرنتامون__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicدستیارهوشمصنوعیرنتامون__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicدستیارهوشمصنوعیرنتامون__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicدستیارهوشمصنوعیرنتامون__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

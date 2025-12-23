@@ -387,9 +387,8 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                         typeof $steps["updateJajigaModalOpen"].then ===
                           "function"
                       ) {
-                        $steps["updateJajigaModalOpen"] = await $steps[
-                          "updateJajigaModalOpen"
-                        ];
+                        $steps["updateJajigaModalOpen"] =
+                          await $steps["updateJajigaModalOpen"];
                       }
                     }}
                     src={
@@ -478,9 +477,8 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                         typeof $steps["updateJabamaModalOpen"].then ===
                           "function"
                       ) {
-                        $steps["updateJabamaModalOpen"] = await $steps[
-                          "updateJabamaModalOpen"
-                        ];
+                        $steps["updateJabamaModalOpen"] =
+                          await $steps["updateJabamaModalOpen"];
                       }
                     }}
                     src={
@@ -949,9 +947,8 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                         typeof $steps["invokeGlobalAction"] === "object" &&
                         typeof $steps["invokeGlobalAction"].then === "function"
                       ) {
-                        $steps["invokeGlobalAction"] = await $steps[
-                          "invokeGlobalAction"
-                        ];
+                        $steps["invokeGlobalAction"] =
+                          await $steps["invokeGlobalAction"];
                       }
                     }}
                   >
@@ -1112,7 +1109,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicPlatformConnectionOtp__VariantsArgs;
     args?: PlasmicPlatformConnectionOtp__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicPlatformConnectionOtp__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicPlatformConnectionOtp__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicPlatformConnectionOtp__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

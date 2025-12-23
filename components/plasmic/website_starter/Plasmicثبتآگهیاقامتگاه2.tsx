@@ -216,9 +216,8 @@ function Plasmicثبتآگهیاقامتگاه2__RenderFunc(props: {
                 typeof $steps["goToثبتآگهیاقامتگاه"] === "object" &&
                 typeof $steps["goToثبتآگهیاقامتگاه"].then === "function"
               ) {
-                $steps["goToثبتآگهیاقامتگاه"] = await $steps[
-                  "goToثبتآگهیاقامتگاه"
-                ];
+                $steps["goToثبتآگهیاقامتگاه"] =
+                  await $steps["goToثبتآگهیاقامتگاه"];
               }
             }}
           />
@@ -259,7 +258,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicثبتآگهیاقامتگاه2__VariantsArgs;
     args?: Plasmicثبتآگهیاقامتگاه2__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicثبتآگهیاقامتگاه2__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicثبتآگهیاقامتگاه2__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicثبتآگهیاقامتگاه2__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

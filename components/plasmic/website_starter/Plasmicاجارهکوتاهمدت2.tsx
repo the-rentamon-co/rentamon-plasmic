@@ -197,9 +197,8 @@ function Plasmicاجارهکوتاهمدت2__RenderFunc(props: {
                 typeof $steps["goToچراجارهکوتاهمدت"] === "object" &&
                 typeof $steps["goToچراجارهکوتاهمدت"].then === "function"
               ) {
-                $steps["goToچراجارهکوتاهمدت"] = await $steps[
-                  "goToچراجارهکوتاهمدت"
-                ];
+                $steps["goToچراجارهکوتاهمدت"] =
+                  await $steps["goToچراجارهکوتاهمدت"];
               }
             }}
           />
@@ -240,7 +239,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicاجارهکوتاهمدت2__VariantsArgs;
     args?: Plasmicاجارهکوتاهمدت2__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicاجارهکوتاهمدت2__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicاجارهکوتاهمدت2__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicاجارهکوتاهمدت2__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

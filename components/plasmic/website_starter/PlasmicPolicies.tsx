@@ -240,7 +240,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicPolicies__VariantsArgs;
     args?: PlasmicPolicies__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicPolicies__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicPolicies__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicPolicies__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

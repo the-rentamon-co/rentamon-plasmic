@@ -202,9 +202,8 @@ function Plasmicسایتاجارهویلا2__RenderFunc(props: {
                 typeof $steps["goToمقایسهبهترینسایتاجارهویلا"].then ===
                   "function"
               ) {
-                $steps["goToمقایسهبهترینسایتاجارهویلا"] = await $steps[
-                  "goToمقایسهبهترینسایتاجارهویلا"
-                ];
+                $steps["goToمقایسهبهترینسایتاجارهویلا"] =
+                  await $steps["goToمقایسهبهترینسایتاجارهویلا"];
               }
             }}
           />
@@ -245,7 +244,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicسایتاجارهویلا2__VariantsArgs;
     args?: Plasmicسایتاجارهویلا2__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicسایتاجارهویلا2__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicسایتاجارهویلا2__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicسایتاجارهویلا2__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

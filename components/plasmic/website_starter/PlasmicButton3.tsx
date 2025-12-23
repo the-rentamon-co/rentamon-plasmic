@@ -378,10 +378,10 @@ function PlasmicButton3__RenderFunc(props: {
         hasVariant($state, "type", "bordered") && $ccVariants["pressed"]
           ? true
           : hasVariant($state, "type", "bordered") && $ccVariants["hovered"]
-          ? true
-          : hasVariant($state, "type", "soft")
-          ? true
-          : false
+            ? true
+            : hasVariant($state, "type", "soft")
+              ? true
+              : false
       ) ? (
         <div
           data-plasmic-name={"softBackground"}
@@ -973,7 +973,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicButton3__VariantsArgs;
     args?: PlasmicButton3__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicButton3__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicButton3__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicButton3__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

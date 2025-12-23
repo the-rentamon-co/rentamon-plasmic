@@ -231,8 +231,8 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
                 hasVariant(globalVariants, "screen", "smallMobile")
                   ? "26px"
                   : hasVariant(globalVariants, "screen", "mobile")
-                  ? "28px"
-                  : "43px"
+                    ? "28px"
+                    : "43px"
               }
               displayMaxHeight={"none"}
               displayMaxWidth={"100%"}
@@ -569,7 +569,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicToastMessageRnt__VariantsArgs;
     args?: PlasmicToastMessageRnt__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicToastMessageRnt__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicToastMessageRnt__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicToastMessageRnt__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

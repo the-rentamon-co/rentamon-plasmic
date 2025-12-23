@@ -215,9 +215,8 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
             typeof $steps["updateSelectedItemClicked"] === "object" &&
             typeof $steps["updateSelectedItemClicked"].then === "function"
           ) {
-            $steps["updateSelectedItemClicked"] = await $steps[
-              "updateSelectedItemClicked"
-            ];
+            $steps["updateSelectedItemClicked"] =
+              await $steps["updateSelectedItemClicked"];
           }
         }}
       >
@@ -394,7 +393,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicDropdownRntComponent__VariantsArgs;
     args?: PlasmicDropdownRntComponent__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicDropdownRntComponent__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicDropdownRntComponent__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicDropdownRntComponent__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

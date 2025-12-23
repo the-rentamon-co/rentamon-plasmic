@@ -219,7 +219,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicWallet2__VariantsArgs;
     args?: PlasmicWallet2__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicWallet2__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicWallet2__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicWallet2__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

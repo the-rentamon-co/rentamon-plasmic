@@ -221,9 +221,8 @@ function Plasmicمبنایمحاسبات__RenderFunc(props: {
                   typeof $steps["goToمقایسهبهترینسایتاجارهویلا"].then ===
                     "function"
                 ) {
-                  $steps["goToمقایسهبهترینسایتاجارهویلا"] = await $steps[
-                    "goToمقایسهبهترینسایتاجارهویلا"
-                  ];
+                  $steps["goToمقایسهبهترینسایتاجارهویلا"] =
+                    await $steps["goToمقایسهبهترینسایتاجارهویلا"];
                 }
               }}
             />
@@ -272,7 +271,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicمبنایمحاسبات__VariantsArgs;
     args?: Plasmicمبنایمحاسبات__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicمبنایمحاسبات__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicمبنایمحاسبات__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicمبنایمحاسبات__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

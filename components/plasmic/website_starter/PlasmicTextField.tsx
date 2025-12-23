@@ -555,10 +555,10 @@ function PlasmicTextField__RenderFunc(props: {
             hasVariant($state, "iconEnd", "iconEnd")
               ? ["right", "left"]
               : hasVariant($state, "iconEnd", "iconEnd")
-              ? ["right"]
-              : hasVariant($state, "iconStart", "iconStart")
-              ? ["left"]
-              : undefined
+                ? ["right"]
+                : hasVariant($state, "iconStart", "iconStart")
+                  ? ["left"]
+                  : undefined
           }
           placeholder={args.placeholder}
         />
@@ -593,10 +593,10 @@ function PlasmicTextField__RenderFunc(props: {
               hasVariant($state, "iconEnd", "iconEnd")
                 ? ["right", "left"]
                 : hasVariant($state, "iconEnd", "iconEnd")
-                ? ["right"]
-                : hasVariant($state, "iconStart", "iconStart")
-                ? ["left"]
-                : undefined
+                  ? ["right"]
+                  : hasVariant($state, "iconStart", "iconStart")
+                    ? ["left"]
+                    : undefined
             }
             placeholder={args.placeholder}
           />
@@ -679,7 +679,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicTextField__VariantsArgs;
     args?: PlasmicTextField__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicTextField__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicTextField__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicTextField__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

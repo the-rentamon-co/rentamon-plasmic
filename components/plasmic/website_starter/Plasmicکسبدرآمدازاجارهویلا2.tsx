@@ -208,9 +208,8 @@ function Plasmicکسبدرآمدازاجارهویلا2__RenderFunc(props: {
                   typeof $steps["goToراهنمایجامعدرآمدازاجارهویلا"].then ===
                     "function"
                 ) {
-                  $steps["goToراهنمایجامعدرآمدازاجارهویلا"] = await $steps[
-                    "goToراهنمایجامعدرآمدازاجارهویلا"
-                  ];
+                  $steps["goToراهنمایجامعدرآمدازاجارهویلا"] =
+                    await $steps["goToراهنمایجامعدرآمدازاجارهویلا"];
                 }
               }}
             />
@@ -259,7 +258,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmicکسبدرآمدازاجارهویلا2__VariantsArgs;
     args?: Plasmicکسبدرآمدازاجارهویلا2__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<Plasmicکسبدرآمدازاجارهویلا2__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<Plasmicکسبدرآمدازاجارهویلا2__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<Plasmicکسبدرآمدازاجارهویلا2__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

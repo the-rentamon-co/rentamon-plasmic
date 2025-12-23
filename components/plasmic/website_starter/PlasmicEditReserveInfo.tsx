@@ -748,9 +748,8 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
                   typeof $steps["invokeGlobalAction"] === "object" &&
                   typeof $steps["invokeGlobalAction"].then === "function"
                 ) {
-                  $steps["invokeGlobalAction"] = await $steps[
-                    "invokeGlobalAction"
-                  ];
+                  $steps["invokeGlobalAction"] =
+                    await $steps["invokeGlobalAction"];
                 }
               }}
               submitsForm={false}
@@ -862,7 +861,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicEditReserveInfo__VariantsArgs;
     args?: PlasmicEditReserveInfo__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicEditReserveInfo__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicEditReserveInfo__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicEditReserveInfo__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

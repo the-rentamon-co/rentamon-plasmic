@@ -949,9 +949,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                             typeof $steps["invokeGlobalAction"].then ===
                               "function"
                           ) {
-                            $steps["invokeGlobalAction"] = await $steps[
-                              "invokeGlobalAction"
-                            ];
+                            $steps["invokeGlobalAction"] =
+                              await $steps["invokeGlobalAction"];
                           }
                         }}
                         submitsForm={true}
@@ -2423,7 +2422,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicCrossListing__VariantsArgs;
     args?: PlasmicCrossListing__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicCrossListing__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicCrossListing__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicCrossListing__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

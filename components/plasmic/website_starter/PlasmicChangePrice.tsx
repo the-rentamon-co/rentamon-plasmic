@@ -283,7 +283,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicChangePrice__VariantsArgs;
     args?: PlasmicChangePrice__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicChangePrice__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicChangePrice__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicChangePrice__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props

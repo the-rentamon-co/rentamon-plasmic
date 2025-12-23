@@ -617,10 +617,10 @@ function PlasmicSelect__RenderFunc(props: {
               hasVariant($state, "isDisabled", "isDisabled")
                 ? ArrowDownSvgrepoCom1SvgIcon
                 : hasVariant($state, "isOpen", "isOpen")
-                ? ChevronUpSvg2Icon
-                : hasVariant($state, "showPlaceholder", "showPlaceholder")
-                ? ArrowDownSvgrepoCom1SvgIcon
-                : ArrowDownSvgrepoCom1SvgIcon
+                  ? ChevronUpSvg2Icon
+                  : hasVariant($state, "showPlaceholder", "showPlaceholder")
+                    ? ArrowDownSvgrepoCom1SvgIcon
+                    : ArrowDownSvgrepoCom1SvgIcon
             }
             className={classNames(projectcss.all, sty.dropdownIcon, {
               [sty.dropdownIcon___focusVisibleWithin]:
@@ -799,7 +799,9 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicSelect__VariantsArgs;
     args?: PlasmicSelect__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicSelect__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } &
+    // Specify variants directly as props
+    Omit<PlasmicSelect__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
     Omit<PlasmicSelect__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
