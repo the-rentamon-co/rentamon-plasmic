@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
@@ -331,22 +332,15 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.stack)}
               />
             </div>
-            {(
-              hasVariant(globalVariants, "screen", "smallMobile")
-                ? (() => {
-                    try {
-                      return $props.navPage == "menu";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
-                      }
-                      throw e;
-                    }
-                  })()
-                : hasVariant(globalVariants, "screen", "mobile")
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal___6Iwl)}
+              direction={"up"}
+              duration={300}
+              effect={"fade"}
+              triggerOnce={true}
+            >
+              {(
+                hasVariant(globalVariants, "screen", "smallMobile")
                   ? (() => {
                       try {
                         return $props.navPage == "menu";
@@ -360,29 +354,44 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                         throw e;
                       }
                     })()
-                  : true
-            ) ? (
-              <div
-                data-plasmic-name={"top4"}
-                data-plasmic-override={overrides.top4}
-                className={classNames(projectcss.all, sty.top4)}
-              >
+                  : hasVariant(globalVariants, "screen", "mobile")
+                    ? (() => {
+                        try {
+                          return $props.navPage == "menu";
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return false;
+                          }
+                          throw e;
+                        }
+                      })()
+                    : true
+              ) ? (
                 <div
-                  data-plasmic-name={"backMenu"}
-                  data-plasmic-override={overrides.backMenu}
-                  className={classNames(projectcss.all, sty.backMenu)}
+                  data-plasmic-name={"top4"}
+                  data-plasmic-override={overrides.top4}
+                  className={classNames(projectcss.all, sty.top4)}
                 >
-                  <NavMenuSvgBlueSvg2Icon
-                    className={classNames(
-                      projectcss.all,
-                      sty.svg___6PDfU,
-                      "fadeinf"
-                    )}
-                    role={"img"}
-                  />
+                  <div
+                    data-plasmic-name={"backMenu"}
+                    data-plasmic-override={overrides.backMenu}
+                    className={classNames(projectcss.all, sty.backMenu)}
+                  >
+                    <NavMenuSvgBlueSvg2Icon
+                      className={classNames(
+                        projectcss.all,
+                        sty.svg___6PDfU,
+                        "fadeinf"
+                      )}
+                      role={"img"}
+                    />
+                  </div>
                 </div>
-              </div>
-            ) : null}
+              ) : null}
+            </Reveal>
             {(
               hasVariant(globalVariants, "screen", "smallMobile")
                 ? (() => {
@@ -527,44 +536,51 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               }
             }}
           >
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return $props.navPage == "calendar";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__wSpob)}
+              direction={"up"}
+              duration={300}
+              triggerOnce={true}
+            >
+              {(
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return $props.navPage == "calendar";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()
-                : true
-            ) ? (
-              <div
-                data-plasmic-name={"top1"}
-                data-plasmic-override={overrides.top1}
-                className={classNames(projectcss.all, sty.top1)}
-              >
+                    })()
+                  : true
+              ) ? (
                 <div
-                  data-plasmic-name={"backCal"}
-                  data-plasmic-override={overrides.backCal}
-                  className={classNames(projectcss.all, sty.backCal)}
+                  data-plasmic-name={"top1"}
+                  data-plasmic-override={overrides.top1}
+                  className={classNames(projectcss.all, sty.top1)}
                 >
-                  <NavCalendarSvgBlueSvgIcon
-                    className={classNames(
-                      projectcss.all,
-                      sty.svg___5FnM,
-                      "fadeinf"
-                    )}
-                    role={"img"}
-                  />
+                  <div
+                    data-plasmic-name={"backCal"}
+                    data-plasmic-override={overrides.backCal}
+                    className={classNames(projectcss.all, sty.backCal)}
+                  >
+                    <NavCalendarSvgBlueSvgIcon
+                      className={classNames(
+                        projectcss.all,
+                        sty.svg___5FnM,
+                        "fadeinf"
+                      )}
+                      role={"img"}
+                    />
+                  </div>
                 </div>
-              </div>
-            ) : null}
+              ) : null}
+            </Reveal>
             {(
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
@@ -714,62 +730,69 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
                 />
               </div>
             ) : null}
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return $props.navPage == "reservations";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__bY2Go)}
+              direction={"up"}
+              duration={200}
+              triggerOnce={true}
+            >
+              {(
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return $props.navPage == "reservations";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()
-                : true
-            ) ? (
-              <div
-                data-plasmic-name={"top2"}
-                data-plasmic-override={overrides.top2}
-                className={classNames(projectcss.all, sty.top2)}
-              >
+                    })()
+                  : true
+              ) ? (
                 <div
-                  data-plasmic-name={"backRes"}
-                  data-plasmic-override={overrides.backRes}
-                  className={classNames(projectcss.all, sty.backRes)}
+                  data-plasmic-name={"top2"}
+                  data-plasmic-override={overrides.top2}
+                  className={classNames(projectcss.all, sty.top2)}
                 >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___2MPaI, "fadeinf")}
-                    displayHeight={"22px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"28px"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    src={
-                      hasVariant(globalVariants, "screen", "smallMobile")
-                        ? {
-                            src: "/plasmic/website_starter/images/navReservationsSvgBlueSvg2.svg",
-                            fullWidth: 23,
-                            fullHeight: 19,
-                            aspectRatio: undefined
-                          }
-                        : {
-                            src: "/plasmic/website_starter/images/navReservationsSvgBlueSvg2.svg",
-                            fullWidth: 23,
-                            fullHeight: 19,
-                            aspectRatio: undefined
-                          }
-                    }
-                  />
+                  <div
+                    data-plasmic-name={"backRes"}
+                    data-plasmic-override={overrides.backRes}
+                    className={classNames(projectcss.all, sty.backRes)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img___2MPaI, "fadeinf")}
+                      displayHeight={"22px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"28px"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? {
+                              src: "/plasmic/website_starter/images/navReservationsSvgBlueSvg2.svg",
+                              fullWidth: 23,
+                              fullHeight: 19,
+                              aspectRatio: undefined
+                            }
+                          : {
+                              src: "/plasmic/website_starter/images/navReservationsSvgBlueSvg2.svg",
+                              fullWidth: 23,
+                              fullHeight: 19,
+                              aspectRatio: undefined
+                            }
+                      }
+                    />
+                  </div>
                 </div>
-              </div>
-            ) : null}
+              ) : null}
+            </Reveal>
             {(
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
@@ -861,44 +884,51 @@ function PlasmicNavbarRntFooter__RenderFunc(props: {
               }
             }}
           >
-            {(
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return $props.navPage == "properties";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__j5XUf)}
+              direction={"up"}
+              duration={200}
+              triggerOnce={true}
+            >
+              {(
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return $props.navPage == "properties";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()
-                : true
-            ) ? (
-              <div
-                data-plasmic-name={"top3"}
-                data-plasmic-override={overrides.top3}
-                className={classNames(projectcss.all, sty.top3)}
-              >
+                    })()
+                  : true
+              ) ? (
                 <div
-                  data-plasmic-name={"backProps"}
-                  data-plasmic-override={overrides.backProps}
-                  className={classNames(projectcss.all, sty.backProps, ``)}
+                  data-plasmic-name={"top3"}
+                  data-plasmic-override={overrides.top3}
+                  className={classNames(projectcss.all, sty.top3)}
                 >
-                  <NavPropertiesSvgBlueSvgIcon
-                    className={classNames(
-                      projectcss.all,
-                      sty.svg__cpVuT,
-                      "fadeinf"
-                    )}
-                    role={"img"}
-                  />
+                  <div
+                    data-plasmic-name={"backProps"}
+                    data-plasmic-override={overrides.backProps}
+                    className={classNames(projectcss.all, sty.backProps, ``)}
+                  >
+                    <NavPropertiesSvgBlueSvgIcon
+                      className={classNames(
+                        projectcss.all,
+                        sty.svg__cpVuT,
+                        "fadeinf"
+                      )}
+                      role={"img"}
+                    />
+                  </div>
                 </div>
-              </div>
-            ) : null}
+              ) : null}
+            </Reveal>
             {(
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
