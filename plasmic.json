@@ -3165,6 +3165,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/new-page-2"
+        },
+        {
+          "id": "-FeDSki1P3al",
+          "name": "SplashDivar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSplashDivar.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/splash-divar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSplashDivar.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/splash-divar"
         }
       ],
       "icons": [

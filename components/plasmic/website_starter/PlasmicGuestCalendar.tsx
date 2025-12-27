@@ -343,19 +343,24 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                           displayMinWidth={"0"}
                           displayWidth={"auto"}
                           loading={"lazy"}
-                          src={(() => {
-                            try {
-                              return $state.profile2.data.profile_pic;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()}
+                          src={
+                            hasVariant(globalVariants, "screen", "mobile")
+                              ? $state.profile2.data.profile_pic
+                              : (() => {
+                                  try {
+                                    return $state.profile2.data.profile_pic;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                          }
                         />
                       </div>
                       <div
@@ -406,7 +411,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                             sty.text__fpEv5
                           )}
                         >
-                          <React.Fragment>{"نام اقامتگاه: "}</React.Fragment>
+                          {""}
                         </div>
                       </div>
                     </div>

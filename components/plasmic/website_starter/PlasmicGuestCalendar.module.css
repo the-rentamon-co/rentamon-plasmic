@@ -80,7 +80,6 @@
   }
 }
 .freeBox__jjqfq {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -91,6 +90,7 @@
   outline-style: dashed;
   outline-color: #e8e8e8;
   min-width: 0;
+  display: none;
   border-radius: 8px;
   padding: 8px;
 }

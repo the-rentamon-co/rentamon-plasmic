@@ -1793,14 +1793,14 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                                 return false;
                               }
                               const isDivar = checkDivarSource();
-                              return console.log(isDivar);
+                              return isDivar;
                             })();
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return false;
+                              return true;
                             }
                             throw e;
                           }
@@ -1983,9 +1983,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           sty.text__blWEa
                         )}
                       >
-                        {
-                          "\u0630\u062e\u06cc\u0631\u0647 \u0634\u0648\u062f(\u062f\u06cc\u0648\u0627\u0631)"
-                        }
+                        {"\u0630\u062e\u06cc\u0631\u0647 \u0634\u0648\u062f"}
                       </div>
                     </div>
                   ) : null}

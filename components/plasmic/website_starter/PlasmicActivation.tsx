@@ -1078,7 +1078,22 @@ function PlasmicActivation__RenderFunc(props: {
                               $steps["goToPage"] = await $steps["goToPage"];
                             }
 
-                            $steps["setCookiePropTour"] = true
+                            $steps["setCookiePropTour"] = (() => {
+                              function checkDivarSource() {
+                                const cookies = document.cookie.split(";");
+                                for (let i = 0; i < cookies.length; i++) {
+                                  const [key, value] = cookies[i]
+                                    .trim()
+                                    .split("=");
+                                  if (key === "source" && value === "divar") {
+                                    return true;
+                                  }
+                                }
+                                return false;
+                              }
+                              const isDivar = checkDivarSource();
+                              return !isDivar;
+                            })()
                               ? (() => {
                                   const actionArgs = {
                                     customFunction: async () => {
