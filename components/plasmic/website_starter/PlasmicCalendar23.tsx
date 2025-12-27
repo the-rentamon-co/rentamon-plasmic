@@ -2154,7 +2154,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                               yesterdayDate.getTime() / 1000
                             );
                             const minTimestamp = yesterdayTimestamp;
-                            const maxTimestamp = 1774110740;
+                            const maxTimestamp = 1776751996;
                             function getDayClass(dateProps, calendarData) {
                               const dayIndex = dateProps.date.day - 1;
                               const calendarItem = calendarData[dayIndex] || {};
@@ -2289,7 +2289,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                               yesterdayDate.getTime() / 1000
                             );
                             const minTimestamp = yesterdayTimestamp;
-                            const maxTimestamp = 1774110740;
+                            const maxTimestamp = 1776751996;
                             function getDayClass(dateProps, calendarData) {
                               const dayIndex = dateProps.date.day - 1;
                               const calendarItem = calendarData[dayIndex] || {};
