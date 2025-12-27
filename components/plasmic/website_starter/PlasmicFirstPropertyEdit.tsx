@@ -1458,80 +1458,137 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                   data-plasmic-override={overrides.newButtons2}
                   className={classNames(projectcss.all, sty.newButtons2)}
                 >
-                  <div
-                    data-plasmic-name={"next2"}
-                    data-plasmic-override={overrides.next2}
-                    className={classNames(
-                      projectcss.all,
-                      sty.next2,
-                      "clickable"
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateLoading"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["loading"]
-                              },
-                              operation: 0,
-                              value: ($state.loading = true)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
+                  {(() => {
+                    try {
+                      return (() => {
+                        function checkDivarSource() {
+                          const cookies = document.cookie.split(";");
+                          for (let i = 0; i < cookies.length; i++) {
+                            const [key, value] = cookies[i].trim().split("=");
+                            if (key === "source" && value === "divar") {
+                              return true;
+                            }
+                          }
+                          return false;
+                        }
+                        const isDivar = checkDivarSource();
+                        return !isDivar;
+                      })();
+                    } catch (e) {
                       if (
-                        $steps["updateLoading"] != null &&
-                        typeof $steps["updateLoading"] === "object" &&
-                        typeof $steps["updateLoading"].then === "function"
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        $steps["updateLoading"] = await $steps["updateLoading"];
+                        return true;
                       }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"next2"}
+                      data-plasmic-override={overrides.next2}
+                      className={classNames(
+                        projectcss.all,
+                        sty.next2,
+                        "clickable"
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
 
-                      $steps["setCookieFirstVisit"] =
-                        $state.propTour === true
+                        $steps["updateLoading"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["loading"]
+                                },
+                                operation: 0,
+                                value: ($state.loading = true)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateLoading"] != null &&
+                          typeof $steps["updateLoading"] === "object" &&
+                          typeof $steps["updateLoading"].then === "function"
+                        ) {
+                          $steps["updateLoading"] =
+                            await $steps["updateLoading"];
+                        }
+
+                        $steps["setCookieFirstVisit"] =
+                          $state.propTour === true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (() => {
+                                      function setCookie(name, value, hours) {
+                                        let expires = "";
+                                        if (hours) {
+                                          const date = new Date();
+                                          date.setTime(
+                                            date.getTime() +
+                                              hours * 60 * 60 * 1000
+                                          );
+                                          expires =
+                                            "; expires=" + date.toUTCString();
+                                        }
+                                        document.cookie =
+                                          name +
+                                          "=" +
+                                          (value || "") +
+                                          expires +
+                                          "; path=/";
+                                      }
+                                      return setCookie(
+                                        "first_visit",
+                                        "true",
+                                        168
+                                      );
+                                    })();
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                        if (
+                          $steps["setCookieFirstVisit"] != null &&
+                          typeof $steps["setCookieFirstVisit"] === "object" &&
+                          typeof $steps["setCookieFirstVisit"].then ===
+                            "function"
+                        ) {
+                          $steps["setCookieFirstVisit"] =
+                            await $steps["setCookieFirstVisit"];
+                        }
+
+                        $steps["deletePropTourCookie"] = true
                           ? (() => {
                               const actionArgs = {
                                 customFunction: async () => {
                                   return (() => {
-                                    function setCookie(name, value, hours) {
-                                      let expires = "";
-                                      if (hours) {
-                                        const date = new Date();
-                                        date.setTime(
-                                          date.getTime() +
-                                            hours * 60 * 60 * 1000
-                                        );
-                                        expires =
-                                          "; expires=" + date.toUTCString();
-                                      }
+                                    function deleteCookie(name) {
                                       document.cookie =
                                         name +
-                                        "=" +
-                                        (value || "") +
-                                        expires +
-                                        "; path=/";
+                                        "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
                                     }
-                                    return setCookie(
-                                      "first_visit",
-                                      "true",
-                                      168
-                                    );
+                                    deleteCookie("prop_tour");
+                                    return ($state.propTour = false);
                                   })();
                                 }
                               };
@@ -1540,185 +1597,156 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                               })?.apply(null, [actionArgs]);
                             })()
                           : undefined;
-                      if (
-                        $steps["setCookieFirstVisit"] != null &&
-                        typeof $steps["setCookieFirstVisit"] === "object" &&
-                        typeof $steps["setCookieFirstVisit"].then === "function"
-                      ) {
-                        $steps["setCookieFirstVisit"] =
-                          await $steps["setCookieFirstVisit"];
-                      }
-
-                      $steps["deletePropTourCookie"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  function deleteCookie(name) {
-                                    document.cookie =
-                                      name +
-                                      "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                                  }
-                                  deleteCookie("prop_tour");
-                                  return ($state.propTour = false);
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["deletePropTourCookie"] != null &&
-                        typeof $steps["deletePropTourCookie"] === "object" &&
-                        typeof $steps["deletePropTourCookie"].then ===
-                          "function"
-                      ) {
-                        $steps["deletePropTourCookie"] =
-                          await $steps["deletePropTourCookie"];
-                      }
-
-                      $steps["registrationSteps"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              args: [
-                                "POST",
-                                "https://nb.miaan.ir/webhook/registration-steps-prop",
-                                undefined,
-                                (() => {
-                                  try {
-                                    return $state.propTour;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                              ]
-                            };
-                            return $globalActions["Fragment.apiRequest"]?.apply(
-                              null,
-                              [...actionArgs.args]
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        $steps["registrationSteps"] != null &&
-                        typeof $steps["registrationSteps"] === "object" &&
-                        typeof $steps["registrationSteps"].then === "function"
-                      ) {
-                        $steps["registrationSteps"] =
-                          await $steps["registrationSteps"];
-                      }
-
-                      $steps["goToPanel"] = true
-                        ? (() => {
-                            const actionArgs = { destination: `/panel` };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToPanel"] != null &&
-                        typeof $steps["goToPanel"] === "object" &&
-                        typeof $steps["goToPanel"].then === "function"
-                      ) {
-                        $steps["goToPanel"] = await $steps["goToPanel"];
-                      }
-
-                      $steps["updateLoading2"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["loading"]
-                              },
-                              operation: 0,
-                              value: ($state.loading = false)
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateLoading2"] != null &&
-                        typeof $steps["updateLoading2"] === "object" &&
-                        typeof $steps["updateLoading2"].then === "function"
-                      ) {
-                        $steps["updateLoading2"] =
-                          await $steps["updateLoading2"];
-                      }
-                    }}
-                  >
-                    {(() => {
-                      try {
-                        return $state.loading;
-                      } catch (e) {
                         if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
+                          $steps["deletePropTourCookie"] != null &&
+                          typeof $steps["deletePropTourCookie"] === "object" &&
+                          typeof $steps["deletePropTourCookie"].then ===
+                            "function"
                         ) {
-                          return true;
+                          $steps["deletePropTourCookie"] =
+                            await $steps["deletePropTourCookie"];
                         }
-                        throw e;
-                      }
-                    })() ? (
-                      <PlasmicImg__
-                        alt={""}
-                        className={classNames(sty.img__umlBm)}
-                        displayHeight={"37px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"auto"}
-                        loading={"lazy"}
-                        src={{
-                          src: "/plasmic/website_starter/images/image140.gif",
-                          fullWidth: 500,
-                          fullHeight: 500,
-                          aspectRatio: undefined
-                        }}
-                      />
-                    ) : null}
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__dr2IG
-                      )}
+
+                        $steps["registrationSteps"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://nb.miaan.ir/webhook/registration-steps-prop",
+                                  undefined,
+                                  (() => {
+                                    try {
+                                      return $state.propTour;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["registrationSteps"] != null &&
+                          typeof $steps["registrationSteps"] === "object" &&
+                          typeof $steps["registrationSteps"].then === "function"
+                        ) {
+                          $steps["registrationSteps"] =
+                            await $steps["registrationSteps"];
+                        }
+
+                        $steps["goToPanel"] = true
+                          ? (() => {
+                              const actionArgs = { destination: `/panel` };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToPanel"] != null &&
+                          typeof $steps["goToPanel"] === "object" &&
+                          typeof $steps["goToPanel"].then === "function"
+                        ) {
+                          $steps["goToPanel"] = await $steps["goToPanel"];
+                        }
+
+                        $steps["updateLoading2"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["loading"]
+                                },
+                                operation: 0,
+                                value: ($state.loading = false)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateLoading2"] != null &&
+                          typeof $steps["updateLoading2"] === "object" &&
+                          typeof $steps["updateLoading2"].then === "function"
+                        ) {
+                          $steps["updateLoading2"] =
+                            await $steps["updateLoading2"];
+                        }
+                      }}
                     >
-                      {"\u0630\u062e\u06cc\u0631\u0647 \u0634\u0648\u062f"}
+                      {(() => {
+                        try {
+                          return $state.loading;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__umlBm)}
+                          displayHeight={"37px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image140.gif",
+                            fullWidth: 500,
+                            fullHeight: 500,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      ) : null}
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__dr2IG
+                        )}
+                      >
+                        {"\u0630\u062e\u06cc\u0631\u0647 \u0634\u0648\u062f"}
+                      </div>
                     </div>
-                  </div>
+                  ) : null}
                   {(
                     hasVariant(globalVariants, "screen", "mobile")
                       ? (() => {

@@ -740,35 +740,36 @@ function PlasmicTst__RenderFunc(props: {
                   '<script type="module">\r\n  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";\r\n  import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging.js";\r\n\r\n  // --- 1. CONFIGURATION ---\r\n  const firebaseConfig = {\r\n    apiKey: "AIzaSyCwfbUiQNPQSyL48d0It3MgFOoTwF6AHN4",\r\n    authDomain: "miaan-notify-mn5436.firebaseapp.com",\r\n    projectId: "miaan-notify-mn5436",\r\n    storageBucket: "miaan-notify-mn5436.firebasestorage.app",\r\n    messagingSenderId: "553708011126",\r\n    appId: "1:553708011126:web:dcdff7eacd0ea7b3296957"\r\n  };\r\n\r\n  const VAPID_KEY = "BPBCMzaOwuDnklPI_8EXu6x30lu0-eq0fcZ058u1fXWbHxicUr0fn8MdpyLFdP5QQIOgiIg9zZtVsyCrr7rV15k";\r\n  const BACKEND_URL = "https://second-n8n.darkube.app/webhook/v1/devices/sync";\r\n  const SW_PATH = "/firebase-messaging-sw.js"; // \u0645\u0633\u06cc\u0631 \u0641\u0627\u06cc\u0644 \u0633\u0631\u0648\u06cc\u0633 \u0648\u0631\u06a9\u0631\r\n\r\n  // Initialize\r\n  const app = initializeApp(firebaseConfig);\r\n  const messaging = getMessaging(app);\r\n\r\n  // --- 2. HELPERS ---\r\n  function getCookie(name) {\r\n    const value = `; ${document.cookie}`;\r\n    const parts = value.split(`; ${name}=`);\r\n    if (parts.length === 2) return parts.pop().split(\';\').shift();\r\n    return null;\r\n  }\r\n\r\n  // --- 3. FORCE SYNC ---\r\n  async function sendTokenToBackend(fcmToken) {\r\n    const ussoToken = getCookie("usso_access_token");\r\n    alert("5. Sending to Backend..."); // DEBUG\r\n\r\n    try {\r\n      const response = await fetch(BACKEND_URL, {\r\n        method: "POST",\r\n        headers: {\r\n          "Content-Type": "application/json",\r\n          "x-fcm-token": fcmToken,\r\n          "Authorization": ussoToken ? `Bearer ${ussoToken}` : ""\r\n        },\r\n        body: JSON.stringify({\r\n          fcm_token: fcmToken,\r\n          usso_access_token: ussoToken,\r\n          device_type: "pwa-apk",\r\n          platform: "android_web_debug",\r\n          timestamp: new Date().toISOString()\r\n        })\r\n      });\r\n\r\n      if (response.ok) {\r\n        alert("\u2705 Success! Token sent to backend.");\r\n      } else {\r\n        alert("\u274c Backend Error: " + response.status);\r\n      }\r\n    } catch (error) {\r\n      alert("\u274c Network Error: " + error.message);\r\n    }\r\n  }\r\n\r\n  // --- 4. MAIN ACTION ---\r\n  window.requestNotificationPermission = async function() {\r\n      alert("1. Start Process"); // DEBUG\r\n\r\n      try {\r\n          // A. Permission\r\n          const permission = await Notification.requestPermission();\r\n          alert("2. Permission status: " + permission); // DEBUG\r\n          \r\n          if (permission === "granted") {\r\n              \r\n              // B. Service Worker Check\r\n              alert("3. Registering SW: " + SW_PATH); // DEBUG\r\n              const registration = await navigator.serviceWorker.register(SW_PATH, { scope: \'/\' });\r\n              \r\n              // C. Get Token\r\n              alert("4. Requesting Token (Please wait)..."); // DEBUG\r\n              \r\n              // \u0627\u06cc\u0646\u062c\u0627 \u0645\u0645\u06a9\u0646\u0647 \u06af\u06cc\u0631 \u06a9\u0646\u0647\r\n              const currentToken = await getToken(messaging, { \r\n                vapidKey: VAPID_KEY,\r\n                serviceWorkerRegistration: registration \r\n              });\r\n\r\n              if (currentToken) {\r\n                  alert("4.5 Token Got! " + currentToken.substring(0, 10) + "..."); // DEBUG\r\n                  await sendTokenToBackend(currentToken);\r\n              } else {\r\n                  alert("\u274c No Token Returned from Firebase!");\r\n              }\r\n\r\n          } else {\r\n              alert("\u274c Permission Denied by User");\r\n          }\r\n      } catch (err) {\r\n          // \u0627\u06af\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0627\u0631\u0648\u0631 \u062f\u0627\u062f\u060c \u06cc\u0639\u0646\u06cc \u0645\u0634\u06a9\u0644 \u0627\u0633\u0627\u0633\u06cc \u0648\u062c\u0648\u062f \u062f\u0627\u0631\u062f\r\n          alert("\u274c CRITICAL ERROR: " + err.message);\r\n          console.error(err);\r\n      }\r\n  };\r\n</script>'
                 }
               />
-            </div>
-            <Button
-              data-plasmic-name={"org"}
-              data-plasmic-override={overrides.org}
-              className={classNames("__wab_instance", sty.org)}
-              onClick={async event => {
-                const $steps = {};
 
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return window.requestNotificationPermission();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-              }}
-            />
+              <Button
+                data-plasmic-name={"org"}
+                data-plasmic-override={overrides.org}
+                className={classNames("__wab_instance", sty.org)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return window.requestNotificationPermission();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
+              />
+            </div>
           </div>
           <div
             data-plasmic-name={"mahanTest"}
