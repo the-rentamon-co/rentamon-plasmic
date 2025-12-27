@@ -1,59 +1,72 @@
 // firebase-messaging-sw.js
-importScripts('https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js');
-importScripts('https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-compat.js');
+// --------------------------------------------------------
+importScripts('https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging-compat.js');
 
-const firebaseConfig = {
+// تنظیمات فایربیس
+firebase.initializeApp({
   apiKey: "AIzaSyCwfbUiQNPQSyL48d0It3MgFOoTwF6AHN4",
   authDomain: "miaan-notify-mn5436.firebaseapp.com",
   projectId: "miaan-notify-mn5436",
+  storageBucket: "miaan-notify-mn5436.firebasestorage.app",
   messagingSenderId: "553708011126",
   appId: "1:553708011126:web:dcdff7eacd0ea7b3296957"
-};
+});
 
-firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
+const MANDATORY_ICON = "https://media.rentamon.com/img%2Flogo-miaan%2Fsign-blue-small.png";
 
-messaging.onBackgroundMessage(function (payload) {
-  console.log('[SW] Background message:', payload);
+// --------------------------------------------------------
+// 1. BACKGROUND MESSAGE HANDLER
+// --------------------------------------------------------
+messaging.onBackgroundMessage((payload) => {
+  console.log('[SW] Background Message:', payload);
 
-  var data = payload && payload.data ? payload.data : {};
-
-  var title = data.title ? data.title : "پیام جدید از میان";
-
-  var options = {
-    body: data.body ? data.body : "",
-    icon: data.icon ? data.icon : "https://media.rentamon.com/img%2Flogo-miaan%2Fsign-blue-small.png",
-    badge: "https://media.rentamon.com/img%2Flogo-miaan%2Fsign-blue-small.png",
+  // اصلاحیه مهم: اضافه کردن  که در کد قبلی شما نبود
+  const notificationTitle = payload.notification?.title  payload.data?.title  'پیام جدید';
+  const notificationOptions = {
+    body: payload.notification?.body  payload.data?.body  '',
+    icon: MANDATORY_ICON,
     data: {
-      url: data.url ? data.url : "/"
+      url: payload.data?.url  payload.data?.link || '/' 
     }
   };
 
-  self.registration.showNotification(title, options);
+  return self.registration.showNotification(notificationTitle, notificationOptions);
 });
 
-self.addEventListener('notificationclick', function (event) {
+// --------------------------------------------------------
+// 2. NOTIFICATION CLICK HANDLER
+// --------------------------------------------------------
+self.addEventListener('notificationclick', function(event) {
+  console.log('[SW] Notification Clicked');
+  
   event.notification.close();
 
-  var targetUrl = "/";
-  if (event.notification &&
-      event.notification.data &&
-      event.notification.data.url) {
-    targetUrl = event.notification.data.url;
+  let urlToOpen = '/';
+  if (event.notification.data && event.notification.data.url) {
+    urlToOpen = event.notification.data.url;
   }
 
   event.waitUntil(
-    clients.matchAll({ type: 'window', includeUncontrolled: true })
-      .then(function (clientList) {
-        for (var i = 0; i < clientList.length; i++) {
-          var client = clientList[i];
-          if (client.url === targetUrl && 'focus' in client) {
-            return client.focus();
-          }
+    clients.matchAll({
+      type: 'window',
+      includeUncontrolled: true
+    }).then(function(clientList) {
+      for (let i = 0; i < clientList.length; i++) {
+        const client = clientList[i];
+        if (client.url && 'focus' in client) {
+          return client.focus().then(focusedClient => {
+             if (urlToOpen !== '/' && focusedClient.navigate) {
+                 return focusedClient.navigate(urlToOpen);
+             }
+             return focusedClient;
+          });
         }
-        if (clients.openWindow) {
-          return clients.openWindow(targetUrl);
-        }
-      })
+      }
+      if (clients.openWindow) {
+        return clients.openWindow(urlToOpen);
+      }
+    })
   );
 });
